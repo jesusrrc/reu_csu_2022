@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+<html class="hasSidebar hasPageActions hasBreadcrumb reference reference has-default-focus theme-light" data-auth-status-determined="false" data-authenticated="false" data-css-variable-support="true" data-target="docs" dir="ltr" lang="en-us" x-ms-format-detection="none">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Set-SPOTenantSyncClientRestriction (Microsoft.Online.SharePoint.PowerShell)" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.microsoft.com/en-us/powershell/module/sharepoint-online/set-spotenantsyncclientrestriction" property="og:url"/>
+<meta content="This cmdlet contains more than one parameter set. You may only use parameters from one parameter set, and you may not combine parameters from different parameter sets. For more information about how to use parameter sets, see Cmdlet Parameter Sets. You must be a SharePoint Online administrator or Global Administrator to run the cmdlet. Requires a valid Connect-SPOService context to identify the tenant. For information on how to connect to the tenant, see Connect-SPOService The Set-SPOTenantSyncClientRestriction cmdlet is used to control a variety of tenant-wide administrative settings related to syncing files from OneDrive and SharePoint. You may use it to:  Set restrictions on whether users can sync items to non-domain joined machines, control the list of allowed domains, and manage whether Mac clients (which do not support domain join) can sync.  Prevents files with specific extensions from being synced.  Controls whether users can continue to sync OneDrive for Business libraries with the old OneDrive for Business sync client.   Restrict non-domain joined machines from syncing The Set-SPOTenantSyncClientRestriction cmdlet can be used to enable the feature for tenancy and set the domain GUIDs in the safe recipients list. When this feature is enabled it can take up to 24 hours for the change to take effect. However, any changes to the safe domains list are reflected within five minutes.  Important The new OneDrive for Business Next Generation Sync Client lets you connect and sync files from your OneDrive for Business. You can add a work or school account to the new OneDrive for Business sync client and sync all your files in OneDrive to your computer.  For more information, see Improve your OneDrive sync experience.  When the feature is enabled the following will occur:  All OneDrive for Business Sync client requests originating from a domain that is not on the safe recipients list will be blocked.  All Microsoft OneDrive Mac Sync client and Mac Beta client requests will not be blocked by default.  Microsoft OneDrive mobile apps  are not blocked when this feature is enabled.  Regardless whether a computer is managed by a device management solution, a sync relationship will not be established unless they are   joined to a domain in the Safe Recipient List.  Any files that have been previously been synced down to your computer will not be deleted.  When this feature is enabled, please be aware the following upload behavior:  New or existing files added to the client will still be uploaded to the server and will not be blocked. Regardless if the computer is joined to a domain which is set in the Safe Recipient List. Regardless if the computer is joined to  a domain which is not set in the Safe Recipient List. And for all non-domain joined computers.   Microsoft  OneDrive for Business sync client prior to version 15.0.4693.1000 will stop syncing existing libraries.    Important In order to explicitly block Microsoft OneDrive client for Mac or OneDrive for Business Next Generation Sync Client on Mac OS X, please run the Set-SPOTenantSyncClientRestriction cmdlet with the BlockMacSync parameter set to true.  For more information about the Next Generation Sync Client for Mac OS X, see Get started with the new OneDrive sync client on Mac OS X.   Important There is a known OneDrive for Business sync client issue where syncing is being  blocked even if a computer is joined to a domain which is  set in the Safe Recipient List. To resolve this behavior, obtain the 15.0.4719.1000 version or higher of the sync client, see May 12, 2015, update for OneDrive for Business.   Note To determine the version of your Sync client, see What version of the sync client am I using?.   The latest OneDrive for Business sync client can be downloaded from Download OneDrive for Windows or How to install OneDrive for Business for SharePoint and SharePoint Online.   Important This capability doesn't support Microsoft Azure Active Directory (AD) Joined or Workplace Joined devices.  For additional information about how to troubleshoot the OneDrive for Business sync client, see How to switch from an MSI installation of OneDrive for Business (formerly SkyDrive Pro) standalone to a Click-To-Run installation of OneDrive for Business (formerly SkyDrive Pro) standalone. Block specific file extensions from syncing The Set-SPOTenantSyncClientRestriction cmdlet can be used to configure a list of file extensions that should not be synced by the OneDrive sync client, such as .PST files. Any file extension may be blocked using this feature, but note that it may take up to 24 hours for a change to take affect across all user devices. When this feature is enabled, users syncing any file that is in the exclusion list will see an error message informing them of the block.  Important This feature is only supported by the new OneDrive for Business sync client. To determine the version of your Sync client, see What version of the sync client am I using?.  " property="og:description"/>
+<meta content="https://docs.microsoft.com/en-us/media/logos/logo-ms-social.png" property="og:image"/>
+<meta content="Microsoft Logo" property="og:image:alt"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="@docsmsft" name="twitter:site"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="trent-green" name="author">
+<meta content="/powershell/breadcrumb/toc.json" name="breadcrumb_path"/>
+<meta content="MSDN.OfficeDocs-Sharepoint-PowerShell" name="depot_name"/>
+<meta content="This cmdlet contains more than one parameter set. You may only use parameters from one parameter set, and you may not combine parameters from different parameter sets. For more information about how to use parameter sets, see Cmdlet Parameter Sets. You must be a SharePoint Online administrator or Global Administrator to run the cmdlet. Requires a valid Connect-SPOService context to identify the tenant. For information on how to connect to the tenant, see Connect-SPOService The Set-SPOTenantSyncClientRestriction cmdlet is used to control a variety of tenant-wide administrative settings related to syncing files from OneDrive and SharePoint. You may use it to:  Set restrictions on whether users can sync items to non-domain joined machines, control the list of allowed domains, and manage whether Mac clients (which do not support domain join) can sync.  Prevents files with specific extensions from being synced.  Controls whether users can continue to sync OneDrive for Business libraries with the old OneDrive for Business sync client.   Restrict non-domain joined machines from syncing The Set-SPOTenantSyncClientRestriction cmdlet can be used to enable the feature for tenancy and set the domain GUIDs in the safe recipients list. When this feature is enabled it can take up to 24 hours for the change to take effect. However, any changes to the safe domains list are reflected within five minutes.  Important The new OneDrive for Business Next Generation Sync Client lets you connect and sync files from your OneDrive for Business. You can add a work or school account to the new OneDrive for Business sync client and sync all your files in OneDrive to your computer.  For more information, see Improve your OneDrive sync experience.  When the feature is enabled the following will occur:  All OneDrive for Business Sync client requests originating from a domain that is not on the safe recipients list will be blocked.  All Microsoft OneDrive Mac Sync client and Mac Beta client requests will not be blocked by default.  Microsoft OneDrive mobile apps  are not blocked when this feature is enabled.  Regardless whether a computer is managed by a device management solution, a sync relationship will not be established unless they are   joined to a domain in the Safe Recipient List.  Any files that have been previously been synced down to your computer will not be deleted.  When this feature is enabled, please be aware the following upload behavior:  New or existing files added to the client will still be uploaded to the server and will not be blocked. Regardless if the computer is joined to a domain which is set in the Safe Recipient List. Regardless if the computer is joined to  a domain which is not set in the Safe Recipient List. And for all non-domain joined computers.   Microsoft  OneDrive for Business sync client prior to version 15.0.4693.1000 will stop syncing existing libraries.    Important In order to explicitly block Microsoft OneDrive client for Mac or OneDrive for Business Next Generation Sync Client on Mac OS X, please run the Set-SPOTenantSyncClientRestriction cmdlet with the BlockMacSync parameter set to true.  For more information about the Next Generation Sync Client for Mac OS X, see Get started with the new OneDrive sync client on Mac OS X.   Important There is a known OneDrive for Business sync client issue where syncing is being  blocked even if a computer is joined to a domain which is  set in the Safe Recipient List. To resolve this behavior, obtain the 15.0.4719.1000 version or higher of the sync client, see May 12, 2015, update for OneDrive for Business.   Note To determine the version of your Sync client, see What version of the sync client am I using?.   The latest OneDrive for Business sync client can be downloaded from Download OneDrive for Windows or How to install OneDrive for Business for SharePoint and SharePoint Online.   Important This capability doesn't support Microsoft Azure Active Directory (AD) Joined or Workplace Joined devices.  For additional information about how to troubleshoot the OneDrive for Business sync client, see How to switch from an MSI installation of OneDrive for Business (formerly SkyDrive Pro) standalone to a Click-To-Run installation of OneDrive for Business (formerly SkyDrive Pro) standalone. Block specific file extensions from syncing The Set-SPOTenantSyncClientRestriction cmdlet can be used to configure a list of file extensions that should not be synced by the OneDrive sync client, such as .PST files. Any file extension may be blocked using this feature, but note that it may take up to 24 hours for a change to take affect across all user devices. When this feature is enabled, users syncing any file that is in the exclusion list will see an error message informing them of the block.  Important This feature is only supported by the new OneDrive for Business sync client. To determine the version of your Sync client, see What version of the sync client am I using?.  " name="description"/>
+<meta content="ffc530c0-109a-055a-f815-602724350913" name="document_id"/>
+<meta content="76d77bbd-01d6-82d0-d00e-e38185022192" name="document_version_independent_id"/>
+<meta content="sharepointonline.xml" name="external help file"/>
+<meta content="https://github.com/MicrosoftDocs/OfficeDocs-Sharepoint-PowerShell/blob/8eb87bb081d1a2b4667b70fe3659ea555bf941e7/sharepoint/sharepoint-ps/sharepoint-online/Set-SPOTenantSyncClientRestriction.md" name="gitcommit"/>
+<meta content="en-us" name="locale"/>
+<meta content="Microsoft.Online.SharePoint.PowerShell" name="module"/>
+<meta content="Microsoft.Online.SharePoint.PowerShell" name="Module Name"/>
+<meta content="sharepoint-ps" name="monikers"/>
+<meta content="trgreen" name="ms.author"/>
+<meta content="powershell" name="ms.devlang"/>
+<meta content="sharepoint-server-itpro" name="ms.prod"/>
+<meta content="" name="ms.reviewer"/>
+<meta content="https://docs.microsoft.com/powershell/module/sharepoint-online/set-spotenantsyncclientrestriction" name="online version"/>
+<meta content="https://github.com/MicrosoftDocs/OfficeDocs-Sharepoint-PowerShell/blob/live/sharepoint/sharepoint-ps/sharepoint-online/Set-SPOTenantSyncClientRestriction.md" name="original_content_git_url"/>
+<meta content="command" name="page_kind"/>
+<meta content="powershell" name="page_type"/>
+<meta content="2.0.0" name="schema"/>
+<meta content="Docs" name="site_name"/>
+<meta content="../sharepoint-ps/toc.json" name="toc_rel"/>
+<meta content="Microsoft.Online.SharePoint.PowerShell.Set-SPOTenantSyncClientRestriction" name="uid"/>
+<meta content="2022-01-13 11:46 PM" name="updated_at"/>
+<meta content="https://authoring-docs-microsoft.poolparty.biz/devrel/7428317a-e6c2-4461-ad3e-8a8ad3608734" data-source="generated" name="cmProducts"/>
+<link href="https://docs.microsoft.com/en-us/powershell/module/sharepoint-online/set-spotenantsyncclientrestriction" rel="canonical"/>
+<title>Set-SPOTenantSyncClientRestriction (Microsoft.Online.SharePoint.PowerShell) | Microsoft Docs</title>
+<link href="/_themes/docs.theme/master/en-us/_themes/styles/be4a8746.site-ltr.css " rel="stylesheet"/>
+<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Reference',
+			brand: '',
+			context: {
+
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: true,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'MicrosoftDocs/OfficeDocs-SharePoint-powershell',
+			feedbackProductUrl: 'https://github.com/MicrosoftDocs/OfficeDocs-SharePoint-powershell/issues',
+			contentGitUrl: 'https://github.com/MicrosoftDocs/OfficeDocs-Sharepoint-PowerShell/blob/main/sharepoint/sharepoint-ps/sharepoint-online/Set-SPOTenantSyncClientRestriction.md',
+			extendBreadcrumb: true,
+			isEditDisplayable: true,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasBookmark: true,
+			hasShare: true,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "guzi99", url: "https://github.com/guzi99" }
+],
+		},
+		functions:{}
+	};
+	</script>
+<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-3.min.js"></script>
+<script src="/_themes/docs.theme/master/en-us/_themes/global/67a45209.deprecation.js"></script>
+<script src="/_themes/docs.theme/master/en-us/_themes/scripts/e4517ff6.index-docs.js"></script>
+</meta></head>
+<body dir="ltr" lang="en-us">
+<div class="header-holder has-default-focus">
+<a class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" href="#main" tabindex="1">Skip to main content</a>
+<div hidden="" id="cookie-consent-holder"></div>
+<div hidden="" id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;">
+<div style="max-width: 800px; margin: 0 auto;">
+<p style="font-size: 24px">This browser is no longer supported.</p>
+<p style="font-size: 16px; margin-top: 16px;">Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.</p>
+<div style="margin-top: 12px;">
+<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 " style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+Download Microsoft Edge					</a>
+<a href="https://docs.microsoft.com/en-US/lifecycle/faq/internet-explorer-microsoft-edge" style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+More info					</a>
+</div>
+</div>
+</div>
+<!-- liquid-tag banners global -->
+<div data-bi-name="header" id="headerAreaHolder">
+<header itemscope="itemscope" itemtype="http://schema.org/Organization" role="banner">
+<div class="nav-bar">
+<div class="nav-bar-brand">
+<a aria-label="Microsoft" class="nav-bar-button" href="https://www.microsoft.com" itemprop="url">
+<div aria-hidden="true" class="nav-bar-logo has-background-image theme-display is-light" itemprop="logo" itemscope="itemscope" role="presentation"></div>
+<div aria-hidden="true" class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" itemprop="logo" itemscope="itemscope" role="presentation"></div>
+</a>
+</div>
+</div>
+<div class="is-hidden"></div>
+</header> </div>
+<div class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header" id="content-header">
+<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+<button aria-haspopup="true" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" data-contents-button="" type="button">
+<span class="icon"><span aria-hidden="true" class="docon docon-menu"></span></span>
+<span class="contents-expand-title">
+Table of contents						</span>
+</button>
+<button aria-controls="action-panel" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" type="button">
+<span class="icon"><span aria-hidden="true" class="docon docon-exit-mode"></span></span>
+<span>Exit focus mode</span>
+</button>
+</div>
+</div>
+<div class="has-overflow-hidden has-default-focus" id="disclaimer-holder">
+<!-- liquid-tag banners sectional -->
+</div>
+</div>
+<div class="mainContainer uhf-container has-default-focus" data-bi-name="body">
+<div class="columns has-large-gaps is-gapless-mobile">
+<div class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop" id="left-container">
+<nav aria-label="Primary" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" id="affixed-left-container" role="navigation"></nav>
+</div>
+<!-- .primary-holder -->
+<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+<!--div.columns -->
+<div class="columns is-gapless-mobile has-large-gaps">
+<div class="column is-full is-8-desktop" id="main-column">
+<main data-bi-name="content" dir="ltr" id="main" lang="en-us" role="main">
+<!-- article-header -->
+<div class="background-color-body margin-top-sm-tablet margin-bottom-xs" id="article-header">
+<div class="display-flex align-items-center">
+<details class="popover" data-for="article-header-breadcrumbs" id="article-header-breadcrumbs-overflow-popover">
+<summary class="button button-clear button-primary button-sm">
+<span class="icon">
+<span class="docon docon-more"></span>
+</span>
+</summary>
+<div class="popover-content padding-none" id="article-header-breadcrumbs-overflow">
+</div>
+</details>
+<bread-crumbs class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop" id="page-breadcrumbs"></bread-crumbs>
+<div class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch" id="article-header-page-actions">
+<a class="button button-primary button-clear button-sm display-none display-inline-flex-tablet" data-bi-name="language-toggle" data-read-in-link="" hidden="" id="lang-link-tablet" title="Read in English">
+<span aria-hidden="true" class="icon margin-none" data-read-in-link-icon="">
+<span class="docon docon-locale-globe"></span>
+</span>
+<span class="is-visually-hidden" data-read-in-link-text="">Read in English</span>
+</a>
+<button class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet" data-bi-name="collection" data-list-type="collection" title="Add to collection" type="button">
+<span aria-hidden="true" class="icon margin-none">
+<span class="docon docon-circle-addition"></span>
+</span>
+<span class="collection-status is-visually-hidden">Save</span>
+</button>
+<a aria-label="Feedback" class="button button-clear button-sm text-decoration-none button-primary display-none display-inline-flex-tablet" data-bi-name="comments" data-feedback-section-link="" href="#feedback" title="Send feedback about this page">
+<span aria-hidden="true" class="icon margin-none">
+<span class="docon docon-comment-lines"></span>
+</span>
+</a>
+<a aria-label="Edit" class="button button-clear button-sm text-decoration-none button-primary display-none display-inline-flex-tablet" data-bi-name="edit" data-contenteditbtn="" data-original_content_git_url="https://github.com/MicrosoftDocs/OfficeDocs-Sharepoint-PowerShell/blob/live/sharepoint/sharepoint-ps/sharepoint-online/Set-SPOTenantSyncClientRestriction.md" data-original_content_git_url_template="{repo}/blob/{branch}/sharepoint/sharepoint-ps/sharepoint-online/Set-SPOTenantSyncClientRestriction.md" data-pr_branch="" data-pr_repo="" href="https://github.com/MicrosoftDocs/OfficeDocs-Sharepoint-PowerShell/blob/main/sharepoint/sharepoint-ps/sharepoint-online/Set-SPOTenantSyncClientRestriction.md" title="Edit This Document">
+<span aria-hidden="true" class="icon margin-none">
+<span class="docon docon-edit-outline"></span>
+</span>
+</a>
+<details class="popover popover-right" id="article-header-page-actions-overflow">
+<summary aria-label="More actions" class="justify-content-flex-start button button-clear button-sm button-primary">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-more-vertical"></span>
+</span>
+</summary>
+<div class="popover-content padding-none">
+<button aria-label="Contents" class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet" data-bi-name="contents-expand" data-contents-button="" data-page-action-item="overflow-mobile" data-popover-close="" type="button">
+<span class="icon">
+<span aria-hidden="true" class="docon docon-editor-list-bullet"></span>
+</span>
+<span class="contents-expand-title">Table of contents</span>
+</button>
+<a class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet" data-bi-name="language-toggle" data-check-hidden="true" data-page-action-item="overflow-mobile" data-read-in-link="" hidden="" id="lang-link-overflow" title="Read in English">
+<span aria-hidden="true" class="icon" data-read-in-link-icon="">
+<span class="docon docon-locale-globe"></span>
+</span>
+<span data-read-in-link-text="">Read in English</span>
+</a>
+<button class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet" data-bi-name="collection" data-check-hidden="true" data-list-type="collection" data-page-action-item="overflow-mobile" data-popover-close="" title="Add to collection" type="button">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-circle-addition"></span>
+</span>
+<span class="collection-status">Save</span>
+</button>
+<a aria-label="Feedback" class="button button-clear button-block button-sm has-inner-focus justify-content-flex-start text-decoration-none display-none-tablet" data-bi-name="comments" data-feedback-section-link="" data-page-action-item="overflow-mobile" href="#feedback" title="Send feedback about this page">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-comment-lines"></span>
+</span>
+<span>
+Feedback														</span>
+</a>
+<a aria-label="Edit" class="button button-clear button-block button-sm has-inner-focus justify-content-flex-start text-decoration-none display-none-tablet" data-bi-name="edit" data-contenteditbtn="" data-original_content_git_url="https://github.com/MicrosoftDocs/OfficeDocs-Sharepoint-PowerShell/blob/live/sharepoint/sharepoint-ps/sharepoint-online/Set-SPOTenantSyncClientRestriction.md" data-original_content_git_url_template="{repo}/blob/{branch}/sharepoint/sharepoint-ps/sharepoint-online/Set-SPOTenantSyncClientRestriction.md" data-pr_branch="" data-pr_repo="" href="https://github.com/MicrosoftDocs/OfficeDocs-Sharepoint-PowerShell/blob/main/sharepoint/sharepoint-ps/sharepoint-online/Set-SPOTenantSyncClientRestriction.md" title="Edit This Document">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-edit-outline"></span>
+</span>
+<span>Edit</span>
+</a>
+<div aria-hidden="true" class="margin-none display-none-tablet border-top" data-page-action-item="overflow-all"></div>
+<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-brand-twitter"></span>
+</span>
+<span>Twitter</span>
+</a>
+<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-brand-linkedin"></span>
+</span>
+<span>LinkedIn</span>
+</a>
+<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-brand-facebook"></span>
+</span>
+<span>Facebook</span>
+</a>
+<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-mail-message-fill"></span>
+</span>
+<span>Email</span>
+</a>
+</div>
+</details>
+</div>
+</div>
+</div>
+<!-- end article-header -->
+<div class="">
+<button aria-label="Contents" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" data-bi-name="contents-expand" data-contents-button="" hidden="" type="button">
+<span class="icon">
+<span aria-hidden="true" class="docon docon-editor-list-bullet"></span>
+</span>
+<span class="contents-expand-title">Table of contents</span>
+</button>
+</div>
+<!-- end mobile-contents button  -->
+<div class="content">
+<!-- <content> -->
+<h1>Set-SPOTenant<wbr/>Sync<wbr/>Client<wbr/>Restriction</h1>
+<div class="display-flex-tablet justify-content-space-between-tablet">
+<ul class="metadata page-metadata" data-bi-name="page info">
+<li>Reference</li>
+</ul>
+<div class="display-flex" data-hide-on-archived="" id="user-feedback">
+<button class="thumb-rating-button like link-button margin-xxs margin-right-none" data-bi-name="rating-yes" data-bi-sat="1" data-binary-rating-response="rating-yes" title="This article is helpful" type="button">
+<span aria-hidden="true" class="icon docon docon-like"></span>
+</button>
+<button class="thumb-rating-button dislike link-button margin-xxs margin-right-none" data-bi-name="rating-no" data-bi-sat="0" data-binary-rating-response="rating-no" title="This article is not helpful" type="button">
+<span aria-hidden="true" class="icon docon docon-dislike"></span>
+</button>
+</div>
+</div>
+<div class="metadata">
+<dl class="attributeList">
+<dt>Module:</dt>
+<dd> <a data-linktype="relative-path" href="./?view=sharepoint-ps">Microsoft.Online.SharePoint.PowerShell</a></dd>
+</dl>
+<dl class="attributeList">
+<dt>Applies to:</dt>
+<dd>SharePoint Online</dd>
+</dl>
+</div>
+<div class="summaryHolder">
+<div class="summary">
+<p>Controls tenant-wide options and restrictions specific to syncing files.</p>
+</div>
+</div>
+<nav aria-label="On page navigation" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" id="center-doc-outline" role="navigation">
+<h3>In this article</h3>
+</nav>
+<h2 id="syntax">Syntax</h2>
+<pre class="wrap"><code class="lang-powershell" dir="ltr">Set-SPOTenant<wbr/>Sync<wbr/>Client<wbr/>Restriction
+   [-BlockMacSync]
+   [-DomainGuids &lt;String&gt;]
+   [-Enable]
+   [&lt;CommonParameters&gt;]</code></pre>
+<pre class="wrap"><code class="lang-powershell" dir="ltr">Set-SPOTenant<wbr/>Sync<wbr/>Client<wbr/>Restriction
+   -DisableReportProblemDialog &lt;Boolean&gt;
+   [&lt;CommonParameters&gt;]</code></pre>
+<pre class="wrap"><code class="lang-powershell" dir="ltr">Set-SPOTenant<wbr/>Sync<wbr/>Client<wbr/>Restriction
+   [-ExcludedFileExtensions &lt;String&gt;]
+   [&lt;CommonParameters&gt;]</code></pre>
+<h2 id="description">Description</h2>
+<p>This cmdlet contains more than one parameter set. You may only use parameters from one parameter set, and you may not combine parameters from different parameter sets. For more information about how to use parameter sets, see <a data-linktype="external" href="https://msdn.microsoft.com/library/dd878348(VS.85).aspx">Cmdlet Parameter Sets</a>.</p>
+<p>You must be a SharePoint Online administrator or Global Administrator to run the cmdlet.</p>
+<p>Requires a valid Connect-SPOService context to identify the tenant. For information on how to connect to the tenant, see <a data-linktype="relative-path" href="connect-sposervice?view=sharepoint-ps">Connect-SPOService</a></p>
+<p>The <strong>Set-SPOTenantSyncClientRestriction</strong> cmdlet is used to control a variety of tenant-wide administrative settings related to syncing files from OneDrive and SharePoint. You may use it to:</p>
+<ul>
+<li><p>Set restrictions on whether users can sync items to non-domain joined machines, control the list of allowed domains, and manage whether Mac clients (which do not support domain join) can sync.</p>
+</li>
+<li><p>Prevents files with specific extensions from being synced.</p>
+</li>
+<li><p>Controls whether users can continue to sync OneDrive for Business libraries with the old OneDrive for Business sync client.</p>
+</li>
+</ul>
+<p><strong>Restrict non-domain joined machines from syncing</strong></p>
+<p>The <strong>Set-SPOTenantSyncClientRestriction</strong> cmdlet can be used to enable the feature for tenancy and set the domain GUIDs in the safe recipients list. When this feature is enabled it can take up to 24 hours for the change to take effect. However, any changes to the safe domains list are reflected within five minutes.</p>
+<div class="IMPORTANT">
+<p>Important</p>
+<p>The new OneDrive for Business Next Generation Sync Client lets you connect and sync files from your OneDrive for Business. You can add a work or school account to the new OneDrive for Business sync client and sync all your files in OneDrive to your computer.  For more information, see <a data-linktype="external" href="https://go.microsoft.com/fwlink/p/?LinkId=717436">Improve your OneDrive sync experience</a>.</p>
+</div>
+<p>When the feature is enabled the following will occur:</p>
+<ul>
+<li><p>All OneDrive for Business Sync client requests originating from a domain that is not on the safe recipients list will be blocked.</p>
+</li>
+<li><p>All Microsoft OneDrive Mac Sync client and Mac Beta client requests will not be blocked by default.</p>
+</li>
+<li><p>Microsoft OneDrive mobile apps  are not blocked when this feature is enabled.</p>
+</li>
+<li><p>Regardless whether a computer is managed by a device management solution, a sync relationship will not be established unless they are   joined to a domain in the Safe Recipient List.</p>
+</li>
+<li><p>Any files that have been previously been synced down to your computer will not be deleted.</p>
+</li>
+<li><p>When this feature is enabled, please be aware the following upload behavior:</p>
+<ul>
+<li>New or existing files added to the client will still be uploaded to the server and will not be blocked.</li>
+<li>Regardless if the computer is joined to a domain which is set in the Safe Recipient List.</li>
+<li>Regardless if the computer is joined to  a domain which is not set in the Safe Recipient List.</li>
+<li>And for all non-domain joined computers.</li>
+</ul>
+</li>
+<li><p>Microsoft  OneDrive for Business sync client prior to version 15.0.4693.1000 will stop syncing existing libraries.</p>
+</li>
+</ul>
+<div class="IMPORTANT">
+<p>Important</p>
+<p>In order to explicitly block Microsoft OneDrive client for Mac or OneDrive for Business Next Generation Sync Client on Mac OS X, please run the <strong>Set-SPOTenantSyncClientRestriction</strong> cmdlet with the <strong>BlockMacSync</strong> parameter set to true.  For more information about the Next Generation Sync Client for Mac OS X, see <a data-linktype="external" href="https://go.microsoft.com/fwlink/?LinkID=717727">Get started with the new OneDrive sync client on Mac OS X</a>.</p>
+</div>
+<div class="IMPORTANT">
+<p>Important</p>
+<p>There is a known OneDrive for Business sync client issue where syncing is being  blocked even if a computer is joined to a domain which is  set in the Safe Recipient List. To resolve this behavior, obtain the 15.0.4719.1000 version or higher of the sync client, see <a data-linktype="external" href="https://support.microsoft.com/en-us/kb/2986244/">May 12, 2015, update for OneDrive for Business</a>.</p>
+</div>
+<div class="NOTE">
+<p>Note</p>
+<p>To determine the version of your Sync client, see <a data-linktype="external" href="https://support.office.com/en-us/article/Which-version-of-OneDrive-am-I-using-19246eae-8a51-490a-8d97-a645c151f2ba">What version of the sync client am I using?</a>.</p>
+</div>
+<ul>
+<li>The latest OneDrive for Business sync client can be downloaded from <a data-linktype="external" href="https://go.microsoft.com/fwlink/?LinkID=404119&amp;clcid=0x409">Download OneDrive for Windows</a> or <a data-linktype="external" href="https://go.microsoft.com/fwlink/?LinkID=321300&amp;clcid=0x409">How to install OneDrive for Business for SharePoint and SharePoint Online</a>.</li>
+</ul>
+<div class="IMPORTANT">
+<p>Important</p>
+<p>This capability doesn't support Microsoft Azure Active Directory (AD) Joined or Workplace Joined devices.</p>
+</div>
+<p>For additional information about how to troubleshoot the OneDrive for Business sync client, see <a data-linktype="external" href="https://go.microsoft.com/fwlink/?LinkId=526386&amp;clcid=0x409">How to switch from an MSI installation of OneDrive for Business (formerly SkyDrive Pro) standalone to a Click-To-Run installation of OneDrive for Business (formerly SkyDrive Pro) standalone</a>.</p>
+<p><strong>Block specific file extensions from syncing</strong></p>
+<p>The <strong>Set-SPOTenantSyncClientRestriction</strong> cmdlet can be used to configure a list of file extensions that should not be synced by the OneDrive sync client, such as .PST files.</p>
+<p>Any file extension may be blocked using this feature, but note that it may take up to 24 hours for a change to take affect across all user devices. When this feature is enabled, users syncing any file that is in the exclusion list will see an error message informing them of the block.</p>
+<div class="IMPORTANT">
+<p>Important</p>
+<p>This feature is only supported by the new OneDrive for Business sync client. To determine the version of your Sync client, see <a data-linktype="external" href="https://support.office.com/en-us/article/Which-version-of-OneDrive-am-I-using-19246eae-8a51-490a-8d97-a645c151f2ba">What version of the sync client am I using?</a>.</p>
+</div>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1">--------------------EXAMPLE 1---------------------</h3>
+<pre><code class="lang-powershell">Set-SPOTenantSyncClientRestriction  -Enable -DomainGuids "786548DD-877B-4760-A749-6B1EFBC1190A; 877564FF-877B-4760-A749-6B1EFBC1190A"</code></pre>
+<p>This example enables the feature for the  tenancy and adds the domains GUIDs to the safe recipient list.</p>
+<h3 id="example-2">--------------------EXAMPLE 2------------------</h3>
+<pre><code class="lang-powershell">Set-SPOTenantSyncClientRestriction  -Enable -DomainGuids "786548DD-877B-4760-A749-6B1EFBC1190A; 877564FF-877B-4760-A749-6B1EFBC1190A" -BlockMacSync:$true</code></pre>
+<p>This example turns on the Block Mac sync functionality.</p>
+<h3 id="example-3">--------------------EXAMPLE 3------------------</h3>
+<pre><code class="lang-powershell">Set-SPOTenantSyncClientRestriction  -ExcludedFileExtensions "pptx;docx;xlsx"</code></pre>
+<p>This example blocks syncing of PowerPoint, Word, and Excel file types using the new sync client (OneDrive.exe).</p>
+<h3 id="example-4">--------------------EXAMPLE 4------------------</h3>
+<pre><code class="lang-powershell">Set-SPOTenantSyncClientRestriction  -ExcludedFileExtensions ""</code></pre>
+<p>This example clears the ExcludedFileExtension list and lets all file types synced with the new client (OneDrive.exe).</p>
+<h2 id="parameters">Parameters</h2>
+<div class="parameterName stack">-BlockMacSync</div>
+<div class="parameterInfo">
+<p>Block Mac sync clients-- the Beta version and the new sync client (OneDrive.exe).
+The values for this parameter are True and False. The default value is False.</p>
+<table class="nameValue stack">
+<tr><td>Type:</td><td><span class="no-loc xref">SwitchParameter</span></td></tr>
+<tr><td>Position:</td><td>Named</td></tr>
+<tr><td>Default value:</td><td>None</td></tr>
+<tr><td>Accept pipeline input:</td><td>False</td></tr>
+<tr><td>Accept wildcard characters:</td><td>False</td></tr>
+<tr><td>Applies to:</td><td>SharePoint Online</td></tr>
+</table>
+</div><div class="parameterName stack">-DisableReportProblemDialog</div>
+<div class="parameterInfo">
+<table class="nameValue stack">
+<tr><td>Type:</td><td><span class="no-loc xref">Boolean</span></td></tr>
+<tr><td>Position:</td><td>Named</td></tr>
+<tr><td>Default value:</td><td>None</td></tr>
+<tr><td>Accept pipeline input:</td><td>False</td></tr>
+<tr><td>Accept wildcard characters:</td><td>False</td></tr>
+<tr><td>Applies to:</td><td>SharePoint Online</td></tr>
+</table>
+</div><div class="parameterName stack">-DomainGuids</div>
+<div class="parameterInfo">
+<p>Sets the domain GUID to add to the safe recipient list. Requires a minimum of 1 domain GUID. The maximum number of domain GUIDs allowed are 125.</p>
+<table class="nameValue stack">
+<tr><td>Type:</td><td><span class="no-loc xref">String</span></td></tr>
+<tr><td>Position:</td><td>Named</td></tr>
+<tr><td>Default value:</td><td>None</td></tr>
+<tr><td>Accept pipeline input:</td><td>False</td></tr>
+<tr><td>Accept wildcard characters:</td><td>False</td></tr>
+<tr><td>Applies to:</td><td>SharePoint Online</td></tr>
+</table>
+</div><div class="parameterName stack">-Enable</div>
+<div class="parameterInfo">
+<p>Enables the feature to block sync originating from domains that are not present in the safe recipients list.</p>
+<table class="nameValue stack">
+<tr><td>Type:</td><td><span class="no-loc xref">SwitchParameter</span></td></tr>
+<tr><td>Position:</td><td>Named</td></tr>
+<tr><td>Default value:</td><td>None</td></tr>
+<tr><td>Accept pipeline input:</td><td>False</td></tr>
+<tr><td>Accept wildcard characters:</td><td>False</td></tr>
+<tr><td>Applies to:</td><td>SharePoint Online</td></tr>
+</table>
+</div><div class="parameterName stack">-ExcludedFileExtensions</div>
+<div class="parameterInfo">
+<p>Blocks certain file types from syncing with the new sync client (OneDrive.exe).</p>
+<div class="NOTE">
+<p>Note</p>
+<p>It may take up to one hour for changes to take effect.</p>
+</div>
+<table class="nameValue stack">
+<tr><td>Type:</td><td><span class="no-loc xref">String</span></td></tr>
+<tr><td>Position:</td><td>Named</td></tr>
+<tr><td>Default value:</td><td>None</td></tr>
+<tr><td>Accept pipeline input:</td><td>False</td></tr>
+<tr><td>Accept wildcard characters:</td><td>False</td></tr>
+<tr><td>Applies to:</td><td>SharePoint Online</td></tr>
+</table>
+</div>
+<h2 id="inputs">Inputs</h2>
+<p><strong><span class="no-loc xref">None</span></strong></p>
+<h2 id="outputs">Outputs</h2>
+<p><strong><span class="no-loc xref">System.Object</span></strong></p>
+</div>
+<!-- </content> -->
+</main>
+<!-- recommendations section -->
+<section data-bi-name="recommendations" id="recommendations-section"></section>
+<!-- end recommendations section -->
+<!-- feedback section -->
+<section class="feedback-section position-relative" data-bi-name="feedback-section">
+<h2 class="title is-3 margin-top-sm" id="feedback">Feedback</h2>
+<div class="alert choose-feedback-type">
+<p id="send-feedback-about">Submit and view feedback for</p>
+<div class="choose-feedback-buttons margin-top-xs">
+<a aria-label="Send feedback about this product" class="button has-external-link-indicator feedback-type-product margin-bottom-xxs" data-bi-name="product-feedback" href="https://github.com/MicrosoftDocs/OfficeDocs-SharePoint-powershell/issues">
+<span>This product</span>
+</a>
+<a aria-label="Send feedback about this page" class="button feedback-type-product margin-bottom-xxs github-link" data-bi-name="create-issue-on-github">
+<span aria-hidden="true" class="docon docon-brand-github padding-right-xxs"></span>
+<span>This page</span>
+</a>
+</div>
+</div>
+<div class="action-container display-flex justify-content-flex-end margin-block-xxs">
+<a class="view-on-github has-external-link-indicator" data-bi-name="view-on-github" href="https://github.com/MicrosoftDocs/OfficeDocs-SharePoint-powershell/issues">
+<span aria-hidden="true" class="docon docon-brand-github"></span>
+<span>View all page feedback</span>
+</a>
+</div>
+</section>
+<!-- end feedback section -->
+<!-- feedback report section -->
+<!-- end feedback report section -->
+<div class="border-top is-visible-interactive has-default-focus margin-top-sm">
+<footer class="footer-layout" data-bi-name="footer" id="footer-interactive">
+<div class="display-flex is-full-height padding-right-lg-desktop">
+<a class="locale-selector-link button button-clear flex-shrink-0" data-bi-name="select-locale" data-mscc-ic="false" href="#">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-world"></span>
+</span>
+<span class="local-selector-link-text"></span></a>
+<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+<button aria-controls="theme-menu-interactive" aria-expanded="false" class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" data-bi-name="theme" title="Theme">
+<span class="icon">
+<span aria-hidden="true" class="docon docon-sun"></span>
+</span>
+<span>Theme</span>
+</button>
+<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+<ul class="theme-selector padding-xxs">
+<li class="theme display-block">
+<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="light">
+<span class="theme-light margin-right-xxs">
+<span aria-hidden="true" class="theme-selector-icon css-variable-support border display-inline-block has-body-background">
+<svg class="svg" viewbox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+<rect class="has-fill-body-background" height="14" width="22"></rect>
+<rect class="has-fill-secondary" height="4" width="12" x="5" y="5"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="5" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="8" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="3" x="11" y="2"></rect>
+<rect class="has-fill-secondary" height="2" width="2" x="1" y="1"></rect>
+<rect class="has-fill-primary" height="2" rx="0.3" width="7" x="5" y="10"></rect>
+<rect class="has-fill-secondary" height="2" rx="1" width="2" x="19" y="1"></rect>
+</svg>
+</span>
+</span>
+<span role="menuitem">
+Light					</span>
+</button>
+</li>
+<li class="theme display-block">
+<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark">
+<span class="theme-dark margin-right-xxs">
+<span aria-hidden="true" class="border theme-selector-icon css-variable-support display-inline-block has-body-background">
+<svg class="svg" viewbox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+<rect class="has-fill-body-background" height="14" width="22"></rect>
+<rect class="has-fill-secondary" height="4" width="12" x="5" y="5"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="5" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="8" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="3" x="11" y="2"></rect>
+<rect class="has-fill-secondary" height="2" width="2" x="1" y="1"></rect>
+<rect class="has-fill-primary" height="2" rx="0.3" width="7" x="5" y="10"></rect>
+<rect class="has-fill-secondary" height="2" rx="1" width="2" x="19" y="1"></rect>
+</svg>
+</span>
+</span>
+<span role="menuitem">
+Dark					</span>
+</button>
+</li>
+<li class="theme display-block">
+<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast">
+<span class="theme-high-contrast margin-right-xxs">
+<span aria-hidden="true" class="border theme-selector-icon css-variable-support display-inline-block has-body-background">
+<svg class="svg" viewbox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+<rect class="has-fill-body-background" height="14" width="22"></rect>
+<rect class="has-fill-secondary" height="4" width="12" x="5" y="5"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="5" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="8" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="3" x="11" y="2"></rect>
+<rect class="has-fill-secondary" height="2" width="2" x="1" y="1"></rect>
+<rect class="has-fill-primary" height="2" rx="0.3" width="7" x="5" y="10"></rect>
+<rect class="has-fill-secondary" height="2" rx="1" width="2" x="19" y="1"></rect>
+</svg>
+</span>
+</span>
+<span role="menuitem">
+High contrast					</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<ul class="links" data-bi-name="footerlinks">
+<li class="manage-cookies-holder" hidden=""></li>
+<li><a data-bi-name="archivelink" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/previous-versions/">Previous Version Docs</a></li>
+<li><a data-bi-name="bloglink" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/teamblog">Blog</a></li>
+<li><a data-bi-name="contributorGuide" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/contribute">Contribute</a></li>
+<li><a data-bi-name="privacy" data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy &amp; Cookies</a></li>
+<li><a data-bi-name="termsofuse" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse">Terms of Use</a></li>
+<li><a data-bi-name="trademarks" data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx">Trademarks</a></li>
+<li>© Microsoft 2022</li>
+</ul>
+</footer>
+</div>
+</div>
+<div aria-label="Page Actions" class="font-size-sm right-container column is-4-desktop display-none display-block-desktop" data-bi-name="pageactions" role="complementary">
+<div class="margin-top-sm-tablet doc-outline is-vertically-scrollable" data-bi-name="right-column" id="affixed-right-container">
+<section class="margin-bottom-xxs" data-bi-name="events-card" hidden="" id="right-rail-events"></section>
+<section class="margin-bottom-xxs" data-bi-name="recommendations" hidden="" id="right-rail-recommendations"></section>
+<nav aria-label="Article Outline" data-bi-name="intopic toc" id="side-doc-outline" role="navigation">
+<h3>In this article</h3>
+</nav>
+<section class="margin-top-xxs" data-bi-name="learning-resources-card" hidden="" id="right-rail-learning-resources"></section>
+<section class="margin-top-xxs" data-bi-name="qna-link-card" hidden="" id="right-rail-qna"></section>
+</div>
+</div>
+</div>
+<!--end of div.columns -->
+</section>
+<!--end of .primary-holder -->
+<!-- interactive container -->
+<aside class="interactive-container is-visible-interactive column has-body-background-dark" id="interactive-container">
+</aside>
+<!-- end of interactive container -->
+</div>
+</div>
+<!--end of .mainContainer -->
+<section class="border-top has-default-focus is-hidden-interactive margin-top-sm">
+<footer class="footer-layout uhf-container has-padding" data-bi-name="footer" id="footer" role="contentinfo">
+<div class="display-flex is-full-height padding-right-lg-desktop">
+<a class="locale-selector-link button button-clear flex-shrink-0" data-bi-name="select-locale" data-mscc-ic="false" href="#">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-world"></span>
+</span>
+<span class="local-selector-link-text"></span></a>
+<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+<button aria-controls="theme-menu" aria-expanded="false" class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" data-bi-name="theme" title="Theme">
+<span class="icon">
+<span aria-hidden="true" class="docon docon-sun"></span>
+</span>
+<span>Theme</span>
+</button>
+<div class="dropdown-menu" id="theme-menu" role="menu">
+<ul class="theme-selector padding-xxs">
+<li class="theme display-block">
+<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="light">
+<span class="theme-light margin-right-xxs">
+<span aria-hidden="true" class="theme-selector-icon css-variable-support border display-inline-block has-body-background">
+<svg class="svg" viewbox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+<rect class="has-fill-body-background" height="14" width="22"></rect>
+<rect class="has-fill-secondary" height="4" width="12" x="5" y="5"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="5" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="8" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="3" x="11" y="2"></rect>
+<rect class="has-fill-secondary" height="2" width="2" x="1" y="1"></rect>
+<rect class="has-fill-primary" height="2" rx="0.3" width="7" x="5" y="10"></rect>
+<rect class="has-fill-secondary" height="2" rx="1" width="2" x="19" y="1"></rect>
+</svg>
+</span>
+</span>
+<span role="menuitem">
+Light					</span>
+</button>
+</li>
+<li class="theme display-block">
+<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark">
+<span class="theme-dark margin-right-xxs">
+<span aria-hidden="true" class="border theme-selector-icon css-variable-support display-inline-block has-body-background">
+<svg class="svg" viewbox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+<rect class="has-fill-body-background" height="14" width="22"></rect>
+<rect class="has-fill-secondary" height="4" width="12" x="5" y="5"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="5" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="8" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="3" x="11" y="2"></rect>
+<rect class="has-fill-secondary" height="2" width="2" x="1" y="1"></rect>
+<rect class="has-fill-primary" height="2" rx="0.3" width="7" x="5" y="10"></rect>
+<rect class="has-fill-secondary" height="2" rx="1" width="2" x="19" y="1"></rect>
+</svg>
+</span>
+</span>
+<span role="menuitem">
+Dark					</span>
+</button>
+</li>
+<li class="theme display-block">
+<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast">
+<span class="theme-high-contrast margin-right-xxs">
+<span aria-hidden="true" class="border theme-selector-icon css-variable-support display-inline-block has-body-background">
+<svg class="svg" viewbox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+<rect class="has-fill-body-background" height="14" width="22"></rect>
+<rect class="has-fill-secondary" height="4" width="12" x="5" y="5"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="5" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="8" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="3" x="11" y="2"></rect>
+<rect class="has-fill-secondary" height="2" width="2" x="1" y="1"></rect>
+<rect class="has-fill-primary" height="2" rx="0.3" width="7" x="5" y="10"></rect>
+<rect class="has-fill-secondary" height="2" rx="1" width="2" x="19" y="1"></rect>
+</svg>
+</span>
+</span>
+<span role="menuitem">
+High contrast					</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<ul class="links" data-bi-name="footerlinks">
+<li class="manage-cookies-holder" hidden=""></li>
+<li><a data-bi-name="archivelink" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/previous-versions/">Previous Version Docs</a></li>
+<li><a data-bi-name="bloglink" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/teamblog">Blog</a></li>
+<li><a data-bi-name="contributorGuide" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/contribute">Contribute</a></li>
+<li><a data-bi-name="privacy" data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy &amp; Cookies</a></li>
+<li><a data-bi-name="termsofuse" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse">Terms of Use</a></li>
+<li><a data-bi-name="trademarks" data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx">Trademarks</a></li>
+<li>© Microsoft 2022</li>
+</ul>
+</footer>
+</section>
+<div aria-label="Action Panel" class="action-panel has-default-focus" id="action-panel" role="region" tabindex="-1"></div>
+</body>
+</html>

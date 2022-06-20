@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<!--[if IE 7]> <html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8"/><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"6baaff3019","applicationID":"5536127","transactionName":"blZbbENSXhYCBxUIWlccdG5yHHQABQUUDUFpUl5dclxeERELDQ1QSxxQVlVWSA==","queueTime":0,"applicationTime":33,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"6baaff3019",applicationID:"5536127"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy Policy &amp; Use of cookies</title>
+<link as="style" href="https://cloud.typography.com/6309160/7599232/css/fonts.css" rel="preload"/>
+<meta content="Nefab takes personal privacy and integrity seriously. Customers, suppliers, partners, students or other stakeholders." name="description"/>
+<meta content="Nefab" name="author"/>
+<meta content="Nefab" name="apple-mobile-web-app-title"/>
+<script data-blockingmode="auto" data-cbid="a587b8b0-eeec-47d6-8cbc-6dac6f09f7b1" id="Cookiebot" src="https://consent.cookiebot.com/uc.js" type="text/javascript"></script>
+<meta content="KJQTtBdhafbqCx7GJ4Q2pytG_6LvQmK_b48s8W2fCQ4" name="google-site-verification"/>
+<link href="/en/privacy-and-cookies/" rel="canonical"/>
+<link href="https://cloud.typography.com/6309160/7599232/css/fonts.css" rel="stylesheet" type="text/css"/>
+<link href="/Static/img/favicons/favicon.ico" rel="shortcut icon"/>
+<link href="/Static/img/favicons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/Static/img/favicons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/Static/img/favicons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/Static/img/favicons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/Static/img/favicons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/Static/img/favicons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/Static/img/favicons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/Static/img/favicons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/Static/img/favicons/favicon-196x196.png" rel="icon" sizes="196x196" type="image/png"/>
+<link href="/Static/img/favicons/favicon-160x160.png" rel="icon" sizes="160x160" type="image/png"/>
+<link href="/Static/img/favicons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/Static/img/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/Static/img/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<meta content="#ffffff" name="msapplication-TileColor"/>
+<meta content="/Static/img/favicons/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="/Static/img/favicons/mstile-70x70.png" name="msapplication-square70x70logo"/>
+<meta content="/Static/img/favicons/mstile-144x144.png" name="msapplication-square144x144logo"/>
+<meta content="/Static/img/favicons/mstile-150x150.png" name="msapplication-square150x150logo"/>
+<meta content="/Static/img/favicons/mstile-310x310.png" name="msapplication-square310x310logo"/>
+<meta content="/Static/img/favicons/mstile-310x150.png" name="msapplication-wide310x150logo"/>
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
+"//www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,"script","dataLayer","GTM-W4G4V6");</script>
+<!-- End Google Tag Manager -->
+<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet" type="text/css"/>
+<link crossorigin="anonymous" href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css"/>
+<link as="script" href="https://unpkg.com/swiper/swiper-bundle.min.js" rel="preload"/>
+<link href="/dist/app.b6306344cd1d952fbf71.css" rel="stylesheet"/>
+<link href="https://www.nefab.com/en/privacy-and-cookies/" hreflang="en" rel="alternate"/>
+<script src="/static/js/modernizr.min.js"></script>
+</head>
+<body class="p-globalcontentpage">
+<div id="siteWrapper">
+<header class="header">
+<nav class="navbar navbar-default navbar-fixed-top no-hero-img" id="header-nav">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand header__logo header__logo--blue" href="/">
+<img class="" src="/globalassets/nefab.com--group-site/new-site/startpage/new-purpose-launch/nefab_new_tagline_primary_blue_rgb_small.png"/>
+</a>
+<a class="navbar-brand header__logo header__logo--white" href="/">
+<img class="" src="/globalassets/nefab.com--group-site/new-site/startpage/new-purpose-launch/nefab_new_tagline_primary_white_rgb_small.png"/>
+</a>
+</div>
+<ul class="nav navbar-nav header__menu">
+<li><a href="/en/solutions/">Solutions</a></li>
+<li><a href="/en/innovation/">Innovation</a></li>
+<li><a href="/en/sustainability/">Sustainability</a></li>
+</ul>
+<nav class="nav navbar-nav navbar-right navbar">
+<a class="header__language-icon" href="/en/site/">Country</a>
+<a class="btn btn-primary header__contact-btn" href="/en/contact/">Contact</a>
+<a class="header__search-icon" href="/en/search/">Search</a>
+<button aria-controls="megamenu" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler menu-button" data-target="#megamenu" data-toggle="collapse" type="button">
+<div class="menu-icon"><span></span><span></span><span></span></div>
+</button>
+</nav>
+</div>
+<div class="collapse navbar-collapse header__megamenu" id="megamenu">
+<div class="container">
+<ul class="header__megamenu-list">
+<li>
+<a href="/en/solutions/">Solutions</a>
+<button aria-expanded="false" class="glyphicon glyphicon-menu-down nav-link dropdown-toggle" data-toggle="dropdown" type="button"></button>
+<ul class="dropdown-menu">
+<li>
+<a href="/en/solutions/packaging-solutions/">Packaging Solutions</a>
+<button aria-expanded="false" class="glyphicon glyphicon-menu-down nav-link dropdown-toggle" data-toggle="dropdown" type="button"></button>
+<ul class="dropdown-menu">
+<li>
+<a href="/en/solutions/packaging-solutions/outer-packaging/">Outer packaging</a>
+</li>
+<li>
+<a href="/en/solutions/packaging-solutions/inner-packaging/">Inner Packaging</a>
+</li>
+<li>
+<a href="/en/solutions/packaging-solutions/pallets/">Pallets</a>
+</li>
+<li>
+<a href="/en/solutions/packaging-solutions/packaging-requirements/">Packaging requirements</a>
+</li>
+<li>
+<a href="/en/solutions/packaging-solutions/products/">Products</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/en/solutions/optimization-programs/">Packaging and Logistics Optimization</a>
+<button aria-expanded="false" class="glyphicon glyphicon-menu-down nav-link dropdown-toggle" data-toggle="dropdown" type="button"></button>
+<ul class="dropdown-menu">
+<li>
+<a href="/en/solutions/optimization-programs/connected-packaging/">Connected Packaging</a>
+</li>
+<li>
+<a href="/en/solutions/optimization-programs/engineering/">Engineering Services</a>
+</li>
+<li>
+<a href="/en/solutions/optimization-programs/life-cycle-assessment/">Life-cycle assessment</a>
+</li>
+<li>
+<a href="/en/solutions/optimization-programs/pack-audit/">Pack Audit</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/en/solutions/logistics-services/">Logistics Services</a>
+<button aria-expanded="false" class="glyphicon glyphicon-menu-down nav-link dropdown-toggle" data-toggle="dropdown" type="button"></button>
+<ul class="dropdown-menu">
+<li>
+<a href="/en/solutions/logistics-services/last-mile-optimization/">Last Mile Optimization</a>
+</li>
+<li>
+<a href="/en/solutions/logistics-services/packing-services/">Packing and Kitting Services</a>
+</li>
+<li>
+<a href="/en/solutions/logistics-services/pooling/">Pooling</a>
+</li>
+<li>
+<a href="/en/solutions/logistics-services/warehousing-services/">Warehousing Services</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="header__megamenu-list">
+<li>
+<a href="/en/innovation/">Innovation</a>
+<button aria-expanded="false" class="glyphicon glyphicon-menu-down nav-link dropdown-toggle" data-toggle="dropdown" type="button"></button>
+<ul class="dropdown-menu">
+<li>
+<a href="/en/innovation/our-approach/">Our approach</a>
+</li>
+<li>
+<a href="/en/innovation/engineering-analysis/">Engineering  &amp; Analysis</a>
+</li>
+<li>
+<a href="/en/innovation/prototyping/">Prototyping</a>
+</li>
+<li>
+<a href="/en/innovation/testing/">Testing</a>
+</li>
+<li>
+<a href="/en/innovation/connected-packaging/">Connected Packaging</a>
+</li>
+<li>
+<a href="/en/innovation/sustainable-materials/">Sustainable Materials</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="header__megamenu-list">
+<li>
+<a href="/en/sustainability/">Sustainability</a>
+<button aria-expanded="false" class="glyphicon glyphicon-menu-down nav-link dropdown-toggle" data-toggle="dropdown" type="button"></button>
+<ul class="dropdown-menu">
+<li>
+<a href="/en/sustainability/greencalc/">GreenCALC</a>
+</li>
+<li>
+<a href="/en/sustainability/global-compact/">Global Compact</a>
+</li>
+<li>
+<a href="/en/sustainability/code-of-conduct/">Code of Conduct</a>
+</li>
+<li>
+<a href="/en/sustainability/csr/">CSR</a>
+</li>
+<li>
+<a href="/en/sustainability/sustainable-solutions/">Sustainable Solutions</a>
+</li>
+<li>
+<a href="/en/sustainability/customer-story/">Customer Story</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<span>Areas</span>
+<ul>
+<li><a href="/en/about/">About Nefab</a></li>
+<li><a href="/en/careers/">Careers</a></li>
+<li><a href="/en/news-insights/">News &amp; Insights</a></li>
+<li><a href="/en/suppliers/">Suppliers</a></li>
+</ul>
+</li>
+<li class="header__megamenu-news">
+<span></span>
+<ul>
+</ul>
+</li>
+<li>
+<span>Your Industry</span>
+<ul>
+<li>
+<img alt="Telecom" src="/globalassets/page-icons/your-industry_telecom_white.svg"/>
+<a href="/en/your-industry/telecom/">Telecom</a>
+</li>
+<li>
+<img alt="Energy" src="/globalassets/page-icons/your-industry_energy_white.svg"/>
+<a href="/en/your-industry/energy/">Energy</a>
+</li>
+<li>
+<img alt="Aerospace" src="/globalassets/page-icons/your-industry_aerospace_white.svg"/>
+<a href="/en/your-industry/aerospace/">Aerospace</a>
+</li>
+<li>
+<img alt="Healthcare" src="/globalassets/page-icons/your-industry_healthcare_white.svg"/>
+<a href="/en/your-industry/healthcare/">Healthcare</a>
+</li>
+<li>
+<img alt="Automotive" src="/globalassets/page-icons/your-industry_automotive_white.svg"/>
+<a href="/en/your-industry/automotive/">Automotive</a>
+</li>
+<li>
+<img alt="Lithium batteries" src="/globalassets/page-icons/white_-lithium_image-24px.svg"/>
+<a href="/en/your-industry/lithium-batteries/">Lithium batteries</a>
+</li>
+<li>
+<img alt="Other Industry" src="/globalassets/page-icons/your-industry_other-industry_white.svg"/>
+<a href="/en/your-industry/other-industry/">Other Industry</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<div class="bodyWrapper">
+<section class="hero-background">
+<div class="hero-background__container hero-background__no-img">
+<div class="embed-responsive">
+<div class="hero-background__content">
+<h2 class="hero-background__page-name">
+                    Privacy and Cookies
+                </h2>
+<h2 class="hero-background__heading"></h2>
+</div>
+</div>
+</div>
+</section>
+<div class="hero-background__breadcrumb hero-background__breadcrumb--no-img">
+<div class="container">
+<ol class="breadcrumb"><li><a href="/en/">Home</a></li><li class="active">Privacy and Cookies</li></ol>
+</div>
+</div>
+<section class="title-and-lead">
+<div class="title-and-lead__container">
+<h1>Privacy Policy &amp; Use of cookies</h1>
+<p>Nefab takes personal privacy and integrity seriously. Customers, suppliers, partners, students or other stakeholders, who are in contact with Nefab shall feel confident that Nefab respects their privacy and adhere to applicable laws and regulations when collecting and processing information that may be used to identify a person.</p>
+</div>
+</section>
+<section class="mainimage-texteditor container mainimage-texteditor--no-img">
+<div>
+<div class="col-sm-12">
+<div class="mainimage-texteditor__text"><div>
+<h2>Privacy Policy</h2>
+<p>Nefab takes personal privacy and integrity seriously. Customers, suppliers, partners, students or other stakeholders, who are in contact with Nefab shall feel confident that Nefab respects their privacy and adhere to applicable laws and regulations when collecting and processing information that may be used to identify a person.</p>
+<h4>General Information</h4>
+<p>By accessing <a href="/en/">www.nefab.com</a> or any other local Nefab website (together referred to as the “website”, “Nefab.com”), you agree to the terms of this privacy policy in connection with your use of the website.</p>
+<p>Nefab AB, company reg. no. 556226-8143 (“we”, “our”, “us”, “Nefab”), is responsible for the website. For contact and questions please email <a href="mailto:privacy@nefab.com"><em>privacy@nefab.com</em></a>.</p>
+<h4>Personal Data</h4>
+<p>Nefab collects personal data such as first name, last name, email, address, telephone number, and other information which is voluntary submitted by the users of the website. The information will only be used as necessary in order for us to manage and respond to your request, including answering questions, signing you up for subscription services or events or any other communication required in each specific case. If you sign up for a newsletter, your personal data will also be processed for marketing purposes. As receiver of marketing material you are always entitled to refuse any further mailings.<br/><br/>If you apply for a job at Nefab or any of our subsidiaries, we will retain your personal data during the recruitment process and for any applicable appeal period thereafter before deleting it, unless you have given us your consent to retain it for potential future job openings.<br/><br/>If you are communicating with Nefab, or any of our subsidiaries, as an employee of any of our customers, suppliers, partners or similar, special terms and conditions may apply as stated in a written agreement signed between Nefab and your employer. You can also find more information regarding processing of personal data in our “Information to Business Partners” that you find on Nefab.com under Terms and Conditions.<br/><br/>We will also use your information to personalize the content you review and to better understand how you use the websites in order to improve the services Nefab provides.<br/><br/>In specific cases, Nefab may request your direct consent to use your personally identifiable information by providing an "opt-in" check box in information fields before your information can be used for any purpose other than that for which it was given.<br/>As a data subject, you are entitled to obtain information regarding your personal data processed by Nefab as well as to request rectifications of incorrect data or to have your personal data erased.</p>
+<p>The controller for each processing of personal data is Nefab AB for the processing related to the website, and the local Nefab company if you choose to contact them via the website. </p>
+<h4>Processor and Disclosure of Personal Data to third parties</h4>
+<p>Nefab uses processors for providing, for example, e-mail services and we may also share your personal data with Nefab business partners who may alert you to new products and services or for sending out newsletters. Nefab will only share your personally identifiable information with third parties (not processors) if you have provided us with your consent to do so.<br/><br/>In addition, Nefab works with certain companies to deliver Nefab advertising and undertake surveys. These companies may collect information to help us determine which products, services and offers are of most interest to our current and future customers. The information that is collected is not identifiable at an individual or company level. It is aggregated at an anonymous level to provide us with general statistics and trends.</p>
+<h4>Securing your information</h4>
+<p>We have put in place appropriate physical, electronic and managerial procedures to prevent unauthorized access, maintain data accuracy and ensure correct use of information and to safeguard and secure the information we collect online.<br/><br/>Please take note of the following to ensure information security:<br/>You should be aware that when you disclose personally identifiable information (such as in a discussion forum), such information is accessible to and collectable by others present.<br/>Nefab advises you to protect yourself against unauthorized access to your computer and disclosure of personal information. If you believe that your password has been compromised, you should immediately change your password.<br/><br/>Nefab strives to comply with all applicable laws around the world that are designed to protect your privacy. Although legal requirements may vary from country to country, we intend to adhere to the principles set forth in this Privacy Policy even if we transfer your information from your country of residence to countries that may not require the same level of protection for your information. Our commitment is to protect your information no matter where it is collected, transferred or retained.<br/><br/>The Nefab websites may provide links to third-party websites for your convenience and information, however, Nefab does not control those third-party websites or their privacy policies or practices.</p>
+<h4>Intellectual Prpoerty Rights</h4>
+<p>All materials on the website, including texts, images, trademarks and design and graphic profiles are the property of Nefab AB or our partners. All use, except as required to use the website, or copy of you as a user requires Nefab AB's prior written approval.<br/><br/>Any use in violation of these terms may result in legal sanctions.</p>
+<h4>Applicable law</h4>
+<p>Any disputes arising out of or in connection with this Privacy Policy, shall be resolved under Swedish law, excluding its conflict of law rules, in general courts.</p>
+<p><strong>Contact</strong></p>
+<p>This Nefab Privacy Policy was last updated on June 7, 2022.<br/><br/>Nefab reserves the right to make changes to this policy from time to time without notice to you. We recommend that all visitors and users of this website re-visit this Privacy Policy page occasionally to learn of any new privacy practices or changes to our policy. Your continued use of the Nefab websites indicates your acceptance of any changes to this Privacy Policy.</p>
+<p><strong>Contact us</strong><br/>We value your opinions and feedback. If you have any questions or comments about our privacy policy, please send them to:<br/>Nefab AB<br/>PO Box 2184<br/>Jonkoping, Sweden<br/>SE-550 02<br/>Phone: +46 (0) 771 – 590 000<br/>Email: privacy@nefab.com<br/>Attn: Privacy</p>
+<p> </p>
+<p> </p>
+</div>
+<div>
+<h2>Cookies</h2>
+<p>Nefab AB uses cookies on the website <a href="/en/">www.nefab.com</a> and all local Nefab websites (together referred to as the "website”, “Nefab.com”), to optimise your experience and usage of the website. When visiting our website, you are given the option to approve or block the use of cookies. However, please note that by blocking cookies you may not get full access to all pages and functions on the website.</p>
+<h4>What is a cookie?</h4>
+<p>A cookie is a small text file which the website you visit saves on your computer (or corresponding device with internet connection such as a tablet or smart phone). Cookies are used to make a website function more effectively, but also to provide our website with certain types of information. Cookies enable a website to distinguish between visitors, which makes it possible to offer each user a more positive website visit. Cookies allow the website to remember the choices you have made, such as forms you have completed and your language settings so that you don't need to reset the same information every time you visit the site.</p>
+<h4>How to block cookies</h4>
+<p>If you would like to stop this website (or any other website) from setting cookies in your browser, this can be done in your browser settings. There is also a browser plugin that you can install to block all cookies from Google Analytics. <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener" target="_blank" title="Block Cookies">The plugin is compatible with most modern browsers</a>.</p>
+<h4>Why we use Cookies</h4>
+<p>There are two types of cookies, persistent cookies and session cookies. Nefabs website uses both types of cookie. Persistent cookies are stored as a file on your computer for a certain period of time until you or the server which sent the cookies, erases them. Session cookies are only stored temporarily while you are visiting the website and are erased when you close the browser.<br/>We use cookies to identify you as a unique user and to make certain activities on the website easier. Cookies are used, amongst other things, to provide us with statistics and information on how many visitors we've had to the website and which pages they visited. These statistics then become an important part of our work in improving the website. We do not store any information from your browser, such as IP address and which pages you visit, to log files on our servers. Therefore, the information we collect from cookies cannot be connected to your identity.</p>
+<h4><br/>Third Party Cookies</h4>
+<p>Nefab´s website uses Third-Party Cookies to help extend our website services and content with known and trusted partners or suppliers. Nefab does not have access to, and cannot control, these cookies or the personal data and information which they may collect. You therefore need to check the websites of these networks/suppliers to get further information on how they manage cookies, and what information their cookies collect.</p>
+<p><strong>Google Analytics</strong><br/>Google Analytics is used to improve the performance of our site. Through analytics we are able to measure traffic, page visits, source of the traffic among others. <a href="http://www.google.com/intl/en/policies/privacy" rel="noopener" target="_blank" title="Google Analytics">Click here for more information about Google's privacy policy.</a></p>
+<p><strong>HubSpot</strong><br/>Hubspot is used to improve the performance of our site and to connect with users through newsletters. <a href="https://legal.hubspot.com/privacy-policy?__hstc=60302386.c51e174cb70159b06e1b2f1fb99507a8.1507211138217.1575465642345.1575467874525.567&amp;__hssc=60302386.11.1575467874525&amp;__hsfp=2541776844" rel="noopener" target="_blank" title="HubSpot">Click here for more information about HubSpot privacy policy.</a><br/><br/><strong>Pardot</strong><br/>Pardot is used to improve the performance of our site and to connect with users through newsletters. <a href="http://www.google.com/intl/en/policies/privacy" rel="noopener" target="_blank" title="Pardot">Click here for more information about Pardot privacy policy.</a><br/><a href="http://www.google.com/intl/en/policies/privacy" rel="noopener" target="_blank" title="Pardot">Sharing or viewing social media content</a></p>
+<p>On our website, we have embedded content from social media channels like YouTube and LinkedIn. Follow the links below to read more about how these services use cookies.<br/>Youtube (<a href="http://www.google.com/intl/en/policies/privacy/key-terms/#toc-terms-cookie" rel="noopener" target="_blank" title="Google">Google Privacy Policy</a>)<br/>Google Maps (<a href="http://www.google.com/help/terms_maps.html" rel="noopener" target="_blank" title="Google Maps">Google Maps Terms of Service</a>)<br/>Twitter (<a href="https://twitter.com/privacy" rel="noopener" target="_blank" title="Twitter">Twitter Privacy Policy</a>)<br/>LinkedIn (<a href="https://www.linkedin.com/legal/privacy-policy" rel="noopener" target="_blank" title="LinkedIn">LinkedIn Privacy Policy</a>)</p>
+<p> </p>
+<h4>Updates</h4>
+<p>This Cookie Policy was last updated on June 7, 2022.<br/>Nefab reserves the right to make changes to this policy from time to time without notice to you.</p>
+</div></div>
+</div>
+</div>
+</section>
+</div>
+<footer class="footer">
+<div class="container text-left text-md-left">
+<section class="row footer__section footer__section--1">
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 mx-auto footer__column footer__column--1">
+<div class="footer__logo"><img src="/globalassets/nefab.com--group-site/new-site/startpage/new-purpose-launch/nefab_new_tagline_primary_blue_rgb_small.png"/></div>
+<div class="col-xs-12 col-sm-9">
+<h5 class="font-weight-bold text-uppercase mt-3 mb-4">Navigation</h5>
+<ul class="list-unstyled">
+<li><a href="/en/solutions/">Solutions</a></li>
+<li><a href="/en/careers/">Careers</a></li>
+<li><a href="/en/sustainability/">Sustainability</a></li>
+<li><a href="/en/innovation/">Innovation</a></li>
+<li><a href="/en/about/">About Nefab</a></li>
+<li><a href="/en/about/terms-and-conditions/">Terms &amp; Conditions</a></li>
+</ul>
+</div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-3 col-lg-4 mx-auto footer__column footer__column--2">
+<h5 class="font-weight-bold text-uppercase mt-3 mb-4">About</h5>
+<p>We save environmental and financial resources by optimizing supply chains. It’s about innovating together to create smarter packaging and logistics solutions while always respecting people and ethical standards. This contributes to a better tomorrow for our customers, for society and for the environment.  </p>
+<a class="arrow-right" href="/en/about/">About Nefab</a>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-3 col-lg-4 mx-auto footer__column footer__column--3">
+<h5 class="font-weight-bold text-uppercase mt-3 mb-4">Let's get acquainted</h5>
+<p>Contact us for more information on our packaging solutions. We are located all over the world and offer both local support as well as global coordination.</p>
+<a class="arrow-right" href="/en/contact/">Contact</a>
+<div class="col-md-12 mx-auto">
+<h5 class="font-weight-bold text-uppercase mt-3 mb-4">Connect With Us</h5>
+<ul class="list-unstyled"><div class="sociallinkblock"><li>
+<span class="social social-linkedin">
+<a href="https://www.linkedin.com/company/18102/" target="_blank">LinkedIn</a>
+</span>
+</li></div><div class="sociallinkblock"><li>
+<span class="social social-youtube">
+<a href="http://www.youtube.com/channel/UCEthftK0b3c3U6ZiKZpf_iA" target="_blank">Youtube</a>
+</span>
+</li></div><div class="sociallinkblock"><li>
+<span class="social social-linkedin">
+<a href="https://vimeo.com/user14412934" target="_blank">Vimeo</a>
+</span>
+</li></div></ul>
+</div>
+</div>
+<div class="col-xs-12 footer__column footer__column--4">
+<ul class="list-unstyled footer__social-icons footer__social-icons--mobile"><div class="sociallinkblock"><li>
+<span class="social social-linkedin">
+<a href="https://www.linkedin.com/company/18102/" target="_blank">LinkedIn</a>
+</span>
+</li></div><div class="sociallinkblock"><li>
+<span class="social social-youtube">
+<a href="http://www.youtube.com/channel/UCEthftK0b3c3U6ZiKZpf_iA" target="_blank">Youtube</a>
+</span>
+</li></div><div class="sociallinkblock"><li>
+<span class="social social-linkedin">
+<a href="https://vimeo.com/user14412934" target="_blank">Vimeo</a>
+</span>
+</li></div></ul>
+</div>
+</section>
+</div>
+<section class="footer__section footer__section--2">
+<div class="footer__logo footer__logo--mobile"><img src="/globalassets/nefab.com--group-site/new-site/startpage/new-purpose-launch/nefab_new_tagline_primary_blue_rgb_small.png"/></div>
+<ul class="list-unstyled list-inline text-center">
+<li class="list-inline-item">
+<p>Copyright 2022, Nefab Group, All rights reserved</p>
+</li>
+<li class="list-inline-item">
+<a class="btn-floating mx-1" href="/en/privacy-and-cookies/">Privacy and Cookies</a>
+</li>
+<li class="list-inline-item">
+<a class="btn-floating mx-1" href="/en/terms-of-use/">Terms of use</a>
+</li>
+<li class="list-inline-item">
+<a class="btn-floating mx-1" href="/en/contact/">Contact</a>
+</li>
+</ul>
+</section>
+</footer>
+</div>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+        var iframeScript = document.createElement("script");
+        iframeScript.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName("script")[0];
+        firstScriptTag.parentNode.insertBefore(iframeScript, firstScriptTag);
+
+        window.youtubeplayers = {};
+        function onYouTubeIframeAPIReady() {
+            var youtubeFrames = document.querySelectorAll("iframe[src*='youtube.com']");
+            for (var i = 0; i < youtubeFrames.length; i++) {
+                var iframeid = youtubeFrames[i].getAttribute("id");
+                window.youtubeplayers[iframeid] = new YT.Player(iframeid, {
+                    playerVars: {
+                        modestbranding: 1,
+                        playsinline: 1,
+                        showinfo: 0,
+                        rel: 0,
+                        autoplay: 1,
+                        autohide: 1,
+                        iv_load_policy: 3,
+                        origin: location.host
+                    }
+                });
+            }
+        }
+    </script>
+<script src="https://secure.leadforensics.com/js/193274.js" type="text/javascript"></script>
+<noscript><img alt="" src="https://secure.leadforensics.com/193274.png" style="display:none;"/></noscript>
+<script src="/dist/app.b6306344cd1d952fbf71.js"></script>
+</body>
+</html>

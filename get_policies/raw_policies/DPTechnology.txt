@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"3fe6061604",applicationID:"314387708"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<noscript><style>form.antibot * :not(.antibot-message) { display: none !important; }</style>
+</noscript><link href="https://www.espritcam.com/privacy-policy" rel="canonical"/>
+<meta content="Drupal 8 (https://www.drupal.org)" name="Generator"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/themes/custom/esprit_bootstrap/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<link href="https://www.espritcam.com/privacy-policy" hreflang="en" rel="alternate"/>
+<link href="https://www.espritcam.com/privacy-policy" rel="revision"/>
+<title>Hexagon Manufacturing Intelligence. Privacy Policy | ESPRITCAM</title>
+<link href="/sites/default/files/css/css_McXPJoZ2gXvkx6lLkor8I17qvtOWq1BToziCDpf5Ajg.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_X6opypjayG1lgOHVDYG9nTQcfqu-Ar1Yg3SYxiootaw.css" media="all" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&amp;display=swap" media="all" rel="stylesheet"/>
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-71670409-1"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-71670409-1');
+    </script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJL45SP');</script>
+<!-- End Google Tag Manager -->
+<script src="https://sp.randallreilly.com/sp-DPTECHNOLOGYCORP-ol7EjwfQh06wCH290JUfMQ.js"></script>
+</head>
+<body class="path-node page-node-type-page" data-spy="scroll" data-target="#page-top" id="page-top">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TJL45SP" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="visually-hidden focusable skip-link" href="#main-content">
+      Skip to main content
+    </a>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<div class="layout-container">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+<div class="container-fluid">
+<a class="navbar-brand" href="/">
+<img class="img-fluid" id="one-color-logo" src="/themes/custom/esprit_bootstrap/images/logos/Hexagon_ESPRIT_RGB_White_SECONDARY_Joint-logo_Horizontal.png"/>
+<img class="img-fluid" id="full-color-logo" src="/themes/custom/esprit_bootstrap/images/logos/Hexagon_ESPRIT_RGB_PRIMARY_Joint-logo_Horizontal.png"/>
+</a>
+<button aria-controls="navbarResponsive" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbarResponsive" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar top-bar"></span>
+<span class="icon-bar middle-bar"></span>
+<span class="icon-bar bottom-bar"></span>
+</button>
+<div class="collapse navbar-collapse flex-column" id="navbarResponsive">
+<ul class="navbar-nav ml-auto" id="topNav">
+<li class="nav-item">
+<a class="nav-link" href="/contact">Contact Us</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://ew.dptechnology.com/Login">Login</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/choose-your-language" title="Language"><span class="fa fa-globe-americas"></span> en</a>
+</li>
+</ul>
+<ul class="navbar-nav ml-auto" id="bottomNav">
+<li class="dropdown nav-item">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button">Products</a>
+<ul class="dropdown-menu" role="menu">
+<li class="nav-item">
+<a class="nav-link" href="/what-we-do">What We Do</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/our-platform">Our Platform</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/product/milling">Milling</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/product/production-machining">Production Machining</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/product/3-axis-milling">3-Axis Milling</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/product/5-axis-milling">5-Axis Milling</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/product/high-speed-machining">High-Speed Machining</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/product/turning">Turning</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/product/multitasking">Multitasking</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/product/swiss-type">Swiss Machining</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/product/high-speed-turning">High-Speed Turning</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/product/wire-edm">Wire EDM</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/product/probing">Probing</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/product/additive-ded">Additive DED</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/product/powder-bed-fusion">Additive PBF</a>
+</li>
+</ul>
+</li>
+<li class="dropdown nav-item">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button">Solutions</a>
+<ul class="dropdown-menu" role="menu">
+<li class="dropdown-submenu nav-item">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button">By Industry</a>
+<ul class="dropdown-menu submenu" role="menu">
+<li class="nav-item">
+<a class="nav-link" href="/industry/aerospace-aviation">Aerospace &amp; Aviation</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/industry/automotive-transportation">Transportation</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/industry/consumer-products">Consumer Products</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/industry/defense-military">Defense &amp; Military</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/industry/electronics">Electronics</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/industry/energy-power">Energy &amp; Power</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/industry/construction">Construction</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/industry/industrial-machinery">Industrial Machinery</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/industry/machine-tool">Machine Tool</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/industry/medical-dental">Medical &amp; Dental</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/industry/die-mold">Die &amp; Mold</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/industry/job-shop">Job Shop</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/our-industries">All Industries</a>
+</li>
+</ul>
+</li>
+<li class="dropdown-submenu nav-item">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button">By Partner</a>
+<ul class="dropdown-menu submenu" role="menu">
+<li class="nav-item">
+<a class="nav-link" href="/partner/machine-tools">Machine Tools &amp; Tooling</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/partner/software">Software</a>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/education">Education</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/industry-4-0">Industry 4.0</a>
+</li>
+</ul>
+</li>
+<li class="dropdown nav-item">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button">Company</a>
+<ul class="dropdown-menu" role="menu">
+<li class="nav-item">
+<a class="nav-link" href="/about">About Us</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/careers">Careers</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/locations">Locations</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/contact">Contact Us</a>
+</li>
+</ul>
+</li>
+<li class="dropdown nav-item">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button">Community</a>
+<ul class="dropdown-menu" role="menu">
+<li class="nav-item">
+<a class="nav-link" href="/news">News</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/events">Events</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/webinars">Webinars</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/training">Training</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/learningcenter">Learning Center</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/success-stories">Success Stories</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<main role="main">
+<a id="main-content" tabindex="-1"></a>
+<div class="layout-content">
+<div class="region region-content">
+<div class="hidden" data-drupal-messages-fallback=""></div><div class="block block-system block-system-main-block" id="block-esprit-bootstrap-content">
+<article about="/privacy-policy" data-history-node-id="77" role="article" typeof="schema:WebPage">
+<span class="hidden" content="Privacy policy" property="schema:name"></span>
+<div>
+<div><header class="head-600" style="background-image: url('/sites/default/files/2019-08/default-background.jpg');">
+<div class="inner">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-8 col-12 my-auto">
+<div class="mx-auto text-center">
+<h1>Hexagon Manufacturing Intelligence</h1>
+<h4>Privacy Policy</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+</div>
+<div>
+<div><section class="py-5 bg-light">
+<div class="container text-left">
+<div>
+<div><h3>PRIVACY STATEMENT</h3>
+<p>Hexagon Manufacturing Intelligence, (“<strong>we</strong>” or “<strong>us</strong>” or “<strong>our</strong>”) respects your privacy. We are committed to the safe and secure processing of personal data and compliance with applicable data protection laws. We have implemented appropriate technical and organisational measures to protect your personal data against loss or unlawful access. The number of persons with access to your personal data is limited. Only individuals associated with us that need to process your personal data in accordance with the purposes below will have access to your personal data.</p>
+<h4>The data we collect about you.</h4>
+<p>Personal data means any information directly or indirectly relating to an identifiable individual.</p>
+<p>We may collect, use, store and transfer different kinds of personal data about you as follows:</p>
+<ul>
+<li><strong>Identity Data</strong>includes first name, maiden name, last name, username or similar identifier, title, date of birth, gender, video, audio and photographic data.</li>
+<li><strong>Contact Data</strong>contact details such as place of work, email address and telephone numbers.</li>
+<li><strong>Financial Data</strong>includes bank account and payment card details.</li>
+<li><strong>Transaction Data</strong>includes details about payments to and from you and other details of products and services you have purchased from us.</li>
+<li><strong>Technical Data</strong>includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, network and device identification and other technology on the devices you use to access our website or products.</li>
+<li><strong>Profile Data </strong>includes biographical information about you, which may include details of your social media presence, your job title/role, purchases or orders made by you, your interests, preferences, feedback and survey responses.</li>
+<li><strong>Usage Data</strong>includes information about how you use our website, products and services.</li>
+<li><strong>Marketing and Communications Data </strong>includes your preferences in receiving marketing from us and our third parties and your communication preferences.</li>
+</ul>
+<p>We do not collect any Special Categories of Personal Data about you (this includes details about your race or ethnicity, religious or philosophical beliefs, sex life, sexual orientation, political opinions, trade union membership, information about your health, and genetic data). Nor do we collect any information about criminal convictions and offences.</p>
+<p>There are various legal bases upon which we may rely, depending on what personal information we process and why. The legal bases we rely on are:</p>
+<ul>
+<li><strong>Consent:</strong> Where you have given us clear and explicit consent for us to process your personal data for a specific purpose.</li>
+<li><strong>Contract:</strong> Where our use of your personal data is necessary for a contract we are about to enter into or have entered into with you, or because you have asked us to take specific steps before entering into a contract.</li>
+<li><strong>Legitimate interest:</strong> Where our use of your personal data is necessary for us to fulfil a legitimate business purpose or the legitimate business purpose of a third party (unless there is a good reason to protect your personal information, which overrides our legitimate interest).</li>
+<li><strong>Legal obligation:</strong> Where our use of your personal data is necessary for us to comply with the law (not including contractual obligations).</li>
+</ul>
+<p>We use different methods to collect data from and about you including through:</p>
+<p><strong>Direct interactions.</strong> You may give us your Identity, Contact and Financial Data by filling in forms or by corresponding with us by post, phone, email or otherwise. This includes personal data you provide when, amongst other things, you visit one of our offices, you apply for our products or services, subscribe to our products or services, register on our website to request marketing information from us, furnish our representatives with your business card, give us feedback or contact us.</p>
+<p><strong>Automated technologies or interactions.</strong> As you interact with our websites or products, we may automatically collect Contact and Technical Data. We collect this information by using cookies and other technologies such as anti-piracy and licence compliance software.</p>
+<p><strong>Third parties or publicly available sources.</strong> We may obtain personal data about you from various third parties as set out below:</p>
+<ul>
+<li>Technical Data: from analytical providers.</li>
+<li>Contact, Financial and Transaction Data: from providers of technical and payment services.</li>
+<li>Identity and Contact Data: from data brokers or aggregators.</li>
+<li>Identity and Contact Data: from publicly available sources.</li>
+</ul>
+<p>We may rely on one or more of the sources of personal data described above.</p>
+<h4>How we process your personal data</h4>
+<p><strong>Contractual obligations:</strong></p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td width="255">
+<p>Categories of personal data we process</p>
+</td>
+<td width="346">
+<p>• <strong>Identity Data </strong></p>
+<p>• <strong>Contact Data</strong></p>
+<p>• <strong>Financial Data</strong></p>
+<p>• <strong>Transaction Data</strong></p>
+<p>• <strong>Technical Data</strong></p>
+<p>• <strong>Marketing and Communications Data</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>The purposes of the processing</p>
+</td>
+<td width="346">
+<p>Fulfilling our contractual obligations towards your company, e.g., register you as a new customer, sending quotes, order administration, provision of products and services to or from your company, invoicing your company or paying a company’s invoice, notifying you of changes to our terms, responding to your service requests, holding meetings at our offices etc.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Legal basis for the processing</p>
+</td>
+<td width="346">
+<p>• <strong>Contract</strong></p>
+<p>• <strong>Legitimate Interest</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Recipients (or categories of recipients) of the personal data</p>
+</td>
+<td width="346">
+<p>We will share your personal data with companies within the Hexagon Group.</p>
+<p>We will also share your personal data with suppliers and business partners and legal agents which carry out services on our behalf such as customer relationship management solution providers.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Retention period</p>
+</td>
+<td width="346">
+<p>We will retain your data for as long as the business relationship with your company exists.</p>
+<p>We will retain and use your data during the applicable statutory limitation periods and as necessary to comply with our legal obligations, resolve disputes and to enforce agreements.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p><strong>Marketing: </strong></p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td width="255">
+<p>Categories of personal data we process</p>
+</td>
+<td width="346">
+<p>• <strong>Identity Data</strong></p>
+<p>• <strong>Contact Data</strong></p>
+<p>• <strong>Transaction Data</strong></p>
+<p>• <strong>Technical Data</strong></p>
+<p>• <strong>Profile Data</strong></p>
+<p>• <strong>Usage Data</strong></p>
+<p>• <strong>Marketing and Communications Data</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>The purposes of the processing</p>
+</td>
+<td width="346">
+<p>To deliver relevant website content. Informing you via any means (including via email, telephone, text message, social media or in person) about our products, services, publications and events which we think may be of interest to you and your company, based on previous purchases and interest shown in our products.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Legal basis for the processing</p>
+</td>
+<td width="346">
+<p>• <strong>Consent</strong></p>
+<p>• <strong>Legitimate Interest</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Recipients (or categories of recipients) of the personal data</p>
+</td>
+<td width="346">
+<p>We will share your personal data with companies within the Hexagon Group.</p>
+<p>We will also share your personal data with suppliers and business partners and legal agents that carry out services on our behalf such as marketing solution providers.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Retention period</p>
+</td>
+<td width="346">
+<p>We will process your personal data unless you opt out of the processing for direct marketing purposes.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p><strong>Customer Testimonials, Comments and Reviews</strong>:</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td width="255">
+<p>Categories of personal data we process</p>
+</td>
+<td width="346">
+<p>• <strong>Identity Data</strong></p>
+<p>• <strong>Contact Data</strong></p>
+<p>• <strong>Technical Data</strong></p>
+<p>• <strong>Profile Data</strong></p>
+<p>• <strong>Marketing and Communications</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>The purposes of the processing</p>
+</td>
+<td width="346">
+<p>The processing is required for the purpose of providing reviews to our client base in support or otherwise, of our products, services and software.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Legal basis for the processing</p>
+</td>
+<td width="346">
+<p>• <strong>Consent </strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Recipients (or categories of recipients) of the personal data</p>
+</td>
+<td width="346">
+<p>Individuals who access any marketing channel from either within Hexagon Manufacturing Intelligence or outside of Hexagon Manufacturing Intelligence.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Retention period</p>
+</td>
+<td width="346">
+<p>For as long as is necessary unless you withdraw your consent to the processing.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p><strong>Recruitment</strong>:</p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td width="255">
+<p>Categories of personal data we process</p>
+</td>
+<td width="346">
+<p>• <strong>Identity Data</strong></p>
+<p>• <strong>Contact Data</strong></p>
+<p>• <strong>Profile Data</strong></p>
+<p>• <strong>Technical Data</strong></p>
+<p>• Also, employment details, background information, and any other information in your application that you choose to share with us.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>The purposes of the processing</p>
+</td>
+<td width="346">
+<p>To consider your application in respect of a role for which you have applied.</p>
+<p>To consider your application in respect of other roles, including future job openings (unless you have told us that you do not want us to keep your information for such purposes).</p>
+<p>To communicate with you in respect of the recruitment process.</p>
+<p>To enhance any information that We receive from you with information obtained from third party data providers.</p>
+<p>General HR administration and management (in case you become an MSC Software employee).</p>
+<p>Conducting satisfaction surveys.</p>
+<p>Analysis and assessment of your application, including verification of employment reference(s) and background checks.</p>
+<p>Compliance with corporate governance and legal requirements.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Legal basis for the processing</p>
+</td>
+<td width="346">
+<p>• <strong>Contract </strong></p>
+<p>• <strong>Consent</strong></p>
+<p>• <strong>Legitimate Interest</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Recipients (or categories of recipients) of the personal data</p>
+</td>
+<td width="346">
+<p>HR Teams, and other employees and third-party service providers involved in or supporting the recruitment process.</p>
+<p>We may also disclose your personal information to other third parties as necessary to comply with Our legal obligations, or to establish, exercise or defend Our legal rights.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Retention period</p>
+</td>
+<td width="346">
+<p>We will retain the data in accordance with applicable statutory obligations or for 12 months after the position has been filled unless you direct us otherwise and never more than a period of 24 months.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p><strong>To administer, improve and protect our business, websites, products and services: </strong></p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td width="255">
+<p>Categories of personal data we process</p>
+</td>
+<td width="346">
+<p>• <strong>Identity Data</strong></p>
+<p>• <strong>Contact Data</strong></p>
+<p>• <strong>Technical Data</strong></p>
+<p>• <strong>Profile Data</strong></p>
+<p>• <strong>Usage Data</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>The purposes of the processing</p>
+</td>
+<td width="346">
+<p>The processing is required for the purpose of improving our products and customer experiences, which includes troubleshooting, data analysis, testing, system maintenance, support, reporting and hosting of data.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Legal basis for the processing</p>
+</td>
+<td width="346">
+<p>• <strong>Legitimate Interest </strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Recipients (or categories of recipients) of the personal data</p>
+</td>
+<td width="346">
+<p>Individuals who access any Hexagon Manufacturing Intelligence marketing channel. Individuals who use our products.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Retention period</p>
+</td>
+<td width="346">
+<p>For as long as is necessary unless you object to the processing and the objection overrides our Legitimate Interest.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p><strong>Anti-Piracy and Licence Compliance:</strong></p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td width="255">
+<p>Categories of personal data we process</p>
+</td>
+<td width="346">
+<p>• <strong>Identity Data</strong></p>
+<p>• <strong>Contact Data</strong></p>
+<p>• <strong>Technical Data</strong></p>
+<p>• <strong>Transaction Data</strong></p>
+<p>• <strong>Profile Data</strong></p>
+<p>• <strong>Usage Data</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>The purposes of the processing</p>
+</td>
+<td width="346">
+<p>To verify user compliance with the terms of the applicable licence agreement, identify unauthorised use and users of software, and otherwise to protect and enforce intellectual property rights.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Legal basis for the processing</p>
+</td>
+<td width="346">
+<p>• <strong>Legitimate Interest </strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Recipients (or categories of recipients) of the personal data</p>
+</td>
+<td width="346">
+<p>We may share your data with our affiliates, as well as our (and our affiliates') contractors (including channel partners), representatives, successors and assigns, in connection with our (and our affiliates') license compliance and anti-piracy efforts, such as sharing data with suppliers of anti-piracy technology, as well as law firms and other enforcement partners and service providers responsible for protecting and enforcing our intellectual property rights.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Retention period</p>
+</td>
+<td width="346">
+<p>For as long as necessary to verify licence compliance, identify unauthorised use and users of our software, and otherwise protect and enforce our intellectual property rights. </p>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p><strong>Legal Compliance:</strong></p>
+<table class="table table-bordered">
+<tbody>
+<tr>
+<td width="255">
+<p>Categories of personal data we process</p>
+</td>
+<td width="346">
+<p>• <strong>Identity Data</strong></p>
+<p>• <strong>Contact Data</strong></p>
+<p>• <strong>Profile Data </strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>The purposes of the processing</p>
+</td>
+<td width="346">
+<p>To carry out customer screening to enable us to meet our legal obligations only to provide products and services to those legally permitted to receive such products and services. To provide information to such authorities that require this in order that we can secure the necessary permissions to continue with our business operations.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Legal basis for the processing</p>
+</td>
+<td width="346">
+<p>• <strong>Legitimate Interest </strong></p>
+<p>• <strong>Legal Obligation</strong></p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Recipients (or categories of recipients) of the personal data</p>
+</td>
+<td width="346">
+<p>We may share your data with those government authorities who require this information or third-party screening platforms.</p>
+</td>
+</tr>
+<tr>
+<td width="255">
+<p>Retention period</p>
+</td>
+<td width="346">
+<p>For as long as necessary to obtain the correct authorisations and perform delivery of the product or service.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>**Where Hexagon Manufacturing Intelligence has sought your consent to the processing of your personal data then you can withdraw your consent at any time by contacting Email: privacy.mi@hexagon.com.</p>
+<h4>FOR EUROPEAN ECONOMIC AREA AND UK RESIDENTS ONLY</h4>
+<p>Your personal data may be transferred to a country outside of EEA or UK such as Canada (commercial organizations), New Zealand, Switzerland, which offer similar levels of protection as within the EEA and UK. The transfer to these countries is based on the adequacy decision of the European Commission.</p>
+<p>Your personal data may be transferred to a country outside of EEA or UK such as Australia, Brazil, Chile, China, Colombia, Hong Kong, India, Indonesia, Japan, Malaysia, Mexico, Peru, Philippines, Russia, Singapore, South Africa, South Korea, Taiwan, Thailand, UAE, United States, Venezuela, which may have a lower level of protection than within the EEA and UK. When transferring personal data to these countries, Hexagon Manufacturing Intelligence uses the standard contractual clauses approved by the European Commission to ensure a sufficient level of protection of your personal data. The standard contractual clauses can be found via the following link: <a href="http://ec.europa.eu/justice/data-protection/international-transfers/transfer/index_en.htm">http://ec.europa.eu/justice/data-protection/international-transfers/transfer/index_en.htm</a></p>
+<h4>FOR CALIFORNIA RESIDENTS ONLY </h4>
+<p>The purpose of this section is to provide information to California residents pursuant to the California Consumer Protection Act (CCPA).</p>
+<p>Personal data also includes any information that identifies, relates to, describes, is reasonably capable of being associated with, or could reasonably be linked, directly or indirectly, with a household. </p>
+<p>We do not and will not sell your personal data to third parties. </p>
+<p><strong>What are your rights?</strong></p>
+<p>You are entitled to know what personal data we are processing about you. You have the right to request access to your personal data and you can request that we provide a copy of such data to you. You are entitled to have incorrect personal data regarding you corrected, and in some cases, you may request that we delete your personal data. You also have the right to object to certain processing of your personal data, and request that the processing of your personal data be limited. Limitation or deletion of your personal data may result in Hexagon Manufacturing Intelligence not being able to fulfil its commitments to you. You also have the right to request data portability, where your personal data would be extracted in a machine-readable format and transferred to another controller. Hexagon Manufacturing Intelligence may not always be obliged to comply with a request from you for deletion, restriction, objection or data portability. Additional circumstances such as exercising the right of freedom of expression and information, compliance with a legal obligation which requires processing by EEA/UK or Member State law or processing for establishment, exercise or defence of legal claims can justify further processing by Hexagon Manufacturing Intelligence. Hexagon Manufacturing Intelligence will assess the eligibility of your request and inform you about Hexagon Manufacturing Intelligence’s decision and reasoning. Where you have given us your consent to process your personal data, you can withdraw your consent at any time and without justification. Where you withdraw your consent, certain personal data (only to the extent that it is absolutely required), will be retained on our “do not contact” list.</p>
+<p>If you have questions regarding how we process Personal Data concerning you, you are most welcome to contact us at Email: privacy.mi@hexagon.com.</p>
+<p><strong>Objections and complaints</strong></p>
+<p>If you have any objections or complaints with the way in which we process your personal data, you have the right to lodge a complaint with the relevant data protection supervisory authority, where the applicable laws provide for such remedy.</p>
+<h4>COOKIES</h4>
+<p>Like many websites, we use cookies in certain areas of the Site to provide us information to make your online experience more convenient, and to maintain and improve the Site. Your web browser places cookies on your hard drive for record-keeping purposes and sometimes to track information about you or your activities on the Site. You may choose to set your web browser to refuse cookies, or to alert you when cookies are being sent. If you do so, please note that some parts of the Site may not function properly. </p>
+<h4>ANALYTICS</h4>
+<p>Our servers automatically record Usage and Technical data whenever you visit the Site or use the Features. We may also collect similar information from emails we may send to you. This information helps us analyze how users use the Features, provide customer service to you, and maintain and improve the Features.</p>
+<p>For this purpose, we use Google Analytics, a web analytics service provided by Google Inc., 1600 Amphitheater Parkway, Mountain View, CA 94043, USA ("<strong>Google</strong>"). Therefore, Technical and Usage data may be collected and transmitted to Google servers in the USA and stored thereon. Your IP addresses will under no circumstances be merged with any other Personal Data provided by Google. Your IP addresses are anonymized so that an assignment of the IP address to an individual user will not be possible.</p>
+<p>You may avoid the collection of information related to your use of the Site and the processing of this data by Google by downloading and installing a web browser add-on (<a href="https://tools.google.com/dlpage/gaoptout?hl=en">https://tools.google.com/dlpage/gaoptout?hl=en</a>). </p>
+<p>As an alternative to the web browser add-on, in particular for browsers on mobile devices, you may avoid the collection of data by Google Analytics by clicking on this link, <a href="https://support.google.com/analytics/answer/181881?hl=en">deactivate Google Analytics</a>. An opt-out cookie will be set that will prevent the future collection of information when the Site is revisited. The opt-out cookie is only valid in this web browser and only for the Site and is stored on your device. If cookies in this web browser are deleted, the opt-out cookie must be set again. For more information about privacy related to Google Analytics, see the Google Analytics Help Center (https://support.google.com/analytics/answer/6004245?hl=en).</p>
+<h4>Identity of the Privacy Officer</h4>
+<p>The Hexagon Manufacturing Intelligence Privacy Officer can be contacted at: privacy.mi@hexagon.com</p>
+<h4>Identity of the controller</h4>
+<p>Reference to Hexagon Group means Hexagon AB, Swedish Company Registration Number 556190-4771, Lilla Bantorget 15, P.O. Box 3692, SE-103 59 Stockholm, Sweden (<a href="http://hexagon.com">hexagon.com</a>), its subsidiaries and controlled joint ventures are the controller(s) of your personal data.</p>
+<p>Hexagon Manufacturing Intelligence operates within a matrix/division structure and reference to it means Hexagon Metrology AB, its subsidiaries and controlled joint ventures. These are the controller(s) of your personal data. It follows that your location and your business relationship with Hexagon Manufacturing Intelligence are essential in determining the relevant controller(s) in terms of the processing of your personal data within the Hexagon Group.</p>
+<p>Upon your request to the Privacy Officer, you will be provided with full details of the relevant controller(s) within the Hexagon Group which is/are responsible for the processing of your personal data. We will provide the name and the contact details of any data protection officer as appointed by the applicable controller.</p>
+<p>This Privacy Statement was last amended on 8 October 2021.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</article>
+</div>
+<div id="cookieModal">
+<div><p>We use cookies to offer you a better browsing experience, analyze site traffic, and personalize content. Read about how we use cookies and how you can control them by clicking <a href="/privacy-policy">here</a>.</p>
+<p>If you continue to use this site, you consent to our use of cookies.</p>
+</div>
+<button class="btn btn-primary btn-sm" data-dismiss="modal" data-target="#cookieModal" id="cookieModalAccepted" type="button">
+        Ok    </button>
+</div>
+</div>
+</div> </main>
+<footer role="contentinfo">
+<footer class="esprit-footer top-gradient-bar">
+<div class="container">
+<nav aria-labelledby="block-footersocialmedia-menu" id="block-footersocialmedia" role="navigation">
+<h2 class="visually-hidden" id="block-footersocialmedia-menu">Footer Social Media</h2>
+<div class="social-media">
+<a href="http://www.facebook.com/espritcam" target="_blank"><i class="fab fa-facebook"></i></a>
+<a href="http://www.instagram.com/espritcam" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="http://twitter.com/espritcam" target="_blank"><i class="fab fa-twitter"></i></a>
+<a href="http://www.youtube.com/espritcam" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="http://www.linkedin.com/company/dp-technology-corp" target="_blank"><i class="fab fa-linkedin"></i></a>
+</div>
+</nav>
+<div class="row">
+<div class="col-lg-2 col-md-2 col-sm-6 col-12">
+<h4>Company</h4>
+<div>
+<a href="/about">About Us</a>
+</div>
+<div>
+<a href="/careers">Careers</a>
+</div>
+<div>
+<a href="/locations">Locations</a>
+</div>
+<div>
+<a href="/education">Education</a>
+</div>
+</div>
+<div class="col-lg-2 col-md-3 col-sm-6 col-12">
+<h4>Community</h4>
+<div>
+<a href="/news">News</a>
+</div>
+<div>
+<a href="/events">Events</a>
+</div>
+<div>
+<a href="/training">Training</a>
+</div>
+<div>
+<a href="/success-stories">Success Stories</a>
+</div>
+</div>
+<div class="col-lg-5 col-md-3 col-sm-6 col-12">
+<div>
+<h4>
+            Newsletter        </h4>
+<div>
+<div><p>Stay up-to-date on product features, exclusive tips and tricks, and stories on how shops just like yours are succeeding with ESPRIT.</p></div>
+</div>
+<!-- href="" -->
+<a class="btn btn-secondary btn-sm ipinfo" data-target="#newsletter-signup-modal" data-toggle="modal" target="_blank">
+            Sign Up        </a>
+</div>
+</div>
+<div class="col-lg-2 col-md-4 col-sm-6 col-12">
+<div>
+<h4>
+            Contact        </h4>
+<div>
+<a href="/contact?pageSource=">Talk to us!</a>
+</div>
+<div>
+<div>800 627 8479</div>
+</div>
+<div>
+<div>805 388 6000</div>
+</div>
+<img class="pt-3 img-fluid" data-effect="fadeIn" data-src="/themes/custom/esprit_bootstrap/images/logos/Hexagon_ESPRIT_RGB_PRIMARY_Joint-logo_Horizontal.png"/>
+</div>
+</div>
+</div>
+<div class="copyrights">
+© 2022 Hexagon AB and/or its subsidiaries.
+                      | <a href="/privacy-policy">Privacy Policy</a>
+</div>
+<div class="sign-up-form block block-esprit-mailchimp-api block-block-mailchimp-signup" data-drupal-selector="sign-up-form" id="block-mailchimpsignupblock">
+<div aria-hidden="true" class="modal fade form-modal" id="thanksSignUp" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<a aria-label="Close" class="close" data-dismiss="modal" href="#">
+<span aria-hidden="true">×</span>
+</a>
+</div>
+<div class="modal-body">
+<h2>You're in!</h2>
+<p>Don't forget to follow ESPRIT on Facebook, Instagram, Twitter, and Linkedin, too.</p>
+<div class="social-media text-left p-0">
+<a href="http://www.facebook.com/espritcam" target="_blank"><i class="fab fa-facebook"></i></a>
+<a href="http://www.instagram.com/espritcam" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="http://twitter.com/espritcam" target="_blank"><i class="fab fa-twitter"></i></a>
+<a href="http://www.youtube.com/espritcam" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="http://www.linkedin.com/company/dp-technology-corp" target="_blank"><i class="fab fa-linkedin"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" aria-labelledby="newsletterSignUpModal" class="modal fade" id="newsletterSignUpModal" role="dialog" tabindex="-1"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="bg-secondary text-white py-5"><div class="modal-body"><h2>Subscribe to our mailing list</h2></div></div><div class="container py-5"> <form accept-charset="UTF-8" action="/privacy-policy?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" id="sign-up-form" method="post">
+<div class="js-form-item form-item js-form-type-email form-item-email-address js-form-item-email-address">
+<label for="edit-email-address">Email</label>
+<input class="email-address-subscribe form-email form-control mb-3" data-drupal-selector="edit-email-address" id="edit-email-address" maxlength="254" name="email_address" size="60" type="email" value=""/>
+</div>
+<small class="pt-3 error-message text-primary" id="email-address-subscribe-error">Please enter a valid email address</small><div class="js-form-item form-item js-form-type-textfield form-item-fname js-form-item-fname form-no-label">
+<input aria-required="true" class="form-text required form-control mb-3" data-drupal-selector="edit-fname" hidden="hidden" id="edit-fname" maxlength="128" name="FNAME" required="required" size="60" type="text" value="Valued"/>
+</div>
+<div class="js-form-item form-item js-form-type-textfield form-item-lname js-form-item-lname form-no-label">
+<input aria-required="true" class="form-text required form-control mb-3" data-drupal-selector="edit-lname" hidden="hidden" id="edit-lname" maxlength="128" name="LNAME" required="required" size="60" type="text" value="Customer"/>
+</div>
+<div class="js-form-item form-item js-form-type-textfield form-item-typeorigin js-form-item-typeorigin form-no-label">
+<input aria-required="true" class="form-text required form-control mb-3" data-drupal-selector="edit-typeorigin" hidden="hidden" id="edit-typeorigin" maxlength="128" name="TYPEORIGIN" required="required" size="60" type="text" value="SignUp Web EN"/>
+</div>
+<div class="js-form-item form-item js-form-type-textfield form-item-optinstatu js-form-item-optinstatu form-no-label">
+<input aria-required="true" class="form-text required form-control mb-3" data-drupal-selector="edit-optinstatu" hidden="hidden" id="edit-optinstatu" maxlength="128" name="OPTINSTATU" required="required" size="60" type="text" value="Confirmed"/>
+</div>
+<div class="js-form-item form-item js-form-type-select form-item-country js-form-item-country">
+<label for="edit-country">Country / Region</label>
+<select class="form-select form-control mb-3" data-drupal-selector="edit-country" id="edit-country" name="COUNTRY"><option value="Aaland Islands">Aaland Islands</option><option value="Afghanistan">Afghanistan</option><option value="Albania">Albania</option><option value="Algeria">Algeria</option><option value="American Samoa">American Samoa</option><option value="Andorra">Andorra</option><option value="Angola">Angola</option><option value="Anguilla">Anguilla</option><option value="Antarctica">Antarctica</option><option value="Antigua And Barbuda">Antigua And Barbuda</option><option value="Argentina">Argentina</option><option value="Armenia">Armenia</option><option value="Aruba">Aruba</option><option value="Australia">Australia</option><option value="Austria">Austria</option><option value="Azerbaijan">Azerbaijan</option><option value="Bahamas">Bahamas</option><option value="Bahrain">Bahrain</option><option value="Bangladesh">Bangladesh</option><option value="Barbados">Barbados</option><option value="Belarus">Belarus</option><option value="Belgium">Belgium</option><option value="Belize">Belize</option><option value="Benin">Benin</option><option value="Bermuda">Bermuda</option><option value="Bhutan">Bhutan</option><option value="Bolivia">Bolivia</option><option value="Bonaire, Saint Eustatius and Saba">Bonaire, Saint Eustatius and Saba</option><option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option><option value="Botswana">Botswana</option><option value="Bouvet Island">Bouvet Island</option><option value="Brazil">Brazil</option><option value="British Indian Ocean Territory">British Indian Ocean Territory</option><option value="Brunei Darussalam">Brunei Darussalam</option><option value="Bulgaria">Bulgaria</option><option value="Burkina Faso">Burkina Faso</option><option value="Burundi">Burundi</option><option value="Cambodia">Cambodia</option><option value="Cameroon">Cameroon</option><option value="Canada">Canada</option><option value="Cape Verde">Cape Verde</option><option value="Cayman Islands">Cayman Islands</option><option value="Central African Republic">Central African Republic</option><option value="Chad">Chad</option><option value="Chile">Chile</option><option value="China">China</option><option value="Christmas Island">Christmas Island</option><option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option><option value="Colombia">Colombia</option><option value="Comoros">Comoros</option><option value="Congo">Congo</option><option value="Cook Islands">Cook Islands</option><option value="Costa Rica">Costa Rica</option><option value="Cote D'Ivoire">Cote D'Ivoire</option><option value="Croatia">Croatia</option><option value="Cuba">Cuba</option><option value="Curacao">Curacao</option><option value="Cyprus">Cyprus</option><option value="Czech Republic">Czech Republic</option><option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option><option value="Denmark">Denmark</option><option value="Djibouti">Djibouti</option><option value="Dominica">Dominica</option><option value="Dominican Republic">Dominican Republic</option><option value="Ecuador">Ecuador</option><option value="Egypt">Egypt</option><option value="El Salvador">El Salvador</option><option value="Equatorial Guinea">Equatorial Guinea</option><option value="Eritrea">Eritrea</option><option value="Estonia">Estonia</option><option value="Ethiopia">Ethiopia</option><option value="Falkland Islands">Falkland Islands</option><option value="Faroe Islands">Faroe Islands</option><option value="Fiji">Fiji</option><option value="Finland">Finland</option><option value="France">France</option><option value="French Guiana">French Guiana</option><option value="French Polynesia">French Polynesia</option><option value="French Southern Territories">French Southern Territories</option><option value="Gabon">Gabon</option><option value="Gambia">Gambia</option><option value="Georgia">Georgia</option><option value="Germany">Germany</option><option value="Ghana">Ghana</option><option value="Gibraltar">Gibraltar</option><option value="Greece">Greece</option><option value="Greenland">Greenland</option><option value="Grenada">Grenada</option><option value="Guadeloupe">Guadeloupe</option><option value="Guam">Guam</option><option value="Guatemala">Guatemala</option><option value="Guernsey">Guernsey</option><option value="Guinea">Guinea</option><option value="Guinea-Bissau">Guinea-Bissau</option><option value="Guyana">Guyana</option><option value="Haiti">Haiti</option><option value="Heard and Mc Donald Islands">Heard and Mc Donald Islands</option><option value="Honduras">Honduras</option><option value="Hong Kong">Hong Kong</option><option value="Hungary">Hungary</option><option value="Iceland">Iceland</option><option value="India">India</option><option value="Indonesia">Indonesia</option><option value="Iran">Iran</option><option value="Iraq">Iraq</option><option value="Ireland">Ireland</option><option value="Isle of Man">Isle of Man</option><option value="Israel">Israel</option><option value="Italy">Italy</option><option value="Jamaica">Jamaica</option><option value="Japan">Japan</option><option value="Jersey (Channel Islands)">Jersey (Channel Islands)</option><option value="Jordan">Jordan</option><option value="Kazakhstan">Kazakhstan</option><option value="Kenya">Kenya</option><option value="Kiribati">Kiribati</option><option value="Kuwait">Kuwait</option><option value="Kyrgyzstan">Kyrgyzstan</option><option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option><option value="Latvia">Latvia</option><option value="Lebanon">Lebanon</option><option value="Lesotho">Lesotho</option><option value="Liberia">Liberia</option><option value="Libya">Libya</option><option value="Liechtenstein">Liechtenstein</option><option value="Lithuania">Lithuania</option><option value="Luxembourg">Luxembourg</option><option value="Macau">Macau</option><option value="Macedonia">Macedonia</option><option value="Madagascar">Madagascar</option><option value="Malawi">Malawi</option><option value="Malaysia">Malaysia</option><option value="Maldives">Maldives</option><option value="Mali">Mali</option><option value="Malta">Malta</option><option value="Marshall Islands">Marshall Islands</option><option value="Martinique">Martinique</option><option value="Mauritania">Mauritania</option><option value="Mauritius">Mauritius</option><option value="Mayotte">Mayotte</option><option value="Mexico">Mexico</option><option value="Micronesia, Federated States of">Micronesia, Federated States of</option><option value="Moldova, Republic of">Moldova, Republic of</option><option value="Monaco">Monaco</option><option value="Mongolia">Mongolia</option><option value="Montenegro">Montenegro</option><option value="Montserrat">Montserrat</option><option value="Morocco">Morocco</option><option value="Mozambique">Mozambique</option><option value="Myanmar">Myanmar</option><option value="Namibia">Namibia</option><option value="Nauru">Nauru</option><option value="Nepal">Nepal</option><option value="Netherlands">Netherlands</option><option value="Netherlands Antilles">Netherlands Antilles</option><option value="New Caledonia">New Caledonia</option><option value="New Zealand">New Zealand</option><option value="Nicaragua">Nicaragua</option><option value="Niger">Niger</option><option value="Nigeria">Nigeria</option><option value="Niue">Niue</option><option value="Norfolk Island">Norfolk Island</option><option value="North Korea">North Korea</option><option value="Northern Mariana Islands">Northern Mariana Islands</option><option value="Norway">Norway</option><option value="Oman">Oman</option><option value="Pakistan">Pakistan</option><option value="Palau">Palau</option><option value="Palestine">Palestine</option><option value="Panama">Panama</option><option value="Papua New Guinea">Papua New Guinea</option><option value="Paraguay">Paraguay</option><option value="Peru">Peru</option><option value="Philippines">Philippines</option><option value="Pitcairn">Pitcairn</option><option value="Poland">Poland</option><option value="Portugal">Portugal</option><option value="Puerto Rico">Puerto Rico</option><option value="Qatar">Qatar</option><option value="Republic of Kosovo">Republic of Kosovo</option><option value="Reunion">Reunion</option><option value="Romania">Romania</option><option value="Russia">Russia</option><option value="Rwanda">Rwanda</option><option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option><option value="Saint Lucia">Saint Lucia</option><option value="Saint Martin">Saint Martin</option><option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option><option value="Samoa (Independent)">Samoa (Independent)</option><option value="San Marino">San Marino</option><option value="Sao Tome and Principe">Sao Tome and Principe</option><option value="Saudi Arabia">Saudi Arabia</option><option value="Senegal">Senegal</option><option value="Serbia">Serbia</option><option value="Seychelles">Seychelles</option><option value="Sierra Leone">Sierra Leone</option><option value="Singapore">Singapore</option><option value="Sint Maarten">Sint Maarten</option><option value="Slovakia">Slovakia</option><option value="Slovenia">Slovenia</option><option value="Solomon Islands">Solomon Islands</option><option value="Somalia">Somalia</option><option value="South Africa">South Africa</option><option value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option><option value="South Korea">South Korea</option><option value="South Sudan">South Sudan</option><option value="Spain">Spain</option><option value="Saint Barthelemy">Saint Barthelemy</option><option value="Sri Lanka">Sri Lanka</option><option value="St. Helena">St. Helena</option><option value="St. Pierre and Miquelon">St. Pierre and Miquelon</option><option value="Sudan">Sudan</option><option value="Suriname">Suriname</option><option value="Svalbard and Jan Mayen Islands">Svalbard and Jan Mayen Islands</option><option value="Swaziland">Swaziland</option><option value="Sweden">Sweden</option><option value="Switzerland">Switzerland</option><option value="Syria">Syria</option><option value="Taiwan">Taiwan</option><option value="Tajikistan">Tajikistan</option><option value="Tanzania">Tanzania</option><option value="Thailand">Thailand</option><option value="Timor-Leste">Timor-Leste</option><option value="Togo">Togo</option><option value="Tokelau">Tokelau</option><option value="Tonga">Tonga</option><option value="Trinidad and Tobago">Trinidad and Tobago</option><option value="Tunisia">Tunisia</option><option value="Turkey">Turkey</option><option value="Turkmenistan">Turkmenistan</option><option value="Turks and Caicos Islands">Turks and Caicos Islands</option><option value="Tuvalu">Tuvalu</option><option value="Uganda">Uganda</option><option value="Ukraine">Ukraine</option><option value="United Arab Emirates">United Arab Emirates</option><option value="United Kingdom">United Kingdom</option><option selected="selected" value="United States of America">United States of America</option><option value="Uruguay">Uruguay</option><option value="USA Minor Outlying Islands">USA Minor Outlying Islands</option><option value="Uzbekistan">Uzbekistan</option><option value="Vanuatu">Vanuatu</option><option value="Vatican City State (Holy See)">Vatican City State (Holy See)</option><option value="Venezuela">Venezuela</option><option value="Vietnam">Vietnam</option><option value="Virgin Islands (British)">Virgin Islands (British)</option><option value="Virgin Islands (U.S.)">Virgin Islands (U.S.)</option><option value="Wallis and Futuna Islands">Wallis and Futuna Islands</option><option value="Western Sahara">Western Sahara</option><option value="Yemen">Yemen</option><option value="Zambia">Zambia</option><option value="Zimbabwe">Zimbabwe</option></select>
+</div>
+<small class="pt-3 error-message text-primary" id="country-subscribe-error">Please select a country</small><div class="js-form-item form-item js-form-type-textfield form-item-language js-form-item-language form-no-label">
+<input aria-required="true" class="form-text required form-control mb-3" data-drupal-selector="edit-language" hidden="hidden" id="edit-language" maxlength="128" name="LANGUAGE" required="required" size="60" type="text" value="English"/>
+</div>
+<div class="js-form-item form-item js-form-type-checkbox form-item-_f081a199c js-form-item-_f081a199c form-no-label">
+<input checked="checked" class="form-checkbox" data-drupal-selector="edit-9f081a199c" hidden="hidden" id="edit-9f081a199c" name="9f081a199c" type="checkbox" value="1"/>
+</div>
+<div class="js-form-item form-item js-form-type-checkbox form-item-_055459087 js-form-item-_055459087 form-no-label">
+<input checked="checked" class="form-checkbox" data-drupal-selector="edit-0055459087" hidden="hidden" id="edit-0055459087" name="0055459087" type="checkbox" value="1"/>
+</div>
+<div class="js-form-item form-item js-form-type-checkbox form-item-e6cf6306e2 js-form-item-e6cf6306e2 form-no-label">
+<input checked="checked" class="form-checkbox" data-drupal-selector="edit-e6cf6306e2" hidden="hidden" id="edit-e6cf6306e2" name="e6cf6306e2" type="checkbox" value="1"/>
+</div>
+<div class="js-form-item form-item js-form-type-checkbox form-item-gdpr-checkbox js-form-item-gdpr-checkbox">
+<input class="form-checkbox" data-drupal-selector="edit-gdpr-checkbox" id="edit-gdpr-checkbox" name="gdpr_checkbox" type="checkbox" value="1"/>
+<label class="option" for="edit-gdpr-checkbox"><small>Yes, I'd like to receive news from DP Technology Corp. related to its products, services, events and special offers by email.<br/>You may unsubscribe at any time by following the instructions in the communications received.</small></label>
+</div>
+<small class="pt-3 error-message text-primary" id="gdpr-checkbox-subscribe-error">Please accept terms and conditions</small><br/><small class="pt-3">DP Technology Corp. will use any personal information you may provide in accordance with its <a href="/privacy-policy">privacy policy</a></small><input class="form-control mb-3" data-drupal-selector="edit-honeypot-time" name="honeypot_time" type="hidden" value="3q7kq6gGx6Eq7wcXCy83jS57zEEpi_JKWKonjuXhAZ4"/>
+<input autocomplete="off" class="form-control mb-3" data-drupal-selector="form-z3zralemt0-ww5r9uglq2cdvasex-v8ujbbvth-1jzm" name="form_build_id" type="hidden" value="form-Z3zrAlEmt0_wW5r9ugLq2cdVASex-v8UJBbVTh-1JzM"/>
+<input class="form-control mb-3" data-drupal-selector="edit-sign-up-form" name="form_id" type="hidden" value="sign_up_form"/>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions"><input class="mt-3 button button--primary js-form-submit form-submit btn btn-primary" data-drupal-selector="edit-submit" id="edit-submit" name="op" type="submit" value="Subscribe"/>
+</div>
+<div class="jobtitle-textfield js-form-wrapper form-wrapper" style="display: none !important;"><div class="js-form-item form-item js-form-type-textfield form-item-jobtitle js-form-item-jobtitle">
+<label for="edit-jobtitle">Leave this field blank</label>
+<input autocomplete="off" class="form-text form-control mb-3" data-drupal-selector="edit-jobtitle" id="edit-jobtitle" maxlength="128" name="jobtitle" size="20" type="text" value=""/>
+</div>
+</div>
+</form>
+</div></div></div></div>
+</div>
+<div aria-hidden="true" class="modal fade form-modal" id="thanksSignUp" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<a aria-label="Close" class="close" data-dismiss="modal" href="#">
+<span aria-hidden="true">×</span>
+</a>
+</div>
+<div class="modal-body">
+<h2>You're in!</h2>
+<p>
+            Don't forget to follow ESPRIT on Facebook, Instagram, Twitter, and Linkedin, too.          </p>
+<div class="social-media text-left p-0">
+<a href="http://www.facebook.com/espritcam" target="_blank">
+<i class="fab fa-facebook"></i>
+</a>
+<a href="http://www.instagram.com/espritcam" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="http://twitter.com/espritcam" target="_blank">
+<i class="fab fa-twitter"></i>
+</a>
+<a href="http://www.youtube.com/espritcam" target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
+<a href="http://www.linkedin.com/company/dp-technology-corp" target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" aria-labelledby="newsletter-signup-modal" class="modal fade" id="newsletter-signup-modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content">
+<div class="bg-secondary text-white py-5">
+<div class="modal-body">
+<h2>Subscribe to our mailing list</h2>
+</div>
+</div>
+<div class="container py-5">
+<form action="https://go.ps.hexagonmi.com/l/91962/2021-07-16/6zj1kc" id="newsletter-signup-form" method="POST" onsubmit="return validationSignUp(this)">
+<input name="prospect_source" type="hidden" value="Web"/>
+<input name="referring_source" type="hidden" value="ESPRIT Sign Up Form"/>
+<input id="signupRetURL" name="signupRetURL" type="hidden"/>
+<div class="contact-form form-group" id="newsletter-form">
+<label for="first_name">
+                First Name                <span class="text-primary">*</span></label>
+<input class="form-control mb-3" id="n_first_name" maxlength="40" minlength="2" name="first_name" size="20" type="text">
+<label for="last_name">
+                Last Name                <span class="text-primary">*</span></label>
+<input class="form-control mb-3" id="n_last_name" maxlength="40" minlength="2" name="last_name" size="20" type="text">
+<label for="email">
+                Email                <span class="text-primary">*</span></label>
+<input class="form-control mb-3" id="n_email" maxlength="80" name="email" size="30" type="text">
+<label for="Industry">
+                Industry                <span class="text-primary">*</span>
+</label>
+<select class="form-control mb-3" id="n_Industry" name="Industry">
+<option hidden="" value=""></option>
+<option value="Aerospace">Aerospace</option>
+<option value="Aerospace">Aerospace Supplier</option>
+<option value="Automotive">Automotive</option>
+<option value="Automotive">Automotive Supplier</option>
+<option value="Industrial Equipment">Construction</option>
+<option value="Consumer Products">Consumer Products</option>
+<option value="Defense">Defense</option>
+<option value="Education">Education</option>
+<option value="Electronics">Electronics</option>
+<option value="Energy &amp; Power Generation">Energy</option>
+<option value="Intermediaries">Engineering Services</option>
+<option value="Government">Government</option>
+<option value="Industrial Equipment">Industrial Equipment</option>
+<option value="Medical">Medical</option>
+<option value="General Manufacturing">Manufacturing</option>
+<option value="Marine">Marine</option>
+<option value="Railways">Railways</option>
+</select>
+<label for="country_code">
+                Country / Region                <span class="text-primary">*</span>
+</label>
+<select class="form-control mb-3 countriesList" id="n_country_code" name="country_code">
+<option value="AF">Afghanistan</option>
+<option value="AX">Aland Islands</option>
+<option value="AL">Albania</option>
+<option value="DZ">Algeria</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antarctica</option>
+<option value="AG">Antigua and Barbuda</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaijan</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrain</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BY">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BZ">Belize</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermuda</option>
+<option value="BT">Bhutan</option>
+<option value="BO">Bolivia, Plurinational State of</option>
+<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+<option value="BA">Bosnia and Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BV">Bouvet Island</option>
+<option value="BR">Brazil</option>
+<option value="IO">British Indian Ocean Territory</option>
+<option value="BN">Brunei Darussalam</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="KH">Cambodia</option>
+<option value="CM">Cameroon</option>
+<option value="CA">Canada</option>
+<option value="CV">Cape Verde</option>
+<option value="KY">Cayman Islands</option>
+<option value="CF">Central African Republic</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CX">Christmas Island</option>
+<option value="CC">Cocos (Keeling) Islands</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comoros</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo, the Democratic Republic of the</option>
+<option value="CK">Cook Islands</option>
+<option value="CR">Costa Rica</option>
+<option value="CI">Cote d'Ivoire</option>
+<option value="HR">Croatia</option>
+<option value="CU">Cuba</option>
+<option value="CW">Curaçao</option>
+<option value="CY">Cyprus</option>
+<option value="CZ">Czech Republic</option>
+<option value="DK">Denmark</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="DO">Dominican Republic</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egypt</option>
+<option value="SV">El Salvador</option>
+<option value="GQ">Equatorial Guinea</option>
+<option value="ER">Eritrea</option>
+<option value="EE">Estonia</option>
+<option value="ET">Ethiopia</option>
+<option value="FK">Falkland Islands (Malvinas)</option>
+<option value="FO">Faroe Islands</option>
+<option value="FJ">Fiji</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GF">French Guiana</option>
+<option value="PF">French Polynesia</option>
+<option value="TF">French Southern Territories</option>
+<option value="GA">Gabon</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="DE">Germany</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GR">Greece</option>
+<option value="GL">Greenland</option>
+<option value="GD">Grenada</option>
+<option value="GP">Guadeloupe</option>
+<option value="GT">Guatemala</option>
+<option value="GG">Guernsey</option>
+<option value="GN">Guinea</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="GY">Guyana</option>
+<option value="HT">Haiti</option>
+<option value="HM">Heard Island and McDonald Islands</option>
+<option value="VA">Holy See (Vatican City State)</option>
+<option value="HN">Honduras</option>
+<option value="HU">Hungary</option>
+<option value="IS">Iceland</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IR">Iran, Islamic Republic of</option>
+<option value="IQ">Iraq</option>
+<option value="IE">Ireland</option>
+<option value="IM">Isle of Man</option>
+<option value="IL">Israel</option>
+<option value="IT">Italy</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japan</option>
+<option value="JE">Jersey</option>
+<option value="JO">Jordan</option>
+<option value="KZ">Kazakhstan</option>
+<option value="KE">Kenya</option>
+<option value="KI">Kiribati</option>
+<option value="KR">Korea, Republic of</option>
+<option value="KW">Kuwait</option>
+<option value="KG">Kyrgyzstan</option>
+<option value="LA">Lao People's Democratic Republic</option>
+<option value="LV">Latvia</option>
+<option value="LB">Lebanon</option>
+<option value="LS">Lesotho</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libyan Arab Jamahiriya</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MO">Macao</option>
+<option value="MK">Macedonia, the former Yugoslav Republic of</option>
+<option value="MG">Madagascar</option>
+<option value="MW">Malawi</option>
+<option value="MY">Malaysia</option>
+<option value="MV">Maldives</option>
+<option value="ML">Mali</option>
+<option value="MT">Malta</option>
+<option value="MQ">Martinique</option>
+<option value="MR">Mauritania</option>
+<option value="MU">Mauritius</option>
+<option value="YT">Mayotte</option>
+<option value="MX">Mexico</option>
+<option value="MD">Moldova, Republic of</option>
+<option value="MC">Monaco</option>
+<option value="MN">Mongolia</option>
+<option value="ME">Montenegro</option>
+<option value="MS">Montserrat</option>
+<option value="MA">Morocco</option>
+<option value="MZ">Mozambique</option>
+<option value="MM">Myanmar</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NL">Netherlands</option>
+<option value="NC">New Caledonia</option>
+<option value="NZ">New Zealand</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Niger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk Island</option>
+<option value="NO">Norway</option>
+<option value="OM">Oman</option>
+<option value="PK">Pakistan</option>
+<option value="PS">Palestine</option>
+<option value="PA">Panama</option>
+<option value="PG">Papua New Guinea</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Peru</option>
+<option value="PH">Philippines</option>
+<option value="PN">Pitcairn</option>
+<option value="PL">Poland</option>
+<option value="PT">Portugal</option>
+<option value="QA">Qatar</option>
+<option value="RE">Reunion</option>
+<option value="RO">Romania</option>
+<option value="RU">Russian Federation</option>
+<option value="RW">Rwanda</option>
+<option value="BL">Saint Barthélemy</option>
+<option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+<option value="KN">Saint Kitts and Nevis</option>
+<option value="LC">Saint Lucia</option>
+<option value="MF">Saint Martin (French part)</option>
+<option value="PM">Saint Pierre and Miquelon</option>
+<option value="VC">Saint Vincent and the Grenadines</option>
+<option value="WS">Samoa</option>
+<option value="SM">San Marino</option>
+<option value="ST">Sao Tome and Principe</option>
+<option value="SA">Saudi Arabia</option>
+<option value="SN">Senegal</option>
+<option value="RS">Serbia</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leone</option>
+<option value="SG">Singapore</option>
+<option value="SX">Sint Maarten (Dutch part)</option>
+<option value="SK">Slovakia</option>
+<option value="SI">Slovenia</option>
+<option value="SB">Solomon Islands</option>
+<option value="SO">Somalia</option>
+<option value="ZA">South Africa</option>
+<option value="GS">South Georgia and the South Sandwich Islands</option>
+<option value="SS">South Sudan</option>
+<option value="ES">Spain</option>
+<option value="LK">Sri Lanka</option>
+<option value="SD">Sudan</option>
+<option value="SR">Suriname</option>
+<option value="SJ">Svalbard and Jan Mayen</option>
+<option value="SZ">Swaziland</option>
+<option value="SE">Sweden</option>
+<option value="CH">Switzerland</option>
+<option value="SY">Syrian Arab Republic</option>
+<option value="TW">Taiwan</option>
+<option value="TJ">Tajikistan</option>
+<option value="TZ">Tanzania, United Republic of</option>
+<option value="TH">Thailand</option>
+<option value="TL">Timor-Leste</option>
+<option value="TG">Togo</option>
+<option value="TK">Tokelau</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad and Tobago</option>
+<option value="TN">Tunisia</option>
+<option value="TR">Turkey</option>
+<option value="TM">Turkmenistan</option>
+<option value="TC">Turks and Caicos Islands</option>
+<option value="TV">Tuvalu</option>
+<option value="UG">Uganda</option>
+<option value="UA">Ukraine</option>
+<option value="AE">United Arab Emirates</option>
+<option value="GB">United Kingdom</option>
+<option value="US">United States</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistan</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela, Bolivarian Republic of</option>
+<option value="VN">Vietnam</option>
+<option value="VG">Virgin Islands, British</option>
+<option value="WF">Wallis and Futuna</option>
+<option value="EH">Western Sahara</option>
+<option value="YE">Yemen</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabwe</option>
+</select>
+<div class="form-check" id="n_GDPRCheckboxBlock">
+<input id="n_Accepted_email_promotions__c" name="Accepted_email_promotions__c" type="checkbox" value="true"/>
+<label class="form-check-label small" for="Accepted_email_promotions__c">
+                  Yes, I'd like to receive news from Hexagon related to its products, services, events and special offers by email. You may unsubscribe at any time by following the instructions in the communications received.                </label>
+</div>
+</input></input></input></div>
+<div class="hidden">
+<input class="hidden" id="n_state" name="state" size="20" type="text">
+<input class="hidden" id="n_IP_Address__c" maxlength="20" name="IP_Address__c" size="20" type="text"/>
+<input class="hidden" id="n_Hostname__c" maxlength="20" name="Hostname__c" size="20" type="text"/>
+<input class="hidden" id="n_Coordinates__c" maxlength="20" name="Coordinates__c" size="20" type="text"/>
+<input class="hidden" id="n_Service_Provider__c" maxlength="20" name="Service_Provider__c" size="20" type="text"/>
+<input class="hidden" id="n_Browser__c" maxlength="20" name="Browser__c" size="20" type="text"/>
+<input class="hidden" id="n_Operating_System__c" maxlength="20" name="Operating_System__c" size="20" type="text"/>
+<input class="hidden" id="n_Source_URL__c" maxlength="255" name="Source_URL__c" size="100" type="text"/>
+<input class="hidden" id="n_langcode" maxlength="20" name="langcode" size="100" type="text" value="en"/>
+<input class="hidden" id="n_Language" maxlength="20" name="Language" size="100" type="text"/>
+<input class="hidden" id="n_country__P" maxlength="50" name="country__P" size="100" type="text"/>
+<input class="hidden" id="n_region__P" maxlength="20" name="region__P" size="100" type="text"/>
+<input class="hidden" id="n_utm_source" maxlength="50" name="utm_source" size="100" type="text"/>
+<input class="hidden" id="n_utm_medium" maxlength="50" name="utm_medium" size="100" type="text"/>
+<input class="hidden" id="n_utm_campaign" maxlength="50" name="utm_campaign" size="100" type="text"/>
+</input></div>
+<label class="form-gender-title" for="genderTitle">Title</label>
+<input class="form-control form-gender-title" id="n_genderTitle" maxlength="40" minlength="2" name="genderTitle" size="20" type="text">
+<div class="my-3 small">
+                              Hexagon will use any personal information you may provide in accordance with its                <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+</div>
+<button class="btn btn-primary mt-3" id="newsletter-signup-submit" name="submit" type="submit">Subscribe</button>
+</input></form></div>
+
+</div>
+</div>
+</div>
+</div>
+</footer>
+</footer>
+<a class="page-scroll btn btn-circle btn-light" href="#page-top" id="back-to-top" title="Go to top">
+<i class="fas fa-angle-up"></i>
+</a>
+</div>
+</div>
+<script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/77","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"user":{"uid":0,"permissionsHash":"092ab0ed5abf87ad83ef1415c702fc74e395d526532623662a10bf2d23fd1429"}}</script>
+<script src="/sites/default/files/js/js_ckWOmiJdp7xQ_EFX98ivlFUVydF368CTj7Kbclhpa1g.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyloadxt/1.1.0/jquery.lazyloadxt.min.js"></script>
+<script src="/sites/default/files/js/js_Cd4cMNSo7r1XaeFJ6Hk3iKAfVwnpiO2uQJ8ZaljnrXk.js"></script>
+<script type="text/javascript">
+        piAId = '92962';
+        piCId = '1930';
+        piHostname = 'pi.pardot.com';
+
+        (function() {
+        	function async_load(){
+        		var s = document.createElement('script'); s.type = 'text/javascript';
+        		s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+        		var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+        	}
+        	if(window.attachEvent) { window.attachEvent('onload', async_load); }
+        	else { window.addEventListener('load', async_load, false); }
+        })();
+      </script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"3fe6061604","applicationID":"314387708","transactionName":"Y1NQMRFVXUsAVEVRXVoZcwYXXVxWTnNDTUJVWm4LDFBWZCJYX0xAW1peABFofVcFUmdRV0N1XQsXRlxUDVJDFQxCX1cS","queueTime":0,"applicationTime":212,"atts":"TxRTR1lPTkU=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

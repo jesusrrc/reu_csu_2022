@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+
+<html class="no-js" dir="ltr" lang="en" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+<script charset="UTF-8" data-domain-script="2e456f46-6b86-42c8-be0a-01efd4471533" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function OptanonWrapper() { }
+    </script>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"ff11c6039c",applicationID:"451499843"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="Sophos Group Privacy Notice" itemprop="acquia_lift:content_title"/>
+<meta content="legal" itemprop="acquia_lift:content_type"/>
+<meta content="node page" itemprop="acquia_lift:page_type"/>
+<meta content="en" itemprop="acquia_lift:context_language"/>
+<meta content="" itemprop="acquia_lift:content_section"/>
+<meta content="" itemprop="acquia_lift:content_keywords"/>
+<meta content="221" itemprop="acquia_lift:post_id"/>
+<meta content="b5b3325c-89da-4f2f-8427-64ba09cee0cc" itemprop="acquia_lift:content_uuid"/>
+<meta content="1591201688" itemprop="acquia_lift:published_date"/>
+<meta content="" itemprop="acquia_lift:persona"/>
+<meta content="1" itemprop="acquia_lift:engagement_score"/>
+<meta content="SOPHOSLTD" itemprop="acquia_lift:account_id"/>
+<meta content="sophos_dotcom_prod" itemprop="acquia_lift:site_id"/>
+<meta content="https://builder.lift.acquia.com" itemprop="acquia_lift:liftAssetsURL"/>
+<meta content="https://us-east-1-decisionapi.lift.acquia.com" itemprop="acquia_lift:liftDecisionAPIURL"/>
+<meta content="auto" itemprop="acquia_lift:bootstrapMode"/>
+<meta content="trusted" itemprop="acquia_lift:contentReplacementMode"/>
+<meta content="2" itemprop="acquia_lift:cdfVersion"/>
+<script async="" src="https://builder.lift.acquia.com/lift.js"></script>
+<link href="https://www.sophos.com/en-us/legal/sophos-group-privacy-notice" rel="canonical"/>
+<meta content="General This is the privacy notice of Sophos Limited and its subsidiaries. This document was last updated on 10 February 2022." name="description"/>
+<meta content="SOPHOS" property="og:site_name"/>
+<meta content="Drupal 9 (https://www.drupal.org)" name="Generator"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://www.sophos.com",
+            "description": "Advanced Endpoint Protection and Network Security Fully Synchronized and Managed in Real Time.",
+            "name": "Sophos",
+            "sameAs": "https://en.wikipedia.org/wiki/Sophos",
+            "url": "https://www.sophos.com"
+        }
+    ]
+}</script>
+<link href="https://www.sophos.com/en-us/legal/sophos-group-privacy-notice" hreflang="en" rel="alternate"/>
+<link href="https://www.sophos.com/ja-jp/legal/sophos-group-privacy-notice" hreflang="ja" rel="alternate"/>
+<link href="https://www.sophos.com/en-us/legal/sophos-group-privacy-notice" rel="revision"/>
+<script defer="" src="/sites/default/files/google_tag/main_gtm_container/google_tag.script.js?rdjlb2"></script>
+<link href="/favicon.ico" rel="icon" sizes="any"/>
+<link href="/icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/manifest.webmanifest" rel="manifest"/>
+<title>Sophos Group Privacy Notice | Sophos</title>
+<link href="/sites/default/files/css/css_nKCCD6Hc-YUSkPeMvMk17WJCDnQUad9R6lZEr0LIy9U.css" media="all" rel="stylesheet">
+<link href="/sites/default/files/css/css_Q--ehrIGs4rYOAjpWhGVnnnMoKUsQDw1Ulm3sBKeztI.css" media="all" rel="stylesheet">
+<link href="/sites/default/files/css/css_QMig4pLEwbD_mMOX8xafMuEKeTbJG0e1OP_zjDTOZkY.css" media="all" rel="stylesheet">
+<link href="/sites/default/files/css/css_ON0j4qqnB5WPUUMchDjgWmthVbFd5gDHfL1HfR8iD1g.css" media="all" rel="stylesheet">
+<link href="/sites/default/files/css/css_xiaLAY-lO3kmR8EfWR_CzLVyhibK3p3YcNqI6qDVh0k.css" media="all" rel="stylesheet"/>
+<script async="" type="text/javascript">
+      var _elqQ = _elqQ || [];
+      _elqQ.push(['elqSetSiteId', '1777052651']);
+      _elqQ.push(['elqTrackPageView']);
+
+      (function async_load() {
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+        s.src = '//img03.en25.com/i/elqCfg.min.js';
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+      })();
+    </script>
+<script type="text/javascript">
+      function GetCookie(k){return(document.cookie.match('(^|; )'+k+'=([^;]*)')||0)[2]}
+      var campaignId = GetCookie('CampaignID');
+
+      var _gaq = _gaq || [];
+      _gaq.push(
+      ['_setAccount', 'UA-737537-1'],
+      ['_setDomainName', '.sophos.com'],
+      ['_setAllowLinker', true],
+      ['_setAllowHash', false],
+      ['_setCustomVar', 4, 'CampaignID', campaignId, 3],
+      ['_trackPageview'],
+      ['o._setAccount', 'UA-737537-18'],
+      ['o._setDomainName', '.sophos.com'],
+      ['o._setAllowLinker', true],
+      ['o._setAllowHash', false],
+      ['o._setCustomVar', 4, 'CampaignID', campaignId, 3],
+      ['o._trackPageview']
+      );
+
+      (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+<script type="text/javascript">
+    window._vwo_code = window._vwo_code || (function(){
+    var account_id=25349,
+    settings_tolerance=2000,
+    library_tolerance=2500,
+    use_existing_jquery=false,
+    is_spa=1,
+    hide_element='body',
+
+    /* DO NOT EDIT BELOW THIS LINE */
+    f=false,d=document,code={use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){
+    window.settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);var a=d.createElement('style'),b=hide_element?hide_element+'{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}':'',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);this.load('https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&f='+(+is_spa)+'&r='+Math.random());return settings_timer; }};window._vwo_settings_timer = code.init(); return code; }());
+    </script>
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+<script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="98YDQ-4R7DD-Y3XRM-CVBHP-WX4A4",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"98YDQ-4R7DD-Y3XRM-CVBHP-WX4A4",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="vzaixdnyd4zsoyvq2gna-f-577ac446c-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"32","ak.cp":"914567","ak.ai":parseInt("173635",10),"ak.ol":"0","ak.cr":31,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"2069ffb8","ak.r":34696,"ak.a2":e,"ak.m":"b","ak.n":"essl","ak.bpcip":"174.64.139.0","ak.cport":49413,"ak.gh":"23.64.141.158","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1655755162","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==oGqE+1GW9MMikpEBu/oFLZ0MOJsetFZnBRIo/MvCfkZLnJP8dSP9Zf5f9TEQS/hLnLyzJTA4dbWb3WtPIaKz1wtFck8ORoGsZZdmwR27yjfWtgs1Dr7vUKtPFgtmTDo7mSjPw0ZPOjkJ8jIZJ1CjWrLPB5OtzkZW0TRbp+JFewjcqbV1U/Txb48+X5yB4niqRXHK6m4iuhRQ0VCbFZOlGmtbfGsgIva3JDCbMTaBL3djCFHUqn/Hqot7aUiYfO0j2kNLlAPsSL9GJaO9kWhbqD+vS0RUyxObyc8ZFaR2Yxq6NrL3z2yVPVQXIyEx5lmD0u53ic13LO34ieVa+422k4oMyoJdfY7ulADEIyXHhfjGGAZfIoLbHeYjA0/6TtOzBU3JeblHoXYUveD4/y/XNNvOsZb7yeM16dsxhxRkpsk=","ak.pv":"357","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></link></link></link></link></head>
+<body class="page-node-221 path-node page-node-type-legal one-sidebar sidebar-first language--en-us">
+<a class="visually-hidden focusable skip-link" href="#main-content">
+      Skip to main content
+    </a>
+<noscript aria-hidden="true"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-556N8KS" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<header class="header" role="banner">
+<div class="header__container container">
+<div class="region region-header">
+<div class="block block-system block-system-branding-block" id="block-sophosdotcom-sitebranding">
+<a class="site-logo" href="/en-us" rel="home">
+<img alt="Home" height="16" src="/themes/custom/sophosdotcom/logo.svg" width="96"/>
+</a>
+</div>
+<div class="block block-sophos-primary-menu" id="block-primarymenublock">
+<nav aria-label="Primary Menu" class="primary-menu" role="navigation">
+<h4 class="visually-hidden" id="block-primary-menu">Primary Menu</h4>
+<ul class="menu">
+<li class="menu-item">
+<span class="primary-menu__product-menu-toggle">Products</span>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/6121" href="/en-us/solutions">Solutions</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/4511" href="/en-us/partners">Partners</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/6601" href="/en-us/support">Support</a>
+</li>
+</ul>
+</nav>
+<div class="primary-menu__dropdown">
+<div class="primary-menu__dropdown__container">
+<div class="primary-menu__dropdown__inner">
+<nav aria-label="For Business" class="primary-menu__dropdown__column primary-menu__for-work" role="navigation">
+<h4 class="primary-menu__section-title">For Business</h4>
+<ul class="menu menu-level-0">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/421" href="/en-us/products/endpoint-antivirus">Endpoint</a>
+<div class="menu_link_content menu-link-contentproducts-for-work view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<div class="clearfix text-formatted field field--name-field-secondary-menu field--type-text-long field--label-hidden field__item"><p><a href="/en-us/products/endpoint-antivirus">Intercept X</a>, <a href="/en-us/products/server-security">Server</a>, <a href="/en-us/products/endpoint-antivirus/xdr">XDR</a>, <a href="/en-us/products/mobile-control">Mobile</a></p></div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1836" href="/en-us/products/next-gen-firewall">Network</a>
+<div class="menu_link_content menu-link-contentproducts-for-work view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<div class="clearfix text-formatted field field--name-field-secondary-menu field--type-text-long field--label-hidden field__item"><p><a href="/en-us/products/next-gen-firewall">Firewall</a>, <a href="/en-us/products/zero-trust-network-access">Zero Trust</a>, <a href="/en-us/products/secure-wifi">Wireless</a>, <a href="/en-us/products/sophos-switch">Switch</a></p></div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/3676" href="/en-us/products/endpoint-antivirus/xdr">Security Operations</a>
+<div class="menu_link_content menu-link-contentproducts-for-work view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<div class="clearfix text-formatted field field--name-field-secondary-menu field--type-text-long field--label-hidden field__item"><p><a href="/en-us/products/endpoint-antivirus/xdr">XDR</a>, <a href="/en-us/products/managed-threat-response">Managed Threat Response</a>, <a href="/en-us/products/managed-threat-response/rapid-response">Rapid Response</a>, <a href="https://www.refactr.it/" target="_blank">Refactr</a></p></div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1386" href="/en-us/products/sophos-email">Messaging</a>
+<div class="menu_link_content menu-link-contentproducts-for-work view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<div class="clearfix text-formatted field field--name-field-secondary-menu field--type-text-long field--label-hidden field__item"><p><a href="/en-us/products/sophos-email">Email protection</a></p></div>
+</div>
+</li>
+<li class="menu-item">
+<a href="/solutions/public-cloud">Cloud</a>
+<div class="menu_link_content menu-link-contentproducts-for-work view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<div class="clearfix text-formatted field field--name-field-secondary-menu field--type-text-long field--label-hidden field__item"><p><a href="/en-us/products/cloud-optix">Cloud Optix</a>, <a href="/en-us/products/server-security/cloud-workload-protection">Workload Protection</a>, <a href="/en-us/products/zero-trust-network-access">Zero Trust</a>,<a href="/en-us/products/next-gen-firewall/public-cloud"> Firewall</a></p></div>
+</div>
+</li>
+<li class="menu-item">
+<a class="minimal" data-drupal-link-system-path="node/4496" href="/en-us/products">All Products</a>
+<div class="menu_link_content menu-link-contentproducts-for-work view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+</div>
+</li>
+</ul>
+</nav>
+<nav aria-label="For Home" class="primary-menu__dropdown__column primary-menu__for-home" role="navigation">
+<h4 class="primary-menu__section-title">For Home</h4>
+<ul class="menu menu-level-0">
+<li class="menu-item">
+<a href="https://home.sophos.com/" target="_blank">Sophos Home</a>
+<div class="menu_link_content menu-link-contentproducts-for-home view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<div class="clearfix text-formatted field field--name-field-secondary-menu field--type-text-long field--label-hidden field__item"><p>Protection for home Mac and PCs.</p></div>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="mobile-menu">
+<nav aria-label="For Business" class="mobile-menu__section mobile-menu__for-work" role="navigation">
+<h4 class="mobile-menu__section-title">Products For Business</h4>
+<ul class="menu menu-level-0">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/421" href="/en-us/products/endpoint-antivirus">Endpoint</a>
+<div class="menu_link_content menu-link-contentproducts-for-work view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<div class="clearfix text-formatted field field--name-field-secondary-menu field--type-text-long field--label-hidden field__item"><p><a href="/en-us/products/endpoint-antivirus">Intercept X</a>, <a href="/en-us/products/server-security">Server</a>, <a href="/en-us/products/endpoint-antivirus/xdr">XDR</a>, <a href="/en-us/products/mobile-control">Mobile</a></p></div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1836" href="/en-us/products/next-gen-firewall">Network</a>
+<div class="menu_link_content menu-link-contentproducts-for-work view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<div class="clearfix text-formatted field field--name-field-secondary-menu field--type-text-long field--label-hidden field__item"><p><a href="/en-us/products/next-gen-firewall">Firewall</a>, <a href="/en-us/products/zero-trust-network-access">Zero Trust</a>, <a href="/en-us/products/secure-wifi">Wireless</a>, <a href="/en-us/products/sophos-switch">Switch</a></p></div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/3676" href="/en-us/products/endpoint-antivirus/xdr">Security Operations</a>
+<div class="menu_link_content menu-link-contentproducts-for-work view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<div class="clearfix text-formatted field field--name-field-secondary-menu field--type-text-long field--label-hidden field__item"><p><a href="/en-us/products/endpoint-antivirus/xdr">XDR</a>, <a href="/en-us/products/managed-threat-response">Managed Threat Response</a>, <a href="/en-us/products/managed-threat-response/rapid-response">Rapid Response</a>, <a href="https://www.refactr.it/" target="_blank">Refactr</a></p></div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1386" href="/en-us/products/sophos-email">Messaging</a>
+<div class="menu_link_content menu-link-contentproducts-for-work view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<div class="clearfix text-formatted field field--name-field-secondary-menu field--type-text-long field--label-hidden field__item"><p><a href="/en-us/products/sophos-email">Email protection</a></p></div>
+</div>
+</li>
+<li class="menu-item">
+<a href="/solutions/public-cloud">Cloud</a>
+<div class="menu_link_content menu-link-contentproducts-for-work view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<div class="clearfix text-formatted field field--name-field-secondary-menu field--type-text-long field--label-hidden field__item"><p><a href="/en-us/products/cloud-optix">Cloud Optix</a>, <a href="/en-us/products/server-security/cloud-workload-protection">Workload Protection</a>, <a href="/en-us/products/zero-trust-network-access">Zero Trust</a>,<a href="/en-us/products/next-gen-firewall/public-cloud"> Firewall</a></p></div>
+</div>
+</li>
+<li class="menu-item">
+<a class="minimal" data-drupal-link-system-path="node/4496" href="/en-us/products">All Products</a>
+<div class="menu_link_content menu-link-contentproducts-for-work view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+</div>
+</li>
+</ul>
+</nav>
+<nav aria-label="For Home" class="mobile-menu__section mobile-menu__for-home" role="navigation">
+<h4 class="mobile-menu__section-title">Products for Home</h4>
+<ul class="menu menu-level-0">
+<li class="menu-item">
+<a href="https://home.sophos.com/" target="_blank">Sophos Home</a>
+<div class="menu_link_content menu-link-contentproducts-for-home view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<div class="clearfix text-formatted field field--name-field-secondary-menu field--type-text-long field--label-hidden field__item"><p>Protection for home Mac and PCs.</p></div>
+</div>
+</li>
+</ul>
+</nav>
+<nav aria-label="Primary Menu" class="mobile-menu__section mobile-menu__primary-menu" role="navigation">
+<h4 class="mobile-menu__section-title">More</h4>
+<ul class="menu">
+<li class="menu-item">
+<span class="primary-menu__product-menu-toggle">Products</span>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/6121" href="/en-us/solutions">Solutions</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/4511" href="/en-us/partners">Partners</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/6601" href="/en-us/support">Support</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Secondary Menu" class="mobile-menu__section mobile-menu__secondary-menu" role="navigation">
+<ul class="menu">
+<li class="menu-item menu-item--expanded">
+<span>Company</span>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/4176" href="/en-us/company">About Sophos</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/81" href="/en-us/company/press">Press</a>
+</li>
+<li class="menu-item">
+<a href="https://news.sophos.com/">News &amp; Blogs</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/6256" href="/en-us/careers">Careers</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<span>Resources</span>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/4511" href="/en-us/partners">Partner Program</a>
+</li>
+<li class="menu-item">
+<a href="https://partners.sophos.com/english/directory/">Partner Locator</a>
+</li>
+<li class="menu-item">
+<a href="https://ai.sophos.com/" target="_blank">Sophos AI</a>
+</li>
+<li class="menu-item">
+<a href="/labs">SophosLabs</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<span>Sign In</span>
+<ul class="menu">
+<li class="menu-item">
+<a href="https://my.sophos.com" target="_blank">Sophos Home</a>
+</li>
+<li class="menu-item">
+<a href="https://central.sophos.com/">Sophos Central</a>
+</li>
+<li class="menu-item">
+<a href="https://partners.sophos.com/">Partner Portal</a>
+</li>
+<li class="menu-item">
+<a href="https://secure2.sophos.com/en-us/mysophos/login">Licenses &amp; Account</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="coveo-searchbox">
+<!-- The `coveo-search-section` class is for alignment purpose only -->
+<div class="coveo-search-section">
+<!-- Setting `data-enable-omnibox` and `data-enable-query-suggest-addon` to `true` is not necessary in version 2.x -->
+<div class="CoveoSearchbox" data-enable-omnibox="true" data-enable-query-suggest-addon="true"></div>
+</div>
+</div></div>
+</div>
+</div>
+<button aria-expanded="false" aria-haspopup="true" class="menu-toggle menu-toggle--secondary" type="button"><span>Toggle Secondary menu</span></button>
+<div class="block secondary-menu" id="block-secondarynavigation">
+<nav aria-labelledby="block-secondarynavigation-menu" role="navigation">
+<h4 class="visually-hidden" id="block-secondarynavigation-menu">Secondary navigation</h4>
+<ul class="menu">
+<li class="menu-item menu-item--expanded">
+<span>Company</span>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/4176" href="/en-us/company">About Sophos</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/81" href="/en-us/company/press">Press</a>
+</li>
+<li class="menu-item">
+<a href="https://news.sophos.com/">News &amp; Blogs</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/6256" href="/en-us/careers">Careers</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<span>Resources</span>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/4511" href="/en-us/partners">Partner Program</a>
+</li>
+<li class="menu-item">
+<a href="https://partners.sophos.com/english/directory/">Partner Locator</a>
+</li>
+<li class="menu-item">
+<a href="https://ai.sophos.com/" target="_blank">Sophos AI</a>
+</li>
+<li class="menu-item">
+<a href="/labs">SophosLabs</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<span>Sign In</span>
+<ul class="menu">
+<li class="menu-item">
+<a href="https://my.sophos.com" target="_blank">Sophos Home</a>
+</li>
+<li class="menu-item">
+<a href="https://central.sophos.com/">Sophos Central</a>
+</li>
+<li class="menu-item">
+<a href="https://partners.sophos.com/">Partner Portal</a>
+</li>
+<li class="menu-item">
+<a href="https://secure2.sophos.com/en-us/mysophos/login">Licenses &amp; Account</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<footer class="secondary-menu__footer">
+<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><div class="coveo-searchbox">
+<!-- The `coveo-search-section` class is for alignment purpose only -->
+<div class="coveo-search-section">
+<!-- Setting `data-enable-omnibox` and `data-enable-query-suggest-addon` to `true` is not necessary in version 2.x -->
+<div class="CoveoSearchbox" data-enable-omnibox="true" data-enable-query-suggest-addon="true"></div>
+</div>
+</div></div>
+</footer>
+</div>
+</div>
+<button aria-expanded="false" class="menu-toggle menu-toggle--mobile" type="button"><span>Toggle Mobile menu</span></button>
+</div>
+</header>
+<div class="region region-header-sticky">
+<div class="block block-page-section-menu" id="block-legal">
+<button aria-expanded="false" aria-haspopup="true" button="" class="section-menu-toggle" type="button"><span>Toggle Section menu</span></button>
+<div class="container">
+<h2 class="block-page-section-menu__title">Legal</h2>
+<nav aria-labelledby="block-legal-menu" class="menu--page-section-menu" role="navigation">
+<div class="menu__wrapper">
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/131" href="/en-us/legal">Overview</a>
+</li>
+<li class="menu-item menu-item--collapsed menu-item--active-trail">
+<a data-drupal-link-system-path="node/156" href="/en-us/legal/cookie-information">Privacy</a>
+</li>
+<li class="menu-item menu-item--collapsed">
+<a data-drupal-link-system-path="node/136" href="/en-us/legal/sophos-end-user-license-agreement">Agreements Terms &amp; Conditions</a>
+</li>
+<li class="menu-item menu-item--collapsed">
+<a data-drupal-link-system-path="node/141" href="/en-us/legal/export">Global Trade Compliance</a>
+</li>
+<li class="menu-item menu-item--collapsed">
+<a data-drupal-link-system-path="node/151" href="/en-us/legal/december-29-2015">Notices</a>
+</li>
+<li class="menu-item menu-item--collapsed">
+<a data-drupal-link-system-path="node/216" href="/en-us/legal/modern-slavery-act-transparency-statement/anti-slavery-and-human-trafficking-policy">Policies</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+</div>
+<div class="region region-page-header">
+<div class="block block-page-header" id="block-legal-2">
+<div class="container">
+<h2 class="block-page-header__title">Privacy</h2>
+</div>
+</div>
+</div>
+<div class="l-container">
+<main class="main" id="main" role="main">
+<div class="region region-highlighted">
+<div class="hidden" data-drupal-messages-fallback=""></div>
+</div>
+<div class="l-content">
+<a id="main-content" tabindex="-1"></a> <div class="region region-title">
+<div class="block block-core block-page-title-block" id="block-pagetitle">
+<h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Sophos Group Privacy Notice</span>
+</h1>
+</div>
+</div>
+<div class="region region-content">
+<div class="block block-system block-system-main-block" id="block-sophosdotcom-content">
+<article about="/en-us/legal/sophos-group-privacy-notice" class="node node--type-legal node--view-mode-full container" role="article">
+<div class="node__content">
+<div class="node__body"><h2>General</h2>
+<p>This is the privacy notice of Sophos Limited and its subsidiaries.</p>
+<p>This document was last updated on 10 February 2022.</p>
+<p>We are committed to safeguarding the privacy of your personal data. Please read the following privacy notice to understand how we collect and use your personal data, for example when you contact us, visit or use one of our websites, mobile applications, portals, or other parts of our network (each a “Site”), apply for a job, or use our products and services, regardless of how you access them. This privacy notice also explains the rights available to you in respect of your personal data.</p>
+<ul><li><a href="/en-us/legal/sophos-group-privacy-notice#tab1" id="tab1-label">What personal data do we collect, how do we collect it, and why?</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab2" id="tab2-label">Other specific ways we collect and use your personal data</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab3" id="tab3-label">Legal basis for processing personal data</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab4" id="tab4-label">With whom might we share your personal data</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab5" id="tab5-label">International transfers of data</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab6" id="tab6-label">Data retention</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab7" id="tab7-label">Use by children</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab8" id="tab8-label">Automated decision-making</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab9" id="tab9-label">Your data protection rights</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab10" id="tab10-label">Links</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab11" id="tab11-label">Security</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab12" id="tab12-label">California privacy rights</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab13" id="tab13-label">Data Processing Agreement</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab14" id="tab14-label">Contact</a></li>
+<li><a href="/en-us/legal/sophos-group-privacy-notice#tab15" id="tab15-label">Notification of changes</a></li>
+</ul><h3 id="tab1">What personal data do we collect, how do we collect it, and why?</h3>
+<p><strong>Data that you provide voluntarily to us</strong></p>
+<p>When you use our Site, products or services, or you otherwise communicate with us, we may ask you to provide certain personal data voluntarily, including but not limited to your name, company position, postal address, telephone number, mobile number, fax number, email address, credit card or other payment details, age or date of birth, account usernames, passwords, or gender. For example, we may ask you to provide some or all of this personal data when you register an account with us, subscribe to our marketing communications, purchase products or services, and/or submit enquiries to us. We use this information to create and administer your account, send you marketing communications, provide you with the products and services you request, and to respond to your enquiries. In general, the personal data that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal data.</p>
+<p><strong>Data collected automatically</strong></p>
+<p>When you use our Site, products, or services, we may collect certain data automatically from your computers or devices (including mobile devices). The data we collect automatically may include your IP address (explained further below), device type, operating system details, unique device identification numbers (including mobile advertising identifiers), browser-type, browser language, operating system, geographic location (as explained further under the heading “<a href="https://www.sophos.com/en-us/legal/sophos-group-privacy-notice#Locationinformation">Location information</a>”) and other technical information. We may also collect data about how your device has interacted with our Site, products or services, including the pages or features accessed and links clicked, the amount of time spent on particular pages, mouse hovers, the date and time of the interaction, error logs, referring and exit pages and URLs, and similar information. Collecting this data enables us to better understand the visitors who use our Site, products, and services, including where they come from and what features are of interest to them. We use this information for our internal analytics purposes, and to improve the quality, relevance, and security of our Site, products and services.</p>
+<p>For example, every time you connect to the Site, we store a log of your visit that shows the unique number your machine uses when it is connected to the Internet - its IP address. This log tells us what your machine has looked at, whether the page request was successful or not, and which browser your machine used to view the pages. This data is used for statistical purposes as well as to help customize the user experience as you browse the Site and subsequently interact with Sophos. This helps us to understand which areas of the Site are of particular interest, which pages are not being requested, and how many people are visiting the Site in total. It also helps us to determine which products and services may be of specific interest to you. We may also use this information to block IP addresses where there is a breach of the terms and conditions for use of the Site.</p>
+<p>Some of the data may be collected automatically using tracking technologies, as explained further under the heading “<a href="https://www.sophos.com/en-us/legal/sophos-group-privacy-notice#CookiesAndSimilarTechnology">Cookies and similar tracking technology</a>”.</p>
+<p><strong>Data that we obtain from third party sources</strong></p>
+<p>From time to time, we may receive personal data about you from third party sources (including without limitation recruitment agencies, credit check agencies, agencies providing compliance checks, lead generation providers, resellers, and other partners who sell our products and services to you), but only where such third parties have confirmed that they have your consent or are otherwise legally permitted or required to disclose your personal data to us.</p>
+<p>The types of information we collect from third parties include contact details, CVs, credit history, and order information, and we use the information we receive from these third parties to assess your suitability for a job position, carry out compliance checks required under applicable law (such as anti-bribery and corruption checks), make credit decisions, maintain and improve the accuracy of the records we hold about you, and market our products and services to you.</p>
+<p>We also receive information from other members of the industry that forms part of or otherwise helps us to develop, test, and enhance our own product offering (for example spam lists, malicious URL lists, and sample viruses), some of which could contain personal data (where permitted by applicable law).</p>
+<p>We may combine information that we collect from you with information about you that we obtain from such third parties.</p>
+<p><strong>Data collected through our products and services</strong></p>
+<p>We use data that we collect from products and services for the purposes for which you provided it, usage and audience counts, monitoring the performance and effectiveness of the products/services, monitoring compliance with our terms and conditions, enabling compatibility with third party operating systems/products/services, planning future roadmap strategy, planning product/service/feature lifecycles and retirements, conducting spam, threat and other scientific research, developing new products and services, enhancing existing products and services, troubleshooting product issues, generating statistics, reporting, and trend analysis. This may include incidental personal data (for example usernames, machine IDs, domain names, IP addresses, file names, and file paths).</p>
+<p>Our products and services may collect further additional personal data about you beyond the data described in this privacy policy, or use your personal data in ways that are different to or in addition to those described in this privacy policy. We provide a <a href="https://www.sophos.com/en-us/legal/product-privacy-info">Product Privacy Information page</a> that explains how our products and services collect and use personal data. Please review the relevant section of the Product Privacy Information page for the product or service you are using to ensure that you are fully informed.</p>
+<p><strong>Cookies and similar tracking technology</strong></p>
+<p>A cookie is a piece of text that gets entered into the memory of your browser by a website, allowing the website to store information on your machine and later retrieve it.</p>
+<p>Our Site, products, and services may use cookies, unique device identifiers (like Apple ID For Advertisers on iOS devices, and Android Advertising ID on Android devices), and other tracking technologies (collectively, "<strong>Cookies</strong>") to distinguish you from other users and better serve you when you return to the Site, product, or service, and to monitor and analyse the usage of the Site, product, or service. Cookies also enable us and our third party partners to track and target the interests of our users to enhance the onsite or in-product experience through content, features, and advertisements.</p>
+<p>We, along with our service providers, may also use other Internet technologies, such as Flash technologies, Web beacons or pixel tags, and other similar technologies, to deliver or communicate with cookies and track your use of the Site, product, or service, as well as serve you ads and personalize/customize your experience when you are using our Site, product, or service and/or when you are on other websites where those cookies can be accessed. We may also include Web beacons in email messages, newsletters, and other electronic communications to determine whether the message has been opened and for other analytics, personalization, and advertising. As we adopt additional technologies, we may also gather additional information through other methods. This practice is explained further under the heading “<a href="https://www.sophos.com/en-us/legal/sophos-group-privacy-notice#MarketingAndPromotions">Marketing and promotions</a>”.</p>
+<p>As explained above, we occasionally share information you have provided to us with service providers, who will de-identify the information and associate it with cookies that enable us to reach you. We may also help these service providers place their own cookies, by deploying a cookie that is associated with a 'hashed' value associated with interest-based or demographic data, to permit advertising to be directed to you on other websites, applications or services.</p>
+<p>Most browsers automatically accept cookies, but you can modify your browser setting to decline cookies by visiting the Help portion of your browser's toolbar. If you choose to decline cookies, please note that your ability to sign in, customize, or use some of the interactive features of our Site, product, or service may be impeded, and the advertisements you see may not be as relevant to you.</p>
+<p>For more information about the cookies that we use, please refer to our <a href="https://www.sophos.com/en-us/legal/cookie-information">Cookie Information</a> page.</p>
+<p><strong>Location information</strong></p>
+<p>We may collect different types of information about your location, including general information (for example IP address or ZIP code) and more specific information (for example GPS-based functionality on mobile devices when used to access a Site, product, or service). This information may be used to customize the services provided to you, such as location-based information, advertising, and features. In order to do this, your location information may be shared with our agents, vendors, or advertisers. If you access the Services through a mobile device and you do not want your device to provide us with location-tracking information, you can disable the GPS or other location-tracking functions on your device, provided your device allows you to do this. See your device manufacturer's instructions for further details.</p>
+<h3 id="tab2">Other specific ways we collect and use your personal data</h3>
+<p><strong>Job applications</strong></p>
+<p>If you are making a job application or inquiry, you may provide us with a copy of your CV or other relevant information. We may use this information for the purpose of assessing your application or inquiry. We may also keep this information on file to contact you about future opportunities, unless you ask us not to do this.</p>
+<p><strong>Partner portal </strong></p>
+<p>Our resellers, distributors, and other partners may visit our partner portal Site. We may use the information provided on that Site for partner relationship management, billing, forecasting, trend analysis, renewal management, marketing, and in order to sell and provide the products and services.</p>
+<p><strong>Account management</strong></p>
+<p>If you obtain products or services from us, we may use your contact details and (where applicable) payment information for the purposes of (i) providing training, customer support, and account management, (ii) order processing and billing, (iii) verifying your usage of the products and services in accordance with the terms and conditions of your agreement with us, (iv) carrying out checks for export control, anti-bribery, anti-corruption, the prevention of modern slavery, and other compliance purposes in accordance with requirements under applicable law; (v) contacting you (including by email communication) regarding license expiry, renewal, and other related notices, and (vi) maintaining our company accounts and records.</p>
+<p><strong>Market research and surveys</strong></p>
+<p>If you participate in surveys, we may use your personal data for our internal business analysis and training purposes in order to improve our understanding of our users’ demographics, interests and behaviour, to measure and increase customer satisfaction, and to improve our products and services.</p>
+<p><strong>Competitions, contests, promotions</strong></p>
+<p>If you participate in a competition, contest, or promotion conducted by us or on our behalf, we may use your personal data in order to administer such competition, contest, or promotion. We may also use your personal data as explained further under the heading “<a href="https://web.stage.sophos.net/en-us/legal/sophos-group-privacy-notice#MarketingAndPromotions">Marketing and promotions</a>”.</p>
+<p><strong>Chat rooms</strong></p>
+<p>Please be careful and responsible whenever you are online. Should you choose to voluntarily disclose information to open areas of our Site, such as via the Sophos Community, online help, or other chat rooms, that information can be viewed publicly and may be collected and used by third parties without our knowledge or consent, and may result in unsolicited messages from other individuals or third parties.</p>
+<p><strong>Marketing and promotions</strong></p>
+<p>We (or our resellers or other selected third parties acting on our behalf) may contact you from time to time in order to provide you with information about products and services that may be of interest to you. Such communications may contain tracking technology that tells us whether you opened the communication and whether you followed the hyperlinks within the communication, in order to help us analyse the effectiveness of, monitor, and improve our marketing campaigns. All marketing communications that we send to you will respect any marketing preferences you have expressed to us and any consent obligations required under applicable privacy and anti-spam rules. You have the right to ask us not to process your personal data for certain or all marketing purposes, but if you do so, we may need to share your contact information with third parties for the limited purpose of ensuring that you do not receive marketing communications from them on our behalf.</p>
+<p><strong>Network monitoring</strong></p>
+<p>We may collect logs and other data about access to and traffic passing through our network and equipment for the purposes of availability and performance monitoring, maintenance, security monitoring and investigations, conducting spam, threat and other scientific research, new product and service development, the enhancement of existing products and services, generating statistics, reporting, and trend analysis.</p>
+<p><strong>Sample submissions</strong></p>
+<p>We collect information about suspected spam, suspected malicious files, and files that may be unwanted or undesirable for our customers (for example file names, URLs, file paths, hashes, and file samples) that are (i) received by our own network and equipment, and (ii) voluntarily submitted via our products and services or our Site submission pages. We use this information for spam, threat and other scientific research, new product and service development, the enhancement of existing products and services, generating statistics, reporting, and trend analysis.</p>
+<h3 id="tab3">Legal basis for processing personal data</h3>
+<p>Our legal basis for collecting and using personal data will depend on the personal data concerned and the specific context in which we collect it.</p>
+<p>However, we will normally collect personal data from you only where we need the personal data to perform a contract with you, or where the processing is in our legitimate interests and not overridden by your data protection interests or fundamental rights and freedoms, or where we have your consent to do so. In some cases, we may also have a legal obligation to collect personal data from you or may otherwise need the personal data to protect your vital interests or those of another person.</p>
+<p>If we collect and use your personal data in reliance on our legitimate interests (or those of any third party) other than as described in this privacy policy, we will make clear to you at the relevant time what those legitimate interests are.</p>
+<p>If you have questions about or need further information concerning the legal basis on which we collect and use your personal data, please contact us using the contact details provided under the “<a href="/en-us/legal/sophos-group-privacy-notice#tab14">Contact</a>” heading.</p>
+<h3 id="tab4">With whom might we share your personal data</h3>
+<p>We may transfer or disclose your personal data to the following categories of recipients:</p>
+<ul><li>to <a href="/en-us/company/contact">our group companies</a>, third party services providers, suppliers, agents, and other organisations who provide data processing services to us (for example, to support the delivery of, provide functionality on, or help to enhance the security of our Site, products, or services), or who otherwise process personal data on our behalf for purposes that are described in this privacy policy or notified to you when we collect your personal data (such as advertising, sweepstakes, analytics, research, customer support, fraud prevention, and legal services);;</li>
+<li>to our authorised resellers, distributors, and other channel partners in order to process your order or sales enquiry, manage your subscription, provide technical or customer support, advise of upcoming product or service subscription expiry and renewal dates, or as otherwise notified to you when we collect your personal data;</li>
+<li>a subset of our threat intelligence data to selected reputable members of the IT security industry for the purpose of anti-spam and security threat research;</li>
+<li>to any government department, agency, court or other official bodies where we believe disclosure is necessary (i) as a matter of applicable law or regulation (such as in response to a subpoena, warrant, court order, or other legal process), (ii) to exercise, establish, participate in, or defend our legal rights, or limit the damages we sustain in litigation or other legal dispute, or (iii) to protect your vital interests, privacy, or safety, or those of our customers or any other person;</li>
+<li>to a potential or actual buyer or transferee (and its agents and advisers) in connection with any proposed or actual transfer of control, purchase, merger, reorganisation, consolidation, or acquisition of any part of our business, provided that we inform the buyer or transferee it must use your personal data only for the purposes disclosed in this privacy policy;</li>
+<li>to any other person with your consent to the disclosure.</li>
+</ul><p>Except as set out above, we will not disclose your personal data save where we need to do so in order to enforce this privacy policy, our End User License Agreement, our rights generally, or where required or permitted by applicable local or foreign law.</p>
+<p>Whenever we share personal data, we take all reasonable steps to ensure that it is treated securely and in accordance with this privacy policy. This may include without limitation aggregating or de-identifying information so that it is not intended to be used by the third party to identify you.</p>
+<h3 id="tab5">Data Transfers</h3>
+<p>As a global company, we and our service providers operate, and our Site, products, and services are accessed from, all over the world. When you give us personal data, that data may be used, processed, or stored anywhere in the world, including in countries that have data protection laws that are different to the country in which you reside. </p>
+<p>However, we have taken appropriate safeguards to require that your personal data will remain protected in accordance with this privacy policy. For example, these include implementing the European Commission’s Standard Contractual Clauses (SCCs) for transfers of personal data between our group companies, which require all group companies to protect personal data they process from the European Economic Area in accordance with European Union data protection law. We have implemented similar appropriate safeguards with our third party service providers , and further details can be provided upon request by contacting us using the contact details provided under the “<a href="https://www.sophos.com/en-us/legal/sophos-group-privacy-notice#tab14">Contact</a>” heading. </p>
+<h3 id="tab6">Data retention</h3>
+<p>We retain personal data we collect from you for as long as necessary for the purposes for which the personal data was collected or where we have an ongoing legitimate business need to do so (for example, to provide you with a product or service you have requested, to ensure that transactions can be processed, settled, refunded, charged back, or to identify fraud), or to comply with applicable legal, tax, or regulatory requirements. Even if you close your account, we will retain certain information in order to meet our obligations.</p>
+<p>When we have no ongoing legitimate business need to process your personal data, we will either securely destroy, erase, delete or anonymise it, or if this is not possible (for example, because your personal data has been stored in backup archives), then we will securely store your personal data and isolate it from any further processing until deletion is possible.</p>
+<h3 id="tab7">Use by children</h3>
+<p>The Site, the products, and the services are not intended for persons under the age of 16. By using the Site, product, or service, you hereby represent that you are at least 16 years old.</p>
+<h3 id="tab8">Automated decision-making</h3>
+<p>In some instances, our use of your personal data may result in automated decisions being taken that legally affect you or similarly significantly affect you.</p>
+<p>Automated decisions mean that a decision concerning you is made automatically on the basis of a computer determination (using software algorithms), without our human review. For example, our products and services use automated decisions to determine whether a domain, URL, or IP address is sending spam or malicious content in order to protect our customers from unwanted or undesirable content. We have implemented measures to safeguard the rights and interests of individuals whose personal data is subject to automated decision-making, including controlled product releases and regular quality assessments.</p>
+<p>When we make an automated decision about you (for example if we block a domain, URL, or IP address used by you), you have the right to contest the decision, to express your point of view, and to require a human review of the decision. You can exercise this right by contact us using the contact details provided under the “<a href="/en-us/legal/sophos-group-privacy-notice#tab14">Contact</a>” heading.</p>
+<h3 id="tab9">Your data protection rights</h3>
+<p>You have the following data protection rights:</p>
+<ul><li>You can <strong>access, delete or request portability</strong> of your personal data by completing <a href="https://app-de.onetrust.com/app/#/webform/5ae85dff-ba17-4244-8f64-15a850fc1130" target="_blank">this form</a>.</li>
+<li>You may also ask us to <strong>correct or update</strong> your personal data, <strong>object to processing</strong> of your personal data, or ask us to <strong>restrict processing</strong> of your personal data using the contact details provided under the “<a href="/en-us/legal/sophos-group-privacy-notice#tab14">Contact</a>” heading</li>
+<li>You have the right to <strong>opt-out of marketing communications</strong> we send you at any time. You can usually exercise this right by clicking on the “unsubscribe” or “opt-out” link in the marketing e-mails we send you. Alternatively, or to opt-out of other forms of marketing (such as postal marketing or telemarketing), then please contact us using the contact details provided under the “<a href="/en-us/legal/sophos-group-privacy-notice#tab14">Contact</a>” heading.</li>
+<li>If we have collected and process your personal data with your consent, then you can <strong>withdraw your consent</strong> at any time by contacting us using the contact details provided under the “<a href="/en-us/legal/sophos-group-privacy-notice#tab14">Contact</a>” heading. Withdrawing your consent will not affect the lawfulness of any processing we conducted prior to your withdrawal, nor will it affect processing of your personal data conducted in reliance on lawful processing grounds other than consent.</li>
+<li>You have the <strong>right to complain</strong> to a data protection authority about our collection and use of your personal data. For more information, please contact your local data protection authority.</li>
+</ul><p>We respond to all requests we receive from individuals wishing to exercise their data protection rights in accordance with applicable data protection laws.</p>
+<h3 id="tab10">Links</h3>
+<p>This privacy policy applies to personal data collected by us. If we provide a link to a third party site (whether through our Site, a product or service, or in an e-mail we send you), please be aware that we are not responsible for the content or privacy practices of such third party site. We encourage our users to be aware when they leave our Site, and to read the privacy policy of other sites that collect personal data. We are not liable for any disputes, loss, or damage that may arise from or in connection with your use of such third party sites.</p>
+<h3 id="tab11">Security</h3>
+<p>While we strive to protect your personal data, no data transmission or storage can be guaranteed as 100% secure. We endeavour to protect all personal data using reasonable and appropriate physical, administrative, technical, and organisational measures, and in accordance with our internal security procedures and applicable law. These safeguards vary based on the sensitivity of the information that we collect, process, and store, and the current state of technology.</p>
+<p>If you have been given or have created log-in details to provide you with access to certain parts of our Site (for example our partner portal), you are responsible for keeping those details confidential in order to prevent unauthorised access to your accounts.</p>
+<h3 id="tab12">California privacy rights</h3>
+<p>California Online Privacy Protection Act Notice Concerning Do Not Track Signals</p>
+<p>Do Not Track (“DNT”) is a privacy preference that users can set in certain web browsers. DNT is a way for users to inform websites and services that they do not want certain information about their webpage visits collected over time and across websites or online services. We do not recognize or respond to browser-initiated DNT signals, as the Internet industry is currently still working toward defining exactly what DNT means, what it means to comply with DNT, and a common approach to responding to DNT. To learn more about Do Not Track, you can do so <a href="http://allaboutdnt.com/" target="_blank">here</a>.</p>
+<p>Your California privacy rights</p>
+<p>California law permits users who are California residents to request and obtain from us once a year, free of charge, a list of the third parties to whom we have disclosed their 'personal information' (if any, and as defined under applicable California law) for their direct marketing purposes in the prior calendar year, as well as the type of personal information disclosed to those parties. If you are a California resident and would like to request this information, please submit your request using the contact details provided under the “<a href="/en-us/legal/sophos-group-privacy-notice#tab14">Contact</a>” heading.</p>
+<h3 id="tab13">Data Processing Agreement </h3>
+<p>If the provision of products and/or services constitutes processing by Sophos of personal data as processor under applicable data protection laws, Sophos’ obligations are documented in the Sophos Data Processing Addendum (“<a href="https://www.sophos.com/en-us/legal/data-processing-addendum">DPA Addendum</a>”). The DPA Addendum is incorporated by reference into our agreements with our Customers, Managed Service Providers and OEM partners. If you require a signable Data Processing Agreement (“DPA”), you can countersign our pre-signed version <a href="https://sophoslegal.na1.adobesign.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhD5B1GsoE2yr35Ef62AEweGNMRcn3ew6zTEAOofhgPIN_tHPXQ_ElytF8Y23XoMtyM*">here</a>.    </p>
+<p>Please note, Sophos will not sign a Data Processing Agreement with its distributors and resellers, unless they are using Sophos products. Order data from end customers that is provided by distributors/ resellers to Sophos is received by Sophos in its capacity as a data controller.  </p>
+<h3 id="tab14">Contact</h3>
+<p>This is the website of Sophos Limited, a company registered in England and Wales under company number 2096520, whose registered office is at The Pentagon, Abingdon Science Park, Abingdon, Oxon, OX14 3YP, United Kingdom, and whose VAT registration number is 991 2418 08. Sophos Limited is the controller of personal data collected under this privacy policy (unless we indicate otherwise).</p>
+<p>We have appointed individuals who are responsible for the protection and security of your personal data. If you have any questions, comments, concerns, grievances, or complaints about this privacy policy or the manner in which we treat your personal data, or if you want to request any information about your personal data or believe that we are holding incorrect personal data on you, please contact our Data Protection and Privacy team at <a href="mailto:dataprotection@sophos.com">dataprotection@sophos.com</a>.</p>
+<p>If you wish to unsubscribe from marketing communications, please email <a href="mailto:unsubscribe@sophos.com">unsubscribe@sophos.com</a>.</p>
+<h3 id="tab15">Notification of changes</h3>
+<p>We reserve the right to amend or vary this policy from time to time to reflect evolving legal, regulatory, or business practices. When we update our privacy policy, we will take appropriate measures to inform you, consistent with the significance of the changes we make (which, for minor changes, may include posting the revised privacy policy to our Site with immediate effect). Please check this page periodically for changes. We will obtain your consent to any material privacy policy changes if and where this is required by applicable data protection laws.</p>
+<p>You can see when this privacy policy was last updated by checking the “last updated” date displayed at the top of this privacy policy under the “<a href="/en-us/legal/sophos-group-privacy-notice#General">General</a>” heading.</p></div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</main>
+<aside class="l-sidebar-first" role="complementary">
+<div class="region region-sidebar-first">
+<nav aria-labelledby="block-legal-menu-trail-menu" class="block block-menu navigation menu--legal" id="block-legal-menu-trail" role="navigation">
+<h2 class="visually-hidden" id="block-legal-menu-trail-menu">Privacy</h2>
+<ul class="menu">
+<li class="menu-item menu-item--active-trail">
+<a data-drupal-link-system-path="node/221" href="/en-us/legal/sophos-group-privacy-notice">Sophos Group Privacy Notice</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/6351" href="/en-us/legal/data-processing-addendum">Data Processing Addendum</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1506" href="/en-us/legal/sub-processor">Sophos Sub-processor List</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/156" href="/en-us/legal/cookie-information">Sophos Cookie Information</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7131" href="/en-us/legal/sophos-global-job-candidate-privacy-notice">Job Candidate Privacy Notice</a>
+</li>
+<li class="menu-item">
+<a href="https://assets.sophos.com/X24WTUEQ/at/n6jrx4hwcwm8c5ptvsc99z/sophos-data-processing-terms-for-suppliers.pdf" target="_blank">Data Processing Terms for Suppliers</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7901" href="/en-us/legal/transfers-of-personal-data">Transfers of Personal Data</a>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</div>
+<footer class="footer" role="contentinfo">
+<div class="footer__container container">
+<div class="footer-top">
+<div class="footer-top__logo">
+<svg height="16" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m15.74 0v9.95c0 1.037-.562 1.992-1.468 2.494l-6.408 3.556-6.397-3.555c-.905-.503-1.467-1.457-1.467-2.493v-9.952zm-4.075 2.428h-5.205c-1.487 0-2.703 1.217-2.703 2.704s1.216 2.704 2.703 2.704h2.889c.512 0 .93.419.93.931s-.418.931-.93.931l-5.206-.02v1.793h5.206c1.487 0 2.704-1.217 2.704-2.704s-1.217-2.704-2.704-2.704h-2.89c-.512 0-.93-.419-.93-.931s.418-.931.93-.931l5.206.02v-1.792z" fill="#83868b" fill-rule="evenodd"></path></svg>
+</div>
+<div class="region region-footer-top">
+<nav aria-labelledby="block-footerlegal-menu" class="block block-menu navigation menu--footer---legal" id="block-footerlegal" role="navigation">
+<h4 id="block-footerlegal-menu">Legal</h4>
+<ul class="menu">
+<li class="menu-item menu-item--expanded menu-item--active-trail">
+<span class="visually-hidden">Column 1</span>
+<ul class="menu">
+<li class="menu-item menu-item--expanded menu-item--active-trail">
+<a data-drupal-link-system-path="node/221" href="/en-us/legal/sophos-group-privacy-notice">Privacy</a>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/156" href="/en-us/legal/cookie-information">Cookies</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/161" href="/en-us/legal/sophos-gdpr">GDPR</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/176" href="/en-us/legal/shareholder-data-privacy">Shareholder Data Privacy</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<span class="visually-hidden">Column 2</span>
+<ul class="menu">
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/141" href="/en-us/legal/export">Global Trade Compliance</a>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/141" href="/en-us/legal/export">Export Information on Sophos Products</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/181" href="/en-us/legal/export/sophos-product-classifications">Sophos Product Classifications</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<span class="visually-hidden">Column 3</span>
+<ul class="menu">
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/216" href="/en-us/legal/modern-slavery-act-transparency-statement/anti-slavery-and-human-trafficking-policy">Policies</a>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/216" href="/en-us/legal/modern-slavery-act-transparency-statement/anti-slavery-and-human-trafficking-policy">Modern Slavery Policy</a>
+</li>
+<li class="menu-item">
+<a href="/legal/data-handling-statement">Data Handling Statement</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/226" href="/en-us/legal/sophos-antibribery-policy">Sophos Anti-Corruption Policy</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/231" href="/en-us/legal/sophoslabs-information-security-policy">SophosLabs Information Security Policy</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/236" href="/en-us/legal/employee-personal-use-policy">Employee Personal Use Policy</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<span class="visually-hidden">Column 4</span>
+<ul class="menu">
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/136" href="/en-us/legal/sophos-end-user-license-agreement">Agreements - Terms &amp; Conditions</a>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/136" href="/en-us/legal/sophos-end-user-license-agreement">Sophos End-User License Agreement (EULA) </a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/201" href="/en-us/legal/addendum-for-government-licensees-or-users">EULA Addendum for Government Licensees or Users</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/206" href="/en-us/legal/agreements/sophos-services-agreement">Sophos Services Agreement</a>
+</li>
+<li class="menu-item">
+<a href="/legal/agreements/service-description-sophos-managed-threat-response-and-sophos-rapid-response">Service Description - Sophos Managed Threat Response and Rapid Response</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="region region-footer-bottom-first">
+<div class="block block-dropdown-language block-dropdown-languagelanguage-interface" id="block-dropdownlanguage">
+<fieldset class="js-form-item form-item js-form-wrapper form-wrapper">
+<legend>
+<span class="fieldset-legend">Switch Language</span>
+</legend>
+<div class="fieldset-wrapper">
+<div class="dropbutton-wrapper"><div class="dropbutton-widget"><ul class="dropdown-language-item dropbutton"><li class="en"><span class="language-link active-language">English</span></li><li class="zh-hans"><a class="language-link" href="/zh-cn/legal/sophos-group-privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="zh-hans" title="Chinese, Simplified">简体中文</a></li><li class="fr"><a class="language-link" href="/fr-fr/legal/sophos-group-privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="fr">Français</a></li><li class="de"><a class="language-link" href="/de-de/legal/sophos-group-privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="de">Deutsch</a></li><li class="it"><a class="language-link" href="/it-it/legal/sophos-group-privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="it" title="Italian">Italiano</a></li><li class="ja"><a class="language-link" href="/ja-jp/legal/sophos-group-privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="ja" title="Japanese">日本語</a></li><li class="pt-br"><a class="language-link" href="/pt-br/legal/sophos-group-privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="pt-br" title="Portuguese, Brazil">Português, Brasil</a></li><li class="es"><a class="language-link" href="/es-es/legal/sophos-group-privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="es">Español</a></li></ul></div></div>
+</div>
+</fieldset>
+</div>
+</div>
+<div class="region region-footer-bottom-last">
+<div class="region-footer-bottom-last__container">
+<div class="block block-footer-menu" id="block-footer">
+<nav aria-labelledby="block-footer-menu" class="footer-menu" role="navigation">
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1511" href="/en-us/legal/sophos-website">Terms</a>
+</li>
+<li class="menu-item menu-item--expanded menu-item--active-trail">
+<span>Privacy</span>
+<ul class="menu">
+<li class="menu-item menu-item--active-trail">
+<a data-drupal-link-system-path="node/221" href="/en-us/legal/sophos-group-privacy-notice">Privacy Notice</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/156" href="/en-us/legal/cookie-information">Cookies</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<span>Legal</span>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/131" href="/en-us/legal">General</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/4081" href="/en-us/legal/modern-slavery-act-transparency-statement">Modern Slavery Statement</a>
+</li>
+<li class="menu-item">
+<a href="https://privacyportal-de.onetrust.com/whistleblower/8814ea97-7d41-4933-8a06-f5b8e65f6da8/9b799aed-af57-40fc-9118-018fac323e49/landing" target="_blank">Speak Out</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="footer-copyright">
+        © 1997-2022 Sophos Ltd. <span class="hide-small">All Rights Reserved.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"en-us\/","currentPath":"node\/221","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"colorbox":{"transition":"elastic","speed":350,"opacity":0.84999999999999998,"slideshow":false,"slideshowAuto":true,"slideshowSpeed":2500,"slideshowStart":"start slideshow","slideshowStop":"stop slideshow","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","overlayClose":true,"returnFocus":true,"maxWidth":"98%","maxHeight":"98%","initialWidth":"300","initialHeight":"250","fixed":true,"scrolling":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"sophosUuidCookieDomain":".sophos.com","sophosGeoCountry":{"countryCodes":[null,"null","DE","AU","AT","BE","BG","CA","CH","CN","CY","CZ","DK","EE","EL","ES","EU","FI","FR","GB","GR","HR","HU","JP","KR","IE","IT","LT","LU","LV","MT","MY","NL","PH","PL","PT","RO","RS","RU","SE","SI","SK","TR","UK"]},"user":{"uid":0,"permissionsHash":"2eb9906781b3dabcdd204e8476345cbf77628e577dcd39422bbd14fe764701cd"}}</script>
+<script src="/sites/default/files/js/js_psfTmF0hUm01oZ85rpzSpj4qa7fFi4UwLXsCobIZaPY.js"></script>
+<script src="/sites/default/files/js/js_Rd_IskbXlP0cAlW611wNHTgiOtHdFY-pyqK9Gz-jio0.js"></script>
+<script src="/sites/default/files/js/js_RM3sZIrQld0V38SP9HXlr39AC41_Q4zrclK_sP_4tdg.js"></script>
+<script src="/sites/default/files/js/js_j1ywoNJwV5YkoaQOAxNxhGqwYHE8haVDRme78pk-VCM.js"></script>
+<script src="//scripts.demandbase.com/WuEFNglz.min.js"></script>
+<script src="/sites/default/files/js/js_0WxYnLmFoj6C7iwIT5LyyGnaAUjnASXo_y5fAt5picY.js"></script>
+<!-- OPTIONAL LANG: https://docs.coveo.com/en/421/javascript-search-framework/changing-the-language-of-your-search-interface#built_in_languages -->
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"ff11c6039c","applicationID":"451499843","transactionName":"ZQEAZRQHW0JUWxYMXVxLIUQVElpcGl0MEVtGHUxfCQJQH1ZZDApcWwcDXVwKUFZUVA==","queueTime":0,"applicationTime":944,"atts":"SUYDE1wdSEw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

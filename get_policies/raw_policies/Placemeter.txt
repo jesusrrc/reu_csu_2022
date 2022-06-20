@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Explore — Placemeter</title>
+<link href="/static/vendor/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="/static/vendor/normalize/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="/static/pictos/odsui/odsui.css" rel="stylesheet" type="text/css"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="en" http-equiv="Content-Language"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<link href="https://s3.amazonaws.com/aws-ec2-us-east-1-opendatasoft-staticfileset/placemeter/favicon" rel="shortcut icon"/>
+<link href="https://placemeter.opendatasoft.com/explore/" rel="canonical"/>
+<meta content="Placemeter" name="description"/>
+<link href="/static/compressed/css/output.b6fed3b57334.css" rel="stylesheet" type="text/css"/>
+<base href="/explore/"/>
+</head>
+<body class="">
+<div class="ods-content">
+<header class="ng-cloak" ng-controller="HeaderController" role="banner">
+<nav breakpoint="1000" class="ods-front-header" ods-responsive-menu="">
+<ods-responsive-menu-placeholder>
+<a class="ods-front-header__portal-brand" href="/">
+<img alt="Placemeter" class="ods-front-header__logo" src="https://s3.amazonaws.com/aws-ec2-us-east-1-opendatasoft-staticfileset/placemeter/logo"/>
+</a>
+</ods-responsive-menu-placeholder>
+<ods-responsive-menu-collapsible>
+<a class="ods-front-header__portal-brand" href="/">
+<img alt="Placemeter" class="ods-front-header__logo" src="https://s3.amazonaws.com/aws-ec2-us-east-1-opendatasoft-staticfileset/placemeter/logo"/>
+<span class="ods-front-header__portal-brand__text" ng-non-bindable="">Placemeter</span>
+</a>
+<ul class="ods-front-header__menu">
+<li class="ods-front-header__menu-item ods-front-header__menu-item--active" ng-non-bindable="">
+<a aria-current="page" class="ods-front-header__menu-item-link ods-front-header__menu-item-link--active" href="/explore/">
+        Explore
+    </a>
+</li><li class="ods-front-header__menu-item" ng-non-bindable="">
+<a class="ods-front-header__menu-item-link" href="/api/">
+        API
+    </a>
+</li><li class="ods-front-header__menu-item" ng-non-bindable="">
+<a class="ods-front-header__menu-item-link" href="/map/">
+        Cartograph
+    </a>
+</li><li class="ods-front-header__menu-item" ng-non-bindable="">
+<a class="ods-front-header__menu-item-link" href="/tutorial/">
+        Tutorial
+    </a>
+</li>
+</ul>
+<ul class="ods-front-header__management-menu">
+<li class="ods-front-header__management-menu-item">
+<a class="ods-front-header__management-menu-item-link" href="/login/">
+<i aria-hidden="true" class="fa fa-sign-in"></i>
+            Login
+        </a>
+</li>
+</ul>
+</ods-responsive-menu-collapsible>
+</nav>
+</header>
+<main class="main--catalog" id="main" role="main">
+<div catalog-urlsync="true" class="container-fluid ods-app-explore-catalog ng-cloak" context="catalog" ng-app="ods.frontend" ng-controller="ExploreCatalogController" ods-catalog-context="">
+<ods-notification-handler></ods-notification-handler>
+<div class="ods-filters-placeholder" ng-class="{'ods-filters-placeholder--expanded': expandedFilters}" ods-sticky-scrollable="">
+<div class="ods-filters" ng-class="{'ods-filters--expanded': expandedFilters}">
+<button class="ods-button ods-filters__toggle-button" ng-click="toggleMobileFilters()">
+<i aria-hidden="true" class="fa" ng-class="{'fa-expand': !expandedFilters, 'fa-compress': expandedFilters}"></i>
+                    Filters
+                </button>
+<h1 class="ods-filters__count">
+<span class="ods-filters__count-number">{{ catalog.nhits | number }}</span>
+<span class="ods-filters__count-units" translate="" translate-context="catalog page" translate-n="catalog.nhits" translate-plural="datasets">dataset</span>
+</h1>
+<ods-catalog-sort class="ods-filters__sort"></ods-catalog-sort>
+<h1 class="ods-filters__filters-summary" ng-show="catalog.getActiveFilters().length">
+<span class="ods-filter__filter-summary-title" translate="">Active filters</span>
+<ods-clear-all-filters context="catalog"></ods-clear-all-filters>
+</h1>
+<ods-filter-summary clear-all-button="false" context="catalog"></ods-filter-summary>
+<h1 class="ods-filters__filters">
+                    Filters
+                </h1>
+<ods-text-search context="catalog" placeholder="Find a dataset..."></ods-text-search>
+<ods-facets class="ods-filters__facets" context="catalog" facets-config="[{&quot;sort&quot;: &quot;-count&quot;, &quot;title&quot;: &quot;View&quot;, &quot;disjunctive&quot;: false, &quot;name&quot;: &quot;features&quot;, &quot;templateName&quot;: &quot;default&quot;, &quot;hideCategoryIf&quot;: &quot;category.name === 'timeserie'&quot;, &quot;valueFormatter&quot;: &quot;visualization&quot;}, {&quot;sort&quot;: &quot;alphanum&quot;, &quot;title&quot;: &quot;Modified&quot;, &quot;disjunctive&quot;: false, &quot;name&quot;: &quot;modified&quot;, &quot;templateName&quot;: &quot;default&quot;, &quot;valueFormatter&quot;: &quot;date&quot;}, {&quot;sort&quot;: &quot;-count&quot;, &quot;title&quot;: &quot;Publisher&quot;, &quot;disjunctive&quot;: false, &quot;name&quot;: &quot;publisher&quot;, &quot;templateName&quot;: &quot;default&quot;}, {&quot;sort&quot;: &quot;-count&quot;, &quot;title&quot;: &quot;Keyword&quot;, &quot;disjunctive&quot;: false, &quot;name&quot;: &quot;keyword&quot;, &quot;templateName&quot;: &quot;default&quot;}, {&quot;sort&quot;: &quot;-count&quot;, &quot;title&quot;: &quot;Theme&quot;, &quot;disjunctive&quot;: false, &quot;name&quot;: &quot;theme&quot;, &quot;templateName&quot;: &quot;default&quot;}, {&quot;sort&quot;: &quot;-count&quot;, &quot;title&quot;: &quot;Language&quot;, &quot;disjunctive&quot;: false, &quot;name&quot;: &quot;language&quot;, &quot;templateName&quot;: &quot;default&quot;, &quot;hideIfSingleCategory&quot;: true, &quot;valueFormatter&quot;: &quot;language&quot;}]"></ods-facets>
+<h1 class="ods-filters__export-catalog-title">Download catalog</h1>
+<div class="ods-filters__export-catalog">
+                    This catalog is available as:
+                    <ul class="ods-filters__export-catalog-choices">
+<li class="ods-filters__export-catalog-choice" ng-repeat="export in catalogExports">
+<a aria-label="Catalog export: {{ export[0] }}" class="ods-filters__export-catalog-link" ng-href="{{ exportLink(export[1]) }}" target="_self" translate="aria-label">
+<i aria-hidden="true" class="fa fa-file"></i>
+                                {{ export[0] }}
+                            </a>
+</li>
+</ul>
+</div>
+</div>
+<div class="ods-sticky-scrollable-mobile-probe"></div>
+</div>
+<ods-infinite-scroll-results context="catalog" list-class="ods-result-list" ng-if="catalog.parameters" no-data-message="No dataset available" no-more-results-message="No more datasets to load." no-results-message="Your search didn't match any dataset." result-class="ods-catalog-card__wrapper" scroll-top-when-refresh="true">
+<ods-catalog-card>
+<ods-catalog-card-theme-icon></ods-catalog-card-theme-icon>
+<ods-catalog-card-body>
+<ods-catalog-card-title></ods-catalog-card-title>
+<ods-catalog-card-description></ods-catalog-card-description>
+<div class="ods-catalog-card__metadata">
+<ods-catalog-card-metadata-item item-key="publisher" item-title="Publisher"></ods-catalog-card-metadata-item>
+<ods-catalog-card-metadata-item item-key="license" item-title="License"></ods-catalog-card-metadata-item>
+</div>
+<ods-catalog-card-keywords></ods-catalog-card-keywords>
+</ods-catalog-card-body>
+<ods-catalog-card-visualizations></ods-catalog-card-visualizations>
+</ods-catalog-card>
+</ods-infinite-scroll-results>
+</div>
+</main>
+</div>
+<footer id="footer" ng-controller="FooterController" role="contentinfo">
+<div class="ods-front-footer">
+<a class="ods-front-footer__ods-logo" href="//www.opendatasoft.com">
+<img alt="Opendatasoft, data management platform" class="ods-front-footer__ods-logo-img" src="/static/ods/imgv4/logo-ods_small_darkblue.svg"/>
+</a>
+<a class="ods-front-footer__legal ods-front-footer__link" href="/terms/terms-and-conditions/" target="_blank">
+    Terms and conditions
+</a>
+<a class="ods-front-footer__legal ods-front-footer__link" href="/terms/privacy-policy/" target="_blank">
+    Privacy policy
+</a>
+</div>
+</footer>
+<script src="/static/compressed/js/output.6f35bdef236b.js"></script>
+<script src="/static/compressed/js/output.2f8d5f214687.js"></script>
+<script type="text/javascript">
+            var app = angular.module('ods.core.config', []);
+
+            app.factory("config", [function() {
+                return {
+                    DATASET_ID: '',
+                    LANGUAGE: 'en',
+                    AVAILABLE_LANGUAGES: ["en"],
+                    USER: null,
+                    FQ_USERNAME: null,
+                    BRAND_HOSTNAME: "opendatasoft.com",
+                    DEFAULT_BASEMAP: {"provider": "jawg.streets", "jawg_apikey": "4cKtE4Rze1HrvxWa9a7mdolSk10lVThTFC8zadQYMIMxTjkpTeIDJAAmhReDGnCH", "jawg_odsdomain": "placemeter"},
+                
+                    DOMAIN_ID: 'placemeter',
+                    ANONYMOUS_ACCESS_ENABLED: 'true',
+                    FEEDBACK: false,
+                    RESOURCE_DOWNLOAD_CONDITIONS: false,
+                    PARENT_DOMAIN: false,
+                    
+                    
+                    MINUTE_LEVEL_SCHEDULING: true,
+                    CATALOG_SEARCH_BOOSTING_ENABLED: false,
+                    
+                    GEOREFERENCE: true,
+                    
+                    CSV_DELIMITER: ';',
+                
+                    CENTRALSTORE: true,
+                    RECAPTCHA_PUBLIC_KEY: '6LflroEUAAAAAH1LD8LksjNLDrYFfDp1_bf-D_RD'
+                }
+            }]);
+        </script>
+<script src="/static/compressed/js/output.54804f3db9e3.js"></script>
+<script src="/static/ods/js/supported-browsers-message.js" type="text/javascript"></script>
+<script src="/static/compressed/js/output.c6e65ed379e5.js"></script>
+<script type="text/javascript">
+    var app = angular.module('ods.core.config');
+
+    app.factory("domainConfig", [function() {
+        return {"explore.enable_api_tab": true, "explore.disable_analyze": null, "languages": ["en"], "explore.dataset_catalog_separate_languages": null, "explore.dataset_catalog_default_source_shared": null, "explore.reuse": null, "explore.catalog.geonavigation": null};
+    }]);
+</script>
+<script src="/static/compressed/js/output.c933c5eb2464.js"></script>
+<script src="/static/compressed/js/output.fd2ee19eddcc.js"></script>
+<script src="/static/compressed/js/output.97143aa032e0.js"></script>
+<script src="/static/compressed/js/output.c684287fc9a8.js"></script>
+</body>
+</html>

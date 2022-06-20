@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<meta content="IE=11,IE=10,IE=9,IE=8" http-equiv="X-UA-Compatible"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="//checkpoint.com" rel="preconnect"/>
+<!-- be_ixf, sdk, gho-->
+<meta content="php_sdk_1.4.26.1" id="be:sdk">
+<meta content="39ms" id="be:timer">
+<meta content="https%3A%2F%2Fwww.checkpoint.com%2Fprivacy%2F%3FAccess-Control-Allow-Origin%3D%252A%26Access-Control-Allow-Methods%3DGET%26Access-Control-Allow-Headers%3DContent-Type%26Access-Control-Max-Age%3D3600%26User-Agent%3DMozilla%252F5.0%2B%2528X11%253B%2BUbuntu%253B%2BLinux%2Bx86_64%253B%2Brv%253A52.0%2529%2BGecko%252F20100101%2BFirefox%252F52.0" id="be:orig_url">
+<meta content="https%3A%2F%2Fwww.checkpoint.com%2Fprivacy%2F" id="be:norm_url"/>
+<meta content="https%3A%2F%2Fixfd-api.bc0a.com%2Fapi%2Fixf%2F1.0.0%2Fget_capsule%2Ff00000000165823%2F1348030869%3Fclient%3Dphp_sdk%26client_version%3D1.4.26.1%26base_url%3Dhttps%253A%252F%252Fwww.checkpoint.com%252Fprivacy%252F%26orig_url%3Dhttps%253A%252F%252Fwww.checkpoint.com%252Fprivacy%252F%253FAccess-Control-Allow-Origin%253D%25252A%2526Access-Control-Allow-Methods%253DGET%2526Access-Control-Allow-Headers%253DContent-Type%2526Access-Control-Max-Age%253D3600%2526User-Agent%253DMozilla%25252F5.0%252B%252528X11%25253B%252BUbuntu%25253B%252BLinux%252Bx86_64%25253B%252Brv%25253A52.0%252529%252BGecko%25252F20100101%252BFirefox%25252F52.0%26user_agent%3Dpython-requests%252F2.22.0" id="be:capsule_url"/>
+<meta content="1646095396720" id="be:api_dt_epoch"/>
+<meta content="1646095396720" id="be:mod_dt_epoch"/>
+<meta content="F8MOD86EjlH9X/Db494dBuTw22s+5Ez9h0/xyIHasl/ZYOk4W9TDW8t1LO78gEtNKMVem2m8SBWQp+qcqRG2kfvM+eoWA6RNSdF87xQGBamldA4+I5i49NQGZbcvK0cPp9n5dhDYgNVXN04CagXjq+0BqNjshLGFOBtBGoNJ3GoYMZ/NtduIevtPQ3MAcMPTnc+aytcbytKo2E1Qidr171+OcX993aHiggc5LMAiZ5JeFr3KfB6nQhQUsaAl/3S1dk8PNZwMbEzT4W7ev3455A8fwxAyiB61mzPdanDgJ65C3ZfUsbYieDUsFDsOOKDHy15J4NX/jHxxA2NwjASnB0o1+dvfbde0TDI6q40mLwu/Nw6tGrHEi9Z8g5xMfwO198GqcbTvW9bIrvvMhEq5+h8SOZ/Hl/IG4AveBxJvPbnLEGemW0HVjl16FgjRoUvuOTOTLO6njSQGny20MeS++zUyu/gEskSmt+ZREla+sqX3IF7IOEX/7rcIqoOXTJs+uM5m28VaA6I80QbRUKVMmwL+vZkXUVg7uZktuGW/uttc8162YitE6kO5Hvq6GVLmLi9osi/LIdmOmu4UyvJzHoT4LRIIQUUPU1QwS46X/dXifnPVn6/aEjzHpgymTTaEG+x8ynk9OBUxX7KOffEmyMtO8EkH8c+i8y3DDMU6ekoRxv9pzWotazFojWoGfPW4+WQMwoEZepyNWp42uKwrz2YlS7WxmmeCCiWjITQCMTM442xh/LjuZuaB7G0MuCAPHxNQRYF5+XPnnfnDBaweQVVdTOZU0R5hjtB7crw333pOVrlKWzdWHOr7MsG1ubpXwjFZCwz1qd4u4zEuNWkWWbUlkO74FdFH1g5UjwKaK3LRzx8vyMnQtgwvahBm6Q0gjPZmln6+pQTQYkCJEXdCgbimad3pKAvFz2gtkXCgINmQ1rLQPvTLfY82rF74uvjr9I0UcO6uY4rtSLztDJJRlM6A3sE0TwKbehtMoyPTcIu/E+XQy1MxurtF2Kp6UaJ54bOpeXlmgaQDZU5ndA7UBbPFnTnydAt/xtGF/TdEBnJYhg2toCmVlPycajgDKNiBJfKHj0eH8BkTP1/CeY1Qxp6BJvme06dGXOAIs/4KcB7xJB7yz81dkIIBesV681hLHrJI8MU2YNGTsC+aEHzsq24VsQNJP3gcNPtrcteyZIoYlcW69VhwPPHPz0CkHbdklRjeCFSq+JhJxATA/ws85+nG43css393YKPO3WmnEeY0BtxejhFLq+d80SZQgwekjwk1JRdTkqFWk4/RVEOq0wkqrtRv9J3l+j87ElYFnR5bhqqmpcU4rs0sUQZUiZGMrzoGBhEznQ00OCG7l8Zyk05/IdqzL4ED7/yV/RXsT1sJzD9h4t04wMxYtM1oxsRwB7ft2mCNnMNznXcDWmg+FeqXI8j68T2eHpaE150mVf/1LSis0/Fpw14AMjcVPgeVHvBlrHm+eBTpS3gdK0SbBX5zdJj2Cl+Rk2TPOk3OiuTU47DjPX4lRYUurQbVJd6EJvi7XJs7CpiMOibY0H/aL8rPc4GvsUN7AXE94f0XW09anvgES1wFBuEsioWeronxHER1TakixjNh9M20jFDI1d3Rs2IGuaA3M927bg2JsJLs752tqoXfgaHVfVcAbUpizBDze+ood5Uj77cl3KReYZGx2C79mFDRgZxw90zvnPwtlpDU6RhjWtWgXsdIXX2lBDkXPi9JewwYCNH4K7Wp5fLDCOfRjIa6uMFSGfQ6mgFUO6e3mZkyb7ENC3WMCK+bimw6kcwckjVSYHzMs3eGxpMD3hHgGtVfPvxUhIHRRt6dW4FyrLYnmqPRuRazlJ7Au6KmS8FTfnm+WEUJsFn7pHdq3e9ErUomqEz7T1XR6N1e02SRZ1x/P6UpMgKm2XaJlLoUMyIHBDZDIZuiFmDf7E4ByJVN7SNEexx7F6jVyO0t65AE+FRPk4mi8AgpAZuNmMWLuCVkkw4IrHwAXU83+oLPawA3qhyQAiPI8FqgidJfTl3uTvd2UzPOx+vUs3QsN/BJ/2w96S78/14qO12e8pOXgAhw66xa9wlr0ml6sAJK20/5g408gJ6cFV+6rQ27Z4lDsXtdJepSDVYH4v7y7Rvz+drbrGYDULYmNWpllNnNBUPm+usVQw5Zu9X76fpIBdNVMnpZ2fM7IPlgfvnoGDfqlo86H9GyEWk/r/XH/QiZnt7Fj6Q2ct4kyvzS6QUiN6V2rx/0Oj70qheLOFzRWUzmIE/azQMosS5JqVeKXTpHDT5AInD7XV9dWxi2MswwX4+R8kHpo2g2jlfa3U3zeYMIDLVC5RP7ZoOb0cTKb0evnlRYwqg9Up1Smbw3KFHpn2Hq6xYC1lvBYOsFsRSVJYbYkK8PadAncPy8GJJzMgibjCPWqW4Lm8YUbO2M4WmqK5V9gmy4M7rSClssXKeNLbOAYFnTiQd7ZTca5iZSTEXp9v1yRKIGDOc+6uBlb0zWh9fkqcH2uGWSCN7Iq6P5n6ISm1e6INnwTcCf7DS44NTqrE1lAuy5TOCEqbNqFtOTayw+H6AOnEQAwvKZv0hXY3EKFOAPFT7Q40Nph5dE5v9hhQ3bFK9IbH3lDIqkO3qXkfH207cCK4CYdGagUAIIfHQJ9nixQnjx+2rWv+FW5PTzWYpcUjiWsdkuuSy4hbu1xGxS9jhVs0xrSDT8ybnyHpX/TF3x3xqgcX2B4zczq5Unt5G3XvgKR+93JBbNx9uEUGuL9yjyzmhLmlEXyQNrhpmPdA91SNbYwE/Kp6NFWACZxPivqp1KwAryQ7WqU4oodWZy48JILeQ4dOL35TmgkXCXDr4K+c2aXvOYvh0w2aERe1q9rUzNhomDoVoIxKpkJrdg39SO6rSnSgx8ObJzXJwOtiS6FW3My6klEqoSwCyTvkNt5p78JILOPuotK7PXDhWN7HUdDNTNckXD3O31KiELH9Dptbr8MfiBaKWQQrTZ8XktJrDyXDr89HERSGhRrLcbkUPM+b042O3T6AK9Xw==" id="be:diag"/>
+<meta content="false" id="be:messages"/>
+<script type="text/javascript">
+if (window.BEJSSDKObserver === undefined) {
+  (function(BEJSSDKObserver, $, undefined) {
+    var observer = void 0;
+    var listeners = [];
+    var readySet = [];
+    var doc = window.document;
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+    function checkSelector(selector, fn, indexList) {
+      var elements = doc.querySelectorAll(selector);
+  /**
+    issues on IE @see https://www.codesd.com/item/javascript-es6-not-a-function-error.html
+    elements = Array.from(elements);
+
+    */
+    for (var i = 0, len = elements.length; i < len; i++) {
+      /* -1 means all instances */
+      if (indexList != -1 && !(i in indexList)) {
+        continue;
+      }
+      var element = elements[i];
+      for (var j = 0; j < readySet.length; j++) {
+        if (readySet[j] == element.className || readySet[j] == element.id) {
+          return;
+        }
+      }
+      if (element.className) {
+        readySet.push(element.className);
+      }
+      if (element.id) {
+        readySet.push(element.id);
+      }
+
+      if (!element.ready || MutationObserver==null) {
+        element.ready = true;
+        fn.call(element, element);
+      }
+    }
+  }
+
+  function checkListeners() {
+    listeners.forEach(function (listener) {
+      return checkSelector(listener.selector, listener.fn, listener.indexList);
+    });
+  }
+
+  function removeListener(selector, fn) {
+    var i = listeners.length;
+    while (i--) {
+      var listener = listeners[i];
+      if (listener.selector === selector && listener.fn === fn) {
+        listeners.splice(i, 1);
+        if (!listeners.length && observer) {
+          observer.disconnect();
+          observer = null;
+        }
+      }
+    }
+  }
+
+/**
+ * Fire event on first js selector
+ * @param selector string to watch on
+ * @param fn       callback function
+ * @param index_list can be undefined which means only first one
+ *                   or -1 which means all
+ *                   or a list of allowable indexes
+ */
+ BEJSSDKObserver.jsElementReady = function(selector, fn, index_list) {
+  if (index_list === undefined) {
+    index_list = [];
+    index_list.push(0);
+  }
+
+  if (MutationObserver != null) {
+    if (!observer) {
+      observer = new MutationObserver(checkListeners);
+      observer.observe(doc.documentElement, {
+        childList: true,
+        subtree: true
+      });
+    }
+    listeners.push({ selector: selector, fn: fn, indexList: index_list });
+  } else {
+    /* <= IE8 */
+    if (!document.addEventListener) {
+      /* log("<=IE8 attachEvent assignment"); */
+      document.addEventListener = document.attachEvent;
+    }
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var elements = doc.querySelectorAll(selector);
+      for (var i = 0, len = elements.length; i < len; i++) {
+        /* -1 means all instances */
+        if (index_list != -1 && !(i in index_list)) {
+          continue;
+        }
+        var element = elements[i];
+        element.ready = true;
+        fn.call(element, element);
+      }
+    });
+  }
+
+  checkSelector(selector, fn, index_list);
+  return function () {
+    return removeListener(selector, fn);
+  };
+};
+}(window.BEJSSDKObserver = window.BEJSSDKObserver || {}));
+}
+var jsElementReady = window.BEJSSDKObserver.jsElementReady;
+
+if (window.BELinkBlockGenerator === undefined) {
+  (function(BELinkBlockGenerator, $, undefined) {
+    BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH = 100;
+    BELinkBlockGenerator.MAXIMUM_DESC_LENGTH = 200;
+
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_URL_TYPE = 0;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_HEADLINE_TYPE = 1;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_DESCRIPTION_TYPE = 2;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_IMAGE_TYPE = 3;
+
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_OVERWRITE = 0;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_POST_APPEND_ELEMENT = 1;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_ELEMENT = 2;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_PARENT = 3;
+
+    BELinkBlockGenerator.setMaximumHeadlineLength = function(length) {
+      BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH = length;
+    };
+
+    BELinkBlockGenerator.setMaximumDescriptionLength = function(length) {
+      BELinkBlockGenerator.MAXIMUM_DESC_LENGTH = length;
+    };
+
+    BELinkBlockGenerator.generateIndividualLinks = function(parentElement, linkStructure, link) {
+      var link_level_element_tag = linkStructure[0];
+      var link_level_element = document.createElement(link_level_element_tag);
+      var link_attribute_dictionary = linkStructure[1];
+      var allowable_elements = linkStructure[2];
+      var children_link_structures = linkStructure[3];
+      for (var link_attribute_key in link_attribute_dictionary) {
+        link_level_element.setAttribute(link_attribute_key, link_attribute_dictionary[link_attribute_key]);
+      }
+
+      var added_something = false;
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_URL_TYPE)>=0) {
+        link_level_element.setAttribute('href', link.url);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_HEADLINE_TYPE)>=0 && link.h1) {
+        var headline_text = link.h1;
+        if (headline_text.length > BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH) {
+          headline_text = headline_text.substring(0, BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH) + '...';
+        }
+        var text_node = document.createTextNode(headline_text);
+        link_level_element.appendChild(text_node);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_DESCRIPTION_TYPE)>=0 && link.desc) {
+        var desc_text = link.desc;
+        if (desc_text.length > BELinkBlockGenerator.MAXIMUM_DESC_LENGTH) {
+          desc_text = desc_text.substring(0, BELinkBlockGenerator.MAXIMUM_DESC_LENGTH) + '...';
+        }
+        var text_node = document.createTextNode(desc_text);
+        link_level_element.appendChild(text_node);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_IMAGE_TYPE)>=0 && link.image) {
+        link_level_element.setAttribute('src', link.image);
+        added_something = true;
+      }
+/**
+    don't emit for empty links, desc, headline, image
+    except for parent structures where allowable_length=0
+    */
+    if (!added_something && allowable_elements.length != 0) {
+
+      return;
+    }
+    /* go depth first */
+    for (var childrenIndex=0; childrenIndex<children_link_structures.length; childrenIndex++) {
+      var childLinkStructure = children_link_structures[childrenIndex];
+      BELinkBlockGenerator.generateIndividualLinks(link_level_element, childLinkStructure, link);
+    }
+    parentElement.appendChild(link_level_element);
+  };
+
+  BELinkBlockGenerator.insertLinkBlocks = function(targetElement, replacementStrategy, overallStructure, linkStructure, links,
+                                                   titleStructure) {
+    if (targetElement == null) {
+      return;
+    }
+
+    if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_OVERWRITE) {
+      while (targetElement.firstChild) {
+        targetElement.removeChild(targetElement.firstChild);
+      }
+    }
+
+    var previousElement = targetElement;
+    for (var i=0;i<overallStructure.length;i++) {
+      var level_definition = overallStructure[i];
+      var level_element_tag = level_definition[0];
+      var level_element = document.createElement(level_element_tag);
+      var attribute_dictionary = level_definition[1];
+      for (var attribute_key in attribute_dictionary) {
+        level_element.setAttribute(attribute_key, attribute_dictionary[attribute_key]);
+      }
+
+      /* need to place title structure */
+      if (titleStructure && titleStructure[0] == i) {
+        var title_element_tag = titleStructure[1];
+        var title_element = document.createElement(title_element_tag);
+        var title_attribute_dictionary = titleStructure[2];
+        var title_text_content = titleStructure[3];
+        for (var title_attribute_key in title_attribute_dictionary) {
+          title_element.setAttribute(title_attribute_key, title_attribute_dictionary[title_attribute_key]);
+        }
+
+        var title_text_node = document.createTextNode(title_text_content);
+        title_element.appendChild(title_text_node);
+
+
+        level_element.appendChild(title_element);
+      }
+
+      /* last level place links */
+      if (i == overallStructure.length-1) {
+        for (var link_i=0; link_i < links.length; link_i++) {
+          var link = links[link_i];
+          for (var linkStructureIndex=0;linkStructureIndex < linkStructure.length; linkStructureIndex++) {
+            BELinkBlockGenerator.generateIndividualLinks(level_element, linkStructure[linkStructureIndex], link)
+          }
+        }
+      }
+
+      /* first level child we need to check placement */
+      if (previousElement == targetElement) {
+        if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_ELEMENT) {
+          /* 2 means insert right before */
+          previousElement.insertBefore(level_element, targetElement.firstChild);
+        } else if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_PARENT) {
+          /* 3 means insert right before at parent level */
+          var parentElement = previousElement.parentElement;
+          parentElement.insertBefore(level_element, previousElement);
+        } else {
+          previousElement.appendChild(level_element);
+        }
+      } else {
+        previousElement.appendChild(level_element);
+      }
+      previousElement = level_element;
+    }
+  };
+}(window.BELinkBlockGenerator = window.BELinkBlockGenerator || {}))
+};
+</script>
+<style>
+.be-ix-link-block .be-related-link-container{padding-top:33px}
+.be-ix-link-block .be-related-link-container .be-label{margin:0;font-weight:700;font-size:17px}
+.be-ix-link-block .be-related-link-container .be-list{display:inline-block;list-style:none;margin:0;padding:0;font-size:17px}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item{display:inline-block;margin-right:20px;margin-bottom:0;font-weight:400;font-size:16px}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item:last-child{margin-right:0}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item a{color:#333;text-decoration:none}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item a:hover{color:#e85685;text-decoration:underline}
+@media (max-width: 767px) {
+.be-ix-link-block .be-related-link-container{text-align:center}
+.be-ix-link-block .be-related-link-container .be-label{width:100%;margin-bottom:8px}
+.be-ix-link-block .be-related-link-container .be-list{display:block;width:100%}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item{display:block;margin-right:0;margin-bottom:8px;max-width:none!important}
+}
+@media (min-width: 768px) {
+.be-ix-link-block .be-related-link-container{display:flex}
+.be-ix-link-block .be-related-link-container .be-label{display:inline-block;margin-right:20px;flex-basis:150px;flex-grow:0;flex-shrink:0}
+.be-ix-link-block .be-related-link-container .be-list{width:auto;display:flex}
+}
+</style>
+<script data-cfasync="false" data-customerid="f00000000165823" data-testmode="true" id="marvel" src="https://marvel-b2-cdn.bc0a.com/marvel.js"></script>
+<script>
+      (function() {
+      var bec = document.createElement('script');
+      bec.type = 'text/javascript';
+      bec.async = true;
+      bec.setAttribute("data-id", "bec");
+      bec.setAttribute("org-id", "f00000000165823");
+      bec.setAttribute("domain", ".checkpoint.com");
+      bec.setAttribute("session-timeout", 86400000);
+      bec.src = document.location.protocol + '//cdn.b0e8.com/conv_v3.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(bec, s);
+})();
+</script>
+<title>Privacy Policy - Check Point Software</title>
+<meta class="swiftype" content="4" data-type="integer" name="popularity"/>
+<link href="https://gmpg.org/xfn/11" rel="profile"/>
+<link href="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/images/fav/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/images/fav/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/images/fav/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/images/fav/site.webmanifest" rel="manifest"/>
+<link color="#b91d47" href="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/images/fav/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#da1572" name="msapplication-TileColor"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- Google Optimize -->
+<script src="https://www.googleoptimize.com/optimize.js?id=GTM-5L6CQT3"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': 
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], 
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); 
+  })(window,document,'script','dataLayer','GTM-5JCRGP');</script>
+<!-- End Google Tag Manager -->
+<script>var CP = {};</script>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+<!-- This site is optimized with the Yoast SEO plugin v18.4.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta content="This Privacy Policy explains how we use the personal information that Check Point collects or generates both on the Check Point website and our products and services." name="description">
+<link href="//www.checkpoint.com/privacy/" rel="canonical">
+<meta content="en_US" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="Privacy Policy - Check Point Software" property="og:title"/>
+<meta content="This Privacy Policy explains how we use the personal information that Check Point collects or generates both on the Check Point website and our products and services." property="og:description"/>
+<meta content="/privacy/" property="og:url"/>
+<meta content="Check Point Software" property="og:site_name"/>
+<meta content="2022-04-18T20:23:45+00:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<!-- / Yoast SEO plugin. -->
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link href="//www.checkpoint.com/wp-content/plugins/cp_functions/head_banner/display/assets/css/cp-head-banner.css?ver=6.66" id="cp-head-banner-style-css" media="all" rel="stylesheet" type="text/css">
+<link href="//www.checkpoint.com/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css?ver=2.5.12" id="search-filter-plugin-styles-css" media="all" rel="stylesheet" type="text/css">
+<link href="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/styles/panel.css?ver=1.3" id="panel-css-css" media="all" rel="stylesheet" type="text/css">
+<link href="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/lib/flickity/flickity.min.css?ver=5.9.3" id="flickity-css-css" media="all" rel="stylesheet" type="text/css">
+<link href="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/tmp_files/css/cp_new_nav.css?ver=1.97" id="cp_new_nav_css-css" media="all" rel="stylesheet" type="text/css">
+<link href="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/css/bootstrap.min.css?ver=3.60" id="bootstrap-css-css" media="all" rel="stylesheet" type="text/css">
+<link href="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/css/cp-base.css?ver=3.60" id="cp-base-css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/css/cp-nav.css?ver=3.60" id="cp-nav-css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/css/font-awesome.min.css?ver=3.60" id="font-awesome-css-css" media="all" rel="stylesheet" type="text/css"/>
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='ie-only-css-css'  href='//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/css/ie-only.css?ver=3.60' type='text/css' media='all' />
+<![endif]-->
+<script id="jquery-js" src="/wp-content/themes/checkpoint-theme-v2/lib/jquery/jquery-3.4.0.min.js?ver=5.9.3" type="text/javascript"></script>
+<script id="cp-head-banner-js-js" src="//www.checkpoint.com/wp-content/plugins/cp_functions/head_banner/display/assets/js/cp_head_banner.js?ver=6.66" type="text/javascript"></script>
+<script id="youtube-js-js" src="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/lib/youtube-modal/bootstrap.youtubepopup.min.js?ver=5.9.3" type="text/javascript"></script>
+<script id="js-cookie-js" src="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/lib/js-cookie/js.cookie.min.js?ver=5.9.3" type="text/javascript"></script>
+<script id="bootstrap-js-js" src="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/js/bootstrap.js?ver=3.60" type="text/javascript"></script>
+<script id="header-js-js" src="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/js/header.js?ver=3.60" type="text/javascript"></script>
+<span data-stet="09:00-17:00" id="stet" name="stet"></span><!-- Stream WordPress user activity plugin v3.9.0 -->
+<link as="font" crossorigin="" href="https://www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/fonts/fontawesome-webfont.woff2?v=4.7.0" rel="preload"/>
+<link as="font" crossorigin="" href="https://www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/fonts/34CA47_4_0.woff2" rel="preload"/>
+<link as="font" crossorigin="" href="https://www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/fonts/34CA47_6_0.woff2" rel="preload"/><style>#chat-container{display:none!important;}</style> <style id="wp-custom-css" type="text/css">
+			.clearfix{
+	clear:both;
+}
+.custom_wrap h1 span {
+  color: #d61a69;
+  font-weight: bold;
+}
+.page-template-page-product-updates .cp_head_banner__flex ~ #container-content, .single-product_updates .cp_head_banner__flex ~ #container-content {
+  margin-top: 0px !important;
+}
+.header_buttons {
+    margin:48px 0 0 !important;
+    transition: all 0.3s ease;
+	padding-top:15px;
+    background: #f6f6f6 !important;
+}
+.product_updates_section_section h2, .product_updates_section h2 a {
+    margin-bottom: 6px;
+-webkit-transition: all .3s ease-in-out;
+-moz-transition: all .3s ease-in-out;
+-o-transition: all .3s ease-in-out;
+transition: all .3s ease-in-out;
+}
+.product_updates_section h2 a:hover{
+	color:#d61a69 !important;
+	text-decoration:none !important;
+-webkit-transition: all .3s ease-in-out;
+-moz-transition: all .3s ease-in-out;
+-o-transition: all .3s ease-in-out;
+transition: all .3s ease-in-out;
+}
+.header_buttons ul{
+	margin:0;
+	float:right;
+	padding:0;
+}
+.header_buttons ul li{
+	margin:0 0px 0 20px;
+	padding:0;
+	list-style:none;
+	display:inline-block;
+}
+.header_buttons ul li a{
+	color:#222 !important;
+	text-decoration:none !important;
+	transition: all .3s ease-in-out !important;
+	font-size:20px !important;
+}
+.header_buttons ul li a:hover{
+	color:#d61a69 !important;
+	text-decoration:none !important;
+    transition: all .3s ease-in-out;
+}
+.cp_product_update_box {
+  padding: 40px 0;
+  border-bottom: 1px solid #e7eaf3;
+}
+.cp_readmore {
+  color: #d61a69;
+  text-decoration: none;
+  font-weight: 600 !important;
+}
+.cp_readmore:hover{
+	color:#d61a69;
+	text-decoration:none;
+}
+.ul_list{
+	margin:0;
+	padding:0;
+}
+.ul_list li{
+	display:inline-block;
+}
+.ul_list li span{
+	font-size:13px;
+	font-weight:400;
+	color:#222;
+}
+
+.ul_list li:after {
+    content: "/";
+    display: inline-block;
+    margin: 0 2px 0 7px;
+	color:#a3a6a8;
+}
+/*.ul_list li:last-child:after {
+    content: "";
+	margin:0;
+}*/
+.ul_list li span.cp_author{
+	font-weight:600;
+}
+.cp_custom_pagination {
+  text-align: center;
+  margin:30px auto;
+}
+.cp_custom_pagination a{
+	padding: 5px 11px;
+    border: 1px solid #ededed;
+    display: inline-block;
+    margin: 30px 8px 8px 0;
+    min-width: 33px;
+    text-align: center;
+    color: #788487;
+    line-height: 21px;
+}
+.cp_custom_pagination .current{
+	background-color: #d61a69 !important;
+    border-color: #ededed !important;
+    color: #fff !important;
+	padding: 5px 11px;
+    border: 1px solid #ededed;
+    display: inline-block;
+    margin: 30px 8px 8px 0;
+    min-width: 33px;
+    text-align: center;
+    line-height: 21px;
+}
+.cp_custom_pagination a:hover{
+	background-color:rgb(237, 237, 237);
+}
+
+.single_product_updates h1{
+	/*font-size: 44px !important;*/
+	line-height: 54px !important;
+	color: #222 !important;
+}
+.single_product_updates p{
+	line-height: 1.6 !important;
+	letter-spacing: 0 !important;
+}
+.cp_product_update_box h2 a {
+  color: #222 !important;
+}
+.single-product_updates .table-responsive{
+	border:none !important;
+}
+.backbtn a {
+  color: #d61a69;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 20px;
+  display: inline-block;
+}
+.search_heading h2 a{
+	color:#222 !important;
+	/*font-size:20px;*/
+	text-decoration:none;
+}
+.search_heading h2 a:hover{
+	background-color: transparent !important;
+	text-decoration:none !important;
+	color:#d61a69 !important;
+}
+.custom_search_section .cp_readmore i{
+	font-weight:400;
+}
+.product_updates_searchform{
+	display:none;
+	margin-top:20px;
+}
+#searchform input[type="text"] {
+	border: 2px solid #ededed;
+	border-right-color: rgb(213, 218, 226);
+	border-right-style: solid;
+	border-right-width: 2px;
+	float: left;
+	border-right: none;
+	border-radius: 10px 0 0 10px;
+	height: 50px;
+	padding: 0 20px;
+	width: 70%;
+}
+#searchform input[type="submit"] {
+  background-color: #d61a69;
+  border: 2px solid #d61a69;
+  color: #fff;
+  outline: 0;
+  height: 50px;
+  width: 30%;
+  border-radius: 0 10px 10px 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+#searchform {
+  max-width: 700px;
+  margin: 0 auto 20px;
+}
+.ul_list li span.cp_tags span {
+  display: inline-block;
+  background: #ededed;
+  margin: 0 4px 0 0;
+  color: #a3a6a8;
+  font-size: 80%;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 6px;
+}
+.search_close {
+    position: relative;
+    cursor: pointer;
+    right: 2%;
+    float: right;
+    top: 0 !important;
+}
+.product_updates_section .container, .single_product_updates .container, .header_buttons .container {
+	max-width: 1170px !important;
+	padding:0 15px;
+}
+.page-id-243073 #section-hero h1 {
+    margin-bottom: 0;
+	font-size:50px;
+	letter-spacing: 0.45px;
+}
+.page-id-243073 #section-hero h3, #ciem_three_boxes h3{
+	font-size:30px;
+}
+.page-id-243073 #section-hero p {
+    max-width:600px ;
+    font-size: 21px;
+    letter-spacing: 0.13px;
+}
+.page-id-243073 #section-hero .btn.btn-secondary.btn-md {
+    min-width: 210px;
+}
+#ciem_three_boxes {
+    padding-bottom: 20px;
+}
+#ciem_webinar p, #ciem_section7 p {
+    font-size: 27px;
+}
+#ciem_zero_trusted {
+    padding: 60px 0 10px;
+}
+#ciem_section5 {
+    padding: 40px 0;
+}
+#ciem_section5 .col-md-6.col-sm-12:nth-child(1) {
+    padding-right: 0;
+}
+#ciem_section5 p {
+    max-width: 520px;
+}
+#ciem_section6 {
+    padding: 50px 0 40px;
+}
+#ciem_section8{
+	padding:90px 0 110px;
+}
+#ciem_section10 .col-md-6.col-sm-12:nth-child(2) img {
+    width: 100%;
+    max-height: 300px;
+}
+#ciem_three_boxes .btn.btn-primary.btn-md {
+    margin-top: 60px;
+}
+@media screen and (max-width:1200px){
+	.header_buttons{
+		margin-top:88px !important;
+	}
+	.page-id-243073 #section-hero h1{
+		font-size:46px;
+	}
+	#ciem_section10 {
+		padding-bottom: 20px;
+	}
+}
+@media screen and (max-width:1080px){
+#searchform{
+	max-width:80%;
+}
+.search_close{
+	top:70px;
+}
+.header_buttons{
+		margin-top:35px !important;
+	}
+}
+@media screen and (max-width:992px){
+.product_updates_section .container, .single_product_updates .container, .header_buttons .container {
+	max-width: 970px !important;
+}
+.page-id-243073 #section-hero {
+    padding: 60px 0;
+}
+#ciem_section5 .col-md-6 h2 {
+    font-size: 38px;
+}
+#ciem_section5 p {
+    max-width: 100%;
+}
+#ciem_section10 .col-md-6.col-sm-12:nth-child(2) img {
+    width: auto;
+    min-height: 300px;
+}
+}
+@media screen and (max-width:767px){
+	.single_product_updates h1 {
+	  font-size: 36px !important;
+	  line-height: 44px !important;
+	}
+	#searchform input[type="submit"]{
+		font-size:14px;
+	}
+	.product_updates_section .container, .single_product_updates .container, .header_buttons .container {
+		max-width: 750px !important;
+	}
+	#ciem_three_boxes .row.vertical-center {
+		margin: 0 auto;
+		width: 100%;
+		display: block;
+	}
+}
+@media screen and (max-width:600px){
+#ciem_section10 .col-md-6.col-sm-12:nth-child(2) img {
+    min-height: 0;
+}
+}		</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><style>
+@media only screen and (min-width : 1081px) {
+  body header#cp_header .cp_nav_menu__logo img {
+    margin-top: -15px;
+  }
+}
+@media only screen and (max-width : 1080px) {
+  body header#cp_header .cp_nav_menu__logo img {
+    max-width: 185px;
+  }
+}
+</style>
+<meta content="9b76d9f46f6a8b6c0feb3f4862cfbd8a35c59c6ea7d48c55f8d2983585bd6480" name="ahrefs-site-verification"/>
+</link></link></link></link></link></link></link></meta></meta></meta></meta></meta></head>
+<body class="page-template-template-panel page-template-template-panel-php page page-id-227950 page-parent lang-en-US preload" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5JCRGP" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- be_ixf, bodystr, _body_open -->
+<script type="text/javascript">
+    function positionLinkBlock(targetContainer) {
+        if (targetContainer != null) {
+            var strLinkBlock = '<div class="be-related-link-container"><div class="be-label">Related Information</div><ul class="be-list"><li class="be-list-item"><a class="be-related-link" href="https://www.checkpoint.com/cyber-hub/network-security/what-is-sd-wan/">SD-WAN</a></li><li class="be-list-item"><a class="be-related-link" href="https://www.checkpoint.com/cyber-hub/threat-prevention/what-is-phishing/">What is Phishing?</a></li><li class="be-list-item"><a class="be-related-link" href="https://www.checkpoint.com/cyber-hub/threat-prevention/ransomware/">Ransomware Attack</a></li></ul></div>';
+            targetContainer.insertAdjacentHTML('afterbegin', strLinkBlock);
+        }
+    }
+
+    jsElementReady('.be-ix-link-block', positionLinkBlock)
+
+</script>
+<!--<style>body .cp_head_banner__flex ~ #container-content { margin-top: 0px !important; }</style>-->
+<div class="cp_head_banner cp_head_banner__flex" data-swiftype-index="false" style="display: none !important;">
+<div class="cp_head_banner_inner">
+<a class="header-link" href="https://www.checkpoint.com/latest-cyber-attacks/staying-safe-in-times-of-cyber-uncertainty/?utm_source=cp-home&amp;utm_medium=cp-website" id="header-banner" title="Staying Safe in Times of Cyber Uncertainty">Staying Safe in Times of Cyber Uncertainty </a>
+</div>
+<button class="cp_head_banner_close" title="Close" type="button">
+<svg fill="none" height="13" viewbox="0 0 12 12" width="13">
+<path d="M1 1L6 6M6 6L11 1M6 6L1 11M6 6L11 11" stroke="#333" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<style>
+        #cp-logo-2022-animated { display: none !important; }
+    </style>
+<header class="no-print" data-swiftype-index="false" id="cp_header" itemscope="itemscope" itemtype="http://schema.org/WPHeader" role="banner">
+<input class="cp_nav_menu__mobile__input" id="cp_nav_menu__mobile" type="checkbox"/>
+<div class="cp_top_nav_menu">
+<a class="header-link" href="/demos/" id="free-demo">Free Demo!</a>
+<a class="header-link" href="/about-us/contact-us/" id="top-nav-desk-contact-us-link">Contact Us</a>
+<a class="header-link" href="https://supportcenter.checkpoint.com/" id="top-nav-desk-support-center-link">Support Center</a>
+<a class="header-link" href="https://usercenter.checkpoint.com/usercenter/index.jsp" id="top-nav-desk-user-center-link">Sign In</a>
+<a class="header-link" href="https://blog.checkpoint.com/" id="top-nav-desk-blog-link">Blog</a>
+<a class="header-link" href="/support-services/threatcloud-incident-response/" id="under-attack"><img alt="Under Attack" src="/wp-content/themes/checkpoint-theme-v2/images/under-attack.png"/></a>
+</div>
+<div class="cp_nav_menu">
+<ul class="cp_search_geo">
+<li class="cp_menu__item alt_menu_item">
+<span class="cp_menu__item__icon cp_menu__item__search cp_menu__item__main" id="cp_search">Search</span>
+<ul class="cp_menu__item__ul">
+<li class="cp_menu__item__li">
+<form id="search-form">
+<input alt="Search" src="/wp-content/themes/checkpoint-theme-v2/images/search-btn.png" type="image" value="Submit"/><input aria-label="Search Term" autocomplete="off" class="st-search-input" id="stq" name="stq" placeholder="Enter your keywords..." type="text" x-webkit-grammar="builtin:search" x-webkit-speech=""/>
+</form>
+</li>
+</ul>
+<span class="dark"></span>
+</li>
+<li class="cp_menu__item alt_menu_item">
+<span class="cp_menu__item__icon cp_menu__item__geo cp_menu__item__main" id="cp_geo">Geo Menu</span>
+<ul class="cp_menu__item__ul">
+<li class="cp_menu__item__li">
+<ul>
+<li id="choose-lang">Choose your language...</li>
+<li class="cp_menu__item__li__inner_li lang-item-en"><a class="header-link" href="/" hreflang="en-US" id="header-language-english-link" lang="en-US">English (English)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-es"><a class="header-link" href="/es/" hreflang="es-419" id="header-language-spanish-link" lang="es-419">Spanish (Español)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-fr"><a class="header-link" href="/fr/" hreflang="fr-FR" id="header-language-french-link" lang="fr-FR">French (Français)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-de"><a class="header-link" href="/de/" hreflang="de-DE" id="header-language-german-link" lang="de-DE">German (Deutsch)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-it"><a class="header-link" href="/it/" hreflang="it-IT" id="header-language-italian-link" lang="it-IT">Italian (Italiano)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-pt"><a class="header-link" href="/pt/" hreflang="pt-PT" id="header-language-portuguese-link" lang="pt-PT">Portuguese (Português)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-ru"><a class="header-link" href="/ru/" hreflang="ru-RU" id="header-language-russia-link" lang="ru-RU">Russian (Русский)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-jp"><a class="header-link" href="/jp/" hreflang="ja" id="header-language-japanese-link" lang="ja">Japanese (日本語)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-cn"><a class="header-link" href="https://www.checkpoint.com.cn/" hreflang="zh" id="header-language-chinese-link" lang="zh">Chinese (中文)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-cz"><a class="header-link" href="/cz/" hreflang="cs" id="header-language-czech-link" lang="cs">Czech (čeština)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-id"><a class="header-link" href="/id/" hreflang="id-ID" id="header-language-indonesian-link" lang="id-ID">Indonesian (Bahasa Indonesia)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-kr"><a class="header-link" href="/kr/" hreflang="kr-KR" id="header-language-korean-link" lang="kr-KR">Korean (한국어)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-nl"><a class="header-link" href="/nl/" hreflang="nl-NL" id="header-language-dutch-link" lang="nl-NL">Dutch (Nederlands)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-pl"><a class="header-link" href="/pl/" hreflang="pl-PL" id="header-language-polish-link" lang="pl-PL">Polish (Polszczyzna)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-tr"><a class="header-link" href="/tr/" hreflang="tr-TR" id="header-language-turkish-link" lang="tr-TR">Turkish (Türkçe)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-tw"><a class="header-link" href="/tw/" hreflang="tw-TW" id="header-language-taiwan-link" lang="tw-TW">Taiwan (繁體中文)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-vi"><a class="header-link" href="/vi/" hreflang="vi-VI" id="header-language-vietnamese-link" lang="vi-VI">Vietnamese (Tiếng Việt)</a></li>
+</ul>
+</li>
+</ul>
+<span class="dark"></span>
+</li>
+</ul>
+<ul class="cp_menu">
+<li class="cp_menu__item" id="products-mega">
+<span class="cp_menu__item__main" id="products-menu">Products</span>
+<ul class="cp_menu__item__ul">
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title"><a class="header-link" href="/quantum/" id="header-desk-products-quantum-link">Quantum</a></span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/quantum/maestro-hyperscale-network-security/" id="header-desk-products-maestro-link">Quantum Maestro</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/quantum/next-generation-firewall/lightspeed/" id="header-desk-products-lightspeed-link">Quantum Lightspeed</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/quantum/next-generation-firewall/" id="header-desk-products-ngfw-link">Quantum Security Gateway</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/quantum/next-generation-firewall/small-business-security/" id="header-desk-products-spark-link">Quantum Spark</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/quantum/edge-branch-virtual-security-gateway/" id="header-desk-products-branch-virtual-security-link">Quantum Edge</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/quantum/iot-protect/" id="header-desk-products-iot-link">Quantum IoT Protect</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/quantum/remote-access-vpn/" id="header-desk-products-vpn-link">Quantum VPN</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/quantum/unified-cyber-security-platform/smart-1-appliances/" id="header-desk-products-management-appliances-link">Quantum Smart-1</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/quantum/unified-cyber-security-platform/smart-1-cloud/" id="header-desk-products-smart-1-link">Quantum Smart-1 Cloud</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title"><a class="header-link" href="/cloudguard/" id="header-desk-products-cloud-native-link">CloudGuard</a></span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/cloud-network-security/" id="header-desk-products-cloud-network-link">CloudGuard Network</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/cloud-security-posture-management/" id="header-desk-products-cloud-security-posture-link">CloudGuard Posture Management</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/workload-protection/" id="header-desk-products-workload-protection-link">CloudGuard Workload</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/appsec/" id="header-desk-products-cloudguard-appsec-link">CloudGuard AppSec</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/cloud-intelligence-threat-hunting/" id="header-desk-products-cloud-intelligence-link">CloudGuard Intelligence</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title"><a class="header-link" href="/harmony/" id="header-desk-products-harmony-link">Harmony</a></span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/harmony/advanced-endpoint-protection/" id="header-desk-products-endpoint-link">Harmony Endpoint</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/harmony/connect-sase/" id="header-desk-products-connect-sase-link">Harmony Connect (SASE)</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/harmony/browse/" id="header-desk-products-browse-link">Harmony Browse</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/harmony/email-security/email-office/" id="header-desk-products-email-security-link">Harmony Email &amp; Collaboration</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/harmony/mobile-security/mobile/" id="header-desk-products-mobile-security-link">Harmony Mobile</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title"><a class="header-link" href="/infinity-vision/" id="header-desk-products-infinity-link">Infinity-Vision</a></span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/infinity-vision/infinity-portal/" id="header-desk-products-infinity-portal-link">Infinity Portal</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/infinity-vision/infinity-soc/" id="header-desk-products-infinity-soc-link">Infinity SOC</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/quantum/unified-cyber-security-platform/" id="header-desk-products-unified-link">Infinity Unified Management</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/infinity-vision/threatcloud/" id="header-desk-products-threatcloud-link">ThreatCloud</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/solutions/mdr-services/" id="header-desk-products-mdr-link">Infinity MDR</a></li>
+<li class="cp_menu__item__li__inner_li cp_menu__item__li__desktop_link"><a class="header-link" href="/products/" id="header-desk-products-all-products-link">View All Products A-Z <span>&gt;</span></a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li cp_menu__item__li__right_image_container">
+<div class="cp_menu__item__li__right_image_container__inner" style="background-image: url('/wp-content/uploads/infinity-ela-solutions-megamenu.jpg'); width: 100% !important; height: 100% !important;">
+<span class="cp_menu__item__li__right_image_container__inner__title"></span>
+<span class="cp_menu__item__li__right_image_container__inner__body">Increase Protection and Reduce TCO with a Consolidated Security Architecture</span>
+<a class="cp_menu__item__li__right_image_container__inner_link header-link" href="/infinity-vision/enterprise-license-agreement/?utm_source=cp-home&amp;utm_medium=cp-website&amp;utm_campaign=infinity_ela_menu_banner&amp;utm_content=megamenu" id="header-desk-solutions-feature-link">DISCOVER
+                                    <span class="fa fa-angle-right nav-image-right-span-greater-than"></span>
+</a>
+</div>
+<span class="cp_menu__item__li__title__mobile"><a class="header-link" href="/products/" id="header-desk-products-products-overview-link">Products Overview</a></span>
+</li>
+</ul>
+<span class="dark"></span>
+</li>
+<li class="cp_menu__item" id="solutions-mega">
+<span class="cp_menu__item__main" id="solutions-menu">Solutions</span>
+<ul class="cp_menu__item__ul">
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title"><a class="header-link" href="/cloudguard/cloud-security-solutions/" id="header-desk-solutions-cloud-security-link">Cloud Security</a></span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/serverless-security/" id="header-desk-solutions-serverless-security-link">Serverless Security</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/container-security/" id="header-desk-solutions-containers-security-link">Container Security</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/appsec/" id="header-desk-solutions-application-security-link">Application Security</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/cloud-network-security/public-cloud-compliance-governance/" id="header-desk-solutions-cloud-compliance-governance-link">Cloud Compliance &amp; Governance</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/devsecops/" id="header-desk-solutions-cloud-devsecops-link">DevOps Security</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/cloud-network-security/iaas-private-cloud-security/" id="header-desk-solutions-private-cloud-network-link">Private Cloud Network Security</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/amazon-aws-security/" id="header-desk-solutions-aws-security-link">AWS Security</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/microsoft-azure-security/" id="header-desk-solutions-azure-security-link">Azure Security</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cloudguard/google-cloud-platform-security/" id="header-desk-solutions-gcp-security-link">Google Cloud Security</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title"><a class="header-link" href="/quantum/network-security-solutions/" id="header-desk-solutions-network-security-link">Network Security</a></span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/solutions/data-center-security/" id="header-desk-solutions-data-center-link">Hybrid Data Center</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/solutions/sd-wan-security/" id="header-desk-solutions-sdwan-security-link">SD-WAN Security</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/solutions/zero-trust-security/" id="header-desk-solutions-zero-trust-link">Zero Trust Security</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/solutions/iot-security/" id="header-desk-solutions-iot-security-link">IoT Security</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title"><a class="header-link" href="/harmony/" id="header-desk-solutions-harmony-link">Users &amp; Access Security</a></span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/harmony/connect-sase/" id="header-desk-solutions-connect-sase-link">Secure Access Service Edge (SASE)</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/solutions/endpoint-security/" id="header-desk-solutions-endpoint-security-link">Endpoint Security</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/harmony/mobile-security/" id="header-desk-solutions-secure-mobile-workforce-link">Mobile Security</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/harmony/anti-ransomware/" id="header-desk-solutions-ransomware-link">Anti-Ransomware</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/harmony/anti-phishing/" id="header-desk-solutions-ant-phishing-link">Anti-Phishing</a></li>
+</ul>
+<br/>
+<span class="cp_menu__item__li__title"><a class="header-link" href="/solutions/security-operations/" id="header-desk-solutions-security-operations-link">Security Operations</a></span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/solutions/mdr-services/" id="header-desk-solutions-mdr-link">Infinity MDR (Managed Detection &amp; Response)</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/infinity-vision/zero-day-protection/" id="header-desk-solutions-zero-day-protection-link">Zero-Day Protection</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title"><a class="header-link" href="/industry/" id="header-desk-solutions-industry-link">Industry</a></span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/industry/retail/" id="header-desk-solutions-retail-link">Retail</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/industry/financial-services/" id="header-desk-solutions-financial-services-link">Financial Services</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/industry/government-federal-security/" id="header-desk-solutions-government-link">Government</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/industry/healthcare/" id="header-desk-solutions-healthcare-link">Healthcare</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/industry/industrial-control-systems/" id="header-desk-solutions-critical-infrastructure-link">Industrial Control Systems ICS &amp; SCADA</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/industry/service-provider/" id="header-desk-solutions-service-provider-link">Telco / Service Provider</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/industry/education/" id="header-desk-solutions-education-link">Education</a></li>
+</ul>
+<br/>
+<span class="cp_menu__item__li__title">Business Size</span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/solutions/enterprise-network-security/" id="header-desk-solutions-large-enterprise-link">Large Enterprise</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/solutions/small-medium-business/" id="header-desk-solutions-small-business-branch-office-link">Small &amp; Medium Business</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/solutions/consumer-small-business/" id="header-desk-solutions-home-offices-link">Consumer &amp; Small Business</a></li>
+<li class="cp_menu__item__li__inner_li cp_menu__item__li__desktop_link" id="solutions-overview"><a class="header-link" href="/solutions/" id="header-desk-solutions-overview-link">Solutions Overview <span>&gt;</span></a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li cp_menu__item__li__right_image_container">
+<div class="cp_menu__item__li__right_image_container__inner" style="background-image: url('/wp-content/uploads/infinity-ela-solutions-megamenu.jpg');">
+<span class="cp_menu__item__li__right_image_container__inner__title"></span>
+<span class="cp_menu__item__li__right_image_container__inner__body">Increase Protection and Reduce TCO with a Consolidated Security Architecture</span>
+<a class="cp_menu__item__li__right_image_container__inner_link header-link" href="/infinity-vision/enterprise-license-agreement/?utm_source=cp-home&amp;utm_medium=cp-website&amp;utm_campaign=infinity_ela_menu_banner&amp;utm_content=megamenu" id="header-desk-solutions-feature-link">DISCOVER
+                                    <span class="fa fa-angle-right nav-image-right-span-greater-than"></span>
+</a>
+</div>
+</li>
+</ul>
+<span class="dark"></span>
+</li>
+<li class="cp_menu__item" id="support-mega">
+<span class="cp_menu__item__main" id="support-menu">Support &amp; Services</span>
+<ul class="cp_menu__item__ul">
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title">Support</span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="https://help.checkpoint.com/s/" id="header-desk-support-create-support-request-link" rel="noopener noreferrer" target="_blank">Create/View Service Request</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/support-services/contact-support/" id="header-desk-support-contact-support-link">Contact Support</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/support-services/pro/" id="header-desk-support-check-point-pro-link">Check Point Pro</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/support-services/support-plans/" id="header-desk-support-support-plans-link">Support Programs</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/support-services/support-life-cycle-policy/" id="header-desk-support-life-cycle-policy-link">Life Cycle Policy</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/support-services/software-license-agreement-limited-hardware-warranty/" id="header-desk-support-license-agreement-warranty-link">License Agreement &amp; Warranty</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/support-services/rma-return-process/" id="header-desk-support-rma-policy-link">RMA Policy</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title">Training</span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/mind/" id="header-desk-support-mind-link">Mind</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="https://training-certifications.checkpoint.com/#/" id="header-desk-support-training-certification-link" rel="noopener noreferrer" target="_blank">Training &amp; Certification</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="https://cyberpark.checkpoint.com/" id="header-desk-support-cyber-range-link" target="_blank">Cyber Park</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/support-services/secureacademy/" id="header-desk-support-secure-academy-link">Secure Academy</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/mind/smartawareness/" id="header-desk-support-smartawarness-link">SmartAwareness</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/elearning/" id="header-desk-support-elearning-link">eLearning</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/clc/" id="header-desk-support-learning-credits-link">Redeem CLC Credits</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title">Services</span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/professional-services/" id="header-desk-support-professional-services-link">Professional Services</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/professional-services/account-management/" id="header-desk-support-account-management-link">Account Management</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/support-services/lifecycle-management/" id="header-desk-support-lifecycle-management-services-link">Lifecycle Management Services</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/support-services/security-consulting/" id="header-desk-support-security-consulting-link">Security Consulting</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/support-services/threatcloud-managed-security-service/" id="header-desk-support-threatcloud-managed-security-service-link">ThreatCloud Managed Security Service</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/support-services/threatcloud-incident-response/" id="header-desk-support-incident-response-link">Incident Response Services</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li cp_menu__item__li__right_image_container">
+<div class="cp_menu__item__li__right_image_container__inner" style="background-image: url('/wp-content/uploads/Support-Services-Nav-Featured-Image-180621.jpg');">
+<span class="cp_menu__item__li__right_image_container__inner__title">HackingPoint Training</span>
+<span class="cp_menu__item__li__right_image_container__inner__body">Learn hackers inside secrets to beat them at their own game.</span>
+<a class="cp_menu__item__li__right_image_container__inner_link header-link" href="/training/hackingpoint/" id="header-desk-support-feature-image">View Courses
+                                    <span class="fa fa-angle-right nav-image-right-span-greater-than"></span>
+</a>
+</div>
+</li>
+</ul>
+<span class="dark"></span>
+</li>
+<li class="cp_menu__item" id="partners-mega">
+<span class="cp_menu__item__main" id="partners-menu">Partners</span>
+<ul class="cp_menu__item__ul">
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title">Channel Partners</span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/partners/channel/" id="header-desk-partners-become-partner-link">Become a Partner</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="https://partnerlocator.checkpoint.com/#/" id="header-desk-partners-find-a-partner-link" rel="noopener noreferrer" target="blank">Find a Partner</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title">Technology Partners</span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/technology-partners/" id="header-desk-partners-technology-partners-link">Technology Partners</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/technology-partners/featured/" id="header-desk-partners-featured-partners-link">Featured Technology Partners</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title">Partner Portal</span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="https://usercenter.checkpoint.com/usercenter/index.jsp" id="header-desk-partners-partnermap-link" rel="noopener noreferrer" target="blank">PartnerMAP Sign In <i aria-hidden="true" aria-label="PMAP" class="fa fa-lock lock-icon"></i></a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li cp_menu__item__li__right_image_container">
+<div class="cp_menu__item__li__right_image_container__inner" style="background-image: url('/wp-content/uploads/frank-rauch-megamenu-352x332.png');">
+<span class="cp_menu__item__li__right_image_container__inner__title">Check Point Partner Ecosystem</span>
+<span class="cp_menu__item__li__right_image_container__inner__body">Frank Rauch,<br/>Head of Worldwide Channel Sales</span>
+<a class="header-link" href="https://www.youtube.com/watch?v=gr2f2LqjUAE" id="header-desk-partners-feature-link">Watch Video
+                                    <span class="fa fa-angle-right nav-image-right-span-greater-than"></span>
+</a>
+</div>
+</li>
+</ul>
+<span class="dark"></span>
+</li>
+<li class="cp_menu__item" id="resources-mega">
+<span class="cp_menu__item__main" id="resources-menu">Resources</span>
+<ul class="cp_menu__item__ul">
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title">Resources</span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="https://resources.checkpoint.com/" id="header-desk-resources-resource-center-link">Content Resource Center</a> </li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/demos/" id="header-desk-resources-product-demos-link">Product Demos</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/trials/" id="header-desk-resources-product-trials-link">Product Trials</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/customer-stories/" id="header-desk-resources-customer-stories-link">Customer Stories</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/events/" id="header-desk-resources-events-link">Events</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/webinars/" id="header-desk-resources-webinars-link">Webinars</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/videos/" id="header-desk-resources-videos-link">Videos</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="/cyber-hub/" id="header-desk-resources-cyber-hub-link">Cyber Hub</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title">Downloads &amp; Documentation</span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doShowprelanding&amp;all" id="header-desk-resources-downloads-documentation-link" rel="noopener noreferrer" target="_blank">Downloads &amp; Documentation</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="https://catalog.checkpoint.com/" id="header-desk-resources-product-catalog-link" rel="noopener noreferrer" target="_blank">Product Catalog</a> </li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="https://usercenter.checkpoint.com/usercenter/portal/media-type/html/role/usercenterUser/page/default.psml/js_pane/PricingToolsId,supportQuoteToolId" id="header-desk-resources-renewal-pricing-tool-link" rel="noopener noreferrer" target="_blank">Renewal Pricing Tool</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li">
+<span class="cp_menu__item__li__title">Cyber Security Insights</span>
+<ul>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="https://blog.checkpoint.com/" id="header-desk-resources-check-point-blog-link" rel="noopener noreferrer" target="_blank">Check Point Blog</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="https://research.checkpoint.com/" id="header-desk-resources-check-point-research-link" rel="noopener noreferrer" target="_blank">Check Point Research</a></li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="https://www.cybertalk.org/" id="header-desk-resources-cyber-talk-link" rel="noopener noreferrer" target="_blank">Cyber Talk for Executives</a> </li>
+<li class="cp_menu__item__li__inner_li"><a class="header-link" href="https://community.checkpoint.com/" id="header-desk-resources-checkmates-link" rel="noopener noreferrer" target="_blank">CheckMates Community</a></li>
+</ul>
+</li>
+<li class="cp_menu__item__li cp_menu__item__li__right_image_container">
+<div class="cp_menu__item__li__right_image_container__inner" style="background-image: url('/wp-content/uploads/CPX2022-banner-nav.jpg');">
+<span class="cp_menu__item__li__right_image_container__inner__title">CPX 360 - NOW ON DEMAND</span>
+<span class="cp_menu__item__li__right_image_container__inner__body">The most important cyber security event of 2022</span>
+<a class="cp_menu__item__li__right_image_container__inner_link header-link" href="https://community.checkpoint.com/t5/General-Topics/CPX-360-2022/m-p/138585#M24678?utm_source=cp-home&amp;utm_medium=cp-website&amp;utm_campaign=cm_wr_21q4_ww_cpx_360_2022&amp;utm_content=megamenu" id="header-desk-resources-feature-link" target="_blank">LEARN MORE
+                                    <span class="fa fa-angle-right nav-image-right-span-greater-than"></span>
+</a>
+</div>
+</li>
+</ul>
+<span class="dark"></span>
+</li>
+</ul>
+<div class="cp_nav_menu__logo" id="nav-logo">
+<ul class="cp_search_geo__mobile">
+<li class="cp_menu__item alt_menu_item">
+<span class="cp_menu__item__icon cp_menu__item__search cp_menu__item__main" id="cp_search_mobile">Search</span>
+<ul class="cp_menu__item__ul">
+<li class="cp_menu__item__li">
+<form id="search-form1">
+<label style="display: none;">Search</label>
+<input alt="Search" src="/wp-content/themes/checkpoint-theme-v2/images/search-btn.png" type="image" value="Submit"/><input aria-label="Search Term" autocomplete="off" class="st-search-input" id="stq1" name="stq1" placeholder="Enter your keywords..." type="text" x-webkit-grammar="builtin:search" x-webkit-speech=""/>
+</form>
+</li>
+</ul>
+</li>
+<li class="cp_menu__item alt_menu_item">
+<span class="cp_menu__item__icon cp_menu__item__geo cp_menu__item__main" id="cp_geo_mobile">Geo Menu</span>
+<ul class="cp_menu__item__ul">
+<li id="choose-lang">Choose your language...</li>
+<li class="cp_menu__item__li__inner_li lang-item-en"><a class="header-link" href="/" hreflang="en-US" id="header-mobile-language-english-link" lang="en-US">English (English)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-es"><a class="header-link" href="/es/" hreflang="es-419" id="header-mobile-language-spanish-link" lang="es-419">Spanish (Español)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-fr"><a class="header-link" href="/fr/" hreflang="fr-FR" id="header-mobile-language-french-link" lang="fr-FR">French (Français)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-de"><a class="header-link" href="/de/" hreflang="de-DE" id="header-mobile-language-german-link" lang="de-DE">German (Deutsch)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-it"><a class="header-link" href="/it/" hreflang="it-IT" id="header-mobile-language-italian-link" lang="it-IT">Italian (Italiano)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-pt"><a class="header-link" href="/pt/" hreflang="pt-PT" id="header-mobile-language-portuguese-link" lang="pt-PT">Portuguese (Português)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-ru"><a class="header-link" href="/ru/" hreflang="ru-RU" id="header-mobile-language-russia-link" lang="ru-RU">Russian (Русский)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-jp"><a class="header-link" href="/jp/" hreflang="ja" id="header-mobile-language-japanese-link" lang="ja">Japanese (日本語)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-cn"><a class="header-link" href="https://www.checkpoint.com.cn/" hreflang="zh" id="header-mobile-language-chinese-link" lang="zh">Chinese (中文)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-cz"><a class="header-link" href="/cz/" hreflang="cs" id="header-mobile-language-czech-link" lang="cs">Czech (čeština)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-id"><a class="header-link" href="/id/" hreflang="id-ID" id="header-mobile-language-indonesian-link" lang="id-ID">Indonesian (Bahasa Indonesia)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-kr"><a class="header-link" href="/kr/" hreflang="kr-KR" id="header-mobile-language-korean-link" lang="kr-KR">Korean (한국어)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-nl"><a class="header-link" href="/nl/" hreflang="nl-NL" id="header-mobile-language-dutch-link" lang="nl-NL">Dutch (Nederlands)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-pl"><a class="header-link" href="/pl/" hreflang="pl-PL" id="header-mobile-language-polish-link" lang="pl-PL">Polish (Polszczyzna)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-tr"><a class="header-link" href="/tr/" hreflang="tr-TR" id="header-mobile-language-turkish-link" lang="tr-TR">Turkish (Türkçe)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-tw"><a class="header-link" href="/tw/" hreflang="tw-TW" id="header-mobile-language-taiwan-link" lang="tw-TW">Taiwan (繁體中文)</a></li>
+<li class="cp_menu__item__li__inner_li lang-item-vi"><a class="header-link" href="/vi/" hreflang="vi-VI" id="header-mobile-language-vietnamese-link" lang="vi-VI">Vietnamese (Tiếng Việt)</a></li>
+</ul>
+</li>
+</ul>
+<a class="header-link" href="/about-us/celebrate/" id="logo-home-link" style="position: absolute; left: 45px; bottom: 12px; background-color: #fff;" title="Check Point Software Technologies Ltd."><img alt="Check Point Software Technologies Ltd." height="88" id="cp-logo-2022-animated" src="/wp-content/uploads/cp-logo-2022-peace.gif?v=1.3" width="231"/></a>
+<a class="header-link" href="/" id="logo-page-link" title="Check Point Software Technologies Ltd."><img alt="Check Point Software Technologies Ltd." src="/wp-content/themes/checkpoint-theme-v2/images/checkpoint-logo.png"/></a>
+<label class="cp_nav-icon" for="cp_nav_menu__mobile">
+<span class="sr-only">Toggle Navigation</span>
+<div class="cp_nav-icon__inside"></div>
+</label>
+</div>
+</div>
+</header>
+<div id="container-content">
+<div id="container-area">
+<div class="container-fluid panels anchor center band1" id="" style="background-color:#ffffff; background-image: url();">
+<div class="container">
+<div class="row vertical-center"><div class="col-md-12 featured-band"><div>
+<style>.band1 {padding: 5px 15px;} .band2 {padding: 30px 15px;}
+</style>
+</div>
+<div style="float: right;"><a href="/privacy/cookies/"><strong>Cookies Notice</strong></a> | <a href="/privacy/terms/"><strong>Website Terms and Conditions</strong></a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid panels anchor center band2" id="" style="background-color:#ffffff; background-image: url();">
+<div class="container">
+<div class="row vertical-center"><div class="col-md-12 col-sm-12"><h1>Privacy Policy</h1>
+<p>Check Point Software Technologies Ltd, including all of its affiliates worldwide (collectively, “Check Point,” “we,” “us,” or “our”) value the privacy of individuals who use or express interest in the Check Point Websites, Check Point Products, and Check Point Services (as defined below, collectively, our “Services”). This privacy policy (the “Privacy Policy”) explains how we collect, use, and disclose Personal Data.</p>
+<p><strong>1. GENERAL INFORMATION</strong><br>
+1.1 “Personal Data” means any data which relates to a living individual who can be identified from that data or from that data and other information which is in the possession of, or is likely to come into the possession of, Check Point (or its representatives or service providers). In addition to factual information, it includes any expression of opinion about an individual and any indication of the intentions of Check Point or any other person in respect of an individual.</br></p>
+<p>1.2 Beyond this Privacy Policy, your use of our Services is also subject to applicable End-user License Agreement available at our website.</p>
+<p>1.3 If you are a California resident, our <a href="/privacy/ccpa-notice/">California Resident Privacy Notice</a> provides more information about your California privacy rights and explains how you can exercise those rights.</p>
+<p><strong>2. THE SOURCES OF THE INFORMATION WE COLLECT</strong><br>
+This Privacy Policy concerns the following sources of information that we collect in connection with our Service, which include:</br></p>
+<ul>
+<li>Our websites (e.g. www.checkpoint.com) (“Check Point Websites”), emails, marketing communication;</li>
+<li>Information we received through our business partners and vendors; and</li>
+<li>Information we receive through our products (“Check Point Products”), support, mobile security solutions and/or cloud-based services, including, without limitation, CloudGuard and Harmony (“Check Point Services”).</li>
+</ul>
+<p><strong>3. THE TYPES OF PERSONAL DATA WE COLLECT</strong></p>
+<p>We may collect and receive a variety of information from you or about you or your devices from various sources, as described below. If you do not provide your Personal Data when requested, you may not be able to use our Services if that information is necessary to provide you with our Services or if we are legally required to collect it.</p>
+<p>3.1 <strong>Information that you provide to Check Point.</strong> This includes Personal Data about you that you provide to us. The nature of the Services you are requesting or using will determine the kind of Personal Data we might ask for, though such information may include (by way of a non-exhaustive list):</p>
+<ul>
+<li>basic Personal Data (such as first name; family name; position in the company [title]; company name; company email address; business phone number; business address; city; postcode; country);</li>
+<li>any information that you choose to share through our Services which may be considered Personal Data. (Please note that Check Point does not collate information included on Check Point internet forums together with Personal Data from your User Center account or profile);</li>
+</ul>
+<p>3.2 <strong>Information that we collect or generate about you.</strong>This includes (by way of non-exhaustive list):</p>
+<ul>
+<li>File with your contact history to be used for enquiry purposes so that we may ensure that you are satisfied with our Services;</li>
+<li>Through our cloud security services, traffic and security reports that include information on the internet usage of the organization’s computer users (e.g. what websites were visited by each user, any documents downloaded, security incidents, prevention measures taken by the gateway, etc.);</li>
+<li>Activity data relating to the use of protected documents, such as altering a document’s permissions and information regarding the individual that performed the activity;</li>
+<li>Information about you provided from third parties’ sources; and</li>
+<li>Through our cloud Harmony Email &amp; Office service, the files and email correspondence (included the content therein) found in your accounts connected to such service.</li>
+</ul>
+<p>3.3 <strong>Cookies. </strong> We and our third-party partners may collect Personal Data using cookies, which are small files of letters and numbers that we store on your browser or the hard drive of your computer. We may also use pixel tags and web beacons on our Services. These are tiny graphic images placed on web pages or in our emails that allow us to determine whether you have performed a specific action. We use cookies, beacons, invisible tags, and similar technologies (collectively “<strong>Cookies</strong>”) to collect information about your browsing activities and to distinguish you from other users of our Services. This aids your experience when you use our Services and allows us to improve the functionality of our Services. Cookies can be used for performance management, collecting information on how our Services are being used for analytics purposes. They can also be used for functionality management, enabling us to make your visit more efficient by, for example, remembering language preferences, passwords, and log-in details. For more information on the types of Cookies we and third parties may use in connection with our Services, please see our <a href="/privacy/cookies/">Check Point Cookies Notice</a>.</p>
+<p>3.4 <strong>Anonymized data.</strong> In addition to the categories of Personal Data described above, Check Point may also process further anonymized information or de-identified and aggregated with other data that is not processed by reference to a specific individual.</p>
+<p><strong>4. HOW WE USE YOUR INFORMATION</strong></p>
+<p>4.1 We may process your Personal Data for the following purposes:</p>
+<ul>
+<li>for ongoing review and improvement of the information provided on Check Point Websites to ensure they are user friendly and to prevent any potential disruptions or cyberattacks;</li>
+<li>to allow you to use and access the functionality provided by the Check Point Products and the Check Point Services;</li>
+<li>to assess your application for Check Point Products and Check Point Services, where applicable;</li>
+<li>to set up customers to use Check Point Products and Check Point Services;</li>
+<li>to set up users to use the User Center;</li>
+<li>to conduct analysis required to detect malicious data and understand how this may affect your IT system;</li>
+<li>for statistical monitoring and analysis of current attacks on devices and systems and for the on-going adaptation of the solutions provided to secure devices and systems against current attacks;</li>
+<li>to understand feedback on Check Point Products and Check Point Services and to help provide more information on the use of those products and services quickly and easily;</li>
+<li>to communicate with you in order to provide you with: (i) our Services; (ii) information about us and our Services; or (iii) offers and marketing information;</li>
+<li>to send you e-mail updates on the latest cyber security trends, news, upcoming events and other marketing or promotional materials;</li>
+<li>for in-depth threat analysis;</li>
+<li>to understand your needs and interests;</li>
+<li>for the management and administration of our business;</li>
+<li>to comply with and to assess compliance with applicable laws, rules and regulations, and internal policies and procedures;</li>
+<li>for the administration and maintenance of databases storing Personal Data to market Check Point’s products and services; or</li>
+<li>for back-up and data loss prevention.</li>
+</ul>
+<p>4.2 When we process Personal Data we verify the existence of a lawful ground for such processing activity, including:</p>
+<ul>
+<li>performing our contractual obligations;</li>
+<li>a lawful consent has been obtained;</li>
+<li>compliance with legal or regulatory obligation;</li>
+<li>exercising or defending our rights;</li>
+<li>legitimate business interests, such as:
+<ul>
+<li>effectively and efficiently manage and administer the operation of our business;</li>
+<li>maintaining compliance with internal policies and procedures;</li>
+<li>monitoring the use of our copyrighted materials;</li>
+<li>enabling quick and easy access to information on our Services;</li>
+<li>offering optimal, up-to-date security solutions;</li>
+<li>sending you e-mail updates on our Services, the latest cyber security trends, news, upcoming events and other marketing or promotional materials; and</li>
+<li>obtaining further knowledge of current threats to network security in order to update our security solutions and provide these to the market.</li>
+</ul>
+</li>
+</ul>
+<p>4.3 We will take steps to ensure that your Personal Data is accessed only by such individuals that have a need to do so for the purposes described in this Privacy Policy.</p>
+<p><strong>5. DISCLOSURE OF INFORMATION TO THIRD PARTIES</strong></p>
+<p>We may share or otherwise disclose the Personal Data we collect from you as described below or otherwise disclosed to you at the time of the collection.</p>
+<ul>
+<li><strong>Vendors and Service Providers</strong>. We may share any information we receive with vendors and service providers retained in connection with the provision and marketing of our Services or other relevant services.</li>
+<li><strong>Partners and Affiliates</strong>. We may share any information with our distributors, partners, corporate affiliates, parents, or subsidiaries for any purpose described in this Privacy Policy.</li>
+<li><strong>As Required by Law and Similar Disclosures</strong>. We may access, preserve, and disclose your Personal Data if we believe doing so is required or appropriate to: (i) comply with law enforcement requests and legal process, such as a court order or subpoena; (ii) respond to your requests; or (iii) protect your, our, or others’ rights, property, or safety.</li>
+<li><strong>Merger, Sale, or Other Asset Transfers</strong>. We may disclose and transfer your Personal Data to service providers, advisors, potential transactional partners, or other third parties in connection with the consideration, negotiation, or completion of a corporate transaction in which we are acquired by or merged with another company, or we sell, liquidate, or transfer all or a portion of our business or assets.</li>
+<li><strong>Consent.</strong>We may also disclose Personal Data from or about you or your devices with your permission.</li>
+</ul>
+<p><strong>6. INTERNATIONAL TRANSFERS OF PERSONAL DATA</strong></p>
+<p>6.1 Check Point is a global business. Our customers and our operations are spread around the world. As a result, we collect and transfer Personal Data on a global basis. That means that we may transfer your Personal Data to locations outside of your country.</p>
+<p>6.2 <u>Europe</u>. Where we transfer your Personal Data to another country outside the European Economic Area (“EEA”) or the United Kingdom (“UK”), we will ensure that it is protected and transferred in a manner consistent with legal requirements. In relation to data being transferred outside of Europe or the UK, for example, this may be done in one of the following ways:</p>
+<ul>
+<li>the country that we send the data to, might be approved by the European Commission as offering an adequate level of protection for Personal Data (for example, Israel is an approved country);</li>
+<li>the recipient might have signed a contract based on applicable “model contractual clauses” approved by the European Commission, obliging them to protect your Personal Data; or</li>
+<li>in other circumstances the law may permit us to otherwise transfer your Personal Data outside the EEA or UK.</li>
+</ul>
+<p>You can obtain more details of the protection given to your Personal Data when it is transferred outside the EEA or the UK (including a copy of the standard data protection clauses which we have entered into with recipients of your Personal Data) by contacting us as described in paragraph 13 below.</p>
+<p>6.3 <u>China</u>. For residents in the mainland of the People’s Republic of China (“Mainland China”), we may transfer, access or store your Personal Data outside of the Mainland China where we are satisfied that adequate levels of protection are in place to protect the integrity and security of your Personal Data or adequate security measures are adopted and in compliance with the applicable laws, such as contractual arrangements. Where required by applicable laws, we will put in place appropriate measures to ensure that all processing of your Personal Data outside of the Mainland China is safeguarded by the equivalent level of data protection in the Mainland China.</p>
+<p><strong>7. YOUR RIGHTS</strong></p>
+<p>7.1 <strong>Marketing Communications</strong>. You can unsubscribe from our promotional emails via the link provided in the emails. Even if you opt out of receiving promotional messages from us, you will continue to receive administrative messages from us.</p>
+<p>7.2 <strong>Do Not Track</strong>. There is no accepted standard on how to respond to Do Not Track signals, and we do not respond to such signals.</p>
+<p>If you choose not to provide us with the Personal Data we collect, some features of our Services may not work as intended.</p>
+<p>7.3 <strong>California Privacy Rights</strong>. If you are a California resident, you can review our <a href="/privacy/ccpa-notice/"> California Resident Privacy Notice</a> for information about your privacy rights and choices under California law.</p>
+<p>7.4 <strong>Your European Privacy Rights</strong>. If you are located in the EEA or the UK, you have additional rights described below.</p>
+<ul>
+<li>You may request access the Personal Data we maintain about you, update and correct inaccuracies in your Personal Data, restrict or object to the processing of your Personal Data, have your Personal Data anonymized or deleted, as appropriate, or exercise your right to data portability to easily transfer your Personal Data to another company. In addition, you also have the right to lodge a complaint with a supervisory authority, including in your country of residence, place of work or where an incident took place.</li>
+<li>You may withdraw any consent you previously provided to us regarding the processing of your Personal Data at any time and free of charge. We will apply your preferences going forward and this will not affect the lawfulness of the processing before you withdrew your consent.</li>
+</ul>
+<p>You may exercise these rights by contacting us using the contact details at the end of this Privacy Policy.  Before fulfilling your request, we may ask you to provide reasonable information to verify your identity.  Please note that there are exceptions and limitations to each of these rights, and that while any changes you make will be reflected in active user databases instantly or within a reasonable period of time, we may retain Personal Data for backups, archiving, prevention of fraud and abuse, analytics, satisfaction of legal obligations, or where we otherwise reasonably believe that we have a legitimate reason to do so.</p>
+<p>7.5 <strong>How to Block Cookies</strong>. You can block Cookies by setting your internet browser to block some or all Cookies.  However, if you use your browser settings to block all Cookies (including essential Cookies) you may not be able to access all or parts of our Services.  By using our Services, you consent to our use of Cookies and our processing of Personal Data collected through such Cookies, in accordance with this Privacy Policy.  You can withdraw your consent at any time by deleting placed Cookies and disabling Cookies in your browser, or as explained below.  You can change your browser settings to block or notify you when you receive a Cookie, delete Cookies, or browse our Services using your browser’s anonymous usage setting.  Please refer to your browser instructions or help screen to learn more about how to adjust or modify your browser settings.  If you do not agree to our use of Cookies, you should change your browser settings accordingly.  You should understand that some features of our Services may not function properly if you do not accept Cookies.  Where required by applicable law, you will be asked to consent to certain Cookies before we use or install them on your computer or other device.</p>
+<p><strong>8. HOW WE SAFEGUARD YOUR INFORMATION</strong></p>
+<p>8.1 We have extensive controls in place to maintain the security of our information and information systems. Files are protected with safeguards according to the sensitivity of the relevant information. Appropriate controls (such as restricted access) are placed on our computer systems. Physical access to areas where Personal Data is gathered, processed or stored is limited to authorized employees.</p>
+<p>8.2 As a condition of employment, Check Point employees are required to follow all applicable laws and regulations, including in relation to data protection law. Access to sensitive Personal Data is limited to those employees who need it to perform their roles. Unauthorized use or disclosure of confidential information by a Check Point employee is prohibited and may result in disciplinary measures.</p>
+<p>8.3 Check Point requires its worldwide employees and contractors that have access to its internal systems to complete annual trainings on data protection and security. Such trainings are aimed to make sure that Check Point’s personnel understand and follow Check Point’s privacy policies and guidelines when handling Personal Data.</p>
+<p>8.4 When you contact a Check Point representative, you may be asked for some Personal Data. This type of safeguard is designed to ensure that only you, or someone authorized by you, has access to your file.</p>
+<p><strong>9. THIRD PARTIES</strong></p>
+<p>Our Services may contain links to other websites, products, or services that we do not own or operate (“Third-Party Services”).  We are not responsible for the privacy practices, policies, or other content of these Third-Party Services.  Please be aware that this Privacy Policy does not apply to your activities on these Third-Party Services or any information you disclose to these Third-Party Services.  If you have any questions about how these other sites use your Personal Data, you should contact them directly.  We encourage you to read their privacy policies before providing any information to them.</p>
+<p><strong>10. HOW LONG WE KEEP YOUR PERSONAL DATA</strong></p>
+<p>We take measures to delete your Personal Data or keep it in a form that does not permit identifying you when this information is no longer necessary for the purposes for which we process it unless we are required by law to keep this information for a longer period.  When we process Personal Data for our own purposes, we determine the retention period taking into account various criteria, such as the type of services provided to you, the nature and length of our relationship with you, possible re-enrollment with our Services, the impact on our Services we provide to you if we delete some information from or about you, and mandatory retention periods provided by law and the statute of limitations.</p>
+<p><strong>11. CHILDREN’S PRIVACY</strong></p>
+<p>We do not knowingly collect, maintain, or use Personal Data from children under 16 years of age (“<strong>Minors</strong>”), and no parts of our Services are directed at children.  If you learn that a Minor has provided us with Personal Data in violation of this Privacy Policy, please alert us at <a href="mailto:privacy_inquiries@checkpoint.com?subject=Children's%20Privacy">privacy_inquiries@checkpoint.com</a>.</p>
+<p><strong>12. DESIGNATED REPRESENTATIVE</strong></p>
+<p>Check Point’s registered office may be contacted using the following contact information:</p>
+<table>
+<tbody>
+<tr>
+<td><em>Address:</em></td>
+<td>Check Point Software Technologies Ltd.,<br>
+5 Shlomo Kaplan Street, Tel Aviv 67897, Israel<br/>
+Attention: Legal Department</br></td>
+</tr>
+<tr>
+<td><em>Email Address:</em></td>
+<td><a href="mailto:privacy_inquiries@checkpoint.com">privacy_inquiries@checkpoint.com</a></td>
+</tr>
+</tbody>
+</table>
+<p>Check Point’s designated representative in the EU may be contacted using the following contact information:</p>
+<table>
+<tbody>
+<tr>
+<td><em>Address:</em></td>
+<td>Check Point Software Technologies GmbH,<br/>
+Oskar-Messter-Str. 13,<br/>
+85737,<br/>
+Ismaning<br/>
+Germany</td>
+</tr>
+<tr>
+<td><em>Email Address:</em></td>
+<td><a href="mailto:contact-germany@checkpoint.com">contact-germany@checkpoint.com</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>13. QUESTIONS, CONCERNS AND UPDATES</strong></p>
+<p>If you have any questions or concerns about Check Point’s handling of your Personal Data, or about this Policy, please contact our Privacy Officer using the following contact information:</p>
+<table>
+<tbody>
+<tr>
+<td><em>Address:</em></td>
+<td>Check Point Software Technologies Ltd.,<br/>
+5 Shlomo Kaplan Street, Tel Aviv 67897, Israel<br/>
+Attention: Legal Department</td>
+</tr>
+<tr>
+<td><em>Email Address:</em></td>
+<td><a href="mailto:privacy_inquiries@checkpoint.com">privacy_inquiries@checkpoint.com</a></td>
+</tr>
+</tbody>
+</table>
+<p>We are typically able to resolve privacy questions or concerns promptly and effectively. If you are not satisfied with the response you receive from our Privacy Officer, you may escalate concerns to the applicable privacy regulator in your jurisdiction. Upon request, Check Point’s Data Protection Officer will provide you with the contact information for that regulator.</p>
+<p>We will post any adjustments to the Privacy Policy on this page, and the revised version will be effective when it is posted.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="no-print" data-swiftype-index="false" id="ChatShare-container">
+<div id="attack-container">
+<a class="sidebar-slide sidebar-link" href="/support-services/threatcloud-incident-response/" id="attack-click">
+<span><img alt="Alert icon" src="/wp-content/themes/checkpoint-theme-v2/images/tri-alert.png"><br/>Under<br/>Attack?</img></span>
+</a>
+</div>
+<br style="clear:both"/>
+<div id="chat-container">
+<a class="close sidebar-link" href="#" id="sidebar-desk-chat-proactive-close-link">
+<img alt="Close button" height="23" src="/wp-content/uploads/chat-close-button.png" width="69">
+</img></a>
+<span class="sidebar-link" id="Sidebar-desk-chat-proactive-slide-open"></span>
+<a class="sidebar-slide sidebar-link" href="#" id="start-chat" onclick="window.open('https://usercenter.checkpoint.com/usercenter/portal/role/usercenterUser/page/openChat.psml/media-type/html?action=controls.Print&amp;sales_chat=true','archive','resizable,height=738,width=550,scrollbars=no'); return false;"><span><img alt="Chat icon" class="icon" src="/wp-content/themes/checkpoint-theme-v2/images/chat.png"/><br/>Chat</span><span><img alt="Chat person image" class="message" src="/wp-content/themes/checkpoint-theme-v2/images/chat-person.png"/></span><span class="chat-hello">Hello! How can I help you?<br/><b>START CHAT</b></span></a>
+</div>
+<div id="contact-container">
+<a class="sidebar-slide sidebar-link" href="/about-us/contact-us/" id="sidebar-desk-contact-link">
+<span><img alt="White phone icon" src="/wp-content/themes/checkpoint-theme-v2/images/contact-us.png"/><br/>Contact</span>
+</a>
+</div>
+</div></div>
+</div>
+<!--Website Feedback Survey Start -->
+<style>
+            #website-feedback {
+                display: none;
+            }
+            #website-feedback-off {
+                display: none;
+            }
+            .insightera-dialog-modern-trim {
+                border: none !important;
+                border-radius: 0 !important;
+                padding: 0;
+            }
+            .insightera-dialog-modern-trim .ui-dialog-content {
+                padding: 0;
+                margin-top: -10px;
+            }
+            .iframe-contain {
+                overflow:hidden;
+                position: fixed;
+                bottom: 0;
+                left: 45%;
+                z-index: 100000;
+                width:98px;
+                height:29px;
+                background:#373737;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+            .box-bigger {
+                width:482px;
+                height:445px;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+            .box-bigger #website-feedback-loaderA, .box-bigger #website-feedback-loaderB {
+                overflow: hidden;
+                top: -103px;
+                position: relative;
+                left: -31px;
+            }
+            .feedback-icon {
+                color: #ffffff;
+                padding: 5px 6px 0;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            .close-x {
+                float: right;
+                display: none;
+                font-size: 26px;
+                padding: 0 8px 0;
+                font-weight: bold;
+                cursor: pointer;
+                color: #ffffff;
+            }
+            @media only screen and (max-width: 1200px) {
+                #website-feedback {
+                    display: none;
+                }
+            }
+        </style>
+<div class="iframe-contain hidden-print" id="website-feedback-off">
+<span class="close-x">×</span>
+<div class="feedback-icon"><img src="https://www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/images/feedback-icon.png"/>  Feedback</div>
+<div id="website-feedback-loaderA"></div>
+</div>
+<!--
+        Script that injects surveymonkey form
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var page_path = window.location.pathname;
+                if(!$('#website-feedback-iframe').length) {
+                    $('#website-feedback-loaderA').html('<iframe id="website-feedback-iframe" class="embed-responsive-item" frameborder="0" data-toggle="modal" src="https://www.research.net/r/cp-nav-feedbackA?page='+page_path+'" width="690" height="700" data-target="#myModal" scrolling="none">');
+                    $('#website-feedback-loaderB').html('<iframe id="website-feedback-iframe" class="embed-responsive-item" frameborder="0" data-toggle="modal" src="https://www.research.net/r/cp-nav-feedbackB?page='+page_path+'" width="690" height="700" data-target="#myModal" scrolling="none">');
+                }
+            });
+        </script>-->
+<!--Website Feedback Survey End -->
+<!--Modal for Image-->
+<div aria-hidden="true" aria-label="Modal" aria-labelledby="myModalLabel" class="modal fade" id="imagemodal" role="dialog" tabindex="-1">
+<div class="modal-dialog" style="width: 95%;margin-top: 5%;">
+<div class="modal-content">
+<div class="modal-body">
+<button class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+<br/><br/>
+<img alt="Image Preview" class="imagepreview" src="" style="width: 100%;"/>
+</div>
+</div>
+</div>
+</div>
+<!-- /Modal for Image-->
+<footer class="site-footer no-print" data-swiftype-index="false" id="colophon" itemscope="itemscope" itemtype="https://schema.org/WPFooter" role="contentinfo">
+<div class="be-ix-link-block">
+<!--Link Equity Target Div -->
+</div>
+<div class="container">
+<ul class="cp_footer_menu">
+<li class="cp_footer_menu__item n-inline">
+<span class="cp_footer_menu__item__title">Products</span>
+<ul class="cp_footer_menu__item__inner_menu">
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="/products/" id="footer-desk-products-overview-link">Products Overview</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://www.zonealarm.com" id="footer-desk-consumer-products-link">Consumer Products</a></li>
+</ul>
+</li>
+<li class="cp_footer_menu__item n-inline">
+<span class="cp_footer_menu__item__title">Resources</span>
+<ul class="cp_footer_menu__item__inner_menu">
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="/customer-stories/" id="footer-desk-customer-stories-link">Customer Stories</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="/events/" id="footer-desk-events-link">Events</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://virtual-cpx.checkpoint.com/" id="footer-desk-cpx-360-link">CPX 360</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="/webinars/" id="footer-desk-webinars-link">Webinars</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="/videos/" id="footer-desk-videos-link">Videos</a></li>
+</ul>
+</li>
+<li class="cp_footer_menu__item y-inline">
+<span class="cp_footer_menu__item__title">Communities</span>
+<ul class="cp_footer_menu__item__inner_menu">
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://blog.checkpoint.com/" id="footer-desk-blog-link">Check Point Blog</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://research.checkpoint.com/" id="footer-desk-research-link">Check Point Research</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://www.cybertalk.org/" id="footer-desk-cyber-talk-link">Cyber Talk for Executives</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://community.checkpoint.com/" id="footer-desk-checkmates-link">CheckMates Community</a></li>
+</ul>
+</li>
+<li class="cp_footer_menu__item y-inline">
+<span class="cp_footer_menu__item__title">Technical Resources</span>
+<ul class="cp_footer_menu__item__inner_menu">
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://usercenter.checkpoint.com/usercenter/index.jsp" id="footer-desk-usercenter-link">User Center</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://pages.checkpoint.com/security-checkup.html" id="footer-desk-security-checkup-link">Security Check Up</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="/advisories/" id="footer-desk-advisories-link">Advisories</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://threatmap.checkpoint.com/" id="footer-desk-threat-map-link">Threat Map</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://threatwiki.checkpoint.com/threatwiki/public.htm" id="footer-desk-threat-wiki-link">Threat Wiki</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://www.checkpoint.com/urlcat/" id="footer-desk-url-categorization-link">URL Categorization</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://appwiki.checkpoint.com/appwikisdb/public.htm" id="footer-desk-app-wiki-link">App Wiki</a></li>
+</ul>
+</li>
+<li class="cp_footer_menu__item y-inline">
+<span class="cp_footer_menu__item__title">Company</span>
+<ul class="cp_footer_menu__item__inner_menu">
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="/about-us/leadership/" id="footer-desk-leadership-link">Leadership</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="/about-us/company-overview/" id="footer-desk-company-overview-link">Company Overview</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="/about-us/investor-relations/" id="footer-desk-investor-relations-link">Investor Relations</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="/press-releases/" id="footer-desk-press-releases-link">Press Releases</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="/about-us/news-coverage/" id="footer-desk-media-link">Check Point in the Media</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://careers.checkpoint.com/careers/" id="footer-desk-careers-link">Careers</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="/about-us/contact-us/" id="footer-desk-contact-us-link">Contact Us</a></li>
+<li><a class="cp_footer_menu__item__inner_menu_link footer-link" href="https://checkpointcompanystore.com/" id="footer-desk-merchandise-link">Merchandise Store</a></li>
+</ul>
+</li>
+<li class="cp_footer_menu__item contact">
+<ul class="cp_footer_menu__item__inner_menu contact">
+<li>
+<span class="contact__title">
+<img alt="Black phone icon" src="/wp-content/themes/checkpoint-theme-v2/images/icon-phone.png"/> Contact Sales
+                                </span>
+<ul>
+<li class="contact__loc"><b>North America:</b></li>
+<li>
+<a class="footer-link" href="tel:1-866-488-6691" id="footer-desk-1-866-488-6691-link">+1-866-488-6691</a>
+</li>
+<li class="contact__loc"><b>International:</b></li>
+<li>
+<a class="footer-link" href="tel:44-125-333-5558" id="footer-desk-44-125-333-5558-link">+44-125-333-5558</a>
+</li>
+</ul>
+</li>
+<li>
+<span class="contact__title">
+<img alt="Black phone icon" src="/wp-content/themes/checkpoint-theme-v2/images/icon-phone.png"/> Contact Support
+                                </span>
+<ul>
+<li class="contact__loc"><b>North America:</b></li>
+<li>
+<a class="footer-link" href="tel:1-888-361-5030" id="footer-desk-1-888-361-5030-link">+1-888-361-5030</a>
+</li>
+<li class="contact__loc"><b>International:</b></li>
+<li>
+<a class="footer-link" href="tel:44-114-478-2845" id="footer-desk-44-114-478-2845-link">+44-114-478-2845</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<div class="row min-footer">
+<div class="col-lg-5 col-lg-push-7 text-right followUs"><span class="title">Follow Us</span>
+<a class="footer-link" href="https://www.facebook.com/checkpointsoftware" id="footer-desk-follow-facebook-link" title="Check Point Software Facebook"><i aria-label="Facebook" class="fa fa-facebook-square"></i></a>
+<a class="footer-link" href="https://twitter.com/checkpointsw" id="footer-desk-follow-twitter-link" title="Check Point Software Twitter"><i aria-label="Twitter" class="fa fa-twitter"></i></a>
+<a class="footer-link" href="https://www.linkedin.com/company/check-point-software-technologies" id="footer-desk-follow-linkedin-link" title="Check Point Software LinkedIn"><i aria-label="LinkedIn" class="fa fa-linkedin"></i></a>
+<a class="footer-link" href="https://www.youtube.com/user/CPGlobal" id="footer-desk-follow-youtube-link" title="Check Point Software YouTube"><i aria-label="YouTube" class="fa fa-youtube-play"></i></a>
+</div>
+<div class="col-lg-7 col-lg-pull-5 text-left">
+<span class="tagline">YOU DESERVE THE BEST SECURITY<small class="tagline_tm">™</small></span>
+<span class="copyright">©1994-
+                            2022 Check Point Software Technologies Ltd. All rights reserved.</span><br>
+<span class="copyright"><a class="footer-link" href="/copyright/" id="footer-desk-copyright-link">Copyright</a> | <a class="footer-link" href="/privacy/" id="footer-desk-privacy-policy-link">Privacy Policy</a></span>
+</br></div>
+</div>
+</div>
+</footer>
+<div id="notification">
+<div class="container">
+<div class="row">
+<div class="col-md-11"><span>This website uses cookies for its functionality and for analytics and marketing purposes. By continuing to use this website, you agree to the use of cookies. For more information, please read our <a class="footer-link" href="/privacy/cookies/" id="footer-desk-cookies-link">Cookies Notice</a>.</span></div>
+<div class="col-md-1">
+<a href="#" id="gdpr-accept">OK</a>
+</div>
+</div>
+</div>
+</div>
+<link href="//www.checkpoint.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.6" id="contact-form-7-css" media="all" rel="stylesheet" type="text/css">
+<style id="contact-form-7-inline-css" type="text/css">
+.wpcf7 .wpcf7-recaptcha iframe {margin-bottom: 0;}.wpcf7 .wpcf7-recaptcha[data-align="center"] > div {margin: 0 auto;}.wpcf7 .wpcf7-recaptcha[data-align="right"] > div {margin: 0 0 0 auto;}
+</style>
+<script id="rocket-browser-checker-js-after" type="text/javascript">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id="rocket-preload-links-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|https:\/\/www.checkpoint.com\/wp-login.php|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/www.checkpoint.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script id="rocket-preload-links-js-after" type="text/javascript">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script id="parallax-js-js" src="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/lib/parallax/parallax.min.js?ver=5.9.3" type="text/javascript"></script>
+<script id="flickity-js-js" src="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/lib/flickity/flickity.pkgd.min.js?ver=5.9.3" type="text/javascript"></script>
+<script id="bg-lazyload-js-js" src="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/lib/flickity/bg-lazyload.js?ver=5.9.3" type="text/javascript"></script>
+<script id="panels-js-js" src="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/js/template-panel.js?ver=5.9.3" type="text/javascript"></script>
+<script id="cp_new_nav_js-js" src="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/tmp_files/js/cp_new_nav.js?ver=5.9.3" type="text/javascript"></script>
+<script id="footer-js-js" src="//www.checkpoint.com/wp-content/themes/checkpoint-theme-v2/js/footer.js?ver=3.60" type="text/javascript"></script>
+<script id="regenerator-runtime-js" src="/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9" type="text/javascript"></script>
+<script id="wp-polyfill-js" src="/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" type="text/javascript"></script>
+<script id="contact-form-7-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/www.checkpoint.com\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script id="contact-form-7-js" src="//www.checkpoint.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.6" type="text/javascript"></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script async="" data-no-minify="1" src="//www.checkpoint.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script></link></body>
+</html>

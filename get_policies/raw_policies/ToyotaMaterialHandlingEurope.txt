@@ -1,0 +1,1265 @@
+
+<!DOCTYPE html>
+
+<html data-system-lang="en-150" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"c08deef957","applicationID":"801000652","transactionName":"Z1ZVYkVTDxFUVU0KWF4cemB0HSINW0JcDUNgUlBTdF0PFkdZVQ9SQhxeWFNXGQ==","queueTime":0,"applicationTime":61,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"c08deef957",applicationID:"801000652"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Privacy Policy | Toyota Material Handling Europe</title>
+<meta content="Toyota Material Handling Europe" property="og:site_name">
+<meta content="website" property="og:type">
+<meta content="https://toyota-forklifts.eu/legal/privacy-policy/?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0" property="og:url">
+<meta content="Privacy Policy" property="og:title"/>
+<!-- Google fonts -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"> </script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"> </script>
+    <![endif]-->
+<link href="https://cdn.toyota-forklifts.eu/assets/main-bundle.1655751153108.css" rel="stylesheet"/>
+<link as="script" href="/assets/main-bundle.ac5053fb60e6326e.js" rel="preload"/>
+<link href="https://consent.cookiebot.com" rel="preconnect"/>
+<link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link href="https://cdn.toyota-forklifts.eu/Content/img/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="https://toyota-forklifts.at/fusstext/datenschutzhinweise/" hreflang="de-AT" rel="alternate">
+<link href="https://shop.toyotamaterialhandling.com.au/legal/privacy-policy/" hreflang="en-AU" rel="alternate">
+<link href="https://toyota-forklifts.az/legal/privacy-policy/" hreflang="az" rel="alternate">
+<link href="https://toyota-forklifts.ba/legal/privacy-policy/" hreflang="bs" rel="alternate">
+<link href="https://baltic.toyota-forklifts.eu/legal/privacy-policy/" hreflang="en-BA" rel="alternate"/>
+<link href="https://baltic.toyota-forklifts.eu/et/legal/privaatsuspoliitika/" hreflang="et" rel="alternate"/>
+<link href="https://baltic.toyota-forklifts.eu/lt/legal/privatumo-politika/" hreflang="lt" rel="alternate"/>
+<link href="https://baltic.toyota-forklifts.eu/lv/legal/konfidencialitates-politika/" hreflang="lv" rel="alternate"/>
+<link href="https://toyota-forklifts.be/fr-be/legal/politique-de-confidentialite/" hreflang="fr-BE" rel="alternate"/>
+<link href="https://toyota-forklifts.be/legal/privacy-policy/" hreflang="nl-BE" rel="alternate"/>
+<link href="https://toyota-forklifts.bg/legal/privacy-policy/" hreflang="bg" rel="alternate"/>
+<link href="https://toyota-forklifts.ch/fusstext/datenschutzhinweise/" hreflang="de-CH" rel="alternate"/>
+<link href="https://toyota-forklifts.ch/fr-ch/footer/politique-de-confidentialite/" hreflang="fr-CH" rel="alternate"/>
+<link href="https://toyota-forklifts.cz/paticka/ochrana-soukromi/" hreflang="cs" rel="alternate"/>
+<link href="https://toyota-forklifts.de/fusstext/datenschutzhinweise/" hreflang="de" rel="alternate"/>
+<link href="https://toyota-forklifts.de/fusstext/datenschutzhinweise/" hreflang="de-DE" rel="alternate"/>
+<link href="https://toyota-forklifts.dk/footer/fortrolighedspolitik/" hreflang="da" rel="alternate"/>
+<link href="https://toyota-forklifts.es/pie-de-pagina/politica-de-privacidad/" hreflang="es" rel="alternate"/>
+<link href="https://toyota-forklifts.eu/legal/privacy-policy/" hreflang="en" rel="alternate"/>
+<link href="https://toyota-forklifts.fi/alatunniste/yksityisyyden-suoja/" hreflang="fi" rel="alternate"/>
+<link href="https://toyota-forklifts.gr/legal/privacy-policy/" hreflang="el" rel="alternate"/>
+<link href="https://toyota-vilicari.hr/informacije-o-legalnosti/privacy-policy/" hreflang="hr" rel="alternate"/>
+<link href="https://toyota-forklifts.hu/lablec/adatvedelmi-iranyelvek/" hreflang="hu" rel="alternate"/>
+<link href="https://toyota-forklifts.ie/legal/privacy-policy/" hreflang="en-IE" rel="alternate"/>
+<link href="https://toyota-forklifts.is/legal/privacy-policy/" hreflang="is" rel="alternate"/>
+<link href="https://toyota-forklifts.it/legale/informativa-sulla-privacy/" hreflang="it" rel="alternate"/>
+<link href="https://toyota-forklifts.com.mk/pravni-stavki/politika-za-privatnost/" hreflang="mk" rel="alternate"/>
+<link href="https://toyota-forklifts.com.mt/legal/privacy-policy/" hreflang="mt" rel="alternate"/>
+<link href="https://toyota-forklifts.nl/voorwaarden/privacy-policy/" hreflang="nl" rel="alternate"/>
+<link href="https://toyota-forklifts.no/legal/privat/" hreflang="no" rel="alternate"/>
+<link href="https://toyota-forklifts.pl/regulaminy/polityka-prywatnoci/" hreflang="pl" rel="alternate"/>
+<link href="https://empilhadores.toyota.pt/legal/politica-de-privacidade/" hreflang="pt" rel="alternate"/>
+<link href="https://toyota-forklifts.ro/legal/politica-de-confidentialitate/" hreflang="ro" rel="alternate"/>
+<link href="https://toyota-forklifts.rs/legal/privacy-policy/" hreflang="sr" rel="alternate"/>
+<link href="https://toyota-forklifts.com.ru/legal/ru-privacy-policy/" hreflang="ru" rel="alternate"/>
+<link href="https://toyota-forklifts.se/footer/privacy-policy/" hreflang="sv" rel="alternate"/>
+<link href="https://toyota-forklifts.sk/legal/ochrana-osobnych-udajov/" hreflang="sk" rel="alternate"/>
+<link href="https://toyota-forklifts.com.ua/legal/privacy-policy/" hreflang="uk" rel="alternate"/>
+<link href="https://toyota-forklifts.co.uk/legal/privacy/" hreflang="en-GB" rel="alternate"/>
+<link href="https://toyota-forklifts.eu/legal/privacy-policy/" rel="canonical"/>
+<!-- Google Tag Manager -->
+<script>
+        window.dataLayer = window.dataLayer || [];
+
+
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NDCB8N');
+    </script>
+<!-- End Google Tag Manager -->
+<meta name="market" value="EU"/>
+</link></link></link></link></meta></meta></meta></head>
+<body>
+<!-- Google Tag Manager -->
+<noscript>
+<iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-NDCB8N" style="display: none; visibility: hidden" width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+  "country": "EU",
+  "authenticationStatus": "guest",
+  "store": "T-Store",
+  "pageID": 1223,
+  "pageType": "ContentPage"
+});
+</script>
+<script id="js-api-query-preferred-language" type="text/html">
+        en-150
+    </script>
+<noscript>
+<div class="container-fluid noscript">
+<div class="container">
+<p>Javascript needs to be activated for this site</p>
+</div>
+</div>
+</noscript>
+<div class="container-fluid pageTop hidden-xs hidden-sm hidden-md">
+<div class="container">
+<div class="jsPageTopWrap pagetop-wrap">
+<div class="table-cell">
+<!-- <div class="btn-onlinestore hidden-xs hidden-sm">
+        <span>Webshop</span>
+    </div>
+
+     <div class="btn-group region-selector hidden-xs hidden-sm">
+        <span class="icon icon-geo-location"></span> Europe
+    </div> -->
+</div>
+<div class="top-menu-language-dropdown">
+<div class="dropdown-language-menu">
+<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle country-search" data-toggle="dropdown" id="language-menu" type="button">
+<div class="flag flag-eu"></div><span class="caret"></span>
+<span class="text-language-menu">Select your local market</span>
+</button>
+<table aria-labelledby="language-menu" class="dropdown-menu dropdown-language-table">
+<tr class="language-table-row">
+<td>
+<div class="flag flag-al"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.com.mk/">Albania</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-am"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://shop-admin.toyota-forklifts.ge/">Armenia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-at"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.at/">Austria</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-au"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://shop.toyotamaterialhandling.com.au/">Australia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-az"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.az/">Azerbaijan</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-by"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="http://www.belpromimpex.by/">Belarus</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-be"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.be/">Belgium</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ba"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.ba/">Bosnia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-bg"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.bg/">Bulgaria</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-hr"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-vilicari.hr/">Croatia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-cy"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.gr/">Cyprus</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-cz"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.cz/">Czech</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-dk"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.dk/">Denmark</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ee"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://baltic.toyota-forklifts.eu/et/">Estonia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-fi"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.fi/">Finland</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-fr"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.fr/">France</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ge"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://shop-admin.toyota-forklifts.ge/">Georgia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-de"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.de/">Germany</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-gr"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.gr/">Greece</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-hu"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.hu/">Hungary</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-is"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="/link/cc3a74b978f84b3b8448fc2743011d76.aspx?epslanguage=is-IS">Iceland</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ie"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.ie/">Ireland</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-it"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.it/">Italy</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-xk"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="/link/cc3a74b978f84b3b8448fc2743011d76.aspx?epslanguage=mk-MK">Kosovo</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-lv"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://baltic.toyota-forklifts.eu/lv/">Latvia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-lt"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://baltic.toyota-forklifts.eu/lt/">Lithuania</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-lu"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.be/fr-be/">Luxembourg</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-mt"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.com.mt/">Malta</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-me"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="http://www.toyota-viljuskari.me/">Montenegro</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-nl"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.nl/">Netherlands</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-mk"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.com.mk/">North Macedonia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-no"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.no/">Norway</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-pl"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.pl/">Poland</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-pt"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://empilhadores.toyota.pt/">Portugal</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ro"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.ro/">Romania</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ru"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.com.ru/">Russia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-rs"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.rs/">Serbia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-sk"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.sk/">Slovakia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-si"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://www.toyotavilicarji.si/">Slovenia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-es"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.es/">Spain</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-se"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.se/">Sweden</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ch"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.ch/">Switzerland</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-tr"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.com.tr/">Turkey</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ua"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.com.ua/">Ukraine</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-uk"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.co.uk/">United Kingdom</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-eu"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="/">EU</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="table-cell top-menu-container">
+<div class="top-menu-links">
+<ul class="top-menu-list">
+</ul>
+</div>
+</div>
+<div class="table-cell">
+<div class="organization-select" id="js-organization-select"></div>
+</div>
+<div class="table-cell">
+<div class="search-wrap visible-xs-block">
+<button aria-label="Search" class="btn-topheader open-search-btn jsTopMenuBtn"><span class="hidden-xs">Search</span></button>
+<div class="header-dropdown jsTopMenu search-wrapper">
+<div class="inner-wrap">
+<div class="search">
+<form action="/search/" class="form-inline" method="get" role="form"> <label class="sr-only" for="search">Search</label>
+<input autocomplete="off" class="jsQuickSearch search-input" data-url="/search/QuickSearch/" name="q" placeholder="What are you looking for?" type="text"/>
+<input name="cat" type="hidden" value="t-store"/>
+<button class="search-btn jsSearchButton" type="submit">
+<svg fill="#bb001e" height="28" version="1.1" viewbox="0 0 30 32" width="26.25" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.109 12.344q0-2.188 0.859-4.188t2.32-3.445 3.477-2.297 4.219-0.852q2.953 0 5.469 1.445t3.977 3.93 1.461 5.406q0 3.031-1.734 5.797l8.859 7.281q0.219 0.219 0.219 0.539t-0.219 0.57l-2.156 2.156q-0.219 0.219-0.563 0.219t-0.563-0.219l-8.906-7.281q-2.719 1.719-5.844 1.719-2.203 0-4.219-0.852t-3.477-2.297-2.32-3.445-0.859-4.188zM3.219 12.344q0 1.547 0.617 2.969t1.656 2.461 2.477 1.648 3.016 0.609 3.016-0.609 2.477-1.648 1.656-2.461 0.617-2.969q0-2.094-1.039-3.859t-2.828-2.797-3.898-1.031-3.898 1.031-2.828 2.797-1.039 3.859z"></path>
+</svg>
+</button>
+</form></div>
+<div class="jsQuickSearchResult"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="main-menu-wrapper">
+<div class="container">
+<div id="header-main">
+<div class="mobile-nav-left">
+<button aria-label="Toggle navigation" class="nav-btn mobile-burger jsMobileMenuToggle" type="button">
+<span class="sr-only">Toggle navigation</span>
+<svg class="mobile-nav__icon mobile-nav__menu" fill="#333333" height="24" version="1.1" viewbox="0 0 32 32" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 6h28v4h-28v-4zM2 14h28v4h-28v-4zM2 22h28v4h-28v-4z"></path>
+</svg>
+<i class="icon-menu7"></i>
+</button>
+<button aria-label="Search" class="jsTopMenuBtn nav-btn" type="button">
+<svg class="mobile-nav__icon" fill="#333333" height="20" version="1.1" viewbox="0 0 30 32" width="18.75" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.109 12.344q0-2.188 0.859-4.188t2.32-3.445 3.477-2.297 4.219-0.852q2.953 0 5.469 1.445t3.977 3.93 1.461 5.406q0 3.031-1.734 5.797l8.859 7.281q0.219 0.219 0.219 0.539t-0.219 0.57l-2.156 2.156q-0.219 0.219-0.563 0.219t-0.563-0.219l-8.906-7.281q-2.719 1.719-5.844 1.719-2.203 0-4.219-0.852t-3.477-2.297-2.32-3.445-0.859-4.188zM3.219 12.344q0 1.547 0.617 2.969t1.656 2.461 2.477 1.648 3.016 0.609 3.016-0.609 2.477-1.648 1.656-2.461 0.617-2.969q0-2.094-1.039-3.859t-2.828-2.797-3.898-1.031-3.898 1.031-2.828 2.797-1.039 3.859z"></path>
+</svg>
+</button>
+<div class="header-dropdown jsTopMenu search-wrapper">
+<div class="inner-wrap">
+<div class="search">
+<form action="/search/" class="form-inline" method="get" role="form"> <label class="sr-only" for="search">Search</label>
+<input autocomplete="off" class="jsQuickSearch search-input" data-url="/search/QuickSearch/" name="q" placeholder="What are you looking for?" type="text"/>
+<input name="cat" type="hidden" value="t-store"/>
+<button class="search-btn jsSearchButton" type="submit">
+<svg fill="#bb001e" height="28" version="1.1" viewbox="0 0 30 32" width="26.25" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.109 12.344q0-2.188 0.859-4.188t2.32-3.445 3.477-2.297 4.219-0.852q2.953 0 5.469 1.445t3.977 3.93 1.461 5.406q0 3.031-1.734 5.797l8.859 7.281q0.219 0.219 0.219 0.539t-0.219 0.57l-2.156 2.156q-0.219 0.219-0.563 0.219t-0.563-0.219l-8.906-7.281q-2.719 1.719-5.844 1.719-2.203 0-4.219-0.852t-3.477-2.297-2.32-3.445-0.859-4.188zM3.219 12.344q0 1.547 0.617 2.969t1.656 2.461 2.477 1.648 3.016 0.609 3.016-0.609 2.477-1.648 1.656-2.461 0.617-2.969q0-2.094-1.039-3.859t-2.828-2.797-3.898-1.031-3.898 1.031-2.828 2.797-1.039 3.859z"></path>
+</svg>
+</button>
+</form></div>
+<div class="jsQuickSearchResult"></div>
+</div>
+</div>
+</div>
+<a &amp;="" &quot;="" aria-label='"Forklifts' class="header-box" href="/" solutions="" warehouse="">
+<img alt="Toyota Material Handling" class="logotype" loading="lazy" src="https://cdn.toyota-forklifts.eu/Content/img/logo.svg" title="Toyota Material Handling"/>
+</a>
+<div class="mobile-nav-right js-mobile-nav-right">
+<div class="top-menu-language-dropdown">
+<div class="dropdown-language-menu">
+<button aria-expanded="true" aria-haspopup="true" class="btn btn-default dropdown-toggle country-search" data-toggle="dropdown" id="language-menu" type="button">
+<div class="flag flag-eu"></div><span class="caret"></span>
+<span class="text-language-menu">Select your local market</span>
+</button>
+<table aria-labelledby="language-menu" class="dropdown-menu dropdown-language-table">
+<tr class="language-table-row">
+<td>
+<div class="flag flag-al"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.com.mk/">Albania</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-am"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://shop-admin.toyota-forklifts.ge/">Armenia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-at"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.at/">Austria</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-au"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://shop.toyotamaterialhandling.com.au/">Australia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-az"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.az/">Azerbaijan</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-by"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="http://www.belpromimpex.by/">Belarus</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-be"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.be/">Belgium</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ba"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.ba/">Bosnia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-bg"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.bg/">Bulgaria</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-hr"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-vilicari.hr/">Croatia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-cy"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.gr/">Cyprus</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-cz"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.cz/">Czech</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-dk"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.dk/">Denmark</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ee"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://baltic.toyota-forklifts.eu/et/">Estonia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-fi"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.fi/">Finland</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-fr"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.fr/">France</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ge"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://shop-admin.toyota-forklifts.ge/">Georgia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-de"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.de/">Germany</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-gr"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.gr/">Greece</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-hu"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.hu/">Hungary</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-is"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="/link/cc3a74b978f84b3b8448fc2743011d76.aspx?epslanguage=is-IS">Iceland</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ie"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.ie/">Ireland</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-it"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.it/">Italy</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-xk"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="/link/cc3a74b978f84b3b8448fc2743011d76.aspx?epslanguage=mk-MK">Kosovo</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-lv"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://baltic.toyota-forklifts.eu/lv/">Latvia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-lt"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://baltic.toyota-forklifts.eu/lt/">Lithuania</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-lu"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.be/fr-be/">Luxembourg</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-mt"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.com.mt/">Malta</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-me"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="http://www.toyota-viljuskari.me/">Montenegro</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-nl"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.nl/">Netherlands</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-mk"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.com.mk/">North Macedonia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-no"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.no/">Norway</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-pl"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.pl/">Poland</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-pt"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://empilhadores.toyota.pt/">Portugal</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ro"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.ro/">Romania</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ru"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.com.ru/">Russia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-rs"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.rs/">Serbia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-sk"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.sk/">Slovakia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-si"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://www.toyotavilicarji.si/">Slovenia</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-es"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.es/">Spain</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-se"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.se/">Sweden</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ch"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.ch/">Switzerland</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-tr"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.com.tr/">Turkey</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-ua"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.com.ua/">Ukraine</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-uk"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="https://toyota-forklifts.co.uk/">United Kingdom</a>
+</td>
+</tr>
+<tr class="language-table-row">
+<td>
+<div class="flag flag-eu"></div>
+</td>
+<td class="language-table-row__country-name">
+<a class="js-uncrawable-link" data-link-href="/">EU</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<nav class="navbar jsNavbar" id="mega-menu" role="navigation">
+</nav>
+<div class="header-box search-wrapper jsSearchWrapper search-collapsed">
+<div class="search">
+<form action="/search/" class="form-inline" method="get" role="form"> <label class="sr-only" for="search">Search</label>
+<input autocomplete="off" class="jsQuickSearch search-input" data-url="/search/QuickSearch/" name="q" placeholder="What are you looking for?" type="text"/>
+<input name="cat" type="hidden" value="t-store"/>
+<button class="search-btn jsSearchButton" type="submit">
+<svg fill="#bb001e" height="28" version="1.1" viewbox="0 0 30 32" width="26.25" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.109 12.344q0-2.188 0.859-4.188t2.32-3.445 3.477-2.297 4.219-0.852q2.953 0 5.469 1.445t3.977 3.93 1.461 5.406q0 3.031-1.734 5.797l8.859 7.281q0.219 0.219 0.219 0.539t-0.219 0.57l-2.156 2.156q-0.219 0.219-0.563 0.219t-0.563-0.219l-8.906-7.281q-2.719 1.719-5.844 1.719-2.203 0-4.219-0.852t-3.477-2.297-2.32-3.445-0.859-4.188zM3.219 12.344q0 1.547 0.617 2.969t1.656 2.461 2.477 1.648 3.016 0.609 3.016-0.609 2.477-1.648 1.656-2.461 0.617-2.969q0-2.094-1.039-3.859t-2.828-2.797-3.898-1.031-3.898 1.031-2.828 2.797-1.039 3.859z"></path>
+</svg>
+</button>
+</form></div>
+<div class="jsQuickSearchResult"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="breadcrumb-wrapper">
+<div class="container">
+<ul class="breadcrumbs">
+<li><a href="/">Start</a><i class="icon icon-arrow-right breadcrumbs--new-icon"></i></li>
+</ul>
+</div>
+</div>
+<div class="promo" id="promotion-area">
+</div>
+<div class="main-page-area">
+<div class="container jsFancyOverlayArea">
+<div class="block-heading-box">
+<h1 class="talign-center heading">Privacy Policy</h1>
+<div class="border-bottom"></div>
+</div> <div class="ingress-header">
+    In this privacy policy we explain how we collect and use your personal data. This privacy policy applies to all personal data we process about you when you visit our website and subdomains, purchase or use our services, or otherwise interact with us. 
+</div> </div>
+</div>
+<section class="jumplink-component js-jumplink-component">
+</section>
+<div class="main-page-area">
+<div class="container jsFancyOverlayArea">
+<h3>Who we are</h3>
+<p>We are Toyota Material Handling Europe AB (TMHE), a company organized under the laws of Sweden with its address at Svarvargatan 8, 595 35 Mjölby Sweden, tel no +46 142 860 00. VAT number SE556491-953701. TMHE is part of the TICO Group. For more information, please see our website under 'About us'.TMHE is responsible for the collection and use of your personal data described in this privacy policy.<br/>If you have any questions, remarks or complaints in relation to the processing of your data, you can contact us at online@toyota-industries.eu</p>
+<h3>The types of personal data we process</h3>
+<p>We may collect and process the following categories of personal data when you visit our website and/or our subdomains:</p>
+<ul>
+<li>Name, title, gender</li>
+<li>Your contact details and personal account or registration details as well as your company name and business location including address, telephone number, VAT number and your email address.</li>
+<li>Information about your requests and purchases</li>
+<li>Our communication with you. When you send us an email or chat with us online or via social media, we register your communication with us. When you call us, our customer support will register your questions or complaints in our database.</li>
+<li>Information we collect when you use our websites, apps and other digital media<br/>-When you visit our websites, we may register your IP address, browser type, operating system, referring website, web-browsing behaviour.<br/>-We may receive an automatic notification when you open a newsletter or click on a link in such newsletter.<br/>-With your permission we may collect your location data.</li>
+<li>Information in relation to social media<br/>Depending on your social network settings we may receive information from your social network provider. For example, when you sign in for our services using a social network account, we may receive your social network profile including your contact details, interests and contacts. For more information on the personal data that we receive from your social network provider and how to change your settings, please check the website and privacy policy of your social network provider.</li>
+<li>Information you choose to share with us. You may choose to share information with us, for example when you leave a comment for us on Facebook, fill out a customer survey or submit an entry for an event.</li>
+</ul>
+<h3>Cookies and similar technologies</h3>
+<p>When you use our website, we collect information via cookies and similar technologies. For more information please read our cookie policy on the website or mobile app you use.</p>
+<h3>Specific services, apps or events</h3>
+<p>For specific services, apps or events, we may collect other types of data and use such data for different purposes than described in this privacy policy. We will inform you about this when you register for a service or an event or download an app.</p>
+<h3>How we collect your data</h3>
+<p>In the following, we will explain which data we collect, process and use when and for what purpose.</p>
+<p><strong>Data collection for an exclusive use for information purposes</strong><br/>If you do not register to use our online shop, or if you provide us with any information, we only collect the data that your browser transmits to enable you to visit our online shop. These are:</p>
+<ul>
+<li>IP address</li>
+<li>Date and time of the request</li>
+<li>Time zone difference to Greenwich Mean Time (GMT)</li>
+<li>Content of the request (the page)</li>
+<li>Access status / HTTP status code</li>
+<li>The amount of data transferred</li>
+<li>Message of whether the retrieval was successful</li>
+<li>Notification of why a request may have failed</li>
+<li>Website from which the request comes</li>
+<li>Used browser</li>
+<li>Operating system</li>
+<li>Screen resolution</li>
+<li>Browser plugins (JavaScript, Java, Silverlight, Adobe Acrobat Reader, etc.)</li>
+<li>Language and version of the browser software.</li>
+<li>In addition, so-called cookies are used, see our cookie policy.</li>
+</ul>
+<p><strong>Data collection at a registration in our online shop</strong><br/>If you would like to order products via our online shop, you must register and create a customer account in which the data you provide (company name, address, e-mail address, other contact data) are stored on our servers. Also, in the case of registration for our online shop, the data mentioned under "3.1" are collected.<br/>Before you register an Order in our online store, you must agree to the storage and use of the data provided during registration. The corresponding declaration of consent is as follows: "I accept the terms and conditions and agree to the use of my data according to the privacy policy"</p>
+<h3>What are the data used for?</h3>
+<ul>
+<li><strong>To contact you in connection with contractual negotiations and to process your inquiries</strong><br/>Should contracts be concluded, the data will be used to process the contracts. In this regard, your data may be passed on to a commissioned shipping company and, where necessary, a transfer of your payment data to our payment provider. To prevent unauthorized access by third parties to your personal data, especially financial data, the order process is encrypted using SSL technology.</li>
+<li><strong>To provide our online services and mobile apps to you</strong><br/>- Some of our online services use your location, for example to show you the nearest location of your interest.<br/>- To ease your use of our online services, we may analyse the data we collect when you use our digital media and combine it with information collected via cookies and similar technologies (please see above). For example, to understand which digital channel (email, social media) or device (desktop, table or mobile) you prefer, so we can restrict our communication to that channel or device.</li>
+<li><strong>To communicate with you</strong><br/>We use your contact details to communicate with you, answer your questions or handle your complaints.</li>
+<li><strong>For statistical research</strong><br/>- We use automatic tools to perform statistical research into general trends regarding the use of our services, websites, and social media and the behaviour and preferences of our customers and users.<br/>- To perform our research, we may merge and analyse the different types of data as described above. We will only use aggregated data and do not use name, email address or other directly identifying information. We may also combine such aggregated data with information we receive from our authorized dealers or from public sources. Without your consent we will not use sensitive data for this statistical research.<br/>- Statistical research helps us to develop better services and offerings, to provide more responsive customer support and to improve the design and content of our websites.</li>
+<li><strong>For direct marketing purposes</strong><br/>- We may use your personal information to send you newsletters, brochures, promotions or other marketing communications.<br/>- To understand what is relevant to you, we may use automatic tools to analyse your personal information. For this purpose, we may use and combine the information described above. We may also combine such aggregated data with information we receive from our group companies or from public sources. Without your consent we will not use sensitive data for this statistical research.<br/>- We use the results of our analysis to tailor our marketing communications to your specific interests and preferences. For example, if our analysis shows that you may be interested in certain types of machines or a specific service we may customize our newsletter and websites with offers and content that we believe will be relevant to you.<br/>- We may use different channels for our marketing communications, such as e-mail, social media and your personal online account.<br/>- We may participate in Facebook's Custom Audience program, which enables us to display personalized ads to you when you visit Facebook. We may share your email address or another identifier to Facebook to enable Facebook to determine if you have a Facebook account. We may use similar programs from other social networks. You may opt-out of participation in our Facebook Custom Audience (or similar programs) by sending an email, from the email address you are opting out of, to EMAIL. For more information on custom audience targeting, please see the website of your social media provider.<br/>- You may object or revoke your consent for receiving marketing communications at any time by following the instructions in the relevant marketing communication or by contacting us at online@toyota-industries.eu</li>
+</ul>
+<h3>Disclosing or sharing data with third parties</h3>
+<p>We disclose or share your personal data with third parties for the following purposes:</p>
+<ul>
+<li><strong>For the support services we involve</strong><br/>We use third parties to provide our services, such as IT suppliers, social network providers, marketing agencies, credit and charge card companies and anti-fraud screening service providers. All such third parties will be required to adequately safeguard your personal data and only process it in accordance with our instructions.</li>
+<li><strong>Third party websites</strong><br/>Our websites contain links to third-party websites. If you follow these links, you will exit our websites or mobile apps. This privacy policy does not apply to websites of third parties. TMHE cannot accept liability for the use of your personal data by these third parties. Your use of these websites is at your own risk. For more information on how these third parties treat your personal information, please check their privacy policy (if available).</li>
+</ul>
+<h3>Security and retention</h3>
+<p>TMHE will take appropriate technical and organizational measures to protect your personal data against loss or unlawful use. Our security measures include:</p>
+<ul>
+<li>Controls to prevent unauthorised persons from gaining access to processing systems used for the processing or use of personal data (access controls) are implemented and reviewed.</li>
+<li>Controls to prevent the use of processing systems without authorisation (access controls) are implemented and reviewed.</li>
+<li>Controls to ensure that persons with access to processing systems have access only to the personal data to which they are entitled to have access, that personal data cannot be read, copied, modified or deleted without authorisation in connection with processing or use and after storage (access controls) are implemented and, where appropriate, reviewed.</li>
+<li>Controls to ensure that personal data cannot be read, copied, modified or deleted without authorisation in connection with electronic transfer or transmission (transfer control) are implemented for all external communications.</li>
+<li>Controls to ensure that it is possible to monitor and determine whether and by whom personal data has been entered in processing systems, modified or deleted (input control) are implemented using access controls, secure development and, where possible, vulnerability testing of interfaces.</li>
+<li>Controls to ensure that, where personal data is to be processed in accordance with instructions, the personal data is processed entirely in accordance with the instructions provided by the principal are implemented through careful monitoring of sub-processors.</li>
+<li>Controls to ensure that personal data is protected against accidental destruction or loss (availability control) are implemented through a combination of administrative and IT security controls for services and infrastructure.</li>
+<li>Controls to ensure that data collected for different purposes can be processed separately are implemented through secure development and, where possible, logical and physical separation.</li>
+</ul>
+<p>Your personal data will be retained for as long as required for the purposes described in this privacy policy or in so far as such is necessary for compliance with statutory obligations and for solving any disputes.</p>
+<h3>Your rights</h3>
+<p>If you do not wish to store your data, we ask you to refrain from registering in our online shop. For technical reasons, it is not possible to differentiate between individual users, so that all users must agree to the data collection / usage. Exceptions are unfortunately not possible.</p>
+<p>You can request access to and you have the opportunity to update and amend your personal data. And you can exercise any other rights you enjoy under applicable data protection laws, including, for example, objection to the processing of your personal data. All you must do is send your written response, accompanied by a copy of your proof of identity, to online@toyota-industries.eu. A revocation of your consent also deletes your registered profile. Our online shop is then no longer usable for you. Please note that even if your profile has been deleted, we may retain information on individual transactions for accounting purposes or to process or process this transaction.<br/><br/>You may say no to receive marketing communications at any time by following the instructions in the relevant marketing communication or by sending an email to online@toyota-industries.eu<br/>Finally, please remember that you, should you wish to do so, are always entitled to lodge a complaint with the relevant data protection authority, such as Datainspektionen in Sweden; datainspektionen@datainspektionen.se.<br/>You can also contact us online@toyota-industries.eu if you have any questions, remarks or complaints in relation to this Privacy Policy.</p>
+<h3>Policy updates</h3>
+<p>This privacy policy is effective as of 2020-06-24 and replaces our previous privacy policy. We will keep this privacy policy under review and notify you of any changes by posting the revised policy on our website to take effect as soon as it is posted.</p>
+<div class="row">
+</div>
+</div>
+</div>
+<div id="footer-content">
+<div class="grey-block">
+<div class="container">
+<div class="row footer-area">
+<div><div class="footer-area-item">
+<div class="link-block col-sm-6 col-md-3 block-area margin-bottom-80">
+<h2 class="footer__header">About Toyota Material Handling Europe</h2>
+<ul class="link-list">
+<li class="Who we are" style="">
+<a href="/about-toyota/who-we-are/" target="_top" title="Who we are">Who we are</a>
+</li>
+<li class="Contact us" style="">
+<a href="/customer-support/contact-us/" target="_top" title="Contact us">Contact us</a>
+</li>
+<li class="Why buy a Toyota" style="">
+<a href="/about-toyota/why-buy-toyota/" target="_top" title="Why buy a Toyota">Why buy a Toyota</a>
+</li>
+<li class="Customer quality programme" style="">
+<a href="/about-toyota/why-buy-toyota/customer-quality-programme/" target="_top" title="Customer quality programme">Customer quality programme</a>
+</li>
+<li class="Design Center" style="">
+<a href="/about-toyota/design/" target="_top" title="Design Center">Design Center</a>
+</li>
+<li class="Logistic Solution Center" style="">
+<a href="/about-toyota/logistics-solutions-center/" title="Logistic Solution Center">Logistic Solution Center</a>
+</li>
+<li class="" style="">
+<a href="/about-toyota/news-and-editorials/">PR and News</a>
+</li>
+</ul>
+</div>
+</div><div class="footer-area-item">
+<div class="link-block col-sm-6 col-md-3 block-area margin-bottom-80">
+<h2 class="footer__header">Toyota values</h2>
+<ul class="link-list">
+<li class="The Toyota Way" style="">
+<a href="/toyota-lean-academy/the-toyota-way/" title="The Toyota Way">The Toyota Way</a>
+</li>
+<li class="Toyota Production Systems (TPS)" style="">
+<a href="/toyota-lean-academy/toyota-production-system/" title="Toyota Production Systems (TPS)">Toyota Production Systems (TPS)</a>
+</li>
+<li class="Sustainability" style="">
+<a href="/about-toyota/sustainability/" target="_top" title="Sustainability">Sustainability</a>
+</li>
+<li class="Code of conduct" style="">
+<a href="https://media.toyota-forklifts.eu/published/21528_Original document_toyota mh.pdf" target="_blank" title="Code of conduct">Code of conduct</a>
+</li>
+</ul>
+</div>
+</div><div class="footer-area-item">
+<div class="link-block col-sm-6 col-md-3 block-area margin-bottom-80">
+<h2 class="footer__header">Products &amp; Solutions</h2>
+<ul class="link-list">
+<li class="Premium trucks" style="">
+<a href="/premium-trucks/" target="_top" title="Premium trucks">Premium trucks</a>
+</li>
+<li class="Used trucks" style="">
+<a href="/used-solutions/approved-used-trucks/" target="_top" title="Used trucks">Used trucks</a>
+</li>
+<li class="I_Site fleet management" style="">
+<a href="/solutions/i_site-fleet-management/" target="_top" title="I_Site fleet management">I_Site fleet management</a>
+</li>
+<li class="Automated solutions" style="">
+<a href="/automated-solutions/" target="_top" title="Automated solutions">Automated solutions</a>
+</li>
+<li class="Racking solutions" style="">
+<a href="/solutions/racking-solutions/" target="_top" title="Racking solutions">Racking solutions</a>
+</li>
+<li class="Energy solutions" style="">
+<a href="/solutions/energy-solutions/" target="_top" title="Energy solutions">Energy solutions</a>
+</li>
+<li class="Service solutions" style="">
+<a href="/toyota-service/" target="_top" title="Service solutions">Service solutions</a>
+</li>
+<li class="Toyota Lean Academy" style="">
+<a href="/toyota-lean-academy/" target="_top" title="Toyota Lean Academy">Toyota Lean Academy</a>
+</li>
+</ul>
+</div>
+</div><div class="footer-area-item">
+<div class="link-block col-sm-6 col-md-3 block-area margin-bottom-80">
+<h2 class="footer__header">Toyota Material Handling Group</h2>
+<ul class="link-list">
+<li class="China" style="">
+<a href="http://www.toyotafl.cn/" target="_blank" title="China">China</a>
+</li>
+<li class="Japan" style="">
+<a href="http://www.toyota-lf.com/" target="_blank" title="Japan">Japan</a>
+</li>
+<li class="North America (Toyota brand)" style="">
+<a href="https://www.toyotaforklift.com/" target="_blank" title="North America (Toyota brand)">North America (Toyota brand)</a>
+</li>
+<li class="North America (Raymond brand)" style="">
+<a href="https://www.raymondcorp.com/" target="_blank" title="North America (Raymond brand)">North America (Raymond brand)</a>
+</li>
+<li class="Asia, Oceania, Middle East, Africa, and Latin America (inlcuding cross-border customers)" style="">
+<a href="https://toyotamaterialhandling-international.com/" target="_blank" title="Asia, Oceania, Middle East, Africa, and Latin America (inlcuding cross-border customers)">Asia, Oceania, Middle East, Africa, and Latin America (inlcuding cross-border customers)</a>
+</li>
+</ul>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="white-bg" id="footer-bottom">
+<div class="container footer-bottom__wrapper">
+<div class="footer-bottom__item">
+<ul class="footer-links">
+<li class="Privacy policy" style="">
+<a href="/legal/privacy-policy/" target="_blank" title="Privacy policy">Privacy policy</a>
+</li>
+<li class="" style="">
+<a href="/legal/cookie-policy/" target="_top">Cookie policy</a>
+</li>
+<li class="" style="">
+<a href="/legal/cookie-settings/" target="_top">Cookie settings</a>
+</li>
+</ul>
+</div>
+<span class="footer-bottom__item addthis_horizontal_follow_toolbox"></span>
+<div class="footer-bottom__item footer-bottom__item--info-text">
+<p>Copyright 2022 • toyota-forklifts.eu • All rights reserved</p>
+</div>
+</div>
+</div>
+<script src="https://dl.episerver.net/13.4.8/epi-util/find.js" type="text/javascript"></script>
+<script type="text/javascript">
+if(typeof FindApi === 'function'){var api = new FindApi();api.setApplicationUrl('/');api.setServiceApiBaseUrl('/find_v2/');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}
+</script>
+</div>
+<span id="mq-detector">
+<span class="visible-xs-inline"></span>
+<span class="visible-sm-inline"></span>
+<span class="visible-md-inline"></span>
+<span class="visible-lg-inline"></span>
+<span class="visible-xl-inline"></span>
+</span>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://cdn.toyota-forklifts.eu/Content/js/cdn-fallbacks/jquery-1.11.3.min.js"><\/script>')</script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script>$.fn.modal || document.write('<script src="https://cdn.toyota-forklifts.eu/Content/js/cdn-fallbacks/bootstrap.min.js"><\/script>')</script>
+<script src="https://cdn.toyota-forklifts.eu/Content/js/libs/modernizr.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.js"></script>
+<script>
+    var megaMenu = JSON.parse('{\"megaMenuBlocks\":[{\"title\":\"Products \\u0026 Solutions\",\"link\":\"\",\"promoTitle\":\"Make the shift to electric\",\"promoDescription\":\"With the new Traigo80 2-3,5 tonnes counterbalanced truck.\",\"promoImage\":\"https://cdn.toyota-forklifts.eu/globalassets/02-new-products/cb-electric/traigo80/new-traigo80/trg80_ledstudio_web_banner_768x400.jpg?format=webp\\u0026preset=Small\\u0026autorotate=true\",\"promoLink\":\"https://toyota-forklifts.eu/premium-trucks/electric-counterbalanced-trucks/new-traigo80/\",\"areas\":{\"mainArea\":{\"title\":\"Products \\u0026 Solutions\",\"link\":\"\",\"megaMenuBlockLinks\":[{\"name\":\"Premium trucks\",\"description\":\"View our product offer\",\"link\":\"https://toyota-forklifts.eu/premium-trucks/\",\"image\":null},{\"name\":\"Special trucks\",\"description\":\"Customised for you\",\"link\":\"https://toyota-forklifts.eu/our-offer/special-trucks/\",\"image\":null},{\"name\":\"I_Site\",\"description\":\"Our fleet management system\",\"link\":\"https://toyota-forklifts.eu/solutions/i_site-fleet-management/\",\"image\":null},{\"name\":\"Used trucks\",\"description\":\"We offer used trucks all over Europe\",\"link\":\"https://toyota-forklifts.eu/used-solutions/approved-used-trucks/\",\"image\":null},{\"name\":\"Finance solutions\",\"description\":\"Rental \\u0026 wholesale financing\",\"link\":\"https://toyota-forklifts.eu/financing/\",\"image\":null},{\"name\":\"Automated solutions\",\"description\":\"Optimise your use of staff\",\"link\":\"https://toyota-forklifts.eu/automated-solutions/\",\"image\":null},{\"name\":\"Racking Solutions\",\"description\":\"Build up your warehouse\",\"link\":\"https://toyota-forklifts.eu/solutions/racking-solutions/\",\"image\":null},{\"name\":\"Energy solutions\",\"description\":\"Find your perfect energy solution\",\"link\":\"https://toyota-forklifts.eu/solutions/energy-solutions/\",\"image\":null},{\"name\":\"Toyota Lean Academy\",\"description\":\"Learn lean from the source\",\"link\":\"https://toyota-forklifts.eu/toyota-lean-academy/\",\"image\":null},{\"name\":\"Service solutions\",\"description\":\"Tailored service solutions\",\"link\":\"https://toyota-forklifts.eu/toyota-service/\",\"image\":null},{\"name\":\"Toyota Genuine Parts\",\"description\":\"Quality guaranteed\",\"link\":\"https://toyota-forklifts.eu/parts/genuine-parts/\",\"image\":null}]},\"linkArea1\":{\"title\":\"Recommendation for your industry\",\"link\":\"\",\"megaMenuBlockLinks\":[{\"name\":\"Manufacturing\",\"description\":\"Production environments\",\"link\":\"https://toyota-forklifts.eu/solutions/your-sector/manufacturing/\",\"image\":null},{\"name\":\"Retail \\u0026 warehouse\",\"description\":\"Supermarkets, mail \\u0026 parcel delivery, distribution centres, e-commerce…\",\"link\":\"https://toyota-forklifts.eu/solutions/your-sector/retail-warehouse/\",\"image\":null},{\"name\":\"Transport \\u0026 distribution\",\"description\":\"Where transportation is vital\",\"link\":\"https://toyota-forklifts.eu/solutions/your-sector/transport--distribution/\",\"image\":null},{\"name\":\"Smaller businesses\",\"description\":\"Agriculture, printing, workshop, transport …\",\"link\":\"https://toyota-forklifts.eu/solutions/your-sector/smaller-businesses/\",\"image\":null},{\"name\":\"Cold store\",\"description\":\"For chilled or frozen operations\",\"link\":\"https://toyota-forklifts.eu/solutions/your-sector/temperature-controlled-environments/\",\"image\":null},{\"name\":\"Other environments\",\"description\":\"Airports, Food, Beverage etc\",\"link\":\"https://toyota-forklifts.eu/solutions/your-sector/other-environments/\",\"image\":null}]},\"linkArea2\":{\"title\":\"Also interested in?\",\"link\":\"\",\"megaMenuBlockLinks\":[{\"name\":\"Smart trucks\",\"description\":\"Get smart with our I_site fleet management\",\"link\":\"https://toyota-forklifts.eu/solutions/smart-logistics/smart-trucks/\",\"image\":null},{\"name\":\"Forklift \\u0026 safety training\",\"description\":\"Book operator training\",\"link\":\"https://toyota-forklifts.eu/solutions/operator-training/\",\"image\":null}]}}},{\"title\":\"Knowledge \\u0026 Innovation\",\"link\":\"\",\"promoTitle\":\"Logiconomi\",\"promoDescription\":\"Watch the latest Logiconomi TV\",\"promoImage\":\"https://cdn.toyota-forklifts.eu/globalassets/00-mega-menu/knowledge-and-innovation/logiconomi_promo_mm_300x150px.png?format=webp\\u0026preset=Small\\u0026autorotate=true\",\"promoLink\":\"https://toyota-forklifts.eu/logiconomi/\",\"areas\":{\"mainArea\":{\"title\":\"Knowledge base\",\"link\":\"\",\"megaMenuBlockLinks\":[{\"name\":\"Toyota Lean Academy\",\"description\":\"Learn lean from the source\",\"link\":\"https://toyota-forklifts.eu/toyota-lean-academy/\",\"image\":null},{\"name\":\"Training\",\"description\":\"Our different training offers\",\"link\":\"https://toyota-forklifts.eu/solutions/operator-training/\",\"image\":null},{\"name\":\"Customer cases\",\"description\":\"Stories about our customers\",\"link\":\"https://toyota-forklifts.eu/case-studies/\",\"image\":null},{\"name\":\"Fairs \\u0026 events\",\"description\":\"Meet our material handling experts\",\"link\":\"https://toyota-forklifts.eu/about-toyota/news-and-editorials/?tagids=63760;\",\"image\":null},{\"name\":\"Visit our blog -\\u003e\",\"description\":\"Articles within smart data, safety and logistic innovations\",\"link\":\"https://blog.toyota-forklifts.eu/\",\"image\":null}]},\"linkArea1\":{\"title\":\"Innovation\",\"link\":\"\",\"megaMenuBlockLinks\":[{\"name\":\"Lean thinking\",\"description\":\"Principles of Toyota Production System\",\"link\":\"https://toyota-forklifts.eu/toyota-lean-academy/toyota-production-system/\",\"image\":null},{\"name\":\"Smart logistics\",\"description\":\"Explore the world of Smart trucks\",\"link\":\"https://toyota-forklifts.eu/solutions/smart-logistics/\",\"image\":null},{\"name\":\"Automated solutions\",\"description\":\"Optimise your use of staff\",\"link\":\"https://toyota-forklifts.eu/automated-solutions/\",\"image\":null},{\"name\":\"Energy solutions\",\"description\":\"Find your perfect energy solution\",\"link\":\"https://toyota-forklifts.eu/solutions/energy-solutions/\",\"image\":null},{\"name\":\"Design center\",\"description\":\"Read about our design team\",\"link\":\"https://toyota-forklifts.eu/about-toyota/design/\",\"image\":null}]},\"linkArea2\":{\"title\":null,\"link\":\"\",\"megaMenuBlockLinks\":[{\"name\":\"IndX2021\",\"description\":\"Where start-ups can pitch their innovative ideas\",\"link\":\"https://toyota-forklifts.eu/indx2021/\",\"image\":null},{\"name\":\"Logiconomi\",\"description\":\"In logistics, standing still is not an option\",\"link\":\"https://toyota-forklifts.eu/logiconomi/\",\"image\":null}]}}},{\"title\":\"Career\",\"link\":\"https://toyota-forklifts.eu/join-the-team/\",\"promoTitle\":null,\"promoDescription\":null,\"promoImage\":null,\"promoLink\":\"\",\"areas\":{\"mainArea\":{\"title\":null,\"link\":\"\",\"megaMenuBlockLinks\":[]},\"linkArea1\":{\"title\":null,\"link\":\"\",\"megaMenuBlockLinks\":[]},\"linkArea2\":{\"title\":null,\"link\":\"\",\"megaMenuBlockLinks\":[]}}},{\"title\":\"About us\",\"link\":\"\",\"promoTitle\":\"Sustainability report 2021\",\"promoDescription\":\"Together we move the world towards easy and sustainable\\u003e\\u003e \",\"promoImage\":\"https://cdn.toyota-forklifts.eu/globalassets/21-sustainability/woman-building-truck-in-factory.jpg?format=webp\\u0026preset=Small\\u0026autorotate=true\",\"promoLink\":\"https://toyota-forklifts.eu/about-toyota/sustainability/\",\"areas\":{\"mainArea\":{\"title\":\"About us\",\"link\":\"\",\"megaMenuBlockLinks\":[{\"name\":\"Who we are\",\"description\":\"Learn more about our company\",\"link\":\"https://toyota-forklifts.eu/about-toyota/who-we-are/\",\"image\":null},{\"name\":\"Why buy Toyota\",\"description\":\"Find out the benefits with our products\",\"link\":\"https://toyota-forklifts.eu/about-toyota/why-buy-toyota/\",\"image\":null},{\"name\":\"Design center\",\"description\":\"Read about our design team\",\"link\":\"https://toyota-forklifts.eu/about-toyota/design/\",\"image\":null},{\"name\":\"Logistics solutions\",\"description\":\"Dedicated to find new technologies and solutions in logistics\",\"link\":\"https://toyota-forklifts.eu/about-toyota/logistics-solutions-center/\",\"image\":null},{\"name\":\"PR \\u0026 News\",\"description\":\"Read our latest updates \",\"link\":\"https://toyota-forklifts.eu/about-toyota/news-and-editorials/\",\"image\":null}]},\"linkArea1\":{\"title\":\"Toyota Values\",\"link\":\"\",\"megaMenuBlockLinks\":[{\"name\":\"The Toyota Way\",\"description\":\"The way we do things\",\"link\":\"https://toyota-forklifts.eu/toyota-lean-academy/the-toyota-way/\",\"image\":null},{\"name\":\"Toyota Production System (TPS)\",\"description\":\"Principles of working based on lean\",\"link\":\"https://toyota-forklifts.eu/about-toyota/toyota-production-system/\",\"image\":null},{\"name\":\"Sustainability\",\"description\":\"People, Planet and Prosperity\",\"link\":\"https://toyota-forklifts.eu/about-toyota/sustainability/\",\"image\":null}]},\"linkArea2\":{\"title\":\"Contact information\",\"link\":\"\",\"megaMenuBlockLinks\":[{\"name\":\"Contact us\",\"description\":\"Get in touch with us\",\"link\":\"https://toyota-forklifts.eu/customer-support/contact-us/\",\"image\":null}]}}},{\"title\":\"Visit our blog -\\u003e\",\"link\":\"https://blog.toyota-forklifts.eu/\",\"promoTitle\":null,\"promoDescription\":null,\"promoImage\":null,\"promoLink\":\"\",\"areas\":{\"mainArea\":{\"title\":null,\"link\":\"\",\"megaMenuBlockLinks\":[]},\"linkArea1\":{\"title\":null,\"link\":\"\",\"megaMenuBlockLinks\":[]},\"linkArea2\":{\"title\":null,\"link\":\"\",\"megaMenuBlockLinks\":[]}}}],\"shopDisabled\":true,\"userAuthenticated\":false,\"isAccountSectionAvailable\":true,\"loginUrl\":null,\"profileUrl\":null,\"logoutUrl\":null,\"loginText\":\"Sign in\",\"logoutText\":\"Sign out\",\"backText\":\"Back\",\"myPagesOverviewText\":\"Overview\",\"languages\":[{\"name\":\"English (Europe)\",\"url\":\"/Market/ChangeLanguage?language=en-150\\u0026redirecturl=%2Flegal%2Fprivacy-policy%2F%3FAccess-Control-Allow-Origin%3D*%26Access-Control-Allow-Methods%3DGET%26Access-Control-Allow-Headers%3DContent-Type%26Access-Control-Max-Age%3D3600%26User-Agent%3DMozilla%2F5.0%2B(X11%3B%2BUbuntu%3B%2BLinux%2Bx86_64%3B%2Brv%3A52.0)%2BGecko%2F20100101%2BFirefox%2F52.0\",\"isCurrentLanguage\":true}]}');
+    </script>
+<script id="market-redirect-dialog-configuration" type="application/json">{"heading":"Redirecting to your local market","ingress":"<div>Based on your current location we will try to redirect you to the correct market.&nbsp;</div>\n<div>It is also possible to choose another one the dropdown menu or stay where you are.&nbsp;</div>","translations":{"marketSelectorLabel":"You will be redirected to:","stayButtonLabel":"Stay here","goButtonLabel":"Go there"}}</script>
+<div id="market-redirect"></div>
+<div class="scroll-to-top-button" id="jsScrollToTopButton">
+<button aria-label="Back to top" class="outlined big scroll-top-btn" type="button"></button>
+</div>
+<script src="https://cdn.toyota-forklifts.eu/assets/runtime-bundle.696c53a149e351a3.js"></script>
+<script src="https://cdn.toyota-forklifts.eu/assets/main-bundle.ac5053fb60e6326e.js"></script>
+<script>
+    if ($.validator) {
+        $.extend($.validator.messages,
+            {
+                required: "The field is required",
+                maxlength: $.validator.format("The max number of characters allowed is {0}"),
+                minlength: $.validator.format("You have to enter at least {0} characters"),
+                rangelength: $.validator.format("Enter at least {0} and at most {1} characters"),
+                email: "Enter a valid email address",
+                vat: "[Missing text &#39;/Validation/Messages/VatInvalidFormat&#39; for &#39;English (Europe)&#39;]",
+                url: "Enter a valid URL",
+                date: "Enter a valid date",
+                dateISO: "Enter a valid date (YYYY-MM-DD)",
+                number: "Enter a valid number",
+                digits: "Use digits only",
+                equalTo: "Enter the same value again",
+                range: $.validator.format("Enter a value between {0} and {1}"),
+                max: $.validator.format("Enter a value less than or equal to {0}"),
+                min: $.validator.format("Enter a value greater than or equal to {0}"),
+                creditcard: "Enter a valid credit card number"
+            });
+
+        var defaultRangeValidator = $.validator.methods.range;
+        $.validator.methods.range = function(value, element, param) {
+            if (element.type === 'checkbox') {
+                // if it's a checkbox return true if it is checked
+                return element.checked;
+            } else {
+                // otherwise run the default validation function
+                return defaultRangeValidator.call(this, value, element, param);
+            }
+        }
+    }
+    </script>
+<script>
+        $('.usage-area a[href^="#"]').click(function (e) {
+            e.preventDefault();
+        });
+    </script>
+<script id="formrequesturl" type="application/json">"/customer-support/contact-us-forms/formrequest"</script>
+<link as="style" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.css" onload="this.rel = 'stylesheet'" rel="preload"/>
+<div class="backdrop"></div>
+</body>
+</html>

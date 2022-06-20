@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"fe6675f03c",applicationID:"51067505"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link href="https://www.bostondynamics.com/privacy-policy" rel="canonical"/>
+<meta content="Boston Dynamics, Inc. (“Boston Dynamics,” “we,” “us” or “our”) respects your right to privacy. This policy summarizes our policies and practices regarding how and why we collect, store, use, and share information related to you or your use of our products and services in accordance with applicable data protection and privacy laws. It also explains your rights in relation to this information and how to contact us in the event you have a complaint.
+
+ 
+
+1. Information we collect." name="description"/>
+<meta content="Boston Dynamics" property="og:site_name"/>
+<meta content="website" property="og:type"/>
+<meta content="Privacy Policy" property="og:title"/>
+<meta content="Boston Dynamics, Inc. (“Boston Dynamics,” “we,” “us” or “our”) respects your right to privacy. This policy summarizes our policies and practices regarding how and why we collect, store, use, and share information related to you or your use of our products and services in accordance with applicable data protection and privacy laws. It also explains your rights in relation to this information and how to contact us in the event you have a complaint.
+
+ 
+
+1. Information we collect." property="og:description"/>
+<link href="/sites/default/files/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/sites/default/files/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/sites/default/files/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/sites/default/files/favicons/site.webmanifest" rel="manifest"/>
+<link color="#5bbad5" href="/sites/default/files/favicons/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#da532c" name="msapplication-TileColor"/>
+<meta content="#ffffff" name="theme-color"/>
+<meta content="Drupal responsive_favicons + realfavicongenerator.net" name="favicon-generator"/>
+<meta content="Drupal 8 (https://www.drupal.org)" name="Generator"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://www.bostondynamics.com/privacy-policy" rel="revision"/>
+<script defer="" src="/sites/default/files/google_tag/main/google_tag.script.js?rdfqn3"></script>
+<title>Privacy Policy | Boston Dynamics</title>
+<link href="/sites/default/files/css/css_GbTR_XN965o4fhOsRLxOXFSB1dQhhohBjVcY-ouTZ2s.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_CYJnVv-iJN9duV81ziHaE8aKrQeWOjfYRN3BmrrKz1g.css" media="all" rel="stylesheet"/>
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="/sites/default/files/js/js_jLhhYFKtdQdA5smo88GWit9kMJ-y1xS32ggaPV0eTKw.js"></script>
+<script type="text/javascript">
+      (function() {
+        document.documentElement.className += " wf-inactive"; 
+    
+        // Optimization for Repeat Views
+        if( sessionStorage.foutFontsLoaded ) {
+          document.documentElement.classList.remove("wf-inactive");
+          document.documentElement.classList.add("wf-active");
+          return;
+        }
+    
+        var fontA = new FontFaceObserver('Gotham', {
+            weight: 300,
+            style: 'normal'
+          });
+        var fontB = new FontFaceObserver('Gotham', {
+            weight: 400,
+            style: 'normal'
+          });
+        var fontC = new FontFaceObserver('Gotham', {
+            weight: 400,
+            style: 'italic'
+          });
+        var fontD = new FontFaceObserver('Gotham', {
+            weight: 500,
+            style: 'normal'
+          });
+        var fontE = new FontFaceObserver('Gotham', {
+            weight: 500,
+            style: 'italic'
+          });
+          
+    
+        Promise.all([fontA.load(), fontB.load(), fontC.load(), fontD.load(), fontE.load()]).then(function () {
+          document.documentElement.classList.remove("wf-inactive");
+          document.documentElement.classList.add("wf-active");
+    
+          // Optimization for Repeat Views
+          sessionStorage.foutFontsLoaded = true;
+        });
+      })();
+    </script>
+</head>
+<body class="node--type-page page-node-6824 path-node page-node-type-page">
+<a class="visually-hidden focusable skip-link" href="#main-content">
+      Skip to main content
+    </a>
+<noscript aria-hidden="true"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-T4HBBQG" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<div id="top"></div>
+<header class="masthead clearfix masthead--" id="banner" role="banner">
+<div class="section-content hp-header limiter">
+<div class="masthead__left">
+<div class="branding">
+<div class="branding__logo">
+<a href="/" rel="home" title="Home">
+<img alt="Site Logo" src="/themes/custom/isovera/logo.svg"/>
+</a>
+</div>
+</div>
+</div>
+<div class="masthead__right">
+<div class="nav--primary">
+<nav aria-labelledby="block-isovera-main-menu-menu" class="navBar" id="block-isovera-main-menu" role="navigation">
+<a aria-controls="block-isovera-main-menu-menu" class="nav-menu-toggle control" href="#nav" id="menu-toggle"></a>
+<div class="nav wrapper">
+<h2 class="visually-hidden">Main navigation</h2>
+<div class="mobile-search"><div class="search-block-form" data-drupal-selector="search-block-form" id="block-searchform" role="search">
+<form accept-charset="UTF-8" action="/search/node" class="header-search-block-form" id="search-block-form" method="get" region="header">
+<div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
+<label class="visually-hidden" for="edit-keys">Search</label>
+<input class="form-search" data-drupal-selector="edit-keys" id="edit-keys" maxlength="128" name="keys" placeholder="Search" size="15" title="Enter the terms you wish to search for." type="search" value=""/>
+</div>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions"><input class="button js-form-submit form-submit" data-drupal-selector="edit-submit" id="edit-submit" type="submit" value=" "/>
+</div>
+</form>
+</div>
+</div>
+<ul class="nav-menu" region="header">
+<li class="menu-item has-children">
+<a data-drupal-link-system-path="node/7500" href="/products">Products</a>
+<ul class="sub-menu">
+<li class="menu-item has-children">
+<a data-drupal-link-system-path="node/7422" href="/products/spot">Spot</a>
+<ul class="sub-menu-two">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7600" href="/products/spot/scout">Scout</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7481" href="/products/spot/arm">Arm</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7617" href="/payloads">Payloads</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7616" href="/extras">Extras</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7516" href="/partners">Partners</a>
+</li>
+</ul>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7491" href="/products/stretch">Stretch</a>
+</li>
+</ul>
+</li>
+<li class="menu-item has-children">
+<a data-drupal-link-system-path="node/7506" href="/solutions">Solutions</a>
+<ul class="sub-menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7479" href="/solutions/inspection">Inspection</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7583" href="/solutions/asset-performance-management">Asset Management</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7485" href="/solutions/construction">Construction</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7584" href="/solutions/manufacturing">Manufacturing</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7557" href="/solutions/public-safety">Public Safety</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7550" href="/solutions/utilities">Power &amp; Utilities</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7509" href="/solutions/warehouse-automation">Warehouse Automation</a>
+</li>
+</ul>
+</li>
+<li class="menu-item has-children">
+<a data-drupal-link-system-path="node/7460" href="/resources">Resources</a>
+<ul class="sub-menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7503" href="/resources/case-studies">Case Studies</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7499" href="/resources/webinars">Webinars</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7695" href="/resources/blog">Blog</a>
+</li>
+<li class="menu-item">
+<a href="https://support.bostondynamics.com/s/">Support Center</a>
+</li>
+<li class="menu-item">
+<a href="https://dev.bostondynamics.com/">Developer Documentation</a>
+</li>
+</ul>
+</li>
+<li class="menu-item has-children">
+<a data-drupal-link-system-path="node/7502" href="/research">Research</a>
+<ul class="sub-menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7561" href="/atlas">Atlas</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/4457" href="/spot-classic">Legacy Robots</a>
+</li>
+</ul>
+</li>
+<li class="menu-item has-children">
+<a data-drupal-link-system-path="node/4" href="/about">Company</a>
+<ul class="sub-menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/4" href="/about">About</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7505" href="/careers" title="Jobs at Boston Dynamics">Careers</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/4948" href="/company-news">News</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7549" href="/ethics">Ethics</a>
+</li>
+</ul>
+</li>
+</ul>
+<div class="utility-nav-mobile">
+<nav aria-labelledby="block-utilitynavigation-2-menu" class="block block-menu navigation menu--utility-navigation" id="block-utilitynavigation-2" role="navigation">
+<h2 class="visually-hidden" id="block-utilitynavigation-2-menu">Utility Navigation</h2>
+<ul region="disabled">
+<li>
+<a data-drupal-link-query='{"utm_campaign":"contact-sales-header","utm_medium":"header-cta","utm_source":"website"}' data-drupal-link-system-path="node/7588" href="/contact-sales?utm_source=website&amp;utm_medium=header-cta&amp;utm_campaign=contact-sales-header">Contact Sales</a>
+</li>
+<li>
+<a href="https://support.bostondynamics.com/s/">Support</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</nav>
+</div>
+<div class="navigation__utility">
+<nav aria-labelledby="block-utilitynavigation-menu" class="block block-menu navigation menu--utility-navigation" id="block-utilitynavigation" role="navigation">
+<h2 class="visually-hidden" id="block-utilitynavigation-menu">Utility Navigation</h2>
+<ul region="header">
+<li>
+<a data-drupal-link-query='{"utm_campaign":"contact-sales-header","utm_medium":"header-cta","utm_source":"website"}' data-drupal-link-system-path="node/7588" href="/contact-sales?utm_source=website&amp;utm_medium=header-cta&amp;utm_campaign=contact-sales-header">Contact Sales</a>
+</li>
+<li>
+<a href="https://support.bostondynamics.com/s/">Support</a>
+</li>
+</ul>
+<div class="search-trigger no-focus-outline" id="search-trigger" role="button" tabindex="0">
+<i class="icon--search"></i>
+</div>
+</nav>
+<div class="search__dropdown" id="search__dropdown">
+<div class="search-block-form" data-drupal-selector="search-block-form" id="block-searchform" role="search">
+<form accept-charset="UTF-8" action="/search/node" class="header-search-block-form" id="search-block-form" method="get" region="header">
+<div class="js-form-item form-item js-form-type-search form-item-keys js-form-item-keys form-no-label">
+<label class="visually-hidden" for="edit-keys">Search</label>
+<input class="form-search" data-drupal-selector="edit-keys" id="edit-keys" maxlength="128" name="keys" placeholder="Search" size="15" title="Enter the terms you wish to search for." type="search" value=""/>
+</div>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions"><input class="button js-form-submit form-submit" data-drupal-selector="edit-submit" id="edit-submit" type="submit" value=" "/>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div>
+<div id="block-isovera-content">
+<header class="limiter">
+<h1 class="header__title bg-hidden"><span property="schema:name">Privacy Policy</span>
+</h1>
+</header>
+<header class="header header--dark header--is_hidden">
+<div class="header__inner">
+<div class="header__text-container">
+<div class="limiter">
+<h1 class="header__title"><span property="schema:name">Privacy Policy</span>
+</h1>
+</div>
+</div>
+</div>
+</header>
+<div class="hidden" data-drupal-messages-fallback=""></div>
+<main>
+<div class="field field--name-body field--type-text-with-summary field--label-hidden field__items" property="schema:text">
+<div class="field__item" property="schema:text">
+<p>Boston Dynamics, Inc. (“Boston Dynamics,” “we,” “us” or “our”) respects your right to privacy. This policy summarizes our policies and practices regarding how and why we collect, store, use, and share information related to you or your use of our products and services in accordance with applicable data protection and privacy laws. It also explains your rights in relation to this information and how to contact us in the event you have a complaint.</p>
+<p> </p>
+<p>1. Information we collect.</p>
+<p>We may collect and use your personal and non-personal information to communicate with you, provide our products and services to you, improve and develop our products and services, or evaluate your education, skills and experiences in considering you for a position at Boston Dynamics or for a vendor or other relationship with us.</p>
+<p><u>Personal Information</u>. Personal information is data that can be used to identify or contact you. We may collect and use the following personal information that identifies or relates to you:</p>
+<ul>
+<li>account information (e.g., name; mailing address; phone number; email);</li>
+<li>payment information (e.g., credit and debit card information; bank information);</li>
+<li>Internet or other electronic network activity information (e.g., browsing history; search history, and information regarding your interaction with a website, application, or advertisement; IP address); and</li>
+<li>education and experience-related information (e.g., education information; employment history; character and performance references).</li>
+</ul>
+<p><u>Non-Personal Information</u>. We may also collect non-personal information about you. Non-personal information is information that does not, on its own, permit direct association with an individual person. It may include information such as:</p>
+<ul>
+<li>service and performance logs and information for products we sell or lease to you (information includes sensor data (including images), product identifying information, product performance information, including faults and safety-related information; see our Spot robot privacy notice <a href="/spot/privacy-notice">here</a>); and</li>
+<li>your online activities (e.g., the type of web browser software you use; the name of the domain from which you access the Internet; the Internet address of the website from which you linked directly to our website; the date and time you access our website; which pages you have visited on our website; the search terms you use; the links on which you click).</li>
+</ul>
+<p>If you only read or download information on our website, we do not collect or learn your name, e-mail address, home address, or other personal information about you. For information about how we use cookies and other similar technologies to gather information, please see our cookie policy <a href="/cookie-policy">here</a>.</p>
+<p>To the extent that non-personal information is combined with personal information or is deemed personal information under applicable data protection or privacy law, we treat the combined information as personal information for the purposes of this policy.</p>
+<p> </p>
+<p>2. How we collect your information.</p>
+<p>We collect information from you in person, by telephone, text, email, via our website, from the products we sell or lease to you with your consent, from publicly accessible sources, from third parties (e.g., sanctions screening providers; credit reporting agencies; customer due diligence providers), from cookies on our website, and via our IT systems (e.g., door entry systems and reception logs; automated monitoring of our website and computer networks).</p>
+<p> </p>
+<p>3. How and why we use your information.</p>
+<p>We may use your information to comply with our legal and regulatory obligations; to provide the products and services you use; for the performance of our contract with you or to take steps at your request before entering into a contract; for our other legitimate interests or those of a third party; or where you have given consent. Examples of how we use your information include, to:</p>
+<ul>
+<li>prevent and detect fraud against you and us;</li>
+<li>conduct checks to verify your identity;</li>
+<li>screen for financial and other sanctions or embargoes;</li>
+<li>comply with professional, legal and regulatory obligations that apply to our business;</li>
+<li>improve and develop our products and services;</li>
+<li>ensure the confidentiality of commercially sensitive information; and </li>
+<li>market our products and services.</li>
+</ul>
+<p> </p>
+<p>4. Promotional communications.</p>
+<p>We may use your information to send you updates about our products and services, including exclusive offers, promotions or new products and services. We treat your personal information with the utmost respect and do not sell or share it with third party organizations for their own marketing purposes.</p>
+<p>You have the right to opt out of receiving our promotional communications at any time by:</p>
+<ul>
+<li>contacting us at privacy@bostondynamics.com; or</li>
+<li>using the “unsubscribe” link in emails or “STOP” number in texts.</li>
+</ul>
+<p>We may ask you to confirm or update your marketing preferences if you instruct us to provide further products or services in the future, or if there are changes in the law, regulation, or the structure of our business.</p>
+<p> </p>
+<p>5. Who we share your information with.</p>
+<p>We may share your information with:</p>
+<ul>
+<li>our affiliates;</li>
+<li>service providers we use to help deliver our products or services to you, such as payment service providers and logistics companies;</li>
+<li>other third parties we use to help us run our business, such as our marketing agencies or website hosts;</li>
+<li>third parties approved by you, including third-party payment providers;</li>
+<li>credit reporting agencies;</li>
+<li>our insurers and brokers; and</li>
+<li>our bank.</li>
+</ul>
+<p>We only allow our service providers to handle your information if we are satisfied they take appropriate measures to protect it. We may also share your information with external auditors, e.g., in relation to the audit of our accounts.</p>
+<p>We may disclose and exchange information with law enforcement agencies and regulatory bodies to comply with our legal and regulatory obligations.</p>
+<p>We may also need to share your information with other parties, such as potential buyers of some or all of our business or during a re-structuring. In addition, if we sell all or a portion of our business, we may provide the acquirer with information about you that is related to that business.</p>
+<p> </p>
+<p>6. No personal information is sold or disclosed for marketing purposes.</p>
+<p>Boston Dynamics does not sell your personal information (and does not sell personal information of minors), and does not share your personal information with third parties for their own marketing purposes.</p>
+<p> </p>
+<p>7. Where your information is held.</p>
+<p>Your information may be held at our offices and those of our third party service providers, representatives and agents as described above (see above: “Who we share your information with”).</p>
+<p> </p>
+<p>8. How long your information will be kept.</p>
+<p>We will keep your information while you have an account with us or while we are providing products or services to you or performing under a contract with you, or in accordance with any applicable requirement set forth in this policy. Thereafter, we will keep your information for as long as is necessary to:</p>
+<ul>
+<li>respond to any questions, complaints or claims made by you or on your behalf;</li>
+<li>show that we treated you fairly; or</li>
+<li>keep records required by law.</li>
+</ul>
+<p>We will not retain your information for longer than necessary for the purposes set out in this policy.</p>
+<p> </p>
+<p>9. International transfers.</p>
+<p>Boston Dynamics is based in the United States and has affiliates and service providers around the world. Your personal information may be transferred to other countries, which may not have similar privacy or data protection laws. However, we will always protect your information as described in this policy, no matter where it is stored, and take steps to comply with applicable local laws when processing your personal information, including conditions for and restrictions on the transfer of personal information. If you are located inside the European Economic Area (EEA), you may ask for further information on the safeguards that we have put in place to secure the transfer of your data to outside of the EEA by contacting us as indicated below at "How to contact us.”</p>
+<p> </p>
+<p>10. Keeping your information secure.</p>
+<p>We have administrative, technical and physical security measures in place designed to prevent your information from being accidentally lost or used or accessed in an unauthorized way. These measures include limiting access to your information to those who have a genuine business need to access it and who are subject to confidentiality obligations. We also require those processing your information to do so only in an authorized manner. We also have procedures in place to deal with any suspected data security breach. We will notify you and any applicable regulator of a suspected data security breach where we are legally required to do so.</p>
+<p> </p>
+<p>11. How to exercise your rights.</p>
+<p>Subject to applicable law, you may have the right to obtain confirmation regarding whether we process personal information about you, request access to and receive information about the personal information we maintain about you, receive copies of the personal information we maintain about you, update and correct inaccuracies in your personal information, object to the processing of your personal information, and/or have the information blocked, anonymized, or deleted, as appropriate. The right to access personal information may be limited in some circumstances by local law. To exercise these rights, please email us at privacy@bostondynamics.com. You will need to provide us with:</p>
+<ul>
+<li>enough information to identify you (e.g., your full name, address and customer or matter reference number);</li>
+<li>proof of your identity and address (e.g., a copy of your driver’s license or passport and a recent utility or credit card bill); and</li>
+<li>a description of what right you want to exercise and the information to which your request relates.</li>
+</ul>
+<p>We are not obligated to make a data access or data portability disclosure if we cannot verify that the person making the request is the person about whom we collected information, or is someone authorized to act on such person’s behalf.</p>
+<p>Any personal information we collect from you to verify your identity in connection with your request will be used solely for the purposes of verification.</p>
+<p> </p>
+<p>12. California privacy rights.</p>
+<p>Under the California Consumer Privacy Act (CCPA), California consumers have a right to knowledge, access, and deletion of information that identifies, relates to, describes, is capable of being associated with, or could reasonably be linked, directly or indirectly, with them or their household. California consumers also have a right to opt out of the sale of this information by a business and a right not to be discriminated against for exercising one of their California privacy rights. Boston Dynamics does not sell this information in relation to California consumers and does not discriminate in response to privacy rights requests.</p>
+<p>We provide notice of our privacy practices in our Privacy Policy. The Privacy Policy includes what personal information is collected, the source of the information, and the purposes of use, as well as whether we disclose that personal information and if so, the categories of third parties to whom it is disclosed.</p>
+<p>California consumers can exercise their privacy rights by contacting us at privacy@bostondynamics.com. If you do not have a Boston Dynamics account, we will ask you for information which we consider necessary to verify your identity for security and to prevent fraud. This information may include name, contact information, and information related to your transaction or relationship with Boston Dynamics, but the specific information requested may differ depending on the circumstances of your request for your security and to protect privacy rights. If we delete your personal information, we will both render certain personal information about you permanently unrecoverable and also de-identify certain personal information.</p>
+<p>Under the CCPA, a California consumer may use an authorized agent to make a CCPA privacy request on the consumer’s behalf. To make a request on behalf of a Boston Dynamics consumer, the authorized agent must first provide a copy of a valid power of attorney issued pursuant to California Probate Code sections 4000 to 4465. The authorized agent must email this document to privacy@bostondynamics.com and include a phone number where the agent may be reached during regular business hours.</p>
+<p>13. Persons located within the European Economic Area.</p>
+<p>Boston Dynamics adheres to applicable data protection laws in the EEA, which, if applicable, practicable, and required under the EU General Data Protection Regulation, include the<br/>
+following rights:</p>
+<ul>
+<li>if our processing of personal information is based on your consent, you have a right to withdraw consent at any time for future processing;</li>
+<li>you have a right to request from us, where we act as a Controller as defined in the law, access to and rectification of your personal information;</li>
+<li>you have a right to object to the processing of your personal information; and</li>
+<li>you have a right to lodge a complaint with the applicable local public authority.</li>
+</ul>
+<p>These are in addition to the rights you have in Section 11 above. When we process personal information about you, we do so with your consent or as necessary to comply with our legal and regulatory obligations; to provide the products and services you use; for the performance of our contract with you or to take steps at your request before entering into a contract; or for our other legitimate interests or those of a third party.</p>
+<p><br/>
+14. Our commitment to your privacy.</p>
+<p>To make sure your information is secure, we communicate and enforce our privacy and security guidelines with our employees and applicable service providers.</p>
+<p><br/>
+15. Changes and updates to this policy.</p>
+<p>We may update this policy from time to time. When we change the policy in a material way, we will contact you via your email contact information on file.</p>
+<p><br/>
+16. How to Contact Us.</p>
+<p>Please contact us at  privacy@bostondynamics.com if you have any questions about this privacy policy or the information we hold about you.</p>
+<p> </p>
+<p dir="ltr">Last Updated on March 29, 2021.</p>
+<p dir="ltr"> </p>
+</div>
+</div>
+</main>
+</div>
+</div>
+<footer class="footer">
+<div class="main-footer">
+<div class="limiter">
+<div class="main-footer__left">
+<a href="/">
+<img alt="" src="/themes/custom/isovera/images/footer-logo.svg"/>
+</a>
+</div>
+<div class="main-footer__right">
+<div class="main-footer__right-contents">
+<nav aria-labelledby="block-footernavigation-menu" id="block-footernavigation" role="navigation">
+<h2 class="visually-hidden" id="block-footernavigation-menu">Footer Navigation</h2>
+<ul class="footer-menu" region="footer">
+<li class="menu-item has-children">
+<span>Products</span>
+<ul class="footer-menu__second-level">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7422" href="/products/spot">Spot</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7481" href="/products/spot/arm">Spot Arm</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7491" href="/products/stretch">Stretch</a>
+</li>
+</ul>
+</li>
+<li class="menu-item has-children">
+<span>Solutions</span>
+<ul class="footer-menu__second-level">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7479" href="/solutions/inspection">Inspection</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7583" href="/solutions/asset-performance-management">Asset Management</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7485" href="/solutions/construction">Construction</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7584" href="/solutions/manufacturing">Manufacturing</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7557" href="/solutions/public-safety">Public Safety</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7550" href="/solutions/utilities">Power &amp; Utilities</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7509" href="/solutions/warehouse-automation">Warehouse Automation</a>
+</li>
+</ul>
+</li>
+<li class="menu-item has-children">
+<span>Resources</span>
+<ul class="footer-menu__second-level">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7503" href="/resources/case-studies">Case Studies</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7499" href="/resources/webinars">Webinars</a>
+</li>
+<li class="menu-item">
+<a href="https://www.bostondynamics.com/resources/blog">Blog</a>
+</li>
+<li class="menu-item">
+<a href="https://support.bostondynamics.com/">Support Center</a>
+</li>
+<li class="menu-item">
+<a href="https://dev.bostondynamics.com/">Developer Documentation</a>
+</li>
+</ul>
+</li>
+<li class="menu-item has-children">
+<span>Company</span>
+<ul class="footer-menu__second-level">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/4" href="/about">About</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7505" href="/careers">Careers</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/4948" href="/news">News</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7502" href="/research">Research</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/40" href="/press-contact">Media Contact</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/7549" href="/ethics">Ethics</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<div class="main-footer__social-wrap">
+<div class="main-footer__social-left">
+<span>SUBSCRIBE FOR UPDATES</span>
+<!--[if lte IE 8]>
+                <script charset="utf-8" type="text/javascript" src="//
+                js.hsforms.net/forms/v2-legacy.js"></script>
+                <![endif]-->
+<script charset="utf-8" src="//js.hsforms.net/forms/v2.js" type="text/javascript"></script>
+<script>
+                  hbspt.forms.create({
+                  portalId: "4845432",
+                  formId: "4f697091-d869-4379-9069-fc78147a7a37",
+                  onFormReady: function($form) {
+                    document.getElementById("email-4f697091-d869-4379-9069-fc78147a7a37").placeholder = "Enter email";
+                  }
+                  });
+              </script>
+</div>
+<div class="main-footer__social-right">
+<a href="https://www.youtube.com/user/BostonDynamics" target="_blank"><i class="icon--youtube"></i></a>
+<a href="https://www.linkedin.com/company/boston-dynamics/" target="_blank"><i class="icon--linkedin"></i></a>
+<a href="https://www.instagram.com/bostondynamicsofficial/" target="_blank"><i class="icon--instagram"></i></a>
+<a href="https://www.facebook.com/BostonDynamicsOfficial/" target="_blank"><i class="icon--facebook"></i></a>
+<a href="https://twitter.com/BostonDynamics" target="_blank"><i class="icon--twitter"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sub-footer">
+<div class="limiter">
+<div class="copyright">© 2022 Boston Dynamics. All rights reserved.</div>
+<div class="nav--footer">
+<nav aria-labelledby="" class="" role="navigation">
+<div class="footer--sub">
+<nav aria-labelledby="block-footer-menu" id="block-footer" role="navigation">
+<div class="footer--sub_menu">
+<h2 class="visually-hidden">Footer</h2>
+<ul class="footer-sub-menu" region="footer">
+<li class="menu-item active-trail">
+<a data-drupal-link-system-path="node/6824" href="/privacy-policy">Privacy Policy</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/4455" href="/terms">Terms of Use</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+</nav>
+
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/6824","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\n\u003Cp\u003EBy clicking the Accept button, you agree to us doing so.\u003C\/p\u003E\n\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EMore info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EAccept\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EMore info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EAccept\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":true,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/privacy-statement","popup_link_new_window":true,"popup_position":false,"fixed_top_position":true,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\n\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"open_by_default":true},"ajaxTrustedUrl":{"\/search\/node":true},"user":{"uid":0,"permissionsHash":"ee65a9d2c49c40cc7bfea6d7593c074c3d5e5d19b555f396fa7304293a9281ab"}}</script>
+<script src="/sites/default/files/js/js_aRVJ3MdDVYsxtzIyliTzcm576TFmee9hAxhtWFHgGbw.js"></script>
+<script src="/sites/default/files/asset_injector/js/hubspot_embed_code-1475f7efc4bdfd9407d34b1e642a869d.js?rdkooi"></script>
+<script src="/sites/default/files/js/js_afY7nifomnjEK5EaLP8fwtgDD7BQ3YHF9k3cVRFlu14.js"></script>
+<script defer="" src="/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.js?v=1.19"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"fe6675f03c","applicationID":"51067505","transactionName":"YFFVMBQFD0ZVBxdRDlkbdgcSDQ5bGxQCXwRoV1YHDgE=","queueTime":0,"applicationTime":13,"atts":"TBZWRlwfHEg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

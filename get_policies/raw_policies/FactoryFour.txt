@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Manufacturing Execution Software" property="og:title">
+<meta content="https://static.factoryfour.com/factoryfour/images/factoryfour_graphic.png" property="og:image">
+<meta content="FactoryFour | Seamlessly configure, capture, and analyze your operations to enable lean manufacturing principles." property="og:description"/>
+<meta content="https://factoryfour.com/security/" property="og:url"/>
+<title>Security and Compliance | FactoryFour</title>
+<!-- Favicon -->
+<link href="/assets/favicons/apple_touch_icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/assets/favicons/favicon_32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/favicons/favicon_16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/assets/favicons/manifest.json" rel="manifest"/>
+<link color="#000000" href="/assets/favicons/safari_pinned_tab.svg" rel="mask-icon"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,700|IBM+Plex+Serif:400,400i|IBM+Plex+Mono:400,700|Raleway:400,500,600,700" rel="stylesheet"/>
+<link href="/build/factoryfour.min.css" rel="stylesheet"/>
+<!-- Google Analytics  -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-103582902-1', 'auto');
+  ga('send', 'pageview');
+	</script>
+</meta></meta></head>
+<body>
+<a id="top"></a>
+<div class="loader"></div>
+<!-- Banner -->
+<!-- Navigation -->
+<nav class="transition--fade transition--active" style="min-height: 0px;">
+<div class="nav-bar nav--absolute nav--transparent" data-fixed-at="200">
+<div class="nav-module logo-module left">
+<a href="/">
+<img (dragstart)="false;" alt="logo" class="logo logo-dark inv20 unselectable" draggable="false" src="/assets/brand/f4_black.png"/>
+<img (dragstart)="false;" alt="logo" class="logo logo-light inv10 unselectable" draggable="false" src="/assets/brand/f4_white.png"/>
+</a>
+</div>
+<div class="nav-module menu-module right button mb-btn-8 font-size-sm" style="padding-right:18px; margin-top:-3px;">
+<a class="btn btn--xs btn--primary0 btn--filled" href="/demo">
+<span class="btn__text text-center">Book a Demo</span>
+</a>
+</div>
+<!-- <div class="nav-module menu-module right button mb-btn-8" style="padding-right:10px; margin-top:-3px;">
+			<a class="btn btn--xs" href="https://app.factoryfour.com" target="_blank">
+				<span class="btn__text text-center">Login</span>
+			</a>
+		</div>
+		<div class="nav-module menu-module right button mb-btn-6" style="padding-right:0; margin-right:0; margin-top:-3px;">
+			<a class="btn btn--xs btn--primary0 btn--filled" href="/demo">
+				<span class="btn__text text-center">Book a Demo</span>
+			</a>
+		</div> -->
+<div class="nav-module menu-module right text-left">
+<ul class="menu">
+<li>
+<a class="noselect noclick font-size-sm2" href="">Why FactoryFour<i class="ti-angle-down icon--xs color--gray1 color--offwhite" style="font-size:0.7em;margin-left:6px;"></i></a>
+<ul class="multi-column">
+<li>
+<ul>
+<li>
+<i class="ti-flag icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="/implementation">
+									Implementation
+									</a>
+</li>
+<li>
+<i class="ti-shield icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="/security">
+									Security &amp; Compliance
+									</a>
+</li>
+<li>
+<i class="ti-cloud icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="/cloud">
+										Cloud Native Solution
+									</a>
+</li>
+<!-- <li>
+									<i class="ti-package color--primary-10 nav-icon"></i>
+									<a href="/assets-and-inventory" class="font-size-sm2">
+									Integrations
+									</a>
+								</li> -->
+<!-- <hr style="margin-top:4px;margin-bottom:16px;">
+								<li>
+									<i class="ti-settings icon--xs color--gray nav-icon"></i>
+									<a href="/capabilities" class="font-size-sm2">
+									See Our Capabilities
+									</a>
+								</li> -->
+</ul>
+</li>
+</ul>
+</li>
+<!-- <li>
+					<a href="/implementation" class="font-size-sm2"><i class="ti-bolt-alt icon--xs color--primary-10" style="font-size:0.8em;margin-right:6px;"></i>Implementation</a>
+				</li>
+				<li>
+					<a href="/security" class="font-size-sm2"><i class="ti-shield icon--xs color--primary-10" style="font-size:0.8em;margin-right:6px;"></i>Security</a>
+				</li> -->
+<!-- <li>
+					<a href="" class="noselect noclick font-size-sm2">Features</a>
+					<ul class="multi-column">
+						<li>
+							<ul>
+								<li>
+									<a href="/capabilities" class="font-size-sm2">
+										<span style="font-weight:700;">
+											Overview
+										</span>
+									</a>
+								</li>
+								<li>
+									<a href="/workflows" class="font-size-sm2">Workflows</a>
+								</li>
+								<li>
+									<a href="/forms" class="font-size-sm2">Forms</a>
+								</li>
+								<li>
+									<a href="/dashboards" class="font-size-sm2">Dashboards</a>
+								</li>
+								<li>
+									<a href="/rules" class="font-size-sm2">Rules</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li> -->
+<!-- <li>
+					<a href="/enterprise">Enterprise</a>
+				</li> -->
+<li>
+<a class="noselect noclick font-size-sm2" href="">Solutions<i class="ti-angle-down icon--xs color--gray1 color--offwhite" style="font-size:0.7em;margin-left:6px;"></i></a>
+<ul class="multi-column">
+<li>
+<ul>
+<!-- <li>
+										<i class="ti-light-bulb icon--xs color--primary-10 nav-icon"></i>
+										<a href="/plan" class="font-size-sm2">Plan
+										<p class="color--gray" style="margin-top:4px; margin-left:0px;font-weight:400;font-size:13px;">Help text to describe dropdown label</p></a>
+									</li> -->
+<li>
+<i class="ti-calendar icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="/plan">Plan</a>
+<p class="color--gray" style="margin-top:-14px; margin-left:23px;overflow:break-word;">Capacity plan, prioritize, and monitor <br/>production orders</p>
+</li>
+<li>
+<i class="ti-panel icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="/control">Control</a>
+<p class="color--gray" style="margin-top:-14px; margin-left:23px;">Enforce process adherence and <br/>handle production incidents</p>
+</li>
+<li>
+<i class="ti-bolt icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="/execute">Execute</a>
+<p class="color--gray" style="margin-top:-14px; margin-left:23px;">Optimize production order <br/>execution</p>
+</li>
+<li style="margin-top:-14px;">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a class="noselect noclick font-size-sm2" href="">Resources<i class="ti-angle-down icon--xs color--gray1 color--offwhite" style="font-size:0.7em;margin-left:6px;"></i></a>
+<ul class="multi-column">
+<li>
+<ul>
+<li>
+<i class="ti-light-bulb icon--xs color--primary nav-icon"></i>
+<a class="font-size-sm2" href="/why-mes" style="color:#5350f2;font-weight:600;">Why MES?</a>
+</li>
+<li>
+<i class="ti-world icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="/blog">Blog</a>
+</li>
+<li>
+<i class="ti-book icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="http://learn.factoryfour.com" target="_blank">Learn Center</a>
+</li>
+<li>
+<i class="ti-shield icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="https://itarguide.com" target="_blank">ITAR Guide</a>
+</li>
+<li>
+<i class="ti-server icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="http://learn.factoryfour.com/api-docs/" target="_blank">API Docs</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a class="noselect noclick font-size-sm2" href="">Company<i class="ti-angle-down icon--xs color--gray1 color--offwhite" style="font-size:0.7em;margin-left:6px;"></i></a>
+<ul class="multi-column">
+<li>
+<ul>
+<li>
+<i class="ti-info icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="/about">About Us</a>
+</li>
+<li>
+<i class="ti-microphone icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="/press">Press</a>
+</li>
+<li>
+<i class="ti-user icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="/partner-program">Partners</a>
+</li>
+<li>
+<i class="ti-location-pin icon--xs color--primary-10 nav-icon"></i>
+<a class="font-size-sm2" href="/contact">Contact</a>
+</li>
+<li>
+<i class="ti-heart icon--xs color--primary-2000 nav-icon"></i>
+<a class="font-size-sm2" href="/careers">Careers</a>
+</li>
+<!-- <li>
+									<a href="/service">Our Service Model</a>
+								</li> -->
+</ul>
+</li>
+</ul>
+</li>
+<!-- <li class="hide-mobile-nav hide-nav-number">
+					<a class="noselect noclick nohover">
+						|
+					</a>
+				</li>
+				<li class="hide-nav-number">
+					<a class="noselect noclick nohover" style="margin-right:-6px;">
+						Sales <span class="type--bold type--body-font">:</span>
+					</a>
+					<a class="noselect noclick nohover" href=""><span class="type--body-font" style="font-size:11px;">+1 833 444 0833</span></a>
+				</li> -->
+</ul>
+</div>
+<div class="nav-mobile-toggle visible-sm visible-xs">
+<i class="ti-menu"></i>
+<i class="ti-close"></i>
+</div>
+</div></nav>
+<!-- Above Fold Video Cover -->
+<!-- Cover -->
+<section class="space--md2 imagebg page-title page-title--animate parallax bg--primary-62" data-overlay="9">
+<div class="background-image-holder background--bottom">
+<img alt="image" src="/assets/img/manufacturing_lab.jpg">
+</img></div>
+<div class="container pt20">
+<div class="row">
+<div class="slideInDown animated">
+<div class="text-center horizontal-pad-20">
+<h2 class="col-xs-12 mb-xs-16 col-md-12 pt-md-70 pb10 pt-xs-0" style="color:#DFE7FF; font-size: 2em;">
+                        Industrial-Grade Data Security &amp; Compliance
+                    </h2>
+<p class="col-xs-12 mb-xs-8 pt-xs-20 pt-sm-24 pt-md-30 col-md-8 col-md-offset-2">
+                        At FactoryFour, we understand different sectors of manufacturing require the unique storage and transfer of data. We are committed to providing fully-compliant manufacturing software and educating manufacturers on
+                        best-practices and risk factors to avoid non-compliance in the midst of a vast and stringent regulatory landscape.
+                    </p>
+</div>
+</div>
+</div>
+<div class="row pt-xs-40 pt-md-24 pt-sm-24 appearUp animated">
+<div class="col-md-8 col-md-offset-2 col-xs-12 text-center">
+<a class="btn btn--white btn--md" href="/contact">
+<span class="btn__text">
+                        Talk to Us About Compliance
+                    </span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Certifications Accordions -->
+<section class="bg--dark space--sm">
+<div class="container">
+<div class="row">
+<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 pb40 pt12">
+<div class="elements--title text-center">
+<h4>Our Certifications</h4>
+</div>
+<ul class="accordion accordion--oneopen">
+<li class="active">
+<li>
+<div class="accordion__title">
+<img alt="ITAR" src="/assets/icons/itar.png" style="max-height:40px; padding-right:6px; margin-bottom:2px; pointer-events:none;">
+<img alt="EAR" src="/assets/icons/bis.png" style="max-height:40px; padding-right:30px; margin-bottom:2px; pointer-events:none;"/>
+<span class="h5">ITAR &amp; EAR</span>
+</img></div>
+<div class="accordion__content">
+<p class="small">
+                                ITAR specifically regulates the import and export of defense-related products, data and services that appear on the United States Munitions List. EAR is a parallel regulation that focuses on dual-use items available
+                                for commercial sale and government use, appearing on the Commercial Control List. Both are strict regulations aimed at preventing sensitive data from being accessible by foreign nationals, and software providers must
+                                structure their applications specifically to achieve this.
+                                <br/><br/>
+                                FactoryFour is ITAR and EAR compliant, hosting our applications on a separate, compliant server and engaging in best practices to avoid violation.
+                            </p>
+</div>
+</li>
+<li>
+<div class="accordion__title">
+<img alt="FDA 21 CFR Part 11" src="/assets/icons/fda.png" style="max-height:40px; padding-right:6px; margin-bottom:2px; pointer-events:none;"/>
+<img alt="EU GMP Annex 11" src="/assets/icons/eugmp.png" style="max-height:50px; padding-right:26px; margin-bottom:2px; pointer-events:none;"/>
+<span class="h5">FDA &amp; EU GMP</span>
+</div>
+<div class="accordion__content">
+<p class="small">
+                                FDA 21 CFR Part 11, and its sister compliance EU GMP Annex 11, require organizations to implement controls, audit trails, electronic signatures, and documentation for software that processes the electronic data the
+                                FDA requires them to maintain. This commonly applies to organizations producing pharmaceuticals, medical devices, biotech and biologics.
+                                <br/><br/>
+                                FactoryFour has implemented all the necessary administrative and technical procedures to be compliant, and cover IQ (installation qualification) and OQ (operational qualification). FactoryFour Customer Success can
+                                provide recommendations to your personnel for PQ (performance qualification) required to incorporate FactoryFour into processes covered by Part 11 or GxP.
+                            </p>
+</div>
+</li>
+<li>
+<div class="accordion__title">
+<img alt="HIPAA" src="/assets/icons/hipaa.png" style="max-height:40px; padding-right:32px; margin-bottom:2px; pointer-events:none;"/>
+<span class="h5">HIPAA</span>
+</div>
+<div class="accordion__content">
+<p class="small">
+                                Organizations that handle patient protected health information (PHI) in the United States are subject to HIPAA. To be compliant with HIPAA, software applications that handle PHI need to have specific network and
+                                process security measures in place, such as encrypting data in transit and at rest. FactoryFour works with manufacturers who fall under these regulations to securely store, send and receive PHI while managing
+                                production.
+                            </p>
+</div>
+</li>
+<li>
+<div class="accordion__title">
+<img alt="GDPR" src="/assets/icons/gdpr.png" style="max-height:40px; padding-right:32px; margin-bottom:2px; pointer-events:none;"/>
+<span class="h5">GDPR</span>
+</div>
+<div class="accordion__content">
+<p class="small">
+                                GDPR applies to organizations operating within the EU as well as any organizations outside of EU providing goods or services to the EU. Under GDPR, companies that collect personally identifiable information (PII) such
+                                as names, addresses, and more are held liable to protect it from misuse or exploitation. Any PII handled within FactoryFour is secure and compliant under GDPR.
+                            </p>
+</div>
+</li>
+</li></ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Quote Section -->
+<!-- <section class="imagebg parallax bg--dark space--sm" data-overlay="9">
+    <div class="background-image-holder">
+        <img alt="image" src="/assets/img/building_color.jpg" />
+    </div>
+    <div class="container">
+        <div class="row pt-xs-16">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="pb16 text-center" style="margin-left:10%; margin-right:10%;">
+                    <span class="h4 type--italic" style="color:#FFF;line-height: 1.5em;font-family:'IBM Plex Serif'; letter-spacing:.01em; font-size:1.5em;">&hairsp;FactoryFour is launching the <span class="color--primary-2000 type--bold">Compliance
+                            Risk Report</span> as the first of many tools to help manufacturers navigate the growing regulatory landscape governing their data.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<!-- Detailed Certifications -->
+<div class="main-container transition--fade">
+<!-- <section class="height-70 bg--dark imagebg page-title page-title--animate parallax" data-overlay="8">
+        <div class="background-image-holder">
+            <img alt="image" src="/assets/img/factory4.jpg" />
+        </div>
+        <div class="container pos-vertical-center">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 text-center">
+                    <h3>Full Service, No Compromise.</h3>
+                    <p class="lead">Pillar is a team of passionate designers, developers and artists working in print and digital. We collaborate with clients to establish bold, effective identities.</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+<section class="imageblock">
+<div class="imageblock__content col-md-4 col-sm-2 pos-right imagebg bg--white" data-overlay="3">
+<div class="background-image-holder">
+<img alt="image" src="/assets/img/cert_itar-ear.jpg"/>
+</div>
+</div>
+<div class="col-md-8 col-sm-8">
+<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-2">
+<div class="feature feature-1 service-1 text-left">
+<!-- <i class="icon icon--sm ti-shield"></i> -->
+<img alt="ITAR" src="/assets/icons/itar.png" style="max-height:65px; margin-left:-6px; padding-right:16px; margin-bottom:30px; pointer-events:none;"/>
+<img alt="EAR" src="/assets/icons/bis.png" style="max-height:65px; padding-right:30px; margin-bottom:30px; pointer-events:none;"/>
+<h4 class="type--bold">ITAR &amp; EAR</h4>
+<hr style="margin:1.25em 0;"/>
+<p class="mb0 type--italic">For manufacturers that need an ITAR and EAR compliant solution, FactoryFour provides you with:</p>
+<!-- <h6>FactoryFour Provides</h6> -->
+<ul class="bullets">
+<li>
+                          Fully compliant data storage hosted on AWS GovCloud restricted to the US.
+                      </li>
+<li>
+                          Secure data encryption in transit and at rest.
+                      </li>
+<li>
+                          Traceable, electronic audit trail of all actions performed or data entered.
+                      </li>
+<li>
+                          Sequestered team of US persons on FactoryFour Customer Success staff who have been trained in safe handling of Export Controlled and ITAR governed data.
+                      </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="imageblock bg--secondary">
+<div class="imageblock__content col-md-4 col-sm-2 pos-left imagebg bg--white" data-overlay="2">
+<div class="background-image-holder">
+<img alt="image" src="/assets/img/cert_fda-gmp.jpg"/>
+</div>
+</div>
+<div class="col-md-8 col-md-push-4 col-sm-10 col-sm-push-2">
+<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+<div class="feature feature-1 service-1 text-left">
+<!-- <i class="icon icon--sm ti-support"></i> -->
+<img alt="FDA 21 CFR Part 11" src="/assets/icons/fda.png" style="max-height:60px; padding-right:16px; margin-bottom:20px; pointer-events:none;"/>
+<img alt="EU GMP Annex 11" src="/assets/icons/eugmp.png" style="max-height:80px; padding-right:26px; margin-bottom:20px; pointer-events:none;"/>
+<h4 class="type--bold">FDA 21 CFR Part 11 / EU GMP Annex 11</h4>
+<hr style="margin:1.25em 0;"/>
+<p class="mb0 type--italic">For manufacturers that require a solution compliant with FDA 21 CFR Part 11 or EU GMP Annex 11, FactoryFour provides you with:</p>
+<!-- <h6>FactoryFour Provides</h6> -->
+<ul class="bullets">
+<li>
+                          Functionality for a fully traceable and electronic audit trail, including compliant electronic signatures and quality forms.
+                      </li>
+<li>
+                          Granular access controls to ensure only approved personnel can perform specific actions such as approvals.
+                      </li>
+<li>
+                          Services for Installation Qualification (IQ) and Operational Qualification (OQ), as well as assistance for your personnel by defining Performance Qualifications (PQ) via User Acceptance Tests (UAT).
+                      </li>
+<li>
+                          Device History Records (DHR) with unique batch identification, lot traceability, and production records.
+                      </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="imageblock">
+<div class="imageblock__content col-md-4 col-sm-2 pos-right imagebg bg--white" data-overlay="3">
+<div class="background-image-holder">
+<img alt="image" src="/assets/img/cert_hipaa-gdpr.jpg"/>
+</div>
+</div>
+<div class="col-md-8 col-sm-8">
+<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-2">
+<div class="feature feature-1 service-1 text-left">
+<!-- <i class="icon icon--sm ti-support"></i> -->
+<img alt="HIPAA" src="/assets/icons/hipaa.png" style="max-height:70px; padding-right:18px; margin-bottom:10x; pointer-events:none;"/>
+<img alt="GDPR" src="/assets/icons/gdpr.png" style="max-height:70px; padding-right:32px; margin-bottom:30px; pointer-events:none;"/>
+<h4 class="type--bold">HIPAA / GDPR</h4>
+<hr style="margin:1.25em 0;"/>
+<p class="mb0 type--italic">For manufacturers handling PHI or PII, FactoryFour offers a HIPAA and GDPR compliant solution that provides you with:</p>
+<!-- <h6>FactoryFour Provides</h6> -->
+<ul class="bullets">
+<li>
+                          Fully compliant data storage with secure data encryption in transit and at rest.
+                      </li>
+<li>
+                          Robust order management tools that allow secure handling of PHI and PII.
+                      </li>
+<li>
+                          Functionality to maintain compliance such as granular access controls, audit logs, and automatic sign-off for unattended devices.
+                      </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- FEATURED POSTS -->
+<section class="space--sm bg--dark">
+<div class="custom-container pb12 text-center">
+<h4 class="pt60 pb16 font-wt-400 color--white n-01em">Read Our Latest on Security</h4>
+<hr class="" style="border-color: white; border-width:3px; margin-left:44%; margin-right:44%; margin-top:-9px; opacity:.45;"/>
+<div class="row pt20">
+<div class="masonry masonry-shop">
+<div class="masonry__container masonry--animate">
+<div class="col-md-4 col-sm-6 masonry__item" data-masonry-filter="Security">
+<a href="/blog/2019/12/05/Itar-Software/" target="_blank">
+<div class="card">
+<div class="card__image" style="pointer-events:none;">
+<img alt="Pic" src="/assets/blog/itar.png"/>
+</div>
+<div class="card__body boxed bg--white">
+<div class="card__title">
+<h5 class="pb16 color--primary">Read More<i class="ti-arrow-right color--primary arrow-size arrow-forward"></i></h5>
+<h4 class="pb20 type--bold" style="font-size:1.1em;">Using off-the-shelf software for government-regulated data?</h4>
+</div>
+<div class="card__price">
+<p class="type--italic" style="font-size:14px;">
+<!-- Popular software applications like those offered by Google, Airtable, and Monday.com are putting small businesses regulated by ITAR and EAR at risk. -->
+</p>
+</div>
+<h6>December 05, 2019  | &amp;nbspScott Stanley </h6>
+</div>
+</div>
+</a>
+</div>
+<div class="col-md-4 col-sm-6 masonry__item" data-masonry-filter="Security">
+<a href="/blog/2019/10/30/Compliance-Risk/" target="_blank">
+<div class="card">
+<div class="card__image" style="pointer-events:none;">
+<img alt="Pic" src="/assets/blog/compliance_risk.png"/>
+</div>
+<div class="card__body boxed bg--white">
+<div class="card__title">
+<h5 class="pb16 color--primary">Read More<i class="ti-arrow-right color--primary arrow-size arrow-forward"></i></h5>
+<h4 class="pb20 type--bold" style="font-size:1.1em;">The FactoryFour Compliance Risk Report</h4>
+</div>
+<div class="card__price">
+<p class="type--italic" style="font-size:14px;">
+<!-- We are launching the Compliance Risk Report as the first of many tools to help manufacturers navigate the growing regulatory landscape governing their data. -->
+</p>
+</div>
+<h6>October 30, 2019  | &amp;nbspParam Shah </h6>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section Small: Compliance -->
+<section class="imagebg parallax bg--primary-62 section--border6 space--sm" data-overlay="9">
+<div class="background-image-holder">
+<img alt="image" src="/assets/img/factory4.jpg"/>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-sm-10 col-sm-offset-1 text-center pb10">
+<h4 class="type--bold pb20" style="font-size:34px; line-height:44px; color:#DFE7FF;">Are you at-risk for compliance violations?</h4> <!-- #FFFFEC -->
+<a class="btn btn--lg mb-xs-16 mb-sm-16" href="/contact">
+<span class="btn__text">Talk to Us Today</span>
+</a>
+<a class="typeform-share button btn btn--lg mb-sm-16" data-mode="popup" href="https://factoryfour.typeform.com/to/i7yi8H" target="_blank">
+<span class="btn__text">Get Your Free Risk Report</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg--dark footer-1">
+<div class="container pb80">
+<!-- <h4 class="text-left type--bold pt40 pb40"></h4> -->
+<div class="col-md-6 col-xs-12 pt10 pb80 mt-sm--40">
+<h4 class="text-left type--bold pt40 pb40 text-center-xxs mb-sm-0">Capture your reality to inform <br class="hide-xs"/>data‑driven decisions.</h4>
+<a class="col-lg-7 col-md-8 col-sm-7 col-xs-11 btn btn--lg btn--green btn--filled hide-xxs" href="/demo">Let's Get to
+				Work</a>
+<a class="col-xs-12 btn btn--md btn--green btn--filled hide-not-xxs" href="/demo">Let's Get to Work</a>
+</div>
+<div class="col-md-6 col-xs-12">
+<div class="row">
+<ul class="footer__navigation col-xs-6">
+<h6 class="pb10">Solutions</h6>
+<li>
+<a href="/plan">
+<span class="hide-xxs">Plan</span>
+<span class="hide-not-xxs">Plan</span>
+</a>
+</li>
+<li>
+<a href="/control">
+<span class="hide-xxxs">Control</span>
+<span class="hide-not-xxxs">Control</span>
+</a>
+</li>
+<li>
+<a href="/execute">
+<span class="hide-xxxs">Execute</span>
+<span class="hide-not-xxxs">Execute</span>
+</a>
+</li>
+</ul>
+<ul class="footer__navigation col-xs-6">
+<h6 class="pb10">Strategy</h6>
+<li>
+<a href="/implementation">
+<span>Implementation</span>
+</a>
+</li>
+<li>
+<a href="/security">
+<span>Security</span>
+</a>
+</li>
+<li>
+<a href="/cloud">
+<span>Cloud Native Solution</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="row">
+<ul class="footer__navigation col-xs-6">
+<h6 class="pb10">Company</h6>
+<li>
+<a href="/about">
+<span>About Us</span>
+</a>
+</li>
+<li>
+<a href="/press">
+<span>Press</span>
+</a>
+</li>
+<li>
+<a class="hide-xxxs con150" href="/partner-program">Partners</a>
+<a class="hide-not-xxxs con150" href="/partner-program">Partners</a>
+</li>
+<li>
+<a href="/contact">
+<span>Contact</span>
+</a>
+</li>
+<li>
+<a href="/careers">
+<span>Careers</span>
+</a>
+</li>
+</ul>
+<ul class="footer__navigation col-xs-6">
+<h6 class="pb10">Resources</h6>
+<li>
+<a href="/why-mes">
+<span>Why MES?</span>
+</a>
+</li>
+<li>
+<a href="/blog">
+<span>Blog</span>
+</a>
+</li>
+<li>
+<a href="http://learn.factoryfour.com" target="_blank">
+<span>Learn Center</span>
+</a>
+</li>
+<li>
+<a href="https://itarguide.com" target="_blank">
+<span>ITAR Guide</span>
+</a>
+</li>
+<li>
+<a href="http://learn.factoryfour.com/api-docs/" target="_blank">
+<span>API Docs</span>
+</a>
+</li>
+<!-- <li>
+						<a href="/enterprise">
+							<span>Enterprise</span>
+						</a>
+					</li> -->
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<footer class="footer__lower pt30 pb30" style="background-color:#14151f;">
+<div class="custom-container">
+<div class="row">
+<div class="col-sm-6 text-center-xs" style="margin-left:-10px;">
+<a class="inv10" href="/">
+<img (dragstart)="false;" alt="FactoryFour" class="logo unselectable" draggable="false" src="/assets/brand/f4_white.png" style="max-width:138px;max-height:auto;margin-left:-7px; margin-top:4px;"/>
+</a>
+</div>
+<div class="col-sm-6 text-center-xs text-right pt-xs-6" style="margin-left:-2px;">
+<div>
+<ul class="social-list">
+<li>
+<a href="https://twitter.com/internetofmfg" target="_blank">
+<i class="ti-twitter color--white"></i>
+</a>
+</li>
+<li>
+<a href="https://www.linkedin.com/company/factoryfour" target="_blank">
+<i class="ti-linkedin color--white"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row text-center-xs">
+<div class="col-sm-12" style="margin-left:-11px;">
+<div class="col-xs-12 text-right pt-xs-0 pt-sm-24 top-link-row">
+<a class="inner-link top-link" href="#top">
+<i class="ti-angle-up"></i>
+</a>
+</div>
+<div class="col-sm-5 col-xs-12 text-center-xs text-left left shift-xs" style="padding: 0 0 0 0; margin-top:-2px;">
+<span class="type--fine-print" style="color:#CBCCCE; font-size:12px;">
+                      ©<span class="update-year">2019</span>
+                      FactoryFour, Inc.
+                       | 
+                      All Rights Reserved
+                      <!--
+                      <a href="http://madewithloveinbaltimore.org" style="text-decoration:none">
+                          Made with <b style="color: pink">♥</b> in Baltimore
+                      </a>
+                      -->
+</span>
+</div>
+<div class="type--fine-print col-sm-5 col-xs-12 text-center-xs contact-links text-right right mt-xs--4" style="padding:0px 0px; margin-right:4.5px; color:#CBCCCE; font-size:12px;">
+<span>
+<a class="text-right">
+                        +1 833 444 0833
+                    </a>
+                     | 
+                    <span>
+<a href="mailto:contact@factoryfour.com">
+                      contact@factoryfour.com
+                    </a>
+</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script src="/build/factoryfour.min.js"></script>
+<script>
+		$(window).scroll(function() {
+			$('#animatedElement').each(function() {
+				var imagePos = $(this).push().top;
+
+				var topOfWindow = $(window).scrollTop();
+				if (imagePos < topOfWindow + 400) {
+					$(this).addClass("slideUp");
+				}
+			});
+		});
+	</script>
+<script>
+		$('#animatedElement').click(function() {
+			$(this).addClass("slideUp");
+		});
+	</script>
+<script>
+			$(window).scroll(function() {
+		var $window = $(window),
+				$body = $('body'),
+				$panel = $('.panelfade');
+		var scroll = $window.scrollTop() + ($window.height() / 2.5);
+		$panel.each(function () {
+			var $this = $(this);
+			if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
+				$body.removeClass(function (index, css) {
+					return (css.match (/(^|\s)bg-\S+/g) || []).join(' ');
+				});
+				$body.addClass('bg-' + $(this).data('bg'));
+			}
+		});
+		}).scroll();
+	</script>
+<script>
+	$(function(){
+	        var x = 0;
+	        setInterval(function(){
+	            x-=1;
+	            $(".strike_fancy:hover").css('background-position', x + 'px 60%');
+	        }, 80);
+	    })
+	</script>
+<script>
+		window.intercomSettings = {
+			app_id: "eacyjptm"
+		};
+	</script>
+<script>
+		(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/eacyjptm';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()
+	</script>
+<script>
+	function hover() {
+	  $(".intercom").on("mouseenter", function() {
+	    return $(this).addClass("hover");
+	  });
+	}
+	function hoverOff() {
+	  $(".intercom").on("mouseleave", function() {
+	    return $(this).removeClass("hover");
+	  });
+	}
+	function active() {
+	  $(".intercom").on("click", function() {
+	    return $(this).addClass("active");
+	  });
+	}
+	hover();
+	hoverOff();
+	active();
+	</script>
+<!-- LinkedIn Insight Tag -->
+<script type="text/javascript"> _linkedin_partner_id = "791978"; window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || []; window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+	</script>
+<script type="text/javascript"> (function(){var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script"); b.type = "text/javascript";b.async = true; b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js"; s.parentNode.insertBefore(b, s);})();
+	</script>
+<noscript> <img alt="" height="1" src="https://dc.ads.linkedin.com/collect/?pid=791978&amp;fmt=gif" style="display:none;" width="1">
+</img></noscript>
+<!-- AdRoll Pixel -->
+<script type="text/javascript">
+    adroll_adv_id = "36HBXXDHHBFZPIOZWB4444";
+    adroll_pix_id = "263BMLSMHBHY5FXV4X3VIV";
+
+    (function () {
+        var _onload = function(){
+            if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+            if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+        else {window.attachEvent('onload', _onload)}
+    }());
+	</script>
+</body>
+</html>

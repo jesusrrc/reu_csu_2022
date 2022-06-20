@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"3bcbfdf90e",applicationID:"1072669312"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link href="https://www.abaco.com/privacy" rel="canonical"/>
+<meta content="Abaco web privacy policy. Find out everything you need to know about how Abaco Systems collects and uses personal information." name="description"/>
+<meta content="Abaco Systems" property="og:site_name"/>
+<meta content="General Page" property="og:type"/>
+<meta content="https://www.abaco.com/privacy" property="og:url"/>
+<meta content="Privacy Policy" property="og:title"/>
+<meta content="Abaco Web Privacy Policy Personal Information – How Abaco Systems Collects and Uses It 1. Document information  Document Owner: Abaco Marketing Group Date Published: 18th May 2018 2. Scope This Policy covers all data subjects whose personal data is collected, in line with the requirements of the EU’s General Data Protection Regulation (GDPR) and other relevant legal requirements that apply." property="og:description"/>
+<meta content="Fri, 11/13/2015 - 11:32" property="article:published_time"/>
+<meta content="Wed, 09/22/2021 - 10:01" property="article:modified_time"/>
+<meta content="Drupal 9 (https://www.drupal.org)" name="Generator"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779bf} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<script type="text/javascript">
+piAId = '985931';
+piCId = '84887';
+piHostname = 'pi.pardot.com';
+
+(function() {
+	function async_load(){
+		var s = document.createElement('script'); s.type = 'text/javascript';
+		s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+		var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+	}
+	if(window.attachEvent) { window.attachEvent('onload', async_load); }
+	else { window.addEventListener('load', async_load, false); }
+})();
+</script>
+<link href="/sites/default/files/favicon_1.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+<script defer="" src="/sites/default/files/google_tag/prod/google_tag.script.js?rdm165"></script>
+<title>Privacy Policy | Abaco Systems</title>
+<link href="/sites/default/files/css/css_I3rhZsMPJd8ZRI_1PqdOFLfsvRUlICrb6E7neqLmkXw.css" media="all" rel="stylesheet"/>
+<link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_U4GtAG81v80qRPDRHjFo_HqlVp31vao5bs7kitmgE2M.css" media="all" rel="stylesheet"/>
+<link href="//fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_hC3L5-eX1GyAgaM-hpfl8ztLCLbN-_KHxtUQquDUb0A.css" media="all" rel="stylesheet"/>
+</head>
+<body class="static-content-page page path-node page--node-type-ge-automation-general-page">
+<a class="visually-hidden focusable skip-link" href="#main-content">
+						Skip to main content
+					</a>
+<noscript aria-hidden="true"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KQJ483" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<header id="header" role="banner">
+<div class="container header">
+<div class="row align-items-center justify-content-between header--main">
+<div class="header--main-logo">
+<div class="region region--navigation-left">
+<div class="block block--system block--system-branding-block" id="block-abaco-branding">
+<a class="site-logo" href="/" rel="home">
+<img alt="Home" class="logo-default" src="/themes/abaco/logo.svg"/>
+<img alt="Home" class="logo-white" src="/themes/abaco/assets/images/dark-logo.svg"/>
+</a>
+</div>
+</div>
+</div>
+<div class="header--main-menu">
+<div class="region region--navigation-center">
+<nav aria-labelledby="block-abaco-main-menu-menu" class="block block-menu navigation menu--main" id="block-abaco-main-menu" role="navigation">
+<h2 class="visually-hidden" id="block-abaco-main-menu-menu">Main navigation</h2>
+<div class="menu--main-wrapper ml-auto" id="menuMain">
+<ul class="menu menu--level-0">
+<li class="menu__item menu__item--expanded">
+<a href="">Products &amp; Services</a>
+<ul class="menu menu--level-2">
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="node/829391" href="/product-overview">Product Overview</a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a data-drupal-link-system-path="products" href="/products">Product Selector</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="products/restricted-production-phase" href="/products/restricted-production-phase">Restricted Production Phase</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="taxonomy/term/128" href="/products/single-board-computers-sbc">Single Board Computers</a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/139" href="/products/intel-architecture-sbcs">Intel Architecture SBCs</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/141" href="/products/power-architecture-sbcs">Power Architecture SBCs</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/126" href="/products/multiprocessing">Multiprocessing</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/142" href="/products/development-systems-and-chassis">Development Systems &amp; Chassis</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="taxonomy/term/2501" href="/products/digital-signal-processing-dsp">Digital Signal Processing </a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/2521" href="/products/fpga-boards">FPGA Boards</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/2516" href="/products/fpga-mezzanine-cards-fmc">FPGA Mezzanine Cards</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/2531" href="/products/fpga-systems">FPGA Systems</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/2526" href="/products/ip-cores-software-tools">IP Cores &amp; Software Tools</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/146" href="/products/sensor-processing">Sensor Processing</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="taxonomy/term/117" href="/products/network-communications">Network Communications</a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/115" href="/products/rugged-routers-switches">Rugged Routers &amp; Switches</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/147" href="/products/embedded-ethernet-switches">Embedded Ethernet Switches</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/125" href="/products/ethernet-network-interface-cards">Ethernet Network Interface Cards</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/113" href="/products/switch-fabric-modules">Switch Fabric Modules</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/112" href="/products/reflective-memory">Reflective Memory </a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="taxonomy/term/111" href="/products/graphics-and-video">Graphics &amp; Video</a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/150" href="/products/graphics-video-boards">Graphics &amp; Video Boards</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/106" href="/products/rugged-display-computers">Rugged Display Computers</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="taxonomy/term/110" href="/integrated-systems">Integrated Systems</a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/6351" href="/products/certifiable">Certifiable</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/6281" href="/products/configurable-systems">Configurable</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/109" href="/products/cots">COTS</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/4516" href="/products/autonomy">Autonomy</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="taxonomy/term/118" href="/avionics">Avionics</a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/4551" href="/products/thunderbolt-3-portable-devices">Thunderbolt 3 Portable Devices</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/116" href="/products/multi-protocol-other-avionics-io">Multi-Protocol &amp; Avionics I/O</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/123" href="/products/databus-analyzers-software">Databus Analyzers &amp; Software</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/124" href="/products/mil-std-1553-protocol">MIL-STD-1553 Protocol</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/122" href="/products/arinc-protocols">ARINC Protocols</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/120" href="/products/afdx-arinc664">AFDX / ARINC664</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/846" href="/products/cables">Cables</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="taxonomy/term/127" href="/products/io-and-storage">I/O &amp; Storage</a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/2496" href="/products/mms-%E2%80%93-carrier-cards">MMS – Carrier Cards</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/3131" href="/products/mms-%E2%80%93-ecms">MMS – ECMs</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/148" href="/products/digital-and-serial-io">Digital &amp; Serial I/O</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/119" href="/products/storage">Storage</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/149" href="/products/analog-and-other-io">Analog &amp; Other I/O</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/836" href="/products/carrier-cards-and-bus-adapters">Carrier Cards &amp; Bus Adapters</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="node/20463261" href="/software">Software</a>
+<ul class="menu menu--level-3">
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="node/20464266" href="/embeddedsw">Embedded Software</a>
+<ul class="menu menu--level-4">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20599066" href="/hdk">Hardware Development Kit</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="taxonomy/term/4546" href="/products/abaco-systems-middleware">Middleware</a>
+<ul class="menu menu--level-4">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7366166" href="/products/axis-software-tool-suite">AXIS Tool Suite</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/11260211" href="/products/health-toolkit">Health Toolkit</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/6733741" href="/openware">OpenWare</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/9568426" href="/industries/product-lifecycle-management">Product Lifecycle Management</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/3463676" href="/support">Support</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="&lt;front&gt;" href="/">Market Specific Solutions</a>
+<ul class="menu menu--level-2">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20598841" href="/industries">Industries</a>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="node/20598836" href="/new-abaco-expertise">Defense</a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a href="/expertise-naval">Sea</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7187066" href="/expertise-land">Land</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7177056" href="/expertise-air">Air</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7187576" href="/expertise-space">Space</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/9676201" href="/industries/program-experience-0">Program Experience</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="node/20598846" href="/applications-0">Applications</a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7258626" href="/autonomy">Autonomy</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/12157496" href="/hypersonic">Hypersonic</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/10951" href="/industries/avionics">Avionics Interface</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/3295561" href="/industries/radar-solutions">Radar</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/12421066" href="/sensor-to-action">Sensor to Action</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/3295056" href="/industries/sonar-solutions">Sonar</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7105996" href="/test-and-simulation">Test &amp; Simulation</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7259131" href="/electronicwarfare">Electronic Warfare</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/9592441" href="/modular-avionics">Modular Avionics</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="&lt;front&gt;" href="/">Technologies</a>
+<ul class="menu menu--level-2">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20599731" href="/sosa">SOSA</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7166046" href="/open-architecture-cots">Open Architecture &amp; COTS</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/9439386" href="/form-factor">Form Factor</a>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="node/7201101" href="/rugged">Ruggedization</a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7200596" href="/ruggedization-levels">Ruggedization Levels</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="node/7258621" href="/anti-tamper-information-assurance">Security</a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7258621" href="/anti-tamper-information-assurance">Anti-Tamper</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20661" href="/safety-certificate">Safety Certifications</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/2253941" href="/quality-certifications">Quality Certifications</a>
+</li>
+</ul>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/6821291" href="/cooling">Cooling</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/6817276" href="/gpgpu">GPGPU</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/12748196" href="/thunderbolt-3">Thunderbolt 3</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7036891" href="/RFSoC">RFSoC</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7210606" href="/size-weight-power">SWaP</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/3346081" href="/products/high-performance-embedded-computing-0">High Performance Embedded Computing</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7258116" href="/tech-insertion">Technology Insertions</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7200091" href="/technology-readiness-level">Technology Readiness Levels</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="&lt;front&gt;" href="/">Company</a>
+<ul class="menu menu--level-2">
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="node/18470" href="/our-company">About Us</a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/9918311" href="/why-abaco">Why Abaco</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="node/20598851" href="/media-center">Media Center</a>
+<ul class="menu menu--level-3">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20599246" href="/blogs">Connected Battlefield Blog</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20599261" href="/press-releases">News Room</a>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="node/20599271" href="/events">Events</a>
+<ul class="menu menu--level-4">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20600206" href="/eurosatory">Eurosatory 2022</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20600141" href="/cema">CEMA 2022</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20600031" href="/summit">SUMMIT 2022</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20599391" href="/ausa-2021">AUSA 2021</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20599621" href="/feindef-2021">FEINDEF 2021</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20599736" href="/afcea-west-2022">WEST 2022</a>
+</li>
+</ul>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20599266" href="/webinars-listing">Webinars</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20599251" href="/video-gallery">Videos</a>
+</li>
+</ul>
+</li>
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="node/20598856" href="/resources">Resources</a>
+<ul class="menu menu--level-3">
+<li class="menu__item menu__item--expanded">
+<a data-drupal-link-system-path="library" href="/library">Document Library</a>
+<ul class="menu menu--level-4">
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/249" href="/library/datasheets">Datasheets</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/247" href="/library/manuals">Manuals</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/273" href="/library/notices">Notices</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/3741" href="/library/technical-datasheets">Technical Datasheets</a>
+</li>
+</ul>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/265" href="/library/brochures">Brochures</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/254" href="/library/white-papers">White Papers</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/3901" href="/library/case-studies">Case Studies</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/5566" href="/library/solutions-briefs">Solutions Briefs </a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/3206" href="/library/ebooks">Ebooks</a>
+</li>
+</ul>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/8241056" href="/our-partners">Our Partners</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/3463676" href="/support">Support</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20599291" href="/careers">Careers</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="user/login" href="/user/login">Login</a>
+</li>
+</ul>
+</li>
+</ul>
+<div class="menu--main-background">
+<div class="menu--content">
+<div class="menu--content-title">Let us know how we can help</div>
+<div class="menu--content-description">Got something you’d like to tell us? See something you’d like us to improve? We want to hear from you.</div>
+<div class="menu--content-contact">
+<span>Americas</span>
+<a href="tel:1-866-652-2226">1-866-652-2226</a>
+</div>
+<div class="menu--content-contact">
+<span>Europe, Africa, Middle East &amp; Asia Pacific</span>
+<a href="tel:+44 (0) 1327 359444">+44 (0) 1327 359444</a>
+</div>
+</div>
+</div>
+<div class="mobile-contact-menu">
+<div class="block block--block-content block--block-content7dcc10a5-cbf3-4bb6-af6a-6b63fb4a1b8f" id="block-contactusmenu">
+<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a class="btn btn--secondary" href="/contact-us">Contact Us</a></p>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</div>
+<div class="header--main-right">
+<div class="region region--navigation-right">
+<div class="block block--block-content block--block-content86f8742c-6b52-44d9-b1e1-009058aef84d" id="block-searchmenu">
+<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p id="searchTop">Search</p>
+</div>
+</div>
+<div class="views-exposed-form bef-exposed-form block block--views block--views-exposed-filter-blocksite-search-w-pdfs-page-1" data-bef-auto-submit="" data-bef-auto-submit-delay="500" data-bef-auto-submit-full-form="" data-drupal-selector="views-exposed-form-site-search-w-pdfs-page-1" id="block-exposedformsite-search-w-pdfspage-1">
+<form accept-charset="UTF-8" action="/search" id="views-exposed-form-site-search-w-pdfs-page-1" method="get">
+<div class="page-title-with-bg">
+<div class="container">
+<div class="row flex-column position-relative">
+<div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-search-api-fulltext form-item-search-api-fulltext">
+<input class="form-text" data-bef-auto-submit-exclude="" data-drupal-selector="edit-search-api-fulltext" id="edit-search-api-fulltext" maxlength="128" name="search_api_fulltext" size="30" type="text" value=""/>
+</div>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions"><input class="button js-form-submit form-submit" data-bef-auto-submit-click="" data-drupal-selector="edit-submit-site-search-w-pdfs" id="edit-submit-site-search-w-pdfs" type="submit" value="Search"/>
+</div>
+</div>
+</div>
+</div>
+<div class="search-products--filter-options">
+<div class="container">
+<div class="row">
+<div class="col-lg-9 d-sm-flex align-items-end mt-5">
+<div class="js-form-item form-item js-form-type-select form-type-select js-form-item-type form-item-type">
+<label for="edit-type">Filter by:</label>
+<select class="form-select" data-drupal-selector="edit-type" id="edit-type" name="type"><option selected="selected" value="All">- Any -</option><option value="events">Events</option><option value="ge_automation_article">Articles</option><option value="ge_automation_blog_enteries">Blog Entries</option><option value="ge_automation_file">Files/Downloads</option><option value="ge_automation_product">Products</option></select>
+</div>
+<div class="js-form-item form-item js-form-type-select form-type-select js-form-item-sort-order form-item-sort-order">
+<label for="edit-sort-order">Order</label>
+<select class="form-select" data-drupal-selector="edit-sort-order" id="edit-sort-order" name="sort_order"><option value="ASC">Oldest</option><option selected="selected" value="DESC">What's New</option></select>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<div class="block block--block-content block--block-content7dcc10a5-cbf3-4bb6-af6a-6b63fb4a1b8f" id="block-contactusmenu">
+<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><a class="btn btn--secondary" href="/contact-us">Contact Us</a></p>
+</div>
+</div>
+</div>
+<button aria-label="Toggle navigation" class="menu-toggle" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<div class="container-fluid standard-width" id="main-wrapper">
+<div class="row justify-content-between">
+<main class="main-content container-fluid" role="main">
+<div class="region region--content">
+<div class="hidden" data-drupal-messages-fallback=""></div><div class="block block--system block--system-main-block" id="block-abaco-content">
+<article about="/privacy" class="node node--type-ge-automation-general-page node--view-mode-full" data-history-node-id="18476" role="article">
+<div class="banner">
+<div class="field field--name-field-banner-component field--type-entity-reference-revisions field--label-hidden field__items">
+<div class="field__item">
+<div class="paragraph paragraph--type--banner-carousel paragraph--view-mode--default">
+<div class="banner-carousel owl-carousel">
+<div class="paragraph paragraph--type--banner paragraph--view-mode--full">
+<div class="banner-wrap custom-banner" style="background-image: url('/sites/default/files/styles/homepage_banner/public/2021-08/leadership.jpg?h=a87e8698&amp;itok=ZOoLi825'); height: 320px;">
+<div class="banner container">
+<div class="banner__left" style="flex-basis: 60%;">
+<div class="content">
+<h1 class="title">
+<div class="field field--name-field-title field--type-string field--label-hidden field__item">Privacy Policy</div>
+</h1>
+<div class="excerpt">
+</div>
+</div>
+<div class="abaco-breadcrumb">
+<div class="block block--system block--system-breadcrumb-block">
+<ol aria-label="Breadcrumb" class="breadcrumb" role="navigation">
+<li>
+<a href="/">Home</a>
+</li>
+<li>
+									Privacy Policy
+							</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="simple-banner-links">
+<div class="container-fluid">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="node__content">
+<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><!-- section title -->
+<h2>Abaco Web Privacy Policy</h2>
+<h3>Personal Information – How Abaco Systems Collects and Uses It</h3>
+<p><strong>1. Document information </strong></p>
+<p><strong>Document Owner</strong>: Abaco Marketing Group</p>
+<p>Date Published: 18th May 2018</p>
+<p><strong>2. Scope</strong></p>
+<p>This Policy covers all data subjects whose personal data is collected, in line with the requirements of the EU’s General Data Protection Regulation (GDPR) and other relevant legal requirements that apply.</p>
+<p>Abaco keeps and uses contact details of individuals and companies who use our products and services. To maintain the quality of our service, we will also keep and use records of the nature and content of the contact we have with them and the products and services we have provided. We may, from time to time, use this information to tailor our services and inform them of ways we can help them. You may on occasion provide us with information relevant to our product and service offerings that we may retain and use to enable us to provide the relevant products and services to you. We will not disclose any information about individuals that we obtain from you to third parties unless they are operating as an agent or service provider for Abaco as described herein, or where we are entitled or required by law to do so.</p>
+<p><strong>3. Responsibilities</strong></p>
+<p>Abaco Systemsis responsible for ensuring that this notice is made available to data subjects prior to Abaco collecting/processing their personal data.</p>
+<p>All Employees of Abaco who interact with data subjects are responsible for ensuring that this notice is drawn to the data subject’s attention and their consent to the processing of their data is secured.</p>
+<p><strong>4. Privacy Notice</strong></p>
+<p><strong>4.1 <u>Who are we?</u></strong><br/>
+With more than 30 years’ experience, Abaco Systems is a global leader in the design, manufacture, delivery and support of mission-critical rugged embedded computing systems for defense, aerospace and industrial organisations applications. Our goal is to be a significant contributor to our customers’ success, partnering with them to reduce cost, time-to-deployment and risk and supporting them over the long term. With an active presence in hundreds of national asset platforms on land, sea and in the air, Abaco Systems is trusted where it matters most.</p>
+<p><strong>4.2 <u>Abaco’s Privacy Organisation</u></strong><br/>
+Our Privacy Organisation can be contacted directly via the contact points set out in section 4.10.</p>
+<p><strong>4.3 <u>Information Collected by Abaco </u></strong><br/>
+We collect, store and process information about you if you use our websites, subscribe to our communications, or use our services. This information can include the following elements:</p>
+<ul style="font-size: 14px; font-weight: bold;"><li>Your Name </li>
+<li>Your Email address </li>
+<li>Your IP address </li>
+<li>Your Company Name</li>
+<li>Your Job Title </li>
+<li>Your Contact Number/s </li>
+<li>Your Business (or Personal) Address (as supplied by you)</li>
+<li>Your Billing Address </li>
+<li>Your Site Preferences </li>
+<li>Any other personal information you provide when interacting with us</li>
+</ul><p>The personal data we collect will be used for the purposes set out in section 5.2 below.</p>
+<p>Our legal basis for processing personal data is as follows:</p>
+<ul><li>Consent</li>
+<li>Legitimate interests</li>
+<li>Contract</li>
+</ul><p>Any legitimate interests pursued by us, or third parties we use, are as follows:</p>
+<ul><li>Providing news and general information</li>
+<li>Information related to Abaco products and services </li>
+<li>Information related to Abaco technical bulletins and training courses</li>
+<li>Information related to Abaco business support services</li>
+<li>Information related to Abaco trade events</li>
+<li>Information related to Abaco recruitment opportunities</li>
+</ul><p><strong>4.4 <u>Consent</u></strong><br/><font color="#a72d24">By indicating your consent to the Abaco Cookie Tool and/or the terms of the Abaco Subscription Tool, you are providing positive consent to the relevant terms of this Privacy Policy, and giving us permission to process your personal data specifically for the purposes identified herein.</font></p>
+<p>Consent is required for Abaco to process personal data, but it must be explicitly given. Where we are asking you for sensitive personal data we will tell you why and how the information will be used.<br/><br/>
+You may withdraw consent at any time by unsubscribing to any email marketing communications; logging into the Abaco website to update personal preferences; or contacting Abaco directly via the contact points set out in section 4.10.</p>
+<p>Not providing this consent and the information related to it may result in access restrictions or reduced functionality.</p>
+<p>You may disable cookies on our websites as set out in section 5 of this Privacy Policy. Please note however that by deleting or refusing cookies, you may be unable to access certain areas or features of our site.<br/><br/><strong>4.5 <u>Sharing / Transferring your Data</u></strong><br/>
+Abaco will not sell or otherwise disclose your personal information outside of Abaco Systems and if affiliates, except as described in this Privacy Notice. </p>
+<p>We may share information provided by our visitors to this and other Abaco Systems sites with service providers we have retained to perform services on our behalf. These service providers are contractually restricted from using or disclosing the information except as necessary to perform services on our behalf or to comply with legal requirements. </p>
+<p>We may also share information with our partners and affiliates, ensuring at all times that an adequate level of protection is in place to protect your information. </p>
+<p>We may disclose information about you (i) if we are required to do so by law or legal process, (ii) to law enforcement authorities or other government officials as required to comply with a legitimate legal request, or (iii) when we believe disclosure is necessary to prevent physical harm or financial loss, or in connection with an investigation of suspected or actual illegal activity.</p>
+<p>We reserve the right to transfer any information we have about you in the event we sell or transfer all or a portion of our business or assets (including through bankruptcy).</p>
+<p><strong>4.6 <u>Transmission</u></strong><br/>
+We may transmit the personal information we collect on this site or other Abaco Systems sites to other countries where we do business, including for websites accessed in the European Union, to the US, but we will do so only where absolutely necessary and for the purposes described herein. Abaco Systems has entered into Binding Corporate Rules governing our treatment of personal information of European Union residents.</p>
+<p><strong>4.7 <u>How We Protect Your Information</u></strong><br/>
+We maintain administrative, technical and physical safeguards to protect against unauthorized disclosure, use, alteration or destruction of the personal information you provide on this and other Abaco Systems websites. We also carry out ongoing assessment and upgrading of our IT systems to ensure that they remain up to date so that we can keep the personal information you provide secure.</p>
+<p><strong>4.8 <u>Retention Periods</u></strong><br/>
+Abaco takes reasonable steps to ensure that the information we process is reliable for its intended use, is accurate, up-to-date and complete, and is limited to the information required to carry out processing for the purposes described in this Privacy Statement. We retain your information for as long as necessary to fulfil the purposes for which we collect it, except if required otherwise by law.<br/><br/><strong>4.9 <u>Your Rights as a Data Subject</u></strong><br/>
+At any point while we are in possession of or processing your personal data, you, the data subject, have the following rights:</p>
+<ul><li><strong>Right of access</strong>– you have the right to request a copy of the information that we hold about you.</li>
+<li><strong>Right of rectification</strong>– you have a right to correct data that we hold about you that is inaccurate or incomplete.</li>
+<li><strong>Right to be forgotten</strong>– in certain circumstances you can ask for the data we hold about you to be erased from our records.</li>
+<li><strong>Right to restriction of processing</strong>– where certain conditions apply to have a right to restrict the processing.</li>
+<li><strong>Right of portability</strong>– you have the right to have the data we hold about you transferred to another organisation.</li>
+<li><strong>Right to object</strong>– you have the right to object to certain types of processing such as direct marketing, the right to object to automated processing or profiling, and the right to be subject to the legal effects of automated processing or profiling.</li>
+</ul><ul><li><strong>Right of Review - </strong>in the event that Abaco refuses your request under rights of access, we will provide you with a reason as to why. You have the right to complain as outlined in clause 4.8 below. Complaints may be forwarded if there is a third party involved (as stated in 4.5 above) in the processing of your personal data.</li>
+</ul><p><strong>4.10 <u>Complaints</u></strong><br/>
+In the event that you wish to make a complaint about how your personal data is being processed by Abaco (or third parties as described in 4.5 above), or how your complaint has been handled, you have the right to lodge a complaint directly with Abaco’s GDPR Management Group and/or with the supervisory authority (the Information Commissioner’s Office, or ICO) whose details are provided below:</p>
+<p><strong>The Data Protection Officer<br/>
+Abaco Systems Limited <br/>
+Tove Valley Business Park<br/>
+Old Tiffield Road<br/>
+Towcester<br/>
+Northamptonshire<br/>
+NN12 6PF<br/>
+England, UK.</strong></p>
+<p>Tel: +44 (0)1327 359444</p>
+<p><a href="mailto:towcester.gdpr@abaco.com">towcester.gdpr@abaco.com</a></p>
+<p><strong>The Information Commissioner’s Office (“ICO”)</strong></p>
+<p><a href="https://ico.org.uk/global/contact-us/">https://ico.org.uk/global/contact-us/</a></p>
+<p><br/><strong>5. Privacy Statement</strong></p>
+<p>Read more about how and why we use your data here:</p>
+<p><strong>5.1 <u>Personal Data</u></strong><br/>
+Under the EU’s General Data Protection Regulation (GDPR) personal data is defined as: </p>
+<p>“any information relating to an identified or identifiable natural person ('data subject'); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person”.<br/><br/><strong>5.2 <u>How we use your information</u></strong><br/>
+We may use the personal information collected about you for the following purposes:</p>
+<p>To provide, administer and communicate with you about products, services, events, surveys and promotions by Abaco Systems or our affiliates (including by sending you marketing communications);</p>
+<p>To process, evaluate and respond to your requests, inquiries and applications; </p>
+<p>To create, administer and communicate with you about your account (including any purchases and payments); Provide investor services; Verify your identity to ensure security for the other purposes listed here; Evaluate your interest in employment and contact you regarding possible employment; </p>
+<p>To operate, evaluate and improve our business including: developing new products and services; managing our communications; performing market research; determining and managing the effectiveness of our advertising and marketing; analyzing our products, services and websites; administering our websites; and performing accounting, auditing, billing, reconciliation and collection activities; </p>
+<p>To protect against and prevent fraud, unauthorized transactions, claims and other liabilities, and manage risk exposure and quality; Conduct investigations and comply and enforce applicable legal requirements or, industry standards and our policies and terms, such as this and other Abaco Systems sites’ terms of use; and Ensure the safety of Abaco Systems network services, information resources and employees.</p>
+<p>We also may use personal information for other additional purposes. We will identify these additional purposes at the time of collection.<br/><br/><strong>5.3 <u>Children’s Privacy</u></strong><br/>
+This website is not directed to children under the age of thirteen and we do not knowingly collect personal information from children under the age of thirteen on Abaco Systems websites. If we become aware that we have inadvertently received personal information from a visitor under the age of thirteen, we will delete the information from our records.<br/><br/><strong>5.3 <u>Use of Cookies</u></strong><br/>
+This website makes use of cookies (files which are sent by us to your computer or other access device) which we may then access when you visit our website in future to facilitate and improve users online experience.</p>
+<p>We do this to enable us to gain a better understanding of our users and their needs, and to monitor the effectiveness of our website in delivering content to them. We also use cookies to authenticate and authorise registered users.</p>
+<p>We do not store any personal information that you have provided to us in any cookie issued by this website.</p>
+<p>If you want to delete any cookies that are already on your computer, please refer to the instructions for your operating system or browser. Our cookies are clearly identifiable and will have the file names &lt;user&gt;@www.abaco.com.<br/>
+ <br/><strong>5.3.1 <u>How this site uses cookies</u></strong><br/>
+Cookies contain small amounts of information which are downloaded to your device when you visit our website.  Cookies are sent back to our website to allow us to recognize your device.  <br/>
+ <br/>
+Recognizing your device with <em>Essential Cookies</em> allows our site to help you navigate efficiently to obtain the information and services you have requested.  <br/>
+ <br/><em>Analytical and Customization Cookies</em> allow our site to remember your preferences such as language selection and help you to view information that is most relevant to your interests; these cookies also help us to maintain and improve our websites by providing information on how visitors find and use the sites, and how well the sites are performing.  <br/>
+ <br/>
+In some cases <em>Advertising Cookies</em> may be used to make advertising messages more relevant to you. <br/><br/><strong>5.3.2 <u>Making Cookie Choices</u></strong><br/>
+Most web browsers automatically accept cookies. However you do not have to accept cookies and you can, should you choose to at any time, reject or block the use of cookies and delete all cookies currently stored on your device.  You can find out how to do this for your particular browser by clicking “help” on your browser's menu, or by visiting: <a href="http://www.allaboutcookies.org/">http://www.allaboutcookies.org/</a>,  <a href="http://www.aboutcookies.org/">http://www.aboutcookies.org/</a>or via other online tools that may be available.</p>
+<p>In addition to our Cookie Consent Tool, most browsers allow you to manage cookie preferences. Please be aware however that if you chose to block cookies you may not be able to access certain features of this web site. For information on how to reject or delete cookies on the browser of your mobile device you may need to refer to your device's manual.<br/><br/><strong>5.3.3 <u>Third Party Cookies and Sharing Tools</u></strong><br/>
+To enhance your experience on our websites, we sometimes embed content and sharing tools from other (third party) sites, such as “like” buttons from social networking sites; these third party sites may also place and access cookies on your device. Abaco Systems does not control the placement or access of these third party cookies.  You should check the relevant third party website(s) for more information about these cookies and whether and how you may make choices about them.<br/><br/><strong>5.4 <u>Links to Other Sites</u></strong><br/>
+We may provide links to other websites for your convenience and information. These sites may have their own privacy statements or policies in place, which we recommend you review if you visit any linked websites. We are not responsible for the content of linked sites or any use of the sites.</p>
+<p><strong>5.5 <u>Use of IP Addresses</u></strong><br/>
+An IP address is a unique identifier that certain electronic devices use to identify and communicate with each other on the Internet. When you visit our website, we may view (using also 3rd party services) the IP address of the device you use to connect to the Internet. We use this information to determine the general physical location of the device and understand from what geographic regions our website visitors come. We also may use this information to enhance our website.</p>
+<p><br/><strong>5.6 <u>Why does Abaco need to collect and store personal data?</u></strong><br/>
+In order for us to provide you with our services, we need to collect personal data in order to fulfil this. In any event, we are committed to ensuring that the information we collect and use is appropriate for this purpose, and does not constitute an invasion of your privacy. <br/><br/>
+In terms of being contacted for marketing purposes, Abaco would contact you for additional consent.<br/><br/><strong>5.7 <u>Will Abaco share my personal data with anyone else?</u></strong><br/>
+We may pass your personal data on to third-party service providers contracted to Abaco in the course of dealing with you. Any third parties that we may share your data with are obliged to keep your details securely, and to use them only to fulfil the service they provide you on our behalf. When they no longer need your data to fulfil this service, they will dispose of the details in line with Abaco’s procedures. If we wish to pass your sensitive personal data onto a third party we will only do so once we have obtained your consent, unless we are legally required to do otherwise.<br/><br/><strong>5.8 <u>How will Abaco use the personal data it collects about me?</u> </strong><br/>
+Abaco will process (collect, store and use) the information you provide in a manner compatible with the EU’s General Data Protection Regulation (GDPR). We will endeavour to keep your information accurate and up to date, and not keep it for longer than is necessary. Abaco is required to retain information in accordance with the law, such as information needed for income tax and audit purposes. How long certain kinds of personal data should be kept may also be governed by specific business-sector requirements and agreed practices. Personal data may be held in addition to these periods depending on individual business needs.<br/><br/><strong>5.9 <u>Under what circumstances will Abaco contact me?</u></strong><br/>
+Our aim is not to be intrusive, and we undertake not to ask irrelevant or unnecessary questions. Moreover, the information you provide will be subject to rigorous measures and procedures to minimise the risk of unauthorised access or disclosure. We may contact you to participate in surveys, which we run to better serve our customers and industry partners and contacts, in line with Abaco’s aims as a business.<br/><br/><strong>5.10 <u>How can I find out what personal data Abaco holds about me?</u></strong><br/>
+When requested to do so, Abaco can confirm what information we hold about you and how it is processed. You can contact us to request this information using the contact details below. </p>
+<p>You may also contact us if you have any questions or comments about this Privacy Policy or if you would like us to update information we have about you or your preferences.</p>
+<p>To help protect your privacy and maintain security, we may take steps to verify your identity before granting you access to the information we hold about you.Abaco accepts any of the following forms of ID when information on your personal data is requested:</p>
+<p>- Passport<br/>
+- Driving licence<br/>
+- National Identity Card <br/><br/><strong><u>Contact details of the Abaco Privacy Organisation:</u></strong><br/><strong>Abaco Systems Limited<br/>
+Tove Valley Business Park<br/>
+Old Tiffield Road<br/>
+Towcester<br/>
+Northamptonshire<br/>
+NN12 6PF<br/>
+England, UK.</strong></p>
+<p><a href="mailto:towcester.gdpr@abaco.com">towcester.gdpr@abaco.com</a></p>
+<p>                  <br/><strong>6. California Privacy Rights</strong></p>
+<p>Annually California residents may request and obtain information that Abaco Systems shared with other businesses for their own direct marketing use within the prior calendar year (as defined by California’s “Shine the Light Law”). If applicable, this information would include a list of the categories of personal information that was shared and the names and addresses of all third parties with which Abaco Systems shared this information in the immediately preceding calendar year.</p>
+<p><strong>7. Regulatory Information</strong></p>
+<p>This website is operated by Abaco Systems, Inc. (“Abaco”), a Delaware corporation whose principal place of business is 12090 South Memorial Parkway, Huntsville, Alabama 35803, United States of America. Abaco’s primary EU based legal entity is a wholly owned subsidiary, Abaco Systems Limited, a company incorporated in England and Wales, (Company No. 02151516), whose registered office and principal place of business is at Tove Valley Business Park, Old Tiffield Road, Towcester, Northamptonshire, NN12 6PF, England, UK.</p>
+<h4><strong>Abaco.com Web Site Terms of Use</strong></h4>
+<p>This Web site is operated by Abaco Systems, Inc., ("Abaco Systems"). Throughout the site, the terms "we," "us" and "our" refer to Abaco Systems. Abaco Systems offers this Web site, including all information, tools and services available from this site, to you, the user, conditioned upon your acceptance of all the terms, conditions, policies and notices stated here. Your use of this site constitutes your agreement to these Terms of Use.</p>
+<h4><strong>Accuracy, Completeness and Timeliness of Information on This Site</strong></h4>
+<p>Abaco Systems is not responsible if information made available on this site is not accurate, complete or current. The material on this site is provided for general information only and should not be relied upon or used as the sole basis for making decisions without consulting primary, more accurate, more complete or more timely sources of information. Any reliance on the material on this site is at your own risk. This site may contain certain historical information. Historical information necessarily is not current and is provided for your reference only. We reserve the right to modify the contents of this site at any time, but we have no obligation to update any information on the site. You agree that it is your responsibility to monitor changes to the site.</p>
+<h4><strong>Use of Materials on the Site</strong></h4>
+<p>All content on this site (including, without limitation, text, design, graphics, logos, icons, images, audio clips, downloads, interfaces, code and software, as well as the selection and arrangement thereof), is the exclusive property of and owned by Abaco Systems, its licensors or its content providers and is protected by copyright, trademark and other applicable laws. You may access, copy, download and print the material contained on the site for your personal and non-commercial use, provided you do not modify or delete any copyright, trademark or other proprietary notice that appears on the material you access, copy, download or print. Any other use of content on the site, including but not limited to the modification, distribution, transmission, performance, broadcast, publication, uploading, licensing, reverse engineering, transfer or sale of, or the creation of derivative works from, any material, information, software, products or services obtained from the site, or use of the site for purposes competitive to Abaco Systems, is expressly prohibited. You agree to abide by all additional restrictions displayed on the site as it may be updated from time to time. Abaco Systems reserves the right to refuse or cancel any person's registration for this site, remove any person from this site or prohibit any person from using this site for any reason whatsoever. Abaco Systems, or its licensors or content providers, retain full and complete title to the material provided on the site, including all associated intellectual property rights, and provide this material to you under a license that is revocable at any time in Abaco Systems' sole discretion. Abaco Systems neither warrants nor represents that your use of materials on this site will not infringe rights of third parties not affiliated with Abaco Systems.</p>
+<p>You may not use contact information provided on the site for unauthorized purposes, including marketing. You may not use any hardware or software intended to damage or interfere with the proper working of the site or to surreptitiously intercept any system, data or personal information from the site. You agree not to interrupt or attempt to interrupt the operation of the site in any way. Abaco Systems reserves the right, in its sole discretion, to limit or terminate your access to or use of the site at any time without notice. Termination of your access or use will not waive or affect any other right or relief to which Abaco Systems may be entitled at law or in equity.</p>
+<h4><strong>Materials You Submit</strong></h4>
+<p>You acknowledge that you are responsible for any material you may submit via the site, including the legality, reliability, appropriateness, originality and copyright of any such material. You may not upload to, distribute or otherwise publish through this site any content that (i) is confidential, proprietary, false, fraudulent, libelous, defamatory, obscene, threatening, invasive of privacy or publicity rights, infringing on intellectual property rights, abusive, illegal or otherwise objectionable; (ii) may constitute or encourage a criminal offense, violate the rights of any party or otherwise give rise to liability or violate any law; or (iii) may contain software viruses, political campaigning, chain letters, mass mailings, or any form of "spam." You may not use a false email address or other identifying information, impersonate any person or entity or otherwise mislead as to the origin of any content. You may not upload commercial content onto the site.</p>
+<p>If you do submit material, and unless we indicate otherwise, you grant Abaco Systems and its affiliates an unrestricted, nonexclusive, royalty-free, perpetual, irrevocable and fully sublicensable right to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute and display such material throughout the world in any media. You further agree that Abaco Systems is free to use any ideas, concepts, know-how that you or individuals acting on your behalf provide to Abaco Systems. You grant Abaco Systems and its affiliates the right to use the name you submit in connection with such material, if they so choose. All personal information provided via this site will be handled in accordance with the site's online Privacy Policy. You represent and warrant that you own or otherwise control all the rights to the content you post; that the content is accurate; that use of the content you supply does not violate any provision herein and will not cause injury to any person or entity; and that you will indemnify Abaco Systems for all claims resulting from content you supply.</p>
+<h4><strong>Conduct on the Site</strong></h4>
+<p>Some features that may be available on this site require registration. By registering at and in consideration of your use of the site you agree to provide true, accurate, current and complete information about yourself.</p>
+<p>Some features on this site require use of a password. You are responsible for protecting your password. You agree that you will be responsible for any and all statements made, and acts or omissions that occur, through the use of your password. If you have any reason to believe or become aware of any loss, theft or unauthorized use of your password, notify Abaco Systems immediately. Abaco Systems may assume that any communications Abaco Systems receives under your password have been made by you unless Abaco Systems receives notice otherwise.</p>
+<p>You or third parties acting on your behalf are not allowed to frame this site or use our proprietary marks as meta tags, without our written consent. These marks include, but are not limited to, Abaco Systems, Abaco Systems Monograms / Logos or other Abaco proprietary marks, trademarks or other intellectual property. You may not use frames or utilize framing techniques or technology to enclose any content included on the site without Abaco Systems' express written consent. Further, you may not utilize any site content in any meta tags or any other "hidden text" techniques or technologies without Abaco Systems' express written consent.</p>
+<h4><strong>Links</strong></h4>
+<p>This site may contain links to other Web sites, some of which are operated by Abaco Systems or its affiliates and others of which are operated by third parties. These links are provided as a convenience to you and as an additional avenue of access to the information contained therein. We have not necessarily reviewed all the information on those other sites and are not responsible for the content of those or any other sites or any products or services that may be offered through those or any other sites. Inclusion of links to other sites should not be viewed as an endorsement of the content of linked sites. Different terms and conditions may apply to your use of any linked sites. Abaco Systems is not responsible for any losses, damages or other liabilities incurred as a result of your use of any linked sites.</p>
+<h4><strong>Trademarks and Copyrights</strong></h4>
+<p>Trademarks, logos and service marks displayed on this site are registered and unregistered trademarks of Abaco Systems, its licensors or content providers, or other third parties. All of these trademarks, logos and service marks are the property of their respective owners. Nothing on this site shall be construed as granting, by implication, estoppel, or otherwise, any license or right to use any trademark, logo or service mark displayed on the site without the owner's prior written permission, except as otherwise described herein. Abaco Systems reserves all rights not expressly granted in and to the site and its content. This site and all of its content, including but not limited to text, design, graphics, interfaces and code, and the selection and arrangement thereof, is protected as a compilation under the copyright laws of the United States and other countries.</p>
+<h4><strong>Infringement Notice</strong></h4>
+<p>We respect the intellectual property rights of others and request that you do the same. You are hereby informed that Abaco Systems has adopted and reasonably implemented a policy that provides for the termination in appropriate circumstances of subscribers and account holders of Abaco Systems' system or network who are repeat copyright infringers. If you believe your copyright or the copyright of a person on whose behalf you are authorized to act has been infringed, you may notify our copyright agent:</p>
+<p>To be effective, your notification must (i) be in writing, (ii) be provided to our copyright agent, and (iii) include substantially the following:</p>
+<ul><li>A physical or electronic signature of a person authorized to act on behalf of the owner of an exclusive right that is allegedly infringed;</li>
+<li>Identification of the copyrighted work claimed to have been infringed, or, if multiple copyrighted works at a single online site are covered by a single notification, a representative list of such works at that site;</li>
+<li>Identification of the material that is claimed to be infringing or to be the subject of infringing activity and that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit the service provider to locate the material;</li>
+<li>Information reasonably sufficient to permit the service provider to contact the complaining party, such as an address, telephone number, and, if available, an electronic mail address at which the complaining party may be contacted;</li>
+<li>A statement that the complaining party has a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law; and</li>
+<li>A statement that the information in the notification is accurate, and under penalty of perjury, that the complaining party is authorized to act on behalf of the owner of an exclusive right that is allegedly infringed.</li>
+</ul><p>Abaco Systems is under no obligation to post, forward, transmit, distribute or otherwise provide any material available on this site, including material you provide to us, and so we have an absolute right to remove any material from the site in our sole discretion at any time.</p>
+<h4><strong>DISCLAIMERS</strong></h4>
+<p>YOUR USE OF THIS SITE IS AT YOUR SOLE RISK. THE SITE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. WE RESERVE THE RIGHT TO RESTRICT OR TERMINATE YOUR ACCESS TO THE SITE OR ANY FEATURE OR PART THEREOF AT ANY TIME. ABACO SYSTEMS EXPRESSLY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE AND ANY WARRANTIES THAT MATERIALS ON THE SITE ARE NONINFRINGING, AS WELL AS WARRANTIES IMPLIED FROM A COURSE OF PERFORMANCE OR COURSE OF DEALING; THAT ACCESS TO THE SITE WILL BE UNINTERRUPTED OR ERROR-FREE; THAT THE SITE WILL BE SECURE; THAT THE SITE OR THE SERVER THAT MAKES THE SITE AVAILABLE WILL BE VIRUS-FREE; OR THAT INFORMATION ON THE SITE WILL BE COMPLETE, ACCURATE OR TIMELY. IF YOU DOWNLOAD ANY MATERIALS FROM THIS SITE, YOU DO SO AT YOUR OWN DISCRETION AND RISK. YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM OR LOSS OF DATA THAT RESULTS FROM THE DOWNLOAD OF ANY SUCH MATERIALS. NO ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED BY YOU FROM Abaco Systems OR THROUGH OR FROM THE SITE SHALL CREATE ANY WARRANTY OF ANY KIND. ABACO SYSTEMS DOES NOT MAKE ANY WARRANTIES OR REPRESENTATIONS REGARDING THE USE OF THE MATERIALS ON THIS SITE IN TERMS OF THEIR COMPLETENESS, CORRECTNESS, ACCURACY, ADEQUACY, USEFULNESS, TIMELINESS, RELIABILITY OR OTHERWISE.</p>
+<p>IN CERTAIN JURISDICTIONS, THE LAW MAY NOT PERMIT THE DISCLAIMER OF WARRANTIES, SO THE ABOVE DISCLAIMER MAY NOT APPLY TO YOU.</p>
+<h4><strong>LIMITATION OF LIABILITY</strong></h4>
+<p>YOU ACKNOWLEDGE AND AGREE THAT YOU ASSUME FULL RESPONSIBILITY FOR YOUR USE OF THE SITE. YOU ACKNOWLEDGE AND AGREE THAT ANY INFORMATION YOU SEND OR RECEIVE DURING YOUR USE OF THE SITE MAY NOT BE SECURE AND MAY BE INTERCEPTED BY UNAUTHORIZED PARTIES. YOU ACKNOWLEDGE AND AGREE THAT YOUR USE OF THE SITE IS AT YOUR OWN RISK AND THAT THE SITE IS MADE AVAILABLE TO YOU AT NO CHARGE. RECOGNIZING SUCH, YOU ACKNOWLEDGE AND AGREE THAT, TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, NEITHER ABACO SYSTEMS NOR ITS AFFILIATES, SUPPLIERS OR THIRD PARTY CONTENT PROVIDERS WILL BE LIABLE FOR ANY DIRECT, INDIRECT, PUNITIVE, EXEMPLARY, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR OTHER DAMAGES ARISING OUT OF OR IN ANY WAY RELATED TO THE SITE, OR ANY OTHER SITE YOU ACCESS THROUGH A LINK FROM THIS SITE OR FROM ANY ACTIONS WE TAKE OR FAIL TO TAKE AS A RESULT OF COMMUNICATIONS YOU SEND TO US, OR THE DELAY OR INABILITY TO USE THE SITE, OR FOR ANY INFORMATION, PRODUCTS OR SERVICES ADVERTISED IN OR OBTAINED THROUGH THE SITE, GEAS REMOVAL OR DELETION OF ANY MATERIALS SUBMITTED OR POSTED ON ITS SITE, OR OTHERWISE ARISING OUT OF THE USE OF THE SITE, WHETHER BASED ON CONTRACT, TORT, STRICT LIABILITY OR OTHERWISE, EVEN IF ABACO SYSTEMS, ITS AFFILIATES OR ANY OF ITS SUPPLIERS HAS BEEN ADVISED OF THE POSSIBILITY OF DAMAGES. THIS DISCLAIMER APPLIES, WITHOUT LIMITATION, TO ANY DAMAGES OR INJURY ARISING FROM ANY FAILURE OF PERFORMANCE, ERROR, OMISSION, INTERRUPTION, DELETION, DEFECTS, DELAY IN OPERATION OR TRANSMISSION, COMPUTER VIRUSES, FILE CORRUPTION, COMMUNICATION-LINE FAILURE, NETWORK OR SYSTEM OUTAGE, YOUR LOSS OF PROFITS, OR THEFT, DESTRUCTION, UNAUTHORIZED ACCESS TO, ALTERATION OF, LOSS OR USE OF ANY RECORD OR DATA, AND ANY OTHER TANGIBLE OR INTANGIBLE LOSS. YOU SPECIFICALLY ACKNOWLEDGE AND AGREE THAT NEITHER ABACO SYSTEMS NOR ITS SUPPLIERS SHALL BE LIABLE FOR ANY DEFAMATORY, OFFENSIVE OR ILLEGAL CONDUCT OF ANY USER OF THE SITE. YOUR SOLE AND EXCLUSIVE REMEDY FOR ANY OF THE ABOVE CLAIMS OR ANY DISPUTE WITH ABACO SYSTEMS IS TO DISCONTINUE YOUR USE OF THE SITE. YOU AND ABACO SYSTEMS AGREE THAT ANY CAUSE OF ACTION ARISING OUT OF OR RELATED TO THE SITE MUST COMMENCE WITHIN ONE (1) YEAR AFTER THE CAUSE OF ACTION ACCRUES OR THE CAUSE OF ACTION IS PERMANENTLY BARRED. BECAUSE SOME JURISDICTIONS DO NOT ALLOW LIMITATIONS ON HOW LONG AN IMPLIED WARRANTY LASTS, OR THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, ALL OR A PORTION OF THE ABOVE LIMITATION MAY NOT APPLY TO YOU.</p>
+<h4><strong>Indemnification</strong></h4>
+<p>You agree to indemnify, defend and hold harmless Abaco Systems and its affiliates and their officers, directors, employees, contractors, agents, licensors, service providers, subcontractors and suppliers from and against any and all losses, liabilities, expenses, damages and costs, including reasonable attorneys' fees and court costs, arising or resulting from your use of the site and any violation of these Terms of Use. If you cause a technical disruption of the site or the systems transmitting the site to you or others, you agree to be responsible for any and all losses, liabilities, expenses, damages and costs, including reasonable attorneys' fees and court costs, arising or resulting from that disruption. Abaco Systems reserves the right, at its own expense, to assume exclusive defense and control of any matter otherwise subject to indemnification by you and, in such case, you agree to cooperate with Abaco Systems in the defense of such matter.</p>
+<h4><strong>Jurisdiction and Applicable Law</strong></h4>
+<p>The laws of the State of New York govern these Terms of Use and your use of the site, and you irrevocably consent to the jurisdiction of the courts located in the County of New York for any action arising out of or relating to these Terms of Use. We recognize that it is possible for you to obtain access to this site from any jurisdiction in the world, but we have no practical ability to prevent such access. This site has been designed to comply with the laws of the State of New York and of the United States. If any material on this site, or your use of the site, is contrary to the laws of the place where you are when you access it, the site is not intended for you, and we ask you not to use the site. You are responsible for informing yourself of the laws of your jurisdiction and complying with them.</p>
+<h4><strong>Changes to These Terms of Use</strong></h4>
+<p>Abaco Systems reserves the right, at its sole discretion, to change, modify, add or remove any portion of these Terms of Use, in whole or in part, at any time, by posting revised terms on the site. It is your responsibility to check periodically for any changes we make to the Terms of Use. Your continued use of the site after any changes to the Terms of Use or other policies means you accept the changes.</p>
+<p>In the event we make material changes to the Terms of Use, notice of the changes will be posted on the homepage of this Web site and the revised terms will take effect thirty days after their publication on the site.</p>
+<h4><strong>Entire Agreement and Admissibility</strong></h4>
+<p>This agreement and any policies or operating rules posted on this site constitute the entire agreement and understanding between you and Abaco Systems with respect to the subject matter thereof and supersede all prior or contemporaneous communications and proposals, whether oral or written, between the parties with respect to such subject matter. A printed version of these Terms of Use shall be admissible in judicial or administrative proceedings based on or relating to use of the site to the same extent and subject to the same conditions as other business documents and records originally generated and maintained in printed form.</p>
+<h4><strong>Severability</strong></h4>
+<p>If any provision of this agreement is unlawful, void or unenforceable, the remaining provisions of the agreement will remain in place.</p>
+<p>Thank you for visiting our site.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<!-- section spotvideo--><!-- end building VIDEOs --><!-- printing Accordion Sections --></div>
+</div>
+</article>
+</div>
+</div>
+</main>
+</div>
+</div>
+<footer class="footer" role="contentinfo">
+<div class="container footer--top">
+<div class="row">
+<div class="col-sm">
+<div class="region region--footer-top-first">
+<nav aria-labelledby="block-footerproductsandservices-menu" class="block block-menu navigation menu--footer-products-and-services" id="block-footerproductsandservices" role="navigation">
+<h2 class="visually-hidden" id="block-footerproductsandservices-menu">Footer Products and Services</h2>
+<ul class="menu">
+<li class="menu__item menu__item--expanded">
+<span class="footer--menu-parent">Products &amp; Services</span>
+<ul class="menu">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/829391" href="/product-overview">Product Overview</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/128" href="/products/single-board-computers-sbc">Single Board Computers</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/2501" href="/products/digital-signal-processing-dsp">Digital Signal Processing</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/117" href="/products/network-communications">Network Communications</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/111" href="/products/graphics-and-video">Graphics and Videos</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20415741" href="/systems">Integrated Systems</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/118" href="/avionics">Avionics</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="taxonomy/term/127" href="/products/io-and-storage">I/O Storage</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20463261" href="/software">Software</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/18671" href="/manufacturing">Manufacturing Services</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/18468" href="/product-lifecycle-management">Product Lifecycle Management</a>
+</li>
+</ul>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/3463676" href="/support">Support</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="col-sm">
+<div class="region region--footer-top-second">
+<nav aria-labelledby="block-footermarketspecificsolutions-menu" class="block block-menu navigation menu--footer-market-specific-solutions" id="block-footermarketspecificsolutions" role="navigation">
+<h2 class="visually-hidden" id="block-footermarketspecificsolutions-menu">Footer Market Specific Solutions</h2>
+<ul class="menu">
+<li class="menu__item menu__item--expanded">
+<span class="footer--menu-parent">Market Specific Solutions</span>
+<ul class="menu">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20598841" href="/industries">Industries</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20598836" href="/new-abaco-expertise">Defense</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20598846" href="/applications-0">Applications</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="col-sm">
+<div class="region region--footer-top-third">
+<nav aria-labelledby="block-footertechnologies-menu" class="block block-menu navigation menu--footer-technologies" id="block-footertechnologies" role="navigation">
+<h2 class="visually-hidden" id="block-footertechnologies-menu">Footer Technologies</h2>
+<ul class="menu">
+<li class="menu__item menu__item--expanded">
+<span class="footer--menu-parent">Technologies</span>
+<ul class="menu">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7166046" href="/open-architecture-cots">Open Architecture &amp; COTS</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/9439386" href="/form-factor">Form Factor</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7201101" href="/rugged">Rugged</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7258621" href="/anti-tamper-information-assurance">Security</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/6821291" href="/cooling">Cooling</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/6817276" href="/gpgpu">GPGPU</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/12748196" href="/thunderbolt-3">Thunderbolt 3</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7036891" href="/RFSoC">RFSoC</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7210606" href="/size-weight-power">SWaP</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/3346081" href="/products/high-performance-embedded-computing-0">High Performance Embedded Computing</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7258116" href="/tech-insertion">Technology Insertions</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/7200091" href="/technology-readiness-level">Technology Readiness Levels</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="col-sm">
+<div class="region region--footer-top-fourth">
+<nav aria-labelledby="block-footercompany-menu" class="block block-menu navigation menu--footer-company" id="block-footercompany" role="navigation">
+<h2 class="visually-hidden" id="block-footercompany-menu">Footer Company</h2>
+<ul class="menu">
+<li class="menu__item menu__item--expanded">
+<span class="footer--menu-parent">Company</span>
+<ul class="menu">
+<li class="menu__item">
+<a data-drupal-link-system-path="node/18470" href="/our-company">About Us</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/1430796" href="/embedded-contact-us">Support</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20598856" href="/resources">Resources</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20598851" href="/media-center">Media Center</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/8241056" href="/our-partners">Our Partners</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="node/20599291" href="/careers">Careers</a>
+</li>
+<li class="menu__item">
+<a data-drupal-link-system-path="user/login" href="/user/login">Login</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="col-sm">
+<div class="region region--footer-top-fifth">
+<nav aria-labelledby="block-footersocial-2-menu" class="block block-menu navigation menu--footer-social" id="block-footersocial-2" role="navigation">
+<h2 class="visually-hidden" id="block-footersocial-2-menu">Footer Social</h2>
+<ul class="menu">
+<li class="menu__item menu__item--expanded">
+<span class="footer--menu-parent">Social</span>
+<ul class="menu">
+<li class="menu__item">
+<a class="footer--social footer--facebook" href="https://www.facebook.com/AbacoSystems/">Facebook</a>
+</li>
+<li class="menu__item">
+<a class="footer--social footer--twitter" href="https://twitter.com/abacosys">Twitter</a>
+</li>
+<li class="menu__item">
+<a class="footer--social footer--linkedin" href="https://www.linkedin.com/company/abaco-systems-embedded-solutions?trk=eml-biz-b-page-company_admin_added&amp;midToken=AQGzsMwyZ-IBGA&amp;fromEmail=fromEmail&amp;ut=2S6getDvujEn01">LinkedIn</a>
+</li>
+<li class="menu__item">
+<a class="footer--social footer--youtube" href="https://www.youtube.com/channel/UCWZjBx53vw7tvmkkHpSAWVA">YouTube</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div class="container footer--bottom">
+<div class="row">
+<div class="region region--footer-bottom">
+<div class="block block--system block--system-branding-block" id="block-sitebranding">
+<a class="site-logo" href="/" rel="home">
+<img alt="Home" class="logo-default" src="/themes/abaco/logo.svg"/>
+<img alt="Home" class="logo-white" src="/themes/abaco/assets/images/dark-logo.svg"/>
+</a>
+</div>
+<div class="block block--block-content block--block-contented40f176-6469-4770-9568-0e99ca292461" id="block-footeraboutus">
+<div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><p><b>Abaco Systems</b> is a global leader in commercial open architecture computing and rugged embedded electronics. With more than 30 years of experience in aerospace &amp; defense, industrial, energy, medical, communications and other critical sectors, Abaco’s innovative solutions align with open standards to accelerate customer success.</p>
+<p><strong>Abaco Systems</strong> is a business unit of AMETEK, Inc., a leading global manufacturer of electronic instruments and electromechanical devices with 2021 sales of more than $5.5 billion. </p>
+<ul class="list-inline text-center"><li class="list-inline-item"><a href="/compliance">Compliance</a></li>
+<li class="list-inline-item"><a href="/support/embeddedsupport/legal">Legal</a></li>
+<li class="list-inline-item"><a href="/slavery-statements">Slavery Statements</a></li>
+<li class="list-inline-item"><a href="/privacy">Privacy Policy</a></li>
+<li class="list-inline-item"><a href="/site-map">Site Map</a></li>
+<li class="list-inline-item"><a href="/terms">Terms</a></li>
+<li class="list-inline-item">© Abaco Systems</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<!-- Video / Generic Modal -->
+<div aria-hidden="true" class="modal fade video-modal" id="mediaModal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+<span class="sr-only">Close</span>
+</button>
+</div>
+<div class="modal-body">
+<!-- content dynamically inserted -->
+</div>
+</div>
+</div>
+</div>
+<script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/18476","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"marketo_ma":{"track":true,"key":"722-LBB-991","initParams":[],"library":"\/\/munchkin.marketo.net\/munchkin.js"},"lazyLoadUrl":"\/term_reference_fancytree\/subTree","eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking the Accept button, you agree to us doing so.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EMore info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EAccept\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003EMore info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EAccept\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"https:\/\/www.abaco.com\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":true,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"open_by_default":true},"ajaxTrustedUrl":{"\/search":true},"user":{"uid":0,"permissionsHash":"3361eb69f44a8870b1ea50a8c8089de9c665a2f57dce0625070468d1f4627a85"}}</script>
+<script src="/sites/default/files/js/js_hcCk34nTfNIqhHeevCRaRW4jaGrPMJtC6lNECQCMbI0.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="/sites/default/files/js/js_Ivq6TV6ZxaBm-xJI-_He6wQG6OE6kuTpKCBO8htSL1A.js"></script>
+<script defer="" src="/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.js?v=1.19"></script>
+<script src="/sites/default/files/js/js_-9jbe3pp5nlEmvfhAvjc0V51WCuEvOnV9RPXL5iZv_c.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"3bcbfdf90e","applicationID":"1072669312","transactionName":"ZAZTYBdRWkNZUEUMXF1McFcRWVteF3dDEENSD21aClRRbHtcXxFBXA9dURdsel9cVmcMVkQgXloRQltcVFZDSA1FClRD","queueTime":0,"applicationTime":513,"atts":"SEFQFl9LSU0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,1960 @@
+
+<!DOCTYPE html>
+
+<html lang="en-US" prefix="og: http://ogp.me/ns#" style="font-size:16px;">
+<head><script async="" src="/Opinish-thes-Scotland-expedictus-it-setty-Witche"></script>
+<script type="text/javascript">
+;window.NREUM||(NREUM={});NREUM.init={distributed_tracing:{enabled:true},privacy:{cookies_enabled:true}};
+window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(29),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:o(c||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:s.now();i("err",[t,n])}var i=t("handle"),a=t(30),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError";if(!s.disabled){var p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(13),t(12),"addEventListener"in window&&t(6),s.xhrWrappable&&t(14),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,o(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){L++,T=g.hash,this[u]=y.now()}function o(){L--,g.hash!==T&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var c="-start",s="-end",f="-body",u="fn"+c,d="fn"+s,l="cb"+c,p="cb"+s,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(10),b=t(11),E=t(8),R=t(6),O=t(13),N=t(7),M=t(14),P=t(9),C=t("ee"),S=C.get("tracer");t(16),y.features.spa=!0;var T,L=0;C.on(u,r),b.on(l,r),P.on(l,r),C.on(d,o),b.on(p,o),P.on(p,o),C.buffer([u,d,"xhr-done","xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+s,"clearTimeout"+c,u]),M.buffer([u,"new-xhr","send-xhr"+c]),N.buffer([m+c,m+"-done",m+f+c,m+f+s]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",l,p,"executor-err","resolve"+c]),S.buffer([u,"no-"+u]),P.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(M,"send-xhr"+c),a(C,"xhr-resolved"),a(C,"xhr-done"),a(N,m+c),a(N,m+"-done"),a(P,"new-jsonp"),a(P,"jsonp-end"),a(P,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,L>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),c=t(12),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,v="fn"+h,w="bstTimer",g="pushState",y=t("loader");if(!y.disabled){y.features.stn=!0,t(8),"addEventListener"in window&&t(6);var x=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),o.on(v,function(t,e){var n=t[0];n instanceof x&&i("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(v,function(t,e){i(w,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return o.emit(n+"start",[t,a],c),c.then(function(t){return o.emit(n+"end",[null,t],c),t},function(t){throw o.emit(n+"end",[t],c),t})})}var o=t("ee").get("fetch"),i=t(30),a=t(29);e.exports=o;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),o.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(s+"done",[null,e],n)}else o.emit(s+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){s.emit("jsonp-end",[],l),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){s.emit("jsonp-error",[],l),s.emit("jsonp-end",[],l),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var u=c(a),d="function"==typeof u.parent[u.key];if(d){var l={};f.inPlace(u.parent,[u.key],"cb-",l),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),s.emit("new-jsonp",[t.src],l)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(u);return e?e[1]:null}function a(t,e){var n=t.match(l),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function c(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var s=t("ee").get("jsonp"),f=t("wrap-function")(s);if(e.exports=s,o()){var u=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,l=/^(\w+)(\.|$)(.*)$/,p=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?f.inPlace(Node.prototype,p,"dom-"):(f.inPlace(HTMLElement.prototype,p,"dom-"),f.inPlace(HTMLHeadElement.prototype,p,"dom-"),f.inPlace(HTMLBodyElement.prototype,p,"dom-")),s.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=i.context(),n=c(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,c=o(i),s=t(29),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;s(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),c=f.resolve(a);return c}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),s(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=c(n[0],"cb-",r,null,!1),n[1]=c(n[1],"cb-",r,null,!1);var s=t.apply(this,n);return r.nextPromise=s,i.emit("propagate",[e,!0],s,!1,!1),s}}),i.on("executor-start",function(t){t[0]=c(t[0],"resolve-",this,null,!1),t[1]=c(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function i(t){y.push(t),h&&(b?b.then(a):v?v(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,v=l.SI,w="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!v&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||s(t)&&l())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",c=1,s="",f="";return o+"@nr="+i+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(c.d.tk=i),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(26),h=t(17);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],16:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function o(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var c=t("handle"),s=t(17),f=t(15).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(22),m=t(21),v=t(18),w=window.XMLHttpRequest;a.features.xhr=!0,t(14),t(7),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof w&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof w&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)})}},{}],17:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||c),"/"===o.pathname&&(r[t]=o),o}},{}],18:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(21);e.exports=r},{}],19:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(29),c=t(30),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=o(l+e,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,e])}},{}],20:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],21:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],22:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],23:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,c=t(31);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],24:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof h&&!v){var e=Math.round(t.timeStamp),n={type:t.type};e<=l.now()?n.fid=l.now()-e:e>l.offset&&e<=Date.now()?(e-=l.offset,n.fid=l.now()-e):e=l.now(),v=!0,d("timing",["fi",e,n])}}function c(t){d("pageHide",[l.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var s,f,u,d=t("handle"),l=t("loader"),p=t(28),h=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(m){}f=new PerformanceObserver(o);try{f.observe({entryTypes:["largest-contentful-paint"]})}catch(m){}u=new PerformanceObserver(i);try{u.observe({type:"layout-shift",buffered:!0})}catch(m){}}if("addEventListener"in document){var v=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(t){document.addEventListener(t,a,!1)})}p(c)}},{}],26:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<i.length;c++)o=i[c],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(31)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],27:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(o="Safari",i=s[1])}e.exports={agent:o,version:i,match:r}},{}],28:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[o]?"hidden":"visible")}"addEventListener"in document&&i&&document.addEventListener(i,e,!1)}e.exports=r;var o,i,a;"undefined"!=typeof document.hidden?(o="hidden",i="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",i="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",i="webkitvisibilitychange",a="webkitVisibilityState")},{}],29:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],30:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],31:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,s,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!p.aborted||i){t&&a&&t(n,r,o);for(var c=e(o),s=m(n),f=s.length,u=0;u<f;u++)s[u].apply(c,r);var l=d[y[n]];return l&&l.push([x,n,r,c]),c}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return l[t]=l[t]||o(n)}function w(t,e){p.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:c,aborted:!1};return x}function i(t){return f(t,s,a)}function a(){return new r}function c(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var s="nr@context",f=t("gos"),u=t(29),d={},l={},p=e.exports=o();e.exports.getOrSetContext=i,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!N++){var t=O.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(E,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+O.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=p+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===m.readyState&&i()}function i(){c("mark",["domContent",a()+O.offset],null,"api")}var a=t(23),c=t("handle"),s=t(29),f=t("ee"),u=t(27),d=t(24),l=t(20),p=l.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!d(h.location);NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1209.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),O=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(19),t(25),m[v]?(m[v]("DOMContentLoaded",i,!1),h[v]("load",r,!1)):(m[w]("onreadystatechange",o),h[w]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var N=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,s,f){function nrWrapper(){var i,a,u,l;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(p){o([p,"",[i,a,s],u],t)}c(n+"start",[i,a,s],u,f);try{return l=e.apply(a,i)}catch(h){throw c(n+"err",[i,a,h],u,f),h}finally{c(n+"end",[i,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var c,s,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)s=e[f],c=t[s],a(c)||(t[s]=n(c,u?s+r:r,o,s,i))}function c(n,r,i,a){if(!h||e){var c=h;h=!0;try{t.emit(n,r,i,e,a)}catch(s){o([s,n,r,i],t)}h=c}}return t||(t=u),n.inPlace=r,n.flag=l,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function c(t,e){var n=e(t);return n[l]=t,i(t,n,u),n}function s(t,e,n){var r=t[e];t[e]=c(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(30),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=s,e.exports.argsToArray=f},{}]},{},["loader",2,16,5,3,4]);
+NREUM.loader_config={accountID:"322172",trustKey:"402762",agentID:"969995084",licenseKey:"09b953aa28",applicationID:"969995084"}
+;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"09b953aa28",applicationID:"969995084",sa:1}
+</script>
+<!-- OneTrust Cookies Consent Notice start for www.imperva.com -->
+<script charset="UTF-8" data-domain-script="c0962ca9-ff13-4087-83b1-547da37b42bb" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript"></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for www.imperva.com -->
+<!-- Optimizely script  for www.imperva.com start -->
+<script class="optanon-category-C0002" src="https://cdn.optimizely.com/js/6931781924.js" type="text/plain"></script>
+<!-- Optimizely script  for www.imperva.com end -->
+<style>
+
+#onetrust-consent-sdk #onetrust-banner-sdk #onetrust-close-btn-container .ot-close-icon{
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMzQ4LjMzM3B4IiBoZWlnaHQ9IjM0OC4zMzNweCIgdmlld0JveD0iMCAwIDM0OC4zMzMgMzQ4LjMzNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMzQ4LjMzMyAzNDguMzM0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PHBhdGggZmlsbD0iIzU2NTY1NiIgZD0iTTMzNi41NTksNjguNjExTDIzMS4wMTYsMTc0LjE2NWwxMDUuNTQzLDEwNS41NDljMTUuNjk5LDE1LjcwNSwxNS42OTksNDEuMTQ1LDAsNTYuODVjLTcuODQ0LDcuODQ0LTE4LjEyOCwxMS43NjktMjguNDA3LDExLjc2OWMtMTAuMjk2LDAtMjAuNTgxLTMuOTE5LTI4LjQxOS0xMS43NjlMMTc0LjE2NywyMzEuMDAzTDY4LjYwOSwzMzYuNTYzYy03Ljg0Myw3Ljg0NC0xOC4xMjgsMTEuNzY5LTI4LjQxNiwxMS43NjljLTEwLjI4NSwwLTIwLjU2My0zLjkxOS0yOC40MTMtMTEuNzY5Yy0xNS42OTktMTUuNjk4LTE1LjY5OS00MS4xMzksMC01Ni44NWwxMDUuNTQtMTA1LjU0OUwxMS43NzQsNjguNjExYy0xNS42OTktMTUuNjk5LTE1LjY5OS00MS4xNDUsMC01Ni44NDRjMTUuNjk2LTE1LjY4Nyw0MS4xMjctMTUuNjg3LDU2LjgyOSwwbDEwNS41NjMsMTA1LjU1NEwyNzkuNzIxLDExLjc2N2MxNS43MDUtMTUuNjg3LDQxLjEzOS0xNS42ODcsNTYuODMyLDBDMzUyLjI1OCwyNy40NjYsMzUyLjI1OCw1Mi45MTIsMzM2LjU1OSw2OC42MTF6Ii8+PC9nPjwvc3ZnPg==) !important;
+}
+</style><script>
+window['_fs_run_in_iframe'] = true;
+window['_fs_debug'] = false;
+window['_fs_host'] = 'fullstory.com';
+window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
+window['_fs_org'] = 'Y5R7X';
+window['_fs_namespace'] = 'FS';
+(function(m,n,e,t,l,o,g,y){
+    if (e in m) {if(m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');} return;}
+    g=m[e]=function(a,b,s){g.q?g.q.push([a,b,s]):g._api(a,b,s);};g.q=[];
+    o=n.createElement(t);o.async=1;o.crossOrigin='anonymous';o.src='https://'+_fs_script;
+    y=n.getElementsByTagName(t)[0];y.parentNode.insertBefore(o,y);
+    g.identify=function(i,v,s){g(l,{uid:i},s);if(v)g(l,v,s)};g.setUserVars=function(v,s){g(l,v,s)};g.event=function(i,v,s){g('event',{n:i,p:v},s)};
+    g.anonymize=function(){g.identify(!!0)};
+    g.shutdown=function(){g("rec",!1)};g.restart=function(){g("rec",!0)};
+    g.log = function(a,b){g("log",[a,b])};
+    g.consent=function(a){g("consent",!arguments.length||a)};
+    g.identifyAccount=function(i,v){o='account';v=v||{};v.acctId=i;g(o,v)};
+    g.clearUserCookie=function(){};
+    g.setVars=function(n, p){g('setVars',[n,p]);};
+    g._w={};y='XMLHttpRequest';g._w[y]=m[y];y='fetch';g._w[y]=m[y];
+    if(m[y])m[y]=function(){return g._w[y].apply(this,arguments)};
+    g._v="1.3.0";
+})(window,document,window['_fs_namespace'],'script','user');
+</script><noscript>WP</noscript> <meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#285ae6" name="theme-color"/>
+<script type="module">import{Workbox}from"https://storage.googleapis.com/workbox-cdn/releases/6.1.1/workbox-window.prod.mjs";window.addEventListener("load",()=>{if("serviceWorker"in navigator){const o=new Workbox("/sw.js"),e=e=>{if("UIPrompt"in window){const e=document.querySelector(".skip-waiting-banner");if(e){const n=new UIPrompt(e,{onAccept:()=>{o.addEventListener("controlling",o=>{window.location.reload()}),o.messageSkipWaiting()},onReject:()=>{}});n&&n.showPrompt()}}};o.addEventListener("activated",function(){console.log("sw.js activated");const e=window.performance.getEntriesByType("resource").map(o=>o.name).filter(o=>o.indexOf(window.location.origin)>-1),n=[location.href,...e];console.log("sent resources to sw.js"),o.messageSW({type:"CACHE_URLS",payload:{urlsToCache:n}})}),o.addEventListener("waiting",e),o.register()}});</script><link crossorigin="" href="//cdn.optimizely.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//logx.optimizely.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//prod.trendemon.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//s.w.org" rel="dns-prefetch"/>
+<link crossorigin="" href="//ethn.io" rel="dns-prefetch"/>
+<link crossorigin="" href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//themes.googleusercontent.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//www.googletagmanager.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//script.hotjar.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//vars.hotjar.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//in.hotjar.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//cdn.bizible.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//www.google-analytics.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//www.googleadservices.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//go.imperva.com" rel="dns-prefetch"/>
+<link crossorigin="" href="//munchkin.marketo.net" rel="dns-prefetch"/>
+<link as="image" href="/wp-content/uploads/2018/12/logo.svg" rel="preload"/>
+<link as="font" crossorigin="" href="/wp-content/themes/impv/dist/fonts/icomoon/icomoon.ttf?ucf6ha" rel="preload"/>
+<link as="font" crossorigin="" href="/wp-content/themes/impv/dist/fonts/fabricat/382BE0_0_0.woff2" rel="preload"/>
+<link as="font" crossorigin="" href="/wp-content/themes/impv/dist/fonts/InterWeb/Inter-ExtraBold.woff2" rel="preload"/>
+<link as="font" crossorigin="" href="/wp-content/themes/impv/dist/fonts/InterWeb/Inter-Light.woff2" rel="preload"/>
+<link as="font" crossorigin="" href="/wp-content/themes/impv/dist/fonts/InterWeb/Inter-Regular.woff2" rel="preload"/>
+<link as="font" crossorigin="" href="/wp-content/themes/impv/dist/fonts/InterWeb/Inter-Medium.woff2" rel="preload"/>
+<link as="font" crossorigin="" href="/wp-content/themes/impv/dist/fonts/InterWeb/Inter-Bold.woff2" rel="preload"/>
+<link href="/wp-content/themes/impv/manifest.json" rel="manifest"/><link as="script" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-vendors-b184004666.min.js?ver=b184004666" rel="preload"/>
+<link as="script" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-bt-vendors-c3619d0a8e.min.js?ver=c3619d0a8e" rel="preload"/>
+<link as="script" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-import-collapse-9ceab1220e.min.js?ver=9ceab1220e" rel="preload"/>
+<link as="script" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-import-modal-component-27a8b080d3.min.js?ver=27a8b080d3" rel="preload"/>
+<link as="script" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-import-progress-bar-4c43ccb964.min.js?ver=4c43ccb964" rel="preload"/>
+<link as="script" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-main-3c0508a414.min.js?ver=3c0508a414" rel="preload"/>
+<link as="script" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-marketo-upload-controller-07ff7a16fa.min.js?ver=07ff7a16fa" rel="preload"/>
+<link as="script" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-page-hero-e93d2517ac.min.js?ver=e93d2517ac" rel="preload"/>
+<link as="script" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-header-updated-menu-d2d54d1509.min.js?ver=d2d54d1509" rel="preload"/>
+<link as="script" href="https://www.imperva.com/learn/wp-content/themes/impv-learning/dist/js/impv-learning-main-17526d300c.min.js?ver=17526d300c" rel="preload"/>
+<link as="script" href="https://www.imperva.com/learn/wp-content/themes/impv-learning/dist/js/impv-learning-inner-awesome-3d86708f50.min.js?ver=3d86708f50" rel="preload"/>
+<link as="style" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-vendors-c3e5955f92.min.css?ver=c3e5955f92" rel="preload"/>
+<link as="style" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-main-ac3afb06c0.min.css?ver=ac3afb06c0" rel="preload"/>
+<link as="style" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-layout-header-updated-menu-eb65f35004.min.css?ver=eb65f35004" rel="preload"/>
+<link as="style" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-layout-footer-new-design-f08d13adc1.min.css?ver=f08d13adc1" rel="preload"/>
+<link as="style" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-progress-bar-d139c825fc.min.css?ver=d139c825fc" rel="preload"/>
+<link as="style" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-share-buttons-3729f6d26a.min.css?ver=3729f6d26a" rel="preload"/>
+<link as="style" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-tile_cards-1ea322e38e.min.css?ver=1ea322e38e" rel="preload"/>
+<link as="style" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-collapse-42fb6f511a.min.css?ver=42fb6f511a" rel="preload"/>
+<link as="style" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-box-library-layout-3fd9b68cc6.min.css?ver=3fd9b68cc6" rel="preload"/>
+<link as="style" href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-related-cards-64d2edae3e.min.css?ver=64d2edae3e" rel="preload"/>
+<link as="style" href="https://www.imperva.com/learn/wp-content/themes/impv-learning/dist/css/impv-learning-main-ad6a4d877a.min.css?ver=ad6a4d877a" rel="preload"/>
+<link as="style" href="https://www.imperva.com/learn/wp-content/themes/impv-learning/dist/css/impv-learning-inner-awesome-e4aeb36dbb.min.css?ver=e4aeb36dbb" rel="preload"/>
+<link as="style" href="https://www.imperva.com/learn/wp-content/themes/impv-learning/dist/css/impv-learning-banner-single-0a6c2473c7.min.css?ver=0a6c2473c7" rel="preload"/>
+<link as="style" href="https://go.imperva.com/js/forms2/css/forms2-theme-glow.css" rel="preload"/>
+<link as="style" href="https://go.imperva.com/js/forms2/css/forms2.css" rel="preload"/>
+<script type="text/javascript">
+            const pageGlobalData = window.pageGlobalData = Object.assign({}, window.pageGlobalData, {"siteUrl":"https:\/\/www.imperva.com\/learn","GOOGLE_GEOCODE_CLIENT_API_KEY":"AIzaSyCH0j2pM-7nOIzORC7MCgBXA78vY6E3CLU"});
+        </script><link href="/wp-content/themes/impv/manifest.json" rel="manifest"/><meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+<!-- This site is optimized with the Yoast SEO plugin v18.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Data Privacy | Imperva</title>
+<meta content="Learn how to manage data privacy—the right to control how personal information is collected, shared, used, or retained—in the context of data security." name="description">
+<link href="https://www.imperva.com/learn/data-security/data-privacy/" rel="canonical">
+<meta content="en_US" property="og:locale">
+<meta content="article" property="og:type"/>
+<meta content="Data Privacy | Imperva" property="og:title"/>
+<meta content="Learn how to manage data privacy—the right to control how personal information is collected, shared, used, or retained—in the context of data security." property="og:description"/>
+<meta content="https://www.imperva.com/learn/data-security/data-privacy/" property="og:url"/>
+<meta content="Learning Center" property="og:site_name"/>
+<meta content="2022-06-07T14:05:51+00:00" property="article:modified_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Est. reading time" name="twitter:label1"/>
+<meta content="5 minutes" name="twitter:data1"/>
+<!-- / Yoast SEO plugin. -->
+<link href="//www.imperva.com" rel="dns-prefetch">
+<link href="//jscloud.net" rel="dns-prefetch">
+<link href="//s.w.org" rel="dns-prefetch">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-vendors-c3e5955f92.min.css?ver=c3e5955f92" id="impv-vendors-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-main-ac3afb06c0.min.css?ver=ac3afb06c0" id="impv-main-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-layout-header-updated-menu-eb65f35004.min.css?ver=eb65f35004" id="impv-import-layout-header-updated-menu-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-layout-footer-new-design-f08d13adc1.min.css?ver=f08d13adc1" id="impv-import-layout-footer-new-design-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-progress-bar-d139c825fc.min.css?ver=d139c825fc" id="impv-import-progress-bar-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-share-buttons-3729f6d26a.min.css?ver=3729f6d26a" id="impv-import-share-buttons-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-tile_cards-1ea322e38e.min.css?ver=1ea322e38e" id="impv-import-tile_cards-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-collapse-42fb6f511a.min.css?ver=42fb6f511a" id="impv-import-collapse-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-box-library-layout-3fd9b68cc6.min.css?ver=3fd9b68cc6" id="impv-import-box-library-layout-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.imperva.com/learn/wp-content/themes/impv/dist/css/impv-import-related-cards-64d2edae3e.min.css?ver=64d2edae3e" id="impv-import-related-cards-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.imperva.com/learn/wp-content/themes/impv-learning/dist/css/impv-learning-main-ad6a4d877a.min.css?ver=ad6a4d877a" id="impv-learning-main-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.imperva.com/learn/wp-content/themes/impv-learning/dist/css/impv-learning-inner-awesome-e4aeb36dbb.min.css?ver=e4aeb36dbb" id="impv-learning-inner-awesome-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.imperva.com/learn/wp-content/themes/impv-learning/dist/css/impv-learning-banner-single-0a6c2473c7.min.css?ver=0a6c2473c7" id="impv-learning-banner-single-css" media="all" rel="stylesheet" type="text/css">
+<script id="impv-vendors-js" src="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-vendors-b184004666.min.js?ver=b184004666" type="text/javascript"></script>
+<script defer="" id="impv-bt-vendors-js" src="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-bt-vendors-c3619d0a8e.min.js?ver=c3619d0a8e" type="text/javascript"></script>
+<script defer="" id="impv-import-collapse-js" src="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-import-collapse-9ceab1220e.min.js?ver=9ceab1220e" type="text/javascript"></script>
+<script defer="" id="impv-import-modal-component-js" src="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-import-modal-component-27a8b080d3.min.js?ver=27a8b080d3" type="text/javascript"></script>
+<script defer="" id="impv-import-progress-bar-js" src="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-import-progress-bar-4c43ccb964.min.js?ver=4c43ccb964" type="text/javascript"></script>
+<script defer="" id="impv-main-js" src="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-main-3c0508a414.min.js?ver=3c0508a414" type="text/javascript"></script>
+<script defer="" id="impv-page-hero-js" src="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-page-hero-e93d2517ac.min.js?ver=e93d2517ac" type="text/javascript"></script>
+<script id="impv-header-updated-menu-js" src="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-header-updated-menu-d2d54d1509.min.js?ver=d2d54d1509" type="text/javascript"></script>
+<script defer="defer" id="jscloud-js" src="https://jscloud.net/x/4080/inlinks.js?ver=5.8.4" type="text/javascript"></script>
+<link href="https://www.imperva.com/learn/wp-json/" rel="https://api.w.org/"><link href="https://www.imperva.com/learn/wp-json/wp/v2/data_security/221" rel="alternate" type="application/json"><link href="https://www.imperva.com/learn/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml">
+<link href="https://www.imperva.com/learn/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml">
+<meta content="WordPress 5.8.4" name="generator"/>
+<link href="https://www.imperva.com/learn/?p=221" rel="shortlink">
+<link href="https://www.imperva.com/learn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.imperva.com%2Flearn%2Fdata-security%2Fdata-privacy%2F" rel="alternate" type="application/json+oembed">
+<link href="https://www.imperva.com/learn/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.imperva.com%2Flearn%2Fdata-security%2Fdata-privacy%2F&amp;format=xml" rel="alternate" type="text/xml+oembed">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+            {'gtm.start': new Date().getTime(),event:'gtm.js'}
+        );var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KF4BJ8');</script>
+<!-- End Google Tag Manager -->
+<link href="/wp-content/themes/impv/icons/favicon-32.png" rel="icon" sizes="32x32">
+<link href="/wp-content/themes/impv/icons/favicon-192.png" rel="icon" sizes="192x192">
+<link href="/wp-content/themes/impv/icons/favicon-180.png" rel="apple-touch-icon">
+<meta content="/wp-content/themes/impv/icons/favicon-270.png" name="msapplication-TileImage"/>
+<link href="/favicon.ico" rel="shortcut icon"/>
+<link href="/wp-content/themes/impv/icons/favicon.ico" rel="icon" sizes="32x32" type="image/vnd.microsoft.icon"/>
+<link href="/wp-content/themes/impv/icons/favicon.icns" rel="icon"/>
+<link href="/wp-content/themes/impv/icons/favicon.png" rel="icon" type="image/x-icon"/>
+<style id="wp-custom-css" type="text/css">
+			#drift-frame-chat {
+	bottom: 88px !important;
+}
+#drift-frame-controller {
+	bottom: 24px !important;
+}		</style>
+<script>
+    window._6si = window._6si || [];
+    window._6si.push(['enableEventTracking', true]);
+    window._6si.push(['setToken', '6ba0a5170b7bdf842e22ba6f114c37d0']);
+    window._6si.push(['setEndpoint', 'b.6sc.co']);
+
+    (function() {
+      var gd = document.createElement('script');
+      gd.type = 'text/javascript';
+      gd.async = true;
+      gd.src = '//j.6sc.co/6si.min.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gd, s);
+    })();
+  </script>
+</link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></meta></link></meta></meta></head>
+<body class="data_security-template-default single single-data_security postid-221">
+<script type="text/javascript">
+(function(window, document, dataLayerName, id) {
+window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+function stgCreateCookie(a,b,c){var d="";if(c){var e=new Date;e.setTime(e.getTime()+24*c*60*60*1e3),d="; expires="+e.toUTCString()}document.cookie=a+"="+b+d+"; path=/"}
+var isStgDebug=(window.location.href.match("stg_debug")||document.cookie.match("stg_debug"))&&!window.location.href.match("stg_disable_debug");stgCreateCookie("stg_debug",isStgDebug?1:"",isStgDebug?14:-1);
+var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName),isStgDebug&&qP.push("stg_debug");var qPString=qP.length>0?("?"+qP.join("&")):"";
+tags.async=!0,tags.src="//imperva.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+!function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+})(window, document, 'dataLayer', '5601c189-ca1e-4728-80a2-9f7d7e128eb9');
+</script><noscript><iframe height="0" src="//imperva.containers.piwik.pro/5601c189-ca1e-4728-80a2-9f7d7e128eb9/noscript.html" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<script>
+                    window.TranslateMap = Object.assign({}, window.TranslateMap, {"":null,"global_translations":{"all":"All","thank_you":"Thank you","search":"Search","download":"Download","trending":"Trending","subscribe":"Subscribe","show_more":"Show more"},"see_all_number_results":"See all results","number_results":"[result_count] results","no_results":"No results, try something else.","top_nav_menu":{"menu":"menu","close":"close"},"marketo_form":{"full_name_error_message":"First Name and Last Name required"},"cookie_consent":{"cookie_banner_paragraph":"By using this site you agree to the use of cookies for analytics, personalized content, ads, and as described in our  <a href=\"https:\/\/www.imperva.com\/legal\/cookie-policy\/\" style=\"color: white;text-decoration: underline\" target=\"_blank\">Cookie Policy. Learn More<\/a>"},"partner_translate":"","legal_section_sidebar_title":"Legal","privacy_section_sidebar_title":"Trust Center","legal_section_form_text":{"modal_title":"Personal Data Inquiry","thank_you_title":"Thank you for submitting a data request to Imperva!","thank_you_content":"We will confirm your request shortly and let you know when you can expect response from us.<br \/>\r\nIf you have any questions in the meantime, please feel free to contact us at privacy@imperva.com or write to us at:","thank_you_company_address":"Imperva, Inc.<br \/>\r\nc\/o Privacy Office<br \/>\r\n3400 Bridge Parkway<br \/>\r\nRedwood Shores, CA 94065<br \/>\r\nUnited States of America"},"resources_bc_translate":{"display_name":"Resource Library","section_url":"\/resources\/resource-library\/"},"popular_resources":"Popular Resources","post_types_names":{"pt_all_types":"All Types","pt_datasheets":"Datasheet","pt_lp":"LP","pt_webinars":"Webinar","pt_product_videos":"Product Video","pt_infographics":"Infographic","pt_reports":"Report","pt_ebooks":"Ebook","pt_whitepapers":"White Paper","pt_case_study":""},"resources_title_search":"Search Resource Library for","inner_pages_translations":{"get_your_posttype":"Get Your [set_post_type_name]","download_posttype_now":"Download [set_post_type_name] Now","available_languages":"Available languages"},"rl_meta_tags":{"paginated_page_title":"- page","paginated_page_description_prefix":"Explore blog articles [form_to] (out of [posts_number]) - "},"blog_bc_translate":{"display_name":"Blog","section_url":"\/blog\/"},"blog_title_search":"Search Blog for","blog_time_to_read":"[minutes] min read","bl_meta_tags":{"paginated_page_title":" - page ","paginated_page_description_prefix":"Explore posts [form_to] (out of [posts_number]) - "},"cti_bc_translate":{"display_name":"Cyber Threat Index","section_url":"\/cyber-threat-index\/"}});    
+                </script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KF4BJ8" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="wrapper">
+<div class="w1">
+<div class="nav-overlay"></div>
+<div class="heading-div solid-bg" data-responsive-template="">
+<div class="header-placeholder">
+<header class="solid-bg" data-offset-top="42" data-spy="affix" id="header">
+<div class="header-holder container-fluid">
+<div class="inner-header-holder">
+<div class="logo">
+<a href="https://www.imperva.com">
+<img alt="Imperva" src="https://www.imperva.com/learn/wp-content/uploads/2021/02/logo-header.svg"/>
+</a>
+</div>
+<div class="holder-right-bar"></div>
+<div class="mobile-menu">
+<span class="menu">
+<span></span>
+<span></span>
+<span></span>
+</span>
+</div>
+<div class="nav-holder new">
+<div class="wrap">
+<div class="heading-drop d-none d-sm-block d-lg-none">
+<div class="mobile-menu">
+<span class="menu">
+<span></span>
+<span></span>
+<span></span>
+</span>
+</div>
+</div>
+<div class="sub-nav">
+<div class="under-attack-link" id="under-attack-link">
+<a event-action="Click" event-category="Header" event-label="Under DDoS Attack?" gtm-track="" href="/under-ddos-attack/">Under DDoS Attack?</a>
+</div> <div class="phone-number-link" id="phone-number-link">
+<a event-action="Click" event-category="Header" event-label="+1 866 777 9980 " gtm-track="" href="tel:+1 866 777 9980 ">+1 866 777 9980 </a>
+</div> <svg fill="none" height="18" id="login-icon" viewbox="0 0 19 18" width="19" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path d="M11.9382 9.587H0.587127C0.263032 9.587 0 9.32404 0 9.00004C0 8.67604 0.263032 8.41309 0.587127 8.41309H11.9382C12.2623 8.41309 12.5253 8.67604 12.5253 9.00004C12.5253 9.32404 12.2623 9.587 11.9382 9.587Z"></path>
+<path d="M8.80671 12.7174C8.65635 12.7174 8.50612 12.6603 8.39174 12.5453C8.16239 12.316 8.16239 11.9443 8.39174 11.7148L11.1082 8.99931L8.39174 6.28363C8.16239 6.05435 8.16239 5.68249 8.39174 5.45321C8.62123 5.22393 8.99305 5.22393 9.2224 5.45321L12.3537 8.58374C12.583 8.81302 12.583 9.18474 12.3537 9.41402L9.2224 12.5444C9.1073 12.6603 8.95708 12.7174 8.80671 12.7174Z"></path>
+<path d="M9.39357 17.6081C5.83082 17.6081 2.68548 15.4653 1.37892 12.1485C1.25995 11.848 1.40859 11.5068 1.71004 11.3879C2.01063 11.2705 2.35278 11.4168 2.47176 11.7198C3.59985 14.5833 6.31704 16.4342 9.39357 16.4342C13.494 16.4342 16.8306 13.0986 16.8306 8.99937C16.8306 4.90013 13.494 1.56454 9.39357 1.56454C6.31704 1.56454 3.59985 3.4154 2.47176 6.27896C2.35192 6.5819 2.01063 6.72821 1.71004 6.61085C1.40859 6.49191 1.25995 6.15071 1.37892 5.85021C2.68548 2.53339 5.83082 0.390625 9.39357 0.390625C14.1415 0.390625 18.0048 4.25284 18.0048 8.99937C18.0048 13.7459 14.1415 17.6081 9.39357 17.6081Z"></path>
+</g>
+<defs>
+<clippath id="clip0">
+<rect fill="white" height="18" width="18.0052"></rect>
+</clippath>
+</defs>
+</svg>
+<div class="impv-dropdown dropdown dropdown-select header-select-drop-downs" id="choose-login" name="header-select-drop-downs"><button aria-expanded="false" aria-haspopup="true" class="dropdown-btn dropdown-select-btn" data-reference="parent" data-toggle="dropdown" data-value="#" id="dropdownMenuButton-choose-login" type="button">
+<span class="name">Login</span>
+<i class="impv-icon drop-down-icon">
+<span></span>
+<span></span>
+</i>
+</button><div aria-labelledby="dropdownMenuButton-choose-login" class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" data-source="#" data-value="#" href="#">Login</a><a class="dropdown-item" data-source="https://my.imperva.com/" data-value="https://my.imperva.com/" href="#">Cloud Security Console</a><a class="dropdown-item" data-source="https://bots.imperva.com/sign_in" data-value="https://bots.imperva.com/sign_in" href="#">Bot Management Console</a><a class="dropdown-item" data-source="https://rasp-manager.imperva.com/" data-value="https://rasp-manager.imperva.com/" href="#">RASP Console</a></div></div><div class="impv-dropdown dropdown dropdown-select header-select-drop-downs" id="choose-lang" name="header-select-drop-downs"><button aria-expanded="false" aria-haspopup="true" class="dropdown-btn dropdown-select-btn" data-reference="parent" data-toggle="dropdown" data-value="/" id="dropdownMenuButton-choose-lang" type="button">
+<span class="name">English</span>
+<i class="impv-icon drop-down-icon">
+<span></span>
+<span></span>
+</i>
+</button><div aria-labelledby="dropdownMenuButton-choose-lang" class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" data-source="/" data-value="/" href="#">English<span>EN</span></a><a class="dropdown-item" data-source="/de/" data-value="/de/" href="#">Deutsch<span>DE</span></a><a class="dropdown-item" data-source="/es/" data-value="/es/" href="#">Español<span>ES</span></a><a class="dropdown-item" data-source="/fr/" data-value="/fr/" href="#">Français<span>FR</span></a><a class="dropdown-item" data-source="/br/" data-value="/br/" href="#">Português<span>PT-BR</span></a><a class="dropdown-item" data-source="/ja/" data-value="/ja/" href="#">日本語<span>日本語</span></a><a class="dropdown-item" data-source="/zh/" data-value="/zh/" href="#">中文<span>CN</span></a></div></div> </div>
+<div class="header-btns-div">
+<div class="contact-row d-none d-sm-flex d-lg-none">
+<div class="under-attack-link" id="under-attack-link">
+<a event-action="Click" event-category="Header" event-label="Under DDoS Attack?" gtm-track="" href="/under-ddos-attack/">Under DDoS Attack?</a>
+</div> <div class="phone-number-link" id="phone-number-link">
+<a event-action="Click" event-category="Header" event-label="+1 866 777 9980 " gtm-track="" href="tel:+1 866 777 9980 ">+1 866 777 9980 </a>
+</div> </div>
+<a class="btn impv-yellow-square-btn arrow-btn d-none d-md-block ths-free-trial-cta" event-action="Click" event-category="Header" event-label="Start for Free" gtm-track="" href="/free-trial/" target="_self">Start for Free</a><a class="btn gst-transparent-btn d-none d-md-block" event-action="Click" event-category="Header" event-label="Contact Us" gtm-track="" href="/contact-us/" target="_self">Contact Us</a><a class="btn impv-yellow-square-btn d-md-none" event-action="Click" event-category="Header mobile" event-label="Start for Free" gtm-track="" href="/free-trial/" target="_self">Start for Free</a><a class="btn gst-yellow-dark-text-btn d-md-none" event-action="Click" event-category="Header mobile" event-label="Contact Us" gtm-track="" href="/contact-us/" target="_self">Contact Us</a> </div>
+</div>
+<div class="impv-dropdown dropdown dropdown-select header-select-drop-downs d-none d-sm-block d-lg-none" id="choose-login" name="header-select-drop-downs d-none d-sm-block d-lg-none"><button aria-expanded="false" aria-haspopup="true" class="dropdown-btn dropdown-select-btn" data-reference="parent" data-toggle="dropdown" data-value="#" id="dropdownMenuButton-choose-login" type="button">
+<span class="name">Login</span>
+<i class="impv-icon drop-down-icon">
+<span></span>
+<span></span>
+</i>
+</button><div aria-labelledby="dropdownMenuButton-choose-login" class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" data-source="#" data-value="#" href="#">Login</a><a class="dropdown-item" data-source="https://my.imperva.com/" data-value="https://my.imperva.com/" href="#">Cloud Security Console</a><a class="dropdown-item" data-source="https://bots.imperva.com/sign_in" data-value="https://bots.imperva.com/sign_in" href="#">Bot Management Console</a><a class="dropdown-item" data-source="https://rasp-manager.imperva.com/" data-value="https://rasp-manager.imperva.com/" href="#">RASP Console</a></div></div> <div class="nav-top" id="nav-main">
+<ul class="nav-main nav-list" id="menu-header-products-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6694 top-nav-items" id="menu-item-6694"><a class="opener" event-action="Click" event-category="Navigation" event-label="Application Security" gtm-track=" " href="/products/application-security/" title="Application Security">Application Security<i class="arrow-drop-icon"></i></a>
+<div class="full-width-drop">
+<div class="container-fluid">
+<div class="row">
+<button class="back-btn d-lg-none">Application Security</button>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Products</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6998 hide_on_desktop_small hide_on_desktop_medium hide_on_desktop_large" id="menu-item-6998"><a event-action="Click" event-category="Navigation" event-label="Application Security Overview" gtm-track=" " href="/products/application-security/" title="Application Security Overview">Application Security Overview</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6696" id="menu-item-6696"><a event-action="Click" event-category="Navigation" event-label="Web Application Firewall-AppSec" gtm-track=" " href="/products/web-application-firewall-waf/" title="Web Application Firewall">Web Application Firewall</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6697" id="menu-item-6697"><a event-action="Click" event-category="Navigation" event-label="Advanced Bot Protection-AppSec" gtm-track=" " href="/products/advanced-bot-protection-management/" title="Advanced Bot Protection">Advanced Bot Protection</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6698" id="menu-item-6698"><a event-action="Click" event-category="Navigation" event-label="Client-Side Protection-AppSec" gtm-track=" " href="/products/client-side-protection/" title="Client-Side Protection">Client-Side Protection</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6699" id="menu-item-6699"><a event-action="Click" event-category="Navigation" event-label="Runtime Protection-AppSec" gtm-track=" " href="/products/runtime-application-self-protection-rasp/" title="Runtime Protection">Runtime Protection</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6700" id="menu-item-6700"><a event-action="Click" event-category="Navigation" event-label="DDoS Protection-AppSec" gtm-track=" " href="/products/ddos-protection-services/" title="DDoS Protection">DDoS Protection</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6908" id="menu-item-6908"><a event-action="Click" event-category="Navigation" event-label="API Security-AppSec" gtm-track=" " href="/products/api-security/" title="API Security">API Security</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Solutions</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6702" id="menu-item-6702"><a event-action="Click" event-category="Navigation" event-label="Stop software supply chain attacks-AppSec" gtm-track=" " href="/solutions/stopping-software-supply-chain-attacks/" title="Stop software supply chain attacks">Stop software supply chain attacks</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6703" id="menu-item-6703"><a event-action="Click" event-category="Navigation" event-label="Prevent account takeover fraud-AppSec" gtm-track=" " href="/solutions/preventing-account-takeover-fraud" title="Mitigate account takeover attacks">Mitigate account takeover attacks</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6704" id="menu-item-6704"><a event-action="Click" event-category="Navigation" event-label="Protect modern web applications-AppSec" gtm-track=" " href="/solutions/protecting-modern-web-applications/" title="Protect modern web applications">Protect modern web applications</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6973" id="menu-item-6973"><a event-action="Click" event-category="Navigation" event-label="Securing API inventories" gtm-track=" " href="/solutions/automating-and-securing-api-inventories/" title="Secure API inventories">Secure API inventories</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6974" id="menu-item-6974"><a event-action="Click" event-category="Navigation" event-label="Online fraud prevention" gtm-track=" " href="/solutions/prevent-online-fraud/" title="Online fraud prevention">Online fraud prevention</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Resources</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6706" id="menu-item-6706"><a event-action="Click" event-category="Navigation" event-label="Explore related assets-AppSec" gtm-track=" " href="/resources/resource-library/?category=application-security" title="Explore related assets">Explore related assets</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6707" id="menu-item-6707"><a event-action="Click" event-category="Navigation" event-label="Read blog posts-AppSec" gtm-track=" " href="/blog/?category=application-security" title="Read blog posts">Read blog posts</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6937" id="menu-item-6937"><a event-action="Click" event-category="Navigation" event-label="Application Security Guide" gtm-track=" " href="/learn/application-security/application-security/" title="Application Security Guide">Application Security Guide</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6708 top-nav-items" id="menu-item-6708"><a class="opener" event-action="Click" event-category="Navigation" event-label="Data Security" gtm-track=" " href="/products/data-security/" title="Data Security">Data Security<i class="arrow-drop-icon"></i></a>
+<div class="full-width-drop">
+<div class="container-fluid">
+<div class="row">
+<button class="back-btn d-lg-none">Data Security</button>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Products</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6999 hide_on_desktop_small hide_on_desktop_medium hide_on_desktop_large" id="menu-item-6999"><a event-action="Click" event-category="Navigation" event-label="Data Security Overview" gtm-track=" " href="/products/data-security/" title="Data Security Overview">Data Security Overview</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6710" id="menu-item-6710"><a event-action="Click" event-category="Navigation" event-label="Data Security Fabric-DataSec" gtm-track=" " href="/products/data-security-fabric/" title="Data Security Fabric">Data Security Fabric</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6895" id="menu-item-6895"><a event-action="Click" event-category="Navigation" event-label="Data Privacy-DataSec" gtm-track=" " href="/products/data-privacy/" title="Data Privacy">Data Privacy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Solutions</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6713" id="menu-item-6713"><a event-action="Click" event-category="Navigation" event-label="Safeguard sensitive and personal data-DataSec" gtm-track=" " href="/solutions/safeguard-sensitive-and-personal-data/" title="Safeguard sensitive and personal data">Safeguard sensitive and personal data</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6715" id="menu-item-6715"><a event-action="Click" event-category="Navigation" event-label="Advance data governance-DataSec" gtm-track=" " href="/solutions/advancing-data-governance/" title="Advance data governance">Advance data governance</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6714" id="menu-item-6714"><a event-action="Click" event-category="Navigation" event-label="Assure data compliance and privacy-DataSec" gtm-track=" " href="/solutions/assuring-data-compliance-and-privacy/" title="Assure data compliance and privacy">Assure data compliance and privacy</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6887" id="menu-item-6887"><a event-action="Click" event-category="Navigation" event-label="Securely move data to the cloud-DataSec" gtm-track=" " href="/solutions/securely-move-your-data-to-the-cloud/" title="Securely move data to the cloud">Securely move data to the cloud</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6996" id="menu-item-6996"><a event-action="Click" event-category="Navigation" event-label="Detect data risk anywhere-DataSec" gtm-track=" " href="/solutions/data-risk-compliance/" title="Detect data risk anywhere">Detect data risk anywhere</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6997" id="menu-item-6997"><a event-action="Click" event-category="Navigation" event-label="Analyze user behavior and data access patterns-DataSec" gtm-track=" " href="/solutions/data-risk-analytics/" title="Analyze user behavior and data access patterns">Analyze user behavior and data access patterns</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Resources</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6717" id="menu-item-6717"><a event-action="Click" event-category="Navigation" event-label="Explore related assets-DataSec" gtm-track=" " href="/resources/resource-library/?category=data-security" title="Explore related assets">Explore related assets</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6718" id="menu-item-6718"><a event-action="Click" event-category="Navigation" event-label="Read blog posts-DataSec" gtm-track=" " href="/blog/?category=data-security" title="Read blog posts">Read blog posts</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6938" id="menu-item-6938"><a event-action="Click" event-category="Navigation" event-label="Data Security Guide" gtm-track=" " href="/learn/data-security/data-security/" title="Data Security Guide">Data Security Guide</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6719 top-nav-items" id="menu-item-6719"><a class="opener" event-action="Click" event-category="Navigation" event-label="Network Security" gtm-track=" " href="/products/network-security/" title="Network Security">Network Security<i class="arrow-drop-icon"></i></a>
+<div class="full-width-drop">
+<div class="container-fluid">
+<div class="row">
+<button class="back-btn d-lg-none">Network Security</button>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Products</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7000 hide_on_desktop_small hide_on_desktop_medium hide_on_desktop_large" id="menu-item-7000"><a event-action="Click" event-category="Navigation" event-label="Network Security Overview" gtm-track=" " href="/products/network-security/" title="Network Security Overview">Network Security Overview</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6721" id="menu-item-6721"><a event-action="Click" event-category="Navigation" event-label="DNS Protection-NetSec" gtm-track=" " href="/products/dns-protection/" title="DNS Protection">DNS Protection</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6723" id="menu-item-6723"><a event-action="Click" event-category="Navigation" event-label="Content Delivery Network-NetSec" gtm-track=" " href="/products/secure-cdn/" title="Content Delivery Network">Content Delivery Network</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6722" id="menu-item-6722"><a event-action="Click" event-category="Navigation" event-label="DDoS Protection-NetSec" gtm-track=" " href="/products/ddos-protection-services/" title="DDoS Protection">DDoS Protection</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7062" id="menu-item-7062"><a event-action="Click" event-category="Navigation" event-label="Imperva Waiting Room" gtm-track=" " href="/products/imperva-waiting-room/" title="Imperva Waiting Room">Imperva Waiting Room</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Solutions</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6725" id="menu-item-6725"><a event-action="Click" event-category="Navigation" event-label="Ensure consistent application availability-NetSec" gtm-track=" " href="/solutions/ensuring-consistent-application-availability/" title="Ensure consistent application availability">Ensure consistent application availability</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6980" id="menu-item-6980"><a event-action="Click" event-category="Navigation" event-label="Defend DDoS attacks at scale" gtm-track=" " href="/solutions/availability-at-scale/" title="Defend DDoS attacks at scale">Defend DDoS attacks at scale</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Resources</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6727" id="menu-item-6727"><a event-action="Click" event-category="Navigation" event-label="Explore related assets-NetSec" gtm-track=" " href="/resources/resource-library/?category=network-security" title="Explore related assets">Explore related assets</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6728" id="menu-item-6728"><a event-action="Click" event-category="Navigation" event-label="Read blog posts-NetSec" gtm-track=" " href="/blog/?category=network-security" title="Read blog posts">Read blog posts</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6729 top-nav-items" id="menu-item-6729"><a class="opener" event-action="Click" event-category="Navigation" event-label="Cloud-Native Security" gtm-track=" " href="/products/cloud-native-security/" title="Cloud-Native Security">Cloud-Native Security<i class="arrow-drop-icon"></i></a>
+<div class="full-width-drop">
+<div class="container-fluid">
+<div class="row">
+<button class="back-btn d-lg-none">Cloud-Native Security</button>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Products</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7001 hide_on_desktop_small hide_on_desktop_medium hide_on_desktop_large" id="menu-item-7001"><a event-action="Click" event-category="Navigation" event-label="Cloud-Native Security Overview" gtm-track=" " href="/products/cloud-native-security/" title="Cloud-Native Security Overview">Cloud-Native Security Overview</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6731" id="menu-item-6731"><a event-action="Click" event-category="Navigation" event-label="Serverless Protection-CNS" gtm-track=" " href="/products/serverless-security-protection/" title="Serverless Protection">Serverless Protection</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6732" id="menu-item-6732"><a event-action="Click" event-category="Navigation" event-label="API Security-CNS" gtm-track=" " href="/products/api-security/" title="API Security">API Security</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6733" id="menu-item-6733"><a event-action="Click" event-category="Navigation" event-label="Cloud Data Security-CNS" gtm-track=" " href="/products/cloud-data-security/" title="Cloud Data Security">Cloud Data Security</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Solutions</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6735" id="menu-item-6735"><a event-action="Click" event-category="Navigation" event-label="Embed security into DevOps-CNS" gtm-track=" " href="/solutions/embedding-security-into-devops/" title="Embed security into DevOps">Embed security into DevOps</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6736" id="menu-item-6736"><a event-action="Click" event-category="Navigation" event-label="Securely move data to the cloud-CNS" gtm-track=" " href="/solutions/securely-move-your-data-to-the-cloud/" title="Securely move data to the cloud">Securely move data to the cloud</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6979" id="menu-item-6979"><a event-action="Click" event-category="Navigation" event-label="Secure API inventories" gtm-track=" " href="/solutions/automating-and-securing-api-inventories/" title="Secure API inventories">Secure API inventories</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Resources</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6739" id="menu-item-6739"><a event-action="Click" event-category="Navigation" event-label="Explore related assets-CNS" gtm-track=" " href="/resources/resource-library/?category=cloud-native-security" title="Explore related assets">Explore related assets</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6740" id="menu-item-6740"><a event-action="Click" event-category="Navigation" event-label="Read blog posts-CNS" gtm-track=" " href="/blog/?category=cloud-native-security" title="Read blog posts">Read blog posts</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6913" id="menu-item-6913"><a event-action="Click" event-category="Navigation" event-label="Try Imperva Snapshot-CNS" gtm-track=" " href="/resources/free-cyber-security-testing-tools/imperva-snapshot-cloud-data-security-posture/" title="Try Imperva Snapshot">Try Imperva Snapshot</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6742 top-nav-items" id="menu-item-6742"><a class="opener" event-action="Click" event-category="Navigation" event-label="Security Automation" gtm-track=" " href="/products/security-automation/" title="Security Automation">Security Automation<i class="arrow-drop-icon"></i></a>
+<div class="full-width-drop">
+<div class="container-fluid">
+<div class="row">
+<button class="back-btn d-lg-none">Security Automation</button>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Products</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7002 hide_on_desktop_small hide_on_desktop_medium hide_on_desktop_large" id="menu-item-7002"><a event-action="Click" event-category="Navigation" event-label="Security Automation Overview" gtm-track=" " href="/products/security-automation/" title="Security Automation Overview">Security Automation Overview</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6745" id="menu-item-6745"><a event-action="Click" event-category="Navigation" event-label="Imperva Sonar SaaS-SecAuto" gtm-track=" " href="/products/sonar-platform-saas/" title="Imperva Sonar – SaaS">Imperva Sonar – SaaS</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6746" id="menu-item-6746"><a event-action="Click" event-category="Navigation" event-label="Imperva Sonar Anywhere-SecAuto" gtm-track=" " href="/products/sonar-platform-anywhere/" title="Imperva Sonar – Anywhere">Imperva Sonar – Anywhere</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Solutions</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6748" id="menu-item-6748"><a event-action="Click" event-category="Navigation" event-label="Automate insider threat management-SecAuto" gtm-track=" " href="/solutions/automating-insider-threat-management/" title="Automate insider threat management">Automate insider threat management</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6749" id="menu-item-6749"><a event-action="Click" event-category="Navigation" event-label="Contain malicious data activity-SecAuto" gtm-track=" " href="/solutions/mitigating-malicious-data-activity/" title="Contain malicious data activity">Contain malicious data activity</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="drop-column">
+<span class="drop-title">Resources</span>
+<div class="sub-drop">
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6751" id="menu-item-6751"><a event-action="Click" event-category="Navigation" event-label="Explore related assets-SecAuto" gtm-track=" " href="/resources/resource-library/?category=security-automation" title="Explore related assets">Explore related assets</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6752" id="menu-item-6752"><a event-action="Click" event-category="Navigation" event-label="Read blog posts-SecAuto" gtm-track=" " href="/blog/?category=security-automation" title="Read blog posts">Read blog posts</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul> <ul class="nav-main more-list">
+<li class="top-nav-items">
+<a class="opener" href="#" target="_self">More <i class="arrow-drop-icon"></i></a> <div class="drop-more">
+<div class="holder">
+<button class="back-btn d-lg-none">More</button>
+<ul class="tabset drop-tabset d-none d-lg-block" id="menu-header-more-menu"><li id="menu-item-6648"><a href="#subdrop6648">Industries</a></li>
+<li id="menu-item-6655"><a href="#subdrop6655">Support</a></li>
+<li id="menu-item-6665"><a href="#subdrop6665">Partners</a></li>
+<li id="menu-item-6677"><a href="#subdrop6677">Customers</a></li>
+<li id="menu-item-6680"><a href="#subdrop6680">Resources</a></li>
+<li id="menu-item-7057"><a href="#subdrop7057">Plans</a></li>
+<li id="menu-item-6687"><a href="#subdrop6687">Company</a></li>
+</ul><div class="tab-content drop-content"><div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6648 subdrop" id="subdrop6648"><a class="sub-opener d-lg-none" event-action="Click" event-category="Navigation" event-label="Industries" gtm-track="" title=' &lt;i class="arrow-drop-icon"&gt;&lt;/i&gt;'>Industries</a>
+<div class="collapse-element">
+<button class="back-sub-btn d-lg-none">Industries</button>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6649 col"><span class="subtitle">One platform that meets your industry’s unique security needs.</span>
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6650" id="menu-item-6650"><a event-action="Click" event-category="Navigation" event-label="Government" gtm-track="" href="/solutions/government-cyber-protection/">Government</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6651" id="menu-item-6651"><a event-action="Click" event-category="Navigation" event-label="Healthcare" gtm-track="" href="/solutions/healthcare-services-protection/">Healthcare</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6652" id="menu-item-6652"><a event-action="Click" event-category="Navigation" event-label="Financial Services" gtm-track="" href="/solutions/financial-services-protection/">Financial Services</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6653" id="menu-item-6653"><a event-action="Click" event-category="Navigation" event-label="Telecom &amp; ISPs" gtm-track="" href="/solutions/protection-for-telecoms-and-isps/">Telecom &amp; ISPs</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6654" id="menu-item-6654"><a event-action="Click" event-category="Navigation" event-label="Retail" gtm-track="" href="/solutions/retail-and-ecommerce-protection/">Retail</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6655 subdrop" id="subdrop6655"><a class="sub-opener d-lg-none" event-action="Click" event-category="Navigation" event-label="Support" gtm-track="" title=' &lt;i class="arrow-drop-icon"&gt;&lt;/i&gt;'>Support</a>
+<div class="collapse-element">
+<button class="back-sub-btn d-lg-none">Support</button>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6656 col"><span class="subtitle">Need support? Check out our channels.</span>
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6657" id="menu-item-6657"><a event-action="Click" event-category="Navigation" event-label="Technical Support" gtm-track="" href="/support/technical-support/">Technical Support</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6658" id="menu-item-6658"><a event-action="Click" event-category="Navigation" event-label="Services" gtm-track="" href="/support/services/">Services</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6659" id="menu-item-6659"><a event-action="Click" event-category="Navigation" event-label="Imperva University" gtm-track="" href="/support/imperva-university/">Imperva University</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6660" id="menu-item-6660"><a event-action="Click" event-category="Navigation" event-label="Community" gtm-track="" href="https://community.imperva.com/home">Community</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6661" id="menu-item-6661"><a event-action="Click" event-category="Navigation" event-label="Support Portal Login" gtm-track="" href="https://support.imperva.com/s/login/?ec=302&amp;startURL=%2Fs%2F">Support Portal Login</a></li>
+</ul>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6662 col"><span class="subtitle empty"></span>
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6663" id="menu-item-6663"><a event-action="Click" event-category="Navigation" event-label="Documentation" gtm-track="" href="https://docs.imperva.com/">Documentation</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6664" id="menu-item-6664"><a event-action="Click" event-category="Navigation" event-label="EOL Policy" gtm-track="" href="/support/eol-policy/">EOL Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6665 subdrop" id="subdrop6665"><a class="sub-opener d-lg-none" event-action="Click" event-category="Navigation" event-label="Partners" gtm-track="" href="#" title=' &lt;i class="arrow-drop-icon"&gt;&lt;/i&gt;'>Partners</a>
+<div class="collapse-element">
+<button class="back-sub-btn d-lg-none">Partners</button>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6666 col"><span class="subtitle">Channel Partners Program</span>
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6667" id="menu-item-6667"><a event-action="Click" event-category="Navigation" event-label="Imperva Partner Ecosystem" gtm-track="" href="/partners/">Imperva Partner Ecosystem</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6668" id="menu-item-6668"><a event-action="Click" event-category="Navigation" event-label="Channel Partners" gtm-track="" href="/partners/channel-partners/">Channel Partners</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6670" id="menu-item-6670"><a event-action="Click" event-category="Navigation" event-label="Find a Partner" gtm-track="" href="/partners/find-a-partner/">Find a Partner</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6671" id="menu-item-6671"><a event-action="Click" event-category="Navigation" event-label="Partner Portal Login" gtm-track="" href="https://partners.imperva.com/">Partner Portal Login</a></li>
+</ul>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6672 col"><span class="subtitle">Technology Alliances Partners (TAP)</span>
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6673" id="menu-item-6673"><a event-action="Click" event-category="Navigation" event-label="Technology Alliances Partners" gtm-track="" href="/partners/technology-alliance-program-tap/">Technology Alliances Partners</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6674" id="menu-item-6674"><a event-action="Click" event-category="Navigation" event-label="Become a TAP" gtm-track="" href="/partners/technology-alliance-program-tap-application/">Become a TAP</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6675" id="menu-item-6675"><a event-action="Click" event-category="Navigation" event-label="Find a TAP" gtm-track="" href="/partners/find-a-technology-alliance-partner/">Find a TAP</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6677 subdrop" id="subdrop6677"><a class="sub-opener d-lg-none" event-action="Click" event-category="Navigation" event-label="Customers" gtm-track="" title=' &lt;i class="arrow-drop-icon"&gt;&lt;/i&gt;'>Customers</a>
+<div class="collapse-element">
+<button class="back-sub-btn d-lg-none">Customers</button>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6678 col"><span class="subtitle">Hear from those who trust us for comprehensive digital security.</span>
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6679" id="menu-item-6679"><a event-action="Click" event-category="Navigation" event-label="Imperva Customer Stories" gtm-track="" href="/resources/customers/">Imperva Customer Stories</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6680 subdrop" id="subdrop6680"><a class="sub-opener d-lg-none" event-action="Click" event-category="Navigation" event-label="Resources" gtm-track="" title=' &lt;i class="arrow-drop-icon"&gt;&lt;/i&gt;'>Resources</a>
+<div class="collapse-element">
+<button class="back-sub-btn d-lg-none">Resources</button>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6681 col"><span class="subtitle">Get the tools, resources and research you need.</span>
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6682" id="menu-item-6682"><a event-action="Click" event-category="Navigation" event-label="Resource Library" gtm-track="" href="/resources/resource-library/">Resource Library</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6683" id="menu-item-6683"><a event-action="Click" event-category="Navigation" event-label="Blog" gtm-track="" href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6684" id="menu-item-6684"><a event-action="Click" event-category="Navigation" event-label="Events &amp; Webinars" gtm-track="" href="/company/events/">Events &amp; Webinars</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6685" id="menu-item-6685"><a event-action="Click" event-category="Navigation" event-label="Free Tools" gtm-track="" href="/resources/free-cyber-security-testing-tools/">Free Tools</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6686" id="menu-item-6686"><a event-action="Click" event-category="Navigation" event-label="Cyber Threat Index" gtm-track="" href="/cyber-threat-index/">Cyber Threat Index</a></li>
+</ul>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6924 col"><span class="subtitle empty"></span>
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6923" id="menu-item-6923"><a event-action="Click" event-category="Navigation" event-label="Privacy, Compliance &amp; Trust Center" gtm-track="" href="/trust-center/">Privacy, Compliance &amp; Trust Center</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6925" id="menu-item-6925"><a event-action="Click" event-category="Navigation" event-label="Imperva Product and Service Certifications" gtm-track="" href="https://docs.imperva.com/bundle/articles/page/product-service-certifications.htm">Imperva Product and Service Certifications</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7057 subdrop" id="subdrop7057"><a class="sub-opener d-lg-none" event-action="Click" event-category="Navigation" event-label="Plans" gtm-track="" href="#" title=' &lt;i class="arrow-drop-icon"&gt;&lt;/i&gt;'>Plans</a>
+<div class="collapse-element">
+<button class="back-sub-btn d-lg-none">Plans</button>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7058 col"><span class="subtitle">Find the right plan for you and your organization.</span>
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7060" id="menu-item-7060"><a event-action="Click" event-category="Navigation" event-label="App Protect Plans" gtm-track="" href="/products/plans/">App Protect Plans</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7059" id="menu-item-7059"><a event-action="Click" event-category="Navigation" event-label="Data Protect Plans" gtm-track="" href="/products/plans/?tab=data-products-table">Data Protect Plans</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6687 subdrop" id="subdrop6687"><a class="sub-opener d-lg-none" event-action="Click" event-category="Navigation" event-label="Company" gtm-track="" title=' &lt;i class="arrow-drop-icon"&gt;&lt;/i&gt;'>Company</a>
+<div class="collapse-element">
+<button class="back-sub-btn d-lg-none">Company</button>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6688 col"><span class="subtitle">Get the tools, resources, and research you need.</span>
+<ul class="sub-drop-list">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6892" id="menu-item-6892"><a event-action="Click" event-category="Navigation" event-label="About Us" gtm-track="" href="/company/about/">About Us</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6691" id="menu-item-6691"><a event-action="Click" event-category="Navigation" event-label="Careers" gtm-track="" href="/company/careers/">Careers</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6692" id="menu-item-6692"><a event-action="Click" event-category="Navigation" event-label="Press &amp; Awards" gtm-track="" href="/company/news/">Press &amp; Awards</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6693" id="menu-item-6693"><a event-action="Click" event-category="Navigation" event-label="Contact Information" gtm-track="" href="/company/locations/">Contact Information</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</header>
+</div>
+</div>
+<div class="new-width">
+<div class="container">
+<div class="row">
+<div class="search-window-header header-nav col-12">
+<div class="row">
+<div class="col-12 breadcrumb-div order-0"><p class="sub-header"><a href="/" target="_self">Home</a> &gt; <a class="" href="/learn/" target="_self">Learning Center</a> &gt; <a class="" href="https://www.imperva.com/learn/data-security/" target="_self">DataSec</a> &gt; <span>Data Privacy</span> </p><style>/**hero-style**/.breadcrumb-div a,.breadcrumb-div span, .sub-header{color:#000!important;}</style></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<progress id="progress-bar" value="0"></progress>
+<div class="page-main-wrapper" id="main">
+<div class="container">
+<div class="row justify-content-between">
+<div class="col-12 col-lg-7">
+<div class="post-title">
+<h1>Data Privacy</h1>
+<div class="post-stats">
+<span class="view-count">20.2k views</span>
+<div class="holder">
+<span class="hero-tags">
+<a class="" href="https://www.imperva.com/learn/data-security/" target="_self">Data Security</a><span>Regulation &amp; Compliance</span> </span>
+<div class="share-icon-bar"><!-- Facebook -->
+<div class="fl-fl float-fb transition-active">
+<a event-action="Click" event-label="Data Privacy" gtm-track="" href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.imperva.com%2Flearn%2Fdata-security%2Fdata-privacy%2F" target="_blank"><i class="fa fa-facebook"></i></a>
+</div><!-- Twitter -->
+<div class="fl-fl float-tw transition-active">
+<a event-action="Click" event-label="Data Privacy" gtm-track="" href="https://twitter.com/share?url=https%3A%2F%2Fwww.imperva.com%2Flearn%2Fdata-security%2Fdata-privacy%2F&amp;text=Data Privacy&amp;hashtags=ImpervaResources" target="_blank"><i class="fa fa-twitter"></i></a>
+</div><!-- LinkedIn -->
+<div class="fl-fl float-li transition-active">
+<a event-action="Click" event-label="Data Privacy" gtm-track="" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.imperva.com%2Flearn%2Fdata-security%2Fdata-privacy%2F" target="_blank"><i class="fa fa-linkedin"></i></a>
+</div></div> </div>
+</div>
+</div>
+<div class="article-content">
+<p>Privacy, in the broadest sense, is the right of individuals, groups, or organizations to <i>control</i> who can access, observe, or use something they own, such as their bodies, property, ideas, data, or information.</p>
+<p>Control is established through physical, social, or informational boundaries that help prevent unwanted access, observation, or use. For example:</p>
+<ul>
+<li>A physical boundary, such as a locked front door, helps prevent others from entering a building without explicit permission in the form of a key to unlock the door or a person inside opening the door.</li>
+<li>A social boundary, such as a members-only club, only allows members to access and use club resources.</li>
+<li>An informational boundary, such as a non-disclosure agreement, restricts what information can be disclosed to others.</li>
+</ul>
+<p>The exponential growth of a global information economy, driven by new technologies and disruptive business models, means that an ever-increasing amount of personal data is being collected, used, exchanged, analyzed, retained, and sometimes used for commercial purposes. It also means there is an ever-increasing number of accidental or intentional data breaches, incorrect or lost data records, and data misuse incidents.</p>
+<p>As a result, the demand for data privacy — the right to control how personal information is collected, with whom it is shared, and how it is used, retained, or deleted — has grown, as has the demand for data security.</p>
+<p>Balancing the individual’s right to data privacy and an organization’s desire to use personal data for its own purposes is challenging, but not impossible. It requires developing a data privacy framework.</p>
+<p>This is part of an extensive series of guides about <a href="https://www.imperva.com/learn/data-security/data-security/">data security</a>.</p>
+<h2>Developing a Data Privacy Framework</h2>
+<p>Although there isn’t a “one-size-fits-all template” for a framework, there are several universal processes that can help you develop one relevant to your business:</p>
+<p><b>Discovering and classifying personal data</b> — Determining what types of data is collected (e.g., medical, financial, or personally identifying data such as Social Security numbers), where and how the data is collected, where data is stored, who has access to the data and where are they physically located, data flows within and across a business unit, and data transfers within and between countries.</p>
+<p><b>Conducting a Privacy Impact Assessment (PIA)</b> — Determining how and where data is stored, backed up, and disposed, what data security measures are currently implemented, and where systems may be vulnerable to a data privacy breach. Examples of data security measures include the following:</p>
+<ul>
+<li><b>Change management </b>— Monitors, logs, and reports on data structure changes. Shows compliance auditors that changes to the database can be traced to accepted change tickets.</li>
+<li><b>Data loss prevention </b>— Monitors and protects data in motion on networks, at rest in data storage, or in use on endpoint devices. Blocks attacks, privilege abuse, unauthorized access, malicious web requests, and unusual activity to prevent data theft.</li>
+<li><b>Data masking </b>— Anonymizes data via encryption/hashing, generalization, perturbation, etc. <a href="https://www.imperva.com/datasecurity/compliance-101/pseudonymization/">Pseudonymizes </a>data by replacing sensitive data with realistic fictional data that maintains operational and statistical accuracy.</li>
+<li><b>Data protection </b>— Ensures data integrity and confidentiality through change control reconciliation, data-across-borders controls, query whitelisting, etc.</li>
+<li><b>Ethical walls </b>— Maintains strict separation between business groups to comply with M&amp;A requirements, government clearance, etc.</li>
+<li><b>Privileged user monitoring </b>— Monitors privileged user database access and activities. Blocks access or activity, if necessary.</li>
+<li><b>Secure audit trail archiving </b>— Secures the audit trail from tampering, modification, or deletion, and provides forensic visibility.</li>
+<li><b>Sensitive data access auditing</b> — Monitors access to and changes of data protected by law, compliance regulations, and contractual agreements. Triggers alarms for unauthorized access or changes. Creates an audit trail for forensics.</li>
+<li><b>User rights management </b>— Identifies excessive, inappropriate, and unused privileges.</li>
+<li><b>User tracking </b>— Maps the web application end user to the shared application/database user and then to the final data accessed.</li>
+<li><b>VIP data privacy — </b>Maintains strict access control on highly sensitive data, including data stored in multi-tier enterprise applications such as SAP and PeopleSoft.</li>
+</ul>
+<p><b>Understanding marketing issues</b> — Determining cross-border marketing issues (e.g., whether products or services are directly marketed to residents of other countries, the language used on a website, or a deployment of mobile applications), and third-party marketing issues (e.g., sharing of information for marketing purposes).</p>
+<p><b>Analyzing compliance requirements</b> — Determining applicable compliance requirements, based on the results gathered in understanding the personal data and conducting a PIA.</p>
+<ul>
+<li><b>Legislative Regulations</b> — State, country, or governmental agency laws regulating personal data collection, use, storage, transport, and protection. Examples include General Data Protection Regulation (<a href="https://www.imperva.com/datasecurity/regulation-glossary/gdpr/">GDPR</a> — European Union), Personal Information Protection and Electronic Documents Act (PIPEDA — Canada), Information Technology Act 2000 (ITA — India), Privacy Act 1993 (New Zealand).</li>
+<li><b>Industry-specific Regulations</b> — Laws or mandates defining how a specific industry, type of business, or government agency will treat and secure personal data. Examples include <a href="https://www.imperva.com/learn/data-security/hipaa-privacy-rule/">Health Information Portability and Accountability Act</a> (HIPAA), Health Information Technology for Economic and Clinical Health (HITECH), Payment Card Industry Data Security Standards (PCI DSS).</li>
+<li><b>Third-Party Obligations</b> — Agreements among business partners defining how a contractor, vendor, or other external agency will treat and secure personal data collected by the ‘parent’ organization. For example, an agency located in India providing credit card services for a U.S. based vendor must observe PCI DSS data protection requirements.</li>
+</ul>
+<p><b>Developing privacy policies and internal controls</b> — Creating external privacy statements (e.g., website, mobile app, and offline privacy policies); internal and external privacy policies and procedures related to <a href="https://www.imperva.com/learn/data-security/data-governance/">data governance</a>, data privacy and security breaches; and data privacy training.</p>
+<p>Learn how Imperva data <a href="https://www.imperva.com/Products/SecureSphereforData">security </a>and data <a href="https://www.imperva.com/Products/camouflage-data-masking">masking </a>solutions can help you develop your Data Privacy Framework.</p>
+<div class="ddos-banner"><div class="wrap"><p>See how Imperva Data Protection can help you with data privacy.</p>
+<div class="cta-container">
+<a class="impv-yellow-btn" event-action="Click" event-category="LC Banner" event-label="Request demo" gtm-track="" href="javascript:openModal('modalid3533', '/learn/banner/virtual/request-demo/', 'Personal Demo Request | Imperva');" target="_self">Request demo</a>
+<a class="gst-yellow-dark-text-btn" event-action="Click" event-category="LC Banner" event-label="Learn more" gtm-track="" href="https://www.imperva.com/products/data-protection/" target="_self">Learn more</a>
+</div></div></div><h2>See Our Additional Guides on Key Data Security Topics</h2>
+<p>Together with our content partners, we have authored in-depth guides on several other topics that can also be useful as you explore the world of <a href="https://www.imperva.com/learn/data-security/data-security/">data security</a></p>
+<h3><a href="https://www.imperva.com/learn/application-security/cyber-security/">Cyber Security</a></h3>
+<p>Learn about tools and practices that can help you protect your organization against cyber threats.</p>
+<ul>
+<li><a href="https://www.imperva.com/learn/application-security/honeypot-honeynet/">What is a Honeypot: Honeynets, Spam Traps &amp; more</a></li>
+<li><a href="https://www.imperva.com/learn/application-security/penetration-testing/">What is Penetration Testing: Step-By-Step Process &amp; Methods</a></li>
+<li><a href="https://www.imperva.com/learn/data-security/information-security-infosec/">What is Information Security: Policy, Principles &amp; Threats</a></li>
+</ul>
+<h3><a href="https://www.exabeam.com/dlp/data-loss-prevention-policies-best-practices-and-evaluating-dlp-software/">DLP</a></h3>
+<p><i>Authored by Exabeam</i></p>
+<p>Learn about data loss protection (DLP) solutions that can prevent sensitive data from loss, theft, and leakage.</p>
+<ul>
+<li aria-level="1"><a href="https://www.exabeam.com/dlp/data-loss-prevention-tools/">Data Loss Prevention Tools</a></li>
+<li aria-level="1"><a href="https://www.exabeam.com/dlp/data-loss-prevention-policy-template/">Data Loss Prevention Policy Template</a></li>
+<li aria-level="1"><a href="https://www.exabeam.com/dlp/cloud-dlp/">Understanding Cloud DLP: Key Features and Best Practices</a></li>
+</ul>
+<h3><a href="https://cloudinary.com/dam-guide/dam">Digital Asset Management</a></h3>
+<p><i>Authored by Cloudinary</i></p>
+<p>Learn about digital asset management (DAM), an enterprise application that stores rich media, and how to manage and secure it.</p>
+<ul>
+<li aria-level="1"><a href="https://cloudinary.com/blog/reimaging_dam_the_next_generation_solution_for_marketing_development">Reimaging DAM: The next-generation solution for marketing &amp; development</a></li>
+<li aria-level="1"><a href="https://cloudinary.com/dam-guide/digital-asset-manager">Digital Asset Managers: What They Do and Why You Need One</a></li>
+<li aria-level="1"><a href="https://cloudinary.com/dam-guide/digital-asset-management-solutions">Digital Asset Management Solutions: A Buyer’s Guide</a></li>
+</ul>
+</div>
+</div>
+<div class="col-md-4 d-none d-lg-block">
+<div class="sidebar-col">
+<h3>Article's content</h3>
+<div class="list-holder">
+<span class="line"></span>
+<ul class="side-nav"></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="related-cards">
+<div class="container">
+<div class="row related-row">
+<div class="col-12 slider-container">
+<h2>Latest Blogs</h2>
+<div class="slick-slider related-slider">
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card">
+<div class="tile-holder card-div">
+<div class="img-wrapper">
+<a class="" event-action="Click" event-category="Read next section" event-label="How Imperva Data Security Fabric Reduces Splunk Ingestion Costs and Accelerates Incident Management" gtm-track="" href="https://www.imperva.com/blog/how-imperva-dsf-reduces-splunk-ingestion-costs-and-accelerates-incident-management/" target="_self"><img alt="Blog image 23" class="tile-img" src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2022/05/Blog-image-23-e1652359075494.jpg"/></a> </div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" event-action="Click" event-label="Data Security" gtm-track="" href="https://www.imperva.com/blog/?category=data-security" target="_self">Data Security</a> </div>
+<a class="subtitle-card dotted" event-action="Click" event-category="Read next section" event-label="How Imperva Data Security Fabric Reduces Splunk Ingestion Costs and Accelerates Incident Management" gtm-track="" href="https://www.imperva.com/blog/how-imperva-dsf-reduces-splunk-ingestion-costs-and-accelerates-incident-management/" target="_self">How Imperva Data Security Fabric Reduces Splunk Ingestion Costs and Accelerates Incident Management</a> <div class="author-and-date">
+<div class="author-avatar-anchors"><a class="author-avatar-anchor" data-placement="bottom" data-toggle="tooltip" href="https://www.imperva.com/blog/author/bruce-lynchimperva-com/" title="Bruce Lynch">
+<picture>
+<source data-srcset="https://www.imperva.com/learn/wp-content/uploads/sites/9/2021/03/Screen-Shot-2021-03-12-at-2.10.03-PM-36x36.png.webp" type="image/webp"/>
+<img class="author-avatar lazyload" data-src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2021/03/Screen-Shot-2021-03-12-at-2.10.03-PM-36x36.png">
+</img></picture>
+</a></div> <div class="links-and-date">
+<div class="author-links"><a class="author-name-anchor" href="https://www.imperva.com/blog/author/bruce-lynchimperva-com/"><p class="author-name"> <span>Bruce</span><span> Lynch</span></p></a></div> <p class="post-date d-none d-sm-block">May 12, 2022 <span class="separator"></span> 3 min read</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card">
+<div class="tile-holder card-div">
+<div class="img-wrapper">
+<a class="" event-action="Click" event-category="Read next section" event-label="Data Protection as the Foundation of Trust: Celebrating Privacy Awareness Week in APAC" gtm-track="" href="https://www.imperva.com/blog/data-protection-as-the-foundation-of-trust-celebrating-privacy-awareness-week-in-apac/" target="_self"><img alt="Blog image 8a" class="tile-img" src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2022/04/Blog-image-8a.png"/></a> </div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" event-action="Click" event-label="Industry Perspective" gtm-track="" href="https://www.imperva.com/blog/?category=industry-perspective" target="_self">Industry Perspective</a> <div class="category-dropdown">
+<button class="opener">...</button>
+<div class="category-dropdown">
+<ul>
+<li>
+<a class="" event-action="Click" event-label="Data Security" gtm-track="" href="https://www.imperva.com/blog/?category=data-security" target="_self">Data Security</a> </li>
+</ul>
+</div>
+</div>
+</div>
+<a class="subtitle-card dotted" event-action="Click" event-category="Read next section" event-label="Data Protection as the Foundation of Trust: Celebrating Privacy Awareness Week in APAC" gtm-track="" href="https://www.imperva.com/blog/data-protection-as-the-foundation-of-trust-celebrating-privacy-awareness-week-in-apac/" target="_self">Data Protection as the Foundation of Trust: Celebrating Privacy Awareness Week in APAC</a> <div class="author-and-date">
+<div class="author-avatar-anchors"><a class="author-avatar-anchor" data-placement="bottom" data-toggle="tooltip" href="https://www.imperva.com/blog/author/georgelee/" title="George Lee">
+<picture>
+<source data-srcset="https://www.imperva.com/learn/wp-content/uploads/sites/9/2022/04/george-lee-36x36.jpg.webp" type="image/webp"/>
+<img class="author-avatar lazyload" data-src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2022/04/george-lee-36x36.jpg">
+</img></picture>
+</a></div> <div class="links-and-date">
+<div class="author-links"><a class="author-name-anchor" href="https://www.imperva.com/blog/author/georgelee/"><p class="author-name"> <span>George</span><span> Lee</span></p></a></div> <p class="post-date d-none d-sm-block">May 1, 2022 <span class="separator"></span> 3 min read</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card">
+<div class="tile-holder card-div">
+<div class="img-wrapper">
+<a class="" event-action="Click" event-category="Read next section" event-label="6 Best Data Security Practices You Can Start Today" gtm-track="" href="https://www.imperva.com/blog/6-best-data-security-practices-you-can-start-today/" target="_self"><img alt="Blog image 6a" class="tile-img" src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2022/04/Blog-image-6a.png"/></a> </div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" event-action="Click" event-label="Data Security" gtm-track="" href="https://www.imperva.com/blog/?category=data-security" target="_self">Data Security</a> </div>
+<a class="subtitle-card dotted" event-action="Click" event-category="Read next section" event-label="6 Best Data Security Practices You Can Start Today" gtm-track="" href="https://www.imperva.com/blog/6-best-data-security-practices-you-can-start-today/" target="_self">6 Best Data Security Practices You Can Start Today</a> <div class="author-and-date">
+<div class="author-avatar-anchors"><a class="author-avatar-anchor" data-placement="bottom" data-toggle="tooltip" href="https://www.imperva.com/blog/author/bruce-lynchimperva-com/" title="Bruce Lynch">
+<picture>
+<source data-srcset="https://www.imperva.com/learn/wp-content/uploads/sites/9/2021/03/Screen-Shot-2021-03-12-at-2.10.03-PM-36x36.png.webp" type="image/webp"/>
+<img class="author-avatar lazyload" data-src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2021/03/Screen-Shot-2021-03-12-at-2.10.03-PM-36x36.png">
+</img></picture>
+</a></div> <div class="links-and-date">
+<div class="author-links"><a class="author-name-anchor" href="https://www.imperva.com/blog/author/bruce-lynchimperva-com/"><p class="author-name"> <span>Bruce</span><span> Lynch</span></p></a></div> <p class="post-date d-none d-sm-block">Apr 27, 2022 <span class="separator"></span> 3 min read</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card">
+<div class="tile-holder card-div">
+<div class="img-wrapper">
+<a class="" event-action="Click" event-category="Read next section" event-label="How to Stop New Employees from Becoming Insider Threats" gtm-track="" href="https://www.imperva.com/blog/how-to-stop-new-employees-from-becoming-insider-threats/" target="_self"><img alt="Blog image 20a" class="tile-img" src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2022/04/Blog-image-20a.png"/></a> </div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" event-action="Click" event-label="Industry Perspective" gtm-track="" href="https://www.imperva.com/blog/?category=industry-perspective" target="_self">Industry Perspective</a> <div class="category-dropdown">
+<button class="opener">...</button>
+<div class="category-dropdown">
+<ul>
+<li>
+<a class="" event-action="Click" event-label="Data Security" gtm-track="" href="https://www.imperva.com/blog/?category=data-security" target="_self">Data Security</a> </li>
+</ul>
+</div>
+</div>
+</div>
+<a class="subtitle-card dotted" event-action="Click" event-category="Read next section" event-label="How to Stop New Employees from Becoming Insider Threats" gtm-track="" href="https://www.imperva.com/blog/how-to-stop-new-employees-from-becoming-insider-threats/" target="_self">How to Stop New Employees from Becoming Insider Threats</a> <div class="author-and-date">
+<div class="author-avatar-anchors"><a class="author-avatar-anchor" data-placement="bottom" data-toggle="tooltip" href="https://www.imperva.com/blog/author/nikhewitt/" title="Nik Hewitt">
+<img class="author-avatar lazyload" data-src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2021/03/image001-36x36.jpg"/>
+</a></div> <div class="links-and-date">
+<div class="author-links"><a class="author-name-anchor" href="https://www.imperva.com/blog/author/nikhewitt/"><p class="author-name"> <span>Nik</span><span> Hewitt</span></p></a></div> <p class="post-date d-none d-sm-block">Apr 21, 2022 <span class="separator"></span> 3 min read</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card">
+<div class="tile-holder card-div">
+<div class="img-wrapper">
+<a class="" event-action="Click" event-category="Read next section" event-label="Why Customers Asked us for a Data Security Fabric (Even When They Didn’t Know to ask for it by Name)" gtm-track="" href="https://www.imperva.com/blog/why-customers-asked-us-for-a-data-security-fabric-even-when-they-didnt-know-to-ask-for-it-by-name/" target="_self"><img alt="Blog image 4a" class="tile-img" src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2022/04/Blog-image-4a.png"/></a> </div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" event-action="Click" event-label="Data Security" gtm-track="" href="https://www.imperva.com/blog/?category=data-security" target="_self">Data Security</a> <div class="category-dropdown">
+<button class="opener">...</button>
+<div class="category-dropdown">
+<ul>
+<li>
+<a class="" event-action="Click" event-label="Cloud-native Security" gtm-track="" href="https://www.imperva.com/blog/?category=cloud-native-security" target="_self">Cloud-native Security</a> </li>
+</ul>
+</div>
+</div>
+</div>
+<a class="subtitle-card dotted" event-action="Click" event-category="Read next section" event-label="Why Customers Asked us for a Data Security Fabric (Even When They Didn’t Know to ask for it by Name)" gtm-track="" href="https://www.imperva.com/blog/why-customers-asked-us-for-a-data-security-fabric-even-when-they-didnt-know-to-ask-for-it-by-name/" target="_self">Why Customers Asked us for a Data Security Fabric (Even When They Didn’t Know to ask for it by Name)</a> <div class="author-and-date">
+<div class="author-avatar-anchors"><a class="author-avatar-anchor" data-placement="bottom" data-toggle="tooltip" href="https://www.imperva.com/blog/author/dneault/" title="Dan Neault">
+<picture>
+<source data-srcset="https://www.imperva.com/learn/wp-content/uploads/sites/9/2022/04/Dan_Neault-1-36x36.png.webp" type="image/webp"/>
+<img class="author-avatar lazyload" data-src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2022/04/Dan_Neault-1-36x36.png">
+</img></picture>
+</a></div> <div class="links-and-date">
+<div class="author-links"><a class="author-name-anchor" href="https://www.imperva.com/blog/author/dneault/"><p class="author-name"> <span>Dan</span><span> Neault</span></p></a></div> <p class="post-date d-none d-sm-block">Apr 7, 2022 <span class="separator"></span> 5 min read</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card">
+<div class="tile-holder card-div">
+<div class="img-wrapper">
+<a class="" event-action="Click" event-category="Read next section" event-label="Ethical Hacking and Penetration Testing. Where to Begin." gtm-track="" href="https://www.imperva.com/blog/ethical-hacking-and-penetration-testing-where-to-begin/" target="_self"><img alt="Blog image 5a" class="tile-img" src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2022/04/Blog-image-5a.png"/></a> </div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" event-action="Click" event-label="Data Security" gtm-track="" href="https://www.imperva.com/blog/?category=data-security" target="_self">Data Security</a> <div class="category-dropdown">
+<button class="opener">...</button>
+<div class="category-dropdown">
+<ul>
+<li>
+<a class="" event-action="Click" event-label="Application Security" gtm-track="" href="https://www.imperva.com/blog/?category=application-security" target="_self">Application Security</a> </li>
+<li>
+<a class="" event-action="Click" event-label="Network Security" gtm-track="" href="https://www.imperva.com/blog/?category=network-security" target="_self">Network Security</a> </li>
+</ul>
+</div>
+</div>
+</div>
+<a class="subtitle-card dotted" event-action="Click" event-category="Read next section" event-label="Ethical Hacking and Penetration Testing. Where to Begin." gtm-track="" href="https://www.imperva.com/blog/ethical-hacking-and-penetration-testing-where-to-begin/" target="_self">Ethical Hacking and Penetration Testing. Where to Begin.</a> <div class="author-and-date">
+<div class="author-avatar-anchors"><a class="author-avatar-anchor" data-placement="bottom" data-toggle="tooltip" href="https://www.imperva.com/blog/author/nikhewitt/" title="Nik Hewitt">
+<img class="author-avatar lazyload" data-src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2021/03/image001-36x36.jpg"/>
+</a></div> <div class="links-and-date">
+<div class="author-links"><a class="author-name-anchor" href="https://www.imperva.com/blog/author/nikhewitt/"><p class="author-name"> <span>Nik</span><span> Hewitt</span></p></a></div> <p class="post-date d-none d-sm-block">Apr 6, 2022 <span class="separator"></span> 4 min read</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card">
+<div class="tile-holder card-div">
+<div class="img-wrapper">
+<a class="" event-action="Click" event-category="Read next section" event-label="Gain Insight into Database Security Vulnerabilities you Didn’t Know you Had" gtm-track="" href="https://www.imperva.com/blog/gain-insight-into-database-security-vulnerabilities-you-didnt-know-you-had/" target="_self"><img alt="Blog image 6a" class="tile-img" src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2022/04/Blog-image-6a.png"/></a> </div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" event-action="Click" event-label="Data Security" gtm-track="" href="https://www.imperva.com/blog/?category=data-security" target="_self">Data Security</a> </div>
+<a class="subtitle-card dotted" event-action="Click" event-category="Read next section" event-label="Gain Insight into Database Security Vulnerabilities you Didn’t Know you Had" gtm-track="" href="https://www.imperva.com/blog/gain-insight-into-database-security-vulnerabilities-you-didnt-know-you-had/" target="_self">Gain Insight into Database Security Vulnerabilities you Didn’t Know you Had</a> <div class="author-and-date">
+<div class="author-avatar-anchors"><a class="author-avatar-anchor" data-placement="bottom" data-toggle="tooltip" href="https://www.imperva.com/blog/author/bruce-lynchimperva-com/" title="Bruce Lynch">
+<picture>
+<source data-srcset="https://www.imperva.com/learn/wp-content/uploads/sites/9/2021/03/Screen-Shot-2021-03-12-at-2.10.03-PM-36x36.png.webp" type="image/webp"/>
+<img class="author-avatar lazyload" data-src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2021/03/Screen-Shot-2021-03-12-at-2.10.03-PM-36x36.png">
+</img></picture>
+</a></div> <div class="links-and-date">
+<div class="author-links"><a class="author-name-anchor" href="https://www.imperva.com/blog/author/bruce-lynchimperva-com/"><p class="author-name"> <span>Bruce</span><span> Lynch</span></p></a></div> <p class="post-date d-none d-sm-block">Apr 5, 2022 <span class="separator"></span> 2 min read</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card">
+<div class="tile-holder card-div">
+<div class="img-wrapper">
+<a class="" event-action="Click" event-category="Read next section" event-label="API Gateway or not, You Need API Security" gtm-track="" href="https://www.imperva.com/blog/api-gateway-or-not-you-need-api-security/" target="_self"><img alt="Blog image 11a" class="tile-img" src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2022/04/Blog-image-11a.png"/></a> </div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" event-action="Click" event-label="Application Security" gtm-track="" href="https://www.imperva.com/blog/?category=application-security" target="_self">Application Security</a> <div class="category-dropdown">
+<button class="opener">...</button>
+<div class="category-dropdown">
+<ul>
+<li>
+<a class="" event-action="Click" event-label="Data Security" gtm-track="" href="https://www.imperva.com/blog/?category=data-security" target="_self">Data Security</a> </li>
+</ul>
+</div>
+</div>
+</div>
+<a class="subtitle-card dotted" event-action="Click" event-category="Read next section" event-label="API Gateway or not, You Need API Security" gtm-track="" href="https://www.imperva.com/blog/api-gateway-or-not-you-need-api-security/" target="_self">API Gateway or not, You Need API Security</a> <div class="author-and-date">
+<div class="author-avatar-anchors"><a class="author-avatar-anchor" data-placement="bottom" data-toggle="tooltip" href="https://www.imperva.com/blog/author/bruce-lynchimperva-com/" title="Bruce Lynch">
+<picture>
+<source data-srcset="https://www.imperva.com/learn/wp-content/uploads/sites/9/2021/03/Screen-Shot-2021-03-12-at-2.10.03-PM-36x36.png.webp" type="image/webp"/>
+<img class="author-avatar lazyload" data-src="https://www.imperva.com/learn/wp-content/uploads/sites/9/2021/03/Screen-Shot-2021-03-12-at-2.10.03-PM-36x36.png">
+</img></picture>
+</a></div> <div class="links-and-date">
+<div class="author-links"><a class="author-name-anchor" href="https://www.imperva.com/blog/author/bruce-lynchimperva-com/"><p class="author-name"> <span>Bruce</span><span> Lynch</span></p></a></div> <p class="post-date d-none d-sm-block">Mar 24, 2022 <span class="separator"></span> 4 min read</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="slides-indicator"><span></span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="topic-holder">
+<section class="related-cards">
+<div class="container">
+<div class="row related-row">
+<div class="col-12 slider-container">
+<h2>Latest Articles</h2>
+<div class="slick-slider related-slider">
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card blue"> <div class="tile-holder card-div">
+<div class="img-wrapper"></div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" href="https://www.imperva.com/learn/data-security/" target="_self">Data Security</a> <div class="category-dropdown">
+<button class="opener">...</button>
+<div class="category-dropdown">
+<ul>
+<li>
+<span>
+                                            Regulation &amp; Compliance                                        </span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<a class="subtitle-card" href="https://www.imperva.com/learn/data-security/soc-2-compliance/" target="_self">SOC 2 Compliance</a> <p class="card-stats">438.2k Views</p>
+</div>
+</div>
+</div> </div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card blue"> <div class="tile-holder card-div">
+<div class="img-wrapper"></div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" href="https://www.imperva.com/learn/data-security/" target="_self">Data Security</a> <div class="category-dropdown">
+<button class="opener">...</button>
+<div class="category-dropdown">
+<ul>
+<li>
+<span>
+                                            Regulation &amp; Compliance                                        </span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<a class="subtitle-card" href="https://www.imperva.com/learn/data-security/pci-dss-certification/" target="_self">PCI DSS Certification</a> <p class="card-stats">123.2k Views</p>
+</div>
+</div>
+</div> </div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card blue"> <div class="tile-holder card-div">
+<div class="img-wrapper"></div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" href="https://www.imperva.com/learn/data-security/" target="_self">Data Security</a> <div class="category-dropdown">
+<button class="opener">...</button>
+<div class="category-dropdown">
+<ul>
+<li>
+<span>
+                                            Regulation &amp; Compliance                                        </span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<a class="subtitle-card" href="https://www.imperva.com/learn/data-security/personally-identifiable-information-pii/" target="_self">Personally Identifiable Information (PII)</a> <p class="card-stats">76.6k Views</p>
+</div>
+</div>
+</div> </div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card purple"> <div class="tile-holder card-div">
+<div class="img-wrapper"></div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" href="https://www.imperva.com/learn/application-security/" target="_self">App Security</a> <div class="category-dropdown">
+<button class="opener">...</button>
+<div class="category-dropdown">
+<ul>
+<li>
+<span>
+                                            Essentials                                        </span>
+</li>
+<li>
+<span>
+                                            Regulation &amp; Compliance                                        </span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<a class="subtitle-card" href="https://www.imperva.com/learn/application-security/intrusion-detection-prevention/" target="_self">Intrusion detection and intrusion prevention</a> <p class="card-stats">75.9k Views</p>
+</div>
+</div>
+</div> </div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card blue"> <div class="tile-holder card-div">
+<div class="img-wrapper"></div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" href="https://www.imperva.com/learn/data-security/" target="_self">Data Security</a> <div class="category-dropdown">
+<button class="opener">...</button>
+<div class="category-dropdown">
+<ul>
+<li>
+<span>
+                                            Essentials                                        </span>
+</li>
+<li>
+<span>
+                                            Regulation &amp; Compliance                                        </span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<a class="subtitle-card" href="https://www.imperva.com/learn/data-security/role-based-access-control-rbac/" target="_self">Role-Based Access Control (RBAC)</a> <p class="card-stats">64.8k Views</p>
+</div>
+</div>
+</div> </div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card blue"> <div class="tile-holder card-div">
+<div class="img-wrapper"></div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" href="https://www.imperva.com/learn/data-security/" target="_self">Data Security</a> <div class="category-dropdown">
+<button class="opener">...</button>
+<div class="category-dropdown">
+<ul>
+<li>
+<span>
+                                            Essentials                                        </span>
+</li>
+<li>
+<span>
+                                            Regulation &amp; Compliance                                        </span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<a class="subtitle-card" href="https://www.imperva.com/learn/data-security/access-control-list-acl/" target="_self">Access Control List (ACL)</a> <p class="card-stats">64.3k Views</p>
+</div>
+</div>
+</div> </div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card blue"> <div class="tile-holder card-div">
+<div class="img-wrapper"></div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" href="https://www.imperva.com/learn/data-security/" target="_self">Data Security</a> <div class="category-dropdown">
+<button class="opener">...</button>
+<div class="category-dropdown">
+<ul>
+<li>
+<span>
+                                            Regulation &amp; Compliance                                        </span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<a class="subtitle-card" href="https://www.imperva.com/learn/data-security/data-classification/" target="_self">Data Classification</a> <p class="card-stats">61.5k Views</p>
+</div>
+</div>
+</div> </div>
+<div>
+<div class="col-12 col-sm-6 col-lg-4 show outer-card blue"> <div class="tile-holder card-div">
+<div class="img-wrapper"></div>
+<div class="tile-contnet-holder">
+<div class="category-holder">
+<a class="post-category" href="https://www.imperva.com/learn/data-security/" target="_self">Data Security</a> <div class="category-dropdown">
+<button class="opener">...</button>
+<div class="category-dropdown">
+<ul>
+<li>
+<span>
+                                            Essentials                                        </span>
+</li>
+<li>
+<span>
+                                            Regulation &amp; Compliance                                        </span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<a class="subtitle-card" href="https://www.imperva.com/learn/data-security/anonymization/" target="_self">Anonymization</a> <p class="card-stats">56.1k Views</p>
+</div>
+</div>
+</div> </div>
+</div>
+<div class="slides-indicator"><span></span></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<footer id="footer">
+<script>
+var elem = document.querySelectorAll('[event-action="Click"], [event-action="click"]');
+for (var i = 0; i < elem.length; i++) {
+  elem[i].addEventListener('click', function() {
+    if (this.hasAttributes()) {
+      var attrs = this.attributes;
+      var category = attrs['event-category'].value;
+      var action = attrs['event-action'].value;
+      var label = attrs['event-label'].value;
+      _paq.push(["trackEvent", category, action, label]);
+    }
+  });
+}
+</script> <div class="footer-holder container-fluid">
+<div class="row menu-row">
+<div class="col-5 col-sm-4 text-left order-xs-1 order-sm-1 logo-col">
+<a class="imp_logo" href="https://www.imperva.com">
+<img alt="Imperva" class="img-fluid" src="https://www.imperva.com/learn/wp-content/themes/impv/img/logo-new-design.svg"/>
+</a>
+</div>
+<div class="col-7 col-sm-8 text-left order-xs-2 order-sm-2 top-phone-col">
+<a class="imp_phone" event-action="Click" event-category="Contact" event-label="Phone number" gtm-track="" href="tel:18669264678">+1 866 926 4678</a>
+</div>
+<div class="col-6 col-sm-4 text-left order-xs-3 order-sm-2 products-menu">
+<div class="col-header">Partners</div> <ul><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2877" id="menu-item-2877"><a event-action="Click" event-category="Footer" event-label="Imperva Partner Ecosystem" gtm-track=" " href="/partners/">Imperva Partner Ecosystem</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2878" id="menu-item-2878"><a event-action="Click" event-category="Footer" event-label="Channel Partners" gtm-track=" " href="/partners/channel-partners/">Channel Partners</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2986" id="menu-item-2986"><a event-action="Click" event-category="Footer" event-label="Technology Alliances" gtm-track=" " href="/partners/technology-alliance-program-tap/">Technology Alliances</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2879" id="menu-item-2879"><a event-action="Click" event-category="Footer" event-label="Find a Partner" gtm-track=" " href="/partners/find-a-partner/">Find a Partner</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3863" id="menu-item-3863"><a event-action="Click" event-category="Footer" event-label="Partner Portal Login" gtm-track=" " href="https://partners.imperva.com/">Partner Portal Login</a></li>
+</ul> </div>
+<div class="col-6 col-sm-4 text-left order-xs-4 order-sm-5 resources-menu">
+<div class="col-header">Resources</div> <ul><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2884" id="menu-item-2884"><a event-action="Click" event-category="Footer" event-label="Imperva Blog" gtm-track=" " href="/blog/">Imperva Blog</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2881" id="menu-item-2881"><a event-action="Click" event-category="Footer" event-label="Resource Library" gtm-track=" " href="/resources/resource-library/">Resource Library</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2882" id="menu-item-2882"><a event-action="Click" event-category="Footer" event-label="Case Studies" gtm-track=" " href="/resources/customers/">Case Studies</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2414" id="menu-item-2414"><a event-action="Click" event-category="Footer" event-label="Learning Center" gtm-track=" " href="/learn/">Learning Center</a></li>
+</ul> </div>
+<div class="col-6 col-sm-4 text-left order-xs-5 order-sm-6 company-menu">
+<div class="col-header">About Us</div> <ul><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2872" id="menu-item-2872"><a event-action="Click" event-category="Footer" event-label="Who We Are" gtm-track=" " href="/company/about/">Who We Are</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2876" id="menu-item-2876"><a event-action="Click" event-category="Footer" event-label="Events" gtm-track=" " href="/company/events/">Events</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2875" id="menu-item-2875"><a event-action="Click" event-category="Footer" event-label="Careers" gtm-track=" " href="/company/careers/">Careers</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2873" id="menu-item-2873"><a event-action="Click" event-category="Footer" event-label="Press &amp; Awards" gtm-track=" " href="/company/news/">Press &amp; Awards</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2874" id="menu-item-2874"><a event-action="Click" event-category="Footer" event-label="Contact Information" gtm-track=" " href="/company/locations/">Contact Information</a></li>
+</ul> </div>
+<div class="col-6 col-sm-4 text-left order-xs-6 order-sm-4 network-menu">
+<div class="col-header">Network</div> <ul><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2984" id="menu-item-2984"><a event-action="Click" event-category="Footer" event-label="Network Map" gtm-track=" " href="/products/global-network-map/">Network Map</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2985" id="menu-item-2985"><a event-action="Click" event-category="Footer" event-label="System Status" gtm-track=" " href="https://status.imperva.com/">System Status</a></li>
+</ul> </div>
+<div class="col-12 col-sm-4 text-left menu-top-offset support-menu order-xs-7 order-sm-3">
+<div class="col-header">Support</div> <ul><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2979" id="menu-item-2979"><a event-action="Click" event-category="Footer" event-label="Emergency DDoS Protection" gtm-track=" " href="/under-ddos-attack/">Emergency DDoS Protection</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2980" id="menu-item-2980"><a event-action="Click" event-category="Footer" event-label="Support Portal" gtm-track=" " href="https://support.imperva.com/">Support Portal</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3123" id="menu-item-3123"><a event-action="Click" event-category="Footer" event-label="Imperva Community" gtm-track=" " href="https://community.imperva.com/home">Imperva Community</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2982" id="menu-item-2982"><a event-action="Click" event-category="Footer" event-label="Documentation Portal" gtm-track=" " href="https://docs.imperva.com/">Documentation Portal</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2983" id="menu-item-2983"><a event-action="Click" event-category="Footer" event-label="API Integration" gtm-track=" " href="https://docs.imperva.com/bundle/cloud-application-security/page/api/api.htm">API Integration</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6425" id="menu-item-6425"><a event-action="Click" event-category="Footer" event-label="Trust Center" gtm-track=" " href="/trust-center/">Trust Center</a></li>
+</ul> </div>
+<div class="col-sm-4 d-none d-sm-block text-left order-sm-6 privacy-lang-col">
+<div class="privacy-sm"><p><a class="ot-sdk-show-settings">Cookie Preferences</a> <a href="/trust-center/">Trust Center</a> <a href='/legal/imperva-uk-msa-transparency-statement/"'>Modern Slavery Statement</a> <a class="disp-ib" href="/legal/privacy-policy/">Privacy</a> <a class="disp-ib" href="/legal/website-terms-of-use/">Legal</a></p>
+</div>
+<div class="lang-sm">
+<div class="impv-dropdown dropdown dropdown-select footer-select-drop-downs" id="choose-lang-footer-privacy" name="footer-select-drop-downs"><button aria-expanded="false" aria-haspopup="true" class="dropdown-btn dropdown-select-btn" data-reference="parent" data-toggle="dropdown" data-value="https://www.imperva.com/" id="dropdownMenuButton-choose-lang-footer-privacy" type="button">
+<span class="name">English</span>
+<i class="impv-icon drop-down-icon">
+<span></span>
+<span></span>
+</i>
+</button><div aria-labelledby="dropdownMenuButton-choose-lang-footer-privacy" class="dropdown-menu"><a class="dropdown-item" data-source="https://www.imperva.com/" data-value="https://www.imperva.com/" href="#">English</a><a class="dropdown-item" data-source="https://www.imperva.com/de/" data-value="https://www.imperva.com/de/" href="#">Deutsch</a><a class="dropdown-item" data-source="/es/" data-value="/es/" href="#">Español</a><a class="dropdown-item" data-source="/fr/" data-value="/fr/" href="#">Français</a><a class="dropdown-item" data-source="/br/" data-value="/br/" href="#">Português</a><a class="dropdown-item" data-source="https://www.imperva.com/ja/" data-value="https://www.imperva.com/ja/" href="#">日本語</a><a class="dropdown-item" data-source="/zh/" data-value="/zh/" href="#">中文</a></div></div> </div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-4 d-none order-sm-1 text-left phone-col">
+<div class="contact-details">
+<a class="imp_phone_bottom" event-action="Click" event-category="Contact" event-label="Phone number" gtm-track="" href="tel:18669264678">+1 866 926 4678</a>
+</div>
+</div>
+<div class="col-12 col-sm-3 order-sm-3 d-sm-none text-center lang-col">
+<div class="impv-dropdown dropdown dropdown-select footer-select-drop-downs" id="choose-lang-footer" name="footer-select-drop-downs"><button aria-expanded="false" aria-haspopup="true" class="dropdown-btn dropdown-select-btn" data-reference="parent" data-toggle="dropdown" data-value="https://www.imperva.com/" id="dropdownMenuButton-choose-lang-footer" type="button">
+<span class="name">English</span>
+<i class="impv-icon drop-down-icon">
+<span></span>
+<span></span>
+</i>
+</button><div aria-labelledby="dropdownMenuButton-choose-lang-footer" class="dropdown-menu"><a class="dropdown-item" data-source="https://www.imperva.com/" data-value="https://www.imperva.com/" href="#">English</a><a class="dropdown-item" data-source="https://www.imperva.com/de/" data-value="https://www.imperva.com/de/" href="#">Deutsch</a><a class="dropdown-item" data-source="/es/" data-value="/es/" href="#">Español</a><a class="dropdown-item" data-source="/fr/" data-value="/fr/" href="#">Français</a><a class="dropdown-item" data-source="/br/" data-value="/br/" href="#">Português</a><a class="dropdown-item" data-source="https://www.imperva.com/ja/" data-value="https://www.imperva.com/ja/" href="#">日本語</a><a class="dropdown-item" data-source="/zh/" data-value="/zh/" href="#">中文</a></div></div> </div>
+<div class="col-12 order-sm-2 text-sm-center social-col">
+<div class="followus">
+<ul class="hList">
+<li>
+<a class="socialIconBtn" event-action="Click" event-category="Footer social" event-label="linkedin" gtm-track="" href="https://www.linkedin.com/company/imperva/" target="_blank">
+<svg fill="none" height="30" viewbox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+<path class="icon-background" d="M29.4524 15C29.4524 23.0089 22.9704 29.5 14.9762 29.5C6.98196 29.5 0.5 23.0089 0.5 15C0.5 6.99112 6.98196 0.5 14.9762 0.5C22.9704 0.5 29.4524 6.99112 29.4524 15Z" fill="#212121" stroke="white"></path>
+<path class="icon-content" d="M21.2214 21.0569V21.0564H21.2245V16.4507C21.2245 14.1975 20.7402 12.4619 18.1104 12.4619C16.8461 12.4619 15.9977 13.1568 15.6514 13.8156H15.6148V12.6723H13.1213V21.0564H15.7177V16.9049C15.7177 15.8118 15.9246 14.7548 17.2761 14.7548C18.6077 14.7548 18.6276 16.0023 18.6276 16.975V21.0569H21.2214Z" fill="white"></path>
+<path class="icon-content" d="M8.3584 12.4619H10.9581V20.8461H8.3584V12.4619Z" fill="white"></path>
+<path class="icon-content" d="M9.86407 8.37158C9.03287 8.37158 8.3584 9.0471 8.3584 9.87959C8.3584 10.7121 9.03287 11.4017 9.86407 11.4017C10.6953 11.4017 11.3698 10.7121 11.3698 9.87959C11.3692 9.0471 10.6948 8.37158 9.86407 8.37158V8.37158Z" fill="white"></path>
+</svg>
+</a>
+</li>
+<li>
+<a class="socialIconBtn" event-action="Click" event-category="Footer social" event-label="facebook" gtm-track="" href="https://www.facebook.com/imperva" target="_blank">
+<svg fill="none" height="30" viewbox="0 0 31 30" width="31" xmlns="http://www.w3.org/2000/svg">
+<path class="icon-background" d="M30.4062 15C30.4062 23.0089 23.9241 29.5 15.9297 29.5C7.93524 29.5 1.45312 23.0089 1.45312 15C1.45312 6.99113 7.93524 0.5 15.9297 0.5C23.9241 0.5 30.4062 6.99113 30.4062 15Z" fill="#212121" stroke="white"></path>
+<path class="icon-content" d="M17.3521 11.3009C17.3722 11.2783 17.4662 11.2046 17.8355 11.2046L19.0463 11.2041C19.4402 11.2041 19.7605 10.8853 19.7605 10.4934V8.38792C19.7605 7.99669 19.4406 7.67789 19.0474 7.67722L17.2489 7.67432C16.1389 7.67432 15.1953 8.03861 14.5201 8.72796C13.8479 9.41417 13.4925 10.3721 13.4925 11.4981V12.6337H12.1167C11.7228 12.6337 11.4023 12.9525 11.4023 13.3444V15.6119C11.4023 16.0038 11.7228 16.3226 12.1167 16.3226H13.4925V21.6149C13.4925 22.0068 13.8129 22.3256 14.2068 22.3256H16.565C16.9589 22.3256 17.2794 22.0068 17.2794 21.6149V16.3227H18.9611C19.355 16.3227 19.6753 16.0038 19.6753 15.6122L19.6762 13.3445C19.6762 13.087 19.5355 12.8488 19.3087 12.7229C19.2037 12.6645 19.0815 12.6337 18.9554 12.6337H17.2794V11.7365C17.2794 11.4441 17.3189 11.3382 17.3521 11.3009Z" fill="white"></path>
+</svg>
+</a>
+</li>
+<li>
+<a class="socialIconBtn" event-action="Click" event-category="Footer social" event-label="twitter" gtm-track="" href="https://twitter.com/imperva" target="_blank">
+<svg fill="none" height="30" viewbox="0 0 31 30" width="31" xmlns="http://www.w3.org/2000/svg">
+<path class="icon-background" d="M30.3594 15C30.3594 23.0089 23.8773 29.5 15.8828 29.5C7.88836 29.5 1.40625 23.0089 1.40625 15C1.40625 6.99113 7.88836 0.5 15.8828 0.5C23.8773 0.5 30.3594 6.99113 30.3594 15Z" fill="#212121" stroke="white"></path>
+<path class="icon-content" d="M23.1973 11.0898C22.6792 11.3139 22.1271 11.4625 21.5516 11.5346C22.1437 11.186 22.5956 10.6382 22.8081 9.97783C22.256 10.3024 21.6465 10.5317 20.9969 10.6596C20.4728 10.1092 19.7257 9.76831 18.9107 9.76831C17.3294 9.76831 16.0564 11.034 16.0564 12.5856C16.0564 12.8089 16.0756 13.0236 16.1226 13.2279C13.7481 13.1137 11.6471 11.9914 10.2356 10.2818C9.9892 10.7034 9.84466 11.186 9.84466 11.7055C9.84466 12.681 10.354 13.5456 11.1133 14.0463C10.6544 14.0377 10.2043 13.9063 9.82289 13.6993C9.82289 13.7079 9.82289 13.7191 9.82289 13.7303C9.82289 15.099 10.8129 16.2359 12.1112 16.4978C11.8787 16.5605 11.6253 16.5905 11.3623 16.5905C11.1795 16.5905 10.9949 16.5802 10.8216 16.5424C11.1917 17.6579 12.2418 18.4779 13.4904 18.5045C12.5187 19.2541 11.2848 19.7058 9.94915 19.7058C9.71492 19.7058 9.49027 19.6955 9.26562 19.6672C10.5308 20.4718 12.0302 20.9312 13.6471 20.9312C18.9028 20.9312 21.7762 16.6378 21.7762 12.9162C21.7762 12.7917 21.7719 12.6715 21.7658 12.5522C22.3326 12.1554 22.8089 11.66 23.1973 11.0898Z" fill="white"></path>
+</svg>
+</a>
+</li>
+<li>
+<a class="socialIconBtn" event-action="Click" event-category="Footer social" event-label="youtube" gtm-track="" href="https://www.youtube.com/user/ImpervaChannel" target="_blank">
+<svg fill="none" height="30" viewbox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+<path class="icon-background" d="M29.4532 15C29.4532 23.0089 22.9711 29.5 14.9766 29.5C6.98214 29.5 0.5 23.0089 0.5 15C0.5 6.99114 6.98214 0.5 14.9766 0.5C22.9711 0.5 29.4532 6.99114 29.4532 15Z" fill="#212121" stroke="white"></path>
+<path class="icon-content" clip-rule="evenodd" d="M21.8676 12.1536C21.8676 12.1536 21.7273 11.1718 21.3066 10.7443C20.7768 10.1742 20.177 10.1742 19.9043 10.1425C17.9488 10 15.0039 10 15.0039 10H14.9961C14.9961 10 12.059 10 10.0957 10.1425C9.82304 10.1742 9.22315 10.1821 8.69338 10.7443C8.27268 11.1718 8.14023 12.1536 8.14023 12.1536C8.14023 12.1536 8 13.3017 8 14.4576V15.5344C8 16.6825 8.14023 17.8385 8.14023 17.8385C8.14023 17.8385 8.28047 18.8203 8.69338 19.2478C9.22315 19.8179 9.92432 19.7941 10.2359 19.8575C11.3578 19.9683 14.9961 20 14.9961 20C14.9961 20 17.941 19.9921 19.8965 19.8496C20.1692 19.8179 20.7691 19.81 21.2988 19.2478C21.7195 18.8203 21.8598 17.8385 21.8598 17.8385C21.8598 17.8385 22 16.6904 22 15.5344V14.4576C22 13.3096 21.8598 12.1536 21.8598 12.1536H21.8676ZM13.5548 16.8488V12.8504L17.3411 14.8535L13.5548 16.8488Z" fill="white" fill-rule="evenodd"></path>
+</svg>
+</a>
+</li>
+<li>
+<a class="socialIconBtn" event-action="Click" event-category="Footer social" event-label="glassdoor" gtm-track="" href="https://www.glassdoor.com/Overview/Working-at-Imperva-EI_IE101738.11,18.htm" target="_blank">
+<svg fill="none" height="30" viewbox="0 0 31 30" width="31" xmlns="http://www.w3.org/2000/svg">
+<path class="icon-background" d="M30.4064 15C30.4064 23.0089 23.9242 29.5 15.9297 29.5C7.93527 29.5 1.45312 23.0089 1.45312 15C1.45312 6.99114 7.93527 0.5 15.9297 0.5C23.9242 0.5 30.4064 6.99114 30.4064 15Z" fill="#212121" stroke="white"></path>
+<path class="icon-content" d="M19.0008 19.8575H11.0006C11.0006 21.0406 11.8949 22 12.9992 22H18.9997C20.104 22 20.9994 21.0406 20.9994 19.8575V11.0575C20.9994 11.0138 20.9679 10.9794 20.9271 10.9794H19.072C19.0329 10.9794 19.0002 11.0144 19.0002 11.0581V19.8581L19.0008 19.8575ZM19.0008 7C20.1045 7 21 7.95938 21 9.14375H13.0004V17.9425C13.0004 17.985 12.9677 18.0206 12.9274 18.0206H11.0729C11.0321 18.0206 11 17.985 11 17.9425V9.1425C11.0006 7.96 11.8949 7 12.9992 7H19.0002" fill="white"></path>
+</svg>
+</a>
+</li>
+<li>
+<a class="socialIconBtn" event-action="Click" event-category="Footer social" event-label="soundcloud" gtm-track="" href="https://soundcloud.com/imperva" target="_blank">
+<svg fill="none" height="30" viewbox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+<path class="icon-background" d="M29.4531 15C29.4531 23.0089 22.971 29.5 14.9766 29.5C6.98211 29.5 0.5 23.0089 0.5 15C0.5 6.99113 6.98211 0.5 14.9766 0.5C22.971 0.5 29.4531 6.99113 29.4531 15Z" fill="#212121" stroke="white"></path>
+<path class="icon-content" d="M6 18.2047C6 18.4284 6.08098 18.5976 6.2429 18.7122C6.40485 18.8269 6.57794 18.8674 6.76222 18.8339C6.93531 18.8003 7.05676 18.7388 7.12659 18.6493C7.19638 18.5598 7.23129 18.4116 7.23129 18.2047V15.7718C7.23129 15.5984 7.17127 15.4516 7.0512 15.3314C6.93116 15.2111 6.78458 15.151 6.61146 15.151C6.44394 15.151 6.30016 15.2111 6.1801 15.3314C6.06004 15.4516 6 15.5984 6 15.7718V18.2047ZM7.92648 19.2449C7.92648 19.4071 7.98372 19.5288 8.09819 19.6099C8.21267 19.691 8.35925 19.7315 8.53792 19.7315C8.7222 19.7315 8.87156 19.691 8.98604 19.6099C9.10051 19.5288 9.15775 19.4071 9.15775 19.2449V13.5738C9.15775 13.406 9.09771 13.262 8.97766 13.1418C8.8576 13.0215 8.71102 12.9614 8.53792 12.9614C8.3704 12.9614 8.22661 13.0215 8.10656 13.1418C7.9865 13.262 7.92648 13.406 7.92648 13.5738V19.2449ZM9.84458 19.5134C9.84458 19.6756 9.90321 19.7972 10.0205 19.8783C10.1377 19.9594 10.2885 20 10.4728 20C10.6515 20 10.7981 19.9594 10.9125 19.8783C11.027 19.7972 11.0842 19.6756 11.0842 19.5134V14.3372C11.0842 14.1639 11.0242 14.0156 10.9042 13.8926C10.7841 13.7696 10.6403 13.7081 10.4728 13.7081C10.2997 13.7081 10.1517 13.7696 10.0289 13.8926C9.90603 14.0156 9.8446 14.1639 9.8446 14.3372V19.5134H9.84458ZM11.7711 19.5386C11.7711 19.8462 11.9777 20 12.3909 20C12.8041 20 13.0107 19.8462 13.0107 19.5386V11.1493C13.0107 10.6795 12.8683 10.4139 12.5835 10.3523C12.3992 10.3076 12.2177 10.3607 12.0391 10.5117C11.8604 10.6627 11.771 10.8753 11.771 11.1493V19.5386H11.7711ZM13.7311 19.7818V10.6544C13.7311 10.3635 13.8176 10.1902 13.9907 10.1342C14.3648 10.0447 14.7362 10 15.1047 10C15.9591 10 16.7548 10.2013 17.4919 10.604C18.2289 11.0067 18.825 11.5562 19.2801 12.2525C19.7352 12.9488 19.9991 13.7164 20.0717 14.5554C20.4123 14.41 20.7752 14.3373 21.1605 14.3373C21.9423 14.3373 22.611 14.6141 23.1666 15.1678C23.7222 15.7215 24 16.387 24 17.1644C24 17.9474 23.7222 18.6158 23.1666 19.1695C22.611 19.7232 21.9451 20 21.1689 20L13.8818 19.9916C13.8315 19.9748 13.7938 19.9441 13.7687 19.8993C13.7436 19.8546 13.7311 19.8154 13.7311 19.7818Z" fill="white"></path>
+</svg>
+</a>
+</li>
+<li>
+<a class="socialIconBtn" event-action="Click" event-category="Footer social" event-label="vimeo" gtm-track="" href="https://vimeo.com/user130735021" target="_blank">
+<svg fill="none" height="30" viewbox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+<path class="icon-background" d="M29.4531 15C29.4531 23.0089 22.971 29.5 14.9766 29.5C6.98211 29.5 0.5 23.0089 0.5 15C0.5 6.99113 6.98211 0.5 14.9766 0.5C22.971 0.5 29.4531 6.99113 29.4531 15Z" fill="#212121" stroke="white"></path>
+<path class="icon-content" d="M20.436 14.2578C19.216 16.8658 16.269 20.4178 14.406 20.4178C12.569 20.4178 12.303 16.5018 11.3 13.8958C10.808 12.6138 10.49 12.9078 9.566 13.5558L9 12.8278C10.35 11.6418 11.698 10.2648 12.529 10.1878C13.462 10.0978 14.037 10.7358 14.253 12.1038C14.537 13.9008 14.934 16.6888 15.627 16.6888C16.166 16.6888 17.498 14.4768 17.565 13.6858C17.686 12.5268 16.713 12.4928 15.87 12.8538C17.206 8.47675 22.767 9.28275 20.436 14.2578Z" fill="white"></path>
+</svg>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-12 d-sm-none order-xs-7 text-center privacy-col">
+<div class="privacy_links">
+<p><a class="ot-sdk-show-settings">Cookie Preferences</a> <a href="/trust-center/">Trust Center</a> <a href='/legal/imperva-uk-msa-transparency-statement/"'>Modern Slavery Statement</a> <a class="disp-ib" href="/legal/privacy-policy/">Privacy</a> <a class="disp-ib" href="/legal/website-terms-of-use/">Legal</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="copyright-holder">
+<div class="row">
+<div class="col-12 order-8">
+<div class="copyright">
+<p>Copyright © 2021 Imperva. All rights reserved</p>
+</div>
+</div>
+</div>
+</div>
+<script async="" src="https://cdn.bttrack.com/js/15272/analytics/1.0/analytics.min.js" type="text/javascript"></script><!-- Start of Async Drift Code -->
+<style>#drift-frame-controller{z-index:950 !important}</style>
+<script>
+"use strict";
+
+!function() {
+  var t = window.driftt = window.drift = window.driftt || [];
+  if (!t.init) {
+    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+    t.factory = function(e) {
+      return function() {
+        var n = Array.prototype.slice.call(arguments);
+        return n.unshift(e), t.push(n), t;
+      };
+    }, t.methods.forEach(function(e) {
+      t[e] = t.factory(e);
+    }), t.load = function(t) {
+      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+      var i = document.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(o, i);
+    };
+  }
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('xrppvhbiz5n6');
+</script>
+<!-- End of Async Drift Code -->
+<script>
+function getParam(p) {
+    var match = RegExp('[?&]' + p + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+  }
+  function getExpiryRecord(value) {
+    var expiryPeriod = 90 * 24 * 60 * 60 * 1000; // 90 day expiry in milliseconds
+    var expiryDate = new Date().getTime() + expiryPeriod;
+    return {
+        value: value,
+        expiryDate: expiryDate
+    };
+  }
+  function addGclid(form) {
+    var formId = form.id;
+    if (!formId.length) return;
+    var storageKey = 'gclid_' + formId;
+    var gclidParam = getParam('gclid');
+    var gclidFormFields = ['gclid_field', 'foobar', 'gclid_Contact__c']; // all possible gclid form field ids here
+    var gclidRecord = null;
+    var currGclidFormFields = [];
+    var gclsrcParam = getParam('gclsrc');
+    var isGclsrcValid = !gclsrcParam || gclsrcParam.indexOf('aw') !== -1;
+    gclidFormFields.forEach(function (field) {
+      var inputs = form.querySelectorAll('input[name="' + field + '"], input[id="' + field + '"]');
+      Array.prototype.slice.call(inputs).forEach(function(input) {
+        currGclidFormFields.push(input);
+      });
+    });
+    if (gclidParam && isGclsrcValid) {
+        gclidRecord = getExpiryRecord(gclidParam);
+        localStorage.setItem(storageKey, JSON.stringify(gclidRecord));
+    }
+    var gclid = gclidRecord || JSON.parse(localStorage.getItem(storageKey));
+    var isGclidValid = gclid && new Date().getTime() < gclid.expiryDate;
+    if (isGclidValid) {
+      currGclidFormFields.forEach(function(input) {
+        input.value = gclid.value
+      });
+    }
+  }
+  function setGclidInfo() {
+    Array.prototype.slice.call(document.querySelectorAll('form')).forEach(function(form) {
+      addGclid(form);
+    });
+  }
+  window.addEventListener('load', setGclidInfo);
+</script><script>
+  drift.on('ready', function(api, eventData) {
+    FS.event('Drift loaded successfully');
+    window.drift.on('conversation:playbookFired', function(data) {
+      FS.event('Drift Playbook Fired', {
+        playbook_id_str: data.playbookId,
+        campaign_id_str: data.campaignId
+      });
+      _paq.push(["trackEvent", "Drift Widget", "Playbook Fired", data.conversationId]);
+    });
+    window.drift.on('conversation:playbookDismissed', function(data) {
+      _paq.push(["trackEvent", "Drift Widget", "Playbook Dismissed", data.conversationId]);
+    });
+    window.drift.on('message', function(data) {
+      _paq.push(["trackEvent", "Drift Widget", "Message Received", data.conversationId]);
+    });
+    window.drift.on('message:sent', function(data) {
+      _paq.push(["trackEvent", "Drift Widget", "Message Sent", data.conversationId]);
+    });
+    window.drift.on('conversation:buttonClicked', function(data) {
+      _paq.push(["trackEvent", "Drift Widget", "Button Clicked", data.conversationId]);
+    });
+    window.drift.on('conversation:playbookClicked', function(data) {
+      _paq.push(["trackEvent", "Drift Widget", "Playbook Clicked", data.conversationId]);
+    });
+    window.drift.on('startConversation', function(data) {
+      FS.event('User started a new conversation', {
+        conversation_id_str: data.conversationId
+      });
+      _paq.push(["trackEvent", "Drift Widget", "Chat Started", data.conversationId]);
+    });
+    window.drift.on('conversation:firstInteraction', function(data) {
+      _paq.push(["trackEvent", "Drift Widget", "First Interaction", data.conversationId]);
+    });
+    window.drift.on('emailCapture', function(data) {
+      _paq.push(["trackEvent", "Drift Widget", "Email Captured", data.conversationId]);
+    });
+    window.drift.on('scheduling:meetingBooked', function(data) {
+      _paq.push(["trackEvent", "Drift Widget", "Meeting Booked", data.conversationId]);
+    });
+    window.drift.on('chatOpen', function() {
+      FS.event('Chat opened');
+    });
+    window.drift.on('chatClose', function() {
+      FS.event('Chat closed');
+    });
+  });
+
+</script> </footer>
+</div>
+</div>
+<script async="" class="optanon-category-C0004" src="//cdn.bizible.com/scripts/bizible.js" type="text/plain"></script>
+<!-- Modal custom css Start--><style>#modalid6356 {
+	 padding: 0px !important;
+}
+#modalid6356 .row {
+	 margin-right: 0px;
+}
+#modalid6356 .modal-dialog {
+	 max-width: 778px;
+}
+#modalid6356 .modal-content {
+	 margin: auto 30px;
+        border-radius:12px !important;
+border:none !important;
+padding:45px 29px;
+text-align:center;
+background-image: url('https://www.imperva.com/wp-content/uploads/2021/07/Group-15500.svg');
+background-color: #fff;
+background-repeat: no-repeat;
+background-position: 0 100%;
+background-size: cover;
+}
+#modalid6356 h3 {
+color: #000;
+ font-size: 40px;
+      font-weight: 800;
+      line-height: 1.23;
+margin:0 0 29px;
+}
+#modalid6356 h3 span {
+  background: -webkit-linear-gradient(
+  0deg, #A560FF, #3F6BE9 50%, #2DB07F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+}
+#modalid6356 .box {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 0 0 25px;
+}
+#modalid6356 ul {
+  margin: 0 -8px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #000;
+}
+#modalid6356 .box ul li {
+  position: relative;
+  padding: 6px 10px;
+  text-align: center;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+display:flex;
+width:100%;
+}
+#modalid6356 .box ul li:first-child {
+  border-left: none;
+}
+#modalid6356 .box ul p {
+  align-self: center;
+  margin: 0;
+}
+#modalid6356 .link-arrow {
+  color: #000;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+#modalid6356 .link-arrow:after {
+      border-radius: 50%;
+      background-color: #285AE6;
+      color: #fff;
+      text-align: center;
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      line-height: 2;
+      transition: color 0.3s, background 0.3s, right 0.3s;
+      font-size: 55%;
+}
+#modalid6356 .link-arrow:hover {
+  text-decoration: none;
+  color: #285AE6;
+}
+#modalid6356 .modal-body {
+	 padding: 0px !important;
+}
+#modalid6356 .close {
+      position: absolute;
+  top: -39px;
+  right: -17px;
+  margin: 0;
+  float: none;
+z-index:3;
+color: #000;
+opacity:1;
+ font-size: 33px;
+      font-weight: 300;
+      line-height: 1;
+}
+@media (max-width: 1023px) {
+     #modalid6356 .row {
+	 margin-right: 0px;
+margin-left: 0px;
+    }
+   #modalid6356 .modal-dialog {
+	 max-width: 100%;
+   }
+}
+ @media (max-width: 767px) {
+#modalid6356 .modal-content {
+	 margin: 30px 47px;
+padding:31px 13px 20px;
+}
+#modalid6356 .modal-dialog-centered {
+margin:0;
+}
+#modalid6356 .modal-dialog-centered:before {
+display:none;
+}
+#modalid6356 .box {
+display:none;
+}
+#modalid6356 h3 {
+ font-size: 24px;
+line-height:1.15;
+margin:0 0 23px;
+}
+#modalid6356 .link-arrow {
+  font-size: 16px;
+}
+#modalid6356 .link-arrow:after {
+ line-height:2.3;
+}
+#modalid6356 .close {
+right:-10px;
+top:-33px;
+}</style><!-- Modal custom css End--> <!-- Modal Start-->
+<div aria-hidden="true" aria-labelledby="modalid6356title" class="modal fade" id="modalid6356" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-body col-12"><!-- Modal wysiwyg Start--><div class="row">
+<div class="col-12">
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+<h3>Prevoty is now part of the <span>Imperva Runtime Protection</span></h3>
+<div class="box">
+<ul>
+<li><p>Protection against zero-day attacks</p></li>
+<li><p>No tuning, highly-accurate out-of-the-box</p></li>
+<li><p>Effective against OWASP top 10 vulnerabilities</p></li>
+</ul>
+</div>
+<a class="link-arrow" href="https://www.imperva.com/blog/5-things-to-know-about-imperva-rasp/">Learn more here</a>
+</div>
+</div>
+<!-- Modal wysiwyg End-->
+</div>
+</div>
+</div>
+</div>
+<!-- Modal End --><!-- Modal custom css Start--><style>#modalid3533 {
+  padding: 0px;
+}
+#modalid3533 .row {
+  margin-right: 0px;
+}
+#modalid3533 .modal-dialog {
+  max-width: 1160px;
+}
+#modalid3533 .modal-content {
+  margin: auto 30px;
+  border-radius:0 !important;
+  border:none !important;
+  padding: 0;
+}
+#modalid3533 .modal-body {
+  padding: 0px !important;
+}
+#modalid3533 .banner-side {
+  background-color: #000;
+  background-image: url('/wp-content/uploads/2021/07/Mask-Group.jpeg');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: cover;
+}
+#modalid3533 .form-side .heading {
+  font-family: Inter !important;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 48px;
+  color: #212121;
+  padding: 54px 42px 0 64px;
+  text-align: left;
+  margin-bottom: 12px !important;
+  letter-spacing: -1.56px;
+display:block;
+}
+#modalid3533 .form-side .form-section form.mktoForm input {
+  border: 1px solid #acb9c5 !important;
+}
+#modalid3533 .form-side .form-section form.mktoForm input.mktoInvalid {
+  border: 1px solid #ff5c5e !important;
+}
+#modalid3533 .form-side .form-section form.mktoForm input::placeholder {
+  opacity: 1 !important;
+  color: rgba(0, 0, 0, 0.3);
+}
+#modalid3533 .form-side .form-section form.mktoForm {
+  max-width: 100% !important;
+}
+@media (min-width: 1024px){
+  #modalid3533 .form-side .form-section form.mktoForm {
+    max-width: 386px !important;
+  }
+}
+#modalid3533 .form-side .form-section form.mktoForm label {
+  display: none !important;
+}
+#modalid3533 .form-side .form-section form.mktoForm .mktoRequired label {
+  display: block !important;
+}
+#modalid3533 .form-side .form-section form.mktoForm .mktoFormRow:nth-child(12) {
+  display: none;
+}
+#modalid3533 .form-side .text {
+  color: #212121;
+  font-family: Inter !important;
+  padding: 0 34px 0 64px;
+  font-size: 18px;
+  line-height: 32px;
+display:block;
+margin-bottom:16px;
+}
+#modalid3533 .form-side .btn-impv{
+  width: unset;
+  padding: 13px 36px !important;
+  font-size: 16px;
+  line-height: 19px;
+}
+#modalid3533 .banner-side {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#modalid3533 .banner-side .modal-logo{
+  padding: 28px 0 0 45px;
+}
+#modalid3533 .banner-side .quote-text {
+  color: #fff;
+  font-family: Inter !important;
+  padding: 28px 0 0 45px;
+  text-align: left;
+  margin-bottom: 12px !important;
+  font-size: 30px;
+  line-height: 46px;
+display:block;
+}
+#modalid3533 .banner-side p{
+  color: #fff;
+  font-family: Inter !important;
+  padding: 28px 0 0 45px;
+  text-align: left;
+  margin-bottom: 12px !important;
+  font-size: 30px;
+  line-height: 46px;
+}
+
+#modalid3533 .banner-side p b,
+#modalid3533 .banner-side .quote-text b{
+  font-family: Inter !important;
+  font-weight:bold;
+}
+
+#modalid3533 .banner-side p.quote{
+  font-size: 18px;
+  line-height: 22px;
+}
+
+#modalid3533 .form-wrapper {
+  margin: 0;
+}
+#modalid3533 .form-side {
+  padding: 13px 21px 40px;
+  min-height: 600px;
+}
+#modalid3533 .close {
+  font-size: 31px;
+  font-weight: 300;
+  line-height: 1;
+  color: #d0d0d0;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+#modalid3533 .mktoFormRow{
+  font-family: Inter !important;
+}
+#modalid3533 .mktoButtonWrap .btn-impv{
+  font-family: Inter !important;
+}
+#modalid3533thankyoumessage {
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.65;
+  color: #212121;
+  position: absolute;
+  top:50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  margin: 0 auto;
+  left: 50%;
+}
+#modalid3533thankyoumessage p {
+  margin:0;
+  padding: 0 50px !important;
+}
+#modalid3533thankyoumessage h2 {
+  font-size: 44px;
+  font-weight: normal;
+  margin: 0 0 38px;
+}
+#modalid3533thankyoumessage img {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 27px;
+}
+@media (max-width: 1023px) {
+  #modalid3533 .row {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  #modalid3533 .modal-dialog {
+    max-width: 100%;
+  }
+  #modalid3533 .form-side {
+    padding: 70px 60px 79px;
+  }
+  #modalid3533 .form-side .heading, #modalid3533 .form-side .text{
+    padding: 0;
+  }
+  #modalid3533 .close {
+    margin: 0 0 16px;
+  }
+}
+@media (max-width: 767px) {
+  #modalid3533 .form-side {
+    padding: 9px 0 55px;
+    min-height: 234px;
+    position:static;
+  }
+  #modalid3533 .modal-content {
+    margin: 91px ​16p;
+  }
+  #modalid3533 .modal-dialog-centered {
+    align-items:flex-start;
+    margin:0;
+  }
+  #modalid3533 .modal-dialog-centered:before {
+    display:none;
+  }
+  #modalid3533 .mktoButtonWrap .btn-impv {
+    padding: 20px 15px !important;
+  }
+  #modalid3533thankyoumessage  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: white;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    transform: none;
+    padding:0 15px;
+  }
+  #modalid3533thankyoumessage h2 {
+    font-size: 32px;
+    margin:0 0 22px;
+  }
+  #modalid3533 .banner-side {
+    background:none;
+  }
+  #modalid3533 .form-side .heading {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  #modalid3533 .form-side .text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  #modalid3533 .form-side .heading, #modalid3533 .form-side .text {
+    padding: 0;
+    letter-spacing: 0px;
+  }
+  #modalid3533 .form-side {
+    padding: 40px 30px;
+  }
+  #modalid3533 .form-side .mktoForm{
+    padding: 0 !important;
+  }
+  #modalid3533 .close::before {
+    content:unset !important;
+  }
+  #modalid3533 .close::after {
+    content:unset !important;
+  }
+  #modalid3533 .close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    margin: 0;
+    float: none;
+    z-index:3;
+  }
+  #modalid3533 .form-section {
+    padding-right:0;
+  }
+  #modalid3533 .form-side .btn-impv{
+    width: 100%;
+  }
+}</style><!-- Modal custom css End--> <!-- Modal Start-->
+<div aria-hidden="true" aria-labelledby="modalid3533title" class="modal fade" id="modalid3533" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+<div class="modal-body col-12"><!-- Modal wysiwyg Start--><div class="row">
+<div class="col-12 col-md-6 form-side">
+<button aria-label="Close" class="close d-block d-md-none" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+<span class="pre-text heading">Want to see Imperva in action?</span>
+<span class="pre-text text">Fill out the form and our experts will be in touch shortly to book your personal demo.</span>
+<input class="modalformselements" thankyoutarget="modalid3533thankyoumessage" type="hidden" value="3495" virtualpagetitle="Request your Personal Demo | Imperva" virtualpageurl="/virtual/contact-us-thank-you/?request=demo"/><div class="form-section"><div class="marketo-script" data-src="//go.imperva.com/js/forms2/js/forms2.min.js" style="position: absolute; left: -999px;"></div>
+<script> window.form_args_439816025 = {"form_id":"3495","button_label":"Schedule my Demo","button_class":"btn btn-impv ","pre_populated_country":true,"validate_fullname":true,"thankyou_url":"","hidden_fields":{"sFDCCampaignID":""},"validate_private_email_domain":false,"email_domain_error":"","email_invalid_error":"","uuid":439816025}; </script>
+<div class="form-wrapper">
+<form class="marketo-form" data-form-args="form_args_439816025" data-form-id="3495" elem-id=""></form>
+</div>
+</div><div id="modalid3533thankyoumessage" style="display:none;"><h2>Thank you!</h2>
+<p><img alt="envelope" src="/wp-content/uploads/2020/12/shape.svg"/></p>
+<p>An Imperva security specialist will contact you shortly.</p>
+</div>
+</div>
+<div class="col-12 col-md-6 banner-side d-none d-md-flex">
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+<div>
+<img class="modal-logo" src="/wp-content/uploads/2021/03/Group-2554.svg">
+<span class="quote-text">“Imperva prevented 10,000 attacks in the first 4 hours of Black Friday weekend with no latency to our online customers.”</span>
+<p class="quote">Top 3 US Retailer</p>
+</img></div>
+</div>
+</div>
+<!-- Modal wysiwyg End-->
+</div>
+</div>
+</div>
+</div>
+<!-- Modal End --><script id="impv-marketo-upload-controller-js" src="https://www.imperva.com/learn/wp-content/themes/impv/dist/js/impv-marketo-upload-controller-07ff7a16fa.min.js?ver=07ff7a16fa" type="text/javascript"></script>
+<script id="impv-learning-main-js" src="https://www.imperva.com/learn/wp-content/themes/impv-learning/dist/js/impv-learning-main-17526d300c.min.js?ver=17526d300c" type="text/javascript"></script>
+<script id="impv-learning-inner-awesome-js" src="https://www.imperva.com/learn/wp-content/themes/impv-learning/dist/js/impv-learning-inner-awesome-3d86708f50.min.js?ver=3d86708f50" type="text/javascript"></script>
+<script async="" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&amp;ns=1&amp;cb=1941380037" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>字串或二進位資料會被截斷。<br/>陳述式已經結束。</title>
+<style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Lucida Console";font-size: .9em}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }
+        </style>
+</head>
+<body bgcolor="white">
+<span><h1>'/' 應用程式中發生伺服器錯誤。<hr color="silver" size="1" width="100%"/></h1>
+<h2> <i>字串或二進位資料會被截斷。<br/>陳述式已經結束。</i> </h2></span>
+<font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+<b> 描述: </b>在執行目前 Web 要求的過程中發生未處理的例外情形。請檢閱堆疊追蹤以取得錯誤的詳細資訊，以及在程式碼中產生的位置。
+
+            <br/><br/>
+<b> 例外詳細資訊: </b>System.Data.SqlClient.SqlException: 字串或二進位資料會被截斷。<br/>陳述式已經結束。<br/><br/>
+<b>原始程式錯誤:</b> <br/><br/>
+<table bgcolor="#ffffcc" width="100%">
+<tr>
+<td>
+<code><pre>
+
+行 63: 			if (ConfigurationSettings.AppSettings.Get("setLogRecord").ToString() == "Y")
+行 64: 			{
+<font color="red">行 65: 				utc.Web.Km.Trace.PageControl.SetClkLog(
+</font>行 66: 					this, "PG", ddsPageID, (Request.Params["dbid"] != null &amp;&amp; Request.Params["dbid"].ToString() != "") ? utc.Web.Km.Trace.PageControl.DecodeB(setFilter.output(Request.Params["dbid"].ToString(), 20)) : "0", Request.Url.PathAndQuery
+行 67: 				);</pre></code>
+</td>
+</tr>
+</table>
+<br/>
+<b> 原始程式檔: </b> c:\vhosts\vecow.com\httpdocs\dispCore\dispPage\PageSet.aspx.cs<b>    行: </b> 65
+            <br/><br/>
+<b>堆疊追蹤:</b> <br/><br/>
+<table bgcolor="#ffffcc" width="100%">
+<tr>
+<td>
+<code><pre>
+
+[SqlException (0x80131904): 字串或二進位資料會被截斷。
+陳述式已經結束。]
+   System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection) +1960634
+   System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection) +4890859
+   System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj) +194
+   System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj) +2412
+   System.Data.SqlClient.SqlDataReader.ConsumeMetaData() +59
+   System.Data.SqlClient.SqlDataReader.get_MetaData() +83
+   System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString) +293
+   System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async) +954
+   System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result) +162
+   System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method) +32
+   System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method) +141
+   System.Data.SqlClient.SqlCommand.ExecuteReader() +89
+   uTRUST.DBAccess.DbData.InsertDataBase(Hashtable htDBContent, String strTableName, String strIdent, String strConnectionName) +625
+   utc.Web.Km.Trace.PageControl.SET_InpRec(Page PagObj) +1246
+   utc.Web.Km.Trace.PageControl.SetClkLog(Page PagObj, String ClkLogCat, String ClkLogObjID, String ClkLogObjDBID, String ClkLogRemark) +84
+   PageSet.Page_Load(Object sender, EventArgs e) in c:\vhosts\vecow.com\httpdocs\dispCore\dispPage\PageSet.aspx.cs:65
+   System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e) +14
+   System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e) +35
+   System.Web.UI.Control.OnLoad(EventArgs e) +99
+   System.Web.UI.Control.LoadRecursive() +50
+   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +627
+</pre></code>
+</td>
+</tr>
+</table>
+<br/>
+<hr color="silver" size="1" width="100%"/>
+<b>版本資訊:</b> Microsoft .NET Framework 版本:2.0.50727.8762; ASP.NET 版本:2.0.50727.8762
+
+            </font>
+</body>
+</html>
+<!-- 
+[SqlException]: 字串或二進位資料會被截斷。
+陳述式已經結束。
+   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   於 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   於 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   於 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   於 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   於 System.Data.SqlClient.SqlCommand.ExecuteReader()
+   於 uTRUST.DBAccess.DbData.InsertDataBase(Hashtable htDBContent, String strTableName, String strIdent, String strConnectionName)
+   於 utc.Web.Km.Trace.PageControl.SET_InpRec(Page PagObj)
+   於 utc.Web.Km.Trace.PageControl.SetClkLog(Page PagObj, String ClkLogCat, String ClkLogObjID, String ClkLogObjDBID, String ClkLogRemark)
+   於 PageSet.Page_Load(Object sender, EventArgs e) 於 c:\vhosts\vecow.com\httpdocs\dispCore\dispPage\PageSet.aspx.cs: 行 65
+   於 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   於 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   於 System.Web.UI.Control.OnLoad(EventArgs e)
+   於 System.Web.UI.Control.LoadRecursive()
+   於 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+[HttpUnhandledException]: 已發生類型 'System.Web.HttpUnhandledException' 的例外狀況。
+   於 System.Web.UI.Page.HandleError(Exception e)
+   於 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   於 System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   於 System.Web.UI.Page.ProcessRequest()
+   於 System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   於 System.Web.UI.Page.ProcessRequest(HttpContext context)
+   於 ASP.disppagebox_vecow_vecowcp_aspx.ProcessRequest(HttpContext context) 於 c:\windows\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files\root\7cb1b2ac\475e9ada\App_Web_n8dfqu62.2.cs: 行 0
+   於 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   於 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+此錯誤頁面可能包含敏感性資料，因為 ASP.NET 是設定成使用 &lt;customErrors mode="Off"/&gt; 顯示詳細資訊錯誤訊息。請考慮在實際執行環境中使用 &lt;customErrors mode="On"/&gt; 或 &lt;customErrors mode="RemoteOnly"/&gt;。-->

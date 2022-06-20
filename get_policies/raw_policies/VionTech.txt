@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+
+<html class="avada-html-layout-wide avada-html-header-position-top avada-header-color-not-opaque" lang="en-US">
+<head>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<script type="text/javascript">
+if (window.BEJSSDKObserver === undefined) {
+  (function(BEJSSDKObserver, $, undefined) {
+    var observer = void 0;
+    var listeners = [];
+    var readySet = [];
+    var doc = window.document;
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+    function checkSelector(selector, fn, indexList) {
+      var elements = doc.querySelectorAll(selector);
+  /**
+    issues on IE @see https://www.codesd.com/item/javascript-es6-not-a-function-error.html
+    elements = Array.from(elements);
+
+    */
+    for (var i = 0, len = elements.length; i < len; i++) {
+      /* -1 means all instances */
+      if (indexList != -1 && !(i in indexList)) {
+        continue;
+      }
+      var element = elements[i];
+      for (var j = 0; j < readySet.length; j++) {
+        if (readySet[j] == element.className || readySet[j] == element.id) {
+          return;
+        }
+      }
+      if (element.className) {
+        readySet.push(element.className);
+      }
+      if (element.id) {
+        readySet.push(element.id);
+      }
+
+      if (!element.ready || MutationObserver==null) {
+        element.ready = true;
+        fn.call(element, element);
+      }
+    }
+  }
+
+  function checkListeners() {
+    listeners.forEach(function (listener) {
+      return checkSelector(listener.selector, listener.fn, listener.indexList);
+    });
+  }
+
+  function removeListener(selector, fn) {
+    var i = listeners.length;
+    while (i--) {
+      var listener = listeners[i];
+      if (listener.selector === selector && listener.fn === fn) {
+        listeners.splice(i, 1);
+        if (!listeners.length && observer) {
+          observer.disconnect();
+          observer = null;
+        }
+      }
+    }
+  }
+
+/**
+ * Fire event on first js selector
+ * @param selector string to watch on
+ * @param fn       callback function
+ * @param index_list can be undefined which means only first one
+ *                   or -1 which means all
+ *                   or a list of allowable indexes
+ */
+ BEJSSDKObserver.jsElementReady = function(selector, fn, index_list) {
+  if (index_list === undefined) {
+    index_list = [];
+    index_list.push(0);
+  }
+
+  if (MutationObserver != null) {
+    if (!observer) {
+      observer = new MutationObserver(checkListeners);
+      observer.observe(doc.documentElement, {
+        childList: true,
+        subtree: true
+      });
+    }
+    listeners.push({ selector: selector, fn: fn, indexList: index_list });
+  } else {
+    /* <= IE8 */
+    if (!document.addEventListener) {
+      /* log("<=IE8 attachEvent assignment"); */
+      document.addEventListener = document.attachEvent;
+    }
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var elements = doc.querySelectorAll(selector);
+      for (var i = 0, len = elements.length; i < len; i++) {
+        /* -1 means all instances */
+        if (index_list != -1 && !(i in index_list)) {
+          continue;
+        }
+        var element = elements[i];
+        element.ready = true;
+        fn.call(element, element);
+      }
+    });
+  }
+
+  checkSelector(selector, fn, index_list);
+  return function () {
+    return removeListener(selector, fn);
+  };
+};
+}(window.BEJSSDKObserver = window.BEJSSDKObserver || {}));
+}
+var jsElementReady = window.BEJSSDKObserver.jsElementReady;
+
+if (window.BELinkBlockGenerator === undefined) {
+  (function(BELinkBlockGenerator, $, undefined) {
+    BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH = 100;
+    BELinkBlockGenerator.MAXIMUM_DESC_LENGTH = 200;
+
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_URL_TYPE = 0;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_HEADLINE_TYPE = 1;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_DESCRIPTION_TYPE = 2;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_IMAGE_TYPE = 3;
+
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_OVERWRITE = 0;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_POST_APPEND_ELEMENT = 1;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_ELEMENT = 2;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_PARENT = 3;
+
+    BELinkBlockGenerator.setMaximumHeadlineLength = function(length) {
+      BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH = length;
+    };
+
+    BELinkBlockGenerator.setMaximumDescriptionLength = function(length) {
+      BELinkBlockGenerator.MAXIMUM_DESC_LENGTH = length;
+    };
+
+    BELinkBlockGenerator.generateIndividualLinks = function(parentElement, linkStructure, link) {
+      var link_level_element_tag = linkStructure[0];
+      var link_level_element = document.createElement(link_level_element_tag);
+      var link_attribute_dictionary = linkStructure[1];
+      var allowable_elements = linkStructure[2];
+      var children_link_structures = linkStructure[3];
+      for (var link_attribute_key in link_attribute_dictionary) {
+        link_level_element.setAttribute(link_attribute_key, link_attribute_dictionary[link_attribute_key]);
+      }
+
+      var added_something = false;
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_URL_TYPE)>=0) {
+        link_level_element.setAttribute('href', link.url);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_HEADLINE_TYPE)>=0 && link.h1) {
+        var headline_text = link.h1;
+        if (headline_text.length > BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH) {
+          headline_text = headline_text.substring(0, BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH) + '...';
+        }
+        var text_node = document.createTextNode(headline_text);
+        link_level_element.appendChild(text_node);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_DESCRIPTION_TYPE)>=0 && link.desc) {
+        var desc_text = link.desc;
+        if (desc_text.length > BELinkBlockGenerator.MAXIMUM_DESC_LENGTH) {
+          desc_text = desc_text.substring(0, BELinkBlockGenerator.MAXIMUM_DESC_LENGTH) + '...';
+        }
+        var text_node = document.createTextNode(desc_text);
+        link_level_element.appendChild(text_node);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_IMAGE_TYPE)>=0 && link.image) {
+        link_level_element.setAttribute('src', link.image);
+        added_something = true;
+      }
+/**
+    don't emit for empty links, desc, headline, image
+    except for parent structures where allowable_length=0
+    */
+    if (!added_something && allowable_elements.length != 0) {
+
+      return;
+    }
+    /* go depth first */
+    for (var childrenIndex=0; childrenIndex<children_link_structures.length; childrenIndex++) {
+      var childLinkStructure = children_link_structures[childrenIndex];
+      BELinkBlockGenerator.generateIndividualLinks(link_level_element, childLinkStructure, link);
+    }
+    parentElement.appendChild(link_level_element);
+  };
+
+  BELinkBlockGenerator.insertLinkBlocks = function(targetElement, replacementStrategy, overallStructure, linkStructure, links,
+                                                   titleStructure) {
+    if (targetElement == null) {
+      return;
+    }
+
+    if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_OVERWRITE) {
+      while (targetElement.firstChild) {
+        targetElement.removeChild(targetElement.firstChild);
+      }
+    }
+
+    var previousElement = targetElement;
+    for (var i=0;i<overallStructure.length;i++) {
+      var level_definition = overallStructure[i];
+      var level_element_tag = level_definition[0];
+      var level_element = document.createElement(level_element_tag);
+      var attribute_dictionary = level_definition[1];
+      for (var attribute_key in attribute_dictionary) {
+        level_element.setAttribute(attribute_key, attribute_dictionary[attribute_key]);
+      }
+
+      /* need to place title structure */
+      if (titleStructure && titleStructure[0] == i) {
+        var title_element_tag = titleStructure[1];
+        var title_element = document.createElement(title_element_tag);
+        var title_attribute_dictionary = titleStructure[2];
+        var title_text_content = titleStructure[3];
+        for (var title_attribute_key in title_attribute_dictionary) {
+          title_element.setAttribute(title_attribute_key, title_attribute_dictionary[title_attribute_key]);
+        }
+
+        var title_text_node = document.createTextNode(title_text_content);
+        title_element.appendChild(title_text_node);
+
+
+        level_element.appendChild(title_element);
+      }
+
+      /* last level place links */
+      if (i == overallStructure.length-1) {
+        for (var link_i=0; link_i < links.length; link_i++) {
+          var link = links[link_i];
+          for (var linkStructureIndex=0;linkStructureIndex < linkStructure.length; linkStructureIndex++) {
+            BELinkBlockGenerator.generateIndividualLinks(level_element, linkStructure[linkStructureIndex], link)
+          }
+        }
+      }
+
+      /* first level child we need to check placement */
+      if (previousElement == targetElement) {
+        if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_ELEMENT) {
+          /* 2 means insert right before */
+          previousElement.insertBefore(level_element, targetElement.firstChild);
+        } else if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_PARENT) {
+          /* 3 means insert right before at parent level */
+          var parentElement = previousElement.parentElement;
+          parentElement.insertBefore(level_element, previousElement);
+        } else {
+          previousElement.appendChild(level_element);
+        }
+      } else {
+        previousElement.appendChild(level_element);
+      }
+      previousElement = level_element;
+    }
+  };
+}(window.BELinkBlockGenerator = window.BELinkBlockGenerator || {}))
+};
+</script>
+<style>
+.be-ix-link-block .be-main-container{background-color:#FAFEFF;padding: 20px 30px 0 30px;}
+.be-ix-link-block .be-related-link-container{max-width:1170px;margin:0 auto}
+.be-ix-link-block .be-related-link-container .be-label{margin:0;font-family:"avenir-heavy";font-size:16px;letter-spacing:.03em;color:#3D3935}
+.be-ix-link-block .be-related-link-container .be-list{display:inline-block;list-style:none;margin:0;padding:0}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item{display:inline-block;margin-right:20px}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item:last-child{margin-right:0}
+@media (max-width: 799px) {
+.be-ix-link-block .be-main-container{padding-left:15px;padding-right:15px}
+.be-ix-link-block .be-related-link-container .be-label{width:100%;line-height:normal;margin:0 0 28px;position:relative}
+.be-ix-link-block .be-related-link-container .be-label:after{content:"";bottom:-12px;left:0;border-bottom:3px solid #3D3935;width:150px;position:absolute;display:block}
+.be-ix-link-block .be-related-link-container .be-list{display:block;width:100%}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item{display:block;margin:1em 0}
+}
+@media (min-width: 800px) {
+.be-ix-link-block .be-related-link-container{display:flex}
+.be-ix-link-block .be-related-link-container .be-label{display:inline-block;margin-right:20px;flex-basis:165px;flex-grow:0;flex-shrink:0}
+.be-ix-link-block .be-related-link-container .be-list{width:auto}
+}
+</style>
+<script data-cfasync="false" data-customerid="f00000000160978" data-testmode="true" id="marvel" src="https://marvel-b2-cdn.bc0a.com/marvel.js"></script>
+<script>
+      (function() {
+      var bec = document.createElement('script');
+      bec.type = 'text/javascript';
+      bec.async = true;
+      bec.setAttribute("data-id", "bec");
+      bec.setAttribute("org-id", "f00000000160978");
+      bec.setAttribute("domain", ".vion.com");
+      bec.setAttribute("session-timeout", 86400000);
+      bec.src = document.location.protocol + '//cdn.b0e8.com/conv_v3.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(bec, s);
+})();
+</script>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<!-- This site is optimized with the Yoast SEO plugin v16.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Privacy Policy - ViON</title>
+<meta content="Privacy Policy" name="description"/>
+<link href="https://www.vion.com/privacy-policy/" rel="canonical"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="Privacy Policy - ViON" property="og:title"/>
+<meta content="Privacy Policy" property="og:description"/>
+<meta content="https://www.vion.com/privacy-policy/" property="og:url"/>
+<meta content="ViON" property="og:site_name"/>
+<meta content="2019-02-03T23:14:45+00:00" property="article:modified_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@ViONcorp" name="twitter:site"/>
+<meta content="Est. reading time" name="twitter:label1"/>
+<meta content="4 minutes" name="twitter:data1"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.vion.com/#organization","name":"ViON Corporation","url":"https://www.vion.com/","sameAs":["https://www.linkedin.com/company/vion-corporation_2","https://twitter.com/ViONcorp"],"logo":{"@type":"ImageObject","@id":"https://www.vion.com/#logo","inLanguage":"en-US","url":"https://www.vion.com/wp-content/uploads/2018/11/vion_logo-new.png","contentUrl":"https://www.vion.com/wp-content/uploads/2018/11/vion_logo-new.png","width":200,"height":94,"caption":"ViON Corporation"},"image":{"@id":"https://www.vion.com/#logo"}},{"@type":"WebSite","@id":"https://www.vion.com/#website","url":"https://www.vion.com/","name":"ViON","description":"Building your enterprise solutions","publisher":{"@id":"https://www.vion.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.vion.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://www.vion.com/privacy-policy/#webpage","url":"https://www.vion.com/privacy-policy/","name":"Privacy Policy - ViON","isPartOf":{"@id":"https://www.vion.com/#website"},"datePublished":"2018-11-13T16:14:26+00:00","dateModified":"2019-02-03T23:14:45+00:00","description":"Privacy Policy","breadcrumb":{"@id":"https://www.vion.com/privacy-policy/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.vion.com/privacy-policy/"]}]},{"@type":"BreadcrumbList","@id":"https://www.vion.com/privacy-policy/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.vion.com/"},{"@type":"ListItem","position":2,"name":"Privacy Policy"}]}]}</script>
+<!-- / Yoast SEO plugin. -->
+<link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://www.vion.com/feed/" rel="alternate" title="ViON » Feed" type="application/rss+xml"/>
+<link href="https://www.vion.com/comments/feed/" rel="alternate" title="ViON » Comments Feed" type="application/rss+xml"/>
+<link href="https://www.vion.com/wp-content/uploads/2018/11/favicon-32x32.png" rel="shortcut icon" type="image/x-icon"/>
+<!-- For iPhone -->
+<link href="https://www.vion.com/wp-content/uploads/2018/11/apple-touch-icon-57x57.png" rel="apple-touch-icon"/>
+<!-- For iPhone Retina display -->
+<link href="https://www.vion.com/wp-content/uploads/2018/11/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="180x180"/>
+<!-- For iPad -->
+<link href="https://www.vion.com/wp-content/uploads/2018/11/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="152x152"/>
+<!-- For iPad Retina display -->
+<link href="https://www.vion.com/wp-content/uploads/2018/11/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="167x167"/>
+<link href="https://www.vion.com/wp-content/plugins/simple-download-monitor/css/sdm_wp_styles.css" id="sdm-styles-css" media="all" rel="stylesheet" type="text/css">
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 12px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 24px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 16px;--wp--preset--font-size--xlarge: 32px;--wp--preset--font-size--huge: 48px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link href="https://www.vion.com/wp-content/plugins/easy-side-tab-pro/css/font-awesome/fontawesome.min.css" id="font-awesome-v5.0.4-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.vion.com/wp-content/plugins/easy-side-tab-pro/css/frontend/estp-frontend.css" id="estp-frontend-css-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.vion.com/wp-content/plugins/easy-side-tab-pro/css/jquery.mCustomScrollbar.css" id="estp-frontend-scrollbar-css-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.vion.com/wp-content/plugins/easy-side-tab-pro/css/backend/available_icons/font-awesome/font-awesome.min.css" id="estp_fontawesome_style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.vion.com/wp-content/plugins/easy-side-tab-pro/css/backend/available_icons/genericons.css" id="estp-genericons-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.vion.com/wp-content/plugins/easy-side-tab-pro/css/backend/available_icons/flaticons/flaticon.css" id="estp-flaticons-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.vion.com/wp-content/plugins/easy-side-tab-pro/css/backend/available_icons/icomoon/icomoon.css" id="estp-icomoon-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.vion.com/wp-content/plugins/easy-side-tab-pro/css/backend/available_icons/linecon/linecon.css" id="estp-linecon-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.vion.com/wp-content/plugins/easy-side-tab-pro/css/frontend/estp-custom-animation.css" id="estp-animate-custom-css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;ver=5.9.3" id="wpcui_font_families-css" media="all" rel="stylesheet" type="text/css"/>
+<!--[if IE]>
+<link rel='stylesheet' id='avada-IE-css'  href='https://www.vion.com/wp-content/themes/Avada/assets/css/dynamic/ie.min.css' type='text/css' media='all' />
+<style id='avada-IE-inline-css' type='text/css'>
+.avada-select-parent .select-arrow{background-color:#ffffff}
+.select-arrow{background-color:#ffffff}
+</style>
+<![endif]-->
+<link href="https://www.vion.com/wp-content/uploads/fusion-styles/b1548b877c1dd91d546b2b829768614b.min.css" id="fusion-dynamic-css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.vion.com/wp-content/themes/vion/jquery.fancybox.min.css" id="fancybox_style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.vion.com/wp-content/themes/vion/vion.css?v=0930212220&amp;ver=1549401940" id="vioncss-css" media="all" rel="stylesheet" type="text/css"/>
+<script id="jquery-core-js" src="https://www.vion.com/wp-includes/js/jquery/jquery.min.js" type="text/javascript"></script>
+<script defer="defer" id="jquery-migrate-js" src="https://www.vion.com/wp-includes/js/jquery/jquery-migrate.min.js" type="text/javascript"></script>
+<script id="estp-frontend-js-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var estp_frontend_ajax = {"front_ajax_url":"https:\/\/www.vion.com\/wp-admin\/admin-ajax.php","front_ajax_nonce":"0ba6259487"};
+/* ]]> */
+</script>
+<script defer="defer" id="estp-frontend-js-js" src="https://www.vion.com/wp-content/plugins/easy-side-tab-pro/js/frontend/estp-frontend.js" type="text/javascript"></script>
+<script defer="defer" id="estp-frontend-scrollbar-js-js" src="https://www.vion.com/wp-content/plugins/easy-side-tab-pro/js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+<script id="sdm-scripts-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var sdm_ajax_script = {"ajaxurl":"https:\/\/www.vion.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script defer="defer" id="sdm-scripts-js" src="https://www.vion.com/wp-content/plugins/simple-download-monitor/js/sdm_wp_scripts.js" type="text/javascript"></script>
+<script defer="defer" id="stickykit-js" src="https://www.vion.com/wp-content/themes/vion/jquery.sticky-kit.min.js" type="text/javascript"></script>
+<script defer="defer" id="vionjs-js" src="https://www.vion.com/wp-content/themes/vion/vion.js" type="text/javascript"></script>
+<link href="https://www.vion.com/wp-json/" rel="https://api.w.org/"/><link href="https://www.vion.com/wp-json/wp/v2/pages/17" rel="alternate" type="application/json"/><link href="https://www.vion.com/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+<link href="https://www.vion.com/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+<meta content="WordPress 5.9.3" name="generator"/>
+<link href="https://www.vion.com/?p=17" rel="shortlink"/>
+<link href="https://www.vion.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.vion.com%2Fprivacy-policy%2F" rel="alternate" type="application/json+oembed"/>
+<link href="https://www.vion.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.vion.com%2Fprivacy-policy%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+<div class="estp-tab-overlay"></div>
+<!-- Analytics by WP-Statistics v13.0.9 - https://wp-statistics.com/ -->
+<script>var WP_Statistics_http = new XMLHttpRequest();WP_Statistics_http.open('GET', 'https://www.vion.com/wp-json/wp-statistics/v2/hit?_=1655758318&_wpnonce=99562ed161&wp_statistics_hit_rest=yes&browser=Unknown&platform=Unknown&version=Unknown&referred=https://www.vion.com&ip=108.162.237.134&exclusion_match=no&exclusion_reason&ua&track_all=1&timestamp=1655743918&current_page_type=page&current_page_id=17&search_query&page_uri=/privacy-policy/?access-control-allow-origin=%2a&access-control-allow-methods=get&access-control-allow-headers=content-type&access-control-max-age=3600&user-agent=mozilla%2f5.0+%28x11%3b+ubuntu%3b+linux+x86_64%3b+rv%3a52.0%29+gecko%2f20100101+firefox%2f52.0&user_id=0', true);WP_Statistics_http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");WP_Statistics_http.send(null);</script>
+<style id="css-fb-visibility" type="text/css">@media screen and (max-width: 640px){body:not(.fusion-builder-ui-wireframe) .fusion-no-small-visibility{display:none !important;}body:not(.fusion-builder-ui-wireframe) .sm-text-align-center{text-align:center !important;}body:not(.fusion-builder-ui-wireframe) .sm-text-align-left{text-align:left !important;}body:not(.fusion-builder-ui-wireframe) .sm-text-align-right{text-align:right !important;}body:not(.fusion-builder-ui-wireframe) .sm-mx-auto{margin-left:auto !important;margin-right:auto !important;}body:not(.fusion-builder-ui-wireframe) .sm-ml-auto{margin-left:auto !important;}body:not(.fusion-builder-ui-wireframe) .sm-mr-auto{margin-right:auto !important;}body:not(.fusion-builder-ui-wireframe) .fusion-absolute-position-small{position:absolute;top:auto;width:100%;}}@media screen and (min-width: 641px) and (max-width: 1024px){body:not(.fusion-builder-ui-wireframe) .fusion-no-medium-visibility{display:none !important;}body:not(.fusion-builder-ui-wireframe) .md-text-align-center{text-align:center !important;}body:not(.fusion-builder-ui-wireframe) .md-text-align-left{text-align:left !important;}body:not(.fusion-builder-ui-wireframe) .md-text-align-right{text-align:right !important;}body:not(.fusion-builder-ui-wireframe) .md-mx-auto{margin-left:auto !important;margin-right:auto !important;}body:not(.fusion-builder-ui-wireframe) .md-ml-auto{margin-left:auto !important;}body:not(.fusion-builder-ui-wireframe) .md-mr-auto{margin-right:auto !important;}body:not(.fusion-builder-ui-wireframe) .fusion-absolute-position-medium{position:absolute;top:auto;width:100%;}}@media screen and (min-width: 1025px){body:not(.fusion-builder-ui-wireframe) .fusion-no-large-visibility{display:none !important;}body:not(.fusion-builder-ui-wireframe) .lg-text-align-center{text-align:center !important;}body:not(.fusion-builder-ui-wireframe) .lg-text-align-left{text-align:left !important;}body:not(.fusion-builder-ui-wireframe) .lg-text-align-right{text-align:right !important;}body:not(.fusion-builder-ui-wireframe) .lg-mx-auto{margin-left:auto !important;margin-right:auto !important;}body:not(.fusion-builder-ui-wireframe) .lg-ml-auto{margin-left:auto !important;}body:not(.fusion-builder-ui-wireframe) .lg-mr-auto{margin-right:auto !important;}body:not(.fusion-builder-ui-wireframe) .fusion-absolute-position-large{position:absolute;top:auto;width:100%;}}</style>
+<style type="text/css">
+/* START Styles Simple Side Tab v2.1.4 */
+#rum_sst_tab {
+    font-family:;
+    top:px;
+    background-color:;
+    color:;
+    border-style:solid;
+    border-width:0px;
+}
+
+#rum_sst_tab:hover {
+    background-color: ;
+}
+.rum_sst_contents {
+    position:fixed;
+    margin:0;
+    padding:6px 13px 8px 13px;
+    text-decoration:none;
+    text-align:center;
+    font-size:15px;
+    font-weight:normal;
+    border-style:solid;
+    display:block;
+    z-index:100000;
+}
+.rum_sst_left {
+    left:-2px;
+    cursor: pointer;
+    -webkit-transform-origin:0 0;
+    -moz-transform-origin:0 0;
+    -o-transform-origin:0 0;
+    -ms-transform-origin:0 0;
+    -webkit-transform:rotate(270deg);
+    -moz-transform:rotate(270deg);
+    -ms-transform:rotate(270deg);
+    -o-transform:rotate(270deg);
+    transform:rotate(270deg);
+    -moz-border-radius-bottomright:10px;
+    border-bottom-right-radius:10px;
+    -moz-border-radius-bottomleft:10px;
+    border-bottom-left-radius:10px;
+}
+.rum_sst_right {
+    right:-1px;
+    cursor: pointer;
+    -webkit-transform-origin:100% 100%;
+    -moz-transform-origin:100% 100%;
+    -o-transform-origin:100% 100%;
+    -ms-transform-origin:100% 100%;
+    -webkit-transform:rotate(-90deg);
+    -moz-transform:rotate(-90deg);
+    -ms-transform:rotate(-90deg);
+    -o-transform:rotate(-90deg);
+    transform:rotate(-90deg);
+    -moz-border-radius-topright:10px;
+    border-top-right-radius:10px;
+    -moz-border-radius-topleft:10px;
+    border-top-left-radius:10px;
+}
+.rum_sst_right.less-ie-9 {
+    right:-120px;
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+.rum_sst_left.less-ie-9 {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+/* END Styles Simple Side Tab */
+</style>
+<style id="wp-custom-css" type="text/css">
+			/* Index */
+
+.home .resource-block.asset .fusion-column-wrapper > div:nth-child(2) {
+    position: absolute;
+	display: none;
+}
+
+.home .resource-block.library .fusion-column-content p:after {
+    border-left: 5px solid #ffffff;
+}
+
+.fusion-column-inner-bg-wrapper .fusion-column-wrapper {
+    z-index: 9999;
+}
+
+
+/* Sidebar */
+
+.sidebar .widget .widget-title {
+    font-size: 26px;
+}
+
+.sidebar .widget .heading h4:after {
+    content: "";
+    position: relative;
+    height: 0;
+    border-top: 4px solid #E2891A;
+    top: 15px;
+    width: 150px;
+    display: block;
+}
+
+.vion-sidebar-marketplace {
+background: url("/wp-content/uploads/2021/05/sidebar-marketplace.jpg") no-repeat;
+	background-position: center bottom;
+}
+
+
+
+/* Popup Maker */
+
+.pum-theme-9933 .pum-container, .pum-theme-lightbox .pum-container {
+    border: none!important;
+}
+
+
+/* WPForms */
+
+div.wpforms-container-full .wpforms-form .wpforms-submit-container {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+div.wpforms-container-full {
+    margin-bottom: 0;
+}
+
+
+/* Footer */
+
+.fusion-footer footer:first-child .fusion-column:nth-child(4) section {
+    height: 330px;
+}
+
+.be-ix-link-block .be-related-link-container {
+    display: none;
+}
+
+
+/* Side Tab */
+.estp-tab-wrapper.estp-rht-side-tab .estp-popup-display {
+    height: 860px;
+}
+
+.estp-tab-wrapper .estp-popup-display .mCustomScrollbar {
+    height: 860px;
+    max-height: 860px;
+}
+
+.estp-tab-wrapper.estp-template-4.estp-rht-side-tab .estp-inner-tab-wrapper .estp-tab-element {
+    width: 165px;
+}
+
+.estp-tab-wrapper.estp-template-4.estp-rht-side-tab .estp-inner-tab-wrapper .estp-tab-element {
+    -webkit-border-top-left-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+}
+
+.estp-tab-wrapper.estp-rht-side-tab.estp-absolute {
+    top: 20%!important;
+}
+
+.estp-tab-wrapper.estp-lft-side-tab.estp-fixed, .estp-tab-wrapper.estp-lft-side-tab.estp-absolute, .estp-tab-wrapper.estp-rht-side-tab.estp-fixed, .estp-tab-wrapper.estp-rht-side-tab.estp-absolute {
+    top: 20%;
+}
+
+@media only screen and (max-width: 800px) {
+.estp-tab-wrapper.estp-template-4.estp-rht-side-tab .estp-inner-tab-wrapper .estp-tab-element {
+    display: none;
+}
+}
+
+/* Request a Quote Side Tab */
+
+#rum_sst_tab {
+    transform: rotate(270deg);
+    left: -67px;
+}		</style>
+<script type="text/javascript">
+			var doc = document.documentElement;
+			doc.setAttribute( 'data-useragent', navigator.userAgent );
+		</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PGDJVC');</script>
+<!-- End Google Tag Manager -->
+<script type="text/javascript">
+        var doc = document.documentElement;
+        doc.setAttribute('data-useragent', navigator.userAgent);
+    </script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PGDJVC');</script>
+<!-- End Google Tag Manager --><script data-cfasync="false" src="//tribl.io/h.js?orgId=Qj0DvmdZWDcq7MKbLbad" type="text/javascript"></script></link></link></link></link></head>
+<body class="privacy-policy page-template-default page page-id-17 page-privacy-policy fusion-image-hovers fusion-pagination-sizing fusion-button_size-large fusion-button_type-flat fusion-button_span-no avada-image-rollover-circle-yes avada-image-rollover-yes avada-image-rollover-direction-left fusion-body ltr no-tablet-sticky-header no-mobile-sticky-header no-mobile-slidingbar fusion-disable-outline fusion-sub-menu-fade mobile-logo-pos-left layout-wide-mode avada-has-boxed-modal-shadow-none layout-scroll-offset-full avada-has-zero-margin-offset-top fusion-top-header menu-text-align-center mobile-menu-design-modern fusion-show-pagination-text fusion-header-layout-v3 avada-responsive avada-footer-fx-none avada-menu-highlight-style-bar fusion-search-form-clean fusion-main-menu-search-dropdown fusion-avatar-square avada-dropdown-styles avada-blog-layout-large avada-blog-archive-layout-large avada-header-shadow-no avada-menu-icon-position-left avada-has-megamenu-shadow avada-has-main-nav-search-icon avada-has-breadcrumb-mobile-hidden avada-has-titlebar-content_only avada-header-border-color-full-transparent avada-header-top-bg-not-opaque avada-has-pagination-padding avada-flyout-menu-direction-fade avada-ec-views-v1">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PGDJVC" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<script type="text/javascript">
+    function positionLinkBlock(targetContainer) {
+        if (targetContainer != null) {
+            var strLinkBlock = '<div class="be-main-container"><div class="be-related-link-container"><div class="be-label">Related Information</div><ul class="be-list"><li class="be-list-item"><a class="be-related-link" href="https://www.vion.com/what-we-do/advanced-analytics/">Advanced Analytics</a></li><li class="be-list-item"><a class="be-related-link" href="https://www.vion.com/blog/what-is-data-center-as-a-service/">What is Data Center as-a-Service?</a></li><li class="be-list-item"><a class="be-related-link" href="https://www.vion.com/blog/are-barriers-to-cloud-real-or-perceived/">Are Barriers To Cloud Real or Perceived?</a></li></ul></div></div>';
+            targetContainer.insertAdjacentHTML('afterbegin', strLinkBlock);
+        }
+    }
+
+    jsElementReady('.be-ix-link-block', positionLinkBlock)
+
+</script>
+<ul id="be_sdkms_capsule_open" style="display:none!important">
+<li class="be_sdkms_sdk_version">be_ixf; php_sdk; php_sdk_1.4.18</li>
+<li id="be_sdkms_capsule_connect_timer">27 ms</li>
+<li id="be_sdkms_capsule_index_time">iy_2022; im_06; id_20; ih_13; imh_51; i_epoch:1655758318652</li>
+<li id="be_sdkms_capsule_pub">ixf-compiler; ixf-compiler_1.0.0.0</li>
+<li id="be_sdkms_capsule_date_modified">py_2021; pm_08; pd_26; ph_07; pmh_06; p_epoch:1629986768403</li>
+</ul>
+<ul class="be_sdkms_node" style="display:none!important">
+<li class="be_sdkms_pub">link-block; link-block_link-block; bodystr</li>
+<li class="be_sdkms_date_modified">pn_tstr:Thu Aug 26 07:06:08 PST 2021; pn_epoch:1629986768403</li>
+<li class="be_sdkms_timer">0 ms</li>
+</ul>
+<ul id="be_sdkms_capsule" style="display:none!important">
+<li class="be_sdkms_sdk_version">be_ixf; php_sdk; php_sdk_1.4.18</li>
+<li id="be_sdkms_original_url">https://www.vion.com/privacy-policy/?access-control-allow-origin=%2a&amp;access-control-allow-methods=get&amp;access-control-allow-headers=content-type&amp;access-control-max-age=3600&amp;user-agent=mozilla%2f5.0+%28x11%3b+ubuntu%3b+linux+x86_64%3b+rv%3a52.0%29+gecko%2f20100101+firefox%2f52.0</li>
+<li id="be_sdkms_normalized_url">https://www.vion.com/privacy-policy/</li>
+</ul>
+<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+<svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0 0.49803921568627" type="table"></fefuncr><fefuncg tablevalues="0 0.49803921568627" type="table"></fefuncg><fefuncb tablevalues="0 0.49803921568627" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0 1" type="table"></fefuncr><fefuncg tablevalues="0 1" type="table"></fefuncg><fefuncb tablevalues="0 1" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0.54901960784314 0.98823529411765" type="table"></fefuncr><fefuncg tablevalues="0 1" type="table"></fefuncg><fefuncb tablevalues="0.71764705882353 0.25490196078431" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0 1" type="table"></fefuncr><fefuncg tablevalues="0 0.27843137254902" type="table"></fefuncg><fefuncb tablevalues="0.5921568627451 0.27843137254902" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0 0" type="table"></fefuncr><fefuncg tablevalues="0 0.64705882352941" type="table"></fefuncg><fefuncb tablevalues="0 1" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0.78039215686275 1" type="table"></fefuncr><fefuncg tablevalues="0 0.94901960784314" type="table"></fefuncg><fefuncb tablevalues="0.35294117647059 0.47058823529412" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0.65098039215686 0.40392156862745" type="table"></fefuncr><fefuncg tablevalues="0 1" type="table"></fefuncg><fefuncb tablevalues="0.44705882352941 0.4" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0.098039215686275 1" type="table"></fefuncr><fefuncg tablevalues="0 0.66274509803922" type="table"></fefuncg><fefuncb tablevalues="0.84705882352941 0.41960784313725" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg> <div class="" id="wrapper">
+<div id="home" style="position:relative;top:-1px;"></div>
+<header class="fusion-header-wrapper">
+<div class="fusion-header-v3 fusion-logo-alignment fusion-logo-left fusion-sticky-menu- fusion-sticky-logo-1 fusion-mobile-logo-1 fusion-mobile-menu-design-modern">
+<div class="fusion-secondary-header">
+<div class="fusion-row">
+<div class="fusion-alignright">
+<div class="fusion-contact-info"><span class="fusion-contact-info-phone-number"><a href="/contact-us/">CONTACT US</a></span></div> </div>
+</div>
+</div>
+<div class="fusion-header-sticky-height"></div>
+<div class="fusion-header">
+<div class="fusion-row">
+<div class="fusion-logo" data-margin-bottom="30px" data-margin-left="0px" data-margin-right="0px" data-margin-top="13px">
+<a class="fusion-logo-link" href="https://www.vion.com/">
+<!-- standard logo -->
+<img alt="ViON Logo" class="fusion-standard-logo" data-retina_logo_url="https://www.vion.com/wp-content/uploads/2018/12/vion-logox2.png" height="49" src="https://www.vion.com/wp-content/uploads/2018/12/vion-logo.png" srcset="https://www.vion.com/wp-content/uploads/2018/12/vion-logo.png 1x, https://www.vion.com/wp-content/uploads/2018/12/vion-logox2.png 2x" style="max-height:49px;height:auto;" width="160"/>
+<!-- mobile logo -->
+<img alt="ViON Logo" class="fusion-mobile-logo" data-retina_logo_url="https://www.vion.com/wp-content/uploads/2018/12/vion-logox2.png" height="49" src="https://www.vion.com/wp-content/uploads/2018/12/vion-logo.png" srcset="https://www.vion.com/wp-content/uploads/2018/12/vion-logo.png 1x, https://www.vion.com/wp-content/uploads/2018/12/vion-logox2.png 2x" style="max-height:49px;height:auto;" width="160"/>
+<!-- sticky header logo -->
+<img alt="ViON Logo" class="fusion-sticky-logo" data-retina_logo_url="https://www.vion.com/wp-content/uploads/2018/12/vion-logox2.png" height="49" src="https://www.vion.com/wp-content/uploads/2018/12/vion-logo.png" srcset="https://www.vion.com/wp-content/uploads/2018/12/vion-logo.png 1x, https://www.vion.com/wp-content/uploads/2018/12/vion-logox2.png 2x" style="max-height:49px;height:auto;" width="160"/>
+</a>
+</div> <nav aria-label="Main Menu" class="fusion-main-menu"><ul class="fusion-menu" id="menu-main-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-393 fusion-dropdown-menu" data-item-id="393" id="menu-item-393"><a class="fusion-bar-highlight"><span class="menu-text">Who We Are</span></a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51 fusion-dropdown-submenu" id="menu-item-51"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/vision/"><span>Vision</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50 fusion-dropdown-submenu" id="menu-item-50"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/leadership/"><span>Leadership</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49 fusion-dropdown-submenu" id="menu-item-49"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/awards-and-certifications/"><span>Awards and Certifications</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48 fusion-dropdown-submenu" id="menu-item-48"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/customer-experience/"><span>Customer Experience</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 fusion-dropdown-submenu" id="menu-item-47"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/careers/"><span>Careers</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46 fusion-dropdown-submenu" id="menu-item-46"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/partners/"><span>Partners</span></a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28 fusion-dropdown-menu" data-item-id="28" id="menu-item-28"><a class="fusion-bar-highlight"><span class="menu-text">What We Do</span></a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28511 fusion-dropdown-submenu" id="menu-item-28511"><a class="fusion-bar-highlight" href="https://www.vion.com/what-we-do/cloud/"><span>Cloud</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-418 fusion-dropdown-submenu" id="menu-item-418"><a class="fusion-bar-highlight" href="https://www.vion.com/what-we-do/advanced-analytics/"><span>Advanced Analytics</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-417 fusion-dropdown-submenu" id="menu-item-417"><a class="fusion-bar-highlight" href="https://www.vion.com/what-we-do/it-infrastructure/"><span>IT Infrastructure</span></a></li></ul></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421" data-item-id="421" id="menu-item-421"><a class="fusion-bar-highlight" href="https://www.vion.com/our-contracts/"><span class="menu-text">Our Contracts</span></a></li><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-30 fusion-dropdown-menu" data-item-id="30" id="menu-item-30"><a class="fusion-bar-highlight"><span class="menu-text">Our Story</span></a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-422 fusion-dropdown-submenu" id="menu-item-422"><a class="fusion-bar-highlight" href="https://www.vion.com/news/"><span>Media / Press</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-423 fusion-dropdown-submenu" id="menu-item-423"><a class="fusion-bar-highlight" href="https://www.vion.com/blog/"><span>Blog</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy current-menu-item page_item page-item-17 current_page_item menu-item-425 fusion-dropdown-submenu" id="menu-item-425"><a class="fusion-bar-highlight" href="https://www.vion.com/privacy-policy/"><span>Privacy Policy</span></a></li></ul></li><li class="fusion-custom-menu-item fusion-main-menu-search"><a aria-expanded="false" aria-label="Search" class="fusion-main-menu-icon fusion-bar-highlight" data-title="Search" href="#" role="button" title="Search"></a><div class="fusion-custom-menu-item-contents"> <form action="https://www.vion.com/" class="searchform fusion-search-form fusion-search-form-clean" method="get" role="search">
+<div class="fusion-search-form-content">
+<div class="fusion-search-field search-field">
+<label><span class="screen-reader-text">Search for:</span>
+<input aria-label="Search..." aria-required="true" class="s" name="s" placeholder="Search..." required="" type="search" value=""/>
+</label>
+</div>
+<div class="fusion-search-button search-button">
+<input aria-label="Search" class="fusion-search-submit searchsubmit" type="submit" value=""/>
+</div>
+</div>
+</form>
+</div></li></ul></nav><div class="fusion-mobile-navigation"><ul class="fusion-mobile-menu" id="menu-main-menu-1"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-393 fusion-dropdown-menu" data-item-id="393"><a class="fusion-bar-highlight"><span class="menu-text">Who We Are</span></a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/vision/"><span>Vision</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/leadership/"><span>Leadership</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/awards-and-certifications/"><span>Awards and Certifications</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/customer-experience/"><span>Customer Experience</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/careers/"><span>Careers</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/partners/"><span>Partners</span></a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28 fusion-dropdown-menu" data-item-id="28"><a class="fusion-bar-highlight"><span class="menu-text">What We Do</span></a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28511 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/what-we-do/cloud/"><span>Cloud</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-418 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/what-we-do/advanced-analytics/"><span>Advanced Analytics</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-417 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/what-we-do/it-infrastructure/"><span>IT Infrastructure</span></a></li></ul></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421" data-item-id="421"><a class="fusion-bar-highlight" href="https://www.vion.com/our-contracts/"><span class="menu-text">Our Contracts</span></a></li><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-30 fusion-dropdown-menu" data-item-id="30"><a class="fusion-bar-highlight"><span class="menu-text">Our Story</span></a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-422 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/news/"><span>Media / Press</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-423 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/blog/"><span>Blog</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy current-menu-item page_item page-item-17 current_page_item menu-item-425 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/privacy-policy/"><span>Privacy Policy</span></a></li></ul></li></ul></div> <div class="fusion-mobile-menu-icons">
+<a aria-expanded="false" aria-label="Toggle mobile menu" class="fusion-icon fusion-icon-bars" href="#"></a>
+</div>
+<nav aria-label="Main Menu Mobile" class="fusion-mobile-nav-holder fusion-mobile-menu-text-align-left fusion-mobile-menu-indicator-hide"></nav>
+<div class="vion-mobile-adds">
+<form action="https://www.vion.com/" class="searchform fusion-search-form fusion-search-form-clean" method="get" role="search">
+<div class="fusion-search-form-content">
+<div class="fusion-search-field search-field">
+<label><span class="screen-reader-text">Search for:</span>
+<input aria-label="Search..." aria-required="true" class="s" name="s" placeholder="Search..." required="" type="search" value=""/>
+</label>
+</div>
+<div class="fusion-search-button search-button">
+<input aria-label="Search" class="fusion-search-submit searchsubmit" type="submit" value=""/>
+</div>
+</div>
+</form>
+<div>
+<h4>Contact &amp; Support</h4>
+<div class="row">
+<div class="col-xs-6">
+<p class="vion-mobile-menu-phone"><a class="click-to-call" href="tel:1-877-857-8466">877.857.8466</a></p>
+<p class="vion-mobile-menu-support"><a href="/support/" target="_blank">Support Portal</a></p>
+</div>
+<div class="col-xs-6">
+<p class="vion-mobile-menu-mail"><a href="/cdn-cgi/l/email-protection#562523262639242216203f39387835393b"><span class="__cf_email__" data-cfemail="73000603031c010733051a1c1d5d101c1e">[email protected]</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fusion-clearfix"></div>
+</header>
+<div id="sliders-container">
+</div>
+<header class="fusion-header-wrapper">
+<div class="fusion-header-v3 fusion-logo-alignment fusion-logo-left fusion-sticky-menu- fusion-sticky-logo-1 fusion-mobile-logo-1 fusion-mobile-menu-design-modern">
+<div class="fusion-secondary-header">
+<div class="fusion-row">
+<div class="fusion-alignright">
+<div class="fusion-contact-info"><span class="fusion-contact-info-phone-number"><a href="/contact-us/">CONTACT US</a></span></div> </div>
+</div>
+</div>
+<div class="fusion-header-sticky-height"></div>
+<div class="fusion-header">
+<div class="fusion-row">
+<div class="fusion-logo" data-margin-bottom="30px" data-margin-left="0px" data-margin-right="0px" data-margin-top="13px">
+<a class="fusion-logo-link" href="https://www.vion.com/">
+<!-- standard logo -->
+<img alt="ViON Logo" class="fusion-standard-logo" data-retina_logo_url="https://www.vion.com/wp-content/uploads/2018/12/vion-logox2.png" height="49" src="https://www.vion.com/wp-content/uploads/2018/12/vion-logo.png" srcset="https://www.vion.com/wp-content/uploads/2018/12/vion-logo.png 1x, https://www.vion.com/wp-content/uploads/2018/12/vion-logox2.png 2x" style="max-height:49px;height:auto;" width="160"/>
+<!-- mobile logo -->
+<img alt="ViON Logo" class="fusion-mobile-logo" data-retina_logo_url="https://www.vion.com/wp-content/uploads/2018/12/vion-logox2.png" height="49" src="https://www.vion.com/wp-content/uploads/2018/12/vion-logo.png" srcset="https://www.vion.com/wp-content/uploads/2018/12/vion-logo.png 1x, https://www.vion.com/wp-content/uploads/2018/12/vion-logox2.png 2x" style="max-height:49px;height:auto;" width="160"/>
+<!-- sticky header logo -->
+<img alt="ViON Logo" class="fusion-sticky-logo" data-retina_logo_url="https://www.vion.com/wp-content/uploads/2018/12/vion-logox2.png" height="49" src="https://www.vion.com/wp-content/uploads/2018/12/vion-logo.png" srcset="https://www.vion.com/wp-content/uploads/2018/12/vion-logo.png 1x, https://www.vion.com/wp-content/uploads/2018/12/vion-logox2.png 2x" style="max-height:49px;height:auto;" width="160"/>
+</a>
+</div> <nav aria-label="Main Menu" class="fusion-main-menu"><ul class="fusion-menu" id="menu-main-menu-2"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-393 fusion-dropdown-menu" data-item-id="393"><a class="fusion-bar-highlight"><span class="menu-text">Who We Are</span></a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/vision/"><span>Vision</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/leadership/"><span>Leadership</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/awards-and-certifications/"><span>Awards and Certifications</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/customer-experience/"><span>Customer Experience</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/careers/"><span>Careers</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/partners/"><span>Partners</span></a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28 fusion-dropdown-menu" data-item-id="28"><a class="fusion-bar-highlight"><span class="menu-text">What We Do</span></a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28511 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/what-we-do/cloud/"><span>Cloud</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-418 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/what-we-do/advanced-analytics/"><span>Advanced Analytics</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-417 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/what-we-do/it-infrastructure/"><span>IT Infrastructure</span></a></li></ul></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421" data-item-id="421"><a class="fusion-bar-highlight" href="https://www.vion.com/our-contracts/"><span class="menu-text">Our Contracts</span></a></li><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-30 fusion-dropdown-menu" data-item-id="30"><a class="fusion-bar-highlight"><span class="menu-text">Our Story</span></a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-422 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/news/"><span>Media / Press</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-423 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/blog/"><span>Blog</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy current-menu-item page_item page-item-17 current_page_item menu-item-425 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/privacy-policy/"><span>Privacy Policy</span></a></li></ul></li><li class="fusion-custom-menu-item fusion-main-menu-search"><a aria-expanded="false" aria-label="Search" class="fusion-main-menu-icon fusion-bar-highlight" data-title="Search" href="#" role="button" title="Search"></a><div class="fusion-custom-menu-item-contents"> <form action="https://www.vion.com/" class="searchform fusion-search-form fusion-search-form-clean" method="get" role="search">
+<div class="fusion-search-form-content">
+<div class="fusion-search-field search-field">
+<label><span class="screen-reader-text">Search for:</span>
+<input aria-label="Search..." aria-required="true" class="s" name="s" placeholder="Search..." required="" type="search" value=""/>
+</label>
+</div>
+<div class="fusion-search-button search-button">
+<input aria-label="Search" class="fusion-search-submit searchsubmit" type="submit" value=""/>
+</div>
+</div>
+</form>
+</div></li></ul></nav><div class="fusion-mobile-navigation"><ul class="fusion-mobile-menu" id="menu-main-menu-3"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-393 fusion-dropdown-menu" data-item-id="393"><a class="fusion-bar-highlight"><span class="menu-text">Who We Are</span></a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/vision/"><span>Vision</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/leadership/"><span>Leadership</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/awards-and-certifications/"><span>Awards and Certifications</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/customer-experience/"><span>Customer Experience</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/careers/"><span>Careers</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/about-vion/partners/"><span>Partners</span></a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-28 fusion-dropdown-menu" data-item-id="28"><a class="fusion-bar-highlight"><span class="menu-text">What We Do</span></a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28511 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/what-we-do/cloud/"><span>Cloud</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-418 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/what-we-do/advanced-analytics/"><span>Advanced Analytics</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-417 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/what-we-do/it-infrastructure/"><span>IT Infrastructure</span></a></li></ul></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421" data-item-id="421"><a class="fusion-bar-highlight" href="https://www.vion.com/our-contracts/"><span class="menu-text">Our Contracts</span></a></li><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-30 fusion-dropdown-menu" data-item-id="30"><a class="fusion-bar-highlight"><span class="menu-text">Our Story</span></a><ul class="sub-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-422 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/news/"><span>Media / Press</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-423 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/blog/"><span>Blog</span></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy current-menu-item page_item page-item-17 current_page_item menu-item-425 fusion-dropdown-submenu"><a class="fusion-bar-highlight" href="https://www.vion.com/privacy-policy/"><span>Privacy Policy</span></a></li></ul></li></ul></div> <div class="fusion-mobile-menu-icons">
+<a aria-expanded="false" aria-label="Toggle mobile menu" class="fusion-icon fusion-icon-bars" href="#"></a>
+</div>
+<nav aria-label="Main Menu Mobile" class="fusion-mobile-nav-holder fusion-mobile-menu-text-align-left fusion-mobile-menu-indicator-hide"></nav>
+<div class="vion-mobile-adds">
+<form action="https://www.vion.com/" class="searchform fusion-search-form fusion-search-form-clean" method="get" role="search">
+<div class="fusion-search-form-content">
+<div class="fusion-search-field search-field">
+<label><span class="screen-reader-text">Search for:</span>
+<input aria-label="Search..." aria-required="true" class="s" name="s" placeholder="Search..." required="" type="search" value=""/>
+</label>
+</div>
+<div class="fusion-search-button search-button">
+<input aria-label="Search" class="fusion-search-submit searchsubmit" type="submit" value=""/>
+</div>
+</div>
+</form>
+<div>
+<h4>Contact &amp; Support</h4>
+<div class="row">
+<div class="col-xs-6">
+<p class="vion-mobile-menu-phone"><a class="click-to-call" href="tel:1-877-857-8466">877.857.8466</a></p>
+<p class="vion-mobile-menu-support"><a href="/support/" target="_blank">Support Portal</a></p>
+</div>
+<div class="col-xs-6">
+<p class="vion-mobile-menu-mail"><a href="/cdn-cgi/l/email-protection#7a090f0a0a15080e3a0c13151454191517"><span class="__cf_email__" data-cfemail="92e1e7e2e2fde0e6d2e4fbfdfcbcf1fdff">[email protected]</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fusion-clearfix"></div>
+</header>
+<div class="avada-page-titlebar-wrapper" role="banner">
+<div class="fusion-page-title-bar fusion-page-title-bar-breadcrumbs fusion-page-title-bar-left">
+<div class="fusion-page-title-row">
+<div class="fusion-page-title-wrapper">
+<div class="fusion-page-title-captions">
+<h1 class="entry-title">Privacy Policy</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+<main class="clearfix" id="main" role="main" style="">
+<div class="fusion-row" style="">
+<section id="content" style="width: 100%;">
+<div class="post-17 page type-page status-publish hentry" id="post-17">
+<span class="entry-title rich-snippet-hidden">Privacy Policy</span><span class="updated rich-snippet-hidden">2019-02-03T18:14:45-05:00</span>
+<div class="post-content">
+<div class="fusion-fullwidth fullwidth-box fusion-builder-row-1 nonhundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-color: rgba(255,255,255,0);background-position: center center;background-repeat: no-repeat;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;margin-bottom: 0px;margin-top: 0px;border-width: 0px 0px 0px 0px;border-color:#eae9e9;border-style:solid;"><div class="fusion-builder-row fusion-row"><div class="fusion-layout-column fusion_builder_column fusion-builder-column-0 fusion_builder_column_1_1 1_1 fusion-one-full fusion-column-first fusion-column-last" style="margin-top:0px;margin-bottom:0px;"><div class="fusion-column-wrapper fusion-flex-column-wrapper-legacy" style="background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;padding: 0px 0px 0px 0px;"><div class="fusion-text fusion-text-1"><p>ViON has created this privacy statement in order to disclose our information gathering and dissemination practices for this Website, <a href="https://www.vion.com">vion-corporation-staging.nwvek60w-liquidwebsites.com</a> and <a href="https://www.vionmarketplace.com">www.vionmarketplace.com</a>.</p>
+<h2>What is a Privacy Policy?</h2>
+<p>ViON created a privacy policy (described herein) to show our dedication and commitment to the privacy of the users of our website. Please read the following to gain an understanding of our privacy policy. If you have any questions regarding this policy, contact ViON and a representative will respond to your query as soon as possible.</p>
+<h2>What information do we collect from users and how is it used?</h2>
+<p>ViON is the sole owner of the information collected on this site. We will not sell, share, or rent this information to others in ways different from what is disclosed in this policy. At ViON, we do not collect any personal information unless you choose to share such information. If you do choose to share personal information via some form of correspondence, such information will not be shared, sold, or rented to others whatsoever.</p>
+<p>We use the information that we collect on or through our Offerings to:</p>
+<ul>
+<li>operate, maintain, enhance and provide all features of our Offerings;</li>
+<li>provide services and information that you request;</li>
+<li>respond to comments and questions;</li>
+<li>otherwise to provide support to users;</li>
+<li>understand and analyze the usage trends and preferences of our users;</li>
+<li>improve our Offerings; and</li>
+<li>to develop new products, services, features, and functionality.
+<div></div>
+</li>
+</ul>
+<p>Unless you ask us not to, we may contact you via email in the future to tell you about products or services, or changes to this privacy policy.</p>
+<h2>Correspondence</h2>
+<p>If you correspond with us via e-mail, we may gather the information in a file specific to you. We only collect the information that you provide to us. We will not sell, share, or rent the information that you share with us to others. Like many other websites, ViON collects information about users’ utilization and navigation of our site. This information helps us to design our site to better suit our users” needs and create a better user experience.</p>
+<h2>Phone</h2>
+<p>Unless you ask us not to, we may contact you via email or telephone in the future to inform you about products or services, or changes to this privacy policy.</p>
+<h2>Does the ViON website use cookies? If so, how are cookies used on the website?</h2>
+<p>Cookies are small files placed on your computer that contain only a unique number. We use this number to recognize your computer when a user of your computer returns. Like most major websites, ViON uses cookies on our site. These cookies strictly identify your computer; our cookies do not contain any personal information about you.</p>
+<h2>Security of Personal Information</h2>
+<p>ViON is committed to taking reasonable efforts to secure your Personal Information. We employ industry-standard privacy and data security measures including, for example, physical access controls, logical access controls, firewalls, intrusion detection, and network monitoring. In addition, we promote the principle of privacy by design in the development of our products and services.</p>
+<h2>What are the policies of linked sites and other third parties?</h2>
+<p>This privacy policy only addresses the use and disclosure of information we collect from you. Although you may interact with hosting companies as a result of visiting our site, or link to other sites or third parties via our website, ViON is not responsible for the privacy practices of third parties or the content of linked sites. We encourage you to read the posted privacy policy whenever interacting with any website.</p>
+<h2>How will I know about changes in the Privacy Policy?</h2>
+<p>ViON reserves the right to update this privacy policy from date and time to time. Please visit this page periodically so that you will be apprised of any changes. However, we will only use Personally Identifiable Information in accordance with the Privacy Policy that was in effect at the date and time the information was collected. If at any point we should decide to use that information differently, we will notify users by way of e-mail so that users can approve or disapprove of such use.</p>
+<div></div>
+<p>If you feel that we are not abiding by this privacy policy, you should contact us immediately via telephone at 571-353-6000 or via <a href="https://www.vion.com/contact-us" rel="noopener" target="_blank">https://www.vion.com/contact-us</a>.</p>
+</div><div class="fusion-clearfix"></div></div></div></div></div>
+</div>
+</div>
+</section>
+</div> <!-- fusion-row -->
+</main> <!-- #main -->
+<!--IXF: The following <div> block needs to be placed in the location where the link equity block will be displayed-->
+<!--IXF: For your website, the location is inside "fusion-footer" before footer-->
+<div class="be-ix-link-block"><!--Link Equity Target Div--></div>
+<!--IXF: end-->
+<div class="fusion-footer">
+<footer class="fusion-footer-widget-area fusion-widget-area" role="contentinfo">
+<div class="fusion-row">
+<div class="fusion-columns fusion-columns-4 fusion-widget-area">
+<div class="fusion-column col-lg-3 col-md-3 col-sm-3">
+<section class="fusion-footer-widget-column widget widget_media_image" id="media_image-2"><a href="/"><img alt="Vion Logo" class="image wp-image-80 attachment-full size-full" height="49" src="https://www.vion.com/wp-content/uploads/2018/12/vion-logo.png" style="max-width: 100%; height: auto;" width="160"/></a><div style="clear:both;"></div></section> </div>
+<div class="fusion-column col-lg-3 col-md-3 col-sm-3">
+<section class="fusion-footer-widget-column widget widget_nav_menu" id="nav_menu-2"><div class="menu-footer-menu-container"><ul class="menu" id="menu-footer-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1878" id="menu-item-1878"><a href="/about-vion/vision/">Who We Are</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1879" id="menu-item-1879"><a href="/what-we-do/multi-cloud/">What We Do</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1876" id="menu-item-1876"><a href="https://www.vion.com/our-contracts/">Our Contracts</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1880" id="menu-item-1880"><a href="/news/">Our Story</a></li>
+</ul></div><div style="clear:both;"></div></section> </div>
+<div class="fusion-column col-lg-3 col-md-3 col-sm-3">
+<section class="fusion-footer-widget-column widget widget_search" id="search-3"><h4 class="widget-title">How Can We Help You?</h4> <form action="https://www.vion.com/" class="searchform fusion-search-form fusion-search-form-clean" method="get" role="search">
+<div class="fusion-search-form-content">
+<div class="fusion-search-field search-field">
+<label><span class="screen-reader-text">Search for:</span>
+<input aria-label="Search..." aria-required="true" class="s" name="s" placeholder="Search..." required="" type="search" value=""/>
+</label>
+</div>
+<div class="fusion-search-button search-button">
+<input aria-label="Search" class="fusion-search-submit searchsubmit" type="submit" value=""/>
+</div>
+</div>
+</form>
+<div style="clear:both;"></div></section> </div>
+<div class="fusion-column fusion-column-last col-lg-3 col-md-3 col-sm-3">
+<section class="fusion-footer-widget-column widget widget_text" id="text-2" style="padding: 20px;border-style: solid;border-color:transparent;border-width:0px;"> <div class="textwidget"><h4 class="widget-title">Connect With Us</h4>
+<p><span style="font-size: 11px;">Here are some ways to get in touch. We are committed to serving you.</span></p>
+<h5 style="margin-top: 10px;">Service</h5>
+<p><i class="fontawesome-icon fa-phone fas" style="font-size: 13px;"></i> <a class="click-to-call" href="tel:1-877-857-8466">877.857.8466</a></p>
+<h5 style="margin-top: 20px;">Sales</h5>
+<p><i class="fontawesome-icon fa-phone fas" style="font-size: 13px;"></i> <a class="click-to-call" href="tel:1-571-353-6000">571.353.6000</a></p>
+<p><i class="fontawesome-icon fa-envelope fas" style="font-size: 13px;"></i> <a href="/cdn-cgi/l/email-protection#553c3b333a15233c3a3b7b363a38"><span class="__cf_email__" data-cfemail="83eaede5ecc3f5eaecedade0ecee">[email protected]</span></a></p>
+</div>
+<div style="clear:both;"></div></section><section class="fusion-footer-widget-column widget widget_media_image" id="media_image-3"><img alt="Man using tablet in an office" class="image wp-image-5798 attachment-full size-full" height="330" sizes="(max-width: 239px) 100vw, 239px" src="https://www.vion.com/wp-content/uploads/2020/01/Footer-Support-Hero.jpg" srcset="https://www.vion.com/wp-content/uploads/2020/01/Footer-Support-Hero-200x276.jpg 200w, https://www.vion.com/wp-content/uploads/2020/01/Footer-Support-Hero-217x300.jpg 217w, https://www.vion.com/wp-content/uploads/2020/01/Footer-Support-Hero.jpg 239w" style="max-width: 100%; height: auto;" width="239"/><div style="clear:both;"></div></section><section class="fusion-footer-widget-column widget social_links" id="social_links-widget-3"><h4 class="widget-title">Connect</h4>
+<div class="fusion-social-networks">
+<div class="fusion-social-networks-wrapper">
+<a aria-label="LinkedIn" class="fusion-social-network-icon fusion-tooltip fusion-linkedin fusion-icon-linkedin" href="https://www.linkedin.com/company/vion-corporation_2" rel="noopener noreferrer" style="font-size:32px;color:#3D3935;" target="_self" title="LinkedIn"></a>
+<a aria-label="Twitter" class="fusion-social-network-icon fusion-tooltip fusion-twitter fusion-icon-twitter" href="https://twitter.com/ViONcorp" rel="noopener noreferrer" style="font-size:32px;color:#3D3935;" target="_self" title="Twitter"></a>
+</div>
+</div>
+<div style="clear:both;"></div></section> </div>
+<div class="fusion-clearfix"></div>
+</div> <!-- fusion-columns -->
+</div> <!-- fusion-row -->
+</footer> <!-- fusion-footer-widget-area -->
+<footer class="fusion-footer-widget-area fusion-widget-area" role="contentinfo">
+<div class="fusion-row">
+<div class="fusion-columns fusion-columns-3 fusion-widget-area">
+<div class="fusion-column col-lg-3 col-md-3 col-sm-3 footer-connect">
+<section class="fusion-footer-widget-column">
+</section>
+</div>
+<div class="fusion-column col-lg-6 col-md-6 col-sm-6 footer-media">
+<section class="fusion-footer-widget-column">
+</section>
+</div>
+<div class="fusion-column col-lg-3 col-md-3 col-sm-3 footer-locations">
+<section class="fusion-footer-widget-column">
+</section>
+</div>
+<div class="fusion-clearfix"></div>
+</div> <!-- fusion-columns -->
+</div> <!-- fusion-row -->
+</footer>
+<footer class="fusion-footer-copyright-area fusion-footer-copyright-center" id="footer">
+<div class="fusion-row">
+<div class="fusion-copyright-content">
+<div class="fusion-copyright-notice">
+<div>
+		Copyright © 2022 ViON. All Rights Reserved.	</div>
+</div>
+</div> <!-- fusion-fusion-copyright-content -->
+</div> <!-- fusion-row -->
+</footer> <!-- #footer -->
+</div> <!-- fusion-footer -->
+</div> <!-- wrapper -->
+<a class="fusion-one-page-text-link fusion-page-load-link"></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">var fusionNavIsCollapsed=function(e){var t;window.innerWidth<=e.getAttribute("data-breakpoint")?(e.classList.add("collapse-enabled"),e.classList.contains("expanded")||(e.setAttribute("aria-expanded","false"),window.dispatchEvent(new Event("fusion-mobile-menu-collapsed",{bubbles:!0,cancelable:!0})))):(null!==e.querySelector(".menu-item-has-children.expanded .fusion-open-nav-submenu-on-click")&&e.querySelector(".menu-item-has-children.expanded .fusion-open-nav-submenu-on-click").click(),e.classList.remove("collapse-enabled"),e.setAttribute("aria-expanded","true"),null!==e.querySelector(".fusion-custom-menu")&&e.querySelector(".fusion-custom-menu").removeAttribute("style")),e.classList.add("no-wrapper-transition"),clearTimeout(t),t=setTimeout(function(){e.classList.remove("no-wrapper-transition")},400),e.classList.remove("loading")},fusionRunNavIsCollapsed=function(){var e,t=document.querySelectorAll(".fusion-menu-element-wrapper");for(e=0;e<t.length;e++)fusionNavIsCollapsed(t[e])};function avadaGetScrollBarWidth(){var e,t,n,s=document.createElement("p");return s.style.width="100%",s.style.height="200px",(e=document.createElement("div")).style.position="absolute",e.style.top="0px",e.style.left="0px",e.style.visibility="hidden",e.style.width="200px",e.style.height="150px",e.style.overflow="hidden",e.appendChild(s),document.body.appendChild(e),t=s.offsetWidth,e.style.overflow="scroll",t==(n=s.offsetWidth)&&(n=e.clientWidth),document.body.removeChild(e),t-n}fusionRunNavIsCollapsed(),window.addEventListener("fusion-resize-horizontal",fusionRunNavIsCollapsed);</script><div class="fusion-privacy-bar fusion-privacy-bar-bottom">
+<div class="fusion-privacy-bar-main">
+<span>By using this site, you agree to our <a href="/privacy-policy/">Privacy Policy</a>.					</span>
+<a class="fusion-privacy-bar-acceptance fusion-button fusion-button-default fusion-button-default-size fusion-button-span-no" data-alt-text="Update Settings" data-orig-text="Ok" href="#">
+			Ok		</a>
+</div>
+</div>
+<a class="rum_sst_contents rum_sst_" href="/contact-us/" id="rum_sst_tab">REQUEST A QUOTE</a><link href="https://www.vion.com/wp-includes/css/dist/block-library/style.min.css" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-code>code{font-family:Menlo,Consolas,monaco,monospace;color:#1e1e1e;padding:.8em 1em;border:1px solid #ddd;border-radius:4px}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-pullquote{border-top:4px solid;border-bottom:4px solid;margin-bottom:1.75em;color:currentColor}.wp-block-pullquote__citation,.wp-block-pullquote cite,.wp-block-pullquote footer{color:currentColor;text-transform:uppercase;font-size:.8125em;font-style:normal}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;position:relative;font-style:normal}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-group:where(.has-background){padding:1.25em 2.375em}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto;opacity:.4}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{padding:.5em;border:1px solid;word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-template-part.has-background{padding:1.25em 2.375em;margin-top:0;margin-bottom:0}
+</style>
+<script defer="defer" id="fancybox_script-js" src="https://www.vion.com/wp-content/themes/vion/jquery.fancybox.min.js" type="text/javascript"></script>
+<script defer="defer" id="js_cookie-js" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.3/js.cookie.min.js" type="text/javascript"></script>
+<script defer="defer" id="modernizr-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/modernizr.js" type="text/javascript"></script>
+<script id="fusion-column-bg-image-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var fusionBgImageVars = {"content_break_point":"799"};
+/* ]]> */
+</script>
+<script defer="defer" id="fusion-column-bg-image-js" src="https://www.vion.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-column-bg-image.js" type="text/javascript"></script>
+<script defer="defer" id="cssua-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/cssua.js" type="text/javascript"></script>
+<script defer="defer" id="jquery-waypoints-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.waypoints.js" type="text/javascript"></script>
+<script defer="defer" id="fusion-waypoints-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-waypoints.js" type="text/javascript"></script>
+<script id="fusion-animations-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var fusionAnimationsVars = {"status_css_animations":"desktop"};
+/* ]]> */
+</script>
+<script defer="defer" id="fusion-animations-js" src="https://www.vion.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-animations.js" type="text/javascript"></script>
+<script id="fusion-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var fusionJSVars = {"visibility_small":"640","visibility_medium":"1024"};
+/* ]]> */
+</script>
+<script defer="defer" id="fusion-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion.js" type="text/javascript"></script>
+<script defer="defer" id="bootstrap-transition-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/bootstrap.transition.js" type="text/javascript"></script>
+<script defer="defer" id="bootstrap-tooltip-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/bootstrap.tooltip.js" type="text/javascript"></script>
+<script defer="defer" id="jquery-request-animation-frame-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.requestAnimationFrame.js" type="text/javascript"></script>
+<script defer="defer" id="jquery-easing-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.easing.js" type="text/javascript"></script>
+<script defer="defer" id="jquery-fitvids-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.fitvids.js" type="text/javascript"></script>
+<script defer="defer" id="jquery-flexslider-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.flexslider.js" type="text/javascript"></script>
+<script defer="defer" id="jquery-hover-flow-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.hoverflow.js" type="text/javascript"></script>
+<script defer="defer" id="jquery-hover-intent-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.hoverintent.js" type="text/javascript"></script>
+<script id="jquery-lightbox-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var fusionLightboxVideoVars = {"lightbox_video_width":"1280","lightbox_video_height":"720"};
+/* ]]> */
+</script>
+<script defer="defer" id="jquery-lightbox-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.ilightbox.js" type="text/javascript"></script>
+<script defer="defer" id="jquery-mousewheel-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.mousewheel.js" type="text/javascript"></script>
+<script defer="defer" id="jquery-placeholder-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.placeholder.js" type="text/javascript"></script>
+<script defer="defer" id="jquery-fade-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.fade.js" type="text/javascript"></script>
+<script id="fusion-equal-heights-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var fusionEqualHeightVars = {"content_break_point":"799"};
+/* ]]> */
+</script>
+<script defer="defer" id="fusion-equal-heights-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-equal-heights.js" type="text/javascript"></script>
+<script defer="defer" id="fusion-parallax-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/fusion-parallax.js" type="text/javascript"></script>
+<script id="fusion-video-general-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var fusionVideoGeneralVars = {"status_vimeo":"0","status_yt":"1"};
+/* ]]> */
+</script>
+<script defer="defer" id="fusion-video-general-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/fusion-video-general.js" type="text/javascript"></script>
+<script id="fusion-video-bg-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var fusionVideoBgVars = {"status_vimeo":"0","status_yt":"1"};
+/* ]]> */
+</script>
+<script defer="defer" id="fusion-video-bg-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/fusion-video-bg.js" type="text/javascript"></script>
+<script id="fusion-lightbox-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var fusionLightboxVars = {"status_lightbox":"1","lightbox_gallery":"1","lightbox_skin":"metro-white","lightbox_title":"1","lightbox_arrows":"1","lightbox_slideshow_speed":"5000","lightbox_autoplay":"","lightbox_opacity":"0.9","lightbox_desc":"1","lightbox_social":"1","lightbox_deeplinking":"1","lightbox_path":"vertical","lightbox_post_images":"1","lightbox_animation_speed":"normal","l10n":{"close":"Press Esc to close","enterFullscreen":"Enter Fullscreen (Shift+Enter)","exitFullscreen":"Exit Fullscreen (Shift+Enter)","slideShow":"Slideshow","next":"Next","previous":"Previous"}};
+/* ]]> */
+</script>
+<script defer="defer" id="fusion-lightbox-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-lightbox.js" type="text/javascript"></script>
+<script defer="defer" id="fusion-tooltip-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-tooltip.js" type="text/javascript"></script>
+<script defer="defer" id="fusion-sharing-box-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-sharing-box.js" type="text/javascript"></script>
+<script defer="defer" id="jquery-sticky-kit-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/library/jquery.sticky-kit.js" type="text/javascript"></script>
+<script defer="defer" id="avada-skip-link-focus-fix-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-skip-link-focus-fix.js" type="text/javascript"></script>
+<script defer="defer" id="avada-general-footer-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-general-footer.js" type="text/javascript"></script>
+<script defer="defer" id="avada-quantity-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-quantity.js" type="text/javascript"></script>
+<script defer="defer" id="avada-crossfade-images-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-crossfade-images.js" type="text/javascript"></script>
+<script defer="defer" id="avada-select-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-select.js" type="text/javascript"></script>
+<script defer="defer" id="avada-tabs-widget-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-tabs-widget.js" type="text/javascript"></script>
+<script defer="defer" id="avada-container-scroll-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-container-scroll.js" type="text/javascript"></script>
+<script id="avada-live-search-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var avadaLiveSearchVars = {"live_search":"1","ajaxurl":"https:\/\/www.vion.com\/wp-admin\/admin-ajax.php","no_search_results":"No search results match your query. Please try again","min_char_count":"4","per_page":"100","show_feat_img":"1","display_post_type":"1"};
+/* ]]> */
+</script>
+<script defer="defer" id="avada-live-search-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-live-search.js" type="text/javascript"></script>
+<script defer="defer" id="fusion-alert-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-alert.js" type="text/javascript"></script>
+<script id="fusion-flexslider-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var fusionFlexSliderVars = {"status_vimeo":"","slideshow_autoplay":"1","slideshow_speed":"7000","pagination_video_slide":"","status_yt":"1","flex_smoothHeight":"false"};
+/* ]]> */
+</script>
+<script defer="defer" id="fusion-flexslider-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-flexslider.js" type="text/javascript"></script>
+<script id="fusion-container-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var fusionContainerVars = {"content_break_point":"799","container_hundred_percent_height_mobile":"0","is_sticky_header_transparent":"0","hundred_percent_scroll_sensitivity":"450"};
+/* ]]> */
+</script>
+<script defer="defer" id="fusion-container-js" src="https://www.vion.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-container.js" type="text/javascript"></script>
+<script id="avada-privacy-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var avadaPrivacyVars = {"name":"privacy_embeds","days":"30","path":"\/","types":[],"defaults":[],"button":"0"};
+/* ]]> */
+</script>
+<script defer="defer" id="avada-privacy-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-privacy.js" type="text/javascript"></script>
+<script id="avada-drop-down-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var avadaSelectVars = {"avada_drop_down":"1"};
+/* ]]> */
+</script>
+<script defer="defer" id="avada-drop-down-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-drop-down.js" type="text/javascript"></script>
+<script id="avada-to-top-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var avadaToTopVars = {"status_totop":"desktop_and_mobile","totop_position":"right_floating","totop_scroll_down_only":"1"};
+/* ]]> */
+</script>
+<script defer="defer" id="avada-to-top-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-to-top.js" type="text/javascript"></script>
+<script id="avada-header-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var avadaHeaderVars = {"header_position":"top","header_sticky":"","header_sticky_type2_layout":"menu_only","header_sticky_shadow":"1","side_header_break_point":"1022","header_sticky_mobile":"","header_sticky_tablet":"","mobile_menu_design":"modern","sticky_header_shrinkage":"","nav_height":"53","nav_highlight_border":"0","nav_highlight_style":"bar","logo_margin_top":"13px","logo_margin_bottom":"30px","layout_mode":"wide","header_padding_top":"0px","header_padding_bottom":"0px","scroll_offset":"full"};
+/* ]]> */
+</script>
+<script defer="defer" id="avada-header-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-header.js" type="text/javascript"></script>
+<script id="avada-menu-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var avadaMenuVars = {"site_layout":"wide","header_position":"top","logo_alignment":"left","header_sticky":"","header_sticky_mobile":"","header_sticky_tablet":"","side_header_break_point":"1022","megamenu_base_width":"custom_width","mobile_menu_design":"modern","dropdown_goto":"Go to...","mobile_nav_cart":"Shopping Cart","mobile_submenu_open":"Open submenu of %s","mobile_submenu_close":"Close submenu of %s","submenu_slideout":"1"};
+/* ]]> */
+</script>
+<script defer="defer" id="avada-menu-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-menu.js" type="text/javascript"></script>
+<script id="avada-sidebars-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var avadaSidebarsVars = {"header_position":"top","header_layout":"v3","header_sticky":"","header_sticky_type2_layout":"menu_only","side_header_break_point":"1022","header_sticky_tablet":"","sticky_header_shrinkage":"","nav_height":"53","sidebar_break_point":"1022"};
+/* ]]> */
+</script>
+<script defer="defer" id="avada-sidebars-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-sidebars.js" type="text/javascript"></script>
+<script defer="defer" id="bootstrap-scrollspy-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/library/bootstrap.scrollspy.js" type="text/javascript"></script>
+<script defer="defer" id="avada-scrollspy-js" src="https://www.vion.com/wp-content/themes/Avada/assets/min/js/general/avada-scrollspy.js" type="text/javascript"></script>
+<script id="fusion-responsive-typography-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var fusionTypographyVars = {"site_width":"1170px","typography_sensitivity":"1","typography_factor":"1.50","elements":"h1, h2, h3, h4, h5, h6"};
+/* ]]> */
+</script>
+<script defer="defer" id="fusion-responsive-typography-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-responsive-typography.js" type="text/javascript"></script>
+<script id="fusion-scroll-to-anchor-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var fusionScrollToAnchorVars = {"content_break_point":"799","container_hundred_percent_height_mobile":"0","hundred_percent_scroll_sensitivity":"450"};
+/* ]]> */
+</script>
+<script defer="defer" id="fusion-scroll-to-anchor-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-scroll-to-anchor.js" type="text/javascript"></script>
+<script defer="defer" id="fusion-general-global-js" src="https://www.vion.com/wp-content/themes/Avada/includes/lib/assets/min/js/general/fusion-general-global.js" type="text/javascript"></script>
+<script defer="defer" id="avada-vertical-menu-widget-js" src="https://www.vion.com/wp-content/plugins/fusion-core/js/min/fusion-vertical-menu-widget.js" type="text/javascript"></script>
+<script id="fusion-video-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var fusionVideoVars = {"status_vimeo":"0"};
+/* ]]> */
+</script>
+<script defer="defer" id="fusion-video-js" src="https://www.vion.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-video.js" type="text/javascript"></script>
+<script defer="defer" id="fusion-column-js" src="https://www.vion.com/wp-content/plugins/fusion-builder/assets/js/min/general/fusion-column.js" type="text/javascript"></script>
+<script type="text/javascript">
+				jQuery( document ).ready( function() {
+					var ajaxurl = 'https://www.vion.com/wp-admin/admin-ajax.php';
+					if ( 0 < jQuery( '.fusion-login-nonce' ).length ) {
+						jQuery.get( ajaxurl, { 'action': 'fusion_login_nonce' }, function( response ) {
+							jQuery( '.fusion-login-nonce' ).html( response );
+						});
+					}
+				});
+				</script>
+<script data-cfasync="false" src="//tribl.io/footer.js?orgId=Qj0DvmdZWDcq7MKbLbad" type="text/javascript"></script> </body>
+</html>

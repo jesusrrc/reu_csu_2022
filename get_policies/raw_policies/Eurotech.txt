@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+<title>40x</title>
+<meta content="" name="description"/>
+<link href="https://www.eurotech.com/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700.css" rel="stylesheet"/>
+<!-- <link href="https://fonts.googleapis.com/css?family=Palanquin:200,300,400,500,600,700" rel="stylesheet"> -->
+<script src="https://www.eurotech.com/tools/jquery-2.2.0.min.js" type="text/javascript"></script>
+<link href="https://www.eurotech.com/tools/bootstrap-3.3.6-dist/css/bootstrap-checkbox.css" rel="stylesheet"/>
+<link href="https://www.eurotech.com/tools/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://www.eurotech.com/tools/bootstrap-3.3.6-dist/js/bootstrap.min.js" type="text/javascript"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<script src="https://www.eurotech.com/tools/bootstrap-validation-0.6/dist/js/formValidation.min.js"></script>
+<script src="https://www.eurotech.com/tools/bootstrap-validation-0.6/dist/js/framework/bootstrap.min.js"></script>
+<script src="https://www.eurotech.com/tools/bootstrap-validation-0.6/dist/js/language/it_IT.js"></script>
+<script src="https://www.eurotech.com/tools/bootstrap-validation-0.6/dist/js/language/ja_JP.js"></script>
+<script src="https://www.eurotech.com/tools/bootstrap-validation-0.6/dist/js/language/fr_FR.js"></script>
+<script src="https://www.eurotech.com/tools/bootstrap-select/js/bootstrap-select.min.js"></script>
+<link href="https://www.eurotech.com/tools/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css">
+<script src="https://www.eurotech.com/tools/sweetalert/sweetalert.min.js"></script>
+<link href="https://www.eurotech.com/tools/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+<link href="https://www.eurotech.com/tools/owl.carousel.2/assets/owl.carousel.css" rel="stylesheet" type="text/css"/>
+<link href="https://www.eurotech.com/tools/owl.carousel.2/assets/owl.theme.default.min.css" rel="stylesheet" type="text/css"/>
+<script src="https://www.eurotech.com/tools/owl.carousel.2/owl.carousel.min.js"></script>
+<script src="https://www.eurotech.com/tools/jquery-scrolltofixed-min.js"></script>
+<script src="https://www.eurotech.com/tools/lazyload.js"></script>
+<script src="https://www.eurotech.com/tools/jquery.visible.min.js"></script>
+<script src="https://www.eurotech.com/tools/shared.js?v=2114"></script>
+<script src="https://www.eurotech.com/tools/header.js?v=2114"></script>
+<script async="" defer="" src="https://www.eurotech.com/tools/atc.min.js"></script>
+<script>
+        $(function () {
+            var nua = navigator.userAgent;
+            var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android ') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1);
+            if (isAndroid) {
+                $('select.form-control').removeClass('form-control').css('width', '100%');
+            }
+        });
+    </script>
+<script src="https://www.eurotech.com/tools/wi.js"></script>
+<link href="https://www.eurotech.com/css/form_request_modal.css" rel="stylesheet"/>
+<link href="https://www.eurotech.com/css/style.css?v=211442" rel="stylesheet" type="text/css">
+<link href="https://www.eurotech.com/css/mobile.css?v=121144" rel="stylesheet" type="text/css"/>
+<style media="screen">
+        .page404 {
+            font-size: 26px;
+            text-align: center;
+        }
+
+        .page404 img {
+            margin: 20% auto 40px;
+        }
+
+        .page404 a {
+            display: inline-block;
+            text-transform: uppercase;
+            color: #fff;
+            padding: 15px 80px;
+            text-decoration: none;
+            background-color: #008ecf;
+            margin-top: 60px;
+        }
+
+        .page404 .not-found-message {
+            font-size: 38px;
+            line-height: 1;
+            font-weight: 200;
+        }
+
+        .btn-back {
+            font-size: 15px;
+        }
+    </style>
+<script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /*search for elements with a certain atrribute:*/
+                file = elmnt.getAttribute("include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TQBBK8');</script>
+<!-- End Google Tag Manager -->
+</link></link></link></link></head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TQBBK8" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header class="fixed fullWidth" id="header">
+<div class="topNav">
+<div class="container">
+<div class="topNavItems">
+<ul class="topNavLinks">
+<!-- <li><a href="/en/investors" class="">Investors</a></li> -->
+<li><a class="" href="https://www.eurotech.com/en/support">Support</a></li>
+<!-- <li><a target="_blank" href="http://www.eurotech.com/download" rel="noopener noreferer">Downloads</a></li> -->
+<li><a href="https://blog.eurotech.com/en/" rel="noopener noreferer" target="_blank">Blog</a>
+</li>
+</ul>
+<div class="langSelector">
+<div class="langSelectorBtn"></div>
+<ul class="langSelectorList">
+<li class="active">
+<a href="https://www.eurotech.com/en">English</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/it">Italiano</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/fr">Français</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/jp">日本語</a>
+</li>
+<li><a href="http://www.advanet.co.jp" target="_blank">Advanet</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="mainNav">
+<div class="container">
+<a class="headerLogo" href="https://www.eurotech.com/en">
+<img alt="Eurotech - Imagine. Build. Succeed." class="img-responsive" src="https://www.eurotech.com/images/icone/eurotech-logo.png"/>
+<!-- <img src="/images/pdf_logo.png" alt="Eurotech - Imagine. Build. Succeed." class="img-responsive"> -->
+</a>
+<div class="mainNavItems">
+<ul class="mainNavList visible">
+<li><a class="" data-nav="products" href="#">Products</a></li>
+<li><a class="" data-nav="solutions" href="#">Markets</a></li>
+<li><a class="" data-nav="corporate" href="#">Corporate</a></li>
+</ul>
+<div class="mainNavWidgetsWrap">
+<div class="mainNavWidgets">
+<div class="btnContactForm"></div>
+<div class="headerContactFormTitle">REQUEST INFORMATION</div>
+<div class="btnSearch"></div>
+<form action="https://www.eurotech.com/en/search" id="headerSearchForm" method="get">
+<input class="input-search" id="headerSearchInput" name="q" required="" type="text"/>
+<span class="placeholder" for="headerSearchInput">Search</span>
+</form>
+<div class="btnMegaMenu" data-nav="mega">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</div>
+<div class="mainNavContactForm">
+<form class="formInfoHeader" id="form_139">
+<input name="referenceUrl" type="hidden" value="http://www.eurotech.com/en/50X"/>
+<input name="lang" type="hidden" value="en"/>
+<input name="type" type="hidden" value="INFO"/>
+<div class="titleForm">
+<div><img alt="mail" class="img-responsive" src="https://www.eurotech.com/images/icone/mail-icona.svg"/></div>
+<div>request information</div>
+</div>
+<div class="bodyForm">
+<div class="required-note">* required fields</div>
+<div class="form-group" style="margin-bottom: 10px">
+<div class="inputWi">
+<textarea autocomplete="off" class="form-control" name="message" required="" rows="6" style="resize: none"></textarea>
+<label for="message">WRITE YOUR MESSAGE*</label>
+</div>
+</div>
+<div class="hiddenBox">
+<div class="form-group">
+<div class="inputWi">
+<input autocomplete="off" class="form-control" name="email" required="" type="email"/>
+<label for="email">WORK EMAIL*</label>
+</div>
+</div>
+<div class="form-group">
+<div class="inputWi">
+<input autocomplete="off" class="form-control" name="name" required="" type="text"/>
+<label for="name">FIRST NAME*</label>
+</div>
+</div>
+<div class="form-group">
+<div class="inputWi">
+<input autocomplete="off" class="form-control" name="surname" required="" type="text"/>
+<label for="surname">LAST NAME*</label>
+</div>
+</div>
+<div class="form-group">
+<div class="inputWi">
+<input autocomplete="off" class="form-control" name="phone" required="" type="text"/>
+<label for="phone">PHONE*</label>
+</div>
+</div>
+<div class="form-group">
+<div class="inputWi">
+<select autocomplete="off" class="form-control" name="country" required="">
+<option value="">CHOOSE YOUR COUNTRY*</option>
+<option value="1">Afghanistan</option>
+<option value="23">Åland Islands</option>
+<option value="24">Albania</option>
+<option value="9">Algeria</option>
+<option value="125">American Samoa</option>
+<option value="205">Andorra</option>
+<option value="206">Angola</option>
+<option value="126">Anguilla</option>
+<option value="25">Antarctica</option>
+<option value="127">Antigua and Barbuda</option>
+<option value="26">Argentina</option>
+<option value="27">Armenia</option>
+<option value="128">Aruba</option>
+<option value="129">Australia</option>
+<option value="28">Austria</option>
+<option value="29">Azerbaijan</option>
+<option value="130">Bahamas</option>
+<option value="207">Bahrain</option>
+<option value="16">Bangladesh</option>
+<option value="131">Barbados</option>
+<option value="30">Belarus</option>
+<option value="208">Belgium</option>
+<option value="132">Belize</option>
+<option value="31">Benin</option>
+<option value="133">Bermuda</option>
+<option value="17">Bhutan</option>
+<option value="32">Bolivia</option>
+<option value="250">Bonaire, Sint Eustatius and Saba</option>
+<option value="33">Bosnia and Herzegovina</option>
+<option value="209">Botswana</option>
+<option value="34">Bouvet Island</option>
+<option value="35">Brazil</option>
+<option value="18">British Indian Ocean Territory</option>
+<option value="191">Brunei Darussalam</option>
+<option value="36">Bulgaria</option>
+<option value="37">Burkina Faso</option>
+<option value="210">Burundi</option>
+<option value="39">Cabo Verde</option>
+<option value="192">Cambodia</option>
+<option value="38">Cameroon</option>
+<option value="135">Canada</option>
+<option value="136">Cayman Islands</option>
+<option value="40">Central African Republic</option>
+<option value="41">Chad</option>
+<option value="42">Chile</option>
+<option value="7">China</option>
+<option value="137">Christmas Island</option>
+<option value="138">Cocos (Keeling) Islands</option>
+<option value="43">Colombia</option>
+<option value="44">Comoros</option>
+<option value="45">Congo</option>
+<option value="211">Congo - Democratic Republic</option>
+<option value="139">Cook Islands</option>
+<option value="140">Costa Rica</option>
+<option value="46">Côte d'Ivoire</option>
+<option value="47">Croatia</option>
+<option value="48">Cuba</option>
+<option value="251">Curaçao</option>
+<option value="49">Cyprus</option>
+<option value="50">Czech Republic</option>
+<option value="212">Denmark</option>
+<option value="51">Djibouti</option>
+<option value="141">Dominica</option>
+<option value="142">Dominican Republic</option>
+<option value="52">Ecuador</option>
+<option value="53">Egypt</option>
+<option value="143">El Salvador</option>
+<option value="54">Equatorial Guinea</option>
+<option value="55">Eritrea</option>
+<option value="56">Estonia</option>
+<option value="238">Eswatini</option>
+<option value="57">Ethiopia</option>
+<option value="58">Falkland Islands (Malvinas)</option>
+<option value="213">Faroe Islands</option>
+<option value="144">Fiji</option>
+<option value="214">Finland</option>
+<option value="10">France</option>
+<option value="59">French Guiana</option>
+<option value="145">French Polynesia</option>
+<option value="60">French Southern Territories</option>
+<option value="61">Gabon</option>
+<option value="62">Gambia</option>
+<option value="63">Georgia</option>
+<option value="64">Germany</option>
+<option value="65">Ghana</option>
+<option value="215">Gibraltar</option>
+<option value="66">Greece</option>
+<option value="146">Greenland</option>
+<option value="147">Grenada</option>
+<option value="148">Guadeloupe</option>
+<option value="149">Guam</option>
+<option value="150">Guatemala</option>
+<option value="216">Guernsey</option>
+<option value="67">Guinea</option>
+<option value="68">Guinea-Bissau</option>
+<option value="69">Guyana</option>
+<option value="151">Haiti</option>
+<option value="70">Heard Island and McDonald Islands</option>
+<option value="71">Holy See (Vatican City State)</option>
+<option value="152">Honduras</option>
+<option value="193">Hong Kong</option>
+<option value="72">Hungary</option>
+<option value="217">Iceland</option>
+<option value="19">India</option>
+<option value="194">Indonesia</option>
+<option value="73">Iran</option>
+<option value="74">Iraq</option>
+<option value="218">Ireland</option>
+<option value="219">Isle of Man</option>
+<option value="75">Israel</option>
+<option value="76">Italy</option>
+<option value="153">Jamaica</option>
+<option value="122">Japan</option>
+<option value="220">Jersey</option>
+<option value="221">Jordan</option>
+<option value="2">Kazakhstan</option>
+<option value="222">Kenya</option>
+<option value="154">Kiribati</option>
+<option value="223">Kuwait</option>
+<option value="3">Kyrgyzstan</option>
+<option value="195">Laos</option>
+<option value="77">Latvia</option>
+<option value="78">Lebanon</option>
+<option value="224">Lesotho</option>
+<option value="79">Liberia</option>
+<option value="80">Libya</option>
+<option value="81">Liechtenstein</option>
+<option value="82">Lithuania</option>
+<option value="225">Luxembourg</option>
+<option value="196">Macao</option>
+<option value="226">Madagascar</option>
+<option value="227">Malawi</option>
+<option value="197">Malaysia</option>
+<option value="20">Maldives</option>
+<option value="84">Mali</option>
+<option value="85">Malta</option>
+<option value="155">Marshall Islands</option>
+<option value="156">Martinique</option>
+<option value="86">Mauritania</option>
+<option value="87">Mauritius</option>
+<option value="88">Mayotte</option>
+<option value="157">Mexico</option>
+<option value="158">Micronesia</option>
+<option value="89">Moldova</option>
+<option value="11">Monaco</option>
+<option value="8">Mongolia</option>
+<option value="90">Montenegro</option>
+<option value="159">Montserrat</option>
+<option value="12">Morocco</option>
+<option value="228">Mozambique</option>
+<option value="198">Myanmar</option>
+<option value="229">Namibia</option>
+<option value="160">Nauru</option>
+<option value="21">Nepal</option>
+<option value="161">Netherlands</option>
+<option value="230">Netherlands</option>
+<option value="162">New Caledonia</option>
+<option value="163">New Zealand</option>
+<option value="164">Nicaragua</option>
+<option value="91">Niger</option>
+<option value="92">Nigeria</option>
+<option value="165">Niue</option>
+<option value="166">Norfolk Island</option>
+<option value="123">North Korea
+                                                </option>
+<option value="83">North Macedonia</option>
+<option value="167">Northern Mariana Islands</option>
+<option value="231">Norway</option>
+<option value="232">Oman</option>
+<option value="15">Pakistan</option>
+<option value="168">Palau</option>
+<option value="93">Palestine</option>
+<option value="169">Panama</option>
+<option value="170">Papua New Guinea</option>
+<option value="94">Paraguay</option>
+<option value="95">Peru</option>
+<option value="199">Philippines</option>
+<option value="171">Pitcairn</option>
+<option value="96">Poland</option>
+<option value="97">Portugal</option>
+<option value="172">Puerto Rico</option>
+<option value="233">Qatar</option>
+<option value="98">Réunion</option>
+<option value="99">Romania</option>
+<option value="100">Russia</option>
+<option value="234">Rwanda</option>
+<option value="173">Saint Barthélemy</option>
+<option value="101">Saint Helena, Ascension and Tristan da Cunha
+                                                </option>
+<option value="174">Saint Kitts and Nevis</option>
+<option value="175">Saint Lucia</option>
+<option value="176">Saint Martin (French part)</option>
+<option value="177">Saint Pierre and Miquelon</option>
+<option value="178">Saint Vincent and the Grenadines</option>
+<option value="179">Samoa</option>
+<option value="102">San Marino</option>
+<option value="103">Sao Tome and Principe</option>
+<option value="235">Saudi Arabia</option>
+<option value="104">Senegal</option>
+<option value="105">Serbia</option>
+<option value="106">Seychelles</option>
+<option value="107">Sierra Leone</option>
+<option value="200">Singapore</option>
+<option value="248">Sint Maarten (Dutch part)</option>
+<option value="108">Slovakia</option>
+<option value="109">Slovenia</option>
+<option value="180">Solomon Islands</option>
+<option value="110">Somalia</option>
+<option value="236">South Africa</option>
+<option value="111">South Georgia and the South Sandwich Islands
+                                                </option>
+<option value="124">South Korea</option>
+<option value="249">South Sudan</option>
+<option value="112">Spain</option>
+<option value="22">Sri Lanka</option>
+<option value="113">Sudan</option>
+<option value="114">Suriname</option>
+<option value="237">Svalbard and Jan Mayen</option>
+<option value="239">Sweden</option>
+<option value="13">Switzerland</option>
+<option value="115">Syria</option>
+<option value="201">Taiwan</option>
+<option value="4">Tajikistan</option>
+<option value="240">Tanzania</option>
+<option value="202">Thailand</option>
+<option value="203">Timor-Leste</option>
+<option value="116">Togo</option>
+<option value="181">Tokelau</option>
+<option value="182">Tonga</option>
+<option value="183">Trinidad and Tobago</option>
+<option value="14">Tunisia</option>
+<option value="117">Turkey</option>
+<option value="5">Turkmenistan</option>
+<option value="184">Turks and Caicos Islands</option>
+<option value="185">Tuvalu</option>
+<option value="241">Uganda</option>
+<option value="118">Ukraine</option>
+<option value="242">United Arab Emirates</option>
+<option value="243">United Kingdom</option>
+<option value="186">United States Minor Outlying Islands</option>
+<option value="187">United States of America</option>
+<option value="119">Uruguay</option>
+<option value="6">Uzbekistan</option>
+<option value="189">Vanuatu</option>
+<option value="120">Venezuela</option>
+<option value="204">Vietnam</option>
+<option value="134">Virgin Islands (British)</option>
+<option value="188">Virgin Islands (U.S.)</option>
+<option value="190">Wallis and Futuna</option>
+<option value="121">Western Sahara</option>
+<option value="244">Yemen</option>
+<option value="245">Zambia</option>
+<option value="246">Zimbabwe</option>
+</select>
+</div>
+</div>
+<div class="form-group stateUSACnt otherState" style="display: none">
+<div class="inputWi">
+<select autocomplete="off" class="form-control" name="state[]" required="">
+<option value="">STATE*</option>
+<option value="Alaska">Alaska</option>
+<option value="Alabama">Alabama</option>
+<option value="Arkansas">Arkansas</option>
+<option value="American Samoa">American Samoa</option>
+<option value="Arizona">Arizona</option>
+<option value="California">California</option>
+<option value="Colorado">Colorado</option>
+<option value="Connecticut">Connecticut</option>
+<option value="District of Columbia">District of Columbia</option>
+<option value="Delaware">Delaware</option>
+<option value="Florida">Florida</option>
+<option value="Georgia">Georgia</option>
+<option value="Guam">Guam</option>
+<option value="Hawaii">Hawaii</option>
+<option value="Iowa">Iowa</option>
+<option value="Idaho">Idaho</option>
+<option value="Illinois">Illinois</option>
+<option value="Indiana">Indiana</option>
+<option value="Kansas">Kansas</option>
+<option value="Kentucky">Kentucky</option>
+<option value="Louisiana">Louisiana</option>
+<option value="Massachusetts">Massachusetts</option>
+<option value="Maryland">Maryland</option>
+<option value="Maine">Maine</option>
+<option value="Michigan">Michigan</option>
+<option value="Minnesota">Minnesota</option>
+<option value="Missouri">Missouri</option>
+<option value="Mississippi">Mississippi</option>
+<option value="Montana">Montana</option>
+<option value="North Carolina">North Carolina</option>
+<option value="North Dakota">North Dakota</option>
+<option value="Nebraska">Nebraska</option>
+<option value="New Hampshire">New Hampshire</option>
+<option value="New Jersey">New Jersey</option>
+<option value="New Mexico">New Mexico</option>
+<option value="Nevada">Nevada</option>
+<option value="New York">New York</option>
+<option value="Ohio">Ohio</option>
+<option value="Oklahoma">Oklahoma</option>
+<option value="Oregon">Oregon</option>
+<option value="Pennsylvania">Pennsylvania</option>
+<option value="Puerto Rico">Puerto Rico</option>
+<option value="Rhode Island">Rhode Island</option>
+<option value="South Carolina">South Carolina</option>
+<option value="South Dakota">South Dakota</option>
+<option value="Tennessee">Tennessee</option>
+<option value="Texas">Texas</option>
+<option value="Utah">Utah</option>
+<option value="Virginia">Virginia</option>
+<option value="Virgin Islands">Virgin Islands</option>
+<option value="Vermont">Vermont</option>
+<option value="Washington">Washington</option>
+<option value="Wisconsin">Wisconsin</option>
+<option value="West Virginia">West Virginia</option>
+<option value="Wyoming">Wyoming</option>
+</select>
+</div>
+</div>
+<div class="form-group stateCanadaCnt otherState" style="display: none">
+<div class="inputWi">
+<select autocomplete="off" class="form-control" name="state[]" required="">
+<option value="">STATE*</option>
+<option value="Alberta">Alberta</option>
+<option value="British Columbia">British Columbia</option>
+<option value="Manitoba">Manitoba</option>
+<option value="New Brunswick">New Brunswick</option>
+<option value="Newfoundland and Labrador">Newfoundland and Labrador
+                                                </option>
+<option value="Northwest Territories">Northwest Territories</option>
+<option value="Nova Scotia">Nova Scotia</option>
+<option value="Nunavut">Nunavut</option>
+<option value="Ontario">Ontario</option>
+<option value="Prince Edward Island">Prince Edward Island</option>
+<option value="Quebec">Quebec</option>
+<option value="Saskatchewan">Saskatchewan</option>
+<option value="Yukon">Yukon</option>
+</select>
+</div>
+</div>
+<div class="form-group stateMexicoCnt otherState" style="display: none">
+<div class="inputWi">
+<select autocomplete="off" class="form-control" name="state[]" required="">
+<option value="">STATE*</option>
+<option value="Aguascalientes">Aguascalientes</option>
+<option value="Baja California">Baja California</option>
+<option value="Baja California Sur">Baja California Sur</option>
+<option value="Campeche">Campeche</option>
+<option value="Chiapas">Chiapas</option>
+<option value="Chihuahua">Chihuahua</option>
+<option value="Ciudad de Mexico">Ciudad de Mexico</option>
+<option value="Coahuila">Coahuila</option>
+<option value="Colima">Colima</option>
+<option value="Durango">Durango</option>
+<option value="Guanajuato">Guanajuato</option>
+<option value="Guerrero">Guerrero</option>
+<option value="Hidalgo">Hidalgo</option>
+<option value="Jalisco">Jalisco</option>
+<option value="Michoacán">Michoacán</option>
+<option value="Morelos">Morelos</option>
+<option value="Nayarit">Nayarit</option>
+<option value="Nuevo León">Nuevo León</option>
+<option value="Oaxaca">Oaxaca</option>
+<option value="Puebla">Puebla</option>
+<option value="Querétaro">Querétaro</option>
+<option value="Quintana Roo">Quintana Roo</option>
+<option value="San Luis Potosí">San Luis Potosí</option>
+<option value="Sinaloa">Sinaloa</option>
+<option value="Sonora">Sonora</option>
+<option value="Tabasco">Tabasco</option>
+<option value="Tamaulipas">Tamaulipas</option>
+<option value="Tlaxcala">Tlaxcala</option>
+<option value="Veracruz">Veracruz</option>
+<option value="Yucatán">Yucatán</option>
+<option value="Zacatecas">Zacatecas</option>
+</select>
+</div>
+</div>
+<div class="form-group" style="display: none;">
+<div>
+<input class="form-control chk_code" name="chk_code" type="text" value=""/>
+<span>CODICE DI CONTROLLO*</span>
+</div>
+</div>
+<div class="form-group" style="display: none;">
+<div>
+<input class="form-control ver_code" name="ver_code" type="text" value=""/>
+<span>CODICE DI VERIFICA*</span>
+</div>
+</div>
+<div class="privacyCnt">
+<div style="margin-bottom: 5px">I have read and understood the <a href="https://www.eurotech.com/en/page/privacy-policy" target="_blank">Privacy Policy</a> *
+                                        </div>
+<div class="form-group">
+<div class="radio radio-inline">
+<input autocomplete="off" id="privvacy_232" name="privacy" required="" type="radio" value="1"/>
+<label for="privvacy_232">I agree</label>
+</div>
+<div class="radio radio-inline">
+<input autocomplete="off" id="privvacy2_127" name="privacy" type="radio" value="0"/>
+<label for="privvacy2_127">I do not agree</label>
+</div>
+</div>
+<div class="form-group mktBox">
+<span style="cursor: pointer">I agree to receive marketing emails * -
+                                                <a>read <i class="fa fa-angle-down"></i></a></span>
+<div style="padding-top: 5px; display: none;">
+<div>We would love to share with you our marketing communications. Keep
+                                                    updated on Eurotech latest products, events and newsletter giving us
+                                                    your consent to receive marketing e-mails. If you want to know more
+                                                    about how we manage your data and how to update your subscription
+                                                    preferences, take a look <a href="https://www.eurotech.com/en/page/personal-data-use-informative" target="_blank">here</a> at our <a href="https://www.eurotech.com/en/page/personal-data-use-informative" target="_blank">Personal Data Use Informative</a></div>
+</div>
+</div>
+<div class="form-group">
+<div class="radio radio-inline">
+<input autocomplete="off" id="mrkt_16" name="marketing" required="" type="radio" value="1"/>
+<label for="mrkt_16">I agree</label>
+</div>
+<div class="radio radio-inline">
+<input autocomplete="off" id="mrkt2_228" name="marketing" type="radio" value="0"/>
+<label for="mrkt2_228">I do not agree</label>
+</div>
+</div>
+<div class="form-group">
+<div style="margin-top: 10px">To confirm click on “SEND”. Click on “RESET”
+                                                to start over</div>
+</div>
+</div>
+<div class="submitCnt">
+<button class="btnCancel" type="reset">reset</button>
+<button class="btnSubmit" type="submit">send</button>
+</div>
+</div>
+<div class="toogleBox"><span class="chevron"></span></div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="headerBreadCrumbs"></div>
+<div class="subNavWrap">
+<div class="container" data-subnav="products">
+<div class="subNavClose">×</div>
+<div class="row">
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/boards-modules">Boards and Modules</a>
+<ul class="subNavCategoryList">
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#com-hpc">COM-HPC</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#comexpress">COM
+                                            Express</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#small-form-factor">Small
+                                            Form Factor</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#singleboardcomputers">Single
+                                            Board Computers</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#vme">VME </a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#compactpci">CompactPCI</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#pc-104">PC/104 </a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#boards-development-kits">Development
+                                            Kits</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/subsystems">Subsystems</a>
+<ul class="subNavCategoryList">
+<li>
+<a href="https://www.eurotech.com/en/products/subsystems#embedded-computers">Embedded
+                                            and Edge Computers</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/subsystems#hmi-displays">HMIs and
+                                            Displays</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/subsystems#expansion-modules">Expansion
+                                            Modules</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/subsystems#development-kits">Development
+                                            Kits</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/networking-and-storage">Networking and Storage</a>
+<ul class="subNavCategoryList">
+<li>
+<a href="https://www.eurotech.com/en/products/networking-and-storage#mobile-access-routers">Mobile
+                                            Access Routers</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/networking-and-storage#data-loggers">Data
+                                            Loggers and Storage</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/networking-and-storage#networking-modules">Networking
+                                            Modules</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/high-performance-embedded-computing-hpec">High Performance Embedded Computing</a>
+<ul class="subNavCategoryList">
+<li>
+<a href="https://www.eurotech.com/en/products/high-performance-embedded-computing-hpec#hpec-systems">HPEC
+                                            Systems</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/high-performance-embedded-computing-hpec#hpec-switches">HPEC
+                                            Switches</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/high-performance-embedded-computing-hpec#hpec-boards">HPEC
+                                            Boards</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/intelligent-sensors">Intelligent Sensors</a>
+<ul class="subNavCategoryList">
+<li>
+<a href="https://www.eurotech.com/en/products/intelligent-sensors#people-counters">People
+                                            Counters</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/intelligent-sensors#environmental-monitoring-systems">Environmental
+                                            Monitoring Systems</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/iot">IoT</a>
+<ul class="subNavCategoryList">
+<li>
+<a href="https://www.eurotech.com/en/products/iot#multi-service-iot-edge-gateways">Multi-service
+                                            IoT Edge Gateways</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/iot#iot-edge-framework">IoT Edge
+                                            Framework</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/iot#iot-edge-management-platform">IoT
+                                            Edge Management Platform</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/iot#development-kit-iot">Development
+                                            Kits</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/complementary-products">Complementary Products</a>
+<ul class="subNavCategoryList">
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="container" data-subnav="solutions">
+<div class="subNavClose">×</div>
+<div class="row">
+<div class="col-md-9 col-md-offset-3">
+<div class="row">
+<div class="col-md-4">
+<nav class="subNav subNavSolutions">
+<a class="subNavCategory" href="https://www.eurotech.com/en/markets/industrial-automation">
+<img alt="Industrial and Automation" class="img-responsive" src="https://www.eurotech.com/data_files/market_icon/industrial-automation-blu_icona.png"/>
+                                            Industrial and Automation
+                                        </a>
+</nav>
+</div>
+<div class="col-md-4">
+<nav class="subNav subNavSolutions">
+<a class="subNavCategory" href="https://www.eurotech.com/en/markets/transportation-mobility">
+<img alt="Transportation and Mobility" class="img-responsive" src="https://www.eurotech.com/data_files/market_icon/transportation-blu_icona-2.png"/>
+                                            Transportation and Mobility
+                                        </a>
+</nav>
+</div>
+<div class="col-md-4">
+<nav class="subNav subNavSolutions">
+<a class="subNavCategory" href="https://www.eurotech.com/en/markets/energy-utilities">
+<img alt="Energy and Utilities" class="img-responsive" src="https://www.eurotech.com/data_files/market_icon/energy-blu_icona-2.png"/>
+                                            Energy and Utilities
+                                        </a>
+</nav>
+</div>
+<div class="col-md-4">
+<nav class="subNav subNavSolutions">
+<a class="subNavCategory" href="https://www.eurotech.com/en/markets/medical-healthcare">
+<img alt="Medical and Healthcare" class="img-responsive" src="https://www.eurotech.com/data_files/market_icon/medical-blu_icona.png"/>
+                                            Medical and Healthcare
+                                        </a>
+</nav>
+</div>
+<div class="col-md-4">
+<nav class="subNav subNavSolutions">
+<a class="subNavCategory" href="https://www.eurotech.com/en/markets/defense-aerospace">
+<img alt="Defense and Aerospace" class="img-responsive" src="https://www.eurotech.com/data_files/market_icon/2026069410defense2.png"/>
+                                            Defense and Aerospace
+                                        </a>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container" data-subnav="corporate">
+<div class="subNavClose">×</div>
+<div class="row">
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/section/about-eurotech">About Eurotech</a>
+<ul class="subNavCategoryList">
+<li><a href="https://www.eurotech.com/en/section/about-eurotech#mission-and-vision">Mission
+                                            and Vision</a></li>
+<li><a href="https://www.eurotech.com/en/section/about-eurotech#code-of-ethics">Code
+                                            of Ethics</a></li>
+<li><a href="https://www.eurotech.com/en/section/about-eurotech#social-responsibility">Social
+                                            Responsibility</a></li>
+<li><a href="https://www.eurotech.com/en/section/about-eurotech#certifications">Certifications</a>
+</li>
+</ul>
+<a class="subNavCategory" href="https://www.eurotech.com/en/investors">Investors</a>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<div class="subNavCategory">Resources</div>
+<ul class="subNavCategoryList">
+<li><a href="https://www.eurotech.com/en/application-stories">Application
+                                            Stories</a></li>
+<li><a href="https://www.eurotech.com/en/story">Related Stories</a></li>
+<li><a href="https://www.eurotech.com/en/white-papers">White Papers</a></li>
+<li><a href="https://www.eurotech.com/en/solution-overviews">Solution Overviews</a>
+</li>
+<li><a href="https://www.eurotech.com/en/case-studies">Case Studies</a></li>
+<li><a href="https://www.eurotech.com/en/catalogs-and-brochures">Catalogs And
+                                            Brochures</a></li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/news">News and Events</a>
+<br/><br/>
+<a class="subNavCategory" href="https://www.eurotech.com/en/awards">Awards</a>
+<br/><br/>
+<a class="subNavCategory" href="https://www.eurotech.com/en/section/eurotech-group-jobs-and-careers">Jobs and Careers</a>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/section/partners">Partners</a>
+<ul class="subNavCategoryList">
+<li><a href="https://www.eurotech.com/en/section/partners#strategic-technology-partners">Eurotech
+                                            Technology Partners</a></li>
+<li><a href="https://www.eurotech.com/en/section/partners#join-eurotech-partner-program">Join
+                                            Eurotech Partner Program</a></li>
+</ul>
+<a class="subNavCategory" href="contact-us.html">Contact Us</a>
+<ul class="subNavCategoryList">
+<li><a href="contact-us.html#global-fooprint">Global Footprint</a></li>
+<li><a href="contact-us.html#contact-local-office">Contact Local Office</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="container" data-subnav="mega">
+<div class="subnavTopnavLinksWrap">
+<ul class="subnavTopnavLinks">
+<li><a href="https://www.eurotech.com/en">English</a></li>
+<li><a href="https://www.eurotech.com/it">Italiano</a></li>
+<li>
+<a href="https://www.eurotech.com/fr">Français</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/jp">日本語</a>
+</li>
+<li><a href="http://www.advanet.co.jp" target="_blank">Advanet</a></li>
+</ul>
+<ul class="subnavTopnavLinks">
+<!-- <li><a href="/en/investors">Investors</a></li> -->
+<li><a href="https://www.eurotech.com/en/support">Support</a></li>
+<!-- <li><a target="_blank" href="http://www.eurotech.com/download">Downloads</a></li> -->
+<li><a href="https://blog.eurotech.com/en/" rel="noopener noreferer" target="_blank">Blog</a></li>
+</ul>
+</div>
+<div class="rowTitle"><span>Products</span></div>
+<div class="row">
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/boards-modules">Boards and Modules</a>
+<ul class="subNavCategoryList">
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#com-hpc">COM-HPC</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#comexpress">COM
+                                            Express</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#small-form-factor">Small
+                                            Form Factor</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#singleboardcomputers">Single
+                                            Board Computers</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#vme">VME </a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#compactpci">CompactPCI</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#pc-104">PC/104 </a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/boards-modules#boards-development-kits">Development
+                                            Kits</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/subsystems">Subsystems</a>
+<ul class="subNavCategoryList">
+<li>
+<a href="https://www.eurotech.com/en/products/subsystems#embedded-computers">Embedded
+                                            and Edge Computers</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/subsystems#hmi-displays">HMIs and
+                                            Displays</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/subsystems#expansion-modules">Expansion
+                                            Modules</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/subsystems#development-kits">Development
+                                            Kits</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/networking-and-storage">Networking and Storage</a>
+<ul class="subNavCategoryList">
+<li>
+<a href="https://www.eurotech.com/en/products/networking-and-storage#mobile-access-routers">Mobile
+                                            Access Routers</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/networking-and-storage#data-loggers">Data
+                                            Loggers and Storage</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/networking-and-storage#networking-modules">Networking
+                                            Modules</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/high-performance-embedded-computing-hpec">High Performance Embedded Computing</a>
+<ul class="subNavCategoryList">
+<li>
+<a href="https://www.eurotech.com/en/products/high-performance-embedded-computing-hpec#hpec-systems">HPEC
+                                            Systems</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/high-performance-embedded-computing-hpec#hpec-switches">HPEC
+                                            Switches</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/high-performance-embedded-computing-hpec#hpec-boards">HPEC
+                                            Boards</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/intelligent-sensors">Intelligent Sensors</a>
+<ul class="subNavCategoryList">
+<li>
+<a href="https://www.eurotech.com/en/products/intelligent-sensors#people-counters">People
+                                            Counters</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/intelligent-sensors#environmental-monitoring-systems">Environmental
+                                            Monitoring Systems</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/iot">IoT</a>
+<ul class="subNavCategoryList">
+<li>
+<a href="https://www.eurotech.com/en/products/iot#multi-service-iot-edge-gateways">Multi-service
+                                            IoT Edge Gateways</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/iot#iot-edge-framework">IoT Edge
+                                            Framework</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/iot#iot-edge-management-platform">IoT
+                                            Edge Management Platform</a>
+</li>
+<li>
+<a href="https://www.eurotech.com/en/products/iot#development-kit-iot">Development
+                                            Kits</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/products/complementary-products">Complementary Products</a>
+<ul class="subNavCategoryList">
+</ul>
+</nav>
+</div>
+</div>
+<div class="row topBorder">
+<div class="col-md-3">
+<nav class="subNav">
+<div class="subNavTitle"><span>Markets</span></div>
+</nav>
+</div>
+<div class="col-md-9">
+<div class="row">
+<div class="col-md-4">
+<nav class="subNav subNavSolutions">
+<a class="subNavCategory" href="https://www.eurotech.com/en/markets/industrial-automation">
+<img alt="Industrial and Automation" class="img-responsive" src="https://www.eurotech.com/data_files/market_icon/industrial-automation-blu_icona.png"/>
+                                            Industrial and Automation
+                                        </a>
+</nav>
+</div>
+<div class="col-md-4">
+<nav class="subNav subNavSolutions">
+<a class="subNavCategory" href="https://www.eurotech.com/en/markets/transportation-mobility">
+<img alt="Transportation and Mobility" class="img-responsive" src="https://www.eurotech.com/data_files/market_icon/transportation-blu_icona-2.png"/>
+                                            Transportation and Mobility
+                                        </a>
+</nav>
+</div>
+<div class="col-md-4">
+<nav class="subNav subNavSolutions">
+<a class="subNavCategory" href="https://www.eurotech.com/en/markets/energy-utilities">
+<img alt="Energy and Utilities" class="img-responsive" src="https://www.eurotech.com/data_files/market_icon/energy-blu_icona-2.png"/>
+                                            Energy and Utilities
+                                        </a>
+</nav>
+</div>
+<div class="col-md-4">
+<nav class="subNav subNavSolutions">
+<a class="subNavCategory" href="https://www.eurotech.com/en/markets/medical-healthcare">
+<img alt="Medical and Healthcare" class="img-responsive" src="https://www.eurotech.com/data_files/market_icon/medical-blu_icona.png"/>
+                                            Medical and Healthcare
+                                        </a>
+</nav>
+</div>
+<div class="col-md-4">
+<nav class="subNav subNavSolutions">
+<a class="subNavCategory" href="https://www.eurotech.com/en/markets/defense-aerospace">
+<img alt="Defense and Aerospace" class="img-responsive" src="https://www.eurotech.com/data_files/market_icon/2026069410defense2.png"/>
+                                            Defense and Aerospace
+                                        </a>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div class="row topBorder">
+<div class="col-md-3">
+<div class="subNavTitle"><span>Corporate</span></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/section/about-eurotech">About Eurotech</a>
+<ul class="subNavCategoryList">
+<li><a href="https://www.eurotech.com/en/section/about-eurotech#mission-and-vision">Mission
+                                            and Vision</a></li>
+<li><a href="https://www.eurotech.com/en/section/about-eurotech#code-of-ethics">Code
+                                            of Ethics</a></li>
+<li><a href="https://www.eurotech.com/en/section/about-eurotech#social-responsibility">Social
+                                            Responsibility</a></li>
+<li><a href="https://www.eurotech.com/en/section/about-eurotech#certifications">Certifications</a>
+</li>
+</ul>
+<a class="subNavCategory" href="https://www.eurotech.com/en/investors">Investors</a>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<div class="subNavCategory">Resources</div>
+<ul class="subNavCategoryList">
+<li><a href="https://www.eurotech.com/en/application-stories">Application
+                                            Stories</a></li>
+<li><a href="https://www.eurotech.com/en/story">Related Stories</a></li>
+<li><a href="https://www.eurotech.com/en/white-papers">White Papers</a></li>
+<li><a href="https://www.eurotech.com/en/solution-overviews">Solution Overviews</a>
+</li>
+<li><a href="https://www.eurotech.com/en/case-studies">Case Studies</a></li>
+<li><a href="https://www.eurotech.com/en/catalogs-and-brochures">Catalogs And
+                                            Brochures</a></li>
+</ul>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/news">News and Events</a>
+<br/><br/>
+<a class="subNavCategory" href="https://www.eurotech.com/en/awards">Awards</a>
+<br/><br/>
+<a class="subNavCategory" href="https://www.eurotech.com/en/section/eurotech-group-jobs-and-careers">Jobs and Careers</a>
+</nav>
+</div>
+<div class="col-md-3">
+<nav class="subNav">
+<a class="subNavCategory" href="https://www.eurotech.com/en/section/partners">Partners</a>
+<ul class="subNavCategoryList">
+<li><a href="https://www.eurotech.com/en/section/partners#strategic-technology-partners">Eurotech
+                                            Technology Partners</a></li>
+<li><a href="https://www.eurotech.com/en/section/partners#join-eurotech-partner-program">Join
+                                            Eurotech Partner Program</a></li>
+</ul>
+<a class="subNavCategory" href="contact-us.html">Contact Us</a>
+<ul class="subNavCategoryList">
+<li><a href="contact-us.html#global-fooprint">Global Footprint</a></li>
+<li><a href="contact-us.html#contact-local-office">Contact Local Office</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!--script>
+        includeHTML();
+    </script-->
+<main id="main">
+<div class="container page404">
+<img alt="404" class="img-responsive" src="https://www.eurotech.com/images/404.jpg">
+<div class="not-found-message">
+                Sorry.
+                <br>This URL was not found.
+                <br> Give another try.
+
+            </br></br></div>
+<div>
+<a class="btn-back" href="https://www.eurotech.com/en">come back</a>
+</div>
+</img></div>
+</main>
+<footer id="footer">
+<div class="container">
+<div class="scrollTop"></div>
+</div>
+<div class="footerContactWrap">
+</div>
+<div class="footerInfo">
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<p class="companyData">© EUROTECH 2021<span class="sep">/</span> P.IVA IT01791330309</p>
+</div>
+<div class="col-md-4">
+<p class="footerLinks">
+<a href="https://www.eurotech.com/en/page/privacy-policy">Privacy</a>
+<span class="sep">/</span>
+<a href="https://www.eurotech.com/en/page/cookie-policy">Cookie policy</a>
+<span class="sep">/</span>
+<a href="https://www.eurotech.com/en/page/terms-conditions">Terms and conditions</a>
+</p>
+</div>
+<div class="col-md-4 text-right">
+<ul class="socialLinksList noList">
+<li><a class="ico-facebook" href="https://www.facebook.com/EurotechIoT" rel="noopener noreferer" target="_blank">Facebook</a></li>
+<li><a class="ico-twitter" href="https://twitter.com/EurotechFan" rel="noopener noreferer" target="_blank">Twitter</a></li>
+<li><a class="ico-linkedin" href="https://www.linkedin.com/company/eurotech" rel="noopener noreferer" target="_blank">Linkedin</a></li>
+<li><a class="ico-slideshare" href="https://www.slideshare.net/Eurotechchannel" rel="noopener noreferer" target="_blank">Slideshare</a></li>
+<li><a class="ico-youtube" href="https://www.youtube.com/user/eurotechchannel" rel="noopener noreferer" target="_blank">You Tube</a></li>
+</ul>
+</div>
+</div>
+<div class="credits">
+<!-- <a href="http://www.webindustry.it" target="_blank" rel="noopener noreferer">made in web industry</a> -->
+</div>
+</div>
+</div>
+</footer>
+<div class="mainNavOverlay"></div>
+<div id="loading">
+<div class="spinner">
+<div class="bounce1"></div>
+<div class="bounce2"></div>
+<div class="bounce3"></div>
+</div>
+</div>
+<script>
+        $(function () {
+            $('.closeX, .linkAccetto').bind('click', function () {
+                var _day = new Date();
+                _day.setTime(_day.getTime() + (30 * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + _day.toUTCString();
+                document.cookie = "cookie_accepted=true;path=/;" + expires;
+                $('.cookiediv').remove();
+                dataLayer.push({ 'event': 'cookie_accepted' });
+            });
+        });
+    </script>
+<div aria-labelledby="myModalLabel" class="modal fade" id="modalThankyou" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title">THANK YOU FOR WRITING US</h4>
+<div class="modal-close" data-dismiss="modal">×</div>
+</div>
+<div class="modal-body">
+<h4>Your request has been sent correctly</h4>
+<div class="txtThank">
+                        You will receive a confirmation email shortly.<br/>The Eurotech Team will be activated as soon as
+                        possibile to respond to your needs.
+                    </div>
+<img alt="eurotech" class="img-responsive" src="https://www.eurotech.com/images/icone/eurotech_logo_bianco.svg" style="margin-bottom:40px">
+</img></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+        $('#modalThankyou').on('hide.bs.modal', function () {
+            location.reload();
+        });
+    </script>
+<script type="text/javascript">
+
+        function sendToCRM(data) {
+            var params = JSON.parse(data);
+            //console.log(params);
+
+            $.ajax({
+                type: 'POST',
+                url: "/api/curl/clickdimension",
+                data: {
+                    email: params.email ? params.email : null,
+                    firstname: params.name ? params.name : null,
+                    lastname: params.surname ? params.surname : null,
+                    telephone1: params.phone ? params.phone : null,
+                    mkpurpose: params.marketing && parseInt(params.marketing) > 0 ? 'on' : 'off',
+                    mkemails: params.marketing && parseInt(params.marketing) > 0 ? 'on' : 'off',
+                    country: params.country ? params.country : null,
+                    comments: params.message,
+                    cd_visitorkey: 'getCookie',
+                }
+            }).done(function (result) {
+                console.log(result)
+            });
+        }
+
+        function sendToCRMLO(data) {
+            var params = JSON.parse(data);
+
+            $.ajax({
+                type: 'POST',
+                url: "/api/curl/clickdimension",
+                data: {
+                    email: params.email ? params.email : null,
+                    firstname: params.name ? params.name : null,
+                    lastname: params.surname ? params.surname : null,
+                    telephone1: params.phone ? params.phone : null,
+                    mkpurpose: params.marketing && parseInt(params.marketing) > 0 ? 'on' : 'off',
+                    mkemails: params.marketing && parseInt(params.marketing) > 0 ? 'on' : 'off',
+                    country: params.country ? params.country : null,
+                    comments: params.message,
+                    type: 'LOCAL_OFFICE',
+                    cd_visitorkey: 'getCookie',
+                }
+            }).done(function (result) {
+                console.log(result)
+            });
+
+        }
+
+
+        $(document).ready(function () {
+
+
+            $('.formInfo select[name="country"], .formInfoHeader select[name="country"], #formLocalOffice select[name="country"]').on('change', function () {
+                var _val = $(this).val();
+                $('.otherState').hide();
+                $('.otherState select').val("");
+                //187 id of USA
+                //135 id of canada
+                //157 id of mexico
+                if (_val == 187) {
+                    $('.stateUSACnt').fadeIn();
+                } else if (_val == 135) {
+                    $('.stateCanadaCnt').fadeIn();
+                } else if (_val == 157) {
+                    $('.stateMexicoCnt').fadeIn();
+                }
+
+            });
+
+
+            $('.formInfo').formValidation({
+                fields: {
+                    privacy: {
+                        validators: {
+                            callback: {
+                                message: "You must agree the privacy policy",
+                                callback: function (value, validator, $field) {
+                                    if (value == 1) return true
+                                    return false
+                                }
+                            }
+                        }
+                    },
+                    /*email:{
+                        onSuccess: function(e, data) {
+                            $(data.element).parent().find('.checkEmail').show();
+                        },
+                        onError: function(e, data) {
+                            $(data.element).parent().find('.checkEmail').hide();
+                        },
+                    }*/
+                },
+            }).on('success.form.fv', function (e) {
+                e.preventDefault();
+                $('#loading').show();
+                //console.log('asdasd');
+                var formData = $('.formInfo').serialize();
+                var _url = "/api/send/request/info";
+                $.ajax({
+                    type: 'POST',
+                    url: _url,
+                    dataType: "json",
+                    data: formData
+                }).done(function (result) {
+                    $('#loading').hide();
+                    if (result.ok) {
+                        sendToCRM(JSON.stringify($('.formInfo').serializeObject()));
+                        swal({
+                            title: "Request sent with success",
+                            text: "You will soon receive an e-mail with a summary of your request",
+                            type: "success",
+                        }, function () {
+                            location.reload();
+                        })
+                    } else {
+                        swal({
+                            title: "Error!",
+                            text: null,
+                            type: "danger",
+                        }, function () {
+                            location.reload();
+                        })
+                    }
+                });
+            });
+
+            $('.formInfoHeader').formValidation({
+                fields: {
+                    privacy: {
+                        validators: {
+                            callback: {
+                                message: "You must agree the privacy policy",
+                                callback: function (value, validator, $field) {
+                                    if (value == 1) return true
+                                    return false
+                                }
+                            }
+                        }
+                    },
+                    email: {
+                        onSuccess: function (e, data) {
+                            $(data.element).parent().find('.checkEmail').show();
+                        },
+                        onError: function (e, data) {
+                            $(data.element).parent().find('.checkEmail').hide();
+                        },
+                    }
+                },
+            }).on('success.form.fv', function (e) {
+                e.preventDefault();
+                $('#loading').show();
+                var formData = $('.formInfoHeader').serialize();
+                var _url = "/api/send/request/info";
+                $.ajax({
+                    type: 'POST',
+                    url: _url,
+                    dataType: "json",
+                    data: formData
+                }).done(function (result) {
+                    $('#loading').hide();
+                    if (result.ok) {
+                        sendToCRM(JSON.stringify($('.formInfoHeader').serializeObject()));
+                        swal({
+                            title: "Request sent with success",
+                            text: "You will soon receive an e-mail with a summary of your request",
+                            type: "success",
+                        }, function () {
+                            location.reload();
+                        })
+                    } else {
+                        swal({
+                            title: "Error!",
+                            text: null,
+                            type: "danger",
+                        }, function () {
+                            location.reload();
+                        })
+                    }
+                });
+            });
+
+            $('#formLocalOffice').formValidation({
+                fields: {
+                    privacy: {
+                        validators: {
+                            callback: {
+                                message: "You must agree the privacy policy",
+                                callback: function (value, validator, $field) {
+                                    if (value == 1) return true
+                                    return false
+                                }
+                            }
+                        }
+                    }
+                },
+            }).on('success.form.fv', function (e) {
+                $('#loading').show();
+                e.preventDefault();
+                var formData = $('#formLocalOffice').serialize(),
+                    _url = "/api/send/request/info";
+
+                $.ajax({
+                    type: 'POST',
+                    url: _url,
+                    dataType: 'json',
+                    data: formData
+                }).done(function (result) {
+                    $('#loading').hide();
+                    $('#modalLocalOffice').modal('hide');
+                    if (result.ok) {
+                        sendToCRMLO(JSON.stringify($('#formLocalOffice').serializeObject()));
+                        $('#modalThankyou').modal('show');
+                    } else {
+                        swal({
+                            title: "Errore!",
+                            text: null,
+                            type: "danger",
+                        }, function () {
+                            location.reload();
+                        })
+                    }
+                });
+            });
+
+
+            $(".ver_code").attr("value", "check" + "ed");
+            setInterval(function () {
+                $(".ver_code").attr("value", "check" + "ed");
+            }, 3000);
+
+        });
+
+
+    </script>
+<!-- 2018-06-25 14:34-->
+</body>
+</html>

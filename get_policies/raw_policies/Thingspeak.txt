@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html>
+<script>
+//<![CDATA[
+let is_local_env = false
+//]]>
+</script>
+<script src="https://login.mathworks.com/embedded-login/js/dotcom_embedded_status.js"></script>
+<script>
+try {
+  MWEmbeddedStatus.initialize({
+    clientString: "TSPK", 
+    embeddedEndpoint: "https://login.mathworks.com/embedded-login/",
+    logout: function(){
+      window.location.href = "/logout";
+    },
+    synced: function(){
+      redirectToEmbeddedLogin();
+    },
+    handle3PCookieDisabled: function(){
+      redirectToEmbeddedLogin();
+    }
+  });
+
+  MWEmbeddedStatus.prototype.logout = function(){
+    if (is_local_env){
+      document.cookie = "mwa_SID=;path=/";
+    }
+    else {
+      document.cookie = "mwa_SID=;path=/;secure";
+    }
+    MWEmbeddedStatus.instance.config.logout();
+  };
+
+  // to enable SSO in local development and test environments
+  if (is_local_env){
+    MWEmbeddedStatus.prototype.redirectToSSO = function(tx){
+      var port = window.location.port === "" ? "" : ":"+ window.location.port;
+      window.location.href = window.location.protocol + "//" + location.hostname + port + "/login/mwa-sso?uri=" + encodeURIComponent(window.location.href) + "&tx_id=" + tx;
+    };
+  }
+} catch (error) {
+  // pages with links that don't have turbolinks disabled won't load the SSO Status API,
+  // or for browsers that don't allow 3p cookies by default, render embedded login form
+  if (typeof MWEmbeddedStatus === "undefined"){
+    window.location.replace("/login" + "?skipSSOCheck=true");
+  }
+}
+
+function redirectToEmbeddedLogin(){
+  let skipSSOCheckPath = "/login/mwa-sso/check";
+  // redirect the user to embedded login page if a synced event is received and the current pathname points to /login/mwa-sso/check
+  if (window.location.pathname === skipSSOCheckPath) {
+    window.location.replace("/login" + "?skipSSOCheck=true"); 
+  }
+}
+</script>
+<head>
+<script crossorigin="anonymous" integrity="sha384-FHIghZStVUwH7KBgzTjFuxxk5zPLiKRZ5QIUvFlJYNUc6qZ+SQquvgaixgB9MaIK" src="https://assets.adobedtm.com/d0cc0600946eb3957f703b9fe43c3590597a8c2c/satelliteLib-c70de708e9cd05573175cb144bac6233555f70e5.js" type="text/javascript"></script>
+<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css"/>
+<link href="//fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css"/>
+<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Licensing FAQ - ThingSpeak IoT</title>
+<meta content="Licensing FAQ on ThingSpeak. ThingSpeak is the open IoT platform with MATLAB analytics." name="description"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#5bbad5" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- alt url handling for css link and script tags onerror handler -->
+<script type="application/javascript">
+    function tryCssAltUrl(linkEl, altUrl) {
+      linkEl.removeAttribute('onerror');  // avoid infinite loop if alt url also error
+      linkEl.href=altUrl;
+    }
+    function tryJsAltUrl(altUrl, integrity) {
+      const script=document.createElement('script');
+      script.src=altUrl;
+      if (integrity) {
+        script.integrity=integrity;
+        script.crossOrigin='anonymous';
+      }
+      document.head.appendChild(script);
+    }
+  </script>
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" integrity="sha384-7tY7Dc2Q8WQTKGz2Fa0vC4dWQo07N4mJjKvHfIGnxuC4vPqFGFQppd9b3NWpf18/" onerror="tryCssAltUrl(this,'/bootstrap-3.1.1/dist/css/bootstrap.min.css');" rel="stylesheet"/>
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" onerror="tryCssAltUrl(this,'/font-awesome-4.7.0/css/font-awesome.min.css');" rel="stylesheet"/>
+<link data-turbolinks-track="reload" href="/assets/application-88ca41f4aa4a1b72a00b468fe7cebcf598e4c6b4a8807adfac0ca6f9ce7fa022.css" media="screen" rel="stylesheet">
+<script crossorigin="anonymous" integrity="sha384-EaUkI/FiMJtEXWAl0dCczvbFvjfzsIF1UNKGJvu9p5JIG71Kih7/kQJvYbBL7HOn" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script crossorigin="anonymous" integrity="sha384-VI5+XuguQ/l3kUhh4knz7Hxptx47wpQbVRDnp8v7Vvuhzwn1PEYb/uvtH6KLxv6d" onerror="tryJsAltUrl('/bootstrap-3.2.0/dist/js/bootstrap.min.js','sha384-VI5+XuguQ/l3kUhh4knz7Hxptx47wpQbVRDnp8v7Vvuhzwn1PEYb/uvtH6KLxv6d');" src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+<script crossorigin="anonymous" integrity="sha384-cfN+2tMN63B5BOlY4cbvyOdOpp2v+DGGmz1ZxHfGNNq0uPIFdS4R53iurgbTOgLu" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.25.3/js/jquery.tablesorter.combined.min.js" type="text/javascript"></script>
+<script data-turbolinks-track="reload" src="/assets/application-e3d278fbffad9f8318498567fc6363131ddf569c8567f27de00db057e505e866.js"></script>
+<script crossorigin="anonymous" integrity="sha384-CUdYwYFu8WmBI8h257c5rCd1GQX0KL+zSYV6kyRNY2thW7QqQymKGfTCI1WHwzvy" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js" type="text/javascript"></script>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="ovRwFCLnzY58ZyHrlG/X0o/jpc6WP9m7dNKzsT3pK2eRfhPMQrgL0XShXHL7bkjFzWthw/4xuAKQO+3c0w7vnQ==" name="csrf-token">
+<script defer="defer" src="/assets/sso_cookie_check-f8b1eba42d88a4157f9a740517d7ffad64cfb3d599f76006804a1ba21eccaa35.js"></script>
+<!-- Qualaroo for thingspeak.com -->
+<script defer="defer" src="/assets/ts_qualaroo_loader-36e56e29a01d4ad7a1ada41d2aef3275308d3a3644040a01e12139d34997bd00.js"></script>
+</meta></meta></link></head>
+<body>
+<div id="wrap">
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a href="/">
+<img data-turbolinks="false" height="35" id="nav-thingspeak-logo" src="/assets/thingspeak_logo_white-ef4990033a96773df16f2a98e7d72e06f1f497d026145ebbcce1aa9d974e9015.png" style="padding: 0 8px; margin-top: 7px;" width="200"/>
+</a> </div>
+<div class="navbar-collapse collapse" data-turbolinks="false">
+<ul class="nav navbar-nav navbar-right visible-xs visible-sm visible-md">
+<li class="dropdown" id="sign_in">
+<a href="/login" id="user-gravatar" title="Sign In"><img height="22" src="/assets/ico-header-account-04278bcd3c3a471562ed25e3f1e5a847993c59f7b63283b9b92ebfef4460a4f1.svg" width="22"/><span class="sign-in-label">Sign In</span></a>
+</li>
+</ul>
+<ul class="nav navbar-nav">
+<li><a href="/channels/public" id="nav-channels-before">Channels</a></li>
+<li><a href="/apps" id="nav-apps">Apps</a></li>
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="nav-support">Support<b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="https://www.mathworks.com/help/thingspeak/" id="nav-support-doc" target="_blank">Documentation</a></li>
+<li><a href="https://www.mathworks.com/help/thingspeak/getting-started-with-thingspeak.html" id="nav-support-tutorials" target="_blank">Tutorials</a></li>
+<li><a href="https://www.mathworks.com/help/thingspeak/examples.html" id="nav-support-examples" target="_blank">Examples</a></li>
+<li><a href="https://www.mathworks.com/matlabcentral/topics/thingspeak.html" id="nav-support-forum" target="_blank">Community Support</a></li>
+</ul>
+</li>
+</ul>
+<div id="right-nav">
+<ul class="nav navbar-nav">
+<span class="nav navbar-nav hidden-sm">
+<li class="dropdown"><a href="/pages/commercial_learn_more" id="commercial-learn-more-nav">Commercial Use</a></li>
+</span>
+<li class="dropdown"><a href="/prices" id="nav-sign-in">How to Buy</a></li>
+</ul>
+<ul class="nav navbar-nav hidden-xs hidden-sm hidden-md">
+<li class="dropdown" id="sign_in">
+<a href="/login" id="user-gravatar" title="Sign In"><img height="22" src="/assets/ico-header-account-04278bcd3c3a471562ed25e3f1e5a847993c59f7b63283b9b92ebfef4460a4f1.svg" width="22"/><span class="sign-in-label">Sign In</span></a>
+</li>
+</ul>
+</div>
+</div><!--/.nav-collapse -->
+</div>
+</div>
+<div class="container">
+<script>
+//<![CDATA[
+var number_of_messages_per_paid_unit_per_day = 90000
+//]]>
+</script>
+<script>
+//<![CDATA[
+var number_of_free_messages_per_day_free_user = 8200
+//]]>
+</script>
+<span style="display:block; padding-bottom: 10px;"><h2>ThingSpeak™ Licensing FAQ</h2></span>
+<ol style="list-style-type:none">
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>1. Can I use ThingSpeak™ for free?</license_faq>
+<p class="text-justify">
+         Commercial users may sign up once for a time-limited free evaluation. All other commercial uses require a standard commercial license.
+         Non-commercial users can use ThingSpeak for free subject to the limitations of the free license option. 
+         Users of the free option will be limited to sending no more than 3 million messages each year to the ThingSpeak service. Users of the free license will also be limited to 4 channels. For users of the free option, the message update interval limit remains limited at 15 seconds.  Other limitations are described on the <a data-turbolinks="false" href="/prices">How to Buy</a> pages.
+      </p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>2. May I sign-up for more than one free license?</license_faq>
+<p class="text-justify">
+         No. You may only sign up for one free license even if you have multiple MathWorks Accounts.
+      </p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>3. If I already have a standard or academic license, can I set up another MathWorks Account for home use?</license_faq>
+<p class="text-justify">
+         Yes. You can set up an additional MathWorks account. Make sure to use a different email address as each MathWorks Account is associated with a unique email address.
+      </p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>4. What is a message?</license_faq>
+<p class="text-justify">ThingSpeak stores messages in channels. A message is defined as a write of up to 8 fields of data to a ThingSpeak channel. For example, a channel representing a weather station could include the following 8 fields of data: temperature, humidity, barometric pressure, wind speed, wind direction, rainfall, battery level, and light level. Each message cannot exceed 3000 bytes. Examples of messages include:
+        <ol>
+<li>A write to a ThingSpeak channel using the REST API or target-specific ThingSpeak libraries</li>
+<ol type="a">
+<li>From an embedded device</li>
+<li>From another computer</li>
+</ol>
+<li> A write to a ThingSpeak channel using MQTT</li>
+<li>A write to a ThingSpeak channel from MATLAB using thingspeakwrite or the REST API</li>
+<li>A write to a ThingSpeak channel inside ThingSpeak using the MATLAB Analysis or MATLAB Visualizations Apps</li>
+<li> Any writes to ThingSpeak triggered by a React or a Timecontrol</li>
+</ol>
+</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>5. What is a channel?</license_faq>
+<p class="text-justify">
+          ThingSpeak stores data in channels.  Normally, one connected device will require one channel on ThingSpeak.
+      </p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>6. What are units?</license_faq>
+<p class="text-justify">ThingSpeak is sold in units. One unit = 33 million messages for use during the term of the annual license. As a reference, one unit provides the ability for a device sending data to ThingSpeak at once per second to send data to ThingSpeak for one year. One unit also provides the ability to create a fixed number of channels on ThingSpeak (e.g., one standard license type unit provide 250 channels). The number of channels that can be created depends on the license type. See How to Buy Pages for details.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>7. When I purchase a unit of messages, how long do they last before expiration?</license_faq>
+<p class="text-justify">They last approximately one year from the purchase date. More precisely, they last from 365-395 days depending on purchase date. Licenses always end at the end of the month so a purchase made on November 20, 2016 will terminate on November 30, 2017.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>8. Can I have both free and paid license at the same time?</license_faq>
+<p class="text-justify">No. If your login is associated with a free license and you purchase (or become a Licensed End User on a paid license) a paid license, your free license and associated messages are no longer available.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>9. What are the benefits of purchasing one of the paid license over using a free license?</license_faq>
+<p class="text-justify">The paid license options offer the ability to send and process more data on ThingSpeak. The paid license options also offer the ability to have more channels on ThingSpeak, which allows you to connect more devices to ThingSpeak. They offer reduced message update interval limit of one second, allowing you to send data to ThingSpeak more frequently (the free option limit is 15 seconds). The academic and standard paid options also offer technical support, and a longer timeout for MATLAB calculations. In addition, the Standard license option offers the ability build commercial projects with ThingSpeak.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>10. If I need more messages or more channels, can I purchase additional units after my initial purchase?</license_faq>
+<p class="text-justify">Yes. You can purchase additional units at any time.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>11. If I have purchased additional units during the year, which units will get used?</license_faq>
+<p class="text-justify">ThingSpeak will draw down messages from the unit with the earliest expiration date first.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>12. What happens if I run out of messages or channels on my license?</license_faq>
+<p class="text-justify">Your ThingSpeak channels will no longer accept new data points. However, you can avoid this situation by adding additional unit(s) to your license prior to using up all your messages. If you run out of channels, you will not be able to create additional channels. However, you can avoid this situation by adding additional unit(s) to your license prior to using up all your channels.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>13. What happens to any unused messages I have when my unit expires?</license_faq>
+<p class="text-justify">When a unit expires, all unused messages are no longer available.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>14. How does MathWorks estimate “suggested daily usage rate”?</license_faq>
+<p class="message_faq text-justify">Recommended maximum daily usage rate is based on the capacity available on your license. For example, a license with one unit = 33 million messages has a recommended maximum daily usage rate of REPLACE_PAID_MESSAGES_PER_DAY messages per day. A license with two units = 66 million would have a recommended maximum daily usage rate of REPLACE_PAID_MESSAGES_PER_DAY_TWO_UNITS messages per day. You may exceed your recommended maximum daily usage, but doing so may result in exhausting your messages before your license expires. </p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>15. Can I have more than one ThingSpeak™ license at the same time?</license_faq>
+<p class="text-justify">Normally, no. However, it is possible that you may have valid access to multiple licenses. In that case, you choose which license you would like to have messages drawn down from when you setup your ThingSpeak channels.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>16. Where do I see the consumption rate for the messages?</license_faq>
+<p class="text-justify">On your My Account page, you can see how many messages you have remaining and your consumption rate.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>17. How will I know if I am running low on messages?</license_faq>
+<p class="text-justify">ThingSpeak will attempt to notify you if it appears you will run out of messages based on your recent historical usage. If you are notified, you may need to purchase additional units to ensure your ThingSpeak channels will continue to receive data.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>18. How will I know if I ran out of messages?</license_faq>
+<p class="text-justify">ThingSpeak will attempt to notify you if you have exhausted all your messages.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>19. Does using any of the apps in ThingSpeak™ affect my messages in any way?</license_faq>
+<p class="text-justify">Your messages are consumed when you write data to a ThingSpeak channel. If you write data to a channel from one of the ThingSpeak Apps, you will consume messages. For example, if are using the MATLAB Analysis app to compute a value that is derived from data you have stored in ThingSpeak channels, you will not consume messages, but if you save/write that value to another channel, you will consume messages.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>20. How is Compute Timeout defined?</license_faq>
+<p class="text-justify">When you request a MATLAB calculation in ThingSpeak, the execution time must be less than the compute timeout. The execution time includes the request communication time, response communication time and the calculation time.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>21. How is message update interval limit defined?</license_faq>
+<p class="text-justify">Message update interval limit is the minimum interval for which ThingSpeak will accept new data from your devices. This limit is a per channel limit. This means each channel that you have setup in ThingSpeak can receive data up to the defined limit.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>22. Can I use MATLAB® Toolboxes in the MATLAB Analysis App on ThingSpeak?</license_faq>
+<p class="text-justify">Yes, provided you have a license and provided the toolbox is supported in ThingSpeak. A complete list of supported toolboxes can be found <a href="https://www.mathworks.com/help/thingspeak/matlab-toolbox-access.html">here</a>.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>23. How much data can I store on ThingSpeak™?</license_faq>
+<p class="text-justify">
+<ul>
+<li>Free users are limited to 10 million messages (3+ years at minimum update interval)</li>
+<li>Paid users are limited to 100 million messages per unit (3+ years at minimum update interval)</li>
+<li>If storage is exceeded, your channels may no longer be able to receive data</li>
+<li>Long term archiving of data for paid customers is available. Email <a href="mailto:thingspeak-sales@mathworks.com?Subject=Long-term%20archiving%20of%20data%20on%20ThingSpeak">thingspeak-sales@mathworks.com</a> for options.</li>
+</ul>
+</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>24. Does uploading of data from a file stored in the cloud or locally count towards my message usage?</license_faq>
+<p class="text-justify">Yes. Upload of data counts as one or more messages.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>25. Can I share a ThingSpeak™ paid license with a colleague?</license_faq>
+<p class="text-justify">As an administrator of a standard or academic ThingSpeak license, you may assign Licensed End Users to your license. Licensed End Users will have access to drawdown messages from your license. The assignment of Licensed End Users is done in License Center.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>26. If a Licensed End User (LEU) leaves my company or university, can I disassociate the user from the license?</license_faq>
+<p class="text-justify">Yes. When you do this, they will no longer have access to ThingSpeak using their MathWorks account. In addition, all channels created by the Licensed End User under your license will stop accepting data. If this is not desired, see the next question.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>27. If a Licensed End User leaves my company or university, can I reassign the ThingSpeak™ data channels associated with that Licensed End User to another Licensed End User?</license_faq>
+<p class="text-justify">Yes. The administrator of the ThingSpeak license can do this. Email <a href="mailto:thingspeak-sales@mathworks.com?Subject=Need%20to%20reassign%20ThingSpeak%20license">thingspeak-sales@mathworks.com</a> to make this request.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>28. What is Standard MathWorks Support?</license_faq>
+<p class="text-justify">Customers covered under standard MathWorks support are entitled to call the MathWorks support line and submit a <a href="https://www.mathworks.com/support/contact_us.html">support request</a>.</p>
+</span>
+</li>
+<li>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>29. If I work for a company with employees in multiple countries, can I, as an administrator of a ThingSpeak™ license, designate users who reside in a different country from my own as Licensed End Users?</license_faq>
+<p class="text-justify">No.  All users of a ThingSpeak license should work predominantly in the country that you chose when you purchased the license.</p>
+</span>
+</li>
+<li>
+<a name="prorated"></a>
+<span style="display:block; padding-bottom: 5px;">
+<license_faq>30. Why is the pricing different when I have multiple units on my renewal?</license_faq>
+<p class="text-justify">If you made multiple purchases at different times during the year, renewal for these units will be synchronized, or co-termed, so they share a single Service End Date based on the earliest Service End Date of the individual purchases. Your renewal pricing and the number of messages deposited into your account at renewal will be prorated.<br/>
+      If your ThingSpeak license is on a Master License with other products like MATLAB, the renewal date will be synchronized with the Master License renewal date. At renewal time, your ThingSpeak renewal pricing and the number of messages deposited into your account at renewal will be prorated.</p>
+</span>
+</li>
+</ol>
+<script src="/assets/messages_locale_formatter-5842ab6fabf7dc1720ecb0dadfb87005faf9adc571fb4a6f5acd7053cda910d3.js"></script>
+</div>
+</div>
+<script type="text/javascript">
+var cookieBanner ={
+   /* Hide the cookie banner if it was accepted in the last year */
+   showIfNotAccepted: function(){
+     if ( localStorage ) {
+       lastCookieNotificationAcceptedDate = parseInt(localStorage.getItem('tspk-cookie-banner'));
+       /* 31536000000 is the number of milliseconds since 365 days ago */
+       if (  isNaN(lastCookieNotificationAcceptedDate) || ( lastCookieNotificationAcceptedDate < ((new Date).getTime() - 31536000000) ) ){
+         $("#cookie-banner").show();
+       } else {
+         $("#cookie-banner").hide();
+       }
+     }
+   },
+
+   /* Store time when the cookie notification was accepted in the browser local storage for this site */
+   setAcceptanceTime: function() {
+     if ( localStorage ) {
+       localStorage.setItem('tspk-cookie-banner',(new Date).getTime());
+       cookieBanner.showIfNotAccepted();
+     }
+   }
+
+};
+</script>
+<div class="cookie-alert-warning" id="cookie-banner">
+<script type="text/javascript">cookieBanner.showIfNotAccepted();</script>
+<div class="text-right" id="cookie-icon"><span class="fa fa-exclamation-triangle"></span></div>
+<div id="cookie-text"><p>This website uses cookies to improve your user experience, personalize content and ads, and analyze website traffic. By continuing to use this website, you consent to our use of cookies. Please see our <a href="https://www.mathworks.com/company/aboutus/policies_statements" style="font-size: small" target="_blank">Privacy Policy</a> to learn more about cookies and how to change your settings.</p></div>
+<div id="cookie-remove"><span class="glyphicon glyphicon-remove" onclick="cookieBanner.setAcceptanceTime();return false;"></span></div>
+</div>
+<div id="footer">
+<div class="container">
+<p>
+<span class="hidden-xs pull-left">
+<a href="https://blogs.mathworks.com/iot/" target="_blank" title="IoT Blog">Blog</a> |
+        <a href="https://www.mathworks.com/help/thingspeak/" target="_blank" title="ThingSpeak Documentation">Documentation</a> |
+        <a href="https://www.mathworks.com/help/thingspeak/getting-started-with-thingspeak.html" target="_blank" title="ThingSpeak Tutorials">Tutorials</a> |
+        <a href="https://www.mathworks.com/mw_account/company/aboutus/policies_statements/online-services-agreement.html" target="_blank">Terms</a> |
+        <a href="https://www.mathworks.com/company/aboutus/policies_statements" target="_blank">Privacy Policy</a>
+</span>
+<span class="pull-right">
+<a alt="Facebook" href="http://www.facebook.com/thingspeak" target="_blank"><img height="16" src="/assets/ico-facebook-864217e7723b63bd8687c81e99e677c0a1efba1db6282794f4077f3d6d5cae86.svg" width="16"/></a>
+<a alt="Twitter" href="http://www.twitter.com/thingspeak" target="_blank"><img height="16" src="/assets/ico-twitter-502ca920ad71f398928c9ec00203b98655f8b1ba821b95f4cf11b4eef72b6d4b.svg" width="16"/></a>
+<a alt="RSS" href="http://feeds.feedburner.com/internetofthings" target="_blank"><img height="16" src="/assets/ico-rss-349a27d6441a574f9218ee6e808d147dc5566204c79d967cf90b33b0bd026171.svg" width="16"/></a>
+         © 2022 <a href="https://www.mathworks.com/" target="_blank">The MathWorks, Inc.</a>
+</span>
+</p>
+</div>
+</div>
+<div class="modal fade" id="confirmation-modal" role="dialog" tabindex="-1">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+<h4 class="modal-title">Confirm</h4>
+</div>
+<div class="modal-body">
+</div>
+<div class="modal-footer">
+<button class="btn btn-default" data-dismiss="modal" type="button">Cancel</button>
+<button class="btn btn-primary" data-dismiss="modal" id="confirmation-modal-ok" type="button">OK</button>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">_satellite.pageBottom();</script>
+</body>
+</html>

@@ -1,0 +1,1249 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="Wistron - Privacy Policy" property="og:title"/>
+<meta content="For more information, please visit www.wistron.com" property="og:description"/>
+<meta content="https://www.wistron.com/CMS/GetFile2/F53A3D3A-2062-4CE8-8C75-7AC5766AC868" property="og:image"/>
+<title>
+        Wistron
+    </title>
+<link href="/favorites.ico" rel="shortcut icon" type="image/x-icon"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/Content/css/bootstrap-responsive.css" rel="stylesheet"/>
+<link href="/Content/css/bootstrap.css" rel="stylesheet"/>
+<link href="/Content/css/cssStyle-phone6.css?v=94" media="screen and ( max-width:480px)" rel="stylesheet" type="text/css">
+<link href="/Content/css/cssStyle6.css?v=94" media="screen and ( min-width:480px)" rel="stylesheet" type="text/css">
+<link href="/Content/css/smoothDivScroll.css" media="screen and ( min-width:480px)" rel="stylesheet" type="text/css">
+<link href="/Content/css/skin.css" rel="stylesheet" type="text/css"/>
+<link href="/Content/css/print.css" media="print" rel="stylesheet" type="text/css"/>
+<script src="/Scripts/jquery-1.11.3.min.js"></script>
+<script src="/Scripts/jquery.PrintArea.js" type="text/javascript"></script>
+<link href="/Content/css/jquery-ui-1.10.0.custom.css" rel="stylesheet"/>
+<script src="/Scripts/jquery-ui.js" type="text/javascript"></script>
+<script src="/Scripts/script.js" type="text/javascript"></script>
+<script src="/Scripts/jquery.blockUI.js" type="text/javascript"></script>
+<script src="/Scripts/bootstrap.js"></script>
+<script src="/Scripts/jquery.jcarousel.min.js" type="text/javascript"></script>
+<script src="/Scripts/nwmatcher-1.2.5.js" type="text/javascript"></script>
+<!--[if IE 8]> 
+      <link href="/Content/css/cssStyle-ie8.css" rel="stylesheet" type="text/css"/>
+      
+      <script type="text/javascript" src="/Scripts/css3-mediaqueries.js"></script>
+      
+      <script type="text/javascript" src="/Scripts/selectivizr.js"></script>
+      <link href="/Content/css/cssStyle6.css?v=94" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-159550382-1" type="text/javascript"></script>
+<script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-159550382-1');
+    </script>
+<style type="text/css">
+    .code {font-family:Arial;font-style:italic;color:blue;font-size:30px;border:0;padding:2px 3px;letter-spacing:3px;font-weight:bolder;float:left;cursor:pointer;width:150px;height:60px;line-height:60px;text-align:center;vertical-align:middle;}
+    .subNaviMenu li a { text-decoration:none; /*font-size:12px; color:#288bc4;*/color:#999;letter-spacing: 0px;position: relative;top: -4px; }
+    .subNaviMenu li a:hover { color:#A0CB59; }
+
+    #pc table td {
+    border: 1px solid #D7D7D7;
+    background: #FAFBFB;
+    padding-left: 10px;
+    height: 40px;
+    word-break: normal;   
+}
+
+#mobile table td {
+    border: 1px solid #D7D7D7;
+    background: #FAFBFB;
+    padding-left: 10px;
+    height: 40px;
+    word-break: normal;   
+}
+
+    </style>
+<style type="text/css">
+        body
+        {
+            /*-moz-user-select: none;
+            -webkit-user-select: none;*/
+        }
+    </style>
+<script type="text/javascript">
+        var code;
+
+        function createCode() {
+            code = '';
+            var codeLength = 6; //驗證碼的長度
+            //var checkCode = $('#checkCode');
+            var checkCode = document.getElementById("checkCode");
+            var codeChars = new Array(2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',  'j', 'k', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'); //所有候選組成驗證碼的字符
+            for (var i = 0; i < codeLength; i++) {
+                var charNum = Math.floor(Math.random() * 52);
+                code += codeChars[charNum];
+            }
+            if (checkCode) {
+                checkCode.className = "code";
+                checkCode.innerHTML = code;
+            }
+        }
+
+        $(document).ready(function () {
+            if ($('.phoneMenu-other ul').is(':empty')) {
+                $(".phoneSubMenu > div >  a").css('display', 'none');
+            } else {
+                $(".phoneSubMenu > div >  a").css('display', 'default');
+            }
+            if ($(window).width() < 480) {
+                $("div.topImage4-1").css('height', $(window).width() * 68 / 320 + "px");
+                $("div.topImage4-1").css('background-image', 'url(/CMS/GetFile2/8198FC4A-5052-44C0-8694-E307BE61A92B)');
+            } else {
+                $("div.topImage4-1").css('height', "228px");
+                $("div.topImage4-1").addClass('web-banner');
+                $("div.topImage4-1").css('background-image', 'url(/CMS/GetFile2/57DB9908-C106-4740-BF33-B30170EC3B0C)');
+            }
+
+            $('.gotop').on('click',function(e){
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 'fast');
+            });
+
+            var btn_cookies = $('#privacyTopBar .privacyBarAcceptBtn').width() + 122;
+            if ($(window).width() > 481){
+                $('#privacyTopBar p').css('margin-left','-' + btn_cookies + 'px');
+            }
+
+            $('.privacyBarAcceptBtn').click(function(){
+                $.post('/CMS/SetCookie', AddAntiForgeryToken({}), function (data) {
+                    if($('#privacyTopBar').hasClass('expand')){
+                        $('.footerContainer').removeClass('privacy');
+                        $('#privacyTopBar').removeClass('expand');
+                        $('.gotop').removeClass('privacy');
+                    }
+                    else{
+                        return false;
+                    }     
+                }).fail(function(data){
+                    if($('#privacyTopBar').hasClass('expand')){
+                        $('.footerContainer').removeClass('privacy');
+                        $('#privacyTopBar').removeClass('expand');
+                        $('.gotop').removeClass('privacy');
+                    }
+                    else{
+                        return false;
+                    }     
+                });                              
+            });
+
+            $(window).scroll(function(){
+                if ( $(window).scrollTop() > 100 ){
+                    $('.gotop').stop().animate({opacity:1},300);
+                }else{
+                    $('.gotop').stop().animate({opacity:0},300);
+                }
+            });
+
+            $('.mail').click(function (e) {
+                e.preventDefault();
+                $('#step1').show();
+                $('#step2').hide();
+                $('#step3').hide();
+                $.blockUI({
+                    message: $('#mail-dialog'),
+                    onBlock: function () {
+                        $('#mail-dialog').addClass("mail-dialog");
+                    },
+                    css: { top: '10%', cursor: 'default', width: '740px', left: '30%', textAlign: 'left' },
+
+                    overlayCSS: { cursor: 'default' },
+                    onOverlayClick: $.unblockUI
+                });
+                $('.blockUI.blockMsg').center();
+            });
+
+            $('#dialog-close1').click(function () {
+                $.unblockUI();
+                $('#step1').show();
+                $('#step2').hide();
+                $('#step3').hide();
+            });
+
+            //加上鍵頭            
+            $('.now-page.down a').after('<span class="now-page-arrow arrow1"></span>');
+            var currentLeft = 0;
+            if(typeof $('.now-page.down a').css('left') != 'undefined' )
+            {
+                currentLeft = parseInt($('.now-page.down a').css('left').replace('px', ''), 10) + $('.now-page.down a').width() / 2 - 10 + parseInt($('.now-page.down').css('padding-left'), 10);
+                $('span.arrow1').css({'left': currentLeft});
+            }
+                                    
+            if(typeof $('.down.Layer2Active a').css('left') != 'undefined' )
+            {
+                $('.down.Layer2Active a').after('<span class="now-page-arrow arrow2"></span>');
+                currentLeft = parseInt($('.down.Layer2Active a').css('left').replace('px', ''), 10) + $('.down.Layer2Active a').width() / 2 - 10 + parseInt($('.down.Layer2Active').css('padding-left'), 10);
+            }            
+            $('span.arrow2').css({'left': currentLeft});
+
+           // 假如第二層下面沒第三層，將內容往上調
+            if(!$('.now-page.l2-now-page').next().hasClass('layer3') && !$('.Layer2Active').next().hasClass('layer3'))
+                $('.detail').css({'margin-top':'31px'});
+
+            //選單加上特效
+            $('.now-page + .layer3').show();
+           // $('.now-page + .layer3').addClass('scale-up-hor-left');
+            
+          
+            //最外層隱藏
+            $('.subNaviMenu ul li:first').hide();
+            
+            //假如第三層下面有第四層，隱藏同層目錄
+            if($('.now-page.l3-now-page').next().hasClass('layer4') || $('.layer4').hasClass('active')){
+                $('.layer3.active li:not(".l3-now-page"):not(".layer4 li")').hide();
+                $('.l3-now-page').addClass('now-page-bg').find('a').text('');
+            }
+                //沒第四層，顯示同層目錄
+            else{ 
+                $('.l3-now-page').css('background','#A0CB59');//將顏色改成緯創綠色
+                $('.l3-now-page a').addClass('hidden-close');
+                $('.l3-now-page a').css('margin-right','0');
+                
+            }
+            
+            //假如第四層下面有第五層，隱藏同層目錄
+            if(!$('.layer4').hasClass('active')){
+                $('.layer4.active li:not(".l4-now-page")').hide();
+                $('.l4-now-page').addClass('now-page-bg').find('a').text('');
+            }
+                //假如第四層下面有第五層，顯示同層目錄
+            else{
+                $('.l4-now-page').css('background','#A0CB59');//將顏色改成緯創綠色
+                $('.l4-now-page a').addClass('hidden-close');
+                $('.l4-now-page a').css('margin-right','0');
+                //顯示上一層被選取的選單項目
+                $('.layer4.active').prev().show();
+                $('.layer4.active').prev().addClass('now-page l3-now-page now-page-bg').find('a').text('');//加上藍色樣式
+                $('.layer4.active').prepend($('.layer4.active').prev());
+            }
+            //被選到的選單連結改成上一層目錄的連結
+            var layer3_prev = $('.Layer2Active a').attr('href');
+            $('.now-page.l3-now-page').find('a').attr('href',layer3_prev);    
+
+            $('.now-page + .layer4').css('display','inline');
+            $('.now-page + .layer4').show();
+
+            
+            
+
+            
+
+
+            $('#btnMail').click(function () {
+                //檢查必填欄位
+                emailRule = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+                emailRuleList = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*(,\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*$/;
+
+                if ($('#txtName').val() == '') {
+                    alert('Please enter your name');
+                    return;
+                }
+                if ($('#txtSendEmail').val() == '') {
+                    alert('Enter your email');
+                    return;
+                }
+                else {
+                    if (!emailRule.test($('#txtSendEmail').val())) {
+                        alert('Your email format is wrong');
+                        return;
+                    }
+                }
+                if ($('#txtReceiveEmail').val() == '') {
+                    
+                    alert('Please enter addressee email');
+                    return;
+                }
+                else {
+                    if (!emailRuleList.test($('#txtReceiveEmail').val())) {
+                        alert('Format of receiver email is wrong');
+                        return;
+                    }
+                }
+                //if ($('#txtMessage').val() == '') {
+                  //  alert('Your message');
+                    //return;
+                //}
+                createCode();
+                $('#step1').hide();
+                $('#btnVerification').show();
+                $('#imgOnline').hide();
+                $('#step2').show();
+            });
+
+            $('#btnVerification').click(function () {
+                var inputCode = $('#inputCode').val();
+                if (inputCode.length <= 0) {
+                    alert("Please enter the verification code！");
+                }
+                else if (inputCode.toUpperCase() != code.toUpperCase()) {
+                    alert("Verification code is wrong");
+                    createCode();
+                }
+                else {
+                    var reveiveEmailList = $('#txtReceiveEmail').val();
+                    if ($('#chkSendSelf').prop('checked')) {
+                        reveiveEmailList += ',' + $('#txtSendEmail').val();
+                    }
+                    $('#btnVerification').hide();
+                    $('#imgOnline').show();
+                    $.ajax({
+                        url: '/CMS/Email/',
+                        data: AddAntiForgeryToken({ name: $('#txtName').val(), sendEmail: $('#txtSendEmail').val(), reveiveEmail: reveiveEmailList, message: $('#txtMessage').val(), link: location.href }),
+                        type: 'POST',
+                        success: function (data) {
+                            if (data == '') {
+                                $('#confirmationEmail').html($('#txtReceiveEmail').val());
+                                $('#step2').hide();
+                                $('#step3').show();
+                            }
+                            else
+                            {
+                                $('#imgOnline').hide();
+                                alert(data);
+                            }                                
+                        },
+                        error: function (data) {
+                            $('#imgOnline').hide();
+                            alert(data);
+                        }
+                    });
+                }
+            });
+
+            $('.phoneSubMenu > div > a').click(function () {
+                $('.phoneMenu-other').slideToggle(500);
+            });
+
+            $("div.active").show();
+            //$("div.active").addClass('scale-up-hor-left');
+            
+            //$("div.topImage4-1").css('background-image', 'url(/Content/images/homeBigBanner/web_banner_4.1.png)');
+            $("div.topImage4-1").css('background-repeat', 'no-repeat');
+            $("div.topImage4-1").css('background-position', 'center 0%');
+
+            $(window).resize(function () {
+                if ($(window).width() < 480){
+                    $("div.topImage4-1").css('height', $(window).width() * 68 / 320 + "px");
+
+                    if( $("div.topImage4-1").hasClass('web-banner') ){
+                        $("div.topImage4-1").css('background-image', 'url(/CMS/GetFile2/8198FC4A-5052-44C0-8694-E307BE61A92B)');
+                        $("div.topImage4-1").removeClass('web-banner');
+                    }
+                }
+                else{
+                    $("div.topImage4-1").css('height', "228px");
+                    if( !$("div.topImage4-1").hasClass('web-banner') ){
+                        $("div.topImage4-1").css('background-image', 'url(/CMS/GetFile2/57DB9908-C106-4740-BF33-B30170EC3B0C)');
+                        $("div.topImage4-1").addClass('web-banner');
+                    }
+                }
+            });
+
+            $('button.teamDetail1, a.teamDetail1').click(function () {
+                var id = $(this).attr('id'),
+                    self = this;
+                $.ajax({
+                    url: "/CMS/ManagementTeam",
+                    type: "POST",
+                    dataType: 'json',
+                    data: { id: id }
+                }).done(function (data) {
+                    
+                    if( data.CL != null){
+                        var $fixedContnet = $('<div/>').html(data.CL).contents();
+                        var oldData = {
+                            CN : $fixedContnet.find('.divCN').html(),
+                            EN : $fixedContnet.find('.divEN').html(),
+                            IN : $fixedContnet.find('.divIN').html(),
+                            LED : $fixedContnet.find('.divLED').html(),
+                            FED : $fixedContnet.find('.divFED').html(),
+                            PTD : $fixedContnet.find('.sPTD').html(),
+                            HSD : $fixedContnet.find('.sHSD').html(),
+                            PTP : $fixedContnet.find('.divPTP').html(),
+                            R : $fixedContnet.find('.divR').html(),
+                            HS : $fixedContnet.find('.divHS').html(),
+                            AS : $fixedContnet.find('.divAS').html(),
+                            ASV : $fixedContnet.find('.divASV').html(),
+                            A : $fixedContnet.find('.divA').html()
+                        }
+
+                        $("div.divCN").html(oldData.CN == undefined ? '' : oldData.CN);
+                        $("div.divEN").html(oldData.EN == undefined ? '' : oldData.EN);
+                        $("div.divIN").html(oldData.IN == undefined ? '' : oldData.IN);
+                        $("div.divLED").html(CheckCalendar(oldData.LED) ? oldData.LED :'');
+                        $("div.divFED").html(CheckCalendar(oldData.FED) ? oldData.FED :'');
+                        $("span.sPTD").html(CheckCalendar(oldData.PTD) ? oldData.PTD : '');
+                        $("span.sHSD").html(CheckCalendar(oldData.HSD) ? oldData.HSD : '');
+                        $("div.divPTP").html(oldData.PTP == undefined ? '' : oldData.PTP);
+                        $("div.divR").html(oldData.R == undefined ? '' : oldData.R);
+                        $("div.divHS").html('' + (oldData.HS == undefined ? '' : oldData.HS) + '');
+                        $("div.divAS").html(oldData.AS == undefined ? '' :oldData.AS);
+
+                        if(oldData.ASV == '0')
+                        {
+                            $("div.divASV").hide();
+                            $("div.divAS").hide();
+                        }
+                        else{
+                            $("div.divASV").show();
+                            $("div.divAS").show();
+                        }
+                        $("div.divA").html(oldData.A);
+                        
+                        // 
+                        $.blockUI({
+                            onOverlayClick: $.unblockUI,
+                            message: $('#team1-dialog'),
+                            onBlock: function () {
+                                $('#team1-dialog').addClass("news-dialog");
+                            },
+                            css: { top: '10%', cursor: 'default', width: '640px', left: '30%', textAlign: 'left' },
+
+                            overlayCSS: { cursor: 'default' }
+                        });
+                        $('.blockUI.blockMsg').center();
+                    }
+                });
+            });
+            $('button.teamDetail2, a.teamDetail2').click(function () {
+                var id = $(this).attr('id');
+                $.ajax({
+                    url: "/CMS/ManagementTeam",
+                    type: "POST",
+                    dataType: 'json',
+                    data: { id: id}/*,
+                    beforeSend: function (xhr) {
+                        xhr.overrideMimeType("text/plain; charset=x-user-defined");
+                    }*/
+                }).done(function (data) {
+                    $(".divCN").html(data.CN);
+                    $(".divEN").html(data.EN);
+                    $(".divJT").html(data.JT);
+                    $(".divLED").html(data.LED);
+                    $(".divFED").html(data.FED);
+                    $(".divPTD").html(data.PTD);
+                    $(".divPTP").html(data.PTP);
+                    $(".divR").html(data.R);
+                    $.blockUI({
+                        onOverlayClick: $.unblockUI,
+                        message: $('#team2-dialog'),
+                        onBlock: function () {
+                            $('#team2-dialog').addClass("news-dialog");
+                        },
+                        css: { top: '10%', cursor: 'default', width: '640px', left: '30%', textAlign: 'left' },
+
+                        overlayCSS: { cursor: 'default' }
+                    });
+                    $('.blockUI.blockMsg').center();
+                });
+            });
+            $('button.teamDetail3, a.teamDetail3').click(function () {
+                var id = $(this).attr('id');
+                $.ajax({
+                    url: "/CMS/ManagementTeam",
+                    type: "POST",
+                    dataType: 'json',
+                    data: { id: id}/*,
+                    beforeSend: function (xhr) {
+                        xhr.overrideMimeType("text/plain; charset=x-user-defined");
+                    }*/
+                }).done(function (data) {
+                    $(".divCN").html(data.CN);
+                    $(".divEN").html(data.EN);
+                    $(".divJT").html(data.JT);
+                    $(".divLED").html(data.LED);
+                    $(".divFED").html(data.FED);
+                    $(".divPTD").html(data.PTD);
+                    $(".divPTP").html(data.PTP);
+                    $(".divR").html(data.R);
+                    $.blockUI({
+                        message: $('#team3-dialog'),
+                        onBlock: function () {
+                            $('#team3-dialog').addClass("news-dialog");
+                        },
+                        css: { top: '10%', cursor: 'default', width: '640px', left: '30%', textAlign: 'left' },
+
+                        overlayCSS: { cursor: 'default' },
+                        onOverlayClick: $.unblockUI
+                    });
+                    $('.blockUI.blockMsg').center();
+                });
+            });
+
+            $('.dialog-close-a').click(function () {
+                $.unblockUI();
+                $('.popup-close').attr('src','/Content/images/icons/cancel.png');
+            });
+
+            $("#normal-print").click(function () {
+                window.print();
+            });
+
+            $(".subNavi-1-2 .menuText li").each(function () {
+                if ($(this).height() > 46) {
+                    $(this).css('cssText', 'background-position: left 9px !important; padding-top:8px; padding-bottom:8px;');
+                }
+            });
+
+            var isMsie = window.navigator.userAgent.indexOf("MSIE ") > 0,
+                printMode = isMsie ? "popup" : "iframe";
+
+            $("#team1-print").click(function (e) {
+                e.preventDefault();
+                var options = {
+                    mode: printMode,
+                    popClose: true
+                };
+
+                $('#team1-dialog .modal-content').printArea(options);
+            });
+            $("#team2-print").click(function (e) {
+                e.preventDefault();
+                var options = {
+                    mode: printMode,
+                    popClose: true
+                };
+
+                $('#team2-dialog .modal-content').printArea(options);
+            });
+            $("#team3-print").click(function (e) {
+                e.preventDefault();
+                var options = {
+                    mode: printMode,
+                    popClose: true
+                };
+
+                $('#team3-dialog .modal-content').printArea(options);
+            });
+
+            //內頁選單左右鍵頭
+            var menuwidth = $('#subNaviMenu-all')[0].clientWidth; //選單Menu寬度
+            var scrollValue = $('#subNaviMenu-all')[0].scrollWidth - menuwidth;//要scroll的寬度 = overflow多出來的寬度 - 選單Menu寬度
+            var scrollTo = 0;//從0開始移動
+            
+
+                //右鍵頭
+                $('#subNaviMenu-right').on("click", function () {
+                    if(scrollTo < scrollValue){
+                        scrollTo += 300;
+                        $('#subNaviMenu-all').scrollLeft(scrollTo);
+                    }
+                });
+                //左鍵頭
+                $('#subNaviMenu-left').on("click", function () {
+                    if(scrollTo > 0){
+                        scrollTo -= 300;
+                        $('#subNaviMenu-all').scrollLeft(scrollTo);
+                    }
+                    //$('#subNaviMenu-all').scrollLeft(0);
+                });
+            
+ 
+            reArrangePath();
+        });
+
+        var pathLength = 65;
+
+        function reArrangePath() {
+            var pathList = $("div.path").find('a'),
+                textArray = [],
+                totalLength = 0;
+            for (var i = 0; i < pathList.length; i++) {
+                var text = pathList[i].textContent || pathList[i].innerText;
+                // console.log(text);
+                textArray.push( text );
+                totalLength += text.length;
+            }
+            if (totalLength > pathLength) {
+                if (pathList.length == 5) {
+                    $("div.path").find('a').eq(3).attr('title', textArray[3]);
+                    $("div.path").find('a').eq(3).text("..");
+
+                    textArray[3] = "..";
+                    totalLength = 0;
+                    for (var i = 0; i < textArray.length; i++) {
+                        totalLength += textArray[i].length;
+                    }
+
+                    if (totalLength > pathLength) {
+                        $("div.path").find('a').eq(2).attr('title', textArray[2]);
+                        $("div.path").find('a').eq(2).text("..");
+
+                        textArray[2] = "..";
+                        totalLength = 0;
+                        for (var i = 0; i < textArray.length; i++) {
+                            totalLength += textArray[i].length;
+                        }
+                        if (totalLength > pathLength) {
+                            $("div.path").find('a').eq(1).attr('title', textArray[1]);
+                            $("div.path").find('a').eq(1).text("..");
+                        }
+                    }
+                }
+                else if (pathList.length == 4) {
+                    $("div.path").find('a').eq(2).attr('title', textArray[2]);
+                    $("div.path").find('a').eq(2).text("..");
+
+                    textArray[2] = "..";
+                    totalLength = 0;
+                    for (var i = 0; i < textArray.length; i++) {
+                        totalLength += textArray[i].length;
+                    }
+                    if (totalLength > pathLength) {
+                        $("div.path").find('a').eq(1).attr('title', textArray[1]);
+                        $("div.path").find('a').eq(1).text("..");
+                    }
+                }
+                else if (pathList.length == 3) {
+                    pathList[1] = "..";
+                    $("div.path").find('a').eq(1).attr('title', textArray[1]);
+                    $("div.path").find('a').eq(1).text("..");
+                }
+            }
+        }
+
+        $(document).on('mouseover','.imgHover',function(){
+            $(document).get(0).oncontextmenu = function() {
+            return false; };
+        });
+       $(document).on('mouseout','.imgHover',function(){
+            $(document).get(0).oncontextmenu = function() {
+            return true; };
+        });
+        function iEsc() { return true; }
+        function iRec(){ return true; }
+        function DisableKeys() {
+            if(event.ctrlKey || event.shiftKey || event.altKey) {
+                window.event.returnValue=false;
+                iEsc();
+            }
+        }
+        document.ondragstart=iEsc;
+        //document.onkeydown=DisableKeys;
+        document.oncontextmenu=iEsc;
+        if (typeof document.onselectstart !="undefined")
+            document.onselectstart=iEsc;
+        else{
+            document.onmousedown=iEsc;
+            document.onmouseup=iRec;
+        }
+        function DisableRightClick(qsyzDOTnet){
+            if (window.Event){
+                if (qsyzDOTnet.which == 2 || qsyzDOTnet.which == 3)
+                iEsc();
+            }
+            else if (event.button == 2 || event.button == 3){
+                event.cancelBubble = true
+                event.returnValue = false;
+                iEsc();
+            }
+        }
+        function AddAntiForgeryToken(data) {
+            data.__RequestVerificationToken = $('input[name=__RequestVerificationToken]').val();
+            return data;
+        }
+        function CheckCalendar(SD)
+        {   
+            if(SD != '')
+            {
+                if(SD == undefined || myIsNaN(SD)){
+                    return false;
+                }
+                if(SD.indexOf("/") > -1){
+                    return true;
+                }
+                else
+                    return false;
+           
+            }
+     
+            return true;
+        }
+        function myIsNaN(o) {
+            return typeof(o) === 'number' && isNaN(o);
+        }
+    </script>
+</link></link></link></head>
+<body>
+<input name="__RequestVerificationToken" type="hidden" value="ISJwGBZ2NIDw_EjQuQW5DJG7SPq6MRdxWgMY7GoWGz991wC31bHw-npxNSTL0URQa2J7SrW5YGLz8Pz8Kt9aM7wnrjTyjAeZuCgUU7K0AiGtYCp8IbwbPZ2QV_Tyr3g5TML_cLZL_0-y3-lUJ8ZKzs5Y5Ldhx8iD5Y8pU4-ILzE1"/>
+<div>
+<!--header begin-->
+<div class="headerContainer">
+<script>
+
+    function openOutsideDialog(url, bAddLog, name) {
+        if (bAddLog == 'TRUE') {
+            $.ajax({
+                url: "/CMS/AddDownLog",
+                type: "POST",
+                dataType: 'json',
+                data: { name: name }
+            }).done(function (data) {
+
+            });
+            window.open(url);
+        }
+        else {
+            $.fn.center = function () {
+                this.css("position", "absolute");
+                var realWidth = 0;
+                if ($(window).width() < this.width())
+                    realWidth = $(window).width() / 1.1;
+                else
+                    realWidth = this.width();
+
+                this.css("top", ($(window).height() - this.height()) / 2 + $(window).scrollTop() + "px");
+                this.css("left", ($(window).width() - realWidth) / 2 + $(window).scrollLeft() + "px");
+                this.css("width", realWidth + "px");
+                return this;
+            }
+
+            $("#btnContinue").attr('href', url);
+            $("#spanInfo").html($("#spanInfo").html().replace("{0}", url));
+            $("#spanInfo").unbind("click");
+
+            $.blockUI({
+                message: $('#warning-dialog'),
+                //                onBlock: function () {
+                //                    $('#mail-dialog').addClass("mail-dialog");
+                //                },
+                css: { top: '10%', cursor: 'default', width: '670px', textAlign: 'left' },
+
+                overlayCSS: { cursor: 'default' },
+                onOverlayClick: $.unblockUI
+            });
+            $('.blockUI.blockMsg').center();
+        }
+    }
+
+    function preloadImages(img_path) {
+        if (!preloadImages.list) {
+            preloadImages.list = [];
+        }
+
+        if (!jQuery.inArray(img_path, preloadImages.list)) {
+            var img = new Image();
+            img.src = img_path;
+            preloadImages.list.push(img);
+        }
+    }
+
+    function preloadImage(source, destElem) {
+        var image = new Image();
+        image.src = source;
+        $(image).load(function () { });
+        /*image.onload = function () {
+            var cssBackground = 'url(' + image.src + ')';
+            destElem.css('background-image', cssBackground);
+        };*/
+        $(destElem).find("img").attr("src", image.src);
+    }
+
+    $(document).ready(function () {
+        $('#dialog-close, #btnCancel, #btnContinue, div.dialog-close').click(function () {
+            $.unblockUI();
+            $('.popup-close').attr('src', '/Content/images/icons/cancel.png');
+        });
+
+//            $("div.headerNavi ul li").each(function () {
+//                return;
+//                if(typeof $(this).attr('wording') != 'undefined')
+//                {
+
+//                    var imagePath = '/CMS/GetStringImage/?text=' + $(this).attr('wording') + '&color=000000&fontSize=14';
+//                    var imagePathHover = '/CMS/GetStringImage/?text=' + $(this).attr('wording') + '&color=006b93&fontSize=14';
+        //                      
+        //                    preloadImages(imagePathHover);
+        //                    preloadImages(imagePath);
+        //                    //$(this).css('background-image', 'url(' + imagePath + ')');
+        //                    preloadImage(imagePath, $(this));
+
+        //                    $(this).hover(function(){
+        //                        preloadImage(imagePathHover, $(this));
+        //                        //$(this).css('background-image', 'url(' + imagePathHover + ')'); 
+        //                    },
+        //                    function(){
+        //                        preloadImage(imagePath, $(this));
+        //                        //$(this).css('background-image', 'url(' + imagePath + ')');
+        //                    });                                        
+        //                }
+        //                
+        //            });
+
+        var count = 0;
+        $('#headMenu img').one("load", function () {
+            count++;
+            if (count == 5) {
+                if ($(window).width() > 480)
+                    $('#headMenu').fadeIn("slow");
+                $('#menu-loading').fadeOut("slow");
+            }
+        }).each(function () {
+            if (this.complete)
+                $(this).load();
+        });
+    });
+</script>
+<div class="header">
+<a href="/CMS/Index">
+<div class="wistronLogo">
+</div>
+</a>
+<a href="/">
+<div class="tophome">
+</div>
+</a>
+<div class="header-right-content">
+<div class="headerLinks">
+<ul>
+<li><a href="/CMS/ChangeLanguage/1">繁體中文</a></li>
+<li>│</li>
+<li><a href="/CMS/ChangeLanguage/2">簡體中文</a></li>
+<li>│</li>
+<li><a href="../../CMS/SiteMap?pageId=245">Site Map</a></li>
+<li>│</li>
+<li><a href="../../CMS/Page/239">Contact Us</a></li>
+<li>│</li>
+<li><a href="javascript:void()">Career
+                    <ul style="z-index: 1000;">
+<li><a href="javascript:openOutsideDialog('http://career.wistron.com/')">Taipei</a></li>
+</ul></a></li>
+</ul>
+</div>
+<div class="headerNavi" id="menu-loading" style="text-align: center; width: 100%;">
+<img src="/content/images/loading.gif"/>
+</div>
+<div class="headerNavi" id="headMenu">
+<ul class="menu">
+<div class="headeritem">
+<li class="about" onclick="location='/CMS/Page/168'" wording="About Wistron">About Wistron<img style="display: none;"/>
+<ul class="about-wistron">
+<li>
+<a href="/CMS/Page/169">
+                                Company Profile
+                            </a>
+</li>
+<li>
+<a href="/CMS/Page/174">
+                                Global Operation
+                            </a>
+</li>
+<li>
+<a href="/CMS/Page/175">
+                                Wistron group
+                            </a>
+</li>
+</ul>
+</li>
+</div>
+<span> </span>
+<div class="headeritem">
+<li class="skill" onclick="location='/CMS/Page/176'" wording="Products &amp; Services">Products &amp; Services<img style="display: none;"/>
+<ul class="skill-service">
+<li>
+<a href="/CMS/Page/177">
+                                Design/Manufacture/Services
+                            </a>
+</li>
+<li>
+<a href="/CMS/Page/413">
+                                Technical Services Solutions
+                            </a>
+</li>
+</ul>
+</li>
+</div>
+<span> </span>
+<div class="headeritem">
+<li class="service" onclick="location='/CMS/Page/185'" wording="Investors">Investors<img style="display: none;"/>
+<ul class="invest-service">
+<li>
+<a href="/CMS/Page/186">
+                                Financials
+                            </a>
+</li>
+<li>
+<a href="/CMS/Page/191">
+                                Annual reports
+                            </a>
+</li>
+<li>
+<a href="/CMS/Page/192">
+                                Corporate governance
+                            </a>
+</li>
+<li>
+<a href="/CMS/Page/214">
+                                Shareholders' Meeting
+                            </a>
+</li>
+<li>
+<a href="/CMS/Page/222">
+                                Shareholders' service
+                            </a>
+</li>
+</ul>
+</li>
+</div>
+<span> </span>
+<div class="headeritem">
+<li class="media1" onclick="location='/CMS/Page/230'" wording="Press">Press<img style="display: none;"/>
+<ul class="media-block">
+<li>
+<a href="/CMS/Page/231">
+                                News releases
+                            </a>
+</li>
+<li>
+<a href="/CMS/Page/232">
+                                Wistron logo and name usage
+                            </a>
+</li>
+</ul>
+</li>
+</div>
+<span> </span>
+<div class="headeritem">
+<li class="company" onclick="location='/CMS/Page/715'" wording="ESG">ESG<img style="display: none;"/>
+</li>
+</div>
+<span> </span>
+<div class="headeritem">
+<li class="about" onclick="location='/CMS/Page/433'" wording="Our Business">Our Business<img style="display: none;"/>
+<ul class="about-wistron">
+<li>
+<a href="/CMS/Page/608">
+                                Wistron Technologies
+                            </a>
+</li>
+<li>
+<a href="/CMS/Page/628">
+                                New Business
+                            </a>
+</li>
+</ul>
+</li>
+</div>
+</ul>
+</div>
+</div>
+</div>
+<div id="warning-dialog" style="display: none;">
+<div>
+<div class="modal-content">
+<img src="/Content/images/header/popup.png"/>
+<img src="/Content/images/header/greenBg.png"/>
+<h3 class="danger-title">
+<img src="/Content/images/icons/danger.png"/><span>Link to third-party website</span></h3>
+<span id="spanInfo"><p><span style="font-size: 12px;">To job seekers and applicant, please beware that Wistron Corporation and its affiliates will not request applicant to provide any personal bank account, PayPal account, credit card number or any similar financial information or request for deposit or payment transfer/receiving for recruiting. Should you encounter any similar situation by misusing Wistron Corporation or similar misleading domain name/ email address, please contact <span style="text-decoration: underline;"><span style="color: #99cc00; text-decoration: underline;">sandy_peng@wistron.com</span></span> immediately. Thank you for your attention.</span></p></span>
+<div class="danger-button">
+<a href="" id="btnContinue" target="_blank">
+<button class="btn btn-normal">Continue</button></a>
+<button class="btn btn-normal" id="btnCancel">Cancel</button>
+</div>
+</div>
+</div>
+<div class="dialog-close">
+<a class="dialog-close-a" id="A1">
+<img alt="" class="popup-close" src="/Content/images/icons/cancel.png"/></a>
+</div>
+</div>
+</div>
+<div class="topImage4-1">
+             </div>
+<!--header end-->
+<!--content begin-->
+<div class="content">
+<div class="path">
+<span> &lt; <a href="/CMS/Index">Home</a> / <a href="/CMS/Page/238">Privacy Policy</a></span>
+<div id="div-icon"><a alt="Print Page" class="print" href="#" id="normal-print"></a><a alt="Mail" class="mail" href="#"></a></div>
+</div>
+<div class="phoneSubMenu">
+<div>
+<a href="#"></a>
+</div>
+<div>
+<p><a href="/CMS/Index">Home</a> / <a href="/CMS/Page/238">Privacy Policy</a></p>
+</div>
+</div>
+<div class="phoneMenu-other">
+<ul></ul>
+</div>
+<div>
+</div>
+<div class="subNaviMenu">
+<img alt="#" id="subNaviMenu-right" src="/Content/images/icons/right-arrow.png">
+<img alt="#" id="subNaviMenu-left" src="/Content/images/icons/left-arrow.png"/>
+<div class="border_bottom"></div>
+<ul id="subNaviMenu-all">
+<li class=""><a href="/CMS/Page/239">Contact Us</a></li><li class="down"><a href="/CMS/Page/245">Site Map</a></li><li class="down"><a href="/CMS/Page/237">Copyright &amp; Trademark </a></li><li class="down fixed"><a href="/CMS/Page/238">Privacy Policy</a></li>
+</ul>
+</img></div>
+<div class="detail">
+<h1 class="greenlong">
+<span>Privacy Policy</span></h1>
+<div id="pc">
+<p><strong>Wistron Privacy Policy</strong></p><p><span style="font-size: 14px;">In order to implement the protection and management of personal data, Wistron Corporation (hereinafter referred to as "Wistron" or "the Company") refers to the requirements of local laws and regulations of the place where it operates and the EU General Data Protection Regulation (GDPR) to make the privacy policy (hereinafter referred to as this policy) as the highest principle of privacy protection, and to ensure the rights of personal data owner in order to reduce the possible impact of personal data incidents.</span></p><p><span style="font-size: 14px;">This policy may be adjusted or revised due to changes of relevant regulations from time to time. It is recommended that you read it regularly. This policy may have been updated when you visit us next time.</span></p><p><strong><span style="font-size: 14px;">Article 1          Scope</span></strong></p><p><span style="font-size: 14px;">1.This policy covers all personnel of the Company, its subsidiaries, and joint ventures which the Company has significant influence on, as well as third parties such as suppliers, contractors, and external consultants.</span></p><p><span style="font-size: 14px;">2.The personal data of any users (including but not limited to visitors of the Company's website, users of products or services, employees of customers and contractors, job applicants, visitors to the Company, investors, contracting and litigation parties, etc., hereinafter referred to as “you”), is applicable to the scope of personal data protection.</span> </p><p><strong>Article 2         Definition of personal data</strong></p><p>Personal data includes but not limited to the following:</p><p>Such as name, gender, birthday, address, phone number, email, employer, job title, ID card number / passport or other ID number, face photo, information collected by the Company's website Cookie, job applicant's education, work experience, and certificates, etc., and other information that can directly or indirectly identify the individual. The scope of personal data will be different due to different purposes of collection and use.</p><p><strong><span style="font-size: 14px;">Article 3         Collection and retention of personal data</span></strong></p><p><span style="font-size: 14px;">1.For the collection / retention / use of personal data with distinctive categories / purposes, the Company will provide adequate instructions and information, and the rights to choose for specific items. After receiving your consent with separate opt-in for each purpose, then we conduct the data collection / retention / use accordingly.</span></p><p><span style="font-size: 14px;">2.The collection, processing and use of personal data shall be based on the principle of not overstepping specific purposes. It will not be used for secondary purposes. At the same time, we will monitor and manage the status of it continuously.</span></p><p><span style="font-size: 14px;">3.When you contact the Company or visit the Company's website, we may process your personal data, including the personal data acquired from the website, products, or services possibly, and the data acquired from different devices, and record and use it.</span></p><p><span style="font-size: 14px;">4.The duration of personal data retention shall be five years unless otherwise agreed, or based on the disappearance of the specific purpose of the collection or the expiration of the agreed duration.</span></p><p> </p><p><strong><span style="font-size: 14px;">Article 4         Entity of using personal data</span></strong></p><p><span style="font-size: 14px;">1.Based on legitimate business activities, we may provide personal data to the following entities:</span></p><p><span style="font-size: 14px;">(1)Legally empowered authorities, including legal authorities, as well as the authorities conducting necessary investigation, detection or prevention of crime with the purpose of litigation or other legal procedure.</span></p><p><span style="font-size: 14px;">(2)Institutions entitled to use of personal data in compliance with the law (such as Wistron or its affiliates, etc.).</span></p><p><span style="font-size: 14px;">(3)Wistron's subsidiaries and other business-related institutions.</span></p><p><span style="font-size: 14px;">(4)Entities agreed by you (including but not limited to the following entities, such as companies that market or interactively use customer data jointly with Wistron, and companies that cooperate with Wistron to promote business, etc.).</span></p><p><span style="font-size: 14px;">(5)Accountant, auditors and lawyers who have signed confidentiality agreements with the Company, and other advisers providing professional services to the Company.</span></p><p><span style="font-size: 14px;">2.If the Company entrusts a supplier to process personal data, we will sign a contract with the supplier, and request for compliance with the following regulations:</span></p><p><span style="font-size: 14px;">(1)Processing personal data in accordance with the purposes and scope specified in prior written instructions.</span></p><p><span style="font-size: 14px;">(2)Establish mechanisms to protected personal data security and confidentiality subject to legal regulations and requirements.</span></p><p><strong><span>Article 5         Use of personal data</span></strong></p><p><span style="font-size: 14px;">The Company may collect and use your personal data based on the following purposes and in compliance with relevant laws:</span></p><p><span style="font-size: 14px;">1.Based on the purpose of providing products and services - including but not limited to related matters such as the need to sign and execute contracts, and contact regarding products and services.</span></p><p><span style="font-size: 14px;">2.Based on the purpose of communication and marketing - including but not limited to the update of the Company's systems, procedure and related information, communication and interaction, maintenance and update of contact information and other related matters.</span></p><p><span style="font-size: 14px;">3.Based on the purpose of management - including but not limited to requirement for supplier management and personnel management and other related matters</span></p><p><span style="font-size: 14px;">4.Based on the purpose of physical security - including but not limited to factory entry and exit records, surveillance video records, and system login and entry and exit records.</span></p><p><strong><span style="font-size: 14px;">Article 6         Security control mechanism</span></strong></p><p><span style="font-size: 14px;">The company will take all reasonable and appropriate actions (including but not limited to equipment security management and data security auditing mechanisms, such as encryption mechanisms, firewalls, etc.) to protect personal data to prevent from illegal intrusion and access.</span></p><p><strong><span style="font-size: 14px;">Article 7         Rights</span></strong></p><p><span style="font-size: 14px;">With regard to personal data, on the legal premise, you have the right to claim / request:</span></p><p><span style="font-size: 14px;">1.Refuse to provide personal data. However, if you choose not to provide personal data, we may not be able to provide the relevant website functions or services in full.</span></p><p><span style="font-size: 14px;">2.Delete or stop the collection, processing and use of personal data.</span></p><p><span style="font-size: 14px;">3.Queries or requests for access of personal data.</span></p><p><span style="font-size: 14px;">4.Provide a duplicate copy of personal data.</span></p><p><span style="font-size: 14px;">5.Request for supplementation or correction of personal data.</span></p><p><span style="font-size: 14px;">6.If you are the residents of European Economic Area within EU, according to GDPR requirements, you have the right to claim / request limited process of personal data, and within the extent possible, to request transfer of personal data in the form of organized, generally usable and interpretable by machine.</span></p><p><strong><span style="font-size: 14px;">Article 8         International transfer of personal data</span></strong></p><p><span style="font-size: 14px;">Because the Company is a multinational company, there may be cases of cross-border transmission and use of personal data between subsidiaries in different countries without overstepping the original and specific purpose of collecting, processing and using personal data and within the scope of this policy. The Company will follow this policy, and applicable laws and regulations of privacy and personal data protection in the transmission area.</span></p><p><strong><span style="font-size: 14px;">Article 9         Personal data management mechanism</span></strong></p><p><span style="font-size: 14px;">1.The Company incorporates privacy and personal information protection into the scope of enterprise-level risk management, and operates in accordance with "Risk Management Policy and Procedure" to reduce potential impacts.</span></p><p><span style="font-size: 14px;">2.In order to ensure the implementation of the privacy protection system, the Company established “Personal Information Protection and Management Task Force” to take in charge of the formulation of related systems, and to review the implementation of related mechanisms annually.</span></p><p><span style="font-size: 14px;">3.The Company adopts regular and irregular internal and external audits to check whether the personal data protection measures and related procedures comply with relevant laws, regulations and management systems, so as to continuously improve the effectiveness of the personal data management mechanism.</span></p><p><span style="font-size: 14px;"><strong>Article 10     </strong>  <strong>Implementation of personal data and privacy protection</strong></span></p><p><span style="font-size: 14px;">1.The Company will regularly conduct privacy protection training for all personnel and evaluate the effectiveness of these training programs.</span></p><p><span style="font-size: 14px;">2.The Company adopts a zero-tolerance policy for privacy protection. Any personnel who violates it will be punished in accordance with the Company's code of conduct, and be brought to justice in accordance with the seriousness of the case.</span></p><p><strong>Article 11       Cookie</strong></p><p><span style="font-size: 14px;">The Company will collect your personal data in several ways. Most of the personal data received comes from voluntary providers of users who want to acquire the Company's product information and services, or collected by information technology. When you browse our website, our information technology (IT) system may collect relevant passive information, including your Internet Protocol (IP) address, type of browser, and operating system.</span></p><p><span style="font-size: 14px;">We use Cookies to collect the date and time of your visit. Temporary Cookies are deleted when you close your browser. Persistent or permanent Cookies continue to exist in the palm of your device until you manually delete them, or it will be deleted by your browser according to the settings of survival duration.</span></p><p><strong><span style="font-size: 14px;">Article 12        Whistleblowing</span></strong></p><p><span style="font-size: 14px;">If there is an event or situation that may cause damage to your rights and interests, as well as a possible violation of this policy, employees of the Company, external institutes or natural persons can use the privacy protection hotline +886 2 6616-9999 # 25740, or e-mail <a href="mailto:web_master@wistron.com">web_master@wistron.com</a>, to appeal or report. We will seriously protect the information of the whistleblower in order to save the rights of the whistleblower.</span></p><p><strong><span style="font-size: 14px;">Article 13        Case handling</span></strong></p><p><span style="font-size: 14px;">When a personal data incident infringes your rights and interests, the Company will immediately involve in the investigation, and notify you in an appropriate manner after investigation. If you have any question or suggestion about this policy, please send an email to <a href="mailto:web_master@wistron.com" target="_blank">web_master@wistron.com</a>.</span></p><p><strong><span style="font-size: 14px;">Article 14       Implementation and revision</span></strong></p><p><span style="font-size: 14px;">This policy is implemented after being approved by the chairman, and the same procedure applies for revision.</span></p><p><span>This policy was formulated and announced on March 21st, 2022.</span></p>
+</div>
+<div id="mobile">
+<p><strong>Wistron Privacy Policy</strong></p><p><span style="font-size: 14px;">In order to implement the protection and management of personal data, Wistron Corporation (hereinafter referred to as "Wistron" or "the Company") refers to the requirements of local laws and regulations of the place where it operates and the EU General Data Protection Regulation (GDPR) to make the privacy policy (hereinafter referred to as this policy) as the highest principle of privacy protection, and to ensure the rights of personal data owner in order to reduce the possible impact of personal data incidents.</span></p><p><span style="font-size: 14px;">This policy may be adjusted or revised due to changes of relevant regulations from time to time. It is recommended that you read it regularly. This policy may have been updated when you visit us next time.</span></p><p><strong><span style="font-size: 14px;">Article 1          Scope</span></strong></p><p><span style="font-size: 14px;">1.This policy covers all personnel of the Company, its subsidiaries, and joint ventures which the Company has significant influence on, as well as third parties such as suppliers, contractors, and external consultants.</span></p><p><span style="font-size: 14px;">2.The personal data of any users (including but not limited to visitors of the Company's website, users of products or services, employees of customers and contractors, job applicants, visitors to the Company, investors, contracting and litigation parties, etc., hereinafter referred to as “you”), is applicable to the scope of personal data protection.</span> </p><p><strong>Article 2         Definition of personal data</strong></p><p>Personal data includes but not limited to the following:</p><p>Such as name, gender, birthday, address, phone number, email, employer, job title, ID card number / passport or other ID number, face photo, information collected by the Company's website Cookie, job applicant's education, work experience, and certificates, etc., and other information that can directly or indirectly identify the individual. The scope of personal data will be different due to different purposes of collection and use.</p><p><strong><span style="font-size: 14px;">Article 3         Collection and retention of personal data</span></strong></p><p><span style="font-size: 14px;">1.For the collection / retention / use of personal data with distinctive categories / purposes, the Company will provide adequate instructions and information, and the rights to choose for specific items. After receiving your consent with separate opt-in for each purpose, then we conduct the data collection / retention / use accordingly.</span></p><p><span style="font-size: 14px;">2.The collection, processing and use of personal data shall be based on the principle of not overstepping specific purposes. It will not be used for secondary purposes. At the same time, we will monitor and manage the status of it continuously.</span></p><p><span style="font-size: 14px;">3.When you contact the Company or visit the Company's website, we may process your personal data, including the personal data acquired from the website, products, or services possibly, and the data acquired from different devices, and record and use it.</span></p><p><span style="font-size: 14px;">4.The duration of personal data retention shall be five years unless otherwise agreed, or based on the disappearance of the specific purpose of the collection or the expiration of the agreed duration.</span></p><p> </p><p><strong><span style="font-size: 14px;">Article 4         Entity of using personal data</span></strong></p><p><span style="font-size: 14px;">1.Based on legitimate business activities, we may provide personal data to the following entities:</span></p><p><span style="font-size: 14px;">(1)Legally empowered authorities, including legal authorities, as well as the authorities conducting necessary investigation, detection or prevention of crime with the purpose of litigation or other legal procedure.</span></p><p><span style="font-size: 14px;">(2)Institutions entitled to use of personal data in compliance with the law (such as Wistron or its affiliates, etc.).</span></p><p><span style="font-size: 14px;">(3)Wistron's subsidiaries and other business-related institutions.</span></p><p><span style="font-size: 14px;">(4)Entities agreed by you (including but not limited to the following entities, such as companies that market or interactively use customer data jointly with Wistron, and companies that cooperate with Wistron to promote business, etc.).</span></p><p><span style="font-size: 14px;">(5)Accountant, auditors and lawyers who have signed confidentiality agreements with the Company, and other advisers providing professional services to the Company.</span></p><p><span style="font-size: 14px;">2.If the Company entrusts a supplier to process personal data, we will sign a contract with the supplier, and request for compliance with the following regulations:</span></p><p><span style="font-size: 14px;">(1)Processing personal data in accordance with the purposes and scope specified in prior written instructions.</span></p><p><span style="font-size: 14px;">(2)Establish mechanisms to protected personal data security and confidentiality subject to legal regulations and requirements.</span></p><p><strong><span>Article 5         Use of personal data</span></strong></p><p><span style="font-size: 14px;">The Company may collect and use your personal data based on the following purposes and in compliance with relevant laws:</span></p><p><span style="font-size: 14px;">1.Based on the purpose of providing products and services - including but not limited to related matters such as the need to sign and execute contracts, and contact regarding products and services.</span></p><p><span style="font-size: 14px;">2.Based on the purpose of communication and marketing - including but not limited to the update of the Company's systems, procedure and related information, communication and interaction, maintenance and update of contact information and other related matters.</span></p><p><span style="font-size: 14px;">3.Based on the purpose of management - including but not limited to requirement for supplier management and personnel management and other related matters</span></p><p><span style="font-size: 14px;">4.Based on the purpose of physical security - including but not limited to factory entry and exit records, surveillance video records, and system login and entry and exit records.</span></p><p><strong><span style="font-size: 14px;">Article 6         Security control mechanism</span></strong></p><p><span style="font-size: 14px;">The company will take all reasonable and appropriate actions (including but not limited to equipment security management and data security auditing mechanisms, such as encryption mechanisms, firewalls, etc.) to protect personal data to prevent from illegal intrusion and access.</span></p><p><strong><span style="font-size: 14px;">Article 7         Rights</span></strong></p><p><span style="font-size: 14px;">With regard to personal data, on the legal premise, you have the right to claim / request:</span></p><p><span style="font-size: 14px;">1.Refuse to provide personal data. However, if you choose not to provide personal data, we may not be able to provide the relevant website functions or services in full.</span></p><p><span style="font-size: 14px;">2.Delete or stop the collection, processing and use of personal data.</span></p><p><span style="font-size: 14px;">3.Queries or requests for access of personal data.</span></p><p><span style="font-size: 14px;">4.Provide a duplicate copy of personal data.</span></p><p><span style="font-size: 14px;">5.Request for supplementation or correction of personal data.</span></p><p><span style="font-size: 14px;">6.If you are the residents of European Economic Area within EU, according to GDPR requirements, you have the right to claim / request limited process of personal data, and within the extent possible, to request transfer of personal data in the form of organized, generally usable and interpretable by machine.</span></p><p><strong><span style="font-size: 14px;">Article 8         International transfer of personal data</span></strong></p><p><span style="font-size: 14px;">Because the Company is a multinational company, there may be cases of cross-border transmission and use of personal data between subsidiaries in different countries without overstepping the original and specific purpose of collecting, processing and using personal data and within the scope of this policy. The Company will follow this policy, and applicable laws and regulations of privacy and personal data protection in the transmission area.</span></p><p><strong><span style="font-size: 14px;">Article 9         Personal data management mechanism</span></strong></p><p><span style="font-size: 14px;">1.The Company incorporates privacy and personal information protection into the scope of enterprise-level risk management, and operates in accordance with "Risk Management Policy and Procedure" to reduce potential impacts.</span></p><p><span style="font-size: 14px;">2.In order to ensure the implementation of the privacy protection system, the Company established “Personal Information Protection and Management Task Force” to take in charge of the formulation of related systems, and to review the implementation of related mechanisms annually.</span></p><p><span style="font-size: 14px;">3.The Company adopts regular and irregular internal and external audits to check whether the personal data protection measures and related procedures comply with relevant laws, regulations and management systems, so as to continuously improve the effectiveness of the personal data management mechanism.</span></p><p><span style="font-size: 14px;"><strong>Article 10     </strong>  <strong>Implementation of personal data and privacy protection</strong></span></p><p><span style="font-size: 14px;">1.The Company will regularly conduct privacy protection training for all personnel and evaluate the effectiveness of these training programs.</span></p><p><span style="font-size: 14px;">2.The Company adopts a zero-tolerance policy for privacy protection. Any personnel who violates it will be punished in accordance with the Company's code of conduct, and be brought to justice in accordance with the seriousness of the case.</span></p><p><strong>Article 11       Cookie</strong></p><p><span style="font-size: 14px;">The Company will collect your personal data in several ways. Most of the personal data received comes from voluntary providers of users who want to acquire the Company's product information and services, or collected by information technology. When you browse our website, our information technology (IT) system may collect relevant passive information, including your Internet Protocol (IP) address, type of browser, and operating system.</span></p><p><span style="font-size: 14px;">We use Cookies to collect the date and time of your visit. Temporary Cookies are deleted when you close your browser. Persistent or permanent Cookies continue to exist in the palm of your device until you manually delete them, or it will be deleted by your browser according to the settings of survival duration.</span></p><p><strong><span style="font-size: 14px;">Article 12        Whistleblowing</span></strong></p><p><span style="font-size: 14px;">If there is an event or situation that may cause damage to your rights and interests, as well as a possible violation of this policy, employees of the Company, external institutes or natural persons can use the privacy protection hotline +886 2 6616-9999 # 25740, or e-mail <a href="mailto:web_master@wistron.com">web_master@wistron.com</a>, to appeal or report. We will seriously protect the information of the whistleblower in order to save the rights of the whistleblower.</span></p><p><strong><span style="font-size: 14px;">Article 13        Case handling</span></strong></p><p><span style="font-size: 14px;">When a personal data incident infringes your rights and interests, the Company will immediately involve in the investigation, and notify you in an appropriate manner after investigation. If you have any question or suggestion about this policy, please send an email to <a href="mailto:web_master@wistron.com" target="_blank">web_master@wistron.com</a>.</span></p><p><strong><span style="font-size: 14px;">Article 14       Implementation and revision</span></strong></p><p><span style="font-size: 14px;">This policy is implemented after being approved by the chairman, and the same procedure applies for revision.</span></p><p><span>This policy was formulated and announced on March 21st, 2022.</span></p>
+</div>
+</div>
+</div>
+<!--content end-->
+</div>
+<div class="bottomArrow">
+<a href="#">Back to Top</a></div>
+<div class="footerContainer privacy">
+<div class="footer-center">
+<div class="footer">COPYRIGHT ©2014 WISTRON CORPORATION. All RIGHTS RESERVED.</div>
+<div class="phoneFooter"><a href="/CMS/ChangeLanguage/1">繁體中文</a> | <a href="/CMS/ChangeLanguage/2">簡體中文</a> | <a href="../../CMS/Page/236">Contact Us</a></div>
+<p><span><a class="law" href="../../CMS/Page/237">Copyright &amp; Trademark</a>    <a class="law" href="../../CMS/Page/238">Privacy Policy</a></span></p>
+</div>
+</div>
+<div class="expand" id="privacyTopBar">
+<div class="container">
+<p><span>We use Cookies to improve your user experience and for web traffic statistics purposes.</span><span>By continuing to use this website, you agree to our use of Cookies and our<a href="/CMS/Page/238"> Privacy Policy</a>. </span></p>
+<a class="privacyBarAcceptBtn" href="javascript:void('0')">I Accept</a>
+</div>
+</div>
+<div id="team1-dialog" style="display:none;"> <!-- for 後選人名單  -->
+<div class="dialog-overflow">
+<div class="modal-content dialog-content-height">
+<img src="/Content/images/header/popup.png"/>
+<img src="/Content/images/header/greenBg.png"/>
+<img src="/Content/images/header/popup_black.jpg" style="width: 160px; height: 31px;"/>
+<div class="table-3-3-2">
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Name (Chinese)</div>
+<div class="td-dialog-right divCN"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Name (English)</div>
+<div class="td-dialog-right divEN"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Shareholder No.  / ID No. </div>
+<div class="td-dialog-right divIN"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">The latest elected date</div>
+<div class="td-dialog-right divLED"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Initially elected date</div>
+<div class="td-dialog-right divFED"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Current Positions(<span class="sPTD"></span>)</div>
+<div class="td-dialog-right divPTP">
+</div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Short Biography</div>
+<div class="td-dialog-right divR">
+</div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Shareholding(<span class="sHSD"></span>)</div>
+<div class="td-dialog-right divHS">
+</div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left divASV">Continuing Education and Training</div>
+<div class="td-dialog-right divAS">
+</div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left td-dialog-left-last">Attendance</div>
+<div class="td-dialog-right td-dialog-right-last divA"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="dialog-close"><a class="dialog-print-a" id="team1-print"><img class="popup-print" src="/Content/images/icons/dialog_print.png"/></a>　<a class="dialog-close-a"><img alt="" class="popup-close" src="/Content/images/icons/cancel.png"/></a></div>
+</div>
+<div id="team2-dialog" style="display:none;"> <!-- for 董事會  -->
+<div class="dialog-overflow">
+<div class="modal-content dialog-content-height">
+<img src="/Content/images/header/popup.png">
+<img src="/Content/images/header/greenBg.png"/>
+<img src="/Content/images/header/popup_black.jpg" style="width: 160px; height: 31px;"/>
+<div class="table-3-3-2">
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Name (Chinese)</div>
+<div class="td-dialog-right divCN"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Name (English)</div>
+<div class="td-dialog-right divEN"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Title</div>
+<div class="td-dialog-right divJT"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">The latest elected date</div>
+<div class="td-dialog-right divLED"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Initially elected date</div>
+<div class="td-dialog-right divFED"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Other positions held(<span class="divPTD"></span>)</div>
+<div class="td-dialog-right divPTP"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left td-dialog-left-last">Short Biography</div>
+<div class="td-dialog-right td-dialog-right-last divR"></div>
+</div>
+</div>
+</img></div>
+</div>
+<div class="dialog-close"><a class="dialog-print-a" id="team2-print"><img class="popup-print" src="/Content/images/icons/dialog_print.png"/></a>　<a class="dialog-close-a"><img alt="" class="popup-close" src="/Content/images/icons/cancel.png"/></a></div>
+</div>
+<div id="team3-dialog" style="display:none;"> <!-- for 委員會  -->
+<div class="dialog-overflow">
+<div class="modal-content dialog-content-height">
+<img src="/Content/images/header/popup.png">
+<img src="/Content/images/header/greenBg.png"/>
+<img src="/Content/images/header/popup_black.jpg" style="width: 160px; height: 31px;"/>
+<div class="table-3-3-2">
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Name (Chinese)</div>
+<div class="td-dialog-right divCN"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Name (English)</div>
+<div class="td-dialog-right divEN"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Title</div>
+<div class="td-dialog-right divJT"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">The latest elected date</div>
+<div class="td-dialog-right divLED"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Initially elected date</div>
+<div class="td-dialog-right divFED"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left">Other positions held(<span class="divPTD"></span>)</div>
+<div class="td-dialog-right divPTP"></div>
+</div>
+<div class="tr-3-3-2">
+<div class="td-dialog-left td-dialog-left-last">Short Biography</div>
+<div class="td-dialog-right td-dialog-right-last divR"></div>
+</div>
+</div>
+</img></div>
+</div>
+<div class="dialog-close"><a class="dialog-print-a" id="team3-print"><img class="popup-print" src="/Content/images/icons/dialog_print.png"/></a>　<a class="dialog-close-a"><img alt="" class="popup-close" src="/Content/images/icons/cancel.png"/></a></div>
+</div>
+<div id="mail-dialog" style="display:none;"><!-- mail begin -->
+<div>
+<div class="modal-content dialog-content-height">
+<img src="/Content/images/header/popup.png">
+<img src="/Content/images/header/greenBg.png"/>
+<div id="step1" style="display:block;">
+<h2>Send this page by email</h2>
+<form>
+<label>Your name<span>＊</span></label>
+<input id="txtName" type="text"/>
+<label>Your email<span>＊</span></label>
+<input id="txtSendEmail" type="text"/>
+<label class="checkbox">
+<input class="sendme" id="chkSendSelf" type="checkbox">Send myself
+                </input></label>
+<label>Addressee email<span>＊</span></label>
+<input id="txtReceiveEmail" type="text"> (You can divide receivers with comma.) 
+                <label>Your message</label>
+<textarea cols="60" id="txtMessage" rows="4" type="textarea"></textarea><br/>
+<button id="btnMail" type="button">Submit</button><label>＊Required field</label>
+</input></form>
+</div>
+<div id="step2" style="display:none;">
+<div class="check">
+<h2>Send this page by email</h2>
+<label>User authentication</label>
+<table border="0" cellpadding="5" cellspacing="5">
+<tr>
+<td><div class="code" id="checkCode" onclick="createCode()"></div></td>
+<td><a href="#" onclick="createCode()" style="margin-left: -30px;">Change a picture</a></td>
+</tr>
+<tr>
+<td><input id="inputCode" style="float:left;" type="text"/></td>
+<td>Please enter the verification code</td>
+</tr>
+<tr>
+<td colspan="2" style="padding-left: 25px;">(請注意英文輸入需區分大小寫)</td>
+</tr>
+<tr>
+<td colspan="2"><button id="btnVerification" type="button">Submit</button><br/><img align="absmiddle" alt="執行中" border="0" id="imgOnline" src="/Content/images/loading.gif" style="cursor:pointer;"/></td>
+</tr>
+</table>
+</div>
+</div>
+<div id="step3" style="display:none;">
+<div class="confirmation">
+<h2>Send this page by email</h2>
+<p>Thank you for using</p>
+<p>E-mail has been sent to ：</p>
+<p id="confirmationEmail"></p>
+</div>
+</div>
+</img></div>
+</div>
+<div class="dialog-close">
+<a class="dialog-close-a"><img alt="" class="popup-close" src="/Content/images/icons/cancel.png"/></a>
+</div>
+</div>
+<a class="gotop privacy" href="#"></a>
+</body>
+<script src="/Scripts/ScrollDiv/jquery.kinetic.min.js" type="text/javascript"></script>
+<script src="/Scripts/ScrollDiv/jquery.mousewheel.min.js" type="text/javascript"></script>
+<script src="/Scripts/ScrollDiv/jquery.smoothdivscroll-1.3-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ($('div.layer4.active').length > 0)
+            $("div.layer4.active").smoothDivScroll({
+            });
+        else if ($("div.layer3:visible").length > 0)
+            $("div.layer3:visible").smoothDivScroll({
+            });
+        $('.container').width($('.container span:nth-child(1)').width());
+    });
+    $(window).load(function () {
+        var i = $('#privacyTopBar').height() + 28;
+        if ($(window).width() < 481 && ($("body").height() + i) > $(window).height()) {
+            $('.footerContainer').css('margin-bottom', i + 'px');
+        }
+            
+        if (($("body").height() + i) < $(window).height()) {
+            $('#privacyTopBar').css('position', 'relative');
+            $('.footerContainer').removeClass('privacy');
+        }
+        else {
+            $('#privacyTopBar').css('position', 'fixed');
+        }
+    });
+</script>
+</html>

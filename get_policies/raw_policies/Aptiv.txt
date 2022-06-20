@@ -1,0 +1,1275 @@
+ <!DOCTYPE html>
+ <html lang="en"> <head> <title>
+	Privacy  Statement | Aptiv
+</title> <script src="/scripts/min/vendor.min.js?v=rxyprGok2gg1" type="text/javascript"></script> <meta charset="utf-8"/> <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/> <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"> <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/> <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/> <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/> <link href="/manifest.json" rel="manifest"/> <link color="#f84018" href="/safari-pinned-tab.svg" rel="mask-icon"/> <meta content="#f84018" name="theme-color"/> <link href="/Assets/jquery-ui-style/jquery-ui.min.css?v=f5aXomok2gg1" rel="stylesheet" type="text/css"><link href="/Assets/ui-bootstrap4/ui-bootstrap-csp.css?v=FnSYomok2gg1" rel="stylesheet" type="text/css"><link href="/scss/css/default.css?v=FTJoqGok2gg1" rel="stylesheet" type="text/css"> <!--<script src="https://www.google.com/recaptcha/api.js?render=6LeRdG8UAAAAAD5E0TGuX0IONA8d-UhD1aiSNX5P" async defer></script>--> <script>
+        function onSubmit(token) {
+            //Certain textareas shouldn't contain urls or emails
+            var paragraphTextBox = null;
+            var containsURL = false;
+
+            if (document.forms[0].getElementsByClassName('no-urls')[0]) {
+                paragraphTextBox = document.forms[0].getElementsByClassName('no-urls')[0].getElementsByTagName('textarea')[0];
+            }
+
+            if (paragraphTextBox) {
+                var val = paragraphTextBox.value;
+
+                if (val.match(/([--:\w?@%&amp;+~#=]*\.[a-z]{2,4}\/{0,2})((?:[?&amp;](?:\w+)=(?:\w+))+|[--:\w?@%&amp;+~#=]+)?/)) {
+                    containsURL = true;
+                }
+            }
+            //Only want to run the client side validation for salesforce forms
+            if (document.forms[0].parentElement.className == "salesforce-form") {
+                if (containsURL) {
+                    paragraphTextBox.style.border = "1px solid red";
+                    alert("The paragraph text box cannot contain an email or URL.");
+                    //Need to reset recaptcha so they can re-submit multiple times
+                    grecaptcha.reset();
+                }
+                else if (document.forms[0].checkValidity()) {
+                    document.forms[0].submit();
+                }
+                else {
+                    alert("All fields must be completed.");
+                    //Need to reset recaptcha so they can re-submit multiple times
+                    grecaptcha.reset();
+                }
+            }
+            else {
+                if (containsURL) {
+                    paragraphTextBox.style.border = "1px solid red";
+                    alert("The paragraph text box cannot contain an email or URL.");
+                    //Need to reset recaptcha so they can re-submit multiple times
+                    grecaptcha.reset();
+                }
+                else {
+                    document.forms[0].submit();
+                }
+            }
+        }
+
+        var stQuickRedirect = function () {
+          var href = window.location.href;
+          var path = window.location.pathname;
+          var search = window.location.search;
+          var redirectTime = 0;
+
+          if (href.toLowerCase().indexOf('stQuickRedirect.LongPause'.toLowerCase()) > -1) {
+            redirectTime = 30000;
+          }
+
+          ;
+
+          function add(redirects) {
+            if (!(redirects instanceof Array)) {
+              redirects = [redirects];
+            }
+
+            var _loop = function _loop(i) {
+              var redir = standardizeRedirect(redirects[i]);
+
+              if (!redir.matches) {
+                return "continue";
+              }
+
+              console.log("stQuickRedirect: Redirect ".concat(redir.name, " found."));
+              console.log("stQuickRedirect: Redirecting to ".concat(redir.to));
+              setTimeout(function () {
+                window.location.href = redir.to;
+              }, redirectTime);
+              return "break";
+            };
+
+            for (var i = 0; i < redirects.length; i++) {
+              var _ret = _loop(i);
+
+              if (_ret === "continue") continue;
+              if (_ret === "break") break;
+            }
+          }
+
+          function standardizeRedirect(redir) {
+            var out = {
+              matches: false
+            };
+
+            if (redir.urlContains) {
+              var contains = typeof redir.urlContains === 'function' ? redir.urlContains({
+                href: href,
+                path: path,
+                search: search
+              }) : redir.urlContains;
+
+              if (contains instanceof RegExp && contains.test(href)) {
+                out.matches = true;
+              } else if (!(contains instanceof RegExp) && href.indexOf(contains) > -1) {
+                out.matches = true;
+              }
+            } else if (redir.url) {
+              var url = typeof redir.url === 'function' ? redir.url({
+                href: href,
+                path: path,
+                search: search
+              }) : redir.url;
+
+              if (url instanceof RegExp && url.test(href)) {
+                out.matches = true;
+              } else if (!(url instanceof RegExp) && href.toLowerCase() === url.toLowerCase() || path.toLowerCase() === url.toLowerCase() || "".concat(path).concat(search).toLowerCase() === url.toLowerCase()) {
+                out.matches = true;
+              }
+            }
+
+            if (!redir.to) {
+              out.matches = false;
+            } else {
+              var to = typeof redir.to === 'function' ? redir.to({
+                href: href,
+                path: path,
+                search: search
+              }) : redir.to;
+              out.to = to;
+            }
+
+            if (out.matches && !redir.name) {
+              out.matches = false;
+            } else {
+              out.name = redir.name;
+            }
+
+            return out;
+          }
+
+          return {
+            add: add
+          };
+        }();
+
+        function IEdetection() {
+	        var ua = window.navigator.userAgent;
+	        var msie = ua.indexOf('MSIE ');
+	        if (msie > 0) {
+		        // IE 10 or older, return version number
+		        return ('IE ' + parseInt(ua.substring(
+		          msie + 5, ua.indexOf('.', msie)), 10));
+	        }
+	        var trident = ua.indexOf('Trident/');
+	        if (trident > 0) {
+		        // IE 11, return version number
+		        var rv = ua.indexOf('rv:');
+		        return ('IE ' + parseInt(ua.substring(
+		          rv + 3, ua.indexOf('.', rv)), 10));
+	        }
+	        var edge = ua.indexOf('Edge/');
+	        if (edge > 0) {
+		        //Edge (IE 12+), return version number
+		        return ('IE ' + parseInt(ua.substring(
+		          edge + 5, ua.indexOf('.', edge)), 10));
+	        }
+	        // User uses other browser
+	        return ('Not IE');
+        }
+
+        var ieResult = IEdetection();
+
+        var isIE = ieResult != 'Not IE';
+        var isInfoPage = /^((?!incompatible-browser).)*$/g.test(window.location.href) == false;
+
+        if(isIE && !isInfoPage){
+            window.location.href = 'https://www.aptiv.com/en/incompatible-browser';
+
+	        stQuickRedirect.add([{
+                name: 'Incompatible Browser Redirect',
+                url: window.location.href,
+                to: 'https://www.aptiv.com/en/incompatible-browser'
+            }])
+        }
+    </script> <meta content="Privacy  Statement | Aptiv" property="og:title"><meta content="Statement of Privacy Practices applies to how we use personal data when you visit aptiv.com." property="og:description"/><meta content="https://www.aptiv.com/images/default-source/og-images/aptiv-technology-company.jpg?sfvrsn=8b68283e_2" property="og:image"/><meta content="https://www.aptiv.com/en/privacy-statement" property="og:url"/><meta content="website" property="og:type"/><meta content="Aptiv" property="og:site_name"/><style media="all" type="text/css">@media (max-width: 767.98px) {
+	#PageContent.de .h1,
+	#PageContent.de .extended-layouts.right-left-layout.black-white-layout h2,
+	.extended-layouts.right-left-layout.black-white-layout #PageContent.de h2,
+	#PageContent.de .three-cols-header h2,
+	.three-cols-header #PageContent.de h2,
+	#PageContent.de .hero-image h2.title,
+	.hero-image #PageContent.de h2.title,
+	#PageContent.de h1,
+	#PageContent.de .sfw-featured-news .full-card .card-text h2 .news-title,
+	.sfw-featured-news .full-card .card-text h2 #PageContent.de .news-title {
+		font-size: 2.2rem
+	}
+}</style><script type="text/javascript">
+(function(){
+var hostname = window.location.host;
+
+  if(hostname.indexOf("www1.aptiv.com") === -1)
+    return;
+  
+  var loc = window.location.href;
+  
+  loc = loc.replace('www1.aptiv.com', 'www.aptiv.com');
+  window.location = loc;
+}());
+</script><script type="text/javascript">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W2CGT5R');
+</script><script type="text/javascript">
+$( document ).ready(function() {
+   var links = $("a[href^='https://origin.aptiv.com']")
+  links.each(function(){
+    var url = new URL($(this).attr('href')); 
+    $(this).attr('href', 'https://www.aptiv.com' + url.pathname)
+  })
+   
+});
+</script><meta content="Sitefinity 13.3.7626.0 PU" name="Generator"/><link href="https://www.aptiv.com/en/privacy-statement" rel="canonical"><meta content="Statement of Privacy Practices applies to how we use personal data when you visit aptiv.com.
+" name="description"/><meta content="Aptiv " name="keywords"/></link></meta></link></link></link></meta></head> <body> <div class="en" id="PageContent"> <div id="TopNavigation">
+<div class="col-24 top-global-navigation new-nav">
+<div class="container nav-sub-container">
+<div class="row no-gutters full-height align-items-center">
+<div class="col-19 col-lg-5 brand-image-container sf_colsIn" data-placeholder-label="Logo" data-sf-element="Column 1" id="ContentTopNavigation_T7A285BBA048_Col00">
+<a href="/en/home" target="_self">
+<img alt="Aptiv Logo" class="img-fluid" src="/images/default-source/default/aptiv.svg?sfvrsn=62dff2e4_4" title="Aptiv"/>
+</a>
+</div>
+<div class="col-5 col-lg-19 navbar-links-container">
+<div class="sf_colsIn" data-placeholder-label="Mobile Navigation" data-sf-element="Column 2" id="ContentTopNavigation_T7A285BBA048_Col01"><div class="d-flex navigation-header justify-content-end d-lg-none" id="mobile-navigation">
+<li class="nav-link nav-search-toggle ng-scope text-white" style="padding: 0 .75rem 0 0">
+<a class="search-icon" id="mobile-search-toggle">
+<i class="icon-magnifying"></i>
+<i class="icon-close d-none"></i>
+</a>
+</li>
+<button class="navbar-toggler" id="mobile-navigation-toggle-button" type="button">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+</div>
+<div class="row no-gutters top-navigation-links">
+<div class="sf_colsIn align-end" data-placeholder-label="Main Navigation Links" data-sf-element="Column 3" id="ContentTopNavigation_T7A285BBA048_Col02">
+<script>
+    $(function() {
+        $(".navigation-header a[confirm-url]").on("click",
+            function() {
+                $($(this).attr('data-target') + " #confirm").attr("href", $(this).attr('confirm-url'));
+                $($(this).attr('data-target') + " #confirm").attr("target", $(this).attr('target'));
+                $($(this).attr('data-target')).modal('show');
+                $(".modal-backdrop").css('z-index', 997);
+            });
+    })
+
+</script>
+<!-- Modal For Leaving Language -->
+<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="languageWarning" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content" style="padding: 30px;">
+<div class="modal-header" style="border: none;">
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body text-left">
+</div>
+<div class="modal-footer justify-content-center" style="border: none;">
+<div class="row">
+<div class="col-24 col-lg-11 d-flex justify-content-center">
+<button class="btn aptiv-button no-arrow fill-black" data-dismiss="modal" type="button">Go Back</button>
+</div>
+<div class="col-24 col-lg-12 offset-lg-1 d-flex justify-content-center">
+<a class="btn aptiv-button" id="confirm" type="button">Continue</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="navigation-header primary-links">
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="collapse navbar-collapse">
+<ul class="navbar-nav ml-auto">
+<li class="nav-link black-with-sub-mobile has-children">
+<a aria-expanded="false" class="sub-navigation-container collapsed" data-target="#black-with-sub-nav-1-0" data-toggle="collapse" href="/en/about">
+<span class="aptiv aptiv-plus"></span>
+</a>
+<a href="/en/about" target="_self">
+                About
+            </a>
+<ul class="nav nav-list collapse sub-nav-collapse" id="black-with-sub-nav-1-0">
+<ul class="column"> <li class="mobile-list">
+<a class="mobile-link" href="/en/about/our-mission" target="_self">Our Mission</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/about/our-businesses" target="_self">Our Businesses</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/about/our-journey" target="_self">Our Journey</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/about/our-locations" target="_self">Our Locations</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/about/our-foundation" target="_self">Our Foundation</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/about/sustainability" target="_self">Sustainability</a>
+</li>
+</ul>
+</ul>
+</li>
+<li class="nav-link black-with-sub dropdown">
+<a class="dropdown-toggle" href="/en/about" target="_self">
+                    About
+                </a>
+<ul class="dropdown-menu" style="">
+<ul class="column"> <li class="">
+<a class="mobile-link" href="/en/about/our-mission" target="_self">Our Mission</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/about/our-businesses" target="_self">Our Businesses</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/about/our-journey" target="_self">Our Journey</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/about/our-locations" target="_self">Our Locations</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/about/our-foundation" target="_self">Our Foundation</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/about/sustainability" target="_self">Sustainability</a>
+</li>
+</ul>
+</ul>
+</li>
+<li class="nav-link black-with-sub-mobile has-children">
+<a aria-expanded="false" class="sub-navigation-container collapsed" data-target="#black-with-sub-nav-1-1" data-toggle="collapse" href="/en/solutions">
+<span class="aptiv aptiv-plus"></span>
+</a>
+<a href="/en/solutions" target="_self">
+                Solutions
+            </a>
+<ul class="nav nav-list collapse sub-nav-collapse" id="black-with-sub-nav-1-1">
+<ul class="column"> <li class="mobile-list">
+<a class="mobile-link" href="/en/solutions/advanced-safety" target="_self">Advanced Safety</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/solutions/commercial-vehicles" target="_self">Commercial Vehicles</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/solutions/autonomous-mobility" target="_self">Autonomous Mobility </a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/solutions/connected-services" target="_self">Connected Services</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/solutions/connection-systems" target="_self">Connection Systems</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/solutions/connectivity-and-security" target="_self">Connectivity and Security</a>
+</li>
+</ul><ul class="column"> <li class="mobile-list">
+<a class="mobile-link" href="/en/solutions/electrical-distribution-systems" target="_self">Electrical Distribution Systems</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/solutions/e-mobility" target="_self">E-Mobility</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/solutions/hellermanntyton" target="_blank">HellermannTyton</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/solutions/smart-vehicle-architecture" target="_self">Smart Vehicle Architecture</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/solutions/user-experience" target="_self">User Experience</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/solutions/winchester-interconnect" target="_blank">Winchester Interconnect</a>
+</li>
+</ul>
+</ul>
+</li>
+<li class="nav-link black-with-sub dropdown">
+<a class="dropdown-toggle" href="/en/solutions" target="_self">
+                    Solutions
+                </a>
+<ul class="dropdown-menu wide-overflow multi-column" style="max-height: 507.6px">
+<ul class="column"> <li class="">
+<a class="mobile-link" href="/en/solutions/advanced-safety" target="_self">Advanced Safety</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/solutions/commercial-vehicles" target="_self">Commercial Vehicles</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/solutions/autonomous-mobility" target="_self">Autonomous Mobility </a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/solutions/connected-services" target="_self">Connected Services</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/solutions/connection-systems" target="_self">Connection Systems</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/solutions/connectivity-and-security" target="_self">Connectivity and Security</a>
+</li>
+</ul><ul class="column"> <li class="">
+<a class="mobile-link" href="/en/solutions/electrical-distribution-systems" target="_self">Electrical Distribution Systems</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/solutions/e-mobility" target="_self">E-Mobility</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/solutions/hellermanntyton" target="_blank">HellermannTyton</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/solutions/smart-vehicle-architecture" target="_self">Smart Vehicle Architecture</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/solutions/user-experience" target="_self">User Experience</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/solutions/winchester-interconnect" target="_blank">Winchester Interconnect</a>
+</li>
+</ul>
+</ul>
+</li>
+<li class="nav-link black-with-sub-mobile has-children">
+<a aria-expanded="false" class="sub-navigation-container collapsed" data-target="#black-with-sub-nav-1-2" data-toggle="collapse" href="/en/careers">
+<span class="aptiv aptiv-plus"></span>
+</a>
+<a href="/en/careers" target="_blank">
+                Careers
+            </a>
+<ul class="nav nav-list collapse sub-nav-collapse" id="black-with-sub-nav-1-2">
+<ul class="column"> <li class="mobile-list">
+<a class="mobile-link" href="/en/careers/our-story" target="_self">Our Story</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/careers/our-people" target="_blank">Working Here</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/careers/diversity-and-inclusion" target="_blank">Diversity and Inclusion</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/careers/global-locations" target="_self">Global Locations</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/careers/students-and-graduates" target="_self">Students and Graduates</a>
+</li>
+</ul>
+</ul>
+</li>
+<li class="nav-link black-with-sub dropdown">
+<a class="dropdown-toggle" href="/en/careers" target="_blank">
+                    Careers
+                </a>
+<ul class="dropdown-menu" style="">
+<ul class="column"> <li class="">
+<a class="mobile-link" href="/en/careers/our-story" target="_self">Our Story</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/careers/our-people" target="_blank">Working Here</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/careers/diversity-and-inclusion" target="_blank">Diversity and Inclusion</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/careers/global-locations" target="_self">Global Locations</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/careers/students-and-graduates" target="_self">Students and Graduates</a>
+</li>
+</ul>
+</ul>
+</li>
+<li class="nav-link black-with-sub-mobile has-children">
+<a aria-expanded="false" class="sub-navigation-container collapsed" data-target="#black-with-sub-nav-1-3" data-toggle="collapse" href="/en/insights">
+<span class="aptiv aptiv-plus"></span>
+</a>
+<a href="/en/insights" target="_self">
+                Insights
+            </a>
+<ul class="nav nav-list collapse sub-nav-collapse insights" id="black-with-sub-nav-1-3">
+<ul class="left-of-insights"><ul class="column"> <li class="mobile-list">
+<a class="mobile-link" href="/en/insights/advanced-manufacturing" target="_self">Advanced Manufacturing</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/insights/advanced-safety" target="_self">Advanced Safety</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/insights/autonomous-driving" target="_self">Autonomous Driving</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/insights/connectivity" target="_self">Connectivity </a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/insights/e-mobility" target="_self">E-Mobility</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/insights/in-cabin-user-experience" target="_self">In-Cabin User Experience</a>
+</li>
+<li class="mobile-list">
+<a class="mobile-link" href="/en/insights/smart-vehicle-architecture" target="_self">Smart Vehicle Architecture</a>
+</li>
+</ul></ul> <ul class="explore-all">
+<li><a class="p-0 m-0 explore-link" href="/en/insights">Explore All</a></li>
+<li>
+<a class="explore-link" href="https://www.aptiv.com/insights/search?newstypes=article" style="color: #000000
+;">Articles</a>
+</li>
+<li>
+<a class="explore-link" href="https://www.aptiv.com/insights/search?newstypes=case-studies" style="color: ;">Case Studies</a>
+</li>
+<li>
+<a class="explore-link" href="https://www.aptiv.com/insights/search?newstypes=mobility-insider" style="color: #6479e2;">Mobility Insider</a>
+</li>
+<li>
+<a class="explore-link" href="https://www.aptiv.com/insights/search?newstypes=video" style="color: #006b63s;">Videos</a>
+</li>
+<li>
+<a class="explore-link" href="https://www.aptiv.com/insights/search?newstypes=white-paper" style="color: #919d95;">White Papers</a>
+</li>
+</ul>
+</ul>
+</li>
+<li class="nav-link black-with-sub dropdown">
+<a class="dropdown-toggle" href="/en/insights" target="_self">
+                    Insights
+                </a>
+<ul class="dropdown-menu wide-overflow insights" style="max-height: 333.6px">
+<ul class="left-of-insights"><ul class="column"> <li class="">
+<a class="mobile-link" href="/en/insights/advanced-manufacturing" target="_self">Advanced Manufacturing</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/insights/advanced-safety" target="_self">Advanced Safety</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/insights/autonomous-driving" target="_self">Autonomous Driving</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/insights/connectivity" target="_self">Connectivity </a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/insights/e-mobility" target="_self">E-Mobility</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/insights/in-cabin-user-experience" target="_self">In-Cabin User Experience</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/insights/smart-vehicle-architecture" target="_self">Smart Vehicle Architecture</a>
+</li>
+</ul></ul> <ul class="explore-all">
+<li><a class="p-0 m-0 explore-link" href="/en/insights">Explore All</a></li>
+<li>
+<a class="explore-link" href="https://www.aptiv.com/insights/search?newstypes=article" style="color: #000000
+;">Articles</a>
+</li>
+<li>
+<a class="explore-link" href="https://www.aptiv.com/insights/search?newstypes=case-studies" style="color: ;">Case Studies</a>
+</li>
+<li>
+<a class="explore-link" href="https://www.aptiv.com/insights/search?newstypes=mobility-insider" style="color: #6479e2;">Mobility Insider</a>
+</li>
+<li>
+<a class="explore-link" href="https://www.aptiv.com/insights/search?newstypes=video" style="color: #006b63s;">Videos</a>
+</li>
+<li>
+<a class="explore-link" href="https://www.aptiv.com/insights/search?newstypes=white-paper" style="color: #919d95;">White Papers</a>
+</li>
+</ul>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div class="horizontal-gray-line d-none d-xl-block"></div>
+</div>
+</div>
+<div>
+<div class="row no-gutters secondary-nav">
+<div class="sf_colsIn" data-placeholder-label="Secondary Navigation Links" data-sf-element="Column 4" id="ContentTopNavigation_T7A285BBA048_Col03">
+<div class="navigation-header secondary-links">
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto">
+<li class="nav-link"><a href="https://ir.aptiv.com" target="_blank">Investors</a></li>
+<li class="nav-link"><a href="/en/newsroom" target="_self">Newsroom</a></li>
+</ul>
+</div>
+</nav>
+</div>
+</div>
+<div class="sf_colsIn" data-placeholder-label="Account Widget" data-sf-element="Column 5" id="ContentTopNavigation_T7A285BBA048_Col04"><div class="navigation-header primary-links account-links">
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="collapse navbar-collapse">
+<ul class="navbar-nav ml-auto">
+<li class="nav-link black-with-sub dropdown">
+<a class="account-icon dropdown-toggle" href="#" target="_self">
+<i>
+<svg height="19px" version="1.1" viewbox="0 0 22 19" width="22px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>My Account</title>
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<g id="TOP-MENU" stroke="#D1D1D1" transform="translate(-1273.000000, -104.000000)">
+<g id="Group-2" transform="translate(551.000000, 61.000000)">
+<g id="Group" transform="translate(723.000000, 8.731588)">
+<g id="USER-icon" transform="translate(0.000000, 35.268412)">
+<path d="M20.1894957,17.5001 C20.1894957,14.6950929 17.92949,12.4206427 15.1422607,12.4206427 L5.04723504,12.4206427 C2.26000574,12.4206427 0,14.6950929 0,17.5001" id="Stroke-1"></path>
+<path d="M15.142094,5.07945734 C15.142094,2.27445022 12.8820883,0 10.094859,0 C7.30707411,0 5.04762393,2.27445022 5.04762393,5.07945734 C5.04762393,7.88446447 7.30707411,10.1589147 10.094859,10.1589147 C12.8820883,10.1589147 15.142094,7.88446447 15.142094,5.07945734 Z" id="Stroke-3"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</i>
+</a>
+<ul class="dropdown-menu account-menu d-none">
+<ul class="column">
+<li class="">
+<a class="mobile-link" href="/en/user/my-account" target="_self">My Account</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/user/order-history" target="_self">Order History</a>
+</li>
+<li class="">
+<a class="mobile-link" href="/en/solutions/connection-systems/contact-us" target="_self">Contact Us</a>
+</li>
+<li class="">
+<a class="mobile-link logout" href="#" target="_self">Logout</a>
+</li>
+</ul>
+</ul>
+</li>
+<li class="nav-link black-with-sub-mobile ac-black-with-sub-mobile has-children">
+<a aria-expanded="false" class="sub-navigation-container collapsed plus-container d-none" data-target="#black-with-sub-nav-n95-0" data-toggle="collapse" href="/en/about">
+<span class="aptiv aptiv-plus"></span>
+</a>
+<a class="account-icon dropdown-toggle" href="#" target="_self">
+<i>
+<svg height="19px" version="1.1" viewbox="0 0 22 19" width="22px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>My Account</title>
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+<g id="TOP-MENU" stroke="#D1D1D1" transform="translate(-1273.000000, -104.000000)">
+<g id="Group-2" transform="translate(551.000000, 61.000000)">
+<g id="Group" transform="translate(723.000000, 8.731588)">
+<g id="USER-icon" transform="translate(0.000000, 35.268412)">
+<path d="M20.1894957,17.5001 C20.1894957,14.6950929 17.92949,12.4206427 15.1422607,12.4206427 L5.04723504,12.4206427 C2.26000574,12.4206427 0,14.6950929 0,17.5001" id="Stroke-1"></path>
+<path d="M15.142094,5.07945734 C15.142094,2.27445022 12.8820883,0 10.094859,0 C7.30707411,0 5.04762393,2.27445022 5.04762393,5.07945734 C5.04762393,7.88446447 7.30707411,10.1589147 10.094859,10.1589147 C12.8820883,10.1589147 15.142094,7.88446447 15.142094,5.07945734 Z" id="Stroke-3"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</i>
+
+                        My Account
+                    </a>
+<ul class="nav nav-list collapse sub-nav-collapse mobile-collapse d-none" id="black-with-sub-nav-n95-0">
+<ul class="column">
+<li class="mobile-list ac-mobile-list">
+<a class="mobile-link" href="/en/user/my-account" target="_self">My Account</a>
+</li>
+<li class="mobile-list ac-mobile-list">
+<a class="mobile-link" href="/en/user/order-history" target="_self">Order History</a>
+</li>
+<li class="mobile-list ac-mobile-list">
+<a class="mobile-link" href="/en/solutions/connection-systems/contact-us" target="_self">Contact Us</a>
+</li>
+<li class="mobile-list ac-mobile-list">
+<a class="mobile-link logout" href="#" target="_self">Logout</a>
+</li>
+</ul>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<script type="text/javascript">
+    function doLogout(){
+        $.post('/ecat/logout', (data,status) => {
+            location.reload();
+        })
+    }
+
+    $(document).ready(function(){
+        $.get('/ecat/login-status', (data,status) => {
+            if(data.LoggedIn){
+                $('ul.dropdown-menu').removeClass('d-none');
+                $('ul.mobile-collapse').removeClass('d-none');
+                $('a.plus-container').removeClass('d-none');
+            }else{
+              if(window.location.pathname != '/en/user/login'){
+                var loc = window.location.href;
+                $('a.account-icon').attr('href','/en/user/login' + '?ReturnUrl=' + (loc.indexOf('&id=') > -1 ? loc.replace('&id=','%26id=') : loc));
+                     }
+                } 
+        })
+        $('a.logout').on('click',function(e){
+            e.preventDefault();
+            doLogout();
+        })
+    })
+</script>
+</div>
+<div class="sf_colsIn" data-placeholder-label="Shopping Cart" data-sf-element="Column 6" id="ContentTopNavigation_T7A285BBA048_Col05"><div class="shopping-cart d-none">
+<div class="cart-container d-none d-lg-flex">
+<a class="cart-url" href="#">
+<i>
+<svg height="19px" version="1.1" viewbox="0 0 19 19" width="19px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>My Cart</title>
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1">
+<g id="TOP-MENU" stroke="#D1D1D1" transform="translate(-1274.000000, -69.000000)">
+<g id="Group-2" transform="translate(551.000000, 61.000000)">
+<g id="Group" transform="translate(723.000000, 8.731588)">
+<g id="Group-11" transform="translate(1.000000, 0.500000)">
+<line id="Stroke-5" stroke-linejoin="round" x1="3.9" x2="15.5" y1="14" y2="14"></line>
+<circle cx="3.5" cy="15.5" id="Oval" r="1.5"></circle>
+<circle cx="15.5" cy="15.5" id="Oval-Copy" r="1.5"></circle>
+<polyline id="Stroke-7" points="0 1.73159154e-15 1.81197333 0 3.2028 12.2739733 3.39048 13.8638133" stroke-linecap="round" stroke-linejoin="round"></polyline>
+<path d="M3.20918655,11.0566907 L15.66808,11.0566907 C16.0797067,11.0566907 16.4396533,10.7792507 16.5448267,10.381224 L17.1903733,4.13688319 C17.2598839,3.4444046 16.8398008,2.99896228 16.31408,2.99896228 L2.31235123,2.99896228" id="Stroke-9" stroke-linecap="round" stroke-linejoin="round"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</i>
+<span class="item-count d-none"></span>
+</a>
+</div>
+<div class="cart-container-mobile d-flex d-lg-none">
+<a class="cart-url" href="#">
+<i>
+<svg height="19px" version="1.1" viewbox="0 0 19 19" width="19px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>My Cart</title>
+<g fill="none" fill-rule="evenodd" id="Symbols" stroke="none" stroke-width="1">
+<g id="TOP-MENU" stroke="#D1D1D1" transform="translate(-1274.000000, -69.000000)">
+<g id="Group-2" transform="translate(551.000000, 61.000000)">
+<g id="Group" transform="translate(723.000000, 8.731588)">
+<g id="Group-11" transform="translate(1.000000, 0.500000)">
+<line id="Stroke-5" stroke-linejoin="round" x1="3.9" x2="15.5" y1="14" y2="14"></line>
+<circle cx="3.5" cy="15.5" id="Oval" r="1.5"></circle>
+<circle cx="15.5" cy="15.5" id="Oval-Copy" r="1.5"></circle>
+<polyline id="Stroke-7" points="0 1.73159154e-15 1.81197333 0 3.2028 12.2739733 3.39048 13.8638133" stroke-linecap="round" stroke-linejoin="round"></polyline>
+<path d="M3.20918655,11.0566907 L15.66808,11.0566907 C16.0797067,11.0566907 16.4396533,10.7792507 16.5448267,10.381224 L17.1903733,4.13688319 C17.2598839,3.4444046 16.8398008,2.99896228 16.31408,2.99896228 L2.31235123,2.99896228" id="Stroke-9" stroke-linecap="round" stroke-linejoin="round"></path>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
+</i>
+<span class="cart-text" style="">Cart</span>
+<span class="item-count-mobile" style=""></span>
+</a>
+</div>
+</div>
+<script type="text/javascript">
+    var isLoggedIn = false;
+
+    $(document).ready(function(){
+        var emptyCartUrl = '/en/solutions/connection-systems/catalog';
+        var cartUrl = '';
+
+        $.get('/ecat/get-cart', (data,status) => {
+            var itemCount = data.GetCartResponse?.Cart?.CartItems?.length ?? 0;
+
+            if(itemCount == 0){
+                cartUrl = emptyCartUrl
+            }else{
+                var loc = window.location.href;
+                cartUrl = data.CartUrl + '&SupplierReturnURL=' + (loc.indexOf('&id=') > -1 ? loc.replace('&id=','%26id=') : loc);
+                $('.item-count').text(itemCount);
+                $('.item-count-mobile').text('(' + itemCount + ')');
+                $('.item-count').removeClass('d-none');
+            }
+
+            if(cartUrl != null && cartUrl != ''){
+                console.log('Setting url');
+                $('a.cart-url').attr('href', cartUrl);
+            }
+        })
+
+        $.get('/ecat/login-status', (data,status) => {
+            if(data.LoggedIn){
+                isLoggedIn = true;
+                $('.shopping-cart').removeClass('d-none');
+            }else{
+                if(window.location.pathname != '/en/user/login'){
+                var loc = window.location.href;
+                 $('a.cart-url').attr('href','/en/user/login' + '?ReturnUrl=' + (loc.indexOf('&id=') > -1 ? loc.replace('&id=','%26id=') : loc));
+                     }
+    $('.shopping-cart').removeClass('d-none');
+            }
+        })
+    })
+</script>
+</div>
+<div class="sf_colsIn" data-placeholder-label="Language Picker" data-sf-element="Column 7" id="ContentTopNavigation_T7A285BBA048_Col06">
+<div class="navigation-header secondary-links">
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="collapse navbar-collapse">
+<ul class="navbar-nav">
+<li class="nav-link black-with-sub-mobile has-children sf-lang-selector language-selector-nav">
+<a aria-expanded="false" class="sub-navigation-container collapsed" data-target="#black-with-sub-nav-2" data-toggle="collapse" href="">
+<span class="aptiv aptiv-plus"></span>
+</a>
+<a href="#">
+<i class="aptiv aptiv-sphere"></i>
+                        en
+                    </a>
+<ul class="nav nav-list collapse sub-nav-collapse" id="black-with-sub-nav-2">
+<ul class="column">
+<li class="selected-lang">
+<a class="language-nav-link text-uppercase" data-culture="en">English (en)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="zh">中文 (zh)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="de">Deutsch (de)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="es">español (es)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="fr">français (fr)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="hu">magyar (hu)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="it">italiano (it)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="ja">日本語 (ja)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="ko">한국어 (ko)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="pl">polski (pl)</a>
+</li>
+</ul>
+</ul>
+</li>
+<li class="sf-lang-selector language-selector-nav nav-link black-with-sub dropdown">
+<a class="dropdown-toggle">
+<i class="aptiv aptiv-sphere"></i>
+                        en
+                    </a>
+<ul class="dropdown-menu">
+<ul class="column">
+<li class="selected-lang">
+<a class="language-nav-link text-uppercase" data-culture="en">English (en)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="zh">中文 (zh)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="de">Deutsch (de)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="es">español (es)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="fr">français (fr)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="hu">magyar (hu)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="it">italiano (it)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="ja">日本語 (ja)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="ko">한국어 (ko)</a>
+</li>
+<li class="">
+<a class="language-nav-link text-uppercase" data-culture="pl">polski (pl)</a>
+</li>
+</ul>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<script type="text/javascript">
+$('.language-nav-link').on("mousedown", function(event) {
+      var culture = $(this).data('culture');
+        switch(event.which)
+        {
+            case 1:
+                openLink(culture);
+            break;
+            case 2:
+                //This is basically the openLink function that opens the data in a new window
+                var url = document.querySelector('[data-sf-role="' + culture + '"]').value;
+                window.open(url, "_blank");
+            break;
+        }
+    });
+</script>
+</div>
+<div class="sf_colsIn" data-placeholder-label="Search" data-sf-element="Column 8" id="ContentTopNavigation_T7A285BBA048_Col07">
+<div class="navigation-header secondary-links">
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="collapse navbar-collapse">
+<ul class="navbar-nav mr-auto">
+<li class="nav-link d-none d-md-block seach-placeholder">
+<aptiv-nav-search></aptiv-nav-search>
+</li>
+</ul>
+</div>
+</nav>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> <div class="global-content-container" id="Contentplaceholder">
+<div class="nav-term-facet-container ng-cloak" ng-controller="stNavSearchTermFacetCtrl as ctrl" ng-init='ctrl.init({"CssClass":null,"Placeholder":"Search by keyword...","Heading":null,"SearchTerms":"Continuous Integration (CI), COVID-19, Smart Vehicle Architecture, Autonomous Driving, Mobility Insider, Active Safety","RedirectUrl":"/global-search","PredictiveIndex":"global"})' ng-show="ctrl.navOpen">
+<div class="global-term-facet nav-term-facet">
+<div class="container">
+<div class="row">
+<div class="col-24">
+<div class="term-facet-container">
+<form action="#" onsubmit="return false;">
+<div class="input-group">
+<input aria-label="Search by keyword..." class="form-control search-term" ng-blur="ctrl.initiateSearch()" ng-model="ctrl.term" placeholder="Search by keyword..." predictive-index="global" st-prevent-enter="ctrl.initiateSearch()" type="search"/>
+<span class="input-group-append d-sm-flex">
+<button class="btn" ng-click="ctrl.initiateSearch()" title="Search" type="submit"></button>
+</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="popular-terms">
+<div class="container">
+<div class="row mt-2">
+<div class="col-md-6">
+<p class="search-term-heading">
+                                Popular Searches:
+                            </p>
+</div>
+<div class="col-md-18">
+<div class="row">
+<div class="col-md-8">
+<a class="search-term-link" ng-click="ctrl.setTerm('Continuous Integration (CI)', true)" role="button">Continuous Integration (CI)</a>
+</div>
+<div class="col-md-8">
+<a class="search-term-link" ng-click="ctrl.setTerm('COVID-19', true)" role="button">COVID-19</a>
+</div>
+<div class="col-md-8">
+<a class="search-term-link" ng-click="ctrl.setTerm('Smart Vehicle Architecture', true)" role="button">Smart Vehicle Architecture</a>
+</div>
+<div class="col-md-8">
+<a class="search-term-link" ng-click="ctrl.setTerm('Autonomous Driving', true)" role="button">Autonomous Driving</a>
+</div>
+<div class="col-md-8">
+<a class="search-term-link" ng-click="ctrl.setTerm('Mobility Insider', true)" role="button">Mobility Insider</a>
+</div>
+<div class="col-md-8">
+<a class="search-term-link" ng-click="ctrl.setTerm('Active Safety', true)" role="button">Active Safety</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> <div>
+<div class="nav-float-dropdown" id="NavFloatDD" ng-class="{'below-fold': belowFold, 'half-scroll': halfScroll}" ng-cloak="" ng-controller="floatDDCtrl">
+<div id="NavFloatHandle" ng-click="navFloatHandleClick()">
+<img alt="connect-toggle" class="icon-close-white" ng-class="{'opened': showNav, 'float-right': isMobile}" src="/Assets/icon-close-white2.svg"/>
+<span>Connect</span>
+</div>
+<ul id="NavFloatList">
+<li class="">
+<a href="https://go.aptiv.com/subscribe-to-newsletter.html" target="_self">Sign-up</a>
+</li>
+<li class="bordered">
+<a href="https://www.aptiv.com/careers/search" target="_self">Apply</a>
+</li>
+<li class="bordered">
+<a href="/en/contact" target="_self">Contact</a>
+</li>
+</ul>
+<input id="HidMobile" type="hidden"/>
+</div>
+</div>
+<div class="container">
+<nav aria-label="Full path to the current page" class="breadcrumb-nav">
+<ol class="sf-breadscrumb breadcrumb">
+<li class="breadcrumb-item"><a href="/en">Home </a></li>
+<li aria-current="page" class="breadcrumb-item active">Aptiv Privacy Statement </li>
+</ol>
+<div class="fade-gradient"></div>
+</nav>
+</div>
+<div class="row" data-placeholder-label="Row" data-sf-element="Row">
+<div class="sf_colsIn col-24" data-placeholder-label="Column 1" data-sf-element="Column 1" id="MainContent_C001_Col00"><div class="sf_colsIn container" data-placeholder-label="Container" data-sf-element="Container" id="MainContent_C002_Col00">
+<div>
+<div><h2 class="h1">Privacy Statement</h2><br/><h2>Information on who we are </h2><p>Aptiv Global Operations Limited and its affiliates (“Aptiv”) as a data controller is committed to protecting the privacy and security of your personal data. Aptiv Global Operations Limited is an Irish company with its registered office at 5 Hanover Quay, Grand Canal Dock, Dublin, D02 VY79, Ireland.<br/>This privacy statement applies when you visit our Aptiv.com site including if you have been directed to this site or when you contact us with a comment, inquiry or customer support request through this site. Personal information collected
+    about you in connection with other Company websites, products, services or mobile applications (including those made available to you by our group companies) may be covered by different privacy statements. It is important that you read this privacy
+    statement together with any other privacy statements or other notices we may provide to you.
+</p><p>By using or accessing this Site or contacting us you agree that we may process your personal information in the manner described in this statement. The Aptiv website is one of our primary channels of communication providing information on our programs
+    and services.
+</p><p>It is important that you read this statement so that you are aware of how and why we are using your information. If you have any questions about this statement or how we handle your personal information, please contact Aptiv by emailing <a href="mailto:privacy@aptiv.com">privacy@aptiv.com</a>. If you are contacting us to fulfill a data subject access request or do not sell for California contact us <a data-sf-ec-immutable="" data-sf-marked="" href="https://www.aptiv.com/contact-us/data-subject-request">here</a>. </p><h2><br/>The kind of information we hold about you </h2><p>Personal data means any information about an individual from which that person can be identified.
+</p><p>When you avail of our services, or purchase Aptiv products, we may collect, store, and use the following categories of personal data about you: </p><ul><li>Identity Data – details such as first name, maiden name, last name, username or similar identifier, title, company/organization name, date of birth.
+    </li><li>Contact Data – name, title, addresses, telephone numbers, and business and personal email addresses.
+    </li><li>Profile Data – your username and password, purchases or orders made by you, your interests, preferences, feedback and survey responses.
+    </li><li>Transaction Data – details about payments to and from you and other details of products and services you have purchased from us.
+    </li><li>Marketing and Communications Data – data on your preferences in receiving marketing from us and our third parties and your communication preferences.
+    </li><li>Interaction and Usage Data – when you interact with us we will record details of those interactions (for example, phone calls, e-mail correspondence and hard copy correspondence as well as information on how you use our website, products and
+        services). If you make a complaint we will process details concerning that complaint.
+    </li><li>Mandatory Data – data that is mandatory for us to collect to comply with certain legal and regulatory obligations that apply to our business
+    </li><li>Sensitive Data – information about your health, including any medical condition, where you disclose those details to us so that we can accommodate any special needs you may have when you avail of our services including to comply with our obligations
+        under the equality legislation.
+    </li><li>Technical Data – such data would include internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform and other technology on the
+        devices you use to access this website.
+    </li><li>Video Data – personal data footage recorded for security, health and safety or product development purposes. </li></ul><h2><br/>How is your personal information collected? </h2><p>We collect personal data through our interactions with you, when you use our services, purchase our products or when you complete our administrative forms in hard copy or on-line. We also may collect data through development of our products or services,
+    which may include street view video data collected in public spaces. </p><p>Different data collection methods: </p><ul><li>Direct interactions. You may give us your Identity, Contact, Financial, Interaction and Usage Data by filling in forms, using our website or by corresponding with us by post, phone, email or otherwise. This includes personal data you provide when
+        you apply for our products or services:
+        <ul><li>Create an account on our website;
+            </li><li>Subscribe to our service or publications;
+            </li><li>Request marketing to be sent to you;
+            </li><li>Enter a competition, promotion or survey;
+            </li><li>Give us feedback;
+            </li><li>Identity and Contact Data from data brokers or aggregators based inside or outside the EU;
+            </li><li>Identity and Contact Data from publicly available sources such as the Companies Registration Office;
+            </li><li>Participation in research and development activities
+            </li></ul></li><li>Automated technologies or interactions. As you interact with our website, we may automatically collect Technical Data about your equipment, browsing actions and patterns. We collect this personal data by using cookies, server logs and other similar
+        technologies. Please see our <a href="/en/cookie-policy">cookie policy</a> for further details.
+        </li><li>Third parties or publicly available sources. We may receive personal data about you from various third parties and public sources as set out below:
+
+        <ul><li>Technical Data from the following parties:
+                <ul><li>analytics providers such as Google based inside or outside the EU;
+                    </li><li>advertising networks based inside or outside the EU; and
+                    </li><li>search information providers based inside or outside the EU. </li></ul></li><li>Video collection via vehicles driving on public motorways </li></ul></li></ul><h2><br/>How we use your personal information </h2><p>We may use the personal information collected via our Site or when you contact us for purposes that include: </p><ul><li>Services and transactions. We may use your personal information to deliver services to you or carry out transactions you have requested, including, but not limited to, providing information on Company products or services you have purchased or otherwise
+        use, registering purchased products, processing product orders, handling warranty claims, replacing product manuals, answering customer service requests and facilitating the use of our Sites.
+    </li><li>Administering and protecting our business and Sites. We may use your personal information to administer and protect our business and our Sites, including troubleshooting, system maintenance, support, reporting and hosting of data.
+    </li><li>Improving our business, Sites, products and services. We may use your personal information to perform business analyses or for other purposes that help us to develop and improve the quality of our business, Sites, products and services (including
+        new products and services), for example, by customizing our Sites to your particular preferences or interests.
+    </li><li>Marketing. In accordance with applicable laws and regulations, we may use your personal information to inform you of products or services which may be of interest to you, and to otherwise communicate with you about offerings, events and news, surveys,
+        special offers, and related topics. You are able to opt-out from marketing communications sent via e-mail at any time, free of charge by using the “unsubscribe” link in any e-mail marketing materials you receive from us, or by contacting
+        us here.
+    </li><li>Research and analysis. We may use your personal information to conduct research and analysis to help us analyze your purchasing preferences, identify the products and services that best meet your requirements and measure the effectiveness of the advertising
+        we serve you. We also may use your data for future product innovation.
+    </li><li>Enforcement: We may use the personal information we collect in order to detect, prevent and respond to fraud, intellectual property infringement, violations of our terms and conditions, violations of law or other misuse of our Sites. </li></ul><p>Where permitted by law, we may combine the information that we collect via our Sites with other information we hold about you (such as information about your use of our products and services) in order to offer you an improved and consistent customer experience
+    when interacting with us or for other purposes set forth in this statement. We do not sell your personal data. </p><h2><br/>The legal basis on which we process information </h2><p>Where required by law, we will ensure there is a legal basis for the processing of your personal information. In most cases the legal basis will be that: </p><ul><li>the processing is necessary for the performance of the services we provide;
+    </li><li>the processing is necessary to comply with our legal obligations, including compliance with applicable laws, regulations, governmental and quasi-governmental requests, court orders or subpoenas;
+    </li><li>the processing is based on your consent to the processing of your personal information for one or more specified purposes (e.g. marketing); or
+    </li><li>the processing is necessary to meet our legitimate interests, for example to develop and improve our Sites, products and/or services for the benefit of our customers.                                                          </li></ul><h2><br/>If you fail to provide personal information </h2><p>When you do not provide requested information, we may not be able to provide you the requested service or complete your transaction.
+</p><p>Where we require your personal data to enter into a contract and to provide you with our services, we will make this clear.
+</p><h2><br/>Change of purpose</h2><p>If we need to use your personal data for an unrelated purpose, we will notify you and we will explain the legal basis which allows us to do so unless this is otherwise required or permitted by law (in which case we may process your personal data without
+    your knowledge .or consent). </p><h2><br/>How we use particularly sensitive personal information</h2><p>Special categories of particularly sensitive personal data require higher levels of protection.
+</p><p>We may process special categories of personal data where we need to carry out our legal obligations or where it is needed in the public interest.
+</p><p>Less commonly, we may process this type of data where it is needed in relation to legal claims or where it is needed to protect your interests (or someone else's interests) and you are not capable of giving your consent, or where you have already made
+    the information public.
+</p><p>We will use information about your physical or mental health, or disability status, to ensure your health and safety when you are availing of our services and to ensure that we comply with the equality legislation. </p><h2><br/>Automated decision-making </h2><p>Automated decision-making takes place when an electronic system uses personal information to make a decision without human intervention.
+</p><p>You will not be subject to decisions that will have a significant impact on you based solely on automated decision-making, unless we have a lawful basis for doing so and we have notified you. </p><h2><br/>Marketing </h2><p>We may contact you on premise, by mail, email, telephone, or social media about our products and services and other events which might be of interest to you.
+</p><p>You may receive marketing communications from us if: </p><ul><li>you have requested to receive or consented to the receipt of information from us; or
+    </li><li>purchased goods or services from us (and our marketing communications will be in relation to Aptiv’s similar goods or services); or
+    </li><li>it is in our legitimate interest, </li></ul><p>and, in each case, you have not opted out of receiving the marketing communications.
+</p><p>You will only receive electronic marketing communications under (b) above where such products or services were purchased by you prior to the receipt of the communication.
+</p><p>You have the right to ask us to stop processing your personal data for direct marketing purposes. If you wish to exercise this right, you can click unsubscribe from the bottom of the email received or please submit a request through the link <a data-sf-ec-immutable="" href="https://origin.aptiv.com/contact-us/data-subject-request">here </a>. </p><h2><br/>Data sharing </h2><p>We will share your personal data with third parties where it is necessary to perform our contract with you, where we have another legitimate interest in doing so or where it is required by law.</p><p>We will share your data with trusted third-party service providers. We may also share your personal data with other third parties, for example, in the context of a transfer of our statutory functions or with a regulator or to otherwise comply with the
+    law.
+</p><p>All our third-party service providers are required to take appropriate security measures to protect your personal data based on the associate risks including proper access controls. They will only process your personal data on our instructions and are
+    subject to a duty of confidentiality. We require third parties to respect the security of your data and to treat it in accordance with the law. </p><h2><br/>Transferring information outside the EU </h2><p>We may transfer the personal data we collect about you outside the European Economic Area (EEA) where a trusted service provider is based outside of the EEA.  We will always take steps to ensure that any transfer of your information outside of the EEA
+    is carefully managed to protect your privacy rights. Where required, we have put in place appropriate safeguards with our group companies, service providers, contractors, distributors and other business partners and agents to ensure that transfers
+    of personal information outside the EEA are adequately protected. These safeguards typically comprise the EU Standard Contractual Clauses in accordance with Article 46(2) of the EU General Data Protection Regulation. For more information on the appropriate
+    safeguards in place to protect your personal information, please contact us using the details at the end of this statement. </p><h2><br/>Do Not Sell Rights </h2><p>California residents have the right to opt-out of the sales of their personal information by us. As noted above, we do not sell personal information about California residents. </p><h2><br/>Data retention </h2><p>We will only retain your personal data for as long as necessary to fulfil the purposes we collected it.
+</p><p>In some circumstances we may anonymize your personal information so that it can no longer be associated with you, in which case we may use such information without further notice to you. </p><h2><br/>Rights of access, correction, erasure, and restriction </h2><p>Your duty to inform us of changes
+</p><p>It is important that the personal information we hold about you is accurate and current. Please keep us informed if your personal information changes.
+</p><p>Your rights in connection with personal information
+</p><p>Under certain circumstances, by law you have the right to:
+
+</p><ul><li>Request access to your personal information.
+    </li><li>Request correction of the personal information that we hold about you.
+    </li><li>Request erasure of your personal information.
+    </li><li>Object to processing of your personal information.
+    </li><li>Request the restriction of processing of your personal information.
+    </li><li>Request the transfer of your personal information to another party. </li></ul><p>If you want to review, verify, correct or request erasure of your personal information, object to the processing of your personal data, or request that we transfer a copy of your personal information to another party, please submit a request through the
+    link   <a data-sf-ec-immutable="" data-sf-marked="" href="https://www.aptiv.com/contact-us/data-subject-request">here</a>.
+</p><p>You will not have to pay a fee to access your personal information (or to exercise any of the other rights). However, we may charge a reasonable fee if your request for access is clearly unfounded or excessive. Alternatively, we may refuse to comply with
+    the request in such circumstances.
+</p><p>We may need to request specific information from you to help us confirm your identity and ensure your right to access the information (or to exercise any of your other rights). This is another appropriate security measure to ensure that personal information
+    is not disclosed to any person who has no right to receive it. </p><h2><br/>Right to withdraw consent </h2><p>In the limited circumstances where you may have provided your consent to the collection, processing and transfer of your personal information for a specific purpose, you have the right to withdraw your consent for that specific processing at any time.
+    To withdraw your consent, please submit a request through the <a href="/en/contact/data-subject-request">link here</a>. Once we have received notification that you have withdrawn your consent, we will no longer process your information for the purpose or purposes you originally agreed to, unless
+    we have another legitimate basis for doing so in law. </p><h2><br/>Children</h2><p>This website is not designed for children and is not intended to appeal to children. Aptiv does not knowingly collect data from children. If you are under 16 years of age, please do not use this website. </p><h2><br/>Other websites</h2><p>Our website contains hyperlinks to other websites, including some third parties who manage our application process. This statement only applies to this website, and when you click links to other websites, you should read their own privacy statement. The
+    change in the URL amongst other factors will help you to recognize the website of other providers.</p><h2><br/>Complaints </h2><p>You have the right to make a complaint at any time to the Data Protection Commission, the Irish supervisory authority for data protection issues. The Data Protection Commission can be contacted at the Office of the Data Protection Commissioner. Canal
+    House, Station Road, Portarlington, Co. Laois, R32 AP23, Ireland or by e-mailing <a data-sf-ec-immutable="" href="https://origin.aptiv.com/sf/system/pages(0f0612ff-f3bb-4b46-9180-8f3e71cdc6b9)/info@dataprotection.ie">info@dataprotection.ie</a>.
+ </p><h2><br/>Changes to this Privacy Statement </h2><p>We reserve the right to update this statement at any time. We may also notify you in other ways from time to time about the processing of your personal information.
+</p><p>If you have any questions about this statement, please submit a request through the link  <a data-sf-ec-immutable="" data-sf-marked="" href="https://www.aptiv.com/contact-us/data-subject-request">here</a>. </p></div>
+</div>
+</div>
+<div class="spacer-widget-container short-p"></div></div>
+</div>
+</div> <div id="Footer"> <div class="sfw-footer-nav-content">
+<div class="col-24 top-global-navigation new-nav">
+<div class="container nav-sub-container">
+<div class="row full-height" data-sf-element="Row">
+<div class="sf_colsIn col-24 col-lg-14 pl-20" data-placeholder-label="Column 1" data-sf-element="Column 1" id="ContentFooterNavigation_T7A285BBA049_Col00">
+<a href="/en/home" target="_blank">
+<img alt="Aptiv Logo" class="img-fluid" src="/images/default-source/default/aptiv.svg?sfvrsn=62dff2e4_4" title="Aptiv"/>
+</a>
+</div>
+<div class="sf_colsIn col-24 col-lg-8 offset-lg-2" data-placeholder-label="Column 2" data-sf-element="Column 2" id="ContentFooterNavigation_T7A285BBA049_Col01">
+<div class="sfw-footer-social-icons">
+<div class="footer-icon">
+<a aria-label="LinkedIn" href="https://linkedin.com/company/aptiv" target="_blank">
+<i class="fa fa-linkedin fa-fw"></i>
+</a>
+</div>
+<div class="footer-icon">
+<a aria-label="Facebook" href="https://facebook.com/aptiv" target="_blank">
+<i class="fa fa-facebook fa-fw"></i>
+</a>
+</div>
+<div class="footer-icon">
+<a aria-label="Twitter" href="https://twitter.com/aptiv" target="_blank">
+<i class="fa fa-twitter fa-fw"></i>
+</a>
+</div>
+<div class="footer-icon">
+<a aria-label="Instagram" href="https://instagram.com/aptiv" target="_blank">
+<i class="fa fa-instagram fa-fw"></i>
+</a>
+</div>
+<div class="footer-icon">
+<a aria-label="YouTube" href="https://www.youtube.com/aptiv" target="_blank">
+<i class="fa fa-youtube-play fa-fw"></i>
+</a>
+</div>
+<div class="footer-icon">
+<a aria-label="Vimeo" href="https://vimeo.com/aptiv" target="_blank">
+<i class="fa fa-vimeo fa-fw"></i>
+</a>
+</div>
+<div class="footer-icon">
+<a aria-label="Medium" href="https://medium.com/@GlenDeVos" target="_blank">
+<span class="aptiv aptiv-medium-icon fa-fw"></span>
+</a>
+</div>
+</div>
+<div class="sfw-footer-social-icons">
+<div class="modal" id="wechatModal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button aria-label="Close" class="close" data-dismiss="modal" type="button">
+<span class="close-image-gallery aptiv aptiv-close"></span>
+</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="background-image" style="background-image: url('/images/default-source/qr-codes/wechat-aptiv-videos-profile-qr.png?sfvrsn=de2f753b_3');"></div>
+<div class="background-image" style="background-image: url('/images/default-source/qr-codes/wechat-aptiv-profile-qr.png?sfvrsn=dd2f753b_6');"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row full-height" data-sf-element="Row">
+<div class="sf_colsIn col-24 col-lg-16 pl-20" data-placeholder-label="Column 3" data-sf-element="Column 3" id="ContentFooterNavigation_T7A285BBA049_Col02">
+<div class="navigation-header sfw-footer-nav d-md-block">
+<nav class="navbar navbar-default" role="navigation">
+<div class="navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav">
+<li class="nav-link"><a href="/en/terms-of-use" target="_self">Terms of Use</a></li>
+<li class="nav-link"><a href="/en/e-catalog" target="_self">Connection Systems Catalog</a></li>
+<li class="nav-link"><a href="/en/Suppliers" target="_self">Suppliers</a></li>
+<li class="nav-link"><a href="/en/legal-compliance" target="_self">Legal &amp; Compliance</a></li>
+<li class="active nav-link"><a href="/en/privacy-statement" target="_self">Aptiv Privacy Statement </a></li>
+<li class="nav-link"><a href="/en/cookie-policy" target="_self">Cookie Policy</a></li>
+<li class="nav-link"><a href="https://www.aptiv.com/en/contact/data-subject-request" target="_self">Do Not Sell My Personal Information</a></li>
+<li class="nav-link"><a href="/en/contact" target="_self">Contact</a></li>
+</ul>
+</div><!-- /.navbar-collapse -->
+</nav>
+<div class="horizontal-gray-line"></div>
+</div>
+</div>
+<div class="sf_colsIn col-24 col-lg-6 offset-lg-2" data-placeholder-label="Column 4" data-sf-element="Column 4" id="ContentFooterNavigation_T7A285BBA049_Col03"><div class="sfw-stock-ticker ng-cloak" ng-controller="stLoadStockDataCtrl">
+<div ng-if="stockData">
+<div class="name">
+            NYSE APTV
+        </div>
+<div class="info">
+<div class="price">
+<strong>{{stockData.TradePrice | currency : '' : 2 }}</strong>
+</div>
+<div class="up" ng-if="stockData.Change &amp;&amp;  stockData.Change &gt;0">
+<i class="fa fa-sort-up"></i>
+</div>
+<div class="down" ng-if="stockData.Change &amp;&amp; stockData.Change &lt; 0">
+<i class="fa fa-sort-down"></i>
+</div>
+<div class="percent-change">
+                {{stockData.Change | currency :'': 2}} ({{stockData.PercChange}}%)
+            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="sf_colsIn col pl-20" data-placeholder-label="Copyright" data-sf-element="Column 3" id="ContentFooterNavigation_T7A285BBA049_Col04">
+<div>
+<div><span class="copyright">© 2022 Aptiv. All rights reserved</span></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="" data-placeholder-label="Row" data-sf-element="Row">
+<div class="sf_colsIn col-24 page-edit-hidden" data-placeholder-label="Hidden in Page Edit" data-sf-element="Column 1" id="ContentFooterNavigation_T7A285BBA025_Col00">
+<script>
+        var st;
+        (function(st) {
+            st.init = function() {
+                if (typeof angular !== 'undefined') {
+                    angular.module('st', [])
+                        .constant('currentCulture', 'en')
+                    ;
+                }
+            };
+            st.modules = ["st"];
+        })(st || (st = {}));
+    </script>
+</div>
+</div>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W2CGT5R" style="display:none;visibility:hidden" width="0"></iframe></noscript> </div> </div> </div> <script src="/scripts/min/main.min.js?v=LBnsrGok2gg1" type="text/javascript"></script><script src="/Frontend-Assembly/Telerik.Sitefinity.Frontend.Navigation/Mvc/Scripts/LanguageSelector/language-selector.min.js?package=Aptiv&amp;v=MTMuMy43NjI2LjA%3d" type="text/javascript"></script> <script src="/WebResource.axd?d=NjxTqR2bqTw1rewxxlkHPrBIbcTxk6hiyDsK_PxW_Nmnw1_uEIwLo7gOgXc4JWZWSwinyumz8uNFUKfgikxml9sl8V_oXaEyTUXiiieIaF5RyqZC8fSe_Bh7Vlefw2Y7bGjUP4FJq_A2zN2_jJIxE3b2kHg0W2703W9i2TroP4TvQMspbI8kzOp2Zba8q_A4m9aHE43btIakjjoxuAkh0mz6vc_NUfrSrD4TfYRCPdc1&amp;t=637589672120000000" type="text/javascript">
+</script><input data-sf-role="en" type="hidden" value="https://www.aptiv.com/en/privacy-statement?Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2f5.0+(X11%3b+Ubuntu%3b+Linux+x86_64%3b+rv%3a52.0)+Gecko%2f20100101+Firefox%2f52.0"/><input data-sf-role="zh" type="hidden" value="https://www.aptiv.com/zh/隐私声明?Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2f5.0+(X11%3b+Ubuntu%3b+Linux+x86_64%3b+rv%3a52.0)+Gecko%2f20100101+Firefox%2f52.0"/><input data-sf-role="es" type="hidden" value="https://www.aptiv.com/es/declaración-privacidad?Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2f5.0+(X11%3b+Ubuntu%3b+Linux+x86_64%3b+rv%3a52.0)+Gecko%2f20100101+Firefox%2f52.0"/><input data-sf-role="de" type="hidden" value="https://www.aptiv.com/de/datenschutzerklarung-von-aptiv?Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2f5.0+(X11%3b+Ubuntu%3b+Linux+x86_64%3b+rv%3a52.0)+Gecko%2f20100101+Firefox%2f52.0"/><input data-sf-role="pl" type="hidden" value="https://www.aptiv.com/pl/oświadczenie-o-ochronie-prywatności?Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2f5.0+(X11%3b+Ubuntu%3b+Linux+x86_64%3b+rv%3a52.0)+Gecko%2f20100101+Firefox%2f52.0"/><input data-sf-role="fr" type="hidden" value="https://www.aptiv.com/fr/déclaration-de-confidentialité?Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2f5.0+(X11%3b+Ubuntu%3b+Linux+x86_64%3b+rv%3a52.0)+Gecko%2f20100101+Firefox%2f52.0"/><input data-sf-role="ja" type="hidden" value="https://www.aptiv.com/ja/プライバシーに関する方針?Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2f5.0+(X11%3b+Ubuntu%3b+Linux+x86_64%3b+rv%3a52.0)+Gecko%2f20100101+Firefox%2f52.0"/><input data-sf-role="ko" type="hidden" value="https://www.aptiv.com/ko/개인-정보-보호-정책?Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2f5.0+(X11%3b+Ubuntu%3b+Linux+x86_64%3b+rv%3a52.0)+Gecko%2f20100101+Firefox%2f52.0"/><input data-sf-role="hu" type="hidden" value="https://www.aptiv.com/hu/adatvedelmi-nyilatkozat?Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2f5.0+(X11%3b+Ubuntu%3b+Linux+x86_64%3b+rv%3a52.0)+Gecko%2f20100101+Firefox%2f52.0"/><input data-sf-role="it" type="hidden" value="https://www.aptiv.com/it/informativa-privacy?Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2f5.0+(X11%3b+Ubuntu%3b+Linux+x86_64%3b+rv%3a52.0)+Gecko%2f20100101+Firefox%2f52.0"/><script type="text/javascript">
+$('li.language-selector-nav ul.dropdown-menu li, li.black-with-sub-mobile.sf-lang-selector li').each((idx, elem) => {
+    const $elem = $(elem)
+    const text = $elem.text().toLowerCase()
+  
+
+
+if (text.indexOf('(zh)') > -1) {
+  const $a = $($elem.find('a'))
+  $a.text($a.text().replace('(zh)', '(cn)'))
+}
+});
+
+(function () {
+const $elem = $('li.black-with-sub-mobile.sf-lang-selector > a:not(.sub-navigation-container), li.black-with-sub.sf-lang-selector > a.dropdown-toggle')
+let html = $elem.html()
+html = html.replace('zh', 'cn')
+$elem.html(html)
+  })()
+</script> <script>(function(w,d,s){w._uptime_rum={};w._uptime_rum.uuid='LTEM-894B790E46DAC2BB';w._uptime_rum.url='https://rum.uptime.com/rum/record-data';s=document.createElement('script');s.async=1;s.src='https://rum.uptime.com/static/rum/compiled/rum.js';d.getElementsByTagName('head')[0].appendChild(s);})(window,document);</script> </body> </html>

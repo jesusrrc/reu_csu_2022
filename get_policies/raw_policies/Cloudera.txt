@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+
+<html class="main-page" lang="en-us">
+<head>
+<!-- Segment -->
+<script>
+	var SegmentLocation = window.location.origin.toString();
+	if (SegmentLocation.indexOf("staging") > -1 || SegmentLocation.indexOf("dev") > -1) {
+
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="RtFIcCu1z9Vo1p4tWq5qzqQDBPtGPtPJ";;analytics.SNIPPET_VERSION="4.15.3";
+      analytics.addSourceMiddleware(function({ payload, integration, next }) {if(localStorage.getItem('com.adobe.reactor.dataElements.marketing:www:ecid')) { payload.obj.context.traits = {a_ecid:localStorage.getItem('com.adobe.reactor.dataElements.marketing:www:ecid').replace(/['"]+/g, '')}};next(payload);});
+      analytics.addSourceMiddleware(function({ payload, integration, next }) {if(payload.obj.userId) {var uid = payload.obj.userId;if(uid.includes('-') || uid.length != 32){payload.obj.userId = '';analytics.user().id(null);}}next(payload);});
+      analytics.load("RtFIcCu1z9Vo1p4tWq5qzqQDBPtGPtPJ");
+      analytics.page();
+        }}();
+      analytics.ready(function () {
+      analytics.timeout(500);
+      })
+
+    }else{
+    	
+
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="RBjJrHqYQYAHHAdaSb7baOi4V84LlDlI";;analytics.SNIPPET_VERSION="4.15.3";
+      analytics.addSourceMiddleware(function({ payload, integration, next }) {if(localStorage.getItem('com.adobe.reactor.dataElements.marketing:www:ecid')) { payload.obj.context.traits = {a_ecid:localStorage.getItem('com.adobe.reactor.dataElements.marketing:www:ecid').replace(/['"]+/g, '')}};next(payload);});
+      analytics.addSourceMiddleware(function({ payload, integration, next }) {if(payload.obj.userId) {var uid = payload.obj.userId;if(uid.includes('-') || uid.length != 32){payload.obj.userId = '';analytics.user().id(null);}}next(payload);});
+      analytics.load("RBjJrHqYQYAHHAdaSb7baOi4V84LlDlI");
+      analytics.page();
+        }}();
+      analytics.ready(function () {
+      analytics.timeout(500);
+      })
+
+
+    }//end check
+  
+</script>
+<!-- Meta -->
+<meta charset="utf-8"/>
+<meta content="width=device-width,height=device-height,initial-scale=1, maximum-scale=2.0" name="viewport"/>
+<meta content="Policies" name="description"/>
+<meta name="keywords"/>
+<meta content="en" name="lang"/>
+<meta name="industry"/>
+<meta name="usecase"/>
+<meta name="usecasetagid"/>
+<meta name="product"/>
+<meta name="thumbnail"/>
+<meta content="webpage" name="mimetype"/>
+<meta content="2022-03-08T23:37:52.221Z" name="created"/>
+<meta content="2022-03-08T23:37:38.944Z" name="date"/>
+<meta name="doctype"/>
+<meta content="false" name="searchexclude"/>
+<meta content="dg7cdnnkw1726k8vfl66cep78zi6hz" name="facebook-domain-verification"/>
+<!-- Robots No Index -->
+<!-- Canonical -->
+<link href="https://www.cloudera.com/legal/policies.html" rel="canonical"/>
+<!-- next -->
+<!-- prev -->
+<!-- Favicons -->
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/manifest.json" rel="manifest"/>
+<meta content="#da532c" name="msapplication-TileColor"/>
+<meta content="/apps/settings/wcm/designs/www/clientlibs/css/assets/icons/favicon/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#ffffff" name="theme-color"/>
+<!-- Social Cards -->
+<!-- Twitter Card data -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@cloudera" name="twitter:site"/>
+<meta content="Cloudera's Privacy and Data Policies" name="twitter:title"/>
+<meta content="Policies" name="twitter:description"/>
+<!-- Twitter Summary card images must be at least 120x120px -->
+<meta content="https://www.cloudera.com/content/dam/www/static/images/logos/cloudera-card.jpg" name="twitter:image"/>
+<!-- Open Graph data -->
+<meta content="Cloudera's Privacy and Data Policies" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.cloudera.com/legal/policies.html" property="og:url"/>
+<meta property="og:video"/>
+<meta content="https://www.cloudera.com/content/dam/www/static/images/logos/cloudera-card.jpg" property="og:image"/>
+<meta content="Policies" property="og:description"/>
+<meta content="Cloudera" property="og:site_name"/>
+<meta content="40235856597" property="fb:admins"/>
+<!-- End Meta -->
+<!--Schema.org-->
+<title>Cloudera's Privacy and Data Policies</title>
+<!--Demandbase Mbox-->
+<script>
+window.set_mbox_variables=function(e){if(e)try{var n="",t=["company_name","industry","sub_industry","audience","watch_list_active_oppty","watch_list_account_type","watch_list_entitled_component","watch_list_cust_prosp_comp","watch_list_cdf_cdh","watch_list_cdsw_hdp","watch_list_fy20_target","watch_list_workloadxm","watch_list_trainingcredits","watch_list_cdp_trial","watch_list_kafkatarget","watch_list_cdp_onboarding_2020","watch_list_sfdc_account_id","watch_list_tal_cdp_test_drive_accts","watch_list_tal_dcb_migrate_early_stage","watch_list_tal_dcb_move_workloads_to_cloud","watch_list_tal_dcb_cloud_point_solutions","watch_list_tal_ece_convert_non_paying_customers","watch_list_tal_ece_migrate_to_dc","watch_list_tal_odl_predicting_ml","watch_list_tal_odl_streaming_analytics","watch_list_tal_odl_kafka_blindness","watch_list_tal_odl_logging_modernization","watch_list_tal_odl_new_use_cases_dw","watch_list_tal_odl_reporting_dw"];for(var o in e)if("object"==typeof e[o]&&null!==e[o]){for(var a in e[o])e[o+"_"+a]=e[o][a];delete e[o]}for(var r in e)if(e.hasOwnProperty(r))if(-1!=t.indexOf(r)&&e[r]){var c="profile."+r+"="+encodeURIComponent(e[r])+",";n+=c}else t.indexOf(r);for(i=0;i<=t.length-1;i++){-1==n.indexOf(t[i])&&(n+="profile."+t[i]+"=none,")}n=n.split(","),window.targetPageParams=function(){return n},window.targetPageParams()}catch(e){console.log(e)}};
+</script>
+<script src="//api.demandbase.com/api/v2/ip.json?key=643d57360c3745d79d30a63cfbe970e8&amp;callback=set_mbox_variables"></script>
+<!--Injects custom datalayer.js for use with Adobe Analytics, DTM-->
+<!-- The datalayer needs to be loaded before the dtm load on the next line -->
+<script>
+        var digitalData = window.digitalData = window.digitalData || [];
+        digitalData.push({
+            "event": "pageView",
+            "page": {
+                "language": "en-us".toLowerCase(),
+                "pageModifiedDate": "03-08-2022 23:37:38",
+                "pagePublishDate": "03-08-2022 23:37:52",
+                "pageName": "www:en-us:legal:cloudera&#39;s privacy and data policies".toLowerCase(),
+                "pageType": "".toLowerCase(),
+                "siteSection": "legal".toLowerCase(),
+                "subSection1": "policies".toLowerCase(),
+                "subSection2": "".toLowerCase(),
+            },
+        });
+
+    </script>
+<!--Based on config in /etc/cloudservices/dtm, the following lines inject the dtm JS -->
+<script type="text/javascript">
+            if ( !window.CQ_Analytics ) {
+                window.CQ_Analytics = {};
+            }
+            if ( !CQ_Analytics.TestTarget ) {
+                CQ_Analytics.TestTarget = {};
+            }
+            CQ_Analytics.TestTarget.clientCode = 'cloudera';
+            CQ_Analytics.TestTarget.currentPagePath = '/content/www/en-us/legal/policies';
+        </script>
+<script src="/etc.clientlibs/cq/testandtarget/clientlibs/testandtarget/parameters.min.js" type="text/javascript"></script>
+<script src="/etc.clientlibs/clientlibs/granite/jquery.min.js" type="text/javascript"></script>
+<script src="/etc.clientlibs/cq/personalization/clientlib/personalization/integrations/commons.min.js" type="text/javascript"></script>
+<script src="/etc.clientlibs/cq/testandtarget/clientlibs/testandtarget/atjs-integration.min.js" type="text/javascript"></script>
+<!-- add the launch config -->
+<script src="//assets.adobedtm.com/5027218cf7d9/7d8944359d78/launch-702a257cf296.min.js" type="text/javascript"></script>
+<!-- CMT-342 -->
+<script src="//scripts.demandbase.com/adobeanalytics/Ffkbjwm1.min.js"></script>
+<script src="//api.demandbase.com/api/v2/ip.json?key=f927e9e4c5fc5374953eed994db77bc3&amp;callback=Dmdbase_CDC.callback"></script>
+<!-- Add Typekit Font -->
+<link href="https://use.typekit.net/qkd3ogh.css" rel="stylesheet"/>
+<!-- Add WWW ClientLibs CSS -->
+<link href="/etc.clientlibs/clientlibs/granite/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+<link href="/etc.clientlibs/cq/personalization/clientlib/personalization/jcarousel.min.css" rel="stylesheet" type="text/css"/>
+<link href="/apps/settings/wcm/designs/www/clientlibs.min.css" rel="stylesheet" type="text/css"/>
+<link href="/libs/foundation/clientlibs/jquery-ui/themes/default.min.css" rel="stylesheet" type="text/css"/>
+<link href="/etc/clientlibs/foundation/jquery-ui/themes/default.min.css" rel="stylesheet" type="text/css"/>
+<!-- Shadowbox -->
+<link href="/apps/settings/wcm/designs/www/clientlibs-vendor/js/shadowbox/shadowbox.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+    <sly data-sly-call=""/>
+    <![endif]-->
+<!-- HrefLang Include -->
+<link href="https://www.cloudera.com/legal/policies.html" hreflang="en-US" rel="alternate">
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+<script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="CWDWZ-6V98F-Q4TFD-9XXZ3-65F8J",function(){function e(){if(!r){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.appendChild(e),r=!0}}function t(e){r=!0;var n,t,a,i,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",i=(a.frameElement||a).style,i.width=0,i.height=0,i.border=0,i.display="none",o.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void 0;",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=14,window.BOOMR.url=n+"CWDWZ-6V98F-Q4TFD-9XXZ3-65F8J";var i=document.currentScript||document.getElementsByTagName("script")[0],o=i.parentNode,r=!1,d=document.createElement("link");if(d.relList&&"function"==typeof d.relList.supports&&d.relList.supports("preload")&&"as"in d)window.BOOMR.snippetMethod="p",d.href=window.BOOMR.url,d.rel="preload",d.as="script",d.addEventListener("load",e),d.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!r)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.appendChild(d);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="eyaiqb5uaa6lajqacqblqaaaenrlby3s-f-ebae9cef2-clienttons-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"32","ak.cp":"1049207","ak.ai":parseInt("622541",10),"ak.ol":"0","ak.cr":31,"ak.ipv":6,"ak.proto":"http/1.1","ak.rid":"8e611c13","ak.r":40958,"ak.a2":n,"ak.m":"dsca","ak.n":"essl","ak.bpcip":"2600:8807:b400:3cb0::","ak.cport":50721,"ak.gh":"23.77.200.123","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1655759730","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==MPBCaWJnnyrnLbzOKkF7HOZoE48PbtpsMkTqsrJOK/2zatFTBXuPFUxlcIv49WQleQhW6+mvIr6OKpgZjxki56LZJzFG5PBZ7ImfLYeIiT2DzCrLfgtkyZdqtD6IvT89zyqhaCDhDD79AZ7F9NGSaj1csCshMP4bBWrvE/+vJ+qcxrRxGNbbYcTSdkkVh5/lKmNIP4Xn46o5EqsUy31At+dT8i0JPgmD0y1a/pwu7WbrzO8x8iA+S9QP9kmRlz5Tb1nRnHsCw1qsxwJ9xU8b8XTddbaRsp7aT8EdoFcBcm+yYXU2J5lAfsJtgzdPEaWPEMcBUQMuiLam9gsF8g03OyMPpXtQqNXCCi61o0GbM7FPwmBAQ0b9u54XnwnoAwt5GiZxiGOZmLN+C8q5PfISQJdTKr3OgyjKCOC0kqe7Gu8=","ak.pv":"108","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></link></link></head>
+<body style="background:white;">
+<div class="cldr-bdy">
+<header>
+<div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="ipar iparsys parsys"><div class="cloudera2019Header section">
+<div class="cloudera-header-wrap">
+<!--Rotated Box-->
+<div class="w-fill"></div>
+<!--Container-->
+<div class="container cldr-nav-container">
+<!--Moblie Hamburger-->
+<div class="cl-mobile-menu cl-mobile-hambuger">
+<li class="">
+<a class="cl-mobile-menu-toggle" href="#"><span class="icon-hamburger"></span></a>
+</li>
+</div>
+<!--Brand-->
+<div class="cloudera-brand">
+<a class="logo-desktop" href="/"><img alt="Cloudera" src="/content/dam/www/marketing/images/logos/cloudera/cloudera-newco-logo.png"/></a>
+<a class="logo-mobile" href="/"><img alt="Cloudera" src="/content/dam/www/marketing/images/logos/cloudera/cloudera-logo-white.png"/></a>
+</div>
+<!--Moblie User Account-->
+<div class="cl-mobile-menu cl-mobile-user-menu">
+<!--Mobile Logged In-->
+<li class="mobile-user-toggle" style="padding-right:20px;">
+<a class="cl-user-mobile-toggle" href="#"><span class="icon-user1"></span></a>
+</li>
+<li class="mobile-user-toggle">
+<a class="cl-user-lang-toggle" href="#"><span class="icon-earth"></span></a>
+</li>
+</div>
+<div class="brand-bk-wrap"><div class="brand-bk"></div></div>
+<nav class="nav-desktop">
+<ul class="main-menu">
+<li class="main-nav-li"><a href="/why-cloudera.html">Why Cloudera</a>
+<div class="mk-submenu container nav-item-1">
+<div class="arrow-up"></div>
+<div class="col-lg-7 nav-col">
+<h5><a href="/why-cloudera/hybrid-data-platform.html">Hybrid Data Platform</a></h5>
+<p>Create value from your data with a modern data architecture that includes a unified data fabric, open data lakehouse, and scalable data mesh.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><a adhocenable="false" href="/campaign/gartner-voice-of-customer-report-2022.html?internal_keyplay=ALL&amp;internal_campaign=FY23-Q2_SC_Globl_Gartner_VOC_CDBMS_u03_2022-06-03&amp;cid=7012H000001en0YQAQ&amp;internal_link=WWW-Nav-u03-img-v1" target="_blank"><img src="/content/dam/www/marketing/images/promos/homepage/u03/u03-Gartner-peer-insights-promo.png"/></a></p>
+</div>
+<div class="mk-gray-nav nav-col col-lg-5">
+<h5><a href="/about.html">About</a></h5>
+<ul>
+<li><a href="/careers.html">Careers</a></li>
+<li><a href="/about/customers.html">Customers</a></li>
+<li><a href="/about/diversity-equality-inclusion.html">Diversity, Equality &amp; Inclusion</a></li>
+<li><a href="/about/events.html">Events</a></li>
+<li><a href="/about/leadership.html">Leadership</a></li>
+<li><a href="/about/locations.html">Locations</a></li>
+<li><a href="/about/news-and-blogs.html">Newsroom</a></li>
+<li><a href="/about/partners.html">Partners</a></li>
+<li><a href="/about/investor-relations.html">Investor Resources</a></li>
+</ul>
+</div>
+</div>
+</li>
+<li class="main-nav-li"><a href="/products.html">Products</a>
+<div class="mk-submenu container nav-item-2">
+<div class="arrow-up"></div>
+<div class="mk-gray-nav col-lg-6 nav-col">
+<h5><a href="/products/cloudera-data-platform.html">Cloudera Data Platform</a></h5>
+<ul>
+<li><a adhocenable="false" href="/products/dataflow.html">DataFlow</a></li>
+<li><a adhocenable="false" href="/products/stream-processing.html">Stream Processing</a></li>
+<li><a href="/products/data-engineering.html">Data Engineering</a></li>
+<li><a href="/products/data-warehouse.html">Data Warehouse</a></li>
+<li><a adhocenable="false" href="/products/operational-db.html">Operational Database</a></li>
+<li><a href="/products/machine-learning.html">Machine Learning</a></li>
+<li><a href="/products/data-hub.html">Data Hub</a></li>
+</ul>
+<p> </p>
+</div>
+<div class="nav-col col-lg-6">
+<h5> </h5>
+<ul>
+<li><a adhocenable="false" href="/products/trust-center.html">CDP Trust Center</a></li>
+<li><span class="icon-external-link-square-after"><a href="https://my.cloudera.com/knowledge-hub.html" target="_blank">Upgrades &amp; Migrations</a></span></li>
+<li><span class="icon-external-link-square-after"><a href="https://docs.cloudera.com" target="_blank">Documentation</a></span></li>
+</ul>
+<p><a href="/downloads.html"><button class="btn www-btn"><span class="btn www-btn">Downloads</span></button></a> <a href="/products/pricing.html"><button class="btn www-btn"><span class="btn www-btn">Pricing</span></button></a> <a href="/products/cloudera-data-platform/test-drive.html?internal_keyplay=CDP&amp;internal_campaign=FY21-Q4_TR_Globl_CDP-Test-Drive-Nav_2020-12-04&amp;cid=7012H000001hF6N&amp;internal_link=WWW-Nav-u03"><button class="btn www-btn"><span class="btn orange-btn">Test Drive CDP</span></button></a></p>
+</div>
+</div>
+</li>
+<li class="main-nav-li"><a href="/solutions.html">Solutions</a>
+<div class="mk-submenu container nav-item-3">
+<div class="arrow-up"></div>
+<div class="col-lg-6 nav-col">
+<h5>BY INDUSTRY</h5>
+<ul>
+<li><a href="/solutions/financial-services.html">Financial Services</a></li>
+<li><a adhocenable="false" href="/solutions/manufacturing.html">Manufacturing</a></li>
+<li><a href="/solutions/insurance.html">Insurance</a></li>
+<li><a href="/solutions/telecommunications.html">Telecommunications</a></li>
+<li><a href="/solutions/retail.html">Retail</a></li>
+<li><a href="/solutions/technology.html">Technology</a></li>
+<li><a href="/solutions/public-sector.html">Public Sector</a></li>
+<li><a href="/solutions/healthcare.html">Healthcare</a></li>
+<li><a href="/solutions/energy-and-utilities.html">Energy &amp; Utilities</a></li>
+<li><a href="/solutions/public-sector/education.html">Education</a></li>
+</ul>
+</div>
+<div class="nav-col col-lg-6">
+<h5>By Use Case</h5>
+<ul>
+<li><a href="/solutions/customer-insights.html">Customer Analytics</a></li>
+<li><a href="/solutions/improve-products-and-services.html">IoT/Connected Products</a></li>
+<li><a href="/solutions/lower-business-risks.html">Security, Risk, &amp; Compliance</a></li>
+</ul>
+<p><a href="/solutions/gallery.html"><button class="btn www-btn"><span class="btn mint-btn">Solutions Gallery</span></button></a></p>
+<p> </p>
+</div>
+</div>
+</li>
+<li class="main-nav-li"><a href="/about/services-and-support.html">Services &amp; Support</a>
+<div class="mk-submenu container nav-item-4">
+<div class="arrow-up"></div>
+<div class="mk-gray-nav col-lg-6 nav-col">
+<h5><a href="/about/services-and-support/service-offerings.html">Services</a></h5>
+<ul>
+<li><a href="/about/services-and-support/professional-services.html">Professional Services</a></li>
+<li><a href="/about/services-and-support/fast-forward-labs.html">Machine Learning Services</a></li>
+</ul>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+</div>
+<div class="nav-col col-lg-6">
+<h5><a href="/about/services-and-support/support-offering.html">Support</a></h5>
+<ul>
+<li><a adhocenable="false" href="/about/training/certification.html">Certification</a></li>
+<li><a href="/about/training.html">Training</a></li>
+<li><span class="icon-external-link-square-after"><a href="https://my.cloudera.com/knowledge-hub.html" target="_blank">Upgrades &amp; Migrations</a></span></li>
+<li><span class="icon-external-link-square-after"><a href="https://docs.cloudera.com" target="_blank">Documentation</a></span></li>
+<li><span class="icon-external-link-square-after"><a href="https://my.cloudera.com/support.html" target="_blank">MyCloudera Support Portal</a></span></li>
+<li><span class="icon-external-link-square-after"><a href="https://community.cloudera.com/" target="_blank">Community</a></span></li>
+</ul>
+</div>
+</div>
+</li>
+</ul>
+</nav>
+<!--User Contact-->
+<div class="mk-overlay">
+<div class="container mk-contact-overlay">
+<!-- i class="icon-close mk-contact mk-icon-marketing"></i -->
+<span class="icon-close mk-contact mk-icon-marketing">X</span>
+<div class="phone-numbers">
+<div class="mk-us-phone"><span style="padding-right:10px;">Call us at</span><span><a href="tel:18887891488">(888) 789-1488</a></span></div>
+<div class="mk-inter-phone"><span style="padding-right:10px;">International:</span><span><a href="tel:16503620488">+1 (650) 362-0488</a></span></div>
+</div>
+<div class="mk-contact-bottom" style="background-image:url('/content/dam/www/marketing/brand/data-line/cn01-data-line-pattern-light-grey-bg.png');">
+<div class="col-sm-6">
+<div class="icon parbase section"><!-- Button Component Sightly -->
+<div class="mk-icon txt-center">
+<a href="/contact-sales.html"> <i class="icon-email mk-icon-marketing" style="color:#3c3c3c; cursor:pointer;" x-cq-linkchecker="”valid”"></i>
+<span class="mk-icon-link" x-cq-linkchecker="”valid”">Email Sales</span></a>
+</div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="icon parbase section"><!-- Button Component Sightly -->
+<div class="mk-icon txt-center">
+<a href="/support.html"> <i class="icon-management mk-icon-marketing" style="color:#3c3c3c; cursor:pointer;" x-cq-linkchecker="”valid”"></i>
+<span class="mk-icon-link" x-cq-linkchecker="”valid”">Support Portal</span></a>
+</div>
+</div>
+</div>
+<div class="col-sm-3"></div>
+</div>
+</div>
+</div>
+<div class="cloudera-utility">
+<ul class="cl-utility-desktop">
+<li><a class="mk-contact" href="tel:18887891488"><span class="glyphicon icon-phone1"></span></a></li>
+<!--Desktop Logged Out-->
+<li class="cl-user loggedoutUser">
+<a class="mk-account"><span class="searchMe icon-user1"></span></a>
+<div class="mk-connect"></div>
+<ul class="mk-user-menu">
+<li style="padding:0px;"><a class="util-nav" href="https://sso.cloudera.com/" id="oktaSignIn"><i class="icon-sign-in"></i>Log In</a></li>
+<li><a class="util-nav" href="https://sso.cloudera.com/register.html" id="oktaSignIn"><i class="icon-pencil"></i>Register</a></li>
+</ul>
+</li>
+<!--Desktop Logged In-->
+<li class="cl-user loggedinUser">
+<a class="mk-account" href="#" style=""><span class="icon-user1"></span></a>
+<div class="mk-connect"></div>
+<ul class="mk-user-menu">
+<!-- <div class="arrow-up"></div>-->
+<li><h5><span class="util-txt userFullName"></span></h5>
+<p style="margin: 12px 0 0 0;"><span class="util-txt userCompany">Cloudera</span><span>|</span> <span class="util-txt userAccount">Customer</span></p></li>
+<li><a class="util-nav" href="https://my.cloudera.com/account/profile"><i class="icon-user-cog"></i><span>My Profile</span></a></li>
+<li><a class="util-nav logout" href="https://my.cloudera.com/account/applications"><i class="icon-applications"></i><span>My Applications</span></a></li>
+<li><a class="util-nav logout" href="/system/sling/logout.html" id="mk-signOut"><i class="icon-sign-out"></i><span>Log Out</span></a></li>
+</ul>
+</li>
+<li><a class="mk-search" href="#"><span class="glyphicon icon-search1"></span></a></li>
+<li class="cl-lang"><a href="#"><span class="glyphicon icon-earth"></span></a>
+<ul class="mk-lang-menu main-lang-picker">
+<li><a class="selected">English</a></li>
+<li> <a href="https://es.cloudera.com">Spanish</a></li>
+<li> <a href="https://fr.cloudera.com">French</a></li>
+<li> <a href="https://de.cloudera.com">German</a></li>
+<li> <a href="https://it.cloudera.com">Italian</a></li>
+<li> <a href="https://pl.cloudera.com">Polish</a></li>
+<li> <a href="https://br.cloudera.com">Portuguese</a></li>
+<li> <a href="https://kr.cloudera.com">Korean</a></li>
+<li> <a href="https://www.clouderacn.cn/">Chinese</a></li>
+<li> <a href="https://jp.cloudera.com">Japanese</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Mobile User Menu -->
+<div>
+<ul class="cl-mobile-user-drop-menu mobile-hide">
+<!-- <div class="arrow-up"></div>-->
+<div class="user-drop-div loggedoutUser">
+<li style="padding:0px;"><a class="util-nav" href="https://sso.cloudera.com/" id="oktaSignIn"><i class="icon-sign-in"></i>Log In</a></li>
+<li><a class="util-nav" href="https://sso.cloudera.com/register.html" id="oktaSignIn"><i class="icon-pencil"></i>Register</a></li>
+</div>
+<div class="user-drop-div loggedinUser">
+<li class="logged-user-info"><h5><span class="util-txt userFullName">Misa Amane</span></h5>
+<p><span class="util-txt userCompany"> Cloudera</span> <span>|</span> <span class="util-txt userAccount"> Customer</span></p></li>
+<li><a class="util-nav" href="https://my.cloudera.com/account/profile"><i class="icon-user-cog"></i><span>My Profile</span></a></li>
+<li><a class="util-nav logout" href="https://my.cloudera.com/account/applications"><i class="icon-applications"></i><span>My Applications</span></a></li>
+<li><a class="util-nav logout" href="/system/sling/logout.html" id="mk-signOut"><i class="icon-sign-out"></i><span>Log Out</span></a></li>
+</div>
+</ul>
+<ul class="mk-mobile-lang-menu mobile-hide">
+<li><a class="selected">English</a></li>
+<li> <a href="https://es.cloudera.com">Spanish</a></li>
+<li> <a href="https://fr.cloudera.com">French</a></li>
+<li> <a href="https://de.cloudera.com">German</a></li>
+<li> <a href="https://it.cloudera.com">Italian</a></li>
+<li> <a href="https://pl.cloudera.com">Polish</a></li>
+<li> <a href="https://br.cloudera.com">Portuguese</a></li>
+<li> <a href="https://kr.cloudera.com">Korean</a></li>
+<li> <a href="https://www.clouderacn.cn/">Chinese</a></li>
+<li> <a href="https://jp.cloudera.com">Japanese</a></li>
+</ul>
+</div>
+<!-- Search -->
+<div class="cloudera-search">
+<div class="container">
+<div class="ClouderaCoveoClass" id="searchbox">
+<div class="CoveoAnalytics" data-search-hub="Cloudera"></div>
+<div class="coveo-search-section">
+<div class="CoveoSearchbox" data-enable-omnibox="true" data-number-of-suggestions="1" data-query-suggest-character-threshold="3"></div>
+</div>
+</div>
+</div>
+</div>
+<!--Moblie Nav-->
+<div class="cl-mobile-menu cl-mobile-nav mobile-on">
+<nav>
+<ul class="main-menu mobile-hide">
+<li class="main-nav-li"><a class="main-nav-a" href="/why-cloudera.html">Why Cloudera<span class="icon-down-arrow"></span></a>
+<div class="mk-submenu nav-item-1">
+<div class="nav-col">
+<ul><li style="padding-bottom:20px"><a href="/why-cloudera.html">Why Cloudera Overview</a></li></ul>
+<h5><a href="/why-cloudera/hybrid-data-platform.html">Hybrid Data Platform</a></h5>
+<p>Create value from your data with a modern data architecture that includes a unified data fabric, open data lakehouse, and scalable data mesh.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><a adhocenable="false" href="/campaign/gartner-voice-of-customer-report-2022.html?internal_keyplay=ALL&amp;internal_campaign=FY23-Q2_SC_Globl_Gartner_VOC_CDBMS_u03_2022-06-03&amp;cid=7012H000001en0YQAQ&amp;internal_link=WWW-Nav-u03-img-v1" target="_blank"><img src="/content/dam/www/marketing/images/promos/homepage/u03/u03-Gartner-peer-insights-promo.png"/></a></p>
+</div>
+<div class="mk-gray-nav nav-col">
+<h5><a href="/about.html">About</a></h5>
+<ul>
+<li><a href="/careers.html">Careers</a></li>
+<li><a href="/about/customers.html">Customers</a></li>
+<li><a href="/about/diversity-equality-inclusion.html">Diversity, Equality &amp; Inclusion</a></li>
+<li><a href="/about/events.html">Events</a></li>
+<li><a href="/about/leadership.html">Leadership</a></li>
+<li><a href="/about/locations.html">Locations</a></li>
+<li><a href="/about/news-and-blogs.html">Newsroom</a></li>
+<li><a href="/about/partners.html">Partners</a></li>
+<li><a href="/about/investor-relations.html">Investor Resources</a></li>
+</ul>
+</div>
+</div>
+</li>
+<li class="main-nav-li"><a class="main-nav-a" href="/products.html">Products<span class="icon-down-arrow"></span></a>
+<div class="mk-submenu nav-item-2">
+<div class="mk-gray-nav col-lg-6 nav-col">
+<ul><li style="padding-bottom:20px"><a href="/products.html">Products Overview</a></li></ul>
+<h5><a href="/products/cloudera-data-platform.html">Cloudera Data Platform</a></h5>
+<ul>
+<li><a adhocenable="false" href="/products/dataflow.html">DataFlow</a></li>
+<li><a adhocenable="false" href="/products/stream-processing.html">Stream Processing</a></li>
+<li><a href="/products/data-engineering.html">Data Engineering</a></li>
+<li><a href="/products/data-warehouse.html">Data Warehouse</a></li>
+<li><a adhocenable="false" href="/products/operational-db.html">Operational Database</a></li>
+<li><a href="/products/machine-learning.html">Machine Learning</a></li>
+<li><a href="/products/data-hub.html">Data Hub</a></li>
+</ul>
+<p> </p>
+</div>
+<div class="nav-col col-lg-6">
+<h5> </h5>
+<ul>
+<li><a adhocenable="false" href="/products/trust-center.html">CDP Trust Center</a></li>
+<li><span class="icon-external-link-square-after"><a href="https://my.cloudera.com/knowledge-hub.html" target="_blank">Upgrades &amp; Migrations</a></span></li>
+<li><span class="icon-external-link-square-after"><a href="https://docs.cloudera.com" target="_blank">Documentation</a></span></li>
+</ul>
+<p><a href="/downloads.html"><button class="btn www-btn"><span class="btn www-btn">Downloads</span></button></a> <a href="/products/pricing.html"><button class="btn www-btn"><span class="btn www-btn">Pricing</span></button></a> <a href="/products/cloudera-data-platform/test-drive.html?internal_keyplay=CDP&amp;internal_campaign=FY21-Q4_TR_Globl_CDP-Test-Drive-Nav_2020-12-04&amp;cid=7012H000001hF6N&amp;internal_link=WWW-Nav-u03"><button class="btn www-btn"><span class="btn orange-btn">Test Drive CDP</span></button></a></p>
+</div>
+</div>
+</li>
+<li class="main-nav-li"><a class="main-nav-a" href="/solutions.html">Solutions<span class="icon-down-arrow"></span></a>
+<div class="mk-submenu nav-item-3">
+<div class="col-lg-6 nav-col">
+<ul><li style="padding-bottom:20px"><a href="/solutions.html">Solutions Overview</a></li></ul>
+<h5>BY INDUSTRY</h5>
+<ul>
+<li><a href="/solutions/financial-services.html">Financial Services</a></li>
+<li><a adhocenable="false" href="/solutions/manufacturing.html">Manufacturing</a></li>
+<li><a href="/solutions/insurance.html">Insurance</a></li>
+<li><a href="/solutions/telecommunications.html">Telecommunications</a></li>
+<li><a href="/solutions/retail.html">Retail</a></li>
+<li><a href="/solutions/technology.html">Technology</a></li>
+<li><a href="/solutions/public-sector.html">Public Sector</a></li>
+<li><a href="/solutions/healthcare.html">Healthcare</a></li>
+<li><a href="/solutions/energy-and-utilities.html">Energy &amp; Utilities</a></li>
+<li><a href="/solutions/public-sector/education.html">Education</a></li>
+</ul>
+</div>
+<div class="nav-col col-lg-6">
+<h5>By Use Case</h5>
+<ul>
+<li><a href="/solutions/customer-insights.html">Customer Analytics</a></li>
+<li><a href="/solutions/improve-products-and-services.html">IoT/Connected Products</a></li>
+<li><a href="/solutions/lower-business-risks.html">Security, Risk, &amp; Compliance</a></li>
+</ul>
+<p><a href="/solutions/gallery.html"><button class="btn www-btn"><span class="btn mint-btn">Solutions Gallery</span></button></a></p>
+<p> </p>
+</div>
+</div>
+</li>
+<li class="main-nav-li"><a class="main-nav-a" href="/about/services-and-support.html">Services &amp; Support<span class="icon-down-arrow"></span></a>
+<div class="mk-submenu nav-item-4">
+<div class="mk-gray-nav col-lg-6 nav-col">
+<ul><li style="padding-bottom:20px"><a href="/about/services-and-support.html">Services &amp; Support Overview</a></li></ul>
+<h5><a href="/about/services-and-support/service-offerings.html">Services</a></h5>
+<ul>
+<li><a href="/about/services-and-support/professional-services.html">Professional Services</a></li>
+<li><a href="/about/services-and-support/fast-forward-labs.html">Machine Learning Services</a></li>
+</ul>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+</div>
+<div class="nav-col col-lg-6">
+<h5><a href="/about/services-and-support/support-offering.html">Support</a></h5>
+<ul>
+<li><a adhocenable="false" href="/about/training/certification.html">Certification</a></li>
+<li><a href="/about/training.html">Training</a></li>
+<li><span class="icon-external-link-square-after"><a href="https://my.cloudera.com/knowledge-hub.html" target="_blank">Upgrades &amp; Migrations</a></span></li>
+<li><span class="icon-external-link-square-after"><a href="https://docs.cloudera.com" target="_blank">Documentation</a></span></li>
+<li><span class="icon-external-link-square-after"><a href="https://my.cloudera.com/support.html" target="_blank">MyCloudera Support Portal</a></span></li>
+<li><span class="icon-external-link-square-after"><a href="https://community.cloudera.com/" target="_blank">Community</a></span></li>
+</ul>
+</div>
+</div>
+</li>
+<li class="main-nav-li" style="padding-top:20px; padding-bottom:20px;">
+<div class="container">
+<button class="www-btn"><a href="tel:18887891488"><i class="glyphicon icon-phone1" style="padding-right:10px;"></i>Call us at</a></button></div></li>
+</ul>
+</nav>
+</div>
+<script>
+window._spProtectedKeywords = "{\x22keyword\x22:[\x22accumulo\x22,\x22altus\x22,\x22anaconda\x22,\x22apache hadoop\x22,\x22apache spark\x22,\x22api\x22,\x22architecture\x22,\x22artificial intelligence\x22,\x22avro\x22,\x22aws\x22,\x22azure\x22,\x22bdr\x22,\x22big data\x22,\x22big data fundamentals\x22,\x22bigdata\x22,\x22blockchain\x22,\x22blog\x22,\x22bootcamp\x22,\x22career\x22,\x22careers\x22,\x22case\x22,\x22case study\x22,\x22cases\x22,\x22cassandra\x22,\x22cca\x22,\x22CCA 175\x22,\x22CCA131\x22,\x22cca175\x22,\x22CCAH\x22,\x22ccdh\x22,\x22ccp\x22,\x22cdh\x22,\x22cdh 6\x22,\x22CDH4\x22,\x22CDH5\x22,\x22CDS\x22,\x22CDSW\x22,\x22certificate\x22,\x22certification\x22,\x22certifications\x22,\x22character sets\x22,\x22cloud\x22,\x22cloudera\x22,\x22cloudera 101\x22,\x22cloudera director\x22,\x22cloudera enterprise\x22,\x22cloudera essentials\x22,\x22cloudera express\x22,\x22cloudera live\x22,\x22cloudera manager\x22,\x22Cloudera Navigator\x22,\x22cloudera search\x22,\x22community\x22,\x22connector\x22,\x22connectors\x22,\x22courses\x22,\x22Data Analyst\x22,\x22data engineer\x22,\x22data lake\x22,\x22data science\x22,\x22data science workbench\x22,\x22data scientist\x22,\x22Data warehouse\x22,\x22demo\x22,\x22devops\x22,\x22director\x22,\x22distcp\x22,\x22docker\x22,\x22document\x22,\x22Documentation\x22,\x22driver\x22,\x22drivers\x22,\x22elasticsearch\x22,\x22essentials\x22,\x22express\x22,\x22fast forward labs\x22,\x22flink\x22,\x22flume\x22,\x22free\x22,\x22gartner\x22,\x22gdpr\x22,\x22google\x22,\x22google cloud\x22,\x22hadoop\x22,\x22hadoop certification\x22,\x22hadoop essentials\x22,\x22hbase\x22,\x22HDFS\x22,\x22Hive\x22,\x22Hive JDBC\x22,\x22Hive JDBC driver\x22,\x22hive odbc\x22,\x22hive odbc driver\x22,\x22hive on spark\x22,\x22HTTPFS\x22,\x22Hue\x22,\x22impala\x22,\x22impala driver\x22,\x22Impala jdbc\x22,\x22impala jdbc driver\x22,\x22impala odbc\x22,\x22impala odbc driver\x22,\x22informatica\x22,\x22install\x22,\x22intern\x22,\x22internship\x22,\x22iot\x22,\x22isilon\x22,\x22java\x22,\x22jdbc\x22,\x22jdbc driver\x22,\x22jdk\x22,\x22jobs\x22,\x22kafka\x22,\x22kerberos\x22,\x22komatsu\x22,\x22kudu\x22,\x22license\x22,\x22live\x22,\x22livy\x22,\x22location\x22,\x22locations\x22,\x22machine learning\x22,\x22manager\x22,\x22mapreduce\x22,\x22maven\x22,\x22microsoft\x22,\x22MySQl\x22,\x22navigator\x22,\x22navistar\x22,\x22nifi\x22,\x22nutanix\x22,\x22odbc\x22,\x22ODBC and JDBC Drivers\x22,\x22odbc driver\x22,\x22odbc drivers\x22,\x22offices\x22,\x22oozie\x22,\x22oracle\x22,\x22oraoop\x22,\x22parcel\x22,\x22parcels\x22,\x22Parquet\x22,\x22partner\x22,\x22partner portal\x22,\x22partners\x22,\x22phoenix\x22,\x22pig\x22,\x22ports\x22,\x22price\x22,\x22pricing\x22,\x22pyspark\x22,\x22python\x22,\x22qlik\x22,\x22quick start vm\x22,\x22quickstart\x22,\x22quickstart vm\x22,\x22RecordService\x22,\x22reference architecture\x22,\x22salesforce\x22,\x22sandbox\x22,\x22sap\x22,\x22SAS\x22,\x22scala\x22,\x22sdx\x22,\x22security\x22,\x22sentry\x22,\x22siemens\x22,\x22snappy\x22,\x22solr\x22,\x22spark\x22,\x22spark 2\x22,\x22spark2\x22,\x22splunk\x22,\x22sql\x22,\x22sqoop\x22,\x22streamsets\x22,\x22support\x22,\x22tableau\x22,\x22talend\x22,\x22teradata\x22,\x22terms and conditions\x22,\x22test\x22,\x22training\x22,\x22tutorial\x22,\x22uninstall\x22,\x22video\x22,\x22vm\x22,\x22vmware\x22,\x22webinar\x22,\x22webinars\x22,\x22wordcount\x22,\x22workload xm\x22,\x22Yarn\x22,\x22zookeeper\x22],\x22links\x22:[{\x22linkText\x22:\x22https:\/\/my.cloudera.com\/search?*\x26collection=community\x26start=0\x26rows=10\x22,\x22linkUrlPrefix\x22:\x22Community\x22},{\x22linkText\x22:\x22https:\/\/my.cloudera.com\/search?*\x26collection=documentation\x26start=0\x26rows=10\x22,\x22linkUrlPrefix\x22:\x22Documentation\x22},{\x22linkText\x22:\x22https:\/\/my.cloudera.com\/search?*\x26collection=kb\x26start=0\x26rows=10\x22,\x22linkUrlPrefix\x22:\x22Knowledge Base\x22}]}";
+</script></div>
+</div>
+</div>
+</header>
+<main>
+<div class="bucket parsys"><div class="full_banner section">
+<div class="row full-banner banner banner-section mk-data-gray" style="background-image:url('');">
+<div class="container">
+<div class="col-sm-12 txt-center centered-txt-banner">
+<h1>Cloudera's Privacy Statement and Data Policy</h1>
+<div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section parbase">
+<section class="section_padding" style="background-image:url(''), url('');">
+<div class="body_container"><div class="column_control parbase section">
+<div style="background-image:url('');">
+<div class="body_container">
+<div class="row">
+<div class="col-xs-12 col_control main_col col">
+<div><div class="text parbase section">
+<div>
+<div class="inner-text-div">
+<div style="text-align: left;"><a href="//privacy.truste.com/privacy-seal/validation?rid=e16bc477-db54-4a6f-aefc-992b96825f1f" target="_blank"><img alt="TRUSTe" src="//privacy-policy.truste.com/privacy-seal/seal?rid=e16bc477-db54-4a6f-aefc-992b96825f1f" style="border: none;"/></a>   <a href="//privacy.truste.com/privacy-seal/validation?rid=e16bc477-db54-4a6f-aefc-992b96825f1f" target="_blank"><img alt="TRUSTe" src="https://privacy-policy.truste.com/privacy-seal/seal?rid=598fa1e7-ec3a-4d2b-bdb6-49e15ab0ec78" style="border: none;"/></a></div>
+</div>
+</div>
+</div>
+<div class="text parbase section">
+<div>
+<div class="inner-text-div top">
+<p>The <a href="#privacy">Cloudera Privacy Statement</a> explains how Personal Data about you is collected, stored, used, disclosed and otherwise processed by Cloudera, Inc.</p>
+<p>The <a href="#data">Cloudera Data Policy</a> describes Cloudera’s policy for handling, storing, and otherwise treating various types of data of Cloudera’s customers.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+<div class="section parbase">
+<section class="section_padding" style="background-image:url(''), url('');">
+<div class="body_container"><div class="anchor section">
+<a class="anchor-link" id="top"></a></div>
+</div>
+</section>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="privacy"></a></div>
+<div class="title section">
+<h1 class="txt-center"> 
+      
+      
+      Privacy Statement
+      </h1>
+</div>
+<div class="text parbase section">
+<div class="none">
+<div class="inner-text-div">
+<p style="text-align: left;"><span class="byline">Last Updated: March 8, 2022<br/>
+<a href="/legal/policies/privacy-and-data-policies-archive.html">Cloudera's Privacy and Data Policies Archive</a></span></p>
+</div>
+</div>
+</div>
+<div class="section parbase">
+<section class="section_padding" style="background-image:url(''), url('');">
+<div class="body_container"><div class="column_control parbase section">
+<div style="background-image:url('');">
+<div class="body_container">
+<div class="row">
+<div class="col_control" }="">
+<div>
+<div class="col-sm-6 col">
+<div><div class="text parbase section">
+<div class="none">
+<div class="inner-text-div">
+<p><a href="#about">About This Privacy Statement</a><br/>
+<a href="#info-colllect">Collection of Personal Data</a><br/>
+<a href="#use">Use of Personal Data</a><br/>
+<a href="#sharing">Sharing of Personal Data</a><br/>
+<a href="#security">Security</a><br/>
+<a href="#data-retention">Data Retention</a><br/>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col">
+<div><div class="text parbase section">
+<div class="none">
+<div class="inner-text-div">
+<p><a href="#intl-transfer">International Personal Data Transfers</a><br/>
+<a href="#personal-data">Your Privacy Rights Concerning Your Personal Data</a><br/>
+<a href="#ca-privacy">California Privacy Rights</a><br/>
+<a href="#privacy-complaints">Data Privacy Complaints</a><br/>
+<a href="#child-site-use">Use of This Site by Children</a><br/>
+<a href="#changes">Changes to this Privacy Statement</a><br/>
+<a href="#how-to-contact">How to Contact Us</a><br/>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</section>
+</div>
+</div>
+</section>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="about"></a></div>
+<div class="section parbase"><section class="section_padding">
+<div class="body_container"><div class="column_control parbase section">
+<div class="">
+<div class="body_container">
+<div class="row">
+<div class="col-xs-12 main_col">
+<div class="col_one parsys"><div class="text parbase section">
+<div class="none">
+<div class="inner-text-div">
+<h3>About This Privacy Statement</h3>
+<p>This Privacy Statement explains how Cloudera, Inc. ("Cloudera," "we," "us" or "our") collects, stores, uses, discloses, and otherwise processes Personal Data relating to you and your rights in relation to your Personal Data. It applies to Personal Data we process when you use our website <a href="http://www.cloudera.com">www.cloudera.com</a> (the “Site”) or Cloudera products and services (the “Products”) (the Site and the Products collectively, the "Services"), as well as information collected by other means, such as through your interactions with us at events or through other sales and marketing activities.</p>
+<p>Cloudera is the Data Controller of any Personal Data collected on or through the Site and processed for sales and marketing activities, as well as any Personal Data associated with our current, past, and prospective business clients (the "Clients") and their interactions with us and our Products.</p>
+<p>Cloudera may act as a Data Processor with regard to Personal Data that our Clients submit or otherwise make available to Cloudera in connection with our performance and delivery of our Products. To the extent that we process any Personal Data as a Data Processor on behalf of a Client that is the Data Controller pursuant to an agreement between Cloudera and the Client, we offer our Client a Data Processing Addendum (the "DPA"), which the Client may request from a Cloudera representative. In this context, we will only use the Client’s Personal Data in accordance with our applicable agreement(s) and the DPA. Please note that our Clients’ privacy policies and practices apply to their own use of your Personal Data for which they are the Data Controllers. Cloudera is not responsible for Clients’ policies or practices, which may differ from those explained in this Privacy Statement.</p>
+</div>
+</div>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="info-colllect"></a></div>
+<div class="text parbase section">
+<div class="none">
+<div class="inner-text-div top">
+<h3>Collection of Personal Data</h3>
+<p> </p>
+<h4>Information You Provide</h4>
+<p>Cloudera collects information you provide directly to us. For example, we collect information when you create an account, use the Services, fill out a form, submit a job application, request customer support, or otherwise communicate or interact with us, including at in-person meetings or events. The types of Personal Data we may collect include your first and last names, company, job title or role, email address, postal address, telephone number, and other contact or identifying information you choose to provide.</p>
+<h4>Information We Collect When You Use Our Services</h4>
+<p>When you access or use our Services or otherwise interact with us, Cloudera may collect information about you, including the following:</p>
+<ul>
+<li><u>Log information</u>: We log information about your use of the Services, including the type of browser you use, internet service provider, clickstream data, date/time stamp, pages and files viewed on our Site (e.g., HTML pages, graphics, etc.), your Internet protocol (“IP”) address, username, and the page you visited before navigating to our Services.</li>
+<li><u>Device information</u>: We collect information about the computer or mobile device you use to access our Services, including the hardware model, operating system and version, unique device identifiers, and mobile network information.</li>
+<li><u>Information collected by cookies and other tracking technologies</u>: We and our partners use cookies or similar technologies to collect information, analyze trends, administer the website, track users’ movements around the website, and gather demographic information about our user base as a whole. You can change your browser settings to enable or disable cookies. We do not currently respond to browser do-not-track signals.</li>
+<li><u>Blogs and Community Forums</u>: Our Site offers publicly accessible blogs and community forums. Please be aware that any information you provide in these areas may be read, collected, and used by others who access them.</li>
+<li><u>Testimonials</u>: We display personal testimonials of satisfied Clients on our Site in addition to other endorsements. With your consent, we may post your testimonial along with your name.</li>
+<li><u>Public Profiles</u>: If you create a profile on our Site (e.g., to participate in Cloudera Community discussions), your profile will be publicly accessible unless otherwise indicated. You may change the privacy settings of your profile through your account portal.</li>
+<li><u>Social Media Widgets</u>: Our Site includes social media features, such as the Facebook button or interactive mini-programs that run on our Site. These features may collect your IP address and information on which page you are visiting on our Site, and they may set a cookie to enable the feature to function properly. Social media features are either hosted by a third party or hosted directly on our Site. Your interactions with these features are governed by the privacy statement of the company providing such features.</li>
+<li><u>Single Sign-On</u>: You may apply for a job opening using sign-in services such as LinkedIn or an Open ID provider. These services will authenticate your identity, provide you the option to share certain Personal Data (such as your name and email address) with us, and pre-populate our application form. Services like LinkedIn give you the option to post information about your activities on our Site to your profile page to share with others within your network.</li>
+<li><u>Employees and Job Applicants</u>: We may collect information related to your job application, including your full name, professional background and work history, and academic or educational background and history, as well as other contact information. With your consent (if required), we may conduct background checks on our potential employees. If we do so, the only information that we append to an application is the result (pass or fail) of that background check. This helps us to evaluate potential candidates for employment.  We do not otherwise append Personal Data on results of the background check to an application. With respect to employees, we may collect additional information about you, including, but not limited to, information about your salary and benefits.</li>
+<li><u>Product Diagnostic and Telemetry Data</u>: When our Clients use our Products, we may collect certain usage data, including configuration files, metrics count, software versions, log files, and other information regarding our Clients’ computing environments and use of the Products. Clients have the option to configure the diagnostic function in our Products to disable automatic reporting of such data to Cloudera. For purposes of clarity, however, this diagnostic functionality does not include metering capabilities within Cloudera online Services which Cloudera uses to determine Client’s usage for billing purposes. Client may not disable, tamper with, or otherwise alter any such metering capabilities within such Services. We may combine such data with other information we have collected, including information from public sources or third parties or information you provide to us when you download our Products, request information, or otherwise communicate with us, including the name of your organization or company.</li>
+<li><u>Inferences</u>: We may infer new information about you and your company from data we collect, including information about your likely preferences, your product and service needs, or other characteristics.</li>
+</ul>
+<p>In addition, Cloudera may collect information about you from public sources and third parties in accordance with applicable privacy laws. This information may include your full name, company, job title/role, email address, postal address, telephone number, and other contact or identifying information.</p>
+<h4>Third-party Websites and Framing of Partner Content</h4>
+<p>Cloudera’s Site may link to third-party websites, which have different privacy policies and practices than our own and over which Cloudera has no control. Also, some of our pages utilize framing techniques to serve content from our partners while preserving the look and feel of our Site. In such case, please be aware that you are providing your Personal Data to these third parties and not to Cloudera.</p>
+<p>Cloudera encourages you to carefully review the privacy policies of these third parties before submitting your Personal Data to them. If you receive marketing communications from these third parties and wish to stop receiving marketing messages from them, please contact these third parties directly.</p>
+<h4>Sensitive Personal Data</h4>
+<p>Unless Cloudera specifically requests your Sensitive Personal Data, we request that you not send or disclose to us any such data (e.g., social security numbers and information related to racial or ethnic origin, political opinions, religion or trade union membership, health, biometrics or genetic characteristics, and criminal background) on or through the Services or otherwise to us.</p>
+</div>
+</div>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="use"></a></div>
+<div class="text parbase section">
+<div class="none">
+<div class="inner-text-div top">
+<h3>Use of Personal Data</h3>
+<p> </p>
+<h4>Lawful Bases and Business Purposes</h4>
+<p>Cloudera may collect and use Personal Data pursuant to several legal bases, including contract performance (namely, to perform our agreements and manage our contractual relationship with you), compliance with our legal or regulatory obligations, our legitimate interests, and your consent.</p>
+<p>Cloudera may use Personal Data for a broad range of business purposes, including to do the following:</p>
+<ul>
+<li>Provide, maintain, and improve our Services; and</li>
+<li>Provide and deliver the Products you request, such as to:<ul>
+<li>process information according to your instructions pursuant to an agreement, such as the DPA;</li>
+<li>process transactions, and send you related information, including confirmations and invoices;</li>
+<li>send you technical notices, updates, security alerts, and support and administrative messages; </li>
+<li>process payments on your account or bill you for Products or Services purchased by you; and</li>
+<li>respond to your comments, questions, and requests and to provide customer service.</li>
+</ul>
+</li>
+<li>Data analysis (e.g., to improve the efficiency of our Services); </li>
+<li>Audits (i.e., to verify that our internal processes function as intended and to address legal, regulatory, or contractual requirements); </li>
+<li>Fraud and security monitoring (e.g., to detect and prevent cyberattacks or malicious, deceptive, fraudulent, or illegal activity, such attempts to commit identity theft); </li>
+<li>Develop new products and services;</li>
+<li>Identify and repair errors that impair existing intended functionality of the Services; </li>
+<li>Enhance, improve, repair, maintain, upgrade, or modify our current products and services, as well as undertaking quality and safety assurance measures; </li>
+<li>Identify usage trends (e.g., to understand which parts of our Services are of most interest to users); </li>
+<li>Determine the effectiveness of our promotional campaigns, so that we can adapt our campaigns to the needs and interests of our users; and</li>
+<li>Operate and expand our business activities (e.g., to understand which parts of our Services are of most interest to our users so we can focus our energies on meeting our users’ interests).</li>
+<li>Consider and manage your job application and our employer-employee relationship or the relationship with a consultant, contractor, vendor, or other third party providing services on our behalf; and</li>
+<li>Process and deliver contest entries and rewards:<ul>
+<li>We may offer you the opportunity to participate in a sweepstakes, contest, or other promotion. Some of these promotions have additional rules containing information about how we will use and disclose your Personal Data.  Please read those additional rules before choosing to participate.</li>
+</ul>
+</li>
+<li>Facilitate social sharing functionalities;</li>
+<li>Market Products that may be of interest to you, including through tailored communications, such as telemarketing, emails, newsletters, or other content;</li>
+<li>Solicit and process your opinions through surveys; and</li>
+<li>Develop our Services and other purposes related to Cloudera’s business, such as to:<ul>
+<li>analyze or predict our users’ preferences to prepare aggregated trend reports on how our digital content is used, so we can improve our Services;</li>
+<li>understand your interests and preferences, so that we can personalize our interactions with you and provide you with information and/or offers tailored to your interests;</li>
+<li>understand your preferences so that we can deliver content via our Services that we believe will be relevant and interesting to you; and</li>
+<li>provide personalized services.<br/>
+ </li>
+</ul>
+</li>
+</ul>
+<h4>Anonymous Data</h4>
+<p>Cloudera may anonymize Personal Data so that it will no longer be considered Personal Data. We do so to generate other data for our use, which we may use and disclose for any purpose, as it no longer identifies you or any other individual.</p>
+</div>
+</div>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="sharing"></a></div>
+<div class="text parbase section">
+<div class="none">
+<div class="inner-text-div top">
+<h3>Sharing of Personal Data</h3>
+<h3> </h3>
+<h4>How We May Share Personal Data</h4>
+<p>Cloudera may share Personal Data about you as follows:</p>
+<ul>
+<li><u>Affiliates / Subsidiaries</u>: With our affiliates or subsidiaries for the purposes described in this Privacy Statement.</li>
+<li><u>Third-Party Service Providers and Consultants</u>: With service providers, consultants, and other third parties who need access to your information to carry out work on our behalf, such as providing product and service functionality, customer service, billing, and invoicing, and conducting research and analysis. </li>
+<li><u>Necessary Disclosures</u>: If we believe disclosure is reasonably necessary to (i) comply with any applicable law, regulation, legal process, or governmental request; (ii) establish, exercise, or defend legal claims or to enforce applicable user agreements or policies, including our <a href="/legal/terms-and-conditions.html">Terms and Condition of Site Use</a> (the “Terms of Use”); or (iii) protect Cloudera, our users, or the public from harm or illegal activities.</li>
+<li><u>Third-Party Sponsors</u>: With our third-party sponsors of sweepstakes, contests, and similar promotions.</li>
+<li><u>Business Partners</u>: With our commercial business partners that offer solutions and services complementary to Cloudera’s offerings, including resellers, system integrators, software providers, or consultant agencies. See our current list of partners <a href="/partners/partners-listing.html">here</a>.</li>
+<li><u>Mergers and Acquisition</u>s: In connection with, or during negotiations of, any merger, sale of company assets, financing or acquisition of all or a portion of our business to another company. In this event, you will be notified via email and/or a prominent notice on our Site, of any change in ownership, uses of your Personal Data, and choices you may have regarding your Personal Data.</li>
+</ul>
+<p>Please note that, by using the Services, you may elect to disclose Personal Data on message boards, chat, profile pages, blogs, and other services to which you are able to post information and content. Any information you post or disclose through these services will become public and may be available to other users and the general public.</p>
+<p> </p>
+<h4>Third-party analytics and advertisements</h4>
+<p>Cloudera performs analytics on the functioning of our Site. Specifically, Cloudera uses an integrated version of Google Analytics. You may opt out from Google Analytics by using the Google’s <a href="https://adssettings.google.com/authenticated?hl=en" target="_blank">Ads Preferences Manager</a>. We also encourage you to use the <a href="https://chrome.google.com/webstore/detail/google-analytics-opt-out/fllaojicojecljbmefodhfapmkghcbnh?hl=en" target="_blank">Google Analytics Opt-out Add-on</a>.</p>
+<p>Cloudera allows third parties to serve advertisements on our behalf across the Internet and to provide analytics services. These third parties may use cookies, web beacons, and other technologies to collect information about your use of our Site and other websites, including your IP address, web browser, pages viewed, time spent on pages, links clicked, and conversion information. This information may be used by Cloudera and third parties to, among other things, analyze and track data, deliver advertising based upon your browsing activities and interests, and to better understand your use of our Services.</p>
+<p>If you wish to opt out of interest-based advertising by these third parties, click <a href="https://optout.aboutads.info/?c=2&amp;lang=EN" target="_blank">here</a> or <a href="https://optout.networkadvertising.org/?c=1" target="_blank">here</a>. Please note that you will continue to receive generic ads.</p>
+<p> </p>
+<h4>Service Providers and Sub-processors</h4>
+<p>Cloudera may transfer or disclose Personal Data to third-party service providers that help us provide our Services. In addition, when we process Personal Data on behalf of our Clients, we may engage sub-processors to help deliver our Products. Our current list of sub-processors is available <a href="/legal/subprocessors.html">here</a>. Our agreements with Clients cover data transfers to third parties.</p>
+<p> </p>
+<h4>We Do Not Sell Your Personal Data</h4>
+<p>Cloudera does not “sell” your Personal Data (as the term “sale” or “sell” is defined under the California Consumer Privacy Act), and we will not do so without offering you the right to opt out of any such sale.</p>
+</div>
+</div>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="security"></a></div>
+<div class="text parbase section">
+<div class="none">
+<div class="inner-text-div top">
+<h3>Security</h3>
+<p>Cloudera uses commercially reasonable organizational, technical, and administrative measures to help protect Personal Data from accidental or unlawful loss, alteration, destruction, theft, misuse, and unauthorized access and disclosure. We follow generally accepted industry standards to protect the Personal Data submitted to us, both during transmission and once it is received. Visit our <a href="/legal/policies/compliance.html">Information Security and Compliance</a> page for additional information. Please keep in mind that no security measures are completely effective, and we encourage you to regularly review your accounts for suspicious activity and carefully guard your credentials.</p>
+</div>
+</div>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="data-retention"></a></div>
+<div class="text parbase section">
+<div class="none">
+<div class="inner-text-div top">
+<h3>Data Retention</h3>
+<p>Cloudera retains Personal Data for as long as necessary for our legitimate business purposes and/or as lawfully permitted given the purpose(s) for which we obtained it and consistent with applicable law. We use the following criteria to determine our retention periods:</p>
+<ul>
+<li>The length of time we have an ongoing relationship with you and to provide the Services to you (for example, for as long as you have an account with us or keep using the Services); </li>
+<li>Whether there is a legal or regulatory obligation to which we are subject (for example, certain laws require us to keep records of your transactions for a certain period of time before we can delete them); or </li>
+<li>Whether retention is advisable considering our legal position (such as in regard to applicable statutes of limitations, litigation, or regulatory investigations).</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="intl-transfer"></a></div>
+<div class="text parbase section">
+<div class="none">
+<div class="inner-text-div top">
+<h3>International Personal Data Transfers</h3>
+<p>As a global company, Cloudera may process Personal Data in multiple countries, including the United States. Cloudera may store and process your Personal Data in any country where we have <a href="/about/locations.html">facilities</a>, affiliates or subsidiaries, or in which we engage third-party service providers. By using the Services, you understand and acknowledge that we may transfer your Personal Data from your country of residence to other countries, including the United States, which may have data protection laws or rules that are different from those of your country. In certain circumstances, courts, law enforcement agencies, regulatory agencies, or security authorities in those other countries may have legal authorization to access or request disclosure of your Personal Data.</p>
+<p>Cloudera may transfer Personal Data from the <a href="https://european-union.europa.eu/principles-countries-history/country-profiles_en" target="_blank">European Union</a> (EU), the <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:European_Economic_Area_(EEA)" target="_blank">European Economic Area</a> (EEA), Switzerland, and/or the United Kingdom (UK) to a third country. The European Commission, Switzerland, and the UK recognize several third countries as providing adequate levels of data protection and granted such countries adequacy decisions, which allow the lawful transfer of Personal Data to such countries. To conduct lawful transfers of Personal Data to third countries without such adequacy decisions, Cloudera relies on appropriate safeguards, such as <a href="https://ec.europa.eu/info/law/law-topic/data-protection/international-dimension-data-protection/standard-contractual-clauses-scc_en" target="_blank">Standard Contractual Clauses</a> (SCCs). You may obtain a copy of these SCCs by contacting us in accordance with the “How to Contact Us” section below.</p>
+</div>
+</div>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="personal-data"></a></div>
+<div class="text parbase section">
+<div class="none">
+<div class="inner-text-div top">
+<h3>Your Privacy Rights Concerning Your Personal Data</h3>
+<h3> </h3>
+<h4>Marketing and Promotional Communications</h4>
+<p>Cloudera may periodically send you free newsletters and emails that directly promote the use of our Site or the purchase of our Products. When you receive newsletters or marketing and promotional communications from us, you may indicate a preference to stop receiving further communications from us. You will have the opportunity to “opt-out” by following the unsubscribe instructions provided in the email you receive or by submitting a request to <a href="/unsubscribe.html">unsubscribe here</a>.</p>
+<p>Despite your indicated marketing and promotional preferences, Cloudera may send you transactional emails and notices of any updates to our Terms of Use or Privacy Statement.</p>
+<p> </p>
+<h4>Your Privacy Rights</h4>
+<p>Depending on the data protection or privacy law applicable to you and your Personal Data, you may be entitled to exercise one or more of the following rights:</p>
+<ul>
+<li>Right to Know about Personal Data Processing and to Access Personal Data</li>
+<li>Right to Delete or Erase Personal Data</li>
+<li>Right to Correct Inaccurate or Incomplete Personal Data</li>
+<li>Right to Data Portability</li>
+<li>Right to Restrict Processing of Personal Data</li>
+<li>Right to Object to Processing of Personal Data</li>
+<li>Right to Withdraw Your Consent at Any Time (where the lawful basis of processing is consent)<br/>
+ </li>
+</ul>
+<h4>Exercising Your Privacy Rights</h4>
+<p>If you would like to exercise one or more of your privacy rights, please submit a request to us at <a href="mailto:privacy@cloudera.com">privacy@cloudera.com</a>. You may also submit your request via one of our contact methods listed in the section titled “How to Contact Us.”</p>
+<p>To help us respond appropriately, please make clear the nature of your request and the Personal Data to which it pertains. For your protection, we may only implement requests with respect to the Personal Data associated with the particular email address that you use to send us your request, and we may need to verify your identity before implementing your request. We will try to comply with your request as soon as reasonably practicable.</p>
+<p>Please note that we may need to retain certain Personal Data for legitimate business purposes, to comply with legal or regulatory obligations, to establish, exercise, or defend legal claims, and/or to perform a contract (e.g., complete any transactions that you began prior to requesting a change or deletion).</p>
+<p>If you become aware that a profile has been created about you without your consent or knowledge, you may contact us to request deletion of such account.</p>
+</div>
+</div>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="ca-privacy"></a></div>
+<div class="text parbase section">
+<div class="none">
+<div class="inner-text-div top">
+<h3>California Privacy Notice</h3>
+<p>The <a href="https://oag.ca.gov/privacy/ccpa" target="_blank">California Consumer Privacy Act</a> (“CCPA”) provides California residents with the right to know, right to delete, right to opt-out of the sale of personal data, and the right to non-discrimination.</p>
+<ul>
+<li><u>Right to Know</u>: This Privacy Statement identifies the categories of Personal Data Cloudera collects and how we use and disclose such information, the sources of information, the purposes for using that information, and the third parties to which we may disclose information. You may request a copy of the Personal Data that we have collected, used, and disclosed about you in the 12-month period preceding the date of your request. We will provide such information to you free of charge.</li>
+<li><u>Right to Delete</u>: As noted in the section above titled “Your Privacy Rights Concerning Your Personal Data,” you may request that Cloudera delete certain Personal Data we have about you.</li>
+<li><u>Right to Opt-out</u>: As noted in the section above titled “Sharing of Personal Data,” Cloudera does not sell your Personal Data, but will give you the right to opt-out if Cloudera decides otherwise.</li>
+<li><u>Right to Non-discrimination</u>: Cloudera will not discriminate against you for exercising your privacy rights.</li>
+</ul>
+<p>If you would like to exercise a privacy right under the CCPA or you are an authorized agent making a request on a California consumer’s behalf, please contact us at <a href="mailto:privacy@cloudera.com">privacy@cloudera.com</a> or 1-888-789-1488. When making your request, please specify which right you would like to exercise and note that we must verify your identity and may need to ask you to provide additional information for purposes of verification. For more information on how we process requests, please refer to the section above titled “Your Privacy Rights Concerning Your Personal Data.”</p>
+</div>
+</div>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="privacy-complaints"></a></div>
+<div class="text parbase section">
+<div class="none">
+<div class="inner-text-div top">
+<h3>Data Privacy Complaints</h3>
+<h3> </h3>
+<h4>How You Can Lodge a Complaint</h4>
+<p>To make a complaint about data privacy, please contact us at <a href="mailto:privacy@cloudera.com">privacy@cloudera.com</a>.</p>
+<p>To help Cloudera address the issue effectively, please clearly state the following in your complaint:</p>
+<ul>
+<li>The specific data privacy complaint with as much detail as possible, including the relevant country, your understanding of the data privacy infringement and issues, and the redress requested;</li>
+<li>Your full name and how we can contact you; and</li>
+<li>Any previous correspondence with us on this specific data privacy issue.</li>
+</ul>
+<p>Cloudera aims to resolve all issues in a timely manner, or as mandated by local law, but if this is not possible because a more detailed investigation is required, we will try to keep in regular contact with you to ensure that you are kept informed of the progress on your matter.</p>
+<p>If you have an unresolved privacy or data use concern that we have not addressed satisfactorily, please contact our U.S.-based third-party dispute resolution provider (free of charge) at <a href="https://feedback-form.truste.com/watchdog/request" target="_blank">https://feedback-form.truste.com/watchdog/request</a>.</p>
+<h4> </h4>
+<h4>Data Protection Authorities</h4>
+<h4> </h4>
+<p>If you are not satisfied with Cloudera’s resolution of your complaint, you may have the right to lodge a complaint with the competent data protection authority for your country or region where you have your habitual residence or place of work or where an alleged infringement of applicable data protection law occurs.</p>
+<h4> </h4>
+<h4>Personal Data Processed on Behalf or for Our Clients</h4>
+<h4> </h4>
+<p>When Cloudera collects or processes Personal Data under the direction of its Clients, Cloudera has no direct relationship with the individuals whose Personal Data it processes. If Cloudera processes your Personal Data at the direction of a Client, and you have a concern or would like to exercise a privacy right related to your Personal Data, please contact the relevant Client directly.</p>
+</div>
+</div>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="child-site-use"></a></div>
+<div class="text parbase section">
+<div class="none">
+<div class="inner-text-div top">
+<h3>Use of this Site by Children</h3>
+<p>These Services are not intended for or directed to anyone under the age of 16 years. Cloudera does not knowingly collect Personal Data of individuals under the age of 16. If you are younger than 16, you should not register with or use the Services.</p>
+</div>
+</div>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="changes"></a></div>
+<div class="text parbase section">
+<div class="none">
+<div class="inner-text-div top">
+<h3>Changes to this Privacy Statement</h3>
+<p>Cloudera may update this Privacy Statement from time to time to reflect changes in our business and practices. If we make material changes, we will notify you or our Client by revising the date at the top of the policy, and in some cases, including as required by law, we may provide you with more prominent notice. We encourage you to review this Privacy Statement whenever you access the Services to stay informed about our information practices and the ways you can help protect your privacy.</p>
+</div>
+</div>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="how-to-contact"></a></div>
+<div class="text parbase section">
+<div class="none">
+<div class="inner-text-div top">
+<h3>How to Contact Us</h3>
+<p>If you have any questions about this Privacy Statement or need to contact us with any questions, complaints, or concerns about how Cloudera handles your Personal Data, you may reach us as follows:</p>
+<p><u><b>Postal Address</b></u></p>
+<p>Cloudera, Inc.<br/>
+5470 Great America Parkway<br/>
+Santa Clara, CA 95054<br/>
+USA<br/>
+Attn: Data Protection Officer   </p>
+<p><b><u>Email</u></b></p>
+<p><a href="mailto:privacy@cloudera.com">privacy@cloudera.com</a></p>
+<p><b><u>Telephone</u></b></p>
+<p>1-888-789-1488 </p>
+<p> </p>
+</div>
+</div>
+</div>
+<div class="anchor section">
+<a class="anchor-link" id="data"></a></div>
+<div class="title section">
+<h2 class="top bottom txt-center">
+    
+    
+      Cloudera Data Policy
+      </h2>
+</div>
+<div class="text parbase section">
+<div>
+<div class="inner-text-div">
+<p><a id="data" name="data"></a></p>
+<p><span><span class="byline">Last Updated: August 11, 2021</span></span></p>
+<p>This Data Policy (the “Policy”) describes Cloudera’s policy for handling, storing, and otherwise treating certain types of data of Cloudera’s customers (each, a “Customer”), including data associated with individual users and employees of Customer organizations, in each case pursuant to a Customer Agreement (as defined below).  “Cloudera” means Cloudera, Inc. and its subsidiaries and affiliates.<br/>
+<br/>
+Additional policies that apply to specific Cloudera Products and Services can be found at the end of this Policy, in the section entitled “Service-Specific Terms.”</p>
+<h4>OVERVIEW</h4>
+<p>Cloudera collects information that a Customer or other data sources send to Cloudera as part of such Customer’s use of Cloudera Products and Services.  This data is addressed in three categories, “Transaction Data”, “Account Data” and “Personal Data”, each as defined below.<br/>
+ </p>
+<h4>TRANSACTION DATA AND ACCOUNT DATA</h4>
+<p><b>Security</b></p>
+<p>Cloudera understands the sensitive nature of the data that Customer or Customer’s organization may provide while using Cloudera Products and Services.  Cloudera will maintain commercially reasonable administrative, physical and technical safeguards designed for the protection, confidentiality and integrity of Customer’s Transaction Data and Account Data.</p>
+<p><b>Data Use by Cloudera</b></p>
+<p><i>Access. </i> Cloudera places strict controls over its employees’ access to Customer’s Transaction Data and Account Data that resides in the Cloudera Products and Services, and is committed to ensuring that Customer’s Transaction Data and Account Data is not used by anyone who should not have access to it.  The operation of the Cloudera Products and Services requires that some employees have access to Customer systems which store and process Customer’s Transaction Data and Account Data. For example, in order to diagnose a problem Customer is having with Cloudera Products and Services, the Cloudera support team may need to access Customer’s Transaction Data.  These employees are prohibited from using these permissions to view Customer’s Transaction Data unless it is necessary to do so.<br/>
+<br/>
+<i>Ownership. </i> As between Cloudera and Customer, Customer or its licensors own all right, title, and interest in and to the Transaction Data and Account Data.  Cloudera obtains no ownership rights under this Agreement from Customer or its licensors to any Transaction Data or Account Data.<br/>
+<br/>
+<i>Use of Transaction Data. </i> Cloudera will treat Transaction Data as confidential and will use it only to: (i) facilitate operation of the Cloudera Products and Services; (ii) enhance the use of the Cloudera Products and Services and its related web pages; (iii) perform internal tracking to improve Cloudera Products and Services; (iv) analyze the extent to which Customers use Cloudera Products and Services; (v) enable Cloudera to contact its Customers; (vi) process, bill and invoice Customer’s transactions for Cloudera Products and Services usage; (vii) make backups in order to prevent data loss; and (viii) comply with the law or a binding order of a governmental body.   This permission includes allowing us to use third-party service providers in the operation and administration of Cloudera Products and Services and the rights granted to us are extended to these third parties to the degree necessary in order for Cloudera Products and Services to be provided. The Privacy Statement does not apply to Transaction Data.<br/>
+<br/>
+<i>Use of Account Data.</i>  Cloudera will only use Account Data in accordance with the Privacy Statement, and Customer consents to such usage.<br/>
+<br/>
+<i>Feedback. </i> If any Customer users provide Cloudera with any feedback, support tickets, reported defects, usability enhancements, feature requests or suggestions regarding Cloudera Products and Services, Customer grants Cloudera an unlimited, irrevocable, perpetual, free license to use any such feedback or suggestions for any purpose without any obligation to Customer.<br/>
+</p>
+<p><b>Retention of Transaction Data and Account Data</b></p>
+<p>Data collected by Cloudera as part of diagnostic bundles will be retained for a period of 12 months.  All other Transaction Data and Account Data may be retained no longer than as permitted by governing law, but in no event longer than for the life of the related Cloudera product + 10 years.<br/>
+</p>
+<p><i>Incident Management and Response</i></p>
+<p>In the event of a security breach involving Cloudera Products and Services, Cloudera will promptly notify each affected Customer of any unauthorized access to any of such Customer’s Transaction Data or Account Data that was stored in Cloudera Products and Services.  Cloudera has internal incident management procedures in place to handle such an event.<br/>
+</p>
+<p><i>Product Security Practices</i></p>
+<p>New features, functionality, and design changes go through a security review process facilitated by Cloudera’s security team.  The security team works closely with development teams to resolve any additional security concerns that may arise during development.<br/>
+ </p>
+<h4>PERSONAL DATA</h4>
+<p>Cloudera’s current Privacy Statement is incorporated into this document and includes important terms regarding Cloudera’s handling of Personal Data.  The sections above relating to Incident Management and Response and Product Security Practices also apply to Personal Data.<br/>
+ </p>
+<h4>CUSTOMER RESPONSIBILITIES</h4>
+<p><b>Customer Account and Account Data</b></p>
+<p>To access certain Cloudera Online Services, Customer may be asked to create a Cloudera account associated with a valid e-mail address (a “Customer Account”).  Customer may only create one account per email address. Customer is responsible for: (i) maintaining the confidentiality of the Account Data, (ii) monitoring and controlling which end users have access to the Customer Account; and (iii) all activities that occur under the Customer Account, regardless of whether the activities are undertaken by Customer, Customer’s employees or a third party (including Customer’s contractors or agents).  Except to the extent caused by Cloudera’s breach of this Data Policy, Cloudera and its Affiliates are not responsible for unauthorized access to the Customer Account. Customer will contact Cloudera immediately if Customer believes an unauthorized third party may be using the Customer Account or if Customer’s Account Information is lost or stolen.</p>
+<p><b>Acceptable Use</b></p>
+<p>Customer must not: (i) use, or encourage, promote, facilitate or instruct others to use, Cloudera Products and Services for any illegal, harmful or offensive use, or to transmit, store, display, distribute or otherwise make available content that is illegal, harmful, or offensive; (ii) use Cloudera Products and Services to violate the security or integrity of any network, computer or communications system, software application, or network or computing device; (iii) make network connections to any users, hosts, or networks unless Customer has permission to communicate with them; (iv) use Cloudera Products and Services to transmit spam, bulk or unsolicited communications; or (v) use Cloudera Products and Services to collect and store personally identifiable information about any person unless specifically authorized by such person.<br/>
+</p>
+<p><b>Transaction Data, Account Data and Personal Data</b></p>
+<p>Customer is solely responsible for the creation, operation and maintenance of Transaction Data, Account Data and Personal Data. For example, Customer is solely responsible for:</p>
+<p> </p>
+<ul>
+<li>the technical operation of Cloudera Products and Services, including ensuring that calls Customer makes to any Cloudera Online Service are compatible with then-current APIs for that Cloudera Online Service;</li>
+<li>compliance with the Acceptable Use provisions herein;</li>
+<li>compliance with all applicable laws;</li>
+<li>any claims relating to Transaction Data, Account Data and Personal Data;<br/>
+anonymizing data to the extent Customer deems it reasonable or prudent to do so; and</li>
+<li>properly handling and processing notices sent to Customer (or any of its affiliates) by any person claiming Customer’s data violates such person’s rights, including notices pursuant to the Digital Millennium Copyright Act.</li>
+</ul>
+<p> </p>
+<p>Customer agrees that its Transactional Data, Account Data and Personal Data will not include information regulated under the International Traffic in Arms Regulations (U.S. government regulations addressing defense-related articles and services).<br/>
+<br/>
+Customer agrees not to upload, post or otherwise transmit to Cloudera any Transaction Data that: (a) is inaccurate, harmful, obscene, pornographic, defamatory, racist, violent, offensive, harassing, or otherwise objectionable; (b) includes unauthorized disclosure of personally identifiable information or other confidential information; (c) violates or infringes any third party intellectual property rights; or (d) contains software viruses or any other computer code, files or programs designed to interrupt, destroy or limit the functionality of any computer software or hardware or telecommunications equipment.  Cloudera reserves the right to edit or remove Transaction Data that violates this Policy.<br/>
+<br/>
+By providing Transaction Data, Customer represents and warrants to Cloudera that Customer owns or otherwise possesses all intellectual property rights and other rights necessary to provide such Transaction Data and to permit others to make use of such Transaction Data.<br/>
+</p>
+<p><b>Security and Backup</b></p>
+<p>Customer is responsible for taking its own steps to maintain appropriate security, protection and backup of Transactional Data, Account Data and Personal Data, which may include the use of encryption technology or anonymization to protect such data from unauthorized access.<br/>
+</p>
+<p><b>Customer Data</b></p>
+<p>Cloudera Products and Services that store or process Customer Data are either located on a third-party hosting site or on Customer’s own servers.  As such, Cloudera has no liabilities or obligations with respect to Customer Data under this Data Policy.<br/>
+ </p>
+<h4>DEFINITIONS</h4>
+<p><i>“Account Data” </i>means information about Customer that Customer provides to Cloudera in connection with the creation or administration of its Cloudera account. For example, Account Data includes names, user names, phone numbers, email addresses and billing information associated with Customer’s Cloudera account.<br/>
+<br/>
+<i>"Cloudera Products and Services" </i>means any of Cloudera’s products and software to which Customer may have subscribed under the terms of a Customer Agreement, including but not limited to Cloudera Manager, Cloudera Enterprise, Cloudera Live, Cloudera Express, Cloudera Altus Director, any Cloudera Online Services, any trial software, and any software related to the foregoing.<br/>
+<br/>
+<i>“Customer Agreement”</i> means the separate agreement between Customer and Cloudera governing Customer’s use of the Cloudera Products and Services.<br/>
+<br/>
+<i>“Customer Data”</i> means any of Customer’s originating data that might be stored in nodes and accessed by Cloudera’s software or other third-party software.<br/>
+<br/>
+<i>“Personal Data”</i> means data that can identify an individual or that is associated with the identity of an individual.<br/>
+<br/>
+<i>“Privacy Statement”</i> means the privacy Statement currently referenced at <a adhocenable="false" href="#privacy">https://www.cloudera.com/legal/policies.html#privacy</a>, as it may be updated by Cloudera from time to time.<br/>
+<br/>
+<i>“Transaction Data”</i> means all data that is (i) input into Cloudera Products and Services by Customer or its end users, (ii) generated by Cloudera’s systems as a result of Customer’s or its end users’ use of the Cloudera Products and Services, or (iii) data that is generated for troubleshooting and diagnostics, in each case that is transmitted to Cloudera. Transaction Data does not include Customer Data.<br/>
+<br/>
+In the event of a conflict between this Policy and the terms of the applicable Customer Agreement, the terms and conditions of this Policy apply, but only to the extent of such conflict.</p>
+<h4><br/>
+SERVICE-SPECIFIC TERMS</h4>
+<p><b>Cloudera Navigator Optimizer and Workload Analytics</b></p>
+<p><i>Data Use. </i> Cloudera’s Navigator Optimizer service (“Optimizer”) and Workload Analytics service (“Workload Analytics”) do not collect or store any Personal Data or Customer Data.  These services may collect and/or store certain types of Transaction Data such as Customer’s queries or workload information (“Analytics Data”). While Analytics Data is confidential information and will be protected pursuant to the provisions in this policy that apply to Transaction Data, Optimizer and Workload Analytics are not databases of record for the storage of Analytics Data.  Retention of this Analytics Data is not Cloudera’s responsibility.<br/>
+<br/>
+<i>Availability.</i>  Cloudera is committed to making Optimizer and Workload Analytics highly-available services that Customers can count on.  To the extent feasible, Cloudera’s infrastructure runs on systems that are fault-tolerant, for failures of individual servers.  Cloudera’s operations team tests disaster-recovery measures regularly and staffs a team to quickly resolve unexpected incidents.  However, at this time Cloudera makes no uptime or availability guarantees with respect to Optimizer or Workload Analytics or retention of Analytics Data.<br/>
+</p>
+<p><b>Cloudera DataFlow for the Public Cloud</b></p>
+<p>Cloudera DataFlow for the Public Cloud (“CDF-PC”) provides the capability for Customer to centrally manage data flows across multiple server clusters, environments, and public cloud providers.  To enable this, CDF-PC allows Customer to upload and store certain metadata about Customer’s data flows (“Flow Definitions”) in a central catalog within CDP Public Cloud Control Plane (“Control Plane”).  Each Flow Definition is encrypted with its own unique encryption key and stored in Control Plane where it may then be accessed by Customer.  Customer may use CDF-PC to: (a) load Flow Definitions into a Customer Environment (as such term is defined in the <a href="https://www.cloudera.com/legal/terms-and-conditions/cloudera-online-services-terms.html">Cloudera Online Services Terms of Service</a>) in CDP Public Cloud, and (b) execute the Flow Definitions in the Customer Environment.</p>
+<p>Control Plane is hosted and runs in a multi-tenant environment.  Cloudera does, however, implement reasonable technical controls and safeguards designed to help ensure logical separation and privacy as between different Cloudera customer accounts.</p>
+<p>Flow Definitions are considered Transaction Data as such terms is used in this Data Policy; provided, however, that, notwithstanding anything to the contrary in this Data Policy, Cloudera will use Flow Definitions only for the following purposes: (a) to store Flow Definitions that are loaded into Control Plane by Customer, (b) to remove from Flow Definitions any content that violates this Data Policy, and (c) to the extent necessary to (i) investigate CDP Public Cloud security issues; (ii) investigate CDP Public Cloud performance issues, or (iii) comply with applicable law or a binding order of a governmental body.</p>
+<p>As Flow Definitions are Customer-generated content, Customer (not Cloudera) is solely responsible for ensuring that Flow Definitions contain the intended information (that is, metadata describing Customer’s dataflow logic) and do not contain data prohibited from being included in Transaction Data by this Data Policy. Without limiting the foregoing, Customer must ensure that neither the name of each Flow Definition nor the Flow Definition content includes any personal data (including without limitation personally identifiable information (PII), personal health information (PHI) regulated under the Health Insurance Portability and Accessibility Act of 1996 (as amended and supplement) (HIPAA)), or cardholder data as defined under the Payment Card Industry Data Security Standard (PCI-DSS). Customer is responsible for ensuring that Flow Definitions adhere to the “Acceptable Use” terms of this Data Policy, including without limitation, those terms that prohibit Customer from using CDP Public Cloud, CDF-PC or Flow Definitions (i) in any manner that would violate the security or integrity of any network, computer or communications system, software application, or network or computing device, or (ii) for any illegal, harmful or offensive use, or to transmit, store, display, distribute or otherwise make available content that is illegal, harmful, or offensive.</p>
+</div>
+</div>
+</div>
+<div class="text parbase section">
+<div>
+<div class="inner-text-div">
+<p><a adhocenable="false" href="#top"><span class="chevron">Return to top</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></div>
+</div>
+</main>
+<div class="mainfoot mainFooter"></div><footer style="padding:0;">
+<div class="footer-top">
+<div class="body_container">
+<div class="col-sm-12">
+<div><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="main-footer iparsys parsys"><div class="text parbase section">
+<div>
+<div class="inner-text-div">
+<p class="social-foot-icons" style="text-align: left;font-size: 20.0px;"><a href="https://www.facebook.com/cloudera/"><span class="icon-facebook1"> </span></a><a href="https://twitter.com/cloudera"><span class="icon-twitter1"> </span></a><a href="https://www.linkedin.com/company/cloudera"><span class="icon-linkedin2"> </span></a></p>
+<ul>
+<li><a href="/partners.html">Partners</a></li>
+<li><a adhocenable="false" href="/about/services-and-support/support-offering.html">Support</a></li>
+<li><a adhocenable="false" href="https://community.cloudera.com" target="_blank">Community</a></li>
+<li><a adhocenable="false" href="https://docs.cloudera.com" target="_blank">Documentation</a></li>
+<li><a adhocenable="false" href="/about/careers.html">Careers</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-data-line">
+<div class="footer-middle">
+<div class="body_container">
+<div class="col-md-4 mk-social-foot">
+<div><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="middle-right-footer iparsys parsys"><div class="text parbase section">
+<div>
+<div class="inner-text-div">
+<h3 style="text-align: left;"><a href="/contact-sales.html">Contact Us</a></h3>
+<p style="text-align: left;"><a href="tel:18887891488">US: +1 888 789 1488</a><br/>
+<a href="tel:16503620488">Outside the US: +1 650 362 0488</a></p>
+</div>
+</div>
+</div>
+<div class="language-picker section">
+<div id="mk-language-picker">
+<span class="icon-earth">
+<label for="mk-country-options" style="display:none;">Language Picker</label>
+<select id="mk-country-options" name="country-options">
+<option value="https://www.cloudera.com/">English</option>
+<option value="https://es.cloudera.com">Spanish</option>
+<option value="https://fr.cloudera.com">French</option>
+<option value="https://de.cloudera.com">German</option>
+<option value="https://it.cloudera.com">Italian</option>
+<option value="https://pl.cloudera.com">Polish</option>
+<option value="https://br.cloudera.com">Portuguese</option>
+<option value="https://kr.cloudera.com">Korean</option>
+<option value="https://www.clouderacn.cn/">Chinese</option>
+<option value="https://jp.cloudera.com/">Japanese</option>
+</select>
+</span>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-8 mk-desktop-foot">
+<div><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="middle-footer iparsys parsys"><div class="column_control parbase section">
+<div style="background-image:url('');">
+<div class="body_container">
+<div class="row">
+<div class="col_control">
+<div>
+<div class="col-sm-4 col">
+<div><div class="text parbase section">
+<div>
+<div class="inner-text-div">
+<p><b>Company</b></p>
+<ul>
+<li><a adhocenable="false" href="/about.html">About us</a></li>
+<li><a href="/about/careers.html">Careers</a></li>
+<li><a href="/about/diversity-equality-inclusion.html">Diversity, Equality &amp; Inclusion</a></li>
+<li><a href="/about/events.html">Events</a></li>
+<li><a href="/about/leadership.html">Leadership</a></li>
+<li><a href="/about/locations.html">Locations</a></li>
+<li><a href="/about/news-and-blogs.html">Newsroom</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-4 col">
+<div><div class="text parbase section">
+<div>
+<div class="inner-text-div">
+<p><b>Get started</b></p>
+<ul>
+<li><a href="/about/training/certification.html">Certification</a></li>
+<li><a href="/contact-us.html">Contact sales</a></li>
+<li><a href="/downloads.html">Downloads</a></li>
+<li><a href="/partners/partners-listing.html">Find a partner</a> </li>
+<li><a href="/solutions/gallery.html">Find a solution</a></li>
+<li><a href="/about/training.html">Training</a> </li>
+<li><a href="/tutorials.html">Tutorials</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-4 col">
+<div><div class="text parbase section">
+<div>
+<div class="inner-text-div">
+<p><b>Resources</b></p>
+<ul>
+<li><a href="https://blog.cloudera.com/" target="_blank">Blog</a></li>
+<li><a adhocenable="false" href="/users.html">CDP resources</a></li>
+<li><a href="/products/trust-center.html">CDP Trust Center</a></li>
+<li><a href="https://community.cloudera.com/" target="_blank">Community</a></li>
+<li><a href="https://docs.cloudera.com/" target="_blank">Documentation</a></li>
+<li><a href="/resources.html">Resources library</a></li>
+<li><a adhocenable="false" href="https://my.cloudera.com/support.html" target="_blank">Support</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="body_container">
+<div class="col-sm-12">
+<div><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="bottom-footer iparsys parsys"><div class="text parbase section">
+<div class="none">
+<div class="inner-text-div">
+<p><span class="byline">© 2022 Cloudera, Inc. All rights reserved. <a adhocenable="false" href="/legal/terms-and-conditions.html">Terms &amp; Conditions</a> | <a adhocenable="false" href="/legal/policies.html">Privacy Statement and Data Policy</a> | <a adhocenable="false" href="/unsubscribe.html">Unsubscribe from Marketing/Promotional Communications</a> | <span id="teconsent"></span><br/>
+<a href="https://hadoop.apache.org/">Apache Hadoop</a> and associated open source project names are trademarks of the <a href="https://apache.org/">Apache Software Foundation</a>. For a complete list of trademarks, <a adhocenable="false" href="/legal/terms-and-conditions.html#trademarks">click here</a>.</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div><div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="promoIpar iparsys parsys"></div>
+</div>
+</div>
+</footer>
+<div class="mk-error-conatiner">
+<div class="mk-form-error text">
+<i class="icon-close mk-icon-marketing"></i>
+<i class="icon-exclamation mk-icon-marketing"></i>
+<h2>Your form submission has failed.</h2>
+<div class="mk-form-error-content">
+<p>This may have been caused by one of the following:</p>
+<ul>
+<li>Your request timed out</li>
+<li>A plugin/browser extension blocked the submission. If you have an ad blocking plugin please disable it and close this message to reload the page.</li>
+</ul>
+</div>
+</div>
+</div>
+<link href="https://static.cloud.coveo.com/searchui/v2.10092/css/CoveoFullSearch.css" rel="stylesheet">
+<script class="coveo-script" src="https://static.cloud.coveo.com/searchui/v2.10092/js/CoveoJsSearch.Lazy.min.js"></script>
+<script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                    const searchBoxRoot = document.getElementById("searchbox");
+                     // 2. Configure a search endpoint
+                    Coveo.SearchEndpoint.configureCloudV2Endpoint("clouderaproductionwe060ie4", "xxfc3178ad-67c0-480a-9a2b-7bd9079f8580");
+                    // 3. Initialize a Searchbox component
+                    Coveo.initSearchbox(
+                        searchBoxRoot,
+                        "/search.html"
+                     );
+                 });
+                 </script>
+<script src="/etc.clientlibs/clientlibs/granite/utils.min.js" type="text/javascript"></script>
+<script src="/etc.clientlibs/clientlibs/granite/jquery/granite.min.js" type="text/javascript"></script>
+<script src="/etc.clientlibs/foundation/clientlibs/jquery.min.js" type="text/javascript"></script>
+<script src="/etc.clientlibs/clientlibs/granite/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/etc.clientlibs/foundation/clientlibs/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/apps/settings/wcm/designs/www/clientlibs-vendor.min.js" type="text/javascript"></script>
+<script src="/apps/settings/wcm/designs/www/clientlibs.min.js" type="text/javascript"></script>
+<script src="/apps/settings/wcm/designs/www/clientlibs-marketing.min.js" type="text/javascript"></script>
+<div class="section"><div class="new"></div>
+</div><div class="iparys_inherited"><div class="loginAwareIpar iparsys parsys"><div class="loginStateAwareContainer section">
+<script>
+        $(window).load(function(){
+            if (userInfoHandler){
+                if (userInfoHandler.status == "OK"){
+                    if (userInfoHandler.loggedIn == true) {
+                    var relayState="";
+                    $("a[href*='community.cloudera.com']")
+                       .each(function()
+                       {
+                          relayState = encodeURIComponent(this.href);
+                          var redirect = 'https://cloudera-production.okta.com/app/template_saml_2_0/exk1az52keQqZWEnE0x7/sso/saml';
+                          var separator = redirect.indexOf('?') !== -1 ? "&" : "?";
+                          this.href= redirect + separator + 'RelayState=' + relayState;
+                       });
+                    }
+                }
+            }
+        });
+    </script>
+</div>
+</div>
+</div>
+<div class="cloudservice testandtarget"><script type="text/javascript">
+    CQ_Analytics.TestTarget.maxProfileParams = 11;
+
+    if (CQ_Analytics.CCM) {
+        if (CQ_Analytics.CCM.areStoresInitialized) {
+            CQ_Analytics.TestTarget.registerMboxUpdateCalls();
+        } else {
+            CQ_Analytics.CCM.addListener("storesinitialize", function (e) {
+                CQ_Analytics.TestTarget.registerMboxUpdateCalls();
+            });
+        }
+    } else {
+        // client context not there, still register calls
+        CQ_Analytics.TestTarget.registerMboxUpdateCalls();
+    }
+    </script>
+</div>
+</link></div>
+</body>
+</html>

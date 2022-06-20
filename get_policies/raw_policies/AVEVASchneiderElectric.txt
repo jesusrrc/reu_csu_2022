@@ -1,0 +1,2430 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Privacy Policy | Legal | AVEVA</title>
+<meta content="Legal" name="keywords"/>
+<meta content="This website is operated by AVEVA Group plc and the AVEVA group of companies, some of which are located in countries outside the European Economic Area." name="description"/>
+<meta content="generic-1-column-template" name="template"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="code-p2fyZg6Bqw" name="baidu-site-verification"/>
+<meta content="fe0f2d1bff6db5982fa8cc5841a4a965e73092d5" name="naver-site-verification"/>
+<meta content="val45168a21a3qtvtwi1b2oqjluy50" name="facebook-domain-verification"/>
+<link href="https://www.aveva.com/en/legal/privacy-policy/" rel="canonical"/>
+<link href="/etc.clientlibs/aveva/clientlibs/clientlib-base.min.a9fe2cb17e323527d79ec507312e77e5.css" rel="stylesheet" type="text/css"/>
+<link href="/en/legal/privacy-policy/" hreflang="en" rel="alternate">
+<link href="https://www.aveva.cn/legal/privacy-policy/" hreflang="zh-cn" rel="alternate"/>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+
+{'gtm.start': new Date().getTime(),event:'gtm.js'}
+);var f=d.getElementsByTagName(s)[0],
+
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+})(window,document,'script','dataLayer','GTM-W5FPMZ');</script>
+<script>
+    var digitalData = [];
+    var pageType;
+    var language = document.documentElement.lang.toLowerCase();
+    var pathArrays = window.location.pathname.split('/');
+    var sitesection = window.location.pathname.split('/');
+    var indexchange = pathArrays.indexOf(language);
+    if (document.querySelector('meta[name="template"]').content != 'home-page-template' && indexchange == -1) {
+        pathArrays.splice(1, 0, language);
+    }
+    var index = pathArrays.indexOf(language);
+    var pathArray = pathArrays.splice(index);
+    var pageType = pathArray[1] || "home";
+    pageType = pageType.replace('.html', '');
+
+    var video = [];
+
+    if (document.title === 'Page Not Found') {
+        pageType = 'errorPage';
+    }
+
+    _init();
+
+    function _init() {
+        setCategory();
+        getSiteSection();
+    }
+
+    function setCategory() {
+        var pageInfo = {
+            pageName: getPageName(pathArray),
+            URL: window.location.href,
+        };
+        var category = {
+            pageType: pageType,
+            org: "aveva",
+            country: getCountry(),
+            language: language,
+            siteSection: document.title === 'Page Not Found' ? '' : sitesection[1]
+        };
+        digitalData.pageInfo = pageInfo;
+        digitalData.category = category;
+    }
+    function getSiteSection() {
+        if (document.title === 'Page Not Found') {
+            return;
+        }
+        var i;
+        for (i = 1; i <= sitesection.length - 2; i++) {
+            var newUser = "siteSection" + i;
+            var newValue = sitesection[i + 1]
+            digitalData.category[newUser] = newValue.replace('.html', '');
+        }
+    }
+    function getDomain() {
+        return window.location.hostname;
+    }
+    function getCountry() {
+        var country = language.split("-")[1];
+        return country ? country : 'uk';
+    }
+    function getPageName(pathArray) {
+        return "aveva:" + getCountry() + ":" + language + ":" + getName();
+    }
+    function getName() {
+        var pageName = pathArray[pathArray.length - 1];
+        pageName = pageName.replace('.html', '');
+        if (pageName === "") {
+            pageName = pathArray[pathArray.length - 2];
+        }
+
+        if (!pageName || pageName.toLowerCase() === language) {
+            pageName = "home";
+        }
+
+        if (document.title === 'Page Not Found') {
+            pageName = "errorPage";
+        }
+
+        return pageName;
+    }
+    //For perspective pages info details
+    function getperspectiveInfo() {
+        var perspectiveInfo = {
+            perspectiveType: pathArray[2],
+            title: getInfo('.cmp-text h1', 'innerText') || getInfo('.herobanner .heading', 'innerText'),
+            authorName: getInfo('.biographycomponent__authorName', 'innerText'),
+        };
+        digitalData.perspectiveInfo = perspectiveInfo;
+    }
+    //For productInfo details
+    function getProductInfo() {
+        var productInfo = {
+            productName: getInfo('.heading h1', 'innerText'),
+        };
+        digitalData.productInfo = productInfo;
+    }
+    //For Query selector
+    function getInfo(elemSelector, property) {
+        var elm = document.querySelector(elemSelector);
+        if (elm) {
+            return elm[property] || '';
+        }
+        return '';
+    }
+    //Form Component
+    function getform() {
+        var form;
+        var marketoForm = document.querySelectorAll(".marketo-form");
+        for (var index = 0; index < marketoForm.length; index++) {
+            var item = marketoForm[index];
+            if (!item.getAttribute('data-form-id')) {
+                return;
+            }
+            if (index === 0) {
+                form = {
+                    formId0: item.getAttribute('data-form-id'),
+                    eventName0: "MarketoFormLoad",
+                    formStatus: "Form Load"
+                }
+            }
+            else {
+                form["formId" + index] = item.getAttribute('data-form-id');
+                form["eventName" + index] = "MarketoFormLoad";
+                form["formStatus"] = "Form Load"
+            }
+        }
+        if (form !== undefined) {
+            digitalData.form = form;
+        }
+    }
+    function getVideo() {
+        var iframes = document.querySelectorAll(".videocomponent__player iframe");
+        for (var i = 0; i < iframes.length; i++) {
+            getVideoName(iframes[i].getAttribute('src'), i);
+        }
+        if (video !== undefined) {
+            digitalData.video = video;
+        }
+    }
+    function getVideoName(item, index) {
+        var responseData;
+        if (item.indexOf("fast.wistia.net") !== -1) {
+            var src = item.split('/');
+            var videoName = src.indexOf("iframe");
+            var videoName = src.splice(videoName);
+            var url = 'https://fast.wistia.com/oembed?url=http://home.wistia.com/medias/' + videoName[1].split('?')[0];
+            loadXMLDoc(url, function (data) {
+                video["videoName" + index] = data.title;
+                video["videoType" + index] = "wistia";
+            });
+
+        }
+        else if (item.indexOf("www.youtube.com") !== -1) {
+            var src = item.split('/');
+            var videoName = src.indexOf("embed");
+            var videoName = src.splice(videoName);
+            var url = "https://noembed.com/embed?url=https://www.youtube.com/watch?v=" + videoName[1].split('?')[0];
+            loadXMLDoc(url, function (data) {
+                video["videoName" + index] = data.title;
+                video["videoType" + index] = "youtube";
+            });
+        }
+
+        else if (item.indexOf("player.vimeo.com") !== -1) {
+            var src = item.split('/');
+            var videoName = src.indexOf("video");
+            var videoName = src.splice(videoName);
+            var url = 'https://vimeo.com/api/v2/video/' + videoName[1].split('?')[0] + '.json';
+            loadXMLDoc(url, function (data) {
+                video["videoName" + index] = data[0].title;
+                video["videoType" + index] = "vimeo";
+            });
+        }
+    }
+    function loadXMLDoc(url, callback) {
+        var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
+        window[callbackName] = function (data) {
+            delete window[callbackName];
+            document.body.removeChild(script);
+            callback(data);
+        };
+
+        var script = document.createElement('script');
+        script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
+        document.body.appendChild(script);
+    }
+
+    //Commenting out HubSpot Code
+    // lazy loading for hubspot
+    /*var hbspt = {};
+    hbspt.forms = {};
+    var formsconfigs = [];
+
+    // funtion to get all the data, use the same function in order to change the existing
+    // implementation
+    hbspt.forms.create = function(config) {
+        formsconfigs.push(config);
+    };
+
+    // function to generate the forms and also append
+    var loadForm = function (formsconfigs) {
+        for (var i = 0; i < formsconfigs.length; i++) {
+            hbspt.forms.create({
+                portalId: formsconfigs[i].portalId,
+                formId: formsconfigs[i].formId,
+                css: formsconfigs[i].css,
+                target: formsconfigs[i].target
+            });
+
+        }
+    };
+
+    // function to load the sciprt tag and also call the hubspot form crete
+    document.addEventListener("DOMContentLoaded", function () {
+        if(formsconfigs.length > 0) {
+            var script = document.createElement( 'script' );
+            script.charset= "utf-8";
+            script.type = "text/javascript";
+            script.onload = function() {
+                loadForm(formsconfigs);
+            }
+            script.src = "//js.hsforms.net/forms/v2.js";
+            document.head.appendChild(script);
+        }
+    });*/
+
+    document.addEventListener("DOMContentLoaded", function () {
+        switch (pageType) {
+            case "perspectives":
+                getperspectiveInfo();
+                break;
+            case "products":
+                getProductInfo();
+                break;
+        }
+        getform();
+        getVideo();
+    });
+</script>
+<script src="//engage.aveva.com/js/forms2/js/forms2.min.js"></script>
+<script>
+        (function(g,b,d,f){(function(a,c,d){if(a){var e=b.createElement("style");e.id=c;e.innerHTML=d;a.appendChild(e)}})(b.getElementsByTagName("head")[0],"at-body-style",d);setTimeout(function(){var a=b.getElementsByTagName("head")[0];if(a){var c=b.getElementById("at-body-style");c&&a.removeChild(c)}},f)})(window,document,"body {opacity: 0 !important}",3E3);
+
+
+    </script>
+<script async="" src="//assets.adobedtm.com/29609a6a8d3a/bfb7aaab41bc/launch-ac08022bebc9.min.js" type="text/javascript"></script>
+<!-- [if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif] -->
+<link href="/content/dam/aveva/images/icons/fav-icon/favicon_v3.ico" rel="icon" sizes="192x192"/>
+<link href="/content/dam/aveva/images/icons/fav-icon/favicon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/content/dam/aveva/images/icons/fav-icon/favicon.png" rel="apple-touch-icon" sizes="167x167"/>
+<link href="/content/dam/aveva/images/icons/fav-icon/favicon.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="/content/dam/aveva/images/icons/fav-icon/favicon.png" rel="apple-touch-icon" sizes="120x120"/>
+<meta content="/content/dam/aveva/images/icons/fav-icon/favicon.png" name="msapplication-square310x310logo"/>
+<meta content="/content/dam/aveva/images/icons/fav-icon/favicon.png" name="msapplication-wide310x150logo"/>
+<meta content="/content/dam/aveva/images/icons/fav-icon/favicon.png" name="msapplication-square150x150logo"/>
+<meta content="/content/dam/aveva/images/icons/fav-icon/favicon.png" name="msapplication-square70x70logo"/>
+</link></head>
+<body class="basepage page basicpage en">
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W5FPMZ" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<a class="skip" href="#main-content">Skip to main content</a>
+<div class="root responsivegrid">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+<div class="cmp-experiencefragment cmp-experiencefragment--header"><div class="xf-content-height">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="globalheader aem-GridColumn aem-GridColumn--default--12">
+<header role="banner">
+<div>
+</div>
+<div aria-label="Utility Navigation" class="utility-nav" role="navigation">
+<ul class="container-xl container-sm utility-nav__list">
+<li>
+<a data-at="Investors" data-cta="Investors" data-track="Global Header" href="https://investors.aveva.com/" rel="noopener noreferrer" target="_blank">Investors</a>
+</li>
+<li>
+<a data-at="Partners" data-cta="Partners" data-track="Global Header" href="https://www.aveva.com/en/about/partners/" target="_self">Partners</a>
+</li>
+<li>
+<a data-at="Academia" data-cta="Academia" data-track="Global Header" href="/en/academia/" target="_self">Academia</a>
+</li>
+<li>
+<a data-at="Training" data-cta="Training" data-track="Global Header" href="/en/training/" target="_self">Training</a>
+</li>
+<li>
+<a data-at="Support &amp; Success" data-cta="Support &amp; Success" data-track="Global Header" href="/en/support-and-success/" target="_self">Support &amp; Success</a>
+</li>
+<li>
+<a data-at="Contact Us" data-cta="Contact Us" data-track="Global Header" href="/en/contact/" target="_self">Contact Us</a>
+</li>
+<li class="globe-selector">
+<i class="icon-globe-2 lang-icon" data-at="Language Selector" data-cta="Language Selector" data-track="Global Header"></i>
+<div class="lang-selector">
+<ul>
+<li class="lang-selected">
+<a class="lang-container" href="/en/legal/privacy-policy/">
+<span class="checkmark highlighted"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/English.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/English.png"/>
+<span class="responsive-selector-list__lang">English</span>
+</a>
+</li>
+<li>
+<a class="lang-container" href="https://www.aveva.cn/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/Chinese.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/Chinese.png"/>
+<span class="responsive-selector-list__lang">Chinese</span>
+</a>
+</li>
+<li>
+<a class="lang-container" href="/fr-fr/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/French.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/French.png"/>
+<span class="responsive-selector-list__lang">French</span>
+</a>
+</li>
+<li>
+<a class="lang-container" href="/de-de/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/German.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/German.png"/>
+<span class="responsive-selector-list__lang">German</span>
+</a>
+</li>
+<li>
+<a class="lang-container" href="/ja-jp/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/Japanese.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/Japanese.png"/>
+<span class="responsive-selector-list__lang">Japanese</span>
+</a>
+</li>
+<li>
+<a class="lang-container" href="/ko-kr/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/Korean.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/Korean.png"/>
+<span class="responsive-selector-list__lang">Korean</span>
+</a>
+</li>
+<li>
+<a class="lang-container" href="/pt-br/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/Portuguese.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/Portuguese.png"/>
+<span class="responsive-selector-list__lang">Portuguese</span>
+</a>
+</li>
+<li>
+<a class="lang-container" href="/ru-ru/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/Russian.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/Russian.png"/>
+<span class="responsive-selector-list__lang">Russian</span>
+</a>
+</li>
+<li>
+<a class="lang-container" href="/es-es/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/Spanish.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/Spanish.png"/>
+<span class="responsive-selector-list__lang">Spanish</span>
+</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<nav class="main-navbar">
+<div aria-label="Main Navigation" class="container-md main-navbar__wrapper" role="navigation">
+<a class="main-navbar__toggle" href="#"><span></span></a>
+<a class="main-navbar__logo" data-at="Aveva" data-cta="Aveva" data-track="Global Header/Footer" href="/en/">
+<img alt="Aveva" src="/content/experience-fragments/aveva/en/site/header/master/_jcr_content/root/responsivegrid/globalheader/logo.coreimg.svg/1645128562695/header-logo.svg"/>
+</a>
+<ul class="main-navbar-links">
+<li>
+<a class="level0-item" data-at="Industries" data-cta="Industries" data-track="Global Header" href="/en/industries/" target="_self">Industries</a>
+<div class="main-navbar-submenu">
+<div class="main-navbar-submenu__list">
+<ul>
+<li class="desktop-l1-item selected" data-id="desktop-chemicals">
+<a data-at="Industries-Chemicals" data-cta="Chemicals" data-title="Industries" data-track="Global Header" href="/en/industries/chemicals/" target="_self">Chemicals</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-food-and-beverage--cpg">
+<a data-at="Industries-Food and Beverage, CPG" data-cta="Food and Beverage, CPG" data-title="Industries" data-track="Global Header" href="/en/industries/food-beverage/" target="_self">Food and Beverage, CPG</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-infrastructure">
+<a data-at="Industries-Infrastructure" data-cta="Infrastructure" data-title="Industries" data-track="Global Header" href="/en/industries/infrastructure/" target="_self">Infrastructure</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-manufacturing">
+<a data-at="Industries-Manufacturing" data-cta="Manufacturing" data-title="Industries" data-track="Global Header" href="/en/industries/manufacturing/" target="_self">Manufacturing</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-marine">
+<a data-at="Industries-Marine" data-cta="Marine" data-title="Industries" data-track="Global Header" href="/en/industries/marine/" target="_self">Marine</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-mining">
+<a data-at="Industries-Mining" data-cta="Mining" data-title="Industries" data-track="Global Header" href="/en/industries/mining/" target="_self">Mining</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-oil-and-gas">
+<a data-at="Industries-Oil and Gas" data-cta="Oil and Gas" data-title="Industries" data-track="Global Header" href="/en/industries/oil-gas/" target="_self">Oil and Gas</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-power-and-utilities">
+<a data-at="Industries-Power and Utilities" data-cta="Power and Utilities" data-title="Industries" data-track="Global Header" href="/en/industries/power-utilities/" target="_self">Power and Utilities</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-water-and-wastewater">
+<a data-at="Industries-Water and Wastewater" data-cta="Water and Wastewater" data-title="Industries" data-track="Global Header" href="/en/industries/power-utilities/water-wastewater/" target="_self">Water and Wastewater</a>
+</li>
+</ul>
+</div>
+<div aria-label="Main Navigation Submenu" class="submenu-content" role="navigation">
+<div class="main-navbar-submenu__sublist">
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-chemicals">
+<li>
+<a data-at="Industries-Chemicals-Basic Chemicals" data-cta="Basic Chemicals" data-title="Industries" data-track="Global Header" href="/en/industries/chemicals/basic-chemicals/" target="_self">Basic Chemicals</a>
+</li>
+<li>
+<a data-at="Industries-Chemicals-Specialty Chemicals" data-cta="Specialty Chemicals" data-title="Industries" data-track="Global Header" href="/en/industries/chemicals/specialty-chemicals/" target="_self">Specialty Chemicals</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-food-and-beverage--cpg">
+<li>
+<a data-at="Industries-Food and Beverage, CPG-Dairy" data-cta="Dairy" data-title="Industries" data-track="Global Header" href="/en/industries/food-beverage/dairy/" target="_self">Dairy</a>
+</li>
+<li>
+<a data-at="Industries-Food and Beverage, CPG-Beverages and Brewing" data-cta="Beverages and Brewing" data-title="Industries" data-track="Global Header" href="/en/industries/food-beverage/beverages-brewing/" target="_self">Beverages and Brewing</a>
+</li>
+<li>
+<a data-at="Industries-Food and Beverage, CPG-Grains, Baked Goods, and Confectionery" data-cta="Grains, Baked Goods, and Confectionery" data-title="Industries" data-track="Global Header" href="/en/industries/food-beverage/grains-baked-goods-confectionery/" target="_self">Grains, Baked Goods, and Confectionery</a>
+</li>
+<li>
+<a data-at="Industries-Food and Beverage, CPG-Sugar, Oil and Biofuels" data-cta="Sugar, Oil and Biofuels" data-title="Industries" data-track="Global Header" href="/en/industries/food-beverage/sugar-oil-biofuels/" target="_self">Sugar, Oil and Biofuels</a>
+</li>
+<li>
+<a data-at="Industries-Food and Beverage, CPG-Consumer Packaged Goods" data-cta="Consumer Packaged Goods" data-title="Industries" data-track="Global Header" href="/en/industries/food-beverage/consumer-packaged-goods/" target="_self">Consumer Packaged Goods</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-infrastructure">
+<li>
+<a data-at="Industries-Infrastructure-Data Centers" data-cta="Data Centers" data-title="Industries" data-track="Global Header" href="/en/industries/infrastructure/data-centers/" target="_self">Data Centers</a>
+</li>
+<li>
+<a data-at="Industries-Infrastructure-Smart Cities" data-cta="Smart Cities" data-title="Industries" data-track="Global Header" href="/en/industries/infrastructure/smart-cities/" target="_self">Smart Cities</a>
+</li>
+<li>
+<a data-at="Industries-Infrastructure-Transportation" data-cta="Transportation" data-title="Industries" data-track="Global Header" href="/en/industries/infrastructure/transportation/" target="_self">Transportation</a>
+</li>
+<li>
+<a data-at="Industries-Infrastructure-Facility Management" data-cta="Facility Management" data-title="Industries" data-track="Global Header" href="/en/industries/infrastructure/facility-management/" target="_self">Facility Management</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-manufacturing">
+<li>
+<a data-at="Industries-Manufacturing-Discrete Manufacturing" data-cta="Discrete Manufacturing" data-title="Industries" data-track="Global Header" href="/en/industries/manufacturing/discrete-manufacturing/" target="_self">Discrete Manufacturing</a>
+</li>
+<li>
+<a data-at="Industries-Manufacturing-Life Sciences" data-cta="Life Sciences" data-title="Industries" data-track="Global Header" href="/en/industries/manufacturing/life-sciences/" target="_self">Life Sciences</a>
+</li>
+<li>
+<a data-at="Industries-Manufacturing-Pulp and Paper" data-cta="Pulp and Paper" data-title="Industries" data-track="Global Header" href="/en/industries/manufacturing/pulp-paper/" target="_self">Pulp and Paper</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-marine">
+<li>
+<a data-at="Industries-Marine-Ship Building" data-cta="Ship Building" data-title="Industries" data-track="Global Header" href="/en/industries/marine/ship-building/" target="_self">Ship Building</a>
+</li>
+<li>
+<a data-at="Industries-Marine-Ship Operations" data-cta="Ship Operations" data-title="Industries" data-track="Global Header" href="/en/industries/marine/ship-operations/" target="_self">Ship Operations</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-mining">
+<li>
+<a class="u-submenu-bold-cta" data-at="Industries-Mining-View All" data-cta="View All" data-title="Industries" data-track="Global Header" href="/en/industries/mining/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-oil-and-gas">
+<li>
+<a data-at="Industries-Oil and Gas-Exploration and Production" data-cta="Exploration and Production" data-title="Industries" data-track="Global Header" href="/en/industries/oil-gas/exploration-production/" target="_self">Exploration and Production</a>
+</li>
+<li>
+<a data-at="Industries-Oil and Gas-Transportation Pipelines" data-cta="Transportation Pipelines" data-title="Industries" data-track="Global Header" href="/en/industries/oil-gas/transportation-pipelines/" target="_self">Transportation Pipelines</a>
+</li>
+<li>
+<a data-at="Industries-Oil and Gas-Gas/LNG Processing" data-cta="Gas/LNG Processing" data-title="Industries" data-track="Global Header" href="/en/industries/oil-gas/lng-gas-processing/" target="_self">Gas/LNG Processing</a>
+</li>
+<li>
+<a data-at="Industries-Oil and Gas-Refining" data-cta="Refining" data-title="Industries" data-track="Global Header" href="/en/industries/oil-gas/refining/" target="_self">Refining</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-power-and-utilities">
+<li>
+<a data-at="Industries-Power and Utilities-Power Generation" data-cta="Power Generation" data-title="Industries" data-track="Global Header" href="/en/industries/power-utilities/power-generation/" target="_self">Power Generation</a>
+</li>
+<li>
+<a data-at="Industries-Power and Utilities-Transmission Distribution" data-cta="Transmission Distribution" data-title="Industries" data-track="Global Header" href="/en/industries/power-utilities/transmission-distribution/" target="_self">Transmission Distribution</a>
+</li>
+<li>
+<a data-at="Industries-Power and Utilities-Water Wastewater" data-cta="Water Wastewater" data-title="Industries" data-track="Global Header" href="/en/industries/power-utilities/water-wastewater/" target="_self">Water Wastewater</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-water-and-wastewater">
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="level0-item" data-at="Offerings" data-cta="Offerings" data-track="Global Header" href="/en/offerings/" target="_self">Offerings</a>
+<div class="main-navbar-submenu">
+<div class="main-navbar-submenu__list">
+<ul>
+<li class="desktop-l1-item selected" data-id="desktop-solutions">
+<a data-at="Offerings-Solutions" data-cta="Solutions" data-title="Offerings" data-track="Global Header" href="/en/solutions/" target="_self">Solutions</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-products">
+<a data-at="Offerings-Products" data-cta="Products" data-title="Offerings" data-track="Global Header" href="/en/products/" target="_self">Products</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-subscription-program">
+<a data-at="Offerings-Subscription Program" data-cta="Subscription Program" data-title="Offerings" data-track="Global Header" href="/en/solutions/flex-subscription/" target="_self">Subscription Program</a>
+</li>
+</ul>
+</div>
+<div aria-label="Main Navigation Submenu" class="submenu-content" role="navigation">
+<div class="main-navbar-submenu__sublist">
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-solutions">
+<li>
+<a data-at="Offerings-Solutions-Digital Transformation" data-cta="Digital Transformation" data-title="Offerings" data-track="Global Header" href="/en/solutions/digital-transformation/" target="_self">Digital Transformation</a>
+</li>
+<li>
+<a data-at="Offerings-Solutions-Engineering" data-cta="Engineering" data-title="Offerings" data-track="Global Header" href="/en/solutions/engineering/" target="_self">Engineering</a>
+</li>
+<li>
+<a data-at="Offerings-Solutions-Operations" data-cta="Operations" data-title="Offerings" data-track="Global Header" href="/en/solutions/operations/" target="_self">Operations</a>
+</li>
+<li>
+<a data-at="Offerings-Solutions-Performance" data-cta="Performance" data-title="Offerings" data-track="Global Header" href="/en/solutions/performance/" target="_self">Performance</a>
+</li>
+<li>
+<a data-at="Offerings-Solutions-Subscription Options" data-cta="Subscription Options" data-title="Offerings" data-track="Global Header" href="/en/solutions/flex-subscription/" target="_self">Subscription Options</a>
+</li>
+<li>
+<a data-at="Offerings-Solutions-Cloud Services" data-cta="Cloud Services" data-title="Offerings" data-track="Global Header" href="/en/solutions/aveva-connect/" target="_self">Cloud Services</a>
+</li>
+<li>
+<a class="u-submenu-bold-cta" data-at="Offerings-Solutions-View All" data-cta="View All" data-title="Offerings" data-track="Global Header" href="/en/solutions/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-products">
+<li>
+<a data-at="Offerings-Products-AVEVA E3D Design" data-cta="AVEVA E3D Design" data-title="Offerings" data-track="Global Header" href="/en/products/e3d-design/" target="_self">AVEVA E3D Design</a>
+</li>
+<li>
+<a data-at="Offerings-Products-AVEVA Enterprise Resource Management" data-cta="AVEVA Enterprise Resource Management" data-title="Offerings" data-track="Global Header" href="/en/products/enterprise-resource-management/" target="_self">AVEVA Enterprise Resource Management</a>
+</li>
+<li>
+<a data-at="Offerings-Products-AVEVA System Platform" data-cta="AVEVA System Platform" data-title="Offerings" data-track="Global Header" href="/en/products/system-platform/" target="_self">AVEVA System Platform</a>
+</li>
+<li>
+<a data-at="Offerings-Products-AVEVA InTouch HMI" data-cta="AVEVA InTouch HMI" data-title="Offerings" data-track="Global Header" href="/en/products/intouch-hmi/" target="_self">AVEVA InTouch HMI</a>
+</li>
+<li>
+<a data-at="Offerings-Products-AVEVA Operations Control" data-cta="AVEVA Operations Control" data-title="Offerings" data-track="Global Header" href="/en/solutions/flex-subscription/aveva-operations-control/" target="_self">AVEVA Operations Control</a>
+</li>
+<li>
+<a data-at="Offerings-Products-AVEVA Predictive Analytics" data-cta="AVEVA Predictive Analytics" data-title="Offerings" data-track="Global Header" href="/en/products/predictive-analytics/" target="_self">AVEVA Predictive Analytics</a>
+</li>
+<li>
+<a data-at="Offerings-Products-AVEVA Insight" data-cta="AVEVA Insight" data-title="Offerings" data-track="Global Header" href="/en/products/insight/" target="_self">AVEVA Insight</a>
+</li>
+<li>
+<a data-at="Offerings-Products-PI System" data-cta="PI System" data-title="Offerings" data-track="Global Header" href="/en/products/pi-system/" target="_self">PI System</a>
+</li>
+<li>
+<a class="u-submenu-bold-cta" data-at="Offerings-Products-View All" data-cta="View All" data-title="Offerings" data-track="Global Header" href="/en/products/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-subscription-program">
+<li>
+<a data-at="Offerings-Subscription Program-AVEVA Flex Subscription" data-cta="AVEVA Flex Subscription" data-title="Offerings" data-track="Global Header" href="/en/solutions/flex-subscription/" target="_self">AVEVA Flex Subscription</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="level0-item" data-at="Resources" data-cta="Resources" data-track="Global Header" href="/en/perspectives/" target="_self">Resources</a>
+<div class="main-navbar-submenu">
+<div class="main-navbar-submenu__list">
+<ul>
+<li class="desktop-l1-item selected" data-id="desktop-blog">
+<a data-at="Resources-Blog" data-cta="Blog" data-title="Resources" data-track="Global Header" href="/en/perspectives/blog/" target="_self">Blog</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-success-stories">
+<a data-at="Resources-Success Stories" data-cta="Success Stories" data-title="Resources" data-track="Global Header" href="/en/perspectives/success-stories/" target="_self">Success Stories</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-webinars">
+<a data-at="Resources-Webinars" data-cta="Webinars" data-title="Resources" data-track="Global Header" href="/en/perspectives/webinars/" target="_self">Webinars</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-white-papers">
+<a data-at="Resources-White Papers" data-cta="White Papers" data-title="Resources" data-track="Global Header" href="/en/perspectives/white-papers/" target="_self">White Papers</a>
+</li>
+</ul>
+</div>
+<div aria-label="Main Navigation Submenu" class="submenu-content" role="navigation">
+<div class="main-navbar-submenu__sublist">
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-blog">
+<li>
+<a class="u-submenu-bold-cta" data-at="Resources-Blog-View All" data-cta="View All" data-title="Resources" data-track="Global Header" href="/en/perspectives/blog/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-success-stories">
+<li>
+<a class="u-submenu-bold-cta" data-at="Resources-Success Stories-View All" data-cta="View All" data-title="Resources" data-track="Global Header" href="/en/perspectives/success-stories/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-webinars">
+<li>
+<a class="u-submenu-bold-cta" data-at="Resources-Webinars-View All" data-cta="View All" data-title="Resources" data-track="Global Header" href="/en/perspectives/webinars/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-white-papers">
+<li>
+<a class="u-submenu-bold-cta" data-at="Resources-White Papers-View All" data-cta="View All" data-title="Resources" data-track="Global Header" href="/en/perspectives/white-papers/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="level0-item" data-at="About Us" data-cta="About Us" data-track="Global Header" href="/en/about/" target="_self">About Us</a>
+<div class="main-navbar-submenu">
+<div class="main-navbar-submenu__list">
+<ul>
+<li class="desktop-l1-item selected" data-id="desktop-about-us">
+<a data-at="About Us-About Us" data-cta="About Us" data-title="About Us" data-track="Global Header" href="/en/about/" target="_self">About Us</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-our-partners">
+<a data-at="About Us-Our Partners" data-cta="Our Partners" data-title="About Us" data-track="Global Header" href="/en/about/partners/" target="_self">Our Partners</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-news-and-press">
+<a data-at="About Us-News and Press" data-cta="News and Press" data-title="About Us" data-track="Global Header" href="/en/about/news/" target="_self">News and Press</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-events">
+<a data-at="About Us-Events" data-cta="Events" data-title="About Us" data-track="Global Header" href="/en/about/events/" target="_self">Events</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-investors">
+<a data-at="About Us-Investors" data-cta="Investors" data-title="About Us" data-track="Global Header" href="https://investors.aveva.com/" rel="noopener noreferrer" target="_blank">Investors</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-sustainability">
+<a data-at="About Us-Sustainability" data-cta="Sustainability" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/our-approach/" target="_self">Sustainability</a>
+</li>
+<li class="desktop-l1-item" data-id="desktop-careers">
+<a data-at="About Us-Careers" data-cta="Careers" data-title="About Us" data-track="Global Header" href="/en/about/careers/" target="_self">Careers</a>
+</li>
+</ul>
+</div>
+<div aria-label="Main Navigation Submenu" class="submenu-content" role="navigation">
+<div class="main-navbar-submenu__sublist">
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-about-us">
+<li>
+<a data-at="About Us-About Us-About AVEVA" data-cta="About AVEVA" data-title="About Us" data-track="Global Header" href="/en/about/about-aveva/" target="_self">About AVEVA</a>
+</li>
+<li>
+<a data-at="About Us-About Us-Diversity &amp; Inclusion" data-cta="Diversity &amp; Inclusion" data-title="About Us" data-track="Global Header" href="/en/about/about-aveva/diversity-equity-inclusion/" target="_self">Diversity &amp; Inclusion</a>
+</li>
+<li>
+<a data-at="About Us-About Us-Leadership" data-cta="Leadership" data-title="About Us" data-track="Global Header" href="/en/about/about-aveva/leadership/" target="_self">Leadership</a>
+</li>
+<li>
+<a data-at="About Us-About Us-Board of Directors" data-cta="Board of Directors" data-title="About Us" data-track="Global Header" href="/en/about/about-aveva/board-of-directors/" target="_self">Board of Directors</a>
+</li>
+<li>
+<a data-at="About Us-About Us-Global Offices" data-cta="Global Offices" data-title="About Us" data-track="Global Header" href="/en/about/about-aveva/locations/" target="_self">Global Offices</a>
+</li>
+<li>
+<a class="u-submenu-bold-cta" data-at="About Us-About Us-View All" data-cta="View All" data-title="About Us" data-track="Global Header" href="/en/about/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-our-partners">
+<li>
+<a data-at="About Us-Our Partners-AVEVA Select" data-cta="AVEVA Select" data-title="About Us" data-track="Global Header" href="/en/about/partners/aveva-select/" target="_self">AVEVA Select</a>
+</li>
+<li>
+<a data-at="About Us-Our Partners-Sales &amp; Support Partners" data-cta="Sales &amp; Support Partners" data-title="About Us" data-track="Global Header" href="/en/about/partners/sales-and-support/" target="_self">Sales &amp; Support Partners</a>
+</li>
+<li>
+<a data-at="About Us-Our Partners-System Integrators" data-cta="System Integrators" data-title="About Us" data-track="Global Header" href="/en/about/partners/system-integrators/" target="_self">System Integrators</a>
+</li>
+<li>
+<a data-at="About Us-Our Partners-Alliance Partners" data-cta="Alliance Partners" data-title="About Us" data-track="Global Header" href="/en/about/partners/global-alliances/" target="_self">Alliance Partners</a>
+</li>
+<li>
+<a data-at="About Us-Our Partners-Partner Login" data-cta="Partner Login" data-title="About Us" data-track="Global Header" href="https://partners.aveva.com/English/" target="_self">Partner Login</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-news-and-press">
+<li>
+<a data-at="About Us-News and Press-Newsroom" data-cta="Newsroom" data-title="About Us" data-track="Global Header" href="/en/about/news/press-releases/" target="_self">Newsroom</a>
+</li>
+<li>
+<a data-at="About Us-News and Press-Press Contacts" data-cta="Press Contacts" data-title="About Us" data-track="Global Header" href="/en/about/news/press-contacts/" target="_self">Press Contacts</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-events">
+<li>
+<a data-at="About Us-Events-AVEVA World Digital" data-cta="AVEVA World Digital" data-title="About Us" data-track="Global Header" href="https://www.avevaworld.com/" rel="noopener noreferrer" target="_blank">AVEVA World Digital</a>
+</li>
+<li>
+<a data-at="About Us-Events-Find an Event" data-cta="Find an Event" data-title="About Us" data-track="Global Header" href="/en/about/events/" target="_self">Find an Event</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-investors">
+<li>
+<a class="u-submenu-bold-cta" data-at="About Us-Investors-View All" data-cta="View All" data-title="About Us" data-track="Global Header" href="https://investors.aveva.com/" rel="noopener noreferrer" target="_blank">View All</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-sustainability">
+<li>
+<a data-at="About Us-Sustainability-Our Approach" data-cta="Our Approach" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/our-approach/" target="_self">Our Approach</a>
+</li>
+<li>
+<a data-at="About Us-Sustainability-Impact Stories" data-cta="Impact Stories" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/impact-stories/" target="_self">Impact Stories</a>
+</li>
+<li>
+<a data-at="About Us-Sustainability-Technology Handprint" data-cta="Technology Handprint" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/technology-handprint/" target="_self">Technology Handprint</a>
+</li>
+<li>
+<a data-at="About Us-Sustainability-Operational Footprint" data-cta="Operational Footprint" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/operational-footprint/" target="_self">Operational Footprint</a>
+</li>
+<li>
+<a data-at="About Us-Sustainability-Inclusive Culture" data-cta="Inclusive Culture" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/inclusive-culture/" target="_self">Inclusive Culture</a>
+</li>
+<li>
+<a data-at="About Us-Sustainability-ESG Reporting" data-cta="ESG Reporting" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/esg-reporting/" target="_self">ESG Reporting</a>
+</li>
+</ul>
+</div>
+<div class="sublist-wrapper">
+<ul class="u-hide" id="desktop-careers">
+<li>
+<a data-at="About Us-Careers-Early Careers" data-cta="Early Careers" data-title="About Us" data-track="Global Header" href="/en/about/careers/early-careers/" target="_self">Early Careers</a>
+</li>
+<li>
+<a data-at="About Us-Careers-Action for Good" data-cta="Action for Good" data-title="About Us" data-track="Global Header" href="/en/about/careers/action-for-good/" target="_self">Action for Good</a>
+</li>
+<li>
+<a data-at="About Us-Careers-Our Benefits" data-cta="Our Benefits" data-title="About Us" data-track="Global Header" href="/en/about/careers/our-benefits/" target="_self">Our Benefits</a>
+</li>
+<li>
+<a data-at="About Us-Careers-How we Hire" data-cta="How we Hire" data-title="About Us" data-track="Global Header" href="/en/about/careers/vacancies/how-we-hire/" target="_self">How we Hire</a>
+</li>
+<li>
+<a data-at="About Us-Careers-Current Opportunities" data-cta="Current Opportunities" data-title="About Us" data-track="Global Header" href="/en/about/careers/vacancies/" target="_self">Current Opportunities</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+<div class="main-navbar__actions">
+<span class="icon-searching search__action" data-at="Search" data-cta="Search" data-track="Global Header"></span>
+</div>
+</div>
+<div class="main-navbar-responsive-wrapper u-hide">
+<div aria-label="Responsive Navigation" class="container-md main-navbar-responsive" role="navigation">
+<ul class="main-navbar-responsive__main-list level1">
+<li class="l1-item">
+<a data-at="Industries" data-cta="Industries" data-id="industries" data-track="Global Header" href="/en/industries/" target="_self">Industries
+<i class="icon-right-arrow l1-right--arrow"></i>
+</a>
+</li>
+<li class="l1-item">
+<a data-at="Offerings" data-cta="Offerings" data-id="offerings" data-track="Global Header" href="/en/offerings/" target="_self">Offerings
+<i class="icon-right-arrow l1-right--arrow"></i>
+</a>
+</li>
+<li class="l1-item">
+<a data-at="Resources" data-cta="Resources" data-id="resources" data-track="Global Header" href="/en/perspectives/" target="_self">Resources
+<i class="icon-right-arrow l1-right--arrow"></i>
+</a>
+</li>
+<li class="l1-item">
+<a data-at="About Us" data-cta="About Us" data-id="about-us" data-track="Global Header" href="/en/about/" target="_self">About Us
+<i class="icon-right-arrow l1-right--arrow"></i>
+</a>
+</li>
+</ul>
+<ul class="main-navbar-responsive__utility-list">
+<li>
+<a href="https://investors.aveva.com/" rel="noopener noreferrer" target="_blank">Investors</a>
+</li>
+<li>
+<a href="https://www.aveva.com/en/about/partners/" target="_self">Partners</a>
+</li>
+<li>
+<a href="/en/academia/" target="_self">Academia</a>
+</li>
+<li>
+<a href="/en/training/" target="_self">Training</a>
+</li>
+<li>
+<a href="/en/support-and-success/" target="_self">Support &amp; Success</a>
+</li>
+<li>
+<a href="/en/contact/" target="_self">Contact Us</a>
+</li>
+</ul>
+<div class="responsive-selector">
+<i class="icon-globe-2"></i>
+<span class="responsive-selector__lang">English</span>
+<i class="icon-right-arrow lang-right--arrow"></i>
+</div>
+</div>
+<div class="responsive-selector-list">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="lang-back-btn" href="#">Back</a>
+<ul>
+<li>
+<a class="resp-lang-container" href="/en/legal/privacy-policy/">
+<span class="checkmark selected"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/English.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/English.png"/>
+<span class="responsive-selector-list__lang">English</span>
+</a>
+</li>
+<li>
+<a class="resp-lang-container" href="https://www.aveva.cn/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/Chinese.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/Chinese.png"/>
+<span class="responsive-selector-list__lang">Chinese</span>
+</a>
+</li>
+<li>
+<a class="resp-lang-container" href="/fr-fr/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/French.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/French.png"/>
+<span class="responsive-selector-list__lang">French</span>
+</a>
+</li>
+<li>
+<a class="resp-lang-container" href="/de-de/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/German.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/German.png"/>
+<span class="responsive-selector-list__lang">German</span>
+</a>
+</li>
+<li>
+<a class="resp-lang-container" href="/ja-jp/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/Japanese.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/Japanese.png"/>
+<span class="responsive-selector-list__lang">Japanese</span>
+</a>
+</li>
+<li>
+<a class="resp-lang-container" href="/ko-kr/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/Korean.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/Korean.png"/>
+<span class="responsive-selector-list__lang">Korean</span>
+</a>
+</li>
+<li>
+<a class="resp-lang-container" href="/pt-br/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/Portuguese.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/Portuguese.png"/>
+<span class="responsive-selector-list__lang">Portuguese</span>
+</a>
+</li>
+<li>
+<a class="resp-lang-container" href="/ru-ru/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/Russian.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/Russian.png"/>
+<span class="responsive-selector-list__lang">Russian</span>
+</a>
+</li>
+<li>
+<a class="resp-lang-container" href="/es-es/">
+<span class="checkmark"></span>
+<img alt="/content/dam/aveva/images/icons/language-selector/Spanish.png" class="lang-image" data-img-path="/content/dam/aveva/images/icons/language-selector/Spanish.png"/>
+<span class="responsive-selector-list__lang">Spanish</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="responsive-selector-list">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="lang-back-btn" href="#">Back</a>
+<ul>
+<li>
+<div class="resp-lang-container">
+<span class="checkmark"></span>
+<img/>
+<a class="responsive-selector-list__lang"></a>
+</div>
+</li>
+</ul>
+</div>
+<div aria-label="Level 2 Navigation" class="level2 u-hide" id="industries" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level2__backBtn" href="#">Back</a>
+<ul>
+<li class="l2-item">
+<a data-at="Industries-Chemicals" data-cta="Chemicals" data-id="chemicals" data-title="Industries" data-track="Global Header" href="/en/industries/chemicals/" target="_self">Chemicals
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="Industries-Food and Beverage, CPG" data-cta="Food and Beverage, CPG" data-id="food-and-beverage--cpg" data-title="Industries" data-track="Global Header" href="/en/industries/food-beverage/" target="_self">Food and Beverage, CPG
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="Industries-Infrastructure" data-cta="Infrastructure" data-id="infrastructure" data-title="Industries" data-track="Global Header" href="/en/industries/infrastructure/" target="_self">Infrastructure
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="Industries-Manufacturing" data-cta="Manufacturing" data-id="manufacturing" data-title="Industries" data-track="Global Header" href="/en/industries/manufacturing/" target="_self">Manufacturing
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="Industries-Marine" data-cta="Marine" data-id="marine" data-title="Industries" data-track="Global Header" href="/en/industries/marine/" target="_self">Marine
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="Industries-Mining" data-cta="Mining" data-id="mining" data-title="Industries" data-track="Global Header" href="/en/industries/mining/" target="_self">Mining
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="Industries-Oil and Gas" data-cta="Oil and Gas" data-id="oil-and-gas" data-title="Industries" data-track="Global Header" href="/en/industries/oil-gas/" target="_self">Oil and Gas
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="Industries-Power and Utilities" data-cta="Power and Utilities" data-id="power-and-utilities" data-title="Industries" data-track="Global Header" href="/en/industries/power-utilities/" target="_self">Power and Utilities
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="Industries-Water and Wastewater" data-cta="Water and Wastewater" data-id="water-and-wastewater" data-title="Industries" data-track="Global Header" href="/en/industries/power-utilities/water-wastewater/" target="_self">Water and Wastewater
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 2 Navigation" class="level2 u-hide" id="offerings" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level2__backBtn" href="#">Back</a>
+<ul>
+<li class="l2-item">
+<a data-at="Offerings-Solutions" data-cta="Solutions" data-id="solutions" data-title="Offerings" data-track="Global Header" href="/en/solutions/" target="_self">Solutions
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="Offerings-Products" data-cta="Products" data-id="products" data-title="Offerings" data-track="Global Header" href="/en/products/" target="_self">Products
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="Offerings-Subscription Program" data-cta="Subscription Program" data-id="subscription-program" data-title="Offerings" data-track="Global Header" href="/en/solutions/flex-subscription/" target="_self">Subscription Program
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 2 Navigation" class="level2 u-hide" id="resources" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level2__backBtn" href="#">Back</a>
+<ul>
+<li class="l2-item">
+<a data-at="Resources-Blog" data-cta="Blog" data-id="blog" data-title="Resources" data-track="Global Header" href="/en/perspectives/blog/" target="_self">Blog
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="Resources-Success Stories" data-cta="Success Stories" data-id="success-stories" data-title="Resources" data-track="Global Header" href="/en/perspectives/success-stories/" target="_self">Success Stories
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="Resources-Webinars" data-cta="Webinars" data-id="webinars" data-title="Resources" data-track="Global Header" href="/en/perspectives/webinars/" target="_self">Webinars
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="Resources-White Papers" data-cta="White Papers" data-id="white-papers" data-title="Resources" data-track="Global Header" href="/en/perspectives/white-papers/" target="_self">White Papers
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 2 Navigation" class="level2 u-hide" id="about-us" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level2__backBtn" href="#">Back</a>
+<ul>
+<li class="l2-item">
+<a data-at="About Us-About Us" data-cta="About Us" data-id="about-us" data-title="About Us" data-track="Global Header" href="/en/about/" target="_self">About Us
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="About Us-Our Partners" data-cta="Our Partners" data-id="our-partners" data-title="About Us" data-track="Global Header" href="/en/about/partners/" target="_self">Our Partners
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="About Us-News and Press" data-cta="News and Press" data-id="news-and-press" data-title="About Us" data-track="Global Header" href="/en/about/news/" target="_self">News and Press
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="About Us-Events" data-cta="Events" data-id="events" data-title="About Us" data-track="Global Header" href="/en/about/events/" target="_self">Events
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="About Us-Investors" data-cta="Investors" data-id="investors" data-title="About Us" data-track="Global Header" href="https://investors.aveva.com/" rel="noopener noreferrer" target="_blank">Investors
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="About Us-Sustainability" data-cta="Sustainability" data-id="sustainability" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/our-approach/" target="_self">Sustainability
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+<li class="l2-item">
+<a data-at="About Us-Careers" data-cta="Careers" data-id="careers" data-title="About Us" data-track="Global Header" href="/en/about/careers/" target="_self">Careers
+<i class="icon-right-arrow l2-right--arrow"></i>
+</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="chemicals" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Industries-Chemicals-Basic Chemicals" data-id="basic-chemicals" data-title="Industries" data-track="Global Header" href="/en/industries/chemicals/basic-chemicals/" target="_self">Basic Chemicals</a>
+</li>
+<li>
+<a data-at="Industries-Chemicals-Specialty Chemicals" data-id="specialty-chemicals" data-title="Industries" data-track="Global Header" href="/en/industries/chemicals/specialty-chemicals/" target="_self">Specialty Chemicals</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="food-and-beverage--cpg" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Industries-Food and Beverage, CPG-Dairy" data-id="dairy" data-title="Industries" data-track="Global Header" href="/en/industries/food-beverage/dairy/" target="_self">Dairy</a>
+</li>
+<li>
+<a data-at="Industries-Food and Beverage, CPG-Beverages and Brewing" data-id="beverages-and-brewing" data-title="Industries" data-track="Global Header" href="/en/industries/food-beverage/beverages-brewing/" target="_self">Beverages and Brewing</a>
+</li>
+<li>
+<a data-at="Industries-Food and Beverage, CPG-Grains, Baked Goods, and Confectionery" data-id="grains--baked-goods--and-confectionery" data-title="Industries" data-track="Global Header" href="/en/industries/food-beverage/grains-baked-goods-confectionery/" target="_self">Grains, Baked Goods, and Confectionery</a>
+</li>
+<li>
+<a data-at="Industries-Food and Beverage, CPG-Sugar, Oil and Biofuels" data-id="sugar--oil-and-biofuels" data-title="Industries" data-track="Global Header" href="/en/industries/food-beverage/sugar-oil-biofuels/" target="_self">Sugar, Oil and Biofuels</a>
+</li>
+<li>
+<a data-at="Industries-Food and Beverage, CPG-Consumer Packaged Goods" data-id="consumer-packaged-goods" data-title="Industries" data-track="Global Header" href="/en/industries/food-beverage/consumer-packaged-goods/" target="_self">Consumer Packaged Goods</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="infrastructure" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Industries-Infrastructure-Data Centers" data-id="data-centers" data-title="Industries" data-track="Global Header" href="/en/industries/infrastructure/data-centers/" target="_self">Data Centers</a>
+</li>
+<li>
+<a data-at="Industries-Infrastructure-Smart Cities" data-id="smart-cities" data-title="Industries" data-track="Global Header" href="/en/industries/infrastructure/smart-cities/" target="_self">Smart Cities</a>
+</li>
+<li>
+<a data-at="Industries-Infrastructure-Transportation" data-id="transportation" data-title="Industries" data-track="Global Header" href="/en/industries/infrastructure/transportation/" target="_self">Transportation</a>
+</li>
+<li>
+<a data-at="Industries-Infrastructure-Facility Management" data-id="facility-management" data-title="Industries" data-track="Global Header" href="/en/industries/infrastructure/facility-management/" target="_self">Facility Management</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="manufacturing" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Industries-Manufacturing-Discrete Manufacturing" data-id="discrete-manufacturing" data-title="Industries" data-track="Global Header" href="/en/industries/manufacturing/discrete-manufacturing/" target="_self">Discrete Manufacturing</a>
+</li>
+<li>
+<a data-at="Industries-Manufacturing-Life Sciences" data-id="life-sciences" data-title="Industries" data-track="Global Header" href="/en/industries/manufacturing/life-sciences/" target="_self">Life Sciences</a>
+</li>
+<li>
+<a data-at="Industries-Manufacturing-Pulp and Paper" data-id="pulp-and-paper" data-title="Industries" data-track="Global Header" href="/en/industries/manufacturing/pulp-paper/" target="_self">Pulp and Paper</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="marine" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Industries-Marine-Ship Building" data-id="ship-building" data-title="Industries" data-track="Global Header" href="/en/industries/marine/ship-building/" target="_self">Ship Building</a>
+</li>
+<li>
+<a data-at="Industries-Marine-Ship Operations" data-id="ship-operations" data-title="Industries" data-track="Global Header" href="/en/industries/marine/ship-operations/" target="_self">Ship Operations</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="mining" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Industries-Mining-View All" data-id="view-all" data-title="Industries" data-track="Global Header" href="/en/industries/mining/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="oil-and-gas" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Industries-Oil and Gas-Exploration and Production" data-id="exploration-and-production" data-title="Industries" data-track="Global Header" href="/en/industries/oil-gas/exploration-production/" target="_self">Exploration and Production</a>
+</li>
+<li>
+<a data-at="Industries-Oil and Gas-Transportation Pipelines" data-id="transportation-pipelines" data-title="Industries" data-track="Global Header" href="/en/industries/oil-gas/transportation-pipelines/" target="_self">Transportation Pipelines</a>
+</li>
+<li>
+<a data-at="Industries-Oil and Gas-Gas/LNG Processing" data-id="gas/lng-processing" data-title="Industries" data-track="Global Header" href="/en/industries/oil-gas/lng-gas-processing/" target="_self">Gas/LNG Processing</a>
+</li>
+<li>
+<a data-at="Industries-Oil and Gas-Refining" data-id="refining" data-title="Industries" data-track="Global Header" href="/en/industries/oil-gas/refining/" target="_self">Refining</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="power-and-utilities" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Industries-Power and Utilities-Power Generation" data-id="power-generation" data-title="Industries" data-track="Global Header" href="/en/industries/power-utilities/power-generation/" target="_self">Power Generation</a>
+</li>
+<li>
+<a data-at="Industries-Power and Utilities-Transmission Distribution" data-id="transmission-distribution" data-title="Industries" data-track="Global Header" href="/en/industries/power-utilities/transmission-distribution/" target="_self">Transmission Distribution</a>
+</li>
+<li>
+<a data-at="Industries-Power and Utilities-Water Wastewater" data-id="water-wastewater" data-title="Industries" data-track="Global Header" href="/en/industries/power-utilities/water-wastewater/" target="_self">Water Wastewater</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="water-and-wastewater" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="solutions" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Offerings-Solutions-Digital Transformation" data-id="digital-transformation" data-title="Offerings" data-track="Global Header" href="/en/solutions/digital-transformation/" target="_self">Digital Transformation</a>
+</li>
+<li>
+<a data-at="Offerings-Solutions-Engineering" data-id="engineering" data-title="Offerings" data-track="Global Header" href="/en/solutions/engineering/" target="_self">Engineering</a>
+</li>
+<li>
+<a data-at="Offerings-Solutions-Operations" data-id="operations" data-title="Offerings" data-track="Global Header" href="/en/solutions/operations/" target="_self">Operations</a>
+</li>
+<li>
+<a data-at="Offerings-Solutions-Performance" data-id="performance" data-title="Offerings" data-track="Global Header" href="/en/solutions/performance/" target="_self">Performance</a>
+</li>
+<li>
+<a data-at="Offerings-Solutions-Subscription Options" data-id="subscription-options" data-title="Offerings" data-track="Global Header" href="/en/solutions/flex-subscription/" target="_self">Subscription Options</a>
+</li>
+<li>
+<a data-at="Offerings-Solutions-Cloud Services" data-id="cloud-services" data-title="Offerings" data-track="Global Header" href="/en/solutions/aveva-connect/" target="_self">Cloud Services</a>
+</li>
+<li>
+<a data-at="Offerings-Solutions-View All" data-id="view-all" data-title="Offerings" data-track="Global Header" href="/en/solutions/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="products" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Offerings-Products-AVEVA E3D Design" data-id="aveva-e3d-design" data-title="Offerings" data-track="Global Header" href="/en/products/e3d-design/" target="_self">AVEVA E3D Design</a>
+</li>
+<li>
+<a data-at="Offerings-Products-AVEVA Enterprise Resource Management" data-id="aveva-enterprise-resource-management" data-title="Offerings" data-track="Global Header" href="/en/products/enterprise-resource-management/" target="_self">AVEVA Enterprise Resource Management</a>
+</li>
+<li>
+<a data-at="Offerings-Products-AVEVA System Platform" data-id="aveva-system-platform" data-title="Offerings" data-track="Global Header" href="/en/products/system-platform/" target="_self">AVEVA System Platform</a>
+</li>
+<li>
+<a data-at="Offerings-Products-AVEVA InTouch HMI" data-id="aveva-intouch-hmi" data-title="Offerings" data-track="Global Header" href="/en/products/intouch-hmi/" target="_self">AVEVA InTouch HMI</a>
+</li>
+<li>
+<a data-at="Offerings-Products-AVEVA Operations Control" data-id="aveva-operations-control" data-title="Offerings" data-track="Global Header" href="/en/solutions/flex-subscription/aveva-operations-control/" target="_self">AVEVA Operations Control</a>
+</li>
+<li>
+<a data-at="Offerings-Products-AVEVA Predictive Analytics" data-id="aveva-predictive-analytics" data-title="Offerings" data-track="Global Header" href="/en/products/predictive-analytics/" target="_self">AVEVA Predictive Analytics</a>
+</li>
+<li>
+<a data-at="Offerings-Products-AVEVA Insight" data-id="aveva-insight" data-title="Offerings" data-track="Global Header" href="/en/products/insight/" target="_self">AVEVA Insight</a>
+</li>
+<li>
+<a data-at="Offerings-Products-PI System" data-id="pi-system" data-title="Offerings" data-track="Global Header" href="/en/products/pi-system/" target="_self">PI System</a>
+</li>
+<li>
+<a data-at="Offerings-Products-View All" data-id="view-all" data-title="Offerings" data-track="Global Header" href="/en/products/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="subscription-program" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Offerings-Subscription Program-AVEVA Flex Subscription" data-id="aveva-flex-subscription" data-title="Offerings" data-track="Global Header" href="/en/solutions/flex-subscription/" target="_self">AVEVA Flex Subscription</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="blog" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Resources-Blog-View All" data-id="view-all" data-title="Resources" data-track="Global Header" href="/en/perspectives/blog/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="success-stories" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Resources-Success Stories-View All" data-id="view-all" data-title="Resources" data-track="Global Header" href="/en/perspectives/success-stories/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="webinars" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Resources-Webinars-View All" data-id="view-all" data-title="Resources" data-track="Global Header" href="/en/perspectives/webinars/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="white-papers" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="Resources-White Papers-View All" data-id="view-all" data-title="Resources" data-track="Global Header" href="/en/perspectives/white-papers/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="about-us" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="About Us-About Us-About AVEVA" data-id="about-aveva" data-title="About Us" data-track="Global Header" href="/en/about/about-aveva/" target="_self">About AVEVA</a>
+</li>
+<li>
+<a data-at="About Us-About Us-Diversity &amp; Inclusion" data-id="diversity-&amp;-inclusion" data-title="About Us" data-track="Global Header" href="/en/about/about-aveva/diversity-equity-inclusion/" target="_self">Diversity &amp; Inclusion</a>
+</li>
+<li>
+<a data-at="About Us-About Us-Leadership" data-id="leadership" data-title="About Us" data-track="Global Header" href="/en/about/about-aveva/leadership/" target="_self">Leadership</a>
+</li>
+<li>
+<a data-at="About Us-About Us-Board of Directors" data-id="board-of-directors" data-title="About Us" data-track="Global Header" href="/en/about/about-aveva/board-of-directors/" target="_self">Board of Directors</a>
+</li>
+<li>
+<a data-at="About Us-About Us-Global Offices" data-id="global-offices" data-title="About Us" data-track="Global Header" href="/en/about/about-aveva/locations/" target="_self">Global Offices</a>
+</li>
+<li>
+<a data-at="About Us-About Us-View All" data-id="view-all" data-title="About Us" data-track="Global Header" href="/en/about/" target="_self">View All</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="our-partners" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="About Us-Our Partners-AVEVA Select" data-id="aveva-select" data-title="About Us" data-track="Global Header" href="/en/about/partners/aveva-select/" target="_self">AVEVA Select</a>
+</li>
+<li>
+<a data-at="About Us-Our Partners-Sales &amp; Support Partners" data-id="sales-&amp;-support-partners" data-title="About Us" data-track="Global Header" href="/en/about/partners/sales-and-support/" target="_self">Sales &amp; Support Partners</a>
+</li>
+<li>
+<a data-at="About Us-Our Partners-System Integrators" data-id="system-integrators" data-title="About Us" data-track="Global Header" href="/en/about/partners/system-integrators/" target="_self">System Integrators</a>
+</li>
+<li>
+<a data-at="About Us-Our Partners-Alliance Partners" data-id="alliance-partners" data-title="About Us" data-track="Global Header" href="/en/about/partners/global-alliances/" target="_self">Alliance Partners</a>
+</li>
+<li>
+<a data-at="About Us-Our Partners-Partner Login" data-id="partner-login" data-title="About Us" data-track="Global Header" href="https://partners.aveva.com/English/" target="_self">Partner Login</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="news-and-press" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="About Us-News and Press-Newsroom" data-id="newsroom" data-title="About Us" data-track="Global Header" href="/en/about/news/press-releases/" target="_self">Newsroom</a>
+</li>
+<li>
+<a data-at="About Us-News and Press-Press Contacts" data-id="press-contacts" data-title="About Us" data-track="Global Header" href="/en/about/news/press-contacts/" target="_self">Press Contacts</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="events" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="About Us-Events-AVEVA World Digital" data-id="aveva-world-digital" data-title="About Us" data-track="Global Header" href="https://www.avevaworld.com/" rel="noopener noreferrer" target="_blank">AVEVA World Digital</a>
+</li>
+<li>
+<a data-at="About Us-Events-Find an Event" data-id="find-an-event" data-title="About Us" data-track="Global Header" href="/en/about/events/" target="_self">Find an Event</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="investors" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="About Us-Investors-View All" data-id="view-all" data-title="About Us" data-track="Global Header" href="https://investors.aveva.com/" rel="noopener noreferrer" target="_blank">View All</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="sustainability" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="About Us-Sustainability-Our Approach" data-id="our-approach" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/our-approach/" target="_self">Our Approach</a>
+</li>
+<li>
+<a data-at="About Us-Sustainability-Impact Stories" data-id="impact-stories" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/impact-stories/" target="_self">Impact Stories</a>
+</li>
+<li>
+<a data-at="About Us-Sustainability-Technology Handprint" data-id="technology-handprint" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/technology-handprint/" target="_self">Technology Handprint</a>
+</li>
+<li>
+<a data-at="About Us-Sustainability-Operational Footprint" data-id="operational-footprint" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/operational-footprint/" target="_self">Operational Footprint</a>
+</li>
+<li>
+<a data-at="About Us-Sustainability-Inclusive Culture" data-id="inclusive-culture" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/inclusive-culture/" target="_self">Inclusive Culture</a>
+</li>
+<li>
+<a data-at="About Us-Sustainability-ESG Reporting" data-id="esg-reporting" data-title="About Us" data-track="Global Header" href="/en/about/sustainability/esg-reporting/" target="_self">ESG Reporting</a>
+</li>
+</ul>
+</div>
+<div aria-label="Level 3 Navigation" class="level3 u-hide" id="careers" role="navigation">
+<i class="icon-left-arrow left--arrow"></i>
+<a class="level3__backBtn" href="#">
+Back <span class="level3__backBtn-text"></span>
+</a>
+<ul>
+<li>
+<a data-at="About Us-Careers-Early Careers" data-id="early-careers" data-title="About Us" data-track="Global Header" href="/en/about/careers/early-careers/" target="_self">Early Careers</a>
+</li>
+<li>
+<a data-at="About Us-Careers-Action for Good" data-id="action-for-good" data-title="About Us" data-track="Global Header" href="/en/about/careers/action-for-good/" target="_self">Action for Good</a>
+</li>
+<li>
+<a data-at="About Us-Careers-Our Benefits" data-id="our-benefits" data-title="About Us" data-track="Global Header" href="/en/about/careers/our-benefits/" target="_self">Our Benefits</a>
+</li>
+<li>
+<a data-at="About Us-Careers-How we Hire" data-id="how-we-hire" data-title="About Us" data-track="Global Header" href="/en/about/careers/vacancies/how-we-hire/" target="_self">How we Hire</a>
+</li>
+<li>
+<a data-at="About Us-Careers-Current Opportunities" data-id="current-opportunities" data-title="About Us" data-track="Global Header" href="/en/about/careers/vacancies/" target="_self">Current Opportunities</a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<div class="main-navbar-search">
+<div class="main-navbar-search-content container-md">
+<input class="currentPagePath" type="hidden" value="/content/aveva/en/legal/privacy-policy/"/>
+<form class="global-search-form">
+<span class="icon-searching form-search-icon"></span>
+<input class="global-search-form__input" placeholder="Search by product name or partner or keyword" type="text"/>
+<input aria-labelledby="global-search-box" class="aveva-select-field global-search-form-input-mobile" placeholder="Search by product name" type="text"/>
+<span class="global-search-form__cross">
+<svg data-name="Group 726" height="24" id="Group_726" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<rect data-name="Rectangle 438" fill="#fff" height="24" id="Rectangle_438" width="24"></rect>
+<g data-name="Group 346" id="Group_346" transform="translate(5 5)">
+<line data-name="Line 65" fill="none" id="Line_65" stroke="#363d42" stroke-width="2" transform="translate(0)" x2="14" y2="14"></line>
+<line data-name="Line 66" fill="none" id="Line_66" stroke="#363d42" stroke-width="2" transform="translate(14) rotate(90)" x2="14" y2="14"></line>
+</g>
+</svg>
+</span>
+</form>
+</div>
+<div class="search-result container-md" data-char-limit="3" data-result-count="5" data-search-url=".search.html">
+<div class="search-result-wrapper container">
+</div>
+<div class="view-all-container">
+<a class="see-all-btn" href="/en/search-results/">See All Results</a>
+</div>
+</div>
+</div>
+</header>
+<div class="u-search-overlay u-hide"></div>
+<div class="u-header-overlay u-hide"></div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+<div class="main-container aem-GridColumn aem-GridColumn--default--12">
+<main id="main-content">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="herobanner aem-GridColumn aem-GridColumn--default--12">
+<section abstyle="background-image: linear-gradient(110deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 40%,rgba(0, 0, 0, 0) 60%),url(/content/dam/aveva/images/banners/top/testimonials-bg-img.png);" class="hero-banner u-hero-height-medium u-banner-light" data-bg="/content/dam/aveva/images/banners/top/testimonials-bg-img.png">
+<div class="container-md hero-banner__wrapper">
+<div class="hero-banner-left-section">
+<div class="breadcrumb-wrapper"><nav aria-label="Breadcrumb" class="cmp-breadcrumb">
+<ol class="cmp-breadcrumb__list" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+<li class="cmp-breadcrumb__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+<a class="cmp-breadcrumb__item-link" href="/en/" itemprop="item">
+<span itemprop="name">Home</span>
+</a>
+<meta content="1" itemprop="position"/>
+</li>
+<li class="cmp-breadcrumb__item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+<a class="cmp-breadcrumb__item-link" href="/en/legal/" itemprop="item">
+<span itemprop="name">Legal</span>
+</a>
+<meta content="2" itemprop="position"/>
+</li>
+<li class="cmp-breadcrumb__last-item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+<span itemprop="name">AVEVA Privacy Policy</span>
+<meta content="3" itemprop="position"/>
+</li>
+</ol>
+</nav>
+</div>
+<div class="hero-banner-content">
+<div>
+<section>
+<div class="heading-horizontalline-container">
+<div class="heading-horizontalline-container__wrapper">
+<div class="heading">
+<h1>AVEVA Privacy Policy</h1>
+</div>
+<span class="hr"></span>
+</div>
+</div>
+</section>
+</div>
+<div class="hero-banner-btn-wrapper">
+<div class="smartbutton embed section">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+</div>
+</div>
+<div class="smartbutton embed section">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+</div>
+</div>
+<div class="smartbutton embed section">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+<h2 class="background-container__heading">Privacy Policy</h2>
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p>This website is operated by AVEVA Group PLC and the AVEVA group of companies (“AVEVA” or “we”), some of which are located in countries outside the European Economic Area. AVEVA and its associated companies will use the information we collect from you in accordance with this policy. A list of AVEVA Group PLC’s associated companies is available on request. </p>
+<p>This policy describes how we use your personal data when you use our website (https://www.aveva.com).  We have provided this policy to ensure that individuals who use our website understand what personal data we may collect and hold about them, what we may use it for and how we keep it safe.  You have legal rights to access the personal data that we hold about you and to control how we use it which are also explained in this policy.</p>
+<p>You can read, print and save this whole policy or click on the links below to see specific information about:</p>
+<p><a href="#whoweare" target="_self">Who we are and how you can contact us</a><br/>
+<a href="#whatpersonaldata" target="_self">What personal data we collect about you</a><br/>
+<a href="#whatweuseyourpersonaldatafor" target="_self">What we use your personal data for</a><br/>
+<a href="#whenweneedyourconsent" target="_self">When we need your consent to use your personal data</a><br/>
+<a href="#personaldata" target="_self">Personal data you are legally obliged to provide</a><br/>
+<a href="#yourrights" target="_self">Your rights to know what personal data we hold and to control how we use it</a><br/>
+<a href="#automateddecision" target="_self">Automated decision making and profiling</a><br/>
+<a href="#whenwewillsharewithothers" target="_self">When we will share your personal data with others</a><br/>
+<a href="#howwekeepdatasafe" target="_self">How we keep your personal data safe</a><br/>
+<a href="#howweuseyourpersonaldata" target="_self">How we use your personal data for marketing</a><br/>
+<a href="#sendtoothercontries" target="_self">When we will send your personal data to other countries</a><br/>
+<a href="#howlongwekeep" target="_self">How long we keep your personal data</a><br/>
+<a href="#makecomplaint" target="_self">How you can make a complaint</a><br/>
+<a href="#policyuptodate" target="_self">How we keep this policy up to date</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="whoweare" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>Who we are and how you can contact us</b></p>
+<p>AVEVA Group PLC is a public limited company. Our registered company number is 02937296 and our registered address is at High Cross, Madingley Road, Cambridge, CB3 0HB.  </p>
+<p>For general queries about our website please use the “Contact Us” form at <a href="https://www.aveva.com/en/contact/">https://www.aveva.com/en/Contact/</a>.</p>
+<p>To update your marketing preferences or unsubscribe from our mailing list <a href="https://engage.aveva.com/preference-center.html" target="_blank">visit AVEVA's preference center</a>.</p>
+<p>For data protection related queries including questions about use of your personal data please contact our Data Protection Officer via email at <a href="/cdn-cgi/l/email-protection#2f4b4e5b4e5f5d405b4a4c5b4640416f4e594a594e014c4042"><span class="__cf_email__" data-cfemail="5b3f3a2f3a2b29342f3e382f3234351b3a2d3e2d3a75383436">[email protected]</span></a>. </p>
+<p>Our Data Protection Officer is Helen Lamprell. You can contact her via email at <a href="/cdn-cgi/l/email-protection#492d283d28393b263d2c2a3d20262709283f2c3f28672a2624"><span class="__cf_email__" data-cfemail="86e2e7f2e7f6f4e9f2e3e5f2efe9e8c6e7f0e3f0e7a8e5e9eb">[email protected]</span></a> or via our postal address at AVEVA Group PLC<br/>
+High Cross, Madingley Road, Cambridge, CB3 0HB.</p>
+<p>Please refer to the sections on <a href="#yourrights">Your rights</a> to know what personal data we hold and to control how we use it and <a href="#makecomplaint">How to make a complaint</a> for further contact information.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="whatpersonaldata" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>What personal data we collect about you</b></p>
+<p>We collect:</p>
+<ul>
+<li><b>personal data that you provide to us.</b>  There are a few different ways in which you may share your personal data with us via our website. You might complete the ‘Contact Us’ Form on our website, subscribe to or comment on our blog, register for one of our events, request content or enroll on “AVEVA Experience” cloud based training. The personal data that you provide to us may include your name, address, e-mail address, employer, job role and phone number.  </li>
+<li><b>personal data that we receive from third parties.</b>  If we work with other businesses these parties may collect personal data about you which they will share with us.  For example, we may have your name and contact details passed on to us by third parties that we work with, such as marketing partners, industry publications or content syndication partners, that refer you to us so that we can provide you with information on our products or services that we feel would be of interest to you. </li>
+<li><b>personal data about your use of our website.</b>  This is technical information and includes details such as your IP address, your login information (where applicable e.g. with “AVEVA Experience”), browser type and version, time zone setting, browser plug-in types and versions, operating system and platform, as well as details of how you navigated our website, what pages you viewed or searched for, page response times, download errors, length of visits to certain pages, page interaction information (such as scrolling, clicks, and mouse-overs), and any phone number used to call our customer service number.</li>
+</ul>
+<p>To learn more about our use of cookies, please see our <a></a><a href="/en/legal/cookie-policy/">Cookie Policy</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="whatweuseyourpersonaldatafor" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>What we use your personal data for</b></p>
+<p>We use your personal data in the following ways:</p>
+<ul>
+<li><b>personal data that you provide to us is used to:</b><ul>
+<li>provide you with the information, products and services that you request from us;</li>
+<li>provide you with marketing information in accordance with your marketing preferences (see <a href="#howweuseyourpersonaldata">How we use your personal data for marketing</a> for further details);</li>
+<li>manage and administer our business;</li>
+<li>review and improve our products and services.</li>
+</ul>
+</li>
+<li><b>personal data that we receive from third parties </b>is combined with the personal data that you provide to us and used for the purposes described above.</li>
+<li><b>personal data about your use of our website is used to:</b><ul>
+<li>administer our website and for internal operations, including troubleshooting, data analysis, testing, research, statistical and survey purposes;</li>
+<li>to make suggestions and recommendations to you or other website users about products or services that may interest you or them where you have confirmed that you would like to be contacted in this regard;</li>
+<li>to improve our website to ensure that content is presented in the most effective manner for you and for your computer or mobile device; </li>
+<li>to allow you to participate in interactive features of our service, when you choose to do so;</li>
+<li>as part of our efforts to keep our site safe and secure;</li>
+<li>to measure or understand the effectiveness of advertising we serve to you and others, and to deliver relevant advertising to you.</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="whenweneedyourconsent" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>When we need your consent to use your personal data</b></p>
+<p>Whilst we always want you to be aware of how we are using your personal data, this does not necessarily mean that we are required to ask for your consent before we can use it.  In the day to day running of our business we may use your personal data without asking for your consent because:</p>
+<ul>
+<li>we are entering into and carrying out our obligations under a contract with you;</li>
+<li>we need to use your personal data for our own legitimate purposes (such as the administration and management of our business and the improvement of our services) and our doing so will not interfere with your privacy rights.</li>
+</ul>
+<p>If we require your consent to process your personal data and, as may be the case, in exceptional circumstances, wish to use your personal data for a different purpose than the one for which it was originally collected we will contact you to explain how we wish to use your data and obtain your consent to use your personal data for the relevant purposes as required.  You are not required to give consent just because we ask for it.  If you do give consent you can change your mind and withdraw it at a later date.</p>
+<p>Please refer to the section on <a href="#howweuseyourpersonaldata">How we use your personal data for marketing</a> for further information on our marketing practices in this regard.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="personaldata" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>Personal data you are legally obliged to provide</b></p>
+<p>You are not under a legal obligation to provide us with any of your personal data but please note that if you elect not to provide us with your personal data we may be unable to provide our products or services to you.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="yourrights" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>Your rights to know what personal data we hold and to control how we use it</b></p>
+<p>You have a legal right to know what personal data we hold about you - this is called the right of subject access.  You can exercise this right by sending us a written request at any time. Please mark your letter “<b>Subject Access Request</b>” and send it to us by post using the following contact details:</p>
+<p>FAO: Data Protection Officer</p>
+<p>Subject Access Request<br/>
+AVEVA Group PLC<br/>
+High Cross, Madingley Road, <br/>
+Cambridge, CB3 0HB<br/>
+<br/>
+or email us at <a href="/cdn-cgi/l/email-protection#b3d7d2c7d2c3c1dcc7d6d0c7dadcddf3d2c5d6c5d29dd0dcde"><span class="__cf_email__" data-cfemail="85e1e4f1e4f5f7eaf1e0e6f1eceaebc5e4f3e0f3e4abe6eae8">[email protected]</span></a>.  </p>
+<p>You also have rights to:</p>
+<ul>
+<li>object to your personal data being used for marketing purposes (see How we use your personal data for marketing for further details);</li>
+<li>object to decisions being made about you by automated means or to your personal data being used for profiling purposes;</li>
+<li>object to our using your personal data in ways that are likely to cause you damage or distress;</li>
+<li>have inaccurate personal data corrected, blocked or erased;</li>
+<li>restrict our use of your personal data;</li>
+<li>require that we delete your personal data;</li>
+<li>require that we provide you, or anyone that you nominate, with a copy of any personal data you have given us in a structured electronic form such as a CSV file.</li>
+</ul>
+<p>You can find full details of your personal data rights on the Information Commissioner’s Office website at ww.ico.org.uk if you are based in the UK, and on <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank">https://edpb.europa.eu/about-edpb/board/members_en</a> if you based in the EU (as applicable in your jurisdiction).</p>
+<p>The California Consumer Protection Act (the “CCPA”) provides various rights to California residents with respect to the collection and use of their personal data that we have collected. This includes a right to request that we: (i) disclose to you any personal information that we have about you; (ii) delete personal information that we have about you (subject to certain exceptions); or (iii) not “sell” your information to a third party (excluding qualified service providers), as that term is interpreted under the CCPA. It is unlawful for us to discriminate against California residents for exercising any rights under the CCPA. If you are a California resident, you can submit such requests to us via the contact information provided above and we will complete the request within the timeframe permitted by law. In addition, you can <a><u></u></a><a href="/en/legal/cookie-policy/">click here</a>  <u>to relaunch our cookie banner and disable cookies as part of a do-not-sell request.</u></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="howweuseyourpersonaldata" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>How we use your personal data for marketing</b></p>
+<p>We may use your personal information to send you communications about our products or services that we feel you may be interested in and will add your details to our marketing database if:</p>
+<ul>
+<li>you make an enquiry about our products or services;</li>
+<li>you attend an industry related event;</li>
+<li>you buy our products or services;</li>
+<li>you have told a third party that you would like them to pass us your contact details so that we can send you updates about our products or services;</li>
+<li>you have consented to receiving marketing communications on our website via <a href="/en/contact/">https://www.aveva.com/en/contact/</a></li>
+</ul>
+<p>This may include marketing relating to products or services offered by other companies within AVEVA that we think you may be interested in. We may send you marketing communications by email, telephone or post. </p>
+<p>You can ask us to only send you marketing communications by particular methods (for example, you may be happy to receive emails from us but not telephone calls), about specific subjects (for example about specific portfolio areas or industry specific information) or you may ask us not to send you any marketing communications at all.</p>
+<p>We may ask you to indicate your marketing preferences when you first access our website.  You can check and update your current marketing preferences at any time by accessing your specified profile link provided in our marketing communications or emailing us at <a href="/cdn-cgi/l/email-protection#84e7ebeaf0e5e7f0c4e5f2e1f2e5aae7ebe9"><span class="__cf_email__" data-cfemail="c2a6a3b6a3b2b0adb6a7a1b6abadac82a3b4a7b4a3eca1adaf">[email protected]</span></a>.</p>
+<p>We may share your personal data with third parties for marketing purposes.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="automateddecision" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>Automated decision making and profiling</b></p>
+<p>If you confirm that you would like to be contacted with further information regarding our products and services we will add your details to our marketing database and a profile regarding your interaction with our website and content will be created.</p>
+<p>Once you are added to our marketing database we will update your profile with information regarding your interaction with our website, online portals (including social media) and regarding which products or services you have shown a particular interest. Further interactions with our website will then be linked to this account so we can better tailor our correspondences with the interest that you have shown in AVEVA and our products and services and provide further information on products and services that are likely to be of interest to you.</p>
+<p>This information is used to assess your profile objectively to consider whether you might be interested in purchasing new or further AVEVA products and/or services. If we think this is likely, a member of the AVEVA team will contact you to take things forward in this regard. </p>
+<p>You are entitled to ask that we do not make automated decisions about you or use your personal data for profiling purposes. Please refer to the section on Your rights to know what personal data we hold and to control how we use it for further details in this regard.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="whenwewillsharewithothers" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>When we will share your personal data with others</b></p>
+<p>We share your data with the following people in the day to day running our business:</p>
+<ul>
+<li>other companies that are part of the AVEVA group;</li>
+<li>business partners, suppliers and sub-contractors we work with to provide you with products or services that you have requested from us;</li>
+<li>analytics and search engine providers that assist us in the improvement and optimisation of our site. </li>
+</ul>
+<p>We may also share your personal information with third parties on a one-off basis, for example, if:</p>
+<ul>
+<li>we sell or buy any business or assets (including our own), in which case we will disclose your personal data to the prospective seller or buyer of such business or assets;</li>
+<li>we are under a duty to disclose or share your personal data in order to comply with any legal obligation, or in order to enforce or apply our website terms of use and other agreements; or to protect the rights, property, or safety of our customers, ourselves or others. This includes exchanging information with other companies and organisations for the purposes of fraud protection and credit risk reduction.</li>
+</ul>
+<p><u>Why might we share your personal information with third parties?</u></p>
+<p>We may share your personal information with third parties where required by law, where it is necessary to administer the working relationship with you, where we have another legitimate interest in doing so, or where you have provided your consent.</p>
+<p><u>Which third-party service providers process you personal information?</u></p>
+<p>"Third parties" includes third party service providers (including contractors and designated agents) and other members of the AVEVA Group, including our marketing teams and business partners. The following activities are carried out by third party service providers: IT services and AVEVA.com live chat box.</p>
+<p><u>How secure is your information with third party service providers and other entities in the AVEVA</u> <u>Group?</u></p>
+<p>All our third-party service providers (including other entities in the AVEVA Group) are required to take appropriate security measures to protect your personal information in line with our policies. We do not allow our third-party service providers to use your personal data for their own purposes. We only permit them to process your personal data for specified purposes and in accordance with our instructions.</p>
+<p><u>When might we share you personal information with other entities in the AVEVA Group?</u></p>
+<p>We will share your personal information with other entities in the AVEVA Group as part of our regular reporting activities on company performance, where other AVEVA Group companies act as service providers to us, in the context of a business reorganisation or group restructuring exercise, for the purpose of dealing with your or a third party’s HR Helpdesk query, for system maintenance support and hosting of data<b><i>.</i></b></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="howwekeepdatasafe" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>How we keep your personal data safe</b></p>
+<p>We take every care to ensure that your personal data is kept secure.  The security measures we take include: </p>
+<ul>
+<li>only storing your personal data on our secure servers;  </li>
+<li>ensuring that our staff receive regular data security awareness training</li>
+<li>keeping paper records to a minimum and ensuring that those which we do have, are stored in locked filing cabinets on our office premises;</li>
+<li>maintaining up to date system security features to minimise the risk of unauthorised access to our systems;</li>
+<li>Requiring third parties to respect the security of your data and to treat it in accordance with the law.</li>
+</ul>
+<p>Please remember that you are responsible for keeping your passwords secure. If we have given you (or you have chosen) a password which enables you to access certain parts of our website, you are responsible for keeping this password confidential. Please do not to share your passwords with anyone.</p>
+<p>Sending information via the internet is not always secure. While we do our best to protect your personal data, we cannot always guarantee the security of data sent to our website. In this regard, please note that you send us personal data at your own risk. We will nonetheless use strict procedures and security features (some of which are described above) to try to prevent unauthorised access.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="sendtoothercontries" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>When we will send your personal data to other countries</b></p>
+<p><a id="_Hlk69821341" name="_Hlk69821341"></a>Your personal data may be transferred to, and stored at, a destination  outside the country in which you are located by us or by our sub-contractors.  For example, our marketing database and associated systems are accessible by AVEVA personnel globally, including outside of the UK / EEA. As AVEVA is global company with global systems, personal data collected in one country may be processed in another country. </p>
+<p>AVEVA seeks to ensure appropriate safeguards are in place in relation to transfers of personal data to provide adequate levels of protection for your personal data. We will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this privacy policy. In particular, if any of our processing activities require your personal data to be transferred outside of the UK and / or the European Economic Area, we will only make that transfer if, for example it is to a country which is deemed “adequate” by the UK Government and / or the European Commission (as applicable) or we have put in place appropriate safeguards to protect your personal data, (such as standard contractual clauses).</p>
+<p>Transfers within AVEVA will be covered by an agreement entered into by the members of AVEVA (an intra-group agreement) which contractually obliges each group company to ensure that your personal data receives an adequate and consistent level of protection wherever it is transferred within AVEVA.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="howlongwekeep" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>How long we keep your personal data</b></p>
+<p>We only keep your personal data for as long as we actually need it. This would be considered from the perspective of whether or not you would still be interested in receiving information from us about our products and services. Generally, this means that if you have not replied to our marketing emails or purchased any of our products or services for a period of one year we will remove you from our database.</p>
+<p>For further details please contact us at <a href="/cdn-cgi/l/email-protection#640005100514160b100107100d0b0a2405120112054a070b09"><span class="__cf_email__" data-cfemail="9afefbeefbeae8f5eefff9eef3f5f4dafbecffecfbb4f9f5f7">[email protected]</span></a>.  </p>
+<p>Please note that we may anonymise your personal data or use it for statistical purposes.   We keep anonymised and statistical data indefinitely but we take care to ensure that such data can no longer identify or be connected to any individual.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="makecomplaint" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>How you can make a complaint</b></p>
+<p><span>If you are unhappy with the way we have used your personal data please contact us to discuss this using <a href="/cdn-cgi/l/email-protection#3f5b5e4b5e4f4d504b5a5c4b5650517f5e495a495e115c5052"><span class="__cf_email__" data-cfemail="a8ccc9dcc9d8dac7dccdcbdcc1c7c6e8c9decddec986cbc7c5">[email protected]</span></a>.</span></p>
+<p>You are also entitled to make a complaint to your local data protection supervisory authority. If you are in the UK, this is the Information Commissioner’s Office ww.ico.org.uk and if you are EU, your applicable data protection supervisory authority can be located at https://edpb.europa.eu/about-edpb/board/members_en.  Whilst you are not required to do so, we encourage you to contact us directly to discuss any concerns that you may have and to allow us an opportunity to address these before you contact the Information Commissioner’s Office.<br/>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" id="policyuptodate" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+<div class="column-control section">
+<div class="container">
+<div class="row align-items-center coltype-1">
+<div class="col col-12">
+<div class="text section">
+<div class="cmp-text" style="width:100%;">
+<p><b>How we keep this policy up to date</b></p>
+<p>We will review and update this policy from time to time. This may be to reflect a change in the products or services we offer or to our internal procedures or it may be to reflect a change in the law.  </p>
+<p>The easiest way to check for updates is by looking for the latest version of this policy on our website or you can contact us (see <a href="#whoweare">Who we are and how to contact us</a>) to ask us to send you the latest version of our policy.</p>
+<p>Each time we update our policy we will update the policy version number at the end of the policy and the date on which that version of the policy came into force.</p>
+<p>This is policy version 3 which came into effect on <b>28 May 2021.</b></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="background-container aem-GridColumn aem-GridColumn--default--12">
+<section aria-label="Background Container" class="background-container" role="contentinfo" style="background-color: #FFFFFF; padding-top: 40px; padding-bottom: 40px;">
+<div class="background-container-wrapper container-md bg-container--center-content">
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+</main></div>
+<div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+<div class="cmp-experiencefragment cmp-experiencefragment--footer"><div class="xf-content-height">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12">
+<div class="globalfooter aem-GridColumn aem-GridColumn--default--12"><footer class="global-footer">
+<div class="global-footer__upper container-md">
+<div class="logo">
+<a class="main-navbar__logo" data-at="AVEVA" data-cta="AVEVA" data-track="Global Header/Footer" href="/en/">
+<img alt="AVEVA" src="/content/experience-fragments/aveva/en/site/footer/master/_jcr_content/root/responsivegrid/globalfooter/footer-logo.coreimg.png/1645128555243/footer-logo.png"/>
+</a>
+</div>
+<div class="global-footer__list">
+<nav class="global-footer__links-wrapper">
+<ul class="global-footer__links child">
+<li>
+<a data-at="Investors" data-cta="Investors" data-track="Footer" href="https://investors.aveva.com/" rel="noopener noreferrer" target="_blank">Investors</a>
+</li>
+<li>
+<a data-at="Partners" data-cta="Partners" data-track="Footer" href="/en/about/partners/" target="_self">Partners</a>
+</li>
+<li>
+<a data-at="Careers" data-cta="Careers" data-track="Footer" href="/en/about/careers/" target="_self">Careers</a>
+</li>
+<li>
+<a data-at="AVEVA Speak Up" data-cta="AVEVA Speak Up" data-track="Footer" href="/en/legal/speak-up/" target="_self">AVEVA Speak Up</a>
+</li>
+<li>
+<a data-at="Anti-Slavery and Human Trafficking Statement" data-cta="Anti-Slavery and Human Trafficking Statement" data-track="Footer" href="/en/legal/anti-slavery-human-trafficking/" target="_self">Anti-Slavery and Human Trafficking Statement</a>
+</li>
+</ul>
+<ul class="global-footer__links child">
+<li>
+<a data-at="Cloud Policy" data-cta="Cloud Policy" data-track="Footer" href="/content/dam/aveva/documents/legal/service-documents/AVEVA-Cloud-Services-Agreement-v5-0-February-2022.pdf" target="_self">Cloud Policy</a>
+</li>
+<li>
+<a data-at="Data Security" data-cta="Data Security" data-track="Footer" href="/en/legal/trust/" target="_self">Data Security</a>
+</li>
+<li>
+<a data-at="Privacy Policy" data-cta="Privacy Policy" data-track="Footer" href="/en/legal/privacy-policy/" target="_self">Privacy Policy</a>
+</li>
+</ul>
+<ul class="global-footer__links child">
+<li>
+<a data-at="Legal" data-cta="Legal" data-track="Footer" href="/en/legal/" target="_self">Legal</a>
+</li>
+<li>
+<a data-at="Terms of Use" data-cta="Terms of Use" data-track="Footer" href="/en/legal/terms-of-use/" target="_self">Terms of Use</a>
+</li>
+<li>
+<a data-at="Gender Pay Gap" data-cta="Gender Pay Gap" data-track="Footer" href="/en/about/about-aveva/diversity-equity-inclusion/gender-and-ethnicity-pay-gap-reporting/" target="_self">Gender Pay Gap</a>
+</li>
+<li>
+<a data-at="Sitemap" data-cta="Sitemap" data-track="Footer" href="/en/sitemap/" target="_self">Sitemap</a>
+</li>
+</ul>
+<div class="global-footer-info">
+<address>
+<p class="global-footer-info__top-label">Contact Us</p>
+<p class="global-footer-info__description">AVEVA Group plc
+High Cross
+Madingley Road
+Cambridge
+CB3 0HB, UK</p>
+<p class="global-footer-info__bottom-label">Reg. No. 2937296</p>
+</address>
+</div>
+</nav>
+</div>
+</div>
+<div class="large-screen-ruler">
+</div>
+<div class="large-screen-container container-md">
+<div class="social-follow container-md">
+<span class="social-follow__title">Connect with Us:</span>
+<div class="social-follow__links">
+<a data-at="facebook" data-cta="facebook" data-track="Footer" href="https://www.facebook.com/avevasolutions" rel="noopener noreferrer" target="_blank">
+<img alt="facebook" class="lozad" data-src=" /content/dam/aveva/images/icons/social-media/facebook.svg"/>
+</a>
+<a data-at="twitter" data-cta="twitter" data-track="Footer" href="https://twitter.com/AVEVAGroup" rel="noopener noreferrer" target="_blank">
+<img alt="twitter" class="lozad" data-src=" /content/dam/aveva/images/icons/social-media/twitter.svg"/>
+</a>
+<a data-at="in" data-cta="in" data-track="Footer" href="https://www.linkedin.com/company/aveva" rel="noopener noreferrer" target="_blank">
+<img alt="in" class="lozad" data-src=" /content/dam/aveva/images/icons/social-media/linkedin.svg"/>
+</a>
+<a data-at="youtube" data-cta="youtube" data-track="Footer" href="https://www.youtube.com/user/AVEVAGroup" rel="noopener noreferrer" target="_blank">
+<img alt="youtube" class="lozad" data-src=" /content/dam/aveva/images/icons/social-media/youtube.svg"/>
+</a>
+</div>
+</div>
+<div class="copyright-text container-md">
+<p><p>© 2020-2022 AVEVA Group plc and its subsidiaries. All Rights Reserved. AVEVA and the AVEVA logo are a trademark or registered trademark of AVEVA Group plc in the U.S. and other countries. <a href="/en/legal/terms-of-use/" target="_self">Terms and Conditions</a></p>
+</p>
+</div>
+</div>
+<div class="disclaimer-text">
+<div class="container-md">
+<p data-at="Footer Text" data-cta="Footer text" data-track="Footer"><p>The Schneider Electric industrial software business and AVEVA have merged to trade as AVEVA Group plc, a UK listed company. The Schneider Electric and Life Is On trademarks are owned by Schneider Electric and are being licensed to AVEVA by Schneider Electric.</p>
+</p>
+</div>
+</div>
+</footer>
+</div>
+<div class="interactive-content aem-GridColumn aem-GridColumn--default--12">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script async="async" crossorigin="" src="//consent.trustarc.com/notice?domain=aveva.com&amp;c=teconsent&amp;js=nj¬iceType=bb&amp;text=true&gt;m=1&amp;pcookie"></script>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+<script>
+
+  var inputFields = ".mktoRequiredField input",
+    areaFields = ".mktoRequiredField textarea",
+    selectFields = ".mktoRequiredField select";
+  function validateEmail(email) {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+  function checkElementValue(element) {
+    var value = element.value,
+      type = element.type === "select-one" ? "select" : element.type,
+      formLang = getFormLanguage();
+
+    if (element.type === "input") { type = element.type }
+    else if (element.type === "select") { type = 'select' }
+    else if (element.type === "textarea") { type = 'textarea' }
+
+    var validEmail =
+      element.type === "email" ? validateEmail(element.value) : true,
+      parent = element.parentElement;
+
+    if (value) {
+      //work here
+      parent.classList.remove(type + "ErrorMsg");
+      parent.classList.remove(type + "ErrorMsg" + formLang);
+    }
+
+    if (type === "email" && validEmail) {
+      parent.classList.remove("emailEmptyErrorMsg");
+      parent.classList.remove("emailInvalidErrorMsg");
+      parent.classList.remove("emailEmptyErrorMsg" + formLang);
+      parent.classList.remove("emailInvalidErrorMsg" + formLang);
+    }
+    if (type === "email" && !value) {
+      parent.classList.add("emailEmptyErrorMsg");
+      parent.classList.remove("emailInvalidErrorMsg");
+      parent.classList.add("emailEmptyErrorMsg" + formLang);
+      parent.classList.remove("emailInvalidErrorMsg" + formLang);
+    } else if (type === "email" && !validEmail) {
+      parent.classList.add("emailInvalidErrorMsg");
+      parent.classList.add("emailInvalidErrorMsg" + formLang);
+    }
+    if (type !== "email" && !value) {
+      //work here
+      parent.classList.add(type + "ErrorMsg");
+      parent.classList.add(type + "ErrorMsg" + formLang);
+    }
+  }
+
+  //Get the Language used on a Page based on the form id 
+  function getFormLanguage() {
+    //find the forms on the page
+    var forms = document.getElementsByTagName("form"),
+      formID,
+      i;
+    //loop through the forms and get the id of the first form
+
+    for (i = 0; i < forms.length; i++) {
+      if (forms[i].id.includes("mktoForm_")) {
+        formID = (forms[i].id.slice(-4));
+        formID = formID.replace(/\D/g, "");
+        if (formID != "") break;
+      }
+    }
+    //based on the id of the form return a 2 letter country 
+    //identifier that will be added to the CSS class
+    if (formID == 191 || formID == 60 || formID == 57) {
+      //chinese
+      return "CN"
+    }
+    else if (formID == 192 || formID == 47 || formID == 66) {
+      //German
+      return "DE"
+    }
+    else if (formID == 193 || formID == 48 || formID == 61) {
+      //Spanish
+      return "ES"
+    }
+    else if (formID == 194 || formID == 55 || formID == 59) {
+      //French
+      return "FR"
+    }
+    else if (formID == 195 || formID == 82 || formID == 83) {
+      //Italian
+      return "IT"
+    }
+    else if (formID == 196 || formID == 45 || formID == 62) {
+      //Japanese
+      return "JP"
+    }
+    else if (formID == 197 || formID == 46 || formID == 63) {
+      //Korean
+      return "KR"
+    }
+    else if (formID == 346 || formID == 344 || formID == 342) {
+      //Polish
+      return "PL"
+    }
+    else if (formID == 49 || formID == 64 || formID == 198) {
+      //Portugeuse
+      return "PT"
+    }
+    else if (formID == 56 || formID == 65 || formID == 199) {
+      //Russian
+      return "RU"
+    }
+    else if (formID == 351 || formID == 345 || formID == 343) {
+      //Turkish
+      return "TR"
+    }
+    else {
+      //English
+      return ""
+    }
+  }
+  MktoForms2.onFormRender(function (form) {
+    var inputs = document.querySelectorAll(inputFields),
+      areas = document.querySelectorAll(areaFields),
+      selects = document.querySelectorAll(selectFields);
+    inputs.forEach(function (element) {
+      element.addEventListener("blur", function (event) {
+        checkElementValue(event.target);
+      });
+    });
+    selects.forEach(function (element) {
+      element.addEventListener("blur", function (event) {
+        checkElementValue(event.target);
+      });
+    });
+    areas.forEach(function (element) {
+      element.addEventListener("blur", function (event) {
+        checkElementValue(event.target);
+      });
+    });
+    form.onValidate(function () {
+      inputs.forEach(function (element) {
+        checkElementValue(element);
+      });
+      selects.forEach(function (element) {
+        checkElementValue(element);
+      });
+      areas.forEach(function (element) {
+        checkElementValue(element);
+      });
+    });
+    document.querySelector(".external-thank-you-message").closest(".mktoFormRow").style.display = "none";
+  });
+  function updateDigitalData(value, object) {
+    digitalData[value] = object;
+  };
+  MktoForms2.whenReady(function (newvalue) {
+
+    var forms = document.getElementsByTagName("form"),
+      submitID,
+      formIDValue,
+      i;
+
+    for (i = 0; i < forms.length; i++) {
+      if (forms[i].id.includes("mktoForm_")) {
+        formIDValue = (forms[i].id.slice(-4));
+        formIDValue = formIDValue.replace(/\D/g, "");
+        submitID = forms[i].id;
+        if (submitID != "") break;
+      }
+
+    }
+
+    $("#" + submitID).find(".mktoButton").click(function () {
+      newvalue.onSuccess(function (values, url) {
+        var dataForm = {
+          formStatus: 'Success ',
+          formId: formIDValue,
+        };
+        updateDigitalData('form', dataForm);
+      });
+      newvalue.onValidate(function (event) {
+        if (event === false) {
+          var dataForm = {
+            formStatus: 'Failed ',
+            formId: formIDValue,
+          };
+          updateDigitalData('form', dataForm);
+        }
+
+      });
+
+    });
+
+  });
+</script>
+<script>
+  (function () {
+    if (!window.MktoForms2) return;
+    // A form has successfully loaded.
+    window.MktoForms2.whenReady(function (form) {
+      // Get the jQuery form element
+      var $form = form.getFormElem();
+      // Prefil the form with products if needed.
+      var $formWrapper = $form.closest(".marketo-form");
+      if ($formWrapper) {
+        var enquiryType = $formWrapper.attr("data-name-3");
+        var product = $formWrapper.attr("data-value-3");
+        if (enquiryType === "products" && product) {
+          form.setValues({ enquiryType: 'Products' });
+          // Product Field
+          var $productField = $form.find("select#product");
+          var productFieldValue = "product";
+          if (!$productField.length) {
+            $productField = $form.find("select#dx_product");
+            productFieldValue = "dx_product";
+          }
+          var validProductTypes = $productField.find("option").toArray().map(function (el) { return el.value.trim().toLowerCase(); });
+          if (product) { if (validProductTypes.indexOf(product.trim().toLowerCase()) === -1) { product = ''; } }
+          form.setValues({ [productFieldValue]: product });
+        }
+      }
+      // Fetch the nearest button to the form.
+      var $modalButton = $form.closest(".smartbutton.embed").find("a[data-toggle]");
+      // Check if the modalButton has a download link attached.
+      var assetDownloadLink = $modalButton.attr("data-dx-download-link") || null;
+      var assetThankYouMessage = $modalButton.attr("data-dx-thankyou-msg") || null;
+      var formDefaultThankYouMessage = "<p>Thank you for downloading</p>";
+      // Get the TY message from the Marketo form
+      var $formThankYouElement = $form.find(".external-thank-you-message");
+      if ($formThankYouElement.length) {
+        formDefaultThankYouMessage = $formThankYouElement.html();
+        $formThankYouElement.closest(".mktoFormRow").hide();
+      }
+      // Submission element
+      form.onSuccess(function () {
+        // Hide the form element
+        $form.hide();
+        // Download link? open this in another window.
+        if (assetDownloadLink) {
+          window.open(assetDownloadLink);
+        }
+        // Thank you message, fall back to default but attempt to show data attribute one
+        var thankYouMessage = formDefaultThankYouMessage;
+        if (assetThankYouMessage) {
+          thankYouMessage = assetThankYouMessage;
+        }
+        // Create the thank you message container
+        var $thankYouMessageContainer = $("<div>");
+        $thankYouMessageContainer.append(thankYouMessage);
+        // Append the thank you message to the form
+        $form.closest(".marketo-form").append($thankYouMessageContainer);
+        // Stop the redirect
+        return false;
+      });
+    });
+  })();
+</script>
+<script src="/etc.clientlibs/aveva/clientlibs/clientlib-base.min.js"></script>
+<script data-script-src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ebc07e36e205754
+" id="social-share" type="text/javascript"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Object.assign%2CIntersectionObserver" type="text/javascript"></script>
+<script src="/etc.clientlibs/aveva/clientlibs/clientlib-lozad.min.js"></script>
+<script>
+  (function () {
+    var observer = lozad(); // lazy loads elements with default selector as '.lozad'
+    observer.observe();
+  })();
+</script>
+<script type="text/javascript">
+  window.addEventListener("message", function(event) {
+    if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted') {
+      if (event.data.id == "9f3a7aff-2249-46c8-90b6-3c88b4ce5675") {
+        //contact form
+      }
+      if (event.data.id == "70596ae8-2111-42df-9fc9-5210147f43e0") {
+        //products/production-management/
+      }
+      if (event.data.id == "7ab8b8d3-0baa-469c-8770-3c521cdb3abb") {
+        //fired-power-plant-with-aveva-advanced-process-control
+      }
+    }
+  });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+ <!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Privacy Policy | scriptr.io</title>
+<meta content="" name="description"/>
+<meta content="" name="keywords"/>
+<!-- start: head.php -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="scriptr.io" property="og:site_name">
+<meta content="Backend for IoT" property="og:title">
+<meta content="The scripting engine for your IoT projects. The easiest way to connect your devices to the cloud. No hosting, no server management, no deployments, create your own APIs with JavaScript in minutes." property="og:description">
+<meta content="https://www.scriptr.io" property="og:url"/>
+<meta content="website" property="og:type">
+<meta content="https://www.scriptr.io/themes/scriptr/images/scriptr-250x250.png" property="og:image">
+<meta content="250" property="og:image:width">
+<meta content="250" property="og:image:height">
+<link href="./themes/scriptr/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/themes/scriptr/images/favicon.ico" rel="shortcut icon" type="image/png">
+<link href="/themes/scriptr/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<!-- core js -->
+<link href="/themes/scriptr/css/scriptr.min.css?v=5313321" rel="stylesheet"/>
+<script src="/dist/js/jQuery-lib.js?v=5303321"></script>
+<script src="/dist/js/bootstraplib.min.js?v=5303321"></script>
+<!-- Extension of CodeMirror Tern addon -->
+<script src="/dist/js/scriptr.min.js?v=5303321"></script>
+<!--[if IE 8]><body class="ie8"><![endif]-->
+<!--[if IE 9]><body class="ie9"><![endif]-->
+<!--[if IE 10]><body class="ie10"><![endif]-->
+<!-- end: head.php -->
+<script type="text/javascript">
+	var isLoggedOut = false; //Flag which indicates that the user is logged out
+	logout = function() {
+		callApi("logout",{}).then(
+			function(data){
+				isLoggedOut = true;
+				pubsub.publish("logout");
+				var uuid = '';
+				location.href="https://www.scriptr.io/login" + uuid;
+			},
+			
+			function(error){
+				isLoggedOut = true;
+				pubsub.publish("logout");
+				var uuid = '';
+				location.href="https://www.scriptr.io/login" + uuid;
+			}
+		);
+	};
+	
+</script>
+<!-- - -->
+<script>
+
+var appsDomainName="scriptrapps.io";
+
+</script>
+<!--	<script language="javascript" type="text/javascript" src="https://www.scriptr.io/lib/editarea/edit_area/edit_area_full.js"></script> -->
+<script>
+
+   	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+   		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+   	
+   	ga('create', 'UA-57251569-1', 'auto');
+   	ga('send', 'pageview');
+
+<!-- Start of Woopra Code -->
+
+	(function(){
+	        var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/t/5.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+	})("woopra");
+	
+	woopra.config({
+	    domain: 'scriptr.io',
+	    hide_campaign: true
+	});
+	woopra.track();
+<!-- End of Woopra Code -->
+</script>
+<script type="text/javascript">
+ var config = {
+			redirURL : 'https://www.scriptr.io/login?expired=true' ,
+			gistUrl :'https://gist.githubusercontent.com/scriptrdotio/d7e0b9ba95d78d9987e53ac9c947cb01/raw?t='+new Date(),
+			amqpClusterName: 'scriptr',
+			authKey: '', 
+			email: '',
+			name:'',
+			isBridgesTrialModeEnabled: true ,
+		    isBridgeTrialUsed : "", 
+		    isMessagingTrialUsed : "", 
+		    messagingTrialStartDate : "", 
+		    bridgesTrialStartDate : "", 
+		    publicDomain: "scriptrapps.io",
+			publicURL : "https://api.scriptrapps.io",
+		    codeMirror: {
+		    	indentUnit : 4, 
+		    	tabSize : 4, 
+			}
+		};
+
+ $.scriptr.applicationsMenu.prototype.updateWorkspace =  function(result){
+     tabsPersistanceProvider.getInstance().saveTabs(); //Persisting tabs in localStorage
+     this.closeAllTabs();
+      config.isBridgeTrialUsed = result.usedBridgeFreeTrial;
+     config.authKey = result.authKey; //update the authKey with the new key of selected app in global object config
+     //update the client token
+     callApi("getToken", {}).then(
+             function(data){
+                     //success
+                     if(data.result && data.result.token)
+                             client.setToken(data.result.token);
+                     if(data.result && data.result.anon_token)
+                             client.setAnonymousToken(data.result.anon_token);
+             }
+     );
+      
+     $("#defaultAppNameId").html(result.defaultApp); //Update active application name in header
+     pubsub.publish("switchApp", result.defaultApp); // publish the new app name so other opened tabs reload the page
+     //Set landing page
+     if(pageId != "editor") {
+             $("#landingPageContainer").html(result.parsedLandingPage);
+     }
+
+     //Showing the workspace loader again (Initializing your workspace loader)
+     $("#scripts").scriptsTree("setDoneLoadingTreeScript",false);
+     tabsPersistanceProvider.getInstance().doneLoadingTabs = false;
+     tabsPersistanceProvider.getInstance().loadTabs(); //Loading tabs from localStorage
+
+};
+
+var enableTabsPersistance = false;	
+ </script>
+</link></meta></meta></meta></meta></meta></meta></meta></head>
+<body class="scriptr">
+<div class="wrapper">
+<nav class="navbar navbar-default menu" id="sticker" role="navigation">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="https://www.scriptr.io">
+          	scriptr<span>;</span>
+</a>
+</div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="https://www.scriptr.io/developers" id="developersLink">Developers</a></li><li><a href="https://www.scriptr.io/connectors" id="connectorsLink">Connectors</a></li><li><a href="https://www.scriptr.io/solutions" id="solutionsLink">Solutions</a></li><li><a href="https://www.scriptr.io/saepio" id="saepioLink">Saepio</a></li>
+<li><a href="https://blog.scriptr.io/" target="_blank">Blog </a></li>
+<li class="dropdown menuIcon tooltip-info visible-sm visible-md visible-lg" data-placement="bottom" data-toggle="tooltip" role="presentation" title="Help">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" id="helpMenu" role="button">
+		 Help <span class="caret mt10 ml5"></span> </a>
+<ul aria-labelledby="helpMenu" class="dropdown-menu" id="helpMenu">
+<span class="arrow top hidden-xs"></span>
+<li><a href="https://www.scriptr.io/documentation">Documentation</a></li>
+<li><a href="https://github.com/scriptrdotio/howto/blob/master/README.md" target="_blank">How-to <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
+<li><a href="https://www.scriptr.io/faq">FAQ</a></li>
+
+<li><a href="https://forum.scriptr.io/" target="_blank">Forum <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
+</ul>
+</li>
+<li class="dropdown visible-xs" role="presentation">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" id="helpMenu" role="button">
+		 Help <span class="caret"></span> </a>
+<ul aria-labelledby="helpMenu" class="dropdown-menu" id="helpMenu">
+<span class="arrow top hidden-xs"></span>
+<li><a href="https://www.scriptr.io/documentation">Documentation</a></li>
+<li><a href="https://github.com/scriptrdotio/howto/blob/master/README.md" target="_blank">How-to <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
+<li><a href="https://www.scriptr.io/faq">FAQ</a></li>
+
+<li><a href="https://forum.scriptr.io/" target="_blank">Forum <i aria-hidden="true" class="fa fa-external-link"></i></a></li>
+</ul>
+</li>
+<li id="li_login"><a href="https://www.scriptr.io/login"> Register | Login</a></li> </ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+</div>
+<script type="text/javascript">
+
+	var menuClicked = false;
+	
+	$(document).ready(function(){
+    	$(".dropdown").hover(function(){
+        	if(menuClicked){
+        		var dropdownMenu = $(this).children(".dropdown-menu");
+                dropdownMenu.parent().addClass("open");
+                
+                $(".navbar-nav .dropdown").not(this).removeClass("open");
+        	}
+    	}, function(event) {
+    		if(menuClicked){
+        		event.preventDefault();
+        	}
+    	});
+    	
+    	$(".dropdown").click(function(){
+        	menuClicked = !menuClicked;
+    	});
+
+	});
+	
+	$(document).click(function(){
+		menuClicked = false;
+	});
+
+	$("#li_logout").click(function(event){
+		$.post("logout.php", {}, function(){
+		}).always(function(data) {
+			pubsub.publish("logout");
+			window.location.reload();
+		});
+	});
+
+	amplify.subscribe("logout", function(data){
+		window.location.reload();
+    });
+</script>
+<section class="vbox">
+<div class="section bg-white">
+<div class="container">
+<h1 class="text-center lead-title"><b>Privacy Policy</b></h1>
+<div class="header-strips-one"></div>
+<div class="mb40">
+<div style="orphans: 2; text-align: start; text-indent: 0px; widows: 2;"><div>Current as of December 23, 2014</div><div><br/></div><div>SUMMARY<br/><br/></div><div>Please read this privacy policy (the "Privacy Policy") to learn more about how ElementN, Inc. d/b/a scriptr.io, a Delaware corporation, having its principal place of business at 119 West 24th Street 4th floor, New York, NY 10011 ("scriptr.io", "we" or "us") treats personally identifiable information that you provide to us when you visit our web Site www.scriptr.io (the "Site") or register as a user and purchase our online services (the "Services") on the Site. Unless otherwise defined herein, capitalized terms shall have the meanings assigned to such terms in the Terms &amp; Conditions of Use Agreement for the Site found at www.scriptr.io/terms of use. If you have comments, suggestions, questions, or concerns about our Privacy Policy, please contact us at info@scriptr.io.</div><div><br/></div><div>What This Policy Covers.</div><div>This policy covers our treatment of personally identifiable information that we obtain from you when you contact us to obtain more information about our services or when you register as a user and purchase Services on our Site. We regard personally identifiable information as information that someone can use to identify or contact you in person, such as real name, telephone number, email address, physical mailing address, and financial account information. Information that we use internally to identify you as a customer in our system, such as your selected username or password, is not considered personally identifiable information.</div><div><br/></div><div>What This Policy Does Not Cover.</div><div>This policy does not cover the privacy practices of third parties that we do not own or control, such as our partners and advertisers. In addition, we may provide links to other services and on occasion to other sites that may interest you. All of these sites operate independently and they have their own privacy or security practices. We have no control over, do not review, and cannot be responsible for these outside Web sites or their content. Accordingly, we encourage you to review their policies before submitting any personal information to them.</div><div><br/></div><div>HOW INFORMATION IS COLLECTED</div><div><br/></div><div>1. Information You Provide.</div><div>Required Information When You Request Additional Information About Our Services. When you contact us via email or via the contact form posted on the Site to obtain additional information about our Services, we require you to provide the following contact information: name, email address or telephone number.</div><div><br/></div><div>Required Registration Information. When you register to use our Services, we collect the following information from you: full name, company name and tax identification number, if applicable, billing postal address, telephone number, email address, credit card type, credit card number, expiration date, security code and the username and password you have created.</div><div><br/></div><div>Email Information. In addition to providing the foregoing information to us, if you choose to correspond further with us through email, we may retain the content of your email messages together with your email address and our responses. We provide the same protections for these electronic communications that we employ in the maintenance of information received by mail and telephone. It will remain safeguarded and not be shared with any outside services or companies.</div><div><br/></div><div>Access To Your Personal Information. In general, we make it easy for you to view the personally identifiable information we have collected from you in your customer profile, where you can add, edit, or delete it as you see fit.</div><div><br/></div><div>2. Information We Track.</div><div><br/></div><div>A. Log Files</div><div>Similar to many commercial Web sites, we gather certain anonymous, non-personal information automatically and store it in web server log files. This information includes internet protocol addresses, browser type, internet service provider (ISP), site entry/exit pages, operating system, date/time stamp, and clickstream data. scriptr.io uses this information to improve our Site, analyze trends, administer the Site, track visitors' and users' movements around the Site, and gather aggregate information about the Site user base as a whole. Aggregate information is data we collects about a group or category of services, visitors, or users from which individual identities have been removed, and therefore does not include your personal information.</div><div><br/></div><div>B. Cookies A cookie is a small text file that is stored on a user's computer for record-keeping purposes. It can also help us understand how visitors and users click to the Site, and what pages they view during their visit. Similar to many commercial Web sites, scriptr.io uses a standard technology called a "session cookie" to enable the Site to recognize you during a visit to this Site. The session cookie is stored in temporary memory on your computer and is not retained after you close your browser.<span class="Apple-tab-span" style="white-space:pre"> </span>You can set your web browser software to disable cookies. To do so, please refer to the help section of your specific browser for more information on how to manage or disable cookies. If you disable cookies, you may still view the Site, but some areas of our site may not work properly.</div><div><br/></div><div>INFORMATION WE DO NOT COLLECT.</div><div><br/></div><div>1. Personal Information of Children Under The Age of 13.</div><div><br/></div><div>You should be aware that our Site is not intended for, or designed to attract, children under the age of 13 and as such, we do not intentionally gather personally identifiable information of children who are under the age of 13. If you believe that we have collected personal information about a child who is under the age of 13, please contact us at info@scriptr.io and such personal information will be deleted.</div><div><br/></div><div>2. Social Security Number.</div><div><br/></div><div>We do not ask or require your social security number in connection with your registration as a user or your purchase of Services on our Site. No one representing scriptr.io will ever ask for your social security number. If at any time you receive an e-mail requesting such information from someone purporting to represent scriptr.io please notify us immediately.</div><div><br/></div><div>HOW PERSONAL INFORMATION IS USED, CONTROLLED, AND SECURED</div><div><br/></div><div>1. Use of Your Personal Information That You Provide To Us.</div><div>We may use your personal information for the following purposes:</div><div>As a customer, you will be given the opportunity, at least once annually, to notify us of your desire not to receive promotional offers.</div><div><br/></div><div>2. Use of Anonymous Information.</div><div>We may create anonymous information records from your personal information by excluding information (such as your name) that make the information personally identifiable to you. We may use this anonymous information to analyze usage patterns so that we may enhance our Site and the Services.</div><div><br/></div><div>3. Control of Your Personal Information.</div><div>Except as otherwise described in this Privacy Policy, personal information you provide to us will not be shared outside of scriptr.io and its controlled subsidiaries and affiliates without your permission.</div><div><br/></div><div>4. Security of Your Personal Information.</div><div>scriptr.io is committed to protecting the security of your personal information. We utilize encryption/security software to safeguard the confidentiality of personal information we collect from unauthorized access or disclosure and accidental loss, alteration or destruction. When you provide your credit card information to us on our Site, a secure server software which we have licensed encrypts all information you input before it is sent to us. The information is scrambled en route and decoded once it reaches our Site. However, no company, including us, can fully eliminate security risks associated with personal information.</div><div><br/></div><div>Please note that email correspondence that you may send to us may not be secure unless we advise you</div><div>*To process and fulfill your order , including to send you emails to confirm your order;</div><div>*To communicate with you and to send you information by email, mail, or other means about our existing; services, updates, new services, and special offers we think you will find valuable; and</div><div>*To notify you about important changes to our Site.</div><div>that security measures will be in place prior to your transmitting the information. For that reason, we ask that you do not send confidential information such as credit card information to us through an unsecured email.</div><div><br/></div><div>HOW INFORMATION IS SHARED AND DISCLOSED</div><div><br/></div><div>1. With Third Parties</div><div>We reserve the right to use and disclose anonymous information to third parties such as our affiliates, partners or reputable third parties in our discretion.</div><div><br/></div><div>2. Linked Services</div><div>In some cases, we may allow you to access or link to other products or services through our Site. In all of these cases, our partners may choose to collect your personal information as they deem appropriate. We are not responsible for or in control of how our partners collect, use, or disclose your information obtained through these linked services. We encourage you to be aware when you are using these partner services and, for your best online experience, we encourage you to review their policies before submitting any personal information to them.</div><div><br/></div><div>3. As Necessary In Certain Legal Circumstances We reserve the right to disclose your personally identifiable information as required by law and when we believe that disclosure is necessary to protect the rights, property or safety of scriptr.io or others, respond to claims and/or to comply with a judicial proceeding, court order, or legal process served on us.</div><div><br/></div><div>POSTING TO PUBLIC AREAS</div><div><br/></div><div>Please note that if you post or make available your personal information in public areas of the Site, such as in online discussion forums, one-to-one communication forums permitting direct communication with other customers, chat rooms or blogs, such information may be collected and used by third parties over whom we have no control. scriptr.io is not responsible for the use by such third parties of personal information you post or make available in public areas of the Site.</div><div><br/></div><div>CUSTOMER DATA</div><div><br/></div><div>Our customers use our Services to host data and information ("Customer Data"). scriptr.io will not review, share, distribute, or reference any such Customer Data except as provided in the scriptr.io End User License Agreement or as may be required by law. Individual records of Customer Data may be viewed or accessed only for the purpose of resolving a problem, support issues, or suspected violation of the scriptr.io End User License Agreement, or as may be required by law.</div><div><br/></div><div>NOTICE TO CALIFORNIA RESIDENTS</div><div><br/></div><div>California Civil Code Section 1798.83 permits customers who are California residents and who have provided scriptr.io with "personal information" (as that term is defined in Section 1798.83) to request certain information about the disclosure of that information to third parties for their direct marketing purposes. If you are a California resident with questions regarding this, please contact us at scriptr.io at info@scriptr.io  or at ElementN, Inc., 119 West 24th Street 4th floor, New York, NY 10011.</div><div><br/></div><div>FOR OUR CANADIAN CUSTOMERS AND VISITORS</div><div><br/></div><div>Canadian citizens, except under circumstances defined by law, are entitled to access their own personal information collected by applyu.com by writing to: ElementN, Inc., 119 West 24th Street 4th floor, New York, NY 10011. We may ask you to pay an administrative fee for accessing or copying your information, but will inform you of the anticipated charges and confirm that you want us to proceed before processing your request. If you believe that the personal information about you that we have collected is incomplete or inaccurate, we will correct the information upon verification of the omission or error and of the identity of the person requesting the change. If you wish additional information about our personal identifiable management, to access, correct or have us investigate any matters in relation to your personally identifiable information, please contact us at the address provided above.</div><div><br/></div><div>NOTICE FOR OUR CUSTOMERS AND VISITORS OUTSIDE OF THE UNITED STATES</div><div><br/></div><div>You should be aware that the United States and other countries have not harmonized their privacy regulations. Because scriptr.io and its servers is located in the United States, we have written our Privacy Policy to satisfy United States regulations. By registering as a user or purchasing services on our Site, you agree to the level of privacy protection set out in this Privacy Policy.</div><div><br/></div><div>CHANGES TO THIS PRIVACY POLICY</div><div><br/></div><div>This Privacy Policy is subject to occasional revision, and changes will be posted on the Site. If we make any substantial changes in the way we use or disclose your personal information, we will notify you at the email address listed in your customer profile and obtain your consent to a change in the use or disclosure of your personal information. If you object to any such changes, we will delete your customer profile.</div></div> </div>
+</div>
+</div>
+</section><div class="footer">
+<div class="container text-center">
+<div class="row">
+<div class="col-xs-12 col-sm-4 text-left">
+<h3 class="text-uppercase">scriptr.io</h3>
+<ul>
+<li><a href="https://scriptr.io/home">Enterprise</a></li>
+<li><a href="https://scriptr.io/developers">Developers</a></li>
+<li><a href="https://scriptr.io/connectors">Connectors</a></li>
+<li><a href="https://scriptr.io/solutions">Solutions</a></li>
+<li><a href="https://www.scriptr.io/documentation">Documentation</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-4 text-left">
+<h3 class="text-uppercase">about</h3>
+<ul>
+<li><a href="https://www.scriptr.io/faq">FAQ</a></li>
+<li><a href="http://blog.scriptr.io/" target="_blank">Blog</a></li>
+<li><a href="https://www.scriptr.io/contactUs">Contact Us</a></li>
+<li><a href="http://forum.scriptr.io" target="_blank">Forum</a></li>
+<li><a href="https://www.scriptr.io/awards">Awards</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-4 text-left">
+<h3 class="text-uppercase">Legal</h3>
+<ul>
+<li><a href="https://scriptr.io/terms">Terms of Use</a></li>
+<li><a href="https://scriptr.io/privacy">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer-strip">
+<div class="container text-center">
+<ul class="social mb0">
+<li><a href="https://www.facebook.com/scriptrdotio/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/scriptrdotio" target="_blank"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://www.linkedin.com/company/scriptr-io" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+</ul>
+<p>© scriptr.io 2022 All Rights Reserved.</p>
+</div>
+</div>
+</div>
+<!--  begin sticky contact form  -->
+<div class="sticky-container">
+<form class="sticky-form lightFormValidation" id="sendEmailFrm" onsubmit="return false;">
+<div class="close-form close-icon"><a href="javascript:void(0);"><i class="fa fa-times"></i></a></div>
+<h5>Let us know who you are and we will update you on scriptr.io news.</h5>
+<div class="note">No Spam, Just scriptr.io updates</div>
+<div class="contactErrorMessage col-xs-12 mb0 center-div alert fadeIn animated alert-danger" style="display: none;">
+<div class="row">
+<div class="col-xs-11">We are currently unable to send your message. Please try again later or send us an email at <a href="mailto:info@scriptr.io">info@scriptr.io</a>.</div>
+<div class="col-xs-1 text-right">
+<button class="close" onclick="hideContactTErrorMessage();" type="button"><i class="fa fa-close"></i></button>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="form-group has-feedback">
+<label class="control-label">Your email address*</label>
+<input class="form-control" id="emailContact" name="emailContact" tabindex="2" type="text"/>
+</div>
+<div class="form-group has-feedback">
+<label class="control-label">Leave us a message</label>
+<textarea class="form-control" id="messageInp" maxlength="500" name="messageInp" rows="3" tabindex="3" type="text"></textarea>
+</div>
+<input name="action" style="display:none" type="text" value="subscribe"/>
+<div class="form-group has-feedback">
+<div class="pull-right">
+<button class="btn btn-default mr5 close-icon cancelBtn" tabindex="5">Cancel</button>
+<btn class="btn-primary btn sendBtn" id="sendupdates" tabindex="4">Send</btn>
+<btn class="btn-primary btn loadBtn" disabled="" style="display:none" tabindex="4"><i class="fa fa-spinner fa-pulse fa-fw text-white"></i> Sending...</btn>
+</div>
+</div>
+<div class="clearfix"></div>
+<input name="csrff52216f141" type="hidden" value="4ee7303e5734790f6673ab44e0c3c8220bb651de28dd28f6ee7c20eb8e09a5ea"/>
+</form>
+</div>
+<div class="sticky-container-success">
+<form class="sticky-form">
+<div class="close-form close-icon"><a href="javascript:void(0);"><i class="fa fa-times"></i></a></div>
+<h5>Message Sent</h5>
+<div class="text-center"><img src="/themes/scriptr/images/sticky-success.png"/></div>
+</form>
+</div>
+<div class="sticky-button">
+<btn class="btn-primary btn"><span><i class="fa fa-envelope"></i></span>	Subscribe for updates </btn>
+</div>
+<!--  end sticky contact form  -->
+<script>
+	function hideContactTErrorMessage(){
+		  $('.contactErrorMessage').hide();
+	}
+
+	function showSupport(text){
+		$('.sticky-container').addClass('visible');
+		  $(".sticky-container").animate({bottom: '10px', opacity: 1}, "medium")
+		  $('#sendEmailFrm')[0].reset();
+		  if(text){
+			$('#messageInp').text(text);
+			$('#messageInp').val(text);
+		  }else{
+			$('#messageInp').val("");
+			$('#messageInp').focus();
+		  }
+		  
+		  $('#sendEmailFrm').data('bootstrapValidator').resetForm();
+		  $('.sticky-container-success').removeClass('visible');
+		  hideContactTErrorMessage();
+	  
+	}
+	
+	
+	$(function() {
+						   $('.sticky-button').click(function() {
+				  $(this).addClass('invisible');
+				  $(this).animate({bottom: '-10px', opacity: 0}, "slow")
+				  showSupport();
+			  });
+		  		  
+		  $('.close-icon').click(function() {
+			  $('.sticky-button').removeClass('invisible');
+			  $('.sticky-button').animate({bottom: '10px', opacity:1}, "slow")	
+			  $('.sticky-container').removeClass('visible');
+			  $(".sticky-container").animate({bottom: '-30px', opacity: 0}, "slow")	
+			  $('.sticky-container-success').removeClass('visible');
+			  hideContactTErrorMessage();
+		});
+
+
+	    $('#sendEmailFrm').bootstrapValidator({
+	        feedbackIcons: {
+	            valid: 'glyphicon glyphicon-ok',
+	            invalid: 'glyphicon glyphicon-remove',
+	            validating: 'glyphicon glyphicon-refresh'
+	        },
+	        fields: {
+            
+	    		        	emailContact: {
+	                validators: {
+	                    notEmpty: {
+	                        message: 'Email address is required.'
+	                    },
+	                    regexp: {
+	                        regexp: /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
+	                        message: 'Please enter a valid email address.'
+	                    }
+	                }
+	         	}					
+
+			            
+	        }
+	    }).on('error.validator.bv', function(e, data) {
+	            data.element
+	                .data('bv.messages')
+	                // Hide all the messages
+	                .find('.help-block[data-bv-for="' + data.field + '"]').hide()
+	                // Show only message associated with current validator
+	                .filter('[data-bv-validator="' + data.validator + '"]').show();
+        });
+
+		      
+		$('#sendupdates').click(function() {
+			$('#sendEmailFrm').data('bootstrapValidator').validate();
+			if($('#sendEmailFrm').data('bootstrapValidator').isValid()){
+				$('.loadBtn').show();
+				$('.cancelBtn').prop('disabled',true);
+				$('.sendBtn').hide();
+				var email = $('#emailContact').val();
+				var message = $('#messageInp').val();
+				var jqxhr = $.post("subscribeUpdate.php", $('#sendEmailFrm').serializeArray(), function(data) {
+					var response = JSON.parse(data);
+						 
+					if (response.metadata.status == "success") {
+						if(response.result.metadata.status == "success"){
+						  $('.sticky-button').addClass('invisible');
+						  $('.sticky-button').animate({bottom: '-10px', opacity: 0}, "slow")
+						  $('.sticky-container').removeClass('visible');
+						  $(".sticky-container").animate({bottom: '-30px', opacity: 0}, "slow")	
+						  $('.sticky-container-success').addClass('visible');
+						  $(".sticky-container-success").animate({bottom: '10px', opacity: 1}, "medium")
+						}else{
+							  $('.contactErrorMessage').show();
+						}
+						  
+					} else {
+						 $('.contactErrorMessage').show();
+					}
+				}).done(function(data) {
+				}).fail(function() {
+					  $('.contactErrorMessage').show();
+				}).always(function() {
+					$('.cancelBtn').prop('disabled',false);
+					$('.loadBtn').hide();
+					$('.sendBtn').show();
+				});
+			
+			}	
+
+		});
+	});
+	</script> </body>
+<script type="text/javascript">
+	  WebFontConfig = {
+	    google: { families: [ 'Raleway:300,800:latin', 'Roboto:700:latin'] }
+	  };
+	  (function() {
+	    var wf = document.createElement('script');
+	    wf.src = '/lib/fonts/webfont.js';
+	    wf.type = 'text/javascript';
+	    wf.async = 'true';
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(wf, s);
+	  })()
+	  </script>
+</html>

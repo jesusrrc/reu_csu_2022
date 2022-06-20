@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"bfd41980ea",applicationID:"460268527"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-157158166-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-157158166-1", {"groups":"default"});</script>
+<link href="https://www.pacteraedge.com/privacy-and-cookie-policy" rel="canonical"/>
+<meta content="PACTERA EDGE PRIVACY POLICY" name="description"/>
+<meta content="Drupal 9 (https://www.drupal.org)" name="Generator"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/sites/default/files/favicon-32x32_0_0.png" rel="icon" type="image/png"/>
+<script defer="" src="/sites/default/files/google_tag/google_tag_manager_1/google_tag.script.js?rd87lq"></script>
+<title>Privacy and Cookie Policy | Pactera Edge</title>
+<link href="/sites/default/files/css/css_js6GM8izjd_7I-NA3ouLNiVs1Zu6Y8xg9oq4iRY3TxM.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_aiC8bNmA9UPnx4z1eAPIPy1zfZJF8eO-Ng0f-mDTk1I.css" media="all" rel="stylesheet"/>
+<link href="//fonts.googleapis.com/css?family=Work+Sans:400,700&amp;display=swap" media="all" rel="stylesheet"/>
+<link href="//fonts.googleapis.com/css?family=Roboto:400,400i,500,700&amp;display=swap" media="all" rel="stylesheet"/>
+</head>
+<body>
+<a class="visually-hidden focusable" href="#main-content">
+      Skip to main content
+    </a>
+<noscript aria-hidden="true"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5958ZVR" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<div class="layout-container page">
+<div id="main-header-container">
+<div id="main-topbar-inner">
+<div>
+<div id="block-pactera-edge-branding">
+<a href="/index.php/" rel="home">
+<img alt="Home" src="/themes/custom/pactera_edge/logo.png"/>
+</a>
+</div>
+<div id="block-pacterasupernav-container">
+<div id="block-headernavigation">
+<a id="main-menu-toggle-close"></a>
+<nav id="block-pacterasupernav" role="navigation">
+<ul class="pactera-super-nav" data-region="header_navigation">
+<li class="list-search">
+<a class="supernav-link search-link" id="main-top-bar-search">Search</a>
+<form action="/search" class="search-form-top">
+<div class="search-input-wrapper">
+<input name="keys" placeholder="Type your search" type="text"/>
+</div>
+<button class="header-search-button">Search</button>
+</form>
+</li>
+<li class="list-about-us">
+<a class="supernav-link" href="https://www.pactera-edge.com.cn" id="main-top-bar-externalLink">中文网站</a>
+</li>
+<li class="list-about-us">
+<a class="supernav-link" href="/locations" id="main-top-bar-locations">Global Locations</a>
+</li>
+<li class="list-contact-us">
+<a class="supernav-link" href="/contact/contact_us" id="main-top-bar-contact">Contact Us</a>
+</li>
+</ul>
+
+</nav>
+<nav aria-labelledby="block-pacteramainmenu-menu" id="block-pacteramainmenu" role="navigation">
+<h2 class="visually-hidden" id="block-pacteramainmenu-menu">Pactera Main menu</h2>
+<ul class="menu menu-level-0">
+<li class="menu-item menu-item--expanded">
+<span>Services</span>
+<div class="submenu-wrapper">
+<div class="submenu-wrapper--first">
+<h2>Services</h2>
+</div>
+<div class="submenu-wrapper--second">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<ul class="menu menu-level-1">
+<li class="menu-item menu-item--expanded">
+<span>Data</span>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+<ul class="menu menu-level-2">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1116" href="/data-governance-compliance">Data Governance + Compliance</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1121" href="/data-management">Data Management</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1126" href="/data-curation">Data Curation</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1131" href="/custom-data-sets">Custom Data Sets</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1136" href="/data-platform-modernization">Data Platform Modernization</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1211" href="/data-science-engineering">Data Science + Engineering</a>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class="menu-item menu-item--expanded">
+<span>Intelligence</span>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+<ul class="menu menu-level-2">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1181" href="/enterprise-ai-strategy">Enterprise AI Strategy</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1146" href="/ai-acceleration">AI Acceleration</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1186" href="/advanced-analytics">Advanced Analytics</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1191" href="/ai-platforms-solutions">AI Platforms &amp; Solutions</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1481" href="/ai-ops">AIOps</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1486" href="/ml-ops">MLOps</a>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class="menu-item menu-item--expanded">
+<span>Experience</span>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+<ul class="menu menu-level-2">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1156" href="/content-commerce-platforms">Content + Commerce Platforms</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1196" href="/digital-products-services">Digital Products + Services</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1161" href="/enterprise-applications">Enterprise Applications</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1166" href="/bots-conversational-ai">Bots + Conversational AI</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1201" href="/voice-skills">Voice Skills</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1206" href="/immersive-reality">Immersive Reality</a>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class="menu-item menu-item--expanded">
+<span>Globalization</span>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+<ul class="menu menu-level-2">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1106" href="/language-services">Language Services</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1171" href="/global-experience-assessment">Global Experience Assessment</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1596" href="/AI-Data-Localization">AI Data Localization</a>
+</li>
+</ul>
+</div>
+</div>
+</li>
+</ul>
+<div class="field_menu_item_image"> <img alt="Services" height="220" loading="lazy" src="/sites/default/files/styles/menu_item_image/public/2020-12/Services.jpg.webp?itok=XCqnn2RF" typeof="foaf:Image" width="300"/>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="menu-item menu-item--expanded">
+<span>Capabilities</span>
+<div class="submenu-wrapper">
+<div class="submenu-wrapper--first">
+<h2>Capabilities</h2>
+</div>
+<div class="submenu-wrapper--second">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<ul class="menu menu-level-1">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1281" href="/consulting">Consulting</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1286" href="/ideation-design">Ideation + Design</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1291" href="/engineering">Engineering + Operations</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1526" href="/digital-workplace-automation">DIGITAL WORKPLACE AUTOMATION</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1316" href="/cloud">Cloud</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+</ul>
+<div class="field_menu_item_image"> <img alt="Capabilities" height="220" loading="lazy" src="/sites/default/files/styles/menu_item_image/public/2020-12/capabilities.jpg.webp?itok=2ROTPucE" typeof="foaf:Image" width="300"/>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="menu-item menu-item--expanded">
+<span>Industries</span>
+<div class="submenu-wrapper">
+<div class="submenu-wrapper--first">
+<h2>Industries</h2>
+</div>
+<div class="submenu-wrapper--second">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<ul class="menu menu-level-1">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1376" href="/consumer-packaged-goods-0">CPG</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1231" href="/consumer-electronics">Consumer Electronics</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1221" href="/financial-services">Financial Services</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1301" href="/healthcare">Healthcare</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1306" href="/insurance">Insurance</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1226" href="/internet-native-brands">Internet Native Brands</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1296" href="/life-sciences">Life Sciences</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1381" href="/logistics">Logistics</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1111" href="/retail">Retail</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/1216" href="/software-isvs">Software + ISVs</a>
+<div class="submenu-wrapper--third">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+</div>
+</div>
+</li>
+</ul>
+<div class="field_menu_item_image"> <img alt="Industries" height="220" loading="lazy" src="/sites/default/files/styles/menu_item_image/public/2020-12/industries.jpg.webp?itok=t5vtmZel" typeof="foaf:Image" width="300"/>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="insights" href="/insights">Insights</a>
+<div class="submenu-wrapper">
+<div class="submenu-wrapper--first">
+<h2>Insights</h2>
+</div>
+<div class="submenu-wrapper--second">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+</div>
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="insights/our-work" href="/insights/our-work">Our Work</a>
+<div class="submenu-wrapper">
+<div class="submenu-wrapper--first">
+<h2>Our Work</h2>
+</div>
+<div class="submenu-wrapper--second">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+</div>
+</div>
+</div>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/171" href="/about-us">About Us</a>
+<div class="submenu-wrapper">
+<div class="submenu-wrapper--first">
+<h2>About Us</h2>
+</div>
+<div class="submenu-wrapper--second">
+<div class="menu_link_content menu-link-contentpactera-main-menu view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+</div>
+</div>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<a id="main-menu-toggle-open"></a>
+</div>
+</div>
+<div id="main-header-inner">
+<header role="banner">
+<div class="header-inner">
+<div>
+<div id="block-pactera-edge-page-title">
+<h1>
+<span class="title" property="schema:name">Privacy and Cookie Policy</span>
+</h1>
+</div>
+</div>
+<p class="subhead">ONLINE PRIVACY STATEMENT</p>
+</div>
+</header>
+</div>
+</div>
+<main class="main-page-content" id="main-content" role="main">
+<div class="layout-content">
+<div>
+<div class="hidden" data-drupal-messages-fallback=""></div>
+<div id="block-pactera-edge-content">
+<article about="/privacy-and-cookie-policy" class="page" data-history-node-id="461" role="article" typeof="schema:WebPage">
+<span class="hidden" content="Privacy and Cookie Policy" property="schema:name"></span>
+<div>
+<div class="layout layout--onecol">
+<div class="layout__region layout__region--content">
+<div>
+<div class="body" property="schema:text"><p class="O-Title1"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt;" xml:lang="EN-GB">PACTERA EDGE PRIVACY POLICY</span></span></strong></p>
+<p class="LNMainL1"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">1.<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">            </span></span></span></span></strong><span lang="EN-GB" xml:lang="EN-GB">OUR approach to privacy</span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">1.1<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">Pactera Technologies NA, Inc. or Pactera EDGE (“<strong>Pactera</strong>“, “<strong>we</strong>“, “<strong>our</strong>“, or “<strong>us</strong>“) is committed to protecting your privacy. This privacy policy sets out how we collect, store, process, transfer, share and use data that identifies or is associated with you (“<strong>personal information</strong>“) and information regarding our use of cookies and similar technologies.</span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">1.2<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">This privacy policy applies to our corporate website at <a href="https://en.pactera.com/">w</a>ww.pactera-edge.com (our “<strong>Website</strong>“). Terms used in this privacy policy have the same meaning as in our Terms of Use, unless otherwise defined in this privacy policy.</span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">1.3<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">Before accessing or using our Website, please ensure that you have read and understood our collection, storage, use and disclosure of your personal information as described in this privacy policy.</span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">1.4<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">Pactera is the data controller of the personal information we hold about you.</span></p>
+<p class="LNMainL1"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">2.<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">            </span></span></span></span></strong><span lang="EN-GB" xml:lang="EN-GB">Personal INFORMATION we COLLECT about you AND HOW WE USE IT</span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">2.1<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">We collect personal information about you when you voluntarily submit information directly to us when you use our Website. This can include information you provide to us when you fill in a form on our Website, correspond with us via the Website, phone, e-mail or otherwise, subscribe to our mailing lists, newsletters or other forms of marketing communications, respond to surveys or use some other feature of our Website as available from time to time.</span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">2.2<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">If you choose not to provide personal information, we may not be able to respond to your requests. </span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">2.3<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">The table at <strong>Annex 1</strong> sets out the categories of personal information we collect about you and how we use that information. The table also lists the legal basis which we rely on to process the personal information, the categories of recipients of the personal information and information as to how we determine applicable retention periods. </span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">2.4<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">We also automatically collect personal information about you indirectly about how you access and use the Website and information about the device you use to access the Website. </span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">2.5<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">The table at <strong>Annex 2</strong> sets out the categories of personal information we collect about you automatically and how we use that information. The table also lists the legal basis which we rely on to process the personal information, the categories of recipients of the personal information and information as to how we determine applicable retention periods. </span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">2.6<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">We may link or combine the personal information we collect about you and the information we collect automatically. This allows us to provide you with a personalized experience regardless of how you interact with us. </span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">2.7<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">We may anonymize and aggregate any of the personal information we collect (so that it does not directly identify you). We may use anonymized information for purposes that include testing our IT systems, research, data analysis, improving our Website and developing new products and features. We may also share such anonymised information with others. </span></p>
+<p class="LNMainL1"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">3.<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">            </span></span></span></span></strong><span lang="EN-GB" xml:lang="EN-GB">MARKETING AND RELATED COMMUNICATIONS</span></p>
+<p class="LNMainL2"><span style="font-family: Arial;"><span lang="EN-GB" xml:lang="EN-GB"><span style="font-family: 'Times New Roman'; font-size: 7pt; font-variant-numeric: normal; font-stretch: normal; line-height: normal;"> </span></span></span><span lang="EN-GB" xml:lang="EN-GB">From time to time we may contact you with relevant information about our Website and services. Most messages we send will be by email. For some messages, we may use personal information we collect about you to help us determine the most relevant information to share with you. If you do not want to receive such messages from us, you can change your marketing preferences by clicking on the unsubscribe link at the bottom of our emails.</span></p>
+<p class="LNMainL1"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">4.<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">            </span></span></span></span></strong><span lang="EN-GB" xml:lang="EN-GB">Storing and transferring your personal information</span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-bidi-font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">4.1<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><strong><span lang="EN-GB" xml:lang="EN-GB">Security</span></strong><span lang="EN-GB" xml:lang="EN-GB">. We implement appropriate technical and organizational measures to protect your personal information against accidental or unlawful destruction, loss, change or damage. All personal information we collect will be stored on secure servers. All electronic transactions entered into via our Website will be protected by SSL encryption technology. </span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-bidi-font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">4.2<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><strong><span lang="EN-GB" xml:lang="EN-GB">International Transfers of your Personal Information</span></strong><span lang="EN-GB" xml:lang="EN-GB">. The personal information we collect may be transferred to and stored in countries outside of the jurisdiction you are in where we and other Pactera EDGE groups or our third-party providers have operations. If you are located in the European Union (</span><span lang="EN-GB" xml:lang="EN-GB">“</span><strong><span lang="EN-GB" xml:lang="EN-GB">EU</span></strong><span lang="EN-GB" xml:lang="EN-GB">“</span><span lang="EN-GB" xml:lang="EN-GB">), your personal information may be processed outside of the EU; these international transfers of your personal information are made pursuant to appropriate safeguards, such as standard data protection clauses adopted by the European Commission. If you wish to enquire further about the safeguards used, please contact us using the details set out at the end of this privacy policy.</span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-bidi-font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">4.3<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">We will take reasonable steps to ensure that your personal information is treated securely and in accordance with applicable law and this privacy policy.</span></p>
+<p class="LNMainL1"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">5.<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">            </span></span></span></span></strong><span lang="EN-GB" xml:lang="EN-GB">YOUR RIGHTS IN RESPECT OF your personal information</span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">5.1<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">If you are located in the EU, in accordance with applicable privacy law, you have the following rights in respect of your personal information that we hold:</span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(a)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><strong><span lang="EN-GB" xml:lang="EN-GB">Right of access</span></strong><span lang="EN-GB" xml:lang="EN-GB">. The right to obtain access to your personal information.</span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(b)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><strong><span lang="EN-GB" xml:lang="EN-GB">Right to rectification</span></strong><span lang="EN-GB" xml:lang="EN-GB">. The right to obtain rectification of your personal information without undue delay where that personal information is inaccurate or incomplete. </span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(c)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><strong><span lang="EN-GB" xml:lang="EN-GB">Right to erasure</span></strong><span lang="EN-GB" xml:lang="EN-GB">. The right to obtain the erasure of your personal information without undue delay in certain circumstances, such as where the personal information is no longer necessary in relation to the purposes for which it was collected or processed.</span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(d)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><strong><span lang="EN-GB" xml:lang="EN-GB">Right to restriction</span></strong><span lang="EN-GB" xml:lang="EN-GB">. The right to obtain the restriction of the processing undertaken by us on your personal information in certain circumstances, such as where the accuracy of the personal information is contested by you, for a period enabling us to verify the accuracy of that personal information.</span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">5.2<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">If you wish to exercise one of these rights, please contact us using the contact details at the end of this privacy policy. You may also review and edit the personal information you have submitted to us by logging into your account on our Website.</span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">5.3<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">You also have the right to lodge a complaint to the Supervisory Authority in your jurisdiction.</span></p>
+<p>6.            cookies and similar technologies</p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">6.1<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">Our Website uses cookies to distinguish you from other users of our Website. This helps us to provide you with a good experience when you browse our Website and also allows us to improve our Website.</span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">6.2<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">Cookies are pieces of code that allow for personalization of our Website experience by saving your information such as user ID and other preferences. A cookie is a small data file that we transfer to your computer’s hard disk for record-keeping purposes. </span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">6.3<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">We use the following types of cookies:</span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(a)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><strong><span lang="EN-GB" xml:lang="EN-GB">Strictly necessary cookies</span></strong><span lang="EN-GB" xml:lang="EN-GB">. These are cookies that are required for the essential operation of our Website such as to authenticate users and prevent fraudulent use. </span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(b)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><strong><span lang="EN-GB" xml:lang="EN-GB">Analytical/performance cookies</span></strong><span lang="EN-GB" xml:lang="EN-GB">. They allow us to recognize and count the number of visitors and to see how visitors move around our Website when they are using it. This helps us to improve the way our Website works, for example, by ensuring that users are finding what they are looking for easily. </span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(c)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><strong><span lang="EN-GB" xml:lang="EN-GB">Functionality cookies</span></strong><span lang="EN-GB" xml:lang="EN-GB">. These are used to recognize you when you return to our Website. This enables us to personalize our content for you, greet you by name and remember your preferences (for example, your choice of language or region).</span><span style="font-family: 'MS Gothic';"><span lang="EN-GB" xml:lang="EN-GB"> </span></span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(d)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><strong><span lang="EN-GB" xml:lang="EN-GB">Targeting cookies</span></strong><span lang="EN-GB" xml:lang="EN-GB">. These cookies record your visit to our Website, the pages you have visited and the links you have followed. We will use this information to make our Website and the advertising displayed on it more relevant to your interests. We may also share this information with third parties for this purpose.</span></p>
+<p class="LNMainL3" style="margin-left: 36.0pt; text-indent: 0cm; mso-list: none; tab-stops: 21.0pt;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt;" xml:lang="EN-GB">Please be aware that third parties (including, for example, advertising networks and providers of external services like web traffic analysis services) may also use cookies, over which we have no control. These cookies are likely to be analytical/performance cookies or targeting cookies.</span></span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">6.4<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">The cookies we use are designed to help you get the most from the Website but if you do not wish to receive cookies, most browsers allow you to change your cookie settings. Please note that if you choose to refuse cookies you may not be able to use the full functionality of our Website. These settings will typically be found in the “options” or “preferences” menu of your browser. In order to understand these settings, the following links may be helpful, otherwise you should use the “Help” option in your browser for more details.</span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(a)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB"><a href="https://support.microsoft.com/en-us/products/windows" rel="noopener" target="_blank"><span style="color: #2999f0;">Cookie settings in Internet Explorer</span></a></span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(b)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB"><a href="http://support.mozilla.org/en-US/kb/cookies" rel="noopener" target="_blank"><span style="color: #2999f0;">Cookie settings in Firefox</span></a></span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(c)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB"><a href="https://support.google.com/chrome/answer/95647?hl=en" rel="noopener" target="_blank"><span style="color: #2999f0;">Cookie settings in Chrome</span></a></span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(d)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB"><a href="https://support.apple.com/kb/PH5042?locale=en_GB" rel="noopener" target="_blank"><span style="color: #2999f0;">Cookie settings in Safari web</span></a></span><span class="ng-scope"><span style="color: #324447;"><span lang="EN-GB" xml:lang="EN-GB"> and </span></span></span><span lang="EN-GB" xml:lang="EN-GB"><a href="https://support.apple.com/en-gb/HT201265" rel="noopener" target="_blank"><span style="color: #2999f0;">iOS</span></a></span><span class="ng-scope"><span style="color: #324447;"><span lang="EN-GB" xml:lang="EN-GB">.</span></span></span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">6.5<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">If you only want to limit third party advertising cookies, you can turn such cookies off by visiting the following links (please bear in mind that there are many more companies listed on these sites than those that drop cookies via our Website):</span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(a)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><span class="ng-scope"><span style="color: #324447;"><span lang="EN-GB" xml:lang="EN-GB">Your Online Choices (</span></span></span><span lang="EN-GB" xml:lang="EN-GB"><a href="http://www.youronlinechoices.com/uk/" rel="noopener" target="_blank"><span style="color: #2999f0;">http://www.youronlinechoices.com/</span></a></span><span class="ng-scope"><span style="color: #324447;"><span lang="EN-GB" xml:lang="EN-GB"> )</span></span></span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(b)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><span class="ng-scope"><span style="color: #324447;"><span lang="EN-GB" xml:lang="EN-GB">Network Advertising Initiative (</span></span></span><span lang="EN-GB" xml:lang="EN-GB"><a href="http://www.networkadvertising.org/" rel="noopener" target="_blank"><span style="color: #2999f0;">http://www.networkadvertising.org/</span></a></span><span class="ng-scope"><span style="color: #324447;"><span lang="EN-GB" xml:lang="EN-GB">)</span></span></span></p>
+<p class="LNMainL3"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">(c)<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">           </span></span></span></span><span class="ng-scope"><span style="color: #324447;"><span lang="EN-GB" xml:lang="EN-GB">Digital Advertising Alliance (</span></span></span><span lang="EN-GB" xml:lang="EN-GB"><a href="http://www.aboutads.info/consumers" rel="noopener" target="_blank"><span style="color: #2999f0;">http://www.aboutads.info/consumers</span></a></span><span class="ng-scope"><span style="color: #324447;"><span lang="EN-GB" xml:lang="EN-GB">)</span></span></span></p>
+<p class="LNMainL1"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">7.<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">            </span></span></span></span></strong><span lang="EN-GB" xml:lang="EN-GB">Links to third party sites</span></p>
+<p class="LNMainCont1"><span lang="EN-GB" xml:lang="EN-GB">Our Website may, from time to time, contain links to and from third party websites, such as news publications. If you follow a link to any of these websites, please note that these websites have their own privacy policies and that we do not accept any responsibility or liability for their policies. Please check the individual policies before you submit any information to those websites.</span></p>
+<p class="LNMainL1"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">8.<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">            </span></span></span></span></strong><span lang="EN-GB" xml:lang="EN-GB">OUR POLICY TOWARDS CHILDREN</span></p>
+<p class="LNMainL1">Our Website is not directed at persons under 16 and we do not knowingly collect personal information from children under 16. If you become aware that your child has provided us with personal information, without your consent, then please contact us using the details below so that we can take steps to remove such information.</p>
+<p class="LNMainL1"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">9.<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">            </span></span></span></span></strong><span lang="EN-GB" xml:lang="EN-GB">Changes to this policy</span></p>
+<p><span lang="EN-GB" xml:lang="EN-GB">We may update this privacy policy from time to time, so you should review this page periodically. When we change this privacy policy in a material way, we will update the “last modified” date at the end of this privacy policy. Changes to this privacy policy are effective when they are posted on this page.</span></p>
+<p class="LNMainL1"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">10.<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span></strong><span lang="EN-GB" xml:lang="EN-GB">Notice to you</span></p>
+<p><span lang="EN-GB" xml:lang="EN-GB">If we need to provide you with information about something, whether for legal, marketing or other business-related purposes, we will select what we believe is the best way to get in contact with you. We will usually do this through email or by placing a notice on our Website. The fact that we may send notices to you will not stop you from being able to opt out of certain types of contact as described in this privacy policy.</span></p>
+<p class="LNMainL1"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">11.<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-weight: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">          </span></span></span></span></strong><span lang="EN-GB" xml:lang="EN-GB">Contacting us</span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">11.1<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">       </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">Questions, comments and requests regarding this privacy policy are welcome and should be addressed to the Chief Privacy Officer at: </span><a href="mailto:data_protection@pacteraedge.com" title="mailto:data_protection@pacteraedge.com">data_protection@pacteraedge.com</a> <span lang="EN-GB" xml:lang="EN-GB">.   </span></p>
+<p class="LNMainL2"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-fareast-font-family: Arial; mso-bidi-font-family: Arial;" xml:lang="EN-GB">11.2<span style="font-family: 'Times New Roman'; font-size: xx-small;"><span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal;">       </span></span></span></span><span lang="EN-GB" xml:lang="EN-GB">This privacy policy was last modified o</span><span lang="EN-GB" xml:lang="EN-GB">n March 09, </span><span lang="EN-GB" xml:lang="EN-GB">2018.</span></p>
+<p align="center" class="O-BodyText" style="text-align: center;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt;" xml:lang="EN-GB">ANNEX 1 – PERSONAL INFORMATION WE COLLECT</span></span></strong></p>
+<table border="1" cellpadding="0" cellspacing="0" class="MsoTableGrid" style="width: 687.35pt; margin-left: -7.35pt; border-collapse: collapse; border: none; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 1184; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt;" width="916"><tbody><tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; height: 18.35pt;"><td bgcolor="#66FF00" height="24" style="width: 153.95pt; border: solid windowtext 1.0pt; mso-border-alt: solid windowtext .5pt; background: #C1D6D6; mso-background-themecolor: accent5; mso-background-themetint: 102; padding: 0cm 5.4pt 0cm 5.4pt; height: 18.35pt;" width="205">
+<p align="center" class="O-BodyText" style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Category of personal information</span></span></strong></p>
+</td>
+<td bgcolor="#66FF00" height="24" style="width: 154.0pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; background: #C1D6D6; mso-background-themecolor: accent5; mso-background-themetint: 102; padding: 0cm 5.4pt 0cm 5.4pt; height: 18.35pt;" width="205">
+<p align="center" class="O-BodyText" style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">How we use it</span></span></strong></p>
+</td>
+<td bgcolor="#66FF00" height="24" style="width: 187px; border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; background: rgb(193, 214, 214); padding: 0cm 5.4pt; height: 18.35pt;" width="205">
+<p align="center" class="O-BodyText" style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Legal basis for the processing</span></span></strong></p>
+</td>
+<td bgcolor="#66FF00" height="24" style="width: 184px; border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; background: rgb(193, 214, 214); padding: 0cm 5.4pt; height: 18.35pt;" width="205">
+<p align="center" class="O-BodyText" style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Categories of recipients</span></span></strong></p>
+</td>
+<td bgcolor="#66FF00" height="24" style="width: 71.85pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; background: #C1D6D6; mso-background-themecolor: accent5; mso-background-themetint: 102; padding: 0cm 5.4pt 0cm 5.4pt; height: 18.35pt;" width="96">
+<p align="center" class="O-BodyText" style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Retention period</span></span></strong></p>
+</td>
+</tr><tr><td style="width: 153.9pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="205">
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Basic personal details and contact information. </span></span></strong><span style="font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">Personal information voluntarily provided via our Website, such as your first name, last name, country of residence and e-mail address. </span></span></p>
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB"> </span></span></p>
+</td>
+<td style="width: 153.95pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="205">
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">We use this information to communicate with you to deal with queries made by you and, where you have subscribed to stay connected with us, for marketing purposes such as sending you updates.</span></span></p>
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB"> </span></span></p>
+</td>
+<td style="width: 187px; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt;" valign="top" width="205">
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">The processing is necessary for our legitimate interests, namely for communicating with individuals that have corresponded with us and for marketing purposes.</span></span></p>
+</td>
+<td rowspan="5" style="width: 184px; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt;" valign="top" width="205">
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><em><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">As required in accordance with how we use it, we will share your personal information with the following:</span></span></em></p>
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Service providers and advisors</span></span></strong><span style="font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">. Third party vendors and other service providers that perform services for us, on our behalf, which may include identifying and serving targeted advertisements, providing mailing or email services, tax and accounting services, payments processing, data enhancement services, fraud prevention, web hosting, or providing analytic services. </span></span></p>
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Purchasers and third parties in connection with a business transaction</span></span></strong><span style="font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">. Personal information may be disclosed to third parties in connection with a transaction, such as a merger, sale of assets or shares, reorganization, financing, change of control or acquisition of all or a portion of our business.</span></span></p>
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Law enforcement, regulators and other parties for legal reasons</span></span></strong><span style="font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">. Third parties as required by law or if we reasonably believe that such action is necessary to (a) comply with the law and the reasonable requests of law enforcement; (b) enforce our Terms of Website or to protect the security or integrity of our Website; and/or (c) exercise or protect the rights, property, or personal safety of Pactera, our customers or others.</span></span></p>
+</td>
+<td rowspan="5" style="width: 71.85pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="96">
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">For no longer than necessary for the purposes set out and in accordance with our legal obligations and legitimate business interests.</span></span></p>
+</td>
+</tr><tr><td style="width: 154.15pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="206">
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Correspondence and comments.</span></span></strong><span style="font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB"> When you contact us directly, e.g., by email, phone, mail or by completing an online form on our Website, we will record your correspondence and comments.</span></span></p>
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB"> </span></span></strong></p>
+</td>
+<td style="width: 154.15pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="206">
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">We use this information to address your questions, issues and concerns and to deal with queries made by you, and to improve our Website where you have provided feedback.</span></span></p>
+</td>
+<td style="width: 187px; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt;" valign="top" width="206">
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">The processing is necessary for our legitimate interests, namely to deal with queries; provide responses to individuals that have corresponded with us and improve our Website.</span></span></p>
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB"> </span></span></p>
+</td>
+</tr><tr><td style="width: 153.9pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="205">
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Location Information. </span></span></strong><span style="font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">Other than information you choose to provide to us, we do not collect information about your precise location. Your device’s IP address may help us determine an approximate location. </span></span></p>
+</td>
+<td style="width: 153.85pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="205">
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">We may use an approximate location to ensure content on our Website is relevant to the city or country you are using your device in.</span></span></p>
+</td>
+<td style="width: 187px; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt;" valign="top" width="205">
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">The processing is necessary for our legitimate interests, namely to tailor our Website to the user and to improve our Website generally.</span></span></p>
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB"> </span></span></p>
+</td>
+</tr><tr><td style="width: 153.9pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="205">
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Subscription status</span></span></strong><span style="font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">. I.e. whether you provided your email via the subscription box, including the time submitted and your IP address.</span></span></p>
+</td>
+<td style="width: 153.95pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="205">
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">We use this information to keep a record of your subscription status and to provide you with appropriate updates / marketing communications.</span></span></p>
+</td>
+<td style="width: 187px; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt;" valign="top" width="205">
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">The processing is necessary for our legitimate interest, namely ensuring the user receives the correct updates / marketing communications.</span></span></p>
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB"> </span></span></p>
+</td>
+</tr><tr><td style="width: 153.9pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="205">
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">All personal information set out above.</span></span></strong></p>
+</td>
+<td style="width: 153.95pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="205">
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">We will use all the personal information we collect to operate, maintain and provide to you the features and functionality of the Website, to communicate with you, to monitor and improve our Website and business, and to help us develop new services.</span></span></p>
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="color: #72ab39; font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB"> </span></span></p>
+</td>
+<td style="width: 187px; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0cm 5.4pt;" valign="top" width="205">
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">The processing is necessary for our legitimate interests, namely to administer and improve the Website, to improve our business and develop new services.</span></span></p>
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="color: #72ab39; font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB"> </span></span></p>
+</td>
+</tr></tbody></table><p class="O-BodyText"><u><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt; mso-bidi-font-size: 10.0pt;" xml:lang="EN-GB"><span style="text-decoration-line: none;"> </span></span></span></u></p>
+<p> </p>
+<p align="center" class="O-BodyText" style="text-align: center;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.5pt;" xml:lang="EN-GB">ANNEX 2 – PERSONAL INFORMATION COLLECTED AUTOMATICALLY</span></span></strong></p>
+<table border="1" cellpadding="0" cellspacing="0" class="MsoTableGrid" style="width: 680.15pt; margin-left: -7.35pt; border-collapse: collapse; border: none; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 1184; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt;" width="907"><tbody><tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes; height: 18.35pt;"><td bgcolor="#66FF00" height="24" style="width: 152.35pt; border: solid windowtext 1.0pt; mso-border-alt: solid windowtext .5pt; background: #C1D6D6; mso-background-themecolor: accent5; mso-background-themetint: 102; padding: 0cm 5.4pt 0cm 5.4pt; height: 18.35pt;" width="203">
+<p class="O-BodyText text-align-center" style="margin-bottom: 0.0001pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Category of personal information</span></span></strong></p>
+</td>
+<td bgcolor="#66FF00" height="24" style="width: 152.4pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; background: #C1D6D6; mso-background-themecolor: accent5; mso-background-themetint: 102; padding: 0cm 5.4pt 0cm 5.4pt; height: 18.35pt;" width="203">
+<p align="center" class="O-BodyText" style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">How we use it</span></span></strong></p>
+</td>
+<td bgcolor="#66FF00" height="24" style="width: 152.4pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; background: #C1D6D6; mso-background-themecolor: accent5; mso-background-themetint: 102; padding: 0cm 5.4pt 0cm 5.4pt; height: 18.35pt;" width="203">
+<p align="center" class="O-BodyText" style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Legal basis for the processing</span></span></strong></p>
+</td>
+<td bgcolor="#66FF00" height="24" style="width: 152.4pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; background: #C1D6D6; mso-background-themecolor: accent5; mso-background-themetint: 102; padding: 0cm 5.4pt 0cm 5.4pt; height: 18.35pt;" width="203">
+<p align="center" class="O-BodyText" style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Categories of recipients</span></span></strong></p>
+</td>
+<td bgcolor="#66FF00" height="24" style="width: 70.6pt; border: solid windowtext 1.0pt; border-left: none; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; background: #C1D6D6; mso-background-themecolor: accent5; mso-background-themetint: 102; padding: 0cm 5.4pt 0cm 5.4pt; height: 18.35pt;" width="94">
+<p align="center" class="O-BodyText" style="margin-bottom: .0001pt; text-align: center; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Retention period</span></span></strong></p>
+</td>
+</tr><tr><td style="width: 152.35pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="203">
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Information about how you access and use the Website</span></span></strong><span style="font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">. For example, the website from which you came and the website to which you are going when you leave our Website, how frequently you access our Website, the time you access our Website and how long you use it for, whether you open emails or click the links contained in emails, whether you access the Website from multiple devices, and other actions you take on the Website.</span></span></p>
+</td>
+<td rowspan="2" style="width: 152.4pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="203">
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">We use this information to present our Website to you on your device; and to monitor and improve our Website.</span></span></p>
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB"> </span></span></p>
+</td>
+<td rowspan="2" style="width: 152.4pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="203">
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">The processing is necessary for our legitimate interests, namely to ensure our Website is presented to you correctly and to monitor and improve our Website.</span></span></p>
+<p class="O-BodyText" style="line-height: normal; margin: 0cm 0cm .0001pt 8.5pt;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB"> </span></span></p>
+</td>
+<td rowspan="2" style="width: 152.4pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="203">
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><em><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">As required in accordance with how we use it, we will share your personal information with the following:</span></span></em></p>
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Service providers and advisors</span></span></strong><span style="font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">. Third party vendors and other service providers that perform services for us, on our behalf, which may include identifying and serving targeted advertisements, providing mailing or email services, tax and accounting services, payments processing, data enhancement services, fraud prevention, web hosting, or providing analytic services. </span></span></p>
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Purchasers and third parties in connection with a business transaction</span></span></strong><span style="font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">. Personal information may be disclosed to third parties in connection with a transaction, such as a merger, sale of assets or shares, reorganization, financing, change of control or acquisition of all or a portion of our business.</span></span></p>
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB"> </span></span></strong></p>
+<p class="O-BodyText" style="margin-bottom: 12.0pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Law enforcement, regulators and other parties for legal reasons</span></span></strong><span style="font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">. Third parties as required by law or if we reasonably believe that such action is necessary to (a) comply with the law and the reasonable requests of law enforcement; (b) enforce our Terms of Website or to protect the security or integrity of our Website; and/or (c) exercise or protect the rights, property, or personal safety of Pactera, our customers or others.</span></span></p>
+</td>
+<td rowspan="2" style="width: 70.6pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; mso-border-top-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="94">
+<p class="O-BodyText" style="margin-bottom: .0001pt; line-height: normal;"><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">For no longer than necessary for the purposes set out and in accordance with our legal obligations and legitimate business interests.</span></span></p>
+</td>
+</tr><tr><td style="width: 152.35pt; border: solid windowtext 1.0pt; border-top: none; mso-border-top-alt: solid windowtext .5pt; mso-border-alt: solid windowtext .5pt; padding: 0cm 5.4pt 0cm 5.4pt;" valign="top" width="203">
+<p align="left" class="LNMainCont3" style="margin: 0cm 0cm 0.0001pt; line-height: normal;"><strong><span style="font-family: Arial; font-size: small;"><span lang="EN-GB" style="font-size: 10pt;" xml:lang="EN-GB">Information about your device</span></span></strong><span style="font-size: small;"><span lang="EN-GB" style="font-size: 10.0pt; mso-ascii-font-family: Arial; mso-ascii-theme-font: major-latin; mso-hansi-font-family: Arial; mso-hansi-theme-font: major-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: major-latin;" xml:lang="EN-GB">. We also collect information about the device you use to access our Website. This information can include details about the type of device, unique device identifying numbers, operating systems, browsers and applications connected to our Website through the device, your Internet service provider or mobile network and your IP address.</span></span></p>
+</td>
+</tr></tbody></table><p>Last Updated: January 2020</p>
+</div>
+</div>
+<div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</main>
+<footer class="main-page-footer" role="contentinfo">
+<div id="main-footer-container">
+<div id="pactera-info-container">
+<div class="main-footer-content">
+<nav aria-labelledby="block-footermainmenu-menu" id="block-footermainmenu" role="navigation">
+<h2 class="visually-hidden" id="block-footermainmenu-menu">Footer Main Menu</h2>
+<a href="/">
+<img alt="Pactera Edge Brand" height="35" id="main-header-logo" src="/themes/custom/pactera_edge/assets/images/logo-lighter.png" width="205"/>
+</a>
+<ul id="footer-menu">
+<li>
+<a data-drupal-link-system-path="node/171" href="/about-us">About Us</a>
+</li>
+<li>
+<a href="https://www.pacteraedge.com/insights/our-work">Our Work</a>
+</li>
+<li>
+<a data-drupal-link-system-path="insights" href="/insights">Insights</a>
+</li>
+<li>
+<a href="https://www.pacteraedge.com/our-partnerships">Partnerships</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/236" href="/careers">Careers</a>
+</li>
+<li>
+<a data-drupal-link-system-path="press-releases" href="/press-releases">Press</a>
+</li>
+</ul>
+</nav>
+<div class="views-element-container" id="block-views-block-office-locations">
+<div><div class="js-view-dom-id-5df703b778e6e819c0521db29385212297f00f9c04df333b954df78c79347972">
+<div class="views-row"><article about="/index.php/locations/americas/new-york" class="office_location" data-history-node-id="1" role="article">
+<h2>
+<span class="title">New York</span>
+<span class="info-toggle open">Open/close</span>
+</h2>
+<div class="office-location-info">
+<div class="office-info address">
+<span id="pactera-location-icon">
+<img src="/themes/custom/pactera_edge/assets/images/location-icon.png">
+</img></span>
+<div class="field_address">102 Madison Ave 2nd Floor New York, NY 10016</div>
+</div>
+<div class="office-info phone">
+<span id="pactera-phone-icon">
+<img src="/themes/custom/pactera_edge/assets/images/phone-icon.png"/>
+</span>
+<div class="field_contact_phone">1.646.290.6124</div>
+</div>
+</div>
+</article>
+</div>
+<div class="views-row"><article about="/index.php/locations/americas/chicago" class="office_location" data-history-node-id="6" role="article">
+<h2>
+<span class="title">Chicago</span>
+<span class="info-toggle open">Open/close</span>
+</h2>
+<div class="office-location-info">
+<div class="office-info address">
+<span id="pactera-location-icon">
+<img src="/themes/custom/pactera_edge/assets/images/location-icon.png"/>
+</span>
+<div class="field_address">500 W Madison St #1610, Chicago, IL 60661</div>
+</div>
+<div class="office-info phone">
+<span id="pactera-phone-icon">
+<img src="/themes/custom/pactera_edge/assets/images/phone-icon.png"/>
+</span>
+<div class="field_contact_phone">1.312.754.9220</div>
+</div>
+</div>
+</article>
+</div>
+<div class="views-row"><article about="/index.php/locations/americas/seattle" class="office_location" data-history-node-id="11" role="article">
+<h2>
+<span class="title">Seattle</span>
+<span class="info-toggle open">Open/close</span>
+</h2>
+<div class="office-location-info">
+<div class="office-info address">
+<span id="pactera-location-icon">
+<img src="/themes/custom/pactera_edge/assets/images/location-icon.png"/>
+</span>
+<div class="field_address">14980 NE 31st Way Suite 100 Redmond, WA 98052</div>
+</div>
+<div class="office-info phone">
+<span id="pactera-phone-icon">
+<img src="/themes/custom/pactera_edge/assets/images/phone-icon.png"/>
+</span>
+<div class="field_contact_phone">1.425.233.8578</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+<a href="/contact/contact_us" id="contact-us">
+    Contact us 
+    <svg height="10" width="21" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.002 4.998l-7.011 5V6H0V4h13.991V-.003l7.011 5.001z" fill="#FFF" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+<nav aria-labelledby="block-socialmenu-menu" id="block-socialmenu" role="navigation">
+<div class="company-info">
+<div id="info-container">
+<h2 id="block-socialmenu-menu">Stay Connected</h2>
+<ul class="menu menu-level-0">
+<li class="menu-item">
+<a href="https://www.facebook.com/PacteraEDGE/" rel="noreferrer" target="_blank">Facebook</a>
+<div class="menu_link_content menu-link-contentsocial-menu view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<a href="https://www.facebook.com/PacteraEDGE/" rel="noreferrer" target="_blank">
+<div class="field_icon"> <img alt="" height="26" loading="lazy" src="/sites/default/files/2019-08/fb-icon.png" typeof="foaf:Image" width="12"/>
+</div>
+</a>
+</div>
+</li>
+<li class="menu-item">
+<a href="https://www.linkedin.com/company/pactera-edge" rel="noreferrer" target="_blank">Linkedin</a>
+<div class="menu_link_content menu-link-contentsocial-menu view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<a href="https://www.linkedin.com/company/pactera-edge" rel="noreferrer" target="_blank">
+<div class="field_icon"> <img alt="" height="22" loading="lazy" src="/sites/default/files/2019-08/lk-icon.png" typeof="foaf:Image" width="22"/>
+</div>
+</a>
+</div>
+</li>
+<li class="menu-item">
+<a href="https://twitter.com/pacteraedge" rel="noreferrer" target="_blank">Twitter</a>
+<div class="menu_link_content menu-link-contentsocial-menu view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+<a href="https://twitter.com/pacteraedge" rel="noreferrer" target="_blank">
+<div class="field_icon"> <img alt="" height="21" loading="lazy" src="/sites/default/files/2019-08/tt-icon.png" typeof="foaf:Image" width="26"/>
+</div>
+</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="text-info">
+<a href="/locations">See our global locations</a>
+</div>
+</nav>
+</div>
+<div id="footnotes">
+<span id="footer-copyright">
+<span>© 2020 Pactera Edge. All rights reserved.</span>
+</span>
+<a href="/terms-use" id="footer-cookie">
+<span>Terms of Use</span>
+</a>
+<a href="/privacy-and-cookie-policy" id="footer-privacy">
+<span>Privacy and Cookie Policy</span>
+</a>
+<a href="/legal-notice" id="footer-conditions">
+<span>Legal Notice</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+<script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/461","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"UA-157158166-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":true},"user":{"uid":0,"permissionsHash":"452db9721c41c05aed90849256d152eb0a68f2e7446361755e88e56b8170253f"}}</script>
+<script src="/sites/default/files/js/js_vjrewt9Ub_VdOnWG7fQvzLvZnbEPsJs5UlnSApFDVF0.js"></script>
+<script src="/sites/default/files/js/js_EhugAcYNcfyZow2gat9QtOb3VTllTMNQTepFYZPWEw8.js"></script>
+<script src="/sites/default/files/js/js_90X-Ai0VhthJWUQFzV51dWymtYywE_4ITei4zTkS5jM.js"></script>
+<script data-ceipal-api-key="cnF1L0NXNXB3dlMwU0ZFV2NYMUlPdz09" src="https://jobsapi.ceipal.com/APISource/widget.js" type="text/javascript"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"bfd41980ea","applicationID":"460268527","transactionName":"YAMENUJQVhUCWhAIVllJJwJEWFcITEkFBlxoBQcCWFQ=","queueTime":0,"applicationTime":38,"atts":"TEQHQwpKRRs=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+<!-- anti-flicker snippet (recommended)  -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+				h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+				(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+			})(window,document.documentElement,'async-hide','dataLayer',4000,
+					{'GTM-W8N5RQ':true});</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+						new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+					j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+					'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-W8N5RQ');</script>
+<!-- End Google Tag Manager -->
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-757df1a3675e60c2710",applicationID:"588196851"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<link href="https://www.plex.com/privacy-policy" rel="canonical"/>
+<meta content="PLEX SMART MANUFACTURING PLATFORM" property="og:site_name"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.plex.com/privacy-policy" property="og:url"/>
+<meta content="Privacy Policy" property="og:title"/>
+<meta content="https://www.plex.com/sites/default/files/2022-02/Rockwell-Plex_OG_1200x1200_dark.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="@PlexSystems" name="twitter:site"/>
+<meta content="Privacy Policy" name="twitter:title"/>
+<meta content="https://www.plex.com/privacy-policy" name="twitter:url"/>
+<meta content="https://www.plex.com/sites/default/files/2022-02/Rockwell-Plex_OG_1200x1200_dark.png" name="twitter:image"/>
+<meta content="Drupal 9 (https://www.drupal.org)" name="Generator"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/sites/default/files/favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+<title>Privacy Policy | Plex</title>
+<link href="/sites/default/files/css/css_2vz7McLH5ee4MkmwBz-TvpzBS0ODhyaVbpjCboLmvhA.css" media="all" rel="stylesheet"/>
+<link href="//cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_Qj4GDsRoNmZ1REZFQ3sat17Vgy3FU7tpHC23N4XGCPk.css" media="all" rel="stylesheet"/>
+<link href="https://use.typekit.net/fgq6etu.css" rel="stylesheet"/>
+<link href="/themes/custom/plex/dist/css/lity.min.css" rel="stylesheet"/>
+<link href="/themes/custom/plex/dist/css/owl.min.css" rel="stylesheet"/>
+<meta content="qge46ej4ap16hsn1osurxdhgnsg81h" name="facebook-domain-verification"/>
+<!-- Need to call them -->
+</head>
+<body class="policy nid-1826">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-W8N5RQ" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<div>
+<header class="header" id="header">
+<div class="blog-search-result-section-outer top-search-popup js-top-search-popup">
+<div class="content">
+<a class="search-popup-close js-search-popup-close"></a>
+<h2 class="text-center">Search</h2>
+<div class="search-section">
+<form class="relative" onsubmit="return false;">
+<input class="js-top-search-textbox" placeholder="Type to search" type="text"/>
+<input class="js-top-search-submit" type="submit"/>
+</form>
+</div>
+</div>
+</div>
+<nav class="navbar navbar-expand-lg" id="navbar-main">
+<div class="header-top">
+<div class="mobile-login-section">
+<a>Log in</a>
+<ul>
+<li class="sub-menu-li">
+<a href="https://cloud.plex.com/login?returnUrl=%2f">Plex Manufacturing Cloud</a>
+</li>
+<li class="sub-menu-li">
+<a href="https://www.plexonline.com/modules/systemadministration/login/index.aspx?">Plex Classic</a>
+</li>
+</ul>
+</div>
+<a class="searchIcon js-search-click"></a>
+<div class="menu-wrapper languageButtonSection">
+<a class="languageIcon"></a>
+<div class="sub-menu-wrapper">
+<ul class="sub-menu with-icon undefined">
+<li class="sub-menu-li">
+<a href="#">EN</a>
+</li>
+<li class="sub-menu-li">
+<a href="/mx">ES</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="header-left">
+<div class="logoSection whiteLogo">
+<a href="https://www.plex.com/">
+<img alt="Plex logo" class="plex-logo" src="/themes/custom/plex_d9/src/img/svg/logo-plex-white.svg"/>
+</a>
+</div>
+<div class="logoSection blackLogo">
+<a href="https://www.plex.com/">
+<img alt="Plex logo" class="plex-logo" src="/themes/custom/plex_d9/src/img/svg/logo-plex-black.svg"/>
+</a>
+</div>
+</div>
+<button class="burger-menu"></button>
+<div class="header-right">
+<div class="nav-wrapper">
+<div class="menu-list">
+<a>Products</a>
+<nav class="submenu">
+<ul>
+<li>
+<a data-drupal-link-system-path="node/2177" href="/products/manufacturing-execution-system">Manufacturing Execution System (MES)</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/2243" href="/products/enterprise-resource-planning">Enterprise Resource Planning (ERP)</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3802" href="/products/quality-management-system">Quality Management System (QMS)</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/2245" href="/products/supply-chain">Supply Chain Planning (SCP)</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3908" href="/products/production-monitoring">Production Monitoring</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/4009" href="/products/mes-automation-orchestration">MES Automation &amp; Orchestration</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/2244" href="/products/asset-performance-management">Asset Performance Management (APM)</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="menu-list">
+<a>Platform</a>
+<nav class="submenu">
+<ul>
+<li>
+<a data-drupal-link-system-path="node/2175" href="/smart-manufacturing-platform">Smart Manufacturing Platform Overview</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/4044" href="/platform/cloud-infrastructure-and-security">Cloud Infrastructure &amp; Security</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/2280" href="/platform/mobile-application">Mobile Application</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3463" href="/platform/availability-performance">Availability &amp; Performance</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3804" href="/platform/manufacturing-automation">Manufacturing Automation</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="menu-list">
+<a>Industries</a>
+<nav class="submenu">
+<ul>
+<li>
+<a data-drupal-link-system-path="node/1603" href="/industries/automotive">Automotive</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3543" href="/industries/food-and-beverage">Food &amp; Beverage</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1858" href="/industries/precision-metalforming-and-fabrication-manufacturing">Precision Metalforming</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1850" href="/industries/plastics-and-rubber">Plastics &amp; Rubber</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1844" href="/industries/industrial-manufacturing">Industrial Manufacturing</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1841" href="/industries/high-tech-and-electronics">High Tech &amp; Electronics</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1839" href="/industries/aerospace">Aerospace</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="menu-list">
+<a>Resources</a>
+<nav class="submenu">
+<ul>
+<li>
+<a data-drupal-link-system-path="resources" href="/resources">All Resources</a>
+</li>
+<li>
+<a data-drupal-link-query='{"field_resource_type":"115"}' data-drupal-link-system-path="resources" href="/resources?field_resource_type=115">Success Stories</a>
+</li>
+<li>
+<a data-drupal-link-query='{"field_resource_type":"59"}' data-drupal-link-system-path="resources" href="/resources?field_resource_type=59">Product Demos</a>
+</li>
+<li>
+<a data-drupal-link-system-path="recognition" href="/recognition">Analyst Reports</a>
+</li>
+<li>
+<a data-drupal-link-system-path="blog" href="/blog">Blog</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="menu-list">
+<a>Services &amp; Support</a>
+<nav class="submenu">
+<ul>
+<li>
+<a data-drupal-link-system-path="node/1540" href="/customer-success/customer-success-and-advocacy">Customer Success &amp; Advocacy</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1604" href="/customer-success/support-services">Support Services</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1539" href="/customer-success/education-services">Education Services</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1537" href="/customer-success/professional-services">Professional Services</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1538" href="/customer-success/plex-community">Plex Community</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="menu-list">
+<a>Company</a>
+<nav class="submenu">
+<ul>
+<li>
+<a data-drupal-link-system-path="node/1543" href="/company">About Us</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/782" href="/company/leadership">Leadership</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/771" href="/company/customers">Customers</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1606" href="/our-partner-ecosystem">Partner Ecosystem</a>
+</li>
+<li>
+<a data-drupal-link-system-path="company/newsroom" href="/company/newsroom">Newsroom</a>
+</li>
+<li>
+<a data-drupal-link-system-path="company/events" href="/company/events">Events</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/773" href="/company/careers">Careers</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1321" href="/contact-us">Contact Us</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="languageButtonSection">
+<a href="#">EN</a>
+<span>|</span>
+<a href="/mx">ES</a>
+</div>
+<div class="headerButtons">
+<div class="button-wrapper">
+<a class="btn-yellow" href="/contact-us">Talk to Us</a>
+<a class="btn-gray" href="/demo">See a Demo</a>
+</div>
+</div>
+<div class="mobile-login-section">
+<h4>Log In</h4>
+<ul>
+<li>
+<a href="https://cloud.plex.com/login?returnUrl=%2f">
+                                Plex Manufacturing Cloud
+                            </a>
+</li>
+<li>
+<a href="https://www.plexonline.com/modules/systemadministration/login/index.aspx?">
+                                Plex Classic
+                            </a>
+</li>
+</ul>
+</div>
+</div>
+<div class="headerButtons">
+<div class="button-wrapper">
+<a class="btn-yellow" href="/contact-us">Talk to Us</a>
+<a class="btn-gray" href="/demo">See a Demo</a>
+</div>
+</div>
+<a class="mobileHamburger"></a>
+</div>
+</nav>
+</header>
+</div>
+<div class="wrapper">
+<div>
+<!-- Component: Sticky Announcement Begins -->
+<div class="sticky-announcement-cta js-announcement">
+<a class="arrowSlide js-announcement-arrowSlide"><div class="title">Announcement</div></a>
+<div class="sticky-content with-thumbnail">
+<div>
+<div> <img alt="7th Annual State of Smart Manufacturing" height="100" loading="lazy" src="/sites/default/files/styles/thumbnail/public/2022-03/1200x1200-7SOSM.png?itok=-P3E9l5e" typeof="foaf:Image" width="100"/>
+</div>
+</div>
+<div>
+<h4>
+<div>Now Available!</div>
+</h4>
+<p>
+<div><p>Get your copy of the 7th Annual State of Smart Manufacturing and hear from 300+ manufacturers in this new survey report!</p></div>
+</p>
+<div>
+<a href="/resources/7th-annual-state-of-smart-manufacturing?announcement=1">Download Report</a>
+</div>
+</div>
+</div>
+</div>
+<div id="block-plex-page-title">
+</div>
+<div id="block-plex-content">
+<div> <div class="paragraph paragraph--type--hero-banner-with-grey-bg paragraph--view-mode--default">
+<div class="innerHeroSection innerGrayHeroSection js-header-content-black">
+<div class="contentWrapper-1290">
+<div class="content">
+<h1 class="uppercase">
+						Privacy Policy</h1>
+<h3>
+<div>
+<div class="hidden">Description</div>
+<div>Last Updated: March 17, 2021</div>
+</div>
+</h3>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div><div class="full-width-content">
+<div class="contentWrapper-1080">
+<p><span>Data privacy is important to Plex Systems, Inc. and our subsidiaries and affiliates (“Plex”, “we”, “us” or “our”) and we respect your preferences concerning the treatment of information that we may collect. This Plex Privacy Policy (this “Policy”) covers the information practices, including how Plex and its “Service Providers” defined as any subcontractor, vendor or other entity with whom we have an ongoing business relationship to provide products, services or information to us, collect, use, transfer, share, disclose and otherwise process information relating to individuals (“Personal Data”).</span></p>
+<p>This Policy applies to the processing of Personal Data collected by Plex and our Service Providers when you:</p>
+<ul>
+<li><span><span><span><span><span><span><span>Visit or use the plex.com (</span></span></span><span><a href="https://www.plex.com/"><span><span><span><span><span><span>https://www.plex.com/</span></span></span></span></span></span></a></span><span><span><span>) website (this “Website”) and/or sites or channels that link or refer to this Policy (collectively, “Channels”);</span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span>Visit our branded social media pages;</span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span>Visit our offices;</span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span>Receive communications from us, including emails, phone calls, or texts; or</span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span>Register for, attend, or take part in our events, webinars, contests or surveys whether online or offline.</span></span></span></span></span></span></span></li>
+</ul>
+<p><span><span><span><span><span><span><span>By visiting or using this Website or Channels or submitting any Personal Data to us (or our Service Providers), you consent to the information practices described in this Policy. If you do not agree with the information practices described in this Policy, you should not provide us (or our Service Providers) with any of your Personal Data or use our Website or Channels. </span></span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span><span>Plex complies with the EU–U.S. Privacy Shield Framework set forth by the U.S. Department of Commerce regarding the collection, use, and retention of personal information transferred from the European Union to the United States, respectively. You can view more information about the Privacy Shield Principles and how we comply with them in the “<strong>EU – U.S. Privacy Shield</strong>” section below.</span></span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span><span>Our website and services may contain links to other websites, applications, and services maintained by third parties. The information practice of other services, or of social media platforms that host our branded social media pages are governed by the applicable privacy statements referred to.</span></span></span></span></span></span></span></p>
+<p><span><span><span><span>This Policy does not apply to the extent we or our Service Providers process Personal Data in the role of a processor or service provider to our customers.</span></span></span></span></p>
+<h2>Collection of Personal and Other Information</h2>
+<h4>Personal Data We Collect</h4>
+<p><span><span><span><span><span><span><span>When you visit this Website and through your interaction with or use of the other Channels, Plex or its Service Providers collect, process, and retain information about you, which may include Personal Data. Personal Data may include, but is not limited to:</span></span></span></span></span></span></span></p>
+<ul>
+<li><span><span><span><span><span><span><span><span>Your name and physical address, email address, telephone number and billing information</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Past transactional behavior on the Channels</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Demographic information, such as your age, gender, interests, preferences, geographic location and information about your business or company such as its name, size and location and your role within the company</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Employment history and related Personal Data submitted by an applicant seeking employment at Plex</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>As described to you when we collect the Personal Data.</span></span></span></span></span></span></span></span></li>
+</ul>
+<p><span><span><span><span><span><span><span>If you provide us or our Service Providers with any Personal Data relating to other individuals, you represent that you have the authority to share such information. Further, you acknowledge that such person’s information will be used in accordance with this Policy. If you believe your Personal Data has been provided to us or our Service Providers improperly, or you wish to exercise your rights relating to your Personal Data, please contact us using the Contact Us information below. </span></span></span></span></span></span></span></p>
+<h4>Other Information We Collect</h4>
+<p><span><span><span><span><span><span><span>Plex and its Service Providers may also collect ‘other information’ through your interaction with and use of this Website, the other Channels and non-Plex websites which does not directly relate to an individual or reveal an individual’s specific identity. For instance, Plex and its Service Providers may collect information about your visits to this Website and the actions you take in connection with your visit through the use of use log files, cookies and other technologies which are described in more detail in the “</span></span></span><span><span><span><span><span><span>Cookies and Other Automated Interactions</span></span></span></span></span></span><span><span><span>” section below.</span></span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span><span>Other information that we collect may include, but is not limited to:</span></span></span></span></span></span></span></p>
+<ul>
+<li><span><span><span><span><span><span><span><span>Unique IDs such as a cookie, web beacon, flash cookie or local shared storage placed on your computer, or mobile or device IDs</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Internet Protocol address ("IP Address") and information derived from your IP Address such as your geographic location</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Activities, interactions, preferences, transactional, and other device and connection information from your visits to this Website and other Channels such as information contained in HTTP headers, or other internet transfer protocol signals, browser or device type and version, operating system, user-agent strings and information about your preferred language</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Behavioral data about your visit to this Website or usage of the other Channels, such as the pages you view, the links and advertisements you click, the content areas visited, and the dates and times of your access and activities</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>The web search terms you used to locate and navigate to this Website or other Channels and the Uniform Resource Locator (URL) of the website that referred you to this Website and to which URL you browse away from this Website if you click on a link while on any Channel</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>When you open email messages from us or click on links within those email messages</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>As described to you when we collect the information</span></span></span></span></span></span></span></span></li>
+</ul>
+<p><span><span><span><span><span><span><span>In some instances, Plex or our Service Providers may combine other information with Personal Data, such as deriving geographical location from your IP Address. Information collected may also be combined or supplemented with information obtained from other sources. For example, we may combine publicly available information related to the organization you work for with the information that you provide to Plex. If we combine other information with Personal Data, we will treat the combined information as Personal Data.</span></span></span></span></span></span></span></p>
+<h2>How Information is Collected and Used</h2>
+<p><span><span><span><span><span><span><span>Personal Data and other information may be collected by Plex and/or our Service Providers using a variety of methods that generally fall into three categories:</span></span></span></span></span></span></span></p>
+<ul>
+<li><span><span><span><span><span><span><span><span>Direct Interactions. From your use of and interaction with us through the Channels and other activities such as account creation, submission of registrations and forms, or sales inquiries and applications for employment.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Publicly Available Information / Information from Third Parties. Information from Automated Interactions on non-Plex websites, or other information you may have made publicly available, such as social media posts, or information provided by third party sources, such as marketing opt-in lists, or data aggregators.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Automated Interactions. From the use of technologies such as Cookies; Web Beacons; IP Addresses, URLs, Log Files and Other Data; and Widgets, Buttons, and Tools.</span></span></span></span></span></span></span></span></li>
+</ul>
+<h4 id="cookies">Cookies and Other Automated Interactions</h4>
+<p><span><span><span><span><span><span><span>Although use of Automated Interactions by Plex and its Service Partners may change over time as technology evolves, we use cookies and other similar technologies to collect information from this Website and the other Channels. These technologies may recognize you across the different devices you use, such as a desktop or laptop computer, smartphone or tablet. Plex may receive reports based on the use of these technologies by our Service Providers on an individual as well as aggregated basis. For information on the use, disclosure and sharing of the information collected through the Channels please refer to “</span></span></span><span><span><span><span><span><span>Use, Disclosure </span></span></span></span></span><span><span><span><span><span>and</span></span></span></span></span><span><span><span><span><span> </span></span></span></span></span><span><span><span><span><span>Sharing of Information</span></span></span></span></span></span><span><span><span>” below. The following descriptions provide additional detail about Plex's current approach to information collected by Plex and its Service Providers from the use of Automated Interactions.</span></span></span></span></span></span></span></p>
+<p><span><span><span><span><em><span><span><span>Cookies.</span></span></span></em><span><span><span> Plex's server will query your browser to see if there are "cookies" previously set by this Website and our other electronic Channels. A cookie is a small piece of information sent by a Web server to store on a Web browser so it can later be read back from that browser. Cookies may collect information, including a unique identifier, user preferences, profile information, membership information, and general usage and volume statistical information. Cookies may also be used to collect individualized website use data, provide electronic Channel personalization, or conduct and measure the effectiveness of advertising in accordance with this Policy. Plex uses cookies that are session-based and persistent-based. Session cookies exist only during one session. They disappear from your computer or device when you close your browser software or turn off your computer or device. Some cookies referred to as ‘persistent cookies’ may remain on your computers or devices after you leave this Website (or other Channels), close your browser or turn off your computer or device. The following sets out how Plex uses different categories of cookies. For information about your options for managing cookies’ settings please refer to the “</span></span></span><span><span><span><span><span><span>Opt-Out, Unsubscribe, Browser Controls and Do Not Track</span></span></span></span></span></span><span><span><span>” section below.</span></span></span></span></span></span></span></p>
+<p><span><span><span><span><em><span><span><span>Functional Cookies. </span></span></span></em><span><span><span>Functional cookies are used to improve how this Website and the other Channels function and perform, to enhance and customize your interactions with Plex, and to help us provide you with more relevant messages, including marketing communications. These cookies collect information about how visitors use our Channels, including which pages visitors go to most often and if they receive error messages from certain pages. Functional cookies are used to improve how this Website and the other Channels function and perform, to enhance and customize your interactions with Plex, and to help us provide you with more relevant messages, including marketing communications. These cookies collect information about how visitors use our Channels, including which pages visitors go to most often and if they receive error messages from certain pages.</span></span></span></span></span></span></span></p>
+<p><span><span><span><span><em><span><span><span>Targeting or Advertising Cookies.</span></span></span></em><span><span><span> Plex and its Service Providers sometimes uses cookies delivered by third parties to show you ads for Plex products and services that we think may interest you on any devices you may use and to track the performance of Plex advertisements.  In these cases, cookies remember information such as which browsers have visited this Website or other Channels. In addition, ad networks follow your online activities over time and across different sites or other online services by collecting information through Automated Interactions, including through the use of cookies. This information may be used to display more relevant advertisements and content to you on this Website or other Channels and non-Plex websites. This information may also be used to display Plex employment opportunities to you if, for example, you have visited our Careers page on this Website. The information used for targeted or interest-based advertising may come from Plex or through third party ad networks. If Plex is using one of its own cookie-related products on this Website or another Channel, then a cookie related to ads may appear on this Website under the Plex or one of our Service Providers’ names. For information about how to opt-out of Targeted and Interest-Based Advertising please refer to the “‘</span></span></span><span><span><span><span><span><span>Opt-Out’ for Targeted and Interest-Based Advertising</span></span></span></span></span></span><span><span><span>” sub-section of the “</span></span></span><span><span><span><span><span><span>Opt-Out, Unsubscribe, Browser Controls and Do Not Track</span></span></span></span></span></span><span><span><span>” section below.</span></span></span></span></span></span></span></p>
+<p><span><span><span><span><em><span><span><span>Web Beacons.</span></span></span></em><span><span><span> Plex and its Service Providers use Web beacons (‘pixels’) alone or in conjunction with cookies to compile information about visitors’ usage of this Website and interaction with emails from Plex. Web beacons are clear electronic images that can recognize certain types of information on your computer, such as cookies, when you viewed this Website or another Channel tied to the Web beacon. Web beacons may be placed in marketing emails that notify Plex when you click on a link in the email that directs you to this Website or one of the other Channels. Web beacons are also used to operate and improve this Website or another Channel. Information collected using these technologies may be associated with the recipient's e-mail address. </span></span></span></span></span></span></span></p>
+<p><span><span><span><span><em><span><span><span>IP Addresses, URLs, Log Files and Other Data.</span></span></span></em><span><span><span> Plex may automatically receive information from you as part of the communication connection itself such as your browser type, your Internet service provider and/or mobile carrier, the pages and files you viewed, your searches, your operating system and system configuration information, and date/time stamps associated with your usage. Due to Internet communications standards, when you visit or use this Website or the other Channels, we automatically receive the URL of the website from which you came and the website to which you go when you leave this Website. This information is used to analyze overall trends, to help us improve the Channels, to track and aggregate non-Personal Data, and to provide the various Channels. The information collected may be gathered and stored in log files and then used to track and analyze both individualized usage and volume statistical information from interactions with the electronic Channels.</span></span></span></span></span></span></span></p>
+<p><span><span><span><span><em><span><span><span>Widgets, Buttons, and Tools</span></span></span></em><span><span><span>. Plex’s electronic Channels may include widgets, which are interactive mini-programs that run on this Website and the other Channels to provide specific services from another company (e.g., links to bookmarked sites), along with buttons or other tools that link to other companies' services (e.g., a "Like" button or third-party map). The widget, button or tool may collect and automatically send Personal Data, such as your e-mail address, or other information (such as your browser information, or IP Address), to a third party. Cookies may also be set or used by the widgets, buttons or tools to enable them to function properly or for other purposes, which may include advertising. Information collected or used by a widget, button or tool, including cookie settings and preferences, is governed by the privacy policy of the company that created it.</span></span></span></span></span></span></span></p>
+<h2>Opt-Out, Unsubscribe, Browser Controls, and Do-Not-Track</h2>
+<ul>
+<li><span><span><span><span><span><span><span><span>Browser Controls. Automated Interaction technologies can operate across all of your browsers. Various browsers may offer their own management tools for removing these technologies and in some instances will require additional steps beyond browser settings to manage their use and removal. You can set your browser to alert you when a cookie is being used, and accept or reject the cookie. You can also set your browser to refuse all cookies or accept only cookies returned to the originating servers. Users can generally disable the cookie feature on their browser without affecting their ability to use the site, except in some cases where cookies are used as an essential security feature necessary for transaction completion or for opting out of targeted or interest-based advertising. Cookies, however, are important to the proper functioning of a site, and disabling them may degrade your experience and interfere with website features and customizations. </span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>‘Opt-Out’ for Targeted and Interest-Based Advertising. As described in the “</span></span></span><span><span><span><span><span><span>Collection of Personal and Other Information</span></span></span></span></span></span><span><span><span>” and the “</span></span></span><span><span><span><span><span><span>How Information is Collected and Used</span></span></span></span></span></span><span><span><span>” sections of this Policy, Plex uses Service Providers to display advertising on this Website and other Channels and to manage our advertising on other sites. Our Service Providers may use Automated Technologies such as cookies to gather information about your activities on this Website and other Channels in order to provide you advertising based upon your browsing activities and interests. We do not use or provide Personal Data collected from visits to or use of this Website or other Channels for serving targeted or interest-based advertising</span></span></span><span><span><span>. Please note this does not opt you out of being served with advertising. You will continue to receive generic ads. The opt-out tools described above may be cookie-based and prevent Plex and its Service Providers from using the information collected from your visit to this Website or other Channels for targeted or interest-based advertising on the browser on which the ‘opt-out’ cookies are installed. As a result, the opt out will only function if your browser is set to accept third-party cookies, and may not function where cookies are automatically or manually disabled or removed (e.g., certain mobile devices, browsers and operating systems). If you block or delete all cookies, change your browser settings, switch browsers or computers, or use another operating system, our opt-out process may not function properly and/or you may need to renew your opt out choice.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Unsubscribe. Plex offers visitors, customers, and attendees of programs and events who provide contact information a means to choose how Plex and its Service Providers use the information provided. You may manage your receipt of marketing and non-transactional communications by clicking on the “unsubscribe” link located on the bottom of our marketing emails.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>For information on how to access or change your Personal Data provided to Plex, please see the “</span></span></span><span><span><span><span><span><span>Access and Changes to Your Personal Data</span></span></span></span></span></span><span><span><span>” section below.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Do Not Track. Because there is no uniform or common industry standard for how Do Not Track (DNT) signals are sent or verified, Plex does not respond to browser DNT signals. </span></span></span><span><span><span>We will continue to monitor further development of a DNT standard by the privacy community and industry.</span></span></span></span></span></span></span></span></li>
+</ul>
+<h2>Use, Disclosure and Sharing of Information</h2>
+<h4>Use of Your Information</h4>
+<p><span><span><span><span><span><span><span>Plex may use or share the information it collects from you, which (unless otherwise restricted by applicable law) may include Personal Data, other information, or a combination of both, in order to:</span></span></span></span></span></span></span></p>
+<ul>
+<li><span><span><span><span><span><span><span><span>Deliver the services and support or carry out the transactions you have requested.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Respond directly to your information requests (including newsletter registrations or other specific requests) or other inquiries. For example, if you fill out a “Contact Me” web form, Plex will use the information provided to contact you about your interest in the products, services and programs offered by Plex. Forms that you choose to complete will indicate whether information requested is mandatory or voluntary.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Provide access to protected information or materials available on this Website or through other Channels and to follow up with you after your visit.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Understand how this Website and the other Channels are being used and personalize your experience on this Website or through other Channels by presenting products or features that are tailored to your interests.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Allow you to participate in interactive discussions; create a profile; post comments, opportunities or other content; communicate directly with another user; or otherwise engage in networking activities. Some of these services are moderated and all may be accessed for technical reasons. Plex does not control the content that users post to these forums or social networks. You should carefully consider whether you wish to submit Personal Data to these forums or social networks and whether you wish to make your profile available to other users, and you should tailor any content you submit appropriately. You should also review any additional terms and conditions that may govern your use of these Channels. To manage or remove your Personal Data from our online communities, please fill out a request form. If we are not able to remove your Personal Data, we will let you know.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Post testimonials on our Channels that may contain Personal Data. Prior to posting a testimonial, we will obtain your consent to use your name and testimonial. If you wish to request the removal of your testimonial, contact us at </span></span></span><span><a href="mailto:privacy@plex.com"><span><span><span><span><span>privacy@plex.com</span></span></span></span></span></a></span><span><span><span>.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Personal Data and other information of applicants interested in employment with Plex may be shared within Plex and with our Service Providers during the hiring process. Plex and its Service Providers are committed to protecting the confidentiality of job applicants.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Send administrative communications such as important product notices including those announcing changes to our terms or policies, information about particular programs in which you have chosen to participate, promotional offers and surveys.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Communicate relevant product, services or other information which we believe may be of interest to you, such as:</span></span></span></span></span></span></span></span>
+<ul>
+<li><span><span><span><span><span><span><span><span>product announcements, newsletters, and educational materials;</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>administrative information such as notices related to product, service, or policy changes; and</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>upcoming events and conferences hosted or co-sponsored by Plex or one of our partners which may include information about the event's content, logistics, payment, updates, and any additional meetings, special demonstrations or other customer facilitation that we may provide related to your event registration. After the event, Plex may contact you about the event and related products and services and may share information about your attendance with your company. Where legally permitted, Plex may also allow designated partners or conference sponsors to send you communications related to your event attendance. Please note that our partners or conference sponsors may directly request your Personal Data at their conference booths or presentations. You should review their privacy policies to learn how they use Personal Data.</span></span></span></span></span></span></span></span></li>
+</ul>
+</li>
+<li><span><span><span><span><span><span><span><span>Diagnose technical problems with this Website or other Channels. </span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Prevent, mitigate, and investigate fraud and other prohibited or illegal activities or protect the security or integrity of this Website, the other Channels, our business, or our products or services.</span></span></span></span></span></span></span></span></li>
+</ul>
+<h4>Disclosure and Sharing Your Information</h4>
+<p><span><span><span><span><span><span><span>Plex may disclose your Personal Data in situations we believe to be necessary or appropriate such as:</span></span></span></span></span></span></span></p>
+<ul>
+<li><span><span><span><span><span><span><span><span>Under applicable law, including laws outside your country of residence to:</span></span></span></span></span></span></span></span>
+<ul>
+<li><span><span><span><span><span><span><span><span>conform to legal requirements or comply with legal process;</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>respond to requests from public and government authorities, including public and government authorities outside your country of residence, for national security and/or law enforcement purposes; </span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>enforce this Website’s Terms and Conditions;</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>protect and defend our rights or property and allow us to pursue available remedies or limit the damages that we may sustain; and</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>act to protect the interests of our visitors, users, customers, applicants or others.</span></span></span></span></span></span></span></span></li>
+</ul>
+</li>
+<li><span><span><span><span><span><span><span><span>Plex may offer solely or jointly with third parties, webinars, white paper downloads, or other services related to Plex offerings or services. We may share your contact information and product interest in these offerings or services with third parties to communicate with you. </span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>In addition to the uses identified elsewhere in this Privacy Policy, we may use the information we collect to provide other companies with statistical information about our visitors and users -- but this information will not be used to identify any individual visitor or \user.</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>In the event of a reorganization, merger, sale, joint venture, assignment, transfer or other disposition of all or any portion of our business, assets or stock (including in connection with any bankruptcy or similar proceedings), we expect that any and all information that we have will be among the assets transferred to the relevant third party, including the Personal Data provided to us by visitors and users of the Channels.</span></span></span></span></span></span></span></span></li>
+</ul>
+<p><span><span><span><span><span><span><span>Plex does not share, sell, rent, or trade Personal Data collected through its Channels with third parties for their sole promotional purposes or as otherwise outlined in this Privacy Statement. Plex may share information with our Service Providers contracted to provide services on our behalf. These Service Providers may only use information we provide to them as requested and instructed by Plex.</span></span></span></span></span></span></span></p>
+<p><span><span><span><span>We may aggregate or de-identify information and share that information with third parties for any purpose. We may use, transfer, and disclose other information we collect for the purposes described in this Policy and for such other purposes we decide, except where applicable law requires otherwise. If we combine other information with Personal Data or are required to treat other information as Personal Data under applicable law, then we will only use it in the same way that we are permitted to use and disclose Personal Data.</span></span></span></span></p>
+<h2>Privacy Shield</h2>
+<p><span><span><span><span><span><span>This section describes how Plex collects, uses, and discloses certain personally identifiable information received in the US from the European Economic Area ("EEA"), the United Kingdom ("UK"), and Switzerland ("Personal Data"). </span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span>Plex recognizes that the EEA, the UK, and Switzerland (“Covered Area”) have established strict protections regarding the handling of Personal Data, including requirements to provide adequate protection for Personal Data transferred outside of the Covered Area. To provide adequate protection for certain Personal Data received in the US from the Covered Area, Plex has elected to self-certify to the EU-US Privacy Shield Framework administered by the US Department of Commerce ("Privacy Shield"). Plex adheres to the Privacy Shield Principles of Notice, Choice, Accountability for Onward Transfer, Security, Data Integrity and Purpose Limitation, Access, and Recourse, Enforcement, and Liability.</span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span>For purposes of enforcing compliance with the Privacy Shield, Plex is subject to the investigatory and enforcement authority of the US Federal Trade Commission. For more information about the Privacy Shield, see the US Department of Commerce's Privacy Shield website located at: </span></span><span><a href="https://www.privacyshield.gov/"><span>https://www.privacyshield.gov</span></a></span><span><span>. </span></span></span></span></span></span></p>
+<h2>Data Processing and Cross-Border Transfer of Information</h2>
+<p><span><span><span><span><span><span><span>Your Personal Data may be collected, transferred to and stored by us in the United States. As such, your Personal Data may be processed outside of your local jurisdiction in a country not subject to an adequacy decision by the European Commission, or other local legislature or regulator (as applicable). We ensure that the recipient of your Personal Data offers an adequate level of protection, for instance by entering into appropriate back-back agreement or where permitted, we will ask for your prior consent to such international transfers. </span></span></span></span></span></span></span></p>
+<h2>Third-Party Websites</h2>
+<p><span><span><span><span><span><span><span>This Website and other Channels may contain links to other sites that Plex does not own or control and whose privacy practices may differ from those of Plex. The fact that this Website or another Channel links to a third-party website or service or allows you to share content on them is not an endorsement, authorization or representation that we are affiliated with that third party. Please be aware that Plex is not responsible for the privacy practices of such other sites. We encourage you to be aware when you leave this Website or other Channel. We recommend that you read the privacy statement of each website that collects Personal Data, as their privacy statement will govern any Personal Data you submit to those sites. This Policy applies only to information collected by this Website and the other Channels.</span></span></span></span></span></span></span></p>
+<h2>Plex Community and Public Forums</h2>
+<p><span><span><span><span>This Website allows you to post comments or questions such as on a blog, public forum, or Plex Community. Some of these features allow you to provide your Personal Data to create a profile. Personal Data you submit in these areas may be read, collected, and used by others who access them. You should only post Personal Data to online forums with the awareness that the information will be made available to others inside and outside of Plex (unless stated otherwise). Some of these comments and discussions are moderated and may be accessed or deleted for technical or other reasons. Any comments posted by individuals on an online forum, such as Plex Community or blog, are his or her own and should not be considered as reflecting the opinion of Plex. To request removal of your Personal Data from our blog or community forum, contact us at </span></span></span></span><span><span><span><a href="mailto:privacy@plex.com"><span><span><span><span><span><span>privacy@plex.com</span></span></span></span></span></span></a></span></span></span><span><span><span><span>. In some cases, we may not be able to remove your Personal Data, in which case we will let you know if we are unable to do so and why.</span></span></span></span></p>
+<h2>Security</h2>
+<p><span><span><span><span><span><span><span>Plex uses a variety of security technologies and procedures to help protect and secure the information we collect and we employ industry standard security measures to ensure the security of information. However, the security of information transmitted through the Internet can never be guaranteed. Plex is not responsible for any interception or interruption of any communications through the Internet or for changes to or losses of information. Visitors to and users of this Website and the other Channels are responsible for maintaining the security of any password, user ID, or other form of authentication involved in obtaining access to password protected or secure areas of any Channels. To protect you and your information, Plex may suspend your use of a Channel, without notice, pending an investigation, if any breach of security is suspected. Access to and use of password protected and/or secure area of any Channel is restricted to authorized users only. Unauthorized access to such areas is prohibited and may lead to criminal prosecution. If you have any questions about the security of information, you can contact us at </span></span></span><span><a href="mailto:privacy@plex.com"><span><span><span><span><span>privacy@plex.com</span></span></span></span></span></a></span><span><span><span>.</span></span></span></span></span></span></span></p>
+<h2>Retention of Information</h2>
+<p><span><span><span><span><span><span><span><span>We may retain your Personal Data for a period of time consistent with the original purpose of collection or as long as required to fulfill our legal obligations. We determine the appropriate retention period for Personal Data on the basis of the amount, nature, and sensitivity of the Personal Data being processed, the potential risk of harm from unauthorized use or disclosure of the Personal Data, whether we can achieve the purposes of the processing through other means, and on the basis of applicable legal requirements.</span></span></span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span><span>After expiry of the applicable retention periods, your Personal Data will be deleted. If there is any data that we are unable, for technical reasons, to delete entirely from our systems, we will implement appropriate measures to prevent any further use of such data.</span></span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span><span>For more information on data retention periods, please contact us by using the information in the “Contact Us” section, below.</span></span></span></span></span></span></span></p>
+<h2><span><span><span><span><span><span><span>Your Rights Relating to Your Personal Data</span></span></span></span></span></span></span></h2>
+<h4>Your Rights</h4>
+<p><span><span><span><span><span><span><span>You may have certain rights in relation to your Personal Data under local data protection and/or privacy laws. Depending on and subject to such laws your rights may include:</span></span></span></span></span></span></span></p>
+<ul>
+<li><span><span><span><span><span><span><span>Accessing your Personal Data held by us;</span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span>Rectifying your Personal Data;</span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span>Erasure or deletion of your Personal Data (“Right to be forgotten”)</span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span>Restricting our processing of your Personal Data;</span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span>Opting out of certain disclosures of your Personal Data to third parties;</span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span>Withdrawing your consent at any time (to the extent we process your Personal Data based on consent).</span></span></span></span></span></span></span></li>
+</ul>
+<h4>Exercising Your Rights</h4>
+<p><span><span><span><span><span><span><span>To exercise your rights, please contact us by using the information in the “Contact Us” section below. We will respond to all legitimate requests within thirty (30) days and will contact you where we require additional information to process your request. </span></span></span></span></span></span></span></p>
+<h4><span><span><span><span><span><span><span>Email, Marketing and Telemarketing Communication Preferences</span></span></span></span></span></span></span></h4>
+<p><span><span><span><span><span><span><span>If we process your Personal Data for the purpose of sending you marketing communications, you may manage your receipt of marketing and non-transactional communications from us by clicking on the “unsubscribe” link located on the bottom of applicable email. In addition, and where you wish to add your number to our internal Do-Not-Call telemarketing register, please contact us by using the information in “Contact Us” below. </span></span></span></span></span></span></span></p>
+<h2>Children</h2>
+<p><span><span><span><span><span><span><span>Plex does not knowingly collect or maintain Personal Data from individuals who are under 13 years of age, and no part of this Website or the other Channels are designed to attract people under the age of 13. Protecting the privacy of children is very important to us. If we obtain knowledge that a visitor is under the age of 13, we will take steps to remove that user's Personal Data from our databases.</span></span></span></span></span></span></span></p>
+<h2>Contact Us</h2>
+<p>If you have any questions regarding this Policy or if you need to update, change or remove information, you can do so by contacting <a href="mailto:privacy@plex.com">privacy@plex.com</a> or by regular mail addressed to:</p>
+<p>Plex Systems, Inc.<br/>
+Attn: Privacy<br/>
+900 Tower Drive<br/>
+Suite 1500<br/>
+Troy, MI 48098<br/>
+United States</p>
+<h2>Changes to this Privacy Statement</h2>
+<p><span><span><span><span><span><span><span>We reserve the right to change or update this Policy at any time. Changes to this Policy will be posted on this Website and links to this Policy will indicate that the statement has been changed or updated. We encourage you to periodically review this Policy for any changes. We will notify you of material changes to this Policy by email or by means of a notice on this Website.</span></span></span></span></span></span></span></p>
+<h2><span><span><span><span><span><span><span>Additional Disclosures for California Residents</span></span></span></span></span></span></span></h2>
+<p><span><span><span><span><span><span><span>The California Consumer Privacy Act requires businesses to disclose whether they sell Personal Data. As a business covered by the CCPA, we do not sell Personal Data.  We may share Personal Data with third parties or allow them to collect Personal Data from our Website or services if those third parties are authorized service providers or business partners who have agreed to our contractual limitations as to their retention, use, and disclosure of such Personal Data.</span></span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span><span>California law requires that we detail the categories of Personal Data that we share or disclose for certain “business purposes,” such as disclosures to service providers that assist us with securing our services or marketing our products. We disclose the following categories of Personal Data for our business purposes:</span></span></span></span></span></span></span></p>
+<ul>
+<li><span><span><span><span><span><span><span><span>Identifiers;</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Commercial information;</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Internet activity information;</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Financial information;  </span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Professional and employment-related information; </span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Education information; and</span></span></span></span></span></span></span></span></li>
+<li><span><span><span><span><span><span><span><span>Inferences drawn from any of the above information categories. </span></span></span></span></span></span></span></span></li>
+</ul>
+<p><span><span><span><span><span><span><span>California law grants state residents certain rights, including the rights to access specific types of Personal Data, to learn how we process Personal Data, to request deletion of Personal Data, and not to be denied goods or services for exercising these rights. </span></span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span><span>If you are a California resident under the age of 18 and have registered for an account with us, you may ask us to remove content or information that you have posted to our website(s). Please note that your request does not ensure complete or comprehensive removal of the content or information, because, for example, some of your content may have been reposted by another user. </span></span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span><span>For information on how to exercise your rights, please refer to section “Your Rights Relation to Your Personal Data” above. If you are an authorized agent wishing to exercise rights on behalf of a California resident, please contact us using the information in the “Contacting Us” section above and provide us with a copy of the consumer’s written authorization designating you as their agent.  </span></span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span><span>We may need to verify your identity and place of residence before completing your rights request.</span></span></span></span></span></span></span></p>
+<h2><span><span><span><span><span><span><span>Additional Disclosures for Canadian Residents</span></span></span></span></span></span></span></h2>
+<p><span><span><span><span><span><span><span>Where you have provided your consent to the collection, use, and transfer of your personal information, you may have the legal right to withdraw your consent under certain circumstances. To withdraw your consent, if applicable, contact us at </span></span></span></span><span><span><span><span><span><span><a href="mailto:privacy@plex.com">privacy@plex.com</a>.</span></span></span></span></span></span><span><span><span><span> Please note that if you withdraw your consent we may not be able to provide you with a particular product or service. We will explain the impact to you at the time to help you with your decision.</span></span></span></span></span></span></span></p>
+<p>Last Updated: March 17, 2021</p>
+</div>
+</div></div>
+</div>
+</div>
+</div> <div class="site-footer__top clearfix">
+<div>
+<!-- Full Width Content with DropDwon -->
+<div class="full-width-CTA-content-dropdown-half-and-half">
+<div>
+<div class="hidden">Background Image</div>
+<div><article>
+<div class="blazy blazy--field blazy--field-media-image blazy--field-media-image--default" data-blazy="">
+<div class="hidden">Image</div>
+<div>
+<div>
+<div class="media media--blazy media--fx media--fx-lg media--bundle--image media--image" data-animation="blur"><img alt="" class="b-lazy b-blur b-blur--tmp" data-src="data:image/jpg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gNzUK/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8AAEQgAHABkAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8Ar6lZ3U8SK9gJUCNw0qHn5R1Ix3rzRzfw3k0MahVEhUiSKMkc9DXZajrKRzSCdGiGSX84M6ONq8YB4+Ydq42wmgOoSyosQcFmQKGwvuM0KPM0kKUuWLk+ht+HNVOj3KXN47LCj4fZhcg5HKjqec4rsNYtJ5tQuJ444JY5GQjE+GwE9M+uOnbNeaak72Vw5jf5pWLOVyDnPr+tdh4X1e71m3lkuyzTo23zcYDDAx07/wD1qirBwhzXuXSmpytaxp2kVzcQFFRUCOVPL7gR7h+lYfimyuYorUEtKzCV1BZvl2xk55Pbr+FU7G/vW8ai2W8mSE320xiQhWG7GNvSup8UzX0OrWY0+0W4khjdivHy7sDufb9TSUVa45Sdzho4kl8P3SfYIleC1WU3OTuLFgMdcfpWz4fMh0FvJUyTxN/qUkIznkc5wM5q6dR8Tvcu40dclAMEpjvjv6mpdMhuIG1C61SH7K07KwUSBeg5I2n2/WlVVo3Q6bvKzKniS9eLw6sSxNHJOh89fNJxgcjrzzXnKj94MDvXa6pqiT6PhjLC8qOVD7m+Vm45wR0/lXJ29qJbqOJLgBnOM7SMUU7qLuOavJJBbEfaITtIBkA6+9b0boJb4vIiHygE3Ql+w6EA4+tMfw5JZf6QbqKVISHKhfvcjjOaJJp2ubkWsqQoyBWVBuDDA45zzXXh580W46nJiqbhJKehmRGTacAkbj/CTRTlt7pBgrIuTkfuxzRXUpS/lZxuML/Ev6+R1d9crJltyEmGRcDfznHHzD+lcrDut/tTqqrKCwyQOPyruJvLkFuHhjcjOS4LFgT0Oa5fxZDBa3zLb28MKsSpCJgcKK8ik2noexVSkrMyJDc3dnboQzM0hVPfP+f5V1PhuOeTR7SVZGRIZXYgEguM9OvPf161zGkyY1C0+RTtZjk9+O9dv4DsIb2yiacFhEzKq8YwTmnO793+uooWWv8AXQzH8PeIU1uW9tLORG+0NJHISB/FkHk10PiG51S3mjVCj3hhXeW4AOWPsPausumMexF4UdBXH+IbiRvFMUecD7NuOO53EVpa2hm3cojUPExtUkjgtTN5hUx71Hy4BB+96k/lWyj3v9lmS/gjeQ53RgZU4x9e+aqRSTDVBm4lKZ/1Zb5enpWpZ3Ms2rXcDtmOKGMqMdCS2f5D8qco3iKErSOQ1CLzntIVCxxNAfkKk7eHwOR2+tYl1beRcOWmJCgEsOD6eteiXem2U026W1iZsdSv1rGn0nT1mKizhx/uCsPeT0ehq7M4mJwZxskLDa3G7PGKvB8zz8n76dBz29RW9eafZwadcSxW0SSCM4ZVwRXP4/ez44+dOlejhn7vzODFfF8jfa9CxQKdRuRiJRj7KOPbpRSiScwQf6VNxGAPmHA/Kiui6OXlZ//Z" decoding="async" loading="lazy" typeof="foaf:Image"/>
+<img alt="Plex_BG_Footer_SolutionFinder" class="media__image media__element b-lazy b-responsive" data-src="/sites/default/files/styles/large/public/2020-04/Plex_BG_Footer_SolutionFinder02.jpg?itok=acBJrbp5" data-srcset="/sites/default/files/styles/max_325x325/public/2020-04/Plex_BG_Footer_SolutionFinder02.jpg?itok=00_lA467 325w, /sites/default/files/styles/max_650x650/public/2020-04/Plex_BG_Footer_SolutionFinder02.jpg?itok=kelsJ5zu 650w, /sites/default/files/styles/max_1300x1300/public/2020-04/Plex_BG_Footer_SolutionFinder02.jpg?itok=l2h3Hyfg 1300w, /sites/default/files/styles/max_2600x2600/public/2020-04/Plex_BG_Footer_SolutionFinder02.jpg?itok=1bmAghaB 2160w" decoding="async" loading="lazy" sizes="(min-width: 1290px) 1290px, 100vw" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%202160%20600'%2F%3E" srcset="" typeof="foaf:Image"/>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<div class="contentWrapper-1080 relative">
+<div class="content">
+<h2>
+<div>Ready to start solving problems before they become problems?</div>
+</h2>
+</div>
+<div class="inputControl">
+<div class="choose-option">
+<h4>Choose Your Role</h4>
+<ul>
+<li><a href="/solution-finder/ceo">CEO</a></li>
+<li><a href="/solution-finder/cfo-or-financial-leader">CFO or Financial Leader</a></li>
+<li><a href="/solution-finder/cio-or-it-leader">CIO or IT Leader</a></li>
+<li><a href="/solution-finder/plant-or-operations-manager">Plant or Operations Manager</a></li>
+<li><a href="/solution-finder/quality-manager">Quality Manager</a></li>
+<li><a href="/solution-finder/supply-chain-leader">Supply Chain Leader</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="site-footer">
+<div class="site-footer__top clearfix">
+<section class="row region region-footer">
+<footer class="footer px-0">
+<div class="menus-section row">
+<div class="col-xs col-md-9 px-0">
+<div class="row">
+<div class="col-xs col-md-4 px-0">
+<h4>Products</h4>
+<nav>
+<ul>
+<li>
+<a data-drupal-link-system-path="node/2177" href="/products/manufacturing-execution-system">Manufacturing Execution System (MES)</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/2243" href="/products/enterprise-resource-planning">Enterprise Resource Planning (ERP)</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3802" href="/products/quality-management-system">Quality Management System (QMS)</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/2245" href="/products/supply-chain">Supply Chain Planning (SCP)</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3908" href="/products/production-monitoring">Production Monitoring</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/4009" href="/products/mes-automation-orchestration">MES Automation &amp; Orchestration</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/2244" href="/products/asset-performance-management">Asset Performance Management (APM)</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-xs col-md-4 px-0">
+<h4>Platform</h4>
+<nav>
+<ul>
+<li>
+<a data-drupal-link-system-path="node/2175" href="/smart-manufacturing-platform">Smart Manufacturing Platform Overview</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/4044" href="/platform/cloud-infrastructure-and-security">Cloud Infrastructure &amp; Security</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/2280" href="/platform/mobile-application">Mobile Application</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3463" href="/platform/availability-performance">Availability &amp; Performance</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3804" href="/platform/manufacturing-automation">Manufacturing Automation</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-xs col-md-4 px-0">
+<h4>Industries</h4>
+<nav>
+<ul>
+<li>
+<a data-drupal-link-system-path="node/1603" href="/industries/automotive">Automotive</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3543" href="/industries/food-and-beverage">Food &amp; Beverage</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1858" href="/industries/precision-metalforming-and-fabrication-manufacturing">Precision Metalforming</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1850" href="/industries/plastics-and-rubber">Plastics &amp; Rubber</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1844" href="/industries/industrial-manufacturing">Industrial Manufacturing</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1841" href="/industries/high-tech-and-electronics">High Tech &amp; Electronics</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1839" href="/industries/aerospace">Aerospace</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="row">
+<div class="col-xs col-md-4 px-0">
+<h4>Resources</h4>
+<nav>
+<ul>
+<li>
+<a data-drupal-link-system-path="resources" href="/resources">All Resources</a>
+</li>
+<li>
+<a data-drupal-link-query='{"field_resource_type":"115"}' data-drupal-link-system-path="resources" href="/resources?field_resource_type=115">Success Stories</a>
+</li>
+<li>
+<a data-drupal-link-query='{"field_resource_type":"59"}' data-drupal-link-system-path="resources" href="/resources?field_resource_type=59">Product Demos</a>
+</li>
+<li>
+<a data-drupal-link-system-path="recognition" href="/recognition">Analyst Reports</a>
+</li>
+<li>
+<a data-drupal-link-system-path="blog" href="/blog">Blog</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-xs col-md-4 px-0">
+<h4>Services &amp; Support</h4>
+<nav>
+<ul>
+<li>
+<a data-drupal-link-system-path="node/1540" href="/customer-success/customer-success-and-advocacy">Customer Success &amp; Advocacy</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1604" href="/customer-success/support-services">Support Services</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1539" href="/customer-success/education-services">Education Services</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1537" href="/customer-success/professional-services">Professional Services</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1538" href="/customer-success/plex-community">Plex Community</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-xs col-md-4 px-0">
+<h4>Company</h4>
+<nav>
+<ul>
+<li>
+<a data-drupal-link-system-path="node/1543" href="/company">About Us</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/782" href="/company/leadership">Leadership</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/771" href="/company/customers">Customers</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1606" href="/our-partner-ecosystem">Partner Ecosystem</a>
+</li>
+<li>
+<a data-drupal-link-system-path="company/newsroom" href="/company/newsroom">Newsroom</a>
+</li>
+<li>
+<a data-drupal-link-system-path="company/events" href="/company/events">Events</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/773" href="/company/careers">Careers</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1321" href="/contact-us">Contact Us</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="col-xs col-md-3 px-0">
+<div class="row">
+<div class="col">
+<h4>Knowledge Articles</h4>
+<nav>
+<ul>
+<li>
+<a data-drupal-link-system-path="node/3784" href="/products/manufacturing-execution-system/what-is-mes">MES Beginners Guide</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3822" href="/products/manufacturing-execution-system/cloud-based-mes-basics">Cloud-Based MES Basics</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3919" href="/products/quality-management-system/what-quality-management-system-qms">What is a Quality Management System (QMS)?</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3921" href="/products/quality-management-system/types-quality-management-systems">Types of Quality Management Systems</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3920" href="/products/quality-management-system/quality-management-systems-qms-manufacturing">Quality Management Systems (QMS) for Manufacturing</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3828" href="/products/analytics-and-industrial-iot/what-is-iiot">IIoT Beginners Guide</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3842" href="/products/analytics-and-industrial-iot/what-is-industry-4-0">What is Industry 4.0?</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3847" href="/products/analytics-and-industrial-iot/what-is-connected-manufacturing-and-why-care">What is Connected Manufacturing?</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3857" href="/products/analytics-and-industrial-iot/what-is-a-smart-factory">What is a Smart Factory?</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3963" href="/platform/manufacturing-automation/rise-automation-manufacturing">The Rise of Automation in Manufacturing</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3964" href="/platform/manufacturing-automation/future-robotics-and-automation">The Future of Robotics and Automation in Manufacturing</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/4061" href="/products/supply-chain/supply-chain-planning-strategic-planning-and-operations">Supply Chain Planning: a Guide to Strategic Planning and Operations</a>
+</li>
+<li>
+<a href="https://www.plex.com/products/supply-chain/what-is-smart-supply-chain-management">What is Smart Supply Chain Management?</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/4105" href="/products/asset-performance-management/apm-guide">An Extensive Guide To Asset Performance Management (APM)</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/4106" href="/monitoring-machine-performance/guide">A Guide to Monitoring Machine Performance </a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/4142" href="/industries/automotive/automotive-quality-management-system-iatf-16949">Automotive Quality Management System: IATF 16949</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div class="logo-social-area d-flex align-items-center">
+<div class="logo-section">
+<a href="https://www.plex.com/">
+<img alt="Plex logo" class="plex-logo-footer" src="/themes/custom/plex_d9/src/img/svg/logo-plex-footer.svg"/>
+</a>
+</div>
+<div class="social-phone">
+<div class="col-xs-12 col-md-5">
+<ul class="socialMediaSection flex float-end">
+<li>
+<a href="https://www.facebook.com/PlexSystems/" target="_blank">
+<img alt="Facebook icon" src="/themes/custom/plex_d9/src/img/icon-facebook.png.webp"/>
+</a>
+</li>
+<li>
+<a href="https://twitter.com/PlexSystems" target="_blank">
+<img alt="Twitter icon" src="/themes/custom/plex_d9/src/img/icon-twitter.png.webp"/>
+</a>
+</li>
+<li>
+<a href="https://www.linkedin.com/company/plex-systems-inc-/" target="_blank">
+<img alt="Linkedin icon" src="/themes/custom/plex_d9/src/img/icon-linked-in.png.webp"/>
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/PlexSystems" target="_blank">
+<img alt="Youtube icon" src="/themes/custom/plex_d9/src/img/icon-youtube.png.webp"/>
+</a>
+</li>
+</ul>
+</div>
+<div class="col-xs-12 col-md-1">
+<a class="phoneNumber float-end" href="tel:8884547539">888.454.7539</a>
+</div>
+</div>
+</div>
+<div class="footerBar">
+<div class="col">
+<div class="copyright">
+                            © 2022 Plex Systems. All rights reserved.
+                        </div>
+<ul>
+<li><a href="/terms-of-service">Terms and Conditions</a></li>
+<li><a href="/privacy-policy">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</section>
+</div>
+</footer>
+</div>
+</div>
+</div>
+<script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1826","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"blazy":{"loadInvisible":false,"offset":100,"saveViewportOffsetDelay":50,"validateDelay":25,"container":"","loader":true,"unblazy":false,"compat":true},"blazyIo":{"disconnect":false,"rootMargin":"0px","threshold":[0,0.25,0.5,0.75,1]},"user":{"uid":0,"permissionsHash":"4acca9e3a5874a49b039d7e3e9b4424984896bf82df494b263993386af40b55c"}}</script>
+<script src="/sites/default/files/js/js_VpO9t_jEPNGegSX6kFxLwtwYu8zkknLuS9qY6rtRc5U.js"></script>
+<script src="//cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/sites/default/files/js/js_ZzFFCSdmXytAVS4noynyc-W_EuoynNywEgFdbAho_NI.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-757df1a3675e60c2710","applicationID":"588196851","transactionName":"blcGZkJYDEtSVkBZXVcdJVFEUA1WHHFGRUJYXjhcX10HZHBaWkRAVl4IV0JlLFdXUGJZV05xC1xESw1UX1BGHQxPWwFF","queueTime":0,"applicationTime":373,"atts":"QhAFEApCH0U=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

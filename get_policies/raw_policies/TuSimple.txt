@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en" prefix="og: https://ogp.me/ns#">
+<head><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"761e715901",applicationID:"35893545"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<title>SEC Filing | TuSimple Holdings Inc</title>
+<link href="/sites/g/files/knoqqb61646/files/css/css_vxuuOEMO4lKhAqe7DxBlo9IrYS7X4lIvxsg-EwtWf50.css" media="all" rel="stylesheet"/>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-199582494-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-199582494-1');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5XG45JJ');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body class="body-sidebars-none nir-node nir-node--type-nir-sec-filing nir-node--6781 body_classes">
+<div class="region region-content">
+<div class="hidden" data-drupal-messages-fallback=""></div>
+<div class="block--system-main-block block--system-main-block--6781 block--content--system-main-block block--content--system-main-block--6781 block--b5931bfd-d66a-4e6b-adbb-b758ec7e2a5c block--b5931bfd-d66a-4e6b-adbb-b758ec7e2a5c--6781 block block-system block-system-main-block" id="block-nir-pid4026-content">
+<div class="nir-sec-header"><div class="logo"><img alt="TuSimple Holdings Inc" src="/sites/g/files/knoqqb61646/files/tusimple-logo.png"/>
+</div><div class="sec-docs">View:  <div class="file-link">
+<span class="file file--mime-application-rtf file--general"> <a href="/static-files/319b8bd5-3479-4996-b18b-e150ca73a952" title="0001193125-21-113276.rtf" type="application/rtf">Download DOC</a></span><span class="filesize"> </span>
+</div>
+<div class="file-link">
+<span class="file file--mime-application-pdf file--application-pdf"> <a href="/static-files/1e44c0f2-235e-4d69-9131-e98c71d6c3f6" title="0001193125-21-113276.pdf" type="application/pdf">Download PDF</a></span><span class="filesize"> </span>
+</div>
+<div class="file-link">
+<span class="file file--mime-application-vnd-ms-excel file--x-office-spreadsheet"> <a href="/static-files/7b968bf6-1e33-4b3e-b173-309b034f0e7b" title="0001193125-21-113276.xls" type="application/vnd.ms-excel">Download XLS</a></span><span class="filesize"> </span>
+</div>
+</div></div>
+<html><head>
+<title>CORRESP</title>
+</head>
+<body bgcolor="WHITE">
+<center><div align="left" style="width:8.5in">
+<p align="center" style="margin-top:0pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">TuSimple Holdings Inc. </p>
+<p align="center" style="margin-top:0pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">9191 Towne Centre Drive, Suite 600 </p>
+<p align="center" style="margin-top:0pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">San Diego, CA 92122 </p> <p style="margin-top:12pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">April 12, 2021 </p>
+<p style="margin-top:12pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman"><i><u>VIA EDGAR</u> </i></p> <p style="margin-top:12pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">Securities and Exchange Commission
+</p> <p style="margin-top:0pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">Division of Corporation Finance </p> <p style="margin-top:0pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">100 F. Street N.E. </p>
+<p style="margin-top:0pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">Washington, D.C. 20549 </p> <p style="font-size:12pt;margin-top:0pt;margin-bottom:0pt"> </p>
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE:COLLAPSE; font-family:Times New Roman; font-size:10pt" width="100%">
+<tr>
+<td width="4%"></td>
+<td valign="bottom" width="1%"></td>
+<td width="95%"></td></tr>
+<tr style="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<td valign="top">Attn:</td>
+<td valign="bottom">  </td>
+<td valign="top">Larry Spirgel</td></tr>
+<tr style="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<td valign="top"></td>
+<td valign="bottom">  </td>
+<td valign="top">Kathleen Collins</td></tr>
+<tr style="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<td valign="top"></td>
+<td valign="bottom">  </td>
+<td valign="top">Alexandra Barone</td></tr>
+<tr style="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<td valign="top"></td>
+<td valign="bottom">  </td>
+<td valign="top">Rebekah Lindsey</td></tr>
+</table> <p style="font-size:12pt;margin-top:0pt;margin-bottom:0pt"> </p>
+<table border="0" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE:COLLAPSE; font-family:Times New Roman; font-size:10pt" width="100%">
+<tr style="page-break-inside:avoid">
+<td width="9%"> </td>
+<td align="left" valign="top" width="4%"><b>Re:</b></td>
+<td align="left" valign="top"> <p align="left" style=" margin-top:0pt ; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman; "><b>TuSimple Holdings Inc. </b></p></td></tr></table>
+<p style="margin-top:0pt; margin-bottom:0pt; margin-left:13%; font-size:10pt; font-family:Times New Roman"><b>Registration Statement on Form <font style="white-space:nowrap">S-1</font> (File No. 333-254616) </b></p>
+<p style="margin-top:12pt; margin-bottom:0pt; font-size:10pt; font-family:Times New Roman">Ladies and Gentlemen: </p> <p style="margin-top:12pt; margin-bottom:0pt; text-indent:9%; font-size:10pt; font-family:Times New Roman">Pursuant to Rule 461
+under the Securities Act of 1933, as amended, TuSimple Holdings Inc. (the “Company”) hereby requests that the Securities and Exchange Commission (the “Commission”) take appropriate action to make the above-referenced Registration
+Statement on Form <font style="white-space:nowrap">S-1</font> effective at 4:00 p.m. Eastern Time on Wednesday, April 14, 2021 or as soon thereafter as practicable. </p>
+<p style="margin-top:12pt; margin-bottom:0pt; text-indent:9%; font-size:10pt; font-family:Times New Roman">The Company hereby authorizes each of Jeffrey Vetter and Colin Conklin of Gunderson Dettmer Stough Villeneuve Franklin &amp; Hachigian,
+LLP, counsel to the Company, to orally modify or withdraw this request for acceleration. </p> <p style="margin-top:12pt; margin-bottom:0pt; text-indent:9%; font-size:10pt; font-family:Times New Roman">The Company requests that it be notified of the
+effectiveness of the Registration Statement by a telephone call to Mr. Vetter at <font style="white-space:nowrap">(650) 463-5335 or,</font> in his absence, Mr. Conklin at
+<font style="white-space:nowrap">(650) 463-5341.</font> </p> <p style="font-size:12pt;margin-top:0pt;margin-bottom:0pt"> </p><div align="right">
+<table border="0" cellpadding="0" cellspacing="0" style="BORDER-COLLAPSE:COLLAPSE; font-family:Times New Roman; font-size:10pt" width="40%">
+<tr>
+<td width="7%"></td>
+<td valign="bottom" width="1%"></td>
+<td width="92%"></td></tr>
+<tr style="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<td colspan="3" valign="top">Very truly yours,</td></tr>
+<tr style="font-size:1pt">
+<td colspan="3" height="16"></td></tr>
+<tr style="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<td colspan="3" valign="top">TuSimple Holdings Inc.</td></tr>
+<tr style="font-size:1pt">
+<td height="16"></td>
+<td colspan="2" height="16"></td></tr>
+<tr style="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<td valign="top">By:</td>
+<td valign="bottom"> </td>
+<td valign="top"> <p style="margin-top:0pt; margin-bottom:1pt; border-bottom:1px solid #000000; font-size:10pt; font-family:Times New Roman">/s/ Cheng Lu</p></td></tr>
+<tr style="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<td valign="top"></td>
+<td valign="bottom"> </td>
+<td valign="top">Cheng Lu</td></tr>
+<tr style="page-break-inside:avoid ; font-family:Times New Roman; font-size:10pt">
+<td valign="top"></td>
+<td valign="bottom"> </td>
+<td valign="top">Chief Executive Officer</td></tr>
+</table></div>
+</div></center>
+</body></html>
+</div>
+<div class="block--website-notice-block block--website-notice-block--6781 block--content--website-notice-block block--content--website-notice-block--6781 block--a1567306-f318-4aff-9b89-93bc242859e0 block--a1567306-f318-4aff-9b89-93bc242859e0--6781 block block-nir-website-notices block-website-notice-block" id="block-nir-pid4026-websitenoticeblock">
+</div>
+<div class="block-content--nir-global-block block-content--nir-global-block--6771 block--block-contenta299e5c8-39da-4de7-830d-209f253b2ebc block--block-contenta299e5c8-39da-4de7-830d-209f253b2ebc--6781 block--content--block-content--a299e5c8-39da-4de7-830d-209f253b2ebc block--content--block-content--a299e5c8-39da-4de7-830d-209f253b2ebc--6781 block--5f9eea9c-e0a1-4cac-b0e9-9c577c918d6b block--5f9eea9c-e0a1-4cac-b0e9-9c577c918d6b--6781 block block-block-content block-block-contenta299e5c8-39da-4de7-830d-209f253b2ebc" id="block-gbprivacypolicy">
+<div class="field field--name-field-nir-global-block-node field--type-entity-reference field--label-hidden field__item">
+<div class="field field--name-field-nir-global-block-body field--type-text-long field--label-hidden field__item"><h2>TuSimple Website Privacy Policy</h2>
+<p class="mb-0">Effective:</p>
+<p>Updated: </p>
+<p>This is TuSimple’s Website Privacy Policy (“Privacy Policy”). To TuSimple (“we” or “us” or “our”), your privacy is of the utmost importance. This Privacy Policy explains how we collect, use, disclose, share, and safeguard your personal information when you visit our website. at www.TuSimple.com, engage with our marketing operations, or when you contact us, including through email or social media. For simplicity, in this Privacy Statement we call all of these activities “interacting with TuSimple.” Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access this website.</p>
+<p>This Privacy Policy applies to information we collect when you use our websites and other products and services that link to this Privacy Policy (collectively, the "Services"). We may supply a different privacy policy in relation to some of our Services, and that policy will apply to any information provided to or collected by us pursuant to those Services.This Privacy Statement does not apply to personal information we obtain from individuals interacting with other TuSimple products and services such as vehicles or mobile applications. </p>
+<p>We operate in the United States and this Privacy Statement is intended for users located in the United States. If you are located outside of the U.S., please be aware that the information we collect will be processed in the U.S. and will be subject to U.S. law. By accessing or using the Services or otherwise providing information to us, you consent to the processing, transfer and storage of information in and to the U.S. and other countries, where you may not have the same rights and protections as you do under local law.</p>
+<p> </p>
+<h3>Personal Information We Collect and How We Use and Share It</h3>
+<p>Presently, the personal information we may collect includes:</p>
+<ul><li>Information You Provide. This information may include personally identifiable information, such as your name, address, email address, phone number, and demographic information, such as your age, gender, hometown, and interests. 
+	<ul><li>This information may be collected when you choose to interact with our website, as well as with third-party websites that are linked with our website, including social media. </li>
+<li>We may also collect information disclosed when entering contests, sweepstakes, or submitting surveys we, or a third-party on our behalf, may run. </li>
+<li>Data provided by you from communications and other feedback, including questions, vulnerability reports, and other messages you address to us directly such as email or online forms may also be collected. </li>
+</ul></li>
+<li>Automatically Collected Information. When you visit our website, we may use automatic data collection technologies to collect certain information, such as: 
+	<ul><li>Access times;</li>
+<li>The pages you have viewed directly before and after accessing the website.</li>
+<li>Internet Protocol (“IP”) addresses of the devices you're using to interact with us online; </li>
+<li>Tools such as cookies and other local storage used by websites and web browsers to maintain information regarding your previous activities on a site;</li>
+<li>Information regarding your internet connection including your Internet Service Provider, connection type, and approximate city level location of your internet connection based on IP address; </li>
+<li>Information about how the device is interacting with our Website and social media accounts;</li>
+<li>Type and version of your device’s operating system and web browser;</li>
+<li>Specific interactions with our Website (such as which pages you viewed, in what order, and how long you engaged with each page); and</li>
+<li>Error logs.</li>
+</ul></li>
+</ul><p>The technologies we use for this automatic data collection may include cookies, web beacons, tracking pixels, and other tracking technologies on our website, including:</p>
+<ul><li>Google Analytics. We use Google Analytics to help us understand your use of our website and the popularity of certain content so we can improve your experience. You can learn about Google’s privacy practices at www.google.com/policies/privacy/partners/, and you can opt out of Google Analytics by downloading the Google Analytics opt-out browser add-on, available at https://tools.google.com/dlpage/gaoptout.</li>
+<li>LinkedIn Insights Tag. We use LinkedIn Insights Tag to retarget our website visitors and learn insights about your interactions with our LinkedIn advertisements. You can learn about LinkedIn’s privacy practices at www.linkedin.com/legal/privacy-policy, and you can opt out of LinkedIn Insights Tag at www.linkedin.com/psettings/.</li>
+<li>Google Ads. We use Google Ads to help us determine how effective our ad campaigns are. You can learn about Google’s privacy practices relating to Google Ads at policies.google.com/privacy, and you can prevent your participation in Google Ads conversion tracking by setting your browser to block cookies from the domain www.googleadservices.com.</li>
+</ul><p>Like many companies, we and our service providers may use "cookies" and other tracking technologies to gather information about your visit to our Website (see “Information We Collect” above). We use these tools to measure site activity, provide a better user experience, and to deliver, evaluate and tailor our marketing communications and online advertisements for you. Cookies are used by websites and web browsers to maintain information regarding your previous activities on a website, including what content has been displayed to you. Cookies are also used to optimize the performance of our Website.</p>
+<p>Some content, including advertisements, on our website may be served by third parties, including advertisers and ad networks. These third parties may use cookies, alone or in conjunction with pixels, web beacons or other tracking technologies, to collect information about you when you use our website. The information they collect may be associated with your personal information or they may collect information, including personal information, about your online activities over time and across different websites and other online services. They may use this information to provide you with personalized ads or other targeted content. You can generally opt out of receiving personalized ads from third party advertisers and ad networks who are members of the Network Advertising Initiative (NAI) or who follow the Digital Advertising Alliance’s Self-Regulatory Principles for Online Behavioral Advertising by visiting the opt out pages on the NAI website and DAA website.</p>
+<p>We may use the personal information you provide to us or that we collect about you to:</p>
+<ul><li><strong>Respond to an email or other inquiry or request, including to fulfill your request to subscribe to a TuSimple newsletter;</strong></li>
+</ul><ul><li>Customize your experience on our website;</li>
+</ul><ul><li>Deliver advertisements to you, including on other websites you visit;</li>
+</ul><ul><li>Compile anonymous statistical data and analysis for use internally or with third parties;</li>
+</ul><ul><li>Provide, maintain, analyze, and improve our Website;</li>
+</ul><ul><li>Monitor and analyze usage and trends to improve the functionality of our website;</li>
+</ul><ul><li>Perform other business activities as needed, such as for recruiting purposes; and</li>
+</ul><ul><li>Fulfill any other purpose for which you provide your information or to which you otherwise consent.</li>
+</ul><ul><li>Develop new products and services;</li>
+</ul><ul><li>Communicate with you for a range of reasons (including providing information, including updates and notices, we think will be of interest to you, conducting surveys, and responding to your comments, questions, and requests);</li>
+<li>Protect the rights and property of TuSimple, our users, and others; </li>
+<li>Detect, prevent, and respond to fraud, abuse, and security issues; and</li>
+<li>Carry out any other purpose described to you at the time the information was collected.</li>
+</ul><p>We may aggregate or de-identify information such that it is no longer linked to you or your device. This notice does not limit our ability to use or disclose aggregated or de-identified information that is not linked to you.</p>
+<p>We will not sell or rent your personal information to anyone.</p>
+<p>At all times, TuSimple reserves the right to disclose your personal information where required by law or to comply with a valid legal process (such as a search warrant, subpoena, or court order), to investigate or remedy potential violations of our policies, to protect TuSimple’s rights or property, or during emergencies when personal safety is at risk.</p>
+<p>We may also share your personal information with our third-party service providers (but only as necessary to provide services to us) and our affiliates, in which case we will require those third-party service providers and affiliates to keep such information confidential and use it only for the purposes for which we disclose it to them.</p>
+<p>Among the third-party service providers that TuSimple uses, and which may collect your personal information on TuSimple’s behalf in order to provide services to TuSimple, are the following:</p>
+<ul><li>MailChimp. We use MailChimp to send newsletters and related communications when you sign up for a newsletter subscription or otherwise opt into communications from us. You can review MailChimp’s privacy policy at https://mailchimp.com/legal/privacy.</li>
+<li>Greenhouse. We use Greenhouse to assist with our employee recruitment and hiring process. You can review Greenhouse’s privacy policy at <a href="https://www.greenhouse.io/privacy-policy">https://www.greenhouse.io/privacy-policy</a>.</li>
+</ul><p>Finally, we may share your personal information with a buyer or other successor company in the event of a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of TuSimple’s assets, whether as a going concern or as part of a bankruptcy, liquidation, or similar proceeding, in which personal information held by TuSimple about our website visitors is among the assets transferred.</p>
+<h3>Your Choices</h3>
+<p>If you have any questions as to how we collect and use your personal information, or would like to opt out of any future contacts from us, please contact us at <a href="mailto:privacy@tusimple.ai">privacy@tusimple.ai</a>. In addition, to the extent required by applicable law, you may have the right to request access to or delete your personal information. If you wish to do any of these things, please contact us at the email address listed above.</p>
+<h3>Do Not Track Features</h3>
+<p>Most web browsers and some mobile operating systems include a Do-Not-Track (“DNT”) feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. There is no final uniform technology standard for recognizing and implementing DNT signals. As a result, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Policy.</p>
+<h3>Links to External Websites</h3>
+<p>For your convenience and informational purposes, our Website may contain links to external websites that are not owned or controlled by TuSimple. TuSimple has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any external websites. If you visit such sites, your activities and the collection, use, and disclosure of information will be subject to the privacy policies and terms of the external websites or services, and not this Privacy Statement.</p>
+<h3>Children’s Privacy</h3>
+<p>TuSimple’s website is not intended for children. It is intended for adults. We do not knowingly collect personal information from children under the age of 13. If we find out that a child under 13 has given us personal information, we will take steps to delete that information.</p>
+<h3>Security</h3>
+<p>We have implemented reasonable measures designed to secure your personal information from accidental loss and from unauthorized access, use, alteration and disclosure. But no security measures are 100% secure and, thus, we cannot guarantee the security of your information. Any transmission of personal information is at your own risk. We are not responsible for the circumvention by any third party of any privacy settings or security measures we implement.</p>
+<h3>Job Candidate Privacy</h3>
+<p>For information regarding your privacy as a candidate for a position with TuSimple, please visit our Candidate Privacy Statement.</p>
+<h3>Privacy Inquiries and Information Requests</h3>
+<p>In some places you may have certain rights under privacy and data protection laws. These may include the right to request to have your personal information updated or deleted, to access your personal information, or to object to TuSimple using that personal information for certain purposes. These rights are subject to verification and certain exceptions. If you are a California resident, for instance, state law affords you certain privacy rights. You can learn more about these in the next section, “California Privacy Rights and Additional Information.”</p>
+<p>No matter where you are from, if you have questions or concerns about TuSimple’s privacy practices or this Privacy Statement, please contact us at <a href="mailto:privacy@tusimple.ai">privacy@tusimple.ai</a>.</p>
+<h2><strong>California Privacy Rights and Additional Information</strong></h2>
+<h3>California Data Access and Deletion Rights</h3>
+<p>If you are a California resident, the California Consumer Privacy Act (“CCPA”) allows you to make certain requests about your personal information (as defined in the CCPA). Specifically, the CCPA allows you to request that we:</p>
+<ul><li>Inform you about the categories of personal information we collect or disclose about you; the categories of sources of such information; the business or commercial purpose for collecting your personal information; and the categories of third-parties with whom we share/disclose personal information. </li>
+<li>Provide access to and/or a copy of certain personal information we hold about you.</li>
+<li>Delete certain personal information we have about you.</li>
+<li>Provide you with information about the financial incentives that we offer to you, if any.</li>
+</ul><p>Please note that certain information may be exempt from such requests under California law. For example, we need certain information in order to provide our Website to you.</p>
+<ul><li>Verification: Depending on the sensitivity of the information you are requesting and the type of request you are making, we will take reasonable steps to verify your identity based on the information that we currently possess. This may include, at a minimum, verifying your contact information and matching it with our records.</li>
+<li>Authorized Agent: You are also permitted to designate an authorized agent to submit certain requests on your behalf. In order for an authorized agent to be verified, you must provide the authorized agent with signed, written permission to make such requests or a power of attorney. We may also follow up with you to verify your identity before processing the authorized agent’s request. </li>
+</ul><p>The CCPA further provides you with the right not to be discriminated against (as provided for by applicable law) for exercising your access or deletion rights.</p>
+<p>If you would like to exercise these rights please contact us as <a href="mailto:privacy@tusimple.ai">privacy@tusimple.ai</a>.</p>
+<h3>California “Shine the Light” Disclosure</h3>
+<p>If you are a California resident you have the right to request information from TuSimple regarding the manner in which TuSimple shares certain categories of your personal information with third-parties, for the third-parties’ direct marketing purposes. We do not share personal information for such purposes.</p>
+<h3>Updates</h3>
+<p>We reserve the right to make changes to this Privacy Policy from time to time and for any reason. You should check this Privacy Policy regularly to see if there have been any changes. We will alert you about any changes by updating the “Updated” date of this Privacy Policy. You will be deemed to have been made aware of, will be subject to, and will be deemed to have accepted changes in any revised Privacy Policy by your continued use of the website after the date the revised Privacy Policy is posted.</p>
+<h3>Questions and Comments</h3>
+<p>If you have questions or comments about this Privacy Policy, please email us at <a href="mailto:privacy@tusimple.ai">privacy@tusimple.ai</a>.</p>
+<div class="mt-40 mb-40">
+<hr class="line"/></div>
+<h2>TuSimple Privacy Statement for Applicants and Candidates</h2>
+<p>This Privacy Statement explains what information we collect during the application and recruitment process, how we use that information, and how you may access and update it.</p>
+<h3>Scope</h3>
+<p>TuSimple’s hiring process consists of multiple steps designed to evaluate your skills and qualifications for a particular position. When you choose to participate in the TuSimple hiring process, TuSimple may collect or obtain personal information about you. This information may include:</p>
+<ul><li>Name, address, email address, telephone number, and other contact information</li>
+<li>Resume or CV and employment history</li>
+<li>Driving history (where applicable)</li>
+<li>Voluntary demographic information, including gender, race, ethnicity, citizenship, and/or nationality</li>
+<li>Veteran status</li>
+<li>Health information (only if required by law)</li>
+<li>A government-issued ID (only where required by job responsibilities)</li>
+<li>US Work Authorization Documentation</li>
+</ul><p>TuSimple will use the information that you provide to assist in our recruitment and hiring process, including the following:</p>
+<ul><li>Evaluating you for current and future job opportunities, including matching your skills and interests to applicable job requirements; </li>
+<li>Communicating with you throughout the hiring process; </li>
+<li>Complying with applicable laws, regulations, legal processes or government requests or inquiries; and </li>
+<li>Improving our hiring and/or recruitment processes, including improving our diversity and inclusion efforts. </li>
+<li>If you are offered and accept employment with TuSimple, information collected about you during the hiring process may become part of your employment record.</li>
+</ul><h3>Data Retention and Deletion</h3>
+<p>We will retain your personal information for the period necessary to fulfill the purposes outlined in this statement unless longer retention is required by law or for auditing purposes. </p>
+<h3>Privacy Inquiries and Correcting Your Information</h3>
+<p>If you have concerns or questions about this Privacy Statement for Applicants and Candidates or about TuSimple’s privacy practices, you may contact us at <a href="mailto:privacy@tusimple.ai">privacy@tusimple.ai</a></p>
+<p>In some places, you may have certain rights under data protection law. These may include the right to have your information updated or deleted, to access your information, or to object to TuSimple using it for certain purposes.</p>
+<p>If you wish to access, correct, or delete your information, please contact <a href="mailto:privacy@tusimple.ai">privacy@tusimple.ai</a>. We will process requests in accordance with applicable law, and there may be circumstances where we are not able to comply with your request.</p>
+<h3>Updates to Privacy Statement</h3>
+<p>We may update this Privacy Statement from time to time. We will post any changes to this policy to this page.</p></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">var s_CCSWebHostingAccount = "trcgtusimpleholdings";</script>
+<script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/6781\/html","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","themeUrl":"sites\/g\/files\/knoqqb61646\/themes\/site\/nir_pid4026","currentQuery":{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"user":{"uid":0,"permissionsHash":"57e7f489872eb53cc673e23fae4c2efd02328ddc6d536541f203dcbdf5b410ad"}}</script>
+<script src="/sites/g/files/knoqqb61646/files/js/js_XeWTwCqzHsO5pnCBvkblsxflvgz64BzeWzEmFzVese8.js"></script>
+<script async="" src="//assets.adobedtm.com/898335afd880/c52ee8aa1e90/launch-5ef258dce664.min.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"761e715901","applicationID":"35893545,24276188","transactionName":"ZlVXYRcAW0ZRW0QKX18fYEcMTlxbVF1ITUBZQA==","queueTime":0,"applicationTime":135,"atts":"ShJUF18aSEg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

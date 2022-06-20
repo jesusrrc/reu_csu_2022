@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<meta content="IE=EDGE" http-equiv="X-UA-Compatible"/>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"6c4acdfd7f",applicationID:"32111505"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/apple-touch-icon-57x57.png" rel="apple-touch-icon-precomposed" sizes="57x57"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/apple-touch-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/apple-touch-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/apple-touch-icon-60x60.png" rel="apple-touch-icon-precomposed" sizes="60x60"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/apple-touch-icon-120x120.png" rel="apple-touch-icon-precomposed" sizes="120x120"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/apple-touch-icon-76x76.png" rel="apple-touch-icon-precomposed" sizes="76x76"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/apple-touch-icon-152x152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/favicon-196x196.png" rel="icon" sizes="196x196" type="image/png"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/favicon-128.png" rel="icon" sizes="128x128" type="image/png"/>
+<meta content=" " name="application-name">
+<meta content="#FFFFFF" name="msapplication-TileColor"/>
+<meta content="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/mstile-70x70.png" name="msapplication-square70x70logo"/>
+<meta content="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/mstile-150x150.png" name="msapplication-square150x150logo"/>
+<meta content="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/mstile-310x150.png" name="msapplication-wide310x150logo"/>
+<meta content="https://www.ctscorp.com/wp-content/themes/orbit-media/favicons/mstile-310x310.png" name="msapplication-square310x310logo"/>
+<meta content="#003871" name="theme-color"/>
+<link href="http://gmpg.org/xfn/11" rel="profile"/>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!-- typekit -->
+<script src="https://use.typekit.net/uew7tqu.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/style.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.ctscorp.com/xmlrpc.php" rel="pingback"/>
+<link href="https://www.ctscorp.com/2022/04/" rel="archives" title="April 2022"/>
+<link href="https://www.ctscorp.com/2022/03/" rel="archives" title="March 2022"/>
+<link href="https://www.ctscorp.com/2022/02/" rel="archives" title="February 2022"/>
+<link href="https://www.ctscorp.com/2022/01/" rel="archives" title="January 2022"/>
+<link href="https://www.ctscorp.com/2021/11/" rel="archives" title="November 2021"/>
+<link href="https://www.ctscorp.com/2021/10/" rel="archives" title="October 2021"/>
+<link href="https://www.ctscorp.com/2021/08/" rel="archives" title="August 2021"/>
+<link href="https://www.ctscorp.com/2021/07/" rel="archives" title="July 2021"/>
+<link href="https://www.ctscorp.com/2021/05/" rel="archives" title="May 2021"/>
+<link href="https://www.ctscorp.com/2021/04/" rel="archives" title="April 2021"/>
+<link href="https://www.ctscorp.com/2021/03/" rel="archives" title="March 2021"/>
+<link href="https://www.ctscorp.com/2021/02/" rel="archives" title="February 2021"/>
+<link href="https://www.ctscorp.com/2021/01/" rel="archives" title="January 2021"/>
+<link href="https://www.ctscorp.com/2020/12/" rel="archives" title="December 2020"/>
+<link href="https://www.ctscorp.com/2020/11/" rel="archives" title="November 2020"/>
+<link href="https://www.ctscorp.com/2020/10/" rel="archives" title="October 2020"/>
+<link href="https://www.ctscorp.com/2020/09/" rel="archives" title="September 2020"/>
+<link href="https://www.ctscorp.com/2020/08/" rel="archives" title="August 2020"/>
+<link href="https://www.ctscorp.com/2020/07/" rel="archives" title="July 2020"/>
+<link href="https://www.ctscorp.com/2020/06/" rel="archives" title="June 2020"/>
+<link href="https://www.ctscorp.com/2020/05/" rel="archives" title="May 2020"/>
+<link href="https://www.ctscorp.com/2020/04/" rel="archives" title="April 2020"/>
+<link href="https://www.ctscorp.com/2020/03/" rel="archives" title="March 2020"/>
+<link href="https://www.ctscorp.com/2020/02/" rel="archives" title="February 2020"/>
+<link href="https://www.ctscorp.com/2020/01/" rel="archives" title="January 2020"/>
+<link href="https://www.ctscorp.com/2019/11/" rel="archives" title="November 2019"/>
+<link href="https://www.ctscorp.com/2019/10/" rel="archives" title="October 2019"/>
+<link href="https://www.ctscorp.com/2019/09/" rel="archives" title="September 2019"/>
+<link href="https://www.ctscorp.com/2019/08/" rel="archives" title="August 2019"/>
+<link href="https://www.ctscorp.com/2019/07/" rel="archives" title="July 2019"/>
+<link href="https://www.ctscorp.com/2019/06/" rel="archives" title="June 2019"/>
+<link href="https://www.ctscorp.com/2019/05/" rel="archives" title="May 2019"/>
+<link href="https://www.ctscorp.com/2019/04/" rel="archives" title="April 2019"/>
+<link href="https://www.ctscorp.com/2019/02/" rel="archives" title="February 2019"/>
+<link href="https://www.ctscorp.com/2019/01/" rel="archives" title="January 2019"/>
+<link href="https://www.ctscorp.com/2018/11/" rel="archives" title="November 2018"/>
+<link href="https://www.ctscorp.com/2018/10/" rel="archives" title="October 2018"/>
+<link href="https://www.ctscorp.com/2018/09/" rel="archives" title="September 2018"/>
+<link href="https://www.ctscorp.com/2018/08/" rel="archives" title="August 2018"/>
+<link href="https://www.ctscorp.com/2018/07/" rel="archives" title="July 2018"/>
+<link href="https://www.ctscorp.com/2018/06/" rel="archives" title="June 2018"/>
+<link href="https://www.ctscorp.com/2018/05/" rel="archives" title="May 2018"/>
+<link href="https://www.ctscorp.com/2018/04/" rel="archives" title="April 2018"/>
+<link href="https://www.ctscorp.com/2018/03/" rel="archives" title="March 2018"/>
+<link href="https://www.ctscorp.com/2018/02/" rel="archives" title="February 2018"/>
+<link href="https://www.ctscorp.com/2018/01/" rel="archives" title="January 2018"/>
+<link href="https://www.ctscorp.com/2017/12/" rel="archives" title="December 2017"/>
+<link href="https://www.ctscorp.com/2017/11/" rel="archives" title="November 2017"/>
+<link href="https://www.ctscorp.com/2017/10/" rel="archives" title="October 2017"/>
+<link href="https://www.ctscorp.com/2017/09/" rel="archives" title="September 2017"/>
+<link href="https://www.ctscorp.com/2017/08/" rel="archives" title="August 2017"/>
+<link href="https://www.ctscorp.com/2017/07/" rel="archives" title="July 2017"/>
+<link href="https://www.ctscorp.com/2017/06/" rel="archives" title="June 2017"/>
+<link href="https://www.ctscorp.com/2017/05/" rel="archives" title="May 2017"/>
+<link href="https://www.ctscorp.com/2017/04/" rel="archives" title="April 2017"/>
+<link href="https://www.ctscorp.com/2017/03/" rel="archives" title="March 2017"/>
+<link href="https://www.ctscorp.com/2017/02/" rel="archives" title="February 2017"/>
+<link href="https://www.ctscorp.com/2017/01/" rel="archives" title="January 2017"/>
+<link href="https://www.ctscorp.com/2016/12/" rel="archives" title="December 2016"/>
+<link href="https://www.ctscorp.com/2016/11/" rel="archives" title="November 2016"/>
+<link href="https://www.ctscorp.com/2016/10/" rel="archives" title="October 2016"/>
+<link href="https://www.ctscorp.com/2016/08/" rel="archives" title="August 2016"/>
+<link href="https://www.ctscorp.com/2016/07/" rel="archives" title="July 2016"/>
+<link href="https://www.ctscorp.com/2016/06/" rel="archives" title="June 2016"/>
+<link href="https://www.ctscorp.com/2016/05/" rel="archives" title="May 2016"/>
+<link href="https://www.ctscorp.com/2016/04/" rel="archives" title="April 2016"/>
+<link href="https://www.ctscorp.com/2016/03/" rel="archives" title="March 2016"/>
+<link href="https://www.ctscorp.com/2016/02/" rel="archives" title="February 2016"/>
+<link href="https://www.ctscorp.com/2016/01/" rel="archives" title="January 2016"/>
+<link href="https://www.ctscorp.com/2015/10/" rel="archives" title="October 2015"/>
+<link href="https://www.ctscorp.com/2015/08/" rel="archives" title="August 2015"/>
+<link href="https://www.ctscorp.com/2015/07/" rel="archives" title="July 2015"/>
+<link href="https://www.ctscorp.com/2015/05/" rel="archives" title="May 2015"/>
+<link href="https://www.ctscorp.com/2015/04/" rel="archives" title="April 2015"/>
+<link href="https://www.ctscorp.com/2015/03/" rel="archives" title="March 2015"/>
+<link href="https://www.ctscorp.com/2015/02/" rel="archives" title="February 2015"/>
+<link href="https://www.ctscorp.com/2015/01/" rel="archives" title="January 2015"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+<!-- This site is optimized with the Yoast SEO plugin v18.5.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Privacy Policy | CTS</title>
+<link href="https://www.ctscorp.com/privacy-policy/" rel="canonical"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="Privacy Policy | CTS" property="og:title"/>
+<meta content="Privacy Policy CTS Corporation (“CTS”) is committed to protecting the privacy of the users of the ctscorp.com website. Our goal is to provide a safe and secure user experience. CTS will use its best efforts to ensure that the information submitted…Read More »" property="og:description"/>
+<meta content="https://www.ctscorp.com/privacy-policy/" property="og:url"/>
+<meta content="CTS" property="og:site_name"/>
+<meta content="2018-06-28T01:38:29+00:00" property="article:modified_time"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Est. reading time" name="twitter:label1"/>
+<meta content="4 minutes" name="twitter:data1"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.ctscorp.com/#organization","name":"CTS","url":"https://www.ctscorp.com/","sameAs":[],"logo":{"@type":"ImageObject","@id":"https://www.ctscorp.com/#logo","inLanguage":"en-US","url":"https://www.ctscorp.com/wp-content/uploads/2015/11/cts-logo.png","contentUrl":"https://www.ctscorp.com/wp-content/uploads/2015/11/cts-logo.png","width":324,"height":99,"caption":"CTS"},"image":{"@id":"https://www.ctscorp.com/#logo"}},{"@type":"WebSite","@id":"https://www.ctscorp.com/#website","url":"https://www.ctscorp.com/","name":"CTS","description":"Sense. Connect. Move.","publisher":{"@id":"https://www.ctscorp.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.ctscorp.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://www.ctscorp.com/privacy-policy/#webpage","url":"https://www.ctscorp.com/privacy-policy/","name":"Privacy Policy | CTS","isPartOf":{"@id":"https://www.ctscorp.com/#website"},"datePublished":"2015-10-09T19:21:33+00:00","dateModified":"2018-06-28T01:38:29+00:00","breadcrumb":{"@id":"https://www.ctscorp.com/privacy-policy/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.ctscorp.com/privacy-policy/"]}]},{"@type":"BreadcrumbList","@id":"https://www.ctscorp.com/privacy-policy/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ctscorp.com/"},{"@type":"ListItem","position":2,"name":"Privacy Policy"}]}]}</script>
+<!-- / Yoast SEO plugin. -->
+<link href="//www.ctscorp.com" rel="dns-prefetch"/>
+<link href="//www.youtube.com" rel="dns-prefetch"/>
+<link href="//cdn.datatables.net" rel="dns-prefetch"/>
+<link href="//maps.googleapis.com" rel="dns-prefetch"/>
+<link href="//maxcdn.bootstrapcdn.com" rel="dns-prefetch"/>
+<link href="//s.w.org" rel="dns-prefetch"/>
+<link href="//jetpack.wordpress.com" rel="dns-prefetch"/>
+<link href="//s0.wp.com" rel="dns-prefetch"/>
+<link href="//public-api.wordpress.com" rel="dns-prefetch"/>
+<link href="//0.gravatar.com" rel="dns-prefetch"/>
+<link href="//1.gravatar.com" rel="dns-prefetch"/>
+<link href="//2.gravatar.com" rel="dns-prefetch"/>
+<link href="https://www.ctscorp.com/feed/" rel="alternate" title="CTS » Feed" type="application/rss+xml"/>
+<link href="https://www.ctscorp.com/comments/feed/" rel="alternate" title="CTS » Comments Feed" type="application/rss+xml"/>
+<!-- This site uses the Google Analytics by MonsterInsights plugin v8.5.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script async="" data-cfasync="false" data-wpfc-render="false" src="//www.googletagmanager.com/gtag/js?id=UA-63903148-2" type="text/javascript"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.5.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-63903148-2',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						if ( document.cookie.indexOf( disableStrs[ index ] + '=true' ) > -1 ) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if ( __gtagTrackerIsOptedOut() ) {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for ( var index = 0; index < disableStrs.length; index++ ) {
+						document.cookie = disableStrs[ index ] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[ disableStrs[ index ] ] = true;
+					}
+				}
+
+				if ( 'undefined' === typeof gaOptout ) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if ( mi_track_user ) {
+					function __gtagDataLayer() {
+						dataLayer.push( arguments );
+					}
+
+					function __gtagTracker( type, name, parameters ) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply( null, arguments );
+							return;
+						}
+
+						if ( type === 'event' ) {
+							
+															parameters.send_to = monsterinsights_frontend.ua;
+								__gtagDataLayer( type, name, parameters );
+													} else {
+							__gtagDataLayer.apply( null, arguments );
+						}
+					}
+					__gtagTracker( 'js', new Date() );
+					__gtagTracker( 'set', {
+						'developer_id.dZGIzZG' : true,
+											} );
+															__gtagTracker( 'config', 'UA-63903148-2', {"forceSSL":"true"} );
+										window.gtag = __gtagTracker;											(function () {
+							/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+							/* ga and __gaTracker compatibility shim. */
+							var noopfn = function () {
+								return null;
+							};
+							var newtracker = function () {
+								return new Tracker();
+							};
+							var Tracker = function () {
+								return null;
+							};
+							var p = Tracker.prototype;
+							p.get = noopfn;
+							p.set = noopfn;
+							p.send = function (){
+								var args = Array.prototype.slice.call(arguments);
+								args.unshift( 'send' );
+								__gaTracker.apply(null, args);
+							};
+							var __gaTracker = function () {
+								var len = arguments.length;
+								if ( len === 0 ) {
+									return;
+								}
+								var f = arguments[len - 1];
+								if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+									if ( 'send' === arguments[0] ) {
+										var hitConverted, hitObject = false, action;
+										if ( 'event' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[3] ) {
+												hitObject = {
+													'eventAction': arguments[3],
+													'eventCategory': arguments[2],
+													'eventLabel': arguments[4],
+													'value': arguments[5] ? arguments[5] : 1,
+												}
+											}
+										}
+										if ( 'pageview' === arguments[1] ) {
+											if ( 'undefined' !== typeof arguments[2] ) {
+												hitObject = {
+													'eventAction': 'page_view',
+													'page_path' : arguments[2],
+												}
+											}
+										}
+										if ( typeof arguments[2] === 'object' ) {
+											hitObject = arguments[2];
+										}
+										if ( typeof arguments[5] === 'object' ) {
+											Object.assign( hitObject, arguments[5] );
+										}
+										if ( 'undefined' !== typeof arguments[1].hitType ) {
+											hitObject = arguments[1];
+											if ( 'pageview' === hitObject.hitType ) {
+												hitObject.eventAction = 'page_view';
+											}
+										}
+										if ( hitObject ) {
+											action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+											hitConverted = mapArgs( hitObject );
+											__gtagTracker( 'event', action, hitConverted );
+										}
+									}
+									return;
+								}
+
+								function mapArgs( args ) {
+									var arg, hit = {};
+									var gaMap = {
+										'eventCategory': 'event_category',
+										'eventAction': 'event_action',
+										'eventLabel': 'event_label',
+										'eventValue': 'event_value',
+										'nonInteraction': 'non_interaction',
+										'timingCategory': 'event_category',
+										'timingVar': 'name',
+										'timingValue': 'value',
+										'timingLabel': 'event_label',
+										'page' : 'page_path',
+										'location' : 'page_location',
+										'title' : 'page_title',
+									};
+									for ( arg in args ) {
+																				if ( ! ( ! args.hasOwnProperty(arg) || ! gaMap.hasOwnProperty(arg) ) ) {
+											hit[gaMap[arg]] = args[arg];
+										} else {
+											hit[arg] = args[arg];
+										}
+									}
+									return hit;
+								}
+
+								try {
+									f.hitCallback();
+								} catch ( ex ) {
+								}
+							};
+							__gaTracker.create = newtracker;
+							__gaTracker.getByName = newtracker;
+							__gaTracker.getAll = function () {
+								return [];
+							};
+							__gaTracker.remove = noopfn;
+							__gaTracker.loaded = true;
+							window['__gaTracker'] = __gaTracker;
+						})();
+									} else {
+										console.log( "" );
+					( function () {
+							function __gtagTracker() {
+								return null;
+							}
+							window['__gtagTracker'] = __gtagTracker;
+							window['gtag'] = __gtagTracker;
+					} )();
+									}
+			</script>
+<!-- / Google Analytics by MonsterInsights -->
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.ctscorp.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.3"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link href="https://www.ctscorp.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="wp-block-library-inline-css" type="text/css">
+.has-text-align-justify{text-align:justify;}
+</style>
+<link href="https://www.ctscorp.com/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.16" id="mediaelement-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.ctscorp.com/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=5.9.3" id="wp-mediaelement-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link href="https://www.ctscorp.com/wp-content/plugins/rotatingtweets/css/style.css?ver=5.9.3" id="rotatingtweets-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css?ver=5.9.3" id="font-awesome-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/css/cts-icons.css?ver=5.9.3" id="cts-icons-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/css/layout.css?ver=5" id="layout-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/css/default.css?ver=5.9.3" id="default-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.ctscorp.com/wp-content/themes/orbit-media/css/support.css?ver=1655757217" id="support-css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.ctscorp.com/wp-content/plugins/jetpack/css/jetpack.css?ver=10.8" id="jetpack_css-css" media="all" rel="stylesheet" type="text/css"/>
+<script id="jquery-core-js" src="https://www.ctscorp.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" type="text/javascript"></script>
+<script id="jquery-migrate-js" src="https://www.ctscorp.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" type="text/javascript"></script>
+<script id="monsterinsights-frontend-script-js" src="https://www.ctscorp.com/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.5.0" type="text/javascript"></script>
+<script data-cfasync="false" data-wpfc-render="false" id="monsterinsights-frontend-script-js-extra" type="text/javascript">/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/www.ctscorp.com","hash_tracking":"false","ua":"UA-63903148-2","v4_id":""};/* ]]> */
+</script>
+<script id="oms_sw_prettyphoto_lib-js" src="https://www.ctscorp.com/wp-content/plugins/oms-sidebar-widgets/vendor/prettyPhoto/js/jquery.prettyPhoto.js?ver=5.9.3" type="text/javascript"></script>
+<script id="oms_sw_scripts-js" src="https://www.ctscorp.com/wp-content/plugins/oms-sidebar-widgets/js/oms-sw.js?ver=5.9.3" type="text/javascript"></script>
+<script id="oms_sw_map_js-js" src="https://www.ctscorp.com/wp-content/plugins/oms-sidebar-widgets/js/oms-sw-map.js?ver=5.9.3" type="text/javascript"></script>
+<link href="https://www.ctscorp.com/wp-json/" rel="https://api.w.org/"/><link href="https://www.ctscorp.com/wp-json/wp/v2/pages/7874" rel="alternate" type="application/json"/><link href="https://www.ctscorp.com/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+<link href="https://www.ctscorp.com/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+<meta content="WordPress 5.9.3" name="generator"/>
+<link href="https://www.ctscorp.com/?p=7874" rel="shortlink"/>
+<link href="https://www.ctscorp.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ctscorp.com%2Fprivacy-policy%2F" rel="alternate" type="application/json+oembed"/>
+<link href="https://www.ctscorp.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.ctscorp.com%2Fprivacy-policy%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+<style>.post-thumbnail img[src$='.svg'] { width: 100%; height: auto; }</style><!-- Stream WordPress user activity plugin v3.9.0 -->
+<style type="text/css">img#wpstats{display:none}</style>
+</meta></meta></head>
+<body class="page-template-default page page-id-7874">
+<div id="header-container">
+<header class="site-header" id="masthead" role="banner">
+<div class="container-fluid">
+<ul class="hidden-xs hidden-sm" id="menu-top-secondary-nav"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20745" id="menu-item-20745"><a href="https://app.mectronic.com/stck6bc874dc734ba420766ea8ef3b3ec0bd" target="_blank" title="Distributor Stock Check">Distributor Stock Check</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7948" id="menu-item-7948"><a href="https://www.ctscorp.com/news-room/" title="News Room">News Room</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7949 dropdown" id="menu-item-7949"><a href="https://www.ctscorp.com/resource-center/" title="Resource Center">Resource Center</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7950" id="menu-item-7950"><a href="https://www.ctscorp.com/resource-center/application-notes/" title="Application Notes and Technical Briefs">Application Notes and Technical Briefs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22178" id="menu-item-22178"><a href="https://www.ctscorp.com/resource-center/certificates-environmental-compliances/" title="Certificates and Environmental Compliances">Certificates and Environmental Compliances</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14404" id="menu-item-14404"><a href="https://app.mectronic.com/stck6bc874dc734ba420766ea8ef3b3ec0bd" title="Distributor Stock Check">Distributor Stock Check</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13948" id="menu-item-13948"><a href="https://www.ctscorp.com/resource-center/policies-and-certifications/" title="Policies and Certifications">Policies and Certifications</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7951" id="menu-item-7951"><a href="https://www.ctscorp.com/resource-center/product-catalogues/" title="Literature">Literature</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16298" id="menu-item-16298"><a href="https://www.ctscorp.com/resource-center/patent-markings/" title="Patent Markings">Patent Markings</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7952" id="menu-item-7952"><a href="https://www.ctscorp.com/resource-center/reference-designs/" title="Reference Designs">Reference Designs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14638" id="menu-item-14638"><a href="https://www.ctscorp.com/resource-center/terms-and-conditions/" title="Terms and Conditions">Terms and Conditions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16234" id="menu-item-16234"><a href="https://www.ctscorp.com/resource-center/tutorials/" title="Tools and Tutorials">Tools and Tutorials</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14114" id="menu-item-14114"><a href="https://www.ctscorp.com/resource-center/video-library/" title="Video Library">Video Library</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25591" id="menu-item-25591"><a href="https://www.ctscorp.com/resource-center/facility-tour-videos/" title="Facility Tour Videos">Facility Tour Videos</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25951" id="menu-item-25951"><a href="https://www.ctscorp.com/resource-center/cts-webinar-library/" title="Webinar Library">Webinar Library</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24237" id="menu-item-24237"><a href="/company/careers/" title="Careers">Careers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7955 dropdown" id="menu-item-7955"><a href="https://www.ctscorp.com/contact/" title="Contact">Contact</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27263" id="menu-item-27263"><a href="https://investors.ctscorp.com/resources/information-request-form/default.aspx" title="Investor Relations">Investor Relations</a></li>
+<li class="menu-item menu-item-type-post_type_archive menu-item-object-sales_reps menu-item-13564" id="menu-item-13564"><a href="https://www.ctscorp.com/contact_sales/" title="Locate a Sales Rep or Distributor">Locate a Sales Rep or Distributor</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7957" id="menu-item-7957"><a href="https://www.ctscorp.com/contact/media-relations/" title="Media Relations">Media Relations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21752" id="menu-item-21752"><a href="https://www.ctscorp.com/contact/conflict-minerals/" title="Conflict Minerals">Conflict Minerals</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7959" id="menu-item-7959"><a href="https://www.ctscorp.com/contact/sample-request/" title="Sales Inquiry">Sales Inquiry</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7958" id="menu-item-7958"><a href="https://www.ctscorp.com/contact/request-technical-info/" title="Technical Inquiry">Technical Inquiry</a></li>
+</ul>
+</li>
+</ul> <!-- #site-navigation -->
+<nav class="navbar navbar-default" role="navigation">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button class="navbar-toggle" data-target="#primary-navigation-menu" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<img alt="menu" src="https://www.ctscorp.com/wp-content/themes/orbit-media/images/menu-bars.png"/>
+<span class="menu-label">Menu</span>
+</button>
+<a class="navbar-brand" href="https://www.ctscorp.com/" rel="home"><img alt="CTS" src="https://www.ctscorp.com/wp-content/themes/orbit-media/images/cts-logo.png"/></a>
+</div>
+<div class="mega-menu" id="primary">
+<ul class="menu" id="menu-main-nav"><li class="products menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7875 dropdown" id="menu-item-7875"><a href="https://www.ctscorp.com/products/" title="Products">Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="sense-header menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13534 dropdown" id="menu-item-13534"><a href="https://www.ctscorp.com/products/sense/" title="Sense">Sense</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="sense menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10917 dropdown" id="menu-item-10917"><a href="https://www.ctscorp.com/products/controls-2/" title="Controls">Controls</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-sense_product_line menu-item-24124" id="menu-item-24124"><a href="https://www.ctscorp.com/sense_product_line/encoders/" title="Encoders">Encoders</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-sense_product_line menu-item-21460" id="menu-item-21460"><a href="https://www.ctscorp.com/sense_product_line/rotary-position-sensors/" title="Rotary Position Sensors">Rotary Position Sensors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20479" id="menu-item-20479"><a href="https://www.ctscorp.com/products/controls-2/slide-potentiometers/" title="Slide Potentiometers">Slide Potentiometers</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-sense_product_line menu-item-21934" id="menu-item-21934"><a href="https://www.ctscorp.com/sense_product_line/industrial-rotary-potentiometers/" title="Industrial Rotary Potentiometers">Industrial Rotary Potentiometers</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-sense_product_line menu-item-21933" id="menu-item-21933"><a href="https://www.ctscorp.com/sense_product_line/commercial-rotary-potentiometers/" title="Commercial Rotary Potentiometers">Commercial Rotary Potentiometers</a></li>
+</ul>
+</li>
+<li class="sense menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11164 dropdown" id="menu-item-11164"><a href="https://www.ctscorp.com/products/pedals/" title="Pedals">Pedals</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8741" id="menu-item-8741"><a href="https://www.ctscorp.com/products/pedals/contacting/" title="Contacting">Contacting</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8740" id="menu-item-8740"><a href="https://www.ctscorp.com/products/pedals/non-contacting/" title="Non-Contacting">Non-Contacting</a></li>
+</ul>
+</li>
+<li class="sense menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10919 dropdown" id="menu-item-10919"><a href="https://www.ctscorp.com/products/piezoelectric-products/" title="Piezoelectric Sense Products">Piezoelectric Sense Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8774" id="menu-item-8774"><a href="https://www.ctscorp.com/products/piezoelectric-products/flow-meters/" title="Flow Meters">Flow Meters</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8770" id="menu-item-8770"><a href="https://www.ctscorp.com/products/piezoelectric-products/hydrophones/" title="Hydrophones">Hydrophones</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8773" id="menu-item-8773"><a href="https://www.ctscorp.com/products/piezoelectric-products/destructive-testing/" title="Non-Destructive Testing">Non-Destructive Testing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8772" id="menu-item-8772"><a href="https://www.ctscorp.com/products/piezoelectric-products/sonar/" title="Sonar">Sonar</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8771" id="menu-item-8771"><a href="https://www.ctscorp.com/products/piezoelectric-products/ultrasonic-imaging/" title="Ultrasonic Imaging">Ultrasonic Imaging</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-17240 dropdown" id="menu-item-17240"><a href="https://www.ctscorp.com/products/piezoelectric-products/bulk/" title="Bulk Products">Bulk Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17377" id="menu-item-17377"><a href="https://www.ctscorp.com/products/piezoelectric-products/bulk-capabilities/" title="Bulk Capabilities">Bulk Capabilities</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8769" id="menu-item-8769"><a href="https://www.ctscorp.com/products/piezoelectric-products/other/" title="Other Piezoelectric Sense Products">Other Piezoelectric Sense Products</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26635" id="menu-item-26635"><a href="https://learn.ctscorp.com/l/689693/2021-07-28/kzlvc" title="CTS Piezoelectric Material Properties">CTS Piezoelectric Material Properties</a></li>
+</ul>
+</li>
+<li class="sense menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10965 dropdown" id="menu-item-10965"><a href="https://www.ctscorp.com/products/sensors-2/" title="Sensors">Sensors</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8783" id="menu-item-8783"><a href="https://www.ctscorp.com/products/sensors-2/chassis/" title="Chassis">Chassis</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8782" id="menu-item-8782"><a href="https://www.ctscorp.com/products/sensors-2/clutch-brake/" title="Clutch and Brake">Clutch and Brake</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26664" id="menu-item-26664"><a href="https://www.ctscorp.com/products/sensors-2/current-sensors-cts-corp/" title="Current Sensors">Current Sensors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8776" id="menu-item-8776"><a href="https://www.ctscorp.com/products/sensors-2/customized-position-sensors/" title="Custom Position Sensors">Custom Position Sensors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27772" id="menu-item-27772"><a href="https://www.ctscorp.com/high-speed-position-sensors/" title="High Speed Position Sensors">High Speed Position Sensors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19795" id="menu-item-19795"><a href="https://www.ctscorp.com/products/sensors-2/long-stroke-sensor/" title="Long Stroke Sensor">Long Stroke Sensor</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13726 dropdown" id="menu-item-13726"><a href="https://www.ctscorp.com/products/sensors-2/rf-dpf-sensor/" title="RF Sensors">RF Sensors</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19903" id="menu-item-19903"><a href="https://www.ctscorp.com/products/sensors-2/rf-dpf-sensor/technical-papers-presentations/" title="Technical Papers &amp; Presentations">Technical Papers &amp; Presentations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19907" id="menu-item-19907"><a href="https://www.ctscorp.com/products/sensors-2/rf-dpf-sensor/diesel-particulate-filter-dpf-knowledge-base/" title="Knowledge Base">Knowledge Base</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8781" id="menu-item-8781"><a href="https://www.ctscorp.com/products/sensors-2/seating/" title="Seating">Seating</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8780" id="menu-item-8780"><a href="https://www.ctscorp.com/products/sensors-2/speed/" title="Speed">Speed</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22792" id="menu-item-22792"><a href="https://www.qtisensing.com/about-qti/" target="_blank" title="Temperature Sensors">Temperature Sensors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8779" id="menu-item-8779"><a href="https://www.ctscorp.com/products/sensors-2/throttle/" title="Throttle">Throttle</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8778" id="menu-item-8778"><a href="https://www.ctscorp.com/products/sensors-2/transmission/" title="Transmission">Transmission</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8777" id="menu-item-8777"><a href="https://www.ctscorp.com/products/sensors-2/turbo/" title="Turbo">Turbo</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8775" id="menu-item-8775"><a href="https://www.ctscorp.com/products/sensors-2/sensors/" title="Other Sensors">Other Sensors</a></li>
+</ul>
+</li>
+<li class="sense menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10967 dropdown" id="menu-item-10967"><a href="https://www.ctscorp.com/products/switches/" title="Switches">Switches</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-sense_product_line menu-item-8595" id="menu-item-8595"><a href="https://www.ctscorp.com/sense_product_line/dip-switches/" title="DIP Switches">DIP Switches</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12981" id="menu-item-12981"><a href="https://www.ctscorp.com/products/switches/rotary-dip-switches/" title="Rotary DIP Switches">Rotary DIP Switches</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12985" id="menu-item-12985"><a href="https://www.ctscorp.com/products/switches/rotary-selector-switches/" title="Rotary Selector Switches">Rotary Selector Switches</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-sense_product_line menu-item-8600" id="menu-item-8600"><a href="https://www.ctscorp.com/sense_product_line/tactile-switches/" title="Tactile Switches">Tactile Switches</a></li>
+</ul>
+</li>
+<li class="sense menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9092 dropdown" id="menu-item-9092"><a href="https://www.ctscorp.com/products/transducers-3/" title="Sensors and Transducers">Sensors and Transducers</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18355" id="menu-item-18355"><a href="https://www.ctscorp.com/products/transducers-3/bulk-capabilities-2/" title="Sensor and Transducer Capabilities">Sensor and Transducer Capabilities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="connect-header menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13535 dropdown" id="menu-item-13535"><a href="https://www.ctscorp.com/products/connect-products/" title="Connect">Connect</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="connect menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10970 dropdown" id="menu-item-10970"><a href="https://www.ctscorp.com/products/connect-products/emirfi-filters/" title="EMI/RFI Filters">EMI/RFI Filters</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8807" id="menu-item-8807"><a href="https://www.ctscorp.com/products/connect-products/emirfi-filters/customized-filter-assemblies/" title="Customized Filter Assemblies">Customized Filter Assemblies</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8806" id="menu-item-8806"><a href="https://www.ctscorp.com/products/connect-products/emirfi-filters/feed-through-filters/" title="Feed-Through Filters">Feed-Through Filters</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8805" id="menu-item-8805"><a href="https://www.ctscorp.com/products/connect-products/emirfi-filters/surface-mount/" title="Surface-Mount">Surface-Mount</a></li>
+</ul>
+</li>
+<li class="connect menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10978 dropdown" id="menu-item-10978"><a href="https://www.ctscorp.com/products/frequency-control-products/" title="Frequency Control Products">Frequency Control Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8627" id="menu-item-8627"><a href="https://www.ctscorp.com/connect_product_line/crystals/" title="Crystals">Crystals</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8808" id="menu-item-8808"><a href="https://www.ctscorp.com/connect_product_line/clock-oscillators/" title="Clock Oscillators">Clock Oscillators</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8628" id="menu-item-8628"><a href="https://www.ctscorp.com/connect_product_line/ocxo/" title="OCXO">OCXO</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8629" id="menu-item-8629"><a href="https://www.ctscorp.com/connect_product_line/tcxo/" title="TCXO/VCTCXO">TCXO/VCTCXO</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8630" id="menu-item-8630"><a href="https://www.ctscorp.com/connect_product_line/timing-modules/" title="Timing Modules">Timing Modules</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8809" id="menu-item-8809"><a href="https://www.ctscorp.com/connect_product_line/vcxo/" title="VCXO">VCXO</a></li>
+</ul>
+</li>
+<li class="connect menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10988 dropdown" id="menu-item-10988"><a href="https://www.ctscorp.com/products/rf-filters/" title="RF Filters">RF Filters</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8634" id="menu-item-8634"><a href="https://www.ctscorp.com/connect_product_line/band-pass-filter/" title="Band Pass Filters">Band Pass Filters</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8635" id="menu-item-8635"><a href="https://www.ctscorp.com/connect_product_line/diplexers/" title="Diplexers">Diplexers</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8636" id="menu-item-8636"><a href="https://www.ctscorp.com/connect_product_line/duplexors/" title="Duplexers">Duplexers</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-15651" id="menu-item-15651"><a href="https://www.ctscorp.com/connect_product_line/low-pass-filters/" title="Low Pass Filters">Low Pass Filters</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8828" id="menu-item-8828"><a href="https://www.ctscorp.com/products/rf-filters/rf-delay-filters/" title="RF Delay Filters">RF Delay Filters</a></li>
+</ul>
+</li>
+<li class="connect menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10980 dropdown" id="menu-item-10980"><a href="https://www.ctscorp.com/products/specialty-capacitors/" title="Specialty Capacitors">Specialty Capacitors</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8823" id="menu-item-8823"><a href="https://www.ctscorp.com/products/specialty-capacitors/ceramic-disc-capacitors/" title="Ceramic Disc Capacitors">Ceramic Disc Capacitors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8821" id="menu-item-8821"><a href="https://www.ctscorp.com/products/specialty-capacitors/variable-capacitorstrimmers-2/" title="Variable Capacitors">Variable Capacitors</a></li>
+</ul>
+</li>
+<li class="connect menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10984 dropdown" id="menu-item-10984"><a href="https://www.ctscorp.com/products/specialty-resistors/" title="Specialty Resistors">Specialty Resistors</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-11444" id="menu-item-11444"><a href="https://www.ctscorp.com/connect_product_line/current-sense-resistors/" title="Current Sense Resistors">Current Sense Resistors</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-11443" id="menu-item-11443"><a href="https://www.ctscorp.com/connect_product_line/resistor-networks-rc-terminations/" title="Resistor Networks &amp; RC Terminations">Resistor Networks &amp; RC Terminations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8826" id="menu-item-8826"><a href="https://www.ctscorp.com/products/specialty-resistors/ultra-high-resistance/" title="Ultra-High Resistance">Ultra-High Resistance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="move-header menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13536 dropdown" id="menu-item-13536"><a href="https://www.ctscorp.com/products/move-products/" title="Move">Move</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="move menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12882 dropdown" id="menu-item-12882"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/" title="Piezoelectric Move Products">Piezoelectric Move Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8869" id="menu-item-8869"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/piezo-actuators/" title="Piezoelectric Actuators">Piezoelectric Actuators</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8868" id="menu-item-8868"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/speakers/" title="Speakers">Speakers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8870" id="menu-item-8870"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/inkjet-printing/" title="Inkjet Printing">Inkjet Printing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8867" id="menu-item-8867"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/ultrasonic-cleaning-welding/" title="Ultrasonic Cleaning and Welding">Ultrasonic Cleaning and Welding</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8866" id="menu-item-8866"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/valves/" title="Valves">Valves</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12883" id="menu-item-12883"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/piezo-move-products/" title="Other Piezoelectric Move Products">Other Piezoelectric Move Products</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-16503 dropdown" id="menu-item-16503"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/multilayer-products/" title="Multilayer Products">Multilayer Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17379" id="menu-item-17379"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/multilayer-products/multilayer-capabilities/" title="Multilayer Capabilities">Multilayer Capabilities</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-18414 dropdown" id="menu-item-18414"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/bulk/" title="Bulk Products">Bulk Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18415" id="menu-item-18415"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/bulk-capabilities/" title="Bulk Capabilities">Bulk Capabilities</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26633" id="menu-item-26633"><a href="https://learn.ctscorp.com/l/689693/2021-07-28/kzlvc" target="_blank" title="CTS Piezoelectric Material Properties">CTS Piezoelectric Material Properties</a></li>
+</ul>
+</li>
+<li class="move menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10991 dropdown" id="menu-item-10991"><a href="https://www.ctscorp.com/products/rotary-actuators/" title="Rotary Actuators">Rotary Actuators</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8872" id="menu-item-8872"><a href="https://www.ctscorp.com/products/rotary-actuators/brushless-dc-actuator/" title="Brushless DC Actuator">Brushless DC Actuator</a></li>
+</ul>
+</li>
+<li class="move menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10993 dropdown" id="menu-item-10993"><a href="https://www.ctscorp.com/products/thermal-products/" title="Thermal Products">Thermal Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8874" id="menu-item-8874"><a href="https://www.ctscorp.com/products/thermal-products/zif-pc-board-retainers/" title="ZIF PC Board Retainers">ZIF PC Board Retainers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8876" id="menu-item-8876"><a href="https://www.ctscorp.com/products/thermal-products/heatsinks/" title="Heatsinks">Heatsinks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8698 dropdown" id="menu-item-8698"><a href="https://www.ctscorp.com/markets/" title="Markets">Markets</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14694" id="menu-item-14694"><a href="https://www.ctscorp.com/markets/aerospace-defense-products/" title="Aero &amp; Defense">Aero &amp; Defense</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14691" id="menu-item-14691"><a href="https://www.ctscorp.com/markets/medical-products/" title="Medical">Medical</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14690" id="menu-item-14690"><a href="https://www.ctscorp.com/markets/industrial-products/" title="Industrial">Industrial</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24378" id="menu-item-24378"><a href="https://www.ctscorp.com/markets/iot-and-connectivity/" title="IoT">IoT</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24627" id="menu-item-24627"><a href="https://www.ctscorp.com/markets/5g/" title="5G">5G</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14692" id="menu-item-14692"><a href="https://www.ctscorp.com/markets/telecommunications-information-technology-products/" title="Telecom &amp; IT">Telecom &amp; IT</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14693" id="menu-item-14693"><a href="https://www.ctscorp.com/markets/transportation-products/" title="Transportation">Transportation</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7876 dropdown" id="menu-item-7876"><a href="https://www.ctscorp.com/investors/" title="Investors">Investors</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27273" id="menu-item-27273"><a href="https://investors.ctscorp.com/overview/default.aspx" title="Overview">Overview</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7882 dropdown" id="menu-item-7882"><a href="https://www.ctscorp.com/investors/corporate-governance/" title="Corporate Governance">Corporate Governance</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11149" id="menu-item-11149"><a href="https://www.ctscorp.com/investors/corporate-governance/board-of-directors/" title="Board of Directors">Board of Directors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8941" id="menu-item-8941"><a href="https://www.ctscorp.com/investors/corporate-governance/board-committees/" title="Board Committees">Board Committees</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11402" id="menu-item-11402"><a href="http://www.ctscorp.com/wp-content/uploads/Amended-Restated-Articles-of-Incorporation.pdf" target="_blank" title="Articles of Incorporation">Articles of Incorporation</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11401" id="menu-item-11401"><a href="https://www.ctscorp.com/wp-content/uploads/Corporate-Governance-Guidelines-Rev-5-12-21-1.pdf" target="_blank" title="Corporate Governance Guidelines">Corporate Governance Guidelines</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12778" id="menu-item-12778"><a href="http://www.ctscorp.com/wp-content/uploads/CTS-ByLaws-04302019.pdf" target="_blank" title="Bylaws">Bylaws</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11406" id="menu-item-11406"><a href="http://www.ctscorp.com/wp-content/uploads/2015/10/StockOwnershipGuidelines.pdf" target="_blank" title="Stock Ownership Guidelines">Stock Ownership Guidelines</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11403" id="menu-item-11403"><a href="http://www.ctscorp.com/wp-content/uploads/2015/11/CODE-OF-ETHICS-2-1-13.pdf" target="_blank" title="Code of Ethics">Code of Ethics</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21395" id="menu-item-21395"><a href="https://www.ctscorp.com/investors/corporate-governance/environmental-health-and-safety/" title="Environmental, Health, and Safety">Environmental, Health, and Safety</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21716" id="menu-item-21716"><a href="/resource-center/policies-and-certifications/" title="Policies and Certifications">Policies and Certifications</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7879" id="menu-item-7879"><a href="https://www.ctscorp.com/investors/events-presentations/" title="Events &amp; Presentations">Events &amp; Presentations</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14756" id="menu-item-14756"><a href="https://www.ctscorp.com/category/investor-news/" title="Investor News">Investor News</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7880" id="menu-item-7880"><a href="https://www.ctscorp.com/investors/sec-filings/" title="SEC Filings">SEC Filings</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7881" id="menu-item-7881"><a href="https://www.ctscorp.com/investors/regulation-g/" title="Financials">Financials</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11400" id="menu-item-11400"><a href="https://investors.ctscorp.com/stock-info/default.aspx#stock-quote" target="_blank" title="Stock Information">Stock Information</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8948" id="menu-item-8948"><a href="https://www.ctscorp.com/investors/requestion-information/" title="Request Information">Request Information</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8877 dropdown" id="menu-item-8877"><a href="https://www.ctscorp.com/company/" title="Our Company">Our Company</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8878" id="menu-item-8878"><a href="https://www.ctscorp.com/company/about-us/" title="About Us">About Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27600" id="menu-item-27600"><a href="https://www.ctscorp.com/sustainability/" title="Sustainability">Sustainability</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25397" id="menu-item-25397"><a href="https://www.ctscorp.com/careers/" title="Careers">Careers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26909" id="menu-item-26909"><a href="https://www.ctscorp.com/company/cts-cares/" title="CTS Cares">CTS Cares</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12763 dropdown" id="menu-item-12763"><a href="https://www.ctscorp.com/company/leadership/" title="Leadership">Leadership</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23982" id="menu-item-23982"><a href="http://www.ctscorp.com/investors/corporate-governance/board-of-directors/" target="_blank" title="Board of Directors">Board of Directors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13554" id="menu-item-13554"><a href="https://www.ctscorp.com/company/leadership/management/" title="Executive Officers">Executive Officers</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12762" id="menu-item-12762"><a href="https://www.ctscorp.com/company/history/" title="History">History</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12780" id="menu-item-12780"><a href="https://www.ctscorp.com/company/locations/" title="Locations">Locations</a></li>
+</ul>
+</li>
+</ul> </div>
+<div class="hidden-xs hidden-sm" id="desktop-search">
+<form action="https://www.ctscorp.com/" class="search-form" method="get" role="search">
+<label>
+<span class="screen-reader-text">Search for:</span>
+<input class="search-field" name="s" placeholder="Search products, people and articles" title="Search products, people and articles:" type="search" value=""/>
+</label>
+<button class="search-submit" type="submit"><span class="fa fa-search"></span></button>
+</form> </div>
+<div class="mobile-menu collapse" id="primary-navigation-menu">
+<ul class="menu" id="menu-main-nav-1"><li class="products menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7875 dropdown"><a href="https://www.ctscorp.com/products/" title="Products">Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="sense-header menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13534 dropdown"><a href="https://www.ctscorp.com/products/sense/" title="Sense">Sense</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="sense menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10917 dropdown"><a href="https://www.ctscorp.com/products/controls-2/" title="Controls">Controls</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-sense_product_line menu-item-24124"><a href="https://www.ctscorp.com/sense_product_line/encoders/" title="Encoders">Encoders</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-sense_product_line menu-item-21460"><a href="https://www.ctscorp.com/sense_product_line/rotary-position-sensors/" title="Rotary Position Sensors">Rotary Position Sensors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20479"><a href="https://www.ctscorp.com/products/controls-2/slide-potentiometers/" title="Slide Potentiometers">Slide Potentiometers</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-sense_product_line menu-item-21934"><a href="https://www.ctscorp.com/sense_product_line/industrial-rotary-potentiometers/" title="Industrial Rotary Potentiometers">Industrial Rotary Potentiometers</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-sense_product_line menu-item-21933"><a href="https://www.ctscorp.com/sense_product_line/commercial-rotary-potentiometers/" title="Commercial Rotary Potentiometers">Commercial Rotary Potentiometers</a></li>
+</ul>
+</li>
+<li class="sense menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11164 dropdown"><a href="https://www.ctscorp.com/products/pedals/" title="Pedals">Pedals</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8741"><a href="https://www.ctscorp.com/products/pedals/contacting/" title="Contacting">Contacting</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8740"><a href="https://www.ctscorp.com/products/pedals/non-contacting/" title="Non-Contacting">Non-Contacting</a></li>
+</ul>
+</li>
+<li class="sense menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10919 dropdown"><a href="https://www.ctscorp.com/products/piezoelectric-products/" title="Piezoelectric Sense Products">Piezoelectric Sense Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8774"><a href="https://www.ctscorp.com/products/piezoelectric-products/flow-meters/" title="Flow Meters">Flow Meters</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8770"><a href="https://www.ctscorp.com/products/piezoelectric-products/hydrophones/" title="Hydrophones">Hydrophones</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8773"><a href="https://www.ctscorp.com/products/piezoelectric-products/destructive-testing/" title="Non-Destructive Testing">Non-Destructive Testing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8772"><a href="https://www.ctscorp.com/products/piezoelectric-products/sonar/" title="Sonar">Sonar</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8771"><a href="https://www.ctscorp.com/products/piezoelectric-products/ultrasonic-imaging/" title="Ultrasonic Imaging">Ultrasonic Imaging</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-17240 dropdown"><a href="https://www.ctscorp.com/products/piezoelectric-products/bulk/" title="Bulk Products">Bulk Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17377"><a href="https://www.ctscorp.com/products/piezoelectric-products/bulk-capabilities/" title="Bulk Capabilities">Bulk Capabilities</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8769"><a href="https://www.ctscorp.com/products/piezoelectric-products/other/" title="Other Piezoelectric Sense Products">Other Piezoelectric Sense Products</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26635"><a href="https://learn.ctscorp.com/l/689693/2021-07-28/kzlvc" title="CTS Piezoelectric Material Properties">CTS Piezoelectric Material Properties</a></li>
+</ul>
+</li>
+<li class="sense menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10965 dropdown"><a href="https://www.ctscorp.com/products/sensors-2/" title="Sensors">Sensors</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8783"><a href="https://www.ctscorp.com/products/sensors-2/chassis/" title="Chassis">Chassis</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8782"><a href="https://www.ctscorp.com/products/sensors-2/clutch-brake/" title="Clutch and Brake">Clutch and Brake</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26664"><a href="https://www.ctscorp.com/products/sensors-2/current-sensors-cts-corp/" title="Current Sensors">Current Sensors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8776"><a href="https://www.ctscorp.com/products/sensors-2/customized-position-sensors/" title="Custom Position Sensors">Custom Position Sensors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27772"><a href="https://www.ctscorp.com/high-speed-position-sensors/" title="High Speed Position Sensors">High Speed Position Sensors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19795"><a href="https://www.ctscorp.com/products/sensors-2/long-stroke-sensor/" title="Long Stroke Sensor">Long Stroke Sensor</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13726 dropdown"><a href="https://www.ctscorp.com/products/sensors-2/rf-dpf-sensor/" title="RF Sensors">RF Sensors</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19903"><a href="https://www.ctscorp.com/products/sensors-2/rf-dpf-sensor/technical-papers-presentations/" title="Technical Papers &amp; Presentations">Technical Papers &amp; Presentations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19907"><a href="https://www.ctscorp.com/products/sensors-2/rf-dpf-sensor/diesel-particulate-filter-dpf-knowledge-base/" title="Knowledge Base">Knowledge Base</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8781"><a href="https://www.ctscorp.com/products/sensors-2/seating/" title="Seating">Seating</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8780"><a href="https://www.ctscorp.com/products/sensors-2/speed/" title="Speed">Speed</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22792"><a href="https://www.qtisensing.com/about-qti/" target="_blank" title="Temperature Sensors">Temperature Sensors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8779"><a href="https://www.ctscorp.com/products/sensors-2/throttle/" title="Throttle">Throttle</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8778"><a href="https://www.ctscorp.com/products/sensors-2/transmission/" title="Transmission">Transmission</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8777"><a href="https://www.ctscorp.com/products/sensors-2/turbo/" title="Turbo">Turbo</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8775"><a href="https://www.ctscorp.com/products/sensors-2/sensors/" title="Other Sensors">Other Sensors</a></li>
+</ul>
+</li>
+<li class="sense menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10967 dropdown"><a href="https://www.ctscorp.com/products/switches/" title="Switches">Switches</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-sense_product_line menu-item-8595"><a href="https://www.ctscorp.com/sense_product_line/dip-switches/" title="DIP Switches">DIP Switches</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12981"><a href="https://www.ctscorp.com/products/switches/rotary-dip-switches/" title="Rotary DIP Switches">Rotary DIP Switches</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12985"><a href="https://www.ctscorp.com/products/switches/rotary-selector-switches/" title="Rotary Selector Switches">Rotary Selector Switches</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-sense_product_line menu-item-8600"><a href="https://www.ctscorp.com/sense_product_line/tactile-switches/" title="Tactile Switches">Tactile Switches</a></li>
+</ul>
+</li>
+<li class="sense menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9092 dropdown"><a href="https://www.ctscorp.com/products/transducers-3/" title="Sensors and Transducers">Sensors and Transducers</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18355"><a href="https://www.ctscorp.com/products/transducers-3/bulk-capabilities-2/" title="Sensor and Transducer Capabilities">Sensor and Transducer Capabilities</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="connect-header menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13535 dropdown"><a href="https://www.ctscorp.com/products/connect-products/" title="Connect">Connect</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="connect menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10970 dropdown"><a href="https://www.ctscorp.com/products/connect-products/emirfi-filters/" title="EMI/RFI Filters">EMI/RFI Filters</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8807"><a href="https://www.ctscorp.com/products/connect-products/emirfi-filters/customized-filter-assemblies/" title="Customized Filter Assemblies">Customized Filter Assemblies</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8806"><a href="https://www.ctscorp.com/products/connect-products/emirfi-filters/feed-through-filters/" title="Feed-Through Filters">Feed-Through Filters</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8805"><a href="https://www.ctscorp.com/products/connect-products/emirfi-filters/surface-mount/" title="Surface-Mount">Surface-Mount</a></li>
+</ul>
+</li>
+<li class="connect menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10978 dropdown"><a href="https://www.ctscorp.com/products/frequency-control-products/" title="Frequency Control Products">Frequency Control Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8627"><a href="https://www.ctscorp.com/connect_product_line/crystals/" title="Crystals">Crystals</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8808"><a href="https://www.ctscorp.com/connect_product_line/clock-oscillators/" title="Clock Oscillators">Clock Oscillators</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8628"><a href="https://www.ctscorp.com/connect_product_line/ocxo/" title="OCXO">OCXO</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8629"><a href="https://www.ctscorp.com/connect_product_line/tcxo/" title="TCXO/VCTCXO">TCXO/VCTCXO</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8630"><a href="https://www.ctscorp.com/connect_product_line/timing-modules/" title="Timing Modules">Timing Modules</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8809"><a href="https://www.ctscorp.com/connect_product_line/vcxo/" title="VCXO">VCXO</a></li>
+</ul>
+</li>
+<li class="connect menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10988 dropdown"><a href="https://www.ctscorp.com/products/rf-filters/" title="RF Filters">RF Filters</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8634"><a href="https://www.ctscorp.com/connect_product_line/band-pass-filter/" title="Band Pass Filters">Band Pass Filters</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8635"><a href="https://www.ctscorp.com/connect_product_line/diplexers/" title="Diplexers">Diplexers</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-8636"><a href="https://www.ctscorp.com/connect_product_line/duplexors/" title="Duplexers">Duplexers</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-15651"><a href="https://www.ctscorp.com/connect_product_line/low-pass-filters/" title="Low Pass Filters">Low Pass Filters</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8828"><a href="https://www.ctscorp.com/products/rf-filters/rf-delay-filters/" title="RF Delay Filters">RF Delay Filters</a></li>
+</ul>
+</li>
+<li class="connect menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10980 dropdown"><a href="https://www.ctscorp.com/products/specialty-capacitors/" title="Specialty Capacitors">Specialty Capacitors</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8823"><a href="https://www.ctscorp.com/products/specialty-capacitors/ceramic-disc-capacitors/" title="Ceramic Disc Capacitors">Ceramic Disc Capacitors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8821"><a href="https://www.ctscorp.com/products/specialty-capacitors/variable-capacitorstrimmers-2/" title="Variable Capacitors">Variable Capacitors</a></li>
+</ul>
+</li>
+<li class="connect menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10984 dropdown"><a href="https://www.ctscorp.com/products/specialty-resistors/" title="Specialty Resistors">Specialty Resistors</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-11444"><a href="https://www.ctscorp.com/connect_product_line/current-sense-resistors/" title="Current Sense Resistors">Current Sense Resistors</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-connect_product_line menu-item-11443"><a href="https://www.ctscorp.com/connect_product_line/resistor-networks-rc-terminations/" title="Resistor Networks &amp; RC Terminations">Resistor Networks &amp; RC Terminations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8826"><a href="https://www.ctscorp.com/products/specialty-resistors/ultra-high-resistance/" title="Ultra-High Resistance">Ultra-High Resistance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="move-header menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-13536 dropdown"><a href="https://www.ctscorp.com/products/move-products/" title="Move">Move</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="move menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12882 dropdown"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/" title="Piezoelectric Move Products">Piezoelectric Move Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8869"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/piezo-actuators/" title="Piezoelectric Actuators">Piezoelectric Actuators</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8868"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/speakers/" title="Speakers">Speakers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8870"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/inkjet-printing/" title="Inkjet Printing">Inkjet Printing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8867"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/ultrasonic-cleaning-welding/" title="Ultrasonic Cleaning and Welding">Ultrasonic Cleaning and Welding</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8866"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/valves/" title="Valves">Valves</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12883"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/piezo-move-products/" title="Other Piezoelectric Move Products">Other Piezoelectric Move Products</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-16503 dropdown"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/multilayer-products/" title="Multilayer Products">Multilayer Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17379"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/multilayer-products/multilayer-capabilities/" title="Multilayer Capabilities">Multilayer Capabilities</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-18414 dropdown"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/bulk/" title="Bulk Products">Bulk Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18415"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/bulk-capabilities/" title="Bulk Capabilities">Bulk Capabilities</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26633"><a href="https://learn.ctscorp.com/l/689693/2021-07-28/kzlvc" target="_blank" title="CTS Piezoelectric Material Properties">CTS Piezoelectric Material Properties</a></li>
+</ul>
+</li>
+<li class="move menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10991 dropdown"><a href="https://www.ctscorp.com/products/rotary-actuators/" title="Rotary Actuators">Rotary Actuators</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8872"><a href="https://www.ctscorp.com/products/rotary-actuators/brushless-dc-actuator/" title="Brushless DC Actuator">Brushless DC Actuator</a></li>
+</ul>
+</li>
+<li class="move menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10993 dropdown"><a href="https://www.ctscorp.com/products/thermal-products/" title="Thermal Products">Thermal Products</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8874"><a href="https://www.ctscorp.com/products/thermal-products/zif-pc-board-retainers/" title="ZIF PC Board Retainers">ZIF PC Board Retainers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8876"><a href="https://www.ctscorp.com/products/thermal-products/heatsinks/" title="Heatsinks">Heatsinks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8698 dropdown"><a href="https://www.ctscorp.com/markets/" title="Markets">Markets</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14694"><a href="https://www.ctscorp.com/markets/aerospace-defense-products/" title="Aero &amp; Defense">Aero &amp; Defense</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14691"><a href="https://www.ctscorp.com/markets/medical-products/" title="Medical">Medical</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14690"><a href="https://www.ctscorp.com/markets/industrial-products/" title="Industrial">Industrial</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24378"><a href="https://www.ctscorp.com/markets/iot-and-connectivity/" title="IoT">IoT</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24627"><a href="https://www.ctscorp.com/markets/5g/" title="5G">5G</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14692"><a href="https://www.ctscorp.com/markets/telecommunications-information-technology-products/" title="Telecom &amp; IT">Telecom &amp; IT</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14693"><a href="https://www.ctscorp.com/markets/transportation-products/" title="Transportation">Transportation</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7876 dropdown"><a href="https://www.ctscorp.com/investors/" title="Investors">Investors</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27273"><a href="https://investors.ctscorp.com/overview/default.aspx" title="Overview">Overview</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7882 dropdown"><a href="https://www.ctscorp.com/investors/corporate-governance/" title="Corporate Governance">Corporate Governance</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11149"><a href="https://www.ctscorp.com/investors/corporate-governance/board-of-directors/" title="Board of Directors">Board of Directors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8941"><a href="https://www.ctscorp.com/investors/corporate-governance/board-committees/" title="Board Committees">Board Committees</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11402"><a href="http://www.ctscorp.com/wp-content/uploads/Amended-Restated-Articles-of-Incorporation.pdf" target="_blank" title="Articles of Incorporation">Articles of Incorporation</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11401"><a href="https://www.ctscorp.com/wp-content/uploads/Corporate-Governance-Guidelines-Rev-5-12-21-1.pdf" target="_blank" title="Corporate Governance Guidelines">Corporate Governance Guidelines</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12778"><a href="http://www.ctscorp.com/wp-content/uploads/CTS-ByLaws-04302019.pdf" target="_blank" title="Bylaws">Bylaws</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11406"><a href="http://www.ctscorp.com/wp-content/uploads/2015/10/StockOwnershipGuidelines.pdf" target="_blank" title="Stock Ownership Guidelines">Stock Ownership Guidelines</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11403"><a href="http://www.ctscorp.com/wp-content/uploads/2015/11/CODE-OF-ETHICS-2-1-13.pdf" target="_blank" title="Code of Ethics">Code of Ethics</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21395"><a href="https://www.ctscorp.com/investors/corporate-governance/environmental-health-and-safety/" title="Environmental, Health, and Safety">Environmental, Health, and Safety</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21716"><a href="/resource-center/policies-and-certifications/" title="Policies and Certifications">Policies and Certifications</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7879"><a href="https://www.ctscorp.com/investors/events-presentations/" title="Events &amp; Presentations">Events &amp; Presentations</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14756"><a href="https://www.ctscorp.com/category/investor-news/" title="Investor News">Investor News</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7880"><a href="https://www.ctscorp.com/investors/sec-filings/" title="SEC Filings">SEC Filings</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7881"><a href="https://www.ctscorp.com/investors/regulation-g/" title="Financials">Financials</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11400"><a href="https://investors.ctscorp.com/stock-info/default.aspx#stock-quote" target="_blank" title="Stock Information">Stock Information</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8948"><a href="https://www.ctscorp.com/investors/requestion-information/" title="Request Information">Request Information</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-8877 dropdown"><a href="https://www.ctscorp.com/company/" title="Our Company">Our Company</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8878"><a href="https://www.ctscorp.com/company/about-us/" title="About Us">About Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27600"><a href="https://www.ctscorp.com/sustainability/" title="Sustainability">Sustainability</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25397"><a href="https://www.ctscorp.com/careers/" title="Careers">Careers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26909"><a href="https://www.ctscorp.com/company/cts-cares/" title="CTS Cares">CTS Cares</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-12763 dropdown"><a href="https://www.ctscorp.com/company/leadership/" title="Leadership">Leadership</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23982"><a href="http://www.ctscorp.com/investors/corporate-governance/board-of-directors/" target="_blank" title="Board of Directors">Board of Directors</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13554"><a href="https://www.ctscorp.com/company/leadership/management/" title="Executive Officers">Executive Officers</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12762"><a href="https://www.ctscorp.com/company/history/" title="History">History</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12780"><a href="https://www.ctscorp.com/company/locations/" title="Locations">Locations</a></li>
+</ul>
+</li>
+</ul> <ul class="menu mobile-tr" id="menu-top-secondary-nav-1"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20745"><a href="https://app.mectronic.com/stck6bc874dc734ba420766ea8ef3b3ec0bd" target="_blank" title="Distributor Stock Check">Distributor Stock Check</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7948"><a href="https://www.ctscorp.com/news-room/" title="News Room">News Room</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7949 dropdown"><a href="https://www.ctscorp.com/resource-center/" title="Resource Center">Resource Center</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7950"><a href="https://www.ctscorp.com/resource-center/application-notes/" title="Application Notes and Technical Briefs">Application Notes and Technical Briefs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22178"><a href="https://www.ctscorp.com/resource-center/certificates-environmental-compliances/" title="Certificates and Environmental Compliances">Certificates and Environmental Compliances</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14404"><a href="https://app.mectronic.com/stck6bc874dc734ba420766ea8ef3b3ec0bd" title="Distributor Stock Check">Distributor Stock Check</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13948"><a href="https://www.ctscorp.com/resource-center/policies-and-certifications/" title="Policies and Certifications">Policies and Certifications</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7951"><a href="https://www.ctscorp.com/resource-center/product-catalogues/" title="Literature">Literature</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16298"><a href="https://www.ctscorp.com/resource-center/patent-markings/" title="Patent Markings">Patent Markings</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7952"><a href="https://www.ctscorp.com/resource-center/reference-designs/" title="Reference Designs">Reference Designs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14638"><a href="https://www.ctscorp.com/resource-center/terms-and-conditions/" title="Terms and Conditions">Terms and Conditions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16234"><a href="https://www.ctscorp.com/resource-center/tutorials/" title="Tools and Tutorials">Tools and Tutorials</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14114"><a href="https://www.ctscorp.com/resource-center/video-library/" title="Video Library">Video Library</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25591"><a href="https://www.ctscorp.com/resource-center/facility-tour-videos/" title="Facility Tour Videos">Facility Tour Videos</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25951"><a href="https://www.ctscorp.com/resource-center/cts-webinar-library/" title="Webinar Library">Webinar Library</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24237"><a href="/company/careers/" title="Careers">Careers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-7955 dropdown"><a href="https://www.ctscorp.com/contact/" title="Contact">Contact</a><span class="caret dropdown-toggle" data-toggle="dropdown"></span>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27263"><a href="https://investors.ctscorp.com/resources/information-request-form/default.aspx" title="Investor Relations">Investor Relations</a></li>
+<li class="menu-item menu-item-type-post_type_archive menu-item-object-sales_reps menu-item-13564"><a href="https://www.ctscorp.com/contact_sales/" title="Locate a Sales Rep or Distributor">Locate a Sales Rep or Distributor</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7957"><a href="https://www.ctscorp.com/contact/media-relations/" title="Media Relations">Media Relations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21752"><a href="https://www.ctscorp.com/contact/conflict-minerals/" title="Conflict Minerals">Conflict Minerals</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7959"><a href="https://www.ctscorp.com/contact/sample-request/" title="Sales Inquiry">Sales Inquiry</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7958"><a href="https://www.ctscorp.com/contact/request-technical-info/" title="Technical Inquiry">Technical Inquiry</a></li>
+</ul>
+</li>
+</ul> </div><!-- #primary-navigation .mobile-->
+</nav>
+</div>
+</header><!-- #masthead -->
+<div class="headerImage" style="background-image:url()">
+<div class="container-fluid">
+<div class="row">
+<div class="">
+<div class="breadcrumb">
+<p id="breadcrumbs"><span><span><a href="https://www.ctscorp.com/">Home</a>  /  <span aria-current="page" class="breadcrumb_last">Privacy Policy</span></span></span></p>
+</div>
+<h1>Privacy Policy</h1>
+</div>
+</div>
+</div>
+</div><!-- .headerImage --></div>
+<!-- Carousel
+================================================== -->
+<div id="interior">
+<div class="container-fluid">
+<div class="hasNoLeftOrRightCols interior-content">
+<div id="right">
+<div class="row">
+<div class="mainContent" id="content">
+<div class="entry facetwp-template">
+<h2>Privacy Policy</h2>
+<p>CTS Corporation (“CTS”) is committed to protecting the privacy of the users of the ctscorp.com website. Our goal is to provide a safe and secure user experience. CTS will use its best efforts to ensure that the information submitted to the CTS website remains private, and is used only for improving general CTS marketing and promotional efforts, and other purposes set forth below.</p>
+<h3>Privacy Shield</h3>
+<p>CTS complies with the EU-U.S. Privacy Shield Framework (“Privacy Shield”), established by the U.S. Department of Commerce in consultation with the European Commission, regarding the collection, use and retention of personal information received from the European Union. CTS has elected to comply with the Privacy Shield and is subject to the investigatory and enforcement powers of the Federal Trade Commission. CTS has certified its adherence to the Privacy Shield principles, including: notice; choice; accountability for onward transfer; security; data integrity and purpose limitation; access; recourse; enforcement; and liability. All subsidiaries listed in our Privacy Shield certification record also adhere to these Privacy Shield principles. To learn more about the Privacy Shield, and to view our certification page, please visit <a href="http://www.privacyshield.gov" rel="noopener" target="_blank">www.privacyshield.gov</a>.</p>
+<h3>Collection and Use of Personal Data</h3>
+<p>CTS may collect Personal Data from Data Subjects when Data Subjects purchase products from CTS or sell products to CTS, register with its website, or otherwise communicate with them. Personal Data may include an individual’s name in combination with address, telephone number, and e-mail address.</p>
+<p>CTS uses Personal Data that is collects for the following purposes: (i) maintaining and supporting its products; (2) compliance with contractual commitments with customers and vendors; (3) government reporting, tax filings, and other regulatory requirements; (4) storing and processing data, including Personal Data, in computer databases and servers located in the United States; (5) other business purposes required under applicable regulations; and (6) as otherwise required by law.  CTS does not process Personal Data of individuals for any other reason; provided, however, that CTS may disclose Personal Data in response to lawful requests by public authorities, including to meet national security or law enforcement requirements.</p>
+<p>Individuals may request access to their Personal Data held by CTS. Individuals may also request that CTS: rectify inaccurate Personal Data; stop processing or erase Personal Data that is no longer necessary for the processing; stop processing or erase Personal Data if the individual’s interest overrides CTS’ legitimate grounds; stop processing or erase Personal Data if processing is unlawful; and stop processing Personal data if such data in inaccurate or if there is dispute. An individual has the possibility, under certain conditions, to invoke binding arbitration for complaints not resolved by other Privacy Shield mechanisms.</p>
+<p>CTS will cooperate with the EU data protection authorities (“DPAs”) regarding Personal Data and will comply with advice given by DPAs regarding Personal Data transferred from the EU. CTS remains responsible for any onward transfer of Personal Data processed by third parties.;</p>
+<h3>Information Disclosure</h3>
+<p>CTS does not disclose information about your individual visits to ctscorp.com, or any personal information that you provide, such as your name, address, e-mail address, telephone number, personal references, etc., to any outside parties, except as may be required by law.</p>
+<p>CTS will not sell, trade, exchange or otherwise make available any personally identifiable information to any other company or organization not directly affiliated with CTS.</p>
+<p>Traffic—CTS uses software programs to analyze traffic for this website. These programs collect aggregate data, not personal information.</p>
+<p>Email—CTS may offer visitors the ability to sign up for email newsletters and announcements. CTS will never sell your email address or share it with anyone else not directly affiliated with CTS Corporation.</p>
+<p>Cookies—CTS uses cookies on this website to aid in your ease of use.</p>
+<p>IP address collection—CTS may collect IP addresses for purposes such as to report anonymous user information, to audit or administer the use of our website and keep it secure. CTS does not link IP address information to personal information.</p>
+<p>Forms—Inquiry forms, such as information requests or site registration, collect information that is securely stored and that will only be used to direct you to the resources you seek. This may include follow-up by one of our associates to answer questions you may have.</p>
+<p>Links to third-party sites—The CTS website contains links to other websites and resources, offered as a convenience to you. CTS has no control over and does not endorse third-party content, goods or services, and is not responsible for the privacy practices or content of these other websites and resources.</p>
+<p>CTS DISCLAIMS ALL REPRESENTATIONS AND WARRANTIES, WHETHER EXPRESS OR IMPLIED, REGARDING THE WEBSITE INCLUDING WEBSITE CONTENT, AND ANY GOODS OR SERVICES THAT YOU OBTAIN FROM THIRD-PARTY PROVIDERS. YOU MUST LOOK SOLELY TO THE THIRD-PARTY FOR ANY AND ALL SUCH CLAIMS.</p>
+<h3>Privacy Policy Changes</h3>
+<p>All changes to the privacy policy for ctscorp.com will be posted here so that you will always know what information we gather, and how that information might be used. Questions or concerns regarding CTS’ privacy policy can be directed to mediarelations@ctscorp.com, or by calling CTS at: +1-630-577-8800.</p>
+</div> <!-- .entry -->
+</div> <!-- #content -->
+</div> <!-- .row -->
+</div> <!-- #right  -->
+</div> <!-- .hasNoLeftOrRightCols.interior-content -->
+</div> <!-- .container-fluid -->
+</div> <!-- #interior -->
+<ul class="socialIconsWidget">
+</ul>
+<!-- FOOTER -->
+<footer>
+<div class="container-fluid">
+<div class="row">
+<div class="footer-widget-area" id="footer-left">
+<!-- widget --><div class="widget widget-nav-menu widget_nav_menu" id="hybrid-nav-menu-2"><h3 class="title">Resources</h3><div class="menu-footer-menu-container"><ul class="nav-menu" id="menu-footer-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7971" id="menu-item-7971"><a href="https://www.ctscorp.com/contact/">Contact Us</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7972" id="menu-item-7972"><a href="https://www.ctscorp.com/news-room/">News Room</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26293" id="menu-item-26293"><a href="https://careers.ctscorp.com" rel="noopener" target="_blank">Careers</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27302" id="menu-item-27302"><a href="https://investors.ctscorp.com/overview/">Investors</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-7874 current_page_item menu-item-7974" id="menu-item-7974"><a aria-current="page" href="https://www.ctscorp.com/privacy-policy/">Privacy Policy</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14252" id="menu-item-14252"><a href="http://www.ctscorp.com/contact_sales/">Sales and Distribution</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12784" id="menu-item-12784"><a href="https://www.ctscorp.com/employee-access/">Employee Access</a></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14367" id="menu-item-14367"><a href="http://www.ctscorp.com/home/website-feedback/">Website Feedback</a></li></ul></div></div><!-- /widget -->
+<div class="socialMedia">
+</div>
+</div><!-- #footer-left -->
+<div class="footer-widget-area" id="footer-middle">
+<!-- widget --><div class="widget widget_black_studio_tinymce" id="black-studio-tinymce-7"><h3 class="title">Contact Information</h3><div class="textwidget"><style type="text/css">  
+  a {text-decoration: none;}  
+  a:link {text-decoration: none;}  
+  a:visited {text-decoration: none;}   
+  a:active {text-decoration: underline;} 
+  a:hover {text-decoration: underline;}   
+</style>
+<p><a href="http://www.ctscorp.com/contact/sample-request/" style="text-decoration: none;">Sales Inquiries</a></p>
+<p><a href="http://www.ctscorp.com/contact/request-technical-info/" style="text-decoration: none;">Technical Inquiries</a></p>
+<p><a href="https://investors.ctscorp.com/resources/information-request-form/" style="text-decoration: none;">Investor Relations</a></p>
+<p><a href="http://www.ctscorp.com/contact/media-relations/" style="text-decoration: none;">Media Relations</a></p>
+<p><a href="http://www.ctscorp.com/company/locations/" style="text-decoration: none;">Locations</a></p>
+</div></div><!-- /widget --> </div><!-- #footer-middle -->
+<div class="footer-widget-area" id="footer-right">
+<h3 class="title">Product Explorer</h3>
+<div class="footer-right-menu" id="footer-right-menu-one">
+<!-- widget --><div class="widget widget-nav-menu widget_nav_menu" id="hybrid-nav-menu-3"><h3 class="title">Sense</h3><div class="sense"><ul class="nav-menu" id="menu-footer-product-one"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11573" id="menu-item-11573"><a href="https://www.ctscorp.com/products/controls-2/">Controls</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11574" id="menu-item-11574"><a href="https://www.ctscorp.com/products/pedals/">Pedals</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11575" id="menu-item-11575"><a href="https://www.ctscorp.com/products/piezoelectric-products/">Piezoelectric Sense Products</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11576" id="menu-item-11576"><a href="https://www.ctscorp.com/products/sensors-2/">Sensors</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11577" id="menu-item-11577"><a href="https://www.ctscorp.com/products/switches/">Switches</a></li><li class="sense menu-item menu-item-type-post_type menu-item-object-page menu-item-12529" id="menu-item-12529"><a href="https://www.ctscorp.com/products/transducers-3/">Sensors and Transducers</a></li></ul></div></div><!-- /widget --> </div>
+<div class="footer-right-menu" id="footer-right-menu-two">
+<!-- widget --><div class="widget widget-nav-menu widget_nav_menu" id="hybrid-nav-menu-4"><h3 class="title">Connect</h3><div class="connect"><ul class="nav-menu" id="menu-footer-product-two"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11578" id="menu-item-11578"><a href="https://www.ctscorp.com/products/connect-products/emirfi-filters/">EMI/RFI Filters</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11579" id="menu-item-11579"><a href="https://www.ctscorp.com/products/frequency-control-products/">Frequency Control Products</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11582" id="menu-item-11582"><a href="https://www.ctscorp.com/products/rf-filters/">RF Filters</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11580" id="menu-item-11580"><a href="https://www.ctscorp.com/products/specialty-capacitors/">Specialty Capacitors</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11581" id="menu-item-11581"><a href="https://www.ctscorp.com/products/specialty-resistors/">Specialty Resistors</a></li></ul></div></div><!-- /widget --> </div>
+<div class="footer-right-menu" id="footer-right-menu-three">
+<!-- widget --><div class="widget widget-nav-menu widget_nav_menu" id="hybrid-nav-menu-5"><h3 class="title">Move</h3><div class="move"><ul class="nav-menu" id="menu-footer-product-three"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16516" id="menu-item-16516"><a href="https://www.ctscorp.com/products/piezoelectric-move-products/">Piezoelectric Move Products</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11590" id="menu-item-11590"><a href="https://www.ctscorp.com/products/rotary-actuators/">Rotary Actuators</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11591" id="menu-item-11591"><a href="https://www.ctscorp.com/products/thermal-products/">Thermal Products</a></li></ul></div></div><!-- /widget --> </div>
+</div><!-- #footer-right -->
+</div><!-- .row -->
+</div><!-- .container-fluid -->
+</footer>
+<!-- /.container -->
+<!-- hidden for modal -->
+<div id="login-box">
+<h3>Distributor Login</h3>
+<p>Please sign in below to access your account.</p>
+<form action="https://www.ctsdsc.com/dsc/welcome.asp" id="login-form" method="post" name="enteredcusno" target="_blank">
+<label>Email Address:</label>
+<input name="txtloginid" size="50" type="text"/>
+<label>Password:</label>
+<input name="txtpwd" size="20" type="password"/>
+<button type="submit" value="">Login</button>
+</form>
+<p><a href="https://www.ctsdsc.com/pwreminder.asp" target="_blank">Forgot your password?</a></p>
+</div>
+<div id="bgOverlay"></div>
+<link href="https://www.ctscorp.com/wp-content/plugins/oms-sidebar-widgets/vendor/prettyPhoto/css/prettyPhoto.css?ver=5.9.3" id="oms_sw_prettyphoto_css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.ctscorp.com/wp-content/plugins/oms-sidebar-widgets/css/oms-sw.css?ver=5.9.3" id="oms_sw_css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.ctscorp.com/wp-content/plugins/oms-sidebar-widgets/css/oms-sw-image.css?ver=5.9.3" id="oms_sw_image_css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.ctscorp.com/wp-content/plugins/oms-sidebar-widgets/css/oms-sw-video.css?ver=5.9.3" id="oms_sw_video_css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.ctscorp.com/wp-content/plugins/oms-sidebar-widgets/css/oms-sw-map.css?ver=5.9.3" id="oms_sw_map_css-css" media="all" rel="stylesheet" type="text/css"/>
+<script id="jquery-cycle-js" src="https://www.ctscorp.com/wp-content/plugins/rotatingtweets/js/jquery.cycle.all.min.js?ver=5.9.3" type="text/javascript"></script>
+<script id="rotating_tweet-js" src="https://www.ctscorp.com/wp-content/plugins/rotatingtweets/js/rotating_tweet.js?ver=1.9.10" type="text/javascript"></script>
+<script id="comment-reply-js" src="https://www.ctscorp.com/wp-includes/js/comment-reply.min.js?ver=5.9.3" type="text/javascript"></script>
+<script id="youtube-api-js" src="https://www.youtube.com/iframe_api?ver=1" type="text/javascript"></script>
+<script id="oms_pageblocks-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var oms_pageblocks = {"scroll_offset":"120"};
+/* ]]> */
+</script>
+<script id="oms_pageblocks-js" src="https://www.ctscorp.com/wp-content/plugins/oms-pageblocks/js/oms-pageblocks.js?ver=5.9.3" type="text/javascript"></script>
+<script id="oms_pageblocks_video-js" src="https://www.ctscorp.com/wp-content/plugins/oms-pageblocks/js/oms-pageblocks-video.js?ver=5.9.3" type="text/javascript"></script>
+<script id="forms-js" src="https://www.ctscorp.com/wp-content/themes/orbit-media/min-js/forms.min.js?ver=1" type="text/javascript"></script>
+<script id="nova-js" src="https://www.ctscorp.com/wp-content/themes/orbit-media/min-js/jquery.nova.min.js?ver=1" type="text/javascript"></script>
+<script id="solarBox-js" src="https://www.ctscorp.com/wp-content/themes/orbit-media/min-js/jquery.solarBox.min.js?ver=1" type="text/javascript"></script>
+<script id="datatables-js" src="//cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.js?ver=2" type="text/javascript"></script>
+<script id="google-maps-js" src="//maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;key=AIzaSyASk7cGOJXiWotom2Wp3Mam6zPHPmb1SOU&amp;ver=1" type="text/javascript"></script>
+<script id="locations-js" src="https://www.ctscorp.com/wp-content/themes/orbit-media/min-js/locations.min.js?ver=1" type="text/javascript"></script>
+<script id="bootstrap-js" src="https://www.ctscorp.com/wp-content/themes/orbit-media/min-js/bootstrap-omscts.min.js?ver=1" type="text/javascript"></script>
+<script id="bootstrap-bcswipe-js" src="https://www.ctscorp.com/wp-content/themes/orbit-media/min-js/jquery.bcswipe.min.js?ver=1" type="text/javascript"></script>
+<script id="orbitJS-js" src="https://www.ctscorp.com/wp-content/themes/orbit-media/js/custom.js?ver=7" type="text/javascript"></script>
+<script id="orbit-modal-js" src="https://www.ctscorp.com/wp-content/themes/orbit-media/min-js/modal.min.js?ver=1" type="text/javascript"></script>
+<script src="https://www.ctscorp.com/wp-content/uploads/custom-css-js/24216.js?v=2904" type="text/javascript"></script>
+<script defer="" src="https://stats.wp.com/e-202225.js"></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:10.8',blog:'102847744',post:'7874',tz:'-5',srv:'www.ctscorp.com'} ]);
+	_stq.push([ 'clickTrackerInit', '102847744', '7874' ]);
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"6c4acdfd7f","applicationID":"32111505","transactionName":"MwQGYkBRWxYHAUxdDgpOJVVGWVoLSRJZUwQ=","queueTime":0,"applicationTime":863,"atts":"H0MFFAhLSBg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

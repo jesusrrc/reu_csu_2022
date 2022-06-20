@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus theme-light" data-auth-status-determined="false" data-authenticated="false" data-css-variable-support="true" data-target="docs" dir="ltr" lang="en-us" x-ms-format-detection="none">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Security framework - Azure IoT Edge" property="og:title"/>
+<meta content="website" property="og:type"/>
+<meta content="https://docs.microsoft.com/en-us/azure/iot-edge/security" property="og:url"/>
+<meta content="Learn about the security, authentication, and authorization standards that were used to develop Azure IoT Edge and should be considered as you design your solution" property="og:description"/>
+<meta content="https://docs.microsoft.com/en-us/media/logos/logo-ms-social.png" property="og:image"/>
+<meta content="Microsoft Logo" property="og:image:alt"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="@docsmsft" name="twitter:site"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="PatAltimore" name="author">
+<meta content="/azure/bread/toc.json" name="breadcrumb_path"/>
+<meta content="Azure.azure-documents" name="depot_name"/>
+<meta content="Learn about the security, authentication, and authorization standards that were used to develop Azure IoT Edge and should be considered as you design your solution" name="description"/>
+<meta content="c7b6e2b9-7808-6c9b-101e-e6c49c14e175" name="document_id"/>
+<meta content="92c38af6-f984-5833-bbee-513c4731ecc5" name="document_version_independent_id"/>
+<meta content="https://github.com/MicrosoftDocs/azure-docs-pr/blob/aad32b19d668c4e2ba59ca69e066ec32928da379/articles/iot-edge/security.md" name="gitcommit"/>
+<meta content="azure" name="learn_banner_products"/>
+<meta content="en-us" name="locale"/>
+<meta content="&gt;=iotedge-2018-06" name="monikerRange"/>
+<meta content="iotedge-2018-06" name="monikers"/>
+<meta content="iotedge-2020-11" name="monikers"/>
+<meta content="patricka" name="ms.author"/>
+<meta content="08/30/2019" name="ms.date"/>
+<meta content="iot-edge" name="ms.service"/>
+<meta content="office" name="ms.suite"/>
+<meta content="conceptual" name="ms.topic"/>
+<meta content="https://github.com/MicrosoftDocs/azure-docs-pr/blob/live/articles/iot-edge/security.md" name="original_content_git_url"/>
+<meta content="conceptual" name="page_type"/>
+<meta content="https://docs.microsoft.com/pdfstore/en-us/Azure.azure-documents/{branchName}{pdfName}" name="pdf_url_template"/>
+<meta content="true" name="recommendations"/>
+<meta content="Conceptual" name="schema"/>
+<meta content="iot-edge" name="services"/>
+<meta content="Docs" name="site_name"/>
+<meta content="toc.json" name="toc_rel"/>
+<meta content="azure" name="uhfHeaderId"/>
+<meta content="2022-03-07 11:03 PM" name="updated_at"/>
+<meta content="1113" name="word_count"/>
+<meta content="https://authoring-docs-microsoft.poolparty.biz/devrel/15394aaa-986f-4800-91ed-a516bac17284" data-source="generated" name="cmProducts"/>
+<meta content="Azure, IoT, Azure IoT Edge" name="scope"/>
+<link href="https://docs.microsoft.com/en-us/azure/iot-edge/security" rel="canonical"/>
+<title>Security framework - Azure IoT Edge | Microsoft Docs</title>
+<link href="/_themes/docs.theme/master/en-us/_themes/styles/be4a8746.site-ltr.css " rel="stylesheet"/>
+<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			userLocale: 'en-us',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: 'azure',
+			context: {
+
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: true,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'GitHub',
+			feedbackGitHubRepo: 'MicrosoftDocs/azure-docs',
+			feedbackProductUrl: 'https://feedback.azure.com/d365community/forum/0e2fff5d-f524-ec11-b6e6-000d3a4f0da0',
+			contentGitUrl: 'https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/iot-edge/security.md',
+			extendBreadcrumb: false,
+			isEditDisplayable: true,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasBookmark: true,
+			hasShare: true,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "PatAltimore", url: "https://github.com/PatAltimore" },
+						{ name: "philmea", url: "https://github.com/philmea" },
+						{ name: "kgremban", url: "https://github.com/kgremban" },
+						{ name: "asergaz", url: "https://github.com/asergaz" },
+						{ name: "robinsh", url: "https://github.com/robinsh" },
+						{ name: "chipalost", url: "https://github.com/chipalost" }
+],
+		},
+		functions:{}
+	};
+	</script>
+<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+<script src="https://js.monitor.azure.com/scripts/c/ms.jsll-3.min.js"></script>
+<script src="/_themes/docs.theme/master/en-us/_themes/global/67a45209.deprecation.js"></script>
+<script src="/_themes/docs.theme/master/en-us/_themes/scripts/e4517ff6.index-docs.js"></script>
+</meta></head>
+<body dir="ltr" lang="en-us">
+<div class="header-holder has-default-focus">
+<a class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" href="#main" tabindex="1">Skip to main content</a>
+<div hidden="" id="cookie-consent-holder"></div>
+<div hidden="" id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;">
+<div style="max-width: 800px; margin: 0 auto;">
+<p style="font-size: 24px">This browser is no longer supported.</p>
+<p style="font-size: 16px; margin-top: 16px;">Upgrade to Microsoft Edge to take advantage of the latest features, security updates, and technical support.</p>
+<div style="margin-top: 12px;">
+<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 " style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+Download Microsoft Edge					</a>
+<a href="https://docs.microsoft.com/en-US/lifecycle/faq/internet-explorer-microsoft-edge" style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+More info					</a>
+</div>
+</div>
+</div>
+<!-- liquid-tag banners global -->
+<div data-bi-name="header" id="headerAreaHolder">
+<header itemscope="itemscope" itemtype="http://schema.org/Organization" role="banner">
+<div class="nav-bar">
+<div class="nav-bar-brand">
+<a aria-label="Microsoft" class="nav-bar-button" href="https://www.microsoft.com" itemprop="url">
+<div aria-hidden="true" class="nav-bar-logo has-background-image theme-display is-light" itemprop="logo" itemscope="itemscope" role="presentation"></div>
+<div aria-hidden="true" class="nav-bar-logo has-background-image theme-display is-dark is-high-contrast" itemprop="logo" itemscope="itemscope" role="presentation"></div>
+</a>
+</div>
+</div>
+<div class="nav-bar border-top is-hidden-mobile"></div>
+</header> </div>
+<div class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header" id="content-header">
+<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+<button aria-haspopup="true" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" data-contents-button="" type="button">
+<span class="icon"><span aria-hidden="true" class="docon docon-menu"></span></span>
+<span class="contents-expand-title">
+Table of contents						</span>
+</button>
+<button aria-controls="action-panel" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" type="button">
+<span class="icon"><span aria-hidden="true" class="docon docon-exit-mode"></span></span>
+<span>Exit focus mode</span>
+</button>
+</div>
+</div>
+<div class="has-overflow-hidden has-default-focus" id="disclaimer-holder">
+<!-- liquid-tag banners sectional -->
+</div>
+</div>
+<div class="mainContainer uhf-container has-default-focus" data-bi-name="body">
+<div class="columns has-large-gaps is-gapless-mobile">
+<div class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop" id="left-container">
+<nav aria-label="Primary" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" id="affixed-left-container" role="navigation"></nav>
+</div>
+<!-- .primary-holder -->
+<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+<!--div.columns -->
+<div class="columns is-gapless-mobile has-large-gaps">
+<div class="column is-full is-8-desktop" id="main-column">
+<main data-bi-name="content" dir="ltr" id="main" lang="en-us" role="main">
+<!-- article-header -->
+<div class="background-color-body margin-top-sm-tablet margin-bottom-xs" id="article-header">
+<div class="display-flex align-items-center">
+<details class="popover" data-for="article-header-breadcrumbs" id="article-header-breadcrumbs-overflow-popover">
+<summary class="button button-clear button-primary button-sm">
+<span class="icon">
+<span class="docon docon-more"></span>
+</span>
+</summary>
+<div class="popover-content padding-none" id="article-header-breadcrumbs-overflow">
+</div>
+</details>
+<bread-crumbs class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop" id="page-breadcrumbs"></bread-crumbs>
+<div class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch" id="article-header-page-actions">
+<a class="button button-primary button-clear button-sm display-none display-inline-flex-tablet" data-bi-name="language-toggle" data-read-in-link="" hidden="" id="lang-link-tablet" title="Read in English">
+<span aria-hidden="true" class="icon margin-none" data-read-in-link-icon="">
+<span class="docon docon-locale-globe"></span>
+</span>
+<span class="is-visually-hidden" data-read-in-link-text="">Read in English</span>
+</a>
+<button class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet" data-bi-name="collection" data-list-type="collection" title="Add to collection" type="button">
+<span aria-hidden="true" class="icon margin-none">
+<span class="docon docon-circle-addition"></span>
+</span>
+<span class="collection-status is-visually-hidden">Save</span>
+</button>
+<a aria-label="Feedback" class="button button-clear button-sm text-decoration-none button-primary display-none display-inline-flex-tablet" data-bi-name="comments" data-feedback-section-link="" href="#feedback" title="Send feedback about this page">
+<span aria-hidden="true" class="icon margin-none">
+<span class="docon docon-comment-lines"></span>
+</span>
+</a>
+<a aria-label="Edit" class="button button-clear button-sm text-decoration-none button-primary display-none display-inline-flex-tablet" data-bi-name="edit" data-contenteditbtn="" data-original_content_git_url="https://github.com/MicrosoftDocs/azure-docs-pr/blob/live/articles/iot-edge/security.md" data-original_content_git_url_template="{repo}/blob/{branch}/articles/iot-edge/security.md" data-pr_branch="" data-pr_repo="" href="https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/iot-edge/security.md" title="Edit This Document">
+<span aria-hidden="true" class="icon margin-none">
+<span class="docon docon-edit-outline"></span>
+</span>
+</a>
+<details class="popover popover-right" id="article-header-page-actions-overflow">
+<summary aria-label="More actions" class="justify-content-flex-start button button-clear button-sm button-primary">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-more-vertical"></span>
+</span>
+</summary>
+<div class="popover-content padding-none">
+<button aria-label="Contents" class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet" data-bi-name="contents-expand" data-contents-button="" data-page-action-item="overflow-mobile" data-popover-close="" type="button">
+<span class="icon">
+<span aria-hidden="true" class="docon docon-editor-list-bullet"></span>
+</span>
+<span class="contents-expand-title">Table of contents</span>
+</button>
+<a class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet" data-bi-name="language-toggle" data-check-hidden="true" data-page-action-item="overflow-mobile" data-read-in-link="" hidden="" id="lang-link-overflow" title="Read in English">
+<span aria-hidden="true" class="icon" data-read-in-link-icon="">
+<span class="docon docon-locale-globe"></span>
+</span>
+<span data-read-in-link-text="">Read in English</span>
+</a>
+<button class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet" data-bi-name="collection" data-check-hidden="true" data-list-type="collection" data-page-action-item="overflow-mobile" data-popover-close="" title="Add to collection" type="button">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-circle-addition"></span>
+</span>
+<span class="collection-status">Save</span>
+</button>
+<a aria-label="Feedback" class="button button-clear button-block button-sm has-inner-focus justify-content-flex-start text-decoration-none display-none-tablet" data-bi-name="comments" data-feedback-section-link="" data-page-action-item="overflow-mobile" href="#feedback" title="Send feedback about this page">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-comment-lines"></span>
+</span>
+<span>
+Feedback														</span>
+</a>
+<a aria-label="Edit" class="button button-clear button-block button-sm has-inner-focus justify-content-flex-start text-decoration-none display-none-tablet" data-bi-name="edit" data-contenteditbtn="" data-original_content_git_url="https://github.com/MicrosoftDocs/azure-docs-pr/blob/live/articles/iot-edge/security.md" data-original_content_git_url_template="{repo}/blob/{branch}/articles/iot-edge/security.md" data-pr_branch="" data-pr_repo="" href="https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/iot-edge/security.md" title="Edit This Document">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-edit-outline"></span>
+</span>
+<span>Edit</span>
+</a>
+<div aria-hidden="true" class="margin-none display-none-tablet border-top" data-page-action-item="overflow-all"></div>
+<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-brand-twitter"></span>
+</span>
+<span>Twitter</span>
+</a>
+<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-brand-linkedin"></span>
+</span>
+<span>LinkedIn</span>
+</a>
+<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-brand-facebook"></span>
+</span>
+<span>Facebook</span>
+</a>
+<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-mail-message-fill"></span>
+</span>
+<span>Email</span>
+</a>
+</div>
+</details>
+</div>
+</div>
+</div>
+<!-- end article-header -->
+<div class="">
+<button aria-label="Contents" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" data-bi-name="contents-expand" data-contents-button="" hidden="" type="button">
+<span class="icon">
+<span aria-hidden="true" class="docon docon-editor-list-bullet"></span>
+</span>
+<span class="contents-expand-title">Table of contents</span>
+</button>
+</div>
+<!-- end mobile-contents button  -->
+<div class="content">
+<h1 id="security-standards-for-azure-iot-edge">Security standards for Azure IoT Edge</h1>
+<div class="display-flex-tablet justify-content-space-between-tablet page-metadata-container">
+<ul class="metadata page-metadata" data-bi-name="page info" dir="ltr" lang="en-us">
+<li>
+Article												</li>
+<li>
+<time aria-label="Article review date" class="is-invisible" data-article-date="" data-article-date-source="git" datetime="2022-03-07T23:03:00Z">03/07/2022</time>
+</li>
+<li class="readingTime">5 minutes to read</li>
+<li class="contributors-holder">
+<button aria-label="View all contributors" class="contributors-button link-button" data-bi-name="contributors" title="View all contributors">
+																6 contributors
+														</button>
+</li>
+</ul>
+<div class="display-flex" data-hide-on-archived="" id="user-feedback">
+<button class="thumb-rating-button like link-button margin-xxs margin-right-none" data-bi-name="rating-yes" data-bi-sat="1" data-binary-rating-response="rating-yes" title="This article is helpful" type="button">
+<span aria-hidden="true" class="icon docon docon-like"></span>
+</button>
+<button class="thumb-rating-button dislike link-button margin-xxs margin-right-none" data-bi-name="rating-no" data-bi-sat="0" data-binary-rating-response="rating-no" title="This article is not helpful" type="button">
+<span aria-hidden="true" class="icon docon docon-dislike"></span>
+</button>
+</div>
+</div>
+<nav aria-label="Article Outline" class="doc-outline is-hidden-desktop" data-bi-name="intopic toc" id="center-doc-outline" role="navigation">
+<h3>In this article</h3>
+</nav>
+<!-- <content> -->
+<p><strong>Applies to:</strong> <img alt="yes icon" data-linktype="relative-path" src="../includes/media/iot-edge-version/yes-icon.png?view=iotedge-2020-11"/> IoT Edge 1.1 <img alt="yes icon" data-linktype="relative-path" src="../includes/media/iot-edge-version/yes-icon.png?view=iotedge-2020-11"/> IoT Edge 1.2</p>
+<p>Azure IoT Edge addresses the risks that are inherent when moving your data and analytics to the intelligent edge. The IoT Edge security standards balance flexibility for different deployment scenarios with the protection that you expect from all Azure services.</p>
+<p>IoT Edge runs on various makes and models of hardware, supports several operating systems, and applies to diverse deployment scenarios. Rather than offering concrete solutions for specific scenarios, IoT Edge is an extensible security framework based on well-grounded principles that are designed for scale. The risk of a deployment scenario depends on many factors, including:</p>
+<ul>
+<li>Solution ownership</li>
+<li>Deployment geography</li>
+<li>Data sensitivity</li>
+<li>Privacy</li>
+<li>Application vertical</li>
+<li>Regulatory requirements</li>
+</ul>
+<p>This article provides an overview of the IoT Edge security framework. For more information, see <a data-linktype="external" href="https://azure.microsoft.com/blog/securing-the-intelligent-edge/">Securing the intelligent edge</a>.</p>
+<h2 id="standards">Standards</h2>
+<p>Standards promote ease of scrutiny and ease of implementation, both of which are hallmarks of security. A security solution should lend itself to scrutiny under evaluation to build trust and shouldn't be a hurdle to deployment. The design of the framework to secure Azure IoT Edge is based on time-tested and industry proven security protocols for familiarity and reuse.</p>
+<h2 id="authentication">Authentication</h2>
+<p>When you deploy an IoT solution, you need to know that only trusted actors, devices, and modules have access to your solution. Certificate-based authentication is the primary mechanism for authentication for the Azure IoT Edge platform. This mechanism is derived from a set of standards governing Public Key Infrastructure (PKiX) by the Internet Engineering Task Force (IETF).</p>
+<p>All devices, modules, and actors that interact with the Azure IoT Edge device should have unique certificate identities. This guidance applies whether the interactions are physical or through a network connection. Not every scenario or component may lend itself to certificate-based authentication, so the extensibility of the security framework offers secure alternatives.</p>
+<p>For more information, see <a data-linktype="relative-path" href="iot-edge-certs?view=iotedge-2020-11">Azure IoT Edge certificate usage</a>.</p>
+<h2 id="authorization">Authorization</h2>
+<p>The principle of least privilege says that users and components of a system should have access only to the minimum set of resources and data needed to perform their roles. Devices, modules, and actors should access only the resources and data within their permission scope, and only when it is architecturally allowable. Some permissions are configurable with sufficient privileges and others are architecturally enforced. For example, some modules may be authorized to connect to Azure IoT Hub. However, there is no reason why a module in one IoT Edge device should access the twin of a module in another IoT Edge device.</p>
+<p>Other authorization schemes include certificate signing rights and role-based access control (RBAC).</p>
+<h2 id="attestation">Attestation</h2>
+<p>Attestation ensures the integrity of software bits, which is important for detecting and preventing malware. The Azure IoT Edge security framework classifies attestation under three main categories:</p>
+<ul>
+<li>Static attestation</li>
+<li>Runtime attestation</li>
+<li>Software attestation</li>
+</ul>
+<h3 id="static-attestation">Static attestation</h3>
+<p>Static attestation verifies the integrity of all software on a device during power-up, including the operating system, all runtimes, and configuration information. Because static attestation occurs during power-up, it's often referred to as secure boot. The security framework for IoT Edge devices extends to manufacturers and incorporates secure hardware capabilities that assure static attestation processes. These processes include secure boot and secure firmware upgrade. Working in close collaboration with silicon vendors eliminates superfluous firmware layers, so minimizes the threat surface.</p>
+<h3 id="runtime-attestation">Runtime attestation</h3>
+<p>Once a system has completed a secure boot process, well-designed systems should detect attempts to inject malware and take proper countermeasures. Malware attacks may target the system's ports and interfaces. If malicious actors have physical access to a device, they may tamper with the device itself or use side-channel attacks to gain access. Such malcontent, whether malware or unauthorized configuration changes, can't be detected by static attestation because it is injected after the boot process. Countermeasures offered or enforced by the device’s hardware help to ward off such threats. The security framework for IoT Edge explicitly calls for extensions that combat runtime threats.</p>
+<h3 id="software-attestation">Software attestation</h3>
+<p>All healthy systems, including intelligent edge systems, need patches and upgrades. Security is important for update processes, otherwise they can be potential threat vectors. The security framework for IoT Edge calls for updates through measured and signed packages to assure the integrity of and authenticate the source of the packages. This standard applies to all operating systems and application software bits.</p>
+<h2 id="hardware-root-of-trust">Hardware root of trust</h2>
+<p>For many intelligent edge devices, especially devices that can be physically accessed by potential malicious actors, hardware security is the last defense for protection. Tamper resistant hardware is crucial for such deployments. Azure IoT Edge encourages secure silicon hardware vendors to offer different flavors of hardware root of trust to accommodate various risk profiles and deployment scenarios. Hardware trust may come from common security protocol standards like Trusted Platform Module (ISO/IEC 11889) and Trusted Computing Group’s Device Identifier Composition Engine (DICE). Secure enclave technologies like TrustZones and Software Guard Extensions (SGX) also provide hardware trust.</p>
+<h2 id="certification">Certification</h2>
+<p>To help customers make informed decisions when procuring Azure IoT Edge devices for their deployment, the IoT Edge framework includes certification requirements. Foundational to these requirements are certifications pertaining to security claims and certifications pertaining to validation of the security implementation. For example, a security claim certification means that the IoT Edge device uses secure hardware known to resist boot attacks. A validation certification means that the secure hardware was properly implemented to offer this value in the device. In keeping with the principle of simplicity, the framework tries to keep the burden of certification minimal.</p>
+<h2 id="extensibility">Extensibility</h2>
+<p>With IoT technology driving different types of business transformations, security should evolve in parallel to address emerging scenarios. The Azure IoT Edge security framework starts with a solid foundation on which it builds in extensibility into different dimensions to include:</p>
+<ul>
+<li>First party security services like the Device Provisioning Service for Azure IoT Hub.</li>
+<li>Third-party services like managed security services for different application verticals (like industrial or healthcare) or technology focus (like security monitoring in mesh networks, or silicon hardware attestation services) through a rich network of partners.</li>
+<li>Legacy systems to include retrofitting with alternate security strategies, like using secure technology other than certificates for authentication and identity management.</li>
+<li>Secure hardware for adoption of emerging secure hardware technologies and silicon partner contributions.</li>
+</ul>
+<p>In the end, securing the intelligent edge requires collaborative contributions from an open community driven by the common interest in securing IoT. These contributions might be in the form of secure technologies or services. The Azure IoT Edge security framework offers a solid foundation for security that is extensible for the maximum coverage to offer the same level of trust and integrity in the intelligent edge as with Azure cloud.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>Read more about how Azure IoT Edge is <a data-linktype="external" href="https://azure.microsoft.com/blog/securing-the-intelligent-edge/">Securing the intelligent edge</a>.</p>
+</div>
+<!-- </content> -->
+</main>
+<!-- recommendations section -->
+<section data-bi-name="recommendations" id="recommendations-section"></section>
+<section class="display-none-desktop margin-top-xxs" data-bi-name="recommendations" hidden="" id="right-rail-recommendations-mobile"></section>
+<!-- end recommendations section -->
+<section class="display-none-desktop margin-top-xxs" data-bi-name="learning-resources-card" hidden="" id="right-rail-learning-resources-mobile"></section>
+<section class="display-none-desktop margin-top-xxs" data-bi-name="qna-link-card" hidden="" id="right-rail-qna-mobile"></section>
+<!-- feedback section -->
+<section class="feedback-section position-relative" data-bi-name="feedback-section">
+<h2 class="title is-3 margin-top-sm" id="feedback">Feedback</h2>
+<div class="alert choose-feedback-type">
+<p id="send-feedback-about">Submit and view feedback for</p>
+<div class="choose-feedback-buttons margin-top-xs">
+<a aria-label="Send feedback about this product" class="button has-external-link-indicator feedback-type-product margin-bottom-xxs" data-bi-name="product-feedback" href="https://feedback.azure.com/d365community/forum/0e2fff5d-f524-ec11-b6e6-000d3a4f0da0">
+<span>This product</span>
+</a>
+<a aria-label="Send feedback about this page" class="button feedback-type-product margin-bottom-xxs github-link" data-bi-name="create-issue-on-github">
+<span aria-hidden="true" class="docon docon-brand-github padding-right-xxs"></span>
+<span>This page</span>
+</a>
+</div>
+</div>
+<div class="action-container display-flex justify-content-flex-end margin-block-xxs">
+<a class="view-on-github has-external-link-indicator" data-bi-name="view-on-github" href="https://github.com/MicrosoftDocs/azure-docs/issues">
+<span aria-hidden="true" class="docon docon-brand-github"></span>
+<span>View all page feedback</span>
+</a>
+</div>
+</section>
+<!-- end feedback section -->
+<!-- feedback report section -->
+<!-- end feedback report section -->
+<section class="display-none-desktop margin-top-xs" data-bi-name="events-card" hidden="" id="right-rail-events-mobile"></section>
+<div class="border-top is-visible-interactive has-default-focus margin-top-sm">
+<footer class="footer-layout" data-bi-name="footer" id="footer-interactive">
+<div class="display-flex is-full-height padding-right-lg-desktop">
+<a class="locale-selector-link button button-clear flex-shrink-0" data-bi-name="select-locale" data-mscc-ic="false" href="#">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-world"></span>
+</span>
+<span class="local-selector-link-text"></span></a>
+<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+<button aria-controls="theme-menu-interactive" aria-expanded="false" class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" data-bi-name="theme" title="Theme">
+<span class="icon">
+<span aria-hidden="true" class="docon docon-sun"></span>
+</span>
+<span>Theme</span>
+</button>
+<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+<ul class="theme-selector padding-xxs">
+<li class="theme display-block">
+<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="light">
+<span class="theme-light margin-right-xxs">
+<span aria-hidden="true" class="theme-selector-icon css-variable-support border display-inline-block has-body-background">
+<svg class="svg" viewbox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+<rect class="has-fill-body-background" height="14" width="22"></rect>
+<rect class="has-fill-secondary" height="4" width="12" x="5" y="5"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="5" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="8" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="3" x="11" y="2"></rect>
+<rect class="has-fill-secondary" height="2" width="2" x="1" y="1"></rect>
+<rect class="has-fill-primary" height="2" rx="0.3" width="7" x="5" y="10"></rect>
+<rect class="has-fill-secondary" height="2" rx="1" width="2" x="19" y="1"></rect>
+</svg>
+</span>
+</span>
+<span role="menuitem">
+Light					</span>
+</button>
+</li>
+<li class="theme display-block">
+<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark">
+<span class="theme-dark margin-right-xxs">
+<span aria-hidden="true" class="border theme-selector-icon css-variable-support display-inline-block has-body-background">
+<svg class="svg" viewbox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+<rect class="has-fill-body-background" height="14" width="22"></rect>
+<rect class="has-fill-secondary" height="4" width="12" x="5" y="5"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="5" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="8" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="3" x="11" y="2"></rect>
+<rect class="has-fill-secondary" height="2" width="2" x="1" y="1"></rect>
+<rect class="has-fill-primary" height="2" rx="0.3" width="7" x="5" y="10"></rect>
+<rect class="has-fill-secondary" height="2" rx="1" width="2" x="19" y="1"></rect>
+</svg>
+</span>
+</span>
+<span role="menuitem">
+Dark					</span>
+</button>
+</li>
+<li class="theme display-block">
+<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast">
+<span class="theme-high-contrast margin-right-xxs">
+<span aria-hidden="true" class="border theme-selector-icon css-variable-support display-inline-block has-body-background">
+<svg class="svg" viewbox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+<rect class="has-fill-body-background" height="14" width="22"></rect>
+<rect class="has-fill-secondary" height="4" width="12" x="5" y="5"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="5" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="8" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="3" x="11" y="2"></rect>
+<rect class="has-fill-secondary" height="2" width="2" x="1" y="1"></rect>
+<rect class="has-fill-primary" height="2" rx="0.3" width="7" x="5" y="10"></rect>
+<rect class="has-fill-secondary" height="2" rx="1" width="2" x="19" y="1"></rect>
+</svg>
+</span>
+</span>
+<span role="menuitem">
+High contrast					</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<ul class="links" data-bi-name="footerlinks">
+<li class="manage-cookies-holder" hidden=""></li>
+<li><a data-bi-name="archivelink" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/previous-versions/">Previous Version Docs</a></li>
+<li><a data-bi-name="bloglink" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/teamblog">Blog</a></li>
+<li><a data-bi-name="contributorGuide" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/contribute">Contribute</a></li>
+<li><a data-bi-name="privacy" data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy &amp; Cookies</a></li>
+<li><a data-bi-name="termsofuse" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse">Terms of Use</a></li>
+<li><a data-bi-name="trademarks" data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx">Trademarks</a></li>
+<li>© Microsoft 2022</li>
+</ul>
+</footer>
+</div>
+</div>
+<div aria-label="Page Actions" class="font-size-sm right-container column is-4-desktop display-none display-block-desktop" data-bi-name="pageactions" role="complementary">
+<div class="margin-top-sm-tablet doc-outline is-vertically-scrollable" data-bi-name="right-column" id="affixed-right-container">
+<section class="margin-bottom-xxs" data-bi-name="events-card" hidden="" id="right-rail-events"></section>
+<section class="margin-bottom-xxs" data-bi-name="recommendations" hidden="" id="right-rail-recommendations"></section>
+<nav aria-label="Article Outline" data-bi-name="intopic toc" id="side-doc-outline" role="navigation">
+<h3>In this article</h3>
+</nav>
+<section class="margin-top-xxs" data-bi-name="learning-resources-card" hidden="" id="right-rail-learning-resources"></section>
+<section class="margin-top-xxs" data-bi-name="qna-link-card" hidden="" id="right-rail-qna"></section>
+</div>
+</div>
+</div>
+<!--end of div.columns -->
+</section>
+<!--end of .primary-holder -->
+<!-- interactive container -->
+<aside class="interactive-container is-visible-interactive column has-body-background-dark" id="interactive-container">
+</aside>
+<!-- end of interactive container -->
+</div>
+</div>
+<!--end of .mainContainer -->
+<section class="border-top has-default-focus is-hidden-interactive margin-top-sm">
+<footer class="footer-layout uhf-container has-padding" data-bi-name="footer" id="footer" role="contentinfo">
+<div class="display-flex is-full-height padding-right-lg-desktop">
+<a class="locale-selector-link button button-clear flex-shrink-0" data-bi-name="select-locale" data-mscc-ic="false" href="#">
+<span aria-hidden="true" class="icon">
+<span class="docon docon-world"></span>
+</span>
+<span class="local-selector-link-text"></span></a>
+<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+<button aria-controls="theme-menu" aria-expanded="false" class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" data-bi-name="theme" title="Theme">
+<span class="icon">
+<span aria-hidden="true" class="docon docon-sun"></span>
+</span>
+<span>Theme</span>
+</button>
+<div class="dropdown-menu" id="theme-menu" role="menu">
+<ul class="theme-selector padding-xxs">
+<li class="theme display-block">
+<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="light">
+<span class="theme-light margin-right-xxs">
+<span aria-hidden="true" class="theme-selector-icon css-variable-support border display-inline-block has-body-background">
+<svg class="svg" viewbox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+<rect class="has-fill-body-background" height="14" width="22"></rect>
+<rect class="has-fill-secondary" height="4" width="12" x="5" y="5"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="5" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="8" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="3" x="11" y="2"></rect>
+<rect class="has-fill-secondary" height="2" width="2" x="1" y="1"></rect>
+<rect class="has-fill-primary" height="2" rx="0.3" width="7" x="5" y="10"></rect>
+<rect class="has-fill-secondary" height="2" rx="1" width="2" x="19" y="1"></rect>
+</svg>
+</span>
+</span>
+<span role="menuitem">
+Light					</span>
+</button>
+</li>
+<li class="theme display-block">
+<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark">
+<span class="theme-dark margin-right-xxs">
+<span aria-hidden="true" class="border theme-selector-icon css-variable-support display-inline-block has-body-background">
+<svg class="svg" viewbox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+<rect class="has-fill-body-background" height="14" width="22"></rect>
+<rect class="has-fill-secondary" height="4" width="12" x="5" y="5"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="5" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="8" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="3" x="11" y="2"></rect>
+<rect class="has-fill-secondary" height="2" width="2" x="1" y="1"></rect>
+<rect class="has-fill-primary" height="2" rx="0.3" width="7" x="5" y="10"></rect>
+<rect class="has-fill-secondary" height="2" rx="1" width="2" x="19" y="1"></rect>
+</svg>
+</span>
+</span>
+<span role="menuitem">
+Dark					</span>
+</button>
+</li>
+<li class="theme display-block">
+<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast">
+<span class="theme-high-contrast margin-right-xxs">
+<span aria-hidden="true" class="border theme-selector-icon css-variable-support display-inline-block has-body-background">
+<svg class="svg" viewbox="0 0 22 14" xmlns="http://www.w3.org/2000/svg">
+<rect class="has-fill-body-background" height="14" width="22"></rect>
+<rect class="has-fill-secondary" height="4" width="12" x="5" y="5"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="5" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="2" x="8" y="2"></rect>
+<rect class="has-fill-secondary" height="1" width="3" x="11" y="2"></rect>
+<rect class="has-fill-secondary" height="2" width="2" x="1" y="1"></rect>
+<rect class="has-fill-primary" height="2" rx="0.3" width="7" x="5" y="10"></rect>
+<rect class="has-fill-secondary" height="2" rx="1" width="2" x="19" y="1"></rect>
+</svg>
+</span>
+</span>
+<span role="menuitem">
+High contrast					</span>
+</button>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<ul class="links" data-bi-name="footerlinks">
+<li class="manage-cookies-holder" hidden=""></li>
+<li><a data-bi-name="archivelink" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/previous-versions/">Previous Version Docs</a></li>
+<li><a data-bi-name="bloglink" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/teamblog">Blog</a></li>
+<li><a data-bi-name="contributorGuide" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/contribute">Contribute</a></li>
+<li><a data-bi-name="privacy" data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839">Privacy &amp; Cookies</a></li>
+<li><a data-bi-name="termsofuse" data-mscc-ic="false" href="https://docs.microsoft.com/en-us/legal/termsofuse">Terms of Use</a></li>
+<li><a data-bi-name="trademarks" data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx">Trademarks</a></li>
+<li>© Microsoft 2022</li>
+</ul>
+</footer>
+</section>
+<div aria-label="Action Panel" class="action-panel has-default-focus" id="action-panel" role="region" tabindex="-1"></div>
+</body>
+</html>

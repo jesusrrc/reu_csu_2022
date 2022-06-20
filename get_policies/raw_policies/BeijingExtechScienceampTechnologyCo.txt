@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html class="no-js" itemscope="itemscope" itemtype="https://schema.org/WebPage" lang="en"><head> <script type="text/javascript">
+//----------------------------------------------------------
+//------ JAVASCRIPT HOOK FUNCTIONS FOR GRAVITY FORMS -------
+//----------------------------------------------------------
+
+if ( ! gform ) {
+	document.addEventListener( 'gform_main_scripts_loaded', function() { gform.scriptsLoaded = true; } );
+	window.addEventListener( 'DOMContentLoaded', function() { gform.domLoaded = true; } );
+
+	var gform = {
+		domLoaded: false,
+		scriptsLoaded: false,
+		initializeOnLoaded: function( fn ) {
+			if ( gform.domLoaded && gform.scriptsLoaded ) {
+				fn();
+			} else if( ! gform.domLoaded && gform.scriptsLoaded ) {
+				window.addEventListener( 'DOMContentLoaded', fn );
+			} else {
+				document.addEventListener( 'gform_main_scripts_loaded', fn );
+			}
+		},
+		hooks: { action: {}, filter: {} },
+		addAction: function( action, callable, priority, tag ) {
+			gform.addHook( 'action', action, callable, priority, tag );
+		},
+		addFilter: function( action, callable, priority, tag ) {
+			gform.addHook( 'filter', action, callable, priority, tag );
+		},
+		doAction: function( action ) {
+			gform.doHook( 'action', action, arguments );
+		},
+		applyFilters: function( action ) {
+			return gform.doHook( 'filter', action, arguments );
+		},
+		removeAction: function( action, tag ) {
+			gform.removeHook( 'action', action, tag );
+		},
+		removeFilter: function( action, priority, tag ) {
+			gform.removeHook( 'filter', action, priority, tag );
+		},
+		addHook: function( hookType, action, callable, priority, tag ) {
+			if ( undefined == gform.hooks[hookType][action] ) {
+				gform.hooks[hookType][action] = [];
+			}
+			var hooks = gform.hooks[hookType][action];
+			if ( undefined == tag ) {
+				tag = action + '_' + hooks.length;
+			}
+			if( priority == undefined ){
+				priority = 10;
+			}
+
+			gform.hooks[hookType][action].push( { tag:tag, callable:callable, priority:priority } );
+		},
+		doHook: function( hookType, action, args ) {
+
+			// splice args from object into array and remove first index which is the hook name
+			args = Array.prototype.slice.call(args, 1);
+
+			if ( undefined != gform.hooks[hookType][action] ) {
+				var hooks = gform.hooks[hookType][action], hook;
+				//sort by priority
+				hooks.sort(function(a,b){return a["priority"]-b["priority"]});
+
+				hooks.forEach( function( hookItem ) {
+					hook = hookItem.callable;
+
+					if(typeof hook != 'function')
+						hook = window[hook];
+					if ( 'action' == hookType ) {
+						hook.apply(null, args);
+					} else {
+						args[0] = hook.apply(null, args);
+					}
+				} );
+			}
+			if ( 'filter'==hookType ) {
+				return args[0];
+			}
+		},
+		removeHook: function( hookType, action, priority, tag ) {
+			if ( undefined != gform.hooks[hookType][action] ) {
+				var hooks = gform.hooks[hookType][action];
+				hooks = hooks.filter( function(hook, index, arr) {
+					var removeHook = (undefined==tag||tag==hook.tag) && (undefined==priority||priority==hook.priority);
+					return !removeHook;
+				} );
+				gform.hooks[hookType][action] = hooks;
+			}
+		}
+	};
+}
+</script>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="IE=edge" http-equiv="X-UA-Compatible"/> <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-JRTRQ30ES1"></script> <script>window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JRTRQ30ES1', { 'anonymize_ip': false } );</script> <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"><link href="https://extechinc.com/wp-content/cache/autoptimize/css/autoptimize_58a1373698912b3388dfa93cbeb5fd7e.css" media="all" rel="stylesheet"/><link href="https://extechinc.com/wp-content/cache/autoptimize/css/autoptimize_09bf52b995b576ab799fbc932f8dce86.css" media="print" rel="stylesheet"/><title>Privacy Policy | EXTECH, Inc.</title><meta content="PRIVACY POLICY This privacy policy has been compiled to better serve those who are concerned with how their 'Personally Identifiable Information' (PII) is" name="description"><link href="https://extechinc.com/privacy-policy/" rel="canonical"/><meta content="en_US" property="og:locale"><meta content="article" property="og:type"/><meta content="Privacy Policy | EXTECH, Inc." property="og:title"/><meta content="PRIVACY POLICY This privacy policy has been compiled to better serve those who are concerned with how their 'Personally Identifiable Information' (PII) is" property="og:description"/><meta content="https://extechinc.com/privacy-policy/" property="og:url"/><meta content="Extech / Exterior Technologies Inc." property="og:site_name"/><meta content="https://www.facebook.com/extechinc" property="article:publisher"/><meta content="2016-10-09T17:50:01+00:00" property="article:modified_time"/><meta content="https://extechinc.com/wp-content/uploads/2016/09/Extech-logo-v2.jpg" property="og:image"/><meta content="1185" property="og:image:width"/><meta content="479" property="og:image:height"/><meta content="image/jpeg" property="og:image:type"/><meta content="summary" name="twitter:card"/><meta content="@extechinc" name="twitter:site"/><meta content="Est. reading time" name="twitter:label1"/><meta content="7 minutes" name="twitter:data1"/> <script class="yoast-schema-graph" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://extechinc.com/#organization","name":"ExTech, Inc.","url":"https://extechinc.com/","sameAs":["https://www.linkedin.com/company/extech-inc","https://www.youtube.com/user/ExtechInc","https://www.facebook.com/extechinc","https://twitter.com/extechinc"],"logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://extechinc.com/#/schema/logo/image/","url":"https://extechinc.com/wp-content/uploads/2016/09/Extech-logo-v2.jpg","contentUrl":"https://extechinc.com/wp-content/uploads/2016/09/Extech-logo-v2.jpg","width":1185,"height":479,"caption":"ExTech, Inc."},"image":{"@id":"https://extechinc.com/#/schema/logo/image/"}},{"@type":"WebSite","@id":"https://extechinc.com/#website","url":"https://extechinc.com/","name":"Extech / Exterior Technologies Inc.","description":"Innovative Daylighting Solutions.","publisher":{"@id":"https://extechinc.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://extechinc.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://extechinc.com/privacy-policy/#webpage","url":"https://extechinc.com/privacy-policy/","name":"Privacy Policy | EXTECH, Inc.","isPartOf":{"@id":"https://extechinc.com/#website"},"datePublished":"2016-08-10T13:49:17+00:00","dateModified":"2016-10-09T17:50:01+00:00","description":"PRIVACY POLICY This privacy policy has been compiled to better serve those who are concerned with how their 'Personally Identifiable Information' (PII) is","breadcrumb":{"@id":"https://extechinc.com/privacy-policy/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://extechinc.com/privacy-policy/"]}]},{"@type":"BreadcrumbList","@id":"https://extechinc.com/privacy-policy/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://extechinc.com/"},{"@type":"ListItem","position":2,"name":"Privacy Policy"}]}]}</script> <script type="application/javascript">console.log('PixelYourSite Free version 9.0.0');</script> <link href="//fonts.googleapis.com" rel="dns-prefetch"/><link href="//s.w.org" rel="dns-prefetch"/><link href="https://extechinc.com/feed/" rel="alternate" title="Extech / Exterior Technologies Inc. » Feed" type="application/rss+xml"/><link href="https://extechinc.com/comments/feed/" rel="alternate" title="Extech / Exterior Technologies Inc. » Comments Feed" type="application/rss+xml"/><link href="https://extechinc.com/wp-content/uploads/2016/06/Extech-favicon.jpg" rel="shortcut icon" type="image/x-icon"/><script type="text/javascript">window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"wpemoji":"https:\/\/extechinc.com\/wp-includes\/js\/wp-emoji.js?ver=5.9.3","twemoji":"https:\/\/extechinc.com\/wp-includes\/js\/twemoji.js?ver=5.9.3"}};
+/**
+ * @output wp-includes/js/wp-emoji-loader.js
+ */
+
+( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	// Create a canvas element for testing native browser support of emoji.
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	/**
+	 * Checks if two sets of Emoji characters render the same visually.
+	 *
+	 * @since 4.9.0
+	 *
+	 * @private
+	 *
+	 * @param {number[]} set1 Set of Emoji character codes.
+	 * @param {number[]} set2 Set of Emoji character codes.
+	 *
+	 * @return {boolean} True if the two sets render the same.
+	 */
+	function emojiSetsRenderIdentically( set1, set2 ) {
+		var stringFromCharCode = String.fromCharCode;
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set1 ), 0, 0 );
+		var rendered1 = canvas.toDataURL();
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set2 ), 0, 0 );
+		var rendered2 = canvas.toDataURL();
+
+		return rendered1 === rendered2;
+	}
+
+	/**
+	 * Detects if the browser supports rendering emoji or flag emoji.
+	 *
+	 * Flag emoji are a single glyph made of two characters, so some browsers
+	 * (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @private
+	 *
+	 * @param {string} type Whether to test for support of "flag" or "emoji".
+	 *
+	 * @return {boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var isIdentical;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for Transgender flag compatibility. This flag is shortlisted for the Emoji 13 spec,
+				 * but has landed in Twemoji early, so we can add support for it, too.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (white flag emoji + transgender symbol).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0x1F3F3, 0xFE0F, 0x200D, 0x26A7, 0xFE0F ],
+					[ 0x1F3F3, 0xFE0F, 0x200B, 0x26A7, 0xFE0F ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDDFA, 0xD83C, 0xDDF3 ],
+					[ 0xD83C, 0xDDFA, 0x200B, 0xD83C, 0xDDF3 ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather an five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDFF4, 0xDB40, 0xDC67, 0xDB40, 0xDC62, 0xDB40, 0xDC65, 0xDB40, 0xDC6E, 0xDB40, 0xDC67, 0xDB40, 0xDC7F ],
+					[ 0xD83C, 0xDFF4, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC62, 0x200B, 0xDB40, 0xDC65, 0x200B, 0xDB40, 0xDC6E, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC7F ]
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				/*
+				 * Burning Love: Just a hunk, a hunk of burnin' love.
+				 *
+				 *  To test for Emoji 13.1 support, try to render a new emoji: Heart on Fire!
+				 *
+				 * The Heart on Fire emoji is a ZWJ sequence combining ❤️ Red Heart, a Zero Width Joiner and 🔥 Fire.
+				 *
+				 * 0x2764, 0xfe0f == Red Heart emoji.
+				 * 0x200D == Zero-Width Joiner (ZWJ) that links the two code points for the new emoji or
+				 * 0x200B == Zero-Width Space (ZWS) that is rendered for clients not supporting the new emoji.
+				 * 0xD83D, 0xDD25 == Fire.
+				 *
+				 * When updating this test for future Emoji releases, ensure that individual emoji that make up the
+				 * sequence come from older emoji standards.
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[0x2764, 0xfe0f, 0x200D, 0xD83D, 0xDD25],
+					[0x2764, 0xfe0f, 0x200B, 0xD83D, 0xDD25]
+				);
+
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Adds a script to the head of the document.
+	 *
+	 * @ignore
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param {Object} src The url where the script is located.
+	 * @return {void}
+	 */
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	/*
+	 * Tests the browser support for flag emojis and other emojis, and adjusts the
+	 * support settings accordingly.
+	 */
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	// Sets DOMReady to false and assigns a ready function to settings.
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	// When the browser can not render everything we need to load a polyfill.
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		/*
+		 * Cross-browser version of adding a dom ready event.
+		 */
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );</script> <style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style><style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--virtue-primary: #06038d;--wp--preset--color--virtue-primary-light: #6c8dab;--wp--preset--color--very-light-gray: #eee;--wp--preset--color--very-dark-gray: #444;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}</style><style id="popup-maker-site-inline-css" type="text/css">/* Popup Google Fonts */
+@import url('//fonts.googleapis.com/css?family=Oswald:700|Source Sans Pro:400|Montserrat|Acme');
+
+/* Popup Theme 77918: Floating Bar - Soft Blue */
+.pum-theme-77918, .pum-theme-floating-bar { background-color: rgba( 255, 255, 255, 1.00 ) } 
+.pum-theme-77918 .pum-container, .pum-theme-floating-bar .pum-container { padding: 8px; border-radius: 0px; border: 1px none #000000; box-shadow: 1px 1px 3px 0px rgba( 2, 2, 2, 0.23 ); background-color: rgba( 255, 255, 255, 1.00 ) } 
+.pum-theme-77918 .pum-title, .pum-theme-floating-bar .pum-title { color: #505050; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-weight: 400; font-size: 32px; line-height: 36px } 
+.pum-theme-77918 .pum-content, .pum-theme-floating-bar .pum-content { color: #505050; font-family: inherit; font-weight: 400 } 
+.pum-theme-77918 .pum-content + .pum-close, .pum-theme-floating-bar .pum-content + .pum-close { position: absolute; height: 18px; width: 18px; left: auto; right: 5px; bottom: auto; top: 50%; padding: 0px; color: #505050; font-family: Sans-Serif; font-weight: 700; font-size: 15px; line-height: 18px; border: 1px solid #505050; border-radius: 15px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.00 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.00 ); background-color: rgba( 255, 255, 255, 1.00 ); transform: translate(0, -50%) } 
+
+/* Popup Theme 77919: Content Only - For use with page builders or block editor */
+.pum-theme-77919, .pum-theme-content-only { background-color: rgba( 255, 255, 255, 1.00 ) } 
+.pum-theme-77919 .pum-container, .pum-theme-content-only .pum-container { padding: 0px; border-radius: 0px; border: 1px none #000000; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.00 ); background-color: rgba( 255, 255, 255, 1.00 ) } 
+.pum-theme-77919 .pum-title, .pum-theme-content-only .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-weight: 400; font-size: 32px; line-height: 36px } 
+.pum-theme-77919 .pum-content, .pum-theme-content-only .pum-content { color: #8c8c8c; font-family: inherit; font-weight: 400 } 
+.pum-theme-77919 .pum-content + .pum-close, .pum-theme-content-only .pum-content + .pum-close { position: absolute; height: 18px; width: 18px; left: auto; right: 7px; bottom: auto; top: 7px; padding: 0px; color: #000000; font-family: inherit; font-weight: 700; font-size: 20px; line-height: 20px; border: 1px none #ffffff; border-radius: 15px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.00 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.00 ); background-color: rgba( 255, 255, 255, 1.00 ) } 
+
+/* Popup Theme 75801: Detail Download */
+.pum-theme-75801, .pum-theme-extech { background-color: rgba( 255, 255, 255, 0.95 ) } 
+.pum-theme-75801 .pum-container, .pum-theme-extech .pum-container { padding: 25px; border-radius: 1px; border: 1px none #000000; box-shadow: 2px 2px 10px 1px rgba( 2, 2, 2, 0.30 ); background-color: rgba( 254, 254, 254, 1.00 ) } 
+.pum-theme-75801 .pum-title, .pum-theme-extech .pum-title { color: #cba052; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: Oswald; font-weight: 700; font-size: 40px; line-height: 36px } 
+.pum-theme-75801 .pum-content, .pum-theme-extech .pum-content { color: #656667; font-family: Source Sans Pro; font-weight: 400 } 
+.pum-theme-75801 .pum-content + .pum-close, .pum-theme-extech .pum-content + .pum-close { position: absolute; height: auto; width: 80px; left: auto; right: 0px; bottom: auto; top: 0px; padding: 8px; color: #ffffff; font-family: Montserrat; font-weight: 400; font-size: 12px; line-height: 36px; border: 1px none #ffffff; border-radius: 0px; box-shadow: 1px 1px 3px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 203, 160, 82, 1.00 ) } 
+
+/* Popup Theme 3531: Enterprise Blue */
+.pum-theme-3531, .pum-theme-enterprise-blue { background-color: rgba( 255, 255, 255, 1.00 ) } 
+.pum-theme-3531 .pum-container, .pum-theme-enterprise-blue .pum-container { padding: 28px; border-radius: 5px; border: 1px none #000000; box-shadow: 0px 10px 25px 4px rgba( 2, 2, 2, 0.50 ); background-color: rgba( 249, 249, 249, 1.00 ) } 
+.pum-theme-3531 .pum-title, .pum-theme-enterprise-blue .pum-title { color: #315b7c; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-size: 34px; line-height: 36px } 
+.pum-theme-3531 .pum-content, .pum-theme-enterprise-blue .pum-content { color: #2d2d2d; font-family: inherit } 
+.pum-theme-3531 .pum-content + .pum-close, .pum-theme-enterprise-blue .pum-content + .pum-close { position: absolute; height: 28px; width: 28px; left: auto; right: 8px; bottom: auto; top: 8px; padding: 4px; color: #ffffff; font-family: inherit; font-size: 20px; line-height: 20px; border: 1px none #ffffff; border-radius: 42px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 0, 183, 205, 1.00 ) } 
+
+/* Popup Theme 3530: Light Box */
+.pum-theme-3530, .pum-theme-lightbox { background-color: rgba( 255, 255, 255, 1.00 ) } 
+.pum-theme-3530 .pum-container, .pum-theme-lightbox .pum-container { padding: 18px; border-radius: 3px; border: 8px solid #000000; box-shadow: 0px 0px 30px 0px rgba( 2, 2, 2, 1.00 ); background-color: rgba( 249, 249, 249, 1.00 ) } 
+.pum-theme-3530 .pum-title, .pum-theme-lightbox .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-size: 32px; line-height: 36px } 
+.pum-theme-3530 .pum-content, .pum-theme-lightbox .pum-content { color: #000000; font-family: inherit } 
+.pum-theme-3530 .pum-content + .pum-close, .pum-theme-lightbox .pum-content + .pum-close { position: absolute; height: 30px; width: 30px; left: auto; right: -24px; bottom: auto; top: -24px; padding: 0px; color: #ffffff; font-family: inherit; font-size: 24px; line-height: 26px; border: 2px solid #ffffff; border-radius: 30px; box-shadow: 0px 0px 15px 1px rgba( 2, 2, 2, 0.75 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 0, 183, 205, 1.00 ) } 
+
+/* Popup Theme 3532: Hello Box */
+.pum-theme-3532, .pum-theme-hello-box { background-color: rgba( 255, 255, 255, 1.00 ) } 
+.pum-theme-3532 .pum-container, .pum-theme-hello-box .pum-container { padding: 30px; border-radius: 80px; border: 14px solid #81d742; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.00 ); background-color: rgba( 249, 249, 249, 1.00 ) } 
+.pum-theme-3532 .pum-title, .pum-theme-hello-box .pum-title { color: #2d2d2d; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: Montserrat; font-size: 32px; line-height: 36px } 
+.pum-theme-3532 .pum-content, .pum-theme-hello-box .pum-content { color: #2d2d2d; font-family: inherit } 
+.pum-theme-3532 .pum-content + .pum-close, .pum-theme-hello-box .pum-content + .pum-close { position: absolute; height: auto; width: auto; left: auto; right: -30px; bottom: auto; top: -30px; padding: 0px; color: #2d2d2d; font-family: inherit; font-size: 32px; line-height: 28px; border: 1px none #ffffff; border-radius: 28px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 0, 183, 205, 1.00 ) } 
+
+/* Popup Theme 3533: Cutting Edge */
+.pum-theme-3533, .pum-theme-cutting-edge { background-color: rgba( 255, 255, 255, 1.00 ) } 
+.pum-theme-3533 .pum-container, .pum-theme-cutting-edge .pum-container { padding: 18px; border-radius: 0px; border: 1px none #000000; box-shadow: 0px 10px 25px 0px rgba( 2, 2, 2, 0.50 ); background-color: rgba( 249, 249, 249, 1.00 ) } 
+.pum-theme-3533 .pum-title, .pum-theme-cutting-edge .pum-title { color: #ffffff; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: Sans-Serif; font-size: 26px; line-height: 28px } 
+.pum-theme-3533 .pum-content, .pum-theme-cutting-edge .pum-content { color: #ffffff; font-family: inherit } 
+.pum-theme-3533 .pum-content + .pum-close, .pum-theme-cutting-edge .pum-content + .pum-close { position: absolute; height: 24px; width: 24px; left: auto; right: 0px; bottom: auto; top: 0px; padding: 0px; color: #1e73be; font-family: inherit; font-size: 32px; line-height: 24px; border: 1px none #ffffff; border-radius: 0px; box-shadow: -1px 1px 1px 0px rgba( 2, 2, 2, 0.10 ); text-shadow: -1px 1px 1px rgba( 0, 0, 0, 0.10 ); background-color: rgba( 0, 183, 205, 1.00 ) } 
+
+/* Popup Theme 3534: Framed Border */
+.pum-theme-3534, .pum-theme-framed-border { background-color: rgba( 255, 255, 255, 1.00 ) } 
+.pum-theme-3534 .pum-container, .pum-theme-framed-border .pum-container { padding: 18px; border-radius: 0px; border: 20px outset #dd3333; box-shadow: 1px 1px 3px 0px rgba( 2, 2, 2, 0.97 ) inset; background-color: rgba( 249, 249, 249, 1.00 ) } 
+.pum-theme-3534 .pum-title, .pum-theme-framed-border .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-size: 32px; line-height: 36px } 
+.pum-theme-3534 .pum-content, .pum-theme-framed-border .pum-content { color: #2d2d2d; font-family: inherit } 
+.pum-theme-3534 .pum-content + .pum-close, .pum-theme-framed-border .pum-content + .pum-close { position: absolute; height: 20px; width: 20px; left: auto; right: -20px; bottom: auto; top: -20px; padding: 0px; color: #ffffff; font-family: Acme; font-size: 20px; line-height: 20px; border: 1px none #ffffff; border-radius: 0px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 0, 183, 205, 1.00 ) } 
+
+/* Popup Theme 3529: Default Theme */
+.pum-theme-3529, .pum-theme-default-theme { background-color: rgba( 255, 255, 255, 1.00 ) } 
+.pum-theme-3529 .pum-container, .pum-theme-default-theme .pum-container { padding: 18px; border-radius: 0px; border: 1px none #000000; box-shadow: 1px 1px 3px 0px rgba( 2, 2, 2, 0.23 ); background-color: rgba( 249, 249, 249, 1.00 ) } 
+.pum-theme-3529 .pum-title, .pum-theme-default-theme .pum-title { color: #000000; text-align: left; text-shadow: 0px 0px 0px rgba( 2, 2, 2, 0.23 ); font-family: inherit; font-weight: inherit; font-size: 32px; font-style: normal; line-height: 36px } 
+.pum-theme-3529 .pum-content, .pum-theme-default-theme .pum-content { color: #8c8c8c; font-family: inherit; font-weight: inherit; font-style: normal } 
+.pum-theme-3529 .pum-content + .pum-close, .pum-theme-default-theme .pum-content + .pum-close { position: absolute; height: auto; width: auto; left: auto; right: 0px; bottom: auto; top: 0px; padding: 8px; color: #ffffff; font-family: inherit; font-weight: inherit; font-size: 12px; font-style: normal; line-height: 14px; border: 1px none #ffffff; border-radius: 0px; box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23 ); text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23 ); background-color: rgba( 0, 183, 205, 1.00 ) } 
+
+#pum-77815 {z-index: 1999999999}
+#pum-76136 {z-index: 1999999999}
+#pum-75967 {z-index: 1999999999}
+#pum-76128 {z-index: 1999999999}
+#pum-76116 {z-index: 1999999999}
+#pum-78114 {z-index: 1999999999}
+#pum-76103 {z-index: 1999999999}
+#pum-76094 {z-index: 1999999999}
+#pum-76083 {z-index: 1999999999}
+#pum-76072 {z-index: 1999999999}
+#pum-76052 {z-index: 1999999999}
+#pum-76042 {z-index: 1999999999}
+#pum-76031 {z-index: 1999999999}
+#pum-76020 {z-index: 1999999999}
+#pum-76007 {z-index: 1999999999}
+#pum-75998 {z-index: 1999999999}
+#pum-75985 {z-index: 1999999999}
+#pum-75865 {z-index: 1999999999}
+#pum-75946 {z-index: 1999999999}</style><link href="https://fonts.googleapis.com/css?family=Lato%3A400%2C700%7COpen+Sans%3A400&amp;subset=latin&amp;ver=5.9.3" id="redux-google-fonts-virtue_premium-css" media="all" rel="stylesheet" type="text/css"/> <script id="wk-tag-manager-script-js-after" type="text/javascript">function shouldTrack(){
+var trackLoggedIn = false;
+var loggedIn = false;
+if(!loggedIn){
+return true;
+} else if( trackLoggedIn ) {
+return true;
+}
+return false;
+}
+function hasWKGoogleAnalyticsCookie() {
+return (new RegExp('wp_wk_ga_untrack_' + document.location.hostname)).test(document.cookie);
+}
+if (!hasWKGoogleAnalyticsCookie() && shouldTrack()) {
+//Google Tag Manager
+(function (w, d, s, l, i) {
+w[l] = w[l] || [];
+w[l].push({
+'gtm.start':
+new Date().getTime(), event: 'gtm.js'
+});
+var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+j.async = true;
+j.src =
+'//www.googletagmanager.com/gtm.js?id=' + i + dl;
+f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-TQ78TK');
+}</script> <script id="jquery-core-js" src="https://extechinc.com/wp-includes/js/jquery/jquery.js?ver=3.6.0" type="text/javascript"></script> <script id="ga_events_main_script-js-extra" type="text/javascript">var ga_options = {"anonymizeip":"0","advanced":"1","snippet_type":"gst","tracking_id":"G-JRTRQ30ES1","gtm_id":"","domain":"","click_elements":[{"name":"ninja_forms_field_30","type":"id","category":"Form-Submitted","action":"click","label":"Order-Sample-Registered","bounce":"false"},{"name":"ninja_forms_field_272","type":"id","category":"Form-Submitted","action":"click","label":"Specification","bounce":"false"},{"name":"ninja_forms_field_132","type":"id","category":"Form-Submitted","action":"click","label":"Newsletter","bounce":"false"},{"name":"ninja_forms_field_128","type":"id","category":"Form-Submitted","action":"click","label":"Download-Link","bounce":"false"},{"name":"ninja_forms_field_57","type":"id","category":"Form-Submitted","action":"click","label":"Request-Info","bounce":"false"},{"name":"ninja_forms_field_216","type":"id","category":"Form-Submitted","action":"click","label":"Order-Sample","bounce":"false"},{"name":"ninja_forms_field_5","type":"id","category":"Form-Submitted","action":"click","label":"Contact-Us","bounce":"false"},{"name":"ninja_forms_field_119","type":"id","category":"Form-Submitted","action":"click","label":"Toolkit","bounce":"false"}],"scroll_elements":[],"link_clicks_delay":"120","download_tracking_type":["pdf","mp3","pptx","docx"],"force_snippet":"gst","download_tracking":"0","email_link_tracking":"0","ga_view_id":"ga:96893552"};
+var gaePlaceholders = {"is_front_page":"","page_title":"Privacy Policy"};</script> <script id="pys-js-extra" type="text/javascript">var pysOptions = {"staticEvents":{"facebook":{"init_event":[{"delay":0,"type":"static","name":"PageView","pixelIds":["717469398408945"],"eventID":"0d8a8364-05c9-4bb5-8c14-0ecde252dd2f","params":{"page_title":"Privacy Policy","post_type":"page","post_id":2433,"plugin":"PixelYourSite","user_role":"guest","event_url":"extechinc.com\/privacy-policy\/"},"e_id":"init_event","ids":[],"hasTimeWindow":false,"timeWindow":0,"woo_order":"","edd_order":""}]}},"dynamicEvents":{"signal_form":{"facebook":{"delay":0,"type":"dyn","name":"Signal","pixelIds":["717469398408945"],"eventID":"f0797784-20fd-4a86-a5c2-47ee3527761c","params":{"event_action":"Form","page_title":"Privacy Policy","post_type":"page","post_id":2433,"plugin":"PixelYourSite","user_role":"guest","event_url":"extechinc.com\/privacy-policy\/"},"e_id":"signal_form","ids":[],"hasTimeWindow":false,"timeWindow":0,"woo_order":"","edd_order":""}},"signal_download":{"facebook":{"delay":0,"type":"dyn","name":"Signal","extensions":["doc","exe","js","pdf","ppt","tgz","zip","xls"],"pixelIds":["717469398408945"],"eventID":"dbb802ff-0f03-43a4-9ca3-782ac87e41b4","params":{"event_action":"Download","page_title":"Privacy Policy","post_type":"page","post_id":2433,"plugin":"PixelYourSite","user_role":"guest","event_url":"extechinc.com\/privacy-policy\/"},"e_id":"signal_download","ids":[],"hasTimeWindow":false,"timeWindow":0,"woo_order":"","edd_order":""}},"signal_comment":{"facebook":{"delay":0,"type":"dyn","name":"Signal","pixelIds":["717469398408945"],"eventID":"7a1b3ab6-c693-4601-91e0-4c59493f275b","params":{"event_action":"Comment","page_title":"Privacy Policy","post_type":"page","post_id":2433,"plugin":"PixelYourSite","user_role":"guest","event_url":"extechinc.com\/privacy-policy\/"},"e_id":"signal_comment","ids":[],"hasTimeWindow":false,"timeWindow":0,"woo_order":"","edd_order":""}}},"triggerEvents":[],"triggerEventTypes":[],"facebook":{"pixelIds":["717469398408945"],"advancedMatching":[],"removeMetadata":false,"contentParams":{"post_type":"page","post_id":2433,"content_name":"Privacy Policy"},"commentEventEnabled":true,"wooVariableAsSimple":false,"downloadEnabled":true,"formEventEnabled":true,"ajaxForServerEvent":true,"serverApiEnabled":false,"wooCRSendFromServer":false},"debug":"","siteUrl":"https:\/\/extechinc.com","ajaxUrl":"https:\/\/extechinc.com\/wp-admin\/admin-ajax.php","enable_remove_download_url_param":"1","gdpr":{"ajax_enabled":false,"all_disabled_by_api":false,"facebook_disabled_by_api":false,"analytics_disabled_by_api":false,"google_ads_disabled_by_api":false,"pinterest_disabled_by_api":false,"bing_disabled_by_api":false,"facebook_prior_consent_enabled":false,"analytics_prior_consent_enabled":true,"google_ads_prior_consent_enabled":null,"pinterest_prior_consent_enabled":true,"bing_prior_consent_enabled":true,"cookiebot_integration_enabled":false,"cookiebot_facebook_consent_category":"marketing","cookiebot_analytics_consent_category":"statistics","cookiebot_google_ads_consent_category":null,"cookiebot_pinterest_consent_category":"marketing","cookiebot_bing_consent_category":"marketing","consent_magic_integration_enabled":false,"real_cookie_banner_integration_enabled":false,"cookie_notice_integration_enabled":false,"cookie_law_info_integration_enabled":false},"signal":[""],"woo":{"enabled":false},"edd":{"enabled":false}};</script> <script id="gform_gravityforms-js-extra" type="text/javascript">var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/extechinc.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/extechinc.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/extechinc.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/extechinc.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_legacy = {"is_legacy":"1"};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/extechinc.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/extechinc.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_legacy = {"is_legacy":"1"};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/extechinc.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/extechinc.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gform_i18n = {"datepicker":{"days":{"monday":"Mon","tuesday":"Tue","wednesday":"Wed","thursday":"Thu","friday":"Fri","saturday":"Sat","sunday":"Sun"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = {"30":"1","20":"1"};
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https:\/\/extechinc.com\/wp-content\/plugins\/gravityforms\/images"}};</script> <!--[if lt IE 9]> <script type='text/javascript' src='https://extechinc.com/wp-content/themes/virtue_premium/assets/js/vendor/respond.min.js?ver=5.9.3' id='virtue-respond-js'></script> <![endif]--><link href="https://extechinc.com/wp-json/" rel="https://api.w.org/"/><link href="https://extechinc.com/wp-json/wp/v2/pages/2433" rel="alternate" type="application/json"/><link href="https://extechinc.com/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/><link href="https://extechinc.com/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/><link href="https://extechinc.com/?p=2433" rel="shortlink"/><link href="https://extechinc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fextechinc.com%2Fprivacy-policy%2F" rel="alternate" type="application/json+oembed"/><link href="https://extechinc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fextechinc.com%2Fprivacy-policy%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/><style id="kt-custom-css" type="text/css">#logo {padding-top:2px;}#logo {padding-bottom:2px;}#logo {margin-left:0px;}#logo {margin-right:0px;}#nav-main, .nav-main {margin-top:0px;}#nav-main, .nav-main  {margin-bottom:0px;}.headerfont, .tp-caption, .yith-wcan-list li, .yith-wcan .yith-wcan-reset-navigation, ul.yith-wcan-label li a, .price {font-family:Lato;} 
+  .topbarmenu ul li {font-family:Open Sans;}
+  #kadbreadcrumbs {font-family:;}.home-iconmenu a, .home-iconmenu .home-icon-item {background:transparent;}.home-iconmenu a h4, .home-iconmenu a i, .home-iconmenu a p, .home-iconmenu .home-icon-item h4, .home-iconmenu .home-icon-item p, .home-iconmenu .home-icon-item i {color:#3778fa;} .home-iconmenu a:hover h4, .home-iconmenu a:hover i, .home-iconmenu a:hover p, .home-iconmenu .home-icon-item:hover h4, .home-iconmenu .home-icon-item:hover i, .home-iconmenu .home-icon-item:hover p {color:#fff;} .home-message:hover {background-color:#06038d; background-color: rgba(6, 3, 141, 0.6);}
+  nav.woocommerce-pagination ul li a:hover, .wp-pagenavi a:hover, .panel-heading .accordion-toggle, .variations .kad_radio_variations label:hover, .variations .kad_radio_variations input[type=radio]:focus + label, .variations .kad_radio_variations label.selectedValue, .variations .kad_radio_variations input[type=radio]:checked + label {border-color: #06038d;}
+  a, a:focus, #nav-main ul.sf-menu ul li a:hover, .product_price ins .amount, .price ins .amount, .color_primary, .primary-color, #logo a.brand, #nav-main ul.sf-menu a:hover,
+  .woocommerce-message:before, .woocommerce-info:before, #nav-second ul.sf-menu a:hover, .footerclass a:hover, .posttags a:hover, .subhead a:hover, .nav-trigger-case:hover .kad-menu-name, 
+  .nav-trigger-case:hover .kad-navbtn, #kadbreadcrumbs a:hover, #wp-calendar a, .testimonialbox .kadtestimoniallink:hover, .star-rating, .has-virtue-primary-color {color: #06038d;}
+.widget_price_filter .ui-slider .ui-slider-handle, .product_item .kad_add_to_cart:hover, .product_item.hidetheaction:hover .kad_add_to_cart:hover, .kad-btn-primary, .button.pay, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li a:hover, html .woocommerce-page .widget_layered_nav ul.yith-wcan-label li.chosen a,
+.product-category.grid_item a:hover h5, .woocommerce-message .button, .widget_layered_nav_filters ul li a, .widget_layered_nav ul li.chosen a, .track_order .button, .wpcf7 input.wpcf7-submit, .yith-wcan .yith-wcan-reset-navigation,.single_add_to_cart_button,
+#containerfooter .menu li a:hover, .bg_primary, .portfolionav a:hover, .home-iconmenu a:hover, .home-iconmenu .home-icon-item:hover, p.demo_store, .topclass, #commentform .form-submit #submit, .kad-hover-bg-primary:hover, .widget_shopping_cart_content .checkout,
+.login .form-row .button, .post-password-form input[type="submit"], .menu-cart-btn .kt-cart-total, #kad-head-cart-popup a.button.checkout, .kad-post-navigation .kad-previous-link a:hover, .kad-post-navigation .kad-next-link a:hover, .shipping-calculator-form .button, .cart_totals .checkout-button, .select2-results .select2-highlighted, .variations .kad_radio_variations label.selectedValue, .variations .kad_radio_variations input[type=radio]:checked + label, #payment #place_order, .shop_table .actions input[type=submit].checkout-button, input[type="submit"].button, .productnav a:hover, .image_menu_hover_class, .select2-container--default .select2-results__option--highlighted[aria-selected], .has-virtue-primary-background-color {background: #06038d;}#nav-second ul.sf-menu > li:hover > a, #nav-second ul.sf-menu a:hover, #nav-second ul.sf-menu a:focus, #nav-second ul.sf-menu li.current-menu-item > a, #nav-second ul.sf-menu ul li a:hover {color:#3778fa;}#nav-second ul.sf-menu > li:hover, #nav-second ul.sf-menu > li:focus, #nav-second ul.sf-menu > li.current-menu-item, #nav-second ul.sf-menu ul > li.current-menu-item, #nav-second ul.sf-menu ul li a:hover, #nav-second ul.sf-menu ul li a:focus {background:#d6d6d6;}#nav-main ul.sf-menu a:hover, #nav-main ul.sf-menu a:focus, .nav-main ul.sf-menu a:hover, .nav-main ul.sf-menu a:focus, #nav-main ul.sf-menu li.current-menu-item > a, .nav-main ul.sf-menu li.current-menu-item > a, #nav-main ul.sf-menu ul li a:hover, .nav-main ul.sf-menu ul li a:hover, #nav-main ul.sf-menu ul li a:focus, .nav-main ul.sf-menu ul li a:focus {color:#3778fa;}.topclass {background:#00026a    ;}.navclass {background:transparent  no-repeat  ;}.footerclass {background:#00026a  repeat-x center center;}@media (max-width: 991px) {.topbarmenu ul.sf-menu {display: none;} } @media only screen and (device-width: 768px) {.topbarmenu ul.sf-menu {display: none;} } @media (max-width: 768px) {#topbar-search form {display: none;}}input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; } input[type=number] {-moz-appearance: textfield;}.quantity input::-webkit-outer-spin-button,.quantity input::-webkit-inner-spin-button {display: none;}.portfolionav {padding: 10px 0 10px;}.woocommerce-ordering {margin: 16px 0 0;}.product_item .product_details h5 {text-transform: none;}.product_item .product_details h5 {min-height:40px;}#nav-second ul.sf-menu>li {width:16.5%;}.kad-header-style-two .nav-main ul.sf-menu > li {width: 33.333333%;}.kad-hidepostauthortop, .postauthortop {display:none;}[class*="wp-image"] {-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;border:none;}[class*="wp-image"]:hover {-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;border:none;} .light-dropshaddow {-moz-box-shadow: none;-webkit-box-shadow: none;box-shadow: none;}.entry-content p { margin-bottom:16px;}/*remove images from download popups on mobile */
+@media (max-device-width: 480px) {
+.dl-img {
+   display:none;
+}
+.dl-inner-left { width: 100% !important;}
+.dl-inner-right {width: 0% !important;}
+}
+@media (max-width: 800px) {
+.dl-img {
+   display:none;
+}
+.dl-inner-left { width: 100% !important;}
+.dl-inner-right {width: 0% !important;}
+}
+
+
+/*Change font on accordion widget*/
+.panel-group h5{
+font: arial;
+color: black;
+}
+
+
+/*Remove Post Date from Website Search Results*/
+.search-results .postdate {
+display: none;
+}
+/*END Remove Post Date from Website Search Results*/
+
+/*Courseware Units page template*/
+.postid-5536 .sidebar {
+    display: none;
+}
+.postid-5536 div#ktmain {
+    width: 100%;
+}
+
+/*END Courseware Units page template*/
+
+/*temporary ENVIRA fix*/
+.virtue_social_widget .icon-facebook:before {
+    content: "\e498";
+}
+
+.virtue_social_widget .icon-twitter:before {
+    content: "\e49d";
+}
+
+.virtue_social_widget .icon-pinterest:before {
+    content: "\e4d6";
+}
+
+/*END temporary ENVIRA fix*/
+
+.tab-content{
+height: 300px;
+}
+
+.nav-tabs {
+    border-color: #000;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    border-color: #000;
+border-bottom-color: transparent;
+}
+
+.tab-content {
+    border-color: #000;
+}
+
+.nav-tabs>li>a {
+    font-weight: 600;
+    color: #000;
+}
+
+li.date-posted {
+display: none;
+}
+.w3eden .btn { background: #3778fa !important; } .w3eden .btn:hover{ background: #3778fa !important; opacity:0.9; }
+
+.postcommentscount {
+display: none;
+}
+#wpdmreg, #wpdmlogin{display:none;}
+
+
+.home_blog article {
+    border: none;
+}
+
+
+.headerclass .container {
+    width: 75%;
+}
+/*
+#nav-main,.nav-main{margin-top:100px}#nav-main,.nav-main{margin-bottom:-80px}
+*/
+
+.topbarmenu ul li a {
+font-size: 14px;
+}
+/*
+@media (min-width: 992px) {
+.col-md-4.clearfix.kad-header-left {
+    width: 25%;
+}
+.col-md-8.kad-header-right {
+    width: 75%;
+}
+.kad-header-style-three #nav-main ul.sf-menu&gt;li&gt;a {
+    padding: 0 15px;
+}
+}
+*/
+
+/* Social Widget Footer CSS */
+
+.virtue_social_widget a.facebook_link {
+    background: rgba(59,89,152, .5);
+    color: #fff;
+}
+.virtue_social_widget a.twitter_link {
+    background: rgba(154,228,232,.5);
+    color: white;
+}
+.virtue_social_widget a.googleplus_link{
+background:rgba(221,75,57,0.5);color: #fff;
+}
+.virtue_social_widget a.youtube_link{
+background:rgba(255,51,51,0.5);color: #fff;
+}
+.virtue_social_widget a.linkedin_link {
+    background: rgba(72,117,180,.5);
+    color: white;
+}
+.virtue_social_widget a.pinterest_link {
+    background: rgba(72,117,180,.5);
+    color: white;
+}
+.virtue_social_widget a.instagram_link {
+    background: rgba(72,117,180,.5);
+    color: white;
+}
+
+#containerfooter .virtue_social_widget {
+    text-align: center;
+}
+#containerfooter .virtue_social_widget a {
+    float: none;
+    display: inline-block;
+}
+
+
+/* END Social Widget Footer CSS */
+
+/* Custom Menu Widget Footer CSS */
+
+#containerfooter .menu li a {
+color: #ffffff;
+}
+
+/* END Custom Menu Widget Footer CSS */
+
+/* Remove bullets from mobile menu */
+
+.kad-mobile-nav .kad-nav-inner li ul.sf-dropdown-menu a {
+    list-style: none;
+}
+/* END Remove bullets from mobile menu */
+
+
+
+/*Minimize size of logo in header*/
+@media (min-width: 992px){
+    .kad-header-left {width:20%}
+    .kad-header-right {width:75%}
+ }
+*/END *Minimize size of logo in header*/
+
+/*
+header#kad-banner {
+    border-bottom: 12px solid #f4f4f4;
+}
+
+*/
+
+
+.page-header {
+padding: 70%;
+}
+
+h1 sup {
+font-size: 40%;
+font-family: arial;
+vertical-align: super;
+}
+
+.home_panel_1 {
+ color: white;
+object-fit: cover;
+}
+
+.kad-icon-box {
+    margin: 0 auto;
+}
+
+.kad-icon-box h3, h5{
+    font-family: arial
+}
+
+/*@media (max-width: 990px) and (min-width: 771px) {
+.kad-icon-box h3{
+word-spacing: .3em;
+word-wrap: break-word;
+}*/
+
+/* JL CSS */
+
+@media (max-width: 768px) {
+  .img_title h1 {
+      font-size: 1.5em !important;
+     letter-spacing: 0px !important;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    line-height: 1.0;
+  }  
+ .tagline {
+    font-size: 1em !important;
+    letter-spacing: 0px !important; 
+    text-transform: capitalize;
+   font-weight: 300;
+
+ }
+
+
+.home_panel_1 a.kad-btn {
+    font-size: 10px;
+    padding: 1%;
+ }
+
+.tab-content{
+height: 450px;
+}
+
+/*CSS for Sketchfab models*/
+.can_3100_sketch {
+display:none;
+}
+
+.flexi_sketch {
+display:none;
+}
+
+.clean_sketch {
+display:none;
+}
+
+.tech_5300_sketch {
+display:none;
+}
+
+.light_3440_sketch {
+display:none;
+}
+
+.light_3100LS_sketch {
+display:none;
+}
+
+.kinetic_sketch {
+display:none;
+}
+
+.light_3000_sketch {
+display:none;
+}
+
+.sky_3300_sketch {
+display:none;
+}
+
+.skyshade_3700_sketch {
+display:none;
+}
+
+.skyshade_3300_sketch {
+display:none;
+}
+
+.skygard_3700_sketch {
+display:none;
+}
+
+.gridlock_sketch {
+display:none;
+}
+
+.matrixwall_sketch {
+display:none;
+}
+
+.tech_6300_sketch {
+display:none;
+}
+
+.EXTECH_map {
+display:none;
+}
+}
+@media (max-width: 480px) {
+  .img_title h1 {
+      font-size: 1.2em !important;
+     letter-spacing: 0px !important;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    line-height: 1.0;
+    margin-left: -10%;
+  }  
+ .tagline {
+    /*font-size: .8em !important;
+    letter-spacing: 0px !important; 
+    text-transform: capitalize;
+   font-weight: 300;*/
+   display: none;
+ }
+
+.home_panel_1 a.kad-btn {
+    font-size: 12px;
+    margin-top: 12%;
+    padding: 1%;
+    color: #000000 !important;
+    background-color: #ffffff !important;
+     margin-left: -10%;
+}
+
+.hist_panel_2 a.kad-btn {
+    font-size: 12px;
+    padding: 1%;
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+
+.tab-content{
+height: 450px;
+}
+
+.can_3100_sketch {
+display:none;
+}
+
+.flexi_sketch {
+display:none;
+}
+.clean_sketch {
+display:none;
+}
+
+.tech_5300_sketch {
+display:none;
+}
+
+.light_3440_sketch {
+display:none;
+}
+
+.light_3100LS_sketch {
+display:none;
+}
+
+.kinetic_sketch {
+display:none;
+}
+.light_3000_sketch {
+display:none;
+}
+.sky_3300_sketch {
+display:none;
+}
+
+.skyshade_3700_sketch {
+display:none;
+}
+
+.skyshade_3300_sketch {
+display:none;
+}
+
+.skygard_3700_sketch {
+display:none;
+}
+
+.gridlock_sketch {
+display:none;
+}
+
+.matrixwall_sketch {
+display:none;
+}
+
+.tech_6300_sketch {
+display:none;
+}
+
+.EXTECH_map {
+display:none;
+}
+
+.hist_panel_1 {
+display:none;
+}
+
+/*.hist_panel_2 h2 {
+color: white !important; 
+}
+*/
+
+}
+
+@media (max-width: 768px) {
+
+.hist_panel_1 h2{
+margin-left: 20% !important;
+}
+}
+
+@media (max-width: 992px) {
+ #thelogo {
+   width: 25%;
+ }
+}
+
+@media (max-width: 1200px) {
+  .headerclass .container {
+      width: 100% !important;
+    }
+}
+
+.footerclass { 
+background: #00026A !important;
+background-image: none;
+}
+
+.topclass {
+background: #00026A !important;
+}
+.wp-image-430, .wp-image-436 {
+  padding: 0 !important;
+  margin-left: 0 !important;
+}
+/*
+.footerclass {
+background: #3778fa;
+ background-image: url("http://extechinc.com/wp-content/uploads/2016/08/logan-footer.jpg"); 
+background-repeat: no-repeat;
+background-size: 100% auto;
+background-position: bottom;
+color: #ffffff !important;
+}
+*/
+/* End JL CSS */
+
+
+/* START - Ninja Form Styling */
+.ninja-forms-form-wrap input, select{
+background-color: #eee;
+border: none;
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+border-radius: 0;
+font-size: 16px;
+color: #999 ;
+padding: 16px;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+.ninja-forms-form-wrap select{
+width: 100% !important;
+height: 50px !important;
+border-radius: 0;
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+}
+.ninja-forms-required-items {
+display: none;
+}
+textarea.ninja-forms-field{
+background-color: #eee;
+border: none;
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+border-radius: 0;
+font-size: 16px;
+color: #999 ;
+padding: 16px;
+-moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+*[id^='nf_submit_'] > .ninja-forms-field {
+float: left;
+/*width: 170px;*/
+color: #ffffff !important;
+margin: 8px auto 0;
+cursor: pointer;
+font-size: 20px;
+font-weight: 500;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+padding: 6px 20px;
+line-height: 1.7em;
+background: #3778fa;
+border: 2px solid;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-moz-transition: all 0.2s;
+-webkit-transition: all 0.2s;
+transition: all 0.2s;
+}
+*[id^='nf_submit_'] > .ninja-forms-field:hover {
+background-color: #eee;
+border-color:#eee;
+color: #3778fa !important;
+padding: 6px 20px !important;
+/*width: 170px;*/
+}
+
+#ninja_forms_form_80_mp_next {
+/*float: left;*/
+/*width: 170px;*/
+color: #ffffff !important;
+margin: 8px auto 0;
+cursor: pointer;
+font-size: 20px;
+font-weight: 500;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+padding: 6px 20px;
+line-height: 1.7em;
+background: #3778fa;
+border: 2px solid;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-moz-transition: all 0.2s;
+-webkit-transition: all 0.2s;
+transition: all 0.2s;
+}
+#ninja_forms_form_80_mp_next:hover {
+background-color: #eee;
+border-color:#eee;
+color: #3778fa !important;
+padding: 6px 20px !important;
+/*width: 170px;*/
+}
+#ninja_forms_form_80_mp_prev {
+/*float: left;*/
+/*width: 170px;*/
+color: #ffffff !important;
+margin: 8px auto 0;
+cursor: pointer;
+font-size: 20px;
+font-weight: 500;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+padding: 6px 20px;
+line-height: 1.7em;
+background: #808080;
+border: 2px solid;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-moz-transition: all 0.2s;
+-webkit-transition: all 0.2s;
+transition: all 0.2s;
+}
+#ninja_forms_form_80_mp_prev:hover {
+background-color: #eee;
+border-color:#eee;
+color: #808080 !important;
+padding: 6px 20px !important;
+/*width: 170px;*/
+}
+/* END - Ninja Form Styling */
+
+/* DMWP Button Styles */
+.w3eden .btn {
+background: none !important;
+} <script async src="//static.getclicky.com/101352268.js"></script> <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101352268ns.gif" /></p></noscript></style><script>/**
+* Function that tracks a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}</script> <script>ga('create', 'UA-34384570-1', 'auto');
+// Updates the tracker to use `navigator.sendBeacon` if available.
+ga('set', 'transport', 'beacon');</script> <meta content="8dcd580b6e0e4cb05867102cdeeb5e4d" name="p:domain_verify"/> <script src="https://extech.x2vps.com/webTracker.php"></script> <script type="text/javascript">(function(o){var b="https://zippyfrog.co/anywhere/",t="03a6e7032ed3426a875aa75fe69f1e6e1e81a1e3768f432d9ba76b0ba60b162a",a=window.AutopilotAnywhere={_runQueue:[],run:function(){this._runQueue.push(arguments);}},c=encodeURIComponent,s="SCRIPT",d=document,l=d.getElementsByTagName(s)[0],p="t="+c(d.title||"")+"&u="+c(d.location.href||"")+"&r="+c(d.referrer||""),j="text/javascript",z,y;if(!window.Autopilot) window.Autopilot=a;if(o.app) p="devmode=true&"+p;z=function(src,asy){var e=d.createElement(s);e.src=src;e.type=j;e.async=asy;l.parentNode.insertBefore(e,l);};y=function(){z(b+t+'?'+p,true);};if(window.attachEvent){window.attachEvent("onload",y);}else{window.addEventListener("load",y,false);}})({});</script> <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-34384570-1"></script> <script>window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+	gtag('config', 'UA-34384570-1');</script> <style class="options-output" title="dynamic-css" type="text/css">header #logo a.brand,.logofont{font-family:Lato;line-height:40px;font-weight:400;font-style:normal;font-size:32px;}.kad_tagline{font-family:Lato;line-height:20px;font-weight:400;font-style:normal;color:#444444;font-size:14px;}.product_item .product_details h5{font-family:Lato;line-height:20px;font-weight:700;font-style:normal;font-size:16px;}h1{font-family:Lato;line-height:40px;font-weight:400;font-style:normal;font-size:38px;}h2{font-family:Lato;line-height:40px;font-weight:400;font-style:normal;font-size:32px;}h3{font-family:Lato;line-height:40px;font-weight:400;font-style:normal;font-size:28px;}h4{font-family:Lato;line-height:40px;font-weight:400;font-style:normal;font-size:24px;}h5{font-family:Lato;line-height:24px;font-weight:normal;font-style:normal;font-size:18px;}body{line-height:20px;font-weight:400;font-style:normal;font-size:14px;}#nav-main ul.sf-menu a, .nav-main ul.sf-menu a{font-family:"Open Sans";line-height:20px;font-weight:400;font-style:normal;font-size:18px;}#nav-second ul.sf-menu a{font-family:"Open Sans";line-height:25px;font-weight:400;font-style:normal;color:#000000;font-size:20px;}#nav-main ul.sf-menu ul li a, #nav-second ul.sf-menu ul li a, .nav-main ul.sf-menu ul li a{line-height:inheritpx;font-size:16px;}.kad-nav-inner .kad-mnav, .kad-mobile-nav .kad-nav-inner li a,.nav-trigger-case{font-family:Lato;line-height:20px;font-weight:400;font-style:normal;font-size:16px;}</style><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/> <script>function loadCSS(e,t,n){"use strict";var o=window.document.createElement("link"),s=t||window.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e,o.media="only x",s.parentNode.insertBefore(o,s),setTimeout(function(){o.media=n||"all"})}loadCSS("https://fonts.googleapis.com/css?family=Lato%3A400%2C700%7COpen+Sans%3A400&subset=latin&ver=1484061185");</script> <script>function loadCSS(e,t,n){"use strict";var o=window.document.createElement("link"),s=t||window.document.getElementsByTagName("script")[0];o.rel="stylesheet",o.href=e,o.media="only x",s.parentNode.insertBefore(o,s),setTimeout(function(){o.media=n||"all"})}loadCSS("https://fonts.googleapis.com/css?family=Roboto%3A500");</script></meta></meta></meta></head><body class="page-template page-template-page-fullwidth page-template-page-fullwidth-php page page-id-2433 wp-embed-responsive kt-turnoff-lightbox kt-showsub-indicator stickyheader virtue-skin-default wide privacy-policy" data-animate="1" data-jsselect="1" data-product-tab-scroll="0" data-smooth-scrolling="0" data-smooth-scrolling-hide="0" data-sticky="1"> <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"> <defs> <filter id="wp-duotone-dark-grayscale"> <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values="
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ "></fecolormatrix> <fecomponenttransfer color-interpolation-filters="sRGB"> <fefuncr tablevalues="0 0.49803921568627" type="table"></fefuncr> <fefuncg tablevalues="0 0.49803921568627" type="table"></fefuncg> <fefuncb tablevalues="0 0.49803921568627" type="table"></fefuncb> <fefunca tablevalues="1 1" type="table"></fefunca> </fecomponenttransfer> <fecomposite in2="SourceGraphic" operator="in"></fecomposite> </filter> </defs> </svg> <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"> <defs> <filter id="wp-duotone-grayscale"> <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values="
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ "></fecolormatrix> <fecomponenttransfer color-interpolation-filters="sRGB"> <fefuncr tablevalues="0 1" type="table"></fefuncr> <fefuncg tablevalues="0 1" type="table"></fefuncg> <fefuncb tablevalues="0 1" type="table"></fefuncb> <fefunca tablevalues="1 1" type="table"></fefunca> </fecomponenttransfer> <fecomposite in2="SourceGraphic" operator="in"></fecomposite> </filter> </defs> </svg> <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"> <defs> <filter id="wp-duotone-purple-yellow"> <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values="
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ "></fecolormatrix> <fecomponenttransfer color-interpolation-filters="sRGB"> <fefuncr tablevalues="0.54901960784314 0.98823529411765" type="table"></fefuncr> <fefuncg tablevalues="0 1" type="table"></fefuncg> <fefuncb tablevalues="0.71764705882353 0.25490196078431" type="table"></fefuncb> <fefunca tablevalues="1 1" type="table"></fefunca> </fecomponenttransfer> <fecomposite in2="SourceGraphic" operator="in"></fecomposite> </filter> </defs> </svg> <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"> <defs> <filter id="wp-duotone-blue-red"> <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values="
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ "></fecolormatrix> <fecomponenttransfer color-interpolation-filters="sRGB"> <fefuncr tablevalues="0 1" type="table"></fefuncr> <fefuncg tablevalues="0 0.27843137254902" type="table"></fefuncg> <fefuncb tablevalues="0.5921568627451 0.27843137254902" type="table"></fefuncb> <fefunca tablevalues="1 1" type="table"></fefunca> </fecomponenttransfer> <fecomposite in2="SourceGraphic" operator="in"></fecomposite> </filter> </defs> </svg> <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"> <defs> <filter id="wp-duotone-midnight"> <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values="
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ "></fecolormatrix> <fecomponenttransfer color-interpolation-filters="sRGB"> <fefuncr tablevalues="0 0" type="table"></fefuncr> <fefuncg tablevalues="0 0.64705882352941" type="table"></fefuncg> <fefuncb tablevalues="0 1" type="table"></fefuncb> <fefunca tablevalues="1 1" type="table"></fefunca> </fecomponenttransfer> <fecomposite in2="SourceGraphic" operator="in"></fecomposite> </filter> </defs> </svg> <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"> <defs> <filter id="wp-duotone-magenta-yellow"> <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values="
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ "></fecolormatrix> <fecomponenttransfer color-interpolation-filters="sRGB"> <fefuncr tablevalues="0.78039215686275 1" type="table"></fefuncr> <fefuncg tablevalues="0 0.94901960784314" type="table"></fefuncg> <fefuncb tablevalues="0.35294117647059 0.47058823529412" type="table"></fefuncb> <fefunca tablevalues="1 1" type="table"></fefunca> </fecomponenttransfer> <fecomposite in2="SourceGraphic" operator="in"></fecomposite> </filter> </defs> </svg> <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"> <defs> <filter id="wp-duotone-purple-green"> <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values="
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ "></fecolormatrix> <fecomponenttransfer color-interpolation-filters="sRGB"> <fefuncr tablevalues="0.65098039215686 0.40392156862745" type="table"></fefuncr> <fefuncg tablevalues="0 1" type="table"></fefuncg> <fefuncb tablevalues="0.44705882352941 0.4" type="table"></fefuncb> <fefunca tablevalues="1 1" type="table"></fefunca> </fecomponenttransfer> <fecomposite in2="SourceGraphic" operator="in"></fecomposite> </filter> </defs> </svg> <svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"> <defs> <filter id="wp-duotone-blue-orange"> <fecolormatrix color-interpolation-filters="sRGB" type="matrix" values="
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ .299 .587 .114 0 0
+ "></fecolormatrix> <fecomponenttransfer color-interpolation-filters="sRGB"> <fefuncr tablevalues="0.098039215686275 1" type="table"></fefuncr> <fefuncg tablevalues="0 0.66274509803922" type="table"></fefuncg> <fefuncb tablevalues="0.84705882352941 0.41960784313725" type="table"></fefuncb> <fefunca tablevalues="1 1" type="table"></fefunca> </fecomponenttransfer> <fecomposite in2="SourceGraphic" operator="in"></fecomposite> </filter> </defs> </svg> <noscript> <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TQ78TK" style="display:none;visibility:hidden" width="0"></iframe> </noscript><div class="container" id="wrapper"> <!--[if lt IE 8]><div class="alert"> You are using an outdated browser. Please upgrade your browser to improve your experience.</div><![endif]--><header class="banner headerclass kt-not-mobile-sticky" data-header-shrink="0" data-menu-stick="0" data-mobile-sticky="0" id="kad-banner"><div class="topclass" id="topbar"><div class="container"><div class="row"><div class="col-md-6 col-sm-6 kad-topbar-left"><div class="topbarmenu clearfix"><ul class="sf-menu" id="menu-utility-navigation"><li class="menu-item-4752 menu-item menu-careers"><a href="https://extechinc.com/careers/"><span>Careers</span></a></li><li class="menu-item-3790 menu-item menu-800-500-8083"><a href="tel:+1-800-500-8083"><i class="icon-phone"></i><span>800 500 8083</span></a></li></ul><div class="nav-trigger mobile-nav-trigger-id" id="mobile-nav-trigger-top"> <a class="nav-trigger-case" data-target=".top_mobile_menu_collapse" data-toggle="collapse" rel="nofollow"><div class="kad-navbtn clearfix"><i class="icon-menu"></i></div> </a></div></div></div><div class="col-md-6 col-sm-6 kad-topbar-right"><div class="topbar-widget" id="topbar-search"><div class="widget-1 widget-first topbar-widgetcontent topbar-widgetcontain"><form action="https://extechinc.com/" class="form-search" method="get" role="search"> <label> <span class="screen-reader-text">Search for:</span> <input class="search-query" name="s" placeholder="Search" type="text" value=""/> </label> <button aria-label="Submit Search" class="search-icon" type="submit"><i class="icon-search"></i></button></form></div></div></div></div><div class="kad-mobile-nav id-kad-mobile-nav" id="kad-mobile-nav-top"><div class="kad-nav-inner mobileclass"><div class="kad-nav-collapse collapse top_mobile_menu_collapse" id="mobile_menu_collapse_top"><form action="https://extechinc.com/" class="form-search" method="get" role="search"> <label> <span class="screen-reader-text">Search for:</span> <input class="search-query" name="s" placeholder="Search" type="text" value=""/> </label> <button aria-label="Submit Search" class="search-icon" type="submit"><i class="icon-search"></i></button></form><ul class="kad-top-mnav" id="menu-utility-navigation-1"><li class="menu-item-4752 menu-item menu-careers"><a href="https://extechinc.com/careers/"><span>Careers</span></a></li><li class="menu-item-3790 menu-item menu-800-500-8083"><a href="tel:+1-800-500-8083"><i class="icon-phone"></i><span>800 500 8083</span></a></li></ul></div></div></div></div></div><div class="container"><div class="row"><div class="col-md-4 clearfix kad-header-left"><div class="logocase" id="logo"> <a class="brand logofont" href="https://extechinc.com/" title="Extech / Exterior Technologies Inc."><div id="thelogo"> <img alt="" class="kad-standard-logo" src="https://extechinc.com/wp-content/uploads/2017/01/EXTECH-Logo.png"/></div> </a></div></div><div class="col-md-8 kad-header-right"></div></div><div class="nav-trigger mobile-nav-trigger-id" id="mobile-nav-trigger"> <button aria-label="Menu" class="nav-trigger-case collapsed mobileclass" data-target=".mobile_menu_collapse" data-toggle="collapse" rel="nofollow" title="Menu"> <span class="kad-navbtn clearfix"> <i class="icon-menu"></i> </span> <span class="kad-menu-name"> Menu </span> </button></div><div class="kad-mobile-nav id-kad-mobile-nav" id="kad-mobile-nav"><div class="kad-nav-inner mobileclass"><div class="kad-nav-collapse collapse mobile_menu_collapse" id="mobile_menu_collapse"><ul class="kad-mnav" id="menu-mobile-navigation"><li class="sf-dropdown menu-item-has-children menu-item-4920 menu-item menu-products"><a><span>Products</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="sf-dropdown-submenu menu-item-has-children menu-item-4051 menu-item menu-translucent-walls"><a><span>Translucent Walls</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-2455 menu-item menu-lightwall-3440"><a href="https://extechinc.com/lightwall-3440-polycarbonate-wall-panels/"><span>LIGHTWALL 3440</span></a></li><li class="menu-item-2453 menu-item menu-lightwall-3000"><a href="https://extechinc.com/lightwall-3000-curtain-wall/"><span>LIGHTWALL 3000</span></a></li><li class="menu-item-2454 menu-item menu-lightwall-8000"><a href="https://extechinc.com/lightwall-3100ls-translucent-wall-panels/"><span>LIGHTWALL 8000</span></a></li></ul></li><li class="sf-dropdown-submenu menu-item-has-children menu-item-4052 menu-item menu-skylights"><a><span>Skylights</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-2476 menu-item menu-skygard-3300"><a href="https://extechinc.com/skygard-3300-commercial-skylights/"><span>SKYGARD 3300</span></a></li><li class="menu-item-2477 menu-item menu-skygard-3700"><a href="https://extechinc.com/skygard-3700-industrial-skylights/"><span>SKYGARD 3700</span></a></li></ul></li><li class="sf-dropdown-submenu menu-item-has-children menu-item-4053 menu-item menu-canopies"><a><span>Canopies</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-75855 menu-item menu-skyshade-2500"><a href="https://extechinc.com/skyshade-2500-glass-canopy/"><span>SKYSHADE 2500</span></a></li><li class="menu-item-2467 menu-item menu-skyshade-3100"><a href="https://extechinc.com/skyshade-3100-commercial-canopies/"><span>SKYSHADE 3100</span></a></li><li class="menu-item-2468 menu-item menu-skyshade-3300"><a href="https://extechinc.com/skyshade-3300-industrial-canopies/"><span>SKYSHADE 3300</span></a></li><li class="menu-item-2469 menu-item menu-skyshade-3700"><a href="https://extechinc.com/skyshade-3700-polycarbonate-canopies/"><span>SKYSHADE 3700</span></a></li><li class="menu-item-14952 menu-item menu-skyshade-8000"><a href="https://extechinc.com/skyshade-8000/"><span>SKYSHADE 8000<sup>®</sup></span></a></li><li class="menu-item-11903 menu-item menu-sunglaze"><a href="https://extechinc.com/sunglaze-sleek-canopy/"><span>SUNGLAZE<sup>™</sup></span></a></li></ul></li><li class="sf-dropdown-submenu menu-item-has-children menu-item-4054 menu-item menu-windows"><a><span>Windows</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-7984 menu-item menu-techvent-5300"><a href="https://extechinc.com/techvent-5300-industrial-polycarbonate-windows/"><span>TECHVENT 5300</span></a></li></ul></li><li class="sf-dropdown-submenu menu-item-has-children menu-item-4928 menu-item menu-interiors"><a href="http://#"><span>Interiors</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-2459 menu-item menu-cleanwall"><a href="https://extechinc.com/cleanwall-porcelain-wall-panels/"><span>CLEANWALL</span></a></li><li class="menu-item-2470 menu-item menu-flexi-panel"><a href="https://extechinc.com/flexi-panel-translucent-ceiling-panels/"><span>FLEXI-PANEL</span></a></li></ul></li><li class="sf-dropdown-submenu menu-item-has-children menu-item-4927 menu-item menu-specialty-exteriors"><a href="http://#"><span>Specialty Exteriors</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-2461 menu-item menu-matrixwall"><a href="https://extechinc.com/matrixwall-glass-block-walls/"><span>MATRIXWALL</span></a></li><li class="menu-item-2460 menu-item menu-gridlock"><a href="https://extechinc.com/gridlock-mortarless-glass-block/"><span>GRIDLOCK</span></a></li></ul></li><li class="menu-item-4040 menu-item menu-kineticwall"><a href="https://extechinc.com/products/kinetic-wall-dynamic-facade/"><span>KINETICWALL</span></a></li><li class="menu-item-7683 menu-item menu-geolam"><a href="https://extechinc.com/products/geolam/"><span>Geolam</span></a></li></ul></li><li class="sf-dropdown menu-item-has-children menu-item-4921 menu-item menu-services"><a><span>Services</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-2462 menu-item menu-custom-design"><a href="https://extechinc.com/custom-wall-design/"><span>Custom Design</span></a></li><li class="menu-item-5328 menu-item menu-daylighting-analysis"><a href="https://extechinc.com/daylighting-simulation/"><span>Daylighting Analysis</span></a></li><li class="menu-item-2464 menu-item menu-engineering"><a href="https://extechinc.com/industrial-window-design/"><span>Engineering</span></a></li><li class="menu-item-2465 menu-item menu-fabrication"><a href="https://extechinc.com/window-fabrication/"><span>Fabrication</span></a></li><li class="menu-item-2466 menu-item menu-installation"><a href="https://extechinc.com/commercial-window-installation/"><span>Installation</span></a></li></ul></li><li class="sf-dropdown menu-item-has-children menu-item-4922 menu-item menu-technology"><a><span>Technology</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-2486 menu-item menu-the-benefits-of-daylighting"><a href="https://extechinc.com/the-benefits-of-daylighting/"><span>The Benefits of Daylighting</span></a></li><li class="menu-item-2487 menu-item menu-the-polycarbonate-difference"><a href="https://extechinc.com/polycarbonate-panels/"><span>The Polycarbonate Difference</span></a></li><li class="menu-item-2472 menu-item menu-our-aluminum-framing-systems"><a href="https://extechinc.com/commercial-aluminum-window-framing/"><span>Our Aluminum Framing Systems</span></a></li><li class="menu-item-2471 menu-item menu-leed-sustainability"><a href="https://extechinc.com/leed-certified-windows/"><span>LEED &amp; Sustainability</span></a></li></ul></li><li class="menu-item-2482 menu-item menu-project-gallery"><a href="https://extechinc.com/project-gallery/"><span>Project Gallery</span></a></li><li class="sf-dropdown menu-item-has-children menu-item-4923 menu-item menu-about-us"><a><span>About Us</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-2445 menu-item menu-history-mission"><a href="https://extechinc.com/history-mission/"><span>History &amp; Mission</span></a></li><li class="menu-item-2448 menu-item menu-our-team"><a href="https://extechinc.com/our-team/"><span>Our Team</span></a></li><li class="menu-item-2446 menu-item menu-markets-case-studies"><a href="https://extechinc.com/markets-case-studies/"><span>Markets &amp; Case Studies</span></a></li><li class="menu-item-2447 menu-item menu-news-blog"><a href="https://extechinc.com/news-blog/"><span>News &amp; Blog</span></a></li></ul></li><li class="sf-dropdown menu-item-has-children menu-item-4058 menu-item menu-contact-us"><a><span>Contact Us</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-2451 menu-item menu-contact-us"><a href="https://extechinc.com/contact-us/"><span>Contact Us</span></a></li><li class="menu-item-4057 menu-item menu-order-a-sample"><a href="https://extechinc.com/order-a-sample/"><span>Order a Sample</span></a></li></ul></li></ul></div></div></div></div><div class="navclass" id="cat_nav"><div class="container"><nav class="clearfix" id="nav-second"><ul class="sf-menu" id="menu-home-page-navigation"><li class="sf-dropdown menu-item-has-children menu-item-1086 menu-item menu-products"><a><span>Products</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="sf-dropdown-submenu menu-item-has-children menu-item-1085 menu-item menu-translucent-walls"><a><span>Translucent Walls</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-1068 menu-item menu-lightwall-3440-interlocking-wall-system kt-lgmenu kt-menu-column-2"><a href="https://extechinc.com/lightwall-3440-polycarbonate-wall-panels/"><span>LIGHTWALL 3440 <br/> <span style="font-size: .7em;"> Interlocking Wall System</span></span></a></li><li class="menu-item-1059 menu-item menu-lightwall-3000-curtain-wall-system kt-lgmenu kt-menu-column-2"><a href="https://extechinc.com/lightwall-3000-curtain-wall/"><span>LIGHTWALL 3000 <br/> <span style="font-size: .7em;">Curtain Wall System</span></span></a></li><li class="menu-item-1066 menu-item menu-lightwall-8000-long-spanning-wall-system kt-lgmenu kt-menu-column-2"><a href="https://extechinc.com/lightwall-3100ls-translucent-wall-panels/"><span>LIGHTWALL 8000 <br/> <span style="font-size: .7em;">Long Spanning Wall System</span></span></a></li></ul></li><li class="sf-dropdown-submenu menu-item-has-children menu-item-1114 menu-item menu-skylights"><a><span>Skylights</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-76824 menu-item menu-skygard-2500-glass-skylight-system"><a href="https://extechinc.com/skygard-2500-glass-skylight/"><span>SKYGARD 2500<br/> <span style="font-size: .7em;"> Glass Skylight System</span></span></a></li><li class="menu-item-1132 menu-item menu-skygard-3300-surface-mounted-skylight"><a href="https://extechinc.com/skygard-3300-commercial-skylights/"><span>SKYGARD 3300 <br/> <span style="font-size: .7em;"> Surface Mounted Skylight</span></span></a></li><li class="menu-item-1131 menu-item menu-skygard-3700-self-spanning-skylight"><a href="https://extechinc.com/skygard-3700-industrial-skylights/"><span>SKYGARD 3700 <br/> <span style="font-size: .7em;">Self-Spanning Skylight</span></span></a></li></ul></li><li class="sf-dropdown-submenu menu-item-has-children menu-item-1117 menu-item menu-canopies"><a><span>Canopies</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-75856 menu-item menu-skyshade-2500-glass-canopy"><a href="https://extechinc.com/skyshade-2500-glass-canopy/"><span>SKYSHADE 2500 <br/> <span style="font-size: .7em;">Glass Canopy</span></span></a></li><li class="menu-item-2032 menu-item menu-skyshade-3100-standing-seam-canopy"><a href="https://extechinc.com/skyshade-3100-commercial-canopies/"><span>SKYSHADE 3100 <br/> <span style="font-size: .7em;">Standing Seam Canopy</span></span></a></li><li class="menu-item-2031 menu-item menu-skyshade-3300-surface-mounted-canopy"><a href="https://extechinc.com/skyshade-3300-industrial-canopies/"><span>SKYSHADE 3300 <br/> <span style="font-size: .7em;">Surface Mounted Canopy</span></span></a></li><li class="menu-item-2030 menu-item menu-skyshade-3700-aluminum-framed-canopy"><a href="https://extechinc.com/skyshade-3700-polycarbonate-canopies/"><span>SKYSHADE 3700 <br/> <span style="font-size: .7em;">Aluminum Framed Canopy</span></span></a></li><li class="menu-item-14951 menu-item menu-skyshade-8000-long-span-high-load-canopy"><a href="https://extechinc.com/skyshade-8000/"><span>SKYSHADE 8000<sup>®</sup><br/> <span style="font-size: .7em;">Long-Span High Load Canopy</span></span></a></li><li class="menu-item-11900 menu-item menu-sunglazesleek-canopy-system"><a href="https://extechinc.com/sunglaze-sleek-canopy/"><span>SUNGLAZE<sup>™</sup><br/><span style="font-size: .7em;">Sleek Canopy System</span></span></a></li></ul></li><li class="sf-dropdown-submenu menu-item-has-children menu-item-1120 menu-item menu-windows"><a><span>Windows</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-7985 menu-item menu-techvent-5300-top-hinged-industrial-window"><a href="https://extechinc.com/techvent-5300-industrial-polycarbonate-windows/"><span>TECHVENT 5300<br/> <span style="font-size: .6em;">Top-Hinged Industrial Window</span></span></a></li></ul></li><li class="sf-dropdown-submenu menu-item-has-children menu-item-1779 menu-item menu-interiors"><a><span>Interiors</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-1778 menu-item menu-cleanwall-porcelain-panel-system"><a href="https://extechinc.com/cleanwall-porcelain-wall-panels/"><span>CLEANWALL <br/> <span style="font-size: .7em;">Porcelain Panel System</span></span></a></li><li class="menu-item-2035 menu-item menu-flexi-panel-translucent-ceiling-panel-system"><a href="https://extechinc.com/flexi-panel-translucent-ceiling-panels/"><span>FLEXI-PANEL <br/> <span style="font-size: .7em;">Translucent Ceiling Panel System</span></span></a></li></ul></li><li class="sf-dropdown-submenu menu-item-has-children menu-item-1124 menu-item menu-specialty-exteriors"><a><span>Specialty Exteriors</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-1777 menu-item menu-matrixwall-mortarless-glass-block-system"><a href="https://extechinc.com/matrixwall-glass-block-walls/"><span>MATRIXWALL <br/> <span style="font-size: .6em;">Mortarless Glass Block System</span></span></a></li><li class="menu-item-1776 menu-item menu-gridlock-snap-in-glass-block-system"><a href="https://extechinc.com/gridlock-mortarless-glass-block/"><span>GRIDLOCK <br/> <span style="font-size: .7em;">Snap-In Glass Block System</span></span></a></li></ul></li><li class="menu-item-3772 menu-item menu-kineticwall-moving-dynamic-facade"><a href="https://extechinc.com/products/kinetic-wall-dynamic-facade/"><span>KINETICWALL<br/> <span style="font-size: .7em;">Moving Dynamic Façade</span></span></a></li><li class="menu-item-7682 menu-item menu-geolam-hybrid-aluminum-wpc"><a href="https://extechinc.com/products/geolam/"><span>Geolam<br/> <span style="font-size: .7em;">Hybrid Aluminum/WPC</span></span></a></li></ul></li><li class="sf-dropdown menu-item-has-children menu-item-1169 menu-item menu-services"><a><span>Services</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-1174 menu-item menu-custom-design"><a href="https://extechinc.com/custom-wall-design/"><span>Custom Design</span></a></li><li class="menu-item-5327 menu-item menu-daylighting-analysis"><a href="https://extechinc.com/daylighting-simulation/"><span>Daylighting Analysis</span></a></li><li class="menu-item-1172 menu-item menu-engineering"><a href="https://extechinc.com/industrial-window-design/"><span>Engineering</span></a></li><li class="menu-item-1171 menu-item menu-fabrication"><a href="https://extechinc.com/window-fabrication/"><span>Fabrication</span></a></li><li class="menu-item-1170 menu-item menu-installation"><a href="https://extechinc.com/commercial-window-installation/"><span>Installation</span></a></li></ul></li><li class="sf-dropdown menu-item-has-children menu-item-1168 menu-item menu-technology"><a><span>Technology</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-1910 menu-item menu-the-benefits-of-daylighting"><a href="https://extechinc.com/the-benefits-of-daylighting/"><span>The Benefits of Daylighting</span></a></li><li class="menu-item-1185 menu-item menu-the-polycarbonate-difference"><a href="https://extechinc.com/polycarbonate-panels/"><span>The Polycarbonate Difference</span></a></li><li class="menu-item-1189 menu-item menu-our-aluminum-framing-systems"><a href="https://extechinc.com/commercial-aluminum-window-framing/"><span>Our Aluminum Framing Systems</span></a></li><li class="menu-item-1187 menu-item menu-leed-sustainability"><a href="https://extechinc.com/leed-certified-windows/"><span>LEED &amp; Sustainability</span></a></li></ul></li><li class="menu-item-1033 menu-item menu-project-gallery"><a href="https://extechinc.com/project-gallery/"><span>Project Gallery</span></a></li><li class="sf-dropdown menu-item-has-children menu-item-2372 menu-item menu-about-us"><a><span>About Us</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-1883 menu-item menu-history-mission"><a href="https://extechinc.com/history-mission/"><span>History &amp; Mission</span></a></li><li class="menu-item-1547 menu-item menu-our-team"><a href="https://extechinc.com/our-team/"><span>Our Team</span></a></li><li class="menu-item-1877 menu-item menu-markets-case-studies"><a href="https://extechinc.com/markets-case-studies/"><span>Markets &amp; Case Studies</span></a></li><li class="menu-item-1880 menu-item menu-news-blog"><a href="https://extechinc.com/news-blog/"><span>News &amp; Blog</span></a></li></ul></li><li class="sf-dropdown menu-item-has-children menu-item-3164 menu-item menu-contact-us"><a><span>Contact Us</span></a><ul class="sub-menu sf-dropdown-menu dropdown"><li class="menu-item-1037 menu-item menu-contact-us"><a href="https://extechinc.com/contact-us/"><span>Contact Us</span></a></li><li class="menu-item-3163 menu-item menu-order-a-sample"><a href="https://extechinc.com/order-a-sample/"><span>Order a Sample</span></a></li><li class="menu-item-76138 menu-item menu-quote-request"><a href="http://#"><span><div class="dl-quoterequest">Quote Request</div></span></a></li></ul></li></ul></nav></div></div></header><div class="wrap clearfix contentclass hfeed" role="document"><div class="titleclass" id="pageheader"><div class="container"><div class="page-header"><h1 class="entry-title" itemprop="name"> Privacy Policy</h1></div></div></div><div class="container container-contained" id="content"><div class="row"><div class="main col-md-12" id="ktmain" role="main"><div class="entry-content" itemprop="mainContentOfPage"><p><strong>PRIVACY POLICY</strong><br/> This privacy policy has been compiled to better serve those who are concerned with how their ‘Personally Identifiable Information’ (PII) is being used online. PII, as described in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Please read our privacy policy carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our website.</p><p><strong>What personal information do we collect from the people that visit our website?</strong></p><p>When ordering or registering on our site, as appropriate, you may be asked to enter your name, email address, mailing address, company name or other details to help you with your experience.</p><p><strong>When do we collect information?</strong></p><p>We collect information from you when you register on our site, order samples, subscribe to a newsletter, fill out a form or enter information on our site.</p><p><strong>How do we use your information?</strong></p><p>We may use the information we collect from you when you register, order samples, sign-up for our newsletter, respond to a survey or marketing communication, surf the website, or use certain other site features in the following ways:</p><ul><li>To allow us to better service you in responding to your customer service requests.</li><li>To quickly process your transactions.</li><li>To send periodic emails regarding your order or other products and services.</li><li>To follow up with you after correspondence (live chat, email or phone inquiries)</li></ul><p><strong>How do we protect your information?</strong></p><p>We only provide information. We never ask for credit card numbers.</p><p>Your personal information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems, and are required to keep the information confidential. In addition, all sensitive information you supply is encrypted via Secure Socket Layer (SSL) technology.</p><p>We implement a variety of security measures when a user places an order enters, submits, or accesses their information to maintain the safety of your personal information.</p><p><strong>Do we use ‘cookies’?</strong></p><p>We use Google Analytics to track activity on extechinc.com. Google Analytics is a web analysis service provided by Google. Google utilizes the data collected to track and examine the use of www.extechinc.com, to prepare reports on its activities and share them with other Google services.</p><p>Google may use the data collected to contextualize and personalize the ads of its own advertising network.</p><p>Personal data collected: Cookie and Usage Data. Place of processing: USA. Find Google’s privacy policy here: https://www.google.com/intl/en/policies/privacy/</p><p>You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your browser settings. Since browsers are different, look at your browser’s Help Menu to learn the correct way to modify your cookies.</p><p>If you turn cookies off, some features will be disabled that makes your site experience more efficient and may not function properly.</p><p><strong>Third-Party Disclosure</strong></p><p>We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information unless we provide users with advance notice. This does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or serving our users, so long as those parties agree to keep this information confidential. We may also release information when it’s release is appropriate to comply with the law, enforce our site policies, or protect ours or others’ rights, property or safety.</p><p>However, non-personally identifiable visitor information may be provided to other parties for marketing, advertising, or other uses.</p><p><strong>Third-Party Links</strong></p><p>We do not include or offer third-party products or services on our website.</p><p><strong>California Online Privacy Protection Act</strong></p><p>CalOPPA is the first state law in the nation to require commercial websites and online services to post a privacy policy. The law’s reach stretches well beyond California to require any person or company in the United States (and conceivably the world) that operates websites collecting Personally Identifiable Information from California consumers to post a conspicuous privacy policy on its website stating exactly the information being collected and those individuals or companies with whom it is being shared. – See more at http://consumercal.org/california-online-privacy-protection-act-caloppa/#sthash.0FdRbT51.dpuf</p><p>According to CalOPPA, we agree to the following:</p><ul><li>Users can visit our site anonymously.</li><li>Once this privacy policy is created, we will add a link to it on our home page or as a minimum, on the first significant page after entering our website.</li><li>Our Privacy Policy link includes the word ‘Privacy’ and can be easily be found on the page specified above.</li></ul><p><strong>You will be notified of any Privacy Policy changes:</strong></p><p>On our Privacy Policy Page<br/> <strong>Can change your personal information:</strong><br/> By logging into your account</p><p><strong>How does our site handle Do Not Track signals?</strong></p><p>We honor Do Not Track signals and Do Not Track, plant cookies, or use advertising when a Do Not Track (DNT) browser mechanism is in place.</p><p><strong>Does our site allow third-party behavioral tracking?</strong></p><p>It’s also important to note that we do not allow third-party behavioral tracking</p><p><strong>COPPA (Children Online Privacy Protection Act)</strong><br/> When it comes to the collection of personal information from children under the age of 13 years old, the Children’s Online Privacy Protection Act (COPPA) puts parents in control. The Federal Trade Commission, United States’ consumer protection agency, enforces the COPPA Rule, which spells out what operators of websites and online services must do to protect children’s privacy and safety online.<br/> We do not specifically market to children under the age of 13 years old.</p><p><strong>Fair Information Practices</strong><br/> The Fair Information Practices Principles form the backbone of privacy law in the United States and the concepts they include have played a significant role in the development of data protection laws around the globe. Understanding the Fair Information Practice Principles and how they should be implemented is critical to comply with the various privacy laws that protect personal information.<br/> In order to be in line with Fair Information Practices we will take the following responsive action, should a data breach occur:<br/> We will notify you via email<br/> • Within 7 business days<br/> We also agree to the Individual Redress Principle which requires that individuals have the right to legally pursue enforceable rights against data collectors and processors who fail to adhere to the law. This principle requires not only that individuals have enforceable rights against data users, but also that individuals have recourse to courts or government agencies to investigate and/or prosecute non-compliance by data processors.</p><p><strong>CAN-SPAM Act</strong><br/> The CAN-SPAM Act is a law that sets the rules for commercial email, establishes requirements for commercial messages, gives recipients the right to have emails stopped from being sent to them, and spells out tough penalties for violations.<br/> We collect your email address in order to:<br/> • Send information, respond to inquiries, and/or other requests or questions<br/> • Process orders and to send information and updates pertaining to orders.<br/> • Market to our mailing list or continue to send emails to our clients after the original transaction has occurred.</p><p><strong>To be in accordance with CANSPAM, we agree to the following:</strong><br/> • Not use false or misleading subjects or email addresses.<br/> • Identify the message as an advertisement in some reasonable way.<br/> • Include the physical address of our business or site headquarters.<br/> • Monitor third-party email marketing services for compliance, if one is used.<br/> • Honor opt-out/unsubscribe requests quickly.<br/> • Allow users to unsubscribe by using the link at the bottom of each email.</p><p><strong>If at any time you would like to unsubscribe from receiving future emails, you can email us at</strong><br/> • Follow the instructions at the bottom of each email.<br/> and we will promptly remove you from ALL correspondence.</p><p><strong>Contacting Us</strong><br/> If there are any questions regarding this privacy policy, you may contact us using the information below.<br/> EXTECH/Exterior Technologies, Inc.<br/> 200 Bridge Street<br/> Pittsburgh, Pennsylvania 15223<br/> United States of America<br/> info@extechinc.com</p><p>Last Edited on 2016-08-09</p></div></div></div></div></div><footer class="footerclass" id="containerfooter"><div class="container"><div class="row"><div class="col-md-3 col-sm-6 footercol1"><div class="widget-1 widget-first footer-widget widget"><aside class="widget_black_studio_tinymce" id="black-studio-tinymce-10"><div class="textwidget"><p><img alt="EXTECH Logo White - CMYK" class="aligncenter wp-image-3647" data-id="3647" height="54" src="https://extechinc.com/wp-content/uploads/2016/09/EXTECH-Logo-White-CMYK-300x82.png" style="margin: 0; padding: 0;" width="198"/></p><p><span style="color: white;">EXTECH/Exterior Technologies, Inc. is an award-winning manufacturer and designer of wall, window, skylight, canopy, and custom façade systems. We deliver solutions for a variety of industries and applications, and are committed to collaboration, innovation, and exceptional engineering.</span></p></div></aside></div></div><div class="col-md-3 col-sm-6 footercol2"><div class="widget-1 widget-first footer-widget widget"><aside class="widget_black_studio_tinymce" id="black-studio-tinymce-11"><div class="textwidget"><p><font color="#ffffff"><strong>EXTECH / Exterior Technologies, Inc.</strong></font></p><p>200 Bridge Street</p><p>Pittsburgh, PA 15223</p><p><strong> <i class="icon-phone" style="font-size:14px; display:inline-block; color:#ffffff; 			"></i> <font color="#ffffff">Toll Free</font></strong><a href="tel:+1-800-500-8083" style="color:white;"> +1 800 500 8083</a></p><p><strong> <i class="icon-phone" style="font-size:14px; display:inline-block; color:#ffffff; 			"></i> <font color="#ffffff">Local</font></strong><a href="tel:+1-412-781-0991" style="color:white;"> +1 412 781 0991</a></p><p><strong> <i class="icon-print" style="font-size:14px; display:inline-block; color:#ffffff; 			"></i> <font color="#ffffff">Toll Free Fax</font></strong><a href="tel:+1-800-500-8012" style="color:white;"> +1 800 500 8012</a></p><p><strong> <i class="icon-print" style="font-size:14px; display:inline-block; color:#ffffff; 			"></i> <font color="#ffffff">Local Fax</font></strong><a href="tel:+1-412-781-9303" style="color:white;"> +1 412 781 9303</a></p><p><strong> <i class="icon-mail" style="font-size:14px; display:inline-block; color:#ffffff; 			"></i> <font color="#ffffff">info@extechinc.com</font></strong></p></div></aside></div></div><div class="col-md-3 col-sm-6 footercol3"><div class="widget-1 widget-first footer-widget widget"><aside class="widget_kadence_social" id="widget_kadence_social-5"><div class="virtue_social_widget clearfix"> <a aria-label="Facebook" class="facebook_link" data-original-title="Facebook" data-placement="top" data-toggle="tooltip" href="https://www.facebook.com/extechinc" rel="noopener" target="_blank" title="Facebook"> <i class="icon-facebook"></i> </a> <a aria-label="Twitter" class="twitter_link" data-original-title="Twitter" data-placement="top" data-toggle="tooltip" href="https://twitter.com/extechinc" rel="noopener" target="_blank" title="Twitter"> <i class="icon-twitter"></i> </a> <a aria-label="Instagram" class="instagram_link" data-original-title="Instagram" data-placement="top" data-toggle="tooltip" href="https://www.instagram.com/extech_systems/" rel="noopener" target="_blank" title="Instagram"> <i class="icon-instagram"></i> </a> <a aria-label="GooglePlus" class="googleplus_link" data-original-title="GooglePlus" data-placement="top" data-toggle="tooltip" href="https://plus.google.com/+Extechinc" rel="publisher" target="_blank" title="GooglePlus"> <i class="icon-google-plus4"></i> </a> <a aria-label="YouTube" class="youtube_link" data-original-title="YouTube" data-placement="top" data-toggle="tooltip" href="https://www.youtube.com/user/ExtechInc" rel="noopener" target="_blank" title="YouTube"> <i class="icon-youtube"></i> </a> <a aria-label="Pinterest" class="pinterest_link" data-original-title="Pinterest" data-placement="top" data-toggle="tooltip" href="https://www.pinterest.com/extechinc/" rel="noopener" target="_blank" title="Pinterest"> <i class="icon-pinterest"></i> </a> <a aria-label="LinkedIn" class="linkedin_link" data-original-title="LinkedIn" data-placement="top" data-toggle="tooltip" href="https://www.linkedin.com/company/extech-inc" rel="noopener" target="_blank" title="LinkedIn"> <i class="icon-linkedin"></i> </a></div></aside></div><div class="widget-2 widget-last footer-widget widget"><aside class="widget_black_studio_tinymce" id="black-studio-tinymce-13"><div class="textwidget"><p style="color: white; text-align: center;"><strong>INDUSTRIES</strong></p><p style="text-align: center;"><div class="row"><div class="col-md-6"><p style="text-align: center;"><strong><a href="https://extechinc.com/industries/aviation/" style="color: white;">Aviation</a></strong></p><p style="text-align: center;"><strong><a href="https://extechinc.com/industries/education/" style="color: white;">Education</a></strong></p><p style="text-align: center;"><strong><a href="https://extechinc.com/industries/industrial/" style="color: white;">Industrial</a></strong><br/></p></div><div class="col-md-6"><p style="text-align: center;"><strong><a href="https://extechinc.com/industries/military/" style="color: white;">Military</a></strong></p><p style="text-align: center;"><strong><a href="https://extechinc.com/industries/recreation/" style="color: white;">Recreation</a></strong></p><p style="text-align: center;"><strong><a href="https://extechinc.com/industries/transit/" style="color: white;">Transit</a></strong><br/></p></div></div></p></div></aside></div></div><div class="col-md-3 col-sm-6 footercol4"><div class="widget-1 widget-first footer-widget widget"><aside class="widget_nav_menu" id="nav_menu-7"><ul class="menu" id="menu-resources"><li class="menu-item-817 menu-item menu-contact-us"><a href="https://extechinc.com/contact-us/"><span>Contact Us</span></a></li><li class="current-menu-item current_page_item menu-item-2437 menu-item menu-privacy-policy"><a aria-current="page" href="https://extechinc.com/privacy-policy/"><span>Privacy Policy</span></a></li><li class="menu-item-3075 menu-item menu-terms-conditions"><a href="https://extechinc.com/terms-conditions/"><span>Terms &amp; Conditions</span></a></li></ul></aside></div></div></div></div><div class="footerbase"><div class="container"><div class="footercredits clearfix"><p>© 2022 Extech / Exterior Technologies Inc.</p></div></div></div> <script type="application/ld+json">{
+ "@context": "http://schema.org/",
+ "@type": "Corporation",
+ "name": "EXTECH/Exterior Technologies, Inc.",
+ "url": "http://www.extechinc.com",
+ "address":
+ {
+   "@type": "PostalAddress",
+   "streetAddress": "200 Bridge Street",
+    "addressLocality": "Pittsburgh",
+    "addressRegion": "Pennsylvania",
+    "postalCode": "15223",
+    "logo": "http://extechinc.com/wp-content/uploads/2016/09/Extech-logo-v2.jpg",
+ }
+ "contactPoint":
+ {
+   "@type": "contactPoint",
+   "telephone": "+1-412-781-0991",
+   
+}
+}</script> </footer><div aria-hidden="true" aria-labelledby="pum_popup_title_77815" class="pum pum-overlay pum-theme-75801 pum-theme-extech popmake-overlay click_open" data-popmake='{"id":77815,"slug":"request-info","theme_id":75801,"cookies":[],"triggers":[{"type":"click_open","settings":{"extra_selectors":"","cookie_name":null}}],"mobile_disabled":null,"tablet_disabled":null,"meta":{"display":{"stackable":false,"overlay_disabled":false,"scrollable_content":false,"disable_reposition":false,"size":"medium","responsive_min_width":"0%","responsive_min_width_unit":false,"responsive_max_width":"100%","responsive_max_width_unit":false,"custom_width":"640px","custom_width_unit":false,"custom_height":"380px","custom_height_unit":false,"custom_height_auto":false,"location":"center top","position_from_trigger":false,"position_top":"100","position_left":"0","position_bottom":"0","position_right":"0","position_fixed":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","overlay_zindex":false,"zindex":"1999999999"},"close":{"text":"","button_delay":"0","overlay_click":false,"esc_press":false,"f4_press":false},"click_open":[],"convert_on":"form_submit"}}' id="pum-77815" role="dialog"><div class="pum-container popmake theme-75801 pum-responsive pum-responsive-medium responsive size-medium" id="popmake-77815"><div class="pum-title popmake-title" id="pum_popup_title_77815"> Request More Information</div><div class="pum-content popmake-content" tabindex="0"><p>Complete this form to have your question reviewed by an EXTECH technical advisor.<br/> <script type="text/javascript">//----------------------------------------------------------
+//------ JAVASCRIPT HOOK FUNCTIONS FOR GRAVITY FORMS -------
+//----------------------------------------------------------
+
+if ( ! gform ) {
+	document.addEventListener( 'gform_main_scripts_loaded', function() { gform.scriptsLoaded = true; } );
+	window.addEventListener( 'DOMContentLoaded', function() { gform.domLoaded = true; } );
+
+	var gform = {
+		domLoaded: false,
+		scriptsLoaded: false,
+		initializeOnLoaded: function( fn ) {
+			if ( gform.domLoaded && gform.scriptsLoaded ) {
+				fn();
+			} else if( ! gform.domLoaded && gform.scriptsLoaded ) {
+				window.addEventListener( 'DOMContentLoaded', fn );
+			} else {
+				document.addEventListener( 'gform_main_scripts_loaded', fn );
+			}
+		},
+		hooks: { action: {}, filter: {} },
+		addAction: function( action, callable, priority, tag ) {
+			gform.addHook( 'action', action, callable, priority, tag );
+		},
+		addFilter: function( action, callable, priority, tag ) {
+			gform.addHook( 'filter', action, callable, priority, tag );
+		},
+		doAction: function( action ) {
+			gform.doHook( 'action', action, arguments );
+		},
+		applyFilters: function( action ) {
+			return gform.doHook( 'filter', action, arguments );
+		},
+		removeAction: function( action, tag ) {
+			gform.removeHook( 'action', action, tag );
+		},
+		removeFilter: function( action, priority, tag ) {
+			gform.removeHook( 'filter', action, priority, tag );
+		},
+		addHook: function( hookType, action, callable, priority, tag ) {
+			if ( undefined == gform.hooks[hookType][action] ) {
+				gform.hooks[hookType][action] = [];
+			}
+			var hooks = gform.hooks[hookType][action];
+			if ( undefined == tag ) {
+				tag = action + '_' + hooks.length;
+			}
+			if( priority == undefined ){
+				priority = 10;
+			}
+
+			gform.hooks[hookType][action].push( { tag:tag, callable:callable, priority:priority } );
+		},
+		doHook: function( hookType, action, args ) {
+
+			// splice args from object into array and remove first index which is the hook name
+			args = Array.prototype.slice.call(args, 1);
+
+			if ( undefined != gform.hooks[hookType][action] ) {
+				var hooks = gform.hooks[hookType][action], hook;
+				//sort by priority
+				hooks.sort(function(a,b){return a["priority"]-b["priority"]});
+
+				hooks.forEach( function( hookItem ) {
+					hook = hookItem.callable;
+
+					if(typeof hook != 'function')
+						hook = window[hook];
+					if ( 'action' == hookType ) {
+						hook.apply(null, args);
+					} else {
+						args[0] = hook.apply(null, args);
+					}
+				} );
+			}
+			if ( 'filter'==hookType ) {
+				return args[0];
+			}
+		},
+		removeHook: function( hookType, action, priority, tag ) {
+			if ( undefined != gform.hooks[hookType][action] ) {
+				var hooks = gform.hooks[hookType][action];
+				hooks = hooks.filter( function(hook, index, arr) {
+					var removeHook = (undefined==tag||tag==hook.tag) && (undefined==priority||priority==hook.priority);
+					return !removeHook;
+				} );
+				gform.hooks[hookType][action] = hooks;
+			}
+		}
+	};
+}</script> <div class="gf_browser_unknown gform_wrapper gform_legacy_markup_wrapper" id="gform_wrapper_30"><form action="/privacy-policy/?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0" enctype="multipart/form-data" id="gform_30" method="post"> <input class="gforms-pum" type="hidden" value='{"closepopup":false,"closedelay":0,"openpopup":false,"openpopup_id":0}'><div class="gform_body gform-body"><ul class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_30"><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_30_5" id="field_30_5"><label class="gfield_label">I am a(n)<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_radio"><ul class="gfield_radio" id="input_30_5"><li class="gchoice gchoice_30_5_0"> <input id="choice_30_5_0" name="input_5" type="radio" value="Architect"> <label for="choice_30_5_0" id="label_30_5_0">Architect</label></input></li><li class="gchoice gchoice_30_5_1"> <input id="choice_30_5_1" name="input_5" type="radio" value="Contractor"/> <label for="choice_30_5_1" id="label_30_5_1">Contractor</label></li><li class="gchoice gchoice_30_5_2"> <input id="choice_30_5_2" name="input_5" type="radio" value="FacilityManager"/> <label for="choice_30_5_2" id="label_30_5_2">Facility Manager</label></li><li class="gchoice gchoice_30_5_3"> <input id="choice_30_5_3" name="input_5" type="radio" value="Glazier"/> <label for="choice_30_5_3" id="label_30_5_3">Glazing Subcontractor</label></li><li class="gchoice gchoice_30_5_4"> <input id="choice_30_5_4" name="input_5" type="radio" value="Student"/> <label for="choice_30_5_4" id="label_30_5_4">Student</label></li></ul></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_30_13" id="field_30_13"><label class="gfield_label" for="input_30_13">First Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="medium" id="input_30_13" name="input_13" type="text" value=""/></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_30_14" id="field_30_14"><label class="gfield_label" for="input_30_14">Last Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="medium" id="input_30_14" name="input_14" type="text" value=""/></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_30_2" id="field_30_2"><label class="gfield_label" for="input_30_2">Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email"> <input aria-invalid="false" aria-required="true" class="medium" id="input_30_2" name="input_2" type="text" value=""/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_30_18" id="field_30_18"><label class="gfield_label" for="input_30_18">Phone</label><div class="ginput_container ginput_container_phone"><input aria-invalid="false" class="medium" id="input_30_18" name="input_18" type="text" value=""/></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_30_19" id="field_30_19"><label class="gfield_label" for="input_30_19">State<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_select"><select aria-invalid="false" aria-required="true" class="medium gfield_select" id="input_30_19" name="input_19"><option value="AK">AK</option><option value="AL">AL</option><option value="AZ">AZ</option><option value="AR">AR</option><option value="CA">CA</option><option value="CO">CO</option><option value="CT">CT</option><option value="DC">DC</option><option value="DE">DE</option><option value="FL">FL</option><option value="GA">GA</option><option value="HI">HI</option><option value="ID">ID</option><option value="IL">IL</option><option value="IN">IN</option><option value="IA">IA</option><option value="KS">KS</option><option value="KY">KY</option><option value="LA">LA</option><option value="ME">ME</option><option value="MD">MD</option><option value="MA">MA</option><option value="MI">MI</option><option value="MN">MN</option><option value="MS">MS</option><option value="MO">MO</option><option value="MT">MT</option><option value="NE">NE</option><option value="NV">NV</option><option value="NH">NH</option><option value="NJ">NJ</option><option value="NM">NM</option><option value="NY">NY</option><option value="NC">NC</option><option value="ND">ND</option><option value="OH">OH</option><option value="OK">OK</option><option value="OR">OR</option><option value="PA">PA</option><option value="RI">RI</option><option value="SC">SC</option><option value="SD">SD</option><option value="TN">TN</option><option value="TX">TX</option><option value="UT">UT</option><option value="VT">VT</option><option value="VA">VA</option><option value="WA">WA</option><option value="WV">WV</option><option value="WI">WI</option><option value="WY">WY</option></select></div></li><li class="gfield field_sublabel_below field_description_above gfield_visibility_visible" data-js-reload="field_30_20" id="field_30_20"><label class="gfield_label" for="input_30_20">Message</label><div class="gfield_description" id="gfield_description_30_20">What questions can we help you with?</div><div class="ginput_container ginput_container_textarea"><textarea aria-describedby="gfield_description_30_20" aria-invalid="false" class="textarea medium" cols="50" id="input_30_20" name="input_20" rows="10"></textarea></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_hidden" data-js-reload="field_30_8" id="field_30_8"><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden"></i><span>Hidden</span></div><label class="gfield_label" for="input_30_8">Source</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_30_8" name="input_8" type="text" value="Website"/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_hidden" data-js-reload="field_30_21" id="field_30_21"><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden"></i><span>Hidden</span></div><label class="gfield_label" for="input_30_21">request_type</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_30_21" name="input_21" type="text" value="ContactUs"/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_hidden" data-js-reload="field_30_22" id="field_30_22"><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden"></i><span>Hidden</span></div><label class="gfield_label" for="input_30_22">system</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_30_22" name="input_22" type="text" value=""/></div></li><li class="gfield gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_30_11" id="field_30_11"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_30_11" name="input_11" type="hidden" value="2600:8807:b400:3cb0::5087"/></div></li><li class="gfield gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_30_12" id="field_30_12"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_30_12" name="input_12" type="hidden" value=""/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_hidden" data-js-reload="field_30_17" id="field_30_17"><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden"></i><span>Hidden</span></div><label class="gfield_label" for="input_30_17">Content-Type</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_30_17" name="input_17" type="text" value="application/json"/></div></li><li class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_30_23" id="field_30_23"><label class="gfield_label" for="input_30_23">Comments</label><div class="ginput_container"><input id="input_30_23" name="input_23" type="text" value=""/></div><div class="gfield_description" id="gfield_description_30_23">This field is for validation purposes and should be left unchanged.</div></li></ul></div><div class="gform_footer top_label"> <input class="gform_button button" id="gform_submit_button_30" onclick='if(window["gf_submitting_30"]){return false;}  window["gf_submitting_30"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_30"]){return false;} window["gf_submitting_30"]=true;  jQuery("#gform_30").trigger("submit",[true]); }' type="submit" value="Contact Us"/> <input class="gform_hidden" name="is_submit_30" type="hidden" value="1"/> <input class="gform_hidden" name="gform_submit" type="hidden" value="30"/> <input class="gform_hidden" name="gform_unique_id" type="hidden" value=""/> <input class="gform_hidden" name="state_30" type="hidden" value="WyJbXSIsIjhlY2Y5MzIxZDI5YzYyNGZmNmVmMGEyMGJiYmI2NDY3Il0="/> <input class="gform_hidden" id="gform_target_page_number_30" name="gform_target_page_number_30" type="hidden" value="0"/> <input class="gform_hidden" id="gform_source_page_number_30" name="gform_source_page_number_30" type="hidden" value="1"/> <input name="gform_field_values" type="hidden" value=""/></div></input></form></div></p></div> <button aria-label="Close" class="pum-close popmake-close" type="button"> CLOSE </button></div></div><div aria-hidden="true" aria-labelledby="pum_popup_title_76136" class="pum pum-overlay pum-theme-75801 pum-theme-extech popmake-overlay click_open" data-popmake='{"id":76136,"slug":"quote-request","theme_id":75801,"cookies":[],"triggers":[{"type":"click_open","settings":{"extra_selectors":".dl-quoterequest"}}],"mobile_disabled":null,"tablet_disabled":null,"meta":{"display":{"stackable":false,"overlay_disabled":false,"scrollable_content":false,"disable_reposition":false,"size":"small","responsive_min_width":"%","responsive_min_width_unit":false,"responsive_max_width":"90%","responsive_max_width_unit":false,"custom_width":"40%","custom_width_unit":false,"custom_height":"380px","custom_height_unit":false,"custom_height_auto":false,"location":"center top","position_from_trigger":false,"position_top":"100","position_left":"0","position_bottom":"0","position_right":"0","position_fixed":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","overlay_zindex":false,"zindex":"1999999999"},"close":{"text":"","button_delay":"0","overlay_click":false,"esc_press":false,"f4_press":false},"click_open":[]}}' id="pum-76136" role="dialog"><div class="pum-container popmake theme-75801 pum-responsive pum-responsive-small responsive size-small" id="popmake-76136"><div class="pum-title popmake-title" id="pum_popup_title_76136"> QUOTE REQUEST</div><div class="pum-content popmake-content" tabindex="0"><div class="dl-outer" style="width: 100%;"><div class="gf_browser_unknown gform_wrapper gform_legacy_markup_wrapper" id="gform_wrapper_20"><div class="gform_heading"> <span class="gform_description">Complete this form to request a quote.</span></div><form action="/privacy-policy/?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0" enctype="multipart/form-data" id="gform_20" method="post"> <input class="gforms-pum" type="hidden" value='{"closepopup":true,"closedelay":5,"openpopup":false,"openpopup_id":0}'/><div class="gform_body gform-body"><ul class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_20"><li class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_28" id="field_20_28"><h2 class="gsection_title">Contact Information</h2></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_13" id="field_20_13"><label class="gfield_label" for="input_20_13">First Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="medium" id="input_20_13" name="input_13" type="text" value=""/></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_14" id="field_20_14"><label class="gfield_label" for="input_20_14">Last Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="medium" id="input_20_14" name="input_14" type="text" value=""/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_20" id="field_20_20"><label class="gfield_label" for="input_20_20">Title</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_20_20" name="input_20" type="text" value=""/></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_2" id="field_20_2"><label class="gfield_label" for="input_20_2">Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email"> <input aria-invalid="false" aria-required="true" class="medium" id="input_20_2" name="input_2" type="text" value=""/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_22" id="field_20_22"><label class="gfield_label" for="input_20_22">Phone</label><div class="ginput_container ginput_container_phone"><input aria-invalid="false" class="medium" id="input_20_22" name="input_22" type="text" value=""/></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_5" id="field_20_5"><label class="gfield_label">I am a(n)<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_radio"><ul class="gfield_radio" id="input_20_5"><li class="gchoice gchoice_20_5_0"> <input id="choice_20_5_0" name="input_5" type="radio" value="Architect"/> <label for="choice_20_5_0" id="label_20_5_0">Architect</label></li><li class="gchoice gchoice_20_5_1"> <input id="choice_20_5_1" name="input_5" type="radio" value="Contractor"/> <label for="choice_20_5_1" id="label_20_5_1">Contractor</label></li><li class="gchoice gchoice_20_5_2"> <input id="choice_20_5_2" name="input_5" type="radio" value="FacilityManager"/> <label for="choice_20_5_2" id="label_20_5_2">Facility Manager</label></li><li class="gchoice gchoice_20_5_3"> <input id="choice_20_5_3" name="input_5" type="radio" value="Glazier"/> <label for="choice_20_5_3" id="label_20_5_3">Glazing Subcontractor</label></li><li class="gchoice gchoice_20_5_4"> <input id="choice_20_5_4" name="input_5" type="radio" value="Student"/> <label for="choice_20_5_4" id="label_20_5_4">Student</label></li></ul></div></li><li class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_27" id="field_20_27"><h2 class="gsection_title">Project Details</h2></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_26" id="field_20_26"><label class="gfield_label" for="input_20_26">Project Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="medium" id="input_20_26" name="input_26" type="text" value=""/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_18" id="field_20_18"><label class="gfield_label gfield_label_before_complex">Project Address</label><div class="ginput_complex ginput_container has_street has_street2 has_city has_state has_zip has_country ginput_container_address" id="input_20_18"> <span class="ginput_full address_line_1 ginput_address_line_1" id="input_20_18_1_container"> <input aria-required="false" id="input_20_18_1" name="input_18.1" type="text" value=""/> <label for="input_20_18_1" id="input_20_18_1_label">Street Address</label> </span><span class="ginput_full address_line_2 ginput_address_line_2" id="input_20_18_2_container"> <input aria-required="false" id="input_20_18_2" name="input_18.2" type="text" value=""/> <label for="input_20_18_2" id="input_20_18_2_label">Address Line 2</label> </span><span class="ginput_left address_city ginput_address_city" id="input_20_18_3_container"> <input aria-required="false" id="input_20_18_3" name="input_18.3" type="text" value=""/> <label for="input_20_18_3" id="input_20_18_3_label">City</label> </span><span class="ginput_right address_state ginput_address_state" id="input_20_18_4_container"> <input aria-required="false" id="input_20_18_4" name="input_18.4" type="text" value=""/> <label for="input_20_18_4" id="input_20_18_4_label">State / Province / Region</label> </span><span class="ginput_left address_zip ginput_address_zip" id="input_20_18_5_container"> <input aria-required="false" id="input_20_18_5" name="input_18.5" type="text" value=""/> <label for="input_20_18_5" id="input_20_18_5_label">ZIP / Postal Code</label> </span><span class="ginput_right address_country ginput_address_country" id="input_20_18_6_container"> <select aria-required="false" id="input_20_18_6" name="input_18.6"><option value=""></option><option value="Afghanistan">Afghanistan</option><option value="Albania">Albania</option><option value="Algeria">Algeria</option><option value="American Samoa">American Samoa</option><option value="Andorra">Andorra</option><option value="Angola">Angola</option><option value="Anguilla">Anguilla</option><option value="Antarctica">Antarctica</option><option value="Antigua and Barbuda">Antigua and Barbuda</option><option value="Argentina">Argentina</option><option value="Armenia">Armenia</option><option value="Aruba">Aruba</option><option value="Australia">Australia</option><option value="Austria">Austria</option><option value="Azerbaijan">Azerbaijan</option><option value="Bahamas">Bahamas</option><option value="Bahrain">Bahrain</option><option value="Bangladesh">Bangladesh</option><option value="Barbados">Barbados</option><option value="Belarus">Belarus</option><option value="Belgium">Belgium</option><option value="Belize">Belize</option><option value="Benin">Benin</option><option value="Bermuda">Bermuda</option><option value="Bhutan">Bhutan</option><option value="Bolivia">Bolivia</option><option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</option><option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option><option value="Botswana">Botswana</option><option value="Bouvet Island">Bouvet Island</option><option value="Brazil">Brazil</option><option value="British Indian Ocean Territory">British Indian Ocean Territory</option><option value="Brunei Darussalam">Brunei Darussalam</option><option value="Bulgaria">Bulgaria</option><option value="Burkina Faso">Burkina Faso</option><option value="Burundi">Burundi</option><option value="Cambodia">Cambodia</option><option value="Cameroon">Cameroon</option><option value="Canada">Canada</option><option value="Cape Verde">Cape Verde</option><option value="Cayman Islands">Cayman Islands</option><option value="Central African Republic">Central African Republic</option><option value="Chad">Chad</option><option value="Chile">Chile</option><option value="China">China</option><option value="Christmas Island">Christmas Island</option><option value="Cocos Islands">Cocos Islands</option><option value="Colombia">Colombia</option><option value="Comoros">Comoros</option><option value="Congo, Democratic Republic of the">Congo, Democratic Republic of the</option><option value="Congo, Republic of the">Congo, Republic of the</option><option value="Cook Islands">Cook Islands</option><option value="Costa Rica">Costa Rica</option><option value="Croatia">Croatia</option><option value="Cuba">Cuba</option><option value="Curaçao">Curaçao</option><option value="Cyprus">Cyprus</option><option value="Czech Republic">Czech Republic</option><option value="Côte d'Ivoire">Côte d'Ivoire</option><option value="Denmark">Denmark</option><option value="Djibouti">Djibouti</option><option value="Dominica">Dominica</option><option value="Dominican Republic">Dominican Republic</option><option value="Ecuador">Ecuador</option><option value="Egypt">Egypt</option><option value="El Salvador">El Salvador</option><option value="Equatorial Guinea">Equatorial Guinea</option><option value="Eritrea">Eritrea</option><option value="Estonia">Estonia</option><option value="Eswatini (Swaziland)">Eswatini (Swaziland)</option><option value="Ethiopia">Ethiopia</option><option value="Falkland Islands">Falkland Islands</option><option value="Faroe Islands">Faroe Islands</option><option value="Fiji">Fiji</option><option value="Finland">Finland</option><option value="France">France</option><option value="French Guiana">French Guiana</option><option value="French Polynesia">French Polynesia</option><option value="French Southern Territories">French Southern Territories</option><option value="Gabon">Gabon</option><option value="Gambia">Gambia</option><option value="Georgia">Georgia</option><option value="Germany">Germany</option><option value="Ghana">Ghana</option><option value="Gibraltar">Gibraltar</option><option value="Greece">Greece</option><option value="Greenland">Greenland</option><option value="Grenada">Grenada</option><option value="Guadeloupe">Guadeloupe</option><option value="Guam">Guam</option><option value="Guatemala">Guatemala</option><option value="Guernsey">Guernsey</option><option value="Guinea">Guinea</option><option value="Guinea-Bissau">Guinea-Bissau</option><option value="Guyana">Guyana</option><option value="Haiti">Haiti</option><option value="Heard and McDonald Islands">Heard and McDonald Islands</option><option value="Holy See">Holy See</option><option value="Honduras">Honduras</option><option value="Hong Kong">Hong Kong</option><option value="Hungary">Hungary</option><option value="Iceland">Iceland</option><option value="India">India</option><option value="Indonesia">Indonesia</option><option value="Iran">Iran</option><option value="Iraq">Iraq</option><option value="Ireland">Ireland</option><option value="Isle of Man">Isle of Man</option><option value="Israel">Israel</option><option value="Italy">Italy</option><option value="Jamaica">Jamaica</option><option value="Japan">Japan</option><option value="Jersey">Jersey</option><option value="Jordan">Jordan</option><option value="Kazakhstan">Kazakhstan</option><option value="Kenya">Kenya</option><option value="Kiribati">Kiribati</option><option value="Kuwait">Kuwait</option><option value="Kyrgyzstan">Kyrgyzstan</option><option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option><option value="Latvia">Latvia</option><option value="Lebanon">Lebanon</option><option value="Lesotho">Lesotho</option><option value="Liberia">Liberia</option><option value="Libya">Libya</option><option value="Liechtenstein">Liechtenstein</option><option value="Lithuania">Lithuania</option><option value="Luxembourg">Luxembourg</option><option value="Macau">Macau</option><option value="Macedonia">Macedonia</option><option value="Madagascar">Madagascar</option><option value="Malawi">Malawi</option><option value="Malaysia">Malaysia</option><option value="Maldives">Maldives</option><option value="Mali">Mali</option><option value="Malta">Malta</option><option value="Marshall Islands">Marshall Islands</option><option value="Martinique">Martinique</option><option value="Mauritania">Mauritania</option><option value="Mauritius">Mauritius</option><option value="Mayotte">Mayotte</option><option value="Mexico">Mexico</option><option value="Micronesia">Micronesia</option><option value="Moldova">Moldova</option><option value="Monaco">Monaco</option><option value="Mongolia">Mongolia</option><option value="Montenegro">Montenegro</option><option value="Montserrat">Montserrat</option><option value="Morocco">Morocco</option><option value="Mozambique">Mozambique</option><option value="Myanmar">Myanmar</option><option value="Namibia">Namibia</option><option value="Nauru">Nauru</option><option value="Nepal">Nepal</option><option value="Netherlands">Netherlands</option><option value="New Caledonia">New Caledonia</option><option value="New Zealand">New Zealand</option><option value="Nicaragua">Nicaragua</option><option value="Niger">Niger</option><option value="Nigeria">Nigeria</option><option value="Niue">Niue</option><option value="Norfolk Island">Norfolk Island</option><option value="North Korea">North Korea</option><option value="Northern Mariana Islands">Northern Mariana Islands</option><option value="Norway">Norway</option><option value="Oman">Oman</option><option value="Pakistan">Pakistan</option><option value="Palau">Palau</option><option value="Palestine, State of">Palestine, State of</option><option value="Panama">Panama</option><option value="Papua New Guinea">Papua New Guinea</option><option value="Paraguay">Paraguay</option><option value="Peru">Peru</option><option value="Philippines">Philippines</option><option value="Pitcairn">Pitcairn</option><option value="Poland">Poland</option><option value="Portugal">Portugal</option><option value="Puerto Rico">Puerto Rico</option><option value="Qatar">Qatar</option><option value="Romania">Romania</option><option value="Russia">Russia</option><option value="Rwanda">Rwanda</option><option value="Réunion">Réunion</option><option value="Saint Barthélemy">Saint Barthélemy</option><option value="Saint Helena">Saint Helena</option><option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option><option value="Saint Lucia">Saint Lucia</option><option value="Saint Martin">Saint Martin</option><option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option><option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option><option value="Samoa">Samoa</option><option value="San Marino">San Marino</option><option value="Sao Tome and Principe">Sao Tome and Principe</option><option value="Saudi Arabia">Saudi Arabia</option><option value="Senegal">Senegal</option><option value="Serbia">Serbia</option><option value="Seychelles">Seychelles</option><option value="Sierra Leone">Sierra Leone</option><option value="Singapore">Singapore</option><option value="Sint Maarten">Sint Maarten</option><option value="Slovakia">Slovakia</option><option value="Slovenia">Slovenia</option><option value="Solomon Islands">Solomon Islands</option><option value="Somalia">Somalia</option><option value="South Africa">South Africa</option><option value="South Georgia">South Georgia</option><option value="South Korea">South Korea</option><option value="South Sudan">South Sudan</option><option value="Spain">Spain</option><option value="Sri Lanka">Sri Lanka</option><option value="Sudan">Sudan</option><option value="Suriname">Suriname</option><option value="Svalbard and Jan Mayen Islands">Svalbard and Jan Mayen Islands</option><option value="Sweden">Sweden</option><option value="Switzerland">Switzerland</option><option value="Syria">Syria</option><option value="Taiwan">Taiwan</option><option value="Tajikistan">Tajikistan</option><option value="Tanzania">Tanzania</option><option value="Thailand">Thailand</option><option value="Timor-Leste">Timor-Leste</option><option value="Togo">Togo</option><option value="Tokelau">Tokelau</option><option value="Tonga">Tonga</option><option value="Trinidad and Tobago">Trinidad and Tobago</option><option value="Tunisia">Tunisia</option><option value="Turkey">Turkey</option><option value="Turkmenistan">Turkmenistan</option><option value="Turks and Caicos Islands">Turks and Caicos Islands</option><option value="Tuvalu">Tuvalu</option><option value="US Minor Outlying Islands">US Minor Outlying Islands</option><option value="Uganda">Uganda</option><option value="Ukraine">Ukraine</option><option value="United Arab Emirates">United Arab Emirates</option><option value="United Kingdom">United Kingdom</option><option selected="selected" value="United States">United States</option><option value="Uruguay">Uruguay</option><option value="Uzbekistan">Uzbekistan</option><option value="Vanuatu">Vanuatu</option><option value="Venezuela">Venezuela</option><option value="Vietnam">Vietnam</option><option value="Virgin Islands, British">Virgin Islands, British</option><option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option><option value="Wallis and Futuna">Wallis and Futuna</option><option value="Western Sahara">Western Sahara</option><option value="Yemen">Yemen</option><option value="Zambia">Zambia</option><option value="Zimbabwe">Zimbabwe</option><option value="Åland Islands">Åland Islands</option></select> <label for="input_20_18_6" id="input_20_18_6_label">Country</label> </span><div class="gf_clear gf_clear_complex"></div></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_23" id="field_20_23"><label class="gfield_label" for="input_20_23">Bid Date</label><div class="ginput_container ginput_container_date"> <input aria-describedby="input_20_23_date_format" aria-invalid="false" class="datepicker mdy datepicker_no_icon gdatepicker-no-icon" id="input_20_23" name="input_23" placeholder="mm/dd/yyyy" type="text" value=""/> <span class="screen-reader-text" id="input_20_23_date_format">MM slash DD slash YYYY</span></div> <input class="gform_hidden" id="gforms_calendar_icon_input_20_23" type="hidden" value="https://extechinc.com/wp-content/plugins/gravityforms/images/datepicker/datepicker.svg"/></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_25" id="field_20_25"><label class="gfield_label" for="input_20_25">Project Notes</label><div class="ginput_container ginput_container_textarea"><textarea aria-invalid="false" class="textarea medium" cols="50" id="input_20_25" name="input_25" rows="10">What should we know about this project?</textarea></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_24" id="field_20_24"><label class="gfield_label" for="gform_browse_button_20_24">Project Files</label><div class="ginput_container ginput_container_fileupload"><div class="gform_fileupload_multifile" data-settings='{"runtimes":"html5,flash,html4","browse_button":"gform_browse_button_20_24","container":"gform_multifile_upload_20_24","drop_element":"gform_drag_drop_area_20_24","filelist":"gform_preview_20_24","unique_names":true,"file_data_name":"file","url":"https:\/\/extechinc.com\/?gf_page=d6de830bb6acf4f","flash_swf_url":"https:\/\/extechinc.com\/wp-includes\/js\/plupload\/plupload.flash.swf","silverlight_xap_url":"https:\/\/extechinc.com\/wp-includes\/js\/plupload\/plupload.silverlight.xap","filters":{"mime_types":[{"title":"Allowed Files","extensions":"*"}],"max_file_size":"104857600b"},"multipart":true,"urlstream_upload":false,"multipart_params":{"form_id":20,"field_id":24},"gf_vars":{"max_files":"10","message_id":"gform_multifile_messages_20_24","disallowed_extensions":["php","asp","aspx","cmd","csh","bat","html","htm","hta","jar","exe","com","js","lnk","htaccess","phtml","ps1","ps2","php3","php4","php5","php6","py","rb","tmp"]}}' id="gform_multifile_upload_20_24"><div class="gform_drop_area" id="gform_drag_drop_area_20_24"> <span class="gform_drop_instructions">Drop files here or </span> <button aria-describedby="gfield_upload_rules_20_24 gfield_description_20_24" class="button gform_button_select_files" id="gform_browse_button_20_24" type="button">Select files</button></div></div><span class="gform_fileupload_rules" id="gfield_upload_rules_20_24">Max. file size: 100 MB, Max. files: 10.</span><ul class="validation_message validation_message--hidden-on-empty gfield_validation_message gform-ul-reset" id="gform_multifile_messages_20_24"></ul></div><div id="gform_preview_20_24"></div><div class="gfield_description" id="gfield_description_20_24">Upload drawings and/or specifications. (.pdf format is preferred)</div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_hidden" data-js-reload="field_20_6" id="field_20_6"><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden"></i><span>Hidden</span></div><label class="gfield_label" for="input_20_6">x2_key</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_20_6" name="input_6" type="text" value=""/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_hidden" data-js-reload="field_20_8" id="field_20_8"><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden"></i><span>Hidden</span></div><label class="gfield_label" for="input_20_8">Source</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_20_8" name="input_8" type="text" value="Website"/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_hidden" data-js-reload="field_20_9" id="field_20_9"><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden"></i><span>Hidden</span></div><label class="gfield_label" for="input_20_9">Form ID</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_20_9" name="input_9" type="text" value="REQUEST QUOTE"/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_hidden" data-js-reload="field_20_10" id="field_20_10"><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden"></i><span>Hidden</span></div><label class="gfield_label" for="input_20_10">Quote Requested</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_20_10" name="input_10" type="text" value="CLEANWALL Details"/></div></li><li class="gfield gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_11" id="field_20_11"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_20_11" name="input_11" type="hidden" value="2600:8807:b400:3cb0::5087"/></div></li><li class="gfield gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_12" id="field_20_12"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_20_12" name="input_12" type="hidden" value=""/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_hidden" data-js-reload="field_20_17" id="field_20_17"><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden"></i><span>Hidden</span></div><label class="gfield_label" for="input_20_17">Content-Type</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_20_17" name="input_17" type="text" value="application/json"/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_hidden" data-js-reload="field_20_16" id="field_20_16"><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden"></i><span>Hidden</span></div><label class="gfield_label" for="input_20_16">visibility</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_20_16" name="input_16" type="text" value="1"/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_hidden" data-js-reload="field_20_15" id="field_20_15"><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden"></i><span>Hidden</span></div><label class="gfield_label" for="input_20_15">assignedTo</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_20_15" name="input_15" type="text" value="Anyone"/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_hidden" data-js-reload="field_20_29" id="field_20_29"><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden"></i><span>Hidden</span></div><label class="gfield_label" for="input_20_29">request_type</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_20_29" name="input_29" type="text" value="QuoteRequest"/></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_hidden" data-js-reload="field_20_30" id="field_20_30"><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden"></i><span>Hidden</span></div><label class="gfield_label" for="input_20_30">system</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_20_30" name="input_30" type="text" value=""/></div></li><li class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_20_31" id="field_20_31"><label class="gfield_label" for="input_20_31">Phone</label><div class="ginput_container"><input id="input_20_31" name="input_31" type="text" value=""/></div><div class="gfield_description" id="gfield_description_20_31">This field is for validation purposes and should be left unchanged.</div></li></ul></div><div class="gform_footer top_label"> <input class="gform_button button" id="gform_submit_button_20" onclick='if(window["gf_submitting_20"]){return false;}  window["gf_submitting_20"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_20"]){return false;} window["gf_submitting_20"]=true;  jQuery("#gform_20").trigger("submit",[true]); }' type="submit" value="Request Quote"/> <input class="gform_hidden" name="is_submit_20" type="hidden" value="1"/> <input class="gform_hidden" name="gform_submit" type="hidden" value="20"/> <input class="gform_hidden" name="gform_unique_id" type="hidden" value=""/> <input class="gform_hidden" name="state_20" type="hidden" value="WyJbXSIsIjhlY2Y5MzIxZDI5YzYyNGZmNmVmMGEyMGJiYmI2NDY3Il0="/> <input class="gform_hidden" id="gform_target_page_number_20" name="gform_target_page_number_20" type="hidden" value="0"/> <input class="gform_hidden" id="gform_source_page_number_20" name="gform_source_page_number_20" type="hidden" value="1"/> <input name="gform_field_values" type="hidden" value=""/> <input id="gform_uploaded_files_20" name="gform_uploaded_files" type="hidden" value=""/></div></form></div></div></div> <button aria-label="Close" class="pum-close popmake-close" type="button"> CLOSE </button></div></div> <script type="text/javascript">var clicky_site_ids = clicky_site_ids || [];
+clicky_site_ids.push(101001020);
+(function() {
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//static.getclicky.com/js';
+  ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+})();</script> <noscript><p><img alt="Clicky" height="1" src="//in.getclicky.com/101001020ns.gif" width="1"/></p></noscript> <script>jQuery( document ).ready( function() {
+    jQuery( document )
+    .on('click', 'input[type=submit].sent-link', function() {
+    ga('send', 'event', 'Form-Submitted', ‘click’, ‘Download-Link', {'transport': 'beacon'});
+    });
+  });</script> <script src="//cdn.callrail.com/companies/266186334/741adac7a555374f074a/12/swap.js" type="text/javascript"></script> <noscript><img alt="facebook_pixel" height="1" src="https://www.facebook.com/tr?id=717469398408945&amp;ev=PageView&amp;noscript=1&amp;cd%5Bpage_title%5D=Privacy+Policy&amp;cd%5Bpost_type%5D=page&amp;cd%5Bpost_id%5D=2433&amp;cd%5Bplugin%5D=PixelYourSite&amp;cd%5Buser_role%5D=guest&amp;cd%5Bevent_url%5D=extechinc.com%2Fprivacy-policy%2F" style="display: none;" width="1"/></noscript> <script id="popup-maker-site-js-extra" type="text/javascript">var pum_vars = {"version":"1.16.7","pm_dir_url":"https:\/\/extechinc.com\/wp-content\/plugins\/popup-maker\/","ajaxurl":"https:\/\/extechinc.com\/wp-admin\/admin-ajax.php","restapi":"https:\/\/extechinc.com\/wp-json\/pum\/v1","rest_nonce":null,"default_theme":"75801","debug_mode":"","disable_tracking":"","home_url":"\/","message_position":"top","core_sub_forms_enabled":"1","popups":[],"analytics_route":"analytics","analytics_api":"https:\/\/extechinc.com\/wp-json\/pum\/v1","page":"-1"};
+var pum_sub_vars = {"ajaxurl":"https:\/\/extechinc.com\/wp-admin\/admin-ajax.php","message_position":"top"};
+var pum_popups = {"pum-77815":{"triggers":[],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"explain":null,"type_section":null,"theme_id":"75801","size":"medium","responsive_min_width":"0%","responsive_max_width":"100%","custom_width":"640px","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":false,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"extech","id":77815,"slug":"request-info"},"pum-76136":{"triggers":[{"type":"click_open","settings":{"extra_selectors":".dl-quoterequest"}}],"cookies":[],"disable_on_mobile":false,"disable_on_tablet":false,"explain":null,"type_section":null,"theme_id":"75801","size":"small","responsive_min_width":"%","responsive_max_width":"90%","custom_width":"40%","custom_height_auto":false,"custom_height":"380px","scrollable_content":false,"animation_type":"fade","animation_speed":"350","animation_origin":"center top","open_sound":"none","custom_sound":"","location":"center top","position_top":"100","position_bottom":"0","position_left":"0","position_right":"0","position_from_trigger":false,"position_fixed":false,"overlay_disabled":false,"stackable":false,"disable_reposition":false,"zindex":"1999999999","close_button_delay":"0","fi_promotion":null,"close_on_form_submission":false,"close_on_form_submission_delay":0,"close_on_overlay_click":false,"close_on_esc_press":false,"close_on_f4_press":false,"disable_form_reopen":false,"disable_accessibility":false,"theme_slug":"extech","id":76136,"slug":"quote-request"}};</script> <script id="popmake-popup-analytics-js-js-extra" type="text/javascript">var popmake_pa = {"nonce":"7b3d08c15a"};</script> <script id="wpcw-frontend-js-extra" type="text/javascript">var wpcw_frontend_params = {"api_url":"https:\/\/extechinc.com\/wp-json\/wpcw\/v1\/api\/","api_nonce":"f8fc0d6453","ajax_api_url":"\/?wpcw-ajax=%%endpoint%%","ajax_api_nonce":"97a1c46106","ajaxurl":"https:\/\/extechinc.com\/wp-admin\/admin-ajax.php","enrollment_nonce":"fce099a898","progress_nonce":"c2ccfe2989","str_uploading":"Uploading:","str_quiz_all_fields":"Please provide an answer for all of the questions on this page.","timer_units_hrs":"hrs","timer_units_mins":"mins","timer_units_secs":"secs","min_password_strength":"3","i18n_password_error":"Please enter a stronger password.","i18n_password_hint":"Hint: The password should be at least twelve characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! \" ? $ % ^ & ).","course_progress":{"i18n_confirm_reset_unit":"Are you sure you wish to reset your progress of this Unit? This CANNOT be undone.","i18n_confirm_reset_units":"Are you sure you wish to reset your progress up to this Unit? This CANNOT be undone."}};</script> <script id="wp-hooks-js" src="https://extechinc.com/wp-content/cache/autoptimize/js/autoptimize_single_65cdbfbf9b2f81f5936242939e727eab.js?ver=1e58c8c5a32b2e97491080c5b10dc71c" type="text/javascript"></script> <script id="wp-i18n-js-after" type="text/javascript">wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );</script> <script id="wp-a11y-js-translations" type="text/javascript">( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );</script> <script id="jquery-ui-datepicker-js-after" type="text/javascript">jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});</script> <script id="virtue_main-js-extra" type="text/javascript">var virtue_js = {"totop":"To Top"};</script> <script type="text/javascript">gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 30) {jQuery('#input_30_18').mask('(999) 999-9999').bind('keypress', function(e){if(e.which == 13){jQuery(this).blur();} } );} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );</script> <script type="text/javascript">gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [30, 1]) } );</script> <script type="text/javascript">gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 20) {jQuery('#input_20_22').mask('(999) 999-9999').bind('keypress', function(e){if(e.which == 13){jQuery(this).blur();} } );} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );</script> <script type="text/javascript">gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [20, 1]) } );</script> <script defer="" src="https://extechinc.com/wp-content/cache/autoptimize/js/autoptimize_1d4934d6ee67344004d350ba16b8d0da.js"></script><!--noptimize--><!-- Autoptimize found a problem with the HTML in your Theme, tag `/body` missing --><!--/noptimize--></div></body></html>

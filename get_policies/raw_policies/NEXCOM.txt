@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><link href="../images/NEXCOM.jpg" rel="shortcut icon"/>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-N8LCL7');</script>
+<!-- End Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Ads --> <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-1011595878"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-1011595878'); </script>
+<script src="/Scripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+<script src="/Scripts/flexdropdown.js" type="text/javascript"></script>
+<script src="/Scripts/overlay.js" type="text/javascript"></script>
+<script src="/Scripts/toolbox.expose.js" type="text/javascript"></script>
+<script src="/Scripts/swfobject.js" type="text/javascript"></script>
+<script src="/Scripts/jquery.swfobject.1-1-1.js" type="text/javascript"></script>
+<script src="/Scripts/cookies.js" type="text/javascript"></script>
+<script src="/Scripts/floatdiv.js?110822" type="text/javascript"></script>
+<link href="/Content/global.css?110827" media="screen" rel="Stylesheet" type="text/css"/><link href="/Content/global-site.css?110727" media="screen" rel="stylesheet" type="text/css"/><link href="/Content/global-print.css" media="print" rel="stylesheet" type="text/css"/><link href="/Content/flexdropdown.css" media="screen" rel="stylesheet" type="text/css"/><link href="/Content/VideoPopup.css" media="screen" rel="stylesheet" type="text/css"/><link href="/Content/surveypopup.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="/Scripts/MicrosoftAjax.js" type="text/javascript"></script>
+<script src="/Scripts/MicrosoftMvcAjax.js" type="text/javascript"></script>
+<script src="/Scripts/MicrosoftMvcValidation.debug.js" type="text/javascript"></script>
+<!--[if IE 8]>
+		<style type="text/css">
+		html { width:99.6%; }
+		</style>
+	<![endif]-->
+<script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            
+            //menu init
+            jQuery('#topsubmenu').load('/Home/TopSubMenu', function () {
+                var $anchors = $('*[dataflexmenu]');
+                $anchors.each(function () {
+                    $(this).addflexmenu(this.getAttribute('dataflexmenu'))
+                });
+            });
+            //worldwide
+            var timeout = 50;
+            var closetimer = 0;
+            var ddmenuitem = 0;
+            var isOnDiv = false;
+            var lanDiv = $('#langItems');
+            var aLan = $('.SelectLan');
+
+            aLan.bind({ 'mouseover': jsddm_open,
+                'mouseleave': jsddm_timer
+            });
+
+            lanDiv.bind({ 'mouseover': jsddm_OnDivOver,
+                'mouseleave': jsddm_OnDivLeave
+            });
+
+            $('#langItems li').bind({ 'click': function () {
+                aLan.html($(this).find('a').html());
+                jsddm_open();
+                //window.location.href = 'World\\' + txt;
+            }
+            });
+
+            function jsddm_open() {
+                jsddm_canceltimer();
+                jsddm_close();
+                ddmenuitem = lanDiv.css('visibility', 'visible');
+
+                var offsetLeft, offsetTop;
+
+                offsetLeft = aLan.offset().left + 5;
+                offsetTop = aLan.offset().top + aLan.innerHeight() / 2;
+                ddmenuitem.css('left', offsetLeft);
+                ddmenuitem.css('top', offsetTop);
+
+                lanDiv.addClass('LanguageHover');
+                aLan.addClass('SelectLanHover');
+            }
+
+            function jsddm_close() {
+                if (ddmenuitem) ddmenuitem.css('visibility', 'hidden');
+                isOnDiv = false;
+                lanDiv.removeClass('LanguageHover');
+                aLan.removeClass('SelectLanHover');
+            }
+
+            function jsddm_timer() {
+                if (!isOnDiv) {
+                    closetimer = window.setTimeout(jsddm_close, timeout);
+                }
+            }
+
+            function jsddm_canceltimer() {
+                if (closetimer) {
+                    window.clearTimeout(closetimer);
+                    closetimer = null;
+                }
+            }
+
+            function jsddm_OnDivLeave() {
+                isOnDiv = false;
+                jsddm_timer();
+            }
+
+            function jsddm_OnDivOver() {
+                isOnDiv = true;
+                jsddm_open();
+            }
+            aLan.html('Global');
+
+            triggers = $(".leftBKVideo").overlay();
+
+
+
+        });
+    </script>
+<title>
+	Privacy Policy
+</title><meta content="The NEXCOM Online Privacy Statement applies to NEXCOM's and our affiliates’ Web sites that link to the Statement. Below are some of the highlights of the Statement." name="description"/><meta content="Privacy Policy" name="keywords"/></head>
+<body>
+<div id="WebContent">
+<!--header begin-->
+<div id="header">
+<div id="HeadRight">
+<a href="/Virtual-Expo.html#utm_source=NEXCOM_web&amp;utm_medium=WebSite&amp;utm_campaign=Virtual-Expo-Official" target="_blank"><img src="/images/button-virtual-expo.gif"/></a>
+<a href="/Home/ContactUs">Contact Us</a>
+<a href="/Inquiry/InquiryModel">Inquiry <span id="inquiryCount"></span></a>
+<a href="/Home/RSS">RSS</a>
+<a class="SelectLan" href="https://www.nexcom.com/">Worldwide(USA)</a>
+</div>
+<div id="TopNav">
+<span><a href="/"><img alt="logo" src="/images/logo_nexcom.gif"/></a></span>
+<ul>
+<li class="begin"><a dataflexmenu="divProductsMenu" href="/Products">Products</a></li>
+<li><a dataflexmenu="divApplicationsMenu" href="/Applications">Solutions</a></li>
+<li><a dataflexmenu="divNewsMenu" href="/News">News</a></li>
+<li><a dataflexmenu="divSupportMenu" href="/Support">Support</a></li>
+<li><a dataflexmenu="divPartnerMenu" href="/Partner">Partners</a></li>
+<li><a dataflexmenu="divAboutMenu" href="/About">About NEXCOM</a></li>
+</ul>
+<script type="text/javascript">
+    jQuery(function ($) {
+
+        var jqSearchTextBox = $('.search-text');
+
+        function DoSearch() {
+            if (jqSearchTextBox.val() != '') {
+                var searchLink = '/Search/SearchResult?text=fake';
+                searchLink = searchLink.replace('fake', jqSearchTextBox.val());
+                window.location.href = searchLink;
+            }
+        }
+
+        jqSearchTextBox
+            .focus(function () {
+                if ($(this).val() == 'Search') {
+                    jqSearchTextBox.val('');
+                    $(this).addClass("search-input");
+                }
+            })
+            .blur(function () {
+                if ($(this).val() == '') {
+                    jqSearchTextBox.val('Search');
+                    $(this).removeClass("search-input");
+                }
+            })
+            .keypress(function (e) {
+                if (e.which == 13) {
+                    DoSearch();
+                }
+            });
+
+        $('.search-btn').bind({ 'click': DoSearch });
+
+    });
+</script>
+<div id="SearchAera">
+<input accesskey="s" class="search-text" type="text" value="Search"/>
+<input accesskey="s" class="search-btn" type="button"/>
+</div>
+</div>
+<div class="sliderBan" id="sliderBanner" style="position:absolute; left: -335px; top: 69px; display:none; z-index:100;"><a><img src=""/></a></div>
+</div>
+<div class="ChooseLan" id="langItems">
+<ul>
+<li><a href="https://www.nexcom.com.tw/">台灣</a></li>
+<li><a href="https://www.nexcom.cn/">中国</a></li>
+<li><a href="https://www.nexcom-jp.com/">日本</a></li>
+<li><a href="https://www.nexcomusa.com">USA</a></li>
+</ul>
+</div>
+<div id="topsubmenu">
+</div>
+<!--header end-->
+<div id="Function">
+<div id="PathTree">
+<span class="before">
+<a href="/">Home</a></span> &gt;
+                    <span class="last">Privacy Policy</span>
+</div>
+<div id="share">
+<div class="addthis_toolbox addthis_default_style">
+<a class="addthis_button_print"></a><a class="addthis_button_email"></a><a class="addthis_button_compact">
+                            Share this page</a>
+</div>
+<script type="text/javascript">
+                        var addthis_config = {
+                            ui_use_css: true,
+                            ui_language: 'en-US',
+                            services_expanded: 'blogger,digg,email,favorites, google, delicious, facebook',
+                            services_compact: 'blogger,digg,email,favorites, google, delicious, facebook'
+                        }
+                    </script>
+<script src=" https://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4d915a356e6a1dda" type="text/javascript"></script>
+<script type="text/javascript">
+
+                        jQuery(function ($) {
+                            $(function () {
+                                addthis.addEventListener('addthis.ready', addthisReady);
+                            });
+
+                            function addthisReady(evt) {
+                                //alert('AddThis API is fully loaded.');
+
+                                $("#share > div > a").each(function () {
+
+                                    if ($(this).attr('title') == "Print") {
+                                        $(this).find("span").attr("style", "background:url(/images/icon-printer.png) no-repeat !Important;");
+                                    }
+
+                                    if ($(this).attr('title') == "Email") {
+                                        $(this).find("span").attr("style", "background:url(/images/icon-mail.png) no-repeat !Important;");
+                                    }
+
+                                    if ($(this).hasClass('addthis_button_compact')) {
+                                        $(this).find("span").attr("style", "background:url(/images/icon-share.png) no-repeat !Important;").find("span").addClass('at_a11y');
+                                    }
+                                });
+                            }
+
+                        });
+
+                    </script>
+</div>
+</div>
+<div id="HorContentLeft">
+<h1>Privacy Policy</h1>
+<div id="PrivacyContent">
+<h2>Privacy and Cookies Notice</h2>
+<p>The NEXCOM Online Privacy Statement applies to NEXCOM's and our affiliates' Web sites that link to the Statement. Below are some of the highlights of the Statement.</p>
+<h2>Personal Information</h2>
+<p>We collect your personal information for various purposes, such as processing your order, corresponding with you, providing you with a subscription or in connection with a job application.</p>
+<p>We may combine the information we collect from you with information obtained from other sources to help us improve its overall accuracy and completeness, and to help us better tailor our interactions with you.</p>
+<p><span style="color: #f60">In addition, we may also collect information relating to your use of our Web sites through the use of various technologies, including cookies. We use cookies to store your preferences and other information on your computer in order to save your time by eliminating the need to repeatedly enter the same information, and to display your personalized content.</span></p>
+<h2>Uses</h2>
+<p>To fulfill your requests by us or by others involved in fulfillment.</p>
+<p>To contact you for customer satisfaction surveys, market research or in connection with certain transactions.</p>
+<p>To support products or services you have obtained from us.</p>
+<p>By NEXCOM and selected organizations for marketing purposes if you have permitted such use.</p>
+<p>To personalize your experience while you are on our sites, make navigation easier, and for Web site usage statistics.</p>
+<h2>Your Choices</h2>
+<p>When we collect information from you, you may tell us that you do not want it used for further marketing contact.</p>
+<p><span style="color: #f60">You may also turn off cookies in your browser, if you do not wish to receive cookies from the sites. Your web browser can be set so that you automatically deny the storage of cookies or are informed every time a website requests to be allowed to store a cookie. Previously stored cookies can also be deleted through the web browser. However, please note that certain pages of the sites may not function properly if cookies are turned off.</span></p>
+<h2>Important Information</h2>
+<p>NEXCOM is a member of TRUSTe (<a href="http://www.truste.com" target="_blank">www.truste.com</a>) in the United States. In addition, NEXCOM participates in the EU Safe Harbor Privacy Framework as set forth by the United States Department of Commerce. As part of our participation in the Safe Harbor, we have agreed to TRUSTe Watchdog dispute resolution for disputes relating to our compliance with the Safe Harbor Privacy Framework. If you have any complaints regarding our compliance with these aspects of the Safe Harbor, you should first contact us.</p>
+<p>If contacting us does not resolve your complaint, you may raise your complaint withTRUSTe. The TRUSTe dispute resolution process will be conducted in English.</p>
+</div>
+<div> </div>
+<div class="clear"> </div>
+<p> </p>
+</div>
+<div class="clear">
+</div>
+<div id="Footer">
+<div id="FooterBottomText">
+<span>Committed to Customer Success </span>©2011-2022 NEXCOM International Co., Ltd. All Rights Reserved. 
+                      <span style="margin-left:180px;"><a href="/home/Cookie">Cookie</a></span>
+<a href="/Home/PrivacyPolicy">Privacy</a>
+<a href="/Home/Sitemap">Sitemap</a>
+</div>
+</div>
+<div id="feedback" style="display: none; z-index: 9999;">
+<a href="/questionnaire?backurl=%2FHome%2FPrivacyPolicy">
+<img alt="icon-feedback" src="/images/icon-feedback.gif"/></a>
+</div>
+<div class="SurveyModal">
+<div id="QuestionnaireContent">
+                Take a minute and tell us what you think! 
+                <div id="questtext"></div>
+<div class="clearzero">
+</div>
+<span>
+<input class="close" id="goQuestion" type="button" value="Yes"/>
+
+<input class="close" type="button" value="No"/></span>
+</div>
+<script type="text/javascript">
+                    jQuery(document).ready(function ($) {
+                        var surverId = '';
+                        $('#goQuestion').bind('click', function () {
+                            //location.href = '/questionnaire?backurl=%2FHome%2FPrivacyPolicy';
+                            $.cookie('NexcomSurvey_' + surverId, "1");
+                            $('#feedback').show().makeFloat();
+                        });
+
+                        var surveModelHewHeight = $('#QuestionnaireContent', ".SurveyModal").height() + 30;
+                        $(".SurveyModal").height(surveModelHewHeight);
+                    });
+                </script>
+</div>
+</div>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-N8LCL7" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</body>
+</html>

@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+<link href="https://www.schurter.com/en/Privacy" rel="canonical"/>
+<link href="https://www.schurter.com/en/Privacy" hreflang="en" rel="alternate"/>
+<link href="https://www.schurter.com/de/Datenschutzerklaerung" hreflang="de" rel="alternate"/>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"0cb8d6fb1e",applicationID:"389938747"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport"/>
+<meta content="https://www.schurter.com/en/Privacy" property="og:url">
+<title>Privacy SCHURTER</title>
+<meta content="Privacy SCHURTER" property="og:title">
+<meta content="SCHURTER Privacy Policy, obtain more details about the privacy policy. SCHURTER is a leading Swiss innovator and producer of electronic components. " name="description"/>
+<meta content="SCHURTER Privacy Policy, obtain more details about the privacy policy. SCHURTER is a leading Swiss innovator and producer of electronic components." property="og:description">
+<meta content="Privacy, SCHURTER" name="keywords"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/apple-touch-icon-57x57.png" rel="apple-touch-icon" sizes="57x57"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/apple-touch-icon-60x60.png" rel="apple-touch-icon" sizes="60x60"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/apple-touch-icon-76x76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/apple-touch-icon-120x120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/apple-touch-icon-152x152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/apple-touch-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/favicon-194x194.png" rel="icon" sizes="194x194" type="image/png"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="//cdn.schurter.com/bundles/snceschurter/images/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/bundles/snceschurter/images/favicons/manifest.json" rel="manifest"/>
+<link color="#0061ab" href="//cdn.schurter.com/bundles/snceschurter/images/favicons/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#0061ab" name="msapplication-TileColor"/>
+<meta content="//cdn.schurter.com/bundles/snceschurter/images/favicons/mstile-144x144.png" name="msapplication-TileImage"/>
+<meta content="#0061ab" name="theme-color"/>
+<script>
+        function injectTermly() {
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'https://app.termly.io/embed.min.js';
+            s.id = '36bc1831-fd0c-4601-9b48-24edfeaf00a1';
+            s.setAttribute("data-name", "termly-embed-banner");
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x); 
+        }
+        document.addEventListener("DOMContentLoaded", injectTermly);
+    </script>
+<link href="" rel="stylesheet" title="fontStyleSheet" type="text/css"/>
+<!-- START WEBPACK ENCORE -->
+<link href="/assets/build/app.84b3c368.css" rel="stylesheet"/>
+<!-- Renders a link tag (if your module requires any CSS)
+                    <link rel="stylesheet" href="/build/app.css"> -->
+<!-- END WEBPACK ENCORE -->
+<!-- START LEGACY assetic+grunt -->
+<link href="//cdn.schurter.com/css/asset_version-v524/app.css" rel="stylesheet">
+<!-- END LEGACY assetic+grunt -->
+</link></meta></meta></meta></head>
+<body>
+<!-- Google Tag Manager -->
+<span class="has-google-analytics hide"></span>
+<noscript><iframe data-categories="analytics" data-src="//www.googletagmanager.com/ns.html?id=GTM-KW8WJL" height="0" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<script data-categories="analytics" type="text/plain">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KW8WJL');</script>
+<!-- End Google Tag Manager -->
+<div id="page-loading">
+<img class="loader_black" src="/bundles/snceschurter/images/loader.gif"/>
+</div>
+<script>document.getElementById('page-loading').style.display = 'block';</script>
+<div class="off-canvas-wrap" data-offcanvas="">
+<div class="inner-wrap" id="inner-wrap">
+<!-- Header Menu -->
+<header class="m260a" id="m260a">
+<div class="m260a__localisation-proposal hide">
+<span class="m260a__banner-message">Please select your region and country:</span>
+<span id="m260a__localisation-proposal__links">
+<a id="m260a__localisation-proposal__links__choose-country-region-link">Other ...</a>
+</span>
+</div>
+<div aria-hidden="true" class="reveal-modal modal_popup" data-reveal="" id="popup_for_changing_domain" role="dialog">
+<h2>You will be transferred to the selected country page address. Therefore you will leave the SCHURTER main page.</h2>
+<div class="m250a__modal-options">
+<div class="m250a__modal-option">
+        If you would you like to visit your selected country page, please click on the button below:
+        <br/>
+<br/>
+<a class="text-link m250a__modal-button button" href="#" id="m250a__modal-button-leave-website">OK
+        </a>
+</div>
+<div class="m250a__modal-option">
+        If you would like to stay on the SCHURTER global website, please click on the button below:
+        <br/>
+<br/>
+<a class="text-link m250a__modal-button button" href="#" id="m250a__modal-button-stay-on-website">#
+        </a>
+</div>
+</div>
+<p class="m250a__modal-note"> Note: Your country preferences for the SCHURTER Global Website are now saved. </p>
+<a aria-label="Close" class="close-reveal-modal"><span class="icon--close_black"></span></a>
+</div><a class="hide" data-reveal-id="popup_for_changing_domain" href="#" id="m250a__open-popup">Link to open the popup</a>
+<div class="m260a__languages hide">
+<span class="m260a__banner-message">The page your are looking at is in a different language than you set as preferred. Would you like to change the language?</span>
+<span id="m260a-language-selector">
+<a class="active uri_path_english" href="/en/Privacy" language-uri-part="en">EN</a>
+<a class="" href="/de/Datenschutzerklaerung" language-uri-part="de">DE</a>
+</span>
+</div>
+<div class="m260a__desktop">
+<div class="m260a__desktop-container">
+<span class="m260a__logo">
+<a href="/en" target="_self">
+<div>
+<img alt="S_SCHURTER_Electronic_Components_Invers" src="/bundles/snceschurter/epim/_ImagePool_/newWS/IM0015071.png"/>
+</div>
+</a>
+</span>
+<span class="m260a__nav">
+<a class="m260a__nav-toggle m260a__nav-open">
+<svg version="1.1" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g stroke="#fff" stroke-linecap="round" stroke-width="2">
+<path d="M0.5,1  L20,1"></path>
+<path d="M0.5,10 L20,10"></path>
+<path d="M0.5,19 L20,19"></path>
+</g>
+</svg>
+</a>
+<a class="m260a__nav-toggle m260a__nav-close hide">
+<svg viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.61,10.11l8.07,8.06a1,1,0,0,1,0,1.51,1.05,1.05,0,0,1-1.51,0l-8.06-8.07h0L2,19.68a1.16,1.16,0,0,1-.75.32c-.21,0-.64-.11-.75-.32a1,1,0,0,1,0-1.51L8.6,10.11h0L.32,1.83A1,1,0,0,1,.32.32a1,1,0,0,1,1.51,0l8.28,8.17h0L18.39.32a1,1,0,0,1,1.5,0,1,1,0,0,1,0,1.51l-8.28,8.28Z" style="fill:#0361ab"></path>
+</svg>
+</a>
+<div id="scrollable-on-mobile">
+<ul class="m260a__nav-ul">
+<li>
+<span class="m260a__nav-ul-a" data-loop-id="0">
+<a class="text-link m260a__nav-ul-a-upper m260a__l1-has-sublevel" href="#">Products
+        </a>
+<div class="m260a__bottom hide">
+<div class="m260a__bottom-container">
+<div class="m260a__bottom-container-layer-0 height-100pc">
+<div class="flex-4 m260a__layer-0-teaser">
+<div class="m260a-teaser">
+<div class="m260a-teaser-title h2-section-title-s">Products</div>
+<p class="paragraph-text-small">SCHURTER is a leading innovator, manufacturer and distributor of fuses, connectors, circuit breakers, input systems and EMC products.</p>
+<a class="text-link" href="/en/Products" target="">Read more
+        </a>
+</div>
+<div class="m260a--highlights">
+<hr/>
+<div class="h3-paragraph-title">Highlights</div>
+<div class="m260a-highlight">
+<div class="m260a-highlight--image">
+<img alt="4761_4762_weiss_mit_Abdeckung_Pressebild_1 " src="/bundles/snceschurter/epim/_ImagePool_/newWS/IM0014825_M62_desktop.jpg"/>
+</div>
+<div class="m260a-highlight--text">
+<div class="h4-small-title">Connectors</div>
+<p class="paragraph-text-small">The SCHURTER equipment connector line comprises a wide variety of connectors acc..</p>
+<a class="text-link" href="/en/Components/Connectors" target="">Connectors
+        </a>
+</div>
+</div> </div>
+</div>
+<div class="flex-6"></div>
+</div>
+<div class="m260a__bottom-container-layer-2 height-100pc">
+<div class="m260a__layer-1-tree">
+<ul class="level-2 ul__line-height ul__no-style">
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Catalog" target="">Catalog
+        </a>
+</span>
+</div>
+</li>
+<li class="has-sublevel">
+<div>
+<span class="text-link">Components</span>
+<span class="sublevel-indicator">
+<svg class="arrow-down" viewbox="0 -5 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10,10.44.34,1.76A1,1,0,0,1,1.68.26L10,7.73,18.32.26a1,1,0,0,1,1.42.08,1,1,0,0,1-.07,1.42Z" style="fill:#0061ab"></path>
+</svg>
+</span>
+</div>
+<ul class="level-3 hide ul__line-height ul__no-style">
+<li>
+<div class="m260a__sublevel-overview">
+<span>
+<a class="text-link" href="/en/Products/Components" target="">Overview
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Components/Components-Competences" target="">Components Competences
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Components/Circuit-Protection" target="">Circuit Protection
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Components/Connectors" target="">Connectors
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Components/Switches" target="">Switches
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Components/EMC-Products" target="">EMC-Products
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Components/Others" target="">Others
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Components/Sales-Partners" target="">Sales Partners
+        </a>
+</span>
+</div>
+</li>
+</ul>
+</li>
+<li class="has-sublevel">
+<div>
+<span class="text-link">Customer Specific Components</span>
+<span class="sublevel-indicator">
+<svg class="arrow-down" viewbox="0 -5 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10,10.44.34,1.76A1,1,0,0,1,1.68.26L10,7.73,18.32.26a1,1,0,0,1,1.42.08,1,1,0,0,1-.07,1.42Z" style="fill:#0061ab"></path>
+</svg>
+</span>
+</div>
+<ul class="level-3 hide ul__line-height ul__no-style">
+<li>
+<div class="m260a__sublevel-overview">
+<span>
+<a class="text-link" href="/en/Products/Customer-Specific-Components" target="">Overview
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Customer-Specific-Components/Customer-Specific-Fuses" target="">Customer Specific Fuses
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Customer-Specific-Components/Customer-Specific-Connectors" target="">Customer Specific Connectors
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Customer-Specific-Components/Customer-Specific-Switches" target="">Customer Specific Switches
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Customer-Specific-Components/Customer-Specific-EMC-Solutions" target="">Customer Specific EMC Solutions
+        </a>
+</span>
+</div>
+</li>
+</ul>
+</li>
+<li class="has-sublevel">
+<div>
+<span class="text-link">Input Systems</span>
+<span class="sublevel-indicator">
+<svg class="arrow-down" viewbox="0 -5 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10,10.44.34,1.76A1,1,0,0,1,1.68.26L10,7.73,18.32.26a1,1,0,0,1,1.42.08,1,1,0,0,1-.07,1.42Z" style="fill:#0061ab"></path>
+</svg>
+</span>
+</div>
+<ul class="level-3 hide ul__line-height ul__no-style">
+<li>
+<div class="m260a__sublevel-overview">
+<span>
+<a class="text-link" href="/en/Products/Input-Systems" target="">Overview
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Input-Systems/Input-Systems-Competences" target="">Input Systems Competences
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Input-Systems/Complete-HMI-Solutions" target="">Complete HMI Solutions
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Input-Systems/PCAP-Touchscreens" target="">PCAP Touchscreens
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Input-Systems/Resistive-Touchscreens" target="">Resistive Touchscreens
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Input-Systems/Capacitive-Switches" target="">Capacitive Switches
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Input-Systems/Membrane-Switches" target="">Membrane Switches
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Products/Input-Systems/References" target="">References
+        </a>
+</span>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</span>
+</li>
+<li>
+<span class="m260a__nav-ul-a" data-loop-id="1">
+<a class="text-link m260a__nav-ul-a-upper m260a__l1-has-sublevel" href="#">Solutions
+        </a>
+<div class="m260a__bottom hide">
+<div class="m260a__bottom-container">
+<div class="m260a__bottom-container-layer-0 height-100pc">
+<div class="flex-4 m260a__layer-0-teaser">
+<div class="m260a-teaser">
+<div class="m260a-teaser-title h2-section-title-s">Solutions</div>
+<p class="paragraph-text-small">SCHURTER Solutions networks the internal competences to be able to offer complete solutions to the customers.</p>
+<a class="text-link" href="/en/Solutions" target="">Read more
+        </a>
+</div>
+<div class="m260a--highlights">
+<hr/>
+<div class="h3-paragraph-title">Highlights</div>
+<div class="m260a-highlight">
+<div class="m260a-highlight--image">
+<img alt="SuccessStory_5_Jahre_Solutions_Aufmacher" src="/bundles/snceschurter/epim/_ImagePool_/newWS/IM0018179_M62_desktop.jpg"/>
+</div>
+<div class="m260a-highlight--text">
+<div class="h4-small-title">5 years of Solutions</div>
+<p class="paragraph-text-small">The Solutions business unit began operations 5 years ago. And it grew quickly. T..</p>
+<a class="text-link" href="/en/data/download/3134481" target='"_blank"'>Success Story 5 years of Solutions
+    <span><svg viewbox="-1 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.86,17.52a1.06,1.06,0,0,1-.75-.31L.31,9.41a1.06,1.06,0,0,1,0-1.49,1.08,1.08,0,0,1,1.49,0L8.86,15l7.06-7a1.05,1.05,0,0,1,1.49,1.49l-7.8,7.8A1.06,1.06,0,0,1,8.86,17.52Z" style="fill:#0361ab"></path>
+<path d="M16.64,19.79H1.08a1.13,1.13,0,0,1,0-2.26H16.64a1.13,1.13,0,0,1,0,2.26Z" style="fill:#0361ab"></path>
+<path d="M8.86,17.52A1.06,1.06,0,0,1,7.8,16.47V1.06a1.06,1.06,0,1,1,2.12,0V16.47A1.06,1.06,0,0,1,8.86,17.52Z" style="fill:#0361ab"></path>
+</svg></span> </a>
+</div>
+</div> </div>
+</div>
+<div class="flex-6"></div>
+</div>
+<div class="m260a__bottom-container-layer-2 height-100pc">
+<div class="m260a__layer-1-tree">
+<ul class="level-2 ul__line-height ul__no-style">
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Solutions/Solutions-Competences" target="">Solutions Competences
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Solutions/Customized-Solutions" target="">Customized Solutions
+        </a>
+</span>
+</div>
+</li>
+<li class="has-sublevel">
+<div>
+<span class="text-link">Technologies</span>
+<span class="sublevel-indicator">
+<svg class="arrow-down" viewbox="0 -5 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10,10.44.34,1.76A1,1,0,0,1,1.68.26L10,7.73,18.32.26a1,1,0,0,1,1.42.08,1,1,0,0,1-.07,1.42Z" style="fill:#0061ab"></path>
+</svg>
+</span>
+</div>
+<ul class="level-3 hide ul__line-height ul__no-style">
+<li>
+<div class="m260a__sublevel-overview">
+<span>
+<a class="text-link" href="/en/Solutions/Technologies" target="">Overview
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Solutions/Technologies/Technology-Competences" target="">Technology Competences
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Solutions/Technologies/Optical-bonding" target="">Optical bonding
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Solutions/Technologies/EMC-Influences" target="">EMC-Influences
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Solutions/Technologies/Prototyping" target="">Prototyping
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Solutions/Technologies/Illumination" target="">Illumination
+        </a>
+</span>
+</div>
+</li>
+</ul>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Solutions/EMC-Services" target="">EMC-Services
+        </a>
+</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</span>
+</li>
+<li>
+<span class="m260a__nav-ul-a" data-loop-id="2">
+<a class="text-link m260a__nav-ul-a-upper m260a__l1-has-sublevel" href="#">Markets
+        </a>
+<div class="m260a__bottom hide">
+<div class="m260a__bottom-container">
+<div class="m260a__bottom-container-layer-0 height-100pc">
+<div class="flex-4 m260a__layer-0-teaser">
+<div class="m260a-teaser">
+<div class="m260a-teaser-title h2-section-title-s">Markets</div>
+<p class="paragraph-text-small">SCHURTER offers various products and solutions specifically designed to specific industry segments. The typical requirements of the specific industries are taken into consideration.</p>
+<a class="text-link" href="/en/Markets" target="">Read more
+        </a>
+</div>
+<div class="m260a--highlights">
+<hr/>
+<div class="h3-paragraph-title">Highlights</div>
+<div class="m260a-highlight">
+<div class="m260a-highlight--image">
+<img alt="Automotive_horizontal_1508" src="/bundles/snceschurter/epim/_ImagePool_/newWS/IM0014804_M62_desktop.jpg"/>
+</div>
+<div class="m260a-highlight--text">
+<div class="h4-small-title">Automotive</div>
+<p class="paragraph-text-small">Approved solutions for a thriving market</p>
+<a class="text-link" href="/en/automotive" target="">Discover more
+        </a>
+</div>
+</div> </div>
+</div>
+<div class="flex-6"></div>
+</div>
+<div class="m260a__bottom-container-layer-2 height-100pc">
+<div class="m260a__layer-1-tree">
+<ul class="level-2 ul__line-height ul__no-style">
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Markets/Industrial-Equipment" target="">Industrial Equipment
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Markets/Medical-Equipment" target="">Medical Equipment
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Markets/Automotive" target="">Automotive
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Markets/Avionics-and-Space" target="">Avionics and Space
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Markets/Data-and-Communication" target="">Data and Communication
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Markets/Energy" target="">Energy
+        </a>
+</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</span>
+</li>
+<li>
+<span class="m260a__nav-ul-a" data-loop-id="3">
+<a class="text-link m260a__nav-ul-a-upper m260a__l1-has-sublevel" href="#">Info Center
+        </a>
+<div class="m260a__bottom hide">
+<div class="m260a__bottom-container">
+<div class="m260a__bottom-container-layer-0 height-100pc">
+<div class="flex-4 m260a__layer-0-teaser">
+<div class="m260a-teaser">
+<div class="m260a-teaser-title h2-section-title-s">Info Center</div>
+<p class="paragraph-text-small">SCHURTER offers various services that support the design-in work or the cooperation with sales partners.</p>
+<a class="text-link" href="/en/Info-Center" target="">Read more
+        </a>
+</div>
+<div class="m260a--highlights">
+<hr/>
+<div class="h3-paragraph-title">Highlights</div>
+<div class="m260a-highlight">
+<div class="m260a-highlight--image">
+<img alt="SuccessStory_COVID19_Aufmacher" src="/bundles/snceschurter/epim/_ImagePool_/newWS/IM0019446_M62_desktop.jpg"/>
+</div>
+<div class="m260a-highlight--text">
+<div class="h4-small-title">Safe technology helps saving lives</div>
+<p class="paragraph-text-small">The new corona virus SARS-CoV-2 has been raging since January 2020, spreading at..</p>
+<a class="text-link" href="/en/data/download/4412219" target='"_blank"'>Success Story
+    <span><svg viewbox="-1 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.86,17.52a1.06,1.06,0,0,1-.75-.31L.31,9.41a1.06,1.06,0,0,1,0-1.49,1.08,1.08,0,0,1,1.49,0L8.86,15l7.06-7a1.05,1.05,0,0,1,1.49,1.49l-7.8,7.8A1.06,1.06,0,0,1,8.86,17.52Z" style="fill:#0361ab"></path>
+<path d="M16.64,19.79H1.08a1.13,1.13,0,0,1,0-2.26H16.64a1.13,1.13,0,0,1,0,2.26Z" style="fill:#0361ab"></path>
+<path d="M8.86,17.52A1.06,1.06,0,0,1,7.8,16.47V1.06a1.06,1.06,0,1,1,2.12,0V16.47A1.06,1.06,0,0,1,8.86,17.52Z" style="fill:#0361ab"></path>
+</svg></span> </a>
+</div>
+</div> </div>
+</div>
+<div class="flex-6"></div>
+</div>
+<div class="m260a__bottom-container-layer-2 height-100pc">
+<div class="m260a__layer-1-tree">
+<ul class="level-2 ul__line-height ul__no-style">
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/News" target="">News
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Events" target="">Events
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Documents" target="">Documents
+        </a>
+</span>
+</div>
+</li>
+<li class="has-sublevel">
+<div>
+<span class="text-link">Support Tools</span>
+<span class="sublevel-indicator">
+<svg class="arrow-down" viewbox="0 -5 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10,10.44.34,1.76A1,1,0,0,1,1.68.26L10,7.73,18.32.26a1,1,0,0,1,1.42.08,1,1,0,0,1-.07,1.42Z" style="fill:#0061ab"></path>
+</svg>
+</span>
+</div>
+<ul class="level-3 hide ul__line-height ul__no-style">
+<li>
+<div class="m260a__sublevel-overview">
+<span>
+<a class="text-link" href="/en/Info-Center/Support-Tools" target="">Overview
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Support-Tools/Track-Trace" target="">Track &amp; Trace
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Support-Tools/Stock-Check-Distributor" target="">Stock Check Distributor
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Support-Tools/Stock-Check-SCHURTER" target="">Stock Check SCHURTER
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Support-Tools/Approvals" target="">Approvals
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Support-Tools/Cross-Reference" target="">Cross Reference
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Support-Tools/Partner-Service" target="">Partner Service
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Support-Tools/CAD-Drawings" target="">CAD-Drawings
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Support-Tools/CatApp" target="">CatApp
+        </a>
+</span>
+</div>
+</li>
+</ul>
+</li>
+<li class="has-sublevel">
+<div>
+<span class="text-link">Certificates</span>
+<span class="sublevel-indicator">
+<svg class="arrow-down" viewbox="0 -5 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10,10.44.34,1.76A1,1,0,0,1,1.68.26L10,7.73,18.32.26a1,1,0,0,1,1.42.08,1,1,0,0,1-.07,1.42Z" style="fill:#0061ab"></path>
+</svg>
+</span>
+</div>
+<ul class="level-3 hide ul__line-height ul__no-style">
+<li>
+<div class="m260a__sublevel-overview">
+<span>
+<a class="text-link" href="/en/Info-Center/Certificates" target="">Overview
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Certificates/Quality-Management" target="">Quality Management
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Certificates/RoHS" target="">RoHS
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Certificates/China-RoHS" target="">China RoHS
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Certificates/REACH" target="">REACH
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Certificates/Halogen-Free" target="">Halogen Free
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Certificates/Conflict-Minerals" target="">Conflict Minerals
+        </a>
+</span>
+</div>
+</li>
+</ul>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Landing-Pages" target="">Landing Pages
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/Videos" target="">Videos
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/Info-Center/FAQ" target="">FAQ
+        </a>
+</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</span>
+</li>
+<li>
+<span class="m260a__nav-ul-a" data-loop-id="4">
+<a class="text-link m260a__nav-ul-a-upper m260a__l1-has-sublevel" href="#">About us
+        </a>
+<div class="m260a__bottom hide">
+<div class="m260a__bottom-container">
+<div class="m260a__bottom-container-layer-0 height-100pc">
+<div class="flex-4 m260a__layer-0-teaser">
+<div class="m260a-teaser">
+<div class="m260a-teaser-title h2-section-title-s">About us</div>
+<p class="paragraph-text-small">The SCHURTER Group is the world's leading Swiss technology company ensuring clean and safe supply of power, ease of use and sophisticated overall solutions.</p>
+<a class="text-link" href="/en/About-us" target="">Read more
+        </a>
+</div>
+</div>
+<div class="flex-6"></div>
+</div>
+<div class="m260a__bottom-container-layer-2 height-100pc">
+<div class="m260a__layer-1-tree">
+<ul class="level-2 ul__line-height ul__no-style">
+<li class="has-sublevel">
+<div>
+<span class="text-link">Company</span>
+<span class="sublevel-indicator">
+<svg class="arrow-down" viewbox="0 -5 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10,10.44.34,1.76A1,1,0,0,1,1.68.26L10,7.73,18.32.26a1,1,0,0,1,1.42.08,1,1,0,0,1-.07,1.42Z" style="fill:#0061ab"></path>
+</svg>
+</span>
+</div>
+<ul class="level-3 hide ul__line-height ul__no-style">
+<li>
+<div class="m260a__sublevel-overview">
+<span>
+<a class="text-link" href="/en/About-us/Company" target="">Overview
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/About-us/Company/Schurter-Group" target="">SCHURTER Group
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/About-us/Company/Cultural-Values" target="">Cultural Values
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/About-us/Company/Affiliates" target="">Affiliates
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/About-us/Company/History" target="">History
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/About-us/Company/Awards" target="">Awards
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/About-us/Company/Bruno-H-Schurter-Foundation" target="">Bruno H. Schurter Foundation
+        </a>
+</span>
+</div>
+</li>
+</ul>
+</li>
+<li class="has-sublevel">
+<div>
+<span class="text-link">Careers</span>
+<span class="sublevel-indicator">
+<svg class="arrow-down" viewbox="0 -5 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10,10.44.34,1.76A1,1,0,0,1,1.68.26L10,7.73,18.32.26a1,1,0,0,1,1.42.08,1,1,0,0,1-.07,1.42Z" style="fill:#0061ab"></path>
+</svg>
+</span>
+</div>
+<ul class="level-3 hide ul__line-height ul__no-style">
+<li>
+<div class="m260a__sublevel-overview">
+<span>
+<a class="text-link" href="/en/About-us/Careers" target="">Overview
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/About-us/Careers/Stories" target="">Stories
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/About-us/Careers/Job-openings" target="">Job openings
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/About-us/Careers/Apprenticeship" target="">Apprenticeship
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/About-us/Careers/Trainees-at-SCHURTER" target="">Trainees at SCHURTER
+        </a>
+</span>
+</div>
+</li>
+</ul>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/About-us/Sustainability" target="">Sustainability
+        </a>
+</span>
+</div>
+</li>
+<li>
+<div>
+<span>
+<a class="text-link" href="/en/About-us/Media" target="">Media
+        </a>
+</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</span>
+</li>
+<li>
+<span class="m260a__nav-ul-a" data-loop-id="5">
+<a class="text-link m260a__nav-ul-a-upper" href="/en/Contact">Contact
+        </a>
+</span>
+</li>
+</ul>
+</div>
+</span>
+<span class="m260a__search-separator"></span>
+<span class="flex-1 m260a__search">
+<div class="m260a__search-toggle m260a__search-open shown-by-default">
+<a class="white" href="#">
+<svg class="lens" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<g>
+<path d="M7.59,15.43A7.66,7.66,0,0,1,0,7.72,7.67,7.67,0,0,1,7.59,0a7.67,7.67,0,0,1,7.6,7.72A7.67,7.67,0,0,1,7.59,15.43ZM7.59,2A5.66,5.66,0,0,0,2,7.72a5.66,5.66,0,0,0,5.59,5.71,5.66,5.66,0,0,0,5.6-5.71A5.66,5.66,0,0,0,7.59,2Z" style="fill:#fff"></path>
+<path d="M18.65,20a1.3,1.3,0,0,1-.95-.4l-4.23-4.22a1.35,1.35,0,0,1,1.91-1.91L19.6,17.7a1.36,1.36,0,0,1,0,1.91A1.34,1.34,0,0,1,18.65,20Z" style="fill:#fff"></path>
+</g>
+</svg>
+<span>Search</span>
+</a>
+</div>
+<div class="m260a__search-toggle m260a__search-open hidden-by-default hide">
+<a class="blue" href="#">
+<svg class="lens" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<g>
+<path d="M7.59,15.43A7.66,7.66,0,0,1,0,7.72,7.67,7.67,0,0,1,7.59,0a7.67,7.67,0,0,1,7.6,7.72A7.67,7.67,0,0,1,7.59,15.43ZM7.59,2A5.66,5.66,0,0,0,2,7.72a5.66,5.66,0,0,0,5.59,5.71,5.66,5.66,0,0,0,5.6-5.71A5.66,5.66,0,0,0,7.59,2Z" style="fill:#fff"></path>
+<path d="M18.65,20a1.3,1.3,0,0,1-.95-.4l-4.23-4.22a1.35,1.35,0,0,1,1.91-1.91L19.6,17.7a1.36,1.36,0,0,1,0,1.91A1.34,1.34,0,0,1,18.65,20Z" style="fill:#fff"></path>
+</g>
+</svg>
+<span>Search</span>
+</a>
+</div>
+<div class="m260a__search-toggle m260a__search-close hide">
+<a href="#">
+<svg viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.61,10.11l8.07,8.06a1,1,0,0,1,0,1.51,1.05,1.05,0,0,1-1.51,0l-8.06-8.07h0L2,19.68a1.16,1.16,0,0,1-.75.32c-.21,0-.64-.11-.75-.32a1,1,0,0,1,0-1.51L8.6,10.11h0L.32,1.83A1,1,0,0,1,.32.32a1,1,0,0,1,1.51,0l8.28,8.17h0L18.39.32a1,1,0,0,1,1.5,0,1,1,0,0,1,0,1.51l-8.28,8.28Z" style="fill:#0361ab"></path>
+</svg>
+</a>
+</div>
+<div class="m260a__bottom hide">
+<div class="m260a__bottom-container">
+<div class="m260a__bottom-container-search height-100pc">
+<div class="h2-section-title">What are you looking for?</div>
+<div class="m260a__search_line">
+<div class="search-loader display-none" style="display: none;">
+<img class="loader_black" src="/bundles/snceschurter/images/loader.gif"/>
+</div>
+<span class="hide" href="/en/search" id="helptext-search"></span>
+<input data="general_textsearch" id="search_terms" type="text"/>
+<a class="text-link cta uppercase" href="#" id="go_search">Search
+        </a>
+<input data="general_textsearch" id="mobile_search" name="mobile_search" type="text"/>
+<a class="text-link cta uppercase" href="#" id="go_mobile_search">Search
+        </a>
+</div>
+<div id="general-suggestions-box">
+<div class="general-suggestions-container">
+<img alt="details" class="arrow" src="/bundles/snceschurter/images/details-arrow.png"/>
+<img alt="details" class="arrow-dark" src="/bundles/snceschurter/images/details-arrow-dark.png"/>
+<div class="general-suggestions">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</span> </div>
+</div>
+</header>
+<div class="hide">
+<span class="at_results">Results</span>
+<span class="at_outof">Out_Of</span>
+<span class="at_readmore">Read more</span>
+<span class="at_products">Products</span>
+<span class="at_view_all">View all results</span>
+</div>
+<div id="main-container">
+<div id="container">
+<div class="m260a__breadcrumb">
+<div class="m260a__breadcrumb-mobile-slideable">
+<div class="m260a__breadcrumb-container">
+<div>
+<a href="/en">Home</a>
+<span class="gray"><svg class="arrow-down" viewbox="0 -5 20 20" xmlns="http://www.w3.org/2000/svg">
+<path d="M10,10.44.34,1.76A1,1,0,0,1,1.68.26L10,7.73,18.32.26a1,1,0,0,1,1.42.08,1,1,0,0,1-.07,1.42Z" style="fill:#0061ab"></path>
+</svg></span>
+</div>
+<div>
+<span>Privacy</span>
+</div>
+</div>
+</div>
+<div class="m260a__breadcrumb-mobile-fader"></div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="FT"> </p></p>
+</div>
+</div>
+</div>
+<div class="row title">
+<div class="small-12 columns">
+<h1>Privacy</h1>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="FT">Last modified</p></p>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="small-12 columns">
+<div class="weblink">
+<a class="download_document" href="https://live.schurter.com/content/download/2741430/45563686/version/18/file/Privacy_en.pdf" target="_blank" title="Privacy Statement of SCHURTER">
+                Privacy Statement of SCHURTER
+                <span class="icon-right icon--download_blue"></span></a>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE1">General</p>
+<p class="FT">SCHURTER makes every effort to protect the privacy of its customers and has taken precautionary measures to ensure that information provided by customers/browsers or registered as subscribers to e-mail lists remains private, protected against loss and misuse or alteration. You can navigate most of SCHURTER's websites without entering personal data. Only for the delivery of products and reactions to inquiries we need a registration.</p>
+<p class="FT"></p>
+<p class="FT">In this privacy policy we inform the users about the type, extent and purpose of the collection and use of personal data as well as any passing on of data to third parties. To ensure that this information is accessible to you at the beginning of the usage process and always, you will find a link to this privacy policy on every SCHURTER website. The following data protection information applies to this and all other websites that refer to this data protection information.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Information we collect</p>
+<p class="FT">We collect information to provide better services to all users and to stay in contact with you after your visit to the SCHURTER website.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Transparency and choice</p>
+<p class="FT">Everyone has different concerns about data protection. The aim of SCHURTER is to clarify what information we collect so that you can make meaningful decisions about its use.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Information provided by us</p>
+<p class="FT">Some of the services of SCHURTER allow you to share information with others. Remember, when you publicly disclose information that this information may be indexed by search engines, including Google.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Non-personal data</p>
+<p class="FT">As a rule, you can visit SCHURTER websites without having to provide any personal data. Location information on your Internet Protocol (IP) address, the website from which you are visiting SCHURTER and the web pages that you view at SCHURTER, the number, date and time of your visits and search terms that you enter in the search and that you entered to access the web pages of SCHURTER. Your identity remains completely anonymous. This information is evaluated for statistical purposes and to determine the acceptance and attractiveness of this website and to improve its contents.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Collection and use of personal data</p>
+<p class="FT">In some places on the SCHURTER web pages, various forms are offered, e. g. for product or service offers, registration, enquiries, contact, order, applications or newsletter functions. Personal data will only be collected and processed if you use these services from SCHURTER and voluntarily provide the data necessary for processing your request.</p>
+<p class="FT"></p>
+<p class="FT">If you decide to provide us with information such as company name, department, address, e-mail address or other personal data, SCHURTER may store, process and evaluate these data and forward them to authorized sales companies or other contractual partners of SCHURTER, exclusively for maintaining the customer relationship with you, in particular for your information about the offer of SCHURTER products.</p>
+<p class="FT"></p>
+<p class="FT">Personal data from applications, however, will only be passed on to affiliated companies or other third parties upon explicit request and consent of the person concerned. This also applies to the storage of application data beyond the usual duration of the application process.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Information provided by us</p>
+<p class="FT">We do not pass on any personal data to companies, organizations or persons outside of SCHURTER, except in one of the following circumstances:</p>
+<p class="FT"></p>
+<p class="UE2">For external processing</p>
+<p class="FT">We make personal data available to SCHURTER's partners, other trustworthy companies or persons who process them on behalf of SCHURTER. This is done on the basis of SCHURTER's instructions and in accordance with the privacy policy of SCHURTER as well as other appropriate confidentiality and security measures.</p>
+<p class="FT"></p>
+<p class="UE2">For legal reasons</p>
+<p class="FT">We will pass on personal data to companies, organizations or persons outside of SCHURTER if we can assume in good faith that it is reasonably necessary to access, use, store or pass on this data in order to be able to do so:</p>
+<p class="FT">• to comply with applicable laws, regulations or legal proceedings or to comply with an enforceable administrative order.</p>
+<p class="FT">• to enforce applicable terms of use, including investigation of possible violations.</p>
+<p class="FT">• detect, prevent or otherwise combat fraud, security deficiencies or technical problems</p>
+<p class="FT">• to protect the rights, property or safety of SCHURTER, the users or the public against damage, as far as legally permissible or necessary.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Cookies</p>
+<p class="FT">When you visit a SCHURTER website, it is possible that information in the form of a "cookie" is stored on your computer to automatically recognize it the next time you visit it. For example, cookies allow you to customize a website to suit your interests or to save your password so that you do not have to enter it each time.</p>
+<p class="FT"></p>
+<p class="FT">You can also set your browser in such a way that all cookies, including those linked to the SCHURTER services, are blocked or that a message is displayed as soon as a cookie is set. However, keep in mind that many services may not work properly if you have cookies disabled.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Google Analytics</p>
+<p class="FT">The SCHURTER website uses Google Analytics, a web analysis service provided by Google Inc. (" Google"). Google Analytics uses "cookies", which are text files placed on your computer, to help us analyze your use of the website. The information generated by the cookie about your use of this website (including your IP address) is transferred to a Google server in the USA and stored there. Google will use this information for evaluating your website use, compiling reports on website activity for website operators and providing other services relating to website activity and internet usage. Google may also transfer this information to third parties if required by law or if third parties process this data on behalf of Google. Google will in no case associate your IP address with other Google data.</p>
+<p class="FT"></p>
+<p class="FT">By using the SCHURTER web pages, you agree to the processing of the data collected about you by Google in the manner and for the purpose described above.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Links to other websites</p>
+<p class="FT">The websites of SCHURTER contain links to other websites. The links do not mean that SCHURTER endorses or adopts the content of the linked pages. The linked sites are not under the control of SCHURTER and therefore SCHURTER assumes no responsibility for these links, their content and data protection strategy and the possible transmission of data through them.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Data transmission</p>
+<p class="FT">The transmission of data over the Internet is not completely secure. The use of the technologies used by SCHURTER for data transmission is at the user's own risk.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Unauthorized access and security</p>
+<p class="FT">SCHURTER protects your data against unauthorized access, loss or destruction by means of technical and organizational measures. SCHURTER's safety measures are continuously improved in line with technological developments. It cannot be completely ruled out that unauthorized third parties such as hackers may gain access to SCHURTER's websites and the information contained therein. SCHURTER is not responsible for any damage that may occur as a result.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Accessing and updating your personal data</p>
+<p class="FT">Some of the services of SCHURTER can only be accessed by certain persons who must enter a password and provide personal information.</p>
+<p class="FT"></p>
+<p class="FT">Whenever you use SCHURTER services, SCHURTER endeavours to give you access to your personal data. Should this data be inaccurate, SCHURTER will endeavour to provide you with the opportunity to update or remove it quickly - unless SCHURTER must keep this data for legitimate business or legal purposes.</p>
+<p class="FT"></p>
+<p class="FT">SCHURTER strives to provide the services in a manner that protects the data from accidental or deliberate destruction. For this reason, SCHURTER does not immediately delete any remaining copies of data that you have deleted from SCHURTER services from the active servers and does not remove this data from the backup systems.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Right of withdrawal</p>
+<p class="FT">You can revoke any consent given to SCHURTER for the collection or processing of your personal data at any time with effect for the future. Upon receipt of your revocation by SCHURTER, your data will be deleted immediately, insofar as it is not necessary for the execution of any contractual usage relationship with you or for the protection of the legitimate business interest of SCHURTER, or if it is contrary to statutory storage obligations.</p>
+<p class="FT"></p>
+<p class="FT">Right to information for the processing of personal data</p>
+<p class="FT"></p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Changes</p>
+<p class="FT">The privacy policy of SCHURTER may change from time to time. SCHURTER will not limit your rights under this privacy policy without your express consent.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="UE2">Right to information, correction and deletion</p>
+<p class="FT">In accordance with the applicable law, we will be happy to provide you with information on the personal data stored about you upon your written request, and on your written instruction we will also correct or delete any such data. If there are legal storage obligations for the data, the data will only be blocked for further use. Please send all such enquiries in text form (by letter or e-mail) to SCHURTER. Check <a alt="/en/group" href="/en/group" target="_blank" title="/en/group">Corporate</a>
+</p>
+<p class="FT">for contact data of local data protection officer.</p></p>
+</div>
+</div>
+</div>
+<div class="module-ft row">
+<div class="small-12 columns">
+<div class="text">
+<p><p class="FT">SCHURTER AG | Werkhofstrasse 8-12 | 6002 Luzern | Switzerland +41 41 369 31 11 | contact.ch@schurter.com</p></p>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="small-12 columns border-bottom"></div>
+</div>
+<div class="text-with-weblink">
+<div class="row">
+<div class="small-12 large-8 columns">
+<p class="description"><p class="FT">Do you have a question about the data protection measures described or would you like detailed information?</p></p>
+</div>
+<div class="small-12 large-4 columns large-text-right small-text-center">
+<div class="row">
+<div class="small-12 columns">
+<div class="weblink">
+<a class="button" href="mailto:unregister@schurter.comsubject=Data protection request" title="Send your message by using email">
+    Send request by email
+    <span class="icon-right icon--txtarrow-r_white"></span>
+</a> </div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="row">
+<div class="small-12 columns border-bottom"></div>
+</div>
+</div>
+<footer class="m270a">
+<div class="m270a__container">
+<div class="m270a__links-n-contacts">
+<div class="m270a__links flex-3">
+<ul class="ul__line-height ul__no-style">
+<li>
+<div class="m270a__choose-country-region">
+<img id="choose-country-region-img"/>
+<a class="text-link" href="/en/choose-country-region" id="choose-country-region-link"> - 
+        </a>
+</div>
+</li>
+</ul>
+</div>
+<div class="m270a__contact-filler"></div>
+</div>
+<div class="m270a__storelogos">
+<div>CatApp download available for</div>
+<a href="https://play.google.com/store/apps/details?id=ch.schurter.catsyncapp" target="_blank">
+<img class="m270a__storelogo" src="/assets/build/images/store-google.png"/>
+</a>
+<a href="https://itunes.apple.com/us/app/schurter/id1378882677?ls=1&amp;mt=8" target="_blank">
+<img class="m270a__storelogo" src="/assets/build/images/store-apple.png"/>
+</a>
+<a href="https://www.microsoft.com/fr-ch/p/schurter-catalog/9n7fhr82ljcb?rtc=1&amp;activetab=pivot%3aoverviewtab" target="_blank">
+<img class="m270a__storelogo" src="/assets/build/images/store-ms.png"/>
+</a>
+</div>
+<div class="m270a__sociallogos">
+<a href="https://www.linkedin.com/company/schurter" target="_blank">
+<img class="m270a__sociallogo" src="/assets/build/images/linkedin.png"/>
+</a>
+<a href="https://www.youtube.com/user/SchurterAG" target="_blank">
+<img class="m270a__sociallogo" src="/assets/build/images/youtube.png"/>
+</a>
+<a href="/en/rss-feed" target="_blank">
+<img class="m270a__sociallogo" src="/assets/build/images/rss.png"/>
+</a>
+</div>
+<div class="m270a__otherlinks">
+<ul class="ul__no-style">
+<li>
+<div>
+<a class="text-link" href="/en/privacy">Privacy
+        </a>
+</div>
+</li>
+<li>
+<div>
+<a class="text-link" href="/en/gtc">Terms and Conditions
+        </a>
+</div>
+</li>
+<li>
+<div>
+<span allow-preference-non-eu="true" class="termly-cookie-preference-button" onclick="displayPreferenceModal()" type="button"> Manage Cookie Preferences
+                        </span>
+</div>
+</li>
+<li>
+<div>
+<a class="text-link" href="/en/Track_and_Trace">Track &amp; Trace
+        </a>
+</div>
+</li>
+<li>
+<div>
+<a class="text-link" href="/en/partnerservice">Partner Service
+        </a>
+</div>
+</li>
+<li>
+<div>
+<select id="m270a-domains-selector">
+<option class="default" value="Visit other sites of SCHURTER">Visit other sites of SCHURTER</option>
+<option data-href="https://at.schurter.com" value="at.schurter.com">at.schurter.com</option>
+<option data-href="https://ch.schurter.com" value="ch.schurter.com">ch.schurter.com</option>
+<option data-href="https://chilick.schurter.com" value="chilick.schurter.com">chilick.schurter.com</option>
+<option data-href="https://cn.schurter.com" value="cn.schurter.com">cn.schurter.com</option>
+<option data-href="https://cz.schurter.com" value="cz.schurter.com">cz.schurter.com</option>
+<option data-href="https://de.schurter.com" value="de.schurter.com">de.schurter.com</option>
+<option data-href="https://fr.schurter.com" value="fr.schurter.com">fr.schurter.com</option>
+<option data-href="https://hk.schurter.com" value="hk.schurter.com">hk.schurter.com</option>
+<option data-href="https://in.schurter.com" value="in.schurter.com">in.schurter.com</option>
+<option data-href="https://it.schurter.com" value="it.schurter.com">it.schurter.com</option>
+<option data-href="https://nl.schurter.com" value="nl.schurter.com">nl.schurter.com</option>
+<option data-href="https://pl.schurter.com" value="pl.schurter.com">pl.schurter.com</option>
+<option data-href="https://schurter.com" value="schurter.com">schurter.com</option>
+<option data-href="https://se.schurter.com" value="se.schurter.com">se.schurter.com</option>
+<option data-href="https://sg.schurter.com" value="sg.schurter.com">sg.schurter.com</option>
+<option data-href="https://uk.schurter.com" value="uk.schurter.com">uk.schurter.com</option>
+<option data-href="https://us.schurter.com" value="us.schurter.com">us.schurter.com</option>
+</select>
+</div>
+</li>
+</ul>
+<div>
+                © 2005-2020 SCHURTER All Rights Reserved
+            </div>
+</div>
+</div>
+</footer>
+</div>
+<!-- close the off-canvas menu -->
+<a class="exit-off-canvas"></a>
+<div class="medium-widget">
+<span class="icon--1024_widget_open"></span>
+</div>
+<div class="siteScrollTop">
+<span class="icon--txtarrow-u_black"></span>
+</div>
+<div class="domain hide">www.schurter.com</div>
+<div class="siteaccess">en-SAG3</div>
+<div class="language_uri_part hide">en</div>
+<div class="locale hide">eng-GB</div>
+<div class="display-none" id="showLoader">Y</div>
+<span class="app-env hide">prod</span>
+<span class="cdnVar hide">//cdn.schurter.com</span>
+<span class="node_key hide">privacy</span>
+<span class="cookies_consent_banner_technology hide">termly</span>
+</div>
+</div>
+<script src="//cdn.schurter.com/bundles/snceschurter/js/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="//cdn.schurter.com/bundles/snceschurter/js/ajax/libs/foundation/5.5.1/js/foundation.min.js"></script>
+<script src="//cdn.schurter.com/bundles/snceschurter/js/ajax/libs/foundation/5.5.1/js/foundation/foundation.equalizer.js"></script>
+<script src="//cdn.schurter.com/bundles/snceschurter/js/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
+<script src="//cdn.schurter.com/bundles/snceschurter/js/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="//cdn.schurter.com/bundles/snceschurter/js/ajax/libs/lazysizes/2.0.4/lazysizes.min.js"></script>
+<!-- START WEBPACK ENCORE -->
+<script src="/assets/build/runtime.41e81ebd.js"></script><script src="/assets/build/app.c9c4b2a5.js"></script>
+<!-- Renders app.js & a webpack runtime.js file
+                <script src="/build/runtime.js"></script>
+                <script src="/build/app.js"></script> -->
+<!-- END WEBPACK ENCORE -->
+<!-- START LEGACY assetic+grunt -->
+<script src="//cdn.schurter.com/js/asset_version-v524/script.js"></script>
+<!-- END LEGACY assetic+grunt -->
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"0cb8d6fb1e","applicationID":"389938747","transactionName":"YAcENkJWXUdXBRdaWFlNJRdDQ1xZGTUNUFJkAQ4XQkNWRnQTDVdbUlgrDVRCX1EMEApWQHQNCBZVWUd1WAIgW15bBhQHXg==","queueTime":0,"applicationTime":621,"atts":"TEAHQApMTkk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

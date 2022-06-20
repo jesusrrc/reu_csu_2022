@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- 必要三个meta标签 -->
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<!-- 万一有http请求,可以升级到https -->
+<meta content="upgrade-insecure-requests" http-equiv="Content-Security-Policy"/>
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<!-- title根据wp的页面类型来决定(不是必要的) -->
+<title>
+        Privacy | Finereport
+
+    </title>
+<meta content="" name="keywords">
+<meta content="" name="description">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-123516354-1"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-123516354-1');
+    </script>
+<!-- Google Tag Manager -->
+<script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PTWCZF2');
+    </script>
+<!-- End Google Tag Manager -->
+<script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-123516354-1', {
+            'optimize_id': 'GTM-TXP45L2'
+        });
+    </script>
+<!-- 全局jquery v2.1.4 -->
+<script src="https://www.finereport.com/en/wp-content/themes/Newweb/js/jquery.min.js"></script>
+<!-- 由3.3.5 的bootstrap变化而来 -->
+<link href="https://www.finereport.com/en/wp-content/themes/Newweb/CSS/bootstrap06.min.css" rel="stylesheet"/>
+<!-- 国内定制规范v3 -->
+<link href="https://www.finereport.com/en/wp-content/themes/Newweb/CSS/common-v3.1%20copy.css" rel="stylesheet" type="text/css"/>
+<!-- 英文区定制css -->
+<link href="https://www.finereport.com/en/wp-content/themes/Newweb/CSS/style_index.css" rel="stylesheet" type="text/css"/>
+<!-- 懒加载js -->
+<script src="https://www.finereport.com/en/wp-content/plugins/wp-smushit/app/assets/js/smush-lazy-load.min.js?ver=3.7.1" type="text/javascript">
+</script>
+<!-- header自己的css -->
+<link href="https://www.finereport.com/en/wp-content/themes/Newweb/modules/new-nav/style.css" rel="stylesheet"/>
+<link href="https://www.finereport.com/en/wp-content/themes/Newweb/modules/new-nav/nav.css?ver=1655359482" rel="stylesheet"/>
+<link href="//at.alicdn.com/t/font_2001453_w0aquzkwy3.css" rel="stylesheet"/>
+<script>
+        $(function() {
+            $("#nav-menu").click(function() {
+                $(this).toggleClass("on");
+                $("#global_header__nav").slideToggle(250);
+            })
+
+
+            if ($(window).width() <= 768) {
+                $(".f-nav").bind("click", function() {
+                    if ($(this).parent("li").hasClass("on")) {
+                        $(this).parent("li").removeClass("on");
+                    } else {
+                        $(this).parent("li").addClass("on").siblings().removeClass("on");
+                    }
+                })
+            } else {
+                $(".f-nav").bind("mouseenter", function() {
+                    if ($(this).parent("li").hasClass("on")) {
+                        $(this).parent("li").removeClass("on");
+                    } else {
+                        $(this).parent("li").addClass("on").siblings().removeClass("on");
+                    }
+                })
+                $(".f-nav:eq(0),.f-nav:eq(5)").bind("mouseleave", function() {
+                    $(this).parent("li").removeClass("on");
+                })
+            }
+
+            $(".global_header__dropdown-menu-wrapper").bind("mouseleave", function() {
+                $(this).parent("li").removeClass("on");
+            })
+
+
+        })
+    </script>
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=e538a342-0989-45aa-838d-dd37695280cd"> </script>
+<script type="text/javascript">
+        zE('webWidget', 'setLocale', 'en');
+        zE('webWidget', 'hide');
+    </script>
+<!-- modal-css -->
+<link href="https://www.finereport.com/en/wp-content/themes/Newweb/modules/modal/popup.css?ver=1638178164" rel="stylesheet"/>
+<!-- modal-js -->
+<script src="https://www.finereport.com/en/wp-content/themes/Newweb/modules/modal/popup-functions.js?ver=1635852732"></script>
+<!-- Bootstrap -->
+</meta></meta></head>
+<style type="text/css">
+    /*.banner {*/
+    /*  height: 500px;*/
+    /*  */
+    /*}*/
+
+    /*顶部导航动态效果,迁移到common中*/
+
+    /*顶部导航*/
+    /* .frbotnav {
+        background-color: #020f27;
+    }
+
+    .frbotnav-tit {
+        font-size: 16px;
+        color: #fff;
+    }
+
+    .frbotnav-a {
+        font-size: 13px;
+        color: #b4bcc5;
+        display: block;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        text-decoration: none;
+    }
+
+    .frbotnav-a:hover {
+        color: #2849f7;
+        text-decoration: none;
+    }
+
+    .frbotnav-a:focus {
+        color: #2849f7;
+        text-decoration: none;
+    }
+
+    .frbotnav-p1 {
+        font-size: 18px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+
+    .frbotnav-p2 {
+        font-size: 13px;
+        color: #ccc;
+    }
+
+    .frbotnav-icon {
+        width: 24px;
+        margin-right: 10px;
+    } */
+
+    .frbotnav .frbtn-wht {
+        margin-bottom: 30px;
+        min-width: 240px;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+
+    @media screen and (min-width: 768px) {
+        .navbar-nav.li.a {
+            text-align: center
+        }
+
+        .frbotnav {
+            text-align: center;
+        }
+
+        .navbar-collapse {
+            text-align: left;
+        }
+
+
+    }
+
+    @media screen and (min-width: 992px) {
+        .navbar-nav.li.a {
+            text-align: center
+        }
+
+        .frbotnav {
+            text-align: center;
+        }
+
+        .navbar-collapse {
+            text-align: left;
+        }
+
+    }
+</style>
+<style type="text/css">
+    body,
+    html {
+        font-family: 'PingFangSC-Light', 'Hiragino Sans GB', 'Microsoft YaHei', 'OpenSans', 'Myriad Pro', 'Verdana';
+    }
+
+
+    section.greybg {
+        background-color: #f2f3f4;
+    }
+
+    /*banner和板块的字体样式*/
+
+    .banner .slogan-p2 {
+        color: rgba(255, 255, 255, .6);
+        font-size: 18px;
+        line-height: 18px;
+        margin-bottom: 70px;
+        letter-spacing: 1px;
+        margin-top: -40px;
+    }
+
+    hr.frline-blue {
+        width: 60px;
+        border-top: 2px solid #2849f7;
+        margin: 30px 0;
+    }
+
+    p.sec-des {
+        margin-bottom: 50px;
+        color: #666;
+        margin-top: -30px;
+    }
+
+    /*按钮样式 可能与common中有重复,待替换*/
+    .frbtn-wht:hover {
+        background-color: rgba(255, 255, 255, .8);
+        color: #2849F7;
+    }
+
+    .frbtn-wht:focus {
+        background-color: rgba(255, 255, 255, .8);
+        color: #2849F7;
+    }
+
+    .frbtn-wht2:hover {
+        background-color: rgba(255, 255, 255, .3);
+        color: #fff;
+    }
+
+    .frbtn-wht2:focus {
+        background-color: rgba(255, 255, 255, .3);
+        color: #fff;
+    }
+
+    .frbtn-blue {
+        color: #fff;
+        background-color: #2849f7;
+        border: none;
+    }
+
+    .frbtn-blue:hover {
+        background-color: rgba(1, 150, 255, 0.8);
+        color: #fff;
+    }
+
+    .frbtn-blue:focus {
+        background-color: rgba(1, 150, 255, 0.8);
+        color: #fff;
+    }
+
+    /*tab切换样式*/
+    .frswt {
+        background: -webkit-linear-gradient(#3852f5, #3c60f7);
+        background: -o-linear-gradient(#3852f5, #3c60f7);
+        background: -moz-linear-gradient(#3852f5, #3c60f7);
+        background: linear-gradient(#3852f5, #3c60f7);
+    }
+
+    .frswt .sec-tit {
+        color: #fff;
+    }
+
+    .frswt .swt-link {
+        color: #666;
+        font-size: 16px;
+        height: 45px;
+        line-height: 45px;
+        border: none;
+        padding: 0;
+        border-radius: 0;
+        border-right: 1px solid #e6e6e6;
+    }
+
+    .frswt .swt-link:hover {
+        color: #2849f7;
+        background-color: #e9f1ff;
+    }
+
+    .frswt .swt-link:focus {
+        color: #666;
+        background-color: #fff;
+    }
+
+    .frswt .swt-link.active {
+        color: #2849f7;
+        background-color: #e9f1ff;
+        border-right: 2px solid #2849f7;
+    }
+
+    .frswt .swt-row {
+        background-color: #fff;
+        padding: 60px 0;
+        margin: 0;
+        min-height: 0px
+    }
+
+    .frswt .swt-left {
+        padding: 0
+    }
+
+    .frswt .swt-tit {
+        font-size: 30px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        color: #333;
+    }
+
+    .frswt .swt-text {
+        font-size: 16px;
+        line-height: 32px;
+    }
+
+    /*阴影盒子*/
+    .frbox {
+        box-shadow: 0 6px 20px #D1EBFC;
+        -moz-box-shadow: 0 6px 20px #D1EBFC;
+        -webkit-box-shadow: 0 6px 20px #D1EBFC;
+    }
+
+    /*盒子的hover特效*/
+    .frhvr-shadow {
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: none;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: transform, box-shadow;
+        transition-property: transform, box-shadow;
+    }
+
+    .frhvr-shadow:hover {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px #D1EBFC;
+        -webkit-box-shadow: 0 6px 20px #D1EBFC;
+    }
+
+
+    /*视频弹出*/
+    .popup {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        z-index: 1100;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        display: none;
+        opacity: 1;
+        background-color: rgba(0, 20, 40, 0.9);
+    }
+
+    #shipin {
+        position: absolute;
+        top: 20%;
+        z-index: 999;
+        padding: 50px;
+    }
+
+    #shipin .col-md-6 {
+        margin: auto;
+        float: none;
+    }
+
+    #shipin a.closeshipin {
+        font-size: 26px;
+        line-height: .5;
+        position: absolute;
+        top: 25px;
+        right: 20%;
+        color: #aaa;
+        text-shadow: 0 -1px 1px rgba(0, 0, 0, .6);
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+        #shipin {
+            width: 100%;
+            position: absolute;
+            top: 20%;
+            z-index: 999;
+            padding: 50px 0;
+            background-color: #2E323B;
+        }
+
+        #shipin .col-md-6 {
+            margin: auto;
+        }
+
+        #shipin a.closeshipin {
+            right: 4%;
+        }
+
+        .frbot {
+            height: auto;
+            background-image: none;
+            background: linear-gradient(#354cf4, #415bf6);
+        }
+
+        .frbot .sec-tit {
+            margin-top: 0;
+        }
+    }
+</style>
+<style type="text/css">
+    .international_info {
+        width: 100%;
+        height: 50px;
+        background-image: url(https://www.finereport.com/en/wp-content/themes/Newweb/images/webinar/webinar3_header.png);
+
+        background-position: center;
+    }
+
+    .international_info_content {
+        height: 100%;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .international_info_content a {
+        display: block;
+        text-decoration: none;
+        height: 50px;
+    }
+
+    .international_info_content h3 {
+        color: #FFFFFF;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        height: 100%;
+        line-height: 50px;
+    }
+</style>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PTWCZF2" style="display:none;visibility:hidden" width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="fr-container fr-header">
+<div class="head-top">
+<div class="fr-box12">
+<a href="/en/contact-us" target="_blank">Contact Us </a>
+<a href="/en/partner-network" target="_blank">Partner</a>
+<a href="/en/pricing" target="_blank">Pricing</a>
+<a href="https://endemo.finereport.com/webroot/decision" target="_blank">Demo</a>
+</div>
+</div>
+<div class="head-box fr-box12">
+<div class="h-left">
+<!-- logo图片 -->
+<div class="logo-box">
+<a class="logo" href="/en/index"><img alt="" src="https://www.finereport.com/en/wp-content/themes/Newweb/modules/new-nav/header_logo.png"/></a>
+<!-- 汉堡图标 -->
+<div class="menu" id="nav-menu">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+<!-- 导航项 -->
+<ul class="global_header__nav" id="global_header__nav">
+<!-- 第一项 -->
+<li>
+<a class="f-nav" href="/en/product" id="first_nav" target="_blank">Why FineReport</a>
+</li>
+<!-- 第二项,有下拉的链表-->
+<li class="">
+<a class="f-nav" id="second_nav" target="_blank">Product <span></span></a>
+<div class="global_header__dropdown-menu-wrapper">
+<div class="global_header__dropdown-menu">
+<div class="product-container">
+<!-- 左边的下拉 -->
+<div class="left">
+<!-- 可能会删掉的部分，下载页 -->
+<a href="/en/activation" target="_blank">
+<i class="iconfont icon-bianzu"></i>
+<p>Download</p>
+</a>
+<a href="https://www.finereport.com/en/version-feature/10-0-19" target="_blank">
+<i class="iconfont icon-bianzu17"></i>
+<p>What's New</p>
+</a>
+<a href="/en/security" target="_blank">
+<i class="iconfont icon-bianzu7"></i>
+<p>Security</p>
+</a>
+<a href="/en/releases" target="_blank">
+<i class="iconfont icon-bianzu4"></i>
+<p>Releases</p>
+</a>
+<a href="/en/beat-corona-virus" target="_blank">
+<i class="iconfont icon-bianzu1"></i>
+<p>COVID-19</p>
+</a>
+</div>
+<!-- 右边的下拉 -->
+<div class="right">
+<!-- product features有下拉菜单 -->
+<a target="_blank">
+<i class="iconfont icon-bianzu91"></i>
+<p>Product Features</p>
+</a>
+<div class="s-link">
+<ul class="s-link-list">
+<li>
+<a href="/en/features/report-designer" target="_blank">
+<p>FineReport Designer</p>
+<i class="iconfont icon-lujing"></i>
+</a>
+</li>
+<li>
+<a href="/en/features/data-visualization" target="_blank">
+<p>Data Visualization</p>
+<i class="iconfont icon-lujing"></i>
+</a>
+</li>
+<li>
+<a href="/en/features/data-integration" target="_blank">
+<p>Data Integration</p>
+<i class="iconfont icon-lujing"></i>
+</a>
+</li>
+<li>
+<a href="/en/features/data-entry" target="_blank">
+<p>Data Entry</p>
+<i class="iconfont icon-lujing"></i>
+</a>
+</li>
+</ul>
+<ul class="s-link-list">
+<li>
+<a href="/en/features/decision-making-system" target="_blank">
+<p>Decision-Making Platform</p>
+<i class="iconfont icon-lujing"></i>
+</a>
+</li>
+<li>
+<a href="/en/features/deploy-and-integration" target="_blank">
+<p>Deployment&amp;Integration</p>
+<i class="iconfont icon-lujing"></i>
+</a>
+</li>
+<li>
+<a href="/en/features/mobilebi" target="_blank">
+<p>Mobile Application</p>
+<i class="iconfont icon-lujing"></i>
+</a>
+</li>
+<li>
+<a href="/en/features/tv-dashboard" target="_blank">
+<p>Large screen Dashboard</p>
+<i class="iconfont icon-lujing"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<!-- 第四项 -->
+<li>
+<a class="f-nav" id="forth_nav" target="_blank">FineBI<span></span></a>
+<div class="global_header__dropdown-menu-wrapper">
+<div class="global_header__dropdown-menu">
+<div class="finebi-container">
+<a href="https://www.finereport.com/en/finebi" target="_blank">
+<i class="iconfont"></i>
+<p>Overview</p>
+</a>
+<a href="https://www.finereport.com/en/bi-activation" target="_blank">
+<i class="iconfont"></i>
+<p>Download</p>
+</a>
+<a href="https://help.fanruan.com/finebi-en/" target="_blank">
+<i class="iconfont"></i>
+<p>Documentation</p>
+</a>
+<a href="https://www.finereport.com/en/bi-contactus" target="_blank">
+<i class="iconfont"></i>
+<p>Contact Us</p>
+</a>
+</div>
+</div>
+</div>
+</li>
+<!-- 第三项 -->
+<li>
+<a class="f-nav" id="third_nav" target="_blank">Learn<span></span></a>
+<div class="global_header__dropdown-menu-wrapper">
+<div class="global_header__dropdown-menu">
+<div class="learning-container">
+<a href="https://help.fanruan.com/finereport-en/" target="_blank">
+<i class="iconfont icon-documenation"></i>
+<p>Help Doc</p>
+</a>
+<a href="https://community.finereport.com/Learning/clip.php" target="_blank">
+<i class="iconfont icon-forums"></i>
+<p>Getting Started</p>
+</a>
+<a href="http://community.finereport.com/Learning/video_center.php" target="_blank">
+<i class="iconfont icon-trainingvideos1"></i>
+<p>Training Videos</p>
+</a>
+<a href="http://community.finereport.com/Learning/learning_path.php" target="_blank">
+<i class="iconfont icon-learningpath1"></i>
+<p>Learning Path</p>
+</a>
+<a href="https://community.finereport.com/webinar_register.php?webinarId=8&amp;utm_source=frwebsite&amp;utm_medium=header&amp;utm_campaign=webinar_en" target="_blank">
+<i class="iconfont icon-webinars"></i>
+<p>Webinars</p>
+</a>
+<a href="/en/blog" target="_blank">
+<i class="iconfont icon-blog"></i>
+<p>Blog</p>
+</a>
+<a href="http://community.finereport.com/" target="_blank">
+<i class="iconfont icon-forums"></i>
+<p>Community</p>
+</a>
+</div>
+</div>
+</div>
+</li>
+<!-- 第五项 -->
+<li>
+<a class="f-nav" id="fifth_nav" target="_blank">Solutions<span></span></a>
+<div class="global_header__dropdown-menu-wrapper">
+<div class="global_header__dropdown-menu">
+<div class="solutions-container">
+<a href="/en/iot-dashboards" target="_blank">
+<i class="iconfont icon-iot"></i>
+<p>IOT</p>
+<span>Description <i class="iconfont icon-lujing"></i></span>
+</a>
+<a href="/en/sales-dashboard" target="_blank">
+<i class="iconfont icon-sales"></i>
+<p>Sales</p>
+<span>Description <i class="iconfont icon-lujing"></i></span>
+</a>
+<a href="/en/financial-dashboards" target="_blank">
+<i class="iconfont icon-financial"></i>
+<p>Financial</p>
+<span>Description <i class="iconfont icon-lujing"></i></span>
+</a>
+</div>
+</div>
+</div>
+</li>
+<!-- 第六项 -->
+<li>
+<a class="f-nav" href="/en/company" id="sixth_nav" target="_blank">About</a>
+</li>
+<li>
+<a class="f-nav" id="seven_nav" target="_blank">Language<span></span></a>
+<div class="global_header__dropdown-menu-wrapper">
+<div class="global_header__dropdown-menu">
+<div class="language-container">
+<a href="https://www.finereport.com" target="_blank">
+<p>简体中文</p>
+</a>
+<a href="/en" target="_blank">
+<p>English</p>
+</a>
+<a href="https://www.finereport.com/tw" target="_blank">
+<p>繁體中文</p>
+</a>
+<a href="https://www.finereport.com/jp" target="_blank">
+<p>日本語</p>
+</a>
+<a href="https://www.finereport.com/kr" target="_blank">
+<p>한국어</p>
+</a>
+<a href="https://www.finereport.com/id" target="_blank">
+<p>Bahasa Indonesia</p>
+</a>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div id="white" style="height:56px;display:none"></div>
+<div class="h-right">
+<a class="login" href="https://www.finereport.com/en/activation" target="_blank">Free Trial</a>
+<a class="ty" href="/en/bookademo" target="_blank">Book a Demo</a>
+</div>
+</div>
+</div> <div class="consult-icon">
+<div class="hover">
+<svg class="icon" data-spm-anchor-id="a313x.7781069.0.i26" height="40" id="mx_n_1626916945170" p-id="12540" t="1626916945168" version="1.1" viewbox="0 0 1024 1024" width="40" xmlns="http://www.w3.org/2000/svg">
+<path class="" d="M512 160h5.28a348.96 348.96 0 0 1 244.16 596.16A352 352 0 0 1 514.08 864H512a352 352 0 0 1-182.72-51.2 64 64 0 0 0-49.6-7.2l-83.84 22.56 22.56-83.84a64 64 0 0 0-7.2-49.6A352 352 0 0 1 160 509.92 357.44 357.44 0 0 1 512 160m0-48C297.92 112 113.28 294.56 112 509.6A400 400 0 0 0 170.08 720a14.88 14.88 0 0 1 1.92 12.16l-36.8 137.44a16 16 0 0 0 16 20.16 12.48 12.48 0 0 0 4.16 0l137.44-36.8a16 16 0 0 1 4 0 14.72 14.72 0 0 1 8.16 2.4A399.04 399.04 0 0 0 512 912h2.4C731.52 910.72 915.36 722.56 912 505.6A400 400 0 0 0 518.4 112z" data-spm-anchor-id="a313x.7781069.0.i27" fill="#0681fc" p-id="12541"></path>
+<path d="M352 584.16a8.16 8.16 0 1 1 0-16h192a8.16 8.16 0 0 1 0 16z" fill="#0681fc" p-id="12542"></path>
+<path class="" d="M544 544H352a32 32 0 0 0-32 32 32 32 0 0 0 32 32h192a32 32 0 0 0 32-32 32 32 0 0 0-32-32z" data-spm-anchor-id="a313x.7781069.0.i29" fill="#0681fc" p-id="12543"></path>
+<path d="M352 450.88a2.88 2.88 0 0 1 0-5.76h320a2.88 2.88 0 0 1 0 5.76z" fill="#0681fc" p-id="12544"></path>
+<path class="" d="M672 416H352a32 32 0 0 0-32 32 32 32 0 0 0 32 32h320a32 32 0 0 0 32-32 32 32 0 0 0-32-32z" data-spm-anchor-id="a313x.7781069.0.i28" fill="#0681fc" p-id="12545"></path>
+</svg>
+</div>
+<div class="nohover">
+<svg class="icon" height="40" p-id="6779" t="1626868209322" version="1.1" viewbox="0 0 1024 1024" width="40" xmlns="http://www.w3.org/2000/svg">
+<path d="M512 160h5.28a348.96 348.96 0 0 1 244.16 596.16A352 352 0 0 1 514.08 864H512a352 352 0 0 1-182.72-51.2 64 64 0 0 0-49.6-7.2l-83.84 22.56 22.56-83.84a64 64 0 0 0-7.2-49.6A352 352 0 0 1 160 509.92 357.44 357.44 0 0 1 512 160m0-48C297.92 112 113.28 294.56 112 509.6A400 400 0 0 0 170.08 720a14.88 14.88 0 0 1 1.92 12.16l-36.8 137.44a16 16 0 0 0 16 20.16 12.48 12.48 0 0 0 4.16 0l137.44-36.8a16 16 0 0 1 4 0 14.72 14.72 0 0 1 8.16 2.4A399.04 399.04 0 0 0 512 912h2.4C731.52 910.72 915.36 722.56 912 505.6A400 400 0 0 0 518.4 112z" fill="#dfebff" p-id="6780"></path>
+<path d="M352 584.16a8.16 8.16 0 1 1 0-16h192a8.16 8.16 0 0 1 0 16z" fill="#dfebff" p-id="6781"></path>
+<path d="M544 544H352a32 32 0 0 0-32 32 32 32 0 0 0 32 32h192a32 32 0 0 0 32-32 32 32 0 0 0-32-32z" fill="#dfebff" p-id="6782"></path>
+<path d="M352 450.88a2.88 2.88 0 0 1 0-5.76h320a2.88 2.88 0 0 1 0 5.76z" fill="#dfebff" p-id="6783"></path>
+<path d="M672 416H352a32 32 0 0 0-32 32 32 32 0 0 0 32 32h320a32 32 0 0 0 32-32 32 32 0 0 0-32-32z" fill="#dfebff" p-id="6784"></path>
+</svg>
+</div>
+<p style="margin-bottom:0">
+        Contact Us
+    </p>
+</div>
+<!-- modal-css -->
+<!-- modal module -->
+<!-- 对于高度的自适应 -->
+<style>
+    @media (min-width: 768px) {
+        #supportModal .custom-modal {
+            width: 500px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        #supportModal .custom-modal {
+            width: 90%;
+        }
+    }
+
+    #supportModal .close-btn {
+        margin-top: 0px;
+        margin-right: 9px;
+        align-self: flex-end;
+    }
+</style>
+<!-- pop-content -->
+<div class="modal-bg hide" id="supportModal">
+<div class="modal-vertical">
+<div class="custom-modal">
+<div class="close-btn">✕</div>
+<div class="product-consult">
+<div class="d-flex">
+<svg class="icon" data-spm-anchor-id="a313x.7781069.0.i26" height="45" id="mx_n_1626916945170" p-id="12540" t="1626916945168" version="1.1" viewbox="0 0 1024 1024" width="45" xmlns="http://www.w3.org/2000/svg">
+<path class="" d="M512 160h5.28a348.96 348.96 0 0 1 244.16 596.16A352 352 0 0 1 514.08 864H512a352 352 0 0 1-182.72-51.2 64 64 0 0 0-49.6-7.2l-83.84 22.56 22.56-83.84a64 64 0 0 0-7.2-49.6A352 352 0 0 1 160 509.92 357.44 357.44 0 0 1 512 160m0-48C297.92 112 113.28 294.56 112 509.6A400 400 0 0 0 170.08 720a14.88 14.88 0 0 1 1.92 12.16l-36.8 137.44a16 16 0 0 0 16 20.16 12.48 12.48 0 0 0 4.16 0l137.44-36.8a16 16 0 0 1 4 0 14.72 14.72 0 0 1 8.16 2.4A399.04 399.04 0 0 0 512 912h2.4C731.52 910.72 915.36 722.56 912 505.6A400 400 0 0 0 518.4 112z" data-spm-anchor-id="a313x.7781069.0.i27" fill="#0086fd" p-id="12541"></path>
+<path d="M352 584.16a8.16 8.16 0 1 1 0-16h192a8.16 8.16 0 0 1 0 16z" fill="#0086fd" p-id="12542"></path>
+<path class="" d="M544 544H352a32 32 0 0 0-32 32 32 32 0 0 0 32 32h192a32 32 0 0 0 32-32 32 32 0 0 0-32-32z" data-spm-anchor-id="a313x.7781069.0.i29" fill="#0086fd" p-id="12543"></path>
+<path d="M352 450.88a2.88 2.88 0 0 1 0-5.76h320a2.88 2.88 0 0 1 0 5.76z" fill="#0086fd" p-id="12544"></path>
+<path class="" d="M672 416H352a32 32 0 0 0-32 32 32 32 0 0 0 32 32h320a32 32 0 0 0 32-32 32 32 0 0 0-32-32z" data-spm-anchor-id="a313x.7781069.0.i28" fill="#0086fd" p-id="12545"></path>
+</svg>
+<div>
+<span>Product Consulting</span>
+<p>Get more information on FineReport, industry solutions, our partner program, or request a live demo.</p>
+<div class="btnContainer" style="text-align: right;margin-top:10px">
+<a class="btn" href="https://www.finereport.com/en/bookademo" onclick="hideModal_support('supportModal')" target="_blank">Contact us</a>
+</div>
+</div>
+</div>
+</div>
+<hr style="border: 1px solid grey;width: 100%;width: 100%;opacity: 0.65;height:auto;"/>
+<div class="product-consult">
+<div class="d-flex">
+<svg class="icon" height="45" p-id="12707" t="1626918787319" version="1.1" viewbox="0 0 1024 1024" width="45" xmlns="http://www.w3.org/2000/svg">
+<path d="M376.944 557.104L512 693.024l-158.528 158.528a95.792 95.792 0 1 1-135.488-135.472l158.96-158.976z m-136.48-407.136c71.36-34.048 167.2-13.856 226.288 45.248 59.088 59.088 63.504 139.136 29.472 210.496l332.56 332.56a63.952 63.952 0 0 1 0 90.496 63.952 63.952 0 0 1-90.496 0L405.712 496.208c-71.36 34.048-159.296 21.728-218.4-37.36-59.072-59.088-71.392-147.024-37.344-218.384l82.336 82.32a63.952 63.952 0 0 0 90.496 0 63.952 63.952 0 0 0 0-90.496z m588.32 45.264l45.248 45.248-45.264 135.76h-90.496l-90.512 90.512-45.248-45.264 90.512-90.512 0.272-90.24 135.472-45.52z" fill="#0086fd" p-id="12708"></path>
+</svg>
+<div style="width:100%">
+<span>Technical Support</span>
+<p>Need technical assistance? Connect with our support team! <a class="text-center" href="https://www.finereport.com/en/technical-support-policy" target="_blank">Technical Support Policy</a> </p>
+<div class="btnContainer" style="text-align:right;margin-top:10px"><button class="btn" onclick="loadZendesk()">Get Started</button></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<style>
+    .consult-icon {
+        position: fixed;
+        bottom: 50%;
+        right: 20px;
+        background-color: #0681fc;
+        border-radius: 25% 0% 25% 25%;
+        text-align: center;
+        padding: 15px;
+        cursor: pointer;
+        box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%);
+        z-index: 1059;
+    }
+
+    .consult-icon p {
+        color: #dfebff;
+        font-size: 14px;
+    }
+
+    .consult-icon .hover {
+        display: none;
+    }
+
+    .consult-icon .nohover {
+        display: inline;
+    }
+
+    .consult-icon:hover {
+        background-color: white;
+    }
+
+    .consult-icon:hover p {
+        color: #0681fc;
+    }
+
+    .consult-icon:hover .hover {
+        display: inline;
+    }
+
+    .consult-icon:hover .nohover {
+        display: none;
+    }
+
+
+    .d-flex {
+        display: flex;
+        align-items: center;
+    }
+
+    .product-consult span {
+        display: inline-block;
+        font-size: 20px;
+        font-weight: bold;
+        color: #000000;
+        margin-bottom: 5px;
+    }
+
+    .product-consult p {
+        height: 36px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #8B8B8B;
+        line-height: 20px;
+    }
+
+    .product-consult svg {
+        margin-right: 10px;
+    }
+
+    .product-consult .btn {
+        width: 30%;
+        border-radius: 50rem;
+        background-color: #0086fd;
+        color: white;
+    }
+
+    .product-consult .btn:focus {
+        outline: none;
+    }
+
+    .product-consult .btn:hover {
+        border: 1px solid #0086fd;
+        color: #0086fd;
+        background-color: white;
+    }
+
+    #supportModal .custom-modal {
+        height: 400px;
+        background-image: url(https://www.finereport.com/tw/wp-content/uploads/2021/07/资源-1@2x.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        justify-content: center;
+        border-radius: 25% 10% 10% 10%;
+        position: relative;
+        padding-left: 40px;
+        padding-right: 40px;
+        box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%);
+    }
+
+    #supportModal {
+        z-index: 9999999;
+    }
+
+    #supportModal .close-btn {
+        position: absolute;
+        top: 24px;
+    }
+
+    #supportModal .btn {
+        font-size: 16px;
+    }
+
+
+    @media screen and (max-width: 600px) {
+        #supportModal .custom-modal {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .product-consult p {
+            height: auto;
+        }
+
+        .product-consult .btnContainer {
+            text-align: left !important;
+        }
+
+        .product-consult .btn {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        #supportModal .custom-modal {
+            height: 470px;
+        }
+
+    }
+</style>
+<script>
+    let support_closeBtn = document.querySelector('#supportModal .close-btn')
+    let support_popmodal = document.querySelector('#supportModal')
+    support_closeBtn.addEventListener('click', () => {
+        support_popmodal.classList.add('hide')
+    })
+    document.querySelector('.consult-icon').addEventListener('click', function() {
+        // show modal
+        $('#supportModal').removeClass('hide');
+    })
+
+    function hideModal_support(id) {
+        $('#' + id).addClass('hide')
+    }
+</script> <script>
+        var zendeskLoad = false;
+
+        function loadZendesk() {
+            if ($('#supportModal')) {
+                $('#supportModal').addClass('hide');
+            }
+            if (!zendeskLoad) {
+                var script = document.createElement("script");
+                script.id = "ze-snippet";
+                script.src = "https://static.zdassets.com/ekr/snippet.js?key=e538a342-0989-45aa-838d-dd37695280cd";
+                document.body.appendChild(script)
+                if (script.readyState) { //IE
+                    script.onreadystatechange = function() {
+                        if (script.readyState == "loaded" || script.readyState == "complete") {
+                            script.onreadystatechange = null;
+                            zE('webWidget', 'setLocale', 'en');
+                            zE('webWidget:on', 'open', function() {
+                                console.log('The widget has been opened!');
+                            });
+                        }
+                    };
+                } else { //Others
+                    script.onload = function() {
+                        zE('webWidget', 'show');
+                        zE('webWidget', 'setLocale', 'en');
+                        zE('webWidget:on', 'close', function() {
+                            zE('webWidget', 'hide');
+                            $('.consult-icon').css({
+                                'z-index': '9999998'
+                            });
+                        });
+                        zE('webWidget:on', 'open', function() {
+                            $('.consult-icon').css({
+                                'z-index': '999999'
+                            });
+                        });
+                        zE('webWidget', 'open');
+
+                    };
+                }
+                zendeskLoad = true;
+            } else {
+                zE('webWidget', 'show');
+                zE('webWidget', 'setLocale', 'en');
+                zE('webWidget:on', 'close', function() {
+                    zE('webWidget', 'hide');
+                    $('.consult-icon').css({
+                        'z-index': '9999998'
+                    });
+                });
+                zE('webWidget:on', 'open', function() {
+                    $('.consult-icon').css({
+                        'z-index': '999999'
+                    });
+                });
+                zE('webWidget', 'open');
+            }
+
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>PRIVACY</title>
+<style>
+        /* header 配套的css */
+
+        .PrivacyContent ul {
+            margin-left: 4rem;
+        }
+
+        h2 {
+            font-weight: 700;
+        }
+
+        .PrivacyWidth {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .PrivacyBanner h1 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* header 配套的css */
+        .PrivacyBanner {
+            padding: 0;
+            margin-top: 107px;
+        }
+
+        @media(max-width: 1024px) {
+            .PrivacyBanner {
+                margin-top: 148px;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .PrivacyBanner {
+                margin-top: 60px;
+            }
+        }
+
+        .content p {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0px;
+            color: #4d5d6d;
+            text-align: justify;
+        }
+
+        .content ul {
+            list-style: disc;
+        }
+    </style>
+</head>
+<body>
+<div class="PrivacyBanner PrivacyWidth text-center">
+<h1>FineReport Privacy Policy</h1>
+</div>
+<div class="content">
+<div class="PrivacyContent PrivacyWidth">
+<small>Last modified June 9, 2020</small>
+<p>
+                Fanruan Software Co., Ltd. ("Fanruan" or "we" "our") believes in the importance of thoughtfully handling personal information and is committed to privacy practices that are transparent and compliant.
+                This Privacy Statement sets out how Fanruan uses the personal information we collect and receive about you. By using our website, product and service, you consent to the collection, sharing and use of information as described here.
+            </p>
+<br/>
+<h2>Scope of this privacy</h2>
+<ul>
+<li>Why We Collect &amp; Use Your Personal Data</li>
+<li>How We Collect &amp; Use Your Personal Data</li>
+<li>Cookies &amp; Similar Technologies</li>
+<li>How We Protect Your Personal Data &amp; Disclose Personal Data</li>
+<li>How to Access &amp; Control Your Personal Data</li>
+<li>How We Process Children's Personal Data</li>
+<li>Third-party Providers and Their Services</li>
+<li>International Transfers of Your Personal Data</li>
+<li>How to Contact Us </li>
+<li>Updates to This Policy</li>
+</ul>
+<br/>
+<h2>Why We Collect &amp; Use Your Personal Data</h2>
+<p>When we process your personal information, we will only do so where at least one of the following applies:</p>
+<ul>
+<li>We need to use your personal information to perform our responsibilities under our contract with you and to provide you with tools and services</li>
+<li>We have a legitimate reason to collect and use your personal information. For example, it is in our legitimate interests to use usage data including your personal information to improve our products and services;
+                    <br/>
+                    to tell you about changes to this Privacy Statement and other policies;
+                    <br/>
+                    to tell you about new products, services and events or changes to our products, services or websites;
+                    <br/>
+                    for business reasons (for example to develop and expand our business); and to tell you about offers or promotions we are running.
+                </li>
+<li>
+                    You have given consent to use your personal information. You may withdraw consent by opting out where we give you the opportunity to do so, or by contacting us using the contact details below.
+
+                </li>
+<li>If it is necessary for us to use your personal information in order to comply with a legal obligation.</li>
+<li>You have chosen to make the information public. You should not share any personal information which you wish to keep confidential or private.</li>
+</ul>
+<br/>
+<h2>How We Collect &amp; Use Your Personal Data</h2>
+<p>This Privacy Policy applies only to personal information collected by Fanruan through Fanruan websites, products,
+                and services that display or provide links to this Policy and does not apply to any other information collected by Fanruan through other means.
+                If you have other agreements with Fanruan governing Fanruan products and services, then those agreements control with regard to the subject matter of those agreements.</p>
+<p>As a convenience to our site visitors, we may provide links to other web sites that are not governed by this privacy policy.
+                These linked sites are not under the control of Fanruan, and we are not responsible for the protection and privacy of any information which you provide whilst visiting such sites.</p>
+<p>Fanruan collects personal information in support of its mission to help people see and understand their data. This personal information is collected in a variety of ways.
+                You provide some information directly to us; we receive some information when you visit our website or use our products and services; and we receive some information from third parties.</p>
+<p>The categories of information we collect will depend on your interactions with Fanruan:</p>
+<ul>
+<li>Contact information. Name, employer, title, email address, physical address, phone number, and similar contact info, user names, passwords, IP addresses, password hints, and similar security information used for authentication and account access.</li>
+<li>Payment and financial information. Company registration Information, banking information, billing address, payment instrument number (such as a credit card number), and the security code associated with your payment instrument.</li>
+<li>Demographic Information. Employment status, occupation, region. If you participate in Fanruan user research activities, you will have the option to provide further information, such as gender, race, age, and personal propensities.</li>
+<li>Inferred and derived information. Data such as propensities and attributes that Fanruan generates to help us understand you and your preferences.</li>
+<li>Transaction and registration information. The information which is generated in the course of your transaction with Fanruan, including account information, logins, passwords, and purchase history.
+                    Product registration information, product interest information, transaction information, and in some cases, student and teacher verification information. We may also collect registration information related to your attendance at Fanruan events, including travel information, scheduling information, food preferences or allergies, and accessibility requests.</li>
+<li>Usage and geographic data. Fanruan collects information related to your use of our products, services and websites.
+                    We analyze that usage data so that we can improve our products and your experience with them.
+                    In certain instances, Fanruan provides administrative tools so you can opt-out of the collection of some usage data.</li>
+<li>Usage data includes online and technical information about your computer's or mobile device's operating system and browser type;
+                    your device type; details about how you are using our products (including natural language queries);
+                    your Internet Protocol (IP) address, and geographic areas derived from your IP address; networking connection data; Fanruan cookie information;
+                    file information; metadata; time-stamped logs regarding access times and duration of visits; the web pages you visited before coming to Fanruan websites (referring URL);
+                    and other usage data relating to your activities on our Sites(including official website, help document website, demo website, forum and all other websites that serve Fanruan users), including the pages you request.
+                    We may link this information to the personal information we have collected about you and use it for the purposes described in this Privacy Statement, and we may deliver targeted marketing and product information back to you based on your usage data.</li>
+<li>Third-party data. We may receive your personal information from third party suppliers or partners.
+                    If you connect with Fanruan accounts on third party social networking sites, we may receive information about your social networking accounts, for example, your name, user name or display name, public profile, and email address.
+                    We may combine information you provide with data we collect automatically and with data we receive from third parties.</li>
+<li>Images, video and recordings. Pictures, videos or audio recordings may be collected by Fanruan. For example, if you attend a Fanruan event, your image may be captured in a photo or video. If you call Fanruan customer support, your call may be recorded.
+                    If you decline to provide your personal information or ask us to delete it, we may be unable to continue to provide or support our products or services.
+                </li>
+</ul>
+<p>
+                We use the personal information we collect for the purposes described in this Privacy Statement, as covered in any agreement that incorporates this Policy, or as disclosed to you in connection with our websites.
+                For example, we will use your information to:
+            </p>
+<ul>
+<li>Provide and deliver products or services, including software upgrades, plug-in installation, function
+                    additions, project services, examination services, customer service, and other new services. For
+                    example, Fanruan’s partners may contact you by email, post, social media account or phone to market
+                    Fanruan or Fanruan-compatible products
+                </li>
+<li>Operate and improve our operations, systems, products, and services;</li>
+<li>Understand you and your preferences to enhance your experience;</li>
+<li>Respond to your comments and questions and provide customer service</li>
+<li>Provide service and support, such as sending confirmations, invoices, technical notices, updates, security alerts, and administrative messages and providing customer support and troubleshooting;</li>
+<li>Communicate with you and your referrals about promotions, upcoming events, and news about products and services offered by Fanruan and our selected partners;</li>
+<li>Link or combine information about you with other personal information we get from third parties, to help understand your needs and provide you with better and more personalized service;</li>
+<li>Enforce our terms and conditions or protect our business, partners, or users;</li>
+<li>Protect against, investigate, and deter fraudulent, unauthorized, or illegal activity;</li>
+<li>Keep our products, facilities, and services secure.</li>
+</ul>
+<br/>
+<h2>Cookies &amp; Similar Technologies</h2>
+<p>Our websites use various software technologies including cookies, web beacons and pixel tags.
+                Cookies are small text files that we and others may place on visitors' devices to store their preferences.
+                We use web beacons or pixel tags - small pieces of code placed on a web page or within the body of an email - to monitor the behavior and collect data about the visitors viewing a web page or viewing or opening an email.
+                Web beacons can be used to count the users who visit a web page or to deliver a cookie to the browser of a visitor viewing that page, and we use them from time to time for this and advertising purposes.</p>
+<p>
+                We partner with third parties, including analytics companies, advertisers, and ad networks,
+                who may place cookies on your browser when you visit our websites, may send their own cookies to your cookie file,
+                and may use those cookies to track and collect information about you and your online activities over time and across different websites, devices,
+                and applications and to provide targeted advertising based on your interests and previous browsing history.
+            </p>
+<p>
+                Third-party ad networks may automatically collect information about your visits to our websites and other websites,
+                such as your IP address, your Internet service provider, and the browser you use to visit our websites.They do this by using cookies, web beacons or other technologies. You can learn more about the practices of many of these third parties by visiting the Digital Advertising Alliance (<a href="http://www.aboutads.info/choices">http://www.aboutads.info/choices</a>) in the USA, Digital Advertising Alliance of Canada (http://youradchoices.ca) in Canada or the European Digital Advertising Alliance (<a href="http://www.youronlinechoices.eu">http://www.youronlinechoices.eu</a>) in Europe.This Privacy Statement does not apply to, and we are not responsible for, cookies or web beacons and other technologies in third-party advertising.We encourage you to check the privacy policies of third party advertisers and/or ad services to learn about their use of cookies, web beacons and other technologies.
+            </p>
+<br/>
+<h2>How We Protect Your Personal Data &amp; Disclose Personal Data</h2>
+<p>Fanruan works to keep your personal information confidential and secure. In some circumstances Fanruan may share your information with third parties, for example:</p>
+<ul>
+<li>We may share your personal information when we have your permission, including when you choose to share information using Fanruan Public or post to our Community websites;</li>
+<li>We provide personal information to trusted partners who work on behalf of or with Fanruan to provide us with services.
+                    For example, we share contact information with our training and certification partners, our reseller and service partners, our data storage, customer support and marketing vendors, and with our software providers.
+                    These companies may use your personal information to perform services and to help Fanruan communicate with you, including making offers from Fanruan and our partners.
+                    Fanruan maintains contracts with these companies restricting their access, use and disclosure of personal information in compliance with this Privacy Statement and any legal obligations;</li>
+<li>If you connect to your third-party accounts through our products, we will use that information to authenticate you, enumerate the data sources available to you,
+                    download any data you request us to, and download and refresh authentication tokens or persist authentication information such as user names and passwords as necessary to continue to connect to these data;</li>
+<li>
+                    We may share your contact and transactional information with our current or future affiliates, which may include parent and subsidiary companies, joint ventures, or other companies under common control, in which case we will require our affiliates to honor this Privacy Statement;
+                </li>
+<li>We will disclose your personal information to comply with legal requirements, such as in response to a court order or a subpoena.
+                    We also may disclose your personal information in response to a law enforcement agency's request, or where we believe it is necessary to investigate, verify, prevent, enforce compliance with, or take action regarding illegal or suspected illegal activities;
+                    suspected fraud; situations involving potential threats to the physical safety of any person; protection of the rights and property of Fanruan, our agents, customers, or others;
+                    violations or suspected violations of our agreements and policies; or as otherwise required or permitted by law or consistent with legal requirements;</li>
+<li>We transfer or disclose your personal information for corporate reasons.
+                    For example, to third parties in connection with or during negotiation of any merger, financing, acquisition, bankruptcy or similar transaction.
+                    We may also share personal information with our auditors, attorneys or other advisors in the connection with corporate functions;</li>
+<li>Finally, we also share aggregated, anonymized or statistical information about you, including demographics data, with others for a variety of purposes, for example, for improving products and services for Fanruan and others.</li>
+<li>If you register for or attend a Fanruan event, seminar or webinar Fanruan may share participant information (e.g. your name, company, and email address) with other participants, organizers or hosts of the same event, seminar, or webinar in order to facilitate the event and the subsequent exchange of ideas. </li>
+</ul>
+<p>We may facilitate third party services or ways to share data through third parties, including social media platforms, websites, applications, and services through plug-ins, widgets, buttons, and other third party features on and connected with our websites, communications or products.
+                Third parties whose services you use in connection with Fanruan, such as our training and certification partners, or third parties whose websites we link to, may have information practices that are different from ours.
+                This Privacy Statement does not apply to the activities of third parties when they are collecting or using data for their own purpose or on behalf of others.
+                We are not responsible for the activities of these third parties. We encourage you to review their privacy policies to understand how they use your information.</p>
+<p>We have reasonable and appropriate physical, electronic, and managerial procedures in place to help safeguard your personal information.
+                However, you should know that no company, including Fanruan, can fully eliminate security risks associated with personal information.
+                To help protect yourself, use a strong password, do not use the same passwords to access your Fanruan accounts that you use with other accounts or services,
+                and protect your user names and passwords to help prevent others from accessing your accounts and services.
+                For more information about Fanruan security practices, see <a href="https://www.finereport.com/en/security">https://www.finereport.com/en/security</a>.</p>
+<p>Employees who have access to such personal information shall be trained regarding this Policy,
+                advised that they are responsible for fully complying with the privacy principles articulated in this Policy and instructed that violations of these principles shall result in appropriate discipline up to and including termination.</p>
+<p>While we take reasonable precautions against possible security breaches of our site and records no website or Internet transmission is completely secure and we cannot guarantee that unauthorized access, hacking, data loss, or other breaches will never occur.</p>
+<p>We offer you the ability to post information and exchange ideas through our websites and other services such as Fanruan Public.
+                Because your posts and information shared through Fanruan Public are public and can be seen by others, we caution all users to consider what they post and not to disclose any personal information.
+                Fanruan will not be responsible in the event that you disclose personal information in your posts, through our public services or during any other communication with other website users.</p>
+<br/>
+<h2>How to Access &amp; Control Your Personal Data</h2>
+<p>Our marketing emails permit you to opt-out of receiving further marketing emails.
+                You may also contact us at international@fanruan.com at any time to let us know that you no longer wish to receive marketing emails.
+                If you opt-out but are a current customer, we will still send you transactional emails.
+                Transactional emails are necessary communications about your accounts and our business dealings with you, such as renewals and updates, and, as allowed by applicable law, requests for your participation in surveys.</p>
+<p>When you use our websites, you can choose to set your browser to remove cookies and to reject cookies from our servers.
+                If you choose to remove or reject cookies, this could affect certain features or services of our websites. For information about how to remove or manage cookies please read our cookie policy.</p>
+<p>You have certain rights in your personal information, subject to local data protection laws.</p>
+<br/>
+<h2>How We Process Children's Personal Data</h2>
+<p>Our websites, products and services are primarily intended for adults.
+                A child must not create a Fanruan account without the consent of a parent or guardian.
+                If a child's personal data is collected with prior parental consent, we will only use or disclose the data as permitted by law, with the explicit consent of the child's parents or guardians,
+                or when necessary for the protection of the child. If we accidentally collect a child's personal data without verified prior consent from the child's parents, we will attempt to delete the data as soon as possible.
+            </p>
+<br/>
+<h2>Third-party Providers and Their Services</h2>
+<p>To ensure positive user experience, you may receive content or web links from third parties other than Fanruan and its partners ("third parties").
+                Fanruan does not have the right to control such third parties, but you can choose whether to use the links, view the content and/or access the products or services provided by third parties.</p>
+<p>
+                Fanruan cannot control the privacy practices and data protection policies of third parties that are not subject to this Policy.
+                When you submit personal information to such a third party, please read and refer to the privacy protection policy of the third party.
+            </p>
+<br/>
+<h2>International Transfers of Your Personal Data</h2>
+<p>As a global company, your personal data collected by Fanruan may be processed or accessed in the country/region where you use our products and services or in other countries/regions where Fanruan or its affiliates,
+                subsidiaries, service providers or business partners have a presence.</p>
+<p>Information collected by Fanruan or on our behalf may be stored on your computers, on your mobile devices, or on our servers, and may be transferred to, accessed from, or stored and processed in Japan, Korea,
+                Singapore and China, and any other country where Fanruan or its service providers maintain facilities or support centers (a list of Fanruan offices can be found here: <a href="https://www.finereport.com/en/contact-us">https://www.finereport.com/en/contact-us</a>,
+                including jurisdictions that may not have data privacy laws that provide protections equivalent to those provided in your home country.
+                However, we will protect all personal information we obtain in accordance with this Privacy Statement and take reasonable steps to ensure that it is treated lawfully.</p>
+<p>In certain circumstances, we may retain your personal information after you have closed your account or are no longer actively engaged with Fanruan. For example:</p>
+<ul>
+<li>We may retain your personal information after you have closed your account so that we can send you
+                    information about products, services and publications we think you may be interested in. You can
+                    "unsubscribe" from receiving such messages or tell us you are no longer interested;
+                </li>
+<li>We may retain your personal information in order to protect our legal rights, or those of third parties, or to comply with the law;</li>
+<li>We may retain personal information about how you have used our products and services in order to improve and develop our business;</li>
+<li>If you purchase products or services from us, we may retain your personal information for as long as we need to in order to provide you with customer service, or for compliance purposes,
+                    for example, in order to comply with our record-keeping requirements;</li>
+<li>Fanruan may also use and share aggregated, non-personally identifiable data for research, external training and marketing purposes.</li>
+</ul>
+<br/>
+<h2>How to Contact Us</h2>
+<p>If you have any questions about how we use your personal information, or if you have any other privacy-related questions, please contact us at <a href="mailto:international@fanruan.com?&amp;subject=Privacy%20Terms">international@fanruan.com</a>.</p>
+<br/>
+<h2>Resources and Updates</h2>
+<p>Fanruan reserves the right to update or change this Policy at any time in any manner. We will release the latest Privacy Policy on this page for any changes.
+                If major changes are made to the Privacy Policy, we may notify you through different channels,
+                for example, posting a notice on our website or sending you a direct notification. We encourage you to periodically review this page for the latest information on our privacy practice.</p>
+<p>For privacy information concerning FanRuan‘s product, please visit: <a href="https://www.finereport.com/en/product-privacy">https://www.finereport.com/en/product-privacy</a>.</p>
+<br/>
+</div>
+</div>
+</body>
+</html>
+<html>
+<style type="text/css">
+    @media screen and (max-width: 600px) {
+        #shipin {
+            width: 100%;
+            position: absolute;
+            top: 20%;
+            z-index: 999;
+            padding: 50px 0;
+            background-color: #2E323B;
+        }
+
+        #shipin .col-md-6 {
+            margin: auto;
+        }
+
+        #shipin a.closeshipin {
+            right: 4%;
+        }
+    }
+
+    .frbotnav {
+        background-color: #020f27;
+    }
+
+    .frbotnav-tit {
+        font-size: 16px;
+        color: #fff;
+    }
+
+    .frbotnav-a {
+        font-size: 13px;
+        color: #b4bcc5;
+        display: block;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        text-decoration: none;
+    }
+
+    .frbotnav-a:hover {
+        color: #2849f7;
+        text-decoration: none;
+    }
+
+    .frbotnav-a:focus {
+        color: #2849f7;
+        text-decoration: none;
+    }
+
+    .frbotnav-p1 {
+        font-size: 18px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+
+    .frbotnav-p2 {
+        font-size: 13px;
+        color: #ccc;
+    }
+
+    .frbotnav-icon {
+        width: 24px;
+        margin-right: 10px;
+    }
+
+    .frbotnav .frbtn-wht {
+        margin-bottom: 30px;
+        min-width: 240px;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .frbotnav {
+            text-align: center;
+        }
+    }
+
+    p#back-to-top {
+        position: fixed;
+        bottom: 100px;
+        right: 80px;
+    }
+
+    p#back-to-top a {
+        text-align: center;
+        text-decoration: none;
+        color: #d1d1d1;
+        display: block;
+        width: 30px;
+        /*使用CSS3中的transition属性给跳转链接中的文字添加渐变效果*/
+        -moz-transition: color1s;
+        -webkit-transition: color1s;
+        -o-transition: color1s;
+    }
+
+    p#back-to-top a:hover {
+        color: #979797;
+    }
+
+    p#back-to-top a span {
+        background: #d1d1d1 url(http://www.finereport.com/images/arrow_up.png) no-repeat center center;
+        border-radius: 6px;
+        display: block;
+        height: 30px;
+        width: 30px;
+        margin-bottom: 5px;
+        /*使用CSS3中的transition属性给<span>标签背景颜色添加渐变效果*/
+        -moz-transition: background1s;
+        -webkit-transition: background1s;
+        -o-transition: background1s;
+    }
+
+    #back-to-top a:hover span {
+        background: #979797 url(http://www.finereport.com/images/arrow_up.png) no-repeat center center;
+    }
+</style>
+<style>
+    #priv {
+        color: #ccc;
+        text-decoration: none;
+        font-size: 13px;
+    }
+
+    #priv:hover,
+    #priv:focus {
+        color: #DB3334;
+
+    }
+</style>
+<body>
+<section class="frbotnav">
+<div class="container" style="padding-top:30px">
+<div class="row">
+<div class="col-md-2 hidden-xs">
+<p class="frbotnav-tit">Product</p>
+<a class="frbotnav-a" href="https://www.finereport.com/en/activation">Download</a>
+<a class="frbotnav-a" href="https://www.finereport.com/en/activation">Free Activation</a>
+<a class="frbotnav-a" href="https://endemo.finereport.com/webroot/decision/login">Try Demo</a>
+</div>
+<div class="col-md-2 hidden-xs">
+<p class="frbotnav-tit">Features</p>
+<a class="frbotnav-a" href="https://www.finereport.com/en/features/report-designer">FineReport
+                        Designer</a>
+<a class="frbotnav-a" href="https://www.finereport.com/en/features/data-integration">Data
+                        Integration</a>
+<a class="frbotnav-a" href="https://www.finereport.com/en/features/data-visualization">Data
+                        Visualization</a>
+<a class="frbotnav-a" href="https://www.finereport.com/en/features/data-entry">Data Entry</a>
+<a class="frbotnav-a" href="https://www.finereport.com/en/features/decision-making-system">Decision-Making Platform</a>
+<a class="frbotnav-a" href="https://www.finereport.com/en/features/deploy-and-integration">Deployment &amp; Integration</a>
+<a class="frbotnav-a" href="https://www.finereport.com/en/features/mobilebi">Mobile
+                        Application</a>
+<a class="frbotnav-a" href="https://www.finereport.com/en/features/tv-dashboard">Large Screen
+                        Dashboard</a>
+                             
+                                 
+                </div>
+<div class="col-md-2 hidden-xs">
+<p class="frbotnav-tit">Resources</p>
+<a class="frbotnav-a" href="https://help.fanruan.com/finereport-en/">Help Document</a>
+<a class="frbotnav-a" href="https://community.finereport.com/Learning/video_center.php">Video
+                        Training</a>
+<a class="frbotnav-a" href="https://www.finereport.com/en/blog">FineReport Blogs</a>
+</div>
+<div class="col-md-4">
+<p class="btn frbtn-wht">
+<a href="/en/activation">Try Now</a>
+</p>
+<p class="frbotnav-p1" style="margin-bottom: 10px;font-size: 16px;">Follow us</p>
+<p style="margin-bottom: 20px;">
+<a href="https://www.facebook.com/finereport/" rel="nofollow" target="_blank"><img alt="FineReport Facebook" src="http://www.finereport.com/jp/wp-content/themes/newsite/fr-newsite-facebook.png" style="width:45px;"/></a>
+<a href="https://www.youtube.com/channel/UC_OWB-vBK5U1KofHSd9xvZA" rel="nofollow" target="_blank"><img alt="youtube" src="http://www.finereport.com/jp/wp-content/themes/newsite/fr-newsite-youtube6.png" style="width:45px;"/></a>
+<a href="https://twitter.com/finereport_en" rel="nofollow" target="_blank"><img alt="twitter" src="http://www.finereport.com/jp/wp-content/themes/newsite/fr-newsite-twitter3.png" style="width:45px;"/></a>
+</p>
+<p class="frbotnav-p1"><img class="frbotnav-icon" src="http://www.finereport.com/images/nav-icon-zixun.png" style="vertical-align: text-top;"/> <a href="http://www.finereport.com/en/contact-us">Contact Us</a></p>
+<a href="mailto:international@fanruan.com?&amp;subject=Activation%20code">
+<p class="frbotnav-p1"><img class="frbotnav-icon" src="http://www.finereport.com/images/nav-icon-tousu.png" style="vertical-align: text-top;"/> Business:
+                            international@fanruan.com
+                    </p></a>
+<a href="mailto:support@fanruan.com?&amp;subject=Activation%20code">
+<p class="frbotnav-p1"><img class="frbotnav-icon" src="http://www.finereport.com/images/nav-icon-tousu.png" style="vertical-align: text-top;"/> Support:
+                            support@fanruan.com
+                    </p></a>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4 col-md-offset-8">
+<a href="/en/privacy" id="priv" rel="noopener noreferrer" target="_blank">Privacy</a>
+<span>   </span>
+<span class="frbotnav-p2">Copyright©2020 FanRuan Software Co., Ltd.</span>
+</div>
+</div>
+</div>
+</section>
+<p id="back-to-top"><a href="#top"><span></span>top</a></p>
+<!-- End of fanruanhelp Zendesk Widget script -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!--<script src="http://www.finereport.com/en/js/medium-check.js"></script>-->
+<!--<script src="http://www.finereport.com/en/js/common-v5.js"></script>-->
+<script type="text/javascript">
+        $(document).ready(function() {
+            //首先将#back-to-top隐藏
+            $("#back-to-top").hide();
+            //当滚动条的位置处于距顶部600像素以下时，跳转链接出现，否则消失
+            $(function() {
+                $(window).scroll(function() {
+                    if ($(window).scrollTop() > 600) {
+                        $("#back-to-top").fadeIn(500);
+                    } else {
+                        $("#back-to-top").fadeOut(500);
+                    }
+                });
+                //当点击跳转链接后，回到页面顶部位置
+                $("#back-to-top").click(function() {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 500);
+                    return false;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+<!-- Dynamic page generated in 0.316 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2022-06-21 04:52:35 -->

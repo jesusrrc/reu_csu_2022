@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+
+<html data-ng-app="cloudsigma" lang="{{localeLang}}">
+<head>
+<base href="/ui/4.0/"/>
+<meta charset="utf-8"/>
+<title ng-bind="root.GUI_NAME"></title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="The CloudSigma cloud computing platform allows instant provisioning of flexible virtual servers and computing resources." name="description"/>
+<meta content="CloudSigma AG" name="author"/>
+<link href="{{Location_Favicon}}/" rel="apple-touch-icon"/>
+<link href="{{Location_Favicon}}/" rel="shortcut icon"/>
+<link href="{{Location_Favicon}}" rel="icon" type="image/x-icon"/>
+<link href="{{Location_Favicon}}" rel="shortcut icon" type="image/x-icon"/>
+<link href="styles/vendor-dafd93bef0.css" rel="stylesheet"/>
+<link href="styles/app-7a01750b92.css" rel="stylesheet"/>
+<script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+  0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+  for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+  </script>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PJ5N8VB');</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'}
+  );var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TMTWVF');</script>
+<script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-28724360-1', 'auto');
+    // for dev environment
+    // ga('create', 'UA-28724360-1', { 'cookieDomain': 'none'});
+
+  </script>
+<style type="text/css">
+    .zopim[data-test-id='ChatWidgetButton'] {
+      width: 36px !important; /* Override button's width */
+      border-radius: 4px; /* Add border-radius 4px to look symmetric */
+    }
+  </style>
+<script type="text/javascript">
+    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=d.createElement(s),e=d.getElementsByTagName(s)[0];
+    z.set=function(o){z.set._.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+    $.src='//v2.zopim.com/?rMRKK04e7xJotucH3rQ4oQRguLlhf9wj';z.t=+new Date;$.type='text/javascript';
+    e.parentNode.insertBefore($,e)})(document,'script');
+    $zopim(function() {
+      $zopim.livechat.button.setPosition('bl');
+      $zopim.livechat.window.setPosition('bl');
+      $zopim.livechat.button.setPositionMobile('bl');
+      $zopim.livechat.window.setPositionMobile('bl');
+
+      $zopim.livechat.badge.hide();
+    });
+  </script>
+<script async="" src="//static.tapfiliate.com/tapfiliate.js" type="text/javascript"></script>
+<script type="text/javascript">
+    window['TapfiliateObject'] = i = 'tap';
+    window[i] = window[i] || function () {
+      (window[i].q = window[i].q || []).push(arguments);
+    };
+
+    tap('create', '3457-a19cb2');
+    tap('detectClick');
+  </script>
+</meta></head>
+<body dir="{{lang_layout}}" ng-class="{'top-navigation': login_status != 'loggedin', 'rtls': lang_layout == 'rtl'}" ng-cloak="">
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PJ5N8VB" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TMTWVF" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<div id="wrapper">
+<nav class="navbar-default navbar-static-side" id="main-menu" ng-if="login_status =='loggedin'" role="navigation">
+<div class="sidebar-collapse" ng-include="sidenavbar"></div>
+</nav>
+<div class="gray-bg" id="page-wrapper">
+<div class="row white-bg" id="header" ng-class="{hide: hideMenuOnPaasView()}">
+<nav class="navbar navbar-static-top" ng-if="login_status !='loggedin'" role="navigation" style="padding-left: 9px;">
+<div class="navbar-header" id="header-left">
+<div>
+<button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed" data-target="#languagebar" data-toggle="collapse" type="button">
+<i class="fa fa-reorder"></i>
+</button>
+<a class="navbar-brand {{currentLocation.id.toLowerCase()}}" href="{{currentLocation.default_frontend_url}}" title="{{root.GUI_NAME}}"></a>
+</div>
+</div>
+<div class="navbar-header return_to_login" id="header-left" ng-show="showLoginButton &amp;&amp; $state.current.name != 'login'">
+<button class="btn btn-white" href="/login" title="{{ 'Return to login page' | translate }}" ui-sref="login">
+<i class="fa fa-arrow-left"></i>
+</button>
+</div>
+<div class="pull-right hidden-xs" id="header-right">
+<div class="navbar-collapse collapse" id="languagebar">
+<ul class="nav navbar-nav">
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-share-alt"></i></a>
+<ul class="dropdown-menu" id="dropdown-share">
+<li><a href="http://www.facebook.com/CloudSigma" target="_blank"><i class="fa fa-facebook-official fa-2x"></i> {{ 'Like us on Facebook' | translate }}</a></li>
+<li>
+<a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Ftwitter.com%2Fabout%2Fresources%2Fbuttons®ion=follow_link&amp;screen_name=cloudsigma&amp;source=followbutton&amp;variant=2.0" target="_blank">
+<i class="fa fa-twitter fa-2x"></i> {{ 'Follow us on Twitter' | translate }}
+</a>
+</li>
+<li><a href="http://www.linkedin.com/company/1121696" target="_blank"><i class="fa fa-linkedin fa-2x"></i> {{ 'Connect with us on LinkedIn' | translate }}</a></li>
+</ul>
+</li>
+<li class="divider-vertical"></li>
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown">
+<i class="fa fa-language fa-lg" title="{{trans.Language}}"></i>
+<strong id="currentlanguage"><i class="flag-icon-smaller" ng-class="currentFlag"></i>
+{{trans.currentlanguage}}</strong> <b class="caret"></b>
+</a>
+<ul class="dropdown-menu" id="dropdown-language">
+<li ng-repeat="lang in root.supportedLanguages">
+<a data-locale="{{lang.locale}}" ng-click="setLanguage(lang.locale);" title="{{ lang.lang | translate }}">
+<i class="flag-icon-smaller" ng-class="lang.class"></i>
+<span>{{ lang.lang | translate }}</span>
+</a>
+</li>
+</ul>
+</li>
+<li class="divider-vertical"></li>
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown">
+<i class="fa fa-map-marker fa-lg" title="{{ 'Location' | translate }}"></i>
+<i class="flag-icon-smaller country-{{(currentLocation.country_code.toLowerCase()=='tbc'?'bg':currentLocation.country_code) | lowercase}}"></i> <strong> {{currentLocation.display_name}}</strong> <b class="caret"></b>
+</a>
+<ul class="pull-right dropdown-menu" ng-if="csResources.locations.objects.length &gt; 0" style="width: auto;">
+<li ng-class="{'active':currentLocation.display_name == location.display_name}" ng-repeat="location in csResources.locations.objects">
+<a data-locale="" href="{{location.default_frontend_url}}" ng-click="">
+<i class="flag-icon-small country-{{(location.country_code.toLowerCase()=='tbc'?'bg':location.country_code) | lowercase}}"> </i>
+{{location.display_name.split(',')[1]}}, {{location.display_name.split(',')[0]}}
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="navbar-note" id="header-notification"></div>
+</nav>
+<nav class="navbar navbar-static-top" ng-hide="loadingSpinner" ng-if="login_status =='loggedin'" role="navigation" style="padding-left: 9px;">
+<div class="pull-left">
+<button class="navbar-minimalize minimalize-styl-2 btn btn-primary" ng-click="toggleMenuWidth()"><i class="fa fa-bars"></i> </button>
+</div>
+<div class="navbar-header" id="header-left" ng-include="actionbar"></div>
+<div class="pull-right" id="header-right">
+<div class="sidebar-collapse">
+<ul class="nav navbar-top-links navbar-right">
+<li class="dropdown hidden-xs" id="jobsbar_region">
+<div>
+<a class="dropdown-toggle count-info {{(countActive &gt; 0)? 'text-info' :'text-muted' }}" data-toggle="dropdown">
+<i class="fa fa-bell fa-lg"></i>
+</a>
+<ul aria-labelledby="dLabel" class="dropdown-menu" role="menu" style="min-width: 910%;height: 908%;overflow-y:auto;">
+<li id="items-container" ng-show="jobsData.objects.length &gt; 0">
+<div ng-repeat="jobs in jobsData.objects | orderBy:'-created'">
+<div style="margin: 5px; border-bottom: 1px solid #ccc; padding-top: 5px">
+<p style="margin-bottom: 0"><strong>{{ jobs.item.title | translate }}</strong><br/>
+<small>{{ jobs.item.uuid }}</small>
+</p>
+<p style="margin-bottom: 0">
+<small>{{ jobs.item.created | amDateFormat:'LLLL' }}</small>
+</p>
+<div class="progress" style="position: relative;height:18px;margin-bottom: 5px">
+<div class="progress-bar {{ jobs.item.progressBarClass}}" role="progressbar" style="width: {{ jobs.item.progress }}%;position: relative;"></div>
+<span style="position: absolute;top: 0;left: 0;z-index:2;text-align: center;width:100%;height:18px;color:#fff;">
+{{ jobs.item.status}} {{(jobs.item.status != 'Failed') ? jobs.item.progress : ''}}%
+</span>
+</div>
+</div>
+</div>
+</li>
+<li id="items-container" ng-show="jobsData.objects.length == 0">
+<div style="margin: 5px"><strong>{{ 'No jobs running' | translate }}</strong></div>
+</li>
+</ul>
+</div>
+</li>
+<li class="dropdown hidden-xs" id="tutorials">
+<div class="" style=""><a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle text-muted tutorials-dropdown" data-toggle="dropdown">
+<i class="blink_me fa fa-graduation-cap tutorials-icon"></i>
+</a>
+<ul class="dropdown-menu" role="menu">
+<li><a ng-click="openClick('snapshot')" title="{{ 'How to Snapshot a Drive on your Cloud Server while it\'s Running' | translate}}">
+<span>{{ 'Creating Drive Snapshots' | translate }}</span></a>
+</li>
+<li><a ng-click="openClick('cloudservers')" title="{{ 'How To Export your Cloud Servers &amp; Download Drive Images' | translate}}">
+<span>{{ 'Export &amp; Download Drive Images' | translate }}</span></a>
+</li>
+<li><a ng-click="openClick('storage')" title="{{ 'Cloud Server Storage Management: How to Attach a Drive to an Existing Cloud Server' | translate}}">
+<span>{{ 'Attach a Drive to a Cloud Server' | translate }}</span></a>
+</li>
+<li><a ng-click="openClick('images')" title="{{ 'How to Upload Cloud Server Images to the Cloud' | translate}}">
+<span>{{ 'Upload Drive Images to the Cloud' | translate }}</span></a>
+</li>
+<li><a ng-click="openClick('static')" title="{{ 'How to Assign a Static IP Address to your Cloud Server' | translate}}">
+<span>{{ 'Using Static IPs' | translate}}</span></a>
+</li>
+<li><a ng-click="openClick('network')" title="{{ 'How to use Private Networking with your Cloud Servers' | translate}}">
+<span>{{ 'Private Networking' | translate}}</span></a>
+</li>
+<li><a ng-click="openClick('ssh')" title="{{ 'Setting up SSH Key Management for your cloud servers' | translate}}">
+<span>{{ 'SSH Key Management' | translate}}</span></a>
+</li>
+<li><a ng-click="openClick('highcloud')" title="{{ 'Achieving High Availability for your Cloud Servers'| translate}}">
+<span>{{ 'Achieving High Availability' | translate}}</span></a>
+</li>
+<li><a ng-click="openClick('serverload')" title="{{ 'Use \'cgroups\' and \'systemd\' Slices to Manage Server Load in the Cloud (by Renich)' | translate}}">
+<span>{{ "Use 'cgroups' and 'systemd' Slices" | translate }}</span></a>
+</li>
+</ul>
+</div>
+</li>
+<li class="divider-vertical"></li>
+<li class="hidden-xs" id="nav-balance" ng-if="!navBalance">
+<a class="ng-hide" name="payment-link" ng-show="balanceData.credit_limit&gt;=0.01" title="{{ 'Current Balance:' | translate }} {{root.profile.currency | currencySymbol}}{{root.profile.currency!='JPY' ? (balanceData.balance | number:2) : (balanceData.balance | number:0)}} {{ 'Credit limit:' | translate}} {{root.profile.currency!='JPY' ? (balanceData.credit_limit | number:2) : (balanceData.credit_limit | number:0)}} {{ 'Click to add funds.' | translate}}" ui-sref="addfunds">
+<span ng-class="{'text-warning':(balanceData.balance&lt;=0), 'text-danger':(balanceData.balance&lt;=(balanceData.credit_limit*(0.2-1)))}">{{root.profile.currency | currencySymbol}} {{root.profile.currency!='JPY' ? (balanceData.balance | number:2) : (balanceData.balance | number:0)}}/-{{balanceData.credit_limit | number:2}}</span>
+</a>
+<a name="payment-link" ng-hide="balanceData.credit_limit&gt;=0.01" title="{{ 'Current Balance:' | translate }} {{root.profile.currency | currencySymbol}}{{root.profile.currency!='JPY' ? (balanceData.balance | number:2) : (balanceData.balance | number:0)}} {{ 'Click to add funds.' | translate}}" ui-sref="addfunds">
+<span class=""> {{root.profile.currency | currencySymbol}} {{root.profile.currency!='JPY' ? (balanceData.balance | number:2) : (balanceData.balance | number:0)}}</span>
+</a>
+</li>
+<li class="hidden-xs" id="nav-add-funds" ng-if="!navAddFunds">
+<button class="btn btn-warning" name="payment-link" ui-sref="addfunds"><i class="fa fa-credit-card"></i> <span>{{ 'Add funds' | translate }}</span></button>
+</li>
+<li id="nav-guest-countdown hidden-xs" ng-click="upgradeFormModal()" ng-if="guestLogin">
+<button class="btn btn-{{count &lt;= 3 ? 'danger':'inverse'}}"><i class="fa fa-clock-o"></i> {{ 'Time left:' | translate }} <span id="guest-countdown">{{clock}}</span>
+</button>
+</li>
+<li class="divider-vertical"></li>
+<li class="hidden-xs">
+<img alt="" class="img-rounded" ng-if="root.profile.gravatar &amp;&amp; ssoData.objects.length == 0" ng-src="{{root.profile.gravatar}}" src="" style="height: 34px; width: 34px; margin:4px 4px 4px 0px;"/>
+<img alt="" class="img-rounded" ng-if="ssoData.objects.length &gt; 0 &amp;&amp; ssoData.objects[0].avatar_url != null" ng-src="{{ssoData.objects[0].avatar_url}}" src="" style="height: 34px; width: 34px; margin:4px 4px 4px 0px;"/>
+</li>
+<li class="hidden-md hidden-sm hidden-xs">
+<a title="{{ 'Profile' | translate }}" ui-sref="profile">
+<span id="user-name" ng-if="avatarName.length&gt;0">
+{{avatarName}}
+</span>
+<span id="user-name" ng-if="!avatarName.length&gt;0">
+{{profileBarName}}
+</span>
+</a>
+</li>
+<li class="hidden-xs" ng-if="isOcreAccount" title='{{ "Your OCRE account will expire within __countDays__ days." | translate:"{ countDays: ocreLeftDuration }":"messageformat" }}'>
+<span class="label label-primary" style="font-size: 13px;">
+<i class="fa fa-clock-o"></i>
+<span translate="__countDays__  day_plural" translate-interpolation="messageformat" translate-values="{countDays: ocreLeftDuration}"></span>
+</span>
+</li>
+<li class="hidden-xs" ng-hide="userState == 'Regular'">
+<span ng-class="userStateLabelClass" style="margin: 3px;" title="{{ 'Type of User' | translate }}">
+<span>{{ userState | translate }}</span>
+</span>
+<span class="label label-danger" title="{{ 'Running servers can only send ICMP requests, request a DHCP IP, query a DNS server and send requests to TCP port 80 and 443 (usually HTTP and HTTPS)' | translate }}">
+<i class="fa fa-ban"></i>
+</span>
+</li>
+<li class="divider-vertical"></li>
+<li><a id="do_logout" ng-click="doLogout()"><i class="fa fa-sign-out" style="margin: -6px 0;"></i>
+<span class="hidden-md hidden-sm hidden-xs">{{ 'Logout' | translate }}</span></a></li>
+<li class="divider-vertical"></li>
+<li class="hidden-xs">
+<i class="visible-lg-inline-block flag-icon-medium country-{{(currentLocation.country_code.toLowerCase()=='tbc'?'bg':currentLocation.country_code) | lowercase}}" style="margin: -6px 0; background-position: 0 -3px;" title="Location: {{currentLocation.id=='EC'?'DUB':currentLocation.id}}"></i>
+<span> {{currentLocation.id=='EC'?'DUB':currentLocation.id |uppercase}}</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="navbar-note" id="header-notification"></div>
+</nav>
+</div>
+<p id="javascript-warning" style="text-align: center; display: none;">{{ "Please note: You need to turn on the JavaScript from you browser's options in order for this site to work!" | translate }}</p>
+<div class="placeholder spinner" ng-show="loadingSpinner || loadingSpinner == undefined || globalSpinner">
+<div class="rect1"></div>
+<div class="rect2"></div>
+<div class="rect3"></div>
+<div class="rect4"></div>
+<div class="rect5"></div>
+</div>
+<div id="page" ng-hide="loadingSpinner || globalSpinner">
+<ui-view></ui-view>
+</div>
+</div>
+<div>
+<toaster-container toaster-options="{'close-button': true, 'time-out': 5000,'newestOnTop': false ,'tap-to-dismiss': false,'position-class':'toast-bottom-full-width'}"></toaster-container>
+</div>
+<script id="importFail.html" type="text/ng-template">
+            <span>{{ 'Key exists' | translate }}! </span><a ng-click="pop(existId)">{{ 'You can find it here' | translate }}. </a>
+        </script>
+<script id="importSuccess.html" type="text/ng-template">
+            <span>{{ 'GitHub key successfully added.' | translate }} </span><a ng-click="pop(existId)">{{ 'You can find it here' | translate }}. </a>
+        </script>
+<script id="successPurchase.html" type="text/ng-template">
+            <span ng-bind-html="message_text"></span>
+        </script>
+</div>
+
+<div id="dialog" style="display:none;"></div>
+<div id="dynamic-views-container"></div>
+<div class="hide" id="terminal"></div>
+<div id="term"></div>
+<div class="modal" id="modal" style="display:none;"></div>
+<div class="modal" id="tutorialModal" style="display:none;"></div>
+<div id="videoModal" style="display:none;"></div>
+<div class="footer fixed" ng-if="$state.current.name != 'paas'">
+<nav class="navbar" id="footer" ng-if="login_status=='loggedin'">
+<div>
+<div class="pull-left" id="footer-left"></div>
+<div class="pull-right" id="footer-right">
+<div>
+<ul class="nav navbar-top-links navbar-right">
+<li ng-show="!WEBSOCKET_OPEN">
+<p>
+<i class="fa fa-circle" custom-popover-grid-compute="" data-content="{{ 'The websocket is currently unavailable, please use the refresh functionality.' | translate }}" data-original-title="&lt;i class='fa fa-exclamation-triangle'&gt;&lt;/i&gt; {{ 'Websocket' | translate }}" data-placement="top" id="websocket-indicator">
+</i>
+</p>
+</li>
+<li class="bonus_offer hide divider-vertical"></li>
+<li class="bonus_offer" ng-if="bonusOffer">
+<div class="dropup">
+<button class="btn btn-success dropdown-toggle" custom-popover="" popover-html="&lt;div style='display: inline-block; width: 100%; clear:both;'&gt;
+                                    &lt;p&gt;{{ 'To celebrate our new San Jose cloud location we are offering an effective discount of 33% on all purchases in July. Every time you make a deposit into your cloud account, we will add a further 50% deposit of funds on top.' | translate }}&lt;/p&gt;
+                                    &lt;p&gt;{{ 'For example:' | translate }}&lt;/p&gt;
+                                    &lt;ul&gt;
+                                        &lt;li&gt;{{ 'You deposit $1000.' | translate }}&lt;/li&gt;
+                                        &lt;li&gt;{{ 'CloudSigma will add a $500 bonus credit.' | translate }}&lt;/li&gt;
+                                        &lt;li&gt;{{ 'You receive a total balance of $1500.' | translate }}&lt;/li&gt;
+                                        &lt;li&gt;{{ 'The best thing about it is it’s uncapped. You can add as many funds as you like as often as you like and benefit from the bonus credits pro rata.' | translate }}&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                    &lt;p&gt;{{ 'Happy computing!' | translate }}&lt;/p&gt; &lt;small&gt;-- {{ 'The CloudSigma Team' | translate }}&lt;/small&gt;
+                                &lt;/div&gt;
+                                    &lt;p class='guestusers' ng-show='guestLogin'&gt;&lt;a href='#' class='opensignup' title=\'{{ 'Sign up and add funds' | translate }}'&gt;{{ 'Sign up and verify today.' | translate }}&lt;span class='text-success'&gt;&lt;span&gt;{{ 'Get bonus coefficient matched funding.' | translate }}&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+                                    &lt;p class='regularusers' ng-show='!guestLogin'&gt;&lt;a href='#' class='openaddfunds' title=\'{{ 'Add funds' | translate }}\'&gt;&lt;span&gt;{{ 'Get bonus coefficient matched funding.' | translate }}&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+                                " popover-placement="top" popover-title="{{ 'Effective 33% off all purchases for July' | translate }}" style="margin: 8px 0 0 5px;"><i class="fa fa-gift"></i> {{ 'Bonus offer expires in:' | translate }}<span id="bonus-countdown"> {{countdown_label}}</span></button>
+</div>
+</li>
+<li class="free_tier" ng-if="free_tier">
+<div class="dropup" style="color: #000;">
+<span ng-include="footer_popover"></span>
+</div>
+</li>
+<li style="margin: auto 0; width: 50px !important;">
+<span class="sparkline" id="sparkline"></span>
+</li>
+<li ng-show="currentUsageData">
+<div style="margin: 5px;">
+<a ui-sref="usage">
+<span id="cpu-usage" rel="tooltip" style="margin: 5px;" uib-tooltip="CPU">
+<span>{{ 'CPU: __value__ __unit__' | translate : {value: csHumanFrequency(total_usage.cpu_usage, -2)['value'], unit: csHumanFrequency(total_usage.cpu_usage, -2)['unit']} }}</span>
+</span>‎
+<span id="mem-usage" rel="tooltip" style="margin: 5px;" uib-tooltip="{{'RAM' | translate}}">
+<span>{{ 'RAM: __value__ __unit__' | translate : {value: csHumanFileSize(total_usage.mem_usage, -2)['value'], unit: csHumanFileSize(total_usage.mem_usage, -2)['unit']} }}</span>
+</span>‎
+<span id="tx-usage" ng-hide="!currentUsageData.usage.tx.using" rel="tooltip" style="margin: 5px;" uib-tooltip="{{'Outgoing data transfer' | translate }}">
+<span>{{ 'Tx: __value__ __unit__' | translate : {value: csHumanFileSize(currentUsageData.usage.tx.using, -2)['value'], unit: csHumanFileSize(currentUsageData.usage.tx.using, -2)['unit']} }}</span>
+</span>‎
+<span id="tx-foreign-usage" ng-hide="!currentUsageData.usage.tx_foreign.using" rel="tooltip" style="margin: 5px;" uib-tooltip="{{'Foreign Outgoing data transfer' | translate }}">
+<span>{{ 'Tx Foreign: __value__ __unit__' | translate : {value: csHumanFileSize(currentUsageData.usage.tx_foreign.using, -2)['value'], unit: csHumanFileSize(currentUsageData.usage.tx_foreign.using, -2)['unit']} }}</span>
+</span>‎
+<span id="tx-local-usage" ng-hide="!currentUsageData.usage.tx_local.using" rel="tooltip" style="margin: 5px;" uib-tooltip="{{'Local Outgoing data transfer' | translate }}">
+<span>{{ 'Tx Local: __value__ __unit__' | translate : {value: csHumanFileSize(currentUsageData.usage.tx_local.using, -2)['value'], unit: csHumanFileSize(currentUsageData.usage.tx_local.using, -2)['unit']} }}</span>
+</span>‎
+<span id="rx-foreign-usage" ng-hide="!currentUsageData.usage.rx_foreign.using" rel="tooltip" style="margin: 5px;" uib-tooltip="{{'Foreign Incoming data transfer' | translate }}">
+<span>{{ 'Rx Foreign: __value__ __unit__' | translate : {value: csHumanFileSize(currentUsageData.usage.rx_foreign.using, -2)['value'], unit: csHumanFileSize(currentUsageData.usage.rx_foreign.using, -2)['unit']} }}</span>
+</span>‎
+<span id="rx-local-usage" ng-hide="!currentUsageData.usage.rx_local.using" rel="tooltip" style="margin: 5px;" uib-tooltip="{{'Local Incoming data transfer' | translate }}">
+<span>{{ 'Rx Local: __value__ __unit__' | translate : {value: csHumanFileSize(currentUsageData.usage.rx_local.using, -2)['value'], unit: csHumanFileSize(currentUsageData.usage.rx_local.using, -2)['unit']} }}</span>
+</span>‎
+<span id="dssd-usage" ng-show="currentUsageData['usage']['dssd'] &amp;&amp; currentUsageData['usage']['dssd']['using']" style="margin: 5px;" uib-tooltip="{{ 'Distributed SSD' | translate }}">
+<span>{{ 'DSSD: __value__ __unit__' | translate : {value: csHumanFileSize(currentUsageData.usage.dssd.using, -2)['value'], unit: csHumanFileSize(currentUsageData.usage.dssd.using, -2)['unit']} }}</span>
+</span>‎
+<span id="zadara-usage" ng-show="currentUsageData['usage']['zadara'] &amp;&amp; currentUsageData['usage']['zadara']['using']" style="margin: 5px;" uib-tooltip="{{ 'Scale-out Magnetic Distributed HDD' | translate }}">
+<span>{{ 'DHDD: __value__ __unit__' | translate : {value: csHumanFileSize(currentUsageData.usage.zadara.using, -2)['value'], unit: csHumanFileSize(currentUsageData.usage.zadara.using, -2)['unit']} }}</span>
+</span>‎
+<span id="ssd-usage" ng-show="currentUsageData['usage']['ssd'] &amp;&amp; currentUsageData['usage']['ssd']['using']" style="margin: 5px;" uib-tooltip="{{ 'SSD' | translate }}">
+<span>{{ 'SSD: __value__ __unit__' | translate : {value: csHumanFileSize(currentUsageData.usage.ssd.using, -2)['value'], unit: csHumanFileSize(currentUsageData.usage.ssd.using, -2)['unit']} }}</span>
+</span>‎
+<span id="hdd-usage" ng-show="currentUsageData['usage']['hdd'] &amp;&amp; currentUsageData['usage']['hdd']['using']" style="margin: 5px;" uib-tooltip="{{ 'HDD' | translate }}">
+<span>{{ 'HDD: __value__ __unit__' | translate : {value: (csHumanFileSize(currentUsageData.usage.hdd.using, -2)['value']), unit: (csHumanFileSize(currentUsageData.usage.hdd.using, -2)['unit'])} }}</span>
+</span>‎
+</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<nav class="navbar" id="footer" ng-show="login_status!=='loggedin'">
+<ul class="nav navbar-top-links">
+<li class="dropup">
+<a class="dropdown-toggle" data-toggle="dropdown" id="copyright-link">© {{ root.today | date : 'yyyy' }} {{ root.COPYRIGHT_FOOT_NOTE | translate }}</a>
+<ul class="dropdown-menu">
+<li><a title="{{ 'Copyright notice' | translate }}" ui-sref="copyright"><i class="fa fa-copyright fa-lg" style="padding-left: 5px; width: 21px;"></i> {{ 'Copyright notice' | translate }}</a></li>
+<li><a title="{{ 'Terms of service' | translate }}" ui-sref="termsofservice"><i class="fa fa-gavel fa-lg" style="padding-left: 3px; width: 21px;"></i> {{ 'Terms of service' | translate }}</a></li>
+<li><a title="{{ 'Privacy policy' | translate }}" ui-sref="privacy"><i class="fa fa-lock fa-lg" style="padding-left: 8px; width: 21px;"></i> {{ 'Privacy policy' | translate }}</a></li>
+<li><a title="{{ 'Data Processing Agreement' | translate }}" ui-sref="dpa"><i class="fa fa-asterisk"></i> {{'DPA' | translate }} <span class="pull-right label label-primary">#GDPR</span></a></li>
+<li><a title="{{ 'Acceptable Use Policy' | translate }}" ui-sref="aup"><i class="fa fa-newspaper-o fa-lg" style="padding-left: 0px; width: 21px;"></i> <span> {{ 'AUP' | translate }}</span></a></li>
+<li><a title="{{ 'Service Level Agreement' | translate }}" ui-sref="sla"><i class="fa fa-heartbeat fa-lg" style="padding-left: 2px; width: 21px;"></i> <span> {{ 'SLA' | translate }}</span></a></li>
+<li name="version" ng-class="$state.current.name == 'version' ? 'active' : ''">
+<a title="{{ 'API and WebApp Versions' | translate }}" ui-sref="version">
+<i class="fa fa-file-code-o"></i> {{ 'Versions' | translate }}</a>
+</li>
+<li> </li>
+<li> </li>
+</ul>
+</li>
+</ul>
+<div ng-if="login_status =='loggedin'" ng-include="footer"></div>
+</nav>
+</div>
+<script id="custom-footer.html" type="text/ng-template">
+    <button class="btn btn-success dropdown-toggle" role="button"  custom-popover popover-title="{{'Effective 33% off all purchases for July' | translate}}"
+            popover-html="<div style='display: inline-block; width: 100%; clear:both;'>
+            <p>{{'To celebrate our new San Jose cloud location we are offering an effective discount of 33% on all purchases in July. Every time you make a deposit into your cloud account, we will add a further 50% deposit of funds on top.' | translate}}</p>
+            <p>{{'For example:' | translate}}</p>
+            <ul>
+                <li>{{'You deposit $1000.' | translate}}</li>
+                <li>{{'CloudSigma will add a $500 bonus credit.' | translate}}</li>
+                <li>{{'You receive a total balance of $1500.' | translate}}</li>
+                <li>{{'The best thing about it is it&rsquo;s uncapped. You can add as many funds as you like as often as you like and benefit from the bonus credits pro rata.' | translate}}</li>
+            </ul>
+            <p>{{'Happy computing!' | translate}}</p> <small>-- {{ 'The CloudSigma Team' | translate }}</small>
+        </div>
+            <p class='regularusers'><a href='#' class='openaddfunds' title='{{'Add funds' | translate }}>
+            <span>{{'Get 20% matched funding.' | translate}}<span></a></p>"
+            popover-placement="top" popover-label="" style="margin: 8px 0 0 5px;">
+      <i class="fa fa-gift"></i>
+      {{'Bonus offer expires in:' | translate }} <span id="bonus-countdown">00:00</span>
+    </button>
+</script>
+<script id="footer-popover.html" ng-if="free_tier" type="text/ng-template">
+  <button class="btn btn-sm btn-primary"
+          custom-footer
+          style="padding: 2px 10px;"
+          data-type="popover"
+          role="button"
+          data-placement="top"
+          data-content="{{ buildFreeTierMessage() }}"
+          data-original-title="{{ 'Free Tier' | translate }}"
+          analytics-on="click"
+          analytics-event="Bonus Offer"
+          analytics-category="Bonus Offer"
+          analytics-label="Bonus Offer Followed">
+  </button>
+</script>
+<script id="showErrorMsg.html" type="text/ng-template">
+    <div class="modal-header">
+        <button class="close" ng-click="cancel()">×</button>
+        <h3><span style="margin-right: 10px;"><i class="icon fa fa-exclamation-circle"></i></span> {{ 'Error:' | translate }} </h3>
+    </div>
+    <div class="modal-body">
+        <p>{{ 'A __error_type__ error has occurred.' | translate : {error_type: popOverErrorValidation.error_type} }}</p>
+        <p>{{popOverErrorValidation.error_message}}</p>
+    </div>
+    <div class="modal-footer">
+        <a data-dismiss="modal" class="btn btn-primary" ng-click="cancel()"><i class="fa fa-check"></i> OK</a>
+    </div>
+</script>
+<script id="guestWarning.html" type="text/ng-template">
+   <div class="modal-header">
+        <button class="close" data-dismiss="modal" ng-click="cancel()">&times;</button>
+        <h3><span style="font-size: 24px; margin-right: 10px;"><i class="fa fa-clock-o"></i> </span>{{ 'Time is running out!' | translate }}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <p>
+                <strong>{{ 'Warning!' | translate }}</strong>
+                <span translate="You only have less than __count__ minutes left before you are logged out. Please sign up below to experience the cloud without time limitations."
+                    translate-values="{count: count}"
+                    translate-interpolation="messageformat">
+                </span>
+            </p>
+        </div>
+        <div class="row" ng-include="upgradeForm">
+        </div>
+    </div>
+</script>
+<script id="dialogTemplate.html" type="text/ng-template">
+    <div>
+        <iframe ng-show="openedFrame == 'static'" width="560" height="315" src="https://www.youtube.com/embed/bDkKpKf0d2M" frameborder="0" allowfullscreen=""></iframe>
+        <iframe ng-show="openedFrame == 'snapshot'" width="560" height="315" src="https://www.youtube.com/embed/mlA5PPjcAZE" frameborder="0" allowfullscreen=""></iframe>
+        <iframe ng-show="openedFrame == 'ssh'" width="560" height="315" src="https://www.youtube.com/embed/LBmmhIgaDLg" frameborder="0" allowfullscreen=""></iframe>
+        <iframe ng-show="openedFrame == 'cloudservers'" width="560" height="315" src="https://www.youtube.com/embed/t_mibFy58JI" frameborder="0" allowfullscreen=""></iframe>
+        <iframe ng-show="openedFrame == 'storage'" width="560" height="315" src="https://www.youtube.com/embed/Zu3m3I-6fH4" frameborder="0" allowfullscreen=""></iframe>
+        <iframe ng-show="openedFrame == 'highcloud'" width="560" height="315" src="https://www.youtube.com/embed/TnfVHOKlEDI" frameborder="0" allowfullscreen=""></iframe>
+        <iframe ng-show="openedFrame == 'images'" width="560" height="315" src="https://www.youtube.com/embed/tkBAnO3k6ag" frameborder="0" allowfullscreen=""></iframe>
+        <iframe ng-show="openedFrame == 'serverload'" width="560" height="315" src="https://www.youtube.com/embed/TDtjAY04o3w" frameborder="0" allowfullscreen=""></iframe>
+        <iframe ng-show="openedFrame == 'network'" width="560" height="315" src="https://www.youtube.com/embed/znD0atQaNZg" frameborder="0" allowfullscreen=""></iframe>
+    </div>
+</script>
+<script id="otpdialog.html" type="text/ng-template">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal" ng-click="cancel()">&times;</button>
+        <h3><span style="font-size: 24px; margin-right: 10px;"><i class="fa fa-cloud"></i> </span>{{ 'Google Authenticator Passcode Required' | translate }}</h3>
+    </div>
+    <div class="modal-body">
+       <div class="alert alert-danger alert-dismissible" ng-show="otperr">
+          <strong style="text-transform: capitalize;"> {{ 'error' | translate }}</strong> {{ 'Invalid Code.' | translate }}
+        </div>
+        <form  name="totp" class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-md-2" for="code">{{ 'Code' | translate }}</label>
+                <div class="col-md-5">
+                    <input class="form-control" type="input" id="code" name="code" ng-model="otpcode" placeholder="123456">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary dwse" tabindex="1" ng-click="checkSSO(otpcode)">
+            <span name="btn-primary"    class="default {{otpverify=='send'?'':'hide'}}"> {{ 'Send' | translate }}</span>
+            <span name="btn-info"       class="working {{otpverify=='sending'?'':'hide'}}"><i class="fa fa-spinner fa-spin"></i> {{ 'Sending' | translate }}</span>
+            <span name="btn-success"    class="success {{otpverify=='sent'?'':'hide'}}"><i class="fa fa-check"></i> {{ 'Success' | translate }}</span>
+            <span name="btn-success"    class="loading {{otpverify=='loading'?'':'hide'}}"><i class="fa fa-spinner fa-spin"></i> {{ 'Loading...' | translate }}</span>
+            <span name="btn-danger"     class="error {{otpverify=='error'?'':'hide'}}"><i class="fa fa-exclamation-circle"></i> {{ 'Error' | translate }}</span>
+        </button>
+    </div>
+</script>
+<script id="UserWarning.html" type="text/ng-template">
+    <div class="modal-header">
+        <button class="close" ng-click="cancel()">&times;</button>
+        <h3><span style="font-size: 24px; margin-right: 10px;"><i class="fa fa-exclamation-triangle"></i> </span>
+            {{ 'Warning!' | translate }}: {{ (warning.action)?(warning.action): "" }}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="alert alert-info col-md-12">
+                <strong>{{ 'Warning!' | translate }}</strong> <span>{{warning.message }}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 well-alt well" ng-if="warning.show_trial" style="height: 230px; margin-bottom: 0;">
+                <div class="lead" style="margin: 0;"><i class="fa fa-check"></i> {{ 'Free Trial.' | translate }}</div>
+                <div class="lead" style="margin: 0; color: gray;">{{ 'Verify your account and benefit from free resources.' | translate }}
+                </div>
+                <div style="position: absolute; bottom: 30px;">
+                    <button id="verify-now" class="btn btn-primary btn-lg" style="display: block; height: 60px;" ng-click="onVerify()">
+                        <div style="position: relative; top: 40%;"><i class="fa fa-check"></i> <strong>{{ 'Verify now' | translate }}</strong></div>
+                    </button>
+                </div>
+            </div>
+            <div class="{{(warning.show_trial)?('col-md-6'):('col-md-12') }} well-alt well"
+                 style="height: 230px; margin-bottom: 0;">
+                <div class="lead" style="margin: 0;"><i class="fa fa-credit-card"></i> {{ 'Add funds' | translate }}.</div>
+                <div class="lead" style="margin: 0; color: gray;">{{ 'Access the cloud as a premium user.' | translate }}</div>
+                <div style="position: absolute; bottom: 30px;">
+                    <button id="add-funds-now" ng-click="onAddFunds()"  class="btn btn-warning btn-lg" style="display: block; height: 60px;">
+                        <div style="position: relative; top: 40%;"><i class="fa fa-credit-card"></i> <strong>{{ 'Add funds now' | translate }}</strong></div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</script>
+<script src="scripts/vendor-d41e65fd1e.js"></script>
+<script src="scripts/app-e2878ea4d9.js"></script>
+<script async="" defer="" src="https://www.google.com/recaptcha/api.js"></script>
+</body>
+</html>

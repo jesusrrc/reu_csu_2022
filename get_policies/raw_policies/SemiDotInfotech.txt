@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let i;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",i=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")&&this._isValidScriptType(i)?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}_isValidScriptType(e){return!e||""===e||"string"==typeof e&&["text/javascript","text/x-javascript","text/ecmascript","text/jscript","application/javascript","application/x-javascript","application/ecmascript","application/jscript","module"].includes(e.toLowerCase())}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript;n||console.error("WPRocket unable to document.write this: "+t);const i=document.createRange(),r=n.parentElement;let a=e.get(n);void 0===a&&(a=n.nextSibling,e.set(n,a));const o=document.createDocumentFragment();i.setStart(o,0),o.appendChild(i.createContextualFragment(t)),r.insertBefore(o,a)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+<meta charset="utf-8"/>
+<meta content="EN" https-equiv="Content-Language">
+<meta content="SemiDot Infotech Pvt. Ltd." itemprop="name"/>
+<meta content="QllYdlVnVTJDNkZrRTJydWxJWDV5QWFmbko1UXJEVlVnUU0rVHRYMGwxZz01" name="dmca-site-verification"/>
+<meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=6" name="viewport"/>
+<link href="//semidotinfotech.com/web/images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+<link href="//semidotinfotech.com/web/images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="//semidotinfotech.com/web/images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="//semidotinfotech.com/web/images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="//semidotinfotech.com/web/site.webmanifest" rel="manifest"/>
+<title>Top Web and Mobile App Development Company - SemiDot Infotech</title>
+<meta content="SemiDot Infotech is one of the top web and mobile app development companies. We offer web and app development services across the globe." name="description">
+<link href="https://semidotinfotech.com/" rel="canonical">
+<meta content="noodp, nodyir" name="googlebot"/>
+<meta content="700383903407755" property="fb:admins"/>
+<meta content="https://semidotinfotech.com/" property="og:url"/>
+<meta content="Top Web and Mobile App Development Company - SemiDot Infotech" property="og:title"/>
+<meta content="SemiDot Infotech Pvt. Ltd." property="og:site_name"/>
+<meta content="SemiDot Infotech is one of the top web and mobile app development companies. We offer web and app development services across the globe." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://semidotinfotech.com/web/images/meta-images/semidot-infotech.jpg" property="og:image"/>
+<meta content="en_us" property="og:locale"/>
+<meta content="@DotSemi" name="twitter:site"/> <meta content="summary_large_image" name="twitter:card"/>
+<meta content="“@DotSemi”" name="twitter:creator"/>
+<meta content="https://semidotinfotech.com/" property="twitter:url">
+<meta content="Top Web and Mobile App Development Company - SemiDot Infotech" property="twitter:title">
+<meta content="SemiDot Infotech is one of the top web and mobile app development companies. We offer web and app development services across the globe." property="twitter:description"/>
+<meta content="2 days" name="revisit-after"/>
+<meta content="Safe For Kids" name="rating"/>
+<meta content="Public" name="document-type"/>
+<meta content="English" name="language">
+<meta content="#ffffff" name="msapplication-TileColor"/>
+<meta content="#ffffff" name="theme-color"/>
+<meta content="*" http-equiv="Access-Control-Allow-Origin"/>
+<link href="//stackpath.bootstrapcdn.com" rel="dns-prefetch"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+<link href="//static.zdassets.com" rel="dns-prefetch"/>
+<link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/>
+<link href="//www.google.com" rel="dns-prefetch"/>
+<link href="//maxst.icons8.com" rel="dns-prefetch"/>
+<link href="//www.googletagmanager.com" rel="dns-prefetch"/>
+<meta content="nmMnPusmiqtEtgX0f3c0GYHEAIO5kkFXAqMM6880" name="csrf-token"/>
+<link as="style" crossorigin="anonymous" data-minify="1" data-rocket-async="style" href="//stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" media="all" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css">
+<link as="style" data-minify="1" data-rocket-async="style" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" media="all" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css">
+<link as="style" data-minify="1" data-rocket-async="style" href="//maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" media="all" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css">
+<link as="style" data-minify="1" data-rocket-async="style" href="//fonts.googleapis.com/css?family=DM+Sans:400,500,700&amp;display=swap" media="all" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css">
+<link as="style" data-minify="1" data-rocket-async="style" href="//fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap" media="all" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css">
+<link as="font" crossorigin="anonymous" data-minify="1" data-rocket-async="font" href="//maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/fonts/la-solid-900.woff2" rel="preload" type="font/woff2">
+<link as="font" crossorigin="anonymous" data-minify="1" data-rocket-async="font" href="//maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/fonts/la-regular-400.woff2" rel="preload" type="font/woff2">
+<link as="font" crossorigin="anonymous" data-minify="1" data-rocket-async="font" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2">
+<link as="font" crossorigin="anonymous" data-minify="1" data-rocket-async="font" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2">
+<link as="script" href="//www.google.com/recaptcha/api.js?onload=onloadCaptchaCallback&amp;render=explicit" rel="preload"/>
+<link as="image" href="//semidotinfotech.com/web/images/bg-slider.jpg" imagesizes="50vw" imagesrcset="//semidotinfotech.com/web/images/bg-slider_400px.jpg 400w, //semidotinfotech.com/web/images/bg-slider_800px.jpg 800w, //semidotinfotech.com/web/images/bg-slider_1600px.jpg 1600w, //semidotinfotech.com/web/images/bg-slider_2500px.jpg 2500w" rel="preload">
+<link as="image" href="//semidotinfotech.com/web/images/expertBG_1600px.jpg" imagesizes="50vw" imagesrcset="//semidotinfotech.com/web/images/expertBG_400px.jpg 400w, //semidotinfotech.com/web/images/expertBG_800px.jpg 800w, //semidotinfotech.com/web/images/expertBG_1600px.jpg 1600w" rel="preload">
+<link as="image" href="//semidotinfotech.com/web/images/default_icon.png" rel="preload">
+<link as="image" href="//semidotinfotech.com/web/images/default_logo.png" rel="preload"/>
+<link as="image" href="//semidotinfotech.com/web/images/default_black_icon.png" rel="preload"/>
+<link as="image" href="//semidotinfotech.com/web/images/default_white_icon.png" rel="preload"/>
+<link as="image" href="//semidotinfotech.com/web/images/default_black_rect_icon.png" rel="preload"/>
+<link as="script" href="//semidotinfotech.com/web/js/jquery.min.js" rel="preload"/>
+<link as="style" data-minify="1" data-rocket-async="style" href="https://semidotinfotech.com/web/css/minified.css" media="all" rel="stylesheet" type="text/css"/>
+<script async="" src="//www.googletagmanager.com/gtag/js?id=UA-59585711-2" type="rocketlazyloadscript"></script>
+<script type="rocketlazyloadscript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-59585711-2');
+        gtag('config', 'AW-805829139');
+    </script>
+</link></link></link></link></link></link></link></link></link></link></link></link></meta></meta></meta></link></meta></meta></head>
+<body>
+<div class="wrapper">
+<header class="mainHeader">
+<div class="container-fluid">
+<nav class="navbar navbar-expand-xl">
+<a class="navbar-brand" href="https://semidotinfotech.com"><img alt="Semidot Infotech Logo" height="56" src="https://semidotinfotech.com/web/images/semidot-logo.svg" width="376"/></a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item dropdown has-megamenu">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="companymenu">Company</a>
+<div aria-labelledby="companymenu" class="dropdown-menu megamenu">
+<div class="inner-menu">
+<div class="menu_img"> <img alt="menu" class="img-fluid grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu.svg" src="https://semidotinfotech.com/web/images/menu-placeholder.jpg" width="434"/></div>
+<div class="company_menu companyBG">
+<ol class="fadeInUp animated3">
+<li>
+<a href="/about-us">
+<img alt="About us" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-about.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> About us
+</a>
+</li>
+<li>
+<a href="/team">
+<img alt="Our Team" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-team.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Our Team
+</a>
+</li>
+<li>
+<a href="/career">
+<img alt="Career" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-career.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Career
+</a>
+</li>
+<li>
+<a href="/testimonials">
+<img alt="Testimonial" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-testimonial.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Testimonial
+</a>
+</li>
+<li>
+<a href="/certifications-awards">
+<img alt="Awards &amp; Partners" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-awards.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Awards &amp; Partners
+</a>
+</li>
+<li>
+<a href="/quality-assurance">
+<img alt="Quality Assurance" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-QA.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Quality Assurance
+</a>
+</li>
+</ol>
+</div>
+<div class="company_info">
+<ul>
+<li><img alt="Business" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/businessMenu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/>
+<div class="text"> 10+ Years <span>Business</span></div>
+</li>
+<li> <img alt="Customer" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/customerMenu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/>
+<div class="text"> 75% Repeat <span>Customer</span></div>
+</li>
+<li> <img alt="Website Delivered" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/websiteMenu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/>
+<div class="text"> 500+ <span>Website Delivered</span></div>
+</li>
+<li> <img alt="Mobile Apps Delivered" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/mobileappsMenu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/>
+<div class="text"> 700+ <span>Mobile Apps Delivered</span></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-item dropdown has-megamenu">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="ourservicemenu">Our
+Services</a>
+<div aria-labelledby="ourservicemenu" class="dropdown-menu megamenu">
+<div class="inner-menu">
+<div class="tabs">
+<ul class="tab-links">
+<li class="tab-nav active"><a data-toggle="tab" href="#mobile-app">Mobile App
+Development</a></li>
+<li class="tab-nav"><a data-toggle="tab" href="#web-development">Web
+Development</a>
+</li>
+<li class="tab-nav"><a data-toggle="tab" href="#frontend">Frontend</a></li>
+<li class="tab-nav"><a data-toggle="tab" href="#blockchain">Blockchain</a></li>
+<li class="tab-nav"><a data-toggle="tab" href="#ready-to-use">Ready To Use</a>
+</li>
+</ul>
+<div class="tab-content">
+<div class="tab fadeInUp animated3 active" id="mobile-app">
+<h4 class="title">Mobile App Development</h4>
+<ul class="company_menu">
+<li>
+<a href="/services/mobile-app-development-company">
+<img alt="Mobile App Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-app.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> <strong>Mobile App
+Development</strong>
+</a>
+</li>
+<li>
+<a href="/services/ios-application-development-company">
+<img alt="iOS Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-ios.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> iOS Development
+</a>
+</li>
+<li>
+<a href="/services/wearable-app-development">
+<img alt="Wearable App Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-wearable.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Wearable App Development
+</a>
+</li>
+<li>
+<a href="/services/android-application-development-company">
+<img alt="Android App Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-android.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Android App Development
+</a>
+</li>
+<li>
+<a href="/services/progressive-web-apps">
+<img alt="PWA Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-pwa.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> PWA Development
+</a>
+</li>
+<li>
+<a href="/services/cross-platform-app-development">
+<img alt="Cross-Platform Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-cross-platform.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Cross-Platform Development
+</a>
+<ul class="submenu">
+<li><a href="/services/react-native-development-company">React
+Native</a></li>
+<li><a href="/services/flutter-app-development">Flutter</a>
+</li>
+<li><a href="/services/hybrid-application-development-company">Hybrid</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/services/enterprise-mobility-solutions">
+<img alt="Enterprise Mobility Solutions" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-cross-platform.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Enterprise Mobility Solutions
+</a>
+</li>
+<li class="active">
+<a href="/mobile-app-development-cost">
+<img alt="Mobile App Development Cost Guide" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-mobile-cost.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Mobile App Development Cost Guide
+</a>
+</li>
+</ul>
+</div>
+<div class="tab fadeInUp animated3" id="web-development">
+<h4 class="title">Web Development</h4>
+<ul class="company_menu">
+<li>
+<a href="/services/web-development">
+<img alt="Web Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-web-development.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> <strong>Web Development</strong>
+</a>
+</li>
+<li>
+<a href="/services/python-development-company">
+<img alt="Python Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-python.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Python Development
+</a>
+</li>
+<li>
+<a href="/services/full-stack-web-development">
+<img alt="Full Stack Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-fullstack-development.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Full Stack Development
+</a>
+</li>
+<li>
+<a href="/services/ruby-on-rails-development">
+<img alt="Ruby on Rails Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-ror.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Ruby on Rails Development
+</a>
+</li>
+<li>
+<a href="/services/wordpress-development-services">
+<img alt="Wordpress Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-wordpress-developer.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Wordpress Development
+</a>
+</li>
+<li>
+<a href="/services/php-development-company">
+<img alt="PHP Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-php.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> PHP Development
+</a>
+<ul class="submenu">
+<li><a href="/services/laravel-development">Laravel</a>
+</li>
+<li><a href="/services/cakephp-development">CakePHP</a>
+</li>
+<li><a href="/services/codeigniter-development">Codeigniter</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/services/ecommerce-development-company">
+<img alt="eCommerce Solutions" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-ecommerce.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> eCommerce Solutions
+ </a>
+</li>
+<li>
+<a href="/services/custom-software-development">
+<img alt="Custom Software Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-custom-development.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Custom Software Development
+</a>
+</li>
+<li>
+<a href="/services/web-portal-development">
+<img alt="Web Portal Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-webportal.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Web Portal Development
+</a>
+</li>
+<li class="active">
+<a href="/cost-to-build-a-website">
+<img alt="Web Development Cost Guide" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-mobile-cost.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Web Development Cost Guide
+</a>
+</li>
+</ul>
+</div>
+<div class="tab fadeInUp animated3" id="frontend">
+<h4 class="title">Frontend</h4>
+<ul class="company_menu">
+<li>
+<a href="/services/front-end-development-company">
+<img alt="Frontend Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-front-development.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> <strong>Frontend
+Development</strong>
+</a>
+</li>
+<li>
+<a href="/services/web-design-company">
+<img alt="Website designing" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-web-design.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Website designing
+ </a>
+</li>
+<li>
+<a href="/services/javascript-development-company">
+<img alt="JavaScript Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-js-development.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> JavaScript Development
+</a>
+</li>
+<li>
+<a href="/services/angular-js-development-company">
+<img alt="Angular JS Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-angular-development.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Angular JS Development
+</a>
+</li>
+<li>
+<a href="/services/node-js-development-company">
+<img alt="Node JS Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-node-development.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Node JS Development
+</a>
+</li>
+<li>
+<a href="/services/react-js-development-company">
+<img alt="React JS Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-react-development.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> React JS Development
+</a>
+</li>
+</ul>
+</div>
+<div class="tab fadeInUp animated3" id="blockchain">
+<h4 class="title">Blockchain</h4>
+<ul class="company_menu">
+<li>
+<a href="/services/blockchain-development-company">
+<img alt="Blockchain Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-blockchain-development.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> <strong>Blockchain
+ Development</strong>
+</a>
+</li>
+<li>
+<a href="/services/ico-development">
+<img alt="ICO Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-ico.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> ICO Development
+</a>
+</li>
+<li>
+<a href="/services/smart-contract-development-company">
+<img alt="Smart Contract Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-smart.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Smart Contract Development
+</a>
+</li>
+<li>
+<a href="/services/cryptocurrency-exchange">
+<img alt="Cryptocurrency Exchange Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-crypto.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Cryptocurrency Exchange Development
+</a>
+</li>
+<li>
+<a href="/services/dapps-development-company">
+<img alt="Dapps Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-dapps.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Dapps Development
+</a>
+</li>
+<li>
+<a href="/services/decentralized-finance-defi-development">
+<img alt="DeFi Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-defi.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> DeFi Development
+</a>
+</li>
+<li>
+<a href="/services/blockchain-supply-chain-management-solutions">
+<img alt="Blockchain SCM" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-blockchain-scm.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Blockchain SCM
+</a>
+</li>
+<li>
+<a href="/services/nft-development-company">
+<img alt="NFT Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-nft.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> NFT Development
+</a>
+</li>
+<li>
+<a href="/services/white-label-nft-marketplace-development">
+<img alt="White-Label NFT Marketplace" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/white-label-menu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> White-Label NFT Marketplace
+</a>
+</li>
+<li>
+<a href="/services/metaverse-development-company">
+<img alt="Metaverse Development" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/metaverse-menu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Metaverse Development
+</a>
+</li>
+</ul>
+</div>
+<div class="tab readyuse fadeInUp animated3" id="ready-to-use">
+<h4 class="title">Ready To Use</h4>
+<ul class="company_menu">
+<li>
+<a href="/on-demand-app-development">
+<strong>On-Demand App Solutions</strong>
+</a>
+</li>
+<li>
+<a href="/health-fitness-app-development">
+Health &amp; Fitness Solutions
+</a>
+</li>
+<li>
+<a href="/taxi-booking-app-development">
+Taxi Booking App Solutions
+ </a>
+</li>
+<li>
+<a href="/food-delivery-app-development">
+Food Delivery App Development
+</a>
+</li>
+<li>
+<a href="/grocery-delivery-app-development">
+Grocery App Solutions
+</a>
+</li>
+<li>
+<a href="/elearning-app-development">
+eLearning App Solutions
+</a>
+</li>
+<li>
+<a href="/translation-app-development-services">
+Translation Services
+</a>
+</li>
+<li>
+<a href="/pos-development-solutions">
+Point of Sale (POS) Software
+</a>
+</li>
+<li>
+<a href="/medicine-delivery-app-development">
+Online Medicine Delivery
+</a>
+</li>
+<li>
+<a href="/doctor-on-demand-app-development">
+Doctor on Demand
+</a>
+</li>
+<li>
+<a href="/job-portal-development">
+Job Portal Development
+</a>
+</li>
+<li>
+<a href="/matrimonial-app-development">
+Matrimonial App Development
+</a>
+</li>
+<li>
+<a href="/classified-portal-development">
+Classified Portal Development
+</a>
+</li>
+<li>
+<a href="/dating-app-development">
+Dating App Development
+</a>
+</li>
+<li>
+<a href="/home-services-app-development">
+Home Services App Development
+</a>
+</li>
+<li>
+<a href="/ewallet-app-development">
+eWallet App Development
+</a>
+</li>
+<li>
+<a href="/video-streaming-app-development">
+Video Streaming App Development
+</a>
+</li>
+<li>
+<a href="/fantasy-sports-app-development">
+Fantasy Sports App Development
+</a>
+</li>
+<li>
+<a href="/beauty-salon-app-development">
+Salon App Development
+</a>
+</li>
+<li>
+<a href="/courier-delivery-app-development">
+Courier Delivery App Development
+</a>
+</li>
+<li>
+<a href="/social-media-app-development">
+Social Media App Development
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="company_menu EmergingTech">
+<h4 class="title">Emerging Tech</h4>
+<ul>
+<li><a href="/services/ai-development-company">
+<div class="tab_icon"><img alt="Artificial Intelligence (AI)" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/icon_Ai.svg" height="28" src="https://semidotinfotech.com/web/images/default_icon.png" width="28"/></div> Artificial Intelligence (AI)
+</a></li>
+<li><a href="/services/machine-learning-development-company">
+<div class="tab_icon"><img alt="Machine Learning" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/icon_MachineL.svg" height="28" src="https://semidotinfotech.com/web/images/default_icon.png" width="28"/></div> Machine Learning
+</a></li>
+<li><a href="/services/big-data-development-company">
+<div class="tab_icon"><img alt="Big Data" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/icon_Bigdata.svg" height="28" src="https://semidotinfotech.com/web/images/default_icon.png" width="28"/></div> Big Data
+</a></li>
+<li><a href="/services/augmented-reality-development-company">
+<div class="tab_icon"><img alt="Augmented Reality (AR)" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/icon_Ar.svg" height="28" src="https://semidotinfotech.com/web/images/default_icon.png" width="28"/></div> Augmented Reality (AR)
+</a></li>
+<li><a href="/services/chatbots-development-company">
+<div class="tab_icon"><img alt="Chatbots" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/icon_Chatbot.svg" height="28" src="https://semidotinfotech.com/web/images/default_icon.png" width="28"/></div> Chatbots
+</a></li>
+<li><a href="/services/iot-development">
+<div class="tab_icon"><img alt="IoT" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/icon_Iot.svg" height="28" src="https://semidotinfotech.com/web/images/default_icon.png" width="28"/></div> IoT
+</a></li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-item dropdown has-megamenu">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="industriesmenu">Industries</a>
+<div aria-labelledby="industriesmenu" class="dropdown-menu megamenu">
+<div class="inner-menu">
+<div class="menu_img"> <img alt="menu" class="img-fluid grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/industries.jpg" src="https://semidotinfotech.com/web/images/menu-placeholder.jpg" width="434"/></div>
+<div class="company_menu">
+<ol class="fadeInUp animated3">
+<li>
+<a href="/retail-ecommerce-software-development">
+<img alt="eCommerce &amp; Retail" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-ecommerce.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> eCommerce &amp; Retail
+</a>
+</li>
+<li>
+<a href="/media-and-entertainment-app-development">
+<img alt="Media &amp; Entertainment" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-media.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Media &amp; Entertainment
+</a>
+</li>
+<li>
+<a href="/event-app-development">
+<img alt="Event Management" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-schedule.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Event Management
+</a>
+</li>
+<li>
+<a href="/real-estate-app-development">
+<img alt="Real Estate" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-real-estate.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Real Estate
+</a>
+</li>
+<li>
+<a href="/fintech-software-development">
+<img alt="Fintech" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-fintech.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Fintech
+</a>
+</li>
+<li>
+<a href="/restaurant-app-development">
+<img alt="Restaurant" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-restaurant.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Restaurant
+</a>
+</li>
+<li>
+<a href="/healthcare-app-development">
+<img alt="Healthcare" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-healthcare.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Healthcare
+</a>
+</li>
+<li>
+<a href="/school-management-software-development">
+<img alt="School Management" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-school.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> School Management
+</a>
+</li>
+<li>
+<a href="/logistics-transportation-software-development">
+<img alt="Logistics &amp; Transport" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-logistics.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Logistics &amp; Transport
+</a>
+</li>
+<li>
+<a href="/travel-and-hospitality-solutions">
+<img alt="Travel &amp; Hospitality" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-travel.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Travel &amp; Hospitality
+</a>
+</li>
+</ol>
+</div>
+<div class="company_info">
+<ul>
+<li><img alt="Business" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/businessMenu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/>
+<div class="text"> 10+ Years <span>Business</span></div>
+</li>
+<li> <img alt="Customer" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/customerMenu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/>
+<div class="text"> 75% Repeat <span>Customer</span></div>
+</li>
+<li> <img alt="Website Delivered" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/websiteMenu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/>
+<div class="text"> 500+ <span>Website Delivered</span></div>
+</li>
+<li> <img alt="Mobile Apps Delivered" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/mobileappsMenu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/>
+<div class="text"> 700+ <span>Mobile Apps Delivered</span></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-item dropdown has-megamenu">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="hiremenu">Hire
+Resources</a>
+<div aria-labelledby="hiremenu" class="dropdown-menu megamenu">
+<div class="inner-menu">
+<div class="menu_img"> <img alt="menu" class="img-fluid grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu1.png" src="https://semidotinfotech.com/web/images/menu-placeholder.jpg" width="434"/></div>
+<div class="company_menu">
+<ol class="fadeInUp animated3">
+<li>
+<a href="/hire-mobile-app-developers">
+<img alt="Hire App Developers" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-app.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Hire App Developers
+</a>
+</li>
+<li>
+<a href="/hire-php-developers">
+<img alt="Hire PHP Developers" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-php.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Hire PHP Developers
+</a>
+</li>
+<li>
+<a href="/hire-ios-developers">
+<img alt="Hire iOS Developers" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-ios.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Hire iOS Developers
+</a>
+</li>
+<li>
+<a href="/hire-python-expert">
+<img alt="Hire Python Developers" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-python.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Hire Python Developers
+</a>
+</li>
+<li>
+<a href="/hire-android-developers">
+<img alt="Hire Android Developers" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-android.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Hire Android Developers
+</a>
+</li>
+<li>
+<a href="/hire-ruby-on-rails-developers">
+<img alt="Hire ROR Developers" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-ror.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Hire ROR Developers
+</a>
+</li>
+<li>
+<a href="/hire-react-native-developers">
+<img alt="Hire React Native Developers" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-react.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Hire React Native Developers
+</a>
+</li>
+<li>
+<a href="/hire-blockchain-developers">
+<img alt="Hire Blockchain Developers" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/menu-blockchain.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/> Hire Blockchain Developers
+</a>
+</li>
+</ol>
+</div>
+<div class="company_info">
+<ul>
+<li><img alt="Business" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/businessMenu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/>
+<div class="text"> 10+ Years <span>Business</span></div>
+</li>
+<li> <img alt="Customer" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/customerMenu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/>
+<div class="text"> 75% Repeat <span>Customer</span></div>
+</li>
+<li> <img alt="Website Delivered" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/websiteMenu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/>
+<div class="text"> 500+ <span>Website Delivered</span></div>
+</li>
+<li> <img alt="Mobile Apps Delivered" class="grey_icon lazy-menu" data-src="https://semidotinfotech.com/web/images/mobileappsMenu.svg" height="50" src="https://semidotinfotech.com/web/images/default_icon.png" width="50"/>
+<div class="text"> 700+ <span>Mobile Apps Delivered</span></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/portfolio">Work</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/blog">Blog</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/contact-us">Contact Us</a>
+</li>
+<li class="nav-item">
+<a class="requestBtn" href="/request-a-quote">Request A Quote <i class="fas fa-angle-right"></i></a>
+</li>
+<li class="contact-info desktopView">
+<div class="btn-group show-on-hover">
+<button class="btn btn-default" data-toggle="dropdown" type="button"> <i class="las la-phone-volume"></i>
+</button>
+<div class="dropdown-menu up-arrow" role="menu">
+<div class="pop-con-heading">
+<div class="sale-inq"><i class="las la-headset"></i></div>Let's Connect With Semidot
+Team
+</div>
+<div class="pop-inquiry-sec">
+<div class="inq-sale">
+<h3>For Sales Inquiry</h3>
+<ul>
+<li class="flag"> <span class="bg-us_flag-sprite"></span> <a href="tel:+17209248638" tabindex="-1">+1 720 924 8638</a> </li>
+<li class="flag"> <span class="bg-uk_flag-sprite"></span> <a href="tel:+441618186630" tabindex="-1">+44 161 818 6630</a>
+</li>
+<li class="flag"> <span class="bg-india_flag-sprite"></span><a href="tel:+91 773 797 0891" target="_blank">+91 773 797 0891 </a>
+</li>
+<li class="flag mail"><span class="bg-email"></span> <a href="/cdn-cgi/l/email-protection#e89b89848d9ba89b8d85818c879c81868e879c8d8b80c68b8785"><span class="__cf_email__" data-cfemail="7e0d1f121b0d3e0d1b13171a110a171018110a1b1d16501d1113">[email protected]</span></a>
+</li>
+</ul>
+</div>
+</div>
+<div class="pop-inquiry-sec">
+<div class="inq-sale">
+<h3>For Quick Connect</h3>
+<ul>
+<li class="flag skype"> <a href="skype:semi.info?call" tabindex="-1"> <i class="fab fa-skype mr-1"></i> semi.info </a> </li>
+<li class="flag whatapp"> <a href="https://wa.me/+917737970891" target="_blank"> <i class="fab fa-whatsapp-square mr-1"></i> +91 773
+ 797 0891 </a> </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</nav>
+<a class="whatappFixBtn" href="https://wa.me/+917737970891" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+</header>
+<main class="cd-main-content">
+<div class="homeHeroSlider">
+<div class="homeHeroSliderInner">
+<div class="container">
+<h1>Experience<br/>COUNTS.</h1>
+<p> Innovating the digital space for businesses to grow. <br/>We build simple software solutions for complex problems.</p>
+<a class="btn btn-primary" href="/portfolio">Latest Work <i class="las la-long-arrow-alt-right"></i></a>
+<div class="mouseDown">
+<a href="javascript:void(0)">
+<div class="mousey">
+<div class="scroller"></div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<section class="featuresBlock">
+<div class="container">
+<h2 class="titleOne">Welcome To a New World of NFTs &amp; Metaverse</h2>
+<div class="row align-items-center listFeatures">
+<div class="col-xl-7 col-lg-12">
+<div class="row">
+<div class="col-md-6">
+<ul>
+<li><i class="lab la-ethereum"></i> Authentic NFT Designing</li>
+<li><i class="las la-balance-scale"></i> Custom Minting Capabilities</li>
+<li><i class="las la-layer-group"></i> OpenSea Listing &amp; Optimization</li>
+<li><i class="las la-handshake"></i> Optimised Smart Contract</li>
+</ul>
+</div>
+<div class="col-md-6">
+<ul>
+<li><i class="las la-pencil-ruler"></i> Metaverse Design &amp; Development</li>
+<li><i class="las la-cubes"></i> Metaverse 3D Modeling</li>
+<li><i class="las la-users"></i> Metaverse Unity Integration</li>
+<li><i class="las la-vr-cardboard"></i> Metaverse 3D Rendering</li>
+</ul>
+</div>
+</div>
+<a class="btn btn-primary Learnmore" href="/services/nft-development-company">Get NFT Solution <i class="las la-long-arrow-alt-right"></i></a>
+<a class="btn btn-outline" href="/request-a-quote">Discuss Your Project <i class="las la-long-arrow-alt-right"></i></a>
+</div>
+<div class="col-md-5">
+<div class="portfolioAnimation"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="nftProject homenftProject">
+<div class="container">
+<div class="row">
+<div class="col-xl-3 col-sm-6 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+<div class="nftInside nftItem1 active-view">
+<div class="nftLogo"><img alt="supercreators" class="img-fluid" src="https://semidotinfotech.com/web/images/supercreators.png" title="supercreators"/></div>
+<span class="winner">Top 50 on Opensea</span>
+<h3>2222 Sold Out in 7 minutes!</h3>
+<div class="linkboxnft">
+<a href="https://opensea.io/collection/supercreatorsbyiac" rel="noopener noreferrer nofollow" target="_blank">
+View On OpenSea <i class="las la-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-4 wow fadeInUp" data-wow-delay="0.6s">
+<div class="nftInside">
+<div class="nftLogo"><img alt="danger-ranger" class="img-fluid" src="https://semidotinfotech.com/web/images/danger-ranger.png" title="danger-ranger"/></div>
+<span class="winner">Top Trending</span>
+<h3>10,000 amazing Artworks created</h3>
+<div class="linkboxnft">
+<a href="https://opensea.io/collection/dangerrangers-official" rel="noopener noreferrer nofollow" target="_blank">
+View On OpenSea <i class="las la-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-4 wow fadeInUp" data-wow-delay="0.9s">
+<div class="nftInside">
+<div class="nftLogo"><img alt="known-origin" class="img-fluid" src="https://semidotinfotech.com/web/images/known-origin.png" title="known-origin"/></div>
+<span class="winner">Project on the Rise</span>
+<h3>Award Winning Art Marketplace</h3>
+<div class="linkboxnft">
+<a href="https://opensea.io/collection/known-origin" rel="noopener noreferrer nofollow" target="_blank">
+View On OpenSea <i class="las la-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="col-xl-3 col-sm-6 mb-4 wow fadeInUp" data-wow-delay="1.2s">
+<div class="nftInside">
+<div class="nftLogo"><img alt="satoshisindex" class="img-fluid" src="https://semidotinfotech.com/web/images/satoshisindex.png" title="satoshisindex"/></div>
+<span class="winner">New kid on the block</span>
+<h3>3D Art Rendered to perfection</h3>
+<div class="linkboxnft">
+<a href="https://opensea.io/collection/satoshis-index" rel="noopener noreferrer nofollow" target="_blank">
+View On OpenSea <i class="las la-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="whoWeAreRow wow fadeInUp">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-12 col-xl-5 centerSeat d-md-block">
+<div class="row mtBox">
+<div class="col-md-6 col-lg-3 col-xl-6 col-6">
+<div class="serviceInsideBox serviceInsideBox1 wow fadeInDown" data-wow-delay="0.2s">
+<img alt="Web Development" class="img-fluid" height="122" src="https://semidotinfotech.com/web/images/websiteDevelopmentIcon.svg" title="" width="123"/>
+<h3><span>Web </span>Development</h3>
+<p>Custom websites using different technologies, per your requirements.</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-3 col-xl-6 col-6">
+<div class="serviceInsideBox serviceInsideBox2 wow fadeInDown" data-wow-delay="0.7s">
+<img alt="App Development" class="img-fluid" height="130" src="https://semidotinfotech.com/web/images/appDevelopmentIcon.svg" title="" width="131"/>
+<h3><span>App</span>Development</h3>
+<p>Applications built using various technologies, one for every business.</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-3 col-xl-6 col-6">
+<div class="serviceInsideBox serviceInsideBox3 wow fadeInDown" data-wow-delay="0.5s">
+<img alt="UI/UX Development" class="img-fluid" height="138" src="https://semidotinfotech.com/web/images/UDesign.svg" title="" width="139"/>
+<h3><span>UI/UX</span>Development</h3>
+<p>Creating beautiful client-side that directly resonates with the customer's heart.</p>
+</div>
+</div>
+<div class="col-md-6 col-lg-3 col-xl-6 col-6">
+<div class="serviceInsideBox serviceInsideBox4 wow fadeInDown" data-wow-delay="1s">
+<img alt="Blockchain Tech" class="img-fluid" height="167" src="https://semidotinfotech.com/web/images/blockchainIntegration.svg" title="" width="167"/>
+<h3><span>Blockchain</span>Tech</h3>
+<p>Our dedicated Blockchain developers have enabled us to serve every business.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-12 col-xl-7 whoAreBox">
+<h2 class="titleOne">Who We Are</h2>
+<div class="row mt-3">
+<div class="col-4">
+<div class="numberRow">
+<span class="numberCountRow"><span class="counter" data-count="10">0</span>+</span>
+Years of experience
+</div>
+</div>
+<div class="col-4">
+<div class="numberRow">
+<span class="numberCountRow"><span class="counter" data-count="1000">0</span>+</span>
+Successful projects
+</div>
+</div>
+<div class="col-4">
+<div class="numberRow">
+<span class="numberCountRow"><span class="counter" data-count="80">0</span>+</span>
+Members in the team
+</div>
+</div>
+</div>
+<p>We are a software development company, SemiDot Infotech originated from our passion to make the world a better place. We are a family of 80 (and growing), each one of us is an expert in the technologies we work in, and we take customer satisfaction as our top priority. </p>
+<p>We are trusted by startups and enterprises for both web and mobile app development, we have delivered over 1000+ successful projects since our inception. We have worked for various niches and industries, the apps we created range from, translation apps, to enterprise management apps, to blockchain-based games, and everything in between and beyond. </p>
+<p>We provide top-notch web and mobile app development services, using the latest technologies out there. We can create apps or websites, or both, in the least possible time, to help skyrocket your business to the top.</p>
+<p class="none">Our selection process has been refined over the years, ensuring only the finest of the best, are hired to be a part of our team. Our aim is to deliver the best possible solution and to build your product on a strong foundation, so your product could handle everything that comes to it.</p>
+<a class="btn btn-primary hvr-float-shadow Learnmore" href="https://semidotinfotech.com/about-us">Check Out More <i class="las la-long-arrow-alt-right"></i></a>
+</div>
+</div>
+</div>
+<section class="brandStrip innerPageBrand">
+<div class="container">
+<div class="owl-carousel brandStripCarousel owl-loaded owl-drag">
+<div class="owl-stage-outer">
+<div class="owl-stage">
+<div class="owl-item"> <img class="img-fluid" height="52" src="https://semidotinfotech.com/web/images/partner1.png" title="" width="128"/> </div>
+<div class="owl-item"> <img class="img-fluid" height="52" src="https://semidotinfotech.com/web/images/partner2.png" title="" width="128"/> </div>
+<div class="owl-item"> <img class="img-fluid" height="52" src="https://semidotinfotech.com/web/images/partner3.png" title="" width="128"/> </div>
+<div class="owl-item"> <img class="img-fluid" height="52" src="https://semidotinfotech.com/web/images/partner4.png" title="" width="128"/> </div>
+<div class="owl-item pearsonlogo"> <img class="img-fluid" height="52" src="https://semidotinfotech.com/web/images/partner5.png" title="" width="128"/> </div>
+<div class="owl-item"> <img class="img-fluid" height="52" src="https://semidotinfotech.com/web/images/partner6.png" title="" width="128"/> </div>
+<div class="owl-item"> <img class="img-fluid" height="52" src="https://semidotinfotech.com/web/images/partner7.png" title="" width="128"/> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="recentWorkRow" id="recentWorkRow">
+<div class="container">
+<h2 class="titleOne wow fadeInUp">Our Recent Works</h2>
+<p class="wow fadeInUp">Some of the esteemed projects we worked upon, to give you a glimpse of the way we work.</p>
+<div class="row mt-5 recentwork-area">
+<div class="col-lg-4 col-md-6 col-item wow fadeInUp">
+<div class="portfolioBox" onclick="getPortFolioInfo(33)">
+<img alt="Semidot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/image_crop.php?width=412&amp;height=534&amp;cropratio=206:267&amp;image=/storage/image/1643105930-joom_small.jpg" height="534" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title="Joom" width="412">
+<div class="portfolioBoxContent">
+<h4>Joom</h4>
+<p>Ecommerce online marketplace</p>
+<button class="view_btn" onclick="getPortFolioInfo(33)" type="button">View Details <i class="las la-long-arrow-alt-right"></i></button>
+</div>
+</img></div>
+</div>
+<div class="col-lg-4 col-md-6 col-item wow fadeInUp">
+<div class="portfolioBox" onclick="getPortFolioInfo(54)">
+<img alt="Semidot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/image_crop.php?width=412&amp;height=534&amp;cropratio=206:267&amp;image=/storage/image/1643106029-picnic_small.jpg" height="534" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title="Picnic" width="412">
+<div class="portfolioBoxContent">
+<h4>Picnic</h4>
+<p>The Online Supermarket</p>
+<button class="view_btn" onclick="getPortFolioInfo(54)" type="button">View Details <i class="las la-long-arrow-alt-right"></i></button>
+</div>
+</img></div>
+</div>
+<div class="col-lg-4 col-md-6 col-item wow fadeInUp">
+<div class="portfolioBox" onclick="getPortFolioInfo(91)">
+<img alt="Semidot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/image_crop.php?width=412&amp;height=534&amp;cropratio=206:267&amp;image=/storage/image/1634029475-Zattoo_small01.jpg" height="534" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title="Zattoo" width="412">
+<div class="portfolioBoxContent">
+<h4>Zattoo</h4>
+<p>TV Streaming App</p>
+<button class="view_btn" onclick="getPortFolioInfo(91)" type="button">View Details <i class="las la-long-arrow-alt-right"></i></button>
+</div>
+</img></div>
+</div>
+<div class="col-lg-8 col-md-6 col-item wow fadeInUp">
+<div class="portfolioBox" onclick="getPortFolioInfo(101)">
+<img alt="Semidot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/image_crop.php?width=834&amp;height=534&amp;cropratio=417:267&amp;image=/storage/image/1631013055-thumb-large.jpg" height="534" src="https://semidotinfotech.com/web/images/placeholder-portfolio-2.png" title="IRL" width="834">
+<div class="portfolioBoxContent">
+<h4>IRL</h4>
+<p>Social Media Platform</p>
+<button class="view_btn" onclick="getPortFolioInfo(101)" type="button">View Details <i class="las la-long-arrow-alt-right"></i></button>
+</div>
+</img></div>
+</div>
+<div class="col-lg-4 col-md-6 col-item wow fadeInUp">
+<div class="portfolioBox" onclick="getPortFolioInfo(105)">
+<img alt="Semidot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/image_crop.php?width=412&amp;height=534&amp;cropratio=206:267&amp;image=/storage/image/1643105273-Colgate_small01.jpg" height="534" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title="Colgate Connect" width="412">
+<div class="portfolioBoxContent">
+<h4>Colgate Connect</h4>
+<p>Best Teeth Whitening and Toothbrush Solutions</p>
+<button class="view_btn" onclick="getPortFolioInfo(105)" type="button">View Details <i class="las la-long-arrow-alt-right"></i></button>
+</div>
+</img></div>
+</div>
+</div>
+<div class="mt-3 relGrow text-center">
+<p>Let’s take this growing relationship to the next level.</p>
+<a class="btn btn-primary hvr-float-shadow" href="https://semidotinfotech.com/portfolio">View All Work <i class="las la-long-arrow-alt-right"></i></a>
+</div>
+</div>
+</section>
+<section class="partnershipModelsRow">
+<div class="container">
+<h2 class="titleOne wow fadeInUp">Partnership Models</h2>
+<p class="wow fadeInUp">We are trying to improve the world with technology as much as possible, for the very reason we have a partnership model for every client.</p>
+<div class="row mt-5">
+<div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+<div class="modalBox hvr-underline-from-center grayscale_img">
+<img alt="Hour Based Billing" class="lazy" data-src="https://semidotinfotech.com/web/images/model1.svg" src="https://semidotinfotech.com/web/images/default_white_icon.png" title=""/>
+<h4>Hour Based Billing</h4>
+<p>Total working hours for the team of developers billed at a per hour rate, especially suited to projects requiring Agile methodology.</p>
+</div>
+</div>
+<div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+<div class="modalBox hvr-underline-from-center grayscale_img">
+<img alt="Referral Program" class="lazy" data-src="https://semidotinfotech.com/web/images/model2.svg" src="https://semidotinfotech.com/web/images/default_white_icon.png" title=""/>
+<h4>Referral Program</h4>
+<p>We are offering referrals for those who connect us with new clients, this way, everyone can earn the profit they deserve.</p>
+</div>
+</div>
+<div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+<div class="modalBox hvr-underline-from-center grayscale_img">
+<img alt="Fixed Cost Package" class="lazy" data-src="https://semidotinfotech.com/web/images/model3.svg" src="https://semidotinfotech.com/web/images/default_white_icon.png" title=""/>
+<h4>Fixed Cost Package</h4>
+<p>We will take care of everything about your project, you just send in requirements and we deliver it on the promised date.</p>
+</div>
+</div>
+<div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+<div class="modalBox hvr-underline-from-center grayscale_img">
+<img alt="Team Collaboration" class="lazy" data-src="https://semidotinfotech.com/web/images/model4.svg" src="https://semidotinfotech.com/web/images/default_white_icon.png" title=""/>
+<h4>Team Collaboration</h4>
+<p>Have an in-house team, want us to collaborate and continually work on your project? This option could be best suited for you.</p>
+</div>
+</div>
+<div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+<div class="modalBox hvr-underline-from-center grayscale_img">
+<img alt="Royalty Based Partnership" class="lazy" data-src="https://semidotinfotech.com/web/images/model5.svg" src="https://semidotinfotech.com/web/images/default_white_icon.png" title=""/>
+<h4>Royalty Based Partnership</h4>
+<p>Have an amazing idea, but low on funds to implement it? We can create your app as a royalty-based partner.</p>
+</div>
+</div>
+<div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+<div class="modalBox hvr-underline-from-center grayscale_img">
+<img alt="Incubation for Startups" class="lazy" data-src="https://semidotinfotech.com/web/images/model6.svg" src="https://semidotinfotech.com/web/images/default_white_icon.png" title=""/>
+<h4>Incubation for Startups</h4>
+<p>Using our expertise to help young entrepreneurs is our passion, contact us to know more about our incubation application.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="weAreAces">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xl-3 col-lg-12">
+<div class="inSapce">
+<h2 class="titleOne">Dedicated Services</h2>
+<p>Creating high-performance websites &amp; apps, using the latest technologies.</p>
+<div class="tabsMenu">
+<a class="tabsMenu-arrow tabsMenu-prev" data-slide="prev" href="#clientTestimonials"><i class="fas fa-caret-left" data-v-fa85815a=""></i></a>
+<ul class="nav">
+<li class="nav-item">
+<a class="nav-link active" data-toggle="tab" href="#webDevelopment">Web Development</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-toggle="tab" href="#appDevelopment">App Development</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-toggle="tab" href="#emegingtech">Emerging Tech</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-toggle="tab" href="#frontendDevelopment">Frontend Development</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-toggle="tab" href="#readytousapps">Ready to use apps</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" data-toggle="tab" href="#hireDevelopers">Hire Developers</a>
+</li>
+</ul>
+<a class="tabsMenu-arrow tabsMenu-next" data-slide="next" href="#clientTestimonials"><i class="fas fa-caret-right" data-v-fa85815a=""></i></a>
+</div>
+</div>
+</div>
+<div class="col-xl-9 col-lg-12">
+<div class="tab-content">
+<div class="tab-pane animated3 fadeInUp show active" id="webDevelopment">
+<div class="row">
+<div class="col-lg-6 hiddenImage" data-wow-delay="0.2s">
+<img alt="Web Development" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/WebDevelopment.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title=""/>
+</div>
+<div class="col-lg-6 contentTabs" data-wow-delay="0.5s">
+<div class="inSapce">
+<h2 class="titleTwo">Web Development</h2>
+<p>We excel at making websites and web apps, in all technology stacks that exist. As a top web development company, we take pride in providing optimum services to our clients.</p>
+<ul>
+<li class="appleLogo">
+<a href="https://semidotinfotech.com/services/php-development-company">
+<img alt="PHP Development" class="lazy" data-src="https://semidotinfotech.com/web/images/phpSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+PHP Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="androidLogo">
+<a href="https://semidotinfotech.com/services/python-development-company">
+<img alt="Python Development" class="lazy" data-src="https://semidotinfotech.com/web/images/pythonSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Python Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="codeLogo">
+<a href="https://semidotinfotech.com/services/ruby-on-rails-development">
+<img alt="Ruby on Rails Development" class="lazy" data-src="https://semidotinfotech.com/web/images/rubySet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Ruby on Rails Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="reactLogo">
+<a href="https://semidotinfotech.com/services/wordpress-development-services">
+<img alt="WordPress Development" class="lazy" data-src="https://semidotinfotech.com/web/images/wordpressset.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+WordPress Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+</ul>
+<a class="btn btn-primary hvr-float-shadow" href="https://semidotinfotech.com/services/web-development">Check Out More <i class="las la-long-arrow-alt-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane animated3 fadeInUp" id="appDevelopment">
+<div class="row">
+<div class="col-lg-6 hiddenImage">
+<img alt="App Development" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/AppImage.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title=""/>
+</div>
+<div class="col-lg-6 contentTabs">
+<div class="inSapce">
+<h2 class="titleTwo">App Development</h2>
+<p>From simple portfolio mobile apps to extensive marketplaces, we have made mobile apps for almost every industry. Our developers excel in all mobile app development technology stacks.</p>
+<ul>
+<li class="appleLogo">
+<a href="https://semidotinfotech.com/services/ios-application-development-company">
+<img alt="iOS Development" class="lazy" data-src="https://semidotinfotech.com/web/images/iosSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+iOS Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="androidLogo">
+<a href="https://semidotinfotech.com/services/android-application-development-company">
+<img alt="Android Development" class="lazy" data-src="https://semidotinfotech.com/web/images/androidSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Android Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="codeLogo">
+<a href="https://semidotinfotech.com/services/hybrid-application-development-company">
+<img alt="Hybrid Development" class="lazy" data-src="https://semidotinfotech.com/web/images/hybridSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Hybrid Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="reactLogo">
+<a href="https://semidotinfotech.com/services/cross-platform-app-development">
+<img alt="Cross Platform Development" class="lazy" data-src="https://semidotinfotech.com/web/images/crossplatformSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+ Cross Platform Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+</ul>
+<a class="btn btn-primary hvr-float-shadow" href="https://semidotinfotech.com/services/mobile-app-development-company">Check Out More <i class="las la-long-arrow-alt-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane animated3 fadeInUp" id="emegingtech">
+<div class="row">
+<div class="col-lg-6 hiddenImage">
+<img alt="Emerging Tech" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/EmerginTech.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title=""/>
+</div>
+<div class="col-lg-6 contentTabs">
+<div class="inSapce">
+<h2 class="titleTwo">Emerging Tech</h2>
+<p>We are not afraid to take chances, we have dedicated team members for AI, ML, IoT and Chatbot development. We focus on the tech, which others still think are out of their reach. </p>
+<ul>
+<li class="appleLogo">
+<a href="https://semidotinfotech.com/services/machine-learning-development-company">
+<img alt="Machine Learning Algorithms" class="lazy" data-src="https://semidotinfotech.com/web/images/MLSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Machine Learning Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="androidLogo">
+<a href="https://semidotinfotech.com/services/ai-development-company">
+<img alt="Artificial Intelligence Development" class="lazy" data-src="https://semidotinfotech.com/web/images/aiSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Artificial Intelligence Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="codeLogo">
+<a href="https://semidotinfotech.com/services/chatbots-development-company">
+<img alt="Chatbot Development" class="lazy" data-src="https://semidotinfotech.com/web/images/chatbotSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Chatbot Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="reactLogo">
+<a href="https://semidotinfotech.com/services/iot-development">
+<img alt="IoT Development" class="lazy" data-src="https://semidotinfotech.com/web/images/iotSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+IoT Development
+ <i class="las la-angle-right"></i>
+</a>
+</li>
+</ul>
+<a class="btn btn-primary hvr-float-shadow" href="https://semidotinfotech.com/services/emerging-tech">Check Out More <i class="las la-long-arrow-alt-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane animated3 fadeInUp" id="frontendDevelopment">
+<div class="row">
+<div class="col-lg-6 hiddenImage">
+<img alt="Frontend Development" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/Front-end.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title=""/>
+</div>
+<div class="col-lg-6 contentTabs">
+<div class="inSapce">
+<h2 class="titleTwo">Frontend Development</h2>
+<p>The exquisite design language is the key to a customer’s heart, that’s exactly why we invested so much on hiring the top of the line in house designers and front-end developers.</p>
+<ul>
+<li class="appleLogo">
+<a href="https://semidotinfotech.com/services/javascript-development-company">
+<img alt="JavaScript Development" class="lazy" data-src="https://semidotinfotech.com/web/images/MLSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+JavaScript Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="androidLogo">
+<a href="https://semidotinfotech.com/services/react-js-development-company">
+<img alt="React JS Development" class="lazy" data-src="https://semidotinfotech.com/web/images/reactSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+React JS Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="codeLogo">
+<a href="https://semidotinfotech.com/services/angular-js-development-company">
+<img alt="Angular JS Development" class="lazy" data-src="https://semidotinfotech.com/web/images/angularSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Angular JS Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="reactLogo">
+<a href="https://semidotinfotech.com/services/node-js-development-company">
+<img alt="Node JS Development" class="lazy" data-src="https://semidotinfotech.com/web/images/nodeJs-Icon.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Node JS Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+</ul>
+<a class="btn btn-primary hvr-float-shadow" href="https://semidotinfotech.com/services/front-end-development-company">Check Out More <i class="las la-long-arrow-alt-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane animated3 fadeInUp" id="readytousapps">
+<div class="row">
+<div class="col-lg-6 hiddenImage">
+<img alt="Ready to use apps" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/readytouse.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title=""/>
+</div>
+<div class="col-lg-6 contentTabs">
+<div class="inSapce">
+<h2 class="titleTwo">Ready to use apps</h2>
+<p>We have an incredible library of pre-built apps, we offer them at a lower price, along with offering discounts on any customizations you need in those particular apps. </p>
+<ul>
+<li class="appleLogo">
+<a href="https://semidotinfotech.com/on-demand-app-development">
+<img alt="On-Demand Solution" class="lazy" data-src="https://semidotinfotech.com/web/images/onDemandSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+On-Demand Solution
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="androidLogo">
+<a href="https://semidotinfotech.com/taxi-booking-app-development">
+<img alt="Taxi App Development" class="lazy" data-src="https://semidotinfotech.com/web/images/taxiappSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Taxi App Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="codeLogo">
+<a href="https://semidotinfotech.com/food-delivery-app-development">
+<img alt="Food Delivery App" class="lazy" data-src="https://semidotinfotech.com/web/images/foodappSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Food Delivery App
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="reactLogo">
+<a href="https://semidotinfotech.com/grocery-delivery-app-development">
+<img alt="Grocery App Development" class="lazy" data-src="https://semidotinfotech.com/web/images/groceryappSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Grocery App Development
+<i class="las la-angle-right"></i>
+</a>
+</li>
+</ul>
+<a class="btn btn-primary hvr-float-shadow" href="https://semidotinfotech.com/readymade-solutions">Check Out More <i class="las la-long-arrow-alt-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane animated3 fadeInUp" id="hireDevelopers">
+<div class="row">
+<div class="col-lg-6 hiddenImage">
+<img alt="Hire Developers" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/Hire-Developers.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title=""/>
+</div>
+<div class="col-lg-6 contentTabs">
+<div class="inSapce">
+<h2 class="titleTwo">Hire Developers</h2>
+<p>We offer different options for you to outsource your project, we can send our dedicated developers on-site, to achieve maximum throughput, and set up a special team collaboration. </p>
+<ul>
+<li class="appleLogo">
+<a href="https://semidotinfotech.com/hire-android-developers">
+<img alt="Android Developers" class="lazy" data-src="https://semidotinfotech.com/web/images/androidSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Android Developers
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="androidLogo">
+<a href="https://semidotinfotech.com/hire-ios-developers">
+<img alt="iOS Developers" class="lazy" data-src="https://semidotinfotech.com/web/images/iosSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+iOS Developers
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="codeLogo">
+<a href="https://semidotinfotech.com/hire-python-expert">
+<img alt="Python Developers" class="lazy" data-src="https://semidotinfotech.com/web/images/pythonSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+Python Developers
+<i class="las la-angle-right"></i>
+</a>
+</li>
+<li class="reactLogo">
+<a href="https://semidotinfotech.com/hire-php-developers">
+<img alt="PHP developers" class="lazy" data-src="https://semidotinfotech.com/web/images/phpSet.svg" src="https://semidotinfotech.com/web/images/default_black_icon.png" title=""/>
+PHP developers
+<i class="las la-angle-right"></i>
+</a>
+</li>
+</ul>
+<a class="btn btn-primary hvr-float-shadow" href="https://semidotinfotech.com/hire-dedicated-developers">Hire Developers <i class="las la-long-arrow-alt-right"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="workProcessRow">
+<div class="container">
+<h2 class="titleOne wow fadeInUp">Work Process</h2>
+<p class="wow fadeInUp">We choose the best development methodology depending on your project, ensuring the lowest TAT, along with the lowest development cost.</p>
+<div class="work_process_holder mt-5">
+<img alt="Work Process" class="work-process-image lazy" data-src="https://semidotinfotech.com/web/images/work-process/work-process.svg" src="https://semidotinfotech.com/web/images/work-process/placeholder.webp" title="Project Launch"/>
+</div>
+</div>
+</section>
+<section class="partnershipModelsRow">
+<div class="container">
+<h2 class="titleOne wow fadeInUp">WHY US</h2>
+<p class="wow fadeInUp">We have been ranked as a top mobile and web development company by the industry’s top reviewers. </p>
+<div class="row mt-5">
+<div class="col-xl-4 col-sm-6 wow zoomIn">
+<div class="counter-item hvr-underline-from-center grayscale_img">
+<div class="counter-inner">
+<div class="icon"><img alt="Dedicated Professionals" class="lazy" data-src="https://semidotinfotech.com/web/images/webDevelopment.svg" src="https://semidotinfotech.com/web/images/default_white_icon.png" title=""/></div>
+<div class="content">
+<span class="counter-number">80+</span>
+<p>Dedicated Professionals</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-sm-6 wow zoomIn">
+<div class="counter-item hvr-underline-from-center grayscale_img">
+<div class="counter-inner">
+<div class="icon"><img alt="Countries Served" class="lazy" data-src="https://semidotinfotech.com/web/images/countries.svg" src="https://semidotinfotech.com/web/images/default_white_icon.png" title=""/></div>
+<div class="content">
+<span class="counter-number">18+</span>
+<p>Countries Served</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-sm-6 wow zoomIn">
+<div class="counter-item hvr-underline-from-center grayscale_img">
+<div class="counter-inner">
+<div class="icon"><img alt="Delivered Projects" class="lazy" data-src="https://semidotinfotech.com/web/images/projectDeliverd.svg" src="https://semidotinfotech.com/web/images/default_white_icon.png" title=""/></div>
+<div class="content">
+<span class="counter-number">1000+</span>
+<p>Delivered Projects</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-sm-6 wow zoomIn">
+<div class="counter-item hvr-underline-from-center grayscale_img">
+<div class="counter-inner">
+<div class="icon"><img alt="Years Of Experience" class="lazy" data-src="https://semidotinfotech.com/web/images/calendar.svg" src="https://semidotinfotech.com/web/images/default_white_icon.png" title=""/> </div>
+<div class="content">
+<span class="counter-number">10+</span>
+<p>Years Of Experience</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-sm-6 wow zoomIn">
+<div class="counter-item hvr-underline-from-center grayscale_img">
+<div class="counter-inner">
+<div class="icon"><img alt="Repeat Client-Ratio" class="lazy" data-src="https://semidotinfotech.com/web/images/repeatClient.svg" src="https://semidotinfotech.com/web/images/default_white_icon.png" title=""/> </div>
+<div class="content">
+<span class="counter-number">75%</span>
+<p>Repeat Client-Ratio</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-sm-6 wow zoomIn">
+<div class="counter-item hvr-underline-from-center grayscale_img">
+<div class="counter-inner">
+<div class="icon"><img alt="Startups We Worked With" class="lazy" data-src="https://semidotinfotech.com/web/images/model5.svg" src="https://semidotinfotech.com/web/images/default_white_icon.png" title=""/></div>
+<div class="content">
+<span class="counter-number">150+</span>
+<p>Startups We Worked With</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="partnersRow">
+<div class="container">
+<div class="owl-carousel partnersCarousel">
+<div class="item partnerItem">
+<img alt="SemiDot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/brand6.png" height="45" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title="" width="134"/>
+</div>
+<div class="item partnerItem">
+<img alt="SemiDot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/brand5.png" height="45" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title="" width="134"/>
+</div>
+<div class="item partnerItem">
+<img alt="SemiDot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/brand4.png" height="45" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title="" width="134"/>
+</div>
+<div class="item partnerItem isobrand">
+<img alt="SemiDot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/brand3.png" height="45" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title="" width="134"/>
+</div>
+<div class="item partnerItem">
+<img alt="SemiDot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/brand2.png" height="45" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title="" width="134"/>
+</div>
+<div class="item partnerItem">
+<img alt="SemiDot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/brand1.png" height="45" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title="" width="134"/>
+</div>
+</div>
+</div>
+</section>
+<section class="readyMadeRow">
+<div class="container">
+<h2 class="titleOne wow fadeInUp">READY MADE SOLUTIONS</h2>
+<p class="wow fadeInUp">We have the widest range of ready made solutions, customizable per your business requirements. </p>
+<div class="owl-carousel readyMadeRowCarousel mt-5">
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/health-fitness-app-development">
+<img alt="Health &amp; Fitness" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/health.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title=""/>
+<div class="readyMadeContent">
+<h4>Health &amp; Fitness</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/taxi-booking-app-development">
+<img alt="Taxi Solutions" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/texiSolutions.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title=""/>
+<div class="readyMadeContent">
+<h4>Taxi Solutions</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/food-delivery-app-development">
+<img alt="Food Ordering" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/FoodOrdering.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title=""/>
+<div class="readyMadeContent">
+<h4>Food Ordering</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/on-demand-app-development">
+<img alt="Health &amp; Fitness" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/on-demand.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title=""/>
+<div class="readyMadeContent">
+<h4>On-demand</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/elearning-app-development">
+<img alt="e-Learning" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/elearning.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title=""/>
+<div class="readyMadeContent">
+<h4>e-Learning</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/grocery-delivery-app-development">
+<img alt="Grocery Delivery" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/grocery-delivery.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title=""/>
+<div class="readyMadeContent">
+<h4>Grocery Delivery</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/translation-app-development-services">
+<img alt="Translation App Development Services" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/translation.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+<div class="readyMadeContent">
+<h4>Translation App Development Services</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/pos-development-solutions">
+<img alt="POS Solutions" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/pos_solution.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+<div class="readyMadeContent">
+<h4>POS Solutions</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/medicine-delivery-app-development">
+<img alt="Medicine Delivery" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/medicine_delivery.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+<div class="readyMadeContent">
+<h4>Medicine Delivery</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/doctor-on-demand-app-development">
+<img alt="Doctor On Demand" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/doctor_demand.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+<div class="readyMadeContent">
+<h4>Doctor On Demand</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/job-portal-development">
+<img alt="Job Portal Development" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/job_portal.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+<div class="readyMadeContent">
+<h4>Job Portal Development</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/matrimonial-app-development">
+<img alt="Matrimonial App Development" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/matrimonial_app.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+<div class="readyMadeContent">
+<h4>Matrimonial App Development</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/classified-portal-development">
+<img alt="Classified Portal Development" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/classified_portal.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+<div class="readyMadeContent">
+<h4>Classified Portal Development</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/dating-app-development">
+<img alt="Dating App Development" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/dating_solution.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+<div class="readyMadeContent">
+<h4>Dating App Development</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/video-streaming-app-development">
+<img alt="Video Streaming App Development" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/video_streaming.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+<div class="readyMadeContent">
+<h4>Video Streaming App Development</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/ewallet-app-development">
+<img alt="eWallet App Development" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/e-wallet.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+<div class="readyMadeContent">
+<h4>eWallet App Development</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/home-services-app-development">
+<img alt="Home Service App Development" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/home_services.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+<div class="readyMadeContent">
+<h4>Home Service App Development</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</div>
+</a>
+</div>
+<div class="item">
+<a class="readyMadeBox" href="https://semidotinfotech.com/fantasy-sports-app-development">
+<img alt="Fantasy App Development" class="img-fluid lazy" data-src="https://semidotinfotech.com/web/images/fantasyAppBanner.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+<span class="readyMadeContent">
+<h4>Fantasy App Development</h4>
+<b>More Details <i class="las la-long-arrow-alt-right"></i></b>
+</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="discussSpecialists wow fadeInUp">
+<div class="container">
+<div class="discussSpecialistsInside">
+<h2 class="wow fadeInUp">Discuss Your Project With The Specialists</h2>
+<p class="wow fadeInUp">Our clients' satisfaction is our end goal, we take pride in most of our clients being our long-term clients. When you hire SemiDot Infotech, we will take care of everything that revolves in and around your project.</p>
+<a class="btn wow fadeInUp" href="https://semidotinfotech.com/request-a-quote">Let’s Talk</a>
+</div>
+</div>
+</section>
+<section class="globalRecognitionRow">
+<div class="container">
+<h2 class="titleOne wow fadeInUp">Global Recognition</h2>
+<p class="wow fadeInUp">We have worked with some globally recognized brands and created perfectly scaled web and mobile apps for them.</p>
+<div class="row mt-5 globalnone">
+<div class="col-xl-6 col-lg-12">
+<ul class="row">
+<li class="col-xl-6 col-lg-4 col-6 wow fadeInDown" data-wow-delay="0.1s">
+<div class="productItem">
+<a class="awardimg" href="https://clutch.co/profile/semidot-infotech" rel="noopener noreferrer nofollow" target="_blank"><img alt="Clutch" class="lazy" data-src="https://semidotinfotech.com/web/images/clutchimg.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/></a>
+</div>
+</li>
+<li class="col-xl-6 col-lg-4 col-6 wow fadeInDown" data-wow-delay="0.1s">
+<div class="productItem">
+<a class="awardimg upcity" href="https://upcity.com/profiles/semidot-infotech/boulder" rel="noopener noreferrer nofollow" target="_blank"><img alt="Upcity" class="lazy" data-src="https://semidotinfotech.com/web/images/upcityimg.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/></a>
+</div>
+</li>
+<li class="col-xl-6 col-lg-4 col-6 wow fadeInDown" data-wow-delay="0.2s">
+<div class="productItem">
+<a class="awardimg" href="https://www.goodfirms.co/companies/view/1221/semidot-infotech-pvt-ltd" rel="noopener noreferrer nofollow" target="_blank"><img alt="GoodFirms" class="lazy" data-src="https://semidotinfotech.com/web/images/goodfirmsimg.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/></a>
+</div>
+</li>
+<li class="col-xl-6 col-lg-4 col-6 wow fadeInDown" data-wow-delay="0.2s">
+<div class="productItem">
+<a class="awardimg" href="https://www.appfutura.com/developers/semidot-infotech-pvt-ltd" rel="noopener noreferrer nofollow" target="_blank"><img alt="Appfutura" class="lazy" data-src="https://semidotinfotech.com/web/images/appfuturaimg.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/></a>
+</div>
+</li>
+<li class="col-xl-6 col-lg-4 col-6 wow fadeInDown" data-wow-delay="0.3s">
+<div class="productItem last">
+<a class="awardimg" href="https://www.softwareworld.co/top-mobile-app-development-companies-in-usa/" rel="noopener noreferrer nofollow" target="_blank"><img alt="SoftwareWorld" class="lazy" data-src="https://semidotinfotech.com/web/images/SoftwareWorld.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/></a>
+</div>
+</li>
+<li class="col-xl-6 col-lg-4 col-6 wow fadeInDown" data-wow-delay="0.3s">
+<div class="productItem last">
+<a class="awardimg" href="https://www.itfirms.co/top-mobile-app-development-companies/" rel="noopener noreferrer" target="_blank"><img alt="ITFirms" class="lazy" data-src="https://semidotinfotech.com/web/images/itfirmsimg.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/></a>
+</div>
+</li>
+</ul>
+</div>
+<div class="col-xl-6 col-lg-12 reviewBox">
+<div class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel" id="carousel-thumb">
+<div class="carousel-inner" role="listbox">
+<div class="carousel-item active">
+<img alt="clutch01" class="d-block lazy" data-src="https://semidotinfotech.com/web/images/clutch01.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+</div>
+<div class="carousel-item">
+<img alt="clutch02" class="d-block lazy" data-src="https://semidotinfotech.com/web/images/clutch02.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+</div>
+<div class="carousel-item">
+<img alt="clutch03" class="d-block lazy" data-src="https://semidotinfotech.com/web/images/clutch03.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+</div>
+<div class="carousel-item">
+<img alt="clutch04" class="d-block lazy" data-src="https://semidotinfotech.com/web/images/clutch04.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/>
+</div>
+</div>
+<a class="carousel-control-prev" data-slide="prev" href="#carousel-thumb" role="button">
+<span aria-hidden="true" class="carousel-control-prev-icon"><i class="las la-angle-left"></i></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" data-slide="next" href="#carousel-thumb" role="button">
+<span aria-hidden="true" class="carousel-control-next-icon"><i class="las la-angle-right"></i></span>
+<span class="sr-only">Next</span>
+</a>
+<ol class="carousel-indicators">
+<li class="active" data-slide-to="0" data-target="#carousel-thumb"></li>
+<li data-slide-to="1" data-target="#carousel-thumb"></li>
+<li data-slide-to="2" data-target="#carousel-thumb"></li>
+<li data-slide-to="3" data-target="#carousel-thumb"></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="owl-carousel globalCarousel">
+<div class="item partnerItem">
+<a class="awardimg" href="https://clutch.co/profile/semidot-infotech" rel="noopener noreferrer nofollow" target="_blank"><img alt="Clutch" class="lazy" data-src="https://semidotinfotech.com/web/images/clutchimg.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/></a>
+</div>
+<div class="item partnerItem">
+<a class="awardimg upcity" href="https://upcity.com/profiles/semidot-infotech/boulder" rel="noopener noreferrer nofollow" target="_blank"><img alt="Upcity" class="lazy" data-src="https://semidotinfotech.com/web/images/upcityimg.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/></a>
+</div>
+<div class="item partnerItem">
+<a class="awardimg" href="https://www.goodfirms.co/companies/view/1221/semidot-infotech-pvt-ltd" rel="noopener noreferrer nofollow" target="_blank"><img alt="GoodFirms" class="lazy" data-src="https://semidotinfotech.com/web/images/goodfirmsimg.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/></a>
+</div>
+<div class="item partnerItem">
+<a class="awardimg" href="https://www.appfutura.com/developers/semidot-infotech-pvt-ltd" rel="noopener noreferrer nofollow" target="_blank"><img alt="Appfutura" class="lazy" data-src="https://semidotinfotech.com/web/images/appfuturaimg.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/></a>
+</div>
+<div class="item partnerItem">
+<a class="awardimg" href="https://www.softwareworld.co/top-mobile-app-development-companies-in-usa/" rel="noopener noreferrer nofollow" target="_blank"><img alt="SoftwareWorld" class="lazy" data-src="https://semidotinfotech.com/web/images/SoftwareWorld.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/></a>
+</div>
+<div class="item partnerItem">
+<a class="awardimg" href="https://www.itfirms.co/top-mobile-app-development-companies/" rel="noopener noreferrer" target="_blank"><img alt="SoftwareWorld" class="lazy" data-src="https://semidotinfotech.com/web/images/itfirmsimg.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png"/></a>
+</div>
+</div>
+</div>
+</section>
+<section class="clientTestimonialsRow appdevelopment_bg">
+<div class="container">
+<div class="row">
+<div class="col-sm-12 col-lg-10 col-xl-8 col-center m-auto">
+<h2 class="titleTwo wow fadeInDown">Client Testimonial</h2>
+<div class="carousel slide" data-ride="carousel" id="clientTestimonials">
+<ol class="carousel-indicators">
+<li class="active" data-slide-to="0" data-target="#clientTestimonials"></li>
+<li class="" data-slide-to="1" data-target="#clientTestimonials"></li>
+<li class="" data-slide-to="2" data-target="#clientTestimonials"></li>
+<li class="" data-slide-to="3" data-target="#clientTestimonials"></li>
+<li class="" data-slide-to="4" data-target="#clientTestimonials"></li>
+<li class="" data-slide-to="5" data-target="#clientTestimonials"></li>
+<li class="" data-slide-to="6" data-target="#clientTestimonials"></li>
+<li class="" data-slide-to="7" data-target="#clientTestimonials"></li>
+</ol>
+<div class="carousel-inner">
+<div class="item carousel-item active">
+<p class="testimonial">
+<span class="quote"></span>
+I was pretty skeptical about outsourcing my project to a different country, but SemiDot proved to be even better than some of the companies I have worked with, within Europe. The prices they quoted were pretty decent, so I took the leap, and they delivered perfectly, and in time, what they promised.
+</p>
+<div class="text-center routBox">
+<div class="img-box"><img alt="Semidot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/image_crop.php?width=75&amp;height=75&amp;cropratio=1:1&amp;image=/storage/image/1591277136-muhanad.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-2.png"/></div>
+<p class="overview"><b>Muhanad</b></p>
+</div>
+</div>
+<div class="item carousel-item">
+<p class="testimonial">
+<span class="quote"></span>
+Me and Harry (Business head of SDI) clicked instantly, thanks to our common passion towards Blockchain. They are currently working on a blockchain-based game for our company. Overall, Semidot Infotech is a complete package, low prices combined with top quality.
+</p>
+<div class="text-center routBox">
+<div class="img-box"><img alt="Semidot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/image_crop.php?width=75&amp;height=75&amp;cropratio=1:1&amp;image=/storage/image/1591277202-carol.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-2.png"/></div>
+<p class="overview"><b>Carol</b></p>
+</div>
+</div>
+<div class="item carousel-item">
+<p class="testimonial">
+<span class="quote"></span>
+A Great design requires a team of enthusiasts, and these guys delivered exactly what I hoped for. Looking forward to continuing my partnership with Semidot Infotech. Give this company a try, as soon as you see their portfolio, you will know exactly what I had been talking about.
+</p>
+<div class="text-center routBox">
+<div class="img-box"><img alt="Semidot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/image_crop.php?width=75&amp;height=75&amp;cropratio=1:1&amp;image=/storage/image/1591277225-bobbySingh.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-2.png"/></div>
+<p class="overview"><b>Bobby</b></p>
+</div>
+</div>
+<div class="item carousel-item">
+<p class="testimonial">
+<span class="quote"></span>
+Outsourcing a multi-million-euro project to a small company in India? You guys must be thinking I am joking. Well, I am not, Semidot Infotech is the complete package you would want for your project, they are truly client-centric, something which is very hard to find in today’s world.
+</p>
+<div class="text-center routBox">
+<div class="img-box"><img alt="Semidot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/image_crop.php?width=75&amp;height=75&amp;cropratio=1:1&amp;image=/storage/image/1591277253-NeilDegg.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-2.png"/></div>
+<p class="overview"><b>Neil Degg</b></p>
+</div>
+</div>
+<div class="item carousel-item">
+<p class="testimonial">
+<span class="quote"></span>
+We are doctors, and passionate about what we do, so one fine day, we decided to get an app for pregnancy needs. We came across Semidot through a friend who had previously worked with them, they delivered the app in just 2.5 months, which is something truly incredible.
+</p>
+<div class="text-center routBox">
+<div class="img-box"><img alt="Semidot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/image_crop.php?width=75&amp;height=75&amp;cropratio=1:1&amp;image=/storage/image/1591277295-Jamil-Idries.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-2.png"/></div>
+<p class="overview"><b>Jamil &amp; Idries</b></p>
+</div>
+</div>
+<div class="item carousel-item">
+<p class="testimonial">
+<span class="quote"></span>
+So, I came up with a one of a kind idea, and when most web development companies told me that’s impossible in your budget, these guys proved to be my saviours. They not only made the web app per the requirements, but also scaled it, to be used by millions of users, and did all of it, in my budget.
+</p>
+<div class="text-center routBox">
+<div class="img-box"><img alt="Semidot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/image_crop.php?width=75&amp;height=75&amp;cropratio=1:1&amp;image=/storage/image/1591867196-Siegfried.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-2.png"/></div>
+<p class="overview"><b>Siegfried Gretzinger</b></p>
+</div>
+</div>
+<div class="item carousel-item">
+<p class="testimonial">
+<span class="quote"></span>
+The primary goal behind my project was to take my business online, and I really didn’t expect or anticipate this much response from my customers. I have dealt with many web development companies in the past, and I can easily say that they have the expertise and resources to develop a good application.
+</p>
+<div class="text-center routBox">
+<div class="img-box"><img alt="Semidot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/image_crop.php?width=75&amp;height=75&amp;cropratio=1:1&amp;image=/storage/image/1591867244-mario.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-2.png"/></div>
+<p class="overview"><b>Mario Thaler</b></p>
+</div>
+</div>
+<div class="item carousel-item">
+<p class="testimonial">
+<span class="quote"></span>
+My idea was brought to life with the help of these guys, it is all thanks to them, that my business could take off so smoothly. SemiDot has proved to be a great business partner, and Kapil (CTO of the company) has proved to be one of the greatest mentors I have ever come across.
+</p>
+<div class="text-center routBox">
+<div class="img-box"><img alt="Semidot Infotech" class="img-fluid lazy" data-src="https://semidotinfotech.com/image_crop.php?width=75&amp;height=75&amp;cropratio=1:1&amp;image=/storage/image/1591937977-Benjamin Buren.png" src="https://semidotinfotech.com/web/images/placeholder-portfolio-2.png"/></div>
+<p class="overview"><b>Benjamin Buren</b></p>
+</div>
+</div>
+</div>
+<a class="carousel-control left carousel-control-prev" data-slide="prev" href="#clientTestimonials">
+<span class="leftBtn"></span>
+</a>
+<a class="carousel-control right carousel-control-next" data-slide="next" href="#clientTestimonials">
+<span class="rightBtn"></span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="blogsRow">
+<div class="container">
+<h2 class="titleOne wow fadeInDown">Our Featured Blogs</h2>
+<p class="wow fadeInDown">Want to know about the latest technology trends? You can find all of them here.</p>
+<div class="row mt-5 mb-5">
+<div class="col-lg-4 col-md-6 wow fadeInUp">
+<a class="blogItem" href="https://semidotinfotech.com/blog/best-health-and-fitness-apps/">
+<span class="imgRange">
+<img alt="Best Health and Fitness Apps to Use in 2022" class="img-fluid lazy" data-src="https://semidotinfotech.com/blog/wp-content/uploads/2022/06/Blog-1-6.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title="">
+</img></span>
+<span class="blogContent">
+<span class="shortBlogTitle">Best Health and Fitness Apps to Use in 2022</span>
+<b>View Details <i class="las la-long-arrow-alt-right"></i></b>
+</span>
+</a>
+</div>
+<div class="col-lg-4 col-md-6 wow fadeInUp">
+<a class="blogItem" href="https://semidotinfotech.com/blog/angular-14-update-and-features/">
+<span class="imgRange">
+<img alt="What Should You Know All About Angular 14 Update?" class="img-fluid lazy" data-src="https://semidotinfotech.com/blog/wp-content/uploads/2022/06/Blog-1-5.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title="">
+</img></span>
+<span class="blogContent">
+<span class="shortBlogTitle">What Should You Know All About Angular 14 Update?</span>
+<b>View Details <i class="las la-long-arrow-alt-right"></i></b>
+</span>
+</a>
+</div>
+<div class="col-lg-4 col-md-6 wow fadeInUp">
+<a class="blogItem" href="https://semidotinfotech.com/blog/how-to-patent-a-mobile-app-idea/">
+<span class="imgRange">
+<img alt="A Complete Guide to Patent a Mobile App Idea" class="img-fluid lazy" data-src="https://semidotinfotech.com/blog/wp-content/uploads/2022/06/Blog-1-4.jpg" src="https://semidotinfotech.com/web/images/placeholder-portfolio-1.png" title="">
+</img></span>
+<span class="blogContent">
+<span class="shortBlogTitle">A Complete Guide to Patent a Mobile App Idea</span>
+<b>View Details <i class="las la-long-arrow-alt-right"></i></b>
+</span>
+</a>
+</div>
+</div>
+<div class="text-center">
+<a class="btn btn-primary hvr-float-shadow" href="https://semidotinfotech.com/blog/">View All Articles <i class="las la-long-arrow-alt-right"></i></a>
+</div>
+</div>
+</section>
+<div class="container" id="ContactFormHomePage">
+<div class="contactRow">
+<div class="insideRightForm">
+<h2 class="titleTwo">Interested in working with us?</h2>
+<div class="labelTag">LET’S TALK AND GET STARTED</div>
+<div class="right_choice_tile"></div>
+<form accept-charset="UTF-8" action="https://semidotinfotech.com/save_enquiry" class="contactForm" enctype="multipart/form-data" id="enquiryForm" method="POST"><input name="_token" type="hidden" value="nmMnPusmiqtEtgX0f3c0GYHEAIO5kkFXAqMM6880"/>
+<div class="row">
+<div class="col-sm-6">
+<div class="form-group">
+<input class="form-control" id="name" name="name" placeholder="Full Name*" required="required" type="text"/>
+</div>
+</div>
+<input name="last_name" style="display:none" type="text"/>
+<div class="col-sm-6">
+<div class="form-group">
+<input class="form-control" name="email" placeholder="Email*" required="required" type="email"/>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group">
+<input class="form-control" id="phone_number" name="phone_number" placeholder="Phone Number" type="number"/>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group">
+<input class="form-control" id="chat_id" name="chat_id" placeholder="Skype Id" type="text"/>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group">
+<select class="custom-select" id="Budget" name="budget_amount"><option selected="selected" value="">Select your Budget</option><option value="Under $10,000">Under $10,000</option><option value="Between $10,000-$50,000">Between $10,000-$50,000</option><option value="Between $50,000-$1,00,000">Between $50,000-$1,00,000</option><option value="Above $1,00,000">Above $1,00,000</option><option value="Not Funded Yet">Not Funded Yet</option></select>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-group">
+<select class="custom-select" id="service_id" name="service_id"><option value="0">What are you looking for?</option><option value="61">Mobile App Development</option><option value="62">Web Development</option><option value="65">Partnership Opportunities</option><option value="66">Custom Software</option><option value="67">Readymade Solutions</option><option value="68">Hire Dedicated Developer</option></select>
+</div>
+</div>
+<div class="col-md-12">
+<div class="row">
+<div class="col-md-12 col-lg-8">
+<div class="form-group">
+<textarea class="form-control" cols="50" name="requirements" placeholder="How can we help?*" required="required" rows="10"></textarea>
+</div>
+</div>
+<div class="col-md-12 col-lg-4">
+<div class="form-group">
+<div class="g-recaptcha" data-sitekey="6Le4kiYTAAAAANE98GBGEs4NJ54Rjlmor7Z1X92R" id="footer_quote_form_captcha"></div>
+</div>
+<div class="invalid-feedback" id="quote-captcha-error" style="padding-top: 77px;margin-left: 67px;">Please verify you are human!</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row mt-3 align-items-center">
+<div class="col-xl-6 col-sm-6">
+</div>
+<div class="col-xl-6 col-sm-6 totalValue">
+<input name="source" type="hidden" value="footer_request_quote"/>
+<input class="btn btn-primary hvr-float-shadow float-right" type="submit" value="Submit"/>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<footer class="mainFooter">
+<div class="finalFooter">
+<div class="container">
+<div class="row informationFooter">
+<div class="col-md-4 col-sm-6 col-xl officeRow">
+<h4>US Office</h4>
+<p>3024 Washington Street, Boulder, <br> CO 80304 United States</br></p>
+<div class="callInfo">
+<a href="tel:+1 720 924 8638"><i class="fas fa-phone-alt"></i> +1 720 924 8638</a>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xl officeRow">
+<h4>UK Office</h4>
+<p>65 Liverpool Road,  Hindley Manchester WN23HQ  United Kingdom</p>
+<div class="callInfo">
+<a href="tel:+44 161 818 6630"><i class="fas fa-phone-alt"></i> +44 161 818 6630</a>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xl officeRow">
+<h4>Dubai Office</h4>
+<p>10 Laya Residences, <br/>Al Barsha South Fourth <br/>681, 450535 Dubai</p>
+<div class="callInfo">
+<a href="tel:+91 773 797 0891"><i class="fas fa-phone-alt"></i> +91 773 797 0891</a>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xl officeRow">
+<h4>INDIA Office</h4>
+<p>12 New Colony II Jaipur, Raj. <br/> 302017 India</p>
+<div class="callInfo">
+<a href="tel:+91 773 797 0891"><i class="fas fa-phone-alt"></i> +91 773 797 0891</a>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xl officeRow">
+<h4>Quick Links</h4>
+<ul>
+<li>
+<a href="/about-us">About Us</a>
+</li>
+<li>
+<a href="/privacy-policy">Privacy Policy</a>
+</li>
+<li>
+<a href="/terms-conditions">Terms &amp; Conditions</a>
+</li>
+<li>
+<a href="/contact-us">Contact Us</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="row align-items-center">
+<div class="col-lg-4 col-md-4 col-sm-7 socialFooter">
+<ul>
+<li class="fb">
+<a data-toggle="tooltip" href="https://www.facebook.com/semidotinfo/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+</li>
+<li class="tw">
+<a data-toggle="tooltip" href="https://twitter.com/DotSemi" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+</li>
+<li class="ld">
+<a data-toggle="tooltip" href="https://www.linkedin.com/company/semidot-infotech-pvt-ltd" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a>
+</li>
+<li class="sk">
+<a data-toggle="tooltip" href="skype:semi.info?call" title="Skype">
+<img alt="" class="lazy" data-src="https://semidotinfotech.com/web/images/skype.svg" height="28" src="https://semidotinfotech.com/web/images/default_black_icon.png" title="" width="28">
+</img></a>
+</li>
+</ul>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-5 leftSet text-center">
+<a href="//www.dmca.com/Protection/Status.aspx?ID=ef6c7354-cd1c-493d-be29-f952a91461a7" rel="noopener" target="_blank">
+<img alt="" class="lazy" data-src="https://semidotinfotech.com/web/images/dmca.png" src="https://semidotinfotech.com/web/images/default_black_rect_icon.png" title="">
+</img></a>
+</div>
+<div class="col-lg-5 col-md-4 copyright">
+<p>Copyright © 2022 Semidot Infotech - All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<a href="#" id="be-themes-back-to-top" style="display: block;">
+<i class="las la-arrow-up"></i>
+</a>
+<div class="acceptprivacy" id="disclaimer" style="display:none">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-md-8 col-xl-9">
+<div class="cookies-banner__text">
+<p>We use cookies to ensure the best experience on our website. For Detailed information how we use cookie view <a href="/privacy-policy">Learn More</a></p>
+</div>
+</div>
+<div class="cookies-banner__controls col-md-4 col-xl-3 static">
+<button class="btn btn-primary decline hvr-icon-forward accept" onclick="setCookie('accept', 1,7 )">Agree &amp; Dismiss <i class="las la-long-arrow-alt-right"></i></button>
+</div>
+</div>
+</div>
+</div>
+<div class="cd-overlay"></div>
+</main>
+</div>
+<div class="modal portfolio_modal fadeZoomIn animated3" id="myModal">
+<div class="modal-dialog">
+<div class="modal-content" id="modal_content">
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-rocket-type="text/javascript" src="//semidotinfotech.com/web/js/jquery.min.js" type="rocketlazyloadscript"></script>
+<script type="text/javascript">
+    var query768=window.matchMedia('(max-width: 767px)');
+    window.onload = function() {
+        if(query768.matches){
+            document.querySelectorAll(".discussSpecialists").forEach(el => el.remove()); 
+            document.querySelectorAll(".partnershipModelsRow").forEach(el => el.remove()); 
+            document.querySelectorAll(".workProcessRow").forEach(el => el.remove());   
+        } 
+        }; 
+</script>
+<script type="rocketlazyloadscript">!function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
+<script data-rocket-type="text/javascript" src="https://semidotinfotech.com/web/js/minified.js" type="rocketlazyloadscript"></script>
+<script data-rocket-type="text/javascript" type="rocketlazyloadscript">"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();</script>
+<script data-rocket-type="text/javascript" type="rocketlazyloadscript"> 
+        /* <![CDATA[ */
+        var RocketPreloadLinksConfig = {"excludeUris":"\/web-admin\/|\/logout\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/semidotinfotech.com\/","onHoverDelay":"100","rateThrottle":"3"};
+        /* ]]> */
+    </script>
+<script data-rocket-type="text/javascript" type="rocketlazyloadscript"> (function() {"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();}());</script>
+<script data-rocket-type="text/javascript" src="//www.google.com/recaptcha/api.js?ver=1" type="rocketlazyloadscript"></script>
+<script data-rocket-type="text/javascript" defer="true" src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js" type="rocketlazyloadscript"></script>
+<script data-rocket-type="text/javascript" defer="true" id="ze-snippet" src="//static.zdassets.com/ekr/snippet.js?key=0c299e60-4058-4da6-913d-a62d37f92eaa" type="rocketlazyloadscript"></script>
+<script async="" type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "SemiDot Infotech",
+            "image": "https://semidotinfotech.com/web/images/meta-images/semidot-infotech.jpg",
+            "email": "sales@semidotinfotech.com",
+            "url": "https://semidotinfotech.com/",
+            "founders": [{
+                    "@type": "Person",
+                    "name": "Jitu Bhaskar"
+                },
+                {
+                    "@type": "Person",
+                    "name": "Kapil Singh"
+                },
+                {
+                    "@type": "Person",
+                    "name": "Rohan Singh"
+                }
+            ],
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingCount": "925",
+                "ratingValue": "4.9",
+                "bestRating": "5.0"
+            },
+            "logo": "https://semidotinfotech.com/web/images/SDI-Logo-Main.svg",
+            "contactPoint": [{
+                    "@type": "ContactPoint",
+                    "telephone": "+1-720-924-8638",
+                    "contactType": "sales",
+                    "areaServed": "US",
+                    "availableLanguage": "en"
+                },
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+44 1618 186630",
+                    "contactType": "sales",
+                    "areaServed": "UK",
+                    "availableLanguage": "en"
+                },
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+91 7737970891",
+                    "contactType": "sales",
+                    "areaServed": "India",
+                    "availableLanguage": "en"
+                }
+            ],
+            "sameAs": [
+                "https://www.facebook.com/semidotinfo/",
+                "https://twitter.com/DotSemi",
+                "https://www.instagram.com/semidotinfo/",
+                "https://www.youtube.com/channel/UCL66zrFzh3FxK46_ylOa1wA",
+                "https://in.linkedin.com/company/semidot-infotech-pvt-ltd",
+                "https://pinterest.com/semidot/"
+            ]
+        } 
+        </script>
+<script async="" type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "SemiDot Infotech",
+            "image": "https://semidotinfotech.com/web/images/meta-images/semidot-infotech.jpg",
+            "@id": "SemiDot Infotech",
+            "url": "https://semidotinfotech.com/",
+            "telephone": "+ 1-720-924-8638",
+            "priceRange": "$20-$25",
+            "address": [{
+                    "@type": "PostalAddress",
+                    "streetAddress": "3024 Washington Street, Boulder",
+                    "addressLocality": "Colorado",
+                    "postalCode": "80304",
+                    "addressCountry": "USA"
+                },
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "65 Liverpool Road, Hindley Manchester",
+                    "addressLocality": "Manchester",
+                    "postalCode": "WN23HQ",
+                    "addressCountry": "UK"
+                },
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "12 New Colony II Jaipur",
+                    "addressLocality": "Jaipur",
+                    "postalCode": "302017",
+                    "addressCountry": "India"
+                }
+            ],
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "00:00",
+                "closes": "23:59"
+            },
+            "sameAs": [
+                "https://www.facebook.com/semidotinfo/",
+                "https://twitter.com/DotSemi",
+                "https://www.instagram.com/semidotinfo/",
+                "https://www.youtube.com/channel/UCL66zrFzh3FxK46_ylOa1wA ",
+                "https://in.linkedin.com/company/semidot-infotech-pvt-ltd",
+                "https://pinterest.com/semidot/",
+                "https://semidotinfotech.com/"
+            ]
+        }
+    </script>
+<script type="text/javascript">
+            var verifyBannerQuoteCallback = function(response) {
+                if (response) {
+                    $('#banner-quote-captcha-error').hide();
+                }
+            };
+
+            var verifyPopupQuoteCallback = function(response) {
+                if (response) {
+                    $('#banner-quote-captcha-error').hide();
+                }
+            };
+
+            var verifyFooterQuoteCallback = function(response) {
+                if (response) {
+                    $('#quote-captcha-error').hide();
+                }
+            };
+
+            var bannerQuoteCaptcha;
+            var bannerPopupCaptcha;
+            var footerQuoteCaptcha;
+            var contactQuoteCaptcha;
+            var requestQuoteCaptcha;
+
+            var onloadCaptchaCallback = function() {
+                if ($('#banner-quote-captcha').length) {
+                    bannerQuoteCaptcha = grecaptcha.render('banner-quote-captcha', {
+                        //'sitekey': '6Le4kiYTAAAAANE98GBGEs4NJ54Rjlmor7Z1X92R',
+                        'sitekey': '6Le4kiYTAAAAANE98GBGEs4NJ54Rjlmor7Z1X92R',
+                        'callback': verifyBannerQuoteCallback,
+                    });
+                }
+                
+                // if ($('#popup-quote-captcha').length) {
+                //     bannerPopupCaptcha = grecaptcha.render('popup-quote-captcha', {
+                //         'sitekey': '6Le4kiYTAAAAANE98GBGEs4NJ54Rjlmor7Z1X92R',
+                //         'callback': verifyPopupQuoteCallback,
+                //     });
+                // }
+                
+
+                if ($('#footer_quote_form_captcha').length) {
+                    footerQuoteCaptcha = grecaptcha.render('footer_quote_form_captcha', {
+                        //'sitekey': '6Le4kiYTAAAAANE98GBGEs4NJ54Rjlmor7Z1X92R',
+                        'sitekey': '6Le4kiYTAAAAANE98GBGEs4NJ54Rjlmor7Z1X92R',
+                        'callback': verifyFooterQuoteCallback,
+                    });
+                }
+
+                if ($('#RecaptchaField1').length) {
+                    contactQuoteCaptcha = grecaptcha.render('RecaptchaField1', {
+                        //'sitekey': '6Le4kiYTAAAAANE98GBGEs4NJ54Rjlmor7Z1X92R',
+                        'sitekey': '6Le4kiYTAAAAANE98GBGEs4NJ54Rjlmor7Z1X92R',
+                        'callback': verifyFooterQuoteCallback,
+                    });
+                }
+
+                if ($('#quote_form_captcha').length) {
+                    requestQuoteCaptcha = grecaptcha.render('quote_form_captcha', {
+                        //'sitekey': '6Le4kiYTAAAAANE98GBGEs4NJ54Rjlmor7Z1X92R',
+                        'sitekey': '6Le4kiYTAAAAANE98GBGEs4NJ54Rjlmor7Z1X92R',
+                        'callback': verifyFooterQuoteCallback,
+                    });
+                }
+            };
+            // var onloadCaptchaCallbackPopup = function() {
+
+            //     if ($('#popup-quote-captcha').length) {
+            //         bannerPopupCaptcha = grecaptcha.render('popup-quote-captcha', {
+            //             //'sitekey': '6Le4kiYTAAAAANE98GBGEs4NJ54Rjlmor7Z1X92R',
+            //             'sitekey': '6Le4kiYTAAAAANE98GBGEs4NJ54Rjlmor7Z1X92R',
+            //             'callback': verifyPopupQuoteCallback,
+            //         });
+            //     }
+                
+            // };
+        </script>
+<script async="" data-rocket-type="text/javascript" src="https://www.google.com/recaptcha/api.js?onload=onloadCaptchaCallback&amp;render=explicit" type="rocketlazyloadscript"></script>
+<script type="rocketlazyloadscript">"use strict";var wprRemoveCPCSS=function wprRemoveCPCSS(){var elem;document.querySelector('link[data-rocket-async="style"][rel="preload"]')?setTimeout(wprRemoveCPCSS,200):(elem=document.getElementById("rocket-critical-css"))&&"remove"in elem&&elem.remove()};window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script>
+<noscript><link href="https://semidotinfotech.com/web/css/minified.css" media="all" rel="stylesheet" type="text/css"/>
+</noscript>
+<script data-rocket-type="text/javascript" defer="" type="rocketlazyloadscript">
+        $(document).ready(function(){$(".mouseDown").click(function(){$("html, body").animate({scrollTop:$(".whoWeAreRow").offset().top},800)})}),$(".counter").each(function(){var e=$(this),o=e.attr("data-count");$({countNum:e.text()}).animate({countNum:o},{duration:5e3,easing:"linear",step:function(){e.text(Math.floor(this.countNum))},complete:function(){e.text(this.countNum)}})}),$(".globalCarousel").owlCarousel({loop:!1,nav:!0,dots:!1,responsiveClass:!0,responsive:{0:{items:1},576:{items:2},768:{items:3},992:{items:5},1200:{items:6}}}),$(".partnersCarousel").owlCarousel({loop:!1,nav:!0,dots:!1,responsiveClass:!0,responsive:{0:{items:2},576:{items:2},768:{items:3},992:{items:5},1200:{items:6}}});
+        var show=!($.fn.isInViewport=function(){var o=$(this).offset().top,r=o+$(this).outerHeight(),s=$(window).scrollTop(),t=s+$(window).height();return s<r&&o<t});$(document).ready(function(){$(".workProcessRow").isInViewport()&&(show=!0)}),$(window).on("resize scroll",function(){if($(".workProcessRow").isInViewport()){if(show)return;show=!0,$(".work-process-image").each(function(){$(this).attr("src");$(this).attr("src", "https://semidotinfotech.com/web/images/work-process/work-process.svg" + "?rand=" + Math.random())})}else show=!1,$(".work-process-image").each(function(){$(this).attr("src", 'https://semidotinfotech.com/web/images/work-process/placeholder.png')})});
+    </script>
+<script data-rocket-type="text/javascript" defer="" type="rocketlazyloadscript">
+        $(document).ready(function($) {
+            $('#services_tab a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+                        let target = $(e.target).data('target');
+                        $(target)
+                            .addClass('active show')
+                            .siblings('.tab-pane.active')
+                            .removeClass('active show')
+                    });
+        });
+    </script>
+<script crossorigin="anonymous" data-cf-beacon='{"rayId":"71e722757c110d16","version":"2022.6.0","r":1,"token":"ac6e05b936bd4672a289fe0bd0586923","si":100}' defer="" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"></script>
+</body>
+</html>

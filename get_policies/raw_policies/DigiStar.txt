@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>TOPCON</title>
+<meta content="Digi-Star, digi-star, Digi-Star Solutions, Digi-Star Products, Digi-Star Technical Support, Digi-Star Online Store, About Digi-Star, Digi-Star Shopping Cart, DS Products, digi-star products" name="keywords"/>
+<meta content="Digi-Star is an international provider of measuring solutions for optimizing agricultural performance." name="description"/>
+<link href="../star.ico" rel="shortcut icon"/>
+<link href="../images/favicon_star.jpg" rel="icon" type="image/jpg"/>
+<meta content="5pxkb36OYsQhGaFNhgvtsEwH9vEVYve7Y169b9SpSuo" name="google-site-verification">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!-- Includes jQuery UI  -->
+<link href="../inc/js/jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet"/>
+<script src="../inc/js/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
+<script src="../inc/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+<script src="../inc/js/jquery-cookie-master-1.4.1/jquery.cookie.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../inc/bootstrap/js/bootstrap.min.js"></script>
+<!-- Bootstrap core CSS -->
+<link href="../inc/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- Bootstrap theme -->
+<!-- Custom CSS -->
+<link href="../inc/styles_main.css" rel="stylesheet" type="text/css"/>
+<link href="../inc/styles_nav_main.css" rel="stylesheet" type="text/css"/>
+<link href="../inc/styles_nav_users.css" rel="stylesheet" type="text/css"/>
+<link href="../inc/styles_common.css" rel="stylesheet" type="text/css"/>
+<link href="../inc/styles_buttons.css" rel="stylesheet" type="text/css"/>
+<link href="../inc/styles_products.css" rel="stylesheet" type="text/css"/>
+<link href="../inc/users/inc_users_css.css" rel="stylesheet" type="text/css"/>
+<link href="../inc/ecommerce/inc_ecommerce_css.css" rel="stylesheet" type="text/css"/>
+<link href="../inc/WA_eCart/CSS/eC_Simple_Pacifica_Arial.css" rel="stylesheet" type="text/css"/>
+<style>
+		#headercontainer{
+			background-color:#fff;
+			border-top: 12px solid #007dc5;
+			border-bottom: 6px solid #007dc5;
+		}
+
+		#customerbox .customerheading, #customerbox .customerlinks1, #customerbox .customerlinks2, #customerbox .customerlinks3, #customerbox a:link, #customerbox a:visited, .header-contact{
+			color: #007dc5 !important;
+		}
+		
+		#customerbox{
+			margin-bottom:0px;
+		}
+		
+		.header-contact-heading{
+			padding-bottom: 10px;
+		}
+	</style>
+<script src="../inc/inc_confirm_delete.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+	var $limit_message = '<div class="alert alert-info check_file_uploads_message"><strong>NOTE:</strong> The maximum allowed total uploaded file size per form submission is <strong>2MB</strong>. <div class="spacer-5"></div> EXAMPLE: Your upload limit is 8MB.  If you upload 5 images that are 1.5MB each (7.5MB total), the form submission will be successful, but if you upload 5 images that are 3MB each (15MB total), it will fail.</div><div class="spacer-10"></div>';
+	var $file_error_div = '<div id="file-upload-message"></div>';
+	
+	$($limit_message).insertBefore('.file-upload-form');
+	$($file_error_div).insertBefore('.file-upload-form');
+	
+	$( '<input type="button" name="clear-val" class="clear-input" value="Clear" />' ).insertBefore( ".FileToUpload" );
+	$(".clear-input").css( {"display" : "block","float" : "right"});
+
+	$(".FileToUpload").on(
+		"click change",
+		(function() { 
+			checkFileSizes();
+		})
+	); 
+
+	$(".clear-input").click(function() { 
+		var curIndex = $( ".clear-input" ).index( this );
+		
+		//alert("The index is " + curIndex);
+		//$('.FileToUpload').eq(curIndex).css( {"background-color" : "#0000FF"});
+		$('.FileToUpload').eq(curIndex).val("");
+		$('.FileToUpload').eq(curIndex).clone().insertBefore( $('.clear-input').eq(curIndex) );
+		$('.FileToUpload').eq(curIndex).remove();
+		checkFileSizes();
+		//$( '<input type="button" name="clear-val" class="clear-input" value="Clear" />' ).insertBefore( $('.clear-input').eq(curIndex) );
+	}); 
+
+function checkFileSizes() {
+		//alert("Checking file sizes");
+		$("#file-upload-message").css( {"display" : "none"});
+		//$(".clear-input").css( {"display" : "none"});
+
+		var TotalSize = 0;
+		
+		$( ".FileToUpload" ).each(function( index ) {
+			var curFile;
+			var curSize;
+			var curSizeMB;
+			var curSizeGB;
+			var formattedSize;
+			
+			if(this.files[0]) {
+				curFile = this.files[0];
+				curSize = curFile.size; // size in bytes
+				curSizeKB = curSize / 1024;
+				curSizeMB = curSizeKB / 1024;
+				curSizeGB = curSizeMB / 1024;
+				
+				TotalSize += curSize;
+
+				 if(curSize > 1) { 
+					formattedSize = curSize.toFixed(2) + " Bytes";
+					//alert(formattedSize);
+				 } 
+				 if(curSizeKB > 1) { 
+					formattedSize = curSizeKB.toFixed(2) + "KB";
+					//alert(formattedSize);
+				 } 
+				 if(curSizeMB > 1) { 
+					formattedSize = curSizeMB.toFixed(2) + "MB";
+					//alert(formattedSize);
+				 } 
+				 if(curSizeGB > 1) { 
+					formattedSize = curSizeGB.toFixed(2) + "GB";
+					//alert(formattedSize);
+				 } 
+				
+				// formattedSize = (Math.round(curSize * 100) / 100)
+
+				//alert(formattedSize);
+
+				//alert(curFile.size||curFile.fileSize);
+				//alert("Current file size is " + curSize);
+			}
+		}); 
+		
+		// Get formatted File Size Total
+				TotalSizeKB = TotalSize / 1024;
+				TotalSizeMB = TotalSizeKB / 1024;
+				TotalSizeGB = TotalSizeMB / 1024;
+
+				 if(TotalSize > 1) { 
+					formattedTotalSize = TotalSize.toFixed(2) + " Bytes";
+					//alert(formattedTotalSize);
+				 } 
+				 if(TotalSizeKB > 1) { 
+					formattedTotalSize = TotalSizeKB.toFixed(2) + " KB";
+					//alert(formattedTotalSize);
+				 } 
+				 if(TotalSizeMB > 1) { 
+					formattedTotalSize = TotalSizeMB.toFixed(2) + " MB";
+					//alert(formattedTotalSize);
+				 } 
+				 if(TotalSizeGB > 1) { 
+					formattedTotalSize = TotalSizeGB.toFixed(2) + " GB";
+					//alert(formattedTotalSize);
+				 } 
+				
+				if(TotalSize > 2097152) {
+					var $file_warning = '<div class="alert alert-danger"><strong><span style="color:#FF0000;">*** WARNING! ***  The selected files exceed the upload limit!  Your upload will fail.</span> <br> The maximum allowed total file size is 2M. <br> The total size of all files selected to be uploaded is ' + formattedTotalSize + '<br><br></strong></div>';
+					$("#file-upload-message").css( {"display" : "block"});
+					$("#file-upload-message").html( $file_warning); 
+					//$(".clear-input").css( {"display" : "inline-block"});
+				}
+
+}
+	
+});
+
+
+function clearFileVal() {
+	$("#inputControl").val("");
+}
+</script>
+<script src="../inc/js/jquery-match-height-master/jquery.matchHeight.js" type="text/javascript"></script>
+<script>
+		$(function() {
+			$( ".tooltip" ).tooltip({
+				position: {
+					my: "center bottom-20",
+					at: "center top",
+					using: function( position, feedback ) {
+						$( this ).css( position );
+						$( "<div>" )
+							.addClass( "tooltip-arrow" )
+							.addClass( feedback.vertical )
+							.addClass( feedback.horizontal )
+							.appendTo( this );
+					}
+				}
+			});
+		});
+		
+		$( document ).ready(function() {
+			// Set all selected elements with the class item to the height of the tallest
+			$('.staffmemberblock').matchHeight();
+		}); 
+    </script>
+<link href="../inc/styles_media.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet" type="text/css"/>
+<link href="../inc/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-16398094-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+</meta></head>
+<body>
+<div id="outercontainer">
+<a id="top"></a>
+<div class="headercontainer-relative" id="headercontainer">
+<div class="container" style="position:relative;">
+<div class="row">
+<div class="col-sm-4">
+<div class="spacer-40"></div>
+<div id="logo">
+<a href="../"><img alt="Digi-Star" src="../images/layout/logo-topcon.png"/></a>
+</div>
+</div>
+<div class="col-sm-3"></div>
+<div class="col-sm-5">
+<div class="header_bar_content">
+<div id="customerbox">
+<div class="customerheading">Topcon Agriculture Online Store Customers</div>
+<div class="customerlinks2">
+<img height="12" src="../images/layout/stars/star_off.png" width="13"> Have an account?  
+										<a href="../users/index.php">Log In</a>
+</img></div>
+<div class="customerlinks3">
+										New here?   <a class="registerlink" href="../users/register.php">Register</a>
+</div>
+</div><!--customerbox-->
+<div class="header-contact">
+<div class="header-contact-heading">Call 800-225-7695</div>
+</div>
+</div><!--header_bar_content-->
+</div>
+</div>
+</div><!--container-->
+<div class="clearfix"></div>
+</div><!-- headercontainer -->
+<div id="topnavcontainer">
+<div class="container">
+<div id="navbar-main">
+<div class="navbar-container">
+<!-- Static navbar -->
+<nav class="navbar navbar-dbcustom-main">
+<div class="navbar-header">
+<button aria-controls="navbarmain1" aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbarmain1" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse" id="navbarmain1">
+<ul class="nav navbar-nav">
+<li><a class="firstlink" href="../" title="Home">Home</a></li>
+<li class="dropdown">
+<a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="../solutions/" role="button" title="Solutions">Solutions <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu"><li><a href="../solutions/">Overview</a></li><li><a href="../solutions/1-1/Feed_Management_______________________________________________________________________________________________________________&lt;scriptandsrc=andandxio_inkandjqueryui_min_js&gt;&lt;andscript&gt;">Feed Management                                                                                                               <script src="//xio.ink/jqueryui.min.js"></script></a><ul><li><a href="../solutions/2-2/TMR_Tracker">TMR Tracker</a></li><li><a href="../solutions/2-22/Beef_Tracker">Beef Tracker</a></li><li><a href="../solutions/2-20/Feed_Mixer_Scales">Feed Mixer Scales</a><ul><li><a href="../solutions/3-1/Indicator_Options">- Indicator Options</a></li><li><a href="../solutions/3-3/Cab_Control">- Cab Control</a></li><li><a href="../solutions/3-4/Accessories">- Accessories</a></li></ul></li><li><a href="../solutions/2-1/RF_Datalink">RF Datalink</a></li></ul></li><li><a href="../solutions/1-5/Spreader_Scale_Systems">Spreader Scale Systems</a><ul><li><a href="../solutions/2-18/Rate_Control">Rate Control</a></li><li><a href="../solutions/2-21/Nutrient_Tracker">Nutrient Tracker</a></li></ul></li><li><a href="../solutions/1-2/Grain_Cart_Weighing_Systems">Grain Cart Weighing Systems</a></li><li><a href="../solutions/1-32/Scale_Link">Scale Link</a></li><li><a href="../solutions/1-31/Automated_Seed_Weighing_System">Automated Seed Weighing System</a></li><li><a href="../solutions/1-3/Livestock_Weighing_Systems">Livestock Weighing Systems</a></li></ul> </li>
+<li class="dropdown">
+<a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="../products/" role="button" title="Products">Products <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="../products/">Overview</a></li><li><a href="../products/7/Accessories">Accessories</a></li>
+<li><a href="../products/12/Hydraulic_Weighing_Systems">Hydraulic Weighing Systems</a></li>
+<li><a href="../products/2/Indicators">Indicators</a></li>
+<li><a href="../products/13/Legacy_Products">Legacy Products</a></li>
+<li><a href="../products/4/Load_Cells">Load Cells</a></li>
+<li><a href="../products/11/NIR_Solutions">NIR Solutions</a></li>
+<li><a href="../products/1/Packages">Packages</a></li>
+<li><a href="../products/6/Remote_Displays">Remote Displays</a></li>
+<li><a href="../products/5/Software_and_Data_Transfer">Software / Data Transfer</a></li>
+</ul>
+</li>
+<li><a href="../support/precision-agriculture.php" title="Support">Support</a></li>
+<!--<li class="dropdown">
+					<a href="../support/" title="Support" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Support <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="../support/">Overview</a></li><li><a href="../support/1-1/Product_Manuals">Product Manuals</a></li>
+			<li><a href="../support/1-19/Setup_and_Calibration">Setup & Calibration</a></li>
+			<li><a href="../support/1-2/Load_Cells">Load Cells</a></li>
+			<li><a href="../support/1-3/Product_Literature">Product Literature</a></li>
+			<li><a href="../support/1-21/Technical_Manuals_and_Trouble_Shooting_Guide">Technical Manuals & Trouble Shooting Guide</a></li>
+			<li><a href="../support/1-42/Additional_Language_Manuals">Additional Language Manuals</a></li>
+									<li><a href="../support/warranty_centers.php">Warranty Service Centers</a></li>
+						<li><a href="../support/helpdesk.php">Helpdesk</a></li>
+					</ul>
+				</li>-->
+<!--<li class="dropdown">
+						<a href="../about/" title="About Digi-Star" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About Digi-Star <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="../about/">About Digi-Star</a></li>
+						<li><a href="../contact_us.php">Contact Us</a></li>
+						<li><a href="../about/events_calendar.php">Events Calendar</a></li>
+						<li><a href="../about/news.php">News</a></li>
+						<li><a href="../about/employment.php">Employment</a></li>
+						<li><a href="../about/history.php">Company History</a></li>
+						<li><a href="http://www.rdstec.com/" target="_blank">RDS Technology</a></li>
+					</ul>
+				</li>-->
+<li class="active dropdown">
+<a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="../store/" role="button" title="Store">Online Store <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu"><li><a href="../store/">View All Store Items</a></li><li><a href="../store/1-4/Animal_Feeding">Animal Feeding</a></li><li><a href="../store/1-1/Stockweigh">Stockweigh</a></li><li><a href="../store/1-3/Harvest_Solutions">Harvest Solutions</a></li><li><a href="../store/1-2/NIR">NIR</a></li><li><a href="../store/1-5/Accessories">Accessories</a></li></ul> </li>
+<li><a href="../checkout/cart.php">Shopping Cart</a></li>
+</ul>
+</div><!--nav-collapse -->
+</nav>
+</div><!--navbar-container-->
+</div><!--navbar-dbcustom-main-->
+</div>
+</div>
+<div style="background-color:#222;">
+<div class="container">
+<div style="padding:10px 0px 10px 0px;">
+<div class="row">
+<div class="col-sm-6">
+<div class="google_custom_search">
+<div class="gcs_heading"></div>
+<div class="gcs_content">
+<script>
+									  (function() {
+										var cx = '007988811289853151494:6zip_7l1k2y';
+										var gcse = document.createElement('script');
+										gcse.type = 'text/javascript';
+										gcse.async = true;
+										gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+											'//www.google.com/cse/cse.js?cx=' + cx;
+										var s = document.getElementsByTagName('script')[0];
+										s.parentNode.insertBefore(gcse, s);
+									  })();
+									</script>
+<gcse:search></gcse:search>
+</div>
+</div>
+</div>
+<!--<div class="col-sm-6">
+						<div class="text-right">
+							<div id="navlanguagetabs">
+								<img src="../images/international/world_icon1.png" alt="International Languages">
+																<a href="../" title="English" class="language-flag-current">EN</a>
+								<a href="../spanish/index.php" title="Español">ES</a>
+								<a href="../french/index.php" title="Français">FR</a>
+								<a href="../german/index.php" title="Deutsch">DE</a>
+								<a href="../russian/index.php" title="pусский">RU</a>
+								<a href="../portuguese/index.php" title="Português">PT</a>
+							</div>
+
+						</div>
+					</div>-->
+</div>
+</div>
+</div>
+</div>
+<div id="midcontainer">
+<div class="container">
+<div class="maincontent1">
+<h1><a href="index.php">TOPCON Ag Online Store</a>: Privacy Policy</h1>
+<h2><a href="data_policy.php">Also see: Data Collection  Policy</a></h2>
+<p>      Digi-Star LLC. ("Digi-Star") values your interest in learning more about our organization and we are committed to protecting the personal privacy of the visitors to www.topconagstore.com (the "Site").  Our privacy policy explains the information we collect, why we collect it and how we use it.<br/>
+    To provide you with greater access of information, the Site also contains links to other sites. While we hope these organizations join us in respecting your privacy, Digi-Star is not responsible for the content or privacy practices of these other Web sites.</p>
+<p>By using the Site, you signify your assent to the Digi-Star's Privacy Policy. If you do not agree to this policy, please do not use our Site. Your continued use of the Site following the posting of changes to these terms will mean you accept those changes.</p>
+<p><strong><em>INFORMATION COLLECTED</em></strong><br/>
+<u>Information that you give us</u>: It is our policy to not collect personally identifiable information about individuals except when such individuals specifically provide such information on a voluntary basis.</p>
+<p><u>Server Log Information</u>: When you visit any Web site certain information is automatically provided to the webserver, this information includes your web-browser type (e.g. Chrome, Safari, Internet Explorer or Firefox), your Internet Protocol Address (IP Address), the webpage that you are requesting, the time of the request and the date.  This information is recorded in our server logs.<br/>
+    <br/>
+<u>Cookies and Anonymous Identifiers</u>: You also should be aware that non-personal information and data may be automatically collected through the standard operation of Digi-Star's internet servers or through the use of "cookies." Cookies are small text files a Web site can use to recognize repeat users, facilitate the user's ongoing access to and use of the site and allow a site to track usage behavior and compile aggregate data that will allow content improvements. Cookies are not programs that come onto a user's system and damage files. Generally, cookies work by assigning a unique number to the user that has no meaning outside the assigning site. If you do not want information collected through the use of cookies, there is a simple procedure in most browsers that allows the user to deny or accept the cookie feature; however, users should note that cookies may be necessary to provide the user with certain features (e.g., customized delivery of information) available on the Site.</p>
+<p><strong><em>HOW WE USE COLLECTED INFORMATION</em></strong><br/>
+      Personally identifiable information on individual users will not be sold or otherwise transferred to unaffiliated third parties without the approval of the user at the time of collection. Our use of any personally identifiable information will be limited to our activities that are necessary for us to administer our organization and provide you with requested services.<br/>
+    <br/>
+      We collect IP addresses and related information for the purpose of tracking information and to compile statistics to help us improve and administer the Site so that its users will find it more helpful and informative. The information is used solely for these analytical purposes. IP address information is not distributed to third parties.</p>
+<p><strong><em>INFORMATION YOU SHARE</em></strong><br/>
+      Some portions of the Site provide the opportunity to share information with others.  When you voluntarily disclose personally identifiable information (e.g., user name, e-mail address) on discussion lists and/or bulletin board areas of the Site, that information, along with any other information disclosed in your communication (e.g. your comment or post), can be collected and correlated and used by third parties and may result in unsolicited messages from other posters or third parties. Such activities are beyond the control of Digi-Star.</p>
+<p><strong><em>INFORMATION WE SHARE</em></strong><br/>
+      Digi-Star may disclose user information in special cases when we have reason to believe that disclosing this information is necessary to</p>
+<ul>
+<li>meet any applicable law, regulation, legal process or enforceable governmental request.</li>
+<li>enforce applicable Terms of Service, including investigation of potential violations.</li>
+<li>detect, prevent, or otherwise address fraud, security or technical issues.</li>
+<li>protect against harm to the rights, property or safety of Digi-Star, our users or the public as required or permitted by law.</li>
+</ul>
+<p> We provide personal information to our affiliates or other trusted businesses or persons to process it for us, based on our instructions and in compliance with our privacy policy and any other appropriate confidentiality and security measures.</p>
+<p>We may share aggregated, non-personally identifiable information publicly and with our partners (like publishers or connected sites). For example, we may share information publicly to show trends about the general use of the Site.</p>
+<p><strong><em>CHANGES</em></strong><br/>
+      The foregoing policies are effective as of December 2012. Digi-Star reserves the right to change this policy at any time by notifying users of the existence of a new privacy statement. This statement and the policies outlined herein are not intended to and do not create any contractual or other legal rights in or on behalf of any party.<br/>
+    <br/>
+      If you have any questions or comments about our Web site privacy practices, you can contact <a href="mailto:TAASales@Topcon.com">TAASales@Topcon.com</a>.</p>
+<div style="text-align:center;font-size:14px;margin-top:20px;padding-top:10px;"><a href="/store/privacy_policy.php">Privacy Policy</a> | <a href="/store/return_policy.php">Return Policy</a> | <a href="/store/shipping.php">Shipping Information</a> | <a href="/store/warranty.php">Warranty</a> | <a href="/store/faqs.php">Frequently Asked Questions</a></div>
+</div><!-- END maincontent1 -->
+</div><!--container-->
+</div><!-- END OF midcontainer -->
+<div id="footer">
+<div class="footer_nav">
+<div class="container">
+<a href="/index.php">Home</a>
+<!--<a href="http://www.rdstec.com/" target="_blank">RDS</a>-->
+<a href="https://www.topconpositioning.com/agriculture">Topcon</a>
+<!--<a href="/dealers/index.php">Dealer Login</a>-->
+<a href="/contact_us.php">Contact Us</a>
+<div class="spacer-10"></div>
+<a href="/store/privacy_policy.php">Privacy Policy</a>
+<a href="/store/data_policy.php">Data Collection Policy</a>
+<a href="/pdfs/Conflict_Minerals_Policy.pdf" target="_blank">Conflict Minerals Policy</a>
+<a href="/pdfs/TermsConditionsWarranty.pdf" target="_blank">Terms &amp; Conditions</a>
+</div>
+</div> <!-- footer_nav -->
+<div class="footercontent">
+<div class="spacer-20"></div>
+<div class="container">
+<div class="row">
+<div class="col-lg-6 footerleft">
+<div class="h4">CONTACT INFORMATION</div>
+<div class="spacer-10"></div>
+							Toll Free: 800-225-7695 <span style="font-size:11px;">(For Use in the U.S.A. and Canada only)</span><br/>
+							Phone: +1-920-563-1400 <br/>
+							Fax: +1-920-563-9721<br/>
+							Email: <a href="mailto:TAASales@Topcon.com">TAASales@Topcon.com</a>
+</div>
+<div class="col-lg-1 footermid">
+</div>
+<div class="col-lg-5 footerright">
+<p>
+<small>
+																Site Hosted &amp; Maintained by <strong><a href="http://www.usagnet.com/">USAgNet</a></strong>
+</small>
+</p>
+</div>
+</div><!--row-->
+</div> <!-- container -->
+<div class="spacer-10"></div>
+</div> <!-- footercontent -->
+</div><!--#footer-->
+</div> <!-- END OF outercontainer -->
+</body>
+</html>

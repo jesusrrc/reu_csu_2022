@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<!-- CSRF Token -->
+<meta content="mGTSy6AOxPwgTNJZMYREKVMsQqe1Qgr7nJVnCG1p" name="csrf-token"/>
+<!-- Mobile Metas -->
+<meta content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no" name="viewport"/>
+<meta content="XnOvVHXLqOiE8h6rsq1kAPUjyKW-4QTrDRxLzsKxch4" name="google-site-verification">
+<meta content="Technosphere Engineering Pvt Ltd" name="description"/><link href="https://technosphereindia.com/privacy-policy" rel="canonical"/><meta content="Technosphere Engineering Pvt Ltd" property="og:description"><meta content="Technosphere Engineering Pvt Ltd" property="og:site_name"><meta content="https://technosphereindia.com/privacy-policy" property="og:url"><meta content="Technosphere Engineering Pvt Ltd" name="twitter:description"><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"WebPage","description":"Technosphere Engineering Pvt Ltd"}</script>
+<!-- Web Fonts  -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400&amp;display=swap" rel="stylesheet" type="text/css"/>
+<link href="https://technosphereindia.com/Classic/vendor/bootstrap/css/bootstrap.min.css?v=442" rel="stylesheet"/>
+<link href="https://technosphereindia.com/Classic/vendor/fontawesome-free/css/all.min.css?v=442" rel="stylesheet"/>
+<link href="https://technosphereindia.com/Classic/vendor/animate/animate.compat.css?v=442" rel="stylesheet"/>
+<link href="https://technosphereindia.com/Classic/vendor/simple-line-icons/css/simple-line-icons.min.css?v=442" rel="stylesheet"/>
+<!-- Technosphere Engineering Pvt Ltd theme CSS -->
+<link href="https://technosphereindia.com/Classic/css/theme.css?v=442" rel="stylesheet"/>
+<link href="https://technosphereindia.com/Classic/css/theme-elements.css?v=442" rel="stylesheet"/>
+<link href="https://technosphereindia.com/Classic/css/theme-blog.css?v=442" rel="stylesheet"/>
+<!-- Technosphere Engineering Pvt Ltd Skin CSS -->
+<link href="https://technosphereindia.com/Classic/css/skins/4.css?v=442" rel="stylesheet"/>
+<link href="https://technosphereindia.com/Classic/css/top_bar_with_appointment.css?v=442" rel="stylesheet"/>
+<!-- Technosphere Engineering Pvt Ltd Custom CSS -->
+<link href="https://technosphereindia.com/Classic/css/custom.css?v=442" rel="stylesheet"/>
+<style type="text/css">
+  /* Click To chatWidget Main Container */
+  .cp-style1{
+    	display: inline-block;
+    	position: fixed;
+    	letter-spacing: 0.1px;
+    	font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    	z-index: 9999;
+  }
+  .cp-right-bottom{
+    	bottom: 1em;
+    	right: 1em;
+    	float: right;
+  }
+
+  /* Floating Panel Container */
+  .cp-style1 .cp-panel{
+    	display: none;
+      padding: 15px 10px;
+    	margin-bottom: 5%;
+    	width: 280px;
+    	border-radius: 10px;
+    	box-shadow: 0px 3px 7px rgba(12, 12, 12, 0.18);
+  }
+  .cp-style1 .cp-panel .cp-list{
+      display: inline-flex;
+      padding: 7px 5px;
+      width: 100%;
+      cursor: pointer;
+  }
+  .cp-style1 .cp-panel .cp-list:hover{
+      border-radius: 10px;
+      box-shadow: 0px 0px 5px 0px #0000002e;
+  }
+  .cp-style1 .cp-list .cp-image{    
+      display: flex;
+      width: 60px;
+      text-align: center;
+      justify-content: center;
+  }
+  .cp-style1 .cp-image img{
+      margin-top: 3px;
+      width: 27px;
+      height: 27px;
+  }
+  .cp-style1 .cp-image img,
+  .cp-style1 .cp-panel .cp-list:hover img{
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      -ms-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+  }
+  .cp-style1 .cp-panel .cp-content{
+      padding-left: 0;
+  }
+  .cp-style1 .cp-content h2{
+      padding-top: 0; 
+  	  margin-bottom: 0;
+  	  font-size: 15px;
+  	  font-weight: 700;
+  	  line-height: 18px;
+  }
+  .cp-style1 .cp-content p{
+  	  margin-bottom: 0;
+  	  font-size: 12px;
+  }
+
+  /* Right Bottom Floating Button */
+  .cp-style1 .cp-button{
+  	  padding: 12px;
+  	  width: 50px;
+      height: 50px;
+  	  border-radius: 100%;
+  	  border: 1px solid #fff;
+      box-shadow: 0 0 10px rgba(12, 12, 12, 0.3);    
+      cursor: pointer;
+  }
+  .cp-style1 .cp-button:hover{
+  	  box-shadow: 0px 0px 10px rgba(12, 12, 12, 0.5);
+  	  -webkit-transition: all .3s ease-in-out;
+  	  -moz-transition: all .3s ease-in-out;
+  	  -ms-transition: all .3s ease-in-out;
+  	  -o-transition: all .3s ease-in-out;
+  	  transition: all .3s ease-in-out;
+  }
+  .cp-style1 .cp-button .fa-comments-o{
+    	font-size: 30px;
+  }
+
+  /* Floating Button Forward Rotation */
+  .rotateForward{
+      animation-name: rotateF;
+      animation-duration: 0.65s;
+      animation-iteration-count: 1;
+  }
+
+  @keyframes  rotateF{
+    	from{
+          transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+    	}
+    	to{
+          transform: rotate(360deg);
+          -o-transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
+          -webkit-transform: rotate(360deg);
+    	}
+  }
+
+  /* Floating Button Backward Rotation */
+  .rotateBackward{
+      animation-name: rotateB;
+      animation-duration: 0.65s;
+      animation-iteration-count: 1;
+  }
+
+  @keyframes  rotateB{
+    	from{
+          transform: rotate(360deg);
+          -o-transform: rotate(360deg);
+          -ms-transform: rotate(360deg);
+          -moz-transform: rotate(360deg);
+          -webkit-transform: rotate(360deg);
+    	}
+    	to{
+          transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+    	}
+  }
+
+  /* Media Css for Smaller Device */
+  @media(max-width: 576px){
+
+  	  .cp-style1 .cp-panel{
+  	      width: 290px;
+  	  }
+  }
+
+  /* Medium devices (landscape tablets, 0px and 1280px) */
+  @media  all and (max-width: 1280px) and (min-width: 0px){
+      
+      .cp-right-bottom {
+          bottom: 10px;
+          right: 10px;
+      }
+      .cp-style1 .cp-panel {
+          margin-bottom: 5px;
+      }
+      .cp-style1 .cp-panel {
+          padding: 10px;
+      }
+      .cp-style1 .cp-panel .cp-list {
+          padding: 5px 0;
+      }
+  }
+</style> <style type="text/css">
+    /*======================================================
+    [Table of Contents For Blue Gradiant Color]
+    * Click To chatWidget Main Layout CSS
+    * Click To chatWidget Sidebar Togle CSS
+    * Click To chatWidget Style1 CSS
+    * Click To chatWidget Style2 CSS
+    * Click To chatWidget Style3 CSS
+    * Click To chatWidget Style4 CSS
+    * Click To chatWidget Style5 CSS
+    * Click To chatWidget Style6 CSS
+    * Click To chatWidget Style7 CSS
+    * Click To chatWidget Style8 CSS
+    * Click To chatWidget Style9 CSS
+    * Click To chatWidget Style10 CSS
+    ========================================================*/ 
+
+    /*==================================================
+        Click To chatWidget Main Layout CSS
+    ====================================================*/
+
+    .layout .layout-features i{
+        color: #009efd;
+    }
+    .layout .layout-funcation .layout-funcation-odd{
+        background: #eee;
+    } 
+
+    /* Common CSS */
+    .layout .title,
+    .layout .wrapper .div-dot:after{
+        background: -webkit-linear-gradient(to right, #2af598, #009efd);
+        background: -moz-linear-gradient(to right, #2af598, #009efd);
+        background: -ms-linear-gradient(to right, #2af598, #009efd);
+        background: -o-linear-gradient(to right, #2af598, #009efd);
+        background: linear-gradient(to right, #2af598, #009efd);
+    }
+    .layout .layout-heading h2,
+    .layout .layout-heading p{
+        color: #fff;
+    } 
+    .layout .layout-style-title h3,
+    .layout .layout-button-title h3,
+    .layout .layout-features-title h3,
+    .layout .layout-funcation-title h3,
+    .layout .layout-features h4,
+    .layout .layout-funcation h4{
+        color: #555;
+    }
+    .layout .layout-style-title p,
+    .layout .layout-button-title p,
+    .layout .layout-features-title p,
+    .layout .layout-funcation-title p,
+    .layout .layout-features p,
+    .layout .layout-funcation p{
+        color: #8c8c8c;
+    }
+
+    /*===========================================================
+        Click To chatWidget Sidebar Togle CSS (Left Slide Panel)
+    =============================================================*/
+
+    .cp-header{
+        background: -webkit-linear-gradient(to right, #2af598, #009efd);
+        background: -moz-linear-gradient(to right, #2af598, #009efd);
+        background: -ms-linear-gradient(to right, #2af598, #009efd);
+        background: -o-linear-gradient(to right, #2af598, #009efd);
+        background: linear-gradient(to right, #2af598, #009efd);
+    }
+
+    /* Common CSS */
+    .cp-setting .icon,
+    .cp-setting .link a{
+        color: #555;
+    }
+    .cp-setting .icon i,
+    .cp-setting .link a:hover{
+        color: #009efd;
+    }
+    a {
+        text-decoration: none !important;
+    }
+    /*==================================================
+        Start Click To chatWidget Style1 CSS
+    ====================================================*/
+
+    .cp-style1 .cp-panel{
+        background: #fff;
+    }
+
+    /* Common CSS */
+    .cp-style1 .cp-panel,
+    .cp-style1 .cp-button{
+        background: -webkit-linear-gradient(to right, #2af598, #009efd);
+        background: -moz-linear-gradient(to right, #2af598, #009efd);
+        background: -ms-linear-gradient(to right, #2af598, #009efd);
+        background: -o-linear-gradient(to right, #2af598, #009efd);
+        background: linear-gradient(to right, #2af598, #009efd);
+    }
+    .cp-style1 .cp-panel,
+    .cp-style1 .cp-panel h2,
+    .cp-style1 .cp-panel p,
+    .cp-style1 .cp-button i{
+        color: #fff;
+    }
+
+    /*==================================================
+        End Click To chatWidget Style1 CSS
+    ====================================================*/
+
+    /*==================================================
+        Start Click To chatWidget Style2 CSS
+    ====================================================*/
+
+    .cp-style2 .cp-list:hover .cp-content{
+        background: #fff;
+    }
+    .cp-style2 .cp-list .cp-content h2{
+        color: #383838;
+    }
+    .cp-style2 .cp-list .cp-content p{
+        color: #8c8c8c;
+    }
+    .cp-style2 .cp-list .cp-image{
+        border: 2px solid #fff;
+    }
+    .cp-style2 .cp-list .cp-image{
+        background: -webkit-linear-gradient(to right, #2af598, #009efd);
+        background: -moz-linear-gradient(to right, #2af598, #009efd);
+        background: -ms-linear-gradient(to right, #2af598, #009efd);
+        background: -o-linear-gradient(to right, #2af598, #009efd);
+        background: linear-gradient(to right, #2af598, #009efd);
+    }
+
+    /*==================================================
+        End Click To chatWidget Style2 CSS
+    ====================================================*/
+
+    /*==================================================
+        Start Click To chatWidget Style3 CSS
+    ====================================================*/
+
+    /* Common CSS */
+    .cp-style3 .cp-control .cp-btn,
+    .cp-style3 .cp-control .cp-right,
+    .cp-style3 .cp-control .cp-left{
+        background: -webkit-linear-gradient(to right, #2af598, #009efd);
+        background: -moz-linear-gradient(to right, #2af598, #009efd);
+        background: -ms-linear-gradient(to right, #2af598, #009efd);
+        background: -o-linear-gradient(to right, #2af598, #009efd);
+        background: linear-gradient(to right, #2af598, #009efd);
+    }
+
+    /*==================================================
+        End Click To chatWidget Style3 CSS
+    ====================================================*/
+
+    /*==================================================
+        Start Click To chatWidget Style4 CSS
+    ====================================================*/
+
+    /* Common CSS */
+    .cp-style4 .fa-comments-o,
+    .cp-style4 .fa-times{
+        color: #fff;
+    }
+    .cp-style4 .cp-toggle-1,
+    .cp-style4 .cp-toggle-2,
+    .cp-style4 .cp-menu{
+        background: -webkit-linear-gradient(to right, #2af598, #009efd);
+        background: -moz-linear-gradient(to right, #2af598, #009efd);
+        background: -ms-linear-gradient(to right, #2af598, #009efd);
+        background: -o-linear-gradient(to right, #2af598, #009efd);
+        background: linear-gradient(to right, #2af598, #009efd);
+    }
+
+    /*==================================================
+        End Click To chatWidget Style4 CSS
+    ====================================================*/
+
+    /*==================================================
+        Start Click To chatWidget Style5 CSS
+    ====================================================*/
+
+    .cp-style5 .cp-chat-button{
+        border: 2px solid #fff;
+    }
+
+    /* Common CSS */
+    .cp-style5 .menu-item a,
+    .cp-style5 .menu-item a:hover,
+    .cp-style5 .cp-chat-button .cp-button .fa-comments-o, 
+    .cp-style5 .cp-chat-button .cp-button .fa-times{
+        color: #fff;
+    }
+    .cp-style5 .cp-chat-button .cp-button,
+    .cp-style5 .menu-item a{
+        background: linear-gradient(to right, #2af598, #009efd);
+    }
+
+    /*==================================================
+        End Click To chatWidget Style5 CSS
+    ====================================================*/
+
+    /*==================================================
+        Start Click To chatWidget Style6 CSS
+    ====================================================*/
+
+    .cp-style6 .cp-menu{
+        background: linear-gradient(to right, #2af598, #009efd);
+    }
+    .cp-style6 .cp-button{
+        color: #fff;
+    }
+
+    /*==================================================
+        End Click To chatWidget Style6 CSS
+    ====================================================*/
+
+    /*==================================================
+        Start Click To chatWidget Style7 CSS
+    ====================================================*/
+
+    /* Common CSS */
+    .cp-style7 .cp-panel .cp-list,
+    .cp-style7 .cp-panel .cp-button{
+        background: -webkit-linear-gradient(to right, #2af598, #009efd);
+        background: -moz-linear-gradient(to right, #2af598, #009efd);
+        background: -ms-linear-gradient(to right, #2af598, #009efd);
+        background: -o-linear-gradient(to right, #2af598, #009efd);
+        background: linear-gradient(to right, #2af598, #009efd);
+    }
+    .cp-style7 .cp-panel .cp-button,
+    .cp-style7 .cp-panel .cp-button:hover{
+        color: #fff;
+    }
+
+    /*==================================================
+        End Click To chatWidget Style7 CSS
+    ====================================================*/
+
+    /*==================================================
+        Start Click To chatWidget Style8 CSS
+    ====================================================*/
+
+    /* Common CSS */
+    .cp-style8 .cp-panel .cp-button i,
+    .cp-style8 .cp-panel ul .cp-list{
+        color: #fff;
+    }
+    .cp-style8 .cp-panel .cp-button,
+    .cp-style8 .cp-list .cp-img-cont,
+    .cp-style8 .cp-list .cp-user-info{
+        background: -webkit-linear-gradient(to right, #2af598, #009efd);
+        background: -moz-linear-gradient(to right, #2af598, #009efd);
+        background: -ms-linear-gradient(to right, #2af598, #009efd);
+        background: -o-linear-gradient(to right, #2af598, #009efd);
+        background: linear-gradient(to right, #2af598, #009efd);
+    }
+
+    /*==================================================
+        End Click To chatWidget Style8 CSS
+    ====================================================*/
+
+    /*==================================================
+        Start Click To chatWidget Style9 CSS
+    ====================================================*/
+
+    .cp-style9 .cp-button{
+        background: #2af598;
+    }
+    .cp-style9 .cp-panel{
+        background: -webkit-linear-gradient(to right, #2af598, #009efd);
+        background: -moz-linear-gradient(to right, #2af598, #009efd);
+        background: -ms-linear-gradient(to right, #2af598, #009efd);
+        background: -o-linear-gradient(to right, #2af598, #009efd);
+        background: linear-gradient(to right, #2af598, #009efd);
+    }
+
+    /* Common CSS */
+    .cp-style9 .cp-panel h2,
+    .cp-style9 .cp-panel p,
+    .cp-style9 .cp-button i{
+        color: #fff;
+    }
+
+    /*==================================================
+        End Click To chatWidget Style9 CSS
+    ====================================================*/
+
+    /*==================================================
+        Start Click To chatWidget Style10 CSS
+    ====================================================*/
+
+    .cp-style10 .cp-panel{
+        background: #fff;
+    }
+
+    /* Common CSS */
+    .cp-style10 .cp-panel,
+    .cp-style10 .cp-button{
+        background: -webkit-linear-gradient(to right, #2af598, #009efd);
+        background: -moz-linear-gradient(to right, #2af598, #009efd);
+        background: -ms-linear-gradient(to right, #2af598, #009efd);
+        background: -o-linear-gradient(to right, #2af598, #009efd);
+        background: linear-gradient(to right, #2af598, #009efd);
+    }
+    .cp-style10 .cp-panel,
+    .cp-style10 .cp-panel h2,
+    .cp-style10 .cp-panel p,
+    .cp-style10 .cp-button i{
+        color: #fff;
+    }
+
+    /*==================================================
+        End Click To chatWidget Style10 CSS
+    ====================================================*/
+</style>
+<title>Privacy policy | Technosphere Engineering Pvt Ltd</title>
+<!--Technosphere Engineering Pvt Ltd Head Libs -->
+<script src="https://technosphereindia.com/Classic/vendor/modernizr/modernizr.min.js?v=442"></script>
+<style type="text/css">
+                        .modal-backdrop.show{
+                opacity: 0.9;
+                background-color: #3AB696;
+            }
+
+            /* For desktop: */
+            @media  only screen and (min-width: 768px) {
+                .form-border-left {
+                    border-left: 1px dotted #3AB696;
+                }
+            }
+        </style>
+</meta></meta></meta></meta></meta></head>
+<body>
+<div class="body">
+<input class="__page_visit_count" type="hidden" value="12"/>
+<header class="header-effect-shrink" data-plugin-options="{'stickyEnabled': true, 'stickyEffect': 'shrink', 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyChangeLogo': true, 'stickyStartAt': 120, 'stickyHeaderContainerHeight': 105}" id="header">
+<div class="header-body border-top-0">
+<div class="header-top header-top-default header-top-borders border-bottom-0 bg-color-light">
+<div class="container h-100">
+<div class="header-row h-100">
+<div class="header-column justify-content-between">
+<div class="header-row">
+<nav class="header-nav-top w-100">
+<ul class="nav nav-pills justify-content-between w-100 h-100">
+<li class="nav-item py-2 d-none d-xl-inline-flex">
+<span class="header-top-phone py-2 d-flex align-items-center text-color-primary font-weight-semibold text-uppercase">
+<i class="icon-phone icons text-5 mr-2"></i>
+<a href="tel:+9886025368" target="_blank">
+												+9886025368
+											</a>
+</span>
+<span class="header-top-email px-0 font-weight-normal d-flex align-items-center">
+<i class="far fa-envelope text-4"></i>
+<a class="text-color-default" href="mailto:info@technosphereindia.in" target="_blank">
+												info@technosphereindia.in
+											</a>
+</span>
+</li>
+<li class="nav-item nav-item-header-top-socials d-flex justify-content-between">
+<span class="header-top-socials p-0 h-100">
+<ul class="d-flex align-items-center h-100 p-0">
+<li class="list-unstyled">
+<a href="https://www.facebook.com/tseplindia/" target="_blank" title="Facebook">
+<i class="fab fa-facebook-f text-color-quaternary text-hover-primary"></i>
+</a>
+</li>
+<li class="list-unstyled">
+<a href="https://www.instagram.com/tseplindia/" target="_blank" title="Instagram">
+<i class="fab fa-instagram text-color-quaternary text-hover-primary"></i>
+</a>
+</li>
+<li class="list-unstyled">
+<a href="https://twitter.com/tseplindia" target="_blank" title="Twitter">
+<i class="fab fa-twitter text-color-quaternary text-hover-primary"></i>
+</a>
+</li>
+<li class="list-unstyled">
+<a href="https://www.linkedin.com/in/tseplindia/" target="_blank" title="Linkedin">
+<i class="fab fa-linkedin-in text-color-quaternary text-hover-primary"></i>
+</a>
+</li>
+</ul>
+</span>
+<span class="header-top-button-make-as-appoitment d-inline-flex align-items-center justify-content-center h-100 p-0 align-top">
+<a class="d-flex align-items-center justify-content-center h-100 w-100 btn-primary font-weight-normal text-decoration-none" data-target="#enquire_now_modal" data-toggle="modal" href="#">
+										CONTACT NOW
+									</a>
+</span>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div> <div class="header-container container">
+<div class="header-row">
+<div class="header-column">
+<a class="logo-link" href="https://technosphereindia.com">
+<img alt="Technosphere Engineering Pvt Ltd - Logo" class="c-logo" src="https://technosphereindia.com/uploads/tenant/TECHNO/TEC-1.jpg"/>
+</a>
+</div>
+<div class="header-column justify-content-end">
+<div class="header-row">
+<div class="header-nav header-nav-links order-2 order-lg-1">
+<div class="header-nav-main header-nav-main-square header-nav-main-effect-2 header-nav-main-sub-effect-1">
+<nav class="collapse">
+<ul class="nav nav-pills" id="mainNav">
+<li class="dropdown">
+<a class="dropdown-item" href="https://technosphereindia.com">
+														Home
+													</a>
+</li>
+<li class="dropdown">
+<a class="dropdown-item" href="https://technosphereindia.com/about-us">
+														About us
+													</a>
+</li>
+<li class="dropdown">
+<a class="dropdown-item" href="https://technosphereindia.com/latest-update">
+														Latest update
+													</a>
+</li>
+<li class="dropdown">
+<a class="dropdown-item dropdown-toggle" href="#">
+														Service
+													</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="https://technosphereindia.com/service/led-drivers-accessories-4">
+																		LED Drivers &amp; Accessories
+																	</a>
+</li>
+<li>
+<a class="dropdown-item" href="https://technosphereindia.com/service/led-street-lights-solar-street-light-7">
+																		Led Street Lights , Solar Street Light
+																	</a>
+</li>
+<li>
+<a class="dropdown-item" href="https://technosphereindia.com/service/solar-products-10">
+																		Solar Products
+																	</a>
+</li>
+<li>
+<a class="dropdown-item" href="https://technosphereindia.com/service/solar-home-light-systems-13">
+																		Solar Home Light Systems
+																	</a>
+</li>
+<li>
+<a class="dropdown-item" href="https://technosphereindia.com/service/electronics-manufacturing-16">
+																		Electronics Manufacturing
+																	</a>
+</li>
+</ul>
+</li>
+<li class="dropdown">
+<a class="dropdown-item" href="https://technosphereindia.com/albums">
+														Album
+													</a>
+</li>
+<li class="dropdown">
+<a class="dropdown-item" href="https://technosphereindia.com/contact-us">
+														Contact us
+													</a>
+</li>
+</ul>
+</nav>
+</div>
+<button class="btn header-btn-collapse-nav" data-target=".header-nav-main nav" data-toggle="collapse">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="main" role="main">
+<section class="page-header page-header-classic">
+<div class="container">
+<div class="row">
+<div class="col">
+<ul class="breadcrumb">
+<li>
+<a href="https://technosphereindia.com">
+							Home
+						</a>
+</li>
+<li class="active">
+						Page
+					</li>
+</ul>
+</div>
+</div>
+<div class="row">
+<div class="col p-static">
+<h1 class="appear-animation" data-appear-animation="fadeInRightShorter" data-title-border="">
+					Privacy policy
+				</h1>
+</div>
+</div>
+</div>
+</section> <div class="container py-4">
+<div class="row">
+<div class="col-md-12 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+<h2>Privacy Policy</h2>
+<p>Your privacy is important to us. It is our policy to respect your privacy regarding any information we may collect from you across our website and other sites we own and operate.</p>
+<p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will be used.</p>
+<p>We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we’ll protect within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use or modification.</p>
+<p>We don’t share any personally identifying information publicly or with third-parties, except when required to by law.</p>
+<p>Our website may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.</p>
+<p>You are free to refuse our request for your personal information, with the understanding that we may be unable to provide you with some of your desired services.</p>
+<p>Your continued use of our website will be regarded as acceptance of our practices around privacy and personal information. If you have any questions about how we handle user data and personal information, feel free to contact us.</p>
+</div>
+</div>
+</div>
+<section class="call-to-action call-to-action-default with-button-arrow content-align-center call-to-action-in-footer">
+<div class="container">
+<div class="row">
+<div class="col-md-9 col-lg-9">
+<div class="call-to-action-content">
+<h2 class="font-weight-normal mb-0">
+<strong class="font-weight-extra-bold">Contact us</strong> today!
+                    </h2>
+<p class="mb-0">We <strong class="font-weight-extra-bold">assure</strong> best work</p>
+</div>
+</div>
+<div class="col-md-3 col-lg-3">
+<div class="call-to-action-btn">
+<a class="btn btn-dark btn-lg text-3 font-weight-semibold px-4 py-3" data-href="#" data-target="#enquire_now_modal" data-toggle="modal">
+                        Contact Now
+                    </a><span class="arrow hlb d-none d-md-block" data-appear-animation="rotateInUpLeft" style="top: -40px; left: 70%;"></span>
+</div>
+</div>
+</div>
+</div>
+</section> </div>
+<footer id="footer">
+<div class="container">
+<div class="footer-ribbon">
+<span>Get in Touch</span>
+</div>
+<div class="row py-5 my-4">
+<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+<h5 class="text-3 mb-2">Office</h5>
+<p class="pr-1">
+							NO 1/34/7, Bheemasena, 11th Cross, Papreddy Palya<br/>
+Nagarabhavi 2nd Stage, <br/>
+	                        BANGALORE , karnataka <br/>
+	                        india (560072)
+						</p>
+</div>
+<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+<div class="contact-details">
+<h5 class="text-3 mb-2">
+								CONTACT US
+							</h5>
+<ul class="list list-icons list-icons-lg">
+<li class="mb-1">
+<i class="fas fa-phone-square-alt text-color-primary"></i>
+<p class="m-0">
+<a href="tel:+9886025368" target="_blank">
+<b class="pr-1">
+													Mobile
+												</b>
+<span class="pl-1">
+													+9886025368
+												</span>
+</a>
+</p>
+</li>
+<li class="mb-1">
+<i class="fas fa-phone-square-alt text-color-primary"></i>
+<p class="m-0">
+<a href="tel:+9972900445" target="_blank">
+<b class="pr-1">
+													Mobile
+												</b>
+<span class="pl-1">
+													+9972900445
+												</span>
+</a>
+</p>
+</li>
+</ul>
+<h5 class="text-3 mb-2">
+								MAIL US
+							</h5>
+<ul class="list list-icons list-icons-lg">
+<li class="mb-1">
+<i class="far fa-envelope text-color-primary"></i>
+<p class="m-0">
+<a href="mailto:info@technosphereindia.in" target="_blank">
+<b class="pr-1">Support</b>
+<span class="pl-1">
+													info@technosphereindia.in
+												</span>
+</a>
+</p>
+</li>
+<li class="mb-1">
+<i class="far fa-envelope text-color-primary"></i>
+<p class="m-0">
+<a href="mailto:vaishali@technosphereindia.in" target="_blank">
+<b class="pr-1">Support</b>
+<span class="pl-1">
+													vaishali@technosphereindia.in
+												</span>
+</a>
+</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-6 col-lg-3 mb-2">
+<h5 class="text-3 mb-2">
+						Business Hours
+					</h5>
+<div style="width: 100% !important;display: flex;">
+<div style="width: 40% !important;">
+<b>
+                            		Sunday
+                            	</b>
+</div>
+<div style="width: 60% !important;">
+<span class="badge badge-danger">
+							        	Closed
+							        </span>
+</div>
+</div>
+<div style="width: 100% !important;display: flex;">
+<div style="width: 40% !important;">
+<b>
+                            		Monday
+                            	</b>
+</div>
+<div style="width: 30% !important;">
+	                          		09:30
+	                          	</div>
+<div style="width: 30% !important;">
+	                            	07:00
+	                            </div>
+</div>
+<div style="width: 100% !important;display: flex;">
+<div style="width: 40% !important;">
+<b>
+                            		Tuesday
+                            	</b>
+</div>
+<div style="width: 30% !important;">
+	                          		09:30
+	                          	</div>
+<div style="width: 30% !important;">
+	                            	07:00
+	                            </div>
+</div>
+<div style="width: 100% !important;display: flex;">
+<div style="width: 40% !important;">
+<b>
+                            		Wednesday
+                            	</b>
+</div>
+<div style="width: 30% !important;">
+	                          		09:30
+	                          	</div>
+<div style="width: 30% !important;">
+	                            	07:00
+	                            </div>
+</div>
+<div style="width: 100% !important;display: flex;">
+<div style="width: 40% !important;">
+<b>
+                            		Thursday
+                            	</b>
+</div>
+<div style="width: 30% !important;">
+	                          		09:30
+	                          	</div>
+<div style="width: 30% !important;">
+	                            	07:00
+	                            </div>
+</div>
+<div style="width: 100% !important;display: flex;">
+<div style="width: 40% !important;">
+<b>
+                            		Friday
+                            	</b>
+</div>
+<div style="width: 30% !important;">
+	                          		09:30
+	                          	</div>
+<div style="width: 30% !important;">
+	                            	07:00
+	                            </div>
+</div>
+<div style="width: 100% !important;display: flex;">
+<div style="width: 40% !important;">
+<b>
+                            		Saturday
+                            	</b>
+</div>
+<div style="width: 30% !important;">
+	                          		09:30
+	                          	</div>
+<div style="width: 30% !important;">
+	                            	07:00
+	                            </div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-copyright">
+<div class="container py-2">
+<div class="row">
+<div class="col-lg-7 col-lg d-flex align-items-center justify-content-center justify-content-lg-start mb-2 mb-lg-0">
+<nav id="sub-menu">
+<ul>
+<li>
+<i class="fas fa-angle-right"></i>
+<a class="ml-1 text-decoration-none" href="https://technosphereindia.com/about-us">
+										About us
+									</a>
+</li>
+<li>
+<i class="fas fa-angle-right"></i>
+<a class="ml-1 text-decoration-none" href="https://technosphereindia.com/contact-us">
+										Contact us
+									</a>
+</li>
+<li>
+<i class="fas fa-angle-right"></i>
+<a class="ml-1 text-decoration-none" href="https://technosphereindia.com/privacy-policy">
+										Privacy policy
+									</a>
+</li>
+<li>
+<i class="fas fa-angle-right"></i>
+<a class="ml-1 text-decoration-none" href="https://technosphereindia.com/terms">
+										Terms and conditions
+									</a>
+</li>
+<li>
+<i class="fas fa-angle-right"></i>
+<a class="ml-1 text-decoration-none" href="https://technosphereindia.com/disclaimer">
+										Disclaimer
+									</a>
+</li>
+<li>
+<i class="fas fa-angle-right"></i>
+<a class="ml-1 text-decoration-none" href="https://technosphereindia.com/faq">
+										FAQs
+									</a>
+</li>
+<li>
+<i class="fas fa-angle-right"></i>
+<a class="ml-1 text-decoration-none" href="https://technosphereindia.com/sitemap.xml">
+										Site Map
+									</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-lg-5 col-lg d-flex align-items-center justify-content-center justify-content-lg-end mb-2 mb-lg-0">
+<ul class="social-icons">
+<li class="social-icons-facebook">
+<a href="https://www.facebook.com/tseplindia/" target="_blank" title="Facebook">
+<i class="fab fa-facebook-f"></i>
+</a>
+</li>
+<li class="social-icons-instagram">
+<a href="https://www.instagram.com/tseplindia/" target="_blank" title="Instagram">
+<i class="fab fa-instagram"></i>
+</a>
+</li>
+<li class="social-icons-twitter">
+<a href="https://twitter.com/tseplindia" target="_blank" title="Twitter">
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+<li class="social-icons-linkedin">
+<a href="https://www.linkedin.com/in/tseplindia/" target="_blank" title="Linkedin">
+<i class="fab fa-linkedin-in"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="row py-4">
+<div class="col-lg-6 d-flex align-items-center justify-content-center justify-content-lg-start mb-2 mb-lg-0">
+<div id="google_translate_element"></div>
+</div>
+<div class="col-lg-6 col-lg d-flex align-items-center justify-content-center justify-content-lg-end mb-2 mb-lg-0">
+<p>
+<i class="far fa-copyright"></i>
+<script>
+			                document.write(new Date().getFullYear())
+			            </script>
+						- Technosphere Engineering Pvt Ltd Made with <i class="far fa-heart"></i> by
+						<a class="color-white" href="" target="_blank">
+<b>
+								ForBiz 360
+							</b>
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<div class="banner_social">
+<a class="enquire_now" data-target="#enquire_now_modal" data-toggle="modal" href="#">
+<span class="bg-color-primary">
+<i class="fa fa-info-circle"></i>
+            Inquiry Now
+        </span>
+</a>
+</div>
+<div aria-hidden="true" aria-labelledby="defaultModalLabel" class="modal fade" id="enquire_now_modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<form action="https://technosphereindia.com/post-enquire" class="contact-form" id="enquire_now_form" method="POST">
+<input name="_token" type="hidden" value="mGTSy6AOxPwgTNJZMYREKVMsQqe1Qgr7nJVnCG1p"/> <div class="modal-content">
+<div class="modal-header">
+<h4 class="modal-title m-auto" id="defaultModalLabel">
+<i>
+			            	Send inquiry to <strong>Technosphere Engineering Pvt Ltd</strong> Now
+			            </i>
+</h4>
+<button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-md-5 mt-auto mb-auto text-center">
+<a href="https://technosphereindia.com">
+<img alt="Technosphere Engineering Pvt Ltd - Logo" class="inquiry-form-logo" src="https://technosphereindia.com/uploads/tenant/TECHNO/TEC-1.jpg"/>
+</a>
+</div>
+<div class="col-md-7 mt-auto mb-auto form-border-left">
+<div class="alert alert-info mt-4 enquire_response_alert" style="display: none;">
+<span class="enquire_response"></span>
+<button aria-label="Close" class="close" data-dismiss="alert" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="form-row mt-1">
+<div class="form-group col-lg-6">
+<label class="required font-weight-bold text-dark text-2" for="name">
+										Your name
+									</label>
+<input class="form-control" data-msg-required="Please enter your name." id="name" maxlength="100" name="name" required="" type="text"/>
+</div>
+<div class="form-group col-lg-6">
+<label class="required font-weight-bold text-dark text-2" for="mobile">
+										Mobile
+									</label>
+<input class="form-control input_number number" data-msg-required="Please enter your mobile number." id="mobile" inputmode="numeric" maxlength="10" minlength="10" name="mobile" required="" type="text"/>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-lg">
+<label class="font-weight-bold text-dark text-2" for="email">
+										Email Address
+									</label>
+<input class="form-control" data-msg-email="Please enter a valid email address." data-msg-required="Please enter your email address." id="email" maxlength="100" name="email" type="email"/>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col">
+<label class="required font-weight-bold text-dark text-2" for="message">Message</label>
+<textarea class="form-control" data-msg-required="Please enter your message." id="message" maxlength="5000" name="message" required="" rows="3"></textarea>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-light" data-dismiss="modal" type="button">
+						Close
+					</button>
+<button class="btn btn-primary submit_enquire" type="submit">
+<span class="submit_enquire_text">
+							Send Message
+						</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+</div> <!-- Start chatWidget Style Container ( Required )  -->
+<div class="container">
+<!-- Click To chatWidget Container -->
+<div class="cp-style1 cp-right-bottom">
+<!-- Start Floating Panel Container -->
+<div class="cp-panel">
+<!-- Chat Button For Facebook Messenger -->
+<!-- Chat Button For Whatsapp -->
+<a class="cp-list cp-whatsapp" data-message="" data-number="9886025368" target="_blank">
+<div class="cp-image">
+<i class="fab fa-whatsapp text-white fa-2x mt-2"></i>
+</div>
+<div class="cp-content">
+<h2>Whatsapp</h2>
+<p>
+                                        Chat on Whatsapp
+                                    </p>
+</div>
+</a>
+<a class="cp-list cp-whatsapp" data-message="" data-number="9972900445" target="_blank">
+<div class="cp-image">
+<i class="fab fa-whatsapp text-white fa-2x mt-2"></i>
+</div>
+<div class="cp-content">
+<h2>Whatsapp</h2>
+<p>
+                                        Chat on Whatsapp
+                                    </p>
+</div>
+</a>
+<!-- Chat Button For Telegram -->
+<!-- Mail Button For Email -->
+<a class="cp-list" href="mailto:info@technosphereindia.in" target="_blank">
+<div class="cp-image">
+<i class="far fa-envelope text-white fa-2x mt-2"></i>
+</div>
+<div class="cp-content">
+<h2>Email</h2>
+<p>Send Email</p>
+</div>
+</a>
+<a class="cp-list" href="mailto:vaishali@technosphereindia.in" target="_blank">
+<div class="cp-image">
+<i class="far fa-envelope text-white fa-2x mt-2"></i>
+</div>
+<div class="cp-content">
+<h2>Email</h2>
+<p>Send Email</p>
+</div>
+</a>
+<!-- Call Button For Phone Number -->
+<a class="cp-list" href="tel:+9886025368" target="_blank">
+<div class="cp-image">
+<i class="fas fa-phone-volume text-white fa-2x mt-2"></i>
+</div>
+<div class="cp-content">
+<h2>Call</h2>
+<p>talk with us over telephone</p>
+</div>
+</a>
+<a class="cp-list" href="tel:+9972900445" target="_blank">
+<div class="cp-image">
+<i class="fas fa-phone-volume text-white fa-2x mt-2"></i>
+</div>
+<div class="cp-content">
+<h2>Call</h2>
+<p>talk with us over telephone</p>
+</div>
+</a>
+</div>
+<!--/ End Floating Panel Container -->
+<!-- Start Right Floating Button -->
+<div class="cp-button cp-right-bottom">
+<i class="far fa-comments fa-lg" id="cp-cmt-o"></i>
+</div>
+<!--/ End Right Floating Button -->
+</div>
+</div>
+<!--/ End chatWidget Style Container --> </div>
+<!-- Vendor Js-->
+<script src="https://technosphereindia.com/Classic/vendor/jquery/jquery.min.js?v=442" type="text/javascript">
+</script>
+<script src="https://technosphereindia.com/Classic/vendor/jquery.appear/jquery.appear.min.js?v=442" type="text/javascript">
+</script>
+<script src="https://technosphereindia.com/Classic/vendor/popper/umd/popper.min.js?v=442" type="text/javascript">
+</script>
+<script src="https://technosphereindia.com/Classic/vendor/bootstrap/js/bootstrap.min.js?v=442" type="text/javascript">
+</script>
+<script src="https://technosphereindia.com/Classic/vendor/common/common.min.js?v=442" type="text/javascript">
+</script>
+<script src="https://technosphereindia.com/Classic/vendor/jquery.validation/jquery.validate.min.js?v=442" type="text/javascript">
+</script>
+<script src="https://technosphereindia.com/Classic/vendor/jquery.lazyload/jquery.lazy.min.js?v=442" type="text/javascript">
+</script>
+<!-- Technosphere Engineering Pvt Ltd Theme Base, Components and Settings -->
+<script src="https://technosphereindia.com/Classic/js/theme.js?v=442"></script>
+<!-- Theme Initialization Files -->
+<script src="https://technosphereindia.com/Classic/js/theme.init.js?v=442"></script>
+<script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            }
+        </script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        //click event on a tag for Whatsapp
+        $('.cp-whatsapp').on("click",function(){
+         
+          var number =  $(this).attr("data-number");
+          var message =  $(this).attr("data-message");
+          
+          //checking for device type
+          if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+              // redirect link for mobile WhatsApp chat awc
+              window.open('https://wa.me/'+number+'/?text='+message, '-blank');  
+          }
+          else{
+              // redirect link for WhatsApp chat in website
+              window.open('https://web.WhatsApp.com/send?phone='+number+'&text='+message, '-blank'); 
+          }
+        })
+
+        // chat widget open/close duration
+        $('cp-style1').launchBtn( { openDuration: 400, closeDuration: 300 } );
+    });
+
+    // chat panel open/close function
+    (function($) {
+      
+        'use strict';
+
+        $.fn.launchBtn = function(options) {
+
+            var mainBtn, panel, clicks, settings, launchPanelAnim, closePanelAnim, openPanel, boxClick;
+
+            mainBtn = $(".cp-button");
+            panel = $(".cp-panel");
+            clicks = 0;
+
+            //default settings
+            settings = $.extend({
+              openDuration: 600,
+              closeDuration: 200,
+              rotate: true
+            }, options);
+
+            //Open panel animation
+            launchPanelAnim = function() {
+              panel.animate({
+                opacity: "toggle",
+                height: "toggle"
+              }, settings.openDuration);
+            };
+
+            //Close panel animation
+            closePanelAnim = function() {
+                panel.animate({
+                  opacity: "hide",
+                  height: "hide"
+                }, settings.closeDuration);
+            };
+
+            //Open panel and rotate icon
+            openPanel = function(e) {
+              if (clicks === 0) {
+                  if (settings.rotate) {
+                      $(this).removeClass('rotateBackward').toggleClass('rotateForward');
+
+                      $(".cp-list").addClass('animated zoomIn');     
+                  }
+
+                  launchPanelAnim();
+                  clicks++;
+              } 
+              else {
+                  if (settings.rotate) {
+                      $(this).removeClass('rotateForward').toggleClass('rotateBackward');
+
+                      $(".cp-list").removeClass('animated zoomIn');
+                  }
+
+                closePanelAnim();
+                clicks--;
+              }
+
+              e.preventDefault();
+              return false;
+          };
+
+          //Allow clicking in panel
+          boxClick = function(e) {
+            e.stopPropagation();
+          };
+
+          //Main button click
+          mainBtn.on('click', openPanel);
+
+          //Prevent closing panel when clicking inside
+          panel.click(boxClick);
+
+          //Click away closes panel when clicked in document
+          $(document).click(function() {
+
+        			closePanelAnim();
+
+        			if (clicks === 1) {
+        				mainBtn.removeClass('rotateForward').toggleClass('rotateBackward');
+        			}
+        			clicks = 0;
+          });
+        };
+    }(jQuery));
+</script> <script src="//cdn.jsdelivr.net/npm/jquery.marquee@1.6.0/jquery.marquee.min.js?v=442" type="text/javascript">
+</script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		
+		$.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+		// enquire form
+		$("#enquire_now_form").validate({
+			submitHandler: function(form, e) {
+				if ($('#enquire_now_form').valid()) {
+					var url = $('form#enquire_now_form').attr('action');
+					var method = $('form#enquire_now_form').attr('method');
+					var data = $('form#enquire_now_form').serialize();
+					$(".submit_enquire").attr('disabled', true);
+					$.ajax({
+						method: method,
+						dataType: "json",
+						url: url,
+						data:data,
+						success: function(result){
+							$(".submit_enquire").attr('disabled', false);
+							if (result.success) {
+								$('form#enquire_now_form').trigger("reset");
+								$(".enquire_response_alert").css({ 'display' : '' });
+								$(".enquire_response").text(result.msg);
+							} else {
+								$(".enquire_response_alert").css({ 'display' : '' });
+								$(".enquire_response").text(result.msg);
+							}
+						}
+					});
+				}
+			}
+		});
+
+		//contact form
+		$("#contact_form").validate({
+			submitHandler: function(form, e) {
+				if ($('#enquire_now_form').valid()) {
+					form.submit();
+					$(".submit_contact_form").attr('disabled', true);
+				}
+			}
+		});
+
+		jQuery.validator.addMethod("number", function(value, element) {
+			return this.optional(element) || value.length == 10;
+		}, "Please enter 10 digit valid phone number.");
+
+
+		//validate if entered input is number only
+        $(document).on('keypress', 'input.input_number', function(event) {
+            var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+            if (!/^\d*$/.test(key)) {
+                event.preventDefault();
+                return false;
+            }
+        });
+        
+		/**
+		 * 
+		 * Show Inquiry Form
+		 * Based on diffrent conditions
+		 * 
+		**/ 
+		var popupShown = false;
+		function showInquiryNowPopUp() {
+
+			if (popupShown) return;
+
+			if (
+			    document.cookie.split(";").filter((item) => {
+			    	return item.includes("inquiryNowPopup=");
+			    }).length
+			) {
+				return;
+			} else {
+				document.cookie = "inquiryNowPopup=true;path=/;max-age=86400"; //set cookie for 24h
+				popupShown = true;
+			}
+			
+			setTimeout(() => {
+		        if (!$('#enquire_now_modal').hasClass('show')) {
+					$(".enquire_now").click();
+				}
+		    }, 1000);			
+		}
+
+		//if scroll percentage is 65 show popup
+		$(window).scroll(function(e){
+
+			let scrollTop = $(window).scrollTop();
+			let docHeight = $(document).height();
+			let winHeight = $(window).height();
+			let scrollPercent = (scrollTop) / (docHeight - winHeight);
+			let scrollPercentRounded = Math.round(scrollPercent*100);
+
+			if (scrollPercentRounded == 65) {
+				showInquiryNowPopUp();
+			}
+		});
+
+		//if intent is exit show popup
+		document.addEventListener("mouseout", (event) => {
+		    if (!event.toElement && !event.relatedTarget) {
+		    	showInquiryNowPopUp();
+		    }
+	  	});
+	  	
+	  	//if page visit is % 5 == 0 show popup
+	  	if ($(".__page_visit_count").length) {
+	  		let page_count = parseInt($(".__page_visit_count").val());
+	  		if (page_count % 5 == 0) {
+	  			setTimeout(() => {
+			        showInquiryNowPopUp();
+			    }, 4000);
+	  		}
+	  	}
+
+	  	function __calculateDiscountPercent(elements) {
+	  		if (elements.length) {
+	  			elements.forEach(function(element){
+	  				let discounted_price = parseFloat(element.dataset.discounted_price);
+	  				let original_price = parseFloat(element.dataset.original_price);
+	  				if (discounted_price && original_price) {
+	  					let discount_percent = 100 * (original_price - discounted_price) / original_price;
+		  				$(element).find('.off-amount').text(`${discount_percent.toPrecision(4)}%`);
+	  				}
+	  			});
+	  		}
+	  	}
+
+	  	__calculateDiscountPercent(document.querySelectorAll('.discount_percent'));
+
+	  	$('.marquee').marquee({
+			//duration in milliseconds of the marquee
+			duration: 15000,
+			//gap in pixels between the tickers
+			gap: 50,
+			//time in milliseconds before the marquee will start animating
+			delayBeforeStart: 0,
+			//'left' or 'right'
+			direction: 'left',
+			//true or false - should the marquee be duplicated to show an effect of continues flow
+			duplicated: true
+		});
+	});
+</script>
+<script type="text/javascript">
+            $(function() {
+                $('.img-lazy-load').Lazy();
+            });
+        </script>
+</body>
+</html>

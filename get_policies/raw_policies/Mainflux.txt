@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+
+<html lang="en-US" prefix="og: http://ogp.me/ns#" xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="index, follow" name="robots">
+<title> Mainflux Open Source IoT Platform</title>
+<meta content="Open-source, patent-free, full stack IoT platform recognized by Linux Foundation. Highly performant, scalable and secure. Built as a set of microservices containerized by Docker and orchestrated with Kubernetes. Easy to deploy on-premises or in the cloud." name="description"/>
+<!-- Bootstrap -->
+<link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet"/>
+<!-- Custom CSS -->
+<link href="main.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,800,900" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
+<meta content="enS" property="og:locale">
+<meta content="website" property="og:type">
+<meta content="Mainflux — Full-stack Open-Source, Patent-free IoT Platform and Consulting services" property="og:title">
+<meta content="Mainflux Labs is a technology company which provides a full-stack open-source, patent-free IoT Platform and consulting services grounded in the team members‘ extensive working experience gained in fortune 500 companies as well as technological start-ups" property="og:description"/>
+<meta content="https://www.mainflux.com/index.html" property="og:url"/>
+<meta content="Mainflux Labs" property="og:site_name"/>
+<meta content="https://www.mainflux.com/images/open-source-iot-platform-mainflux-labs.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content=" Mainflux Labs is a technology company which provides a full-stack open-source, patent-free IoT 
+     Platform and consulting services grounded in the team members‘ extensive working experience gained in fortune 500 companies as well 
+     as technological start-ups" name="twitter:description"/>
+<meta content="Mainflux — Full-stack Open-Source, Patent-free IoT Platform and Consulting services" name="twitter:title"/>
+<meta content="@Mainflux" name="twitter:site"/>
+<meta content="https://www.mainflux.com/images/open-source-iot-platform-mainflux-labs.jpg" name="twitter:image"/>
+<meta content="@Mainflux" name="twitter:creator"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<!-- Favicon -->
+<link href="images/logo-iot-mainflux.png" rel="icon" sizes="32x32" type="image/png">
+<link href="images/logo-iot-mainflux.png" rel="shortcut icon" type="image/png">
+<!-- Google Analytic -->
+<script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-97185759-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+<link href="//wpcc.io/lib/1.0.2/cookieconsent.min.css" rel="stylesheet" type="text/css">
+<script src="//wpcc.io/lib/1.0.2/cookieconsent.min.js"></script>
+<script>
+        window.addEventListener("load", function() {
+            window.wpcc.init({
+                "colors": {
+                    "popup": {
+                        "background": "#f6f6f6",
+                        "text": "#000000",
+                        "border": "#555555"
+                    },
+                    "button": {
+                        "background": "#555555",
+                        "text": "#ffffff"
+                    }
+                },
+                "position": "bottom-right",
+                "fontsize": "small",
+                "corners": "large",
+                "content": {
+                    "button": "I agree",
+                    "message": "We use cookies to analyze this site’s usage, pages viewed and your journey around a website. Therefore, some data will be stored on, and retrieved from, your device.",
+                    "href": "https://en.wikipedia.org/wiki/HTTP_cookie"
+                }
+            })
+        });
+
+    </script>
+</link></link></link></meta></meta></meta></meta></head>
+<body>
+<header>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="container-fluid">
+<div class="navbar-header">
+<button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="index.html" id="brand">MAINFLUX LABS</a>
+</div>
+<!-- navbar-header -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<ul class="nav navbar-nav navbar-right" id="nav">
+<li><a href="index.html" id="active">Home</a></li>
+<li class="get-started"><a href="cloud.html">Cloud</a></li>
+<li class="dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Edge</a>
+<ul class="dropdown-menu">
+<li><a href="edge-gateway.html">MFX-1 Edge Gateway</a></li>
+<li><a href="iot-device-management.html">Edgeflux - IoT Device Management</a></li>
+</ul>
+</li>
+<li class="get-started"><a href="consulting.html" style="display: none">Services</a></li>
+<li class="get-started"><a href="pricing.html" style="display: none">Pricing</a></li>
+<li class="dropdown">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Resources</a>
+<ul class="dropdown-menu">
+<li><a href="https://docs.mainflux.io/" target="_blank">Documentation</a></li>
+<li><a href="guides.html" target="_blank">Guides</a></li>
+<li><a href="https://github.com/mainflux/mainflux" target="_blank">GitHub</a></li>
+<li><a href="https://medium.com/mainflux-iot-platform" target="_blank">Blog</a></li>
+<li><a href="news.html">News</a></li>
+<li><a href="faq.html">FAQ</a></li>
+</ul>
+</li>
+<li><a href="careers.html">Careers</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+<!-- collapse navbar-collapse -->
+</div>
+<!-- container -->
+</nav>
+</header>
+<!-- -------MAIN-------- -->
+<section class="main-home" id="main-home">
+<div class="container-fluid">
+<div class="row bgimage">
+<div class="col-xs-6 col-sm-6" id="headline">
+<h1>Open source IoT Platform <br/>
+                    Edge computing and <br/>Consulting services
+                    </h1>
+<h2>Mainflux Labs is technology company offering end-to-end, open-source
+ <br/> patent-free IoT platform, edge computing gateway and consulting services <br/> for the software and hardware layers of the internet of things technology</h2>
+<!-- --- buttons --- -->
+<div class="row home-butt">
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
+<a class="btn btn-default github" href="downloads/Mainflux Labs - References.pdf" id="github"> REFERENCES</a>
+</div>
+<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+<a class="btn btn-default download" href="https://github.com/mainflux/mainflux/releases" id="dirdownload"> DOWNLOAD</a>
+</div>
+</div>
+</div>
+<div class="col-xs-6 col-sm-6">
+<img alt="open source internet of things" id="shape" src="images/isometric-shape-1_shadow.png"/>
+</div>
+<!--  ---- References Section --- -->
+<div class="container">
+<div class="row references">
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="edgex">
+<a href="https://www.lfedge.org/2018/05/17/edgex-foundry-member-spotlight-mainflux/"><img alt="Mainflux is member of the Linux Foundation Edgex Foundry project, in which it has leadership role" class="edgex" src="images/edegex.png"/></a>
+<h5 id="edge">MEMBER &amp; LEADERSHIP</h5>
+</div>
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="reilly">
+<a href="https://www.oreilly.com/programming/free/scalable-architecture-for-the-internet-of-things.csp"> <img alt="Mainflux team authored book Scalable Architecture of Internet of Things published by O'Reilly Media" class="oreilly" src="images/oreilly-logo.png"/></a>
+<h5 id="oreilly">AUTHORED BY MAINFLUX TEAM</h5>
+</div>
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="park">
+<a href="https://ntpark.rs/en/"> <img alt="Mainflux is member of The Science technology park Belgrade" class="sciencepark" src="images/science-park.png"/></a>
+<h5 id="science">MEMBER</h5>
+</div>
+<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+<a href="http://www.inovacionifond.rs/"> <img alt="The Government of Serbia Innovation Fund, supported by European Union and World Bank technology innovation programs, has awarded Mainflux a significant funding grant for the continued development of its two main systems,the core IoT Platform and the EdgeX Gateway." class="fund" src="images/innovation-fund-serbia.png"/></a>
+<h5 id="fund">FOUNDED BY <br/>SERBIAN INNOVATION FUND</h5>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ----------------- IoT Platform ---------------- -->
+<section class="iot-platform" id="iot-platform">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div class="section-sub">
+<hr/>
+<h3 class="section-subheadline">OPEN SOURCE  IoT PLATFORM</h3>
+</div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 right">
+<div class="section-main-text">
+<h4>ON PREM, <br/> HYBRID OR CLOUD</h4>
+<p class="section-text">
+                            Mainflux is performant and secure open-source IoT platform with the complete full-scale capabilities for development of Internet of Things solutions, IoT applications and smart connected products.
+                            <br/>
+<br/> Built as a set of microservices containerized by Docker and orchestrated with Kubernetes, Mainflux IoT platform serves as a software infrastructure and middleware which provides:
+
+                        </p>
+<br/>
+<ul>
+<li>Device management
+
+                            </li>
+<br/>
+<li>Data aggregation and data management
+
+                            </li>
+<br/>
+<li>Connectivity and message routing
+
+                            </li>
+<br/>
+<li>Event management
+
+                            </li>
+<br/>
+<li>Core analytics
+
+                            </li>
+<br/>
+<li>User Interface
+
+                            </li>
+<br/>
+<li>Application enablement
+
+                            </li>
+<br/>
+</ul>
+</div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 left stack">
+<img alt="mainflux internet of things technology stack" id="stack" src="images/iot-platform-stack-mainflux.png"/>
+</div>
+</div>
+</div>
+</section>
+<br/>
+<br/>
+<!-- ----------------- Platform Features ---------------- -->
+<section class="platform-features" id="platform-features">
+<div class="container">
+<div class="row row-features">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div class="section-sub">
+<hr id="features"/>
+<h3 class="section-subheadline"> FEATURES</h3>
+</div>
+</div>
+</div>
+<br/>
+<br/>
+<br/>
+<div class="row">
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+<img alt="" src="images/home_opensource-100x100px.png"/>
+</div>
+<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5 left">
+<br/>
+<h4 class="sub-subheadline-section">Open source &amp; Patent Free</h4>
+<p class="section-text">
+                        Apache 2.0 license. All the benefits of open source solutions: transparency, control, community testing, support and bug fixes. No client access licenses issues. No vendor lock.
+                    </p>
+<br/>
+<br/>
+</div>
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+<img alt="" src="images/home_security-100x100px.png"/>
+</div>
+<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5 right">
+<br/>
+<h4 class="sub-subheadline-section">Secure</h4>
+<p class="section-text">
+                        Enhanced and fine-grained security via deployment-ready Mainflux Authentication and Authorization Server with Access Control scheme based on customizable API keys and scoped JWT. <u style="color: #071440"> Mutual TLS Authentication (mTLS)  using X.509 Certificates.</u> NGINX reverse proxy for security, load-balancing and termination of TLS and DTLS connections.
+                    </p>
+<br/>
+<br/>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"> <img alt="" src="images/home_performant-100x100px.png"/>
+</div>
+<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5 left">
+<br/>
+<h4 class="sub-subheadline-section">Performant</h4>
+<p class="section-text">
+                        Thanks to Golang language, and microservices, it has tested performance, deployment speed, fast and robust execution, small footprint.
+                    </p>
+<br/>
+<br/>
+</div>
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+<img alt="iot platform extensibility" src="images/home_extensibility-100x100px.png"/>
+</div>
+<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5 right">
+<br/>
+<h4 class="sub-subheadline-section">Built for Extensibility</h4>
+<p class="section-text">
+                        Adding new functionality for vertical solutions and applications does not require reconfiguration or modification of the core platform.
+                    </p>
+<br/>
+<br/>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+<img alt="integration" id="integration" src="images/home_seamless-100x100px.png"/>
+</div>
+<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5 left">
+<br/>
+<h4 class="sub-subheadline-section">Seamless Integration</h4>
+<p class="section-text">
+                        Open, modularized and flexible architecture with many iot protocols and easy-to-use APIs, ensures seamless 3rd-party integration with existing enterprise systems ( (e.g., ERP, BI, CRM), databases, and analytics programs, back-end systems and/or other cloud services.
+                    </p>
+<br/>
+<br/>
+</div>
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+<img alt="" id="agnostic" src="images/home_protocol-device-agnostic-100x100px.png"/>
+</div>
+<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5 right">
+<br/>
+<h4 class="sub-subheadline-section">Protocol and Device Agnostic</h4>
+<p class="section-text">
+                        Multi-protocol support and hardware agnostic. Connectivity for any device and any application. PUB/SUB multiprotocol messaging bridge (HTTP, MQTT, WebSocket, CoAP) based on NATS ultra-performant broker.
+                    </p>
+<br/>
+<br/>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+<img alt="" id="scalable" src="images/home_scalable-100x100px.png"/>
+</div>
+<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5 left">
+<br/>
+<h4 class="sub-subheadline-section">Scalable and Responsive</h4>
+<p class="section-text">
+                        Microservice-based architecture, built using open-source technologies resulting in high-performance, scalability and fault-tolerance.
+                    </p>
+<br/>
+<br/>
+</div>
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+<img alt="" src="images/home_scale-down-100x100px.png"/>
+</div>
+<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5 right">
+<br/>
+<h4 class="sub-subheadline-section">Scale down - Deployable</h4>
+<p class="section-text">
+                        Deployable from multi-datacenter scale to RPi class devices.
+                    </p>
+<br/>
+<br/>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+<img alt="" id="low" src="images/home_low-opex-100x100px.png"/>
+</div>
+<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5 left">
+<br/>
+<h4 class="sub-subheadline-section">Low Opex</h4>
+<p class="section-text">
+                        Low operating expense (OPEX) due to design and selection of core technologies.
+                    </p>
+<br/>
+<br/>
+</div>
+<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+<img alt="" id="prem" src="images/home_prem-hybrid-cloud-100x100px.png"/>
+</div>
+<div class="col-xs-11 col-sm-11 col-md-5 col-lg-5 right">
+<br/>
+<h4 class="sub-subheadline-section">On prem, Hybrid or Cloud</h4>
+<p class="section-text">
+                        Easy to deploy on-prem, hybrid or in the cloud.
+                    </p>
+<br/>
+<br/>
+</div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<a class="btn btn-default center-block" href="cloud.html">IoT Platform Technology</a>
+</div>
+</div>
+</div>
+<!-- --- Container --- -->
+</section>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<!-- ----------------- Gateway ---------------- -->
+<section class="gateway" id="gateway">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div class="section-sub">
+<hr/>
+<h3 class="section-subheadline">EDGE COMPUTING MFX-1 GATEWAY</h3>
+</div>
+</div>
+</div>
+<br/>
+<br/>
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-11 col-md-offset-1 col-lg-10 col-lg-offset-1">
+<h4 class="subheadline-section" id="linux">DEVELOPED TO MEET THE B2B MARKET DEMANDS </h4>
+<br/>
+<p class="section-text">
+                        MFX-1 IoT Edge Gateway based on Mainflux IoT open-source platform is developed on the optimized hardware, the Solid Run HummingBoard CBi - Edge hardware platform, created to meet the B2B market demands for a high performance, secure, robust and overall low-cost industrial compliant device.
+
+                    </p>
+</div>
+</div>
+<br/>
+<br/>
+<br/>
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1 col-lg-5 left col-lg-offset-1">
+<h4 class="sub-subheadline-section">MFX-1 HARDWARE GENERAL FEATURES</h4>
+<br/>
+<ul>
+<li>Low memory footprint (RAM)
+
+
+                        </li>
+<br/>
+<li>Small size binaries
+
+
+                        </li>
+<br/>
+<li>Low Latency
+
+
+                        </li>
+<br/>
+<li>Hi Performance
+                        </li>
+<br/>
+<li>Industrial Temp. (-40° to 85° C)
+
+                        </li>
+<br/>
+<li>
+                            Deploy only microservices you need for the project
+
+                        </li>
+<br/>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-5 col-lg-5 right">
+<h4 class="sub-subheadline-section">MFX-1  SOFTWARE FEATURES</h4>
+<br/>
+<ul>
+<li>All features of the Mainflux IoT Platform</li>
+<br/>
+<br/>
+<li>Remote IoT Devices &amp; Gateways Management - Ensures the secure and proper functioning of multiple IoT devices</li>
+<br/>
+<br/>
+<li>Unified IoT Cloud/Edge Computing System - Mainflux IoT Platform implemented on the Edge Computing Gateway, creates with a centralized Mainflux IoT instance in the cloud an unfied comprehensive full turn-key IoT system.
+
+
+                        </li>
+</ul>
+</div>
+</div>
+<br/>
+<br/>
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<h5 class="sub-subheadline-section">Mainflux MFX-1 Gateway</h5>
+<br/>
+<img alt="Mainflux internet of things edge computing gateway compliant with Linux Foundation EdgeX Foundry framework" class="img-responsive" src="images/Mainflux-Edge-Computing-Gateway.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<!-- ----------------- Consulting ---------------- -->
+<section class="consulting" id="consulting">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div class="section-sub">
+<hr/>
+<h3 class="section-subheadline">MAINFLUX LABS <br/> CONSULTING SERVICES</h3>
+<p>Mainflux cross-functional team provide operational expertise for all technology layers
+                            <br/>and complexity of the IoT technology and cost-quality related solutions with support
+                            <br/>needed for every Internet of Things project
+                        </p>
+</div>
+<br/>
+<br/>
+</div>
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<h4 id="expertise">EXPERTISE FOR ALL TECHNOLOGY LAYERS </h4>
+</div>
+</div>
+<br/>
+<br/>
+<div class="row">
+<div class="col-xs-2 col-xs-offset-1 col-sm-2 col-sm-offset-1 col-md-2 col-md-offset-1 col-lg-2 col-lg-offset-1 img1">
+<img alt="" class="img-responsive" id="embedded-hardware" src="images/Embedded-Software- Development-for-IoT.png"/>
+<h6>Hardware &amp; Embedded Software Development</h6>
+</div>
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 img">
+<img alt="" class="img-responsive" id="Software-Development" src="images/software-developement-for-IoT.png"/>
+<h6>Software <br/>Development</h6>
+</div>
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 img">
+<img alt="" class="img-responsive" id="Webapplication-Development" src="images/web-application-development-for-iot.png"/>
+<h6>Web Application Development</h6>
+</div>
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 img">
+<img alt="" class="img-responsive" id="IT operations and management" src="images/it-operation-management-for-iot.png"/>
+<h6>IT Operations and Management</h6>
+</div>
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 img">
+<img alt="" class="img-responsive" id="data-science" src="images/data-science-for-iot.png"/>
+<h6>Data Science and Distributive Systems</h6>
+</div>
+</div>
+<br/>
+<br/>
+<br/>
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<h4 id="include">MAINFLUX LABS SERVICES INCLUDE
+</h4>
+<br/>
+</div>
+</div>
+<br/>
+<br/>
+<div class="services row">
+<div class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-5 col-md-offset-2 col-lg-4 col-lg-offset-2 left">
+<h5>PROFESIONAL SERVICES</h5>
+<ul>
+<li>Consultancy for Product Design, and Architecturing
+                            </li>
+<li>Proof Of Concept (Poc) Project’s
+                            </li>
+<li>Integration’s And Pilot’s</li>
+<li>Auditing</li>
+</ul>
+<br/>
+<br/>
+</div>
+<div class="col-xs-5 col-sm-5 col-md-4 col-lg-4 col-lg-offset-1 right">
+<h5>SUPPORT</h5>
+<ul>
+<li id="sensors">Technical Support
+                            </li>
+<li id="embed">Training - Get Mainflux IoT up and running in a production-ready environment. </li>
+<li id="inter">Workshops - From idea to production
+                            </li>
+</ul>
+<br/>
+<br/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<br/>
+<br/>
+<!-- ----------------- Action-call---------------- -->
+<section class="action-call" id="action-call">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" id="demo">
+<h6> Mainflux Demo</h6>
+<br/>
+<a class="btn btn-default center-block" href="https://www.youtube.com/watch?v=H4BPKfvCZLk"> Watch Demo</a>
+</div>
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+<h6>For IoT Solution or Hardware Expertise </h6>
+<br/>
+<a class="btn btn-default center-block" href="contact.html">CONTACT US</a>
+</div>
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" id="products">
+<h6>Mainflux Labs References</h6>
+<br/>
+<a class="btn btn-default center-block" href="downloads/Mainflux Labs - References.pdf
+
+">Download</a>
+</div>
+</div>
+</div>
+</section>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<!-- --------- Conferences logos BIG SCREENS ---------- -->
+<section class="big-conferences" id="conferences">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div class="section-sub">
+<h3 class="section-subheadline">MAINFLUX LABS IS FEATURED IN</h3>
+</div>
+</div>
+</div>
+<div class="row" id="logoconf">
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1 col-lg-offset-1">
+<a href="https://elciotna18.sched.com/event/DYM7/hyperscalable-unified-iot-platform-drasko-draskovic-janko-isidorovic-mainflux"> <img alt="" id="open" src="images/230x100px_LOGO-OPENSOURCESUBMIT.png"/></a>
+</div>
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+<a href="https://conferences.oreilly.com/software-architecture/sa-eu-2017/public/schedule/detail/62113"><img alt="" id="relly" src="images/OREILLY-2.png"/></a>
+</div>
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1 barcelona">
+<a href="https://medium.com/mainflux-iot-platform/mainflux-iot-edge-computing-gateway-is-part-of-edgex-foundry-demonstrator-at-iot-world-solution-40c73b8bd49e"> <img alt="" id="barcelona" src="images/barcelona.png"/></a>
+</div>
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+<a href="https://archive.fosdem.org/2016/schedule/event/mainflux/"> <img alt="" id="fosdem" src="images/FOSDEM.png"/></a>
+</div>
+<a href="https://amsterdam2018.codemotionworld.com/speaker/3910/">
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+<img alt="" id="emotion" src="images/codemotion.png"/>
+</div>
+</a>
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+<a href="https://www.golab.io/2017-edition.html#Program25"> <img alt="" id="golab" src="images/LOGO-GOLAB.png"/></a>
+</div>
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+<a href="https://ons2017.sched.com/draskodraskovic"> <img alt="" id="ons" src="images/ONS.png"/> </a>
+</div>
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+<a href="https://www.itnextsummit.com/startups/mainflux__trashed/mainflux-logo/"><img alt="" id="itnext" src="images/ITNEXT.png"/></a>
+</div>
+</div>
+</div>
+</section>
+<br/>
+<!-- ----------------- Conferences---------------- -->
+<section class="conferences" id="conferences">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div class="section-sub">
+<h3 class="section-subheadline">MAINFLUX LABS IS FEATURED IN</h3>
+</div>
+</div>
+</div>
+<div class="row" id="logoconf">
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1 col-lg-offset-1">
+<a href="https://elciotna18.sched.com/event/DYM7/hyperscalable-unified-iot-platform-drasko-draskovic-janko-isidorovic-mainflux"> <img alt="" id="open" src="images/230x100px_LOGO-OPENSOURCESUBMIT.png"/></a>
+</div>
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+<a href="https://conferences.oreilly.com/software-architecture/sa-eu-2017/public/schedule/detail/62113"> <img alt="" id="relly" src="images/OREILLY-2.png"/></a>
+</div>
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1 barcelona">
+<a href="https://medium.com/mainflux-iot-platform/mainflux-iot-edge-computing-gateway-is-part-of-edgex-foundry-demonstrator-at-iot-world-solution-40c73b8bd49e"> <img alt="" id="barcelona" src="images/barcelona.png"/></a>
+</div>
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+<a href="https://archive.fosdem.org/2016/schedule/event/mainflux/"> <img alt="" id="fosdem" src="images/FOSDEM.png"/></a>
+</div>
+</div>
+<div class="row" id="second-conf">
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+<a href="https://amsterdam2018.codemotionworld.com/speaker/3910/"> <img alt="" id="emotion" src="images/codemotion.png"/></a>
+</div>
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+<a href="https://www.golab.io/2017-edition.html#Program25"> <img alt="" id="golab" src="images/LOGO-GOLAB.png"/></a>
+</div>
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+<a href="https://ons2017.sched.com/draskodraskovic"> <img alt="" id="ons" src="images/ONS.png"/></a>
+</div>
+<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+<a href="https://www.itnextsummit.com/startups/mainflux__trashed/mainflux-logo/"><img alt="" id="itnext" src="images/ITNEXT.png"/></a>
+</div>
+</div>
+</div>
+</section>
+<br/>
+<!-- --------------- News --------------- -->
+<section class="news" id="news">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+<div class="section-sub">
+<h3 class="section-subheadline">MAINFLUX LABS NEWS</h3>
+</div>
+</div>
+</div>
+<br/>
+<br/>
+<div class="row" id="column">
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+<h5>Mainflux Labs is a Member of the Construction R&amp;D Project Funded by the EU H2020 Program
+ </h5>
+<p class="news-text">Mainflux Labs is a consortium member of the Ashvin: EU H2020 funded, international R&amp;D project which goal is to address long-lasting challenges of the construction industry using digital twins and the power of IoT as assistants for design, construction and maintenance of civil engineering infrastructures. </p>
+<p id="news-link"><a class="news-link" href="https://medium.com/mainflux-iot-platform/mainflux-labs-is-a-member-of-the-construction-r-d-project-funded-by-the-eu-h2020-program-9530949c86d4">Read More</a></p>
+</div>
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+<h5>Intel Developer Zone Demonstrates Mainflux and EdgeX Foundry for IoT Metering
+ </h5>
+<p class="news-text">Intel Developer Zone in the blog post "View Metering In Action On Edge Middleware Platforms" demonstrates how Mainflux and EdgeX Foundry can be used for IoT metering which has large scale applications that are key to certain business ventures. </p>
+<p id="news-link"><a class="news-link" href="https://software.intel.com/en-us/articles/view-metering-in-action-on-edge-middleware-platforms">Read More</a></p>
+</div>
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+<h5>Mainflux is a National IoT Winner of the Central European Startup Awards</h5>
+<p class="news-text">Mainflux Labs is a Serbian National Winner in the IoT category of Central European Startup Awards competition, which is a part of the Global Startup Awards, one of the largest independent startup ecosystem competitions.
+
+                    </p>
+<p id="news-link"><a class="news-link" href="https://medium.com/mainflux-iot-platform/mainflux-is-a-national-iot-winner-of-central-european-startup-awards-f1392405e459">Read More</a></p>
+</div>
+</div>
+</div>
+</section>
+<br/>
+<br/>
+<br/>
+<!-- ---------------- FOOTER ---------------- -->
+<div class="container-fluid">
+<div class="row footer">
+<div class="col-md-12">
+<div class="row">
+<div class="col-md-2 col-md-offset-1 footer-col">
+<h6>CONTACT US</h6>
+<br>
+<p><a href="mailto:infos@mainflux.com" target="_blank">Email: infos@mainflux.com</a></p>
+<br>
+<p><a href="#">Website: mainflux.com</a></p>
+<br>
+<p><a href="https://github.com/mainflux/mainflux">GitHub</a></p>
+<br/>
+</br></br></br></div>
+<div class="col-md-2 footer-col">
+<h6>IoT PLATFORM &amp; EDGE</h6>
+<br>
+<p><a href="cloud.html">IoT Cloud Platform</a></p>
+<br>
+<p><a href="edge-gateway.html">Edge Computing</a></p>
+<br>
+<p><a href="http://mainflux.readthedocs.io/en/latest/" target="_blank">Documentation</a></p>
+<br>
+<p><a href="downloads/Mainflux Labs - References.pdf" target="_blank">References</a></p>
+</br></br></br></br></div>
+<div class="col-md-2 footer-col">
+<h6>ABOUT US</h6>
+<br>
+<p><a href="about.html">Team</a></p>
+<br>
+<p><a href="https://medium.com/mainflux-iot-platform">Blog</a></p>
+<br>
+<p><a href="news.html">News and Press</a></p>
+<br>
+<p><a href="">FAQ</a></p>
+</br></br></br></br></div>
+<div class="col-md-3">
+<h6>NEWSLETTER</h6>
+<br>
+<!-- Begin MailChimp Signup Form -->
+<form action="//mainflux.us12.list-manage.com/subscribe/post?u=b9b2ffdff810ddd685623007b&amp;id=3528078a5f" class="form-horizontal" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" target="_blank">
+<div class="input-group">
+<input class="form-control" id="mce-EMAIL" name="EMAIL" placeholder="Enter your email to sing up" required="required" type="email" value=""/>
+<span class="input-group-btn input-group-btn-newsletter">
+<button class="btn btn-sm btn-outline-default" type="submit">SUBMIT</button>
+</span>
+</div>
+<div aria-hidden="true" style="position: absolute; left: -5000px;">
+<input name="b_b9b2ffdff810ddd685623007b_3528078a5f" tabindex="-1" type="text" value=""/>
+</div>
+</form>
+<!--End mc_embed_signup-->
+</br></div>
+</div>
+</div>
+<div class="col-md-12" id="licence">
+<div class="row">
+<div class="col-md-6 col-xs-12 apache">
+<p>Apache v2.0 – 2020 Mainflux Labs - Internet of Things Solutions</p>
+</div>
+<div class="col-md-6 col-xs-12" id="social">
+<a href="https://github.com/mainflux/mainflux" target="_blank"><i class="fa fa-github"></i></a>
+<a href="https://twitter.com/Mainflux" target="_blank"><i class="fa fa-twitter"></i></a>
+<a href="https://www.facebook.com/mainflux/#" target="_blank"><i class="fa fa-facebook-f"></i></a>
+<a href="https://plus.google.com/u/0/118370332058380800320" target="_blank"><i class="fa fa-google-plus"></i></a>
+<a href="https://www.linkedin.com/company/mainflux?trk=top_nav_home" target="_blank"> <i class="fa fa-linkedin"></i></a>
+<a href="http://www.slideshare.net/Mainflux
+                        " target="_blank"><i class="fa fa-slideshare"></i></a>
+<a href="https://www.youtube.com/channel/UCVoy7rdj7T9uuASB3E_Fuiw" target="_blank"><i class="fa fa-youtube"></i></a>
+<a href="https://vimeo.com/mainflux" target="_blank"><i class="fa fa-vimeo"></i></a>
+<i class="fa fa-reddit-alien"></i>
+</div>
+<div class="col-md-12 col-xs-12">
+<div class="footer-line"></div>
+</div>
+<div class="col-md-7 col-xs-12" id="terms">
+<p><a href="#">Terms of Use /</a><a href="#">Internet Security /</a><a href="#">Privacy &amp; Cookie Policy /</a><a href="#">Accessibility</a></p>
+</div>
+<div class="col-md-4 col-xs-12" id="mainflux-footer">
+<p>MAINFLUX LABS</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- jqery and JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+        _linkedin_partner_id = "619313";
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+
+    </script>
+<script type="text/javascript">
+        (function() {
+            var s = document.getElementsByTagName("script")[0];
+            var b = document.createElement("script");
+            b.type = "text/javascript";
+            b.async = true;
+            b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+            s.parentNode.insertBefore(b, s);
+        })();
+
+    </script>
+<noscript>
+<img alt="" height="1" src="https://dc.ads.linkedin.com/collect/?pid=619313&amp;fmt=gif" style="display:none;" width="1">
+</img></noscript>
+</body>
+</html>

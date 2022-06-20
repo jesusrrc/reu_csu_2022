@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<title>Privacy Notice | Flexera</title>
+<!-- Start: Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PDSJXT');</script>
+<!-- End: Google Tag Manager -->
+<link as="font" crossorigin="anonymous" href="/themes/custom/flexera/dist/17c0392cf7fce9aceb9f.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="/themes/custom/flexera/dist/d2c7d5c5c14c18a7505a.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="/themes/custom/flexera/dist/ed37bc608c1680ca735f.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="/themes/custom/flexera/dist/f74389bd42b524dffbb4.woff2" rel="preload" type="font/woff2"/>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"1120023421",accountID:"3373873",trustKey:"66686",xpid:"VwUAUl5UCxABVVBXAgkGXlMD",licenseKey:"NRJS-d799fe38e0121ae7a51",applicationID:"1115581872"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(31),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(32),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError";if(!c.disabled){var l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(14),t(13),"addEventListener"in window&&t(7),c.xhrWrappable&&t(15),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t("ee"),C=M.get("tracer"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(p,r),M.on(d,o),b.on(l,o),P.on(l,o),M.buffer([u,d,"xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),S.buffer([u,"new-xhr","send-xhr"+s]),T.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),C.buffer([u,"no-"+u]),P.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,m+s),a(T,m+"-done"),a(P,"new-jsonp"),a(P,"jsonp-end"),a(P,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,N(!0)),w[v]("load",i,N(!0)),w[v]("popstate",function(){i(0,U>1)},N(!0))}},{}],5:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function o(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+p])try{window.performance[h](m,o,!1)}catch(t){}else try{window.performance[h]("webkit"+m,o,!1)}catch(t){}}function i(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(14),f=t(13),u=t(6),d=t(23),p="learResourceTimings",l="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",O=t("loader");if(!O.disabled){O.features.stn=!0,t(9),"addEventListener"in window&&t(7);var T=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof T&&(this.bstStart=O.now())}),a.on(b,function(t,e){var n=t[0];n instanceof T&&s("bst",[n,e,this.bstStart,O.now()])}),c.on(x,function(t,e,n){this.bstStart=O.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),this.bstType])}),f.on(x,function(){this.bstStart=O.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=O.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):l in window.performance&&(window.performance["c"+p]?window.performance[l](m,o,d(!1)):window.performance[l]("webkit"+m,o,d(!1))),document[l]("scroll",i,d(!1)),document[l]("keypress",i,d(!1)),document[l]("click",i,d(!1))}}},{}],6:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],7:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],8:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(32),a=t(31);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],9:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],10:[function(t,e,n){function r(t){function e(){f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}function n(){f.emit("jsonp-error",[],l),f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var d=s(a),p="function"==typeof d.parent[d.key];if(p){var l={};u.inPlace(d.parent,[d.key],"cb-",l),t.addEventListener("load",e,c(!1)),t.addEventListener("error",n,c(!1)),f.emit("new-jsonp",[t.src],l)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(d);return e?e[1]:null}function a(t,e){var n=t.match(l),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(p);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t(23),f=t("ee").get("jsonp"),u=t("wrap-function")(f);if(e.exports=f,o()){var d=/[?&](?:callback|cb)=([^&#]+)/,p=/(.*)\.([^.]+)/,l=/^(\w+)(\.|$)(.*)$/,h=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,h,"dom-"):(u.inPlace(HTMLElement.prototype,h,"dom-"),u.inPlace(HTMLHeadElement.prototype,h,"dom-"),u.inPlace(HTMLBodyElement.prototype,h,"dom-")),f.on("dom-start",function(t){r(t[0])})}},{}],11:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],12:[function(t,e,n){function r(t){var e=i.context(),n=s(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,s=o(i),c=t(31),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),s=f.resolve(a);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=s(n[0],"cb-",r,null,!1),n[1]=s(n[1],"cb-",r,null,!1);var c=t.apply(this,n);return r.nextPromise=c,i.emit("propagate",[e,!0],c,!1,!1),c}}),i.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this,null,!1),t[1]=s(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],13:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],14:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],15:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,O.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(7);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=t(23),l=NREUM.o,h=l.XHR,m=l.MO,v=l.PR,w=l.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,o,p(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,O=document.createTextNode(R);new m(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],16:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",s=1,c="",f="";return o+"@nr="+i+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(28),h=t(18);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],17:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function o(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(18),f=t(16).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(24),m=t(22),v=t(19),w=t(23),g=t(25).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(15),t(8),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},i=this.target;if("string"==typeof i?n=i:"object"==typeof i&&i instanceof y?n=i.url:window.URL&&"object"==typeof i&&i instanceof URL&&(n=i.href),o(this,n),"data"!==this.params.protocol){var s=(""+(i&&i instanceof y&&i.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],18:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],19:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(22);e.exports=r},{}],20:[function(t,e,n){function r(){}function o(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),i(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var i=t("handle"),a=t(31),s=t(32),c=t("ee").get("tracer"),f=t("loader"),u=t(25),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",h=l+"ixn-";a(p,function(t,e){d[e]=o(l,e,!0,"api")}),d.addPageAction=o(l,"addPageAction",!0),d.setCurrentRouteName=o(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=o(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),i("err",[t,f.now(),!1,e])}},{}],21:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],22:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],23:[function(t,e,n){var r=!1;try{var o=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,o),window.removeEventListener("testPassive",null,o)}catch(i){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],24:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return i("storeMetric",n,null,"api"),n}function o(t,e){var n=[s,t,{name:t},e];return i("storeEventMetrics",n,null,"api"),n}var i=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:o}},{}],26:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,s=t(33);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],27:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var o=[r],i=a({});i&&o.push(i),l("lcp",o)}}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,l("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),l("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,p,l=t("handle"),h=t("loader"),m=t(30),v=t(23),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(o);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}p=new PerformanceObserver(i);try{p.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],28:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(t)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],29:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],30:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[i]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,o(!1))}var o=t(23);e.exports=r;var i,a,s;"undefined"!=typeof document.hidden?(i="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],31:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],32:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],33:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var s=e(o),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var p=d[y[n]];return p&&p.push([x,n,r,s]),s}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){l.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function i(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",f=t("gos"),u=t(31),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=O.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+O.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===m.readyState&&i()}function i(){s("mark",["domContent",a()+O.offset],null,"api")}var a=t(26),s=t("handle"),c=t(31),f=t("ee"),u=t(29),d=t(21),p=t(23),l=d.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!1;NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1216.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),O=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(20),t(27),m[v]?(m[v]("DOMContentLoaded",i,p(!1)),h[v]("load",r,p(!1))):(m[w]("onreadystatechange",o),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var i,a,u,p;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,c],u],t)}s(n+"start",[i,a,c],u,f);try{return p=e.apply(a,i)}catch(h){throw s(n+"err",[i,a,h],u,f),h}finally{s(n+"end",[i,a,p],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,o,c,i))}function s(n,r,i,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,i,e,a)}catch(c){o([c,n,r,i],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function s(t,e){var n=e(t);return n[p]=t,i(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(32),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,17,5,3,4]);</script>
+<link href="https://www.flexera.com/legal/privacy-policy" rel="canonical"/>
+<meta content="Flexera privacy notice for the collection, use and protection of personal information for users and other products that are accessible by impaired individuals." name="description"/>
+<meta content="Privacy Notice | Flexera" property="og:title"/>
+<meta content="Flexera privacy notice for the collection, use and protection of personal information for users and other products that are accessible by impaired individuals." property="og:description"/>
+<meta content="https://www.flexera.com/themes/custom/flexera/images/flexera_social.png" property="og:image"/>
+<meta content="Drupal 9 (https://www.drupal.org)" name="Generator"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://www.flexera.com/legal/privacy-policy?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="en" rel="alternate"/>
+<link href="https://www.flexera.de/legal/privacy-policy?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="de" rel="alternate"/>
+<link href="/themes/custom/flexera/favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+<link href="https://www.flexera.com/legal/privacy-policy" hreflang="en" rel="alternate"/>
+<link href="https://www.flexera.de/legal/privacy-policy" hreflang="de" rel="alternate"/>
+<link href="/sites/default/files/css/css_Qlv51zldu4yu78KmYDH41VXaVLiH-lacTFJabzAJwVA.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_YmMnngKSqNRqojCDielfiqvpB_bqVr-CuimMpkXE_Yc.css" media="all" rel="stylesheet"/>
+<script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script>
+<script src="/core/misc/modernizr-additional-tests.js?v=3.11.7"></script>
+</head>
+<body class="english page--node page--node--page page--node--74 flexera" data-current-path="/node/74">
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PDSJXT" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<a class="visually-hidden focusable" href="#main-content">
+      Skip to main content
+    </a>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<div class="layout-container">
+<header role="banner">
+<div class="container">
+<div class="row">
+<div class="mobile-menu__top col-12 d-lg-none d-flex justify-content-between align-items-center">
+<div class="branding-mobile">
+<div id="block-flexera-branding">
+<a href="https://www.flexera.com/" rel="home">
+<img alt="Home" class="d-none d-md-block" src="/themes/custom/flexera/images/logo.svg"/>
+<img alt="Home" class="d-md-none" src="/themes/custom/flexera/images/logo-mobile.svg"/>
+</a>
+</div>
+</div>
+<button class="btn-burger p-1 button-reset"><svg height="18" width="30" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h30v2H0zm0 8h30v2H0zm0 8h30v2H0z" fill-rule="evenodd"></path>
+</svg></button>
+<button class="btn-close p-1 button-reset"><svg height="23" width="23" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.27 0l-9.923 9.924L1.421 0 0 1.421l9.926 9.924L.001 21.27l1.421 1.421 9.925-9.925 9.924 9.925 1.421-1.421-9.925-9.925 9.924-9.924z" fill="#231f20" fill-rule="evenodd"></path>
+</svg></button>
+</div>
+<div class="mobile-menu col-12">
+<div class="mobile-menu__inner w-100 d-flex flex-column flex-lg-row justify-content-start justify-content-lg-between align-items-start align-items-lg-center">
+<div class="mobile-menu__first-part d-block d-lg-flex align-items-lg-center">
+<div class="site-branding d-none d-lg-flex flex-column justify-content-center py-1">
+<div id="block-flexera-branding">
+<a href="https://www.flexera.com/" rel="home">
+<img alt="Home" class="d-none d-md-block" src="/themes/custom/flexera/images/logo.svg"/>
+<img alt="Home" class="d-md-none" src="/themes/custom/flexera/images/logo-mobile.svg"/>
+</a>
+</div>
+</div>
+<div class="search search-mobile d-flex d-lg-none flex-column justify-content-center">
+<div class="search-bar">
+<div class="searchunify-search-form" data-drupal-selector="searchunify-search-form" id="block-flexera-search-form-header">
+<form accept-charset="UTF-8" action="" id="searchunify-search-form" method="get">
+<div class="js-form-item form-item js-form-type-search form-item-searchstring js-form-item-searchstring form-no-label">
+<label class="visually-hidden" for="edit-searchstring">Search</label>
+<input class="form-search" data-drupal-selector="edit-searchstring" id="edit-searchstring" maxlength="128" name="searchString" placeholder="Search" size="15" title="Enter the terms you wish to search for." type="search" value=""/>
+</div>
+<input autocomplete="off" data-drupal-selector="form-idcf3a7kz1clituycrl5n8i3tze3bccabdlfcldzsna" name="form_build_id" type="hidden" value="form-iDCF3A7KZ1CLiTuycrl5N8i3tzE3BCCAbDlfcLDzsnA"/>
+<input data-drupal-selector="edit-searchunify-search-form" name="form_id" type="hidden" value="searchunify_search_form"/>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions"><input class="button js-form-submit form-submit" data-drupal-selector="edit-submit" id="edit-submit" type="submit" value="Search"/>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="main-menu">
+<nav aria-labelledby="block-flexera-main-menu-menu" id="block-flexera-main-menu" role="navigation">
+<h2 class="visually-hidden" id="block-flexera-main-menu-menu">Main navigation</h2>
+<ul class="menu-level-0">
+<li class="has-child">
+<span>Solutions</span>
+<ul class="menu-level-1">
+<li class="has_heading">
+<a class="font-weight-bold" data-drupal-link-system-path="node/4" heading="SAAS" href="https://www.flexera.com/flexera-one"><span class="menu__heading">SAAS</span>Flexera One</a>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/7" href="https://www.flexera.com/flexera-one/it-visibility">IT Visibility</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only has_heading">
+<a class="font-weight-bold" data-drupal-link-system-path="node/7" heading="Flexera one" href="https://www.flexera.com/flexera-one/it-visibility"><span class="menu__heading">Flexera one</span>IT Visibility</a>
+</li>
+<li class="d-lg-none header-only">
+<a data-drupal-link-system-path="node/7" href="https://www.flexera.com/flexera-one/it-visibility">Overview</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3" href="https://www.flexera.com/flexera-one/it-visibility/business-service-mapping">Business Service Mapping</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/15" href="https://www.flexera.com/flexera-one/it-visibility/cmdb-data-quality">CMDB Data Quality</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/6" href="https://www.flexera.com/flexera-one/it-visibility/data-normalization">Data Normalization</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/5" href="https://www.flexera.com/flexera-one/it-visibility/end-of-support-end-of-life">End of Life / End of Support</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/8" href="https://www.flexera.com/flexera-one/it-visibility/integration-to-it-business-systems">Integration to IT Business Systems</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/58" href="https://www.flexera.com/flexera-one/it-visibility/application-rationalization">Application Rationalization</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/97" href="https://www.flexera.com/products/technopedia">Technopedia</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/10" href="https://www.flexera.com/flexera-one/it-asset-management">IT Asset Management</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only has_heading">
+<a class="font-weight-bold" data-drupal-link-system-path="node/10" heading="Flexera One" href="https://www.flexera.com/flexera-one/it-asset-management"><span class="menu__heading">Flexera One</span>IT Asset Management</a>
+</li>
+<li class="d-lg-none header-only">
+<a data-drupal-link-system-path="node/10" href="https://www.flexera.com/flexera-one/it-asset-management">Overview</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/13" href="https://www.flexera.com/flexera-one/it-asset-management/saas-management">SaaS Management</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/17" href="https://www.flexera.com/flexera-one/it-asset-management/software-asset-management">Software Asset Management</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/22" href="https://www.flexera.com/flexera-one/it-asset-management/software-request-and-reclamation">Software Request and Reclamation</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/26" href="https://www.flexera.com/flexera-one/it-asset-management/hardware-asset-management">Hardware Asset Management</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/97" href="https://www.flexera.com/products/technopedia">Technopedia</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/27" href="https://www.flexera.com/flexera-one/cloud-migration-and-modernization">Cloud Migration and Modernization</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only has_heading">
+<a class="font-weight-bold" data-drupal-link-system-path="node/27" heading="Flexera One" href="https://www.flexera.com/flexera-one/cloud-migration-and-modernization"><span class="menu__heading">Flexera One</span>Cloud Migration and Modernization</a>
+</li>
+<li class="d-lg-none header-only">
+<a data-drupal-link-system-path="node/27" href="https://www.flexera.com/flexera-one/cloud-migration-and-modernization">Overview</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/32" href="https://www.flexera.com/flexera-one/cloud-migration-and-modernization/cloud-migration-planning">Cloud Migration Planning</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/33" href="https://www.flexera.com/flexera-one/cloud-migration-and-modernization/cloud-cost-assessment">Cloud Cost Assessment</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/34" href="https://www.flexera.com/flexera-one/cloud-migration-and-modernization/workload-placement">Workload Placement</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/37" href="https://www.flexera.com/flexera-one/cloud-cost-optimization">Cloud Cost Optimization</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only has_heading">
+<a class="font-weight-bold" data-drupal-link-system-path="node/37" heading="Flexera One" href="https://www.flexera.com/flexera-one/cloud-cost-optimization"><span class="menu__heading">Flexera One</span>Cloud Cost Optimization</a>
+</li>
+<li class="d-lg-none header-only">
+<a data-drupal-link-system-path="node/37" href="https://www.flexera.com/flexera-one/cloud-cost-optimization">Overview</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/40" href="https://www.flexera.com/flexera-one/cloud-cost-optimization/cloud-cost-management">Cloud Cost Management</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/39" href="https://www.flexera.com/flexera-one/cloud-cost-optimization/cloud-governance">Cloud Governance</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a class="font-weight-bold" data-drupal-link-system-path="node/77" href="https://www.flexera.com/products/software-vulnerability-research/secunia-research">Security</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only">
+<a class="font-weight-bold" data-drupal-link-system-path="node/77" href="https://www.flexera.com/products/software-vulnerability-research/secunia-research">Security</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/95" href="https://www.flexera.com/products/software-vulnerability-manager">Software Vulnerability Manager</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/96" href="https://www.flexera.com/products/software-vulnerability-research">Software Vulnerability Research</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/77" href="https://www.flexera.com/products/software-vulnerability-research/secunia-research">Secunia Research</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a class="font-weight-bold" data-drupal-link-system-path="node/11" href="https://www.flexera.com/products/adminstudio">Application Readiness</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only">
+<a class="font-weight-bold" data-drupal-link-system-path="node/11" href="https://www.flexera.com/products/adminstudio">Application Readiness</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/11" href="https://www.flexera.com/products/adminstudio">AdminStudio</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="font-weight-bold" data-drupal-link-system-path="node/14" href="https://www.flexera.com/solutions/public-sector">Public Sector</a>
+</li>
+<li class="has-child">
+<a class="font-weight-bold" data-drupal-link-system-path="node/9" href="https://www.flexera.com/products">Additional Products</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only">
+<a class="font-weight-bold" data-drupal-link-system-path="node/9" href="https://www.flexera.com/products">Additional Products</a>
+</li>
+<li class="d-lg-none header-only">
+<a data-drupal-link-system-path="node/9" href="https://www.flexera.com/products">Overview</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/12" href="https://www.flexera.com/products/app-broker-app-portal">App Broker / App Portal</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/29" href="https://www.flexera.com/products/cloud-management-platform">Cloud Management Platform</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/31" href="https://www.flexera.com/products/data-platform">Data Platform</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/35" href="https://www.flexera.com/products/flexnet-manager">FlexNet Manager</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/16" href="https://www.flexera.com/customer-success">Customer Success</a>
+<ul class="menu-level-1">
+<li>
+<a data-drupal-link-system-path="node/18" href="https://www.flexera.com/customer-success/implementation">Implementation</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/19" href="https://www.flexera.com/customer-success/training">Training</a>
+</li>
+<li>
+<a href="https://community.flexera.com/t5/Flexera-Community/ct-p/Flexera_Community" target="_blank">Community</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources">Resources</a>
+<ul class="menu-level-1">
+<li>
+<a data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources">All Resources</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1700" href="https://www.flexera.com/flexera-one/business-value-calculator">Business Value Calculator</a>
+</li>
+<li>
+<a href="https://www.flexera.com/resources/case-studies">Case Studies</a>
+</li>
+<li>
+<a data-drupal-link-query='{"type":{"datasheet":"datasheet"}}' data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources?type%5Bdatasheet%5D=datasheet">Datasheets</a>
+</li>
+<li>
+<a data-drupal-link-query='{"type":{"demo-trials":"demo-trials"}}' data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources?type%5Bdemo-trials%5D=demo-trials">Demos &amp; Trials</a>
+</li>
+<li>
+<a data-drupal-link-query='{"type":{"video":"video"}}' data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources?type%5Bvideo%5D=video">Videos</a>
+</li>
+<li>
+<a data-drupal-link-query='{"type":{"webinar":"webinar"}}' data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources?type%5Bwebinar%5D=webinar">Webinars</a>
+</li>
+<li>
+<a data-drupal-link-query='{"type":{"event":"event"}}' data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources?type%5Bevent%5D=event">Events</a>
+</li>
+<li>
+<a data-drupal-link-query='{"type":{"white-paper-industry-report":"white-paper-industry-report"}}' data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources?type%5Bwhite-paper-industry-report%5D=white-paper-industry-report">White Papers &amp; Industry Reports</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/755" href="https://www.flexera.com/about-us">About</a>
+<ul class="menu-level-1">
+<li>
+<a data-drupal-link-system-path="node/92" href="https://www.flexera.com/about-us/technology-value-optimization">Technology Value Optimization</a>
+</li>
+<li class="header-only">
+<a data-drupal-link-system-path="node/755" href="https://www.flexera.com/about-us">About</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/93" href="https://www.flexera.com/about-us/leadership">Leadership</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1609" href="https://www.flexera.com/about-us/press-center">Media / Press Center</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/760" href="https://www.flexera.com/about-us/partners">Partners</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/30" href="https://www.flexera.com/about-us/careers">Careers</a>
+</li>
+<li class="footer-only">
+<a data-drupal-link-system-path="node/79" href="https://www.flexera.com/about-us/diversity">Diversity</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/60" href="https://www.flexera.com/about-us/contact-us">Contact Us</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="mobile-menu__second-part d-lg-flex flex-column flex-lg-row justify-content-end">
+<div class="site-reference d-flex flex-column justify-content-center">
+<nav aria-labelledby="block-sitereference-menu" id="block-sitereference" role="navigation">
+<h2 class="visually-hidden" id="block-sitereference-menu">Site Reference</h2>
+<ul class="menu-level-0">
+<li class="has-child">
+<a href="https://www.revenera.com/" target="_blank">Revenera</a>
+<ul class="menu-level-1">
+<li class="current-site">
+<p class="menu__title">Flexera.com</p>
+<p class="menu__heading">Inform IT. Transform IT.</p>
+<p class="menu__body">IT Visibility, IT Asset Management, Cloud Management</p>
+<span body="IT Visibility, IT Asset Management, Cloud Management" heading="Inform IT. Transform IT." note="You are here">You are here</span>
+</li>
+<li>
+<p class="menu__title">Revenera.com</p>
+<p class="menu__heading">Install | Protect | Monetize</p>
+<p class="menu__body">Solutions for Software and IoT Companies</p>
+<a body="Solutions for Software and IoT Companies" heading="Install | Protect | Monetize" href="https://www.revenera.com/" note="VISIT SITE">VISIT SITE</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="language-switcher d-flex flex-column justify-content-center">
+<div class="language-switcher-language-url" id="block-flexera-languageswitcher" role="navigation">
+<div class="d-flex align-items-center language-switcher__content">
+<div class="menu__icon">
+<svg id="icon-nav-globe" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M256 0c141.67 0 256 114.33 256 256 0 141.67-114.33 256-256 256C114.33 512 0 397.67 0 256 0 114.33 114.33 0 256 0zm67.885 348.16h-135.77c10.985 44.605 29.945 89.21 56.88 133.815 3.644.171 7.314.258 11.005.258 3.69 0 7.362-.09 11.012-.267 26.93-44.602 45.889-89.204 56.873-133.806zm-164.952 0l-109.946.001c28.866 65.529 87.784 114.256 159.82 129.247-23.476-43.084-40.101-86.166-49.874-129.248zm303.727.001l-109.593-.001c-9.76 43.027-26.356 86.055-49.788 129.082 70.935-15.176 130.169-63.788 159.38-129.08zM153.126 194.558H38.208c-5.495 19.502-8.44 40.104-8.44 61.442 0 21.337 2.878 41.939 8.272 61.44h115.086c-3.097-20.48-4.646-40.96-4.646-61.44 0-20.48 1.549-40.96 4.646-61.442zm177.064 0H181.81c-3.362 20.481-5.043 40.962-5.043 61.442 0 20.48 1.68 40.96 5.043 61.44h148.38c3.362-20.48 5.043-40.96 5.043-61.44 0-20.48-1.68-40.96-5.043-61.441zm143.77 0H358.873c3.097 20.481 4.646 40.962 4.646 61.442 0 20.48-1.549 40.96-4.646 61.44h114.919c5.494-19.501 8.44-40.103 8.44-61.44 0-21.338-2.88-41.94-8.274-61.442zm-265.24-159.8l-3.179.702C136.02 51.394 78.116 99.523 49.341 163.837l109.592.003c9.76-43.027 26.356-86.055 49.788-129.082zm47.28-4.99c-3.69 0-7.36.089-11.01.266-26.933 44.603-45.891 89.204-56.875 133.806h135.77c-10.985-44.605-29.944-89.21-56.879-133.814A232.421 232.421 0 00256 29.767zm47.192 4.824l.008.02c23.473 43.075 40.095 86.152 49.867 129.228l109.945-.003C434.146 98.31 375.228 49.582 303.192 34.592z"></path>
+</svg> </div>
+<div class="active-language">
+    en
+  </div>
+</div>
+<div class="subtab">
+<ul class="links"><li class="is-active" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/74" hreflang="en"><a class="language-link is-active" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/74" href="https://www.flexera.com/legal/privacy-policy?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="en">English</a></li><li data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/74" hreflang="de"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/74" href="https://www.flexera.de/legal/privacy-policy?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="de">Deutsch</a></li></ul>
+</div>
+</div>
+</div>
+<div class="search search-desktop d-none d-lg-flex flex-column justify-content-center">
+<button>
+<svg id="icon-nav-search" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M367.971 63.261c81.156 81.184 84.2 210.348 9.134 295.132L510 491.337 489.336 512 356.163 379.073l-2.398 2.044c-84.769 71.08-210.794 66.74-290.526-13.018-84.319-84.348-84.319-220.49 0-304.838 84.32-84.348 220.413-84.348 304.732 0zm-21.722 20.983c-73.39-73.583-190.27-73.583-263.66 0-72.031 72.222-73.39 190.773 0 264.357 73.39 73.584 190.27 73.584 263.66 0 72.03-72.221 73.39-190.773 0-264.357z"></path>
+</svg> <svg id="icon-nav-search-close" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M479.9,0L256,223.9L32.1,0L0,32.1L224,256L0,479.9L32.1,512L256,288.1L479.9,512l32.1-32.1L288.1,256L512,32.1L479.9,0z"></path>
+</svg>
+</button>
+<div class="search-bar">
+<div class="searchunify-search-form" data-drupal-selector="searchunify-search-form" id="block-flexera-search-form-header">
+<form accept-charset="UTF-8" action="" id="searchunify-search-form" method="get">
+<div class="js-form-item form-item js-form-type-search form-item-searchstring js-form-item-searchstring form-no-label">
+<label class="visually-hidden" for="edit-searchstring">Search</label>
+<input class="form-search" data-drupal-selector="edit-searchstring" id="edit-searchstring" maxlength="128" name="searchString" placeholder="Search" size="15" title="Enter the terms you wish to search for." type="search" value=""/>
+</div>
+<input autocomplete="off" data-drupal-selector="form-idcf3a7kz1clituycrl5n8i3tze3bccabdlfcldzsna" name="form_build_id" type="hidden" value="form-iDCF3A7KZ1CLiTuycrl5N8i3tzE3BCCAbDlfcLDzsnA"/>
+<input data-drupal-selector="edit-searchunify-search-form" name="form_id" type="hidden" value="searchunify_search_form"/>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="edit-actions"><input class="button js-form-submit form-submit" data-drupal-selector="edit-submit" id="edit-submit" type="submit" value="Search"/>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="external-links d-flex flex-column justify-content-center pb-1 pb-lg-0">
+<nav aria-labelledby="block-externallinks-menu" id="block-externallinks" role="navigation">
+<h2 class="visually-hidden" id="block-externallinks-menu">External Links</h2>
+<ul class="menu-level-0">
+<li class="has-child">
+<span>External Links</span>
+<ul class="menu-level-1">
+<li>
+<a href="https://community.flexera.com/t5/Flexera-Community/ct-p/Flexera_Community" target="_blank">Community</a>
+</li>
+<li>
+<a href="https://app.flexera.com/login" target="_blank">Product Access</a>
+</li>
+<li>
+<a href="https://flexera.channeltivity.com/Login" target="_blank">Partner Portal</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="contact-us d-flex flex-column justify-content-center pb-2 pb-lg-0">
+<div id="block-contactus-header">
+<div class="contact-us">
+<a class="btn btn--secondary btn--small" href="/about-us/contact-us">Contact Us</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="layout-overlay"></div>
+<div class="featured">
+<aside>
+<div>
+<div class="hidden" data-drupal-messages-fallback=""></div>
+</div>
+</aside>
+</div>
+<main role="main">
+<a id="main-content" tabindex="-1"></a>
+<div class="layout-content">
+<div>
+<div class="container">
+<div class="row block__container">
+<div class="col-12 breadcrumbs d-none d-md-block">
+<div id="block-breadcrumbs">
+<nav aria-labelledby="system-breadcrumb" role="navigation">
+<h2 class="visually-hidden" id="system-breadcrumb">Breadcrumb</h2>
+<ol>
+<li>
+<a href="https://www.flexera.com/">
+<svg id="icon-nav-home" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<polygon points="196.923 472.615 196.923 315.077 315.077 315.077 315.077 472.615 435.692 472.615 435.692 236.308 512 236.308 256 0 0 236.308 76.308 236.308 76.308 472.615"></polygon>
+</svg>
+</a>
+</li>
+<li>
+<a href="https://www.flexera.com/legal">
+                      Legal
+                  </a>
+</li>
+<li>
+                  Privacy Notice
+              </li>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id="block-flexera-content">
+<article role="article">
+<div>
+<div class="_none pt-7"><div class="container">
+<div class="layout row no-gutters layout-builder__layout">
+<div class="col-md-8 col-12">
+<div class="basic-block block-layout-builder block-inline-blockbasic">
+<h2 class="h1">Flexera Privacy Notice</h2>
+</div>
+</div>
+<div class="col-md-4 col-12">
+<div class="basic-block block-layout-builder block-inline-blockbasic">
+<div><ul>
+<li><a href="/legal">Legal Home Page</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="_none pb-4"><div class="container">
+<div class="layout row no-gutters layout-builder__layout">
+<div class="col-12">
+<div class="basic-block block-layout-builder block-inline-blockbasic">
+<div><p><strong>This document was last updated April 14, 2022</strong></p>
+<p>We appreciate your interest in our offered services and products and our websites (<a href="/">www.flexera.com</a>, <a href="https://www.flexerasoftware.com">www.flexerasoftware.com</a>, <a href="https://www.revenera.com">www.revenera.com</a>, <a href="https://www.flexera.de">www.flexera.de</a>, <a href="https://www.flexerasoftware.de">www.flexerasoftware.de</a>, <a href="https://www.revenera.de">www.revenera.de</a>, <a href="https://store.flexerasoftware.com">https://store.flexerasoftware.com</a>, <a href="http://consumer.installshield.com">http://consumer.installshield.com</a>, <a href="https://community.flexera.com/t5/Flexera-Community/ct-p/Flexera_Community">https://community.flexera.com/t5/Flexera-Community/ct-p/Flexera_Community</a>, <a href="https://community.flexera.com/t5/Flexera-Software-Community/ct-p/Flexera_Software_Community">https://community.flexera.com/t5/Flexera-Software-Community/ct-p/Flexera_Software_Community</a>, <a href="http://www.flexnetoperations.com">www.flexnetoperations.com</a>, <a href="https://www.flexnetmanager.com">www.flexnetmanager.com</a>, <a href="https://www.flexnetmanager.eu">www.flexnetmanager.eu</a>, <a href="https://www.brainwaregroup.com">www.brainwaregroup.com</a>, <a href="https://app.secunia.com/">https://app.secunia.com/</a>, <a href="https://app.flexerasoftware.com/">https://app.flexerasoftware.com/</a>, <a href="https://csi7.secunia.com/csi/">https://csi7.secunia.com/csi/</a>, <a href="https://portal.technopedia.com/login">https://portal.technopedia.com/login</a>, <a href="https://login.rightscale.com/">https://login.rightscale.com/</a>, <a href="https://my.metasaas.com/login">https://my.metasaas.com/login</a>, <a href="https://www.riscnetworks.com">https://www.riscnetworks.com</a>, <a href="https://portal.riscnetworks.com/">https://portal.riscnetworks.com/</a>, <a href="https://analytics.revulytics.com/">https://analytics.revulytics.com/</a>), online communities and service platforms owned and operated by Flexera (collectively, our “<strong>Websites</strong>” and together with our services and products, our “<strong>Services</strong>”). Privacy protection is very important to us, and we are committed to protecting and respecting your privacy. This privacy notice sets out information about how we collect, store, transfer, use and otherwise process personal information.</p>
+<h4>A. General Provisions</h4>
+<ol>
+<li><strong>Who we are.</strong>
+<p>Flexera Software LLC, 300 Park Blvd, Suite 500, Itasca, IL 60143, (“<strong>Flexera Software LLC</strong>”) is generally responsible for and controls the processing of your personal information collected through the Services.</p>
+<p>However, if you retain Services directly from a local Flexera group company (i.e., when you have concluded a contract with one of the local Flexera group companies) or otherwise do business with that Flexera group company and share personal information with that company, that company is the data controller in relation to all personal information obtained, used and otherwise processed in relation to such Services.</p>
+<p>The expressions “<strong>Flexera</strong>,” “<strong>we</strong>” and “<strong>our</strong>” include Flexera Software LLC and any other Flexera group company from whom you retain Services. For the contact details of all Flexera group companies see: <a href="/about-us/contact-us/office-locations">https://www.flexera.com/about-us/contact-us/office-locations</a>.</p>
+<p>Any Services where a Flexera group company processes personal information based on a data processing agreement entered with you or your employer (or other similarly situated entity) are not covered by this privacy notice. Transfers to subsequent third parties are covered by the service agreements with our customers.</p>
+</li>
+<br/>
+<li><strong>Global applicability and region-specific disclosures.</strong>
+<p>This privacy notice is designed to apply to our Website visitors, users of our Services and other companies and users on a global basis. Therefore, section A applies to any processing of personal information worldwide.</p>
+<p>We may choose or be required by law to provide different or additional disclosures relating to the processing of personal information about residents of certain countries, regions or states. Please refer below for disclosures that may be applicable to you:</p>
+<p><strong>Europe</strong><br/>
+	The processing covered by the Europe-specific privacy disclosures contained in section B include our processing of personal information (i) relating to individuals in the European Union, the UK, Switzerland, Liechtenstein, Norway and Iceland - all of which will, for the purpose of this privacy notice, be defined as “Europe” - if we either offer goods or services to such individuals or monitor their activities in Europe, or (ii) where the processing is undertaken by or on behalf of a Flexera group company located in Europe. Please click <a href="#GDPR">here</a> for additional Europe-specific privacy disclosures.</p>
+<p><strong>California</strong><br/>
+	If you are a resident of the State of California in the United States, please click <a href="#CCPA">here</a> for additional California-specific privacy disclosures in section C containing information about the processing of your personal information and the rights granted to you by California law.</p>
+</li>
+<br/>
+<li><strong>What is personal information?</strong>
+<p>When we use the term “<strong>personal information</strong>” in this privacy notice, we mean information that identifies, relates to, describes, is capable of being associated with or could reasonably be linked, directly or indirectly, to you. It does not include aggregated information that is maintained in a form that is not capable of being associated with or reasonably linked to you.</p>
+</li>
+<br/>
+<li><strong>What personal information do we collect?</strong>
+<p>In the context of rendering our Services, we may collect personal information about you. This personal information regularly includes the following:</p>
+<ul>
+<li><strong>If you order any Service from us or ask for a quote (via our Websites or via phone, email or letter):</strong> This in particular includes: Your name, company name, company address, billing contact, billing address, company email address, company phone number, job title, job function, industry, price and Service information and customer ID. If you render services as our customers, we may in particular also process the following personal information: Log-in ID, password, employee ID, employment status, manager, your corporate unit and cost center, account name, IP address, computer and device information (such as MAC address, computer/device name, host name, calculated user, hardware dongleID, UUID and FQDN). But we also may process information we need to contact you or otherwise communicate with you, information for order fulfilment and delivery of requested materials or services as well as maintenance and training associated with our Services, information to manage your account, information to enable the download or usage of Services, information on defects or erroneous Services, your feedback and complaints, quotes we offer you and information for invoicing and payment follow-up.</li>
+<li><strong>If you register on our Websites:</strong> Name, company name, company address, company email address, company phone number, job title, job function, industry and your interest(s) in Flexera and/or its Services.</li>
+<li><strong>If you post on our blogs or forums:</strong> You also may provide information to be published or displayed (hereinafter, "<strong>posted</strong>") on public areas of the Websites, such as forums or blogs, for example, our community forum (<a href="https://community.flexera.com/t5/Flexera-Community/ct-p/Flexera_Community">https://community.flexera.com/t5/Flexera-Community/ct-p/Flexera_Community</a>) (collectively, "<strong>User Contributions</strong>"). We may collect any of your User Contributions, your username, your name, company name, company email address as well as your IP address. Please note that we cannot control the actions of other users of the Website with whom you may choose to share your User Contributions. Therefore, we cannot and do not guarantee that your User Contributions will not be viewed or processed by other persons.</li>
+<li><strong>If you contact us (via our Websites or via phone, email or letter), e.g., for a support request:</strong> Name, company name, company address, company email address, company phone number and information on our communication with you, your interest(s) in Flexera and/or its Services and any additional information you provide us with.</li>
+<li><strong>If you merely use our Websites:</strong> IP address, browser data, device type, Uniform Resource Locators (URL), operating system, site preferences and information on your usage of our Websites.</li>
+<li><strong>If you participate in our events, such as webinars, and trade fair booth events, or if you download our white papers:</strong> Name, company name, email address, phone number, address, position/job title, job function, job level and any information on the event or download.</li>
+<li><strong>If you are in our email marketing campaigns:</strong> Name, company name, email address, phone number, address, position/job title, job function, information about whether you are already a customer, marketing campaign information such as the newsletter option you have selected and your reaction to our marketing and your interest in our products.</li>
+</ul>
+</li>
+<br/>
+<li><strong>How do we collect your personal information?</strong>
+<p>The personal information is collected in many ways and may include:</p>
+<ul>
+<li><strong>Personal information you provide to us.</strong> Most of the personal information we receive comes to us voluntarily from our users in the course of using our Services, communicating with us in the procurement of or in the process of requesting our Services, registering to attend a seminar or participate in a survey, interacting with us at trade shows or conventions or other industry events or asking to be included in an email or other communication list, or other product promotions.
+
+		<p>You are free to choose which personal information you want to provide to us or whether you want to provide us with any personal information at all. However, some personal information, such as your name, address, payment information and information on your requested Services may be necessary for the performance of our contractual obligations. Without providing this personal information, you will not be able to order certain Services or enter into a contract with us.</p>
+</li>
+<li><strong>Personal information collected via technology.</strong> As you use our Services, we may collect information automatically, such as log information and through the use of cookies or other tracking technologies. Please see our section “<a href="#cookies">How do we use cookies and other Tracking Technology</a>?” below for more information.</li>
+<li><strong>Personal information we receive from others.</strong> We may receive personal information about users from publicly available databases or third parties from whom we have purchased data, third parties such as social media sites, law enforcement agencies, providers of denied party screening and marketing consultants and partners. We may also receive personal information, such as contact details, including name, position, phone or email address from our partners and customers.</li>
+</ul>
+</li>
+<br/>
+<li><strong>Why we collect and use your personal information?</strong>
+<p>The reasons for using your personal information may differ depending on the purpose of the collection. Regularly, we use your personal information for the following purposes:</p>
+<ul>
+<li><strong>Providing our Services</strong>. If you order Services from Flexera or if you contact us to request our Services, we use your personal information to provide you with these Services.</li>
+<li><strong>Pursue our business interests.</strong> The usage of your personal information may also be necessary for our own business interests. For example, we may use some of your personal information to evaluate and review our business performance, create financial statements, improve our Services, provide advertising or to identify potential cyber security threats. We may use your personal information for marketing purposes, for example, to send you relevant product updates and/or share your contact information such as name, email address or phone number with reseller partners for them to directly contact, qualify and manage the customer relationship. In the case that a reseller partner uses your contact details for own marketing purposes, we or the reseller will do so only if you have granted a respective separate consent. If necessary, we may also use your personal information to pursue or defend ourselves against legal claims.</li>
+<li><strong>Purpose for which consent has been provided.</strong> In some cases, we may ask you to grant us separate consent to use your personal information.
+		<p>We often work on the basis of consent in relation to sales and marketing campaigns. For example, if you sign up to our email newsletter, you allow us to send marketing communication to you, or when our marketing partners provide us with your email address, we will process your data to the extent covered by your consent. If you want to learn about your options regarding withdrawing your consent to receive marketing communication, please see our section “<a href="#preferences">E-Mail Settings and Preferences</a>.” If you want to learn more about your options to avoid Tracking Technology, please see our section “<a href="#cookies">How do we use cookies and other Tracking Technology</a>?”.</p>
+<p>If you have granted us consent to use your information, we will use it only for the purposes for which you have granted your consent. You are free to deny your consent and the denial will have no negative consequences for you. You are also free to withdraw your consent at any time with effect for the future.</p>
+</li>
+<li><strong>Comply with legal obligations. </strong>We are obligated to retain certain information because of legal requirements, for example, tax or commercial laws, or we may be required by law enforcement to provide personal information on request.</li>
+</ul>
+</li>
+<br/>
+<li><strong>With whom do we share your personal information?</strong>
+<p>As required in accordance with how we use it, we will share your personal information with the following third parties:</p>
+<ul>
+<li><strong>Flexera group companies.</strong> To support our sales and marketing efforts, as well as in the performance of the Services, your personal information may be disclosed to Flexera group companies. Further information regarding the Flexera group companies can be obtained <a href="/about-us">here</a>.</li>
+<li><strong>Service providers and advisors.</strong> We may use third party vendors and other service providers to perform services on our behalf. Such services may include marketing campaign services, providing mailing or email services, tax and accounting services, product fulfilment, payment processing, conducting surveys or contests, performing customer service, performing data enhancement services, performing fraud prevention services, performing web hosting services or providing analytic services. These third parties, whose services Flexera Software LLC regularly uses include, in particular: Eloqua, SalesForce.com, Lithium, Gainsight, Melissa Data and Snowflake. Any such service providers will by appropriate data processing agreements be bound to only process the data on Flexera’s behalf and under its instructions, unless such service providers act as their own controllers (e.g., in the case we seek advice from lawyers and tax consultants).</li>
+<li><strong>Promotional partners.</strong> Third parties with whom we partner to provide promotional activities, which will be identified by name in the context of these activities. We may, for example, share contact details with reseller partners.</li>
+<li><strong>Purchasers and third parties in connection with a business transaction.</strong> Third parties in connection with a Flexera-related transaction, such as a merger, sale of Flexera assets or shares, reorganization, financing, change of control or acquisition of all or a portion of our business, or in the event of a bankruptcy or similar proceedings.</li>
+<li><strong>Law enforcement, regulators, and other parties for legal reasons.</strong> Third parties as required by law or subpoena or if we reasonably believe that such action is necessary to (a) comply with the law and the reasonable requests of law enforcement; (b) to enforce our legal claims or to protect the security or integrity of our Services; and/or (c) to exercise or protect the rights, property or personal safety of Flexera employees, our visitors or others.</li>
+<li><strong>The public, when posted in certain public spaces.</strong> Remember, our Websites allow you to connect and interact with others. Your profile information or information that you post in a forum or on a blog, including personal information, will be available publicly to other members of the Websites by default when you create a profile, post in a blog or forum or interact with others on the Websites in public groups and post content to public spaces.</li>
+<li><strong>Otherwise with consent</strong>. We may disclose an individual’s personal information to certain other third parties with that individual’s consent.</li>
+</ul>
+</li>
+<br/>
+<li><strong>How do we safeguard your personal information when there is an international transfer?</strong>
+<p>As Flexera Software LLC is located in the USA, any information you provide will be processed and stored in the USA.</p>
+<p>Furthermore, some other Flexera group companies who may process your personal information depending on the Services you are using are also located outside Europe. Our Flexera group companies are, for example, located in Japan, Australia, India, and China. Further information regarding the Flexera group companies can be obtained <a href="/about-us">here</a>.</p>
+<p>This may mean that your personal information will be stored in a jurisdiction that offers a level of protection that may, in certain instances, be less protective of your personal information than the jurisdiction you are typically a resident in.</p>
+<p>Further Europe-specific information regarding the safeguards we have in place can be obtained <a href="#GDPR">here</a>.</p>
+</li>
+<br/>
+<li><strong>How do we use cookies and other Tracking Technology?</strong>
+<p>When using our Services, we and our third-party partners may automatically collect certain types of usage information. For this purpose, we often rely on tracking technologies, including cookies, web beacons, embedded scripts and similar technology (collectively, “<strong>Tracking Technologies</strong>”) in accordance with this notice. Where legally required, we will inform you about the use of such tracking technologies using so-called cookie-banners and/or obtain your consent to use such Tracking Technology.</p>
+<ul>
+<li><strong>How do these Tracking Technologies work?</strong> Cookies are pieces of code that allow for personalization of the Services experience by saving your personal information such as user ID and other preferences. A cookie is a small data file that we transfer to your device's hard disk (such as your computer or smartphone) for record-keeping purposes. Cookies store certain settings and data for exchange with our system via your browser. A cookie usually contains the name of the domain from which the cookie has been placed, as well as information about the age of the cookie and a random alphanumeric identifier, the so-called cookie-ID. They help to recognize the device and make any pre-settings immediately available. Web beacons are small graphical images that may be included on our Sites and typically work in conjunction with cookies to identify our users and user behaviour. An embedded script is programming code that is designed to collect information about your interactions with the Site, such as the links you click on. The code is temporarily downloaded onto your computer or device from our web server or a third-party service provider, is active only while you are connected to the Site and is deactivated or deleted thereafter. Flash cookies are pieces of data that websites which use Adobe Flash may store on a user's computer or device. Third parties with whom we partner to provide certain features on our Sites or to display advertising based upon your web browsing activity often use flash cookies.</li>
+<li><strong>What information do these Tracking Technologies collect?</strong> These tracking technologies collect information about your browser and online usage patterns (e.g., IP address, pages you view, the links you click and other actions you take on the Services such as opening an email, log files, browser type, browser language, referring/exit pages and URLs, etc.), and information about the device(s) you use to access the Services (e.g., unique identification numbers associated with your device or our mobile application (including, for example, a UDID, Unique ID for Advertisers (IDFA), Google AdID or Windows Advertising ID), device type, model and manufacturer, operating system brand and model and, depending on your mobile device settings, your geographical location data). We, or our third party partners, may link your various devices so that content you see on one device can result in relevant advertising and content displayed on another device so that we may recognize and contact you on the various devices you may use.</li>
+<li><strong>What are Cookies and other Tracking Technologies used for?</strong> Tracking Technologies do lots of different jobs, like helping us understand how our Websites are being used, helping us analyse trends, administering the Websites, tracking users’ movements around the Websites, gathering demographic information about our user base as a whole, letting you navigate between pages efficiently, remembering your preferences and generally improving your browsing experience. Tracking Technology can also help ensure that you see marketing content that is more relevant to you and your interests. Therefore, generally speaking, we use the data collected through tracking technologies to: (a) remember information so that you will not have to re-enter it during your visit or the next time you visit the Website(s); (b) provide custom, personalized content and information, including targeted content and advertising; (c) recognize and contact you across multiple devices; (d) provide and monitor the effectiveness of our Services; (e) monitor aggregate metrics such as total number of visitors, traffic, usage and demographic patterns on our Websites; (f) diagnose or fix technology problems; and (g) otherwise plan for and enhance our Services.</li>
+<li><strong>What types of cookies are used by Flexera?</strong> The types of cookies used on our site can generally be put into one of the following categories: Necessary; functional and advertising. You can find out more about each of the cookie categories in the table below.
+		<ul>
+<li><strong>Necessary Cookies.</strong> These cookies are essential to make our Websites work. They enable you to move around the Websites and use their features. Without these cookies, services that are <strong>necessary</strong> for you to fully use our Websites may not be available, such as accessing certain areas of the Websites.</li>
+<li><strong>Functional Cookies.</strong> These cookies allow us to recognize you and tailor our Websites to provide enhanced features and content to you. For example, these cookies can be used to remember your IP address, language choice, country selection and requested Services.</li>
+<li><strong>Advertising Cookies.</strong> These cookies are used to deliver advertisements that are more relevant to you and your interests. They are also used to limit the number of times you see an advertisement as well as help measure the effectiveness of the advertising campaign. They remember that you have visited a website and may track you on other websites. This information may be shared with other organizations such as advertising partners.</li>
+</ul>
+</li>
+<li><strong>How long will cookies stay on your browsing device?</strong> The length of time a cookie will stay on your browsing device depends on whether it is a "persistent" or "session" cookie. Session cookies will only stay on your device until you stop browsing the website that has set the cookie. Persistent cookies stay on your browsing device after you have finished browsing a particular website, until they are deleted or until they expire. The actual period of validity of each persistent cookie depends on each cookie. However, they generally expire within 3 months. You can amend your cookie settings using your internet browser’s settings.</li>
+<li><strong>Cookies by third parties.</strong> Some cookies belong to us, and we place them on your device. Other cookies are placed on your browsing device by third parties when you visit our Websites. Third parties setting cookies from our Websites will be providing a service to us or a function of the website, but we do not always control how third-party cookies are used. Some third parties may use advertising cookies to help gather information about your browsing activity so that they can deliver website advertising to you that is relevant to your interests. You should check the third party's website for more information about how they use cookies. The third-party tracking technologies on our Websites include Adobe Audience Manager, Adobe Test &amp; Target, Google AdWords, Twitter Advertising, LinkedIn Marketing Solutions, Eloqua, Facebook Customer Audience, Google Analytics, LinkedIn Analytics, Visual Website Optimizer, Kenshoo and Demandbase. You can, for example, also download the <a href="https://www.ghostery.com/">Ghostery</a> browser extension to find out the most current tracking technologies running on our Websites.</li>
+<li><strong>Interest-based advertising.</strong> We participate in interest-based advertising and use third party advertising companies to serve you targeted advertisements based on your online browsing history and your interests. To do this, we or our advertising partners may collect information about how you use or connect to our Services, or the types of other websites, social media services, content and ads that you (or others using your device) visit or view or connect to our Services. Typically, this information is collected through cookies and similar tracking technologies. Where legally required, we will obtain your consent.
+		<p>If you only want to limit third-party advertising cookies, you can turn such cookies off by visiting the following links (please bear in mind that there are many more companies listed on these sites than those that drop cookies via our website):</p>
+<ul>
+<li>Your Online Choices (<a href="http://www.youronlinechoices.com/">http://www.youronlinechoices.com/</a>)</li>
+<li>Network Advertising Initiative (<a href="http://www.networkadvertising.org/">http://www.networkadvertising.org/</a>)</li>
+<li>Digital Advertising Alliance (<a href="http://www.aboutads.info/consumers">http://www.aboutads.info/consumers</a>)</li>
+</ul>
+<p>To manage the Tracking Technologies, you may also follow the steps as described below:</p>
+</li>
+<li><strong>How can you manage cookies from our Websites?</strong> The cookies we use are designed to help you get the most from our Services, but if you do not wish to receive cookies, most browsers allow you to: (i) change your browser settings to notify you when you receive a cookie, which lets you choose whether or not to accept it; (ii) disable existing cookies; or (iii) set your browser to automatically reject cookies. You can also avoid Tracking Technology by not consenting to the use of Tracking Technology when asked for consent in cookie banners. Please check your browser and browser settings to determine where cookies are stored and whether and how they may be deleted. The help portion of the toolbar on most browsers will tell you how to prevent your browser from accepting new cookies, how to have the browser notify you when you receive a new cookie or how to disable most cookies altogether. Depending on your mobile device and operating system, you may not be able to delete or block all Tracking Technologies. Please note that in the case you delete existing cookies, your chosen pre-settings will be deleted as well. This means that the next time you access our website, we may ask for your consent again (to the extent required by law) and set new cookies. The period of validity of those cookies will then start from the beginning. You may also set your email options to prevent the automatic downloading of images that may contain technologies that would allow us to know whether you have accessed our email and performed certain functions with it. In order to understand these settings, the following links may be helpful, otherwise you should use the "Help" option in your browser for more details.
+		<p><a href="https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies">Cookie settings in Internet Explorer</a></p>
+<p><a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer?redirectlocale=en-US&amp;redirectslug=Cookies">Cookie settings in Firefox</a></p>
+<p><a href="https://support.google.com/chrome/answer/95647?hl=en">Cookie settings in Chrome</a></p>
+<p><a href="https://support.apple.com/en-gb/guide/safari/sfri11471/mac">Cookie settings in Safari</a></p>
+<p>Please note that if you choose to refuse cookies, you may not be able to use the full functionality of the Services.</p>
+</li>
+<li><strong>How to withdraw consent for showing targeted ads on third-party websites and for our use of Tracking Technology. </strong>To the extent we rely on your consent to provide you with targeted advertising on third-party websites and the use of Tracking Technology, you may withdraw such consent at any time with effect for the future by contacting us using the contact details set out at the end of this section A. Depending on the setting options and the scope of your consent withdrawal, you may still receive generic ads.</li>
+<li><strong>Google Analytics.</strong> We use Google Analytics and have implemented the following Google Advertising Feature: Google AdWords Conversion. Google uses cookies to help the website analyze how users use the site. The information generated by the cookie about your use of the website will generally be transmitted to and stored by Google on servers in the United States. However, if IP anonymization is activated on this website, your IP address will be shortened by Google in advance within if data is collected from within the Member States of the European Union and in the European Economic Area. Only in exceptional cases is the full IP address transmitted to a Google server in the USA and shortened there. We use Google Analytics to recognize you and link the devices you use when you visit our Websites on your browser or mobile device, login to your account on our Websites, or otherwise engage with us. Google Analytics allows us to better understand how our users interact with our Services and to tailor our advertisements and content to you. For information on how Google Analytics collects and processes data, as well as how you can control information sent to Google, review Google's site "How Google uses data when you use our partners' sites or apps" located at www.google.com/policies/privacy/partners/. You can learn about Google Analytics' currently available opt outs, including the Google Analytics Browser Add-On here: <a href="https://tools.google.com/dlpage/gaoptout/">https://tools.google.com/dlpage/gaoptout/</a>.</li>
+<li>We use Demandbase to help us provide you with targeted ads on the basis of cookies and online search behaviour. If you do not wish to receive such ads, you can use the means set out above and also choose to withdraw your consent (if provided before) or opt-out by using the means provided <a href="http://optout.aboutads.info/?c=2&amp;lang=EN">here</a>.</li>
+</ul>
+</li>
+<br/>
+<li><strong>Social media.</strong>
+<p>Our Websites include links to social media sites, such as Facebook, LinkedIn, Twitter, Instagram and YouTube. These social sites are hosted by a third party, and your interactions with these features are governed by the privacy notice of the company providing it.</p>
+</li>
+<br/>
+<li><strong>Links to other Websites and services.</strong>
+<p>The Services may contain links to and from third-party websites of our business partners, advertisers and social media sites, and our users may post links to third-party websites. If you follow a link to any of these websites, please note that these websites have their own privacy policies and that we do not accept any responsibility or liability for their policies. We strongly recommend that you read their privacy policies and terms and conditions of use to understand how they collect, use, share and otherwise process personal information. We are not responsible for the privacy practices or the content on the websites of third-party sites.</p>
+</li>
+<br/>
+<li><strong>How do we protect your personal information?</strong>
+<p>We implement a variety of security measures designed to maintain the safety of your personal information when you use our Services.</p>
+<p>However, no security system is impenetrable, and we cannot guarantee the security of our systems 100%. In the event that any personal information under our control is compromised as a result of a breach of security, we will take reasonable steps to investigate the situation and, where appropriate, notify those individuals whose personal information may have been compromised, such notification will be made having regard to the nature of the personal information involved and may include email communications, written correspondence, or public statements and take other steps in accordance with any applicable laws and regulations, such as notify competent data protection authorities.</p>
+</li>
+<br/>
+<li><strong>Children’s privacy.</strong>
+<p>We do not knowingly collect or solicit any personal information from anyone under the age of 16 on or through the Services. In the event that we learn that we have inadvertently collected personal information from a child under age 16, we will delete that information as quickly as possible. If you believe that we might have any information from a child under 16, please contact us by using the contact details set out at the end of this section A.</p>
+<p>For Europe-specific information on children’s privacy, please our section “<a href="#EEA_children">Additional information on children’s privacy</a>”.</p>
+<p>For California-specific information on children’s privacy, please see our section “<a href="#CCPA_children">Additional California-specific information on children’s privacy</a>”.</p>
+</li>
+<br/>
+<li><strong>What rights and choices do you have?</strong>
+<p>We want you to understand your rights and choices regarding how we may use your personal information. Depending on how we use your personal information, these rights and choices may include the following:</p>
+<ul>
+<li><strong>Access, correction and deletion.</strong> Upon request, Flexera will provide you with information about whether we hold any of your personal information. You may access, correct, or request deletion of your personal information by contacting us at <a href="mailto:marketingops@flexera.com">marketingops@flexera.com</a>. We will respond to your request within a reasonable timeframe.</li>
+<li><strong>Cookies Settings and Preferences.</strong> You may disable cookies and other tracking technologies through the settings in your browser. In the case you have provided consent to use marketing cookies and similar Tracking Technology or would like to learn more about how to avoid Tracking Technology, please see our section “<a href="#cookies">How do we use cookies and other Tracking Technology?</a>”.</li>
+<li><strong>E-Mail Settings and Preferences.</strong> If you have consented to receiving marketing communication (e.g., by signing up for our newsletters), you may easily withdraw your consent at any time with effect for the future. You can also opt out from receiving marketing emails if we do not rely on consent. You can withdraw your consent or opt out from receiving marketing communication via or by using the link provided to you at the end of each promotional communication. You may also contact us using the contact details set out at the end of this section A to request that we remove you from our email list. <a href="https://info.flexera.com/Manage-Preferences?lead_source=Website%20Visitor&amp;id=Flexera.com-Legal">https://info.flexera.com/Manage-Preferences</a>.</li>
+<li><strong>Deny or Withdraw of Consent</strong>. We may work on the basis of consent, in particular in relation to sales and marketing campaigns. For example, if you sign up to our email newsletter, you allow us to send marketing communication to you, or when our marketing partners provide us with your email address, we will process your data to the extent covered by your consent. If you have granted us consent to use your personal information, we will use it only for the purposes for which you have granted your consent. You are free to deny your consent and the denial will have no negative consequences for you. You are also free to withdraw your consent at any time with effect for the future without negative consequences for you. However, we will not / no longer be able to provide you with the Services to which this consent relates. If you want to learn about your options regarding withdrawing your consent to receive marketing communication specifically, please see our section “E-Mail Settings and Preferences” above. If you want to learn more about your options to avoid Tracking Technology, please see our section “<a href="#cookies">How do we use cookies and other Tracking Technology?</a>”</li>
+<li><strong>Europe-specific rights</strong>. For further Europe-specific rights, please see our section “<a href="#GDPR">Additional Europe specific disclosures</a>.”</li>
+<li><strong>California-specific rights</strong>. For further California-specific rights, please see our section “<a href="#CCPA">Additional CCPA specific disclosures</a>.”</li>
+</ul>
+</li>
+<br/>
+<li><strong>Online privacy notice updates.</strong>
+<p>We may make changes to our privacy notice from time to time and will update the “last updated” date at the beginning of this privacy notice. Please review our policies regularly, as updated policies will apply to your future use of our Services. To the extent that we have your contact information, we will notify you of any material changes to our privacy notice.</p>
+</li>
+<br/>
+<li><strong>How to contact us?</strong>
+<p>If you have any questions or concerns about our privacy notice or if you want to exercise your rights, please send an email to <a href="mailto:DataProtectionTeam@flexera.com">DataProtectionTeam@flexera.com</a> or write to us at:</p>
+<p><strong>Flexera Software LLC, 300 Park Boulevard, Suite 500, Itasca, IL 60143, USA</strong></p>
+<p>You may also contact the <strong>EU representative </strong>of all non-EU Flexera group companies, which is <strong>Flexera Software GmbH, at <a href="mailto:DataProtectionTeam@flexera.com">DataProtectionTeam@flexera.com</a></strong> or Paul-Dessau-Straße 8, 22761 Hamburg, Germany.</p>
+<p>For the individuals and supervisory authorities in the UK, the UK representative of all non-EU Flexera group companies is Flexera Software Ltd. Level 3, 401 Faraday Street Birchwood Park, Birchwood Warrington, Cheshire WA3 6GA, United Kingdom. The UK representative may be contacted at <a href="mailto:DataProtectionTeam@flexera.com">DataProtectionTeam@flexera.com</a>.</p>
+<p>If you obtain Services from one of our Flexera entities, you may of course address any privacy related question to the Flexera entity that has concluded a contract with you.</p>
+<p>While the main contact information above is favored and would be happy to respond to all queries for all entities within the Flexera family, you can obtain contact information on each Flexera group company <a href="/about-us">here</a>.</p>
+</li>
+<br/>
+<li><strong>Data Compliance Team.</strong>
+<p>For all enquiries regarding Flexera’s data processing activities, you may also want to contact our Data Compliance Team, who can be reached at <a href="mailto:DataProtectionTeam@flexera.com">DataProtectionTeam@flexera.com</a>.</p>
+</li>
+</ol>
+<h4>B. Additional Europe-specific disclosures</h4>
+<ol start="18">
+<li><strong>Scope of the disclosure.</strong>
+<p>These Additional Europe-specific disclosures supplement the information contained in our privacy notice above to comply with the requirements under applicable data protection law in Europe, in particular the General Data Protection Regulation (“<strong>GDPR</strong>”). Unlike the generally applicable section A. of this privacy notice, these Additional Europe-specific disclosures apply only to our processing of personal information where the processing of personal information relates to individuals in Europe -–where we either offer goods or services to such individuals or monitor their activities in Europe or where the processing is undertaken by or on behalf of a Flexera company or branch established in Europe.</p>
+</li>
+<br/>
+<li><strong>Information on data processing rendered by us on behalf of customers.</strong>
+<p>Where a Flexera group company processes personal information based on a data processing agreement entered with you or your employer (or other similarly situated entity), the respective Flexera group company is not the data controller but a data processor.</p>
+<p>The use of personal information provided to us as a data processor by our customers for the purpose of processing on their behalf shall be limited to the purpose of providing the Service for which the customer has engaged Flexera (data processing on behalf of customer).</p>
+<p>Flexera acknowledges that you have the right to access your personal information. Flexera has no direct relationship with the individuals whose personal information it processes on behalf of its customers. An individual who seeks access or who seeks to correct, amend or delete inaccurate data should direct their query to Flexera’s customer (the data controller). If requested to remove data we are processing for our customer, we will respond within a reasonable timeframe. We may transfer personal information to companies that help us provide our Services. Transfers to subsequent third parties are covered by the service agreements with our customers.</p>
+</li>
+<br/>
+<li><strong>Legal basis based on which we collect and use your personal information.</strong>
+<p>Regularly, we use your personal information based on the following legal grounds according to the GDPR and the Data Protection Act 2018:</p>
+<ul>
+<li><strong>Perform of our contractual services or prior to entering into a contract with you</strong>. If you order Services from Flexera or if you contact us to request our Services, we use your personal information to provide you with these Services.</li>
+<li><strong>Justified by our legitimate interests.</strong> The usage of your personal information may also be necessary for our own business interests. For example, we may use some of your personal information to evaluate and review our business performance, create financial statements, improve our Services, provide advertising or to identify potential cyber security threats. We may use your personal information for marketing purposes, for example, to send you relevant product updates and/or share your contact information such as name, email address or phone number with reseller partners for them to directly contact, qualify and manage the customer relationship. To the extent we rely on legitimate interests to process your data for marketing purposes (for example, in the case that you have provided your email address in connection with the purchase of our services), you may object to such processing at any time via <a href="https://info.flexera.com/Manage-Preferences?lead_source=Website%20Visitor&amp;id=Flexera.com-Legal">https://info.flexera.com/Manage-Preferences</a> or by using the link provided to you at the end of each promotional communication. You may also contact us using the contact details set out at the end of section A to request that we remove you from our email list. If necessary, we may also use your personal information to pursue or defend ourselves against legal claims.</li>
+<li><strong>Consent</strong> In some cases, we may ask you to grant us separate consent to use your personal information. Please see “<a href="#rights">What rights and choices do you have?</a>” regarding the choices and rights you have in this respect.
+		<p> </p>
+</li>
+<li><strong>Compliance with legal obligations. </strong>We are obligated to retain certain personal information because of legal requirements, for example, tax or commercial laws, or we may be required by law enforcement to provide personal information on request.</li>
+</ul>
+<p>We do not use your personal information for automated individual decision-making.</p>
+</li>
+<br/>
+<li><strong>Additional information on international data transfers.</strong>
+<p><a href="https://privacy.truste.com/privacy-seal/validation?rid=c1aff876-f113-47d9-8b5b-0d9a1ce0fce6"><img alt="TRUSTe" src="https://privacy-policy.truste.com/privacy-seal/seal?rid=c1aff876-f113-47d9-8b5b-0d9a1ce0fce6"/></a>We may transfer personal information about you outside Europe and when we do so, we rely on appropriate or suitable safeguards recognized under applicable law in Europe, including adequacy decisions, Standard Contractual Clauses that have been adopted by the European Commission and provide appropriate guarantees for the transfer of personal information.</p>
+<ul>
+<li><strong>Flexera-internal transfers.</strong>
+<p>As regards the sharing of personal information with Flexera group companies located outside Europe, Flexera has entered into data transfer agreements based on the Standard Contractual Clauses issued by the European Commission. The data transfer agreements between the Flexera group entities also make use of the Standard Contractual Clauses issued by the European Commission for data transfers to Flexera group entities located in the US, the UK or any other country in which we have subsidiaries for as long as these countries are not acknowledged by the European Commission or Switzerland as providing for an adequate level of data protection. If you would like to obtain further information, please contact us using the contact details set out at the end of section A.</p>
+</li>
+<li><strong>External transfers.</strong></li>
+</ul>
+<p>We may transfer personal information about you to countries that the European Commission has deemed to adequately safeguard personal information. We may also use Standard Contractual Clauses when transferring personal information from a country in Europe to a country outside Europe that has not been deemed to adequately safeguard personal information. The same applies to data transfers from the European Economic Area or Switzerland to the UK as well as data transfers from the UK to other countries that are not recognized by the UK to adequately safeguard personal information. If you would like to obtain further information, please contact us using the contact details set out at the end of section A.</p>
+</li>
+<br/>
+<li><strong>How long do we keep your personal information?</strong>
+<p>We will store personal information for as long as necessary to fulfil the purposes for which we collect the personal information, and in accordance with our legal obligations and legitimate business interests. Personal information collected in connection with the Websites by Eloqua that offers marketing services will be identified for manual removal after 18 months of no interaction between the data subject and Flexera. Additionally, personal information processed by Flexera as a data processor will be removed in accordance with the instructions of the applicable data controller.</p>
+<p>If you signed up for our promotional emails, we will delete the respective personal information if you unsubscribe from receiving our promotional emails. However, we will store your email address in a ‘do not contact’ list to ensure that you will not receive any further communication.</p>
+</li>
+<br/>
+<li><strong>Additional Europe-specific information on children’s privacy.</strong>
+<p>From children under the age of 16 residing in Europe, we will not process any personal information on the ground of a consent.</p>
+</li>
+<br/>
+<li><strong>Europe-specific rights.</strong>
+<p>Subject to the applicable law in your jurisdiction, you have the following rights in respect to your personal information that we hold:</p>
+<ul>
+<li><strong>Right of access</strong>. The right to obtain access to your personal information.</li>
+<li><strong>Right to rectification</strong>. The right to obtain rectification of your personal information without undue delay where that personal information is inaccurate or incomplete.</li>
+<li><strong>Right to erasure</strong>. The right to obtain the erasure of your personal information without undue delay in certain circumstances, such as where the personal information is no longer necessary in relation to the purposes for which it was collected or processed.</li>
+<li><strong>Right to restriction</strong>. The right to obtain restriction of the processing undertaken by us on your personal information in certain circumstances, such as, where the accuracy of the personal information is contested by you, for a period of time enabling us to verify the accuracy of that personal information.</li>
+<li><strong>Right to portability</strong>. The right to portability allows you to move, copy or transfer personal information easily from one organization to another.</li>
+<li><strong>Right to object</strong>. You have a right to object to any processing based on our legitimate interests where there are grounds relating to your particular situation. You can object to marketing activities for any reason whatsoever.</li>
+</ul>
+<p>If you wish to exercise one of these rights, please contact us by using the contact details set out at the end of section A.</p>
+<p>In addition to the foregoing listed rights, you also have the <strong>right to lodge a complaint</strong> with your local data protection authority. However, we encourage you to first reach out to us by using the contact set out at the end of section A so that you have an opportunity to address your concerns directly and find a solution together before you do lodge a complaint.</p>
+</li>
+</ol>
+<h4>C. Additional California-specific disclosures</h4>
+<ol start="25">
+<li><strong>Scope of notice.</strong>
+<p>These Additional California specific disclosures (the “<strong>CA Notice</strong>”) supplements the information contained in the privacy notice above and applies solely to individual residents of the State of California (“<strong>consumers</strong>” or “<strong>you</strong>”).</p>
+<p>This CA Notice provides additional information about how we collect, use, disclose and otherwise process personal information of individual residents of the State of California, either online or offline, within the scope of the California Consumer Privacy Act of 2018 (“<strong>CCPA</strong>”).</p>
+<p>Unless otherwise expressly stated, all terms in this CA Notice have the same meaning as defined in our privacy notice above or as otherwise defined in the CCPA.</p>
+</li>
+<br/>
+<li><strong>General remarks on personal information disclosures.</strong>
+<p>When we use the term “<strong>personal information</strong>” in this CA Notice, we mean information that identifies, relates to, describes, is reasonably capable of being associated with or could reasonably be linked, directly or indirectly, with a particular consumer or household.</p>
+<p>For the purposes of this CA Notice, the term personal information does not include:</p>
+<ul>
+<li>Publicly available information from government records.</li>
+<li>De-identified or aggregated information that is maintained in a form that is not capable of being associated with or linked to you.</li>
+<li>Information excluded from the CCPA's scope, such as:
+		<ul>
+<li>Information reflecting a communication or a transaction between us and a representative of another legal entity in the context of conducting due diligence regarding, or providing or receiving, a product or service to or from that legal entity.</li>
+<li>Information covered by certain sector-specific privacy laws, including the Fair Credit Reporting Act (FRCA), the Gramm-Leach-Bliley Act (GLBA) or California Financial Information Privacy Act (FIPA), and the Driver's Privacy Protection Act of 1994.</li>
+</ul>
+</li>
+<li>Information relating to our job applicants, employees, contractors and other personnel.</li>
+</ul>
+</li>
+<br/>
+<li><strong>Information on data processing rendered by us on behalf of customers.</strong>
+<p>Where a Flexera group company processes personal information based on a data processing agreement entered with you or your employer (or other similarly situated entity), the respective Flexera group company is not the “business” that determines the purposes and means of the processing of consumers’ personal information, but a “service provider” within the meaning of the CCPA.</p>
+<p>The use of personal information provided to us as a service provider by our customers for the purpose of processing on their behalf shall be limited to the purpose of providing the Service for which the customer has engaged Flexera (data processing on behalf of customer).</p>
+<p>Flexera acknowledges that you have the right to access your personal information. Flexera has no direct relationship with the individuals whose personal information it processes on behalf of its customers. An individual who seeks access, or who seeks to correct, amend, or delete inaccurate data should direct their query to Flexera’s customer (the business). If requested by our customer to remove data we are processing on their behalf and at their direction, we will respond within a reasonable timeframe. We may transfer personal information to companies that help us provide our Services. Transfers to subsequent third parties are covered by the service agreements with our customers.</p>
+</li>
+<br/>
+<li><strong>Collection and use of personal information.</strong>
+<p>In the last 12 months, we have collected the following categories of personal information from the following sources of personal information for the following purposes, which reference the personal information, sources and purposes described in the “<a href="#what_we_collect">What personal information do we collect?</a>” and “<a href="#how_we_collect">How do we collect your information</a>” section of our privacy notice:</p>
+	 
+
+	<table>
+<tbody>
+<tr>
+<th>Category of Personal Information</th>
+<th>Collected</th>
+<th>Commercial or Business Purpose</th>
+<th>Categories of Sources</th>
+</tr>
+<tr>
+<td>
+<p><strong>Identifiers</strong>, including your name, email address, phone number, postal address, username and password</p>
+</td>
+<td><img alt="Yes" height="14" src="/sites/default/files/2021-12/icon-checkmark.svg"/></td>
+<td>
+<ul>
+<li>Monitor and run the use of services</li>
+<li>For customer service purposes</li>
+<li>For quality assurance purposes</li>
+<li>For regulatory compliance purposes</li>
+<li>For collecting feedback</li>
+<li>Personalization purposes</li>
+<li>For marketing purposes</li>
+<li>Product and services improvement</li>
+<li>For contests and sweepstakes</li>
+<li>For market research purposes</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Directly from you</li>
+<li>Your browser or device</li>
+<li>Our business partners and affiliates</li>
+<li>Third parties you direct to share information with us</li>
+<li>Push notification providers</li>
+<li>Customer service platforms</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Internet/Network Information</strong>, such as IP address, device and browser information, clickstream data, log data and analytics data</p>
+</td>
+<td><img alt="Yes" src="/sites/default/files/2021-12/icon-checkmark.svg"/></td>
+<td>
+<ul>
+<li>To monitor and run the services</li>
+<li>Understanding consumer behavior</li>
+<li>Addressing software issues</li>
+<li>Personalization purposes</li>
+<li>Product and services improvement</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Directly from you</li>
+<li>Your browser or device</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Geolocation Data</strong>, such as your general geographic location or more precise location when permitted by law</p>
+</td>
+<td><img alt="Yes" src="/sites/default/files/2021-12/icon-checkmark.svg"/></td>
+<td>
+<ul>
+<li>To generate recommendations for users</li>
+<li>Monitor the use of products</li>
+<li>Personalization purposes</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Directly from you</li>
+<li>Your browser or device</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Other Personal Information</strong>, such as personal information you provide us in relation to a question, request or inquiry, or information you post on our social media pages or otherwise provide to us</p>
+</td>
+<td><img alt="Yes" src="/sites/default/files/2021-12/icon-checkmark.svg"/></td>
+<td>
+<ul>
+<li>Monitor and run the use of services</li>
+<li>For market research purposes</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Directly from you</li>
+<li>Your browser or device</li>
+<li>Third parties you direct to share information from us</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Inferences, </strong>including predictions about your interests and preferences.</p>
+</td>
+<td><img alt="Yes" src="/sites/default/files/2021-12/icon-checkmark.svg"/></td>
+<td>
+<ul>
+<li>To generate recommendations for users</li>
+<li>Monitor the use of services</li>
+<li>Monitor habit formation</li>
+<li>For engagement analytics</li>
+<li>Personalization purposes</li>
+<li>For market research purposes</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Directly from you</li>
+<li>Your browser or device</li>
+<li>Information generated or derived from your purchases, online browsing and usage activity</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+<br/>
+<li><strong>Disclosure and sale of personal information.</strong>
+<p>As described in the “<a href="#whom_we_share">With whom do we share your personal information?</a>” section in our privacy notice, we have disclosed personal information within Flexera and with a variety of third parties for business purposes.</p>
+<p>In the previous 12 months, we have disclosed the following categories of personal information to third parties for a business purpose:</p>
+<ul>
+<li>All of the categories of personal information we collect, explained in the table above.</li>
+</ul>
+<p><strong>*Note about “Sales”:</strong> Flexera does not “sell” personal information as most people would typically understand that term. However, we do allow certain third-party advertising partners to collect information about consumers through our Services for purposes of serving ads that are more relevant, for ad campaign measurement and analytics and for ad fraud detection and reporting. To the extent these practices qualify as “sales” under the CCPA, you may have the right to opt out as described in the “<a href="#CA">California-specific rights</a>” section below.</p>
+</li>
+<br/>
+<li><strong>California-specific rights.</strong>
+<p>As a California resident, you may be able to exercise the following rights in relation to the personal information about you that we have collected (subject to certain limitations at law):</p>
+<ul>
+<li><strong>Right of access</strong>. The right to access and obtain a copy of the personal information we have collected about you in the last 12 months.</li>
+<li><strong>Right to knowledge: </strong>The right to request the following information from the last 12 months relating to the personal information we have collected about you:
+		<ul>
+<li>The categories and specific pieces of personal information we have collected about you;</li>
+<li>The categories of sources of the personal information;</li>
+<li>The purposes for collecting the personal information;</li>
+<li>The categories of third parties with whom we share the personal information; and</li>
+<li>The categories of personal information we have disclosed for a business purpose and the categories of recipients.</li>
+</ul>
+</li>
+<li><strong>Right to deletion. </strong>The right to request the deletion or erasure of personal information we have collected about you.</li>
+<li><strong>Right to opt out. </strong>The right to direct us not to sell personal information we have collected about you to third parties now or in the future.</li>
+<li><strong>Right to opt in.</strong> If you are under the age of 16: The right to authorize us, or have your parent or guardian authorize us, to sell personal information about you.</li>
+<li><strong>Non-discrimination. </strong>The right to be free from discrimination for exercising any of the rights described above. Please note, however, that if the exercise of the rights described above limits our ability to process personal information (such as in the case of a deletion request), we may not be able to provide our services and offerings to individuals who exercise these rights, or to otherwise engage with such individuals going forward.</li>
+</ul>
+</li>
+<br/>
+<li><strong>How to exercise your California-specific rights.</strong>
+<ul>
+<li><strong>To exercise your right to know or right to deletion. </strong>To exercise your right to know and/or right to deletion, please submit a request by:
+		<ul>
+<li>Emailing <a href="mailto:DataProtectionTeam@Flexera.com">DataProtectionTeam@Flexera.com</a> with the subject line “California Rights Request,”; or</li>
+<li>Filling out our California Resident Rights Request Form.</li>
+</ul>
+<p>Before processing your request, we will need to verify your identity and confirm you are a resident of the State of California. In order to verify your identity, we will generally require you to (1) log into your account if you have one, or (2) require you to provide sufficient information to enable us to identify the information we maintain about you in our systems. This process may require us to request additional personal information from you, including, but not limited to your name, email, address, and/or date of last interaction with customer service. We will only use personal information provided in connection with a Consumer Rights Request to review and comply with the request.</p>
+<p>In certain circumstances, we may decline a request to exercise the rights described above, particularly where we are unable to verify your identity or locate your personal information in our systems. If we are unable to comply with all or a portion of your request, we will explain the reasons for declining to comply with the request.</p>
+<p><strong>Authorized Agents</strong></p>
+<p>In certain circumstances, you are permitted to use an authorized agent (as that term is defined by the CCPA) to submit requests on your behalf through the designated methods set forth in this CA Notice where we can verify the authorized agent’s authority to act on your behalf by:</p>
+<ul>
+<li>For requests to know or delete personal information:
+			<ul>
+<li>receiving a power of attorney valid under the laws of California from you or your authorized agent; or</li>
+<li>receiving sufficient evidence to show that you have:
+				<ul>
+<li>provided the authorized agent signed permission to act on your behalf;</li>
+<li>verified your own identity directly with us pursuant to the instructions set forth in these Disclosures; and</li>
+<li>directly confirmed with us that you provided the authorized agent permission to submit the request on your behalf.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>For requests to opt-out of personal information “sales”: receiving a signed permission demonstrating your authorized agent has been authorized by you to act on your behalf.</li>
+</ul>
+</li>
+<li><strong>To exercise your right to opt out of personal information sales</strong>
+<p>As noted above, we do not “sell” personal information as most people would typically understand that term. However, as is common practice among companies that operate online, we permit third party advertising networks, social media companies and other third party businesses to collect and disclose your personal information (including Internet/Network Information, Commercial Information, and Inferences) directly from your browser or device through cookies or tracking technologies when you visit or interact with our websites or engage with us online. These third parties use this information for the purposes of serving ads that are more relevant, for ad campaign measurement and analytics, and for fraud detection and reporting and they may sell that information to other businesses for advertising and other purposes. By visiting <a href="https://www.privacyrights.info/">www.privacyrights.info</a> or <a href="https://optout.privacyrights.info/?c=1">https://optout.privacyrights.info/</a>, you can opt out from sales of this type of personal information by businesses that participate in the opt out tool. To make opt-out requests related to mobile apps on your device for businesses participating in the DAA’s CCPA App-based Opt-Out Tool, you can download the appropriate app at www.youradchoices.com/appchoices. To learn more about how third parties collect information automatically and the choices you may have in relation to those activities, please see “<a href="#cookies">How can you manage cookies from our Websites?</a>” and “<strong>Interest-based advertising</strong>” in the “<a href="#cookies">How do we use cookies and other Tracking Technology?</a>” section of our privacy notice.</p>
+</li>
+</ul>
+</li>
+<br/>
+<li><strong>Minors under age 16.</strong>
+<p>We do not sell the personal information of consumers we know to be less than 16 years of age, unless we receive affirmative authorization (the "Right to Opt In") from either the minor who is between 13 and 16 years of age or the parent or guardian of a minor less than 13 years of age. Please contact us at <a href="mailto:DataProtectionTeam@Flexera.com">DataProtectionTeam@Flexera.com</a> to inform us if you or your minor child are under the age of 16. </p>
+</li>
+<br/>
+<li><strong>Additional information.</strong>
+<p><strong>Updates to This CA Notice</strong><br/>
+	We will update this CA Notice from time to time. When we make changes to this CA Notice, we will change the "Last Updated" date at the beginning of this CA Notice. All changes shall be effective from the date of publication unless otherwise provided in the notification.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div></div> <div class="layout layout--onecol">
+<div class="layout__region layout__region--content">
+<div>
+</div>
+<div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</main>
+<footer role="contentinfo">
+<div class="container">
+<div class="row">
+<div class="col-12 py-2 d-flex">
+<div id="block-sitebranding">
+<a href="https://www.flexera.com/" rel="home">
+<img alt="Home" class="d-none d-md-block" src="/themes/custom/flexera/images/logo.svg"/>
+<img alt="Home" class="d-md-none" src="/themes/custom/flexera/images/logo-mobile.svg"/>
+</a>
+</div>
+<div class="breadcrumb__footer w-100">
+<div class="breadcrumbs d-none d-md-block">
+<div id="block-breadcrumbs-footer">
+<nav aria-labelledby="system-breadcrumb" role="navigation">
+<h2 class="visually-hidden" id="system-breadcrumb">Breadcrumb</h2>
+<ol>
+<li>
+<a href="https://www.flexera.com/">
+<svg id="icon-nav-home" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<polygon points="196.923 472.615 196.923 315.077 315.077 315.077 315.077 472.615 435.692 472.615 435.692 236.308 512 236.308 256 0 0 236.308 76.308 236.308 76.308 472.615"></polygon>
+</svg>
+</a>
+</li>
+<li>
+<a href="https://www.flexera.com/legal">
+                      Legal
+                  </a>
+</li>
+<li>
+                  Privacy Notice
+              </li>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-8 col-lg-10 footer__mainmenu">
+<nav aria-labelledby="block-footer-mainnavigation-menu" id="block-footer-mainnavigation" role="navigation">
+<h2 class="visually-hidden" id="block-footer-mainnavigation-menu">Main navigation</h2>
+<ul class="menu-level-0">
+<li class="has-child">
+<span>Solutions</span>
+<ul class="menu-level-1">
+<li class="has_heading">
+<a class="font-weight-bold" data-drupal-link-system-path="node/4" heading="SAAS" href="https://www.flexera.com/flexera-one"><span class="menu__heading">SAAS</span>Flexera One</a>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/7" href="https://www.flexera.com/flexera-one/it-visibility">IT Visibility</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only has_heading">
+<a class="font-weight-bold" data-drupal-link-system-path="node/7" heading="Flexera one" href="https://www.flexera.com/flexera-one/it-visibility"><span class="menu__heading">Flexera one</span>IT Visibility</a>
+</li>
+<li class="d-lg-none header-only">
+<a data-drupal-link-system-path="node/7" href="https://www.flexera.com/flexera-one/it-visibility">Overview</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/3" href="https://www.flexera.com/flexera-one/it-visibility/business-service-mapping">Business Service Mapping</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/15" href="https://www.flexera.com/flexera-one/it-visibility/cmdb-data-quality">CMDB Data Quality</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/6" href="https://www.flexera.com/flexera-one/it-visibility/data-normalization">Data Normalization</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/5" href="https://www.flexera.com/flexera-one/it-visibility/end-of-support-end-of-life">End of Life / End of Support</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/8" href="https://www.flexera.com/flexera-one/it-visibility/integration-to-it-business-systems">Integration to IT Business Systems</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/58" href="https://www.flexera.com/flexera-one/it-visibility/application-rationalization">Application Rationalization</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/97" href="https://www.flexera.com/products/technopedia">Technopedia</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/10" href="https://www.flexera.com/flexera-one/it-asset-management">IT Asset Management</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only has_heading">
+<a class="font-weight-bold" data-drupal-link-system-path="node/10" heading="Flexera One" href="https://www.flexera.com/flexera-one/it-asset-management"><span class="menu__heading">Flexera One</span>IT Asset Management</a>
+</li>
+<li class="d-lg-none header-only">
+<a data-drupal-link-system-path="node/10" href="https://www.flexera.com/flexera-one/it-asset-management">Overview</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/13" href="https://www.flexera.com/flexera-one/it-asset-management/saas-management">SaaS Management</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/17" href="https://www.flexera.com/flexera-one/it-asset-management/software-asset-management">Software Asset Management</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/22" href="https://www.flexera.com/flexera-one/it-asset-management/software-request-and-reclamation">Software Request and Reclamation</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/26" href="https://www.flexera.com/flexera-one/it-asset-management/hardware-asset-management">Hardware Asset Management</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/97" href="https://www.flexera.com/products/technopedia">Technopedia</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/27" href="https://www.flexera.com/flexera-one/cloud-migration-and-modernization">Cloud Migration and Modernization</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only has_heading">
+<a class="font-weight-bold" data-drupal-link-system-path="node/27" heading="Flexera One" href="https://www.flexera.com/flexera-one/cloud-migration-and-modernization"><span class="menu__heading">Flexera One</span>Cloud Migration and Modernization</a>
+</li>
+<li class="d-lg-none header-only">
+<a data-drupal-link-system-path="node/27" href="https://www.flexera.com/flexera-one/cloud-migration-and-modernization">Overview</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/32" href="https://www.flexera.com/flexera-one/cloud-migration-and-modernization/cloud-migration-planning">Cloud Migration Planning</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/33" href="https://www.flexera.com/flexera-one/cloud-migration-and-modernization/cloud-cost-assessment">Cloud Cost Assessment</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/34" href="https://www.flexera.com/flexera-one/cloud-migration-and-modernization/workload-placement">Workload Placement</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/37" href="https://www.flexera.com/flexera-one/cloud-cost-optimization">Cloud Cost Optimization</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only has_heading">
+<a class="font-weight-bold" data-drupal-link-system-path="node/37" heading="Flexera One" href="https://www.flexera.com/flexera-one/cloud-cost-optimization"><span class="menu__heading">Flexera One</span>Cloud Cost Optimization</a>
+</li>
+<li class="d-lg-none header-only">
+<a data-drupal-link-system-path="node/37" href="https://www.flexera.com/flexera-one/cloud-cost-optimization">Overview</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/40" href="https://www.flexera.com/flexera-one/cloud-cost-optimization/cloud-cost-management">Cloud Cost Management</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/39" href="https://www.flexera.com/flexera-one/cloud-cost-optimization/cloud-governance">Cloud Governance</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a class="font-weight-bold" data-drupal-link-system-path="node/77" href="https://www.flexera.com/products/software-vulnerability-research/secunia-research">Security</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only">
+<a class="font-weight-bold" data-drupal-link-system-path="node/77" href="https://www.flexera.com/products/software-vulnerability-research/secunia-research">Security</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/95" href="https://www.flexera.com/products/software-vulnerability-manager">Software Vulnerability Manager</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/96" href="https://www.flexera.com/products/software-vulnerability-research">Software Vulnerability Research</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/77" href="https://www.flexera.com/products/software-vulnerability-research/secunia-research">Secunia Research</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a class="font-weight-bold" data-drupal-link-system-path="node/11" href="https://www.flexera.com/products/adminstudio">Application Readiness</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only">
+<a class="font-weight-bold" data-drupal-link-system-path="node/11" href="https://www.flexera.com/products/adminstudio">Application Readiness</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/11" href="https://www.flexera.com/products/adminstudio">AdminStudio</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="font-weight-bold" data-drupal-link-system-path="node/14" href="https://www.flexera.com/solutions/public-sector">Public Sector</a>
+</li>
+<li class="has-child">
+<a class="font-weight-bold" data-drupal-link-system-path="node/9" href="https://www.flexera.com/products">Additional Products</a>
+<ul class="menu-level-2">
+<li class="d-none d-lg-block header-only">
+<a class="font-weight-bold" data-drupal-link-system-path="node/9" href="https://www.flexera.com/products">Additional Products</a>
+</li>
+<li class="d-lg-none header-only">
+<a data-drupal-link-system-path="node/9" href="https://www.flexera.com/products">Overview</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/12" href="https://www.flexera.com/products/app-broker-app-portal">App Broker / App Portal</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/29" href="https://www.flexera.com/products/cloud-management-platform">Cloud Management Platform</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/31" href="https://www.flexera.com/products/data-platform">Data Platform</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/35" href="https://www.flexera.com/products/flexnet-manager">FlexNet Manager</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/16" href="https://www.flexera.com/customer-success">Customer Success</a>
+<ul class="menu-level-1">
+<li>
+<a data-drupal-link-system-path="node/18" href="https://www.flexera.com/customer-success/implementation">Implementation</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/19" href="https://www.flexera.com/customer-success/training">Training</a>
+</li>
+<li>
+<a href="https://community.flexera.com/t5/Flexera-Community/ct-p/Flexera_Community" target="_blank">Community</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources">Resources</a>
+<ul class="menu-level-1">
+<li>
+<a data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources">All Resources</a>
+</li>
+<li>
+<a href="/blog/">Blog</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1700" href="https://www.flexera.com/flexera-one/business-value-calculator">Business Value Calculator</a>
+</li>
+<li>
+<a href="https://www.flexera.com/resources/case-studies">Case Studies</a>
+</li>
+<li>
+<a data-drupal-link-query='{"type":{"datasheet":"datasheet"}}' data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources?type%5Bdatasheet%5D=datasheet">Datasheets</a>
+</li>
+<li>
+<a data-drupal-link-query='{"type":{"demo-trials":"demo-trials"}}' data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources?type%5Bdemo-trials%5D=demo-trials">Demos &amp; Trials</a>
+</li>
+<li>
+<a data-drupal-link-query='{"type":{"video":"video"}}' data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources?type%5Bvideo%5D=video">Videos</a>
+</li>
+<li>
+<a data-drupal-link-query='{"type":{"webinar":"webinar"}}' data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources?type%5Bwebinar%5D=webinar">Webinars</a>
+</li>
+<li>
+<a data-drupal-link-query='{"type":{"event":"event"}}' data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources?type%5Bevent%5D=event">Events</a>
+</li>
+<li>
+<a data-drupal-link-query='{"type":{"white-paper-industry-report":"white-paper-industry-report"}}' data-drupal-link-system-path="node/711" href="https://www.flexera.com/resources?type%5Bwhite-paper-industry-report%5D=white-paper-industry-report">White Papers &amp; Industry Reports</a>
+</li>
+</ul>
+</li>
+<li class="has-child">
+<a data-drupal-link-system-path="node/755" href="https://www.flexera.com/about-us">About</a>
+<ul class="menu-level-1">
+<li>
+<a data-drupal-link-system-path="node/92" href="https://www.flexera.com/about-us/technology-value-optimization">Technology Value Optimization</a>
+</li>
+<li class="header-only">
+<a data-drupal-link-system-path="node/755" href="https://www.flexera.com/about-us">About</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/93" href="https://www.flexera.com/about-us/leadership">Leadership</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/1609" href="https://www.flexera.com/about-us/press-center">Media / Press Center</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/760" href="https://www.flexera.com/about-us/partners">Partners</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/30" href="https://www.flexera.com/about-us/careers">Careers</a>
+</li>
+<li class="footer-only">
+<a data-drupal-link-system-path="node/79" href="https://www.flexera.com/about-us/diversity">Diversity</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/60" href="https://www.flexera.com/about-us/contact-us">Contact Us</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="col-12 col-md-4 col-lg-2 footer__right-sidebar ps-md-0 pe-xl-0">
+<div class="d-flex flex-column pt-1 pt-md-0">
+<div><div id="block-phone">
+<div class="phone mb-1">
+<a href="tel:infoModel.phoneLink" target="_blank"> +1.800.374.4353</a>
+</div>
+</div>
+</div>
+<div><div id="block-contactus-footer">
+<div class="contact-us">
+<a class="btn btn--secondary btn--small" href="/about-us/contact-us">Contact Us</a>
+</div>
+</div>
+</div>
+<div><div id="block-footerlinks">
+<div class="footer-links">
+<a class="btn btn--blue-dark" href="https://community.flexera.com/t5/Flexera-Community/ct-p/Flexera_Community">Flexera Community</a>
+<a class="btn btn--blue-dark" href="https://app.flexera.com/login">Product Access</a>
+<a class="btn btn--blue-dark" href="https://www.revenera.com/">Revenera</a>
+</div>
+</div>
+</div>
+<div class="footer__language-switcher pb-1">
+<div class="language-switcher-language-url" id="block-languageswitcher-2" role="navigation">
+<div class="d-flex align-items-center language-switcher__content">
+<div class="menu__icon">
+<svg id="icon-nav-globe" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M256 0c141.67 0 256 114.33 256 256 0 141.67-114.33 256-256 256C114.33 512 0 397.67 0 256 0 114.33 114.33 0 256 0zm67.885 348.16h-135.77c10.985 44.605 29.945 89.21 56.88 133.815 3.644.171 7.314.258 11.005.258 3.69 0 7.362-.09 11.012-.267 26.93-44.602 45.889-89.204 56.873-133.806zm-164.952 0l-109.946.001c28.866 65.529 87.784 114.256 159.82 129.247-23.476-43.084-40.101-86.166-49.874-129.248zm303.727.001l-109.593-.001c-9.76 43.027-26.356 86.055-49.788 129.082 70.935-15.176 130.169-63.788 159.38-129.08zM153.126 194.558H38.208c-5.495 19.502-8.44 40.104-8.44 61.442 0 21.337 2.878 41.939 8.272 61.44h115.086c-3.097-20.48-4.646-40.96-4.646-61.44 0-20.48 1.549-40.96 4.646-61.442zm177.064 0H181.81c-3.362 20.481-5.043 40.962-5.043 61.442 0 20.48 1.68 40.96 5.043 61.44h148.38c3.362-20.48 5.043-40.96 5.043-61.44 0-20.48-1.68-40.96-5.043-61.441zm143.77 0H358.873c3.097 20.481 4.646 40.962 4.646 61.442 0 20.48-1.549 40.96-4.646 61.44h114.919c5.494-19.501 8.44-40.103 8.44-61.44 0-21.338-2.88-41.94-8.274-61.442zm-265.24-159.8l-3.179.702C136.02 51.394 78.116 99.523 49.341 163.837l109.592.003c9.76-43.027 26.356-86.055 49.788-129.082zm47.28-4.99c-3.69 0-7.36.089-11.01.266-26.933 44.603-45.891 89.204-56.875 133.806h135.77c-10.985-44.605-29.944-89.21-56.879-133.814A232.421 232.421 0 00256 29.767zm47.192 4.824l.008.02c23.473 43.075 40.095 86.152 49.867 129.228l109.945-.003C434.146 98.31 375.228 49.582 303.192 34.592z"></path>
+</svg> </div>
+<div class="active-language">
+    en
+  </div>
+</div>
+<div class="subtab">
+<ul class="links"><li class="is-active" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/74" hreflang="en"><a class="language-link is-active" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/74" href="https://www.flexera.com/legal/privacy-policy?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="en">English</a></li><li data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/74" hreflang="de"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/74" href="https://www.flexera.de/legal/privacy-policy?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="de">Deutsch</a></li></ul>
+</div>
+</div>
+</div>
+<div>
+<div class="social-medias">
+<p class="social-label">CONNECT WITH US</p>
+<div class="social-icons d-flex justify-content-between">
+<a class="" href="https://www.linkedin.com/company/flexera/">
+<svg id="icon-linkedin" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M362.922 178.834c-48.037 0-69.55 26.422-81.528 44.96v-38.577h-90.478c1.195 25.557 0 272.2 0 272.2h90.478v-152.02c0-8.111.585-16.249 2.976-22.047 6.535-16.25 21.411-33.084 46.409-33.084 32.753 0 45.85 24.947 45.85 61.54v145.636l90.453-.025V301.355c0-83.613-44.63-122.52-104.16-122.52zm-222.103 6.383H50.366v272.2h90.453v-272.2zM96.165 54C65.217 54 45 74.318 45 101.02c0 26.141 19.632 47.044 50.02 47.044h.56c31.532 0 51.19-20.928 51.19-47.045C146.185 74.32 127.112 54 96.165 54z"></path>
+</svg> </a>
+<a class="" href="https://twitter.com/flexera">
+<svg id="icon-twitter" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M310.162 82.203c-38.8 14.129-63.325 50.538-60.543 90.388l.927 15.373-15.52-1.879c-56.492-7.223-105.859-31.699-147.783-72.818l-20.498-20.4-5.247 15.056c-11.176 33.578-4.026 69.06 19.254 92.926 12.421 13.177 9.615 15.056-11.786 7.223-7.443-2.513-13.983-4.392-14.593-3.44-2.172 2.196 5.27 30.747 11.176 42.07 8.077 15.715 24.525 31.064 42.534 40.191l15.227 7.223-18.033.269c-17.375 0-18.01.317-16.13 6.93 6.198 20.4 30.723 42.07 58.054 51.49l19.254 6.589-16.765 10.054c-24.842 14.47-54.028 22.62-83.214 23.207-13.982.317-25.476 1.561-25.476 2.513 0 3.124 37.897 20.694 59.909 27.624 66.131 20.4 144.684 11.591 203.665-23.231 41.924-24.794 83.824-74.087 103.395-121.819 10.566-25.403 21.108-71.866 21.108-94.146 0-14.446.927-16.325 18.302-33.578 10.25-10.054 19.864-21.035 21.743-24.159 3.123-5.978 2.782-5.978-13.031-.634-26.38 9.42-30.113 8.175-17.058-5.954 9.615-10.054 21.109-28.259 21.109-33.579 0-.927-4.661.635-9.932 3.441-5.588 3.148-18.01 7.858-27.331 10.664l-16.765 5.344-15.203-10.395c-8.394-5.637-20.157-11.933-26.38-13.812-15.861-4.393-40.069-3.758-54.369 1.269z"></path>
+</svg> </a>
+<a class="" href="https://www.youtube.com/user/FlexeraSoftware">
+<svg id="icon-youtube" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M204.08 332.34l133.262-75.962-133.261-77.86v153.821zm294.329 46.129c-3.805 19.017-22.828 39.936-43.754 43.739-39.949 11.41-199.744 11.41-199.744 11.41s-157.893 0-197.841-11.41c-20.926-3.803-39.95-24.722-45.656-43.74C0 336.632 0 256.76 0 256.76s0-81.773 11.414-121.709c5.707-20.919 24.73-41.837 45.656-45.64C97.018 78 254.91 78 254.91 78s159.795 0 199.744 11.41c20.926 3.804 39.949 24.722 43.754 45.641 13.316 39.936 13.316 121.709 13.316 121.709s0 79.871-13.316 121.709z"></path>
+</svg> </a>
+<a class="" href="https://www.instagram.com/weareflexera/">
+<svg id="icon-instagram" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M256.48 88.858c54.597 0 61.072.204 82.645 1.192 55.414 2.522 81.298 28.815 83.82 83.82.988 21.556 1.175 28.031 1.175 82.628 0 54.613-.204 61.071-1.175 82.627-2.54 54.954-28.355 81.298-83.82 83.82-21.573.988-28.014 1.192-82.645 1.192-54.596 0-61.071-.204-82.627-1.192-55.55-2.54-81.298-28.951-83.82-83.837-.988-21.556-1.192-28.014-1.192-82.628 0-54.596.221-61.054 1.192-82.627 2.54-54.988 28.355-81.298 83.82-83.82 21.573-.97 28.031-1.175 82.627-1.175zm0-36.858c-55.533 0-62.485.239-84.297 1.227-74.26 3.408-115.531 44.61-118.94 118.94C52.24 193.994 52 200.946 52 256.48c0 55.534.239 62.503 1.227 84.315 3.408 74.26 44.61 115.531 118.94 118.94 21.828.987 28.78 1.226 84.313 1.226 55.534 0 62.503-.239 84.315-1.227 74.192-3.408 115.565-44.61 118.922-118.94 1.005-21.81 1.244-28.78 1.244-84.314 0-55.533-.239-62.485-1.227-84.297-3.34-74.192-44.594-115.531-118.922-118.94C318.983 52.24 312.014 52 256.48 52zm0 99.48c-57.987 0-105 47.013-105 105 0 57.988 47.013 105.018 105 105.018 57.988 0 105.001-47.013 105.001-105.018 0-57.987-47.013-105-105-105zm0 173.16c-37.641 0-68.16-30.501-68.16-68.16 0-37.641 30.519-68.16 68.16-68.16 37.642 0 68.16 30.519 68.16 68.16 0 37.659-30.518 68.16-68.16 68.16zM365.64 122.802c-13.564 0-24.555 10.991-24.555 24.538s10.991 24.538 24.555 24.538c13.547 0 24.52-10.991 24.52-24.538s-10.973-24.538-24.52-24.538z"></path>
+</svg> </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-12">
+<div class="subfooter d-flex flex-column flex-md-row justify-content-between mt-2 py-2">
+<div>
+<div id="block-privacypolicy">
+<div class="privacy-policy">
+<p class="mb-0">© 2022 Flexera. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+<div class="subfooter-menu">
+<nav aria-labelledby="block-footer-menu" id="block-footer" role="navigation">
+<h2 class="visually-hidden" id="block-footer-menu">Footer</h2>
+<ul class="menu-level-0">
+<li>
+<a data-drupal-link-system-path="node/74" href="https://www.flexera.com/legal/privacy-policy">Privacy Policy</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/69" href="https://www.flexera.com/legal">Terms and conditions</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/60" href="https://www.flexera.com/about-us/contact-us">Contact Us</a>
+</li>
+<li class="german-only">
+<a data-drupal-link-system-path="node/716" href="https://www.flexera.com/node/716">Impressum</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+<script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/74","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"bootstrap_styles\/plugin.background_color.build,bootstrap_styles\/plugin.padding.build,bootstrap_styles\/plugin.text_color.build,eu_cookie_compliance\/eu_cookie_compliance_bare,flexera\/flexera,layout_discovery\/onecol,system\/base","theme":"flexera","theme_token":null},"ajaxTrustedUrl":{"":true},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Cp\u003EOur website uses cookies to save your preferred settings and to optimize your navigation. By closing this message or navigating the website, you agree to our \u003Ca href=\u0022\/legal\/privacy-policy\u0022\u003Ecookie policy\u003C\/a\u003E.\u003C\/p\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EAccept\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EAccept\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":true,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"https:\/\/www.flexera.com\/","popup_link_new_window":true,"popup_position":false,"fixed_top_position":true,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv role=\u0022alertdialog\u0022 aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"open_by_default":true},"user":{"uid":0,"permissionsHash":"769f7e0bafea3c4e7a38e59a07b0b39725587b408e95ac20aba141d4bad10eb8"}}</script>
+<script src="/sites/default/files/js/js_u7yPACIYBuf8jK_1BTQvtG05msvmzqiaarHAJLEYxJE.js"></script>
+<script defer="" src="/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.js?v=1.19"></script>
+<div aria-hidden="true" aria-labelledby="bs-modal-title" class="modal fade" id="bs-modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="bs-modal-title"></h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">×</button>
+</div>
+<div class="modal-body">...</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-d799fe38e0121ae7a51","applicationID":"1115581872","transactionName":"ZgADZ0UCWxcEUkMPXl9KIFBDCloKSkFWAVRuBgBQXwY=","queueTime":0,"applicationTime":15,"atts":"SkcAEQ0YSBk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+<script data-cfasync="false" src="https://tribl.io/footer.js?orgId=9o4az7eD5eTlxemR26zX" type="text/javascript"></script>
+</html>

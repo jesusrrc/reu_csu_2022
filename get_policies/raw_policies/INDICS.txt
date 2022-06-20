@@ -1,0 +1,823 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<meta content="webkit" name="renderer"/>
+<script src="/js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="/js/jquery/jquery.cookie.min.js" type="text/javascript"></script>
+<script src="/pages/cloud3.0/js/cloud/ajaxfileupload.js" type="text/javascript"></script>
+<script src="/pages/cloud3.0/js/cloud/cloudDialogUtil.js" type="text/javascript"></script>
+<script src="/pages/cloud3.0/js/cloud/uploadPreview.js" type="text/javascript"></script>
+<script src="/js/layer/layer.js" type="text/javascript"></script>
+<script src="/js/hotent/formdata.js" type="text/javascript"></script>
+<script src="/js/hotent/platform/form/CommonDialog.js" type="text/javascript"></script>
+<script src="/js/hotent/subform.js" type="text/javascript"></script>
+<script src="/js/hotent/platform/system/SysDialog.js" type="text/javascript"></script>
+<script src="/js/hotent/platform/system/FlexUploadDialog.js" type="text/javascript"></script>
+<script src="/js/cloud/system/CloudFlexUploadDialog.js" type="text/javascript"></script>
+<script src="/js/hotent/platform/system/IconDialog.js" type="text/javascript"></script>
+<script src="/js/jquery/jquery.form.js" type="text/javascript"></script>
+<script src="/js/jquery/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/js/jquery/additional-methods.min.js" type="text/javascript"></script>
+<script src="/js/jquery/jquery.validate.ext.js" type="text/javascript"></script>
+<script src="/js/util/util.js" type="text/javascript"></script>
+<script src="/js/util/form.js" type="text/javascript"></script>
+<script src="/js/lg/ligerui.min.js" type="text/javascript"></script>
+<script src="/js/lg/plugins/ligerDialog.js" type="text/javascript"></script>
+<script src="/js/cloud/fileOperate.js" type="text/javascript"></script>
+<script src="/js/pic_tab.js" type="text/javascript"></script>
+<script type="text/javascript">
+	/**
+	 * 国际化
+	 **/
+	var There_please_edit="There is no option, please select an item to edit";
+	var Information="Information";
+	var Prompt="Prompt";
+	var Confirm="Confirm";
+	var Cancel="Cancel";
+	var Are_you_performing_operation="Are you sure you are performing this operation?";
+	var Has_number_option_edit="Has selected a number of options, please select an edit";
+	var Are_about_operation="Are you sure about this operation?";
+	var Please_select_record="Please select record!";
+	var Required="Required";
+	var Please_valid_number="Please enter a valid number";
+	var No_less_than="No less than{0}";
+	var No_more_than_1="No more than{0}";
+	var Must_be_between="Must be between {0} and {1}";
+	var Please_v3_1="Please enter a valid email address.";
+	var Please_enter_website="Please enter a valid website.";
+	var Please_v3_2="Please enter a correct mobile phone number.";
+	var Please_enter_date="Please enter a valid date.";
+	var Please_enter_integer="Please enter an integer";
+	var Inconsistent="Inconsistent";
+	var Start_date_later_date="Start date cannot be later than end date.";
+	var Letters_underlines_only="Letters and underlines only.";
+	var Please_numbers_between="Please enter numbers between {0} and {1}.";
+	var Maximum_length_integer="Maximum length of integer place should be{0}";
+	var Maximum_length_decimal="Maximum length of decimal place should be{0}";
+	var Start_date_earlier="Start date must be earlier than or the same as end date.";
+	var End_cannot_earlier_start="End date cannot be earlier than start date.";
+	var Please_enter_telephone_number="Please enter a correct telephone number.";
+	var Please_correct_information="Please enter the correct contact information.";
+	var Email_already_used="Email address is already used";
+	var Phone_Number_already="Phone Number is already used";
+	var Name_already_used="Name is already used";
+	var Individual_users_cannot="Individual users cannot release information!";
+	var Picture_Uploading="Picture Uploading";
+	var Required="Required";
+	var No_more_than_90="No more than 90";
+	var No_more_than_100="No more than 100";
+	var No_more_than_8="No more than 8";
+	var No_more_than_255="No more than 255";
+	var No_more_than_20="No more than 20";
+	var No_more_than_200="No more than 200";
+	var No_more_than_40="No more than 40";
+	var The_mailbox_incorrect="The mailbox is incorrect";
+	var The_phone_number_incorrect="The phone number is incorrect";
+	var Please_enter_integer="Please enter an integer";
+    var Page_Number_not_null="Page Number is not null!";
+    var Prompts="Prompts";
+	var Confirm1="Confirm";
+	var domain = "";
+	//本地环境
+	//var casserverLoginUrl = 'http://172.17.11.236:9090/aop-cas-server/login?service=';
+	//测试环境
+	//var casserverLoginUrl = 'http://testintllogin.casicloud.com/login?service=';
+	//正式环境
+	var casserverLoginUrl = 'https://cas.indics.de/login?service=';
+
+	var casLogoutUrl = '';
+	var localCasLogin = '';
+	var localCasLoginNew = '';
+	var __ctx='';
+
+	$(function(){
+		//禁用Enter
+		$(document).keydown(function(event){
+			switch(event.keyCode){
+				case 13:return false;
+			}
+		});
+		//获取当前域名
+		var localURl=window.location.href;
+		var urls=localURl.split("/");
+		domain=urls[0]+"//"+urls[2]+"/";
+		casLogoutUrl = domain+ 'CAS/casLogout.ht';
+		localCasLogin=urls[0]+"//"+urls[2]+"/CAS/casLogin.ht";
+		localCasLoginNew = urls[0]+"//"+urls[2];
+
+//		if(localURl.indexOf("reg_cloud.ht")==-1&&localURl.indexOf("regPostCloud_ent.ht")==-1)
+//           isLogin(localCasLoginNew);
+	});
+
+	function doLogin(url,isNewTab){
+
+		var language=encodeURIComponent($("#language").find("option:selected").val());
+		var loginUserName = '';
+		if(loginUserName!= null && loginUserName!= undefined && loginUserName!=''){
+			if(url!= null && url!= undefined && url!=''){
+				if(url.indexOf("inquiryAdd")>0
+						|| url.indexOf("abilityPublish")>0
+						|| url.indexOf("industryAbilityPublish")>0
+						|| url.indexOf("industryInquiryAdd")>0){
+					if(isPersonal()){
+						layer.alert("Individual users cannot release information！");
+						return false;
+					}
+				}
+				url = initUrl(url);
+				openTab(url,isNewTab);
+			}else{
+				openTab(domain + '/CAS/casLogout.ht',isNewTab);
+			}
+		}else{
+			var currentPath = window.location.href;
+			currentPath = initUrl(currentPath);
+			var localCasLogin = domain + '/CAS/casLogin.ht';
+			var returnUrl = encodeURIComponent(localCasLogin+"?url="+currentPath);
+			openTab(casserverLoginUrl+returnUrl+"&language="+language,isNewTab);
+		}
+	}
+
+	function toLogin(){
+        var language=getLanguage();
+		var location=window.location;
+		var url = (encodeURIComponent(location.protocol+"//"+location.hostname+":"+location.port+"/j_spring_cas_security_check"+"?spring-security-redirect="+location));
+		window.location.href = casserverLoginUrl+url+"&language="+language;
+	}
+
+	function getLanguage(){
+		var t=$("#dropLan").html()+"";
+		var txt=$("#dropLan").text();
+		var language="en_US";
+		if(t.indexOf("cn.svg")>-1||txt=="中文简体"){
+			language="zh_CN";
+		}else if(t.indexOf("de.svg")>-1||txt=="Deutsch"){
+			language="de";
+		}else if(t.indexOf("ru.svg")>-1||txt=="Pусский"){
+			language="ru_RU";
+		}else if(t.indexOf("fr.svg")>-1||txt=="Français"){
+			language="fr_FR";
+		}else if(t.indexOf("es.svg")>-1||txt=="Español"){
+			language="es_ES";
+		}else if(t.indexOf("ir.svg")>-1||txt=="فارسی"){
+			language="ir_IR";
+		}else if(t.indexOf("sa.svg")>-1||txt=="سعودي عربية"){
+			language="ar_AE";
+		}
+		return language;
+	}
+
+	function toLogin2(urler,isNewTab){
+		var location=window.location;
+		var url = (encodeURIComponent(location.protocol+"//"+location.hostname+":"+location.port+"/j_spring_cas_security_check"+"?spring-security-redirect="));
+		if(urler != 'undefined' && urler != ''){
+			url += localCasLoginNew + urler;
+		}
+
+		/* alert(location.protocol+"//"+location.hostname+":"+location.port+"/j_spring_cas_security_check"+"?spring-security-redirect="+location.pathname); */
+		var language=getLanguage();
+		if(isNewTab){
+			openTab(casserverLoginUrl+url+"&language="+language,isNewTab);
+		}else{
+			window.location.href = casserverLoginUrl+url+"&language="+language;
+		}
+	}
+
+	function initUrl(url){
+		//remove '#'
+		if(url.indexOf("#")>0){
+			url = url.replace(/#/gm,'');
+		}
+		//replace domain to casicloud.com
+		url = url.replace(/aerospacecloud\.cn/gm,'b2b.casicloud.com');
+		url = url.replace(/casicloud\.cn/gm,'b2b.casicloud.com');
+		var domainUrl = url.split('//')[1];
+		if(domainUrl!=null && domainUrl!=""){
+			if(domainUrl.indexOf('localhost')==0 || domainUrl.indexOf('127.0.0.1')==0){
+				return url;
+			}else{
+				var subDomain = domainUrl.split('\.')[0];
+				if(subDomain!=null && subDomain!='' && 'www'!=subDomain){
+					//domainUrl = 'www.'+domainUrl;
+					url = url.split('//')[0]+"//"+domainUrl;
+				}
+			}
+		}
+		//url = domain;
+		return url;
+	}
+	function openTab(url,isNewTab){
+		if(isNewTab){
+			window.open(url);
+		}else{
+			window.location = url;
+		}
+	}
+
+	function isPersonal(){
+		var flag = false;
+		$.ajax({
+			type : 'post',
+			dataType : 'json',
+			async : false,
+			url : '/isPernalLogin.ht',
+			success : function(dics){
+				flag = dics;
+			}
+		});
+		return flag;
+	}
+
+    /* 获取cas认证信息 */
+	function isLogin(url) {
+        var urlStr = url+"/CAS/enAjaxCasLogin.ht";
+        var loginUrl=casserverLoginUrl+urlStr;
+        var responseData = $.ajax({
+            type:'post',
+            async:false,
+            url:loginUrl,
+            dataType : "jsonp",
+            jsonpCallback:"success_jsonpCallback",
+            success:function(data){
+                console.log("----login in----"+data);
+                $("#login_before").hide();
+                $("#login_after").show();
+            },
+            error:function(error){
+				console.log(error);
+                console.log("----login out----");
+                $("#login_before").show();
+                $("#login_after").hide();
+            }
+        });
+    }
+	
+	//设置样式
+	function myInsertAfter( newTxt, targetElement ){ // newTxt是要给元素加载的内容  targetElement 是指定元素的位置
+		var newElement=document.createElement("style");//newElement是要追加的元素
+		newElement.innerHTML=newTxt;
+		var parent = targetElement.parentNode; // 找到指定元素的父节点
+		if( parent.lastChild == targetElement ){ // 判断指定元素的是否是节点中的最后一个位置 如果是的话就直接使用appendChild方法
+			parent.appendChild( newElement, targetElement );
+		}else{
+			parent.insertBefore( newElement, targetElement.nextSibling );
+		};
+	};
+	
+	//获取cookie 相关字段内容
+	function getCookie(name){
+		var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+		if(arr=document.cookie.match(reg)){
+			return unescape(arr[2]);
+		}
+		else{
+			return null;
+		}
+	};
+	
+	
+		
+		
+		
+	
+</script>
+<script src="/js/hotent/CustomValid.js" type="text/javascript"></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>Privacy Policy</title>
+<link href="" id="aboutUs" rel="stylesheet"/>
+<script>
+	var cookieLanguage=getCookie('Language');
+	if(cookieLanguage=='ar_AE'){
+		document.getElementById('aboutUs').setAttribute('href','/pages/cloud7.0/newIndex4/css/reset-rtl.css');
+	}else{
+		document.getElementById('aboutUs').setAttribute('href','/pages/cloud7.0/newIndex4/css/reset-17.9.26.css');
+	}
+</script>
+<link href="/pages/cloud6.0/yzz/loginAndReg/css/loginRegister.css" rel="stylesheet" type="text/css">
+<link href="/pages/cloud7.0/htcloud/css/style-en_modify.css" rel="stylesheet" type="text/css"/>
+<script language="JavaScript" src="/js/layer/layer.js" type="text/javascript"></script>
+<script language="JavaScript" src="/pages/cloud6.0/yzz/loginAndReg/js/jquery.validate.js" type="text/javascript"></script>
+<script language="JavaScript" src="/js/jquery/resource.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function() {
+				$('.am-nav>li').mouseover(function () {
+					$(this).addClass('am-active');
+					$(this).siblings('.am-active').removeClass('am-active');
+				});
+
+				$('.am-dropdown-content').mouseout(function () {
+					var item = $(this).parent('li');
+					if (item.hasClass('am-active')) {
+						item.removeClass('am-active');
+					}
+				});
+			});
+</script>
+<meta content="width=1210" name="viewport"/>
+<style type="text/css">
+.register_new{
+ width:1200px;
+ height:auto;
+ margin-bottom: 24px;
+}
+.yyindex_rightlist1 h4{
+ font-size: 18px;
+ font-family: "Microsoft YaHei";
+ font-weight: bold;
+ padding: 20px;
+}
+.yyindex_rightlist1 p{
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+  padding: 0 30px;
+  line-height:30px;
+  padding-bottom: 6px;
+}
+
+</style>
+</link></meta></head>
+<body>
+<!--顶部 start-->
+<link href="" id="languagefooter" rel="stylesheet"/>
+<style>
+  #msgLen img{width: 16px;vertical-align: middle; animation: 1s linear infinite msgloading;}
+  @keyframes msgloading {
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
+  }
+</style>
+<script>
+  var cookieLanguage=getCookie('Language');
+  if(cookieLanguage=='ar_AE'){
+    document.getElementById('languagefooter').setAttribute('href','/pages/cloud7.0/newIndex5/css/header-footer.18.01.29Ar.css');
+  }else{
+    document.getElementById('languagefooter').setAttribute('href','/pages/cloud7.0/newIndex5/css/header-footer.18.01.29.css');
+  }
+</script>
+<script>
+    $(function () {
+      //获取未读消息
+      if($("#sendMessageUserId").val()!=undefined){
+        $.ajax({
+          type: "get",
+          url:"api/getUnReadMessageList.ht",
+          jsonp: "callback",
+          dataType : 'jsonp',
+          data:{"systemId":100,"userId":$("#sendMessageUserId").val()},
+          success:function(data) {
+            var str = ''
+            var msgLen = data.length> 99 ? '99+' : data.length
+            $('#msgLen').text('Msg('+ msgLen +')')
+            $.each(data, function(index){
+              if(index>1){ return false; }
+              str += '<li>' +
+                  '<a href="javascript:void(0);" title="'+this.messagecontent+'" style="text-overflow: ellipsis;overflow: hidden;cursor: default;color: #fff">'+this.messagecontent+'</a>' +
+                  '</li>'
+            })
+            $(str).insertAfter('#msgList')
+          },
+          error: function(er) {
+          }
+        });
+      }
+
+
+
+        // headerDown hover
+        $('.u-down-menu').hover(function () {
+            $(this).find('.u-down-con').stop(true, true).slideDown(400);
+        }, function () {
+            $(this).find('.u-down-con').stop(true, true).slideUp(0);
+        });
+
+      var language=$.cookie('Language');
+      if(language=="en_US"){
+        $("#"+language).hide();
+        $("#dropLan").html('English<i class="u-down-icon"></i>');
+      }else if(language=="zh_CN"){
+        $("#"+language).hide();
+        $("#dropLan").html('简体中文<i class="u-down-icon"></i>');
+      }else if(language=="de"){
+        $("#"+language).hide();
+        $("#dropLan").html('Deutsch<i class="u-down-icon"></i>');
+      }else if(language=="ru_RU"){
+        $("#"+language).hide();
+        $("#dropLan").html('русский<i class="u-down-icon"></i>');
+      }else if(language=="es_ES"){
+        $("#"+language).hide();
+        $("#dropLan").html('Español<i class="u-down-icon"></i>');
+      }else if(language=="fr_FR"){
+        $("#"+language).hide();
+        $("#dropLan").html('Français<i class="u-down-icon"></i>');
+      }else if(language=="ir_IR"){
+        $("#"+language).hide();
+        $("#dropLan").html('فارسی<i class="u-down-icon"></i>');
+      }else if(language=="ar_AE"){
+        $("#"+language).hide();
+        $("#dropLan").html('سعودي عربية ' +
+                '<i class="u-down-icon"></i>');
+      }else{
+        $("#en_US").hide();
+        $("#dropLan").html('English<i class="u-down-icon"></i>');
+      }
+      $('#'+language).hide();
+
+    });
+
+    function changeLanguage(item){
+      var currentPath =encodeURIComponent(window.location.href);
+      window.location.href="/language.ht?language="+item+"&url="+currentPath;
+    }
+
+    function fullSearch(obj){
+        $(obj).closest("form").submit();
+    }
+</script>
+<div class="g-hd">
+<style>
+    .g-hd .s-text-no, .g-hd .m-links .s-text-no-link{cursor: default;}
+    .g-hd  .m-links .s-text-no-link:hover{border-bottom-color: transparent;}
+    .g-hd .u-down-con .s-text-no:hover{color: #fff;}
+    .g-hd .s-text-id{color: #989898;text-indent: 8px;}
+    .g-hd .u-down-con ol a{color:#fff;}
+    .g-hd .u-down-con ol a.s-text-id{color:#989898;}
+  </style>
+<a class="m-logo" href="/index.ht"></a>
+<ul class="m-links">
+<li class="u-down-menu">
+<a href="/new2Index.ht">Cloud Manufacturing</a>
+<ul class="u-down-con">
+<li>
+<a href="/cosimcloud/index.ht" target="_blank">Cloud Collaboration</a>
+<ol>
+<a href="/cosimcloud/searchInquiry.ht" target="_blank">Demands</a>
+<a href="/cosimcloud/searchRelease.ht" target="_blank">Capacities</a>
+</ol>
+</li>
+<li>
+<a class="s-text-no" href="javascript:void(0);">Solutions</a>
+<ol>
+<a href="/introducepage/gongchangyun.ht" target="_blank">Industrial Cloud Solution</a>
+<a href="/introducepage/intelligentFactory.ht" target="_blank">Smart Factory Solution</a>
+<a class="s-text-id" href="/introducepage/LogisticsSystem.ht">Intelligent Logistics System</a>
+<a class="s-text-id" href="/introducepage/RackAssemblyLine.ht">Intelligent Rack Assembly Line</a>
+<a href="/introducepage/IndustrialBigData.ht" target="_blank">Industrial Big Data Solution</a>
+<a href="/introducepage/SmartIot.ht" target="_blank">IIoT Solution</a>
+</ol>
+</li>
+<li>
+<a class="s-text-no" href="javascript:void(0);"> Developer Tools</a>
+<ol>
+<a href="http://developer.indics.com/index/product/internetApplatform.ht" target="_blank">IoT Application Platform</a>
+<a href="http://developer.indics.com/index/product/appLifeManage.ht" target="_blank">Application Lifecycle Management</a>
+<a href="http://developer.indics.com/index/product/htx3.ht" target="_blank">Microservice Framework</a>
+<a href="http://developer.indics.com/index/product/indicsApiCenter.ht" target="_blank">API Center</a>
+<a href="http://developer.indics.com/index/product/mysql.ht" target="_blank">My SQL</a>
+<a href="http://developer.indics.com/index/product/postgreSql.ht" target="_blank">PostgreSQL</a>
+<a href="http://developer.indics.com/index/product/messageService.ht" target="_blank">Message Service</a>
+<a href="http://developer.indics.com/index/product/cacheServRedis.ht" target="_blank">Cache Service (Redis)</a>
+<a href="http://developer.indics.com/index/product/cacheServMemcache.ht" target="_blank">Cache Service (Memcache)</a>
+</ol>
+</li>
+</ul>
+</li>
+<li class="u-down-menu">
+<a href="javascript:void(0);">Cloud Apps</a>
+<ul class="u-down-con">
+<li>
+<a class="s-text-no" href="javascript:void(0);">For Enterprise</a>
+<ol>
+<a class="s-text-no" href="javascript:void(0);">Cloud Simulation</a>
+</ol>
+</li>
+<li><a class="s-text-no" href="javascript:void(0);">For Industry</a></li>
+<li>
+<a class="s-text-no" href="javascript:void(0);">For Production</a>
+<ol>
+<a href="http://intlcrp.indics.com/cloud-erp/sys/index.ht" target="_blank">CRP</a>
+<a href="http://intlcmes.indics.com/sys/index.ht" target="_blank">CMES</a>
+<a href="http://intlcpdm.indics.com/sys/index.ht" target="_blank">CPDM</a>
+</ol>
+</li>
+</ul>
+</li>
+<li class="u-down-menu">
+<a href="javascript:void(0);"> Cloud Enterprise</a>
+<ul class="u-down-con">
+<li><a href="/admin/cloud/overview" target="_blank">Cloud Business Studio</a></li>
+<li><a href="/shop/index.ht" target="_blank">Enterprise Store</a></li>
+<li><a class="s-text-no" href="javascript:void(0);">Cloud Application Studio</a></li>
+<li><a class="s-text-no" href="javascript:void(0);">Enterprise Brain</a></li>
+<li><a class="s-text-no" href="javascript:void(0);">Enterprise Cockpit</a></li>
+</ul>
+</li>
+<li class="u-down-menu">
+<a href="/industryMall/hall/industryIndex.ht" target="_blank"> Mall</a>
+<ul class="u-down-con">
+<li><a href="/industryMall/hall/releaseHall.ht?proType=0">Product Center</a></li>
+<li><a href="/industryMall/hall/releaseHall.ht?proType=1">Software</a></li>
+<li><a href="/industryMall/hall/inquiryHall.ht" target="_blank">Request for Quoatation</a></li>
+</ul>
+</li>
+<li class="u-down-menu">
+<a href="javascript:void(0);">Service</a>
+<ul class="u-down-con">
+<li><a href="https://thinktank.indics.de/web/index" target="_blank">Think Tank</a></li>
+<li><a class="s-text-no" href="javascript:void(0);">Cloud Detection</a></li>
+<li><a class="s-text-no" href="javascript:void(0);">Cloud Factory</a></li>
+</ul>
+</li>
+<li>
+<a href="#Partners">Partners</a>
+</li>
+<li>
+<a href="/newsRelease/searchNews.ht" target="_blank">Press</a>
+</li>
+<li class="u-down-menu">
+<a href="javascript:void(0);">Support</a>
+<ul class="u-down-con">
+<li>
+<a class="zhiCustomBtn" target="_blank">Customer Service</a>
+</li>
+<li>
+<a class="s-text-no" href="/cloud/helpCenterCategory/HelpCenterCategory/index.ht" target="_blank">Help Center</a></li>
+<li>
+<a class="s-text-id" href="/upload/common/SignUp_SignIn.pdf" target="_blank">Sign up/Sign in</a>
+</li>
+<li>
+<a class="s-text-id" href="/upload/common/Enterprise_Management.pdf" target="_blank">Enterprise Management</a>
+</li>
+<li>
+<a class="s-text-id" href="/upload/common/Cloud_collaboration.pdf" target="_blank">Cloud Collaboration</a>
+</li>
+<li>
+<a class="s-text-id" href="/upload/common/Customized_Store.pdf" target="_blank">Customized Store</a>
+</li>
+<li>
+<a class="s-text-id" href="/upload/common/CRP.pdf" target="_blank">CRP</a>
+</li>
+<li>
+<a class="s-text-id" href="/upload/common/CPDM.pdf" target="_blank">CPDM</a>
+</li>
+<li>
+<a class="s-text-id" href="/upload/common/CMES.pdf" target="_blank">CMES</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="m-users">
+<li>
+<a class="u-user-icon" href="javascript:toLogin();"></a>
+</li>
+<li>
+<a class="u-users-join" href="/registeredVevision.ht">Join Free</a>
+</li>
+</ul>
+</div>
+<div class="register_new">
+<!-- 		     <div class="register_title"> -->
+<!-- 				 <p><a href="javascript:doLogin();" style="display: none;">Sign In</a></p> -->
+<!-- 			 </div> -->
+<div class="yyindex_content1" style="margin:auto;height:auto;width:1200px">
+<div class="yyindex_right2" id="yyindex_right2" style="margin-top: 20px;">
+<p style="text-align: center;font-size: 20px;font-weight:bold;">Privacy Policy</p>
+<ul class="yyindex_rightlist1">
+<li>
+<h4>1. Privacy Protection</h4>
+<p>1.1 INDICS respects your privacy. INDICS recognizes the need for appropriate protections and management of your personal information that you provide INDICS and INDICS obtains from your use of our Services.</p>
+<p>1.2 INDICS may collect information that you provide INDICS and INDICS  obtains from your use of our Service, such as the name, telephone number, address, location information, email address, user IDs and passwords, transaction information, which pages you visit, what content you view and how often you come to our sites. Personal information collected online may be supplemented with information you provide INDICS through Cookies, tracking and spot tags.</p>
+<p>1.3 INDICS uses your information to provide services to you, to communicate with you, to help you complete a transaction, to improve performance of our Services and the overall visitor experience. If you do not provide your personal information to INDICS, INDICS may be unable to complete these functions. INDICS will also pass on your information to a third partiesparties, such as a partner, if you have asked us to do so.</p>
+<p>1.4 INDICS may share personal information with third parties, such as service providers and/or suppliers, to the extent needed to respond to requests for information on products and/or services or deliver the service or support the customers' business needs. Third parties receiving personal information is expected to apply privacy protection and only uses it for originally intended.</p>
+<p>1.5 INDICS shall not disclosure your personal information to others. Without your permission, INDICS will not share personally identifiable information with other third parties, except in the following cases: </p>
+<p class="sm-con">1) releasing authorized by yourself;</p>
+<p class="sm-con">2)  needed to share your information with others in order to be able to provide the products or services you requested;</p>
+<p class="sm-con">3)  according to the mandatory provisions of the relevant laws and regulations;</p>
+<p class="sm-con">4)  according to the relevant law enforcement agencies;</p>
+<p class="sm-con">5)  using within the group of affiliated our companies;</p>
+<p class="sm-con">6)  in the event of an emergency, to protect the safety of INDICS or tits users or the public.</p>
+<p>1.6 If you need to have a correction made to personal information that you have provided to INDICS, please contact with kf@Casicloud.cn . INDICS may verify your identity before correcting your personal information</p>
+<p>1.7 If you wish to cancel your INDICS Account, please contact with kf@Casicloud.cn . INDICS will retain and use your information as necessary to comply with INDICS’s legal obligations, resolve disputes, and enforce this Agreement.</p>
+<p>1.8 To maximize the protection of your personal information and privacy, INDICS employs industry-standard controls including physical access controls, Internet firewalls, encryption, intrusion detection, and network monitoring. You acknowledge and agree that, notwithstanding the foregoing, your personal information and privacy may be illegally exploited by others to take technical disruptions.</p>
+<p>1.9 INDICS uses Cookies on some of its web sites. Information collected by Cookies may be tagged to your personal information, including your contact information, device information or other personal information which you provide INDICS. You can elect not to accept Cookies, and you may also set your browser to notify you when you are sent a Cookie. However, not using Cookies may prevent you from using certain functions of our Services.</p>
+<p>1.10 INDICS collects and/or logs the website visitor’s location, Internet Protocol addresses, Internet domain names, the web browser and operating system, the time and date of each visit, the files visited and the time spent in each file. INDICS collects this information through the use of log files and web beacons.</p>
+<p>1.11 The personal data that may be accessed due to INDICS’s role as a cloud services and Infrastructure-as-a-Service provider is not governed by this Agreement.</p>
+<p>1.12 If you have any questions regarding this Agreement or believe that the privacy of your personal information has not been respected, you may submit a complaint in writing to kf@Casicloud.cn.</p>
+<p>1.13 INDICS may change or update this Agreement at all times and notify you the changes on the INDICS Platform, since the release the entry into force. If INDICS makes big changes to this Privacy Terms, INDICS will notify you either by prominently posting a notice of change or by directly sending you a notification.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- 底部 -->
+<link href="" id="languagefooter" rel="stylesheet"/>
+<script>
+    var cookieLanguage=getCookie('Language');
+    if(cookieLanguage=='ar_AE'){
+        document.getElementById('languagefooter').setAttribute('href','/pages/cloud7.0/newIndex5/css/header-footer.18.01.29Ar.css');
+    }else{
+        document.getElementById('languagefooter').setAttribute('href','/pages/cloud7.0/newIndex5/css/header-footer.18.01.29.css');
+    }
+</script>
+<div class="g-ft">
+<div class="m-links clearfix">
+<ul class="u-link-1">
+<li class="u-link-tit">Quick Links</li>
+<li>
+<a href="/new2Index.ht">Cloud Manufacturing</a>
+<ol>
+<li>
+<a href="/cosimcloud/index.ht">Cloud Collaboration</a>
+</li>
+<li>
+<a href="/cosimcloud/searchInquiry.ht" target="_blank">Demands</a>
+</li>
+<li>
+<a href="/cosimcloud/searchRelease.ht" target="_blank">Capacities</a>
+</li>
+</ol>
+</li>
+<li>
+<a href="/industryMall/hall/industryIndex.ht">Mall</a>
+</li>
+<li>
+<a href="javascript:void(0);" style="cursor: default;">Industrial Parks</a>
+</li>
+</ul>
+<ul class="u-link-2">
+<li class="u-link-tit">Support</li>
+<li>
+<a class="zhiCustomBtn">Customer Service</a>
+</li>
+<li>
+<a href="javascript:void(0);">Help</a>
+<ol>
+<li>
+<a href="/upload/common/SignUp_SignIn.pdf">Sign up/Sign in</a>
+</li>
+<li>
+<a href="/upload/common/Enterprise_Management.pdf">Enterprise Management</a>
+</li>
+<li>
+<a href="/upload/common/Cloud_collaboration.pdf">Cloud Collaboration</a>
+</li>
+<li>
+<a href="/upload/common/CRP.pdf">CRP</a>
+</li>
+<li>
+<a href="/upload/common/CPDM.pdf">CPDM</a>
+</li>
+<li>
+<a href="/upload/common/CMES.pdf">CMES</a>
+</li>
+</ol>
+</li>
+<li>
+<a href="javascript:void(0);" style="cursor: default;">Announcement</a>
+</li>
+</ul>
+<ul class="u-link-3">
+<li class="u-link-tit">About Us</li>
+<li>
+<a href="/introducepage/aboutus.ht">INDICS Platform</a>
+</li>
+<li style="display: none;">
+<a href="javascript:void(0);">who are you</a>
+</li>
+<li style="display: none;">
+<a href="javascript:void(0);">What we do</a>
+</li>
+<li style="display: none;">
+<a href="javascript:void(0);">How we can help</a>
+</li>
+</ul>
+<ul class="u-link-4">
+<li class="u-link-logo"></li>
+<li>
+<a href="/contactUs.ht"> Contact Us</a>
+</li>
+<li>Fax: +49 (0) 69 770699 366</li>
+<li>E-mail: info@indics.de</li>
+<li>Adresse: Alfred-Herrhausen-Allee 3-5,</li>
+<li>65760 Eschborn, Deutschland</li>
+</ul>
+</div>
+<div class="m-sites">
+<span class="u-sites-tt">INDICS Site : </span>
+<a href="http://www.indics.com">International</a> -
+        <a href="https://www.indics.de"> indics.de</a> -
+        
+        <a href="http://www.casicloud.com">航天云网</a>
+</div>
+<div class="m-cprt">
+<p>We recommend using 1200*768 and above to have better experience.Chrome and Firefox web browsers are preferred.</p>
+<p>Copyright@2018,All Rights Reserved  
+            <a href="/imprint.ht" target="_blank">Imprint</a>
+              <a href="/privacyPolicy.ht" target="_blank">Data_Privacy</a>
+              <a href="/termsOfUse.ht" target="_blank">Terms_Conditions</a>
+</p>
+</div>
+</div>
+<div class="am-gotop am-gotop-default" data-am-widget="gotop" id="gotop" style="position: fixed; right: 100px; bottom: 20px;display:none;">
+<a href="#top" title="回到顶部">
+<span class="am-gotop-title">回到顶部</span>
+<i class="am-gotop-icon am-icon-chevron-up"></i>
+</a>
+</div>
+<script class="zhiCustomBtn" id="zhichiScript" src="//www.sobot.com/chat/frame/js/entrance.js?sysNum=ab2cb41634994594b38362312a190c90"></script>
+<script type="text/javascript">
+    //-- 客服会话 --
+    var zhiManager = (getzhiSDKInstance());
+    zhiManager.set('customBtn', 'true'); //true[自定义按钮]  false[使用系统默认咨询按钮]     | 默认为系统咨询按钮
+    //zhiManager.set("color", 'aabbcc');  //取值为0-9a-f共六位16进制字符[主题色]    | 默认取后台设置的颜色
+    zhiManager.set("powered", 'true'); //true[显示悬浮聊天窗体下方公司标识信息]   false[不显示]   | 默认显示
+    zhiManager.set('manual', 'true');   //true[手动初始化]   false[自动初始化]  | 默认调用后自动初始化
+    zhiManager.set('manTrace', 'true');   //true[开启用户访问轨迹收集]  false[不开启]  |默认不开启用户访问轨迹收集
+    //  zhiManager.set('title', '我是文案'); //咨询按钮文案
+    zhiManager.set('isInviteFlag', 'false'); //true[开启主动邀请功能]  false[不开启] |默认不开启
+    //zhiManager.set('location', 1); //1[系统默认按钮靠右显示]  3[系统默认按钮靠左显示]
+    //zhiManager.set('horizontal', 100); //水平边距 px
+    //zhiManager.set('vertical', 50); //垂直边距  px
+    zhiManager.set('tipTitle', 'Customer service invites you to enter the conversation'); //主动邀请文案
+    zhiManager.set('submitBtnTitle', 'Accept'); //主动邀请功能接受按钮文案
+    zhiManager.set('invite', 0); // 是否开启自动邀请  1 开启 0 关闭  | 默认关闭
+    // zhiManager.set('firstTimeout', 1); // 第一次加载延迟邀请时间   时间为秒
+    //zhiManager.set('overTimeout', 10); //拒绝后再次邀请时间       时间为秒
+    //zhiManager.set('inviteCount', 1); //一天之内共邀请多少次
+    zhiManager.set('lan', 'en'); //支持语言   cn 中文  en 英文   默认为 中文
+    zhiManager.set('telShowFlag', 'true');   //true[显示手机号输入框]  false[不显示] |  默认显示
+    zhiManager.set('telFlag', 'false');  //true[手机号为必填项]  false[为选填项]  | 默认必填
+    zhiManager.set('satDegree_A', true); //true[开启主动评价功能] false[不开启] | 默认开启
+    zhiManager.set('msgflag', false); //false[开启窗体和结束会话后的留言功能] true[不开启] | 默认开启
+    zhiManager.set('isMessageFlag', true); //true[开启输入框留言功能] false[不开启] | 默认开启
+    zhiManager.set('isFeedBackFlag', true); //true[开启输入框满意度评价功能] false[不开启] | 默认开启
+    zhiManager.set('artificial', false);  //true[默认隐藏转人工 遇未知问题时显示转人工]   false[直接显示转人工]  | 默认不隐藏转人工
+    //zhiManager.set('groupId','5375a0d3ffe94aec88eb23cd1dd1d1aa');   //指定客服组Id
+
+    var loginUserId = '';
+    
+    var url = window.location.toString(); //Current Page URL
+    var pageTitle;
+    if (url.indexOf('b2b') >= 0) {
+        pageTitle = 'Cloud Market';
+    } else if (url.indexOf('back') >= 0) {
+        pageTitle = 'Control Panel';
+    } else {
+        pageTitle = 'Search';
+    }
+    if (loginUserId !== '') {
+        zhiManager.set("userinfo",
+            {
+                "tel":loginUserMobile,
+                "email":loginUserEmail,
+                "uname":loginUserName,
+                "realname":loginUserName
+            });
+
+        //对接用户身份、预留字段、自定义字段（新版，推荐）
+        var obj = {
+            "customField8":loginUserId,//userId
+            "customField9":pageTitle
+        };
+        var objStr = JSON.stringify(obj);
+        zhiManager.set("customerFields",objStr);
+    } else {
+        var obj = {
+            "customField9":pageTitle
+        };
+        var objStr = JSON.stringify(obj);
+        zhiManager.set("customerFields",objStr);
+    }
+    zhiManager.set('size', { //悬浮窗宽度与高度
+        'width': 360, // 最小宽度360像素，最大宽度640像素，默认360像素
+        'height': 430 // 最小高度430像素，最大高度720像素，默认540像素
+    });
+    zhiManager.set("customMargin",95);//自定义按钮后可设置该值改变悬浮窗的水平位置
+    //自定义按钮时 通过该方法获取客服发送的未读内容 & 消息数
+    zhiManager.on("receivemessage", function(ret) {
+        /**
+         * 返回格式：[{content:'您好',msgId:'615b0a3801804f14be1d456e11b329af',customName:'智齿科技'}]
+         */
+        console.log(ret);
+    });
+    /** 自定义按钮时 通过该方法获取客服发送的离线消息数
+    zhiManager.on("unread.count",function(data){
+        console.log(data);
+    });
+     */
+    //手动初始化时 通过 load 方法调用 js 组件
+    zhiManager.on("load", function(ret) {
+        zhiManager.initBtnDOM();
+    });
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-101259563-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-101259563-1');
+</script>
+</body>
+</html>

@@ -1,0 +1,865 @@
+
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={xpid:"VgYPVlJUDBADVFJRBAgEU1E=",licenseKey:"608b2de9d6",applicationID:"303339355"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(27),s={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,i.indexOf("dev")!==-1&&(s.dev=!0),i.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&o.on("internal-error",function(t){r(t.stack)}),s.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{p?p-=1:i(s||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:c.now();o("err",[t,n])}var o=t("handle"),a=t(28),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError";if(!c.disabled){var p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(10),t(9),"addEventListener"in window&&t(6),c.xhrWrappable&&t(11),d=!0)}s.on("fn-start",function(t,e,n){d&&(p+=1)}),s.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){o("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function i(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+l])try{window.performance[h](m,i,!1)}catch(t){}else try{window.performance[h]("webkit"+m,i,!1)}catch(t){}}function o(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(10),f=t(9),u=t(5),d=t(19),l="learResourceTimings",p="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",S=t("loader");if(!S.disabled){S.features.stn=!0,t(8),"addEventListener"in window&&t(6);var O=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof O&&(this.bstStart=S.now())}),a.on(b,function(t,e){var n=t[0];n instanceof O&&s("bst",[n,e,this.bstStart,S.now()])}),c.on(x,function(t,e,n){this.bstStart=S.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),this.bstType])}),f.on(x,function(){this.bstStart=S.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=S.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):p in window.performance&&(window.performance["c"+l]?window.performance[p](m,i,d(!1)):window.performance[p]("webkit"+m,i,d(!1))),document[p]("scroll",o,d(!1)),document[p]("keypress",o,d(!1)),document[p]("click",o,d(!1))}}},{}],5:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){s.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return i.emit(n+"start",[t,a],s),s.then(function(t){return i.emit(n+"end",[null,t],s),t},function(t){throw i.emit(n+"end",[t],s),t})})}var i=t("ee").get("fetch"),o=t(28),a=t(27);e.exports=i;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(s,"fetch",c),i.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(c+"done",[null,e],n)}else i.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],10:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(c+u,r),o.on(s+u,i)},{}],11:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function o(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,S.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=t(19),p=NREUM.o,h=p.XHR,m=p.MO,v=p.PR,w=p.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,i,l(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,S=document.createTextNode(R);new m(a).observe(S,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],12:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&l())&&(w.traceContextParentHeader=i(h,m),w.traceContextStateHeader=o(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",s=1,c="",f="";return i+"@nr="+o+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(s.d.tk=o),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(24),h=t(14);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],13:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function i(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function o(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(14),f=t(12).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(20),m=t(18),v=t(15),w=t(19),g=t(21).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(11),t(7),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){o(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<l;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},o=this.target;if("string"==typeof o?n=o:"object"==typeof o&&o instanceof y?n=o.url:window.URL&&"object"==typeof o&&o instanceof URL&&(n=o.href),i(this,n),"data"!==this.params.protocol){var s=(""+(o&&o instanceof y&&o.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],14:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||s),"/"===i.pathname&&(r[t]=i),i}},{}],15:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(18);e.exports=r},{}],16:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),o(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(27),s=t(28),c=t("ee").get("tracer"),f=t("loader"),u=t(21),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var l=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",h=p+"ixn-";a(l,function(t,e){d[e]=i(p,e,!0,"api")}),d.addPageAction=i(p,"addPageAction",!0),d.setCurrentRouteName=i(p,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),o("err",[t,f.now(),!1,e])}},{}],17:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],18:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],19:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],20:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],21:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[s,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:i}},{}],22:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,s=t(29);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],23:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var i=[r],o=a({});o&&i.push(o),p("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,l,p=t("handle"),h=t("loader"),m=t(26),v=t(19),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}l=new PerformanceObserver(o);try{l.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],24:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<o.length;s++)i=o[s],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(t)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],25:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],26:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(19);e.exports=r;var o,a,s;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],27:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],28:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],29:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var s=e(i),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var l=d[y[n]];return l&&l.push([x,n,r,s]),s}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return l[t]=l[t]||i(n)}function w(t,e){p.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function o(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var c="nr@context",f=t("gos"),u=t(27),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!O++){var t=S.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+S.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=p+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){s("mark",["domContent",a()+S.offset],null,"api")}var a=t(22),s=t("handle"),c=t(27),f=t("ee"),u=t(25),d=t(17),l=t(19),p=d.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!1;NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),S=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(16),t(23),m[v]?(m[v]("DOMContentLoaded",o,l(!1)),h[v]("load",r,l(!1))):(m[w]("onreadystatechange",i),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var O=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,c],u],t)}s(n+"start",[o,a,c],u,f);try{return l=e.apply(a,o)}catch(h){throw s(n+"err",[o,a,h],u,f),h}finally{s(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,i,c,o))}function s(n,r,o,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function s(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(28),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,13,4,3]);</script>
+<link href="/sites/default/files/css/css_PLslS2_Ku7Mak7hWqv_2o7PH-w5HgN1Bm8nUn3rDDxQ.css" media="all" rel="stylesheet"/>
+<link href="https://style-assets.tableau.com/v5.2.3/css/style.min.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_LdplAmT0jyLD3yjanRo_2K4tP6fID6rXNJO3h3ePiOY.css" media="all" rel="stylesheet"/>
+<script charset="UTF-8" data-document-language="true" data-domain-script="e34c4692-2fda-47de-a31b-bf53c95f654a" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript"></script><style>
+.intellimize-element {
+  transition: opacity 0.25s ease-in-out;
+}
+.intellimize-loading .intellimize-element {
+  opacity: 0 !important;
+}
+</style>
+<script>
+(function () {
+  // Add the intellimize-loading class immediately.
+  document.documentElement.className += ' intellimize-loading';
+})();
+</script><link as="font" crossorigin="anonymous" href="https://www.tableau.com/sites/all/fonts/bentonsans-book.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="https://www.tableau.com/sites/all/fonts/bentonsans-medium.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="https://www.tableau.com/sites/all/fonts/merriweather-light.woff2" rel="preload" type="font/woff2"/><meta content="dm_audience_role_all_audience_roles" name="dataModel:audience_role"/>
+<meta content="dm_department_all_departments" name="dataModel:department"/>
+<meta content="dm_industry_all_industries" name="dataModel:industry"/>
+<meta content="en-US" name="dataModel:language"/>
+<script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({"drupalLanguage":"en-US","drupalCountry":"US","drupalSitename":"Tableau","entityLangcode":"en-US","entityStatus":"1","entityUid":"633608","entityUuid":"285ff121-ebd4-4dc1-87df-b8a3f88007ae","entityType":"node","entityBundle":"page","entityIdentifier":"63167","entityTitle":"GDPR","entityTaxonomy":{"dmo_audiences":{"1197":"All - Audience Roles"},"dmo_departments":{"1196":"All - Departments"},"dmo_industries":{"1195":"All - Industries"},"department":{"1196":"All - Departments"},"job_role":{"1197":"All - Audience Roles"},"vocabulary_4":{"1195":"All - Industries"}},"userUid":0,"userRoles":["anonymous"],"campaignDetails":{"campaign_id":"","lead_source_detail":"","formCampaignId":"","primaryProductInterest":"","partnerPromoCode":"","optInCampaignId":""},"partnerDetails":null,"entityBundleNice":"Resource","dataModelFields":{"field_dmo_audiences":["All - Audience Roles"],"field_dmo_departments":["All - Departments"],"field_dmo_industries":["All - Industries"],"taxonomy_vocabulary_23":["All - Audience Roles"],"field_departments":["All - Departments"],"field_industries":["All - Industries"]},"entityId":"63167","entityTnid":"63167","entityLabel":"GDPR","eloquaDetails":{"campaign_id":"","lead_source_detail":"","formCampaignId":"","primaryProductInterest":"","partnerPromoCode":"","optInCampaignId":""},"flatTaxonomy":{"dmo_audiences":"All - Audience Roles","dmo_departments":"All - Departments","dmo_industries":"All - Industries","department":"All - Departments","job_role":"All - Audience Roles","vocabulary_4":"All - Industries"}});</script>
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779bf} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<meta content="summary" name="twitter:card"/>
+<meta content="Tableau" property="og:site_name"/>
+<link href="https://www.tableau.com/legal/regional-privacy-laws" rel="canonical"/>
+<meta content="We at Tableau want to help you focus on your core business while efficiently preparing for the GDPR. Here’s what we’ve been doing." name="description"/>
+<meta content="GDPR" name="twitter:title"/>
+<meta content="article" property="og:type"/>
+<meta content="https://www.tableau.com/legal/regional-privacy-laws" property="og:url"/>
+<meta content="@tableau" name="twitter:creator"/>
+<meta content="GDPR" property="og:title"/>
+<meta content="https://www.tableau.com/legal/regional-privacy-laws" name="twitter:url"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<script type="text/javascript">document.documentElement.className += ' js';</script>
+<meta content="https://www.tableau.com/legal" name="breadcrumb_l1_url"/>
+<meta content="Legal" name="breadcrumb_l1_text"/>
+<link href="/themes/custom/tableau_www/favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+<link href="https://api.intellimize.co" rel="preconnect"/>
+<link href="https://api.intellimize.co" rel="dns-prefetch"/>
+<link href="https://www.tableau.com/zh-cn/legal/regional-privacy-laws" hreflang="zh-Hans-CN" rel="alternate"/>
+<link href="https://www.tableau.com/legal/regional-privacy-laws" hreflang="en-US" rel="alternate"/>
+<link href="https://www.tableau.com/zh-tw/legal/regional-privacy-laws" hreflang="zh-Hant-TW" rel="alternate"/>
+<link href="https://www.tableau.com/nl-nl/legal/regional-privacy-laws" hreflang="nl-NL" rel="alternate"/>
+<link href="https://www.tableau.com/en-gb/legal/regional-privacy-laws" hreflang="en-GB" rel="alternate"/>
+<link href="https://www.tableau.com/fr-fr/legal/regional-privacy-laws" hreflang="fr-FR" rel="alternate"/>
+<link href="https://www.tableau.com/de-de/legal/regional-privacy-laws" hreflang="de-DE" rel="alternate"/>
+<link href="https://www.tableau.com/it-it/legal/regional-privacy-laws" hreflang="it-IT" rel="alternate"/>
+<link href="https://www.tableau.com/ja-jp/legal/regional-privacy-laws" hreflang="ja-JP" rel="alternate"/>
+<link href="https://www.tableau.com/ko-kr/legal/regional-privacy-laws" hreflang="ko-KR" rel="alternate"/>
+<link href="https://www.tableau.com/pt-br/legal/regional-privacy-laws" hreflang="pt-BR" rel="alternate"/>
+<link href="https://www.tableau.com/es-es/legal/regional-privacy-laws" hreflang="es-ES" rel="alternate"/>
+<link href="https://www.tableau.com/sv-se/legal/regional-privacy-laws" hreflang="sv-SE" rel="alternate"/>
+<link href="https://www.tableau.com/legal/regional-privacy-laws" hreflang="x-default" rel="alternate"/>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0];var j=d.createElement(s);var dl=l!='dataLayer'?'&l='+l:'';j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;j.type='text/javascript';j.async=true;f.parentNode.insertBefore(j,f);})(window,document,'script', 'dataLayer', 'GTM-BVCN');</script>
+<title>Tableau and the General Data Protection Regulation (GDPR)</title>
+</head>
+<body class="i18n-en i18n-en-us" data-user-type="anonymous">
+<!-- Google Tag Manager -->
+<noscript><iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-BVCN" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager -->
+<a class="visually-hidden focusable" href="#main-content">
+      Skip to main content
+    </a>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<div class="layout-admin_tools adminimal">
+</div>
+<div class="page l-page flex-fill-viewport-height">
+<header class="global-header global-header-v1" id="header">
+<nav aria-label="helmet" class="global-header__helmet" role="navigation">
+<div class="global-header__helmet-wrapper content-container content-container--wide">
+<a class="global-header__helmet-logo" href="https://www.salesforce.com/?placement=helmet&amp;utm_medium=Referral&amp;utm_source=Tableau" title="Return to the Salesforce home page">
+<img alt="Salesforce" loading="lazy" src="/themes/custom/tableau_www/img/salesforce-logo.svg"/>
+</a>
+</div>
+</nav>
+<nav aria-label="main" class="global-header__container content-container content-container--wide">
+<div class="global-header__nav-wrapper">
+<div class="global-header__logo-wrapper" id="block-tableau-logo">
+<a class="site-logo logo-img" href="/" rel="home" title="Return to the Tableau Software home page">
+<img alt="Tableau, A Salesforce Company" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcQAAABeCAMAAACKC5S8AAAAYFBMVEUAAAAbQ33JIDXpgSsxTYDHHzNvmaUcRH0bQ38bQ30cRHxbiJvskS0bQ34cQ33rkS1ul6fpdS1abZJZZZFZZZEiSYHJHzVZh5tacZXJIDXskS1wmaZaZZEcRH5Zh5vpdi0aehpOAAAAGXRSTlMA58A+F0CBvkKCZcDAn89/P8BAwYAwfoBm00FwiwAABOBJREFUeF7s211rhDAQRuGAQ1w/YGctpSVR+///ZTW5MNAstLTrRnvO3Xv9IAxIzM+y3ltTWLQ/IoFIIBKIIBKIBCKJxlZEjYkpOro653qTpP5L1iTNS515bAQiiGJjnfedjemhEEHMHzYggkgg7hWIBCKBCCKIl5CAeOSm0OV8iKIqIBZctRUQk52Fk2ErICZbQHxKlbvf1WR6m+83gJgLRBBBbNbasyP2SW4pmVnE924ryCVbC/2waq7T2AOu06Zea4+MCGI9rTUgfisQQaxCh0YE8faxdPs3iCCCCCKIIIIIIoiv4TcGiPun1uofIb6M4ziA+Mz3Tr9H/GTnbpvahmE4gNsgJsk7e49mcJtu3/9brrRDTXAbP9I2XP7v4Kqi5Oec3cTl8ohAL4krQ9TG6V0Q77/sUoP4a5enyyJGPlRZ7wyrUA4R6Fg2BBGcD7KLRQeFcA7tawXJPuZ0HL+EprW8j/6E6FLENHlEzSURycoxFksRp1ViuRsRePqOvoAxYtq4FJ+WGToEdoR+rYjgJUkeMU2IfYhkZRbrTCZOkjQjMrO3ZGmdiBBkDKLYmEWsE8koehmIiJEdOuZ1IqKMQhQL7YgkUqnIMhSR2NtYgng/zQFx9qsmRMZ57P8ZYh6XPxVaW4FoZ0WhGREmb4KYGxVKoBWhF5E9Ezsb84g7t6V8O7GH8QXxaXHvIkpJOHPygtPFRTGidYeOotdLpxURdX0E0/nRm7OxMmsCnO1ChIDkrD/9Re6vjYg//6T5Ph6R5e3ZAixFxHRRYtsQ9bIK8GamhuIKY7gH0YBDT2aViCdGPDcg6jmlNkSfiEDm0sakwlAHoiZF1K1qt4pIOvf0ISoDtyHatA1cbkP0Sh2LuMI5kXW89yHqlROaEEl7TFpbrvBmLOIK79joAIB+RBNknwZEBQvpIlviYoW+4YZoTS+ilgm0IHo5G1pEhA3xdS7CgYjUgojViF4BNkQZh0jvg8gLFStB3K5EdxuIj3e71CDiLnzJOTFceU7UqTmTK86Jd8+71CDqCVrV6hT7V6dQjUhDEdM9NitAvJnPiU7bSHKdz4mafkTNWMT0OLAfkXvu2MD5O6+ZCtgQ9d6p60WMffdOgw6BuqMULEdMXs8fBZFFFXsQY+dTDHd6LQou+zjRQyGiT+bdQ89h/Yj6PBFJj7YQUR8nGuh/nqhtwLE18ktdhGQrjiu52xrgjSqvGDHd2mKRmTFUPdkPyJxsB2hBJHlN4H0wZLqIokHPfNwOkBkngfSx6T7wARCNH7fHJkAzonHVXTg5new4seh1rAqbLsT7fa6OaHw/ohq2IxrOdFGsWPV6bzoQNddHNM4OQWQYuO9Uuyiu0NQcKJuPgmjAJ0eHtFiRKahG1PVR3f5hYFtVAr6mZ3g4Zo84+RlOFtAxh+n3GBiDmP8ShC5wCv5knFU4GPRdDJxweDL5EKMWoHeQP9DD60O+54fn83ks3wmbOfTMN0dqA/Ujprii/EgiOWYmgt428rk5xO0f9G2I750N8V97d5OCQAwDYLSI4M+yjqKQuf81rbQLwZWLQgPvXeEjkFUi4jSTt9MURIxmckTX+EVERBERMQERERERRbzXLpo6JIso4i1+TY6IiDw+/onYX/gsjefWRbMNJSe+JxARERERRUREREREalMWwxtlOQbs4dwwrgAAAABJRU5ErkJggg=="/>
+</a>
+</div>
+<div class="mobile-buttons">
+<button aria-controls="header-nav" aria-expanded="false" aria-label="Toggle Main Menu" class="mobile-nav-button" data-search-trigger="coveo">
+<span class="mobile-nav-button__label">Menu</span>
+<span aria-hidden="true" class="mobile-nav-button__icon"></span>
+</button>
+</div>
+<div class="site-header__inner" id="site-header__inner">
+<div class="header-nav" data-menu-open="false" id="header-nav">
+<div class="global-header__primary-nav" data-menu-name="main" id="block-tableau-main-menu">
+<ul class="menu primary-nav__menu primary-nav__menu--level-1 menu--main__v1">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-1 primary-nav__menu-item--has-children">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-1 primary-nav__menu-link--has-children" data-drupal-link-system-path="node/72654" data-section="header:primary-link" data-value="Why Tableau" href="/why-tableau"><span class="primary-nav__menu-link-inner">Why Tableau</span></a>
+<button aria-controls="why-tableau-submenu-1" aria-expanded="false" aria-hidden="true" class="primary-nav__button-toggle" tabindex="-1">
+<span class="visually-hidden">Toggle sub-navigation</span>
+<span class="icon--menu-toggle"></span>
+</button>
+<ul class="menu primary-nav__menu menu--main__v1 primary-nav__menu--level-2" id="why-tableau-submenu-1">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/72659" data-section="header:primary-sublink" data-value="What Is Tableau" href="/why-tableau/what-is-tableau"><span class="primary-nav__menu-link-inner">What Is Tableau</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/80503" data-section="header:primary-sublink" data-value="Build a Data Culture" href="/why-tableau/data-culture"><span class="primary-nav__menu-link-inner">Build a Data Culture</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/86213" data-section="header:primary-sublink" data-value="Tableau Economy" href="/why-tableau/tableau-economy"><span class="primary-nav__menu-link-inner">Tableau Economy</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/74174" data-section="header:primary-sublink" data-value="The Tableau Community" href="/community"><span class="primary-nav__menu-link-inner">The Tableau Community</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/72660" data-section="header:primary-sublink" data-value="Our Customers" href="/why-tableau/our-customers"><span class="primary-nav__menu-link-inner">Our Customers</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2 primary-nav__menu-item--has-children">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2 primary-nav__menu-link--has-children" data-drupal-link-system-path="node/62153" data-section="header:primary-sublink" data-value="About Tableau" href="/about"><span class="primary-nav__menu-link-inner">About Tableau</span></a>
+<button aria-controls="about-tableau-submenu-6" aria-expanded="false" aria-hidden="true" class="primary-nav__button-toggle" tabindex="-1">
+<span class="visually-hidden">Toggle sub-navigation</span>
+<span class="icon--menu-toggle"></span>
+</button>
+<ul class="menu primary-nav__menu menu--main__v1 primary-nav__menu--level-3" id="about-tableau-submenu-6">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/63422" data-section="header:tertiary-link" data-value="Awards and Recognition" href="/about/awards-and-recognition"><span class="primary-nav__menu-link-inner">Awards and Recognition</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/63581" data-section="header:tertiary-link" data-value="Tableau Foundation" href="/foundation"><span class="primary-nav__menu-link-inner">Tableau Foundation</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/74595" data-section="header:tertiary-link" data-value="Equality at Tableau" href="/about/careers/equality"><span class="primary-nav__menu-link-inner">Equality at Tableau</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/63464" data-section="header:tertiary-link" data-value="Careers" href="/about/careers"><span class="primary-nav__menu-link-inner">Careers</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-1 primary-nav__menu-item--has-children">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-1 primary-nav__menu-link--has-children" data-drupal-link-system-path="node/72652" data-section="header:primary-link" data-value="Products" href="/products"><span class="primary-nav__menu-link-inner">Products</span></a>
+<button aria-controls="products-submenu-2" aria-expanded="false" aria-hidden="true" class="primary-nav__button-toggle" tabindex="-1">
+<span class="visually-hidden">Toggle sub-navigation</span>
+<span class="icon--menu-toggle"></span>
+</button>
+<ul class="menu primary-nav__menu menu--main__v1 primary-nav__menu--level-2" id="products-submenu-2">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/74175" data-section="header:primary-sublink" data-value="Our Platform" href="/products/our-platform"><span class="primary-nav__menu-link-inner">Our Platform</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/62386" data-section="header:primary-sublink" data-value="Tableau Desktop" href="/products/desktop"><span class="primary-nav__menu-link-inner">Tableau Desktop</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/62387" data-section="header:primary-sublink" data-value="Tableau Server" href="/products/server"><span class="primary-nav__menu-link-inner">Tableau Server</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/62388" data-section="header:primary-sublink" data-value="Tableau Cloud" href="/products/cloud-bi"><span class="primary-nav__menu-link-inner">Tableau Cloud</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/63077" data-section="header:primary-sublink" data-value="Tableau Prep" href="/products/prep"><span class="primary-nav__menu-link-inner">Tableau Prep</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/75657" data-section="header:primary-sublink" data-value="CRM Analytics" href="/products/crm-analytics" title="CRM Analytics (formerly Tableau CRM) will empower your Salesforce CRM users with actionable insights and AI-driven analytics right in their workflow."><span class="primary-nav__menu-link-inner">CRM Analytics</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/76703" data-section="header:primary-sublink" data-value="Tableau Public" href="/products/public"><span class="primary-nav__menu-link-inner">Tableau Public</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/63320" data-section="header:primary-sublink" data-value="Data Management" href="/products/add-ons/data-management"><span class="primary-nav__menu-link-inner">Data Management</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/63473" data-section="header:primary-sublink" data-value="Server Management" href="/products/add-ons/server-management"><span class="primary-nav__menu-link-inner">Server Management</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/62685" data-section="header:primary-sublink" data-value="Embedded Analytics" href="/embedded-analytics"><span class="primary-nav__menu-link-inner">Embedded Analytics</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/72661" data-section="header:primary-sublink" data-value="Our Integrations" href="/products/our-integrations"><span class="primary-nav__menu-link-inner">Our Integrations</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/86241" data-section="header:primary-sublink" data-value="Latest Releases" href="/products/new-features"><span class="primary-nav__menu-link-inner">Latest Releases</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/63095" data-section="header:primary-sublink" data-value="Plans and Pricing" href="/pricing/teams-orgs"><span class="primary-nav__menu-link-inner">Plans and Pricing</span></a>
+</li>
+</ul>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-1 primary-nav__menu-item--has-children">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-1 primary-nav__menu-link--has-children" data-drupal-link-system-path="node/73846" data-section="header:primary-link" data-value="Solutions" href="/solutions"><span class="primary-nav__menu-link-inner">Solutions</span></a>
+<button aria-controls="solutions-submenu-3" aria-expanded="false" aria-hidden="true" class="primary-nav__button-toggle" tabindex="-1">
+<span class="visually-hidden">Toggle sub-navigation</span>
+<span class="icon--menu-toggle"></span>
+</button>
+<ul class="menu primary-nav__menu menu--main__v1 primary-nav__menu--level-2" id="solutions-submenu-3">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/63517" data-section="header:primary-sublink" data-value="Tableau Blueprint" href="/learn/blueprint"><span class="primary-nav__menu-link-inner">Tableau Blueprint</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/63529" data-section="header:primary-sublink" data-value="By Industry" href="/solutions/industries"><span class="primary-nav__menu-link-inner">By Industry</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/63530" data-section="header:primary-sublink" data-value="By Department" href="/solutions/departments"><span class="primary-nav__menu-link-inner">By Department</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/63534" data-section="header:primary-sublink" data-value="By Technology" href="/solutions/technologies"><span class="primary-nav__menu-link-inner">By Technology</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/81036" data-section="header:primary-sublink" data-value="Dashboard Showcase" href="/data-insights/dashboard-showcase"><span class="primary-nav__menu-link-inner">Dashboard Showcase</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2 primary-nav__menu-item--has-children">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2 primary-nav__menu-link--has-children" data-drupal-link-system-path="node/89888" data-section="header:primary-sublink" data-value="Tableau Exchange" href="/solutions/exchange"><span class="primary-nav__menu-link-inner">Tableau Exchange</span></a>
+<button aria-controls="tableau-exchange-submenu-6" aria-expanded="false" aria-hidden="true" class="primary-nav__button-toggle" tabindex="-1">
+<span class="visually-hidden">Toggle sub-navigation</span>
+<span class="icon--menu-toggle"></span>
+</button>
+<ul class="menu primary-nav__menu menu--main__v1 primary-nav__menu--level-3" id="tableau-exchange-submenu-6">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/63078" data-section="header:tertiary-link" data-value="Accelerators" href="/solutions/exchange/accelerators"><span class="primary-nav__menu-link-inner">Accelerators</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-1 primary-nav__menu-item--has-children">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-1 primary-nav__menu-link--has-children" data-drupal-link-system-path="node/72662" data-section="header:primary-link" data-value="Resources" href="/resources"><span class="primary-nav__menu-link-inner">Resources</span></a>
+<button aria-controls="resources-submenu-4" aria-expanded="false" aria-hidden="true" class="primary-nav__button-toggle" tabindex="-1">
+<span class="visually-hidden">Toggle sub-navigation</span>
+<span class="icon--menu-toggle"></span>
+</button>
+<ul class="menu primary-nav__menu menu--main__v1 primary-nav__menu--level-2" id="resources-submenu-4">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/63392" data-section="header:primary-sublink" data-value="Getting Started" href="/learn/get-started"><span class="primary-nav__menu-link-inner">Getting Started</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2 primary-nav__menu-item--has-children">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2 primary-nav__menu-link--has-children" data-drupal-link-system-path="node/62152" data-section="header:primary-sublink" data-value="Learn Tableau" href="/learn"><span class="primary-nav__menu-link-inner">Learn Tableau</span></a>
+<button aria-controls="learn-tableau-submenu-2" aria-expanded="false" aria-hidden="true" class="primary-nav__button-toggle" tabindex="-1">
+<span class="visually-hidden">Toggle sub-navigation</span>
+<span class="icon--menu-toggle"></span>
+</button>
+<ul class="menu primary-nav__menu menu--main__v1 primary-nav__menu--level-3" id="learn-tableau-submenu-2">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/62081" data-section="header:tertiary-link" data-value="Free Training Videos" href="/learn/training"><span class="primary-nav__menu-link-inner">Free Training Videos</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/62346" data-section="header:tertiary-link" data-value="Tableau Certification" href="/learn/certification"><span class="primary-nav__menu-link-inner">Tableau Certification</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/62582" data-section="header:tertiary-link" data-value="Instructor-led Training" href="/learn/classroom"><span class="primary-nav__menu-link-inner">Instructor-led Training</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/62808" data-section="header:tertiary-link" data-value="Tableau eLearning" href="/learn/training/elearning"><span class="primary-nav__menu-link-inner">Tableau eLearning</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/78939" data-section="header:tertiary-link" data-value="Academic Programs" href="/community/academic"><span class="primary-nav__menu-link-inner">Academic Programs</span></a>
+</li>
+</ul>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2 primary-nav__menu-item--has-children">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2 primary-nav__menu-link--has-children" data-drupal-link-system-path="node/85413" data-section="header:primary-sublink" data-value="Teams and Organizations" href="/resources/teams-organizations"><span class="primary-nav__menu-link-inner">Teams and Organizations</span></a>
+<button aria-controls="teams-and-organizations-submenu-3" aria-expanded="false" aria-hidden="true" class="primary-nav__button-toggle" tabindex="-1">
+<span class="visually-hidden">Toggle sub-navigation</span>
+<span class="icon--menu-toggle"></span>
+</button>
+<ul class="menu primary-nav__menu menu--main__v1 primary-nav__menu--level-3" id="teams-and-organizations-submenu-3">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/86067" data-section="header:tertiary-link" data-value="Premium Support" href="/resources/teams-organizations/premium-support"><span class="primary-nav__menu-link-inner">Premium Support</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/85416" data-section="header:tertiary-link" data-value="Learning and Certification" href="/resources/teams-organizations/learning"><span class="primary-nav__menu-link-inner">Learning and Certification</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/62347" data-section="header:tertiary-link" data-value="Professional Services" href="/resources/teams-organizations/professional-services"><span class="primary-nav__menu-link-inner">Professional Services</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/62728" data-section="header:tertiary-link" data-value="Customer Success" href="/resources/teams-organizations/customer-success"><span class="primary-nav__menu-link-inner">Customer Success</span></a>
+</li>
+</ul>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2 primary-nav__menu-item--has-children">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2 primary-nav__menu-link--has-children" data-drupal-link-system-path="node/74174" data-section="header:primary-sublink" data-value="Community" href="/community"><span class="primary-nav__menu-link-inner">Community</span></a>
+<button aria-controls="community-submenu-4" aria-expanded="false" aria-hidden="true" class="primary-nav__button-toggle" tabindex="-1">
+<span class="visually-hidden">Toggle sub-navigation</span>
+<span class="icon--menu-toggle"></span>
+</button>
+<ul class="menu primary-nav__menu menu--main__v1 primary-nav__menu--level-3" id="community-submenu-4">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/78935" data-section="header:tertiary-link" data-value="Welcome" href="/community/welcome"><span class="primary-nav__menu-link-inner">Welcome</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/78933" data-section="header:tertiary-link" data-value="Tableau Public" href="/community/public"><span class="primary-nav__menu-link-inner">Tableau Public</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="global-header__primary-sublink--repeat primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-section="header:tertiary-link" data-value="Tableau User Groups" href="https://usergroups.tableau.com/" target="_blank"><span class="primary-nav__menu-link-inner">Tableau User Groups</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/78942" data-section="header:tertiary-link" data-value="Community Leaders" href="/community/community-leaders"><span class="primary-nav__menu-link-inner">Community Leaders</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/78948" data-section="header:tertiary-link" data-value="DataDev" href="/community/datadev"><span class="primary-nav__menu-link-inner">DataDev</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/78949" data-section="header:tertiary-link" data-value="Community Projects" href="/community/community-projects"><span class="primary-nav__menu-link-inner">Community Projects</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-section="header:tertiary-link" data-value="Community Forums" href="https://community.tableau.com/s/explore-forums" target="_blank"><span class="primary-nav__menu-link-inner">Community Forums</span></a>
+</li>
+</ul>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/62360" data-section="header:primary-sublink" data-value="Blog" href="/about/blog"><span class="primary-nav__menu-link-inner">Blog</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/63466" data-section="header:primary-sublink" data-value="Customer Stories" href="/solutions/customers"><span class="primary-nav__menu-link-inner">Customer Stories</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2 primary-nav__menu-item--has-children">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2 primary-nav__menu-link--has-children" data-drupal-link-system-path="node/62589" data-section="header:primary-sublink" data-value="Events" href="/community/events"><span class="primary-nav__menu-link-inner">Events</span></a>
+<button aria-controls="events-submenu-7" aria-expanded="false" aria-hidden="true" class="primary-nav__button-toggle" tabindex="-1">
+<span class="visually-hidden">Toggle sub-navigation</span>
+<span class="icon--menu-toggle"></span>
+</button>
+<ul class="menu primary-nav__menu menu--main__v1 primary-nav__menu--level-3" id="events-submenu-7">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/79240" data-section="header:tertiary-link" data-value="Event Video Library" href="/events/video-library"><span class="primary-nav__menu-link-inner">Event Video Library</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/62087" data-section="header:tertiary-link" data-value="On-Demand Webinars" href="/learn/webinars"><span class="primary-nav__menu-link-inner">On-Demand Webinars</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/83159" data-section="header:tertiary-link" data-value="Tableau Conference" href="/events/conference"><span class="primary-nav__menu-link-inner">Tableau Conference</span></a>
+</li>
+</ul>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2 primary-nav__menu-item--has-children">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2 primary-nav__menu-link--has-children" data-drupal-link-system-path="node/62345" data-section="header:primary-sublink" data-value="Support" href="/support"><span class="primary-nav__menu-link-inner">Support</span></a>
+<button aria-controls="support-submenu-8" aria-expanded="false" aria-hidden="true" class="primary-nav__button-toggle" tabindex="-1">
+<span class="visually-hidden">Toggle sub-navigation</span>
+<span class="icon--menu-toggle"></span>
+</button>
+<ul class="menu primary-nav__menu menu--main__v1 primary-nav__menu--level-3" id="support-submenu-8">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/62778" data-section="header:tertiary-link" data-value="Knowledge Base" href="/support/knowledgebase" target="_blank"><span class="primary-nav__menu-link-inner">Knowledge Base</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/61954" data-section="header:tertiary-link" data-value="Tableau Help" href="/support/help"><span class="primary-nav__menu-link-inner">Tableau Help</span></a>
+</li>
+</ul>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2 primary-nav__menu-item--has-children">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2 primary-nav__menu-link--has-children" data-drupal-link-system-path="node/72663" data-section="header:primary-sublink" data-value="Reference Materials" href="/resources/reference-materials"><span class="primary-nav__menu-link-inner">Reference Materials</span></a>
+<button aria-controls="reference-materials-submenu-9" aria-expanded="false" aria-hidden="true" class="primary-nav__button-toggle" tabindex="-1">
+<span class="visually-hidden">Toggle sub-navigation</span>
+<span class="icon--menu-toggle"></span>
+</button>
+<ul class="menu primary-nav__menu menu--main__v1 primary-nav__menu--level-3" id="reference-materials-submenu-9">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/63598" data-section="header:tertiary-link" data-value="Articles" href="/learn/articles"><span class="primary-nav__menu-link-inner">Articles</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/62143" data-section="header:tertiary-link" data-value="Newsroom" href="/about/newsroom"><span class="primary-nav__menu-link-inner">Newsroom</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-3">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-3" data-drupal-link-system-path="node/62088" data-section="header:tertiary-link" data-value="Whitepapers" href="/learn/whitepapers"><span class="primary-nav__menu-link-inner">Whitepapers</span></a>
+</li>
+</ul>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/63292" data-section="header:primary-sublink" data-value="Developer Program" href="/developer"><span class="primary-nav__menu-link-inner">Developer Program</span></a>
+</li>
+</ul>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-1 primary-nav__menu-item--has-children">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-1 primary-nav__menu-link--has-children" data-drupal-link-system-path="node/63211" data-section="header:primary-link" data-value="Partners" href="/partners"><span class="primary-nav__menu-link-inner">Partners</span></a>
+<button aria-controls="partners-submenu-5" aria-expanded="false" aria-hidden="true" class="primary-nav__button-toggle" tabindex="-1">
+<span class="visually-hidden">Toggle sub-navigation</span>
+<span class="icon--menu-toggle"></span>
+</button>
+<ul class="menu primary-nav__menu menu--main__v1 primary-nav__menu--level-2" id="partners-submenu-5">
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/63526" data-section="header:primary-sublink" data-value="Find a Partner" href="/partners/search"><span class="primary-nav__menu-link-inner">Find a Partner</span></a>
+</li>
+<li class="primary-nav__menu-item primary-nav__menu-item--link primary-nav__menu-item--level-2">
+<a class="primary-nav__menu-link primary-nav__menu-link--link primary-nav__menu-link--level-2" data-drupal-link-system-path="node/63212" data-section="header:primary-sublink" data-value="Become a Partner" href="/partners/become"><span class="primary-nav__menu-link-inner">Become a Partner</span></a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="global-header__secondary-nav">
+<div id="block-tableau-menu-secondary-nav">
+<div class="embeddable" data-embeddable-id="526">
+<div class="">
+<nav id="tableau-menu-secondary-nav" role="navigation">
+<ul class="global-header__secondary-menu">
+<li class="global-header__secondary-item"><a class="global-header__secondary-link user-vary-link user-anonymous-show user-guest-show" href="/pricing/individual">Pricing</a></li>
+<li class="global-header__secondary-item"><a class="global-header__secondary-link user-vary-link user-anonymous-show" href="/tableau-login-hub">Sign In</a></li>
+<li class="global-header__secondary-item"><a class="global-header__secondary-link user-vary-link user-guest-show" href="/user/account-convert">Create Account</a></li>
+<li class="global-header__secondary-item"><a class="global-header__secondary-link user-vary-link user-guest-show" href="/guest-user/logout">End Guest Session</a></li>
+<li class="global-header__secondary-item"><a class="global-header__myaccount-link text--dark-body user-vary-link user-customer-show user-partner-show user-authenticated-show" href="/my-account"><span class="my-account-name"></span></a></li>
+<li class="global-header__secondary-item"><a class="global-header__search-toggle" href="/search/all/try%2Btableau">Search</a></li>
+</ul>
+<ul class="global-header__secondary-menu-ctas" data-lytics-audience-vary="webstore_customer">
+<li class="global-header__secondary-item" data-lytics-audience-hide="webstore_customer" data-lytics-display="inline-block"><a class="cta global-header__secondary-cta user-vary-link user-anonymous-show user-guest-show user-authenticated-show section-vary-link section-academic-hide" href="/products/trial">Try Now</a></li>
+<li class="global-header__secondary-item" data-lytics-audience-hide="webstore_customer" data-lytics-display="inline-block"><a class="cta cta--secondary cta--buy-now global-header__secondary-cta user-vary-link user-anonymous-show section-vary-link section-academic-hide" href="https://buy.tableau.com/">Buy Now</a></li>
+<li class="global-header__secondary-item" data-lytics-audience-show="webstore_customer" data-lytics-display="inline-block"><a class="cta cta--buy-now global-header__secondary-cta section-academic-hide" href="https://buy.tableau.com/add-on?source=globalheader">Buy More Licenses</a></li>
+<li class="global-header__secondary-item" data-lytics-audience-hide="webstore_customer" data-lytics-display="inline-block"><a class="cta cta--dark global-header__secondary-cta user-vary-link user-customer-show section-vary-link section-academic-hide" href="/learn/training">Free Training</a></li>
+<li class="global-header__secondary-item" data-lytics-audience-hide="webstore_customer" data-lytics-display="inline-block"><a class="cta cta--dark global-header__secondary-cta user-vary-link user-partner-show" href="/prc/home">Partner Portal</a></li>
+<li class="global-header__secondary-item"><a class="cta cta--dark global-header__secondary-cta section-vary-link section-academic-show" href="/academic/students#form">Free Student License</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="global-header__search-wrapper" id="block-tableau-coveo-global">
+<div class="global-header__search">
+<div class="">
+<div>
+<div class="coveo-search-box" data-tab-group="global">
+<div class="CoveoAnalytics" data-search-hub="Tableau.comMain"></div>
+<div class="CoveoSearchbox" data-auto-focus="false" data-placeholder="Search" data-query-suggest-character-threshold="2"></div>
+</div>
+</div>
+</div>
+<button class="global-header__search-close"><span class="sr-only">Cancel Search</span></button>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="main-content flex-grow">
+<div id="main-content">
+<div class="hidden" data-drupal-messages-fallback=""></div><div id="block-tableau-page-content">
+<section about="/legal/regional-privacy-laws" class="node node--page node--view-mode-full clearfix" typeof="schema:WebPage">
+<span class="hidden" content="GDPR" property="schema:name"></span>
+<article>
+<div class="field field--name-field-hero field--node field--label-hidden">
+<div>
+<section class="hero hero--background hero--light text--contrast-dark">
+<div id="hero">
+<div class="hero__content" style="background-image: url(/sites/default/files/hero-backgrounds/vizheadergrey_1366x455_0.png);">
+<div class="hero__content-inner content-container content-container--narrow">
+<h1 class="hero__title">
+            Tableau helps you see, understand and protect your data.
+          </h1>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div>
+<section class="hero bg--dark-gray-1">
+<div id="hero--2">
+<div class="hero__content">
+<div class="hero__content-inner content-container content-container--narrow">
+<h1 class="hero__title">
+            Frequently Asked Questions
+          </h1>
+<div class="hero__extra-content">
+<p>Learn more about Tableau’s approach to GDPR and CCPA compliance with these frequently asked privacy questions documents. <a class="cta cta--secondary" href="https://www.tableau.com/sites/default/files/2021-06/Tableau%20Privacy%20FAQ.pdf">Download the GDPR FAQ</a> <a class="cta cta--secondary" href="https://www.tableau.com/sites/default/files/pages/ccpa_website_faq.pdf">Download the CCPA FAQ</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<div class="field field--name-field-page-sections field--node field--label-hidden">
+<div>
+<section class="section entity entity-paragraphs-item paragraph paragraph--type--text-passage paragraph--view-mode--default" id="paragraph-id--211786">
+<article class="content content-container">
+<div class="">
+<p>Tableau has always believed in the importance of handling personal data in a way that is both thoughtful and comprehensive.  We will continue to protect customer data in accordance with privacy laws, including GDPR and CCPA. We believe these privacy laws are important steps toward clarifying and enabling individual privacy rights. We want to help you focus on your core business while efficiently preparing for and complying with global privacy regulations.</p>
+<p>The <a href="http://ec.europa.eu/justice/data-protection/reform/index_en.htm">General Data Protection Regulation (GDPR)</a>, effective 25 May 2018, strengthens and unifies data protection for all individuals in the European Economic Area (EEA). The GDPR imposes enhanced rules on companies, government agencies, non-profits, and other organizations that offer goods and services to people in the EEA, or that collect and analyze data tied to EEA residents. The GDPR applies to all organizations doing business with individuals in the EEA, whether the organizations are based in the EEA or not. It also addresses the export of personal data outside the EEA, so companies need to take a measured approach to their personal data collection and protection practices.</p>
+<p>The <a href="https://oag.ca.gov/privacy/ccpa">California Consumer Privacy Act (CCPA)</a>, effective 1 January, 2020, represents the highest standard of data protection in the United States so far. It grants California residents a number of rights over their personal data, such as the right to have certain personal data deleted, the right to be notified about a company’s collection and processing of their personal data, the right to information about how a company uses their personal data, and the right not to have companies sell their personal data. </p>
+</div>
+</article>
+</section>
+</div>
+<div>
+<section class="section entity entity-paragraphs-item paragraph paragraph--type--quote-text paragraph--view-mode--default bg--light-gray-1" id="paragraph-id--210018">
+<article class="content content-container">
+<div class="quote">
+<div class="quote__wrapper">
+<p class="quote__text">Tableau is committed to creating customers for life.  Earning the generational trust of the world’s data users requires a relentless focus on the customer experience, a fundamental component of which is safeguarding your data.</p>
+<p class="quote__byline">
+<span class="quote__byline-name">
+          Adam Selipsky<span class="quote__byline-comma">,</span> </span>
+<span class="quote__byline-detail">President and CEO, Tableau Software</span>
+</p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div>
+<section class="section entity entity-paragraphs-item paragraph paragraph--type--cross-reference paragraph--view-mode--default" id="paragraph-id--210036">
+<article class="content content-container">
+<div class="cross-reference-3">
+<div class="cross-reference-3__title grid--3">
+<h3 class="heading-highlight">
+<p>Our commitment to you.</p>
+</h3>
+</div>
+<div class="cross-reference-3__items grid--9 grid--last">
+<div class="teaser-item grid--4">
+<div class="teaser-item__info">
+<h3 class="heading--h5 teaser-item__title">
+<a class="link--arrow" href="#paragraph-id--295621">          Policies
+        </a> </h3>
+<p class="teaser-item__description">
+<p>Tableau is dedicated to providing transparency and building trust. We have engaged in a company-wide effort to implement privacy practices that are compliant with global regulations and are dedicated to continuous improvement in this area.</p>
+</p>
+<p class="teaser-item__link">
+<a aria-label="Policies" class="link link--arrow" href="#paragraph-id--295621">Learn More</a>
+</p>
+</div>
+</div>
+<div class="teaser-item grid--4">
+<div class="teaser-item__info">
+<h3 class="heading--h5 teaser-item__title">
+<a class="link--arrow" href="https://www.tableau.com/products">          Product
+        </a> </h3>
+<p class="teaser-item__description">
+<p>Tableau provides robust governance control measures (like data source certifications), features (like live query), and tools (like using open metadata for internal audits) within the product itself.</p>
+</p>
+<p class="teaser-item__link">
+<a aria-label="Product" class="link link--arrow" href="https://www.tableau.com/products">Learn More</a>
+</p>
+</div>
+</div>
+<div class="teaser-item grid--4">
+<div class="teaser-item__info">
+<h3 class="heading--h5 teaser-item__title">
+<a class="link--arrow" href="https://www.tableau.com/security">          Security
+        </a> </h3>
+<p class="teaser-item__description">
+<p>Protecting customers' privacy and respecting confidential information is fundamental to our core value of delighting our customers.  Our robust security practices include conducting annual SOC 2, SOC 3, and ISAE 3402 audits for the Tableau Cloud service.</p>
+</p>
+<p class="teaser-item__link">
+<a aria-label="Security" class="link link--arrow" href="https://www.tableau.com/security">Learn More</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div>
+<a class="anchor-link" id="product"></a>
+</div>
+<div>
+<section class="section entity entity-paragraphs-item paragraph paragraph--type--text-passage paragraph--view-mode--default bg--dark-gray-1 text--centered" id="paragraph-id--211792">
+<article class="content content-container">
+<div class="">
+<h4>TABLEAU PRODUCTS AND THE GENERAL DATA PROTECTION REGULATION</h4>
+<p>Tableau users subject to privacy regulations need to be aware of their obligations.  Download our whitepaper to understand the ways Tableau products can help you meet your obligations.</p>
+<p><a class="cta cta--arrow" href="https://www.tableau.com/learn/whitepapers/tableau-products-and-general-data-protection-regulation">Download the whitepaper</a></p>
+</div>
+</article>
+</section>
+</div>
+<div>
+<a class="anchor-link" id="policies"></a>
+</div>
+<div>
+<section class="section entity entity-paragraphs-item paragraph paragraph--type--text-passage paragraph--view-mode--default bg--light-gray-2 padding-bottom-none" id="paragraph-id--295621">
+<article class="content content-container">
+<h2 class="text--centered">
+      Tableau Policies
+      </h2>
+</article>
+</section>
+</div>
+<div>
+<section class="section entity entity-paragraphs-item paragraph paragraph--type--accordion paragraph--view-mode--default bg--light-gray-2 padding-top-one" id="paragraph-id--293454">
+<article class="content content-container">
+<div class="accordion">
+<div class="accordion__item" id="item-293450">
+<div class="accordion__title-wrapper">
+<div class="accordion__title">
+<h4 class="heading--h5">Privacy Statement</h4>
+</div>
+</div>
+<div class="accordion__content-wrapper">
+<div class="accordion__content">
+<div class="">
+<p>Tableau collects personal information in support of its mission to help people see and understand their data. This personal information is collected and used in a variety of ways as described more fully in our <a href="https://www.tableau.com/privacy" target="_blank">Privacy Statement</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="accordion__item" id="item-293451">
+<div class="accordion__title-wrapper">
+<div class="accordion__title">
+<h4 class="heading--h5">Data Transfer</h4>
+</div>
+</div>
+<div class="accordion__content-wrapper">
+<div class="accordion__content">
+<div class="">
+<p>The GDPR restricts the export of personal data to countries outside the EU and the European Economic Area (EEA) unless certain controls are in place. Tableau gives its customers assurances that personal data will be transferred and processed in compliance with EU data protection law in multiple ways. </p>
+<p> </p>
+<div class="bg--dark-gray-1">
+<p> </p>
+<h4 class="text--centered">View Salesforce's response to the Court of Justice of the European Union's decision on transfers of personal data</h4>
+<p class="text--centered"><a class="cta cta--secondary" data-name="unique-cta" href="https://www.salesforce.com/content/dam/web/en_us/www/documents/legal/Agreements/EU-Data-Transfer-Mechanisms-FAQ.pdf">Read more</a></p>
+<hr class="spacer"/></div>
+</div>
+</div>
+</div>
+</div>
+<div class="accordion__item" id="item-293452">
+<div class="accordion__title-wrapper">
+<div class="accordion__title">
+<h4 class="heading--h5">Contractual Protections</h4>
+</div>
+</div>
+<div class="accordion__content-wrapper">
+<div class="accordion__content">
+<div class="">
+<p>GDPR requires that personal information is subject to certain contractual protections as it transfers between controller and processor. As a Salesforce company, Tableau offers our Tableau Cloud customers the Salesforce Data Processing Addendum upon registration and at renewal.
+</p>
+<p> 
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="accordion__item" id="item-293453">
+<div class="accordion__title-wrapper">
+<div class="accordion__title">
+<h4 class="heading--h5">Marketing Communications</h4>
+</div>
+</div>
+<div class="accordion__content-wrapper">
+<div class="accordion__content">
+<div class="">
+<p>Tableau collects personal information for marketing purposes pursuant to GDPR and other local laws. Marketing communications are easily opted out of at any time, either through an unsubscribe button on the email itself, or by contacting <a href="mailto:customerservice@tableau.com">customerservice@tableau.com</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div>
+<a class="anchor-link" id="security"></a>
+</div>
+<div>
+<section class="section entity entity-paragraphs-item paragraph paragraph--type--feature-list paragraph--view-mode--default padding-bottom-none" id="paragraph-id--210025">
+<article class="content content-container content-container--wide">
+<h2>
+      Product Readiness
+      </h2>
+<div class="feature-list">
+<div class="feature-list__feature">
+<div class="feature-list__icon">
+<span>
+<i aria-hidden="true" class="icon icon--security" title="security"></i>
+</span>
+</div>
+<div class="feature-list__copy">
+<h3 class="feature-list__title">On-Premise Software</h3>
+<div class="feature-list__description">
+<p>Tableau Desktop, Tableau Prep, and Tableau Server are installed locally on your servers/computers, behind your firewall, and do not automatically transmit your data back to Tableau.  Our Support staff members do not have a built-in remote connection to the software and cannot “tunnel” into your installation.  As such, Tableau does not process the customer data that you analyze using our on-premise software and relies on our customers to maintain adequate protections for that data.  Note that for registration information or usage data used to perform our contractual obligations and improve your experience with our products, Tableau is the controller/business and accepts related responsibilities under applicable law.  </p>
+</div>
+</div>
+</div>
+<div class="feature-list__feature">
+<div class="feature-list__icon">
+<span>
+<i aria-hidden="true" class="icon icon--tableau-online" title="tableau-online"></i>
+</span>
+</div>
+<div class="feature-list__copy">
+<h3 class="feature-list__title">Tableau Cloud Data Location</h3>
+<div class="feature-list__description">
+<p>Tableau Cloud is structured so that customers control where their data is stored.  Tableau’s EU-based data center is available to both existing and new Tableau Cloud customers, wherever they are located, with disaster recovery systems also located in the EU.  Existing customers can choose to migrate their data to the EU-based data center, while new customers can select their preferred location – currently either North America or Europe – when setting up their Tableau Cloud site.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div>
+<section class="section entity entity-paragraphs-item paragraph paragraph--type--grid paragraph--view-mode--default" id="paragraph-id--210032">
+<article class="content content-container">
+<h2>
+      Security Readiness
+      </h2>
+<div class="clearfix">
+<div class="grid--4">
+<div class="">
+<div class="vertical-divider">
+<h3>Information Security Practices</h3>
+<p>We have published <a href="https://www.tableau.com/security">informational security and data protection practices</a> governing when employees and contractors can access data stores containing your data.
+</p></div>
+</div>
+</div>
+<div class="grid--4">
+<div class="">
+<div class="vertical-divider">
+<h3>Third Party Audits and Certifications</h3>
+<p>Tableau’s controls have been audited by independent third parties against defined standards and makes SOC 2 Type II and SSAE 16 SOC 1 reports <a href="https://www.tableau.com/security#compliance">available to customers</a>.
+</p></div>
+</div>
+</div>
+<div class="grid--4 last-item">
+<div class="">
+<div class="vertical-divider">
+<h3>Incident Response</h3>
+<p>We have implemented a data breach and incident response plan. In case of an incident involving your customer data, we will inform you per the terms of your agreement with us.
+</p></div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div>
+<section class="section entity entity-paragraphs-item paragraph paragraph--type--text-passage paragraph--view-mode--default bg--light-gray-1" id="paragraph-id--211791">
+<article class="content content-container">
+<h2>
+      Best Practices for Tableau customers
+      </h2>
+<div class="">
+<p>Apart from following the security hardening best practices for Tableau Server, the best thing our customers can do to reduce their exposure under any privacy law is to not collect or store personal data that isn’t needed.</p>
+<p>Additionally, customers should ensure that only those people who have the need to see personal data are able to do so. The rich permissions settings on <a href="https://help.tableau.com/current/server/en-us/permissions_section.htm">Tableau Server</a> and <a href="https://help.tableau.com/current/online/en-us/permissions_section.htm">Tableau Cloud</a> allow control of which assets users are able to access, such as sites, workbooks, worksheets, and data sources.</p>
+<p>We will keep you informed on our progress with updates to this site.  Should you have additional concerns or questions you would like to discuss, please do not hesitate to contact us at <a href="mailto:privacy@tableau.com">privacy@tableau.com</a>.</p>
+</div>
+</article>
+</section>
+</div>
+</div>
+</article>
+</section>
+</div>
+</div>
+</main>
+<footer class="flex-shrink" id="footer">
+<div class="global-footer section section--padded-two bg--dark-gray-3">
+<nav aria-label="additional" class="content-container content-container--wide">
+<div class="global-footer__first clearfix">
+<div class="language-switcher-language-url" id="block-tableau-language-switcher">
+<div class="global-footer__language">
+<a class="anchor-link" id="lang-dropdown"></a>
+<span class="selected">English (US)</span>
+<ul class="links language-switcher-locale-url global-footer__language__options plain-list"><li class="en-us is-active" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" hreflang="en-US"><a class="language-link is-active" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" href="/legal/regional-privacy-laws?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="en-US">English (US)</a></li><li class="de-de" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" hreflang="de-DE"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" href="/de-de/legal/regional-privacy-laws?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="de-DE">Deutsch</a></li><li class="en-gb" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" hreflang="en-GB"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" href="/en-gb/legal/regional-privacy-laws?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="en-GB">English (UK)</a></li><li class="es-es" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" hreflang="es-ES"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" href="/es-es/legal/regional-privacy-laws?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="es-ES">Español</a></li><li class="fr-fr" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" hreflang="fr-FR"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" href="/fr-fr/legal/regional-privacy-laws?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="fr-FR">Français</a></li><li class="it-it" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" hreflang="it-IT"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" href="/it-it/legal/regional-privacy-laws?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="it-IT">Italiano</a></li><li class="ja-jp" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" hreflang="ja-JP"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" href="/ja-jp/legal/regional-privacy-laws?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="ja-JP">日本語</a></li><li class="ko-kr" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" hreflang="ko-KR"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" href="/ko-kr/legal/regional-privacy-laws?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="ko-KR">한국어</a></li><li class="nl-nl" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" hreflang="nl-NL"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" href="/nl-nl/legal/regional-privacy-laws?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="nl-NL">Nederlands</a></li><li class="pt-br" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" hreflang="pt-BR"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" href="/pt-br/legal/regional-privacy-laws?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="pt-BR">Português</a></li><li class="sv-se" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" hreflang="sv-SE"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" href="/sv-se/legal/regional-privacy-laws?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="sv-SE">Svenska</a></li><li class="zh-hans-cn" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" hreflang="zh-Hans-CN"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" href="/zh-cn/legal/regional-privacy-laws?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="zh-Hans-CN">简体中文</a></li><li class="zh-hant-tw" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" hreflang="zh-Hant-TW"><a class="language-link" data-drupal-link-query='{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}' data-drupal-link-system-path="node/63167" href="/zh-tw/legal/regional-privacy-laws?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="zh-Hant-TW">繁體中文</a></li></ul>
+</div>
+</div>
+<div class="global-footer__menu" data-menu-name="footer" id="block-tableau-footer-menu">
+<ul class="link-list link-list--inline">
+<li>
+<a data-value="System Status" href="https://trust.tableau.com">System Status</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/62360" data-value="Blog" href="/about/blog">Blog</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/63292" data-value="Developer" href="/developer">Developer</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/63464" data-value="Careers" href="/about/careers">Careers</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/63501" data-value="Contact Us" href="/about/contact">Contact Us</a>
+</li>
+</ul>
+</div>
+<div class="global-footer__links" data-menu-name="footer-secondary" id="block-tableau-footer-secondary-menu">
+<ul class="link-list link-list--inline">
+<li>
+<a data-drupal-link-system-path="node/62372" data-value="Legal" href="/legal">Legal</a>
+</li>
+<li>
+<a data-value="Privacy" href="https://www.salesforce.com/company/privacy/" target="_blank">Privacy</a>
+</li>
+<li>
+<a data-value="Uninstall" href="https://kb.tableau.com/articles/knowledgebase/uninstalling-tableau-desktop">Uninstall</a>
+</li>
+<li>
+<a data-drupal-link-system-path="node/63602" data-value="Do not sell my personal information" href="/do-not-sell-my-personal-information">Do not sell my personal information</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="global-footer__second clearfix">
+<div class="global-footer__social" id="block-tableau-social-media-links">
+<div class="">
+<ul class="link-list link-list--inline">
+<li>
+<a class="" data-location="linkedin" data-name="social-interact" href="https://www.linkedin.com/company/tableau-software" target="_blank"><i aria-hidden="true" class="icon icon--social-linkedin"></i><span class="sr-only">LinkedIn</span></a>
+</li>
+<li>
+<a class="" data-location="facebook" data-name="social-interact" href="https://www.facebook.com/Tableau/" target="_blank"><i aria-hidden="true" class="icon icon--social-facebook"></i><span class="sr-only">Facebook</span></a>
+</li>
+<li>
+<a class="" data-location="twitter" data-name="social-interact" href="https://www.twitter.com/tableau" target="_blank"><i aria-hidden="true" class="icon icon--social-twitter"></i><span class="sr-only">Twitter</span></a>
+</li>
+</ul>
+</div>
+</div>
+<div id="block-tableau-copyright">
+<div class="">
+<p class="copy-right text--label text--medium-body">© 2003-2022 Tableau Software, LLC, a Salesforce Company. All Rights Reserved</p>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</footer>
+</div>
+</div>
+<script>
+(function () {
+  // How many milliseconds to wait for intellimize to load before timing out.
+  var intellimizeTimeout = 6000;
+
+  // Schedule and remove the intellimize-hide class.
+  setTimeout(intellimizeReady, intellimizeTimeout);
+
+  if (document.addEventListener) {
+    document.addEventListener('DOMContentLoaded', intellimizeLoad, false);
+  }
+  else {
+    document.attachEvent('onDOMContentLoaded', intellimizeLoad);
+  }
+
+  // Call when Intellimize is done loading and ready, or after timing out.
+  function intellimizeReady() {
+    document.documentElement.className = document.documentElement.className.replace('intellimize-loading', '');
+  }
+
+  // Callback for DOMReady event.
+  function intellimizeLoad() {
+    // Asynchronously load the Intellimize script.
+    $.ajax({
+      dataType: 'script',
+      cache: true,
+      url: 'https://api.intellimize.co/client/117259316.js'
+    }).done(intellimizeReady);
+  }
+})();
+</script>
+<script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/63167","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en-US","currentQuery":{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"jquery":{"ui":{"datepicker":{"isRTL":false,"firstDay":0}}},"clientside_validation_jquery":{"validate_all_ajax_forms":2,"force_validate_on_blur":true,"messages":{"required":"This field is required.","remote":"Please fix this field.","email":"Please enter a valid email address.","url":"Please enter a valid URL.","date":"Please enter a valid date.","dateISO":"Please enter a valid date (ISO).","number":"Please enter a valid number.","digits":"Please enter only digits.","equalTo":"Please enter the same value again.","maxlength":"Please enter no more than {0} characters.","minlength":"Please enter at least {0} characters.","rangelength":"Please enter a value between {0} and {1} characters long.","range":"Please enter a value between {0} and {1}.","max":"Please enter a value less than or equal to {0}.","min":"Please enter a value greater than or equal to {0}.","step":"Please enter a multiple of {0}."}},"dataLayer":{"defaultLang":"en-US","languages":{"fr-CA":{"id":"fr-CA","name":"French, Canada","direction":"ltr","weight":-16},"pt-PT":{"id":"pt-PT","name":"Portuguese, Portugal","direction":"ltr","weight":-16},"ar-EG":{"id":"ar-EG","name":"Arabic","direction":"rtl","weight":-15},"zh-Hant-HK":{"id":"zh-Hant-HK","name":"Chinese, Hong Kong","direction":"ltr","weight":-15},"ar-SA":{"id":"ar-SA","name":"Arabic, Saudi Arabia","direction":"rtl","weight":-14},"zh-Hans-CN":{"id":"zh-Hans-CN","name":"Chinese, Simplified","direction":"ltr","weight":-14},"en-US":{"id":"en-US","name":"English","direction":"ltr","weight":-14},"ar-AE":{"id":"ar-AE","name":"Arabic, United Arab Emerites","direction":"rtl","weight":-13},"zh-Hant-TW":{"id":"zh-Hant-TW","name":"Chinese, Traditional","direction":"ltr","weight":-13},"cs-CZ":{"id":"cs-CZ","name":"Czech","direction":"ltr","weight":-12},"nl-NL":{"id":"nl-NL","name":"Dutch","direction":"ltr","weight":-11},"en-NZ":{"id":"en-NZ","name":"English, New Zealand","direction":"ltr","weight":-10},"en-GB":{"id":"en-GB","name":"English, United Kingdom","direction":"ltr","weight":-9},"en-ZA":{"id":"en-ZA","name":"English, South Africa","direction":"ltr","weight":-8},"fr-FR":{"id":"fr-FR","name":"French","direction":"ltr","weight":-7},"fi-FI":{"id":"fi-FI","name":"Finnish","direction":"ltr","weight":-6},"es-MX":{"id":"es-MX","name":"Spanish, Mexico","direction":"ltr","weight":-6},"de-DE":{"id":"de-DE","name":"German","direction":"ltr","weight":-5},"he-IL":{"id":"he-IL","name":"Hebrew","direction":"rtl","weight":-4},"it-IT":{"id":"it-IT","name":"Italian","direction":"ltr","weight":-3},"ja-JP":{"id":"ja-JP","name":"Japanese","direction":"ltr","weight":-2},"ko-KR":{"id":"ko-KR","name":"Korean","direction":"ltr","weight":-1},"pl-PL":{"id":"pl-PL","name":"Polish","direction":"ltr","weight":0},"pt-BR":{"id":"pt-BR","name":"Portuguese, Brazil","direction":"ltr","weight":1},"ro-RO":{"id":"ro-RO","name":"Romanian","direction":"ltr","weight":2},"ru-RU":{"id":"ru-RU","name":"Russian","direction":"ltr","weight":3},"es-ES":{"id":"es-ES","name":"Spanish","direction":"ltr","weight":4},"sv-SE":{"id":"sv-SE","name":"Swedish","direction":"ltr","weight":5},"tr-TR":{"id":"tr-TR","name":"Turkish","direction":"ltr","weight":6},"vi-VN":{"id":"vi-VN","name":"Vietnamese","direction":"ltr","weight":7}}},"eu_cookie_compliance":{"popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--default\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Cp\u003EWe use cookies on this site to enhance your user experience\u003C\/p\u003E\n\u003Cp\u003EYour further use of this site will be considered consent.\u003C\/p\u003E\n\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EOK, I agree\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--default\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-default-button\u0022\u003EOK, I agree\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":true,"popup_language":"en-US","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"disagree_do_not_show_popup":false,"method":"default","whitelisted_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Cp\u003EWe use cookies on this site to enhance your user experienceYou have given your consent for us to set cookies.\u003C\/p\u003E\n\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button\u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"withdraw_button_on_info_popup":false,"cookie_categories":[],"enable_save_preferences_button":true,"fix_first_cookie_category":true,"select_all_categories_by_default":false},"tableau6Sense":{"customerToken":"7de4a2f5ee5804353e4d7b724b9f2ef5","eventEndpoint":"b.6sc.co","epsilonKey":"80606f4ef9ec210a1976cc499eb5573ff4ff8e3b","timeout":10000,"cookieGroup":"C0004"},"tableauBrightcove":{"accountId":"3798483592001","defaultPlayerId":"default"},"tableauEloqua":{"siteId":"840","contact":{"enabled":true,"timeout":20000,"clientLimit":14400,"localStorage":{"enabled":true,"ttl":172800000}},"tracking":{"remoteUrl":"https:\/\/img.en25.com\/i\/elqCfg.min.js","firstPartyCookieHost":"clicks.tableau.com","timeout":20000}},"tableauGeolocation":{"apiBaseUrl":"https:\/\/api.ipstack.com\/","apiKey":"1efdb022030bd78427fb06ef041edab1","timeout":5000,"ttl":"86400000"},"tableauSite":{"products":{"hyper_api_version_dot":"0.0.14946","hyper_api_version_dash":"0-0-14946","tableau_bridge_version_dot":"20221.22.0516.1720","tableau_bridge_version_dash":"20221-22-0516-1720","tableau_catalog_version_dot":"0.0.0","tableau_catalog_version_dash":"0-0-0","tableau_data_management_add_on_version_dot":"0.0.0","tableau_data_management_add_on_version_dash":"0-0-0","tableau_desktop_version_dot":"2022.1.2","tableau_desktop_version_dash":"2022-1-2","tableau_mobile_version_dot":"0.0.0","tableau_mobile_version_dash":"0-0-0","tableau_online_version_dot":"2022.1","tableau_online_version_dash":"2022-1-0","tableau_prep_version_dot":"2022.1.2","tableau_prep_version_dash":"2022-1-2","tableau_prep_builder_version_dot":"0.0.0","tableau_prep_builder_version_dash":"0-0-0","tableau_prep_conductor_version_dot":"0.0.0","tableau_prep_conductor_version_dash":"0-0-0","tableau_public_version_dot":"2022.1.2","tableau_public_version_dash":"2022-1-2","tableau_reader_version_dot":"2022.1.2","tableau_reader_version_dash":"2022-1-2","tableau_server_version_dot":"2022.1.2","tableau_server_version_dash":"2022-1-2","tableau_server_management_version_dot":"2022.1.2","tableau_server_management_version_dash":"2022-1-2"},"entityType":"node","bundle":"page"},"tabia":{"logging":{"logLevel":5,"logDebug":false,"logDebugTrace":false},"storage":{"ttl":null},"tracking":{"gaTimeout":20000,"gaTrackerId":"UA-625217-46"}},"tableauMenuActiveTrail":{"menus":{"footer-secondary":"footer-secondary","footer":"footer","main":"main"},"menuPositionRules":{"main":[{"menu_name":"main","menu_link":"\/products","conditions":{"path_patterns":["\/products\/*","\/developer\/*","\/pricing\/*"]}},{"menu_name":"main","menu_link":"\/solutions","conditions":{"entity_bundles":["node:customer_story","node:solution","node:visualization","node:workbook"],"path_patterns":["\/solutions\/*"]}},{"menu_name":"main","menu_link":"\/resources","conditions":{"entity_bundles":["node:blog_post","node:training_free_live","taxonomy_term:training_free_live_types","node:event_in_person","node:event_user_group","node:product_driver","node:product_known_issue","node:series","node:training_paid","node:webinar_live","node:webinar_ondemand","node:whitepaper"],"path_patterns":["\/community\/*","\/learn\/*","\/support\/*"]}},{"menu_name":"main","menu_link":"\/partners","conditions":{"path_patterns":["\/partners\/*"]}}]}},"coveo":{"searchEndpoint":"https:\/\/platform.cloud.coveo.com\/rest\/search","initOptions":{"Facet":{"valueCaption":{"blog_post":"Blog Post\r","customer_story":"Customer Story\r","event_in_person":"Event\r","event_live_training":"Free Live Training\r","event_ondemand_training":"Free Training\r","event_paid_in_person":"Classroom Training\r","event_user_group":"User Group Event\r","live_webinar":"Live Webinar\r","page":"Resource\r","press_release":"Press Release\r","resource_page":"Resource\r","series":"Series\r","stories_topic_page":"Solution\r","visualization":"Visualization\r","webinar":"On-Demand Webinar\r","whitepaper":"Whitepaper\r","featured_speaker":"Person"}},"facet-products-version":{"customSort":["Current","Not Specified","Unspecified","Not version specific","2028.4","2028.3","2028.2","2028.1","2027.4","2027.3","2027.2","2027.1","2026.4","2026.3","2026.2","2026.1","2025.4","2025.3","2025.2","2025.1","2024.4","2024.3","2024.2","2024.1","2023.4","2023.3","2023.2","2023.1","2022.4","2022.3","2022.2","2022.1","2021.4","2021.3","2021.2","2021.1","2021.4","2021.3","2021.2","2021.1","2020.4","2020.3","2020.2","2020.1","2019.4","2019.3","2019.2","2019.1","2018.4","2018.3","2018.2","2018.1","11.9","11.8","11.7","11.6","11.5","11.4","11.3","11.2","11.1","11.0","10.9","10.8","10.7","10.6","10.5","10.4","10.3","10.2","10.1","10.0","9.9","9.8","9.7","9.6","9.5","9.4","9.3","9.2","9.1","9.0","8.9","8.8","8.7","8.6","8.5","8.4","8.3","8.2","8.1","8.0"]},"facet-support-version":{"customSort":["Current","Not Specified","Unspecified","Not version specific","2028.4","2028.3","2028.2","2028.1","2027.4","2027.3","2027.2","2027.1","2026.4","2026.3","2026.2","2026.1","2025.4","2025.3","2025.2","2025.1","2024.4","2024.3","2024.2","2024.1","2023.4","2023.3","2023.2","2023.1","2022.4","2022.3","2022.2","2022.1","2021.4","2021.3","2021.2","2021.1","2021.4","2021.3","2021.2","2021.1","2020.4","2020.3","2020.2","2020.1","2019.4","2019.3","2019.2","2019.1","2018.4","2018.3","2018.2","2018.1","11.9","11.8","11.7","11.6","11.5","11.4","11.3","11.2","11.1","11.0","10.9","10.8","10.7","10.6","10.5","10.4","10.3","10.2","10.1","10.0","9.9","9.8","9.7","9.6","9.5","9.4","9.3","9.2","9.1","9.0","8.9","8.8","8.7","8.6","8.5","8.4","8.3","8.2","8.1","8.0"]},"facet-learning-version":{"customSort":["Current","Not Specified","Unspecified","Not version specific","2028.4","2028.3","2028.2","2028.1","2027.4","2027.3","2027.2","2027.1","2026.4","2026.3","2026.2","2026.1","2025.4","2025.3","2025.2","2025.1","2024.4","2024.3","2024.2","2024.1","2023.4","2023.3","2023.2","2023.1","2022.4","2022.3","2022.2","2022.1","2021.4","2021.3","2021.2","2021.1","2021.4","2021.3","2021.2","2021.1","2020.4","2020.3","2020.2","2020.1","2019.4","2019.3","2019.2","2019.1","2018.4","2018.3","2018.2","2018.1","11.9","11.8","11.7","11.6","11.5","11.4","11.3","11.2","11.1","11.0","10.9","10.8","10.7","10.6","10.5","10.4","10.3","10.2","10.1","10.0","9.9","9.8","9.7","9.6","9.5","9.4","9.3","9.2","9.1","9.0","8.9","8.8","8.7","8.6","8.5","8.4","8.3","8.2","8.1","8.0"]},"SearchInterface":{"enableAutomaticResponsiveMode":"false","loadingAnimation":"false"}},"searchPagePath":"\/search","library":{"scriptPath":"\/libraries\/coveo\/js\/CoveoJsSearch.Lazy.min.js","version":"2.9159.6"},"gaTrackingEnabled":true},"coveoSearchBox":true,"user":{"uid":0,"permissionsHash":"108c4b6326688ba323edf505f380f8aedc19d51db29a24e42cbf4036218408e3"}}</script>
+<script src="/sites/default/files/js/js_FwesIlhW-qTvvzFWjqCOYxokX30k8yGUK2gnXakRiLs.js"></script>
+<script src="https://style-assets.tableau.com/v5.2.3/js/shared.min.js"></script>
+<script src="https://style-assets.tableau.com/v5.2.3/js/scripts.min.js"></script>
+<script src="/sites/default/files/js/js_BFtBDvcRsPbJt0z7qo8yY1k3AV1djW0Mn69gkdIKxvs.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"608b2de9d6","applicationID":"303339355","transactionName":"YV1SZBRRDRZYBUdfWlgXcVMSWQwLFiJBQ0VXVGxeCVQGOXoJXUJHWVRcVRRsLQpdA2VfUEF7X14SQgwJVQNBGwtAUVVH","queueTime":0,"applicationTime":1170,"atts":"TRpFElxLHkkbBxEMTktF","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

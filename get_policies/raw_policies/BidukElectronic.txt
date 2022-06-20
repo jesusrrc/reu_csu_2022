@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"NRJS-c04bedcdf3ee4bcd6c9","applicationID":"462306473","transactionName":"IgoIF0tWXg0BRxtBVwYAFUxKUV0W","queueTime":0,"applicationTime":192,"agent":""}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-c04bedcdf3ee4bcd6c9",applicationID:"462306473"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<title>Privacy | Bail for Immigration Detainees</title>
+<link href="https://hubble-live-assets.s3.amazonaws.com/biduk/theme/icon/1/BID_icon.png" rel="shortcut icon" type="image/x-icon"/>
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="Y23ZduoxamqgUD9rXv/2o1OIFe3o/zuNb2fkWXtJCPVzOBCM264+jNWN/Q1PScAjjdREKIAuIqK1ooI2gz36qQ==" name="csrf-token"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+<meta content="biduk" name="client"/>
+<meta content="Privacy" property="og:title"/>
+<meta content="article" property="og:type"/>
+<meta content="/pages/75-privacy" property="og:url"/>
+<meta content="Bail for Immigration Detainees" property="og:site_name"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="@BIDdetention" name="twitter:site"/>
+<script>
+    var disableStr = 'gt-disable-biduk';
+    if (document.cookie.indexOf(disableStr + '=true') > -1) {
+      window[disableStr] = true;
+    }
+
+    function gtOptin() {
+      if (document.cookie.indexOf(disableStr + '=true') > -1) {
+        document.cookie = disableStr + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      }
+      window[disableStr] = false;
+      hide_cookie_notice();
+    }
+    function gtOptout() {
+      document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+      window[disableStr] = true;
+      hide_cookie_notice();
+    }
+  </script>
+<!-- Google Analytics -->
+<script>
+        if (window[disableStr] != true) {
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-103851206-1', 'auto');
+          ga('set', 'anonymizeIp', true);
+          ga('send', 'pageview');
+        }
+      </script>
+<!-- End Google Analytics -->
+<link href="/assets/application-7f83fefe6ed3c9ac6f626857568c6eae9462ebb6a09f7e83e2ddbcf6919b4f2b.css" media="all" rel="stylesheet"/>
+<script src="/assets/application-b9adfb130c69a0f5698f210558d1d938567c258bc237206fb107ad5b1dbfb53c.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,700,700i" rel="stylesheet"/>
+<style>
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
+h1 {
+  font-family: "Rubik", sans-serif;
+  font-weight: normal;
+}
+div#content h2,
+div#trailer h2,
+div.teaser h2,
+div.tile h2 {
+  font-family: "Rubik", sans-serif;
+  font-weight: normal;
+}
+div#menu h2,
+div#content h3,
+div#trailer h3,
+div.teaser h3,
+div.tile h3,
+div#overview a.link span.title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
+div#menu h3,
+div#content h4,
+div#trailer h4,
+div.teaser h4,
+div.tile h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
+blockquote {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
+div.slide span.title,
+a.signpost span.title {
+  font-family: "Rubik", sans-serif;
+  font-weight: normal;
+}
+a,
+a.overview span.title,
+div#overview a span.title {
+  color: #009ad9;
+}
+a:hover,
+a.overview:hover span.title,
+div#overview a:hover span.title,
+div#trailer div.block > div.more a:hover {
+  color: #006c98;
+}
+a.icon.mdi:hover {
+  color: #FFFFFF;
+  background: #009ad9;
+}
+button,
+a.button,
+span.button,
+label.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  color: #FFFFFF;
+  background: #d9b100;
+}
+button:hover,
+a.button:hover,
+span.button:hover,
+label.button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  background: #ae8e00;
+}
+
+
+div#wrapper {
+  max-width: 1600px;
+  /*max-width: 1320px;*/
+}
+div.holder {
+  max-width: 1200px;
+  /*max-width: 1050px;*/
+}
+
+div#header {
+  color: #4C4C4C;
+  background: #FFFFFF;
+}
+
+div#header div#logo {
+  width: 21.2121%;
+}
+div#header div#logo + div#navbar {
+  width: 69.697%;
+}
+
+div#header div#primary ul.menu {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
+@media screen and (max-width: 840px) {
+  div#header div#primary ul.menu {
+    line-height: inherit;
+    font-size: inherit;
+  }
+}
+div#header div#primary ul.menu li a {
+}
+@media screen and (max-width: 840px) {
+  div#header div#primary ul.menu li a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+div#header div#primary ul.menu li a,
+div#header div#highlight ul.menu li a {
+}
+div#header div#primary:before {
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+div#header div#primary:after {
+  background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+}
+div#header div#primary ul.menu li a {
+  color: #FFFFFF;
+  background: #009ad9;
+}
+div#header div#primary ul.menu li a.trail,
+div#header div#primary ul.menu li a.active,
+div#header div#primary ul.menu li a:hover {
+    background: #007bae;
+}
+  div#header div#navbar ul.menu > li.highlight > a {
+    background: #d9b100
+  }
+  div#header div#navbar ul.menu > li.highlight > a.trail,
+  div#header div#navbar ul.menu > li.highlight > a.active,
+  div#header div#navbar ul.menu > li.highlight > a:hover {
+    background: #ae8e00;
+  }
+div#banner > div.banner,
+form div.row div.radios div.option div.banner_half {
+  background: #444444;
+}
+div#banner > div.banner div.gradient,
+form div.row div.radios div.option div.banner_half div.gradient {
+  background: linear-gradient(to right, #444444, transparent);
+}
+div#banner > div.banner div.cover {
+  background: #0e0e0e;
+    opacity: 0.2;
+}
+/*
+div#banner div.image div.cover,
+div.slide.image a span.cover {
+    background-color: #987c00;
+}
+*/
+div.teaser div.content h2 a:hover span.image span.cover,
+div.tile a:hover span.image span.cover,
+div.slide.image a:hover span.cover,
+div#overview a:hover span.image span.cover {
+  background-color: #006c98;
+}
+a.signpost {
+  color: #FFFFFF;
+  background: #009ad9;
+    border-radius: 2px;
+}
+a.signpost:hover {
+  background: #007bae;
+}
+div#focus span.mdi {
+  color: #d9b100;
+}
+div#ribbon {
+  color: #222222;
+  background: #F6F6F6;
+}
+div#ribbon div.cover {
+  display: none;
+}
+div#ribbon div.block.social ul li a {
+  color: #F6F6F6;
+  background: #222222;
+}
+</style>
+</head>
+<body class="client biduk pages show" data-action="show" data-controller="pages">
+<a class="skip" href="#skip_title">Skip to title</a>
+<a class="skip" href="#skip_content">Skip to main content</a>
+<div id="cover"></div>
+<div id="window">
+<div id="modal"></div>
+</div>
+<div id="wrapper">
+<div class="no-sidebars" id="page">
+<div id="cookie"><div class="holder">
+<div class="message">We gather anonymised analytics data on website usage unless you opt out.</div>
+<div class="buttons"><a class="button" href="javascript:gtOptin()">OK</a> <a class="secondary button" href="javascript:gtOptout()">Opt out</a></div>
+</div></div>
+<div id="header"><div class="holder">
+<div id="logo">
+<a href="/"><img alt="Bail for Immigration Detainees" src="https://hubble-live-assets.s3.amazonaws.com/biduk/theme/logo/1/logo_logo_BID_LOGO_LARGE.jpg"/></a>
+</div><div id="navbar">
+<div id="highlight">
+<ul class="menu highlight"><li class="highlight"><a class="" href="/pages/67-support-our-work">Make a donation</a></li></ul>
+</div>
+<div id="primary">
+<ul class="menu"><li class=""><a class="" href="/pages/6-information-for-detainees">Information for Detainees</a></li><li class=""><a class="" href="/pages/109-get-involved">Get involved</a></li><li class=""><a class="" href="/pages/campaign">Campaign</a></li><li class=""><a class="" href="/pages/12-stories-from-detention">Stories From Detention</a></li><li class=""><a class="" href="/pages/19-publications-policy">Research and policy</a></li><li class=""><a class="home" href="/pages/127-news">News</a></li><li class=""><a class="" href="/pages/2-about-us">About</a></li><li class="highlight"><a class="" href="/pages/67-support-our-work">Make a donation</a></li></ul>
+</div>
+</div>
+</div></div>
+<a name="skip_title"></a>
+<div id="banner">
+<div class="banner">
+<div class="border top"></div>
+<div class="stand full" style="background-image: url('https://hubble-live-assets.s3.amazonaws.com/biduk/banner_asset/file/23/banner_9.jpg')"><div class="gradient"></div></div>
+<div class="cover"></div>
+<div class="holder">
+<div class="table">
+<div class="content">
+<div class="">
+<div class="frame yield">
+<h1>Privacy</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border bottom"></div>
+</div>
+</div>
+<div id="main"><div class="holder">
+<div id="content">
+<a name="skip_content"></a>
+<div id="region-blocks">
+<div id="blocks">
+<div class="block legacy_block" id="block-246">
+<div class="frame yield">
+<h2><p align="justify">Privacy Policy for <a href="https://www.biduk.org"></a><a href="https://www.biduk.org">www.biduk.org</a><br/></p></h2>
+<p>BID is dedicated to safeguarding and preserving your privacy when visiting our site or communicating electronically with us. We comply with all UK and EU privacy laws such as the Data Protection Act 2018 and the EU General Data Protection Regulation (“GDPR”).<br/> <br/>BID is a registered data controller, number Z4954749 on the ICO’s public register of Data Controllers.<br/> <br/>This privacy policy, together with our terms of use, explains what happens to any personal data that you provide to us, or that we collect from you when you are on this site.<br/> <br/>We do update this policy from time to time so please do return and review this policy regularly.</p>
+<p><strong>Information we collect</strong><br/> <br/>BID collects minimal personal data about you when you visit this site, including:</p>
+<ul><li>Details of your visits to our      website and the resources that you access, including, but not limited to,      traffic data, location data, weblogs and other communication data.</li><li>Information provided to us when you communicate with us for any reason using the details provided on the website</li></ul>
+<p><strong>Use of cookies</strong><br/> <br/>BID does not use any cookies on its website. Where BID decides to use any non-essential cookies on the website, it will first seek your consent.</p>
+<p>If BID does decide to use any cookies or tracking mechanisms, BID will ensure the information will not identify you personally. </p>
+<p>All computers have the ability to decline cookies. This can be done by activating the setting on your browser which enables you to decline the cookies. Please note that should you choose to decline cookies, you may be unable to access particular parts of our website.<br/> <br/><strong>Use of your information</strong><br/> <br/>BID will only use your personal information for specified purposes in accordance with data protection rules. </p>
+<p>Occasionally, BID may process information on the basis of BID’s legitimate interests, the legitimate interests of detainees and other public policy objectives, to undertake research and monitor trends in relation to immigration casework. </p>
+<p>Please note that all legal casework will be subject to a separate data protection policy and full details regarding the use and disclosure of such information will always be provided to individuals.</p>
+<p><strong>Storing your personal data</strong><br/> <br/>We will only keep your personal data for limited timeframes, in accordance with the purpose for which it was collected.<br/> <br/>We may sometimes transfer data that we collect from you to locations outside of the European Economic Area for processing and storing. Also, it may be processed by staff operating outside the European Economic Area who work for us or for a sub-contractor. For example, such staff maybe engaged in the provision of technical support services. By submitting your personal data, you agree to this transfer, storing or processing. We will take all reasonable steps to make sure that your data is treated securely and in agreement with this Privacy Policy.<br/> <br/>Data that is provided to us is stored on our secure servers. Details relating to any transactions entered into on our site will be encrypted to ensure its safety.<br/> <br/>The transmission of information via the internet is not completely secure and therefore we cannot guarantee the security of data sent to us electronically and transmission of such data is therefore entirely at your own risk. Where we have given you (or where you have chosen) a password so that you can access certain parts of our site, you are responsible for keeping this password confidential.<br/> <br/><strong>Disclosing your information</strong><br/> <br/>Where applicable, we may disclose your personal information to third parties where we are legally required to disclose your information.<br/> <br/><strong>Third Party links<br/></strong> <br/>You might find links to third party websites on our website. These websites should have their own privacy policies which you should check. We do not accept any responsibility or liability for their policies whatsoever as we have no control over them.<br/> <br/><strong>Your rights</strong><br/> <br/>You have several rights under data protection rules, such as the right to request your data is updated; and in certain cases deleted. </p>
+<p>You also have the right to access the information that we hold about you. Should you wish to receive a copy of the information we hold about you please contact us using the contact details below.</p>
+<p><strong>Contacting us<br/></strong> <br/>We welcome any queries, comments or requests you may have regarding this privacy policy. Please contact <a href="/cdn-cgi/l/email-protection#b3d0d6dfdad2f3d1dad7c6d89ddcc1d4" target="_blank"><span class="__cf_email__" data-cfemail="7615131a1f1736141f12031d58190411">[email protected]</span></a><br/><br/></p><hr/><p> Find out about our <a href="https://www.biduk.org/pages/39-fundraising-promise" target="_blank">Fundraising Promise</a> and <a href="https://www.biduk.org/pages/40-our-fundraising-complaints-procedure" target="_blank">Fundraising Complaints Procedure</a>.<br/> <br/>The Information Commissioner’s Office (“ICO”) monitors and enforces data protection in the UK. For further details please see <a href="https://ico.org.uk/" target="_blank">www.ico.org.uk</a>.</p>
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<div id="trailer"><div class="holder">
+<div id="region-signposts">
+</div>
+</div></div>
+<div id="ribbon">
+<div class="border top"></div>
+<div class="cover"></div>
+<div class="holder">
+<div class="">
+<div class="frame">
+<div class="block social">
+<ul>
+<li><a class="mdi mdi-facebook" href="https://www.facebook.com/BIDdetention" target="_blank"><span>Facebook</span></a></li>
+<li><a class="mdi mdi-twitter" href="https://twitter.com/biddetention" target="_blank"><span>Twitter</span></a></li>
+</ul>
+</div>
+<div class="block menu">
+<ul class="menu"><li class="trail"><a class="trail active" href="/pages/75-privacy">Privacy</a></li><li class=""><a class="" href="/pages/107-casework-privacy-policy">Casework Privacy Policy</a></li><li class=""><a class="" href="/pages/5-accessibility">Accessibility</a></li><li class=""><a class="" href="/pages/39-fundraising-promise">Fundraising Promise</a></li><li class=""><a class="" href="/pages/125-covid-19-news">COVID-19 News</a></li><li class=""><a class="" href="/pages/97-subscribe">Sign up for e-newsletters</a></li><li class="highlight"><a class="" href="/pages/3-contact-us">Contact us</a></li></ul>
+</div>
+<div class="block ribbon">
+<div class="narrow">
+      Bail for Immigration Detainees (BID) is a registered Charity No. 1077187. Registered in England as a Limited Company No. 03803669. Accredited by the Office of the Immigration Services Commissioner Ref. No. N200100147.
+
+We are a member of the Fundraising Regulator, committed to best practice in fundraising and follow the standards for fundraising as set out in the Code of Fundraising Practice.
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="border bottom"></div>
+</div>
+<div id="credit"><div class="holder">
+<div class="block">
+<a href="/account/users/sign_in">Log in</a>
+    | Powered by <a href="https://whitefuse.com" rel="nofollow" target="_blank">White Fuse</a>
+</div>
+</div></div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

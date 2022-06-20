@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+<script>dataLayer = [{"country":"US"},{"realCountry":"USA"},{"cusDimIndex": 4,"cusDimValue":"New Design Wordpress"},{"os":"win"}];</script><style>.async-hide{opacity:0!important}</style>
+<script>
+  function writeExpCookie() {
+    var urlParam = document.location.search;
+    var paramSplit = urlParam.split("&");
+    var _gaexp = getParameter("_gaexpadserver", window.location.href);
+    for (var i = 0; i < paramSplit.length; i++) {
+      if (paramSplit[i].indexOf("_gaexpadserver") > -1 && _gaexp !== "noexp") {
+        createCookie("_gaexp", _gaexp, 90);
+      }
+    }
+  }
+
+  function getParameter(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return "";
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+
+  function createCookie(name, value, days) {
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      var expires = "; expires=" + date.toGMTString();
+    } else var expires = "";
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+
+  (function(a, s, y, n, c, h, i, d, e) {
+    s.className += " " + y;
+    h.start = 1 * new Date();
+    h.end = i = function() {
+      s.className = s.className.replace(RegExp(" ?" + y), "");
+    };
+    (a[n] = a[n] || []).hide = h;
+    setTimeout(function() {
+      i();
+      h.end = null;
+    }, c);
+    h.timeout = c;
+  })(window, document.documentElement, "async-hide", "dataLayer", 4000, {
+    "OPT-TZH6C5W": true
+  });
+
+  (function(i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function() {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "https://www.google-analytics.com/analytics.js",
+    "ga"
+  );
+  ga("create", "UA-168798294-1", "auto", {
+    siteSpeedSampleRate: 100,
+    allowLinker: true,
+    clientId: trakkGetClientIDfromURL().returnClientID() //New
+  });
+  ga("require", "OPT-TZH6C5W");
+
+  trakkGetClientIDfromURL().returnClientID();
+
+  //get customized client id
+  function trakkGetClientIDfromURL() {
+    var gaClientidParameterKey = "gaclientid";
+    var clickTimestampParameterKey = "gaclientidtime";
+    var dataLayerEventName = "gaClientIDreceived";
+    return {
+      returnClientID: returnClientID
+    };
+
+    function returnClientID() {
+      var clientID = getClientIdFromURL();
+      var clickTimestamp = getClientIdTimeStamp() || 0;
+      var currentTimeStamp = Date.now() / 1000;
+
+      if (currentTimeStamp - clickTimestamp > 60) {
+        clientID = undefined;
+      }
+      pushClientIDtoDataLayer(clientID);
+      return clientID;
+    }
+
+    function pushClientIDtoDataLayer(clientID) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: dataLayerEventName,
+        clientID: clientID
+      });
+    }
+
+    function getClientIdFromURL() {
+      var urlParam = window.location.search.substring(1);
+      var paramSplit = urlParam.split("&");
+
+      for (var i = 0; i < paramSplit.length; i++) {
+        if (paramSplit[i].indexOf("gaclientid") > -1) {
+          var clientId = paramSplit[i].split("=")[1];
+          return clientId;
+        }
+      }
+    }
+
+    function getClientIdTimeStamp() {
+      var urlParam = document.location.search;
+      var paramSplit = urlParam.split("&");
+      for (var i = 0; i < paramSplit.length; i++) {
+        if (paramSplit[i].indexOf("gaclientidtime") > -1) {
+          var clientIdTimestamp = paramSplit[i].split("=")[1];
+          return clientIdTimestamp;
+        }
+      }
+    }
+  }
+
+  (function(w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-TL9BXFZ");
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="none" name="msapplication-config"/>
+<meta content="pc,mobile" name="applicable-device"/>
+<meta content="wNWFRErSiK" name="baidu-site-verification"/>
+<meta content="8763ea8ce003ca44fa69953b349ae070117703b0" name="naver-site-verification"/>
+<meta content="088dd33e5200ce6a" name="yandex-verification"/>
+<meta content="#2b76ad" name="theme-color"/>
+<script>
+            LUX=(function(){var a=("undefined"!==typeof(LUX)&&"undefined"!==typeof(LUX.gaMarks)?LUX.gaMarks:[]);var d=("undefined"!==typeof(LUX)&&"undefined"!==typeof(LUX.gaMeasures)?LUX.gaMeasures:[]);var j="LUX_start";var k=window.performance;var l=("undefined"!==typeof(LUX)&&LUX.ns?LUX.ns:(Date.now?Date.now():+(new Date())));if(k&&k.timing&&k.timing.navigationStart){l=k.timing.navigationStart}function f(){if(k&&k.now){return k.now()}var o=Date.now?Date.now():+(new Date());return o-l}function b(n){if(k){if(k.mark){return k.mark(n)}else{if(k.webkitMark){return k.webkitMark(n)}}}a.push({name:n,entryType:"mark",startTime:f(),duration:0});return}function m(p,t,n){if("undefined"===typeof(t)&&h(j)){t=j}if(k){if(k.measure){if(t){if(n){return k.measure(p,t,n)}else{return k.measure(p,t)}}else{return k.measure(p)}}else{if(k.webkitMeasure){return k.webkitMeasure(p,t,n)}}}var r=0,o=f();if(t){var s=h(t);if(s){r=s.startTime}else{if(k&&k.timing&&k.timing[t]){r=k.timing[t]-k.timing.navigationStart}else{return}}}if(n){var q=h(n);if(q){o=q.startTime}else{if(k&&k.timing&&k.timing[n]){o=k.timing[n]-k.timing.navigationStart}else{return}}}d.push({name:p,entryType:"measure",startTime:r,duration:(o-r)});return}function h(n){return c(n,g())}function c(p,o){for(i=o.length-1;i>=0;i--){var n=o[i];if(p===n.name){return n}}return undefined}function g(){if(k){if(k.getEntriesByType){return k.getEntriesByType("mark")}else{if(k.webkitGetEntriesByType){return k.webkitGetEntriesByType("mark")}}}return a}return{mark:b,measure:m,gaMarks:a,gaMeasures:d}})();LUX.ns=(Date.now?Date.now():+(new Date()));LUX.ac=[];LUX.cmd=function(a){LUX.ac.push(a)};LUX.init=function(){LUX.cmd(["init"])};LUX.send=function(){LUX.cmd(["send"])};LUX.addData=function(a,b){LUX.cmd(["addData",a,b])};LUX_ae=[];window.addEventListener("error",function(a){LUX_ae.push(a)});LUX_al=[];if("function"===typeof(PerformanceObserver)&&"function"===typeof(PerformanceLongTaskTiming)){var LongTaskObserver=new PerformanceObserver(function(c){var b=c.getEntries();for(var a=0;a<b.length;a++){var d=b[a];LUX_al.push(d)}});try{LongTaskObserver.observe({type:["longtask"]})}catch(e){}};
+        </script>
+<script async="" crossorigin="anonymous" defer="" src="https://cdn.speedcurve.com/js/lux.js?id=2624851647"></script>
+<link href="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/media/favicon.png" rel="apple-touch-icon"/>
+<link href="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/media/favicon.png" rel="icon" type="image/png"/>
+<link crossorigin="" href="https://static.teamviewer.com" rel="preconnect"/><link crossorigin="" href="https://cdn.cookielaw.org" rel="preconnect"/><link crossorigin="" href="https://www.googletagmanager.com" rel="preconnect"/><link crossorigin="" href="https://www.google-analytics.com" rel="preconnect"/><style id="wpml-ls-inline-styles-additional-css" type="text/css">.wpml-ls-display{display:inline!important;}</style>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+<link href="https://www.teamviewer.com/en-us/trust-center/application-security-options/" hreflang="en-us" rel="alternate">
+<link href="https://www.teamviewer.com/en-us/trust-center/application-security-options/" hreflang="x-default" rel="alternate">
+<link as="script" data-wpacu-preload-js="1" href="https://www.teamviewer.com/wp-includes/js/jquery/jquery.min.js" rel="preload"/>
+<link as="script" data-wpacu-preload-js="1" href="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/js/lazy_load.min.js?ver=3.0.97" rel="preload"/>
+<title>TeamViewer Security and Privacy</title>
+<meta content="Security and privacy dominate all of TeamViewer's feature and development goals." name="description">
+<link href="https://www.teamviewer.com/en-us/trust-center/application-security-options/" rel="canonical">
+<meta content="en_US" property="og:locale">
+<meta content="article" property="og:type">
+<meta content="TeamViewer Security and Privacy" property="og:title">
+<meta content="Security and privacy dominate all of TeamViewer's feature and development goals." property="og:description">
+<meta content="https://www.teamviewer.com/en-us/trust-center/application-security-options/" property="og:url">
+<meta content="TeamViewer" property="og:site_name">
+<meta content="2020-10-26T15:12:06+00:00" property="article:modified_time"/>
+<meta content="https://static.teamviewer.com/resources/2018/12/Facebook_v1.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="628" property="og:image:height"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Est. reading time" name="twitter:label1"/>
+<meta content="7 minutes" name="twitter:data1"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.teamviewer.com/en-us/#organization","name":"TeamViewer","url":"https://www.teamviewer.com/en-us/","sameAs":[],"logo":{"@type":"ImageObject","@id":"https://www.teamviewer.com/en-us/#logo","inLanguage":"en-US","url":"https://static.teamviewer.com/resources/2019/07/TeamViewer_Logo_512x512.png","contentUrl":"https://static.teamviewer.com/resources/2019/07/TeamViewer_Logo_512x512.png","width":512,"height":512,"caption":"TeamViewer"},"image":{"@id":"https://www.teamviewer.com/en-us/#logo"}},{"@type":"WebSite","@id":"https://www.teamviewer.com/en-us/#website","url":"https://www.teamviewer.com/en-us/","name":"TeamViewer","description":"The World&#039;s #1 Remote Desktop App","publisher":{"@id":"https://www.teamviewer.com/en-us/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.teamviewer.com/en-us/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://www.teamviewer.com/en-us/trust-center/application-security-options/#webpage","url":"https://www.teamviewer.com/en-us/trust-center/application-security-options/","name":"TeamViewer Security and Privacy","isPartOf":{"@id":"https://www.teamviewer.com/en-us/#website"},"datePublished":"2018-10-17T19:10:00+00:00","dateModified":"2020-10-26T15:12:06+00:00","description":"Security and privacy dominate all of TeamViewer's feature and development goals.","breadcrumb":{"@id":"https://www.teamviewer.com/en-us/trust-center/application-security-options/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.teamviewer.com/en-us/trust-center/application-security-options/"]}]},{"@type":"BreadcrumbList","@id":"https://www.teamviewer.com/en-us/trust-center/application-security-options/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.teamviewer.com/en-us/"},{"@type":"ListItem","position":2,"name":"Trust Center","item":"https://www.teamviewer.com/en-us/trust-center/"},{"@type":"ListItem","position":3,"name":"Application Security Options"}]}]}</script>
+<link href="https://www.teamviewer.com/wp-content/plugins/wp-hazard-messages/css/msgbox.css" id="msgbox.css-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.teamviewer.com/wp-includes/css/dist/components/style.min.css" id="wp-components-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.teamviewer.com/wp-includes/css/dist/block-editor/style.min.css" id="wp-block-editor-css" media="all" rel="stylesheet" type="text/css">
+<link href="https://www.teamviewer.com/wp-includes/css/dist/nux/style.min.css" id="wp-nux-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-includes/css/dist/reusable-blocks/style.min.css" id="wp-reusable-blocks-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-includes/css/dist/editor/style.min.css" id="wp-editor-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/plugins/wpsvg/gutenberg/dist/blocks.style.build.css" id="wpsvg_inline-cgb-style-css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/css/global.min.css?ver=3.0.97" id="tv-theme-global-css" media="all" rel="stylesheet" type="text/css"/>
+<link as="style" data-wpacu-preload-it-async="1" href="https://www.teamviewer.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css" id="wpacu-preload-js_composer_front-css" media="all" onload="this.onload=null;this.rel='stylesheet'" rel="preload" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/uploads/smile_fonts/Defaults/Defaults.css" id="bsf-Defaults-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/uploads/smile_fonts/Marketing/Marketing.css" id="bsf-Marketing-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/uploads/smile_fonts/Delivery/Delivery.css" id="bsf-Delivery-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/uploads/smile_fonts/Interaction/Interaction.css" id="bsf-Interaction-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/uploads/smile_fonts/Arrows/Arrows.css" id="bsf-Arrows-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/uploads/smile_fonts/Business/Business.css" id="bsf-Business-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/uploads/smile_fonts/Technology/Technology.css" id="bsf-Technology-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/uploads/smile_fonts/Webdev/Webdev.css" id="bsf-Webdev-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/uploads/smile_fonts/Office/Office.css" id="bsf-Office-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/uploads/smile_fonts/Security/Security.css" id="bsf-Security-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/uploads/smile_fonts/Essentials/Essentials.css" id="bsf-Essentials-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/style.min.css" id="ultimate-vc-addons-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/slick.min.css" id="ultimate-vc-addons-slick-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/css/icons.css" id="ultimate-vc-addons-icons-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/animate.min.css" id="ultimate-vc-addons-animate-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/info-box.min.css" id="ultimate-vc-addons-info-box-style-css" media="all" rel="stylesheet" type="text/css"/>
+<script data-wpacu-to-be-preloaded-basic="1" id="jquery-core-js" src="https://www.teamviewer.com/wp-includes/js/jquery/jquery.min.js" type="text/javascript"></script>
+<script id="jquery-migrate-js" src="https://www.teamviewer.com/wp-includes/js/jquery/jquery-migrate.min.js" type="text/javascript"></script>
+<script async="" data-wpacu-to-be-preloaded-basic="1" id="lazysizes-js" src="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/js/lazy_load.min.js?ver=3.0.97" type="text/javascript"></script>
+<script id="ultimate-vc-addons-params-js" src="https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/ultimate-params.min.js" type="text/javascript"></script>
+<script id="ultimate-vc-addons-appear-js" src="https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/jquery-appear.min.js" type="text/javascript"></script>
+<script id="ultimate-vc-addons-custom-js" src="https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/custom.min.js" type="text/javascript"></script>
+<script id="ultimate-vc-addons-slick-js" src="https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/slick.min.js" type="text/javascript"></script>
+<script id="ultimate-vc-addons-slick-custom-js" src="https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/slick-custom.min.js" type="text/javascript"></script>
+<style>
+::-webkit-input-placeholder { 
+color: #777 !important;
+opacity: 1 !important;
+}
+::-moz-placeholder { 
+color: #777 !important;
+opacity: 1 !important;
+}
+:-ms-input-placeholder {
+color: #777 !important;
+opacity: 1;
+}
+ul.phone_number_list { list-style-type: none; padding-left: 0px !important; } 
+ul.phone_number_list li { margin-bottom: 0px !important; }
+.wd-row.wd-row--highlight ul li { color: #fff; }
+.ub-emb-bar-frame {
+    bottom: 0px !important;
+    z-index: 999 !important;
+}
+.ub-emb-bar { visibility: visible  !important; }
+.lh_feature_icon img { width:100% !important;  }
+.phone_number_language { display:none !important; }
+</style>
+<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><script id="wpacu-preload-async-css-fallback">
+/*! LoadCSS. [c]2020 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/
+(function(w){"use strict";var wpacuLoadCSS=function(href,before,media,attributes){var doc=w.document;var ss=doc.createElement('link');var ref;if(before){ref=before}else{var refs=(doc.body||doc.getElementsByTagName('head')[0]).childNodes;ref=refs[refs.length-1]}
+var sheets=doc.styleSheets;if(attributes){for(var attributeName in attributes){if(attributes.hasOwnProperty(attributeName)){ss.setAttribute(attributeName,attributes[attributeName])}}}
+ss.rel="stylesheet";ss.href=href;ss.media="only x";function ready(cb){if(doc.body){return cb()}
+setTimeout(function(){ready(cb)})}
+ready(function(){ref.parentNode.insertBefore(ss,(before?ref:ref.nextSibling))});var onwpaculoadcssdefined=function(cb){var resolvedHref=ss.href;var i=sheets.length;while(i--){if(sheets[i].href===resolvedHref){return cb()}}
+setTimeout(function(){onwpaculoadcssdefined(cb)})};function loadCB(){if(ss.addEventListener){ss.removeEventListener("load",loadCB)}
+ss.media=media||"all"}
+if(ss.addEventListener){ss.addEventListener("load",loadCB)}
+ss.onwpaculoadcssdefined=onwpaculoadcssdefined;onwpaculoadcssdefined(loadCB);return ss};if(typeof exports!=="undefined"){exports.wpacuLoadCSS=wpacuLoadCSS}else{w.wpacuLoadCSS=wpacuLoadCSS}}(typeof global!=="undefined"?global:this))
+</script>
+</link></link></link></meta></meta></meta></meta></meta></meta></link></meta></link></link></meta></head>
+<body class="page-template-default page page-id-48248 page-child parent-pageid-48481 wpb-js-composer js-comp-ver-6.7.0 vc_responsive">
+<noscript>
+<iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TL9BXFZ" style="display:none;visibility:hidden" width="0"></iframe>
+<img alt="" height="1" src="https://px.ads.linkedin.com/collect/?pid=57080&amp;fmt=gif" style="display:none;" width="1"/>
+</noscript>
+<div class="site" id="page">
+<header class="wd-top-header" id="tv-main-header">
+<div class="wd-toggle">
+<div class="wd-toggle__item"></div>
+<div class="wd-toggle__item"></div>
+<div class="wd-toggle__item"></div>
+</div>
+<div class="wd-top-header__logo-menu">
+<div class="wd-tv-logo">
+<a class="wd-tv-logo__image" href="https://www.teamviewer.com/en-us/"></a>
+</div>
+<div class="wd-top-menu">
+<ul class="wd-top-menu__panel" id="menu-teamviewer-top-menu-english-us"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children wd-top-menu__item wd-top-menu__item--proud wd-top-menu__item--has-sub" id="menu-item-185256"><a class="wd-top-menu__link wd-top-menu__link--proud"> Products</a>
+<ul class="wd-top-menu__list wd-main-menu_sub-menu wd-top-menu__list--depth-0">
+<li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item acf-column-break" id="menu-item-244744"><a class="wd-top-menu__link" href="/en-us/products/teamviewer/"> TeamViewer<div class="wd-top-menu__link-description">Remote Access &amp; Support</div></a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-188696"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/teamviewer-tensor/"> TeamViewer Tensor<div class="wd-top-menu__link-description">Enterprise Remote Connectivity</div></a> <li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item" id="menu-item-233786"><a class="wd-top-menu__link" href="/en-us/iot/"> TeamViewer IoT<div class="wd-top-menu__link-description">Access, Control, Manage</div></a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item acf-column-break" id="menu-item-185348"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/augmented-reality/"> TeamViewer Assist AR<div class="wd-top-menu__link-description">Remote Support with AR</div></a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-356733"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/frontline/"> TeamViewer Frontline<div class="wd-top-menu__link-description">AR Workflow Solutions</div></a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-370241"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/engage/"> TeamViewer Engage<div class="wd-top-menu__link-description">Digital Customer Engagement</div></a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item acf-column-break" id="menu-item-185349"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/remote-management/"> TeamViewer Remote Management<div class="wd-top-menu__link-description">Manage, Monitor, Patch and Protect your devices</div></a> <li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item" id="menu-item-185404"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/meeting/"> TeamViewer Meeting<div class="wd-top-menu__link-description">Secure Videoconferencing</div></a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-231981"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/solutions/support-ticket-system/"> TeamViewer Servicecamp<div class="wd-top-menu__link-description">Service Desk Ticketing</div></a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item acf-column-break" id="menu-item-186001"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/integrations/"> Application Integrations</a> <li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item" id="menu-item-191298"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/success-stories/"> Customer Success</a> </li></li></li></li></li></li></li></li></li></li></li></ul><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children wd-top-menu__item wd-top-menu__item--proud wd-top-menu__item--has-sub" id="menu-item-185557"><a class="wd-top-menu__link wd-top-menu__link--proud"> Solutions</a>
+<ul class="wd-top-menu__list wd-main-menu_sub-menu wd-top-menu__list--depth-0">
+<li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item acf-column-break" id="menu-item-259498"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/solutions/remote-support/"> Remote Support</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-371139"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/solutions/it-management/"> IT Management</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-370527"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/solutions/web-monitoring/"> Web Monitoring</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-370242"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/solutions/remote-work-videoconferencing/"> Remote Work and Videoconferencing</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item acf-column-break" id="menu-item-389620"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/solutions/remote-access/"> Remote Access</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-372463"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/augmented-reality/"> Augmented Reality Support</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-370244"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/solutions/frontline/"> Workflow Digitalization</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-371138"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/solutions/iot-industry/"> IoT and Industry 4.0</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item acf-column-break" id="menu-item-356734"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/frontline/xpick/"> Logistics &amp; Intralogistics</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-356736"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/frontline/xmake/"> Assembly &amp; Production</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-356737"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/frontline/xinspect/"> Inspection &amp; Maintenance</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-356735"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/frontline/xassist/"> Service &amp; After Sales</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item acf-column-break" id="menu-item-185647"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/solutions/support-mobile-devices/"> Support for Mobile Devices</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-370246"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/solutions/support-android-devices/"> Support For Android Devices</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-392928"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/?page_id=380388"> Digital Customer Service</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-392929"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/engage/online-consultation/"> Online Sales &amp; Consultation</a> <li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item acf-column-break" id="menu-item-370247"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/content/education-packages/"> For Schools and Universities</a> </li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></ul><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children wd-top-menu__item wd-top-menu__item--proud wd-top-menu__item--has-sub" id="menu-item-185816"><a class="wd-top-menu__link wd-top-menu__link--proud"> Resources</a>
+<ul class="wd-top-menu__list wd-main-menu_sub-menu wd-top-menu__list--depth-0">
+<li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item acf-column-break" id="menu-item-398852"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/customer-support/"> Customer Support</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-370250"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/custom-modules/"> Custom Modules</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-185856"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/for-developers/"> For Developers</a> <li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item" id="menu-item-185857"><a class="wd-top-menu__link" href="https://community.teamviewer.com/?category.id=en"> Community</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-185858"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/info/"> Glossary</a> <li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item" id="menu-item-185915"><a class="wd-top-menu__link" href="https://community.teamviewer.com/t5/Knowledge-Base/tkb-p/Knowledgebase?_ga=2.12813815.1503713766.1563778129-797906566.1562684420"> Knowledge Base</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item acf-column-break" id="menu-item-185916"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/documents/"> Documents</a> <li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor wd-top-menu__item" id="menu-item-192517"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/trust-center/"> Trust Center</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-185943"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/product-training/"> TeamViewer Academy</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-271999"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/blog/"> Blog</a> <li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item" id="menu-item-185945"><a class="wd-top-menu__link" href="https://status.teamviewer.com/"> System Status</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-270456"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/events/"> Events &amp; Webinars</a> </li></li></li></li></li></li></li></li></li></li></li></li></ul><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children wd-top-menu__item wd-top-menu__item--proud wd-top-menu__item--has-sub" id="menu-item-200850"><a class="wd-top-menu__link wd-top-menu__link--proud"> Partner</a>
+<ul class="wd-top-menu__list wd-main-menu_sub-menu wd-top-menu__list--depth-0">
+<li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item acf-column-break" id="menu-item-407332"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/integrations/"> Integration Partner</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-205409"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/solutions/support-android-devices/"> OEM Partner</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-370252"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/frontline/become-a-partner/"> Frontline Partner</a> <li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item acf-column-break" id="menu-item-264246"><a class="wd-top-menu__link" href="/en-us/become-a-partner/"> Become a Partner</a> <li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item" id="menu-item-186112"><a class="wd-top-menu__link" href="/en-us/partner-locations/"> Find a Partner</a> </li></li></li></li></li></ul><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children wd-top-menu__item wd-top-menu__item--proud wd-top-menu__item--has-sub" id="menu-item-186309"><a class="wd-top-menu__link wd-top-menu__link--proud"> Company</a>
+<ul class="wd-top-menu__list wd-main-menu_sub-menu wd-top-menu__list--depth-0">
+<li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item acf-column-break" id="menu-item-186067"><a class="wd-top-menu__link" href="https://ir.teamviewer.com/websites/teamviewer/English/1/investor-relations.html"> Investors</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-186204"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/company/press/"> Press Room</a> <li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item" id="menu-item-186159"><a class="wd-top-menu__link" href="https://jobs.teamviewer.com/"> Careers</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-398851"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/customer-support/"> Customer Support</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item acf-column-break" id="menu-item-49002"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/company/leadership/"> Leadership</a> <li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item" id="menu-item-387327"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/sponsorship/"> Sport Sponsorship</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-324992"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/company/sustainability-csr/"> Sustainability and CSR</a> <li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__item" id="menu-item-324993"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/company/"> About TeamViewer</a> <li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__item" id="menu-item-371414"><a class="wd-top-menu__link" href="https://www.teamviewer.com/en-us/customer-support/?sales"> Sales Contact</a> </li></li></li></li></li></li></li></li></li></ul><li class="menu-item menu-item-type-post_type menu-item-object-page wd-top-menu__button wd-top-menu__button--corporate-inverted" id="menu-item-408556"><a class="wd-top-menu__link wd-top-menu__link--proud" href="https://www.teamviewer.com/en-us/download/"> Download<span class="wd-top-menu__button-icon wd-top-menu__button-icon--corporate-inverted"><svg height="16.492" viewbox="0 0 12 16.492" width="12" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(-155.586 -13.383)">
+<path d="M6,0,4.909,1.091l4.13,4.13H-1.488V6.779H9.039l-4.13,4.13L6,12l6-6Z" data-name="Pfad 3506" fill="#fff" transform="translate(167.586 14.871) rotate(90)"></path>
+<path d="M155.586,29.125h12" data-name="Pfad 3507" fill="none" stroke="#fff" stroke-width="1.5"></path>
+</g>
+</svg>
+</span></a> <li class="menu-item menu-item-type-custom menu-item-object-custom wd-top-menu__button wd-top-menu__button--corporate-inverted" id="menu-item-186235"><a class="wd-top-menu__link wd-top-menu__link--proud" href="/en-us/buy-now/"> Buy Now<span class="wd-top-menu__button-icon wd-top-menu__button-icon--corporate-inverted"><svg height="16.404" viewbox="0 0 18.401 16.404" width="18.401" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.254,2.25a.725.725,0,0,1,.578.281.657.657,0,0,1,.141.625l-1.344,6.5a.92.92,0,0,1-.094.234.682.682,0,0,1-.156.188.75.75,0,0,1-.219.125.708.708,0,0,1-.25.047H5.533l.375,2H15.16a.706.706,0,0,1,.75.563,1.958,1.958,0,0,1,.594,1.438,2,2,0,1,1-4,0,1.912,1.912,0,0,1,.281-1H8.221a1.912,1.912,0,0,1,.281,1,1.975,1.975,0,0,1-2,2,1.975,1.975,0,0,1-2-2,1.89,1.89,0,0,1,.531-1.344L2.844,1.25H.375A.332.332,0,0,1,0,.875V.625A.332.332,0,0,1,.375.25H3.032a.726.726,0,0,1,.484.172.8.8,0,0,1,.266.453l.25,1.375ZM7.189,14.941a.89.89,0,0,0,.313-.688.995.995,0,0,0-1.7-.7,1,1,0,0,0,.7,1.7A.89.89,0,0,0,7.189,14.941Zm6.6,0a.988.988,0,0,0,.719.313.995.995,0,1,0-1-1A.935.935,0,0,0,13.785,14.941Zm1.907-5.689,1.25-6H4.22l1.125,6Z" fill="#fff" stroke="#fff" stroke-width="0.4" transform="translate(0.2 -0.05)"></path>
+</svg>
+</span></a> </li></li></li></li></li></li></li></ul> <div class="wd-top-menu__overlay"></div>
+</div>
+</div>
+<div class="wd-top-header__support-menu">
+<ul class="wd-support-menu">
+<li class="wd-support-menu__item">
+<a aria-label="TeamViewer Contact Page" class="wd-support-menu__link wd-support-menu__link--phone-icon wd-support__phone--mobile" href="tel:+1 800 638 0253">
+<span class="wd-support-menu__phone-icon"></span>
+</a>
+<a aria-label="TeamViewer Contact Page" class="wd-support-menu__link wd-support-menu__link--phone-icon wd-support__phone--tablet" href="https://www.teamviewer.com/en-us/customer-support/?sales" style="">
+<span class="wd-support-menu__phone-icon"></span>
+<span class="wd-support-menu__phone-number">+1 800 638 0253</span>
+</a>
+</li>
+<li class="wd-support-menu__item">
+<span aria-label="TeamViewer Login Page" class="wd-support-menu__link wd-support-menu__link--profil" id="tv_login_icon" rel="noopener">
+<span class="wd-support-menu__profil wd-support-menu__profil--avatar">
+</span>
+</span>
+<div class="wd-support-menu__sub-menu">
+<div class="wd-support-menu__sub-menu-wrapper">
+<span class="wd-support-menu__sub-menu-text wd-support-menu__sub-menu-headline">
+                            Sign in:                        </span>
+<a aria-label="#" class="wd-support-menu__sub-menu-text wd-support-menu__sub-menu-link" href="https://login.teamviewer.com/LogOn" target="_blank">
+                            Management Console                        </a>
+<a aria-label="#" class="wd-support-menu__sub-menu-text wd-support-menu__sub-menu-link" href="https://login.teamviewer.com/oauth2/authorize/TvWebsite?client_id=468123-M4e8KETDG5OXotATbPTW&amp;response_type=code&amp;display=popup&amp;redirect_uri=https%3A%2F%2Fwww.teamviewer.com%2Fmco%2Fsupport%3Flang%3Den-us" target="_blank">
+                            Chat                        </a>
+<a aria-label="#" class="wd-support-menu__sub-menu-text wd-support-menu__sub-menu-link" href="https://freshworks-help175.freshworks.com/login/auth/contactsso?client_id=78368727158800390&amp;redirect_uri=https%3A%2F%2Fsupport.teamviewer.com%2Ffreshid%2Fcustomer_authorize_callback" target="_blank">
+                            Ticket                        </a>
+<a aria-label="#" class="wd-support-menu__sub-menu-text wd-support-menu__sub-menu-link" href="https://service.teamviewer.com" target="_blank">
+                            Customer Portal                        </a>
+</div>
+</div>
+</li>
+<li class="wd-support-menu__item">
+<a class="wd-support-menu__link wd-support-menu__link--language" href="/en-us/language-selector/?previous_page=48248" id="language-selector-link">
+<img alt="en-us" class="wd-support-menu__language" id="en-us" src="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/src/img/flags/en-us.png"/>
+</a>
+</li>
+</ul>
+</div></header>
+<div class="wd-breadcrumb wd-breadcrumb--white"><div class="wd-breadcrumb__item">
+<a class="wd-breadcrumb__link wd-breadcrumb__link--home" href="https://www.teamviewer.com/en-us/"></a>
+</div><div class="wd-breadcrumb__item"><a class="wd-breadcrumb__link" href="https://www.teamviewer.com/en-us/trust-center/">Trust Center</a></div><div class="wd-breadcrumb__item">Application Security Options</div></div>
+<div class="wd-site-content" id="content">
+<div class="content-area" id="primary">
+<main class="site-main" id="main">
+<article class="post-48248 page type-page status-publish hentry wd-main-content-container" id="post-48248">
+<div class="entry-content">
+<div class="vc_row wpb_row vc_row-fluid wd-header" data-vc-full-width="true" data-vc-full-width-init="false"><div class="wpb_column vc_column_container vc_col-sm-8"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<h1 style="text-align: left"><strong>TeamViewer Trust Center</strong></h1>
+<p style="text-align: left">Your single source for the latest security, compliance, and system performance information.</p>
+</div>
+</div>
+</div></div></div><div class="wpb_column vc_column_container vc_col-sm-4"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element wd-margin-bottom-zero">
+<div class="wpb_wrapper">
+<p style="text-align: right">CURRENT SYSTEM STATUS</p>
+</div>
+</div>
+<div class="wpb_single_image wpb_content_element vc_align_right wd-margin-bottom-zero">
+<figure class="wpb_wrapper vc_figure">
+<div class="vc_single_image-wrapper vc_box_border_grey"><img alt="" class="vc_single_image-img attachment-medium" height="34" loading="lazy" sizes="(max-width: 240px) 100vw, 240px" src="https://static.teamviewer.com/resources/2018/06/current-system-status.png" srcset="https://static.teamviewer.com/resources/2018/06/current-system-status.png 240w, https://static.teamviewer.com/resources/2018/06/current-system-status-50x7.png 50w, https://static.teamviewer.com/resources/2018/06/current-system-status-150x21.png 150w" width="240"/></div>
+</figure>
+</div>
+<div class="vc_btn3-container wd-button wd-button--default-inverted vc_btn3-right"><a class="vc_general vc_btn3 vc_btn3-size-md vc_btn3-shape-square vc_btn3-style-flat vc_btn3-color-grey" href="https://status.teamviewer.com/" target="_blank" title="Status">See Details</a></div><div class="vc_empty_space" style="height: 100px"><span class="vc_empty_space_inner"></span></div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div class="upb_bg_img" data-animation-repeat="repeat" data-bg-animation="left-animation" data-bg-animation-type="h" data-bg-img-position="" data-bg-img-repeat="no-repeat" data-bg-img-size="cover" data-bg-override="0" data-bg_img_attach="scroll" data-custom-vc-row="" data-fadeout="" data-fadeout-percentage="30" data-image-id="id^8840|url^https://static.teamviewer.com/resources/2018/05/woman-and-man-working.jpg|caption^null|alt^null|title^woman-and-man-working|description^null" data-img-parallax-mobile-disable="true" data-is_old_vc="" data-overlay="true" data-overlay-color="rgba(58,148,191,0.6)" data-overlay-pattern="" data-overlay-pattern-attachment="scroll" data-overlay-pattern-opacity="0.8" data-overlay-pattern-size="" data-parallax-content="" data-parallax-content-sense="30" data-parallx_sense="30" data-row-effect-mobile-disable="true" data-rtl="false" data-theme-support="disable" data-ultimate-bg="url(https://static.teamviewer.com/resources/2018/05/woman-and-man-working.jpg)" data-ultimate-bg-style="vcpb-default" data-upb-bg-animation="" data-upb-overlay-color="rgba(58,148,191,0.6)" data-vc="6.7.0"></div><div class="vc_row wpb_row vc_row-fluid wd-row--intoheader-white wd-row--intoheader-white__small" data-vc-full-width="true" data-vc-full-width-init="false"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="ult-carousel-wrapper ult_horizontal" data-gutter="15" data-rtl="false" id="ult-carousel-236859561662b0d3e83ef55"><div class="ult-carousel-413181305662b0d3e83ef37"><div class="ult-item-wrap" data-animation="animated no-animation"><div class="aio-icon-component style_1"><a class="aio-icon-box-link" href="https://www.teamviewer.com/en-us/trust-center/security/" title="Security"><div class="aio-icon-box default-icon" id="Info-box-wrap-2827" style=""><div class="aio-icon-default"><div class="ult-item-wrap" data-animation="animated no-animation"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;">
+<div class="aio-icon none" style="color:#2e2e2e;font-size:32px;display:inline-block;">
+<i class="Business-safebox-1"></i>
+</div></div></div></div></div><div class="aio-icon-header"><h3 class="aio-icon-title ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target="#Info-box-wrap-2827 .aio-icon-title" style="color:#2e2e2e;">Security Overview</h3></div> </div> </a></div> </div><div class="ult-item-wrap" data-animation="animated no-animation"><div class="aio-icon-component style_1"><a class="aio-icon-box-link" href="https://www.teamviewer.com/en-us/trust-center/application-security-options/" title="Application Security"><div class="aio-icon-box default-icon" id="Info-box-wrap-6352" style=""><div class="aio-icon-default"><div class="ult-item-wrap" data-animation="animated no-animation"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;">
+<div class="aio-icon none" style="color:#2b76ad;font-size:32px;display:inline-block;">
+<i class="Defaults-wrench"></i>
+</div></div></div></div></div><div class="aio-icon-header"><h3 class="aio-icon-title ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target="#Info-box-wrap-6352 .aio-icon-title" style="color:#2b76ad;">Application Security</h3></div> </div> </a></div> </div><div class="ult-item-wrap" data-animation="animated no-animation"><div class="aio-icon-component style_1"><a class="aio-icon-box-link" href="https://www.teamviewer.com/en-us/trust-center/compliance/" title="Compliance"><div class="aio-icon-box default-icon" id="Info-box-wrap-8364" style=""><div class="aio-icon-default"><div class="ult-item-wrap" data-animation="animated no-animation"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;">
+<div class="aio-icon none" style="color:#2e2e2e;font-size:32px;display:inline-block;">
+<i class="Essentials-success"></i>
+</div></div></div></div></div><div class="aio-icon-header"><h3 class="aio-icon-title ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target="#Info-box-wrap-8364 .aio-icon-title" style="">Compliance</h3></div> </div> </a></div> </div><div class="ult-item-wrap" data-animation="animated no-animation"><div class="aio-icon-component style_1"><a class="aio-icon-box-link" href="https://www.teamviewer.com/en-us/trust-center/faq/" title="FAQ"><div class="aio-icon-box default-icon" id="Info-box-wrap-1550" style=""><div class="aio-icon-default"><div class="ult-item-wrap" data-animation="animated no-animation"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;">
+<div class="aio-icon none" style="color:#2e2e2e;font-size:32px;display:inline-block;">
+<i class="Interaction-speech-bubble-18"></i>
+</div></div></div></div></div><div class="aio-icon-header"><h3 class="aio-icon-title ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target="#Info-box-wrap-1550 .aio-icon-title" style="color:#2e2e2e;">FAQs</h3></div> </div> </a></div> </div></div></div> <script type="text/javascript">
+				jQuery(document).ready(function ($) {
+					if( typeof jQuery('.ult-carousel-413181305662b0d3e83ef37').slick == "function"){
+						$('.ult-carousel-413181305662b0d3e83ef37').slick({dots: false,autoplaySpeed: 5000,speed: 300,infinite: false,arrows: true,nextArrow: '<button type="button" role="button" aria-label="Next" style="color:#333333; font-size:20px;" class="slick-next default"><i class="ultsl-arrow-right6"></i></button>',prevArrow: '<button type="button" role="button" aria-label="Previous" style="color:#333333; font-size:20px;" class="slick-prev default"><i class="ultsl-arrow-left6"></i></button>',slidesToScroll:4,slidesToShow:4,swipe: true,draggable: true,touchMove: true,pauseOnHover: true,pauseOnFocus: false,responsive: [
+							{
+							  breakpoint: 1026,
+							  settings: {
+								slidesToShow: 4,
+								slidesToScroll: 4,  
+							  }
+							},
+							{
+							  breakpoint: 1025,
+							  settings: {
+								slidesToShow: 2,
+								slidesToScroll: 2
+							  }
+							},
+							{
+							  breakpoint: 760,
+							  settings: {
+								slidesToShow: 2,
+								slidesToScroll: 2
+							  }
+							}
+						],pauseOnDotsHover: true,customPaging: function(slider, i) {
+                   return '<i type="button" style= "color:#333333;" class="ultsl-record" data-role="none"></i>';
+                },});
+					}
+				});
+			</script>
+</div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div class="upb_color" data-bg-color="" data-bg-override="0" data-custom-vc-row="" data-fadeout="" data-fadeout-percentage="30" data-img-parallax-mobile-disable="true" data-is_old_vc="" data-overlay="false" data-overlay-color="" data-overlay-pattern="" data-overlay-pattern-opacity="" data-overlay-pattern-size="" data-parallax-content="" data-parallax-content-sense="30" data-row-effect-mobile-disable="true" data-rtl="false" data-theme-support="disable" data-vc="6.7.0"></div><div class="vc_row wpb_row vc_row-fluid wd-row" data-vc-full-width="true" data-vc-full-width-init="false"><div class="wpb_column vc_column_container vc_col-sm-3 vc_hidden-sm vc_hidden-xs"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="aio-icon-component wd-sidebarmenu scrollsmooth style_1"><div class="aio-icon-box default-icon" id="Info-box-wrap-9191" style=""><div class="aio-icon-default"><div class="ult-just-icon-wrapper"><div class="align-icon" style="text-align:center;">
+<div class="aio-icon none" style="color:#2b76ad;font-size:32px;display:inline-block;">
+<i class="Defaults-wrench"></i>
+</div></div></div></div><div class="aio-icon-header"><h3 class="aio-icon-title ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target="#Info-box-wrap-9191 .aio-icon-title" style="font-weight:bold;color:#2b76ad;">Application Security Options</h3></div> <div class="aio-icon-description ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target="#Info-box-wrap-9191 .aio-icon-description" style="">
+<ul>
+<li><a href="#policy-based-settings">Policy-Based Settings</a></li>
+<li><a href="#black-and-whitelist">Black and Whitelist</a></li>
+<li><a href="#chat-and-video-encryption">Chat and Video Encryption</a></li>
+<li><a href="#no-stealth-mode">No Stealth Mode</a></li>
+<li><a href="#password-protection">Password Protection</a></li>
+<li><a href="#incoming-and-outgoing-access-control">Incoming and Outgoing Access Control</a></li>
+<li><a href="#two-factor-authentication">Two-Factor Authentication</a></li>
+<li><a href="#company-profile">Company Profile</a></li>
+<li><a href="#trusted-devices">Trusted Devices</a></li>
+</ul>
+<p></p></div> </div> </div> </div></div></div><div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-9 vc_col-xs-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_row wpb_row vc_inner vc_row-fluid" id="policy-based-settings"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<h2>Policy-Based Settings</h2>
+<p>From within the TeamViewer Management Console, users are able to define, distribute, and enforce setting policies for the TeamViewer software installations on devices that belong specifically to them. Setting policies are digitally signed by the account that generated them. This ensures that the only account permitted to assign a policy to a device is the account to which the device belongs.</p>
+<p>To learn more about setting policies and the different options available, visit the article, How to add a new settings policy in our knowledge base.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid" id="black-and-whitlist"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<h2>Black and Whitelist</h2>
+<p>Particularly if TeamViewer is being used for maintaining unattended computers (i.e. TeamViewer is installed as a Windows service), the additional security option to restrict access to these computers to a number of specific clients can be of interest. With the whitelist function you can explicitly indicate which TeamViewer IDs and/or TeamViewer accounts are allowed to access a computer. With the blacklist function, you can block certain TeamViewer IDs and TeamViewer accounts. A central whitelist is available as part of the “policy-based settings” described above under “Management Console.”</p>
+<p>For steps on <a href="https://community.teamviewer.com/t5/Knowledge-Base/Black-and-whitelist/ta-p/29739?__hstc=159622562.022baa35750f199c3eeec3e288b8f907.1538059543616.1539716290785.1539725124027.14&amp;__hssc=159622562.8.1539725124027&amp;__hsfp=3707452877&amp;_ga=2.126368202.695054693.1539714443-963577199.1538059545">how to set up blacklists and whitelists</a>, visit our knowledge base.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid" id="chat-and-video-encryption"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<h2>Chat and Video Encryption</h2>
+<p>Chat histories are associated with your TeamViewer account and are therefore encrypted and stored using the same AES/RSA 4096-bit encryption security as described under the “TeamViewer Account” heading. All chat messages and video traffic are end-to-end encrypted using AES (256-bit) session encryption.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid" id="no-stealth-mode"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<h2>No Stealth Mode</h2>
+<p>There is no function that enables you to have TeamViewer running completely in the background. Even if the application is running as a Windows service in the background, TeamViewer is always visible by means of an icon in the system tray. After establishing a connection there is always a small control panel visible above the system tray. Therefore, TeamViewer is intentionally unsuitable for covertly monitoring computers or employees.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid" id="password-protection"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<h2>Password Protection</h2>
+<p>For spontaneous customer support, TeamViewer (TeamViewer QuickSupport) generates a session password (one-time password). If your customer tells you their password, you can connect to their computer by entering their ID and password. After a restart of TeamViewer on the customer’s side, a new session password will be generated so that you can only connect to your customer’s computers if you are invited to do so.</p>
+<p>When deploying TeamViewer for unattended remote support (e.g. of servers), you set an individual, fixed password, which secures access to the computer.</p>
+<p>There are many configurable password options you can customize.</p>
+<p>For in-depth articles on password options and settings, visit the <a href="https://community.teamviewer.com/t5/Knowledge-Base/All-about-passwords/ta-p/28442">All about passwords</a> section of our knowledge base.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid" id="incoming-and-outgoing-access-control"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<h2>Incoming and Outgoing Access Control</h2>
+<p>You can individually configure the connection modes of TeamViewer. For instance, you can configure your remote support or meeting computer in a way that no incoming connections are possible. Limiting functionality to those features actually needed always means limiting possible weak points for potential attacks.</p>
+<p>To restrict functionality for incoming connections, you can set up an access control. Choose between <strong>Full access</strong>, <strong>Confirm all</strong>, <strong>Viewing access</strong>, <strong>Custom settings</strong> or <strong>Deny any incoming remote control connection</strong>.</p>
+<p>With custom settings, you can configure the remote device in such a way that, for example, controlling mouse and keyboard on the remote device is only possible after confirmation by your customer. Your customer basically has full control of what is happening on his device.</p>
+<p>For more information on <a href="https://community.teamviewer.com/t5/Knowledge-Base/How-can-I-restrict-access-for-TeamViewer-connections-to-my/ta-p/4594">ways to control access</a> or to <a href="https://community.teamviewer.com/t5/Knowledge-Base/About-incoming-and-outgoing-connections-reports/ta-p/2625?__hstc=159622562.022baa35750f199c3eeec3e288b8f907.1538059543616.1539716290785.1539725124027.14&amp;__hssc=159622562.8.1539725124027&amp;__hsfp=3707452877&amp;_ga=2.188692719.695054693.1539714443-963577199.1538059545">set up logging and reports for incoming and outgoing connections</a>, visit our knowledge base.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid" id="two-factor-authentication"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<h2>Two-Factor Authentication</h2>
+<p>TeamViewer assists companies with their HIPAA compliance requirements. Two-factor authentication adds an additional security layer to protect TeamViewer accounts from unauthorized access. In addition to both username and password, the user must enter a code in order to authenticate. This code is generated via the time-based one-time password (TOTP) algorithm. Therefore, the code is only valid for a short period of time. Through two-factor authentication and limiting access by means of whitelisting, TeamViewer assists in meeting all necessary criteria for HIPAA certification.</p>
+<p>For details on how to set up two-factor authentication, visit the <a href="https://community.teamviewer.com/t5/Knowledge-Base/How-to-configure-the-Two-Factor-Authentication-Video-tutorial/ta-p/8709?__hstc=159622562.022baa35750f199c3eeec3e288b8f907.1538059543616.1539716290785.1539725124027.14&amp;__hssc=159622562.8.1539725124027&amp;__hsfp=3707452877&amp;_ga=2.146373235.695054693.1539714443-963577199.1538059545">tutorial video</a> in our knowledge base.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid" id="company-profile"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<h2>Company Profile</h2>
+<p>The TeamViewer Management Console offers the possibility to centrally manage several TeamViewer accounts inside a company by one or several users. This allows to assign different permissions to the company users centrally.</p>
+<p>A company profile also allows central management of client settings for the TeamViewer clients of your company, management of available contacts and computers for every user in the company profile, and many other features that support centralized permission and access management.</p>
+<p>For more information on <a href="https://community.teamviewer.com/t5/Knowledge-Base/How-to-add-Users-to-a-Company-Profile/ta-p/3573?__hstc=159622562.022baa35750f199c3eeec3e288b8f907.1538059543616.1539716290785.1539725124027.14&amp;__hssc=159622562.8.1539725124027&amp;__hsfp=3707452877&amp;_ga=2.246968643.695054693.1539714443-963577199.1538059545">adding, removing, and setting permissions for users</a>, visit our knowledge base.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_inner vc_row-fluid" id="trusted-devices"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<h2>Trusted Devices</h2>
+<p>Trusted Devices is an extra layer of security for your TeamViewer account to prevent your TeamViewer account from unauthorized access. As a preventive measure to ensure your account’s security, you need to authorize every new device on which you sign in to your account for the very first time.</p>
+<p>Read more about <a href="https://community.teamviewer.com/t5/Knowledge-Base/What-is-Trusted-Devices-for-your-TeamViewer-account/ta-p/13954?__hstc=159622562.022baa35750f199c3eeec3e288b8f907.1538059543616.1539716290785.1539725124027.14&amp;__hssc=159622562.8.1539725124027&amp;__hsfp=3707452877&amp;_ga=2.78214739.695054693.1539714443-963577199.1538059545">how to authorize devices</a> in our knowledge base.</p>
+</div>
+</div>
+</div></div></div></div></div></div></div></div><div class="vc_row-full-width vc_clearfix"></div>
+</div>
+</article>
+</main>
+</div>
+<div class="wd-row wd-row--info-dark-one-color wd-narrow-bar wd-newsletter-bar--hidden">
+<div class="wd-narrow-bar__wrapper">
+<span class="wd-narrow-bar__text"><b>Want more?</b></span>
+<span class="wd-narrow-bar__text">Exclusive deals, the latest news: Our Newsletter!</span>
+<div class="wd-button-newsletter__wrapper">
+<span class="wd-button wd-button--highlight wd-button--highlight__larger">
+<a href="/en/newsletter/" title="Subscribe to Newsletter">Sign up</a>
+</span>
+</div>
+</div>
+</div>
+<div class="wd-footer-divider-container">
+<div class="wd-footer-divider"> </div>
+</div>
+<div class="wd-multi-column-footer wd-multi-column-footer--redesign">
+<aside class="widget-area wd-footer-sidebar" id="wd-js-footer-sidebar">
+<div class="wd-footer-sidebar__info">
+<span class="wd-footer-sidebar__item"><img src="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/src/img/logo/logo-teamviewer-white.svg"/></span>
+</div>
+<section class="wd-footer-menu" id="sidebar-1"><div class="widget_nav_menu wd-footer-menu__widget" id="nav_menu-10"><h3 class="widget-title">Company</h3><div class="menu-footer_menu_4-english-us-2-container"><ul class="menu" id="menu-footer_menu_4-english-us-2"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-224816" id="menu-item-224816"><a href="https://ir.teamviewer.com/websites/teamviewer/English/1/investor-relations.html">Investors</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183778" id="menu-item-183778"><a href="https://channelpartner.teamviewer.com/" rel="noopener" target="_blank">Channel Partners</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183835" id="menu-item-183835"><a href="https://jobs.teamviewer.com/" rel="noopener" target="_blank">Careers</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183836" id="menu-item-183836"><a href="/en-us/press/">Press</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270459" id="menu-item-270459"><a href="https://www.teamviewer.com/en-us/events/">Events</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183874" id="menu-item-183874"><a href="/en-us/customer-support/">Contact</a></li>
+</ul></div></div></section><section class="wd-footer-menu" id="sidebar-2"><div class="widget_nav_menu wd-footer-menu__widget" id="nav_menu-11"><h3 class="widget-title">Products</h3><div class="menu-footer_menu_1-english-us-2-container"><ul class="menu" id="menu-footer_menu_1-english-us-2"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-404509" id="menu-item-404509"><a href="https://www.teamviewer.com/en-us/products/teamviewer/">TeamViewer</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183422" id="menu-item-183422"><a href="https://www.teamviewer.com/en-us/teamviewer-tensor/">TeamViewer Tensor</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183423" id="menu-item-183423"><a href="https://www.teamviewer.com/en-us/augmented-reality/">TeamViewer Assist AR</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-293241" id="menu-item-293241"><a href="https://www.teamviewer.com/en-us/iot/">TeamViewer IoT</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-404632" id="menu-item-404632"><a href="https://www.teamviewer.com/en-us/engage/">TeamViewer Engage</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-404508" id="menu-item-404508"><a href="https://www.teamviewer.com/en-us/frontline/">TeamViewer Frontline</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183500" id="menu-item-183500"><a href="https://www.teamviewer.com/en-us/remote-management/">TeamViewer Remote Management</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-376814" id="menu-item-376814"><a href="https://www.teamviewer.com/en-us/solutions/support-ticket-system/">Support Ticket System</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183539" id="menu-item-183539"><a href="https://www.teamviewer.com/en-us/meeting/" rel="noopener" target="_blank">TeamViewer Meeting</a></li>
+</ul></div></div></section><section class="wd-footer-menu" id="sidebar-3"><div class="widget_nav_menu wd-footer-menu__widget" id="nav_menu-12"><h3 class="widget-title">Popular topics</h3><div class="menu-footer_menu_2-english-us-2-container"><ul class="menu" id="menu-footer_menu_2-english-us-2"><li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-183558" id="menu-item-183558"><a href="https://www.teamviewer.com/en-us/trust-center/">Trust Center</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183559" id="menu-item-183559"><a href="https://login.teamviewer.com/" rel="noopener" target="_blank">Management Console</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183616" id="menu-item-183616"><a href="https://www.teamviewer.com/en-us/solutions/support-mobile-devices/">Mobile Support</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183617" id="menu-item-183617"><a href="https://community.teamviewer.com/">Community</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183639" id="menu-item-183639"><a href="https://www.teamviewer.com/en-us/gdpr/">GDPR</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-199436" id="menu-item-199436"><a href="https://www.teamviewer.com/en-us/product-descriptions/">Product Description</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-431774" id="menu-item-431774"><a href="https://www.teamviewer.com/en-us/teamviewer-user-focus-program/">TeamViewer User Focus Program</a></li>
+</ul></div></div></section><section class="wd-footer-menu" id="sidebar-4"><div class="widget_nav_menu wd-footer-menu__widget" id="nav_menu-13"><h3 class="widget-title">Solutions</h3><div class="menu-footer_menu_3-english-us-2-container"><ul class="menu" id="menu-footer_menu_3-english-us-2"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183645" id="menu-item-183645"><a href="https://www.teamviewer.com/en-us/teamviewer-tensor/">TeamViewer Tensor™</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183701" id="menu-item-183701"><a href="https://www.teamviewer.com/en-us/?page_id=48425">Remote Access</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183702" id="menu-item-183702"><a href="https://www.teamviewer.com/en-us/solutions/remote-desktop/">Remote Desktop</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183741" id="menu-item-183741"><a href="https://www.teamviewer.com/en-us/solutions/collaboration/">Collaboration</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-293245" id="menu-item-293245"><a href="https://www.teamviewer.com/en-us/solutions/support-ticket-system/">Support Ticket System</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183742" id="menu-item-183742"><a href="https://www.teamviewer.com/en-us/solutions/support-mobile-devices/">Support for Mobile Devices</a></li>
+</ul></div></div></section> </aside>
+</div>
+</div>
+<a class="back_to_top_button" title="Go to top"></a>
+<div class="wd-footer__divider-background">
+<hr class="wd-footer__divider"/>
+</div>
+<footer class="wd-site-footer wd-site-footer--redesign">
+<div class="wd-bottom-footer-area">
+<nav class="footer-navigation" id="footer-navigation">
+<ul class="wd-tv-footer-menu" id="menu-bottom-footer-tv-english-us"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-189276" id="menu-item-189276"><a href="/en-us/address/">Imprint</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183347" id="menu-item-183347"><a href="https://www.teamviewer.com/en-us/privacy-notice/">Privacy Notice</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-183372" id="menu-item-183372"><a href="/en-us/customer-support/">Contact</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215488" id="menu-item-215488"><a href="https://www.teamviewer.com/en-us/product-descriptions/">Product Description</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-232032" id="menu-item-232032"><a href="https://www.teamviewer.com/en-us/eula/">EULA</a></li>
+<li class="wd-tv-footer-menu__hidden menu-item" id="show-cookie-settings-footer">
+<a class="ot-sdk-show-settings">Cookie Settings</a>
+</li>
+</ul> </nav>
+</div>
+<div class="wd-tv-footer-social">
+<span>
+                Follow us on:            </span>
+<ul class="wd-social-items">
+<li>
+<a href="https://www.facebook.com/teamviewer/" rel="noopener" target="_blank">
+<svg height="14.977" viewbox="0 0 6.958 14.977" width="6.958" xmlns="http://www.w3.org/2000/svg"><title>Facebook Icon</title>
+<g id="facebook" transform="translate(0 0)">
+<path d="M394.005,221.428v7.241a.189.189,0,0,0,.189.189h2.689a.189.189,0,0,0,.189-.189V221.31h1.95a.188.188,0,0,0,.188-.173l.188-2.217a.189.189,0,0,0-.188-.2h-2.137v-1.573a.668.668,0,0,1,.668-.668h1.5a.189.189,0,0,0,.189-.189V214.07a.189.189,0,0,0-.189-.189H396.7a2.7,2.7,0,0,0-2.7,2.7v2.137h-1.344a.189.189,0,0,0-.189.189v2.217a.188.188,0,0,0,.189.189h1.344Z" data-name="Path 52" fill="#FFFFFF" fill-rule="evenodd" id="Path_52" transform="translate(-392.472 -213.881)"></path>
+</g>
+</svg>
+</a>
+</li>
+<li>
+<a href="https://twitter.com/teamviewer" rel="noopener" target="_blank">
+<svg height="11.994" viewbox="0 0 14.562 11.994" width="14.562" xmlns="http://www.w3.org/2000/svg"><title>Twitter Icon</title>
+<g id="twitter" transform="translate(0 0)">
+<g data-name="Group 29" id="Group_29" transform="translate(0 0)">
+<path d="M317.065,218.576a5.968,5.968,0,0,1-1.471.42c.237-.04.586-.469.726-.642a2.71,2.71,0,0,0,.49-.892c.013-.026.022-.058,0-.077a.083.083,0,0,0-.078.006,7.5,7.5,0,0,1-1.747.669.116.116,0,0,1-.12-.032,1.414,1.414,0,0,0-.153-.156,3.092,3.092,0,0,0-.846-.519,2.947,2.947,0,0,0-1.3-.209,3.1,3.1,0,0,0-1.231.348,3.172,3.172,0,0,0-.993.812,3.054,3.054,0,0,0-.594,1.188,3.217,3.217,0,0,0-.031,1.255c.009.07,0,.08-.06.07a9.331,9.331,0,0,1-6-3.056c-.07-.08-.108-.08-.166.006a3.045,3.045,0,0,0,.519,3.6c.118.111.238.223.369.325a3.05,3.05,0,0,1-1.159-.325c-.07-.044-.105-.019-.111.06a1.814,1.814,0,0,0,.019.344,3.079,3.079,0,0,0,1.9,2.454,1.781,1.781,0,0,0,.385.118,3.431,3.431,0,0,1-1.136.035c-.083-.016-.114.026-.083.105a3.2,3.2,0,0,0,2.388,2c.108.019.217.019.325.044-.007.01-.013.01-.019.019a3.788,3.788,0,0,1-1.631.864,5.841,5.841,0,0,1-2.476.317c-.133-.02-.161-.018-.2,0s0,.054.038.089c.169.112.341.211.515.306a8.194,8.194,0,0,0,1.655.662,8.818,8.818,0,0,0,8.559-2,8.983,8.983,0,0,0,2.368-6.552c0-.094.111-.146.178-.2a5.768,5.768,0,0,0,1.159-1.212.353.353,0,0,0,.072-.232v-.013C317.12,218.538,317.125,218.55,317.065,218.576Z" data-name="Path 47" fill="#FFFFFF" id="Path_47" transform="translate(-302.559 -217.139)"></path>
+</g>
+<g data-name="Group 30" id="Group_30" transform="translate(4.324 11.942)">
+<path d="M312.006,243.228Z" data-name="Path 48" fill="#FFFFFF" fill-rule="evenodd" id="Path_48" transform="translate(-312.006 -243.228)"></path>
+</g>
+<g data-name="Group 31" id="Group_31" transform="translate(4.213 11.942)">
+<path d="M311.874,243.228c-.019,0-.24,0,0,0Z" data-name="Path 49" fill="#FFFFFF" fill-rule="evenodd" id="Path_49" transform="translate(-311.763 -243.228)"></path>
+</g>
+<g data-name="Group 32" id="Group_32" transform="translate(4.815 11.944)">
+<path d="M313.077,243.243c0-.024.258,0,0,0C313.077,243.23,313.109,243.243,313.077,243.243Z" data-name="Path 50" fill="#FFFFFF" fill-rule="evenodd" id="Path_50" transform="translate(-313.077 -243.232)"></path>
+</g>
+<g data-name="Group 33" id="Group_33" transform="translate(9.905 0.018)">
+<path d="M324.257,217.177a.051.051,0,0,1-.06,0Z" data-name="Path 51" fill="#FFFFFF" fill-rule="evenodd" id="Path_51" transform="translate(-324.197 -217.177)"></path>
+</g>
+</g>
+</svg>
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/TeamViewer" rel="noopener" target="_blank">
+<svg height="10.317" viewbox="0 0 14.738 10.317" width="14.738" xmlns="http://www.w3.org/2000/svg"><title>Youtube Icon</title>
+<g id="youtube" transform="translate(0 0)"><g data-name="Group 36" id="Group_36" transform="translate(0 0)"><path d="M480.889,158.071a3.208,3.208,0,0,0-3.208-3.208h-8.321a3.208,3.208,0,0,0-3.208,3.208v3.9a3.208,3.208,0,0,0,3.208,3.208h8.321a3.208,3.208,0,0,0,3.208-3.208Zm-5.25,2.146-3.319,1.82c-.144.078-.274-.026-.274-.19v-3.736c0-.166.134-.27.278-.188l3.342,1.916A.218.218,0,0,1,475.639,160.218Z" data-name="Path 53" fill="#FFFFFF" id="Path_53" transform="translate(-466.151 -154.863)"></path></g></g></svg>
+</a>
+</li>
+<li>
+<a href="https://www.linkedin.com/company/teamviewer/" rel="noopener" target="_blank">
+<svg height="12.583" viewbox="0 0 13.175 12.583" width="13.175" xmlns="http://www.w3.org/2000/svg"><title>Linkedin Icon</title>
+<g id="linkedin" transform="translate(0 0)">
+<g data-name="Group 40" id="Group_40" transform="translate(0.184 3.9)">
+<g data-name="Group 39" id="Group_39">
+<path d="M400.116,292.892v4.657a.208.208,0,0,1-.208.208h-2.4a.208.208,0,0,1-.209-.208v-4.331c0-1.14-.407-1.918-1.429-1.918a1.542,1.542,0,0,0-1.446,1.031,1.922,1.922,0,0,0-.093.688v4.53a.209.209,0,0,1-.209.208h-2.4a.208.208,0,0,1-.208-.208c.006-1.154.03-6.749.005-8.065a.207.207,0,0,1,.208-.211h2.4a.209.209,0,0,1,.208.209v.994c-.005.01-.014.019-.019.028h.019v-.028a2.8,2.8,0,0,1,2.542-1.4c1.856,0,3.247,1.213,3.247,3.818Zm-12.782,4.865h2.4a.208.208,0,0,0,.208-.208v-8.067a.209.209,0,0,0-.208-.209h-2.4a.208.208,0,0,0-.208.209v8.067A.208.208,0,0,0,387.334,297.757Z" data-name="Path 57" fill="#FFFFFF" id="Path_57" transform="translate(-387.126 -289.074)"></path>
+</g>
+</g>
+<g data-name="Group 41" id="Group_41" transform="translate(0 0)">
+<ellipse cx="1.51" cy="1.51" data-name="Ellipse 11" fill="#FFFFFF" id="Ellipse_11" rx="1.51" ry="1.51"></ellipse>
+</g>
+</g>
+</svg>
+</a>
+</li>
+<li>
+<a href="https://www.instagram.com/TeamViewer/" rel="noopener" target="_blank">
+<svg height="15.623" viewbox="0 0 15.623 15.623" width="15.623" xmlns="http://www.w3.org/2000/svg"><title>Instagram Icon</title>
+<g id="instagram" transform="translate(0 0)">
+<path d="M476.022,213.461h-6.211a4.706,4.706,0,0,0-4.706,4.706v6.211a4.706,4.706,0,0,0,4.706,4.706h6.211a4.706,4.706,0,0,0,4.706-4.706v-6.211A4.706,4.706,0,0,0,476.022,213.461Zm3.232,10.917a3.232,3.232,0,0,1-3.232,3.232h-6.211a3.232,3.232,0,0,1-3.232-3.232v-6.211a3.232,3.232,0,0,1,3.232-3.232h6.211a3.232,3.232,0,0,1,3.232,3.232Z" data-name="Path 54" fill="#FFFFFF" id="Path_54" transform="translate(-465.106 -213.461)"></path>
+<path d="M490.06,219.744a.918.918,0,1,0,.919.919A.919.919,0,0,0,490.06,219.744Z" data-name="Path 55" fill="#FFFFFF" id="Path_55" transform="translate(-478.14 -216.868)"></path>
+<path d="M477.658,222.317a3.858,3.858,0,1,0,3.857,3.858A3.863,3.863,0,0,0,477.658,222.317Zm0,6.329a2.471,2.471,0,1,1,2.471-2.471A2.474,2.474,0,0,1,477.658,228.646Z" data-name="Path 56" fill="#FFFFFF" id="Path_56" transform="translate(-469.82 -218.263)"></path>
+</g>
+</svg>
+</a>
+</li>
+</ul>
+</div>
+</footer>
+<script id="wpb-modifications" type="text/html"></script><link href="https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/background-style.min.css" id="ultimate-vc-addons-background-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/css/tvdefault.min.css?ver=3.0.97" id="tv-theme-default-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.teamviewer.com/wp-includes/css/dist/block-library/style.min.css" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<script id="tv-theme-global-js-js" src="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/js/global.min.js?ver=3.0.97" type="text/javascript"></script>
+<script id="tv-theme-default-js-js" src="https://www.teamviewer.com/wp-content/themes/tv-wordpress-theme/dist/js/tvdefault.min.js?ver=3.0.97" type="text/javascript"></script>
+<script id="ultimate-vc-addons-info_box_js-js" src="https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/info-box.min.js" type="text/javascript"></script>
+<script id="wp-embed-js" src="https://www.teamviewer.com/wp-includes/js/wp-embed.min.js" type="text/javascript"></script>
+<script id="wpb_composer_front_js-js" src="https://www.teamviewer.com/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js" type="text/javascript"></script>
+<script id="ultimate-vc-addons-row-bg-js" src="https://www.teamviewer.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/ultimate_bg.min.js" type="text/javascript"></script>
+<noscript><link href="https://www.teamviewer.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css" media="all" rel="stylesheet"/></noscript>
+</div>
+</body>
+</html>

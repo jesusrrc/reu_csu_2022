@@ -1,0 +1,777 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<link href="/Public/favicon.ico" rel="shortcut icon" type="image/x-icon"/><!-- Favicon Icon -->
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+<meta content="webkit" name="renderer"/>
+<meta content="http://www.fractal-technology.com" name="author"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="telephone=no,email=no,adress=no" name="format-detection"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+<meta content="Privacy,Policy" name="keywords">
+<meta and="" as="" browse="" collection="" consent="" content="This privacy policy describes how we handle your personal information. By using www.neoway.com (the " described="" disclosure="" in="" information="" may="" name="description" of="" personal="" policy.="" privacy="" processing,="" site="" site"),="" storage,="" the="" this="" to="" transfer,="" wi..."="" you="" your="">
+<title>Privacy Policy</title>
+<link href="http://www.neoway.com/faq-privacy-policy/759.html" rel="canonical"/>
+<link href="/Public/static/themes_en/css/plugs.css" rel="stylesheet" type="text/css"/>
+<link href="/Public/static/themes_en/css/global.css" rel="stylesheet" type="text/css"/>
+<link href="/Public/static/themes_en/css/baiy.css" rel="stylesheet" type="text/css"/>
+<script src="/Public/static/themes_en/js/plugs/jquery-1.11.3.min.js"></script>
+<script src="/Public/static/themes_en/js/plugs/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/Public/static/themes_en/js/plugs/gsap.min.js"></script>
+<script src="/Public/static/themes_en/js/plugs/slick.js"></script>
+<script src="/Public/static/themes_en/js/global.js"></script>
+<script src="/Public/static/themes_en/js/plugs/xRoll.js"></script>
+<link href="/Public/static/themes_en/css/page.css" rel="stylesheet" type="text/css"/>
+<script src="/Public/static/themes_en/js/plugs/jquery.placeholder.min.js"></script>
+<script src="/Public/static/themes_en/js/plugs/iscroll-probe.js"></script>
+<script src="/Public/static/themes_en/js/plugs/video.js"></script>
+</meta></meta></head>
+<body>
+<script>
+        $(function(){
+            $('.x-header .widget-area-edit-bg,.x-header .widget-area-edit-title').remove();
+            $('.x-footer .widget-area-edit-bg,.x-footer .widget-area-edit-title').remove();
+            $('.rightNav .widget-area-edit-bg,.rightNav .widget-area-edit-title').remove();
+        });
+
+        </script>
+<style>
+        .empty-data{ width:100%; font-size:25px; padding-top:8%; padding-bottom:8%; text-align: center;}
+        </style>
+<style>
+#myalert{ display:none; }
+.recruit .block1{ height: auto}
+.layer{background:url(/Public/static/themes/image/con_mask.png);;position:fixed;left:0;right: 0;top:0;bottom: 0;width:100%;height:100%;z-index: 1000000;}
+.layer .myalert{padding:30px;background:#fff;width:240px;position:absolute;margin-top:-100px;top:50%;left:50%;margin-left:-120px;text-align:center; z-index: 100000}
+.layer .guan{background:url(/Public/static/themes/image/clos.png) no-repeat center; display:block;width:23px;height:23px;position:absolute;top:10px;right:10px;}
+.layer .text{padding-bottom:15px;font-size:16px;color:#474747;}
+.layer .button{background:none;border:1px solid #bbbbbb;width:91px;height:29px;font:14px/100% "Microsoft YaHei", Arial, Tahoma, Helvetica, sans-serif;color: #707070;}
+</style>
+<div class="layer" id="myalert">
+<div class="myalert">
+<a class="guan" href="javascript:;" onclick="myalert_hide();" rel="nofollow"></a>
+<div class="text">Please enter the keywords</div>
+<a><button class="button" id="my_ok" style="cursor:pointer ;opacity: 1;transform: translateY(0px);">OK</button></a>
+</div>
+</div>
+<script>
+function my_alert(text,callback) {
+    $('#myalert').show();
+    $('#myalert .myalert div').html(text);
+
+    $('#my_ok').click( function() {
+        $('#myalert').hide();
+
+        if (typeof(callback) == 'function') {
+            callback();
+            return false;
+        }
+    });
+}
+
+function myalert_hide(){
+    $('#myalert').hide();
+}
+</script>
+<div class="pop-mod pop-video">
+<div class="pop-panel" pop-hide="">
+<div class="pop-dialog">
+<div class="pop-cont">
+<iframe allowfullscreen="" frameborder="0" height="100%" id="frame" src="" style="width:100%;height:400px;" width="100%"></iframe>
+</div>
+</div>
+</div>
+</div>
+<div class="pop-mod pop-login">
+<div class="pop-panel" pop-hide="">
+<div class="pop-dialog">
+<div class="pop-close"></div>
+<div class="pop-cont h16">
+<div class="t h36">Member Login</div>
+<div class="form">
+<div class="form-item">
+<div class="from-detail">
+<input name="login_login" placeholder="Email account" type="text"/>
+</div>
+<!-- <div class="from-tip" style="display: block;">请输入正确账号</div> -->
+</div>
+<div class="form-item">
+<div class="from-detail">
+<input name="pwd_login" placeholder="Password" type="password"/>
+</div>
+</div>
+<div class="form-item">
+<div class="from-code">
+<a href="javascript:void(0)" rel="nofollow">
+<img class="yzm" id="verify2_login" onclick="refresh_login()" src="/Site/Passport/verify/type/login.html"/>
+</a>
+</div>
+<div class="from-detail"><input name="verify_login" placeholder="Enter a verification code" type="text"/></div>
+</div>
+</div>
+<div class="clear">
+<a class="reg" href="/member/signupen.html" rel="nofollow">Immediately registered</a>
+<div class="forgot">
+<span class="s">Forgot Password</span>
+<div class="pop">Please contact the administrator to help recover:<br/><a href="mailto:market@neoway.com">market@neoway.com</a></div>
+</div>
+</div>
+<a class="submit h18" href="javascript:void(0)" id="login" rel="nofollow">Login</a>
+</div>
+</div>
+</div>
+</div>
+<!-- <div class="gotop">
+    <div class="s">top</div>
+</div> -->
+<div class="pop-mod pop-contact">
+<div class="pop-panel" pop-hide="">
+<div class="pop-dialog">
+<div class="pop-close"></div>
+<div class="pop-cont">
+<div class="t h38">Contact Us</div>
+<div class="list">
+<div class="list-item"><div class="tit h24"><img alt="" class="ico" src="/Public/static/themes/image/temp/png6.png"/>Pre-sales Consulting</div>
+<div class="scroll h16">
+<div class="ul">
+<div class="li">Ameria: intl@neoway.com</div>
+<div class="li">Europe: sales.europe@neoway.com</div>
+<div class="li">India: sales.india@neoway.com</div>
+<div class="li">Asia: sales.asia@neoway.com</div>
+<div class="li">Global: sales@neoway.com</div>
+</div>
+<div class="p"></div></div></div>
+<div class="list-item"><div class="tit h24"><img alt="" class="ico" src="/Public/static/themes/image/temp/png7.png"/>Technical Support</div>
+<div class="scroll h16">
+<div class="ul">
+<div class="li">support@neoway.com</div>
+<br>
+</br></div>
+<div class="p"></div></div></div> </div>
+</div>
+</div>
+</div>
+</div>
+<div class="x-sidebar">
+<div class="side-item" pop-show=".pop-contact">
+<div class="side-unit">
+<div class="icon"><img alt="" src="/Public/static/themes/image/temp/img46.jpg"/></div>
+</div>
+</div>
+<div class="side-item"><div class="side-unit">
+<div class="icon"><img alt="" src="/Public/static/themes/image/temp/img47.jpg"/></div>
+</div>
+<div class="side-pop">
+<div class="code"><img alt="" src="/Uploads/Picture/2020/11/05/s5fa375f63a022.jpg" title=""/></div>
+</div></div>
+<div class="side-item top">
+<div class="side-unit">
+<div class="icon"><img alt="" src="/Public/static/themes/image/temp/img48.jpg"/></div>
+</div>
+</div>
+</div>
+<div class="x-header">
+<div class="x-wrap">
+<div class="menu-head">
+<div class="logo"><a href="/"><img alt="" src="/Uploads/Picture/2020/11/06/s5fa4bd435991a.png" title=""/></a></div> <div class="menu-btn m-show"><span class="line"></span></div>
+</div>
+<div class="tools-mod">
+<a class="tools-item user" href="javascript:void(0)" rel="nofollow">
+<img alt="" class="a" src="/Public/static/themes_en/image/temp/ico1.png"/>
+<img alt="" class="b" src="/Public/static/themes_en/image/temp/ico1-1.png"/>
+</a> <div class="tools-item lang">
+<div class="select-mod">
+<div class="select-bar">
+<div class="select-btn">
+<div class="select-val">中</div>
+</div>
+</div>
+<div class="select-cont" style="min-width:10px;min-height:10px;"> <div class="select-opts">
+<div class="select-item"><a href="http://www.neoway.com/" target="_blank">中</a></div><div class="select-item"><a href="/" target="_blank">EN</a></div></div></div> </div>
+</div>
+</div>
+<div class="nav-mod">
+<div class="nav-box nav-lv1"><div class="nav-item nav-lv1-item">
+<div class="nav-tit nav-lv1-tit" flex="dir:left box:last"><a class="nav-link nav-lv1-link" href="/products.html">Products</a>
+<span class="arr"></span> </div>
+<div class="nav-lv nav-lv2">
+<div class="nav-grp">
+<div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/wireless-communications.html">Wireless Modules</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/wireless-devices-in-telematics.html">Wireless Devices</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/neopipe-cloud-for-neoway-modules-and-terminal.html">Neopipe Cloud</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/access-cloud-for-communication-access.html">Neoaccess Cloud</a></div>
+</div> </div>
+</div> </div><div class="nav-item nav-lv1-item">
+<div class="nav-tit nav-lv1-tit" flex="dir:left box:last"><a class="nav-link nav-lv1-link" href="/applications/838.html">Applications</a>
+<span class="arr"></span> </div>
+<div class="nav-lv nav-lv2">
+<div class="nav-grp">
+<div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/applications/838.html">Energy</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/applications/765.html">Automotive</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/applications/767.html">Smart City</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/applications/814.html">Commercial Retail</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/applications/815.html">Electrical Appliance</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/applications/816.html">Healthcare</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/applications/817.html">Security</a></div>
+</div> </div>
+</div> </div><div class="nav-item nav-lv1-item">
+<div class="nav-tit nav-lv1-tit" flex="dir:left box:last"><a class="nav-link nav-lv1-link" href="/service-support.html">Support</a>
+<span class="arr"></span> </div>
+<div class="nav-lv nav-lv2">
+<div class="nav-grp">
+<div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/faq-privacy-policy/759.html">FAQ</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/product-documentation.html">Download Center</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/service-support.html#common_problem3">Tutorial Videos</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="http://cp.neoway.com.cn:8080/UserLogin_EN.aspx?ReturnUrl=%2FFeedback_Cn%2FIndex.aspx" target="_blank">Case System</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/feedbacks.html">Feedbacks</a></div>
+</div> </div>
+</div> </div><div class="nav-item nav-lv1-item">
+<div class="nav-tit nav-lv1-tit" flex="dir:left box:last"><a class="nav-link nav-lv1-link" href="/company-new.html">News</a>
+<span class="arr"></span> </div>
+<div class="nav-lv nav-lv2">
+<div class="nav-grp">
+<div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/company-new.html">Company News</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/exhibition-news.html">Events</a></div>
+</div> </div>
+</div> </div><div class="nav-item nav-lv1-item">
+<div class="nav-tit nav-lv1-tit" flex="dir:left box:last"><a class="nav-link nav-lv1-link" href="/about-neoway.html">About Neoway</a>
+<span class="arr"></span> </div>
+<div class="nav-lv nav-lv2">
+<div class="nav-grp">
+<div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/about-neoway.html">Overview</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/about-neoway.html#about-wh">Corporate Culture</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/about-neoway.html#about-lc">Neoway History</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/about-neoway.html#about-dt">Global Presence</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/about-neoway.html#about-gx">Investor Relations</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/about-neoway.html#about-dl">Distributors</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/about-neoway.html#about-yf">Contacts</a></div>
+</div> </div>
+</div> </div><div class="nav-item nav-lv1-item">
+<div class="nav-tit nav-lv1-tit" flex="dir:left box:last"><a class="nav-link nav-lv1-link" href="/neoway-recruitment.html">Recruitment</a>
+<span class="arr"></span> </div>
+<div class="nav-lv nav-lv2">
+<div class="nav-grp">
+<div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/neoway-recruitment.html#hr">Talent Concept</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/neoway-recruitment.html#hr-sh">Experienced</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/neoway-recruitment.html#hr-xy">Graduate</a></div>
+</div><div class="nav-item nav-lv2-item">
+<div class="nav-tit nav-lv2-tit"><a class="nav-link nav-lv2-link" href="/neoway-recruitment.html#hr-yg">Life at Neoway</a></div>
+</div> </div>
+</div> </div><div class="nav-item nav-lv1-item">
+<div class="nav-tit nav-lv1-tit" flex="dir:left box:last"><a class="nav-link nav-lv1-link" href="/about-neoway.html#about-yf">Contacts</a>
+</div>
+</div><script type="text/javascript">
+  
+    var nowurl    = "";
+    var parent_id = "75";
+    var parents_id = "";
+    $('.nav-lv1-tit a').each(function(){
+        var _that = $(this);
+        var listurlone = _that.attr('href');
+        if( nowurl == listurlone ) {
+            _that.parent().parent().addClass('cur').siblings().removeClass('cur');
+        }
+    });
+    $(".nav-lv2-tit a").each( function() {
+        var _that = $(this);
+        var listurlone = _that.attr('href');
+        if( nowurl == listurlone ) {
+            //_that.parent().parent().addClass('cur').siblings().removeClass('cur');
+            _that.parent().parent().parent().parent().parent().addClass('cur').siblings().removeClass('cur');
+        }
+    });
+    if(parent_id == 81 || parent_id == 77){
+         $('.nav-lv1 .nav-lv1-item').eq(0).addClass('cur').siblings().removeClass('cur');
+    }
+     if(parent_id == 89){
+         $('.nav-lv1 .nav-lv1-item').eq(1).addClass('cur').siblings().removeClass('cur');
+    }
+    if(parent_id == 97 || parent_id == 99 || parent_id == 101 || parent_id == 103){
+         $('.nav-lv1 .nav-lv1-item').eq(2).addClass('cur').siblings().removeClass('cur');
+    }
+    if(parent_id == 105){
+         $('.nav-lv1 .nav-lv1-item').eq(3).addClass('cur').siblings().removeClass('cur');
+    }
+    if(parent_id == 109 || parent_id == 111){
+         $('.nav-lv1 .nav-lv1-item').eq(4).addClass('cur').siblings().removeClass('cur');
+    }
+    if(parents_id == 81){
+         $('.nav-lv1 .nav-lv1-item').eq(0).addClass('cur').siblings().removeClass('cur');
+    }
+</script></div> </div>
+</div>
+</div>
+<script src="/Public/static/base64.min.js"></script>
+<script src="/Public/Rsa/BigInt.js"></script>
+<script src="/Public/Rsa/Barrett.js"></script>
+<script src="/Public/Rsa/RSA_Stripped.js"></script>
+<script language="JavaScript">
+setMaxDigits(262);
+var key=new RSAKeyPair("10001","10001","BDA62CB4233011370498F0515264275D0DF58726957523DD4B864EF9E67B8FB2FFFA34AD666D116B88474D6FDD4C18A96C74767F457882EE7E7F088668E3315E742571F8030949181B6A2ADC3FA6A93D5A21690DA3D8B849E6B366167343DDFAA540F785EA4A5EFC332D4D798E495E74A46C84C532F058299ADF47B44499CE4AB3C69DA21A0E8A9D8FD439D695F8B27A2B4AABA22D052398D6A0D9187D18ADA6E33F8F53DCE198CAADE0082937F6ED5AD9CE0C0FD1D4AB04459811439CCA572BA36B96B7435ED4A17ECF3CFE7A48CCBCF27C1185E1F258C1EC7355C0D9CA77ED173A4C362620EE7E34C09D79506487DD75C57DE39CB32ABF1054C3FC0BA2E309",2048);
+</script>
+<script src="/Public/k/k.form.js"></script>
+<script>
+$(function(){
+    if(!device().isMobile){
+        $('.pop-contact .list-item .scroll').mCustomScrollbar();
+    }
+});
+</script>
+<script type="text/javascript">
+    // var login = false;
+    // $('.x-header .user').on('click', function(){
+    //     if(!login){
+    //         $('.pop-login').trigger('show');
+    //     }
+    // })
+
+    // $('.x-header .tit').on('click', function(){
+    //     alert(111);
+    //     $(this).addClass('login');
+    // });
+
+    // $(window).on('click',function(){
+    //     alert(222);
+    //     $(".x-header .tit").removeClass('login');
+    // })
+
+    if( 0 ){
+        var login = true;
+        $('.x-header .tit').on('click', function(event){
+            event.stopPropagation();
+            if(!login){
+                $('.pop-login').trigger('show');
+            }else{
+                if($('.x-header .tit').hasClass('login')){
+                    $('.x-header .tit').removeClass('login');
+                }else{
+                    $('.x-header .tit').addClass('login');
+                }
+            }
+        });
+    }else{
+        $('.x-header .user').on('click', function(event){
+            $('.pop-login').addClass('x-show');
+        });
+    }
+    
+
+    $(window).click(function(){
+        $(".x-header .tit").removeClass('login');
+    })
+
+    $('.out').on('click',function(){
+        var _outhref = $(this).attr( 'data-url' );
+        $.get( _outhref,'',function( data ){
+            if( data ){
+                if( data.status ){
+                     my_alert( data.info, function() {
+                        setTimeout(function(){
+                            window.location.replace("/");
+                        },1000)
+                    });
+                 }else{
+                    my_alert( data.info );
+                 }
+            }
+        })
+    })
+
+    //回车提交
+    $(".pop-login .form").find('input').keyup(function(e){
+        if(e.keyCode === 13){
+            $('#login').click();
+        }
+    });
+
+    // 重置验证码
+    function refresh_login() {
+        var verifyimg_login = $("#verify2_login").attr("src");
+        if( verifyimg_login.indexOf('?') > 0 ) {
+            $("#verify2_login").attr( "src" , verifyimg_login + '&random=' + Math.random() );
+        } else {
+            $("#verify2_login").attr( "src" , verifyimg_login.replace(/\?.*$/,'') + '?' + Math.random() );
+        }
+    }
+    
+    $('#login').on('click',function(){
+        var url     = "/member/loginen.html";
+        var _login   = $('input[name="login_login"]').val();
+        var _pwd     = $('input[name="pwd_login"]').val();
+        var _verify  = $('input[name="verify_login"]').val();
+
+        if( !k_null(_login) ){
+            my_alert('The user name cannot be empty');
+            refresh_login();
+            return false;
+        }
+        if( _login.indexOf( '@' ) > -1 ){
+            if( !k_email(_login) ){
+                my_alert('Incorrect email format');
+                refresh_login();
+                return false;
+            }
+        }else{
+                my_alert( 'Incorrect email format' );
+                refresh_login();
+                return false;
+            
+        }
+
+        if(_pwd == ''){
+            my_alert( 'The password must not be empty' );
+            refresh_login();
+            return false;
+        }
+
+        var reg = /^\d{4}$/;
+        if(_verify == '' || _verify.length != 4 ||  reg.test(_verify) === false){
+            my_alert( 'The image captcha length is 4 digits' );
+            refresh_login();
+            return false;
+        }
+
+        _pwd     = window.btoa( encryptedString( key , _pwd , RSAAPP.PKCS1Padding , RSAAPP.RawEncoding ) );
+
+        var datas = {
+            login  : _login,
+            pwd    : _pwd,
+            verify : _verify,
+            gobackurl: document.referrer,
+        }
+        
+        $.post( url, datas, function( data ) {
+            if( data ){
+                if( data.status ) {
+                    my_alert( data.info, function() {
+                        window.location.replace("/");
+                    });
+                }else{
+                    my_alert( data.info );
+                    refresh_login();
+                }
+            }
+        })
+    })
+</script>
+<div class="x-container" data-mh=".article">
+<div class="article h16">
+<div class="x-wrap">
+<div class="bread-mod">
+<div class="bread-item"><a href="/" title="Home">Home</a></div>
+<div class="bread-item cur"><a href="" onclick="return false">Privacy Policy</a></div>
+<script type="application/ld+json">
+                            {
+                             "@context": "https://schema.org",
+                             "@type": "BreadcrumbList",
+                             "itemListElement":
+                             [
+                              {
+                               "@type": "ListItem",
+                               "position": 1,
+                               "item":
+                               {
+                                "@id": "https://neoway.com",
+                                "name": "Home"
+                                }
+                              }
+                             ]
+                            }
+                        </script>
+</div>
+<div class="article-title">
+<div class="h24">Privacy Policy</div>
+</div>
+<div class="article-cont">
+<span style="font-size:18px;line-height:2;color:#333333;">This privacy policy describes how we handle your personal information. By using <a href="http://www.neoway.com/" target="_blank">www.neoway.com</a> (the "Site"), you consent to the storage, processing, transfer, and disclosure of your personal information as described in this privacy policy.</span>
+<p>
+<span style="color:#333333;font-size:32px;"><br/>
+</span>
+</p>
+<p>
+<span style="color:#333333;font-size:32px;">Collection</span>
+</p>
+<p>
+<span style="font-size:18px;line-height:2;color:#333333;">You may browse this Site without providing any personal information about yourself. However, to receive notifications, updates or request additional information about www.neoway.com or this Site, we may collect the following information: name, contact information, email address, company and user ID; correspondence sent to or from us; any additional information you choose to provide; and other information from your interaction with our Site, services, content and advertising, including computer and connection information, statistics on page views, traffic to and from the Site, ad data, IP address and standard web log information. <br/>
+</span>
+</p>
+<p>
+<span style="font-size:18px;line-height:2;color:#333333;">If you choose to provide us with personal information, you consent to the transfer and storage of that information on our servers located in Hong Kong, China. </span>
+</p>
+<p>
+<span style="font-size:32px;line-height:2;color:#333333;"><br/>
+</span>
+</p>
+<p>
+<span style="color:#333333;font-size:32px;">Use</span>
+</p>
+<p>
+<span style="font-size:18px;line-height:2;color:#333333;">We use your personal information to provide you with the services you request, communicate with you, troubleshoot problems, customize your experience, inform you about our services and Site updates and measure interest in our sites and services. <br/>
+</span>
+</p>
+<p>
+<span style="font-size:18px;line-height:2;color:#333333;"><br/>
+</span>
+</p>
+<p>
+<span style="font-size:18px;line-height:2;color:#333333;"> Like many websites, we use "cookies" to enhance your experience and gather information about visitors and visits to our websites. Please refer to the "Do we use 'cookies'?" section below for information about cookies and how we use them. </span>
+</p>
+<p>
+<span style="font-size:32px;line-height:2;color:#333333;"><br/>
+</span>
+</p>
+<p>
+<span style="color:#333333;font-size:32px;">Do we use "cookies"?</span>
+</p>
+<p>
+<span style="font-size:18px;line-height:2;color:#333333;">Yes. Cookies are small files that a site or its service provider transfers to your computer's hard drive through your web browser (if you allow) that enables the site's or service provider's systems to recognize your browser and capture and remember certain information. They are used to help us understand your preferences based on the previous or current site activity, which enables us to provide you with improved services. We also use cookies to help us compile aggregate data about site traffic and site interactions so that we can offer better site experience and tools in the future. We may contract with third-party service providers to assist us in better understanding our site visitors. These service providers are not permitted to use the information collected on our behalf except to help us conduct and improve our business. <br/>
+</span>
+</p>
+<p>
+<span style="font-size:18px;line-height:2;color:#333333;"><br/>
+</span>
+</p>
+<p>
+<span style="font-size:18px;line-height:2;color:#333333;"> You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your browser (like Netscape Navigator or Internet Explorer) settings. Each browser is a little different, so look at your browser Help menu to learn the correct way to modify your cookies. If you turn cookies off, you won't have access to many features that make your site experience more efficient, and some of our services will not function properly. However, you can still place orders over the telephone by contacting customer service. </span>
+</p>
+<p>
+<span style="font-size:32px;line-height:2;color:#333333;"><br/>
+</span>
+</p>
+<p>
+<span style="color:#333333;font-size:32px;">Disclosure</span>
+</p>
+<p>
+<span style="font-size:18px;line-height:2;color:#333333;">We don't sell or rent your personal information to third parties for their marketing purposes without your explicit consent. We may disclose personal information to respond to legal requirements, enforce our policies, respond to claims that a posting or other content violates others' rights, or protect anyone's rights, property, or safety. Such information will be disclosed in accordance with applicable laws and regulations. We may also share personal information with service providers who help with our business operations, and with members of our corporate family, who may provide joint content and services and help detect and prevent potentially illegal acts. Should we plan to merge or be acquired by another business entity, we may share personal information with the other company and will require that the new combined entity follow this privacy policy with respect to your personal information. </span>
+</p>
+<p>
+<span style="font-size:32px;line-height:2;color:#333333;"><br/>
+</span>
+</p>
+<p>
+<span style="color:#333333;font-size:32px;">Access</span>
+</p>
+<p>
+<span style="font-size:18px;line-height:2;color:#333333;">You may access or update the personal information you provided to us at any time by contacting us at www.neoway.com. </span>
+</p>
+<p>
+<span style="font-size:32px;line-height:2;color:#333333;"><br/>
+</span>
+</p>
+<p>
+<span style="color:#333333;font-size:32px;">Security</span>
+</p>
+<p>
+<span style="font-size:18px;line-height:2;color:#333333;">We treat information as an asset that must be protected and use lots of tools to protect your personal information against unauthorized access and disclosure. However, as you probably know, third parties may unlawfully intercept or access transmissions or private communications. Therefore, although we work very hard to protect your privacy, we do not promise, and you should not expect that your personal information or private communications will always remain private. </span>
+</p>
+<p>
+<span style="font-size:32px;line-height:2;color:#333333;"><br/>
+</span>
+</p>
+<p>
+<span style="color:#333333;font-size:32px;">General</span>
+</p>
+<p>
+<span style="font-size:18px;line-height:2;color:#333333;">We may update this policy at any time by posting amended terms on this site. All amended terms automatically take effect 30 days after they are initially posted on the site. For questions about this policy, please send an email to us. </span>
+</p>
+<br/> </div>
+</div>
+</div>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://yfkjen.fractaltest.cn/details/news-en/759.html"
+  },
+  "headline": "Privacy Policy",
+  "description": "",
+  "image": "http://yfkjen.fractaltest.cn/Public/static/images/default.png",  
+  "author": {
+    "@type": "Organization",
+    "name": "neoway",
+    "url": "http://www.neoway.com"
+  },  
+  "publisher": {
+    "@type": "Organization",
+    "name": "neoway",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://yfkjen.fractaltest.cn/Public/favicon.ico"
+    }
+  },
+  "datePublished": "2020-10-30",
+  "dateModified": "2020-10-30"
+}
+</script>
+<div class="x-footer">
+<div class="unit1">
+<div class="l-wrap">
+<div class="logo"><a href="/"><img alt="" src="/Uploads/Picture/2020/11/06/s5fa4bd435991a.png" title=""/></a></div>
+<div class="ul" style="min-height:10px">
+<div class="li">
+<div class="h18">
+<a href="/products.html">Products</a>
+<div class="arr"></div>
+</div>
+<div class="box">
+<div class="p">
+<a href="/wireless-communications.html">Wireless Modules</a>
+</div><div class="p">
+<a href="/wireless-devices-in-telematics.html">Wireless Devices</a>
+</div><div class="p">
+<a href="/neopipe-cloud-for-neoway-modules-and-terminal.html">Neopipe Cloud</a>
+</div><div class="p">
+<a href="/access-cloud-for-communication-access.html">Neoaccess Cloud</a>
+</div> </div>
+</div><div class="li">
+<div class="h18">
+<a href="/applications/838.html">Applications</a>
+<div class="arr"></div>
+</div>
+<div class="box">
+<div class="p">
+<a href="/applications/838.html">Energy</a>
+</div><div class="p">
+<a href="/applications/765.html">Automotive</a>
+</div><div class="p">
+<a href="/applications/767.html">Smart City</a>
+</div><div class="p">
+<a href="/applications/814.html"> Commercial Retail</a>
+</div><div class="p">
+<a href="/applications/815.html">Electrical Appliances</a>
+</div><div class="p">
+<a href="/applications/816.html">Healthcare</a>
+</div><div class="p">
+<a href="/applications/817.html">Security</a>
+</div> </div>
+</div><div class="li">
+<div class="h18">
+<a href="/service-support.html">Support</a>
+<div class="arr"></div>
+</div>
+<div class="box">
+<div class="p">
+<a href="/faq-privacy-policy/759.html">FAQ</a>
+</div><div class="p">
+<a href="/product-documentation.html">Download Center</a>
+</div><div class="p">
+<a href="/service-support.html#common_problem3">Tutorial Videos</a>
+</div><div class="p">
+<a href="http://cp.neoway.com.cn:8080/UserLogin_EN.aspx?ReturnUrl=%2FFeedback_Cn%2FIndex.aspx" target="_blank">Case System</a>
+</div><div class="p">
+<a href="/feedbacks.html">Feedbacks</a>
+</div><div class="p">
+<a href="/onlineask.html">Ask a Question</a>
+</div> </div>
+</div><div class="li">
+<div class="h18">
+<a href="/company-new.html">News</a>
+<div class="arr"></div>
+</div>
+<div class="box">
+<div class="p">
+<a href="/company-new.html">Company News</a>
+</div><div class="p">
+<a href="/exhibition-news.html">Events</a>
+</div> </div>
+</div><div class="li">
+<div class="h18">
+<a href="/about-neoway.html">About Neoway</a>
+<div class="arr"></div>
+</div>
+<div class="box">
+<div class="p">
+<a href="/about-neoway.html">Overview</a>
+</div><div class="p">
+<a href="/about-neoway.html#about-wh">Corporate Culture</a>
+</div><div class="p">
+<a href="/about-neoway.html#about-lc">Neoway History</a>
+</div><div class="p">
+<a href="/about-neoway.html#about-dt">Global Presence</a>
+</div><div class="p">
+<a href="/about-neoway.html#about-gx">Investor Relations</a>
+</div><div class="p">
+<a href="/about-neoway.html#about-dl">Distributors</a>
+</div><div class="p">
+<a href="/about-neoway.html#about-yf">Contacts</a>
+</div> </div>
+</div><div class="li">
+<div class="h18">
+<a href="/neoway-recruitment.html">Recruitment</a>
+<div class="arr"></div>
+</div>
+<div class="box">
+<div class="p">
+<a href="/neoway-recruitment.html">Talent Concept</a>
+</div><div class="p">
+<a href="/neoway-recruitment.html#hr-sh">Experienced</a>
+</div><div class="p">
+<a href="/neoway-recruitment.html#hr-xy">Graduate</a>
+</div><div class="p">
+<a href="/neoway-recruitment.html#hr-yg">Life at Neoway</a>
+</div> </div>
+</div></div>
+<div class="share-box">
+<a class="share-item" data-cmd="linkedin" href="https://cn.linkedin.com/company/neowaytechnology" target="_blank" title="linkedin"><img alt="" class="ico" rel="nofollow" src="/Public/static/themes/image/temp/icon2.png"/></a>
+<a class="share-item" data-cmd="fbook" href="https://www.facebook.com/NeowayTechnology" target="_blank" title="Facebook"><img alt="" class="ico" rel="nofollow" src="/Public/static/themes/image/temp/icon3.png"/></a>
+<a class="share-item" data-cmd="twi" href="https://twitter.com/neowaytech" target="_blank" title="Twitter"><img alt="" class="ico" rel="nofollow" src="/Public/static/themes/image/temp/icon4.png"/></a>
+</div>
+</div>
+</div>
+<div class="unit2">
+<div class="l-wrap">
+<div class="ul" style="min-height:10px;min-width:10px;"><div class="li"><a href="/faq-privacy-policy/759.html">Privacy Policy</a></div><div class="li"><a href="/sitemap.html">Website Map</a></div></div> <div class="copy">Copyright©2021  Neoway Technology Co. LTD. 
+                <a href="https://beian.miit.gov.cn/#/Integrated/index" rel="nofollow" target="_blank">Guangdong ICP for No. 11089498</a>
+<span class="ftbj">
+<a href="http://www.fractal-technology.com" target="_blank">Powered by Fractal-technology</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</body>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d524594115b81817c40934b36e3aa88f";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</html>

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<script type="text/javascript">
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+<link as="font" crossorigin="anonymous" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-900italic-webfont.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-900-webfont.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-700italic-webfont.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-700-webfont.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-500italic-webfont.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-500-webfont.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-300italic-webfont.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-300-webfont.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-100italic-webfont.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="anonymous" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/fonts/museosans-100-webfont.woff2" rel="preload" type="font/woff2"/>
+<link href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/site.webmanifest" rel="manifest"/>
+<link color="#e2211c" href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/safari-pinned-tab.svg" rel="mask-icon"/>
+<link href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/favicon.ico" rel="shortcut icon"/>
+<meta content="#e2211c" name="msapplication-TileColor"/>
+<meta content="https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/favicon/browserconfig.xml" name="msapplication-config"/>
+<meta content="#e2211c" name="theme-color"/>
+<title>Poly Network Recoups $610M Stolen from DeFi Platform | Threatpost</title>
+<script>
+var gAMP_urlhost =  'https://threatpost.com/';
+var gAMP_urlpath =  '/poly-network-recoups-610m-stolen-from-defi-platform/168906/';
+var gAMP_urlquery =  'googfc';
+var gAMP_contentid =  '168906';
+var gAMP_category =  'hacks';
+var gAMP_contenttags =  '';
+</script>
+<!--  Start Header Code for Threatpost.com ROS -->
+<script async="" src="https://tagan.adlightning.com/math-aids-threatpost/op.js"></script>
+<script async="" src="//www.googletagservices.com/tag/js/gpt.js"></script>
+<script src="https://qd.admetricspro.com/js/threatpost/ros-layout.js"></script>
+<script async="" src="https://qd.admetricspro.com/js/threatpost/cmp.js"></script>
+<script async="" src="https://qd.admetricspro.com/js/threatpost/uspcmp.js"></script>
+<script async="" src="https://qd.admetricspro.com/js/threatpost/targeting.js"></script>
+<script async="" src="https://qd.admetricspro.com/js/threatpost/prebid.js"></script>
+<script src="https://qd.admetricspro.com/js/threatpost/engine.js"></script>
+<!--  End Header Code for Threatpost.com -->
+<!-- AdMetricsPro Video Head Code for threatpost.com -->
+<script>
+!function(n){if(!window.cnx){window.cnx={},window.cnx.cmd=[];var t=n.createElement('iframe');t.display='none',t.onload=function(){var n=t.contentWindow.document,c=n.createElement('script');c.src='//cd.connatix.com/connatix.player.js',c.setAttribute('async','1'),c.setAttribute('type','text/javascript'),n.body.appendChild(c)},n.head.appendChild(t)}}(document);
+</script>
+<!-- AdMetricsPro Video Head Code for threatpost.com -->
+<!-- The SEO Framework by Sybre Waaijer -->
+<meta content="Hacks, Malware, Vulnerabilities, Web Security, Mobile Security, Privacy" name="keywords">
+<meta content="The attacker returned the loot after being offered a gig as chief security advisor with Poly Network." name="description">
+<meta content="https://media.threatpost.com/wp-content/uploads/sites/103/2021/08/11103228/crypto-hack.jpg" property="og:image">
+<meta content="article" property="og:type">
+<meta content="Poly Network Recoups $610M Stolen from DeFi Platform" property="og:title">
+<meta content="The attacker returned the loot after being offered a gig as chief security advisor with Poly Network." property="og:description"/>
+<meta content="https://threatpost.com/poly-network-recoups-610m-stolen-from-defi-platform/168906/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@threatpost" name="twitter:site"/>
+<meta content="@threatpost" name="twitter:creator"/>
+<meta content="Poly Network Recoups $610M Stolen from DeFi Platform" name="twitter:title"/>
+<meta content="The attacker returned the loot after being offered a gig as chief security advisor with Poly Network." name="twitter:description"/>
+<meta content="https://media.threatpost.com/wp-content/uploads/sites/103/2021/08/11103228/crypto-hack.jpg" name="twitter:image"/>
+<link href="https://threatpost.com/poly-network-recoups-610m-stolen-from-defi-platform/168906/" rel="canonical">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://threatpost.com/","name":"Threatpost"}},{"@type":"ListItem","position":2,"item":{"@id":"https://threatpost.com/category/hacks/","name":"Hacks"}},{"@type":"ListItem","position":3,"item":{"@id":"https://threatpost.com/poly-network-recoups-610m-stolen-from-defi-platform/168906/","name":"Poly Network Recoups $610M Stolen from DeFi Platform"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://threatpost.com/poly-network-recoups-610m-stolen-from-defi-platform/168906/"},"headline":"Poly Network Recoups $610M Stolen from DeFi Platform","image":["https://media.threatpost.com/wp-content/uploads/sites/103/2021/08/11103228/crypto-hack.jpg",{"@type":"ImageObject","url":"https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2021/08/11103228/crypto-hack.jpg","width":800,"height":526}],"datePublished":"2021-08-24T19:35:41+00:00","dateModified":"2021-08-24T20:10:43+00:00","author":{"@type":"Person","name":"Becky Bracken"},"publisher":{"@type":"Organization","name":"Threatpost","logo":{"@type":"ImageObject","url":"https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2018/12/04121519/amp_logo.png","width":60,"height":60}},"description":"The attacker returned the loot after being offered a gig as chief security advisor with Poly Network."}</script>
+<!-- / The SEO Framework by Sybre Waaijer | 163.57ms meta | 0.49ms boot -->
+<link href="//kasperskycontenthub.com" rel="dns-prefetch">
+<link href="//www.google.com" rel="dns-prefetch">
+<link href="//threatpost.com" rel="dns-prefetch">
+<link href="//media.kaspersky.com" rel="dns-prefetch">
+<link href="//s.w.org" rel="dns-prefetch">
+<link href="https://threatpost.com/feed/" rel="alternate" title="Threatpost - English - Global - threatpost.com » Feed" type="application/rss+xml">
+<link href="https://threatpost.com/comments/feed/" rel="alternate" title="Threatpost - English - Global - threatpost.com » Comments Feed" type="application/rss+xml">
+<link href="https://threatpost.com/poly-network-recoups-610m-stolen-from-defi-platform/168906/feed/" rel="alternate" title="Threatpost - English - Global - threatpost.com » Poly Network Recoups $610M Stolen from DeFi Platform Comments Feed" type="application/rss+xml">
+<link href="https://threatpost.com/wp-content/plugins/bwp-minify/min/?f=wp-content/plugins/wds-rss-builder/includes/css/select2.min.css,wp-content/plugins/wds-rss-builder/includes/css/wds-rss.css,wp-content/plugins/honeypot-comments/public/assets/css/public.css,wp-content/plugins/kspr_twitter_pullquote/css/style.css,wp-content/plugins/pullquote-shortcode/css/pullquote-shortcode.css,wp-content/themes/threatpost-2018/assets/css/main.css,wp-content/plugins/kaspersky-social-sharing/assets/css/style.css,wp-content/plugins/kaspersky-social-sharing/assets/css/custom.css&amp;ver=v67" id="select-2-css-group-css" media="all" rel="stylesheet" type="text/css">
+<script id="jquery-core-js" src="https://threatpost.com/wp-content/plugins/kaspersky-enable-jquery-migrate-helper/js/jquery/jquery-1.12.4-wp.js?ver=1.12.4-wp" type="text/javascript"></script>
+<script id="kaspersky-lazy-load-external-js" src="https://threatpost.com/wp-content/plugins/kaspersky-lazy-load/assets/js/lazyload.js?ver=202224051706" type="text/javascript"></script>
+<script id="notification_strings-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var gdprDynamicStrings = {"notification_text":"We use cookies to make your experience of our websites better. By using and further navigating this website you accept this. Detailed information about the use of cookies on this website is available by clicking on <a href=\"https:\/\/threatpost.com\/web-privacy-policy\/\" target=\"_blank\">more information<\/a>.","button_text":"ACCEPT AND CLOSE"};
+/* ]]> */
+</script>
+<script id="notification_strings-js" src="https://threatpost.com/wp-content/plugins/kaspersky-cookies-notification/scripts/alert_text.js?ver=1655157277" type="text/javascript"></script>
+<script id="kasp-cookie-alert-js" src="https://threatpost.com/wp-content/plugins/kaspersky-cookies-notification/scripts/alert.js?ver=1655157277" type="text/javascript"></script>
+<script id="honeypot-comments-plugin-script-js" src="https://threatpost.com/wp-content/plugins/honeypot-comments/public/assets/js/public.js?ver=1.0.0" type="text/javascript"></script>
+<script id="kspr_twitter_pullquote-js" src="https://threatpost.com/wp-content/plugins/kspr_twitter_pullquote/js/kaspersky-twitter-pullquote.js?ver=1.0" type="text/javascript"></script>
+<script id="loadmore-js" src="https://threatpost.com/wp-content/themes/threatpost-2018/assets/js/loadmore.js?ver=5.9.3" type="text/javascript"></script>
+<script id="kss_js-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var kss = {"twitter_account":"threatpost"};
+/* ]]> */
+</script>
+<script id="kss_js-js" src="https://threatpost.com/wp-content/plugins/kaspersky-social-sharing/assets/js/social-share.js?ver=1.0.0" type="text/javascript"></script>
+<link href="https://threatpost.com/wp-json/" rel="https://api.w.org/"><link href="https://threatpost.com/wp-json/wp/v2/posts/168906" rel="alternate" type="application/json"><link href="https://threatpost.com/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml">
+<link href="https://threatpost.com/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml">
+<link href="https://threatpost.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthreatpost.com%2Fpoly-network-recoups-610m-stolen-from-defi-platform%2F168906%2F" rel="alternate" type="application/json+oembed">
+<link href="https://threatpost.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthreatpost.com%2Fpoly-network-recoups-610m-stolen-from-defi-platform%2F168906%2F&amp;format=xml" rel="alternate" type="text/xml+oembed">
+<script type="text/javascript">
+var sNew = document.createElement("script");
+sNew.async = true;
+sNew.src = "https://kasperskycontenthub.com/?dm=ed1f9e435dc885292eab65620c51f3fb&action=load&blogid=103&siteid=1&t=366224726&back=https%3A%2F%2Fthreatpost.com%2Fpoly-network-recoups-610m-stolen-from-defi-platform%2F168906%2F%3FAccess-Control-Allow-Origin%3D%252A%26Access-Control-Allow-Methods%3DGET%26Access-Control-Allow-Headers%3DContent-Type%26Access-Control-Max-Age%3D3600%26User-Agent%3DMozilla%252F5.0%2B%2528X11%253B%2BUbuntu%253B%2BLinux%2Bx86_64%253B%2Brv%253A52.0%2529%2BGecko%252F20100101%2BFirefox%252F52.0"
+var s0 = document.getElementsByTagName('script')[0];
+s0.parentNode.insertBefore(sNew, s0);
+</script>
+<meta content="9f5583a6c271e2179a68ee93b9050160" name="propeller"/><!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PM29HLF');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WZ7LJ3');</script>
+<!-- End Google Tag Manager -->
+<script type="text/javascript">
+            var jQueryMigrateHelperHasSentDowngrade = false;
+
+			window.onerror = function( msg, url, line, col, error ) {
+				// Break out early, do not processing if a downgrade reqeust was already sent.
+				if ( jQueryMigrateHelperHasSentDowngrade ) {
+					return true;
+                }
+
+				var xhr = new XMLHttpRequest();
+				var nonce = '720835b514';
+				var jQueryFunctions = [
+					'andSelf',
+					'browser',
+					'live',
+					'boxModel',
+					'support.boxModel',
+					'size',
+					'swap',
+					'clean',
+					'sub',
+                ];
+				var match_pattern = /\)\.(.+?) is not a function/;
+                var erroredFunction = msg.match( match_pattern );
+
+                // If there was no matching functions, do not try to downgrade.
+                if ( typeof erroredFunction !== 'object' || typeof erroredFunction[1] === "undefined" || -1 === jQueryFunctions.indexOf( erroredFunction[1] ) ) {
+                    return true;
+                }
+
+                // Set that we've now attempted a downgrade request.
+                jQueryMigrateHelperHasSentDowngrade = true;
+
+				xhr.open( 'POST', 'https://threatpost.com/wp-admin/admin-ajax.php' );
+				xhr.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+				xhr.onload = function () {
+					var response,
+                        reload = false;
+
+					if ( 200 === xhr.status ) {
+                        try {
+                        	response = JSON.parse( xhr.response );
+
+                        	reload = response.data.reload;
+                        } catch ( e ) {
+                        	reload = false;
+                        }
+                    }
+
+					// Automatically reload the page if a deprecation caused an automatic downgrade, ensure visitors get the best possible experience.
+					if ( reload ) {
+						location.reload();
+                    }
+				};
+
+				xhr.send( encodeURI( 'action=jquery-migrate-downgrade-version&_wpnonce=' + nonce ) );
+
+				// Suppress error alerts in older browsers
+				return true;
+			}
+        </script>
+</link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></link></meta></meta></meta></meta></meta></meta></head>
+<body class="" style="">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PM29HLF" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WZ7LJ3" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="adRUPTad interstitial" data-adunit="interstitial">
+<!-- GPT AdSlot 1 for Ad unit '2x2-Skin' ### Size: [[2,2]] -->
+<div id="div-gpt-ad-6794670-1">
+<script>
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-6794670-1'); });
+		</script>
+</div>
+<!-- End AdSlot 1 -->
+</div>
+<div class="c-ad-section">
+<div class="o-container-fluid">
+<div class="c-ad u-bg--none@sm">
+<div class="c-ad__container">
+<div class="textwidget custom-html-widget"><div class="adRUPTad header" data-adunit="header" data-size-mapping="header">
+<!-- GPT AdSlot 2 for Ad unit '970x250-ATF' ### Size: [[970,250],[728,90]] -->
+<div id="div-gpt-ad-6794670-2">
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-6794670-2'); });
+  </script>
+</div>
+<!-- End AdSlot 2 -->
+</div></div><div class="textwidget custom-html-widget"><div class="mfp-hide" id="modal_newsletter">
+<div class="c-modal c-modal--narrow" id="default-modal">
+<div class="c-modal__header">
+<a class="c-modal__close c-modal__close--dark js-modal-close" href="#"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018//assets/sprite/icons.svg#icon-remove" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a>
+</div>
+<div class="c-modal__main">
+<div class="c-section c-section--bg c-section--dark c-newsletter-modal" style="background-image: url(https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/photo-newsletter.jpg);">
+<div class="c-section__overlay"></div>
+<div class="o-container-fluid">
+<p><span class="c-label c-label--white-transparent">Newsletter</span></p>
+<div class="o-row">
+<div class="o-col-6@sm c-newsletter-modal__content">
+<div class="c-newsletter-modal__header">
+<h3><strong>Subscribe to our <em>Threatpost Today</em> newsletter</strong></h3>
+<p>Join thousands of people who receive the latest breaking cybersecurity news every day.</p>
+</div>
+<div class="c-note c-note--dash u-hidden u-block@md"><p>The administrator of your personal data will be Threatpost, Inc., 500 Unicorn Park, Woburn, MA 01801. Detailed information on the processing of personal data can be found in the <a href="https://threatpost.com/web-privacy-policy/">privacy policy</a>. In addition, you will find them in the message confirming the subscription to the newsletter.</p></div>
+</div>
+<div class="o-col-6@sm">
+<script type="text/javascript"></script>
+<div class="gf_browser_unknown gform_wrapper gform_legacy_markup_wrapper" id="gform_wrapper_5" style="display:none"><div class="gform_anchor" id="gf_5" tabindex="-1"></div><form action="/poly-network-recoups-610m-stolen-from-defi-platform/168906/?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0#gf_5" enctype="multipart/form-data" id="gform_5" method="post" target="gform_ajax_frame_5">
+<div class="gform_body gform-body"><ul class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_5"><li class="gfield field_sublabel_below field_description_below gfield_visibility_visible" id="field_5_8"><label class="gfield_label screen-reader-text" for="input_5_8">Your name</label><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="medium" id="input_5_8" name="input_8" placeholder="Your name" type="text" value=""/> </div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_5_1"><label class="gfield_label screen-reader-text" for="input_5_1">Your e-mail address<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email">
+<input aria-invalid="false" aria-required="true" class="medium" id="input_5_1" name="input_1" placeholder="Your e-mail address" type="text" value=""/>
+</div></li><li class="gfield js-kaspersky-gform-recaptcha-placeholder gform_hidden field_sublabel_below field_description_below gfield_visibility_hidden" id="field_5_9"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_5_9" name="input_9" type="hidden" value=""/></div></li><li class="gfield input-without-label label-gdpr gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_5_2"><label class="gfield_label screen-reader-text gfield_label_before_complex"><span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_checkbox"><ul class="gfield_checkbox" id="input_5_2"><li class="gchoice gchoice_5_2_1">
+<input class="gfield-choice-input" id="choice_5_2_1" name="input_2.1" type="checkbox" value="I agree"/>
+<label for="choice_5_2_1" id="label_5_2_1">I agree to my personal data being stored and used to receive the newsletter</label>
+</li></ul></div></li><li class="gfield input-without-label label-gdpr gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_5_5"><label class="gfield_label screen-reader-text gfield_label_before_complex"><span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_checkbox"><ul class="gfield_checkbox" id="input_5_5"><li class="gchoice gchoice_5_5_1">
+<input class="gfield-choice-input" id="choice_5_5_1" name="input_5.1" type="checkbox" value="I agree"/>
+<label for="choice_5_5_1" id="label_5_5_1">I agree to accept information and occasional commercial offers from Threatpost partners</label>
+</li></ul></div></li><li class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible" id="field_5_10"><label class="gfield_label" for="input_5_10">Comments</label><div class="ginput_container"><input id="input_5_10" name="input_10" type="text" value=""/></div><div class="gfield_description" id="gfield_description_5_10">This field is for validation purposes and should be left unchanged.</div></li></ul></div>
+<div class="gform_footer top_label"> <input class="gform_button button" id="gform_submit_button_5" onclick='if(window["gf_submitting_5"]){return false;}  window["gf_submitting_5"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_5"]){return false;} window["gf_submitting_5"]=true;  jQuery("#gform_5").trigger("submit",[true]); }' type="submit" value="Subscribe"/> <input name="gform_ajax" type="hidden" value="form_id=5&amp;title=&amp;description=&amp;tabindex=0"/>
+<input class="gform_hidden" name="is_submit_5" type="hidden" value="1"/>
+<input class="gform_hidden" name="gform_submit" type="hidden" value="5"/>
+<input class="gform_hidden" name="gform_unique_id" type="hidden" value=""/>
+<input class="gform_hidden" name="state_5" type="hidden" value="WyJbXSIsImIwODQwZTA2ZGQ0NzYwODcyOTBkZjNmZDM1NDk2Y2ZkIl0="/>
+<input class="gform_hidden" id="gform_target_page_number_5" name="gform_target_page_number_5" type="hidden" value="0"/>
+<input class="gform_hidden" id="gform_source_page_number_5" name="gform_source_page_number_5" type="hidden" value="1"/>
+<input name="gform_field_values" type="hidden" value=""/>
+</div>
+<p style="display: none !important;"><label>Δ<textarea cols="45" maxlength="100" name="ak_hp_textarea" rows="8"></textarea></label><input id="ak_js_1" name="ak_js" type="hidden" value="190"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>
+</div>
+<iframe id="gform_ajax_frame_5" name="gform_ajax_frame_5" src="about:blank" style="display:none;width:0px;height:0px;" title="This iframe contains the logic required to handle Ajax powered Gravity Forms."></iframe>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 5, 'https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/loader.svg' );jQuery('#gform_ajax_frame_5').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_5');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_5').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_5').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_5').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_5').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_5').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_5').val();gformInitSpinner( 5, 'https://threatpost.com/wp-content/themes/threatpost-2018/assets/images/loader.svg' );jQuery(document).trigger('gform_page_loaded', [5, current_page]);window['gf_submitting_5'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_5').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_5').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [5]);window['gf_submitting_5'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_5').text());}, 50);}else{jQuery('#gform_5').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [5, current_page]);} );} );
+</script>
+<footer class="c-note c-note--border u-hidden@md"><p>The administrator of your personal data will be Threatpost, Inc., 500 Unicorn Park, Woburn, MA 01801. Detailed information on the processing of personal data can be found in the <a href="https://threatpost.com/web-privacy-policy/">privacy policy</a>. In addition, you will find them in the message confirming the subscription to the newsletter.</p></footer>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div> </div>
+</div>
+</div>
+</div>
+<div class="c-page-wrapper">
+<header class="c-site-header js-sticky-header">
+<div class="o-container-fluid">
+<a class="c-menu-toggle js-menu-toggle" href="#">
+<span></span>
+<span></span>
+<span></span>
+</a>
+<a class="c-site-logo c-site-logo--larger@md" href="https://threatpost.com/">
+<div>Threatpost</div>
+</a>
+<div class="c-site-header__nav">
+<nav class="c-nav-primary"><ul class="c-main-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-177582" id="menu-item-177582"><a href="https://threatpost.com/microsite/threatpost-podcasts-going-beyond-the-headlines/"><span>Podcasts</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133110" id="menu-item-133110"><a href="https://threatpost.com/category/malware-2/"><span>Malware</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133112" id="menu-item-133112"><a href="https://threatpost.com/category/vulnerabilities/"><span>Vulnerabilities</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-141047" id="menu-item-141047"><a href="https://threatpost.com/microsite/infosec-insiders-community/"><span>InfoSec Insiders</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-176258" id="menu-item-176258"><a href="https://threatpost.com/category/webinars/"><span>Webinars</span></a></li>
+</ul></nav>
+<div class="c-site-header__aside">
+<nav class="c-nav-social">
+<ul class="menu" id="menu-social-menu"><li><a class="facebook" href="https://www.facebook.com/Threatpost/" target="_blank" title="Facebook"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-facebook" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="twitter" href="https://twitter.com/threatpost/" target="_blank" title="Twitter"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="linkedin" href="https://www.linkedin.com/company/threatpost/" target="_blank" title="LinkedIn"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-linkedin" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="youtube" href="https://www.youtube.com/user/threatpost" target="_blank" title="YouTube"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-youtube" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="feedly" href="https://feedly.com/threatpost" target="_blank" title="Feedly"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-feedly" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="instagram" href="https://www.instagram.com/Threatpost/" target="_blank" title="Instagram"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-instagram" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="rss" href="https://threatpost.com/feed" target="_blank" title="RSS"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-rss" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li></ul> </nav>
+<!-- <nav class="c-nav-utility">
+						<a href="https://threatpost.com/" class="c-button c-button--secondary-transparent c-button--smaller"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-user'></use></svg> Log in</a>
+					</nav> -->
+<div class="c-site-search">
+<div class="c-site-search__wrap js-main-search">
+<form action="https://threatpost.com/" class="c-site-search__form" method="get" role="search">
+<input class="c-site-search__field" name="s" placeholder="Search" type="text"/>
+<button class="c-button c-button--secondary c-button--smaller c-site-search__button" type="submit" value="Search"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-search" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg> Search</button>
+<div class="c-site-search__overlay"></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div><!-- /.o-container -->
+</header>
+<div class="c-main">
+<div class="c-section c-section--divider-internal c-nav-links">
+<div class="o-container-fluid">
+<nav>
+<ul>
+<li class="c-nav-links__prev">
+<a href="https://threatpost.com/pegasus-spyware-uses-iphone-zero-click-imessage-zero-day/168899/" rel="prev"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-arrow-left-2" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg><span class="c-nav-links__title">Pegasus Spyware Uses iPhone Zero-Click iMessage Zero-Day</span><span class="c-nav-links__desc">Previous article</span></a> </li>
+<li class="c-nav-links__next">
+<a href="https://threatpost.com/man-hacked-icloud/168923/" rel="next"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-arrow-right-2" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg><span class="c-nav-links__title">California Man Hacked iCloud Accounts to Steal Nude Photos</span><span class="c-nav-links__desc">Next article</span></a> </li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="c-section">
+<div class="o-container-fluid">
+<div class="o-row c-fixed-sidebar-layout--336@md">
+<div class="o-col">
+<article class="c-article js-reading-wrapper">
+<header class="c-article__header">
+<h1 class="c-article__title">Poly Network Recoups $610M Stolen from DeFi Platform</h1>
+<figure>
+<img alt="" src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2021/08/11103228/crypto-hack.jpg"/>
+</figure>
+</header>
+<div class="o-row c-fixed-sidebar-layout--140--left@lg">
+<div class="o-col c-sidebar c-article__info">
+<div class="c-article__meta">
+<div class="c-article__author-avatar">
+<a href="https://threatpost.com/author/beckybracken/"><img alt="" class="avatar avatar-60 photo" height="60" loading="lazy" src="https://media.threatpost.com/wp-content/uploads/sites/103/2020/07/10041056/Becky-Bracken-pic.jpg" srcset="https://media.threatpost.com/wp-content/uploads/sites/103/2020/07/10041056/Becky-Bracken-pic.jpg 2x" width="60"/></a>
+</div>
+<div class="c-article__meta-content">
+<div class="c-article__author">
+<span>Author: </span>
+<a class="c-article__author-name" href="https://threatpost.com/author/beckybracken/">Becky Bracken</a>
+</div>
+<div class="c-article__time">
+<time datetime="2021-08-24T15:35:41-04:00">August 24, 2021 <span> 3:35 pm</span></time>
+</div>
+</div>
+</div>
+<div class="c-sticky-sidebar js-sticky-sidebar">
+<div class="c-article__progress">
+<div class="c-article__progress-wrapper">
+<div class="c-article__progress-bar rpi-progress-bar">
+<div class="c-article__progress-bar__position rpi-progress-bar__position"></div>
+<div class="rpi-progress-bar__percentage"></div>
+</div>
+</div>
+<div class="c-article__progress-time">
+<span class="js-reading-time"></span> minute read
+											</div>
+</div>
+<div class="c-article__sharing">
+<p><strong>Share this article:</strong></p>
+<nav class="c-nav-sharing c-nav-sharing__fixed-height c-nav-sharing__no-wrap@lg c-nav-sharing__show-more@lg c-share-popup js-sharing-popup">
+<div class="social-likes social-likes_notext" data-counters="no" data-title="Poly Network Recoups $610M Stolen from DeFi Platform" data-url="https://threatpost.com/poly-network-recoups-610m-stolen-from-defi-platform/168906/" data-zeroes="yes"><div class="facebook" title="Share via Facebook"></div>
+<div class="twitter" title="Share via Twitter"></div><div class="linkedin" title="Share via LinkedIn"></div>
+<div class="reddit" title="Share via Reddit"></div>
+<div class="flipboard" title="Share via Flipboard"></div>
+</div> <ul class="">
+<li class="c-nav-sharing__button c-nav-sharing__more"><a href="#"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-dots" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li>
+<li class="c-nav-sharing__button c-nav-sharing__less"><a href="#"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-remove" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="o-col">
+<div class="c-article__main">
+<div class="c-article__intro" name="overview">
+<p>The attacker returned the loot after being offered a gig as chief security advisor with Poly Network. </p>
+</div>
+<div class="c-article__content js-reading-content">
+<p>A threat actor called “Mr. White Hat” has returned the $610 million <a href="https://threatpost.com/crypto-hack-600-million/168554/" rel="noopener" target="_blank">they stole</a> from the decentralized finance platform Poly Network. The breached company did everything from threaten to sic law enforcement on the attacker on up to its ultimate offer: the position of chief security officer in exchange for getting its money back.</p>
+<p>Instead of falling victim to the largest DeFi heist in history, all it wound up costing Poly Networks was a bit of embarrassment.</p>
+<p>Mr. White Hat, as Poly Network dubbed him, said the plan was never to keep the money, just to prove there are security weaknesses associated with DeFi platforms.</p>
+<p>Mission accomplished.</p>
+<p><a href="https://threatpost.com/infosec-insider-subscription-page/?utm_source=ART&amp;utm_medium=ART&amp;utm_campaign=InfosecInsiders_Newsletter_Promo/" rel="noopener" target="_blank"><img alt="Infosec Insiders Newsletter" class="aligncenter wp-image-168544 size-full" height="50" src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2021/07/10165815/infosec_insiders_in_article_promo.png" width="700"/></a></p>
+<p>The money was returned in different phases, with the remainder released when the attacker shared the key to a multi-signature wallet on Monday, Coin Rivet added.</p>
+<p>“Poly Network has successfully retrieved the remaining 28,953 ETH and 1,032 WBTC (about $141 million),” the <a href="https://coinrivet.com/hackers-take-600m-from-polynetwork-in-major-crypto-heist/" rel="noopener" target="_blank">company said in a statement</a>, according to the cryptocurrency-focused publication Coin Rivet.</p>
+<p>“At this point, all the user assets that were transferred out during the incident have been fully recovered,” Poly Network said. “Thanks to Mr. White Hat’s cooperation, Poly Network has officially entered the fourth phase of our roadmap ‘Asset Recovery’. We are in the process of returning full asset control to users as swiftly as possible.”</p>
+<p>The Poly Network DeFi platform connects various blockchains so they can all work together to build a wider infrastructure. Poly Network has not responded to Threatpost’s request for comment.</p>
+<h2><b>Mr. White Hat’s Attack </b></h2>
+<p>On Aug. 10, Poly Network announced it had been attacked.</p>
+<blockquote class="twitter-tweet" data-dnt="true" data-width="500">
+<p dir="ltr" lang="en">Important Notice:<br/>We are sorry to announce that <a href="https://twitter.com/hashtag/PolyNetwork?src=hash&amp;ref_src=twsrc%5Etfw">#PolyNetwork</a> was attacked on <a href="https://twitter.com/BinanceChain?ref_src=twsrc%5Etfw">@BinanceChain</a> <a href="https://twitter.com/ethereum?ref_src=twsrc%5Etfw">@ethereum</a>  and <a href="https://twitter.com/0xPolygon?ref_src=twsrc%5Etfw">@0xPolygon</a> Assets had been transferred to hacker's following addresses:<br/>ETH: 0xC8a65Fadf0e0dDAf421F28FEAb69Bf6E2E589963<br/>BSC: 0x0D6e286A7cfD25E0c01fEe9756765D8033B32C71</p>
+<p>— Poly Network (@PolyNetwork2) <a href="https://twitter.com/PolyNetwork2/status/1425073987164381196?ref_src=twsrc%5Etfw">August 10, 2021</a></p></blockquote>
+<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
+<p>Thanks to <a href="https://coinrivet.com/hackers-take-600m-from-polynetwork-in-major-crypto-heist/" rel="noopener" target="_blank">blockchain, the stolen money was tracked</a> to three addresses. There was $264.8 million in Ethereum, $250.8 million in Binance Smart Chain and $85 million in Polygon, according to Coin Rivet.</p>
+<p>On the same day, with few alternatives available to recover the stolen assets, the company decided to try to engage the attacker with an open letter urging Mr. White Hat to return the money.</p>
+<p>“The amount of money you hacked is the biggest one in the defi history,” the <a href="https://twitter.com/PolyNetwork2/status/1425123153009803267/photo/1" rel="noopener" target="_blank">Poly Network open letter</a> said. “Law enforcement in any country will regard this as a major economic crime and you will be pursued. … You should talk to us to work out a solution.”</p>
+<p>Then, the mood seemed to shift inside Poly Network. Hours later, the company changed tactics and started <a href="https://coinrivet.com/polynetwork-mr-white-hat-hacker-offered-a-job-by-polynetwork/" rel="noopener" target="_blank">recruiting the attacker</a> to its team.</p>
+<p>“To extend our thanks and encourage Mr. White Hat to continue contributing to security advancement in the blockchain world together with Poly Network, we cordially invite Mr. White Hat to be the Chief Security Advisor of Poly Network,” the company said on a Bloomberg broadcast, according to Coin Rivet. “Again, it is important to reiterate that Poly Network has no intention of holding Mr. White Hat legally responsible, as we are confident that Mr. White Hat will promptly return full control of the assets to Poly Network and its users.”</p>
+<blockquote class="twitter-tweet" data-dnt="true" data-width="500">
+<p dir="ltr" lang="und"><a href="https://t.co/Yzw4oDenjC">pic.twitter.com/Yzw4oDenjC</a></p>
+<p>— Poly Network (@PolyNetwork2) <a href="https://twitter.com/PolyNetwork2/status/1425123153009803267?ref_src=twsrc%5Etfw">August 10, 2021</a></p></blockquote>
+<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
+<p>By the next day, Aug. 11, the attacker published what they called a Q&amp;A explaining that they broke into the Poly Network “for fun” and always planned to return the money. Elliptic researcher Tom Robinson tweeted out screenshots of the correspondence.</p>
+<blockquote class="twitter-tweet" data-dnt="true" data-width="500">
+<p dir="ltr" lang="en">The $600 million Poly Network hacker has published part one of a "Q&amp;A":<a href="https://twitter.com/hashtag/polynetworkhack?src=hash&amp;ref_src=twsrc%5Etfw">#polynetworkhack</a> <a href="https://t.co/3y1JQnHe50">pic.twitter.com/3y1JQnHe50</a></p>
+<p>— Tom Robinson (@tomrobin) <a href="https://twitter.com/tomrobin/status/1425487745166753794?ref_src=twsrc%5Etfw">August 11, 2021</a></p></blockquote>
+<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
+<p>After a bit more back-and-forth between Poly Network and the attacker on Aug. 23, all of the stolen funds were returned, including a $500,000 bug bounty paid by Poly Network and other donations.</p>
+<blockquote class="twitter-tweet" data-dnt="true" data-width="500">
+<p dir="ltr" lang="en">It's over – the Poly Network hacker has just shared the key needed by Poly to move the remainder of the stolen funds. The hacker also returned the $500k bug bounty, as well as other donations they received!<a href="https://twitter.com/hashtag/polynetworkhack?src=hash&amp;ref_src=twsrc%5Etfw">#polynetworkhack</a> <a href="https://t.co/SwtISPAa5Y">pic.twitter.com/SwtISPAa5Y</a></p>
+<p>— Tom Robinson (@tomrobin) <a href="https://twitter.com/tomrobin/status/1429764560064552964?ref_src=twsrc%5Etfw">August 23, 2021</a></p></blockquote>
+<p><script async="" charset="utf-8" src="https://platform.twitter.com/widgets.js"></script></p>
+<p>As a final act, Mr. White Hat released a statement explaining that they hope this is a security lesson for the wider DeFi community.</p>
+<p>“Personally, I have learned and practiced a lot,” Mr. White Hat wrote. “And I tried to point out some crucial facts about this crazy DeFi world.”</p>
+<p>For one last jab at Poly Networks, the note was signed “Your Chief Security Officer.”</p>
+<p><em><strong>Check out our free </strong></em><a href="https://threatpost.com/category/webinars/" rel="noopener" target="_blank"><em><strong>upcoming live and on-demand webinar events</strong></em></a><em><strong> – unique, dynamic discussions with cybersecurity experts and the Threatpost community.</strong></em></p>
+<footer class="c-article__footer">
+<div class="c-article__footer__container">
+<div class="c-article__footer__col">
+<div class="c-article__sharing">
+<p><strong>Share this article:</strong></p>
+<nav class="c-nav-sharing">
+<div class="social-likes social-likes_notext" data-counters="no" data-title="Poly Network Recoups $610M Stolen from DeFi Platform" data-url="https://threatpost.com/poly-network-recoups-610m-stolen-from-defi-platform/168906/" data-zeroes="yes"><div class="facebook" title="Share via Facebook"></div>
+<div class="twitter" title="Share via Twitter"></div><div class="linkedin" title="Share via LinkedIn"></div>
+<div class="reddit" title="Share via Reddit"></div>
+<div class="flipboard" title="Share via Flipboard"></div>
+</div> </nav>
+</div>
+</div>
+</div>
+<div class="c-article__footer__container">
+<div class="c-article__footer__col"></div>
+<div class="c-article__footer__col">
+<ul class="c-list-categories">
+<li><a class="c-label c-label--secondary-transparent" href="https://threatpost.com/category/hacks/">Hacks</a></li>
+<li><a class="c-label c-label--secondary-transparent" href="https://threatpost.com/category/web-security/">Web Security</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div class="c-post-list-slider">
+<h3 class="c-section-title"><a href="#"><span>Suggested articles</span></a></h3>
+<div class="o-row js-slider-3">
+<div class="o-col-4@md">
+<article class="c-card c-card__image-top">
+<figure>
+<a href="https://threatpost.com/acebook-messenger-scam/179977/">
+<img alt="facebook" class="attachment-article-2_1 size-article-2_1 wp-post-image" data-src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2018/12/19152401/Facebook2-540x270.png" data-srcset="" height="270" loading="lazy" src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2018/12/19152401/Facebook2-540x270.png" srcset="" width="540"/> </a>
+</figure>
+<h2 class="c-card__title"><a href="https://threatpost.com/acebook-messenger-scam/179977/">Facebook Messenger Scam Duped Millions</a></h2>
+<p>One well crafted phishing message sent via Facebook Messenger ensnared 10 million Facebook users and counting.</p>
+<footer class="c-card__info">
+<div class="c-card__time">
+<time datetime="2022-06-16T06:59:40-04:00">June 16, 2022</time>
+</div>
+</footer>
+</article>
+</div>
+<div class="o-col-4@md">
+<article class="c-card c-card__image-top">
+<figure>
+<a href="https://threatpost.com/hackers-india-government/179968/">
+<img alt="" class="attachment-article-2_1 size-article-2_1 wp-post-image" data-src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2022/06/15095642/Cerberus-540x270.jpg" data-srcset="" height="270" loading="lazy" src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2022/06/15095642/Cerberus-540x270.jpg" srcset="" width="540"/> </a>
+</figure>
+<h2 class="c-card__title"><a href="https://threatpost.com/hackers-india-government/179968/">DragonForce Gang Unleash Hacks Against Govt. of India</a></h2>
+<p>In response to a comment about the Prophet Mohammed, a hacktivist group in Malaysia has unleashed a wave of cyber attacks in India.</p>
+<footer class="c-card__info">
+<div class="c-card__time">
+<time datetime="2022-06-15T09:59:37-04:00">June 15, 2022</time>
+</div>
+</footer>
+</article>
+</div>
+<div class="o-col-4@md">
+<article class="c-card c-card__image-top">
+<figure>
+<a href="https://threatpost.com/travel-related-cybercrime-takes-off/179962/">
+<img alt="" class="attachment-article-2_1 size-article-2_1 wp-post-image" data-src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2019/02/07101809/airline-data-540x270.jpeg" data-srcset="" height="270" loading="lazy" src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2019/02/07101809/airline-data-540x270.jpeg" srcset="" width="540"/> </a>
+</figure>
+<h2 class="c-card__title"><a href="https://threatpost.com/travel-related-cybercrime-takes-off/179962/">Travel-related Cybercrime Takes Off as Industry Rebounds</a></h2>
+<p>Upsurge in the tourism industry after the COVID-19 pandemic grabs the attention of cybercriminals to scam the tourists. </p>
+<footer class="c-card__info">
+<div class="c-card__time">
+<time datetime="2022-06-15T09:37:23-04:00">June 15, 2022</time>
+</div>
+</footer>
+</article>
+</div>
+</div>
+</div>
+<div class="c-discussion" id="comments" name="discussion">
+<h3 class="c-section-title"><span>Discussion</span></h3>
+<ul class="c-comments c-comment__replies">
+<li>
+<div class="c-comment" id="comment-859015">
+<div class="c-comment__author-avatar">
+<img alt="" class="avatar-60 photo" height="60" loading="lazy" src="https://secure.gravatar.com/avatar/b084822de3996d802e95634d7d153e0c?s=60&amp;d=https%3A%2F%2Fthreatpost.com%2Fwp-content%2Fthemes%2Fthreatpost-2018%2Fassets%2Fimages%2Favatar-default.jpg&amp;r=g" srcset="https://secure.gravatar.com/avatar/b084822de3996d802e95634d7d153e0c?s=120&amp;d=https%3A%2F%2Fthreatpost.com%2Fwp-content%2Fthemes%2Fthreatpost-2018%2Fassets%2Fimages%2Favatar-default.jpg&amp;r=g 2x" width="60"/>
+</div>
+<header class="c-comment__header">
+<p>
+<a class="c-comment__author-name" href="#">Keith</a>
+<span class="c-article__time">
+                            on <time datetime="2021-08-27T07:17:56-04:00">August 27, 2021</time>
+</span>
+</p>
+</header>
+<div class="c-comment__content">
+                    Crazy! While not the most ethical approach by the hacker gotta give them some credit for returning such a huge amount of currency.
+                </div>
+<footer class="c-comment__footer"></footer>
+</div></li> </ul>
+</div>
+</div>
+<div class="o-col c-sidebar">
+<div class="widget_text widget-odd widget-first widget-1 c-ad ad-unit c-widget widget_custom_html" id="custom_html-3"><div class="textwidget custom-html-widget"><div class="c-ad__container">
+<div class="adRUPTad medrectangle" data-adunit="medrectangle">
+<!-- GPT AdSlot 3 for Ad unit '300x250-ATF' ### Size: [[300,250]] -->
+<div id="div-gpt-ad-6794670-3">
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-6794670-3'); });
+  </script>
+</div>
+<!-- End AdSlot 3 -->
+</div>
+</div></div></div><div class="widget-even widget-2 c-widget widget_threatpost_category_posts" id="threatpost_category_posts-2">
+<div class="c-widget">
+<h3 class="c-section-title"><span>InfoSec Insider</span></h3>
+<ul class="c-list-cards">
+<li>
+<article class="c-card c-card--small">
+<figure>
+<a href="https://threatpost.com/ransomware-risk-healthcare/179980/" title="Ransomware Risk in Healthcare Endangers Patients"><img alt="UVM Medical center cyberattack" class="attachment-article-1_1 size-article-1_1 wp-post-image" data-src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2020/11/09143413/UVM-Medical-Center-cyberattacl-64x64.jpg" data-srcset="" height="64" loading="lazy" src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2020/11/09143413/UVM-Medical-Center-cyberattacl-64x64.jpg" srcset="" width="64"/></a>
+</figure>
+<h2 class="c-card__title"><a href="https://threatpost.com/ransomware-risk-healthcare/179980/">Ransomware Risk in Healthcare Endangers Patients</a></h2>
+<footer class="c-card__info">
+<div class="c-card__time">
+<time datetime="2022-06-16T07:24:26-04:00">June 16, 2022</time>
+</div>
+</footer>
+</article>
+</li>
+<li>
+<article class="c-card c-card--small">
+<figure>
+<a href="https://threatpost.com/digital-asset-tsunami/179917/" title="Taming the Digital Asset Tsunami"><img alt="" class="attachment-article-1_1 size-article-1_1 wp-post-image" data-src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2022/05/05082831/remote_desktop_abstract-64x64.jpg" data-srcset="" height="64" loading="lazy" src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2022/05/05082831/remote_desktop_abstract-64x64.jpg" srcset="" width="64"/></a>
+</figure>
+<h2 class="c-card__title"><a href="https://threatpost.com/digital-asset-tsunami/179917/">Taming the Digital Asset Tsunami</a></h2>
+<footer class="c-card__info">
+<div class="c-card__time">
+<time datetime="2022-06-08T09:36:22-04:00">June 8, 2022</time>
+</div>
+<div class="c-card__stats">
+<div class="c-card__stats-comments">
+<a href="https://threatpost.com/digital-asset-tsunami/179917/#comments"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-comments" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg> <span>1</span></a>
+</div>
+</div>
+</footer>
+</article>
+</li>
+<li>
+<article class="c-card c-card--small">
+<figure>
+<a href="https://threatpost.com/cyber-risk-retainers-not-another-insurance-policy/179895/" title="Cyber Risk Retainers: Not Another Insurance Policy"><img alt="" class="attachment-article-1_1 size-article-1_1 wp-post-image" data-src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2019/11/20112437/risks-ahead-64x64.jpg" data-srcset="" height="64" loading="lazy" src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2019/11/20112437/risks-ahead-64x64.jpg" srcset="" width="64"/></a>
+</figure>
+<h2 class="c-card__title"><a href="https://threatpost.com/cyber-risk-retainers-not-another-insurance-policy/179895/">Cyber Risk Retainers: Not Another Insurance Policy</a></h2>
+<footer class="c-card__info">
+<div class="c-card__time">
+<time datetime="2022-06-07T09:25:11-04:00">June 7, 2022</time>
+</div>
+<div class="c-card__stats">
+<div class="c-card__stats-comments">
+<a href="https://threatpost.com/cyber-risk-retainers-not-another-insurance-policy/179895/#comments"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-comments" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg> <span>1</span></a>
+</div>
+</div>
+</footer>
+</article>
+</li>
+<li>
+<article class="c-card c-card--small">
+<figure>
+<a href="https://threatpost.com/criminals-expand-attack-radius/179832/" title="Cybercriminals Expand Attack Radius and Ransomware Pain Points"><img alt="cyrusone ransomware" class="attachment-article-1_1 size-article-1_1 wp-post-image" data-src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2019/12/05152830/ransomware-64x64.jpeg" data-srcset="" height="64" loading="lazy" src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2019/12/05152830/ransomware-64x64.jpeg" srcset="" width="64"/></a>
+</figure>
+<h2 class="c-card__title"><a href="https://threatpost.com/criminals-expand-attack-radius/179832/">Cybercriminals Expand Attack Radius and Ransomware Pain Points</a></h2>
+<footer class="c-card__info">
+<div class="c-card__time">
+<time datetime="2022-06-02T09:08:55-04:00">June 2, 2022</time>
+</div>
+</footer>
+</article>
+</li>
+<li>
+<article class="c-card c-card--small">
+<figure>
+<a href="https://threatpost.com/zero-trust-for-data/179706/" title="Zero Trust for Data Helps Enterprises Detect, Respond and Recover from Breaches"><img alt="" class="attachment-article-1_1 size-article-1_1 wp-post-image" data-src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2021/06/11165310/zero-trust-64x64.jpeg" data-srcset="" height="64" loading="lazy" src="https://media.kasperskycontenthub.com/wp-content/uploads/sites/103/2021/06/11165310/zero-trust-64x64.jpeg" srcset="" width="64"/></a>
+</figure>
+<h2 class="c-card__title"><a href="https://threatpost.com/zero-trust-for-data/179706/">Zero Trust for Data Helps Enterprises Detect, Respond and Recover from Breaches</a></h2>
+<footer class="c-card__info">
+<div class="c-card__time">
+<time datetime="2022-05-23T08:47:12-04:00">May 23, 2022</time>
+</div>
+</footer>
+</article>
+</li>
+</ul>
+</div>
+</div><div class="widget_text widget-odd widget-3 c-widget widget_custom_html" id="custom_html-4"><div class="textwidget custom-html-widget"><div class="c-newsletter-widget">
+<div class="c-label-wrapper"><span class="c-label c-label--white-transparent">Newsletter</span></div>
+<h3>Subscribe to <em>Threatpost Today</em></h3>
+<p>Join thousands of people who receive the latest breaking cybersecurity news every day.</p>
+<a class="c-button c-button--primary c-button--full js-modal-open" href="#modal_newsletter">Subscribe now</a>
+</div></div></div><div class="widget-even widget-4 c-widget threatpost_tweets widget_text" id="threatpost_tweets-2"> <div class="c-twitter-post-widget">
+<div class="c-label-wrapper">
+<span class="c-label c-label--white">Twitter</span>
+</div>
+<p>Mohit Tiwari, CEO of <a href="http://twitter.com/SymmetrySystems" target="_blank">@SymmetrySystems</a>, explores Zero Trust, data objects and the NIST framework for cloud and on-pr… <a href="https://t.co/r9SB5txR4W" target="_blank">https://t.co/r9SB5txR4W</a></p>
+<footer class="c-twitter-post__footer">
+<p>5 hours ago</p>
+<a class="c-button c-button--white-transparent c-button--full twitter-follow-button" href="https://twitter.com/threatpost" target="_blank">Follow @threatpost</a>
+</footer>
+</div>
+</div><div class="widget_text widget-odd widget-last widget-5 c-ad ad-unit c-widget widget_custom_html" id="custom_html-5"><div class="textwidget custom-html-widget"><div class="adRUPTad tower" data-adunit="tower">
+<!-- GPT AdSlot 5 for Ad unit '300x600-ATF' ### Size: [[300,600],[300,250]] -->
+<div id="div-gpt-ad-6794670-5">
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-6794670-5'); });
+  </script>
+</div>
+<!-- End AdSlot 5 -->
+</div></div></div>
+</div> </div>
+</div>
+</div>
+</div>
+<div class="c-ad-section c-ad-section--footer">
+<div class="o-container-fluid">
+<div class="o-row c-fixed-sidebar-layout--336@sm">
+<div class="o-col">
+<div class="c-ad u-bg--none@sm">
+<div class="c-ad__container" style="width:100%;max-width:400px;">
+<!-- AdMetricsPro Video Body Tag for threatpost.com -->
+<script id="74c2ec1bc8f84f7cb2ff365ad0b58123">
+								cnx.cmd.push(function() {
+									cnx({
+									playerId: "c2ecd04f-0dca-4ffa-8761-d93b34717380"
+									}).render("74c2ec1bc8f84f7cb2ff365ad0b58123");
+								});
+								</script>
+<!-- AdMetricsPro Video Body Tag for threatpost.com -->
+</div>
+</div>
+</div>
+<div class="o-col c-sidebar c-sidebar--pt-small"></div>
+</div>
+</div>
+</div>
+<div class="c-section c-section--bg u-border--top c-newsletter-section">
+<div class="o-container-fluid">
+<div class="textwidget custom-html-widget"><div class="o-row">
+<div class="o-col-7@sm o-col-8@md o-col-9@lg">
+<h3>Subscribe to our newsletter, <em>Threatpost Today</em>!</h3>
+<p>Get the latest breaking news delivered daily to your inbox.</p>
+</div>
+<div class="o-col-5@sm o-col-4@md o-col-3@lg"><a class="c-button c-button--secondary c-button--full js-modal-open" href="#modal_newsletter">Subscribe now</a></div>
+</div>
+</div> </div>
+</div>
+<footer class="c-site-footer c-section--dark">
+<div class="o-container-fluid">
+<div class="o-row c-site-footer__layout">
+<div class="o-col-6@md c-site-logo-group">
+<a class="c-site-logo c-site-logo--white c-site-logo--larger@md" href="https://threatpost.com/">
+<div>Threatpost</div>
+</a>
+<p class="c-site-tagline"><a href="https://threatpost.com/">The First Stop For Security News</a></p>
+</div>
+<div class="o-col-6@md u-text-right u-hidden u-block@md">
+<nav class="c-nav-secondary">
+<ul class="c-main-menu" id="menu-footer-threatpost-menu-2"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-133105" id="menu-item-133105"><a href="https://threatpost.com/"><span>Home</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133106" id="menu-item-133106"><a href="https://threatpost.com/about-threatpost/"><span>About Us</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133107" id="menu-item-133107"><a href="https://threatpost.com/contact-us/"><span>Contact Us</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-147168" id="menu-item-147168"><a href="https://media.threatpost.com/wp-content/uploads/sites/103/2021/12/09015533/ThreatpostMK_TEMPLATE.pdf"><span>Advertise With Us</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133108" id="menu-item-133108"><a href="https://threatpost.com/rss-feeds/"><span>RSS Feeds</span></a></li>
+</ul> </nav>
+</div>
+<div class="o-col-6@md">
+<nav class="c-site-info">
+<ul class="c-small-links" id="menu-footer-threatpost-menu-1"><li>Copyright © 2022 Threatpost</li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133103" id="menu-item-133103"><a href="https://threatpost.com/privacy-policy/">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133943" id="menu-item-133943"><a href="https://threatpost.com/tos/">Terms and Conditions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133958" id="menu-item-133958"><a href="https://threatpost.com/advertise/">Advertise</a></li>
+</ul> </nav>
+<nav class="c-nav-social">
+<ul class="menu" id="menu-social-menu-1"><li><a class="facebook" href="https://www.facebook.com/Threatpost/" target="_blank" title="Facebook"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-facebook" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="twitter" href="https://twitter.com/threatpost/" target="_blank" title="Twitter"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="linkedin" href="https://www.linkedin.com/company/threatpost/" target="_blank" title="LinkedIn"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-linkedin" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="youtube" href="https://www.youtube.com/user/threatpost" target="_blank" title="YouTube"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-youtube" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="feedly" href="https://feedly.com/threatpost" target="_blank" title="Feedly"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-feedly" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="instagram" href="https://www.instagram.com/Threatpost/" target="_blank" title="Instagram"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-instagram" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="rss" href="https://threatpost.com/feed" target="_blank" title="RSS"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-rss" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li></ul> </nav>
+</div>
+<div class="o-col-6@md u-text-right u-hidden u-block@md">
+<h3 class="c-section-title"><span>Topics</span></h3>
+<ul class="c-small-links" id="menu-topics"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133149" id="menu-item-133149"><a href="https://threatpost.com/category/bh/" rel="noopener" target="_blank">Black Hat</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133150" id="menu-item-133150"><a href="https://threatpost.com/category/breaking-news/">Breaking News</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133151" id="menu-item-133151"><a href="https://threatpost.com/category/cloud-security/">Cloud Security</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133152" id="menu-item-133152"><a href="https://threatpost.com/category/critical-infrastructure/">Critical Infrastructure</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133153" id="menu-item-133153"><a href="https://threatpost.com/category/cryptography/">Cryptography</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133154" id="menu-item-133154"><a href="https://threatpost.com/category/facebook/">Facebook</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133156" id="menu-item-133156"><a href="https://threatpost.com/category/government/">Government</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-133157" id="menu-item-133157"><a href="https://threatpost.com/category/hacks/">Hacks</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133158" id="menu-item-133158"><a href="https://threatpost.com/category/iot/">IoT</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133159" id="menu-item-133159"><a href="https://threatpost.com/category/malware-2/">Malware</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133160" id="menu-item-133160"><a href="https://threatpost.com/category/mobile-security/">Mobile Security</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133161" id="menu-item-133161"><a href="https://threatpost.com/category/podcasts/">Podcasts</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133162" id="menu-item-133162"><a href="https://threatpost.com/category/privacy/">Privacy</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133163" id="menu-item-133163"><a href="https://threatpost.com/category/rsac/">RSAC</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133164" id="menu-item-133164"><a href="https://threatpost.com/category/sas/">Security Analyst Summit</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133167" id="menu-item-133167"><a href="https://threatpost.com/category/videos/">Videos</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-133168" id="menu-item-133168"><a href="https://threatpost.com/category/vulnerabilities/">Vulnerabilities</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-133169" id="menu-item-133169"><a href="https://threatpost.com/category/web-security/">Web Security</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="c-site-nav">
+<div class="c-site-nav__header">
+<div class="o-container-fluid">
+<a class="c-menu-toggle js-menu-toggle" href="#">
+<span></span>
+<span></span>
+<span></span>
+</a>
+<a class="c-site-logo c-site-logo--larger@md" href="https://threatpost.com/">
+<div>Threatpost</div>
+</a>
+<div class="c-site-nav__header__aside">
+<nav class="c-nav-social">
+<ul class="menu" id="menu-social-menu-2"><li><a class="facebook" href="https://www.facebook.com/Threatpost/" target="_blank" title="Facebook"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-facebook" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="twitter" href="https://twitter.com/threatpost/" target="_blank" title="Twitter"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="linkedin" href="https://www.linkedin.com/company/threatpost/" target="_blank" title="LinkedIn"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-linkedin" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="youtube" href="https://www.youtube.com/user/threatpost" target="_blank" title="YouTube"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-youtube" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="feedly" href="https://feedly.com/threatpost" target="_blank" title="Feedly"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-feedly" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="instagram" href="https://www.instagram.com/Threatpost/" target="_blank" title="Instagram"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-instagram" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="rss" href="https://threatpost.com/feed" target="_blank" title="RSS"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-rss" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li></ul> </nav>
+<!-- <nav class="c-nav-utility">
+						<a href="https://threatpost.com/" class="c-button c-button--secondary-transparent c-button--smaller"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-user'></use></svg> Log in</a>
+					</nav> -->
+</div>
+</div>
+</div>
+<div class="c-site-nav__main">
+<div class="o-container-fluid">
+<div class="o-row">
+<div class="o-col-6@md"><div class="c-site-nav__list js-nav-toggle-container">
+<div class="c-site-nav__list__header js-nav-toggle-button">
+<h3 class="c-section-title"><span>Topics</span></h3>
+</div><ul class="o-stack-1 o-stack-2@sm c-main-menu"><li><a href="https://threatpost.com/category/cloud-security/"><span>Cloud Security</span></a></li><li><a href="https://threatpost.com/category/malware-2/"><span>Malware</span></a></li><li><a href="https://threatpost.com/category/vulnerabilities/"><span>Vulnerabilities</span></a></li><li><a href="https://threatpost.com/category/privacy/"><span>Privacy</span></a></li></ul>
+<a class="c-label c-label--secondary-transparent u-hidden@md js-nav-toggle-button" href="#">Show all</a>
+<div class="c-site-nav__list__content js-nav-toggle-content">
+<ul class="o-stack-1 o-stack-2@sm c-main-menu"><li><a href="https://threatpost.com/category/bh/"><span>Black Hat</span></a></li><li><a href="https://threatpost.com/category/critical-infrastructure/"><span>Critical Infrastructure</span></a></li><li><a href="https://threatpost.com/category/cryptography/"><span>Cryptography</span></a></li><li><a href="https://threatpost.com/category/facebook/"><span>Facebook</span></a></li><li><a href="https://threatpost.com/category/featured/"><span>Featured</span></a></li><li><a href="https://threatpost.com/category/government/"><span>Government</span></a></li><li><a href="https://threatpost.com/category/hacks/"><span>Hacks</span></a></li><li><a href="https://threatpost.com/category/iot/"><span>IoT</span></a></li><li><a href="https://threatpost.com/category/mobile-security/"><span>Mobile Security</span></a></li><li><a href="https://threatpost.com/category/podcasts/"><span>Podcasts</span></a></li><li><a href="https://threatpost.com/category/rsac/"><span>RSAC</span></a></li><li><a href="https://threatpost.com/category/sas/"><span>Security Analyst Summit</span></a></li><li><a href="https://threatpost.com/category/slideshow/"><span>Slideshow</span></a></li><li><a href="https://threatpost.com/category/videos/"><span>Videos</span></a></li><li><a href="https://threatpost.com/category/web-security/"><span>Web Security</span></a></li></ul></div></div></div><div class="o-col-3@md"><div class="c-site-nav__list js-nav-toggle-container">
+<div class="c-site-nav__list__header js-nav-toggle-button">
+<h3 class="c-section-title"><span>Authors</span></h3>
+</div><div class="c-site-nav__list__content js-nav-toggle-content"><ul class="o-stack-1 c-main-menu"><li><a href="https://threatpost.com/author/elizabethmontalbano/"><span>Elizabeth Montalbano</span></a></li><li><a href="https://threatpost.com/author/natenelson/"><span>Nate Nelson</span></a></li></ul></div></div></div><div class="o-col-3@md"><div class="c-site-nav__list js-nav-toggle-container">
+<div class="c-site-nav__list__header js-nav-toggle-button">
+<h3 class="c-section-title"><span>Threatpost</span></h3>
+</div><div class="c-site-nav__list__content js-nav-toggle-content"><ul class="o-stack-1 c-main-menu"><li><a href="https://threatpost.com/"><span>Home</span></a></li><li><a href="https://threatpost.com/about-threatpost/"><span>About Us</span></a></li><li><a href="https://threatpost.com/contact-us/"><span>Contact Us</span></a></li><li><a href="https://threatpost.com/advertise/"><span>Advertise With Us</span></a></li><li><a href="https://threatpost.com/rss-feeds/"><span>RSS Feeds</span></a></li></ul></div></div></div> </div>
+<div class="o-row">
+<div class="o-col-6@md o-offset-3@md">
+<div class="c-site-search c-site-nav__search">
+<form action="https://threatpost.com/" class="c-site-search__form" method="get" role="search">
+<input class="c-site-search__field" name="s" placeholder="Search" type="text"/>
+<button class="c-button c-button--secondary c-button--smaller c-site-search__button" type="submit" value="Search"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-search" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg> Search</button>
+<div class="c-site-search__overlay"></div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="c-site-nav__footer u-hidden@md">
+<div class="o-container-fluid">
+<nav class="c-nav-social">
+<ul class="menu" id="menu-social-menu-3"><li><a class="facebook" href="https://www.facebook.com/Threatpost/" target="_blank" title="Facebook"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-facebook" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="twitter" href="https://twitter.com/threatpost/" target="_blank" title="Twitter"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-twitter" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="linkedin" href="https://www.linkedin.com/company/threatpost/" target="_blank" title="LinkedIn"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-linkedin" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="youtube" href="https://www.youtube.com/user/threatpost" target="_blank" title="YouTube"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-youtube" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="feedly" href="https://feedly.com/threatpost" target="_blank" title="Feedly"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-feedly" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="instagram" href="https://www.instagram.com/Threatpost/" target="_blank" title="Instagram"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-instagram" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li><li><a class="rss" href="https://threatpost.com/feed" target="_blank" title="RSS"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-rss" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a></li></ul> </nav>
+<!-- <a href="https://threatpost.com/" class="c-button c-button--secondary-transparent c-button--smaller u-size--full"><svg class='icon fill'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-user'></use></svg> Log in</a> -->
+</div>
+</div>
+</div>
+<div class="c-modal c-modal--small mfp-hide" id="modal_infosec_desc">
+<div class="c-modal__header">
+<a class="c-modal__close c-modal__close--dark js-modal-close" href="#"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-remove" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a>
+</div>
+<div class="c-modal__main">
+<div class="c-section c-section--bg c-section--dark">
+<div class="o-container-fluid">
+<div class="u-mb-spacer-base">
+<div class="c-label c-label--secondary-blue">InfoSec Insider</div>
+</div>
+<h3>Infosec Insider Post</h3>
+<p>Infosec Insider content is written by a trusted community of Threatpost cybersecurity subject matter experts. Each contribution has a goal of bringing a unique voice to important cybersecurity topics. Content strives to be of the highest quality, objective and non-commercial.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="c-modal c-modal--small mfp-hide" id="modal_sponsored_desc">
+<div class="c-modal__header">
+<a class="c-modal__close c-modal__close--dark js-modal-close" href="#"><svg class="icon fill"><use xlink:href="https://threatpost.com/wp-content/themes/threatpost-2018/assets/sprite/icons.svg#icon-remove" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg></a>
+</div>
+<div class="c-modal__main">
+<div class="c-section c-section--bg c-section--dark">
+<div class="o-container-fluid">
+<div class="u-mb-spacer-base">
+<div class="c-label c-label--secondary-yellow">Sponsored</div>
+</div>
+<h3>Sponsored Content</h3>
+<p>Sponsored Content is paid for by an advertiser. Sponsored content is written and edited by members of our sponsor community. This content creates an opportunity for a sponsor to provide insight and commentary from their point-of-view directly to the Threatpost audience. The Threatpost editorial team does not participate in the writing or editing of Sponsored Content.</p>
+</div>
+</div>
+</div>
+</div>
+<script id="kspr_embeds-js" src="https://kasperskycontenthub.com/threatpost-global/wp-content/plugins/kaspersky-embeds/js/scripts.js?ver=1.0" type="text/javascript"></script>
+<script id="kaspersky-dynamic-gravity-forms-google-recaptcha-js" src="https://www.google.com/recaptcha/api.js?render=explicit&amp;ver=202124050927" type="text/javascript"></script>
+<script id="kaspersky-dynamic-gravity-forms-main-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var kasperskyDynamicaReCaptchaData = {"ajaxUrl":"https:\/\/threatpost.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script id="kaspersky-dynamic-gravity-forms-main-js" src="https://threatpost.com/wp-content/plugins/kaspersky-gravity-forms-dynamic-recaptcha/assets/js/main.js?ver=202124050927" type="text/javascript"></script>
+<script id="kaspersky-lazy-load-js" src="https://threatpost.com/wp-content/plugins/kaspersky-lazy-load/assets/js/main.js?ver=202224051706" type="text/javascript"></script>
+<script id="kaspersky-omniture-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var kaspersky = {"isStaging":"0"};
+/* ]]> */
+</script>
+<script id="kaspersky-omniture-js" src="//media.kaspersky.com/tracking/omniture/s_code_single_suite.js?ver=5.9.3" type="text/javascript"></script>
+<script id="main-js" src="https://threatpost.com/wp-content/themes/threatpost-2018/assets/js/main.js?ver=202107061113" type="text/javascript"></script>
+<script id="regenerator-runtime-js" src="https://threatpost.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9" type="text/javascript"></script>
+<script id="wp-polyfill-js" src="https://threatpost.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" type="text/javascript"></script>
+<script id="wp-dom-ready-js" src="https://threatpost.com/wp-includes/js/dist/dom-ready.min.js?ver=ecda74de0221e1c2ce5c57cbb5af09d5" type="text/javascript"></script>
+<script id="wp-hooks-js" src="https://threatpost.com/wp-includes/js/dist/hooks.min.js?ver=1e58c8c5a32b2e97491080c5b10dc71c" type="text/javascript"></script>
+<script id="wp-i18n-js" src="https://threatpost.com/wp-includes/js/dist/i18n.min.js?ver=30fcecb428a0e8383d3776bcdd3a7834" type="text/javascript"></script>
+<script id="wp-i18n-js-after" type="text/javascript">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script id="wp-a11y-js-translations" type="text/javascript">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script id="wp-a11y-js" src="https://threatpost.com/wp-includes/js/dist/a11y.min.js?ver=68e470cf840f69530e9db3be229ad4b6" type="text/javascript"></script>
+<script defer="defer" id="gform_json-js" src="https://threatpost.com/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.5.16.3" type="text/javascript"></script>
+<script id="gform_gravityforms-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mon","tuesday":"Tue","wednesday":"Wed","thursday":"Thu","friday":"Fri","saturday":"Sat","sunday":"Sun"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/threatpost.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/threatpost.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_legacy_multi = {"5":"1"};
+/* ]]> */
+</script>
+<script defer="defer" id="gform_gravityforms-js" src="https://threatpost.com/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.5.16.3" type="text/javascript"></script>
+<script id="gform_conditional_logic-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var gf_legacy = {"is_legacy":"1"};
+/* ]]> */
+</script>
+<script defer="defer" id="gform_conditional_logic-js" src="https://threatpost.com/wp-content/plugins/gravityforms/js/conditional_logic.min.js?ver=2.5.16.3" type="text/javascript"></script>
+<script defer="defer" id="gform_placeholder-js" src="https://threatpost.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.5.16.3" type="text/javascript"></script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 5) {gf_global["number_formats"][5] = {"8":{"price":false,"value":false},"1":{"price":false,"value":false},"9":{"price":false,"value":false},"2":{"price":false,"value":false},"5":{"price":false,"value":false},"10":{"price":false,"value":false}};if(window['jQuery']){if(!window['gf_form_conditional_logic'])window['gf_form_conditional_logic'] = new Array();window['gf_form_conditional_logic'][5] = { logic: { 0: {"field":{"actionType":"show","logicType":"all","rules":[{"fieldId":"2","operator":"is","value":"I agree"},{"fieldId":"5","operator":"is","value":"I agree"}]},"section":null} }, dependents: { 0: [0] }, animation: 1, defaults: [], fields: {"8":[0],"1":[0],"9":[0],"2":[0],"5":[0],"10":[0]} }; if(!window['gf_number_format'])window['gf_number_format'] = 'decimal_dot';jQuery(document).ready(function(){window['gformInitPriceFields']();gf_apply_rules(5, [0], true);jQuery('#gform_wrapper_5').show();jQuery(document).trigger('gform_post_conditional_logic', [5, null, true]);} );} if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [5, 1]) } );
+</script>
+<!-- Powered by Whitelist IP For Limit Login Attempts | URL: http://club.orbisius.com/products/wordpress-plugins/whitelist-ip-for-limit-login-attempts/ -->
+</body>
+</html>

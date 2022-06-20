@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<!--  Last Published: Tue Jan 04 2022 09:37:35 GMT+0000 (Coordinated Universal Time)  -->
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Privacy Policy | JFrog Connect</title>
+<meta content="If you have any questions about this Privacy Policy or concerns about the way we process your PII, please contact us" name="description"/>
+<meta content="If you have any questions about this Privacy Policy or concerns about the way we process your PII, please contact us" name="description"/>
+<meta content="Privacy Policy | JFrog Connect" property="og:title"/>
+<meta content="If you have any questions about this Privacy Policy or concerns about the way we process your PII, please contact us" property="og:description"/>
+<meta content="Privacy Policy | JFrog Connect" property="twitter:title"/>
+<meta content="If you have any questions about this Privacy Policy or concerns about the way we process your PII, please contact us" property="twitter:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Axx1qX35jZ7HxaqdcTe0sjbME3TDOUlmnt2NX2bOZD4" name="google-site-verification"/>
+<link href="/connect/css/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="/connect/css/jfrog-connect.css" rel="stylesheet" type="text/css"/>
+<link href="/connect/css/jfrog-connect-new.css" rel="stylesheet" type="text/css"/>
+<link href="https://jfrog.com/connect/privacy/" rel="canonical">
+<script>
+        /* 20-12-2021 */
+        (function () {
+            var config = {
+                "clientId": "e1c95e5f-6e95-40a4-b650-2ec1790e35f2",
+                "disablePrototyeHooks": false,
+                "isAllowed": true,
+                "innerHtmlHook": false,
+                "ignoredFiles": ["captcha_code_file.php"],
+                "workerLocation": "/speedsize-sw-info.js",
+                "mLinkBaseUrl": "https://d2d22nphq0yz8t.cloudfront.net",
+                "format": "auto",
+                "allowedPaths": [],
+                "ignoreDataAttributes": false,
+                "maxDpr": 1.5,
+                "enableStatement": "",
+                "disableWorker": false,
+                "forbiddenPaths": ["/jira", "/jira/*", "/confluence", "/confluence/*"],
+                "searchChildren": false,
+                "whitelistDomains": ["jfrog.com", "jfrog.info", "jfrog-swampup.site.strattic.io"],
+                "useOriginalCDN": false,
+                "lazyload": {
+                    "hideBackgrounds": false,
+                    "blurredPlaceholders": false,
+                    "awaitWorker": false,
+                    "native": true,
+                    "hideImgElements": false,
+                    "eagerCheck": false
+                },
+                "processPreloadImages": false,
+                "allowCrossOrigin": false
+            } || {};
+            var e, t, i, r = 10;
+
+            function n(e) {
+                e && e.postMessage({
+                    type: "WINDOW_PARAMS",
+                    data: {DPR: window.devicePixelRatio, vpWidth: window.screen.width, vpHeight: window.screen.height}
+                })
+            }
+
+            navigator.serviceWorker && navigator.serviceWorker.controller && n(navigator.serviceWorker.controller);
+            var a = 1.5, s = window.screen.width * Math.min(window.devicePixelRatio, config.maxDpr || a),
+                o = window.screen.height * Math.min(window.devicePixelRatio, config.maxDpr || a),
+                d = window.location.origin + window.location.pathname;
+
+            function c(e) {
+                var t = new URL(e, d), i = t.href;
+                return t.hash && (i = t.origin + t.pathname + t.search), {
+                    srcUrl: i.replace(/%7B/g, "{").replace(/%7D/g, "}"),
+                    hash: t.hash || "",
+                    hostname: t.hostname,
+                    pathname: t.pathname
+                }
+            }
+
+            "/" === d.charAt(d.length - 1) || d.endsWith(".html") || d.endsWith(".htm") || d.endsWith(".php") || d.endsWith(".asp") || d.endsWith(".aspx") || d.endsWith(".jsp") || (d += "/");
+            var u = new URL(config.mLinkBaseUrl).hostname;
+
+            function g(e) {
+                var t = !1, {hostname: i} = new URL(e, d);
+                if (i === u) return !1;
+                if (config.whitelistDomains && config.whitelistDomains.length) for (var r = 0; r < config.whitelistDomains.length; r += 1) {
+                    var n = config.whitelistDomains[r];
+                    if (i.indexOf(n) >= 0) {
+                        t = !0;
+                        break
+                    }
+                }
+                return t
+            }
+
+            function l(e) {
+                if (!config.ignoredFiles || !config.ignoredFiles.length) return !1;
+                for (var t = !1, i = 0; i < config.ignoredFiles.length; i += 1) {
+                    var r = config.ignoredFiles[i];
+                    (r.endsWith("*") && 0 === e.indexOf(r.substring(0, r.length - 1)) || r === e) && (t = !0)
+                }
+                return t
+            }
+
+            function p(e, t, i, r, n, d) {
+                if (0 === t.indexOf("data:image")) return t;
+                var u = "image" === e ? me : ve, {srcUrl: p, hash: f, hostname: m, pathname: v} = c(t), A = n || "";
+                if (!config.allowCrossOrigin && b(p) && !g(p)) return t;
+                if (config.ignoredFiles && config.ignoredFiles.length && l(v)) return t;
+                var w = r || {}, y = [];
+                A && (y.push(A), A.indexOf("c_auto") >= 0 && -1 === A.indexOf("w_") && -1 === A.indexOf("h_") && (w.w = s, w.h = o)), "string" == typeof i && (i = parseInt(Number(i.replace("px", "")), 10));
+                var z = i || window.screen.width,
+                    O = h(Math.min(z, window.screen.width) * Math.min(window.devicePixelRatio, config.maxDpr || a));
+                Object.keys(w).forEach((e => {
+                    y.push(`${e}_${w[e]}`)
+                })), config.disableAutoResize || w.w || w.h || d || y.push(`mxw_${O}`), u && y.push(u), config.format && y.push(`f_${config.format}`);
+                var _ = y.join(",");
+                return `${config.mLinkBaseUrl}/${config.clientId}/${p}/${_}${f}`
+            }
+
+            function f(e) {
+                if (e.hasAttribute("data-speedsize-src") || e.hasAttribute("data-speedsize-srcset")) {
+                    if (e.hasAttribute("data-speedsize-srcset") && (e.srcset = e.getAttribute("data-speedsize-srcset")), e.hasAttribute("data-speedsize-src") && (e.src = p("image", e.getAttribute("data-speedsize-src"), e.getAttribute("data-speedsize-width"), null, e.getAttribute("data-speedsize-params"))), e.hasAttribute("data-speedsize-width")) {
+                        const t = e.getAttribute("data-speedsize-width");
+                        t && e.setAttribute("width", t)
+                    }
+                    if (e.hasAttribute("data-speedsize-height")) {
+                        const t = e.getAttribute("data-speedsize-height");
+                        t && e.setAttribute("height", t)
+                    }
+                    e.setAttribute("data-processed", "true")
+                }
+            }
+
+            function h(e) {
+                if (e <= Z[0]) return Z[0];
+                if (e >= Z[Z.length - 1]) return Z[Z.length - 1];
+                for (var t = Z.length - 2; t >= 0; t--) if (e >= Z[t]) return Z[t + 1]
+            }
+
+            function b(e) {
+                if (!e || 0 === e.indexOf("data:image")) return !1;
+                var t = new URL(e, d).hostname;
+                return t === u || !t.endsWith(window.location.hostname) && 0 !== e.indexOf(window.location.origin)
+            }
+
+            function m(e) {
+                if (!e) return null;
+                var r = parseInt(e, 10);
+                return e.endsWith("px") ? r : e.endsWith("vw") ? (t || (t = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)), parseInt(r * t / 100, 10)) : e.endsWith("vh") ? (i || (i = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)), parseInt(r * i / 100, 10)) : null
+            }
+
+            function v(e) {
+                if (!e || "string" != typeof e) return null;
+                for (var t = null, i = e.split(","), r = 0; r < i.length; r += 1) {
+                    var n = i[r].trim().split(")"), a = n[0] + ")", s = n[1] && n[1].trim();
+                    window.matchMedia(a).matches && (t = m(s))
+                }
+                return t
+            }
+
+            function A(e) {
+                var t = config.lazyload;
+                return !e.isConnected && config.notConnectedLazyload && (t = config.notConnectedLazyload), t
+            }
+
+            function w(e) {
+                var t = A(e);
+                if (!(e.dataset["speedsize-ignore"] || e.dataset.speedsizeIgnore || e.hasAttribute("data-speedsize-ignore")) && !(e.speedsize || e.isObserved || 0 === e.src.indexOf("data:image") && !e.hasAttribute("data-srcset")) && (config.allowCrossOrigin || !b(e.src) || g(e.src))) {
+                    if (e.hasAttribute("data-src") && !config.ignoreDataAttributes) {
+                        var i = p("image", e.getAttribute("data-src"), e.getAttribute("data-speedsize-width"), null, e.getAttribute("data-speedsize-params"));
+                        e.setAttribute("data-src", i)
+                    }
+                    if (e.hasAttribute("data-srcset") && !config.ignoreDataAttributes) {
+                        var r = z(e.dataset.srcset, "image", e);
+                        e.setAttribute("data-srcset", r)
+                    }
+                    if (e.speedsize = !0, !e.complete && (e.hasAttribute("src") || e.hasAttribute("srcset"))) {
+                        if (!e.hasAttribute("data-speedsize-src") && e.getAttribute("src") && (e.setAttribute("data-speedsize-src", e.getAttribute("src")), e.removeAttribute("src")), e.srcset) {
+                            r = z(e.srcset, "image", e);
+                            e.setAttribute("data-speedsize-srcset", r), e.removeAttribute("srcset")
+                        }
+                        if (!config.ignoreDimensionAttributes && e.hasAttribute("width") && (e.setAttribute("data-speedsize-width", e.getAttribute("width")), e.removeAttribute("width")), !config.ignoreDimensionAttributes && e.hasAttribute("height") && (e.setAttribute("data-speedsize-height", e.getAttribute("height")), e.removeAttribute("height")), !config.ignoreDimensionAttributes && e.hasAttribute("sizes")) {
+                            var n = v(e.getAttribute("sizes"));
+                            n && e.setAttribute("data-speedsize-width", n)
+                        }
+                        if (t) {
+                            if (!t.eagerShowNotConnected) return t.native ? (e.hasAttribute("loading") || e.setAttribute("loading", "lazy"), void f(e)) : void 0;
+                            f(e)
+                        } else f(e)
+                    }
+                }
+            }
+
+            function y(e) {
+                for (var t = [], i = "url(", r = e; r.indexOf(i) >= 0;) {
+                    var n = r.indexOf(i);
+                    if (-1 === n) return null;
+                    var a = n + i.length, s = r.indexOf(")", a), o = r.substring(a, s);
+                    if ('"' !== o.charAt(0) && "'" !== o.charAt(0) || (o = o.substring(1, o.length - 1)), 0 !== o.indexOf("data:") && t.push(o), r = r.substring(s + 1), -1 === s) break
+                }
+                return t
+            }
+
+            function z(e, t, i) {
+                var r = t || "image";
+                if (!e) return "";
+                if (e.indexOf(config.mLinkBaseUrl) >= 0) return e;
+                for (var n = e.split(","), a = 0; a < n.length; a += 1) {
+                    var s = n[a].trim().split(" ")[0], o = c(s).srcUrl;
+                    if (config.allowCrossOrigin || !b(o) || g(o)) {
+                        var d = p(r, s, i && (i.getAttribute("data-speedsize-width") || i.getAttribute("width")), null, i && i.getAttribute("data-speedsize-params"));
+                        n[a] = n[a].replace(s, d)
+                    }
+                }
+                return n.join(",")
+            }
+
+            function O(e, t, i) {
+                if (String.prototype.replaceAll) return e.replaceAll(t, i);
+                var r = new RegExp(t, "g");
+                return e.replace(r, i)
+            }
+
+            function _(e) {
+                if (!e.hasAttribute("data-processed")) {
+                    var t = !1;
+                    config.disableBackgroundAutoResize && (t = !0);
+                    var i = e.style.backgroundImage, r = !1;
+                    if (!i && e.hasAttribute("style") && (r = !0, i = e.getAttribute("style")), i) {
+                        var n = y(i);
+                        n = Array.from(new Set(n));
+                        for (var a = {}, s = i, o = 0; o < n.length; o += 1) {
+                            var d = n[o];
+                            s = O(s, d, p("image", c(d).srcUrl, null, a, e.getAttribute("data-speedsize-params"), t))
+                        }
+                        n.length && (r ? e.setAttribute("style", s) : e.style.backgroundImage = s), e.setAttribute("data-processed", !0)
+                    }
+                }
+            }
+
+            function k(e) {
+                var t, i = {};
+                e.hasAttribute("muted") && !e.hasAttribute("controls") && (i.v = "muted", e.muted = !0);
+                var r, n = e.getAttribute("width");
+                n && (t = parseInt(n, 10));
+                var a = e.getAttribute("height");
+                if (a && (r = parseInt(a, 10)), config.videoComputeStyles || config.enableVideoAutocrop) {
+                    var s = window.getComputedStyle(e);
+                    t || (t = parseInt(s.width.replace("px", ""), 10)), r || (r = parseInt(s.height.replace("px", ""), 10))
+                }
+                if (300 === t) return e.setAttribute("poster", te), void window.requestAnimationFrame((function () {
+                    var t = window.getComputedStyle(e).width.replace("px", "");
+                    if (t = parseInt(t, 10), e.src = p("video", e.getAttribute("data-speedsize-src"), t, i, e.getAttribute("data-speedsize-params")), e.hasAttribute("data-speedsize-poster")) {
+                        var r = p("image", e.getAttribute("data-speedsize-poster"), t, null, e.getAttribute("data-speedsize-params"));
+                        e.setAttribute("poster", r)
+                    }
+                }));
+                if (e.src = p("video", e.getAttribute("data-speedsize-src"), t, i, e.getAttribute("data-speedsize-params")), e.hasAttribute("data-speedsize-poster")) {
+                    var o = p("image", e.getAttribute("data-speedsize-poster"), t, null, e.getAttribute("data-speedsize-params"));
+                    e.setAttribute("poster", o)
+                }
+            }
+
+            var x = window.screen.height;
+
+            function E(e) {
+                if (e.hasAttribute("src")) return e.getAttribute("src");
+                var t = e.querySelectorAll("source");
+                if (!t || !t.length) return "";
+                for (var i, r, n, a = t[t.length - 1].src, s = 0; s < t.length; s += 1) {
+                    var o = t[s];
+                    o.hasAttribute("type") && "video/mp4" === o.getAttribute("type") && (r = o.src), o.src.endsWith(".mp4") && (n = o.src), o.hasAttribute("media") && window.matchMedia(o.getAttribute("media")).matches && (i = o.src)
+                }
+                return r || n || i || a
+            }
+
+            function I(e) {
+                for (var t = e.querySelectorAll("source"), i = 0; i < t.length; i += 1) {
+                    var r = t[i], n = r.getAttribute("data-src");
+                    if (n && !n.speedsize) {
+                        var a = p("video", n, e.getAttribute("data-speedsize-width"), null, e.getAttribute("data-speedsize-params"));
+                        r.setAttribute("data-src", a), n.speedsize = !0
+                    }
+                }
+            }
+
+            function C(e) {
+                if (!config.disableVideo && !e.speedsize && !(e.dataset["speedsize-ignore"] || e.dataset.speedsizeIgnore || e.hasAttribute("data-speedsize-ignore"))) {
+                    e.hasAttribute("autoplay") && e.hasAttribute("poster") && e.removeAttribute("poster");
+                    var t = E(e);
+                    if (I(e), t && (e.speedsize = !0, config.allowCrossOrigin || !b(t) || g(t))) {
+                        e.hasAttribute("data-speedsize-src") || e.setAttribute("data-speedsize-src", t), e.hasAttribute("poster") && !e.hasAttribute("data-speedsize-poster") && e.setAttribute("data-speedsize-poster", e.getAttribute("poster")), e.hasAttribute("autoplay") && (e.hasAttribute("muted") || e.setAttribute("muted", !0), e.hasAttribute("playsinline") || e.setAttribute("playsinline", !0));
+                        var i = A(e);
+                        if (i) return i.native ? (e.hasAttribute("loading") || e.setAttribute("loading", "lazy"), void k(e)) : void 0;
+                        k(e)
+                    }
+                }
+            }
+
+            function N(e) {
+                var t = navigator.userAgentData;
+                if (!e || !t) return null;
+                var i = null;
+                if (t && t.brands && t.brands.length) for (var r = t.brands, n = 0; n < r.length; n += 1) if (r[n].brand === e) {
+                    i = r[n].version;
+                    break
+                }
+                return i
+            }
+
+            function L() {
+                return !!N("Opera") || ie.includes("opr")
+            }
+
+            function S(e, t = null) {
+                var i = N("Opera");
+                return i = i ? parseInt(i, 10) : parseInt(ie.substring(ie.indexOf("opr")).split("/")[1], 10), t ? i >= e && i <= t : i >= e
+            }
+
+            function P() {
+                return ie.includes("firefox")
+            }
+
+            function W(e, t = null) {
+                var i = parseInt(ie.substring(ie.indexOf("firefox")).split("/")[1], 10);
+                return t ? i >= e && i <= t : i >= e
+            }
+
+            function D() {
+                return !!N("Microsoft Edge") || ie.includes("edg")
+            }
+
+            function M(e, t = null) {
+                var i = N("Microsoft Edge");
+                return i = i ? parseInt(i, 10) : parseInt(ie.substring(ie.indexOf("edg")).split("/")[1], 10), t ? i >= e && i <= t : i >= e
+            }
+
+            function R() {
+                return !(!ie.includes("safari") || ie.includes("chrome") || ie.includes("crios"))
+            }
+
+            function U() {
+                return R() && ie.includes("macintosh")
+            }
+
+            function B(e, t = null) {
+                var i = parseInt(ie.substring(ie.indexOf("version")).split("/")[1], 10);
+                return t ? i >= e && i <= t : i >= e
+            }
+
+            function H() {
+                return ie.includes("iphone") || ie.includes("ipad") || ie.includes("macintosh")
+            }
+
+            function j() {
+                return ie.includes("android")
+            }
+
+            function T() {
+                return R() && (ie.includes("iphone") || ie.includes("ipad"))
+            }
+
+            function V() {
+                return ie.includes("crios")
+            }
+
+            function $(e, t = null) {
+                var i = parseInt(ie.split(" os")[1], 10) || parseInt(ie.split(" os x")[1], 10);
+                return t ? i >= e && i <= t : i >= e
+            }
+
+            function F() {
+                if (N("Google Chrome")) return !0;
+                var e = navigator.vendor && navigator.vendor.toLowerCase();
+                return !L() && !P() && !D() && !R() && ("google inc." === e || ie.includes("chrome") && j())
+            }
+
+            function G(e, t = null) {
+                var i = N("Google Chrome");
+                return i = i ? parseInt(i, 10) : parseInt(ie.substring(ie.indexOf("chrome")).split("/")[1], 10), t ? i >= e && i <= t : i >= e
+            }
+
+            function K() {
+                return D() ? M(18) : P() ? W(65) : L() ? S(19) : !(!T() && !V()) && $(14)
+            }
+
+            function q() {
+                return !!D() && M(12, 18)
+            }
+
+            function Q() {
+                return U() ? B(5) : !(!T() && !V()) && $(5)
+            }
+
+            function J() {
+                return U() ? B(13) : !(!T() && !V()) && $(11)
+            }
+
+            function X() {
+                return D() ? M(79) : P() ? W(28) : L() ? S(16) : !!F() && G(25)
+            }
+
+            function Y() {
+                return !P() || H() || j() ? L() ? S(57) : !(!F() || j()) && G(70) : W(67)
+            }
+
+            for (var Z = [64, 96, 100, 128, 160, 192, 200, 240, 256, 320, 360, 480, 540, 600, 640, 720, 750, 768, 800, 828, 1024, 1080, 1125, 1152, 1170, 1200, 1242, 1280, 1284, 1366, 1440, 1536, 1600, 1650, 1920, 2048, 2256, 2304, 2560, 2736, 2880, 3e3, 3200, 3440, 3840], ee = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="1"/>', te = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAABCAQAAADJJpP6AAAAHklEQVR42u3BAQkAAAACoPp/uh+hNgAAAAAAAABcGDwCAAKXu7/2AAAAAElFTkSuQmCC", ie = navigator.userAgent.toLowerCase(), re = (window.location.search || "").substring(1), ne = re.split("&"), ae = [], se = 0; se < ne.length; se += 1) {
+                "nospeedsize" !== (ge = ne[se]) && ge !== config.enableStatement && ae.push(ge)
+            }
+            var oe = ae.join("&"), de = oe ? `${window.location.pathname}?${oe}` : window.location.pathname;
+            de = de.toLowerCase();
+            var ce = !0, ue = !1;
+            if (ne && ne.length) for (se = 0; se < ne.length; se += 1) {
+                var ge;
+                if ("nospeedsize" === (ge = ne[se])) {
+                    ce = !1;
+                    break
+                }
+            }
+            if (config.forbiddenPaths && config.forbiddenPaths.length) {
+                var le = !0;
+                for (se = 0; se < config.forbiddenPaths.length; se += 1) {
+                    var pe = config.forbiddenPaths[se].toLowerCase();
+                    if (pe.endsWith("*") && 0 === de.indexOf(pe.substring(0, pe.length - 1))) le = !1; else if (pe === de) {
+                        le = !1;
+                        break
+                    }
+                }
+                le || (ce = !1)
+            }
+
+            function fe() {
+                navigator.serviceWorker.register(config.workerLocation || "/speedsize-sw.js").then((function (e) {
+                    if (config.lazyload && config.lazyload.awaitWorker) {
+                        var t = e.installing || e.waiting || e.active;
+                        "activated" === t.state ? (n(t), styleSheet && styleSheet.parentElement && styleSheet.parentElement.removeChild(styleSheet)) : t.addEventListener("statechange", (function (e) {
+                            "activated" === e.target.state && (n(t), styleSheet && styleSheet.parentElement && styleSheet.parentElement.removeChild(styleSheet))
+                        }))
+                    }
+                })).catch((function (e) {
+                    console.log("Service worker registration failed:", e)
+                }))
+            }
+
+            "serviceWorker" in navigator && !ce && navigator.serviceWorker.getRegistrations().then((function (e) {
+                var t = "speedsize-sw.js";
+                if (config.workerLocation) {
+                    var i = config.workerLocation.split("/");
+                    t = i[i.length - 1]
+                }
+                e.forEach((function (e) {
+                    if (e.active) {
+                        var i = e.active.scriptURL.split("/");
+                        i[i.length - 1].split("?")[0] === t && e.unregister()
+                    }
+                }))
+            }));
+            var he = [], be = [];
+            K() && he.push("s_webp"), q() && he.push("s_jxr"), Q() && he.push("s_jp2"), R() && he.push("s_videoimg", "ns_atwebp"), X() && be.push("s_vp9"), J() && be.push("s_hevc"), Y() && be.push("s_av1");
+            var me = he.join(","),
+                ve = be.join(","), {setAttribute: Ae, setAttributeNS: we, appendChild: ye, insertBefore: ze} = Element.prototype;
+            const Oe = Object.getOwnPropertyDescriptor(HTMLImageElement.prototype, "src"), {set: _e, get: ke} = Oe,
+                xe = Object.getOwnPropertyDescriptor(HTMLMediaElement.prototype, "src"), {set: Ee, get: Ie} = xe,
+                Ce = Object.getOwnPropertyDescriptor(Element.prototype, "innerHTML"), {set: Ne, get: Le} = Ce;
+            var Se = () => {
+                Element.prototype.setAttribute = Ae, Element.prototype.setAttributeNS = we, Element.prototype.appendChild = ye, Element.prototype.insertBefore = ze, Object.defineProperty(HTMLImageElement.prototype, "src", {
+                    configurable: !0,
+                    enumerable: !0,
+                    __proto__: Oe.__proto__,
+                    get: ke,
+                    set: _e
+                }), Object.defineProperty(HTMLMediaElement.prototype, "src", {
+                    configurable: !0,
+                    enumerable: !0,
+                    __proto__: xe.__proto__,
+                    get: Ie,
+                    set: Ee
+                }), Object.defineProperty(Element.prototype, "innerHTML", {
+                    configurable: !0,
+                    enumerable: !0,
+                    __proto__: Ce.__proto__,
+                    get: Le,
+                    set: Ne
+                }), CSSStyleDeclaration.prototype.__defineSetter__("backgroundImage", (function (e) {
+                    this.setProperty("background-image", e)
+                }))
+            }, Pe = () => {
+                navigator.serviceWorker && navigator.serviceWorker.controller && navigator.serviceWorker.controller.postMessage({type: "DISABLE_WORKER"}), Se(), e && e.disconnect()
+            }, We = () => {
+                var e = e => function () {
+                    var t = arguments;
+                    if ("IMG" !== this.tagName || config.skipSrcHookIfNotConnected && !this.isConnected || "src" !== t[0] && ("data-src" !== t[0] || config.ignoreDataAttributes) || !t[1] || 0 === t[1].indexOf(config.mLinkBaseUrl) || 0 === t[1].indexOf("data:image") || b(t[1]) && !g(t[1])) "VIDEO" !== this.tagName || config.skipSrcHookIfNotConnected && !this.isConnected || "poster" !== t[0] && "data-poster" !== t[0] || config.ignoreDataAttributes || !t[1] || 0 === t[1].indexOf(config.mLinkBaseUrl) || 0 === t[1].indexOf("data:image") || b(t[1]) && !g(t[1]) ? config.skipSrcHookIfNotConnected && !this.isConnected || "VIDEO" !== this.tagName || "src" !== t[0] && "data-src" !== t[0] || config.ignoreDataAttributes || !t[1] || 0 === t[1].indexOf(config.mLinkBaseUrl) || b(t[1]) && !g(t[1]) || (t[1] = p("video", t[1], this.getAttribute("width"), null, this.getAttribute("data-speedsize-params")), this.speedsize = !0) : (t[1] = p("image", t[1], this.getAttribute("width"), null, this.getAttribute("data-speedsize-params")), this.speedsize = !0); else {
+                        var i = A(this);
+                        i && i.native && !i.eagerShowNotConnected && !this.hasAttribute("loading") && this.setAttribute("loading", "lazy");
+                        var r = this.getAttribute("width");
+                        t[1] = p("image", t[1], r, null, this.getAttribute("data-speedsize-params")), this.speedsize = !0
+                    }
+                    var n = e.apply(this, t);
+                    return n
+                };
+                Element.prototype.setAttribute = e(Ae), Element.prototype.setAttributeNS = e(we);
+                var t = e => function () {
+                    var t = arguments, i = t[0];
+                    if (1 !== i.nodeType) return e.apply(this, t);
+                    "PICTURE" === i.tagName ? He(i) : "IMG" === i.tagName ? w(i) : "VIDEO" === i.tagName ? config.enableVideoAutocrop && !i.isConnected || C(i) : je(i) && _(i);
+                    var r = e.apply(this, t);
+                    return r
+                };
+                Element.prototype.appendChild = t(ye), Element.prototype.insertBefore = t(ze), Object.defineProperty(HTMLImageElement.prototype, "src", {
+                    configurable: !0,
+                    enumerable: !0,
+                    __proto__: Oe.__proto__,
+                    get: ke,
+                    set: function () {
+                        var e = arguments;
+                        if ("IMG" === this.tagName && (!config.skipSrcHookIfNotConnected || this.isConnected) && e[0] && 0 !== e[0].indexOf(config.mLinkBaseUrl) && 0 !== e[0].indexOf("data:image") && (!b(e[0]) || g(e[0]))) {
+                            var t = this.getAttribute("width"),
+                                i = p("image", e[0], t, null, this.getAttribute("data-speedsize-params")), r = A(this);
+                            r && r.native && !r.eagerShowNotConnected && !this.hasAttribute("loading") && this.setAttribute("loading", "lazy"), e[0] = i
+                        }
+                        _e.apply(this, e)
+                    }
+                }), Object.defineProperty(HTMLMediaElement.prototype, "src", {
+                    configurable: !0,
+                    enumerable: !0,
+                    __proto__: xe.__proto__,
+                    get: Ie,
+                    set: function () {
+                        var e = arguments;
+                        if ("VIDEO" === this.tagName && e[0] && 0 !== e[0].indexOf(config.mLinkBaseUrl) && (!b(e[0]) || g(e[0]))) {
+                            var t = this.getAttribute("width"),
+                                i = p("video", e[0], t, null, this.getAttribute("data-speedsize-params"));
+                            e[0] = i
+                        }
+                        Ee.apply(this, e)
+                    }
+                }), CSSStyleDeclaration.prototype.__defineSetter__("backgroundImage", (function (e) {
+                    var t = e, i = y(t), r = {};
+                    if (config.enableImgAutocrop) {
+                        var n = s, a = o;
+                        r.w = n, r.h = a, r.c = "auto"
+                    }
+                    for (var d = 0; d < i.length; d += 1) {
+                        var u = i[d], g = p("image", c(u).srcUrl, null, r);
+                        t = t.replace(u, g)
+                    }
+                    this.setProperty("background-image", t)
+                }))
+            }, De = () => {
+                navigator.serviceWorker && navigator.serviceWorker.controller ? navigator.serviceWorker.controller.postMessage({type: "ENABLE_WORKER"}) : navigator.serviceWorker && !config.disableWorker && fe(), We(), e && e.observe(document.body, {
+                    childList: !0,
+                    subtree: !0
+                })
+            };
+            if (config.allowedPaths && config.allowedPaths.length || config.forbiddenPaths && config.forbiddenPaths.length) {
+                var {pushState: Me} = window.History.prototype;
+
+                function Re(e) {
+                    var t = !0, i = !0;
+                    if (config.allowedPaths && config.allowedPaths.length) {
+                        i = !1;
+                        for (var r = 0; r < config.allowedPaths.length; r += 1) {
+                            if ((n = config.allowedPaths[r].toLowerCase()) === e) {
+                                i = !0;
+                                break
+                            }
+                        }
+                        t = !!i && !!(!config.enableStatement || config.enableStatement && ue)
+                    }
+                    if (config.forbiddenPaths && config.forbiddenPaths.length) {
+                        for (i = !0, r = 0; r < config.forbiddenPaths.length; r += 1) {
+                            var n;
+                            if ((n = config.forbiddenPaths[r].toLowerCase()).endsWith("*") && 0 === e.indexOf(n.substring(0, n.length - 1))) i = !1; else if (n === e) {
+                                i = !1;
+                                break
+                            }
+                        }
+                        i || (t = !1)
+                    }
+                    return t
+                }
+
+                var Ue = e => function () {
+                    var t = arguments[2] || "", i = Re(t = "string" == typeof t ? t.toLowerCase() : "");
+                    i ? De() : Pe();
+                    var r = e.apply(this, arguments);
+                    return r
+                };
+                window.History.prototype.pushState = Ue(Me), window.addEventListener("popstate", (function () {
+                    Re(new URL(document.location).pathname.toLowerCase()) ? De() : Pe()
+                }))
+            }
+
+            function Be(e) {
+                e.speedsize || (e.href = p("image", e.href), e.speedsize = !0)
+            }
+
+            function He(e) {
+                if (!(e.speedsize || e.hasAttribute("data-processed") || (e.speedsize = !0, e.dataset["speedsize-ignore"] || e.dataset.speedsizeIgnore || e.hasAttribute("data-speedsize-ignore")))) {
+                    for (var t = e.getElementsByTagName("source"), i = e.getElementsByTagName("img")[0], r = 0; r < t.length; r += 1) {
+                        var n = t[r];
+                        const i = z(n.srcset, "image", e);
+                        n.srcset = i;
+                        const a = n.getAttribute("data-srcset");
+                        if (a) {
+                            const t = z(a, "image", e);
+                            n.setAttribute("data-srcset", t)
+                        }
+                    }
+                    if (i && i.src && i.src !== window.location.href) {
+                        var a = p("image", i.src, i.getAttribute("data-speedsize-width") || i.getAttribute("width"), null, i.getAttribute("data-speedsize-params"));
+                        i.removeAttribute("src");
+                        var s = A(e);
+                        if (s && s.native && !s.eagerShowNotConnected && !i.hasAttribute("loading") && i.setAttribute("loading", "lazy"), i.src = a, i.hasAttribute("srcset")) {
+                            var o = z(i.getAttribute("srcset"), "image", i);
+                            i.setAttribute("srcset", o)
+                        }
+                    }
+                    e.setAttribute("data-processed", "true")
+                }
+            }
+
+            function je(e) {
+                return !(!e.style.backgroundImage || 0 !== e.style.backgroundImage.indexOf('url("')) || (!!(e.hasAttribute("style") && e.getAttribute("style").indexOf("background-image") >= 0) || !!(e.hasAttribute("style") && e.getAttribute("style").indexOf("background") >= 0 && e.getAttribute("style").indexOf("url(") >= 0))
+            }
+
+            function Te(e) {
+                for (var t = 0; t < e.length; t += 1) {
+                    var i = e[t];
+                    if (1 === i.nodeType && !i.hasAttribute("data-processed")) if ("IMG" === i.tagName) {
+                        if (i.parentNode && "PICTURE" === i.parentNode.tagName) continue;
+                        w(i)
+                    } else if ("VIDEO" === i.tagName) C(i); else {
+                        if ("SOURCE" === i.tagName) {
+                            i.parentNode && "VIDEO" === i.parentNode.tagName && C(i.parentNode);
+                            continue
+                        }
+                        if ("PICTURE" === i.tagName) He(i); else if (je(i)) _(i); else if ("LINK" === i.tagName) {
+                            if ("preload" !== i.rel || "image" !== i.as) continue;
+                            Be(i)
+                        } else config.searchChildren && i.childElementCount
+                    }
+                }
+            }
+
+            if (ce) {
+                function Ve() {
+                    var e = document.createElement("meta");
+                    e.content = "Viewport-Width, Width, DPR", e.httpEquiv = "Accept-CH", document.head.prepend(e)
+                }
+
+                if (Ve(), window.MutationObserver && !config.MODisabled) {
+                    function $e() {
+                        return new window.MutationObserver((function (e) {
+                            if (e && e.length) {
+                                for (var t, i = []; t = e.pop();) if (t.addedNodes && t.addedNodes.length && i.push(t), i.length >= r) {
+                                    var n = i;
+                                    i = [], Promise.resolve(n).then((function (e) {
+                                        for (var t; t = e.pop();) Te(t.addedNodes)
+                                    }))
+                                }
+                                if (i.length) for (var a; a = i.pop();) Te(a.addedNodes)
+                            }
+                        }))
+                    }
+
+                    if (e = $e(), config.processPreloadImages) {
+                        var Fe = $e();
+
+                        function Ge() {
+                            Fe.disconnect()
+                        }
+
+                        Fe.observe(document.head, {childList: !0}), window.addEventListener("DOMContentLoaded", Ge, !1)
+                    }
+                    if (document.body) e.observe(document.body, {childList: !0, subtree: !0}); else {
+                        var Ke = new window.MutationObserver((function (t) {
+                            if (t && t.length) for (var i; i = t.pop();) if (i.addedNodes && i.addedNodes.length) for (var r = 0; r < i.addedNodes.length; r += 1) {
+                                var n = i.addedNodes[r];
+                                if (n === document.body) if (e.observe(document.body, {
+                                    childList: !0,
+                                    subtree: !0
+                                }), Ke.disconnect(), !config.onlyImages) Te(n.getElementsByTagName("*"))
+                            }
+                        }));
+                        Ke.observe(document.documentElement, {childList: !0})
+                    }
+                }
+                config.disablePrototypeHooks || We(), "serviceWorker" in navigator && !config.disableWorker && fe()
+            }
+        })();
+    </script>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+<script type="text/javascript">WebFont.load({google: {families: ["Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic", "Inconsolata:400,700", "Inter:regular,500,600", "Raleway:100,200,300,regular,500,600,700,800,900", "Source Code Pro:200,300,regular,500,600"]}});</script>
+<!-- [if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"
+            type="text/javascript"></script><![endif] -->
+<script type="text/javascript">!function (o, c) {
+        var n = c.documentElement, t = " w-mod-";
+        n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
+    }(window, document);</script>
+<link href="/connect/images/favicon.png" rel="shortcut icon" type="image/x-icon"/>
+<link href="/connect/images/webclip.png" rel="apple-touch-icon"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139613034-1"></script>
+<script type="text/javascript">window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-139613034-1', {'anonymize_ip': false});</script>
+<script type="text/javascript">!function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = '2.0';
+        n.agent = 'plwebflow';
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4045520318851761');
+    fbq('track', 'PageView');</script> <!--  Start of HubSpot Embed Code  -->
+<script async="" defer="" id="hs-script-loader" src="https://js-na1.hs-scripts.com/6292067.js" type="text/javascript"></script>
+<!--  End of HubSpot Embed Code  -->
+<!--  Google Tag Manager  -->
+<script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-T6MF8M');</script>
+<!--  End Google Tag Manager  -->
+<!--  Google Tag Manager  -->
+<script>(function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MFP7JFN');</script>
+<!--  End Google Tag Manager  -->
+<style>
+        ::-moz-selection { /* Code for Firefox */
+            background: #15c39a;
+        }
+
+        ::selection {
+            background: #15c39a;
+        }
+
+        /* Hide Cookies Bar on mobile */
+        @media only screen and (min-device-width: 320px) and (max-device-width: 768px) {
+            .cc-window {
+                display: none !important;
+            }
+        }
+
+        @media only screen and (min-width: 1024px) and (max-width: 1025px) {
+            .section.homepage-hero.small-pad.home {
+                background-size: auto 27%, auto !important;
+            }
+
+            .div-block-5 {
+                -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            }
+
+            .feature-card {
+                padding: 140px 40px 40px 40px;
+            }
+
+            .div-plan-free.dark.transp {
+                -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            }
+
+            .section.homepage-hero.about.short {
+                background-position: 50% 104%, 0 0, 50% 50% !important;
+            }
+
+            .section.homepage-hero.about {
+                background-position: 50% 102%, 0 0, 0 0 !important;
+            }
+
+            .bg-pic-industry {
+                background-position: 50% 102%, 0 0, 0 0 !important;
+            }
+
+            .div-cards {
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+            }
+
+            .featured-card.margin {
+                width: 47%;
+                margin-bottom: 40px;
+            }
+
+            .section.gray.slant.bigger {
+                background-position: 50% 102%, 0 0;
+            }
+        }
+    </style>
+<!--  Hotjar Tracking Code for https://www.upswift.io/  -->
+<script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = {hjid: 2139718, hjsv: 6};
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+<link href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" rel="stylesheet" type="text/css"/>
+<!--  F’in sweet Webflow Hacks  -->
+<style>
+        /
+        The page-wrapper is initially hidden
+
+        /
+        .banner {
+            display: none;
+        }
+
+        .banner-mobile {
+            display: none
+        }
+    </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+<script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            // get a reference to the page wrapper
+            const loadingWrapper = document.querySelector(".banner");
+            const loadingWrapperMobile = document.querySelector(".banner-mobile");
+            // get the 'seenAnimation' cookie and store in a seenAnimation variable
+            const seenAnimation = Cookies.get('seenAnimation');
+            if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                // some code..
+                // if the 'seenAnimation' cookie is undefined
+                if (!seenAnimation) {
+                    // display the loading-wrapper
+                    loadingWrapper.style.display = "flex";
+                    // show the page-wrapper
+                    // after a set duration of 3000 milliseconds
+                    // (the time it takes to show the loading-wrapper in this case)
+                    // set the 'seenAnimation' cookie
+                    Cookies.set('seenAnimation', 1, {expires: 1});
+                } else {
+                    // else if the 'seenAnimation' cookie exists
+                    // the user has already seen the animation
+                    // and so
+                    // hide the loading-wrapper
+                    loadingWrapper.style.visibility = "hidden";
+                    // show the page-wrapper
+                }
+            } else {
+                // if the 'seenAnimation' cookie is undefined
+                if (!seenAnimation) {
+                    // display the loading-wrapper
+                    loadingWrapperMobile.style.display = "flex";
+                    // show the page-wrapper
+                    // after a set duration of 3000 milliseconds
+                    // (the time it takes to show the loading-wrapper in this case)
+                    // set the 'seenAnimation' cookie
+                    Cookies.set('seenAnimation', 1, {expires: 1});
+                } else {
+                    // else if the 'seenAnimation' cookie exists
+                    // the user has already seen the animation
+                    // and so
+                    // hide the loading-wrapper
+                    loadingWrapperMobile.style.visibility = "hidden";
+                    // show the page-wrapper
+                }
+            }
+        });
+    </script>
+</link></head>
+<body>
+<div class="w-embed w-iframe">
+<!--  Google Tag Manager (noscript)  -->
+<noscript>
+<iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-T6MF8M" style="display:none;visibility:hidden" width="0"></iframe>
+</noscript>
+<!--  End Google Tag Manager (noscript)  -->
+<!--  Google Tag Manager (noscript)  -->
+<noscript>
+<iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MFP7JFN" style="display:none;visibility:hidden" width="0"></iframe>
+</noscript>
+<!--  End Google Tag Manager (noscript)  -->
+</div>
+<div class="navigation-wrap-2">
+<div class="navigation-2 w-nav" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner">
+<div class="navigation-full">
+<div class="navigation-container-2">
+<div class="navigation-left-2">
+<a class="llogo-1" href="/"><img alt="" class="logo-1" height="55" src="/connect/images/jfrog_logo.svg"/></a>
+<a aria-current="page" class="brand-2 w-nav-brand w--current" href="/connect/"><img alt="" class="logo-2" height="65" src="/connect/images/jfrog-connect-nav.svg"/></a>
+<nav class="nav-menu-2 w-nav-menu" role="navigation">
+<div class="dropdown-2 w-dropdown" data-delay="150" data-hover="true">
+<div class="dropdown-toggle-2 w-dropdown-toggle">
+<div class="drop-arrow-plain w-icon-dropdown-toggle"></div>
+<div>Features</div>
+</div>
+<nav class="dropdown-list-2 w-dropdown-list">
+<div class="dropdown-list-full-wrapper">
+<div class="columns w-row">
+<div class="column-3 w-col w-col-8 w-col-stack">
+<div>
+<div class="navigation-drop-container">
+<div class="navigation-column">
+<div class="w-dyn-list">
+<div class="w-dyn-items" role="list">
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/linux-iot-device-management/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5bd53f46a9b66566c04d1_5fac9c9f668c903eee3c2ce9_002-smartwatch.svg"/>
+</div>
+<div>
+<div class="nav-title">Device Management
+                                                                            </div>
+<div class="nav-link-details-2">Manage your
+                                                                                remote Linux and IoT devices in one
+                                                                                place, anywhere.
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/embedded-linux-ota-software-updates/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5c680b70972d811c5a167_5fac9c9f652842fe6f1f6f3f_001-processing.svg"/>
+</div>
+<div>
+<div class="nav-title">Updates</div>
+<div class="nav-link-details-2">Top-notch
+                                                                                over the air update tool for edge Linux
+                                                                                IoT devices
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/ota-container-updates-linux-edge/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5c752ce7bca6f9ec876db_5fac9c9f821ebd23d97d54b5_011-upload.svg"/>
+</div>
+<div>
+<div class="nav-title">Container Updates
+                                                                            </div>
+<div class="nav-link-details-2">OTA
+                                                                                Container update tool for remote Linux
+                                                                                IoT devices
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/embedded-linux-remote-control-ssh/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5d0e04bde14f049fba78b_5fac9c9f36be979fdd9753bf_003-remote-control.svg"/>
+</div>
+<div>
+<div class="nav-title">Remote Control</div>
+<div class="nav-link-details-2">Access your
+                                                                                Linux devices shell remotely
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/linux-send-remote-commands/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5d118ce7bca0b87c8a015_5fac9c9f67bb5f59daee5838_004-push-screen.svg"/>
+</div>
+<div>
+<div class="nav-title">Remote Commands</div>
+<div class="nav-link-details-2">Deploy
+                                                                                commands on Linux edge devices easily
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/monitor-iot-embedded-linux-devices/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5d192eab0e07924610a99_5fac9c9f5f051b3e4c56fbb6_009-line-graph.svg"/>
+</div>
+<div>
+<div class="nav-title">Data Monitor</div>
+<div class="nav-link-details-2">Monitor your
+                                                                                edge devices data 24/7
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/monitor-resources-edge-linux/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5d22fce29968e85337f66_5fac9c9f0f78096e491b08e9_008-computer.svg"/>
+</div>
+<div>
+<div class="nav-title">Resources Monitor
+                                                                            </div>
+<div class="nav-link-details-2">Monitor your
+                                                                                edge devices resources 24/7
+                                                                            </div>
+</div>
+</div>
+</a></div>
+</div>
+</div>
+</div>
+<div class="navigation-column">
+<div class="w-dyn-list">
+<div class="w-dyn-items" role="list">
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/monitor-processes-linux-iot-edge/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5d2a1f46a9b11466c5c39_5fac9c9fd8ece21db67837b2_010-visualization-of-data.svg"/>
+</div>
+<div>
+<div class="nav-title">Processes Monitor
+                                                                            </div>
+<div class="nav-link-details-2">Monitor
+                                                                                Linux edge device processes easily
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/logs-alerts-edge-iot-linux-devices/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5d2f340e0d002c369694f_5fac9c9f09126ff60ecb9ad2_005-log-file-format.svg"/>
+</div>
+<div>
+<div class="nav-title">Device Logs</div>
+<div class="nav-link-details-2">Log
+                                                                                management for your edge devices
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/embedded-linux-agent-control-manage/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5d354a3ed416a07f50ac7_5fac9c9f3a57ba650f7cd872_007-linux.svg"/>
+</div>
+<div>
+<div class="nav-title">Embedded Linux
+                                                                                Agent
+                                                                            </div>
+<div class="nav-link-details-2">JFrog
+                                                                                Connect
+                                                                                embedded Linux agent supervisor
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/map-view-linux-devices/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5d3ced44fd662672e44c1_5fac9c9f7c45842e304f5004_006-placeholder.svg"/>
+</div>
+<div>
+<div class="nav-title">Map View</div>
+<div class="nav-link-details-2">View the
+                                                                                location of your edge devices
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/embedded-linux-security/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5d83a48e78da893227bd9_shield%20(1).svg"/>
+</div>
+<div>
+<div class="nav-title">Security</div>
+<div class="nav-link-details-2">Secure edge
+                                                                                Linux devices remotely
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/linux-remote-access/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5d8587aeed636139490e6_remote-control.svg"/>
+</div>
+<div>
+<div class="nav-title">Remote Access</div>
+<div class="nav-link-details-2">Access your
+                                                                                edge Linux devices network remotely
+                                                                            </div>
+</div>
+</div>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="column-gray w-col w-col-4 w-col-stack">
+<div class="nav-title">FROM THE BLOG</div>
+<div class="spacer"></div>
+<div class="w-dyn-list">
+<div class="w-dyn-items" role="list">
+<div class="w-dyn-item" role="listitem"><a class="feature-column w-inline-block" href="/connect/post/raspberry-pi-zero-2-review/" tabindex="0">
+<div class="div-block" style="background-image:url('images/61975c37d2e01fd6bac9ca97_Raspberry-Pi-Zero-2-W-Hero-800x535.jpeg')"></div>
+<div class="date">November 19, 2021</div>
+<div class="line-green"></div>
+<div class="spacer _10"></div>
+<div class="nav-title blog">Raspberry Pi Zero 2 W Review</div>
+<div class="spacer"></div>
+<div class="nav-link-details-2">Review of the Raspberry Pi Zero
+                                                            2 W model, the latest product that comes in the affordable
+                                                            range of SBCs, has replaced the original board, and it is a
+                                                            form factor-compatible successor of the previous
+                                                            generations.
+                                                        </div>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<div class="dropdown-2 w-dropdown" data-delay="150" data-hover="true">
+<div class="dropdown-toggle-2 w-dropdown-toggle">
+<div class="drop-arrow-plain w-icon-dropdown-toggle"></div>
+<div>Industries</div>
+</div>
+<nav aria-labelledby="w-dropdown-toggle-1" class="dropdown-list-2 w-dropdown-list" id="w-dropdown-list-1">
+<div class="dropdown-list-full-wrapper">
+<div class="columns w-row">
+<div class="column-3 w-col w-col-8 w-col-stack">
+<div>
+<div class="navigation-drop-container">
+<div class="navigation-column">
+<div class="w-dyn-list">
+<div class="w-dyn-items" role="list">
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/industries/agriculture-iot-management/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5b38cd72193470f902670_5fac9e6e3b7f5d7df1ada0bf_001-tractor.svg"/>
+</div>
+<div>
+<div class="nav-title">Agriculture</div>
+<div class="nav-link-details-2">The data of
+                                                                                your field devices sensors in one place
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/industries/logistics-iot-management/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5b44310e3c7e6ccecdc42_5fac9e6e11010987e035f926_002-trolley.svg"/>
+</div>
+<div>
+<div class="nav-title">Logistics</div>
+<div class="nav-link-details-2">Manage
+                                                                                robots and complex systems remotely
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/industries/smart-city-iot-management/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5b47059bbf30d64c31a68_5fac9e6ed8de1e393a68a7e5_010-smart-home.svg"/>
+</div>
+<div>
+<div class="nav-title">Smart City</div>
+<div class="nav-link-details-2">Manage smart
+                                                                                city devices: from cameras to sensors
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/industries/industrial-iot-management/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5b49d09814dd0da29bef1_5fac9e6e821ebd3bab7d58e2_008-industrial-architecture-buildings.svg"/>
+</div>
+<div>
+<div class="nav-title">Industrial</div>
+<div class="nav-link-details-2">Manage
+                                                                                connected devices in IIoT and IT/OT
+                                                                                environments
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/industries/consumer-iot-management/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5b4c255e5b94252aa7783_5fac9e6efd8977b6c2669749_007-consumer-research.svg"/>
+</div>
+<div>
+<div class="nav-title">Consumer</div>
+<div class="nav-link-details-2">Manage
+                                                                                millions of products that are in every
+                                                                                home and office
+                                                                            </div>
+</div>
+</div>
+</a></div>
+</div>
+</div>
+</div>
+<div class="navigation-column">
+<div class="w-dyn-list">
+<div class="w-dyn-items" role="list">
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/industries/healthcare-iot-management/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5b4efbbf6c49b7e6f04e9_5fac9e6e668c9003a43c30dd_006-pharmacy.svg"/>
+</div>
+<div>
+<div class="nav-title">Healthcare</div>
+<div class="nav-link-details-2">Manage and
+                                                                                secure connected medical devices
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/industries/telecom-iot-management/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5b511bffbfa52c6cda454_5fac9e6ed8ece2f6ab78399d_005-satellite-dish.svg"/>
+</div>
+<div>
+<div class="nav-title">Telecom</div>
+<div class="nav-link-details-2">Manage and
+                                                                                secure network equipment
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/industries/smart-energy-iot-management/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5b53dce7bca82d0c82a95_5fac9e6ecf855404d7f90db2_009-charging.svg"/>
+</div>
+<div>
+<div class="nav-title">Smart Energy</div>
+<div class="nav-link-details-2">Manage
+                                                                                connected devices in critical
+                                                                                infrastructure
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/industries/automotive-iot-management/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5b55db60ec7b9ac63e81a_5fac9e6e87b7376d4731e30a_004-car-frontal-view-with-signal-connection.svg"/>
+</div>
+<div>
+<div class="nav-title">Automotive</div>
+<div class="nav-link-details-2">Secure and
+                                                                                manage connected components for vehicles
+                                                                            </div>
+</div>
+</div>
+</a></div>
+<div class="w-dyn-item" role="listitem"><a class="navigation-link-block w-inline-block" href="/connect/industries/retail-iot-management/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc5b580f46a9b81ea6bed24_5fac9e6eff112fd10de25abd_003-label.svg"/>
+</div>
+<div>
+<div class="nav-title">Retail</div>
+<div class="nav-link-details-2">From
+                                                                                automated checkout to smart retail
+                                                                                stores and robots
+                                                                            </div>
+</div>
+</div>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="column-gray w-col w-col-4 w-col-stack">
+<div class="nav-title">FROM THE BLOG</div>
+<div class="spacer"></div>
+<div class="w-dyn-list">
+<div class="w-dyn-items" role="list">
+<div class="w-dyn-item" role="listitem"><a class="feature-column w-inline-block" href="/connect/post/a-leap-into-the-future/" tabindex="0">
+<div class="div-block" style="background-image:url('images/613f08d6dd7726360c943b5a_Blog_UPswift863X300.png')"></div>
+<div class="date">September 13, 2021</div>
+<div class="line-green"></div>
+<div class="spacer _10"></div>
+<div class="nav-title blog">A Leap into the Future</div>
+<div class="spacer"></div>
+<div class="nav-link-details-2">Follow our journey to change the
+                                                            world of software in the IoT industry!
+                                                        </div>
+</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<a class="nav-link mobile" href="/connect/enterprise/">Enterprise</a>
+<a class="nav-link mobile" href="/connect/blog/">Blog</a>
+<a class="nav-link mobile" href="/connect/pricing/">Pricing</a>
+<a class="nav-link mobile" href="https://docs.connect.jfrog.io/" target="_blank">Docs</a>
+<div class="dropdown-2 w-dropdown nav-link mobile" data-delay="150" data-hover="true" style="padding: 0;">
+<div class="dropdown-toggle-2 w-dropdown-toggle">
+<div class="drop-arrow-plain w-icon-dropdown-toggle"></div>
+<div>Contact</div>
+</div>
+<nav aria-labelledby="w-dropdown-toggle-2" class="dropdown-list-2 w-dropdown-list" id="w-dropdown-list-2">
+<div class="dropdown-list-full-wrapper">
+<div class="columns w-row">
+<div class="column-3 w-col w-col-8 w-col-stack">
+<div>
+<div class="navigation-drop-container">
+<div class="navigation-column full"><a class="navigation-link-block w-inline-block" href="/connect/schedule-a-demo/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fbdc8f9d7c0725c87451f4c_001-mouse-pointer-arrow-on-laptop-black-screen.svg"/></div>
+<div>
+<div class="nav-title">Schedule a Demo</div>
+<div class="nav-link-details-2">Schedule a 1:1 with us
+                                                                    now and we’ll show you what JFrog Connect can
+                                                                    do.<br/>
+</div>
+</div>
+</div>
+</a><a class="navigation-link-block w-inline-block" href="/connect/upswift-edge-device-manager-value/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc11a319b588b165eec4b7b_s.svg"/></div>
+<div>
+<div class="nav-title">JFrog Connect Value</div>
+<div class="nav-link-details-2">Maintain a Product fleet
+                                                                    as if it's in your Office.<br/></div>
+</div>
+</div>
+</a></div>
+<div class="navigation-column full"><a class="navigation-link-block w-inline-block" href="/connect/contact-us/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fbdc8f9a1eace1d7301fac5_002-contact.svg"/></div>
+<div>
+<div class="nav-title">Contact us</div>
+<div class="nav-link-details-2">We welcome you to
+                                                                    contact us to schedule a meeting and discuss about
+                                                                    special requirements.<br/></div>
+</div>
+</div>
+</a><a class="navigation-link-block w-inline-block" href="/connect/imgflasher/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc9b965f20f9f47d0cf73b6_5fc110dfc145ac2ec3cd7633_flash.svg"/></div>
+<div>
+<div class="nav-title">imgFlasher</div>
+<div class="nav-link-details-2">Lightweight software to
+                                                                    quickly flash OS images on SD cards and USB
+                                                                    drives<br/></div>
+</div>
+</div>
+</a></div>
+</div>
+</div>
+</div>
+<div class="column-gray w-col w-col-4 w-col-stack">
+<div class="nav-title">OUR CREATIVE BUNKER</div>
+<div class="spacer"></div>
+<a class="feature-column w-inline-block/" href="/connect/contact-us" tabindex="0">
+<div class="div-block office"></div>
+<div class="spacer _10"></div>
+<div class="nav-title blog">Here at JFrog Connect, we love our customers
+                                                    and
+                                                    happy to learn new things every day.<br/></div>
+<div class="spacer"></div>
+<div>Leave us a message!</div>
+</a></div>
+</div>
+</div>
+</nav>
+</div>
+<a class="nav-link mobile" href="https://connect.jfrog.io/" target="_blank">Log in</a>
+<a class="button-2 nav mobile w-button" href="https://jfrog.com/register/" target="_blank">Get Started</a>
+</nav>
+<a class="nav-link" href="/connect/enterprise/">Enterprise</a>
+<a class="nav-link" href="/connect/blog/">Blog</a>
+<a class="nav-link" href="/connect/pricing/">Pricing</a>
+<a class="nav-link" href="https://docs.connect.jfrog.io/" target="_blank">Docs</a>
+<div class="dropdown-2 w-dropdown nav-link" data-delay="150" data-hover="true" style="padding: 0px; min-height: unset; margin-bottom: -5px;">
+<div class="dropdown-toggle-2 w-dropdown-toggle">
+<div class="drop-arrow-plain w-icon-dropdown-toggle"></div>
+<div>Contact</div>
+</div>
+<nav aria-labelledby="w-dropdown-toggle-2" class="dropdown-list-2 w-dropdown-list" id="w-dropdown-list-2">
+<div class="dropdown-list-full-wrapper">
+<div class="columns w-row">
+<div class="column-3 w-col w-col-8 w-col-stack">
+<div>
+<div class="navigation-drop-container">
+<div class="navigation-column full"><a class="navigation-link-block w-inline-block" href="/connect/schedule-a-demo/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fbdc8f9d7c0725c87451f4c_001-mouse-pointer-arrow-on-laptop-black-screen.svg"/></div>
+<div>
+<div class="nav-title">Schedule a Demo</div>
+<div class="nav-link-details-2">Schedule a 1:1 with us
+                                                                now and we’ll show you what JFrog Connect can
+                                                                do.<br/>
+</div>
+</div>
+</div>
+</a><a class="navigation-link-block w-inline-block" href="/connect/upswift-edge-device-manager-value/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc11a319b588b165eec4b7b_s.svg"/></div>
+<div>
+<div class="nav-title">JFrog Connect Value</div>
+<div class="nav-link-details-2">Maintain a Product fleet
+                                                                as if it's in your Office.<br/></div>
+</div>
+</div>
+</a></div>
+<div class="navigation-column full"><a class="navigation-link-block w-inline-block" href="/connect/contact-us/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fbdc8f9a1eace1d7301fac5_002-contact.svg"/></div>
+<div>
+<div class="nav-title">Contact us</div>
+<div class="nav-link-details-2">We welcome you to
+                                                                contact us to schedule a meeting and discuss about
+                                                                special requirements.<br/></div>
+</div>
+</div>
+</a><a class="navigation-link-block w-inline-block" href="/connect/imgflasher/" tabindex="0">
+<div class="nav-content-wrap-2">
+<div class="div-round"><img alt="" class="ico-menu" loading="lazy" src="/connect/images/5fc9b965f20f9f47d0cf73b6_5fc110dfc145ac2ec3cd7633_flash.svg"/></div>
+<div>
+<div class="nav-title">imgFlasher</div>
+<div class="nav-link-details-2">Lightweight software to
+                                                                quickly flash OS images on SD cards and USB
+                                                                drives<br/></div>
+</div>
+</div>
+</a></div>
+</div>
+</div>
+</div>
+<div class="column-gray w-col w-col-4 w-col-stack">
+<div class="nav-title">OUR CREATIVE BUNKER</div>
+<div class="spacer"></div>
+<a class="feature-column w-inline-block/" href="/connect/contact-us" tabindex="0">
+<div class="div-block office"></div>
+<div class="spacer _10"></div>
+<div class="nav-title blog">Here at JFrog Connect, we love our customers
+                                                and
+                                                happy to learn new things every day.<br/></div>
+<div class="spacer"></div>
+<div>Leave us a message!</div>
+</a></div>
+</div>
+</div>
+</nav>
+</div>
+</div>
+<div class="navigation-right">
+<a class="nav-link" href="https://connect.jfrog.io/" target="_blank">Log in</a>
+<a class="button-2 nav mob-off w-button" href="https://jfrog.com/register/" target="_blank">Get Started</a>
+</div>
+</div>
+<div class="menu-mob w-nav-button">
+<div class="w-icon-nav-menu"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section homepage-hero about short pp wf-section">
+<div class="container center">
+<h1 class="everywhere centered white">Privacy Policy</h1>
+<p class="hero-subheading centered w center">January 9, 2022<br/></p>
+</div>
+</div>
+<div class="section wf-section">
+<div class="container terms-and-privacy">
+<div class="rt w-richtext">
+<p>
+                JFrog (including our subsidiaries and affiliates worldwide – collectively, “<b>JFrog</b>“, “<b>us</b>”,
+                “<b>our</b>” or “<b>we</b>”) is on a mission to enable continuous updates through liquid software,
+                empowering developers to code high-quality applications that securely flow to end-users with zero
+                downtime.
+                <br/>
+                This Privacy Policy (“Policy”) applies to JFrog’s website relating to JFrog Connect (the “Platform”) and
+                describes how we collect, use, and disclose your information in connection therewith. We respect the
+                privacy of our customers, users, partners, and websites visitors (collectively – “you”, or “your”) and
+                are committed to protecting the personal information that you share with us. We have taken efforts to
+                make our Policy as clear and informative as possible and we encourage you to carefully read it.
+                Please note that this Policy applies to the information provided by you through our website JFrog
+                Connect (the “Website”) or through the Platform, or as you may otherwise interact with us in connection
+                with the Platform (together with the Website and Platform - the “Services”). By accessing and/or using
+                our Services you agree to this Policy, including to the collection and processing of your personal
+                information. In case you disagree with any of these terms please do not provide us with any personal
+                information and avoid contacting us or using our Services.
+            </p>
+<p>
+<b>1. What information do we collect and how?</b><br/>
+<b>Directly and indirectly from you when using our Platform or visiting our Website.</b> For example,
+                usage details collected automatically during your interaction with our Services, such as the type of
+                browser you use, IP address, device ID, cookies installed on the device, date/time stamp, referring/exit
+                pages, clicked pages, the actions you take on the Services and any other information your browser may
+                send us.
+                <br/>
+                We use industry standard tools and software to monitor your navigation and usage of the Services, your
+                usage pattern-logs and other communications information. We may also use cookies and/or similar
+                technologies (“cookies”), which stores certain information on your computer, and which allows us to
+                enable automatic activation of particular features and improve your experience. Most browsers will allow
+                you to erase such cookies, block acceptance of cookies, or receive a warning before a cookie is stored.
+                However, if you block or erase cookies, or change the applicable settings, your experience on our
+                Services may be limited. For more information, please see our <a href="https://jfrog.com/jfrog-cookies-policy/">Cookies Policy</a>.
+                <br/>
+                Directly from you or via our customer (i.e., your employer or the organization you are related to). For
+                example, if you fill out a form or communicate with us through our Website, or when your organization
+                subscribes and engages with JFrog to receive Services. This includes information such as business
+                contact details – first and last name, job title, email or physical address, phone number, professional
+                needs and interests, and your interactions with us, including posting comments or feedback on our
+                forums, session recordings, correspondence or calls recordings and associated transcriptions (if
+                applicable).<br/>
+                From external providers that contract with us or interact with us in connection with the Services we
+                perform. For example, from vendors and partners such as social media sites and analytics providers that
+                integrate their services with ours or provide us access to their services.<br/>
+                At all times, you may choose whether to provide or disclose your personal information. If you choose not
+                to provide such personal information, you may still visit parts of the Website or receive limited
+                Services, but you may be unable to access certain options, programs, offers, and services that involve
+                our interaction with you.
+            </p>
+<p>
+<b>2. How do we use the information collected?</b><br/>
+                We will only collect and process your personal information in order to abide by our legal obligations;
+                comply with a contract between us and you or a third party you are associated with; for the performance
+                of our Services; to support our legitimate interests (for example: maintaining, improving and
+                advertising our Services, protecting the security of our systems, as well as ours and our customers’
+                data, and providing customer support). <br/>
+                Your acceptance of our related <a href="">Terms of Use</a> and this Policy will be deemed as your
+                consent, only in case this is the only legal basis allowed for processing personal information in the
+                applicable territory. If you wish to withdraw your consent for such processing, please contact us at: <a href="mailto:privacy@jfrog.com">privacy@jfrog.com.</a>
+<br/>
+                We may use or disclose the personal information we collect for the following purposes:
+            <ul style="padding-left: 40px;">
+<li>To fulfill or meet the reason you provided the information. For example, if you share your name and
+                    contact information to request a price quote or ask a question about our Services, or to process
+                    your payment and facilitate billing communication;
+                </li>
+<li>To enable the use of the Services, including for registration and authentication. For example, in
+                    order to register to the Services, you will need to provide us with your name and email so we will
+                    be able to issue a license key;
+                </li>
+<li>To provide, support, personalize, and develop our Website and Platform by learning about your
+                    preferences and general trends relating to the Services;
+                </li>
+<li>To create, maintain, customize, and secure your account with us;</li>
+<li>To process your requests, transactions, payments and prevent fraud;</li>
+<li>To provide you with support and to respond to your inquiries, including to investigate and address
+                    your concerns and monitor and improve our responses;
+                </li>
+<li>To personalize your Website experience and to deliver content, product and service offerings
+                    relevant to your interests, regarding new products, events, offers, services, features,
+                    enhancements, special offers, upgrade opportunities, and events, including targeted offers and ads
+                    through our Website, third-party service providers’ sites or via email;
+                </li>
+<li>To help maintain the safety, security, and integrity of our Services, databases and other technology
+                    assets and businesses;
+                </li>
+<li>To create aggregated statistical data, rendered non-personal, for internal use;</li>
+<li>To respond to law enforcement requests as required by applicable law, court order, or governmental
+                    regulations;
+                </li>
+<li>To evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other
+                    sale or transfer of some or all of JFrog’s assets, whether as an ongoing concern or as part of
+                    bankruptcy, liquidation, or similar proceeding, in which personal information held by JFrog about
+                    you is among the assets transferred.
+                </li>
+</ul>
+<br/>
+            Please note, we do not sell your personal information for the intents and purposes of the California
+            Consumer Privacy Act (CCPA). Under the CCPA, a business that sells California residents’ personal
+            information to others: (a) must give notice to California residents before selling their personal
+            information to others; and (b) must provide the right to opt out of the sale of their personal information.
+            JFrog does not sell personal information, thus, these notification and opt-out requirements do not apply to
+            JFrog.
+            </p>
+<p>
+<b>3. How can you control your information?</b><br/>
+                Privacy regulations worldwide such as the EU/UK General Data Protection Regulation (GDPR), and the CCPA
+                provide certain rights for data subjects. If you wish to exercise your rights under the applicable data
+                protection regulation, please submit your request via JFrog’s Privacy Request Form. <br/>
+                You have a right to access and correct (rectify) the record of your personal information maintained by
+                JFrog if it is inaccurate. You may request that JFrog erase that data or cease processing it, subject to
+                certain exceptions, or to confirm whether we process your personal information, or if we comply with the
+                right to non-discrimination of service and price (if applicable). Upon your request, and when
+                technically feasible, JFrog will provide your personal information to you or directly transmit it (if
+                applicable). <br/>
+                Please note that: (a) we may require additional information in order to verify your request; (b) if you
+                will not respond within 30 days from our initial verification email, your request will be closed, and we
+                will not be able to accommodate it; (c) your request may be recorded by us for legal obligations in
+                accordance with Section 6; (d) if you are using the Services on behalf of our customer (i.e., your
+                employer or the organization you are related to), you should contact your account administrator with
+                your request, if you will contact us directly we will share such request with the relevant customer; and
+                (e) we may charge a reasonable fee or refuse to act on a request if such request is excessive,
+                repetitive, manifestly unfounded, or if we required to or allowed by the applicable law or regulation.
+                You may also request that JFrog cease using your information for direct marketing purposes. Please note
+                that you may manage the receipt of marketing information from us by clicking on the “unsubscribe” link
+                located on the bottom of the email and/or by updating your communication preferences via <a href="https://leap.jfrog.com/SubscriptionCenter.html?mkt_unsubscribe=1&amp;">JFrog’s Subscription
+                Center.</a> We may also contact you with service information such as billing/login issues, surveys,
+                event information following your registration, etc. <br/>
+                Please also note that if you have concerns about how JFrog processes your personal information, you have
+                a right to lodge a complaint with the appropriate local data protection authority. You can also call us
+                at +1-408-329-1540 (for Californian Consumers) or contact us at: <a href="mailto:privacy@jfrog.com">privacy@jfrog.com.</a>
+</p>
+<p>
+<b>4. Who do we share information with?</b><br/>
+                Our Website and some of the Platform allow you to share information with other users and create and
+                publish content. Any content that you post on or via the Services (“User Submissions”), may be publicly
+                available to other users. The notices and tools that we provide on the Services are intended to inform
+                you which information will be made publicly available. If you publish your personal information in any
+                User Submissions, you may receive unsolicited messages from other users of the Website or the public.
+                Therefore, we encourage you only to post information that you are sure you want to be accessible to
+                anyone.<br/>
+                If you are using our Services on behalf of an organization or if you provide us with an email address
+                which belongs to an organization, certain information provided to us may be accessible to the respective
+                administrator or to other users of such organization.<br/>
+                JFrog uses third-party service providers to enable us to provide the Services. These providers are not
+                permitted to store, retain, or use information collected by us except for the sole purpose of providing
+                the Services.<br/>
+                We also reserve the right to use or disclose your information if: (a) required by law, under a judicial
+                proceeding, court order, or legal processor if we reasonably believe that such disclosure is required to
+                protect our rights, including their enforcement; (b) to transfer or assign the personal information
+                retained by us in the event that we are acquired by or merged with a third party entity; (c) to share
+                information internally within JFrog; (d) in the event of bankruptcy or a comparable event; or (e) if we
+                rendered such information non-personal.
+            </p>
+<p>
+<b>5. How do we protect your information?</b><br/>
+                We use industry standard technologies and internal procedures to maintain the security and integrity of
+                our Services and your information, and to prevent unauthorized access thereto. Please visit <a href="https://jfrog.com/trust/">JFrog’s Trust Center</a> for further information. Please note,
+                however, that there are inherent risks in transmission of information over the internet or other methods
+                of electronic storage and we cannot guarantee that unauthorized access or use of your information will
+                never occur.
+            </p>
+<p>
+<b>6. Where is your information stored and for how long? </b><br/>
+                JFrog operates globally and our Services are provided from various location. In order to allow us to
+                perform our obligations and provide you with the Services, we transfer information within our group of
+                companies (a list thereof is available <a href="https://jfrog.com/contact-us/">here</a>) and to other
+                contracted third-party service providers, which may be located outside your country of residence. <br/>
+                When sharing such information, we use appropriate legal mechanisms to safeguard the transfer, such as
+                the Standard Contractual Clauses (SCC), which have been approved by the European Commission Implementing
+                Decision 2021/914, to safeguard the transfer of information from the European Economic Area and
+                Switzerland (collectively - the “EEA”) outside of the EEA. You can obtain a copy of the SCCs by
+                contacting us at: <a href="mailto:privacy@jfrog.com">privacy@jfrog.com.</a> <br/>
+                Please note that we may transfer such information to a country and jurisdiction that may not have
+                equivalent privacy and data protection laws that apply to your country of residence. Regardless of where
+                your information is stored, we, our affiliates and third-party service providers apply the same
+                protections described in this Policy.
+                JFrog may retain your information for a period consistent with the original purpose of collection,
+                and/or in accordance with our legal and contractual obligations and the applicable law or regulation.
+                For example, we will retain your information for as long as you are using our Services, and for a
+                reasonable period thereafter. Please note, we are not required to retain personal information for a
+                specific time period and are free to remove it at any moment. Aggregated and/or anonymous data, and any
+                other non-personal information may be retained by us as permitted under the applicable privacy laws.
+            </p>
+<p>
+<b>7. Third-party websites and social media features</b><br/>
+                Our Services may include social media features (“Features“), for example, you can share posts and
+                comments on or through your social media account. The Features may enable the applicable social networks
+                to collect your IP address and other automatically collected usage details and may set a cookie to
+                enable the functionality of the Feature (see Section 1). Your interactions with the Features are
+                governed by the privacy policy of the third party who provided such Features, and we are not responsible
+                for the privacy practices or the content of such third-party Features. Please be aware that the third
+                parties providing the Features may collect personal information from you. Accordingly, we encourage you
+                to read the terms and conditions and privacy policy of each relevant third party that you choose to use
+                or interact with.
+                In addition, certain links on our Website, enables you to enter other sites or services. Those linked
+                sites and services are provided solely as a convenience to you and are not under the control of JFrog.
+                We are not responsible or liable for such linked sites and services’ privacy practices and/or any other
+                practices. Your access to, use of, and reliance upon any such sites, services and content and your
+                dealings with such third parties are at your sole risk and expense.
+            <p>
+<p>
+<b>8. Changes to this Privacy Policy</b><br/>
+                The terms of this Policy will govern the use of the Services and any information collected by JFrog.
+                JFrog reserves the right to change this policy at any time by posting an updated version on our
+                Services. We will provide notice of substantial changes of this policy on the homepage of the Website.
+                All other changes to this Policy are effective as of the stated “Last Update” date and your continued
+                use of the Services after the Last Update date will constitute acceptance of, and agreement to be bound
+                by, those changes. If the Policy is required to be amended to comply with any legal requirements, the
+                amendments may take effect immediately, or as required by the law and without any prior notice.</p>
+<p>
+<b>9. Our policy towards children</b><br/>
+                The Website is intended for users over the age of eighteen (18). Therefore, JFrog does not intend and
+                does not knowingly collect personal information from children under the age of eighteen (18). We reserve
+                the right to request proof of age when needed. If we learn that we collected personal information from
+                children under the age of eighteen (18) we will delete that information promptly. Please contact JFrog
+                at privacy@jfrog.com if you have reasons to suspect that JFrog collected such information.
+            </p>
+<p>
+<b>10. Got any questions?</b><br/>
+                We are committed to protecting your privacy. If you have any questions concerning this Policy, please
+                contact us at: <a href="mailto:privacy@jfrog.com">privacy@jfrog.com.</a> or write to us at: JFrog, 270 E. Caribbean Drive, Sunnyvale, CA 94089,
+                and we will make an effort to reply within a reasonable timeframe.
+            </p>
+</p></p></div>
+</div>
+</div>
+<div class="section footer wf-section" id="talk">
+<div class="container">
+<div class="footer-email-capture">
+<div class="grid-container center">
+<div class="footer-description-text">JFrog Connect Platform</div>
+<h2 class="h2 white full">Let's Talk.<br/></h2>
+</div>
+<div class="form-component w-form">
+<!--[if lte IE 8]>
+                <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+                <![endif]-->
+<script charset="utf-8" src="https://js.hsforms.net/forms/v2.js" type="text/javascript"></script>
+<script>
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "6292067",
+                        formId: "702c4c73-40c4-4fab-8bba-e4179d8b54ef"
+                    });
+                </script>
+<div class="contact-success-message w-form-done">
+<div class="contact-success-text">Thank you! Your submission has been received!</div>
+</div>
+<div class="w-form-fail">
+<div class="error-text">Oops! Something went wrong while submitting the form.</div>
+</div>
+</div>
+</div>
+<div class="footer-divider"></div>
+<div class="w-layout-grid footer-links">
+<div class="footer-container"><img alt="JFrog Connect icon" class="logo" src="/connect/images/jfrog-connect-nav.svg"/>
+<div class="social-media-icons-container">
+<a class="social-media-link w-inline-block" href="https://www.facebook.com/artifrog" target="_blank"><img alt="Facebook" class="social-media-icon" src="/connect/images/001-facebook-1.svg"/></a>
+<a class="social-media-link w-inline-block" href="https://twitter.com/jfrog" target="_blank"><img alt="Twitter" class="social-media-icon" src="/connect/images/004-twitter-1.svg"/></a>
+</div>
+</div>
+<div class="footer-container" id="w-node-_1beb13b1-5970-eec1-1966-5861803a3b4e-803a3b46">
+<div class="footer-title">FEATURES</div>
+<div class="w-dyn-list">
+<div class="w-dyn-items" role="list">
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/linux-iot-device-management/">Device Management</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/embedded-linux-ota-software-updates/">Updates</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/ota-container-updates-linux-edge/">Container Updates</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/embedded-linux-remote-control-ssh/">Remote Control</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/linux-send-remote-commands/">Remote Commands</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/monitor-iot-embedded-linux-devices/">Data Monitor</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/monitor-resources-edge-linux/">Resources Monitor</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/monitor-processes-linux-iot-edge/">Processes Monitor</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/logs-alerts-edge-iot-linux-devices/">Device Logs</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/embedded-linux-agent-control-manage/">Embedded Linux Agent</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/map-view-linux-devices/">Map View</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/embedded-linux-security/">Security</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/linux-remote-access/">Remote Access</a></div>
+</div>
+</div>
+</div>
+<div class="footer-container">
+<div class="footer-title">INDUSTRIES</div>
+<div class="w-dyn-list">
+<div class="w-dyn-items" role="list">
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/industries/agriculture-iot-management/">Agriculture</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/industries/logistics-iot-management/">Logistics</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/industries/smart-city-iot-management/">Smart City</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/industries/industrial-iot-management/">Industrial</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/industries/consumer-iot-management/">Consumer</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/industries/healthcare-iot-management/">Healthcare</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/industries/telecom-iot-management/">Telecom</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/industries/smart-energy-iot-management/">Smart Energy</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/industries/automotive-iot-management/">Automotive</a></div>
+<div class="w-dyn-item" role="listitem"><a class="footer-link" href="/connect/industries/retail-iot-management/">Retail</a></div>
+</div>
+</div>
+</div>
+<div class="footer-container">
+<div class="footer-title">RESOURCES</div>
+<a class="footer-link" href="https://docs.connect.jfrog.io/" target="_blank">Docs</a>
+<a aria-current="page" class="footer-link w--current" href="/connect/blog">Blog</a>
+<a class="footer-link" href="/connect/pricing/#faq">FAQ</a></div>
+<div class="footer-container">
+<div class="footer-title">CONTACT</div>
+<a class="footer-link" href="/connect/schedule-a-demo/">Schedule a Demo</a>
+<a aria-current="page" href="/connect/contact-us/">Contact us</a>
+<a class="footer-link" href="/connect/upswift-edge-device-manager-value/">JFrog Connect Value</a>
+<a class="footer-link" href="/connect/imgflasher/">imgFlasher</a>
+<a class="footer-link" href="/connect/pricing/">Pricing</a>
+<a class="footer-link" href="/connect/enterprise/">Enterprise</a>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="columns-2 w-row">
+<div class="column-8 w-col w-col-6 w-col-small-6">
+<div class="footer-text center">© 2022 JFrog Ltd All Rights Reserved<br/></div>
+</div>
+<div class="column-5 w-col w-col-6 w-col-small-6">
+<div class="footer-text right">
+<a class="ot-sdk-show-settings footer-link inline" id="ot-sdk-btn">Cookie Settings</a>
+                    | <a class="footer-link inline" href="/connect/privacy/">Privacy Policy</a>
+                    | <a class="footer-link inline" href="/connect/terms-of-service/">Terms of Use</a>
+                    | <a class="footer-link inline" href="/connect/cookies-policy/">Cookies Policy</a><br/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script crossorigin="anonymous" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=5fa323cf11912a807106af17" type="text/javascript"></script>
+<script src="/connect/js/frog-connect.js" type="text/javascript"></script>
+<!-- [if lte IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+<script>
+
+    $(document).ready(function () {
+        // set unique id to videoplayer for the Webflow video element
+        var src = $('#videoplayer').children('iframe').attr('src');
+        // when object with class open-popup is clicked...
+        $('.open-popup').click(function (e) {
+            e.preventDefault();
+            // change the src value of the video
+            $('#videoplayer').children('iframe').attr('src', src);
+            $('.popup-bg').fadeIn();
+        });
+        // when object with class close-popup is clicked...
+        $('.close-popup').click(function (e) {
+            setTimeout(function () {
+                e.preventDefault();
+                $('#videoplayer').children('iframe').attr('src', '');
+                $('.popup-bg').fadeOut();
+            }, 500);
+        });
+    });
+</script>
+</body>
+</html>

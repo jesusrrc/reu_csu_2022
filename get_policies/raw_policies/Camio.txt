@@ -1,0 +1,1166 @@
+<!-- includes/privacy.jsp //-->
+<!-- includes/htmlHeaderNoLogo.jsp //-->
+<!DOCTYPE HTML>
+<html itemscope="" itemtype="http://schema.org/Product" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="Privacy Policy | Camio" itemprop="name"/>
+<meta content="Put your cameras to work" itemprop="description"/>
+<meta content="Put your cameras to work" name="description"/>
+<meta content="Put your cameras to work" name="description" property="og:description"/>
+<meta content="Privacy Policy | Camio" property="og:title">
+<meta content="website" property="og:type">
+<meta content="https://camio.com/privacy?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0" property="og:url">
+<meta content="https://camio.com/images/camio-logo-text-tagline-4k.png" property="og:image">
+<meta content="Camio" property="og:site_name">
+<meta content="1107701" property="fb:admins"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@camio" name="twitter:site"/>
+<meta content="Privacy Policy | Camio" name="twitter:title"/>
+<meta content="Put your cameras to work" name="twitter:description"/>
+<meta content="https://camio.com/images/camio-logo-text-tagline-4k.png" name="twitter:image:src"/>
+<link href="/camio-favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="/camio-apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="app-id=618450809" name="apple-itunes-app"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+<link href="/css/camioboot.css" rel="stylesheet"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700" rel="stylesheet" type="text/css"/>
+<!-- Scripts included on all pages -->
+<!-- includes/headScripts.jsp //-->
+<script src="/js/min/jquery.min.js"></script>
+<script src="/js/min/jquery-ui.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/jquery.cycle.all.latest.js"></script>
+<script src="/js/min/sugar.min.js"></script>
+<!-- includes/currentUserScript.jsp //-->
+<script type="text/javascript">
+    // UserVariables shim until load in
+    window.UserVariables = (function () {
+        var onReadyCallbacks = [],
+            postInitCallbacks = [];
+
+        var isShim = function () {
+            return true;
+        };
+
+        var get = function (key, options) {
+            var deferred = new jQuery.Deferred();
+            postInitCallbacks.push({
+                fn: 'get',
+                args: [key, options, deferred]
+            });
+            return deferred;
+        }
+        var put = function (key, value, options) {
+            var deferred = new jQuery.Deferred();
+            postInitCallbacks.push({
+                fn: 'put',
+                args: [key, value, options, deferred]
+            });
+            return deferred;
+        }
+
+        var del = function (key, options) {
+            var deferred = new jQuery.Deferred();
+            postInitCallbacks.push({
+                fn: 'del',
+                args: [key, options, deferred]
+            });
+            return deferred;
+        }
+
+        var isReady = function () {
+            return false;
+        };
+
+        var onReady = function (callback) {
+            onReadyCallbacks.push(callback);   
+        };
+
+        var getDict = function () {
+            return {};
+        };
+
+        var getUserId = function () {
+            return undefined;
+        };
+
+        var getOnReadyCallbacks = function () {
+            return onReadyCallbacks;
+        };
+
+        var getPostInitCallbacks = function () {
+            return postInitCallbacks;
+        };
+        return {
+            isShim: isShim,
+            get: get,
+            put: put,
+            del: del,
+            isReady: isReady,
+            onReady: onReady,
+            getDict: getDict,
+            getUserId: getUserId,
+            getOnReadyCallbacks: getOnReadyCallbacks,
+            getPostInitCallbacks: getPostInitCallbacks
+        }
+    }());
+
+    var CurrentUser = {
+        isAuthed: false,
+        userEmail: null,
+        userId: null,
+    }
+</script>
+<title>Privacy Policy | Camio</title>
+</meta></meta></meta></meta></meta></head>
+<body>
+<div id="wrap">
+<!-- includes/website/top.jsp //-->
+<link href="/css/includes.website.top.jsp.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+  $(document).ready(function() {
+	  $('.navbar-toggle').click(function () {
+ 		$(this).toggleClass('opened');
+ 		$('#wrap').toggleClass('opened');
+ 		$('.dropdown-menu').show();
+	});
+
+	  var isiPhone = (function(){
+              return /iPhone|iPod/i.test(navigator.userAgent);
+          })();
+          var isiPad = (function(){
+              return /iPad/i.test(navigator.userAgent);
+          })();
+          var isAndroid = (function(){
+              return /Android/i.test(navigator.userAgent);
+          })();
+          var isMobile = (function(){
+              return isiPhone || isiPad || isAndroid;
+          })();
+
+          if (isAndroid) {
+              $('#downloadapp').show();
+              $('.pricesection').addClass('android-download');
+              $('#jumbo-container').addClass('android-download');
+          }
+
+  });
+
+ </script>
+<link href="/images/logo500.png" rel="image_src">
+<header class="navbar navbar-default navbar-fixed-top" role="banner">
+<div class="container-fluid">
+<div class="navbar-header">
+<button class="navbar-toggle" data-target=".bs-navbar-collapse" data-toggle="collapse" type="button">
+<img class="closedimg" onerror="this.src=/images/website-navbartoggle-collapsed.png" src="/svg/website-navbartoggle-collapsed.svg"/>
+<img class="openedimg" onerror="this.src=/images/website-navbartoggle-open.png" src="/svg/website-navbartoggle-open.svg"/>
+</button>
+<ul class="nav navbar-nav navbar-brand">
+<li>
+<ul class="nav navbar-nav navbar-brand">
+<li>
+<div class="logo notranslate">
+<a href="/home">
+<span>cam</span><span class="logogreen">i</span><span class="logoorange">o</span>
+</a>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<nav class="collapse navbar-collapse bs-navbar-collapse sidemenu" role="navigation">
+<ul class="nav navbar-nav toppage">
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Solutions</a>
+<ul class="dropdown-menu">
+<li class="dropdown-header text-uppercase text-primary" role="presentation">Industry Solutions</li>
+<li><a class="dropdown-item" href="/solutions/biotech-and-pharma">Biotech and Pharma</a></li>
+<li><a class="dropdown-item" href="/solutions/education">Education</a></li>
+<li><a class="dropdown-item" href="/solutions/financial-services">Financial Services</a></li>
+<li><a class="dropdown-item" href="/solutions/fitness">Fitness</a></li>
+<li><a class="dropdown-item" href="/solutions/real-estate">Real Estate</a></li>
+<li><a class="dropdown-item" href="/solutions/retail">Retail</a></li>
+<li class="dropdown-header text-uppercase text-primary" role="presentation">Technology Solutions</li>
+<li><a class="dropdown-item" href="/solutions/camio-flex">IT-Based VMS Replacement</a></li>
+<li><a class="dropdown-item" href="/solutions/unauthorized-access-detection">Unauthorized Access Detection</a></li>
+<li><a class="dropdown-item" href="/solutions/multi-property-monitoring">Multi-Property Monitoring</a></li>
+<li><a class="dropdown-item" href="/solutions/occupancy-insights">Occupancy Insights</a></li>
+<li><a class="dropdown-item" href="/solutions/covid-19-mitigation">Covid-19 Mitigation</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Product</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="/product/features">Features</a></li>
+<li><a class="dropdown-item" href="/product/pricing">Pricing</a></li>
+<li><a class="dropdown-item" href="/product/information-security">Information Security</a></li>
+<li><a class="dropdown-item" href="/product/technology">Technology</a></li>
+</ul>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Resources</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="/resources/case-studies">Case Studies</a></li>
+<li><a class="dropdown-item" href="https://www.youtube.com/c/Camiolog/featured" target="_blank">Videos <span class="glyphicon glyphicon-new-window"></span></a></li>
+<li><a class="dropdown-item" href="/help" target="_blank">Help Articles <span class="glyphicon glyphicon-new-window"></span></a></li>
+<li><a class="dropdown-item" href="/resources/media-kit">Media Kit</a></li>
+</ul>
+</li>
+<li><a class="dropdown-item" href="/about/company">Company</a></li>
+<li><a class="nav-item" href="/partners">Partners</a></li>
+</ul>
+<ul class="nav navbar-nav navbar-right nav-end">
+<li class="join-now">
+<a class="button-sign-in hidden-xs open-login" data-destination="/welcome" data-inorup="up" data-target="#login-modal" data-toggle="modal" href="#" id="sign-in">
+         	Sign Up<span></span>
+</a>
+</li>
+<li>
+<a class="button-sign-in hidden-xs open-login" data-inorup="in" data-target="#login-modal" data-toggle="modal" href="#" id="join-now">
+         	Sign In<span></span>
+</a>
+</li>
+<li class="join-now">
+<a class="button-sign-in visible-xs col-xs-10 col-xs-push-1 text-center open-login" data-destination="/welcome" data-inorup="up" data-target="#login-modal" data-toggle="modal" href="#" id="sign-in">
+         	Sign Up<span></span>
+</a>
+</li>
+<li>
+<a class="button-sign-in visible-xs col-xs-10 col-xs-push-1 text-center open-login" data-inorup="in" data-target="#login-modal" data-toggle="modal" href="#" id="join-now">
+         	Sign In<span></span>
+</a>
+</li>
+</ul>
+</nav>
+</div> <!--  container -->
+<div class="progress">
+<div class="indeterminate"></div>
+</div>
+</header>
+<!-- includes/website/heroCorporate.jsp //-->
+<script>
+	function goBackHero(e) {
+		e.preventDefault();
+  		window.history.back();
+  	}
+</script>
+<div class="row">
+<div class="page-header col-xs-10 col-xs-push-1">
+<div class="heroheader">
+<h1>Privacy Policy</h1>
+<div class="back-arrow">
+<a href="#" onclick="goBackHero(event);">
+<img alt="Back" src="/svg/backarrow.svg"/>
+</a>
+</div>
+</div>
+</div>
+</div>
+<link href="/css/includes.terms.jsp.css" rel="stylesheet" type="text/css"/>
+<script src="/js/doctools.nocache.js"></script>
+<div class="container web mtx">
+<div class="col-xs-12 col-sm-10 col-sm-push-1">
+<p>
+This privacy policy applies to all of the Services offered by Camiolog, Inc. and describes how we treat personal information when you 
+use Camiolog Services.  Please <a href="/contact">contact us</a> with any privacy questions.
+</p>
+<h2 class="addAnchor">
+Information we collect and how we use it
+</h2>
+<p>
+We may collect the following types of information:
+</p>
+<ol>
+<li class="c1">
+Information you provide
+	</li>
+<ol>
+<li class="c2">
+When you sign in to camio.com using your Google or Facebook Account, we receive and store only your email address and user id. 
+When you sign in using Email, we store the information you enter in creating your Camio Account. 
+We use your email address to personalize your Camio experience in the way we address you (e.g. “Hello, john@example.com”) or notify you of account updates or alerts (e.g. email, instant message).
+			</li>
+<li class="c2">
+When you make a payment for Camiolog Services, we store your payment amount, payment date, item number and user id to apply the payment received from your chosen method of payment. 
+			</li>
+<li class="c2">
+If you authorize another user to view your Content, we store the email address of the guest you authorized, the type of authorization, the date of authorization, the date range of Content authorized for sharing, and the expiration date of that authorization. 
+			</li>
+<li class="c2">
+If you invite friends by email to try Camio, we store the invitee's email address only to associate the invitee's sign-in with your invitation. 
+			</li>
+<li class="c2">
+				If you assign locations to your video streams, we store those assigned locations, along with their associated labels
+				and time zones to enable search and alerts by location and local time.
+			</li>
+</ol>
+<li class="c1">
+Your uploaded Content
+	</li>
+<ol>
+<li class="c2">
+We store the Content you upload using Camiolog Services.  That Content is viewable only by you unless you explicitly authorize another user to view it.
+			</li>
+</ol>
+<li class="c1">
+Cookies
+	</li>
+<ol>
+<li class="c2">
+We use browser “cookies” to collect information and improve our Services.  A cookie is a small data file that we transfer to your browser.  You can instruct your browser to stop accepting cookies or to prompt you before accepting a cookie from the websites you visit. If you do not accept cookies, however, you may not be able to use all aspects of the Service.
+			</li>
+</ol>
+<li class="c1">
+Log Information
+	</li>
+<ol>
+<li class="c2">
+When you access Camiolog services via a browser, application or other client, our servers automatically record certain information. These server logs may include information such as your web request, your interaction with a service, Internet Protocol address, browser type, browser language, client operating system info, the date and time of your request, your browser’s timezone offset from Greenwich Mean Time and one or more cookies that may uniquely identify your browser or your account.
+			</li>
+</ol>
+<li class="c1">
+User communications
+	</li>
+<ol>
+<li class="c2">
+When you send email or other communications to Camiolog, we may retain those communications in order to process your inquiries, respond to your requests and improve our services. We may use your email address to communicate with you about our services.
+			</li>
+</ol>
+</ol>
+<p>
+In addition to the above, we may use the information we collect to:
+</p>
+<ul>
+<li>
+	Provide, maintain, protect, and improve our services and develop new services; and
+	</li>
+<li>
+	Protect the rights or property of Camiolog or our users.
+	</li>
+</ul>
+<p>
+If we use this information in a manner different than the purpose for which it was collected, then we will ask for your consent prior to such use.
+</p>
+<h2 class="addAnchor">
+Choices
+</h2>
+<p>
+You can use <a href="/me/">camio.com/me</a> to review and control the information stored in your Camio Account.
+We want you to be in control of your information, so we provide you with the following tools.
+</p>
+<ul class="bold-span">
+<li>
+<span>Download</span>. You can access your data right in our apps. You can also use <a href="https://help.camio.com/hc/en-us/articles/203887885">Download</a> and <a href="https://help.camio.com/hc/en-us/articles/360000807723">Export</a> to obtain a copy of data, so you can move it or store it wherever you want. Because your privacy is important to us, we may ask you to verify your identity or provide additional information before we let you access or update your personal information. We may also reject your request to access or update your personal information for a number of reasons, including, for example, that the request risks the privacy of other users or is unlawful.
+</li>
+<li>
+<span>Revoking permissions</span>. If you let us use your information, you can always change your mind and simply revoke your permission by changing the settings in our services or through your device if your device offers those options. 
+Most browsers are initially set up to accept cookies, but you can reset your browser to refuse all cookies or to indicate when a cookie is being sent. Of course, some Camio features and services may not function properly if permissions are revoked or if your cookies are disabled.
+</li>
+<li>
+<span>Deletion</span>. While we hope you’ll remain a lifelong Camio user, if for some reason you ever want to delete your account, just go <a href="/delete-account">here</a> to learn how. You can also delete your content in the app, like video you’ve saved, Guests you've added, and links that you've shared.
+</li>
+</ul>
+<p>
+Most browsers are initially set up to accept cookies, but you can reset your browser to refuse all cookies or to indicate when a cookie is being sent. However, some Camiolog features and services may not function properly if your cookies are disabled. 
+</p>
+<h2 class="addAnchor">
+Information Sharing
+</h2>
+<p>
+Camiolog only shares personal information with other companies or individuals outside of Camiolog in the following limited circumstances:
+</p>
+<ul>
+<li>
+We have your consent. We require explicit opt-in consent for the sharing of any sensitive personal information like your Content.
+</li>
+<li>
+We may use certain trusted third party companies to help us provide, analyze, and improve the Service (including but not limited to data storage, web analytics, and payment processing). These third parties may have access to your information only for purposes of performing these tasks on our behalf and under obligations similar to those in this Privacy Policy and any other appropriate confidentiality and security measures. Learn more <a href="https://help.camio.com/hc/en-us/articles/360000873046">here</a>.
+</li>
+<li>
+We have a good faith belief that access, use, preservation or disclosure of such information is reasonably necessary to (a) satisfy any applicable law, regulation, legal process or enforceable governmental request, (b) enforce applicable Terms of Service, including investigation of potential violations thereof, (c) detect, prevent, or otherwise address fraud, security or technical issues, or (d) protect against harm to the rights, property or safety of Camiolog, its users or the public as required or permitted by law.
+</li>
+</ul>
+<p>
+If Camiolog becomes involved in a merger, acquisition, or any form of sale of some or all of its assets, we will ensure the confidentiality of any personal information involved in such transactions and provide notice before personal information is transferred and becomes subject to a different privacy policy.
+</p>
+<h2 class="addAnchor">
+Information security
+</h2>
+<p>
+We take appropriate security measures to protect against unauthorized access to or unauthorized alteration, disclosure or destruction of data. These include internal reviews of our data collection, storage and processing practices and security measures, including appropriate encryption and physical security measures to guard against unauthorized access to systems where we store personal data.
+</p>
+<p>
+We restrict access to personal information to Camiolog employees, contractors and agents who need to know that information in order to process it on our behalf. These individuals are bound by confidentiality obligations and may be subject to discipline, including termination and criminal prosecution, if they fail to meet these obligations.
+</p>
+<h2 class="addAnchor">
+Information retention
+</h2>
+<p>
+Camiolog retains your recorded video content for the period of time you choose. The subscription plan you assign to each video stream controls that retention period. Your video content will be automatically deleted by default from our servers after it is older than the retention period, unless you've requested that it be retained by saving it or sharing it.
+</p>
+<p>	
+We store other information for longer periods of time. For example:
+</p>
+<ul>
+<li>	
+We store your basic account information—like your name and email address— until you ask us to delete them.
+</li>
+<li>
+If you assign a location to your camera, we'll retain that location until the camera is deleted or until you remove the location from the camera.
+</li>
+<li>
+If you invite a Guest to access your account, we'll retain records of that authorization until you remove the Guest.
+</li>
+<li>
+We continually collect and update information about the video Events you might deem important or unimportant, so we can provide you with more relevant search results.
+</li>
+</ul>
+<p>
+If you ever decide to stop using Camio, you can just ask us to delete your account.
+Keep in mind that, while our systems are designed to carry out our deletion practices automatically, we cannot promise that deletion will occur within a specific timeframe. There may be legal requirements to store your data and we may need to suspend those deletion practices if we receive valid legal process asking us to preserve content or if we receive reports of abuse or other Terms of Service violations. Finally, we may also retain certain information in backup for a limited period of time or as required by law.
+</p>
+<h2 class="addAnchor">
+Users in the European Union
+</h2>
+<p>
+If you’re a user in the European Union, you should know that Camiolog is the controller of your personal information. Here is some additional information we would like to bring to your attention:
+</p>
+<h3>
+Bases for using your information
+</h3>
+<p>
+Your country only allows us to use your personal information when certain conditions apply. These conditions are called “legal bases” and, at Camiolog, we typically rely on one of four:
+</p>
+<ol class="bold-span">
+<li>
+<span>Contract</span>. One reason we might use your information is because you’ve entered into an agreement with us. For example, when you buy a subscription and agree to our <a href="/pricingterms">Pricing Terms</a>, we need to use some of your information to collect payment.
+</li>
+<li>
+<span>Legitimate interest</span>. Another reason we might use your information is because we have—or a third party has—a legitimate interest in doing so. For example, we need to use your information to provide and improve our services, including protecting your account, delivering your video search results, and providing customer support. An important point to understand about legitimate interest is that our interests don’t outweigh your right to privacy, so we only rely on legitimate interest when we think the way we are using your data doesn’t significantly impact your privacy or would be expected by you, or there is a compelling reason to do so.
+</li>
+<li>
+<span>Consent</span>. In some cases we’ll ask for consent to use your information for specific purposes. If we do, we’ll make sure you can revoke your consent in our services or through your device permissions. Even if we’re not relying on consent to use your information, we may ask you for permission to access data like the location of your cameras.
+</li>
+<li>
+<span>Legal obligation</span>. We may be required to use your personal information to comply with the law, like when we respond to valid legal process or need to take action to protect our users.
+</li>
+</ol>
+<h3>
+Your right to object
+</h3>
+You have the right to object to our use of your information. With many types of data, we’ve provided you with the ability to delete the data or disconnect from the service if you don't want us processing it anymore. For other types of data, we’ve given you the ability to stop the use of your data by deleting your account altogether. You can do these things in the Web browser app. If there are other types of information you don’t agree with us processing, you can <a href="/contact">contact us</a>.
+
+<h3>
+International transfers
+</h3>
+<p>
+We may collect your personal information from, transfer it to, and store and process it in the United States and other countries outside of where you live. Whenever we share information of EU users outside the EU we make sure an adequate transfer mechanism is in place. For internal transfers, we rely on Model Contractual Clauses or the EU-U.S. and Swiss-U.S. Privacy Shield, which you can read more about <a href="/privacy/privacy-shield">here</a>. You can find more information on the categories of third parties we share information with <a href="https://help.camio.com/hc/en-us/articles/360000873046">here</a>.
+</p>
+<p>
+Complaints? If you’re based in the EU, you can always file a complaint with the supervisory authority in your Member State. For example, if you’re based in the UK you can file a complaint with the 
+<a href="https://ico.org.uk/">Information Commissioner’s Office</a>.
+</p>
+<h2 class="addAnchor">
+Children
+</h2>
+<p>
+We do not knowingly collect any personal information from children under the age of 13. If you are under the age of 13, please do not submit any personal information through our services. We encourage parents and legal guardians to monitor their children’s Internet usage and to help enforce this Policy by instructing their children never to provide personal information through the services without their permission. If you have reason to believe that a child under the age of 13 has provided personal information to us through the services, please <a href="/contact">contact us</a>, and we will use commercially reasonable efforts to delete that information.
+</p>
+<h2 class="addAnchor">
+Changes to this Privacy Policy
+</h2>
+<p>
+Please note that this Privacy Policy may change from time to time. We will not reduce your rights under this Privacy Policy without your explicit consent. We will post any Privacy Policy changes on this page and, if the changes are significant, we will provide a more prominent notice (including, for certain services, email notification of Privacy Policy changes). We will also keep prior versions of this Privacy Policy in an archive for your review.
+</p>
+<p>
+Last modified: May 23, 2018
+</p>
+</div>
+</div>
+<!-- includes/camiologFooter.jsp //-->
+</link></div> <!-- #wrap -->
+<!-- includes/website/loginModal.jsp //-->
+<script>
+  var userLoggedIn = false;
+  var facebookConnected = false;
+  var isSignIn = true;
+  var inOrUp = "in";
+  var oldUrl = null;
+  var destinationURL;
+  try {
+    destinationURL = JSON.parse('null');
+  } catch (e) {
+    destinationURL = null;
+  }
+  var redirectNewUsers = !false;
+  var autoOpen = false;
+
+  var _reloadNecessary = function () {
+    var newUrl = window.location;
+    return newUrl.origin + newUrl.pathname === oldUrl.origin + oldUrl.pathname;
+  }
+
+  var setDestinationURL = function(url) {
+    if (url != null) {
+      destinationURL = url;
+    }
+  };
+
+  var getDestinationURL = function(bEncodeUrl) {
+    var url = destinationURL ? destinationURL : window.location.href;
+    return bEncodeUrl ? encodeURIComponent(url) : url;
+  };
+
+  // Force reload if the url has not changed.
+  var loadDestination = function(isNewAccount) {
+    // TODO(carter) why are we requiring redirect to /start rather than honoring requested destinationURL?
+    if (isNewAccount && redirectNewUsers) {
+      if (document.location.pathname.startsWith("/start")) {
+        window.location.reload();
+      } else {
+        window.location.href = '/start';
+      }
+      return;
+    }
+    var url = getDestinationURL();
+    var currentUrl = window.location.href;
+    oldUrl = jQuery.extend({}, window.location);
+    window.location.href = url;
+    if (_reloadNecessary()) {
+      window.location.reload();
+    }
+  }
+  
+  // This is called with the results from from FB.getLoginStatus().
+  function loginCallback(response, isSignUp) {
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      if (!facebookConnected && !isFacebookLoginDisabled()) {
+        // Logged into your app and Facebook.
+        var loginData = {'auth_response': response.authResponse, 'login_type': 'cookie'};
+        $.ajax({
+        	url: '/api/login/facebook/',
+        	type: 'POST',
+        	contentType: 'application/json',
+        	data: JSON.stringify(loginData),
+          error: function(xhr) {
+            if ($('#login-modal').hasClass('in')) {
+              // Handle the error only if the modal is shown.
+              handleError(xhr, 'general');
+            }
+            handleUnwantedFacebookApiLogin(xhr);
+          },
+          success: function() {
+            loadDestination(isSignUp);
+          }
+        });
+      }
+      facebookConnected = true;
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      console.log("Facebook: not_authorized");
+    }
+  }
+
+  function logoutCallback(response, destinationURL) {
+    if (response.status === 'connected') {
+      FB.logout(function(response) {
+        window.location.href = destinationURL;
+      });
+    } else {
+      window.location.href = destinationURL;
+    }
+  }
+
+  function handleError(xhr, method) {
+    userLoggedIn = false;
+    var errorMessage = "An error occurred, please try again."; // Default error
+    // TODO(carter) refactor server responses to replace this mismash of error message handling.
+    var responseText = JSON.parse(xhr.responseText);
+    if (typeof responseText != "undefined") {
+      if (typeof responseText.message != "undefined") {
+        var userMessage;
+        try {
+          userMessage = JSON.parse(responseText.message);
+          if (typeof userMessage != "undefined" &&
+            Object.keys(userMessage).length > 0) {
+            // TODO(carter) display all errors, not just first.
+            errorMessage = userMessage[Object.keys(userMessage)[0]];
+          } else {
+            errorMessage = responseText.message;
+          }
+        } catch (e) {
+          errorMessage = responseText.message;
+        }
+      }
+    }
+    $("div.login-" + method + "-error").html(errorMessage);
+    $("div.login-" + method + "-error").fadeIn();
+  }
+
+  function handleUnwantedFacebookApiLogin(xhr) {
+    var response = JSON.parse(xhr.responseText);
+    if (typeof response != "undefined") {
+      if (typeof response.name != "undefined") {
+        if (response.name == "EMAIL_ADDRESS_IN_USE") {
+          setDisabledFacebookLogin(true);
+        }
+      }
+    }
+  }
+
+  function setDisabledFacebookLogin(value) {
+    if (value) {
+      $.cookie('disable-fb', 'true');
+    } else {
+      $.removeCookie('disable-fb');
+    }
+  }
+
+  function isFacebookLoginDisabled() {
+    if (typeof $.cookie('disable-fb') != "undefined") {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '123581087708231',
+      cookie     : true,  // enable cookies to allow the server to access 
+                          // the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.0' // use version 2.0
+    });
+
+    if (userLoggedIn == false) {
+      FB.getLoginStatus(function(response) {
+        loginCallback(response);
+      });
+    }
+
+        
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+
+
+  var showSignIn = function(isSignIn) {
+    if (isSignIn) {
+      $("#signupdiv").hide();
+      $("#signindiv").show();
+    } else {
+      $("#signindiv").hide();
+      $("#signupdiv").show();
+    }
+  };
+
+  $(document).ready(function() {
+    $('#signindiv a.google-signin-button').click(function(e) {
+      trackLoginClick('google', inOrUp);
+    }).attr('href', '/login?method=google&destinationURL='+getDestinationURL(true));
+
+    $('#signupdiv a.google-signin-button').click(function(e) {
+      trackLoginClick('google', inOrUp);
+    }).attr('href', '/login?method=google&destinationURL='+getDestinationURL(true));
+
+    $('.facebook-login-button').click(function(e) {
+      var isSignUp = $(e.target).closest('#signupdiv').length > 0;
+      e.preventDefault();
+      $(".login-alert").hide();
+      trackLoginClick('facebook', inOrUp);
+      setDisabledFacebookLogin(false);
+      facebookConnected = false;
+      if (userLoggedIn) {
+        loadDestination();
+      } else {
+       FB.login(function(response) {
+          loginCallback(response, isSignUp);
+        }, {scope: 'public_profile,email'});
+      }
+    });
+
+    $("#login-modal").on('hidden.bs.modal', function () {
+      $(".login-alert").hide();
+    });
+
+    $(".open-login").click(function () {
+      inOrUp = $(this).data('inorup');
+      // Use the data-destination in html only when specified.
+      var htmlDestination = $(this).data('destination');
+      if (htmlDestination) setDestinationURL(htmlDestination);
+      isSignIn = "in" == inOrUp;
+      showSignIn(isSignIn);
+      trackLoginModalClick(inOrUp);
+    });
+
+    $('.email-signin-button.proxy').click(function(e) {
+      e.preventDefault();
+      $('.email-signin-button.proxy').hide();
+      $('.emailform').toggle();
+    });
+
+    if ($("#signupdiv .signMethod").length == 1) {
+      // Expand the sole option immediately
+      $('.email-signin-button.proxy').hide();
+      $('.emailform').toggle();
+    }
+    const send2FACode = function () {
+      // Hide the success message
+      $('#one-time-code-sent').hide()
+
+      var data = {
+        'email': $('#login-form #email-signin').val(),
+        'password': $('#login-form #password-signin').val(),
+        'login_type': 'cookie'
+      };
+
+      jQuery.ajax({
+        url: "/api/login/otc",
+        type: "PUT",
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        error: function(xhr) {
+          handleError(xhr, 'native');
+          $('#one-time-code-sent').hide();
+        },
+        success: function() {
+          // Show the input form and resend and hide 
+          $('.btn.send-one-time-code').hide();
+          $('#one-time-code-signin').addClass('show-form');
+          $('.resend-one-time-code').show();
+          $('#one-time-code-sent').show();
+        }
+      });
+      
+    }
+
+    $('.resend-one-time-code').click(function(e) {
+      e.preventDefault();
+      send2FACode();
+    })
+
+    $('button.send-one-time-code').click(function(e){
+      e.preventDefault();
+      send2FACode();
+    });
+
+    var validateLoginForm = function() {
+      $("form#login-form input").removeClass("error");
+      $("form#login-form div.login-alert").hide().html("");
+
+      var emailValid = false;
+      var passwordValid = false;
+
+      var email = $("form#login-form #email-signin").val();
+      var password = $("form#login-form #password-signin").val();
+
+      if (email == "") {
+        $("form#login-form div.login-email-error").html("Please enter your email");       
+      } else {
+        emailValid = true; 
+      }
+      if (password == "") {
+        $("form#login-form div.login-password-error").html("Please enter your password");  
+      } else {
+        passwordValid = true;
+      }
+
+      if (!emailValid) {
+        $("form#login-form div.login-email-error").show();
+        $("form#login-form #email-signin").addClass("error");
+      }
+      if (!passwordValid) {
+        $("form#login-form div.login-password-error").show();
+        $("form#login-form #password-signin").addClass("error");
+      }
+      return emailValid && passwordValid;
+    };
+
+    var validEmail = function(email) {
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    };
+
+    var validateRegisterForm = function() {
+      $("form#register-form input").removeClass("error");
+      $("form#register-form div.login-alert").hide().html("");
+
+      var firstNameValid = false;
+      var emailValid = false;
+      var passwordValid = false;
+
+      var firstName = $("form#register-form #first-name").val();
+      var email = $("form#register-form #email-signup").val();
+      var password = $("form#register-form #password-signup").val();
+
+      if (firstName == "") {
+        $("form#register-form div.login-first-name-error").html("Please enter your name");
+      } else {
+        firstNameValid = true;
+      }
+      // We don't check last name.
+      if (email == "") {
+        $("form#register-form div.login-email-error").html("Please enter an email address");
+      } else if (!validEmail(email)) {
+        $("form#register-form div.login-email-error").html("Please enter a valid email address");
+      } else {
+        emailValid = true;
+      }
+      if (password == "") {
+        $("form#register-form div.login-password-error").html("Please enter your password");
+      } else if (password.length < 6) {
+        $("form#register-form div.login-password-error").html("Password must be at least 6 characters");      
+      } else {
+        passwordValid = true;
+      }
+
+      if (!firstNameValid) {
+        $("form#register-form div.login-first-name-error").show();
+        $("form#register-form #first-name").addClass("error");
+      }
+      if (!emailValid) {
+        $("form#register-form div.login-email-error").show();
+        $("form#register-form #email-signup").addClass("error");
+      }
+      if (!passwordValid) {
+        $("form#register-form div.login-password-error").show();
+        $("form#register-form #password-signup").addClass("error");
+      }
+      
+      return firstNameValid && emailValid && passwordValid;
+    };
+
+    var makeLoginFormClickHandler = function makeLoginFormClickHandlerFunc () {
+      var $btn = null,
+          disabled = false,
+          loginFormClickHandler = function loginFormClickHandlerFunc(e) {
+            e.preventDefault();
+            if (disabled) return;
+            if (!validateLoginForm()) return;
+            $btn = $(this);
+            disableButton();
+            var data = {
+              'email': $('#login-form #email-signin').val(),
+              'password': $('#login-form #password-signin').val(),
+              'login_type': 'cookie',
+              'remember_me': $('#login-form #remember').prop('checked'),
+              'one_time_code': $("form#login-form #one-time-code-signin").val()
+            };
+            jQuery.ajax({
+              url: "/api/login/",
+              type: "POST",
+              contentType: 'application/json',
+              data: JSON.stringify(data),
+              error: function(xhr) {
+                enableButton();
+                handleError(xhr, 'native');
+              },
+              success: function() {
+                loadDestination();
+              }
+            });
+
+            trackLoginClick('native', inOrUp);
+          },
+        enableButton = function enableButtonFunc () {
+            $btn.css('opacity', '');
+            disabled = false;
+          },
+        disableButton = function disableButtonFunc () {
+            $btn.css('opacity', '.3');
+            disabled = true;
+          }
+      return loginFormClickHandler;
+    }
+    
+
+    var makeRegisterFormClickHandler = function makeRegisterFormClickHandlerFunc () {
+      var $btn = null,
+          disabled = false,
+          registerFormClickHandler = function registerFormClickHandlerFunc(e) {
+            e.preventDefault();
+            if (disabled) return;
+            if (!validateRegisterForm()) return;
+            $btn = $(this);
+            disableButton();
+            var data = {
+              'first_name': $('#register-form #first-name').val(),
+              'last_name': $('#register-form #last-name').val(),
+              'email': $('#register-form #email-signup').val(),
+              'password': $('#register-form #password-signup').val(),
+              'login_type': 'cookie'
+            };
+            jQuery.ajax({
+              url: "/api/user/",
+              type: "POST",
+              contentType: 'application/json',
+              data: JSON.stringify(data),
+              error: function(xhr) {
+                enableButton();
+                handleError(xhr, 'register');
+              },
+              success: function() {
+                loadDestination(true);
+              }
+            });
+            trackLoginClick('native', inOrUp);
+          },
+          disableButton = function disableButtonFunc() {
+            $btn.css('opacity', '.3');
+            disabled = true;
+          },
+          enableButton = function enableButtonFunc() {
+            $btn.css('opacity', '');
+            disabled = false;
+          };
+        return registerFormClickHandler;
+    }
+
+    $('#login-form button[type="submit"]').click(makeLoginFormClickHandler());
+    $('#register-form button[type="submit"]').click(makeRegisterFormClickHandler());
+
+    $('a.facebook-login-button').tooltip();
+
+    if (autoOpen) {
+      $('#login-modal').modal('toggle');
+      isSignIn = "in" == inOrUp;
+      showSignIn(isSignIn);
+    }
+
+  }); // end document ready
+
+</script>
+<link href="/css/includes.website.loginModal.jsp.css" rel="stylesheet" type="text/css"/>
+<style>
+  #login-modal.modal {
+    position:absolute;
+  }
+  .form-group {
+    margin-bottom: 0.25em;
+  }
+</style>
+<div aria-hidden="true" aria-labelledby="login-modal" class="modal fade" id="login-modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
+<div id="signindiv">
+<div class="row">
+<div class="col-xs-12 col-xs-push-0 text-center">
+<div class="logo notranslate">
+<a href="/home">
+<span>cam</span><span class="logogreen">i</span><span class="logoorange">o</span>
+</a>
+</div>
+</div>
+</div>
+<div class="alert alert-danger login-alert login-general-error" role="alert">
+</div>
+<div class="row signMethod">
+<div class="col-xs-12 text-center">
+<a class="facebook-login-button" href="#">
+<img class="img img-responsive" src="/images/login-facebook.png"/>
+</a>
+</div>
+</div>
+<div class="row signMethod">
+<div class="col-xs-12 text-center">
+<a class="google-signin-button" href="#">
+<img class="img img-responsive" src="https://storage.googleapis.com/camio_general/btn_google_signin_light_normal_web%402x.png"/>
+</a>
+</div>
+</div>
+<div class="row signMethod">
+<div class="col-xs-12 text-center">
+<div class="emaillogin">
+<a class="email-signin-button proxy" href="#" id="email-signin-button">
+<img class="img img-responsive" src="/images/login-email.png"/>
+</a>
+</div>
+<form class="emailform" id="login-form" role="form" style="display:none;">
+<div class="form-group">
+<div class="alert alert-danger login-alert login-native-error" role="alert"></div>
+<div class="alert alert-danger login-alert login-email-error" role="alert"></div>
+<input autocomplete="email" class="form-control" id="email-signin" placeholder="Email" type="email" value=""/>
+</div>
+<div class="form-group">
+<div class="alert alert-danger login-alert login-password-error" role="alert"></div>
+<input autocomplete="current-password" class="form-control" id="password-signin" placeholder="Password" type="password"/>
+</div>
+<div class="form-group">
+<div class="alert alert-danger login-alert login-one-time-code-error" role="alert"></div>
+<input autocomplete="one-time-code" class="form-control" id="one-time-code-signin" placeholder="Enter 2FA Code Sent Via Email" type="one-time-code"/>
+<button class="btn btn-primary send-one-time-code" type="button">Send One-Time 2FA Code</button>
+<div class="text-success" id="one-time-code-sent" style="display: none;">Code Sent! Check your email.</div>
+<a class="resend-one-time-code" style="display:none;" type="button">Resend Code</a>
+</div>
+<div class="form-group">
+<div class="row">
+<div class="col-xs-10 col-xs-push-1 checkbox">
+<label for="remember">
+<input id="remember" type="checkbox"/>Remember me
+                    </label>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-8 col-xs-push-2 forgone-time-codeass">
+<a href="/forgot-password">Forgot password?</a>
+</div>
+</div>
+</div>
+<div class="emaillogin">
+<button class="btn btn-default email-signin-button" type="submit">
+<img class="img img-responsive" src="/images/login-email.png"/>
+</button>
+</div>
+</form>
+<div class="alreadygotit">
+              Don’t have an account? <a href="#" onclick="event.preventDefault();showSignIn(false);">Sign Up</a>
+</div>
+</div>
+</div>
+</div>
+<div class="getsmart native" id="signupdiv" style="display:none;">
+<div class="text-center signupbuttons">
+<div class="row">
+<div class="col-xs-12 col-xs-push-0 text-center">
+<div class="logo notranslate">
+<a href="/home">
+<span>cam</span><span class="logogreen">i</span><span class="logoorange">o</span>
+</a>
+</div>
+</div>
+</div>
+<div class="alert alert-danger login-alert login-general-error" role="alert">
+</div>
+<div class="facebook signMethod">
+<a class="facebook-login-button" data-delay='{"show":"1500", "hide":"300"}' data-placement="top" data-toggle="tooltip" href="#" title="Camio will never post to your wall">
+<img class="img img-responsive" src="/images/signup-facebook.png"/>
+</a>
+</div>
+<div class="googleplus signMethod">
+<a class="google-signin-button" href="#">
+<img class="img img-responsive" src="https://storage.googleapis.com/camio_general/btn_google_signin_light_normal_web%402x.png"/>
+</a>
+</div>
+<div class="emaillogin signMethod">
+<a class="email-signin-button proxy" href="#" id="email-signup-button">
+<img class="img img-responsive" src="/images/signup-email.png"/>
+</a>
+</div>
+<div class="emailform" style="display:none;">
+<form id="register-form" role="form">
+<div class="form-group">
+<div class="alert alert-danger login-alert login-register-error" role="alert">
+</div>
+<div class="alert alert-danger login-alert login-first-name-error" role="alert">
+</div>
+<input autocomplete="given-name" class="form-control" id="first-name" placeholder="First name" type="text" value=""/>
+</div>
+<div class="form-group">
+<input autocomplete="family-name" class="form-control" id="last-name" placeholder="Last name" type="text" value=""/>
+</div>
+<div class="form-group">
+<div class="alert alert-danger login-alert login-email-error" role="alert">
+</div>
+<input autocomplete="email" class="form-control" id="email-signup" placeholder="Email" type="email" value=""/>
+</div>
+<div class="form-group">
+<div class="alert alert-danger login-alert login-password-error" role="alert">
+</div>
+<input autocomplete="new-password" class="form-control" id="password-signup" placeholder="Password" type="password"/>
+</div>
+<div class="emaillogin">
+<button class="btn btn-default email-signin-button" type="submit">
+<img class="img img-responsive" src="/images/signup-email.png"/>
+</button>
+</div>
+</form>
+</div>
+</div>
+<div class="form-group">
+<div class="text-center footnote">
+<p>Already have an account? <a href="#" onclick="event.preventDefault();showSignIn(true);">Sign In</a></p>
+</div>
+</div>
+<div>
+<p class="text-center">
+            Your use of Camio is agreement to the <a href="/terms" target="_blank">Terms of Service</a> and <a href="/privacy" target="_blank">Privacy Policy</a>.
+          </p>
+</div>
+</div> <!--signupdiv-->
+</div>
+</div>
+</div>
+<!-- This jsp simply embeds the vue component in a more declarative way than we have done it in the past. -->
+<script>
+  var isLoggedInPolicyModal = false
+ </script>
+<policy-modal-vue></policy-modal-vue>
+<script src="/includes/compiled-vue/policy-modal/policy-modal-index.js" type="text/javascript"></script>
+<footer>
+<div class="text-center">
+<div><img alt="Camio" src="https://storage.googleapis.com/camio_general/camio-logo-text-only-white-with-color.svg" style="height: 10vh; margin-block: 0.5rem;"/></div>
+<ul class="nav nav-pills" style="display:inline-block">
+<li><a href="/help">Help</a></li>
+<li><a href="/careers">Careers</a></li>
+<li><a href="/about/company">Company</a></li>
+<li><a href="/blog">Blog</a></li>
+<li><a href="/contact">Contact</a></li>
+</ul>
+<p>
+				© 2022 Camiolog, Inc.
+				·
+				<a href="/privacy">Privacy Policy</a>
+				·
+				<a href="/terms">Terms of Service</a>
+</p>
+</div>
+</footer>
+<script src="/js/min/camio-global.min.js" type="text/javascript"></script>
+<script src="/js/min/UserVariables.nocache.js" type="text/javascript"></script>
+<script src="/js/min/jquery.waypoints.min.js" type="text/javascript"></script>
+<!-- includes/htmlFooter.jsp //-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24014642-1', 'auto', {'allowLinker': true});
+  
+  ga('require', 'linker');
+  ga('linker:autoLink', ['camio.com', 'camiocam.com', 'camiolog.com']);
+  ga('require', 'displayfeatures');
+  
+  ga('set', 'forceSSL', true);
+  ga('send', 'pageview');
+
+</script>
+<!-- Start of camio Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("https://assets.zendesk.com/embeddable_framework/main.js","camio.zendesk.com");
+/*]]>*/</script>
+<!-- End of camio Zendesk Widget script -->
+<script src="//www.googleadservices.com/pagead/conversion_async.js" type="text/javascript"></script>
+</body>
+</html>

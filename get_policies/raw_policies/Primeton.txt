@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"465817224"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","/sites/default/files/google_analytics/analytics.js?rdeuqk","ga");ga("create", "UA-1706522-1", {"cookieDomain":"auto"});ga("require", "linkid", "linkid.js");ga("set", "anonymizeIp", true);ga("set", "dimension2", "1");ga("set", "dimension3", "chaptered");ga("send", "pageview");ga('require', 'maxScrollTracker', {
+  maxScrollMetricIndex: 1,
+});</script>
+<meta content="238312316239555" property="fb:app_id"/>
+<meta content="Princeton University" property="og:site_name"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.princeton.edu/privacy-notice" property="og:url"/>
+<meta content="Princeton University Privacy Notice" property="og:title"/>
+<meta content="Through teaching and research, we educate people who will contribute to society and develop knowledge that will make a difference in the world." property="og:description"/>
+<meta content="https://www.princeton.edu//sites/default/files/images/2017/06/20060425_NassauHall_JJ_IMG_5973.jpg" property="og:image"/>
+<meta content="B6i7aTvWeIZCk1-Ntnn_Lkyf37sREVxxkY6p3gdHucY" name="google-site-verification"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="@Princeton" name="twitter:site"/>
+<meta content="Through teaching and research, we educate people who will contribute to society and develop knowledge that will make a difference in the world." name="twitter:description"/>
+<meta content="Princeton University Privacy Notice" name="twitter:title"/>
+<meta content="Nassau Hall" name="twitter:image:alt"/>
+<meta content="https://www.princeton.edu//sites/default/files/images/2017/06/20060425_NassauHall_JJ_IMG_5973.jpg" name="twitter:image"/>
+<meta content="Drupal 9 (https://www.drupal.org)" name="Generator"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/themes/custom/tony/icons/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/themes/custom/tony/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/themes/custom/tony/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/themes/custom/tony/icons/manifest.json" rel="manifest"/>
+<link color="#e77500" href="/themes/custom/tony/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="/themes/custom/tony/icons/browserconfig.xml" name="msapplication-config"/>
+<meta content="#ffffff" name="theme-color"/>
+<link href="/profiles/contrib/lightning/favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+<link href="https://www.princeton.edu/privacy-notice" rel="canonical"/>
+<link href="https://www.princeton.edu/node/174186" rel="shortlink"/>
+<title>Princeton University Privacy Notice | Princeton University</title>
+<link href="/sites/default/files/css/css_JQyZ9StD4-4I5jikYtL8icbvn1b-f6xMTWUzpXDhKlc.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_-znt2TQwDYX5ozJW377y85zmm1pZ-MFpYBWRJ6P5ojY.css" media="all" rel="stylesheet"/>
+<!--[if lte IE 8]>
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" />
+<![endif]-->
+<script src="/sites/default/files/js/js_vjrewt9Ub_VdOnWG7fQvzLvZnbEPsJs5UlnSApFDVF0.js"></script>
+<meta content="HCFMWeXbGYFnJTWfcWQmuHWebYmZPzueLOKf8RM09I4" name="google-site-verification"/>
+<link href="/feed/" rel="alternate" title="Princeton University News" type="application/rss+xml"/>
+<link href="/feed/research/" rel="alternate" title="Princeton Research News" type="application/rss+xml"/>
+<link href="/feed/events/" rel="alternate" title="Princeton Public Events" type="application/rss+xml"/>
+</head>
+<body class="node-174186 path-node page-node-type-chaptered nojs" data-resize="body" data-scroll="body">
+<a class="visually-hidden focusable button skip-link" href="#main-content" id="skip-link">
+      Skip to main content
+    </a>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<div class="header-sticky-container" data-sticky-container="">
+<header class="clearfix page-header" data-btm-anchor="main:bottom" data-options="marginTop:0;" data-sticky="" data-sticky-on="small" data-top-anchor="main:top" role="banner" style="width:100%">
+<div class="contents">
+<div class="block-tony-branding">
+<a class="site-logo" href="/" rel="home" title="Home">
+<img alt="Princeton University" src="/themes/custom/tony/logo.svg"/>
+</a>
+</div>
+<button aria-label="Toggle Menu" class="toggle-main-menu">
+<!-- Screen readers will see "close" -->
+<span class="show-for-sr">Toggle subitems</span>
+<!-- Visual users will see the X, but not the "Close" text -->
+<span aria-hidden="true" class="menu-icon"></span>
+<span aria-hidden="true" class="close-icon"></span>
+</button>
+<nav class="menu-container" id="main-menu" role="navigation">
+<div>
+<nav aria-labelledby="block-tony-main-menu-menu" class="menu--main block--main-navigation" data-block-plugin-id="system_menu_block:main" id="block-tony-main-menu" role="navigation">
+<h2 aria-hidden="true" class="visually-hidden" id="block-tony-main-menu-menu">Main navigation</h2>
+<ul class="menu main-menu vertical xmedium-horizontal" role="menubar">
+<li class="menu-item level-0 menu-item--expanded" role="menuitem">
+<a data-drupal-link-system-path="node/126" href="/meet-princeton" role="menuitem">Meet Princeton</a>
+<button class="toggleparent" type="button">
+<!-- Screen readers will see "close" -->
+<span class="show-for-sr">Toggle sub-items</span>
+<!-- Visual users will see the X, but not the "Close" text -->
+<span aria-hidden="true" class="plusminus"></span>
+</button>
+<ul class="menu vertical first-sub" role="menu">
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20346" href="/meet-princeton/service-humanity" role="menuitem">In Service of Humanity</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/54486" href="/meet-princeton/facts-figures" role="menuitem">Facts &amp; Figures</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20176" href="/meet-princeton/history" role="menuitem">History</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/93986" href="/meet-princeton/honors-awards" role="menuitem">Honors &amp; Awards</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20181" href="/meet-princeton/contact-us" role="menuitem">Contact Us</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20531" href="/meet-princeton/visit-us" role="menuitem">Visit Us</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20351" href="/meet-princeton/our-faculty" role="menuitem">Our Faculty</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20356" href="/meet-princeton/our-students" role="menuitem">Our Students</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20361" href="/meet-princeton/our-alumni" role="menuitem">Our Alumni</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20256" href="/meet-princeton/our-staff" role="menuitem">Our Staff</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/172146" href="/meet-princeton/our-leadership" role="menuitem">Our Leadership</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/252886" href="/meet-princeton/academic-freedom-and-free-expression" role="menuitem">Academic Freedom and Free Expression</a>
+</li>
+</ul>
+</li>
+<li class="menu-item level-0 menu-item--expanded" role="menuitem">
+<a data-drupal-link-system-path="node/46" href="/academics" role="menuitem">Academics</a>
+<button class="toggleparent" type="button">
+<!-- Screen readers will see "close" -->
+<span class="show-for-sr">Toggle sub-items</span>
+<!-- Visual users will see the X, but not the "Close" text -->
+<span aria-hidden="true" class="plusminus"></span>
+</button>
+<ul class="menu vertical first-sub" role="menu">
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/76" href="/academics/studying-princeton" role="menuitem">Studying at Princeton</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20166" href="/academics/library" role="menuitem">Library</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="academics/areas-of-study" href="/academics/areas-of-study" role="menuitem">Areas of Study</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="academics/areas-of-study/humanities" href="/academics/areas-of-study/humanities" role="menuitem">Humanities</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="academics/areas-of-study/social-sciences" href="/academics/areas-of-study/social-sciences" role="menuitem">Social Sciences</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="academics/areas-of-study/engineering" href="/academics/areas-of-study/engineering" role="menuitem">Engineering</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="academics/areas-of-study/natural-sciences" href="/academics/areas-of-study/natural-sciences" role="menuitem">Natural Sciences</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20381" href="/academics/advising" role="menuitem">Advising</a>
+</li>
+<li class="menu-item level-1">
+<a href="https://registrar.princeton.edu/academic-calendar/" role="menuitem">Academic Calendar<span class="arrow"></span></a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/54066" href="/academics/course-tools" role="menuitem">Course Tools</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20161" href="/academics/learning-abroad" role="menuitem">Learning Abroad</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20391" href="/academics/career-development" role="menuitem">Career Development</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20376" href="/academics/continuing-education" role="menuitem">Continuing Education</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20366" href="/academics/innovative-learning" role="menuitem">Innovative Learning</a>
+</li>
+</ul>
+</li>
+<li class="menu-item level-0 menu-item--expanded" role="menuitem">
+<a data-drupal-link-system-path="node/51" href="/research" role="menuitem">Research</a>
+<button class="toggleparent" type="button">
+<!-- Screen readers will see "close" -->
+<span class="show-for-sr">Toggle sub-items</span>
+<!-- Visual users will see the X, but not the "Close" text -->
+<span aria-hidden="true" class="plusminus"></span>
+</button>
+<ul class="menu vertical first-sub" role="menu">
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20396" href="/research/engineering-and-applied-science" role="menuitem">Engineering &amp; Applied Science</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20401" href="/research/humanities" role="menuitem">Humanities</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20406" href="/research/natural-sciences" role="menuitem">Natural Sciences</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20411" href="/research/social-sciences" role="menuitem">Social Sciences</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20421" href="/research/interdisciplinary-approach" role="menuitem">Interdisciplinary Approach</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/94976" href="/research/office-dean-research" role="menuitem">Dean for Research Office</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20416" href="/research/external-partnerships" role="menuitem">External Partnerships</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/21111" href="/research/facilities-labs" role="menuitem">Facilities &amp; Labs</a>
+</li>
+</ul>
+</li>
+<li class="menu-item level-0 menu-item--expanded" role="menuitem">
+<a data-drupal-link-system-path="node/56" href="/one-community" role="menuitem">One Community</a>
+<button class="toggleparent" type="button">
+<!-- Screen readers will see "close" -->
+<span class="show-for-sr">Toggle sub-items</span>
+<!-- Visual users will see the X, but not the "Close" text -->
+<span aria-hidden="true" class="plusminus"></span>
+</button>
+<ul class="menu vertical first-sub" role="menu">
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20436" href="/one-community/lifelong-connections" role="menuitem">Lifelong Connections</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20441" href="/one-community/student-life" role="menuitem">Student Life</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20446" href="/one-community/arts-culture" role="menuitem">Arts &amp; Culture</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20451" href="/one-community/athletics" role="menuitem">Athletics</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20456" href="/one-community/living-princeton-nj" role="menuitem">Living in Princeton, N.J.</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20461" href="/one-community/housing-dining" role="menuitem">Housing &amp; Dining</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20466" href="/one-community/activities-organizations" role="menuitem">Activities &amp; Organizations</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20471" href="/one-community/cultural-affinity-groups" role="menuitem">Cultural &amp; Affinity Groups</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20476" href="/one-community/health-wellness" role="menuitem">Health &amp; Wellness</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20481" href="/one-community/religious-life" role="menuitem">Religious Life</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20486" href="/one-community/serving-public-good" role="menuitem">Serving the Public Good</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20491" href="/one-community/families" role="menuitem">Families</a>
+</li>
+</ul>
+</li>
+<li class="menu-item level-0 menu-item--expanded" role="menuitem">
+<a data-drupal-link-system-path="node/61" href="/admission-aid" role="menuitem">Admission &amp; Aid</a>
+<button class="toggleparent" type="button">
+<!-- Screen readers will see "close" -->
+<span class="show-for-sr">Toggle sub-items</span>
+<!-- Visual users will see the X, but not the "Close" text -->
+<span aria-hidden="true" class="plusminus"></span>
+</button>
+<ul class="menu vertical first-sub" role="menu">
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20496" href="/admission-aid/affordable-all" role="menuitem">Affordable for All</a>
+</li>
+<li class="menu-item level-1">
+<a href="https://admission.princeton.edu/cost-aid" role="menuitem">About Financial Aid<span class="arrow"></span></a>
+</li>
+<li class="menu-item level-1">
+<a href="https://finaid.princeton.edu" role="menuitem">Current Undergraduate Financial Aid<span class="arrow"></span></a>
+</li>
+<li class="menu-item level-1">
+<a href="https://admission.princeton.edu" role="menuitem">Undergraduate Admission<span class="arrow"></span></a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20501" href="/admission-aid/graduate-admission" role="menuitem">Graduate Admission</a>
+</li>
+<li class="menu-item level-1">
+<a data-drupal-link-system-path="node/20506" href="/admission-aid/international-students" role="menuitem">For International Students</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<nav aria-labelledby="block-utilitymenu-menu" class="menu--menu-toolbar" data-block-plugin-id="system_menu_block:menu-toolbar" id="block-utilitymenu" role="navigation">
+<h2 class="visually-hidden" id="block-utilitymenu-menu">Utility menu</h2>
+<ul class="menu utility-menu vertical xmedium-horizontal clearfix" role="menubar">
+<li class="menu-item">
+<a data-drupal-link-system-path="news" href="/news" role="menuitem">News</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/20286" href="/events" role="menuitem">Events</a>
+</li>
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/21131" href="/meet-princeton/work-princeton" role="menuitem">Work at Princeton</a><span aria-hidden="true" class="dropcarat"></span>
+<ul class="menu vertical is-dropdown-submenu" role="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/20736" href="/work/benefits-services" role="menuitem">Services &amp; Resources</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/20191" href="/work/work-life-balance" role="menuitem">Work-Life Balance</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--expanded">
+<a data-drupal-link-system-path="node/20266" href="/links/students" role="menuitem">Links for</a><span aria-hidden="true" class="dropcarat"></span>
+<ul class="menu vertical is-dropdown-submenu" role="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/20266" href="/links/students" role="menuitem">Students</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/20186" href="/links/faculty-staff" role="menuitem">Faculty &amp; Staff</a>
+</li>
+</ul>
+</li>
+<li class="menu-item">
+<a href="http://alumni.princeton.edu" role="menuitem">Alumni<span class="arrow"></span></a>
+</li>
+<li class="menu-item">
+<a href="https://alumni.princeton.edu/give" role="menuitem">Giving<span class="arrow"></span></a>
+</li>
+</ul>
+</nav>
+</div>
+</nav>
+<form accept-charset="UTF-8" action="/search" id="pu-header-search" method="GET">
+<div class="js-form-item form-item js-form-type-search form-item-search js-form-item-search form-no-label">
+<input aria-label="Search Sites &amp; People" autocomplete="off" class="form-search" data-drupal-selector="edit-search" id="header-search" maxlength="128" name="search" size="15" type="search" value=""/>
+<label for="header-search">Search Sites &amp; People</label>
+<button aria-label="Close search" class="close-button" type="button">
+<span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" id="header-edit-actions">
+<input class="button js-form-submit form-submit" data-drupal-selector="header-edit-submit" id="header-edit-submit" type="submit" value="Submit search"/>
+</div>
+</form>
+</div>
+</header>
+</div>
+<main class="main node-princeton-university-privacy-notice" id="main" role="main">
+<a id="main-content" name="main-content"></a>
+<section class="clearfix">
+<div>
+<div class="hidden" data-drupal-messages-fallback=""></div>
+<div class="block__wrapper" data-block-plugin-id="system_main_block" id="block-tony-content">
+<article about="/privacy-notice" class="node node--type-chaptered node--view-mode-full" role="article">
+<div class="image-cover-container">
+<div class="field field--name-field-chaptered-cover-image field--type-image field--label-hidden field__item"> <img alt="Dormitory facade" sizes="100vw" src="/sites/default/files/styles/1x_full_2x_half_crop/public/images/2018/10/20181003_CLDJA_023.jpg?itok=o_CZVGUN" srcset="/sites/default/files/styles/third_1x_crop/public/images/2018/10/20181003_CLDJA_023.jpg?itok=d0a6oDDq 640w, /sites/default/files/styles/half_1x_crop/public/images/2018/10/20181003_CLDJA_023.jpg?itok=PSMiWFSt 960w, /sites/default/files/styles/half_16_9_1440/public/images/2018/10/20181003_CLDJA_023.jpg?itok=_d8YLrzo 1440w, /sites/default/files/styles/1x_full_2x_half_crop/public/images/2018/10/20181003_CLDJA_023.jpg?itok=o_CZVGUN 1920w, /sites/default/files/styles/crop_2048_ipad/public/images/2018/10/20181003_CLDJA_023.jpg?itok=FJU-5ZO_ 2048w, /sites/default/files/styles/full_2x_crop/public/images/2018/10/20181003_CLDJA_023.jpg?itok=xJPDPWea 2880w" typeof="foaf:Image"/>
+</div>
+<div class="image-caption-overlay gradient">
+<div class="image-cover-text chaptered">
+<h1>
+<span>Princeton University Privacy Notice</span>
+</h1>
+</div>
+</div>
+</div>
+<div class="row chaptered-content magellan-container content-container">
+<div class="columns small-12 medium-3 magellan" data-sticky-container="">
+<nav class="sticky" data-anchor="chaptered-content" data-check-every="5" data-margin-top="7" data-sticky="" data-sticky-on="medium">
+<ul class="vertical menu" data-bar-offset="200" data-magellan="" data-offset="200">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#links-to-other-sites">Links to Other Sites</a></li>
+<li><a href="#collection-of-personal-information">Collection of Personal Information</a></li>
+<li><a href="#site-analytics">Site Analytics</a></li>
+<li><a href="#cookies-beacons">Cookies &amp; Beacons</a></li>
+<li><a href="#use-of-log-data">Use of Log Data</a></li>
+<li><a href="#forms-comments-and-social-sharing">Forms, Comments and Social Sharing</a></li>
+<li><a href="#monitoring-of-electronic-communications">Monitoring of Electronic Communications</a></li>
+<li><a href="#university-use-of-information">University Use of Information</a></li>
+<li><a href="#third-party-use-of-information">Third Party Use of Information</a></li>
+<li><a href="#security-retention-and-disposition-of-your-information">Security, Retention and Disposition of Your Information</a></li>
+<li><a href="#information-for-data-subjects-in-the-european-union">Information for Data Subjects in the European Union</a></li>
+<li><a href="#updates-to-this-policy">Updates to This Policy</a></li>
+</ul>
+</nav>
+</div>
+<div class="columns small-12 medium-9" id="chaptered-content">
+<div>
+<div class="paragraph clearfix constrain row paragraph--type--chapter paragraph--view-mode--default">
+<h2 class="columns small-12 large-4 xlarge-3 xxlarge-4 xxxlarge-3" data-magellan-target="overview" id="overview">Overview</h2>
+<div class="columns small-12 large-8 xlarge-9 xxlarge-8 xxxlarge-9 float-right"><p>This Privacy Notice applies to all Princeton University (the “University” or “we”) owned websites and apps, as well as electronic communications involving the use of University systems and/or networks, unless a different notice is provided.</p>
+<p>The University reserves the right to modify this Privacy Notice at any time.</p></div>
+</div>
+<div class="paragraph clearfix constrain row paragraph--type--chapter paragraph--view-mode--default">
+<h2 class="columns small-12 large-4 xlarge-3 xxlarge-4 xxxlarge-3" data-magellan-target="links-to-other-sites" id="links-to-other-sites">Links to Other Sites</h2>
+<div class="columns small-12 large-8 xlarge-9 xxlarge-8 xxxlarge-9 float-right"><p>Some University websites may contain links to external websites not owned or controlled by the University. The University is not responsible for the privacy practices or the content of such websites.</p></div>
+</div>
+<div class="paragraph clearfix constrain row paragraph--type--chapter paragraph--view-mode--default">
+<h2 class="columns small-12 large-4 xlarge-3 xxlarge-4 xxxlarge-3" data-magellan-target="collection-of-personal-information" id="collection-of-personal-information">Collection of Personal Information</h2>
+<div class="columns small-12 large-8 xlarge-9 xxlarge-8 xxxlarge-9 float-right"><p>Personal information is any information that personally identifies you or from which you could be identified. This may include information related to you that can be identified, directly or indirectly, by reference to an identifier such as an identification number, location data, an online identifier or to one or more factors specific to your physical, physiological, genetic, mental, economic, cultural, or social identity.</p>
+<p>The University collects personal information from you from a variety or sources, including from you directly (e.g. when you contact us, sign up for an account, complete a form online) and information we generate about you in the course of our relationship with you (e.g. information collected from cookies). By using the website, you consent to the collection and use of your personal information as described in this Privacy Notice.</p></div>
+</div>
+<div class="paragraph clearfix constrain row paragraph--type--chapter paragraph--view-mode--default">
+<h2 class="columns small-12 large-4 xlarge-3 xxlarge-4 xxxlarge-3" data-magellan-target="site-analytics" id="site-analytics">Site Analytics</h2>
+<div class="columns small-12 large-8 xlarge-9 xxlarge-8 xxxlarge-9 float-right"><p>The University collects data about how users interact with websites and applications. This information is collected by third-party analytics providers on behalf of the University, and is used to evaluate and improve our websites and communication initiatives. </p></div>
+</div>
+<div class="paragraph clearfix constrain row paragraph--type--chapter paragraph--view-mode--default">
+<h2 class="columns small-12 large-4 xlarge-3 xxlarge-4 xxxlarge-3" data-magellan-target="cookies-beacons" id="cookies-beacons">Cookies &amp; Beacons</h2>
+<div class="columns small-12 large-8 xlarge-9 xxlarge-8 xxxlarge-9 float-right"><p>The University’s websites make use of persistent cookies to save preferences and temporary (session) cookies to track logins and allow for site analytics. Note that logged in users are individually identifiable to the web server through these cookies.</p>
+<p>You can prevent the setting of cookies or selectively accept cookies by adjusting the preferences in your browser (please refer to your browser’s help function to learn more about cookie controls). If you turn off cookies, you may not be able to log in, and some web pages may not display properly.</p>
+<p>A beacon is code that tracks how users interact with our websites. We use this information to improve our websites and online services, tailor our websites and online services to your likely interests, and conduct market research.</p>
+<p>You may be able to turn off scripting functionality, such as JavaScript, within your browser (please refer to your browser’s help function). If you turn off JavaScript, there may be some features of our websites that will not be available to you, and some web pages may not display properly.</p></div>
+</div>
+<div class="paragraph clearfix constrain row paragraph--type--chapter paragraph--view-mode--default">
+<h2 class="columns small-12 large-4 xlarge-3 xxlarge-4 xxxlarge-3" data-magellan-target="use-of-log-data" id="use-of-log-data">Use of Log Data</h2>
+<div class="columns small-12 large-8 xlarge-9 xxlarge-8 xxxlarge-9 float-right"><p>University websites may collect personal information such as account names, netIDs, Internet Protocol (“IP”) addresses, browser characteristics and times and dates of connections.</p>
+<p>We may use log data to help diagnose problems with our server, administer our websites, analyze trends and track users’ use of websites to improve our websites, and to deliver customized and/or personalized content.</p></div>
+</div>
+<div class="paragraph clearfix constrain row paragraph--type--chapter paragraph--view-mode--default">
+<h2 class="columns small-12 large-4 xlarge-3 xxlarge-4 xxxlarge-3" data-magellan-target="forms-comments-and-social-sharing" id="forms-comments-and-social-sharing">Forms, Comments and Social Sharing</h2>
+<div class="columns small-12 large-8 xlarge-9 xxlarge-8 xxxlarge-9 float-right"><p>If you share personal information, including photographs, on any University website, social network, blog, or other such forum, please be aware that any information you submit can be read, viewed, collected, or used by other users, and could be used to contact you, send you unsolicited messages, or for purposes over which neither you nor the University have control. The University is not responsible for the personal information you choose to provide in these forums.</p></div>
+</div>
+<div class="paragraph clearfix constrain row paragraph--type--chapter paragraph--view-mode--default">
+<h2 class="columns small-12 large-4 xlarge-3 xxlarge-4 xxxlarge-3" data-magellan-target="monitoring-of-electronic-communications" id="monitoring-of-electronic-communications">Monitoring of Electronic Communications</h2>
+<div class="columns small-12 large-8 xlarge-9 xxlarge-8 xxxlarge-9 float-right"><p>The University monitors and scans network traffic and electronic communications involving the use of University systems or networks to preserve the security and integrity of University systems and networks.</p></div>
+</div>
+<div class="paragraph clearfix constrain row paragraph--type--chapter paragraph--view-mode--default">
+<h2 class="columns small-12 large-4 xlarge-3 xxlarge-4 xxxlarge-3" data-magellan-target="university-use-of-information" id="university-use-of-information">University Use of Information</h2>
+<div class="columns small-12 large-8 xlarge-9 xxlarge-8 xxxlarge-9 float-right"><p>Your personal information will be used for administrative, educational and/or research purposes and in furtherance of the University’s mission. The use of your personal information is necessary for the legitimate interest of the University in carrying out its educational and research mission and performing University business, for complying with legal obligations, for protecting your or someone else’s vital interests, and/or for the public interest. </p></div>
+</div>
+<div class="paragraph clearfix constrain row paragraph--type--chapter paragraph--view-mode--default">
+<h2 class="columns small-12 large-4 xlarge-3 xxlarge-4 xxxlarge-3" data-magellan-target="third-party-use-of-information" id="third-party-use-of-information">Third Party Use of Information</h2>
+<div class="columns small-12 large-8 xlarge-9 xxlarge-8 xxxlarge-9 float-right"><p>We do not sell the information we gather from individual visitors to our websites.</p>
+<p>We may disclose your information to third parties as follows:</p>
+<ul><li><strong>Consent:</strong> We may disclose your information to third parties if we have your consent to do so.</li>
+<li><strong>Service Providers:</strong> We may share your information with third parties that help us provide services and/or products to you, support our operations or to help fulfill the University’s obligations. </li>
+<li><strong>Required by Law:</strong> We may share your information with third parties to the extent we are required to do so by law, court order, subpoena or other legal processes.</li>
+<li><strong>De-Identified and Aggregate Information:</strong> We may use and disclose your information in anonymized or aggregate form without limitation.</li>
+</ul></div>
+</div>
+<div class="paragraph clearfix constrain row paragraph--type--chapter paragraph--view-mode--default">
+<h2 class="columns small-12 large-4 xlarge-3 xxlarge-4 xxxlarge-3" data-magellan-target="security-retention-and-disposition-of-your-information" id="security-retention-and-disposition-of-your-information">Security, Retention and Disposition of Your Information</h2>
+<div class="columns small-12 large-8 xlarge-9 xxlarge-8 xxxlarge-9 float-right"><p>The University implements appropriate technical, physical and organizational security measures designed to protect the personal information we process that ensure a level of security appropriate to the risks presented by the processing and the nature of the data to be protected. While we strive to protect your information, we cannot ensure or warrant the security of such information.</p>
+<p>Your information will be retained or disposed of by the University in accordance with its records management principles and policies.</p></div>
+</div>
+<div class="paragraph clearfix constrain row paragraph--type--chapter paragraph--view-mode--default">
+<h2 class="columns small-12 large-4 xlarge-3 xxlarge-4 xxxlarge-3" data-magellan-target="information-for-data-subjects-in-the-european-union" id="information-for-data-subjects-in-the-european-union">Information for Data Subjects in the European Union</h2>
+<div class="columns small-12 large-8 xlarge-9 xxlarge-8 xxxlarge-9 float-right"><p>Subject to certain limitations and conditions, you have certain rights regarding the processing of your personal information, including the right to request access, correct, delete, restrict or object to our processing of, or receive a portable copy of, your personal information. You may exercise these rights by contacting <a href="mailto:GDPR@princeton.edu">GDPR@princeton.edu</a>. You may also have a right to lodge a complaint with your local data protection or privacy regulator. </p>
+<p>Your personal information may be transferred to, stored and processed in, a country that is not regarded as providing the same level of protection for personal information as the laws of your home country. We have put in place appropriate safeguards (such as contractual commitments) in accordance with applicable legal requirements to provide adequate protections for your personal information. For more information about the safeguards which the University has in place in connection with this transfer, please contact <a href="mailto:infosec@princeton.edu">infosec@princeton.edu</a>.</p></div>
+</div>
+<div class="paragraph clearfix constrain row paragraph--type--chapter paragraph--view-mode--default">
+<h2 class="columns small-12 large-4 xlarge-3 xxlarge-4 xxxlarge-3" data-magellan-target="updates-to-this-policy" id="updates-to-this-policy">Updates to This Policy</h2>
+<div class="columns small-12 large-8 xlarge-9 xxlarge-8 xxxlarge-9 float-right"><p>We may update or change this policy at any time. Your continued use of this site after any such change indicates your acceptance of such changes.</p>
+<p>Last updated 12/12/19.</p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<footer class="page-footer">
+<div class="row">
+<div class="small-6 xmedium-3 columns">
+<div>
+<nav aria-labelledby="block-footergroup1-menu" class="menu--footer block--contact-links" data-block-plugin-id="system_menu_block:footer" id="block-footergroup1" role="navigation">
+<h2 aria-hidden="true" class="visually-hidden" id="block-footergroup1-menu">Contact links</h2>
+<ul class="menu vertical" role="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/20181" href="/meet-princeton/contact-us" role="menuitem">Contact Us</a>
+</li>
+<li class="menu-item">
+<a href="https://accessibility.princeton.edu/resources/accessibility-help" role="menuitem">Accessibility</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="search/people-advanced" href="/search/people-advanced" role="menuitem">Advanced People Search</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/20526" href="/news/media-inquiries" role="menuitem">Media Inquiries</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="contact/beta_feedback" href="/feedback" role="menuitem">Website Feedback</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="small-6 xmedium-3 columns">
+<div>
+<nav aria-labelledby="block-footergroup2-menu" class="menu--footer-2 block--visiting-links" data-block-plugin-id="system_menu_block:footer-2" id="block-footergroup2" role="navigation">
+<h2 aria-hidden="true" class="visually-hidden" id="block-footergroup2-menu">Visiting links</h2>
+<ul class="menu vertical" role="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/20531" href="/meet-princeton/visit-us" role="menuitem">Plan a Visit</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/20531" href="/meet-princeton/visit-us#campus-maps" role="menuitem">Maps &amp; Shuttles</a>
+</li>
+<li class="menu-item">
+<a href="http://www.goprincetontigers.com" role="menuitem">Varsity Athletics</a>
+</li>
+<li class="menu-item">
+<a href="http://giving.princeton.edu" role="menuitem">Giving to Princeton</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="small-6 xmedium-3 columns">
+<div>
+<nav aria-labelledby="block-footergroup3-menu" class="menu--footer-3 block--academic-links" data-block-plugin-id="system_menu_block:footer-3" id="block-footergroup3" role="navigation">
+<h2 aria-hidden="true" class="visually-hidden" id="block-footergroup3-menu">Academic links</h2>
+<ul class="menu vertical" role="menu">
+<li class="menu-item">
+<a href="http://library.princeton.edu" role="menuitem">Library</a>
+</li>
+<li class="menu-item">
+<a href="https://registrar.princeton.edu/academic-calendar/" role="menuitem">Academic Calendar</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/20266" href="/links/students" role="menuitem">Student Links</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/20186" href="/links/faculty-staff" role="menuitem">Faculty &amp; Staff Links</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="small-6 xmedium-3 columns">
+<div>
+<nav aria-labelledby="block-footersocialmedia-menu" class="menu--footer-sm block--footer-social-media" data-block-plugin-id="system_menu_block:footer-sm" id="block-footersocialmedia" role="navigation">
+<h2 aria-hidden="true" class="visually-hidden" id="block-footersocialmedia-menu">Footer social media</h2>
+<ul class="menu vertical" role="menu">
+<li class="menu-item sprite-before facebook">
+<a href="https://www.facebook.com/princetonu" role="menuitem">Facebook</a>
+</li>
+<li class="menu-item sprite-before twitter">
+<a href="https://twitter.com/princeton" role="menuitem">Twitter</a>
+</li>
+<li class="menu-item sprite-before instagram">
+<a href="https://www.instagram.com/princeton/" role="menuitem">Instagram</a>
+</li>
+<li class="menu-item sprite-before snapchat">
+<a href="https://www.snapchat.com/add/princetonu" role="menuitem">Snapchat</a>
+</li>
+<li class="menu-item sprite-before linkedin">
+<a href="https://www.linkedin.com/school/157313/" role="menuitem">LinkedIn</a>
+</li>
+<li class="menu-item sprite-before youtube">
+<a href="https://www.youtube.com/princeton" role="menuitem">YouTube</a>
+</li>
+<li class="menu-item sprite-before social-media-directory">
+<a href="http://socialmedia.princeton.edu/accounts" role="menuitem">Social Media Directory</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="midfooter row">
+<div class="columns">
+<strong>Equal Opportunity and Nondiscrimination at Princeton University:</strong> Princeton University believes that commitment to principles of fairness and respect for all is favorable to the free and open exchange of ideas, and the University seeks to reach out as widely as possible in order to attract the ablest individuals as students, faculty, and staff. In applying this policy, the University is committed to nondiscrimination on the basis of personal beliefs or characteristics such as political views, religion, national or ethnic origin, race, color, sex, sexual orientation, gender identity or expression, pregnancy, age, marital or domestic partnership status, veteran status, disability, genetic information and/or other characteristics protected by applicable law in any phase of its education or employment programs or activities. In addition, pursuant to Title IX of the Education Amendments of 1972 and supporting regulations, Princeton does not discriminate on the basis of sex in the education programs or activities that it operates; this extends to admission and employment. Inquiries about the application of Title IX and its supporting regulations may be directed to the Assistant Secretary for Civil Rights, Office for Civil Rights, U.S. Department of Education or to the University's Sexual Misconduct/Title IX Coordinator. See Princeton’s full <a href="https://rrr.princeton.edu/eop">Equal Opportunity Policy and Nondiscrimination Statement</a>.
+            </div>
+</div>
+<div class="subfooter row" typeof="schema: Organization">
+<div class="subfooter-first small-6 medium-4 large-5 columns">
+<a href="http://www.princeton.edu"><img alt="" src="/themes/custom/tony/images/logo-white.svg"/><span class="show-for-sr" property="schema:name">Princeton University</span></a>
+</div>
+<div class="subfooter-second small-6 medium-8 large-7 columns">
+<div class="row">
+<div class="small-12 medium-5 large-4 columns address">
+<div property="schema: address" typeof="PostalAddress">
+<span property="addressLocality">Princeton, NJ</span>
+<span property="schema: postalCode">08544</span>
+</div>
+<div>Operator: <span property="telephone">(609) 258-3000</span></div>
+</div>
+<div class="small-12 medium-7 large-8 columns text-right">
+<div class="copyright">
+                        © 2022 The Trustees of Princeton University
+                      </div>
+<div>
+<nav aria-labelledby="block-subfooterlinks-menu" class="menu--subfooter-links block--subfooter-links" data-block-plugin-id="system_menu_block:subfooter-links" id="block-subfooterlinks" role="navigation">
+<h2 aria-hidden="true" class="visually-hidden" id="block-subfooterlinks-menu">Subfooter links</h2>
+<ul class="menu float-right" role="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/20201" href="/meet-princeton/copyright-infringement" role="menuitem">Copyright Infringement</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/174186" href="/privacy-notice" role="menuitem">Privacy Notice</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer></div>
+
+
+<!-- DO NOT REMOVE this comment. The UltraDNS service tests for the following string to confirm that the site is available: ultradns-test-string -->
+<script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/174186","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"ajax":[],"user":{"uid":0,"permissionsHash":"fdd3a7e2d99481993235bdcf7649ecbbb79b084fad1707ca75a8c53d95d3980e"}}</script>
+<script src="/sites/default/files/js/js_QLTZlbHE4dai2IYXvkAUZH4-MguQ55-HAcdPP5xNvwo.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"465817224","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":353,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

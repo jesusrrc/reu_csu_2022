@@ -1,0 +1,611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Alpha &amp; Omega Semiconductor</title>
+<link href="/rss" rel="alternate" title="news and events" type="application/rss+xml"/>
+<link href="/css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<link href="/css/reset.css" rel="stylesheet" type="text/css"/>
+<link href="/css/aos.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/css/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 6]><link rel="stylesheet" href="/css/ie6.css" type="text/css" media="screen, projection"><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/css/ie7.css" type="text/css" media="screen, projection"><![endif]-->
+<script src="/js/jquery.min.js" type="text/javascript"></script>
+<script src="/js/jquery.fancybox.js" type="text/javascript"></script>
+<script src="/js/jquery.mousewheel.js" type="text/javascript"></script>
+<script src="/js/jquery-ui.js" type="text/javascript"></script>
+<script src="/js/jquery.maphilight.min.js" type="text/javascript"></script>
+<script src="/js/cufon-yui.js" type="text/javascript"></script>
+<script src="/js/Myriad_Pro.js" type="text/javascript"></script>
+<script src="/js/Aller.js" type="text/javascript"></script>
+<script src="/js/fonts.js" type="text/javascript"></script>
+<script src="/js/menus.js" type="text/javascript"></script>
+<script src="/js/AC_RunActiveContent.js" type="text/javascript"></script>
+<script src="/js/player.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="header">
+<div class="container">
+<a class="home" href="/"><img src="/images/logo.png"/></a>
+<div class="right">
+<ul class="language">
+<li>English</li>
+<li class="last"><a href="/zh/privacy">简体中文</a></li>
+</ul>
+<ul class="menu">
+<li><a class="myriad" href="/products">Products</a></li>
+<li><a class="myriad" href="/applications">Applications</a></li>
+<li><a class="myriad" href="/quality">Quality</a></li>
+<li><a class="myriad" href="http://investor.aosmd.com">Investors</a></li>
+<li><a class="myriad" href="/careers">Careers</a></li>
+<li><a class="myriad" href="/corporate_responsibility">Corp Resp</a></li>
+<li><a class="myriad" href="/about">About AOS</a></li>
+<li class="last"><a class="myriad" href="/contact">Contact Us</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="subheader">
+<div class="container">
+<h2 class="tagline">Powering a Greener Future ™</h2>
+</div>
+</div>
+<a id="pagetop" name="pagetop"></a>
+<div class="container">
+<div class="inner-left">
+<h2>Search Products By</h2>
+<ul class="box collapsible">
+<li class="item top expanded"><a href="#">Enter Part Number</a><div> </div></li>
+<li class="form" style="display:block">
+<form action="/search" method="get">
+<input class="inactive" id="pn" name="pn" title="Enter Part Number..." type="text" value="Enter Part Number..."/>
+<span class="mysearchbtn" href="#" id="submit-partnumber">Search</span>
+</form>
+</li>
+<li class="item"><a href="#">Parametric Search</a></li>
+<li class="form">
+<form action="/filter" id="parametric" method="get">
+<input id="c" name="c" type="hidden" value=""/>
+<input id="sc" name="sc" type="hidden" value=""/>
+<div class="dropdown" title="Select Category...">Select Category...</div>
+<ul class="options" id="c_options">
+<li><a href="#" rel="c" title="lv-mosfets">LV MOSFETs (12V - 30V)</a></li>
+<li><a href="#" rel="c" title="mv-mosfets">MV MOSFETs (40V - 400V)</a></li>
+<li><a href="#" rel="c" title="hv-mosfets">HV MOSFETs (500V -1000V)</a></li>
+<li><a href="#" rel="c" title="p-ch-mosfets">P-Channel MOSFETs (8V - 60V)</a></li>
+<li><a href="#" rel="c" title="igbts">IGBTs</a></li>
+<li><a href="#" rel="c" title="power-ics">Power ICs</a></li>
+<li><a href="#" rel="c" title="ipm">IPMs</a></li>
+<li><a href="#" rel="c" title="tvs">TVS</a></li>
+<li><a href="#" rel="c" title="gan">Wide Bandgap (SiC/GaN)</a></li>
+<li><a href="#" rel="c" title="hvic">HVICs</a></li>
+</ul>
+<div class="dropdown" title="Select Subcategory...">Select Subcategory...</div>
+<ul class="options" id="sc_options">
+</ul>
+<span class="mysearchbtn" href="#" id="submit-parametric">Show</span>
+</form>
+<script type="text/javascript">
+            	function getTypes(){
+	            	var prds=[];
+	            	var tmpC={};
+	            	tmpC.name="lv-mosfets";
+	            	tmpC.title="LV MOSFETs (12V - 30V)";
+	          		var tmpScs=[];
+          			var tmpSc={};
+          			tmpSc.name="single";
+          			tmpSc.title="Single";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="dual";
+          			tmpSc.title="Dual";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="complementary";
+          			tmpSc.title="Complementary";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="common-drain";
+          			tmpSc.title="Common Drain";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="asymmetric";
+          			tmpSc.title="Asymmetric";
+          			tmpScs.push(tmpSc);
+	          		tmpC.types=tmpScs;
+	          		prds.push(tmpC);
+	            	var tmpC={};
+	            	tmpC.name="mv-mosfets";
+	            	tmpC.title="MV MOSFETs (40V - 400V)";
+	          		var tmpScs=[];
+          			var tmpSc={};
+          			tmpSc.name="single";
+          			tmpSc.title="Single";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="dual";
+          			tmpSc.title="Dual";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="complementary";
+          			tmpSc.title="Complementary";
+          			tmpScs.push(tmpSc);
+	          		tmpC.types=tmpScs;
+	          		prds.push(tmpC);
+	            	var tmpC={};
+	            	tmpC.name="hv-mosfets";
+	            	tmpC.title="HV MOSFETs (500V -1000V)";
+	          		var tmpScs=[];
+          			var tmpSc={};
+          			tmpSc.name="single";
+          			tmpSc.title="Single";
+          			tmpScs.push(tmpSc);
+	          		tmpC.types=tmpScs;
+	          		prds.push(tmpC);
+	            	var tmpC={};
+	            	tmpC.name="p-ch-mosfets";
+	            	tmpC.title="P-Channel MOSFETs (8V - 60V)";
+	          		var tmpScs=[];
+          			var tmpSc={};
+          			tmpSc.name="single";
+          			tmpSc.title="Single";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="dual";
+          			tmpSc.title="Dual";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="common-drain";
+          			tmpSc.title="Common Drain";
+          			tmpScs.push(tmpSc);
+	          		tmpC.types=tmpScs;
+	          		prds.push(tmpC);
+	            	var tmpC={};
+	            	tmpC.name="igbts";
+	            	tmpC.title="IGBTs";
+	          		var tmpScs=[];
+          			var tmpSc={};
+          			tmpSc.name="igbt_ap_diode";
+          			tmpSc.title="IGBT with Anti-Parallel Diode";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="igbt_discrete";
+          			tmpSc.title="IGBT Discrete";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="igbt_frd";
+          			tmpSc.title="Fast Recovery Diodes (FRD)";
+          			tmpScs.push(tmpSc);
+	          		tmpC.types=tmpScs;
+	          		prds.push(tmpC);
+	            	var tmpC={};
+	            	tmpC.name="power-ics";
+	            	tmpC.title="Power ICs";
+	          		var tmpScs=[];
+          			var tmpSc={};
+          			tmpSc.name="ezbuck-dc-dc-buck-regulators";
+          			tmpSc.title="EZBuck&#153;: DC-DC Buck Regulators";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="buck-module";
+          			tmpSc.title="DC-DC Buck Module";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="ezpower-smart-load-switches";
+          			tmpSc.title="EZPower&#153;: Smart Load Switches";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="drmos";
+          			tmpSc.title="DrMOS";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="sps";
+          			tmpSc.title="Smart Power Stage (SPS)";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="acdc";
+          			tmpSc.title="AC-DC Solutions";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="ecpower";
+          			tmpSc.title="ECPower&#153; Type C Protection Switch";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="type_c_pd_controller";
+          			tmpSc.title="USB Type-C PD Controller";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="half-bridge-driver";
+          			tmpSc.title="Half-Bridge Driver (30V-60V)";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="efuse";
+          			tmpSc.title="eFuse";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="digital-multi";
+          			tmpSc.title="Digital Multiphase Controllers";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="hybrid-multi";
+          			tmpSc.title="Hybrid Multiphase Controllers";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="active-bridge";
+          			tmpSc.title="Active Bridge Driver";
+          			tmpScs.push(tmpSc);
+	          		tmpC.types=tmpScs;
+	          		prds.push(tmpC);
+	            	var tmpC={};
+	            	tmpC.name="ipm";
+	            	tmpC.title="IPMs";
+	          		var tmpScs=[];
+          			var tmpSc={};
+          			tmpSc.name="ipm3";
+          			tmpSc.title="IPM3";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="ipm5";
+          			tmpSc.title="IPM5";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="ipm7";
+          			tmpSc.title="IPM7";
+          			tmpScs.push(tmpSc);
+	          		tmpC.types=tmpScs;
+	          		prds.push(tmpC);
+	            	var tmpC={};
+	            	tmpC.name="tvs";
+	            	tmpC.title="TVS";
+	          		var tmpScs=[];
+          			var tmpSc={};
+          			tmpSc.name="esd-tvs";
+          			tmpSc.title="ESD TVS";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="high-current-surge-tvs";
+          			tmpSc.title="High Current Surge TVS";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="high-power-surge-tvs";
+          			tmpSc.title="High Power Surge TVS";
+          			tmpScs.push(tmpSc);
+	          		tmpC.types=tmpScs;
+	          		prds.push(tmpC);
+	            	var tmpC={};
+	            	tmpC.name="gan";
+	            	tmpC.title="Wide Bandgap (SiC/GaN)";
+	          		var tmpScs=[];
+          			var tmpSc={};
+          			tmpSc.name="sic_mosfet";
+          			tmpSc.title="Silicon Carbide (SiC) MOSFETs";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="sic_diode";
+          			tmpSc.title="Silicon Carbide (SiC) Diodes";
+          			tmpScs.push(tmpSc);
+          			var tmpSc={};
+          			tmpSc.name="gan-fets";
+          			tmpSc.title="Gallium Nitride (GaN) FETs";
+          			tmpScs.push(tmpSc);
+	          		tmpC.types=tmpScs;
+	          		prds.push(tmpC);
+	            	var tmpC={};
+	            	tmpC.name="hvic";
+	            	tmpC.title="HVICs";
+	          		var tmpScs=[];
+          			var tmpSc={};
+          			tmpSc.name="hvic-6-channel";
+          			tmpSc.title="6-Channel HVIC";
+          			tmpScs.push(tmpSc);
+	          		tmpC.types=tmpScs;
+	          		prds.push(tmpC);
+		          	return prds;
+		        }
+		        var productTypes=getTypes();
+            	jQuery('#c_options > li').click(function(){
+	   				var c = jQuery(this).children('a').html();
+					jQuery("#sc_options").prev('.dropdown').html("Loading, please wait...");
+                    jQuery('#sc_options').empty();
+                    jQuery('#sc').val("");
+                    var selectedCat=null;
+					for(i=0;i<productTypes.length;i++){
+						if (productTypes[i].name==jQuery(this).children('a').attr('title')){
+							selectedCat=productTypes[i];
+							break;
+						}
+					}
+					if (!selectedCat.name) {alert("category "+jQuery(this).children('a').attr('title')+" not found!");}
+  					jQuery('#sc_options').empty();
+					jQuery("#sc_options").prev('.dropdown').html("Select Subcategory");
+  					for (i=0; i<selectedCat.types.length; i++) {
+	   					jQuery('#sc_options').append('<li><a href="#" rel="sc" title="'+selectedCat.types[i].name+'">'+selectedCat.types[i].title+'</a></li>');
+	   				}
+
+	   				jQuery('#sc_options').unbind();
+
+	   				jQuery('#sc_options > li').mouseover(function() {
+						jQuery(this).addClass('hover');
+					});
+
+					jQuery('#sc_options > li').mouseout(function() {
+						if (!jQuery(this).hasClass('active')) jQuery(this).removeClass('hover');
+					});
+
+					jQuery('#sc_options > li').click(function(e) {
+						e.preventDefault();
+
+						jQuery('#'+jQuery(this).children('a').attr('rel')).val(jQuery(this).children('a').attr('title'));
+						jQuery(this).parent().children('li').removeClass('hover');
+						jQuery(this).parent().children('li').removeClass('active');
+						jQuery(this).addClass('hover');
+						jQuery(this).addClass('active');
+						jQuery(this).parent().prev('.dropdown').html(jQuery(this).children('a').html());
+
+					});
+
+	                if (selectedCat.length == 1) {
+	                    jQuery("#sc_options").prev('.dropdown').html(selectedCat.types[0].title);
+	                    jQuery('#sc').val(selectedCat.types[0].name);
+	                }
+
+				});
+               	jQuery('#sc_options > li').click(function(e) {
+					e.preventDefault();
+
+					jQuery('#'+jQuery(this).children('a').attr('rel')).val(jQuery(this).children('a').attr('title'));
+					jQuery(this).parent().children('li').removeClass('hover');
+					jQuery(this).parent().children('li').removeClass('active');
+					jQuery(this).addClass('hover');
+					jQuery(this).addClass('active');
+					jQuery(this).parent().prev('.dropdown').html(jQuery(this).children('a').html());
+
+					//document.location = '/products/'+jQuery('#c').val()+'/'+jQuery(this).children('a').attr('title');
+				});
+
+				jQuery('ul.filters > li > a').click(function(e){
+	   				e.preventDefault();
+
+	   				if (jQuery(this).parent('li').hasClass('set')) {
+	   					jQuery(this).parent('li').removeClass('set');
+	   					jQuery('#' + this.rel).hide();
+	   				}
+	   				else {
+	   					jQuery(this).parent('li').addClass('set');
+	   					jQuery('#' + this.rel).show();
+	   				}
+
+	   			});
+            </script>
+</li>
+<li class="item"><a href="#">Keyword</a><div> </div></li>
+<li class="form">
+<form action="/search" method="get">
+<input class="inactive" id="q" name="q" title="Enter Keyword..." type="text" value="Enter Keyword..."/>
+<span class="mysearchbtn" href="#" id="submit-keyword">Search</span>
+</form>
+</li>
+<li class="item"><a href="#">Cross Reference</a><div> </div></li>
+<li class="form">
+<form action="/search" id="cross_reference" method="get">
+<input id="brandQnamePath" name="brandQnamePath" type="hidden" value=""/>
+<div class="dropdown" title="Select Manufacturer...">Select Manufacturer...</div>
+<ul class="options" id="m_options">
+<li><a href="#" rel="crm" title="">Select Manufacturer</a></li>
+<li><a href="#" rel="crm" title="/app:company_home/cm:Website/cm:cross_reference/cm:Fairchild">Fairchild</a></li>
+<li><a href="#" rel="crm" title="/app:company_home/cm:Website/cm:cross_reference/cm:Infineon">Infineon</a></li>
+<li><a href="#" rel="crm" title="/app:company_home/cm:Website/cm:cross_reference/cm:ON_Semiconductor">ON Semiconductor</a></li>
+<li><a href="#" rel="crm" title="/app:company_home/cm:Website/cm:cross_reference/cm:Renesas">Renesas</a></li>
+<li><a href="#" rel="crm" title="/app:company_home/cm:Website/cm:cross_reference/cm:ST">ST</a></li>
+<li><a href="#" rel="crm" title="/app:company_home/cm:Website/cm:cross_reference/cm:Toshiba">Toshiba</a></li>
+<li><a href="#" rel="crm" title="/app:company_home/cm:Website/cm:cross_reference/cm:Vishay">Vishay</a></li>
+</ul>
+<input class="inactive" id="cpn" name="cpn" title="Enter Part Number..." type="text" value="Enter Part Number..."/>
+<span class="mysearchbtn" href="#" id="submit-cross">Search</span>
+</form>
+<script>
+			var url='/api/search?q=' + escape('PATH:"/app:company_home/cm:Website/cm:cross_reference/*/*"');
+   			jQuery(document).ready(function(){
+   			
+	 			jQuery('#cpn').autocomplete({
+				    source: function (request, response) {
+				        $.getJSON(url+escape(' AND +@cm\\:title:"*'+request.term+'*"')+'&limit=20', function (data) {
+				            response($.map(data.results, function (item) {
+				                return {
+				                    label: item['cm:name'],
+				                    value: item['cm:name']
+				                };
+				            }));
+				        });
+				    },
+				    minLength: 2,
+				    delay: 100
+				});
+
+	   			jQuery('#m_options > li').click(function(e){
+	   				e.preventDefault();
+	   				url = '/api/search?q=' + escape('+PATH:"'+jQuery(this).children('a').attr('title')+'/\*"');
+	   				jQuery('#brandQnamePath').val(jQuery(this).children('a').attr('title'));
+	   			});
+   			
+            	jQuery('#submit-parametric').click(function(){
+            		if (jQuery('#c').val()!='' && jQuery('#sc').val()!='') {
+	            		var link = '/filter/' + jQuery('#c').val() + '/' + jQuery('#sc').val();
+		            	document.location = link;
+	            	}else if (jQuery('#c').val()!='' && jQuery('#c').val().match(/mosfets/)) {
+	            		var link = '/filter/' + jQuery('#c').val();
+		            	document.location = link;
+	            	}
+            	});
+
+            	jQuery('#submit-partnumber').click(function(){
+            		var value = jQuery(this).parent('form').children('#pn').val();
+            		var title = jQuery(this).parent('form').children('#pn').attr('title');
+            		if (value!='' && value!=title) {
+            			jQuery(this).parent('form').submit();
+            		}
+            	});
+
+            	jQuery('#submit-keyword').click(function(){
+            		var value = jQuery(this).parent('form').children('#q').val();
+            		var title = jQuery(this).parent('form').children('#q').attr('title');
+            		if (value!='' && value!=title) {
+            			jQuery(this).parent('form').submit();
+            		}
+            	});
+
+            	jQuery('#submit-cross').click(function(){
+		    		var value = jQuery(this).parent('form').children('#cpn').val();
+					if (value!='Enter Part Number...'||jQuery('#brandQnamePath').val()!='') {
+		                if(value=='Enter Part Number...') jQuery(this).parent('form').children('#cpn').val('*');
+            			jQuery(this).parent('form').submit();
+            		}else{
+            		    alert("Choose a manufacturer if you are going to search for all parts or type something in the part input.");
+            		}
+            	});
+            });
+
+            </script>
+</li>
+</ul>
+<h2 class="underlined">Tools</h2>
+<ul class="tools">
+<li><a href="/packaging">Packaging</a></li>
+<li><a href="/media/ShortFormCatalog.pdf">Short Form Catalog (PDF)</a></li>
+<li><a href="/media/MOSFET_selector.xlsx">MOSFETs Selector Guide (Excel)</a></li>
+<li><a href="/media/IGBT_selector.xls">IGBTs Selector Guide (Excel)</a></li>
+<li><a href="/media/TVS_selector.xlsx">TVS Selector Guide (Excel)</a></li>
+<li><a href="/media/PIC Selection Guide.xlsx">PIC Selector Guide (Excel)</a></li>
+<li><a href="https:\/\/www.poweresim.com\/">PowerEsim</a></li>
+<li><a href="/media/EZBUCK Design Tool 20220610.xlsx">EZBuck Design Tool</a></li>
+</ul>
+<h2 class="underlined">Featured Product</h2>
+<p>
+<a class="inline" href="/res/news/news-article-1650995646242/1650995749486-AOS_204-205BL2_HR.jpg" target="_blank"><img src="/thumbnails/1650995749486-AOS_204-205BL2_HR_80x80.jpg"/></a>
+
+	Alpha and Omega Semiconductor Announces 2-in-1 Super Low Capacitance TVS for USB4.0 &amp; Thunderbolt 4.0 &amp; HDMI2.1 Protection
+
+	<a href="/res/news/news-article-1650995646242/AOZ8S204BL2-205BL2_PR.pdf" target="_blank">more »</a>
+</p>
+</div>
+<div class="body">
+<h1 class="aller">Privacy</h1>
+<p>Alpha and Omega Semiconductor (AOS) believes strongly in protecting the privacy of the personally identifiable information you share with us. We also believe it is important to inform you about how we will use your personal data, and to give you choices about how those data will be used. We encourage you to read this Privacy Policy carefully.</p>
+<h2>Browsing</h2>
+<p>When you visit and browse our website, we do not collect or store any personally identifiable information, such as your name, mailing address, email address, phone number or social security number. We do, however, log IP addresses for systems administration purposes to track a visitor’s session, which gives us an idea of which parts of our site you are visiting. We do not link IP addresses to any personally-identifying information. In other words, a visitor’s session is tracked, but the visitor’s identity remains anonymous.</p>
+<h2>Why and When We Collect Personal Information</h2>
+<p>Sometimes, it is necessary to collect specific customer information in order to fulfill a visitor's request, for instance, for product information or technical support. This information, such as name, mailing address, email address, type of request and possibly additional information, is collected and stored by us to fulfill your request. Your personal information is never given to any other company for that company's independent use. AOS may employ third-party companies to perform services or functions on our behalf. These companies may require access to personal information in order to perform their functions, but may not use it for other purposes.</p> <p>Visitors to aosmd.com provide personally identifying information only when using one or more of the following services:</p>
+<ul style="list-style:inherit; padding:0 0 0 10px; margin:0 0 20px 10px">
+<li>Contact forms</li>
+<li>Request for technical support</li>
+<li>Sales inquiry</li>
+<li>Resume submission</li>
+<li>Request for other information, such as product catalogs or annual reports</li>
+<li>Surveys and business reply forms</li>
+</ul>
+<h2>How We Collect Personal Information</h2>
+<p>Like many websites, our site uses "cookie" technology. When you first connect to our site, the cookie identifies your browser with a unique, random number. Cookies help us determine past users from new users and unique users, and to understand which parts of our websites are the most popular, where our visitors are going, and how long they spend there. If you do not wish to receive cookies, please refer to the "Help" file of your Internet Browser to learn how to either block all cookies or receive a warning before a cookie is stored.</p>
+<p>In some of our communications, we use a "click-through URL." When you click one of these URLs, you pass through our web server before arriving at the website that is your destination. We track this data to help us determine your interest in particular topics and measure the effectiveness of our customer communications.</p>
+<h2>What We Do With Information You Provide Us</h2>
+<p>When contacting us about a product or service, visitors to our website may decide to send us information that identifies them personally. When that is the case, we will only use that information to identify the user as a customer and to determine how to respond to the electronic mail. We will not use this information other than to resolve the matter identified in the e-mail.</p>
+<p>If we are going to use your personal information in a different manner from the way we stated at the time we received it, we will try to contact you via email using the most recent information we have. If you have not given us permission to communicate with you, you will not be contacted, nor will we use your personal information in a new manner. We will not sell, rent, or lease your personal information to others.</p>
+<h2>General Considerations</h2>
+<p>We recognize our responsibility to protect the information you entrust to us. AOS uses a variety of secure techniques to protect your information. We operate a secure data network protected by industry standard firewall systems. Our security policies are periodically reviewed and enhanced as necessary and only authorized individuals have access to the information provided by our visitors.</p>
+<p>Although we make every effort to preserve user privacy, we cannot guarantee that the information you provide to us is completely safe. There may be technical problems beyond our control that may make it accessible to unauthorized persons. There may also be visitors to the site who gather and use information available there. Additionally, we may also need to disclose personal information when required by law wherein we have a good-faith belief that such action is necessary to comply with a current judicial proceeding, a court order or legal process served on our website.</p>
+<p>Periodically, we may send electronic newsletters and other communications that contain industry, marketing, product or event information. Only AOS (or agents working on behalf of AOS and under confidentiality agreements) will send you these direct mailings. At any time you can easily opt-out of receiving further marketing from AOS by following the instructions within the mailing.</p>
+<p>AOS will retain the data collected only as long as it is useful or necessary. AOS administers and operates the www.aosmd.com from the United States. Other AOS sites may be administered and operated from various locations outside the United States. Regardless of the sites, we process or store your information in our U.S. databases.</p>
+<p>We reserve the right to change this policy at any time by posting a new privacy policy at this site. We recommend that you check it frequently.</p>
+<p><a href="http://www.aosmd.com/media/AOS--Privacy_Shield_Policy.pdf">AOS Privacy Shield Policy</a></p>
+</div>
+<div class="backtotop"><a href="#pagetop">Back to Top</a></div>
+<div class="news">
+<ul id="newsticker">
+<li><a href="/about/newsroom"><b>News</b></a> Alpha and Omega Semiconductor Announces 2-in-1 Super Low Capacitance TVS for USB4.0 &amp; Thunderbolt 4.0 &amp; HDMI2.1 Protecti... <a href="/res/news/news-article-1650995646242/AOZ8S204BL2-205BL2_PR.pdf">more »</a></li>
+<li style="display:none"><a href="/about/newsroom"><b>News</b></a> Alpha and Omega Semiconductor Unveils World’s Lowest Quiescent Power Notebook Multiphase VR Controller<a href="/res/news/news-article-1647434064956/AOZ71026_PR.pdf">more »</a></li>
+<li style="display:none"><a href="/about/newsroom"><b>News</b></a> Alpha and Omega Semiconductor Releases 600V 110mOhm and 140mOhm αMOS5™ Super Junction MOSFETs in DFN8x8 Package<a href="/res/news/news-article-1646951278476/AONV110-140A60_PR.pdf">more »</a></li>
+</ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  var current = $('#newsticker > li:first-child');
+  var next = current.next('li');
+
+  setInterval(function(){
+    current.fadeOut();
+    next.fadeIn();
+
+    current = next;
+
+    if (current.next('li').length>0) {
+      next = current.next('li');
+    }
+    else {
+      next = $('#newsticker > li:first-child');
+    }
+  },5000);
+
+});
+</script>
+<!-- FOOTER -->
+<div class="footer">
+<div class="icons">
+<a href="/rss"><img src="/images/rss.png"/></a>
+<a href="http://www.facebook.com/pages/Alpha-and-Omega-Semiconductor/170608549672880"><img src="/images/fb.png"/></a>
+<a href="http://twitter.com/AlphaOmega_Semi"><img src="/images/tw.png"/></a>
+</div>
+<div class="menu">
+<a href="/sitemap">Site Map</a>
+<a href="/terms">Terms of Use</a>
+<a href="/terms_and_conditions_of_sale">Terms and Conditions of Sale</a>
+<a href="/privacy">Privacy</a>
+<a href="/contact">Contact Us</a>
+<p>Copyright © 2022 Alpha and Omega Semiconductor. All Rights Reserved.</p>
+</div>
+<div class="icons right">
+<a href="/quality/green_commitment"><img src="/images/green.png"/></a>
+</div>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	jQuery("#videobox").click(function(e) {
+		e.preventDefault();
+
+		$.fancybox({
+				'padding'		: 0,
+				'autoScale'		: false,
+				'transitionIn'	: 'none',
+				'transitionOut'	: 'none',
+				'title'			: this.title,
+				'width'			: 646,
+				'height'		: 525,
+				'href'			: this.rel,
+				'type'			: 'swf',
+				'swf'			: {
+				   	 'wmode'		: 'transparent',
+					'allowfullscreen'	: 'true'
+				}
+			});
+
+		return false;
+	});
+});
+</script>
+</div>
+<!-- script type="text/javascript">Cufon.now(); </script -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12437420-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script async="" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&amp;ns=1&amp;cb=1640390941" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"2a222ee87c",applicationID:"368375410"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="Privacy Notice" itemprop="acquia_lift:content_title"/>
+<meta content="page" itemprop="acquia_lift:content_type"/>
+<meta content="node page" itemprop="acquia_lift:page_type"/>
+<meta content="en" itemprop="acquia_lift:context_language"/>
+<meta content="Help and Support" itemprop="acquia_lift:content_section"/>
+<meta content="" itemprop="acquia_lift:content_keywords"/>
+<meta content="182071" itemprop="acquia_lift:post_id"/>
+<meta content="e41e32b9-4e28-4a95-83ad-99c8d5324ceb" itemprop="acquia_lift:content_uuid"/>
+<meta content="1587485381" itemprop="acquia_lift:published_date"/>
+<meta content="" itemprop="acquia_lift:persona"/>
+<meta content="1" itemprop="acquia_lift:engagement_score"/>
+<meta content="UnderwritersLaborat" itemprop="acquia_lift:account_id"/>
+<meta content="ULCOM" itemprop="acquia_lift:site_id"/>
+<meta content="https://builder.lift.acquia.com" itemprop="acquia_lift:liftAssetsURL"/>
+<meta content="https://us-east-1-decisionapi.lift.acquia.com" itemprop="acquia_lift:liftDecisionAPIURL"/>
+<meta content="auto" itemprop="acquia_lift:bootstrapMode"/>
+<meta content="trusted" itemprop="acquia_lift:contentReplacementMode"/>
+<meta content="1" itemprop="acquia_lift:cdfVersion"/>
+<script async="" class="optanon-category-C0004" src="https://builder.lift.acquia.com/lift.js" type="text/plain"></script>
+<meta content="Our privacy policy details information we may collect from site visitors and how we share, store and safeguard this data. Your right regarding your personal data are also explained, along with prohibitions on collection of personal data from minors." name="description"/>
+<meta content="UL" property="og:site_name"/>
+<meta content="https://www.ul.com/resources/online-policies/privacy-notice" property="og:url"/>
+<meta content="Privacy Notice" property="og:title"/>
+<meta content="Our privacy policy details information we may collect from site visitors and how we share, store and safeguard this data. Your right regarding your personal data are also explained, along with prohibitions on collection of personal data from minors." property="og:description"/>
+<meta content="https://www.ul.com/sites/g/files/qbfpbp251/files/styles/hero_boxed_width/public/2020-04/Privacy-Policy_2400px.jpg?itok=sgFDowvB" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Our privacy policy details information we may collect from site visitors and how we share, store and safeguard this data. Your right regarding your personal data are also explained, along with prohibitions on collection of personal data from minors." name="twitter:description"/>
+<meta content="Privacy Notice | UL" name="twitter:title"/>
+<meta content="https://www.ul.com/resources/online-policies/privacy-notice" name="twitter:url"/>
+<meta content="Privacy Notice" name="twitter:image:alt"/>
+<meta content="https://www.ul.com/sites/g/files/qbfpbp251/files/styles/hero_boxed_width/public/2020-04/Privacy-Policy_2400px.jpg?itok=sgFDowvB" name="twitter:image"/>
+<meta content="Drupal 9 (https://www.drupal.org)" name="Generator"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport"/>
+<script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({"ul_user_type":"anonymous","ul_content_type":"page","ul_page_created":"2020-04-21","ul_page_updated":"2022-05-19","ul_industries":"(not available)","ul_topic":"(not available)","ul_business_needs":"(not available)"});</script>
+<link href="https://www.ul.com/resources/online-policies/privacy-notice" rel="canonical"/>
+<link href="/sites/g/files/qbfpbp251/themes/site/ul_com_theme/favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+<link href="https://www.ul.com/resources/online-policies/privacy-notice" hreflang="en" rel="alternate"/>
+<link href="https://www.ul.com/zh-hans/resources/online-policies/privacy-notice" hreflang="zh-hans" rel="alternate"/>
+<link href="https://www.ul.com/zh-hant/resources/online-policies/privacy-notice" hreflang="zh-hant" rel="alternate"/>
+<link href="https://www.ul.com/fr/resources/online-policies/privacy-notice" hreflang="fr" rel="alternate"/>
+<link href="https://www.ul.com/fr-ca/resources/online-policies/privacy-notice" hreflang="fr-ca" rel="alternate"/>
+<link href="https://www.ul.com/de/resources/online-policies/privacy-notice" hreflang="de" rel="alternate"/>
+<link href="https://www.ul.com/it/resources/online-policies/privacy-notice" hreflang="it" rel="alternate"/>
+<link href="https://www.ul.com/ja/resources/online-policies/privacy-notice" hreflang="ja" rel="alternate"/>
+<link href="https://www.ul.com/ko/resources/online-policies/privacy-notice" hreflang="ko" rel="alternate"/>
+<link href="https://www.ul.com/pt-br/resources/online-policies/privacy-notice" hreflang="pt-br" rel="alternate"/>
+<link href="https://www.ul.com/es/resources/online-policies/privacy-notice" hreflang="es" rel="alternate"/>
+<link href="https://www.ul.com/vi/resources/online-policies/privacy-notice" hreflang="vi" rel="alternate"/>
+<script defer="" src="/sites/g/files/qbfpbp251/files/google_tag/primary/google_tag.script.js?rdf4qu"></script>
+<script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};</script>
+<title>Privacy Notice | UL</title>
+<link href="/sites/g/files/qbfpbp251/files/css/css_5FHL9zq0dGnIDpWN3CdWd-Dm1n4c58tWGAJARUi03aQ.css" media="all" rel="stylesheet"/>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" media="all" rel="stylesheet"/>
+<link href="/sites/g/files/qbfpbp251/files/css/css_KtFWiHP0iSOy1Buc_rvSIdcojNtnJs5h6eyztwY1h8M.css" media="all" rel="stylesheet"/>
+<link href="/sites/g/files/qbfpbp251/files/css/css_6AaHEKYipANOR57RHJQAgetv_PVBNA6mdtu7k0pyRyU.css" media="all" rel="stylesheet"/>
+<script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/182071","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"addtoany\/addtoany,classy\/base,classy\/messages,core\/drupal.dropbutton,core\/normalize,core\/picturefill,dropdown_language\/dropdown-language-selector,paragraphs\/drupal.paragraphs.unpublished,social_media_links\/fontawesome.component,social_media_links\/social_media_links.theme,system\/base,ul_alerts\/ul_alerts,ul_base_theme\/fontawesome,ul_base_theme\/global-scripts,ul_base_theme\/global-styles-lrt,ul_com_theme\/ul-com-hotjar,ul_com_theme\/ul-com-styles,ul_com_theme\/ul-com-svg,ul_enterprise_profile\/back-button,ul_enterprise_theme\/global-scripts,ul_enterprise_theme\/lift-fade,ul_experience_hub\/ul_experience_hub,ul_marketo\/ul_marketo,ul_marketo\/ul_marketo.datalayer,ul_onetrust\/ul_onetrust,ul_salesforce\/ul_salesforce.return_link,ul_search\/solosegment-search,views\/views.module","theme":"ul_com_theme","theme_token":null},"ajaxTrustedUrl":{"\/search":true},"back_link":{"en":"Back","es":"Atr\u00e1s","pt-br":"Voltar","fr-ca":"Arri\u00e8re","de":"Zur\u00fcck","it":"Indietro","zh-hans":"\u8fd4\u56de","zh-hant":"\u8fd4\u56de","ja":"\u623b\u308b","ko":"\ub4a4\ub85c"},"ulAlerts":{"siteLanguages":["en","zh-hans","zh-hant","fr","fr-ca","de","it","ja","ko","pt-br","es","vi"],"defaultLanguage":"en"},"user":{"uid":0,"permissionsHash":"af862a47f71bb96856e55cb8b30511ff41772058e7ab252f55caceb5e89784f1"}}</script>
+<script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/sites/g/files/qbfpbp251/files/js/js_k02IrtWfMyDX9fQwKS_mELqjApf7_7g-LGrFX1QnoXc.js"></script>
+<script src="/profiles/custom/ul_enterprise_profile/themes/custom/ul_enterprise_theme/build/scripts/app_enterprise.built.js?v=9.3.15"></script>
+<script src="/sites/g/files/qbfpbp251/files/js/js_3v4rRoEekt3aNG7hYie1w9NlahO993DWCZenU3cW7ww.js"></script>
+<script async="" class="optanon-category-C0002" src="/modules/custom/ul_marketo/js/ul_marketo.datalayer.js?rdf4qu" type="text/plain"></script>
+<script src="/sites/g/files/qbfpbp251/files/js/js_a5lUPxM0ya_UYxOTG5M1N36_oRZ6pcHtJe5NrgWWPV4.js"></script>
+</head>
+<body class="path-node page-node-type-page">
+<noscript aria-hidden="true"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PBJ84RQ" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<a class="sr-only sr-only-focusable" href="#main-content" id="skip-to-content">Skip to main content</a>
+<div class="global-header--fix auto-hide-header">
+<div class="region region-header-before">
+<div class="block block-ul-alerts block-ul-alerts-block" id="block-ul-com-theme-alerts">
+<div id="ul-alerts"></div>
+</div>
+<div class="block block-ul-enterprise-profile block-wrot-block" id="block-wrotrefererblock">
+<div class="wrot-link" data-aliases='["/trust", "/node/178946"]' data-return-text="Back to the World Runs on Trust."></div>
+</div>
+</div>
+<header class="global-header" data-module="globalHeader">
+<div class="global-header__inner">
+<div class="global-header__container">
+<div class="global-header__row global-header__row--bottom">
+<div class="wrapper">
+<div class="global-header__main global-header__row-inner row">
+<div class="global-header__logo span-auto">
+<a aria-label="UL logo" href="https://www.ul.com/">
+<svg class="brand-logo" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<title>UL Logo</title>
+<path d="M10,20C4.5,20,0,15.5,0,10C0,4.5,4.5,0,10,0c5.5,0,10,4.5,10,10C20,15.5,15.5,20,10,20 M10,18.1c4.5,0,8.1-3.6,8.1-8.1 c0-4.5-3.6-8.1-8.1-8.1c-4.5,0-8.1,3.6-8.1,8.1C1.9,14.5,5.5,18.1,10,18.1"></path>
+<path d="M5.1,4.6H7v5.9c0,0.4,0.1,0.7,0.6,0.7c0.5,0,0.6-0.4,0.6-0.8V4.6h1.8v5.7c0,1.3-0.6,2.4-2.5,2.4c-1.6,0-2.5-0.7-2.5-2.4 V4.6"></path>
+<polyline points="10.8,15.4 10.8,7.5 12.7,7.5 12.7,13.8 14.9,13.8 14.9,15.4 10.8,15.4"></polyline>
+</svg>
+</a>
+</div>
+<div class="global-header__primary-nav span-8 title-menu-will-toggle">
+<nav class="nav nav--primary" data-max-width="991" data-module="primaryNav">
+<div class="nav__inner">
+<ul class="menu-list menu-list--primary-nav list-unstyled row">
+<li class="menu-item menu-item--primary-nav span-auto">
+<a class="has-mobile-menu" data-close-on-load="true" data-group="main-menu" data-min-width="992" data-module="accordion" data-no-transition-after-open="true" data-target="[data-trigger-id='e004bdb9-c101-497c-8bee-8672285f5577']" href="/industries" id="e004bdb9-c101-497c-8bee-8672285f5577">Industries</a>
+<div class="mobile-menu popover">
+<div class="mobile-menu__header">
+<div class="inner-wrapper">
+<span class="mobile-menu__title h3">Industries</span>
+<a class="mobile-menu__back" href="#">
+<span class="mobile-menu__icon icon-angle-left"></span>
+            Back
+          </a>
+</div>
+</div>
+<ul class="menu-list menu-list--group list-unstyled">
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/industries/automotive-and-mobility">Automotive and Mobility</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/automotive-and-mobility/automotive-and-commercial-vehicles">Automotive and Commercial Vehicles</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/automotive-and-mobility/e-mobility">e-Mobility</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/automotive-and-mobility/micromobility-device-testing-and-certification">Micromobility</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/industries/building-and-construction">Buildings and Construction</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/building-and-construction/architecture-engineering-and-construction">Architecture, Engineering and Construction</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/building-and-construction/building-envelope-testing-commissioning-and-advisory-services">Building Envelope</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/building-and-construction/building-products-and-systems">Building Products and Systems</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/industries/chemicals-and-materials">Chemicals and Materials</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/chemicals-and-materials/basic-and-industrial-chemicals">Basic and Industrial Chemicals</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/chemicals-and-materials/plastics-and-engineered-materials">Plastics and Engineered Materials</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/chemicals-and-materials/specialty-and-fine-chemicals">Specialty and Fine Chemicals</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/industries/energy-and-utilities">Energy and Utilities</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/energy-and-utilities/batteries-and-energy-storage">Batteries and Energy Storage</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/energy-and-utilities/energy-equipment">Energy Equipment</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/energy-and-utilities/oil-and-gas">Oil and Gas</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/energy-and-utilities/power-distribution">Power Distribution</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/energy-and-utilities/renewables">Renewables</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/industries/financial-and-investment-services">Financial and Investment Services</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/financial-and-investment-services/asset-and-property-management">Asset and Property Management</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/financial-and-investment-services/commercial-banking">Commercial Banking</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/financial-and-investment-services/fintech">FinTech</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/financial-and-investment-services/insurance-and-risk-management">Insurance and Risk Management</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/financial-and-investment-services/project-finance">Project Finance</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/government-services">Government Services</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/industries/healthcare-and-life-sciences">Healthcare and Life Sciences</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/healthcare-and-life-sciences/health-and-wellness-retail">Health and Wellness Retail</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/healthcare-and-life-sciences/healthcare-providers">Healthcare Providers</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/healthcare-and-life-sciences/healthtech">Healthtech</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/healthcare-and-life-sciences/medtech">Medtech</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/healthcare-and-life-sciences/pharmaceuticals-and-biotech">Pharmaceuticals and Biotech</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/industries/industrial-products-and-systems">Industrial Products and Systems</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/industrial-products-and-systems/industrial-machinery-and-automation">Industrial Machinery and Automation</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/industrial-products-and-systems/instruments-and-controls">Instruments and Controls</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/industrial-products-and-systems/low-and-medium-voltage-distribution">Low and Medium Voltage Distribution</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/industrial-products-and-systems/manufacturing-facilities">Manufacturing Facilities</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/life-safety-and-security">Life Safety and Security</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/retail">Retail</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/industries/technology-and-electronics">Technology and Electronics</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/technology-and-electronics/consumer-electronics">Consumer Electronics</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/technology-and-electronics/information-and-communications-technology">Information and Communications Technology</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default vertical_line_start vertical_line_end">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/industries/products-and-components">Products and Components</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/appliances">Appliances</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/batteries">Batteries</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/beauty-and-personal-care">Beauty and Personal Care</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/components">Components</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/consumer-packaged-goods">Consumer Packaged Goods</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/furniture">Furniture</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/general-merchandise">General Merchandise</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level accordion ul-ga-megamenu-link" data-module="accordion" href="/industries/products-and-components/hvacr">HVACR</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/hvacr/commercial-refrigeration-and-freezer">Commercial Refrigeration and Freezer</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/hvacr/heating-products">Heating Products</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/hvacr/residential-and-commercial-air-conditioning">Residential and Commercial Air Conditioning</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/hvacr/ventilation">Ventilation</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/household-and-industrial-cleaners">Household and Industrial Cleaners</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level accordion ul-ga-megamenu-link" data-module="accordion" href="/industries/products-and-components/lighting">Lighting</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/lighting/commercial-and-professional-lighting">Commercial and Professional Lighting</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/lighting/connected-lighting">Connected Lighting</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/lighting/lighting-global-market-access">Lighting Global Market Access</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/lighting/lighting-performance">Lighting Performance</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/lighting/lighting-safety-testing-and-certification">Lighting Safety Testing and Certification</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/lighting/residential-and-consumer-lighting">Residential and Consumer Lighting</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/lighting/transportation-lighting">Transportation Lighting</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/otc-and-dietary-supplements">OTC and Dietary Supplements</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/textiles-apparel-and-footwear">Textiles, Apparel and Footwear</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/toys-and-childrens-products">Toys and Children's Products</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/water-and-plumbing">Water and Plumbing</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/wire-and-cable-testing-certification">Wire and Cable</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-item menu-item--primary-nav span-auto">
+<a class="has-mobile-menu" data-close-on-load="true" data-group="main-menu" data-min-width="992" data-module="accordion" data-no-transition-after-open="true" data-target="[data-trigger-id='f5ad74df-2960-40a9-b550-f0d292ba9c5b']" href="/services" id="f5ad74df-2960-40a9-b550-f0d292ba9c5b">Services</a>
+<div class="mobile-menu popover">
+<div class="mobile-menu__header">
+<div class="inner-wrapper">
+<span class="mobile-menu__title h3">Services</span>
+<a class="mobile-menu__back" href="#">
+<span class="mobile-menu__icon icon-angle-left"></span>
+            Back
+          </a>
+</div>
+</div>
+<ul class="menu-list menu-list--group list-unstyled">
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/services/certification">Certification</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/certification/facility-certification">Facility</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/certification/personnel-certification">Personnel</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/certification/process-certification">Process</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/certification/product-certification">Product</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/certification/system-certification">System</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/services/testing">Testing</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/emc-testing">EMC</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/energy-efficiency-testing">Energy Efficiency</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/environmental-testing">Environmental</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/indoor-air-quality-testing">Indoor Air Quality</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/interoperability-testing">Interoperability</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/performance-and-quality-testing">Performance and Quality</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/reliability-and-durability-testing">Reliability and Durability</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/safety-testing">Safety</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/wireless-testing">Wireless</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/services/additional-services">Additional Services</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/advisory">Advisory</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/auditing-and-inspection">Auditing and Inspection</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/learning-and-development">Learning and Development</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/verification">Verification</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/services/digital-applications">Digital Applications</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/digital-applications/compliance-lms-for-life-sciences">Compliance LMS for Life Sciences</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/esg-and-sustainability-management-software">ESG and Sustainability Management Software</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/digital-applications/global-ehs-training">Global EHS Training</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/material-sourcing-and-technical-insights">Material Sourcing and Technical Insights</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/digital-applications/occupational-health-compliance">Occupational Health Compliance</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/safecyber">SafeCyber</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/digital-applications/simplified-co2-reporting">Simplified CO2 Reporting</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/resources/apps/built-inform-software-building-safety-and-governance">UL Built InForm</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/digital-applications/ul-certification-database">UL Certification Database</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default vertical_line_start vertical_line_end">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/services/solutions">Solutions</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/benchmarking">Benchmarking</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/brand-risk-management">Brand Risk Management</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/chemical-data-management">Chemical Data Management</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/corporate-social-responsibility">Corporate Social Responsibility</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level accordion ul-ga-megamenu-link" data-module="accordion" href="/services/solutions/cybersecurity">Cybersecurity</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/cybersecurity/automotive-cybersecurity">Automotive Cybersecurity</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/healthcare-cybersecurity-solutions">Digital Health Cybersecurity</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/cybersecurity/industry-40-cybersecurity">Industry 4.0 Cybersecurity</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/cybersecurity/payment-security">Payment Security</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/cybersecurity/smart-buildings-cybersecurity">Smart Buildings Cybersecurity</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/cybersecurity/smart-home-cybersecurity">Smart Home Cybersecurity</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/environmental-health-and-safety">Environmental Health and Safety</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/fire-safety">Fire Safety</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/functional-safety">Functional Safety</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/global-market-access">Global Market Access</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/hazardous-locations">Hazardous Locations</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/legal-and-regulatory">Legal and Regulatory</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/supply-chain-and-product-stewardship">Supply Chain and Product Stewardship</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level accordion ul-ga-megamenu-link" data-module="accordion" href="/services/solutions/sustainability-and-environment-solutions">Sustainability and Environment</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/sustainability-and-environment-solutions/carbon-reporting-solutions">Carbon Reporting Solutions</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/sustainability-and-environment-solutions/circular-economy-solutions">Circular Economy Solutions</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/sustainability-and-environment-solutions/esg-reporting">ESG Reporting</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/sustainability-and-environment-solutions/meeting-investor-and-stakeholder-disclosure-needs-requirements">Investor and Stakeholder Requirements</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/sustainability-and-environment-solutions/responsible-sourcing-supply-chains">Responsible Sourcing in Supply Chains</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/sustainability-and-environment-solutions/sustainable-product-certification">Sustainable Product Certification</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-item menu-item--primary-nav span-auto">
+<a class="has-mobile-menu" data-close-on-load="true" data-group="main-menu" data-min-width="992" data-module="accordion" data-no-transition-after-open="true" data-target="[data-trigger-id='036dedcf-2671-477d-bd8d-c1cad7430ca7']" href="/insights" id="036dedcf-2671-477d-bd8d-c1cad7430ca7">Insights</a>
+<div class="mobile-menu popover">
+<div class="mobile-menu__header">
+<div class="inner-wrapper">
+<span class="mobile-menu__title h3">Insights</span>
+<a class="mobile-menu__back" href="#">
+<span class="mobile-menu__icon icon-angle-left"></span>
+            Back
+          </a>
+</div>
+</div>
+<ul class="menu-list menu-list--group list-unstyled">
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/insights/connected-ecosystems">Connected Ecosystems</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/insights/innovation-safety">Innovation Safety</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/insights/sustainable-business">Sustainable Business</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/insights/trust-talks">Trust Talks</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/insights/trust-talks/safety-talks">Safety Talks</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/insights/trust-talks/security-talks">Security Talks</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/insights/trust-talks/sustainability-talks">Sustainability Talks</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-item menu-item--primary-nav span-auto">
+<a class="has-mobile-menu" data-close-on-load="true" data-group="main-menu" data-min-width="992" data-module="accordion" data-no-transition-after-open="true" data-target="[data-trigger-id='6a8da14d-dd48-4069-870e-66a12ba8b2f0']" href="/news" id="6a8da14d-dd48-4069-870e-66a12ba8b2f0">News</a>
+<div class="mobile-menu popover">
+<div class="mobile-menu__header">
+<div class="inner-wrapper">
+<span class="mobile-menu__title h3">News</span>
+<a class="mobile-menu__back" href="#">
+<span class="mobile-menu__icon icon-angle-left"></span>
+            Back
+          </a>
+</div>
+</div>
+<ul class="menu-list menu-list--group list-unstyled">
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/news/news-stories">News Stories</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/news/press-releases">Press Releases</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/news/feature-stories">Feature Stories</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/news/regulatory-updates">Regulatory Updates</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/news/public-notices">Public Notices</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/news/newsletters">Newsletters</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/media-center">Media Center</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-item menu-item--primary-nav span-auto">
+<a class="has-mobile-menu" data-close-on-load="true" data-group="main-menu" data-min-width="992" data-module="accordion" data-no-transition-after-open="true" data-target="[data-trigger-id='3f71b6bb-ed81-4d2d-9fe1-04ea61a1b912']" href="/events" id="3f71b6bb-ed81-4d2d-9fe1-04ea61a1b912">Events</a>
+<div class="mobile-menu popover">
+<div class="mobile-menu__header">
+<div class="inner-wrapper">
+<span class="mobile-menu__title h3">Events</span>
+<a class="mobile-menu__back" href="#">
+<span class="mobile-menu__icon icon-angle-left"></span>
+            Back
+          </a>
+</div>
+</div>
+<ul class="menu-list menu-list--group list-unstyled">
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/events/digital-live-events">Digital Live Events</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/events/on-demand-webinars">On-Demand Webinars</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/events/webinars">Upcoming Webinars</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/events/webinar-series">Webinar Series</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/events">All Events</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-item menu-item--primary-nav span-auto">
+<a class="has-mobile-menu" data-close-on-load="true" data-group="main-menu" data-min-width="992" data-module="accordion" data-no-transition-after-open="true" data-target="[data-trigger-id='32e2cba0-c54a-4cd2-aaf9-8aeff6cca7ba']" href="/about" id="32e2cba0-c54a-4cd2-aaf9-8aeff6cca7ba">About UL</a>
+<div class="mobile-menu popover">
+<div class="mobile-menu__header">
+<div class="inner-wrapper">
+<span class="mobile-menu__title h3">About UL</span>
+<a class="mobile-menu__back" href="#">
+<span class="mobile-menu__icon icon-angle-left"></span>
+            Back
+          </a>
+</div>
+</div>
+<ul class="menu-list menu-list--group list-unstyled">
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/mission">Mission</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/corporate-sustainability">Corporate Sustainability</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/ethics-and-compliance">Ethics and Compliance</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/diversity-and-inclusion">Diversity and Inclusion</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/brand-integrity">Brand Integrity</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/ventures">Ventures</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/about/leadership">Leadership</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/about/william-henry-merrill-society">The William Henry Merrill Society</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/about/councils">Councils</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/board-of-directors">Board of Directors</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/careers">Careers</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/history">History</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/locations">Locations</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/global-impact-reports">Global Impact Reports</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="menu-item menu-item--primary-nav span-auto active-trail">
+<a class="has-mobile-menu" data-close-on-load="true" data-group="main-menu" data-min-width="992" data-module="accordion" data-no-transition-after-open="true" data-target="[data-trigger-id='11f34deb-6f95-4609-a38e-be6b52c2fffd']" href="/resources" id="11f34deb-6f95-4609-a38e-be6b52c2fffd">Resources</a>
+<div class="mobile-menu popover">
+<div class="mobile-menu__header">
+<div class="inner-wrapper">
+<span class="mobile-menu__title h3">Resources</span>
+<a class="mobile-menu__back" href="#">
+<span class="mobile-menu__icon icon-angle-left"></span>
+            Back
+          </a>
+</div>
+</div>
+<ul class="menu-list menu-list--group list-unstyled">
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/resources/follow-up-services">Follow-Up Services</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/resources/help">Help and Support</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="https://marks.ul.com">Marks and Labels</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/resources/resource-library">Resource Library</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/resources/apps">Tools, Apps and Databases</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level accordion ul-ga-megamenu-link" data-module="accordion" href="/resources/contracts">Terms and Legal Information</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/resources/contracts/agreement">Global Services Agreement (GSA)</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/resources/contracts/gsa-service-terms">GSA Service Terms</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/resources/contracts/follow-up-service-terms">Follow-up Service Terms</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/resources/contracts/ul-memorandum-of-insurance">UL Memorandum of Insurance</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/resources/contracts/ivisitor-agreements">iVisitor Agreement</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="https://www.shopulstandards.com/">UL Standards</a>
+</li>
+<li class="menu-item menu-item--default mobile-only">
+<a class="first-level ul-ga-megamenu-link" href="https://my.ul.com/">myUL® Client Portal</a>
+</li>
+<li class="menu-item menu-item--default mobile-only">
+<a class="first-level ul-ga-megamenu-link" href="https://iq.ulprospector.com/info/">Certification Database - UL Product iQ®</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="global-header__search span-2 title-menu-will-toggle">
+<a aria-label="Search Site" class="accordion" data-max-width="991" data-module="accordion" href="#">
+<span class="icon icon-search"></span>
+</a>
+<div class="global-header__search-container search-container">
+<div class="wrapper">
+<div class="form-group form-group--search search-bar-group form-loaded">
+<form accept-charset="UTF-8" action="/search" id="ul-search-header-search" method="get">
+<div class="js-form-item form-item js-form-type-search form-type-search js-form-item-search form-item-search form-no-label">
+<input aria-label="Search" class="form-search" data-drupal-selector="edit-search" data-solosearchbox="solosearchbox" id="edit-search--2" maxlength="128" name="Search" placeholder="Search" size="60" type="search" value=""/>
+</div>
+<div class="form-action search icon-search input-submit-wrap"><input class="search-submit button js-form-submit form-submit" data-drupal-selector="edit-submit" id="edit-submit--2" name="op" type="submit" value="Search"/>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="global-header__hamburger span-auto">
+<div class="global-header__hamburger-inner">
+<div class="hamburger">
+<a aria-expanded="false" class="hamburger__button" href="#">
+<div class="lines">
+<span class="sr-only">Menu</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="global-header__title-container">
+<div class="global-header__title h4"><!-- NOTE: Do not remove --></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="region region-header-after">
+<div class="mega-menu">
+<section class="nav--mega-menu" data-trigger-id="f5ad74df-2960-40a9-b550-f0d292ba9c5b">
+<div class="wrapper">
+<span class="nav--mega-menu--panel--title h2">Services</span>
+<div class="row">
+<div class="nav__content span-12">
+<div class="row">
+<div class="nav__overview span-4 span-4-ld display-none">
+</div>
+<div class="nav__menu span-12 span-12-ld full-menu-section col-count-5">
+<ul class="menu-list menu-list--mega-menu">
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/services/certification">Certification</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/certification/facility-certification">Facility</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/certification/personnel-certification">Personnel</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/certification/process-certification">Process</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/certification/product-certification">Product</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/certification/system-certification">System</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/services/testing">Testing</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/emc-testing">EMC</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/energy-efficiency-testing">Energy Efficiency</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/environmental-testing">Environmental</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/indoor-air-quality-testing">Indoor Air Quality</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/interoperability-testing">Interoperability</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/performance-and-quality-testing">Performance and Quality</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/reliability-and-durability-testing">Reliability and Durability</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/safety-testing">Safety</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/testing/wireless-testing">Wireless</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/services/additional-services">Additional Services</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/advisory">Advisory</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/auditing-and-inspection">Auditing and Inspection</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/learning-and-development">Learning and Development</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/verification">Verification</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/services/digital-applications">Digital Applications</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/digital-applications/compliance-lms-for-life-sciences">Compliance LMS for Life Sciences</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/esg-and-sustainability-management-software">ESG and Sustainability Management Software</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/digital-applications/global-ehs-training">Global EHS Training</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/material-sourcing-and-technical-insights">Material Sourcing and Technical Insights</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/digital-applications/occupational-health-compliance">Occupational Health Compliance</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/safecyber">SafeCyber</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/digital-applications/simplified-co2-reporting">Simplified CO2 Reporting</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/resources/apps/built-inform-software-building-safety-and-governance">UL Built InForm</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/digital-applications/ul-certification-database">UL Certification Database</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default vertical_line_start vertical_line_end">
+<a class="first-level ul-ga-megamenu-link" href="/services/solutions">Solutions</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/benchmarking">Benchmarking</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/brand-risk-management">Brand Risk Management</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/chemical-data-management">Chemical Data Management</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/corporate-social-responsibility">Corporate Social Responsibility</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level accordion ul-ga-megamenu-link" data-module="accordion" href="/services/solutions/cybersecurity">Cybersecurity</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/environmental-health-and-safety">Environmental Health and Safety</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/fire-safety">Fire Safety</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/functional-safety">Functional Safety</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/global-market-access">Global Market Access</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/hazardous-locations">Hazardous Locations</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/legal-and-regulatory">Legal and Regulatory</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/solutions/supply-chain-and-product-stewardship">Supply Chain and Product Stewardship</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level accordion ul-ga-megamenu-link" data-module="accordion" href="/services/solutions/sustainability-and-environment-solutions">Sustainability and Environment</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="nav__aside span-4 display-none">
+</div>
+</div>
+</div>
+</section>
+<section class="nav--mega-menu" data-trigger-id="036dedcf-2671-477d-bd8d-c1cad7430ca7">
+<div class="wrapper">
+<span class="nav--mega-menu--panel--title h2">Insights</span>
+<div class="row">
+<div class="nav__content span-8">
+<div class="row">
+<div class="nav__overview span-4 span-4-ld">
+<div class="nav__description">
+<p>Navigate your business in an increasingly complex world with industry leading research and actionable insights from UL.</p>
+</div>
+<a class="button button--black-outline ul-ga-megamenu-cta" href="/insights">View all</a>
+</div>
+<div class="nav__menu span-8">
+<ul class="menu-list menu-list--mega-menu">
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/insights/connected-ecosystems">Connected Ecosystems</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/insights/innovation-safety">Innovation Safety</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/insights/sustainable-business">Sustainable Business</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/insights/trust-talks">Trust Talks</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="nav__aside span-4">
+<section class="section section--gallery section--paragraph is-carousel">
+<div class="hash-target" id="1605131939">
+</div>
+<div class="paragraph-gutter paragraph--gallery">
+<div class="section__header">
+</div>
+<div class="section__body">
+<div class="carousel--default center-block" data-module="contentCarousel">
+<div class="swiper-container swiper-container--has-outset-nav">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<img alt="Aerial photo of downtown Chicago" class="lazy" data-src="https://www.ul.com/sites/g/files/qbfpbp251/files/styles/card/public/2019-05/insights.jpg?itok=ojX3QiOB"/>
+</div>
+</div>
+<div class="swiper-pagination swiper-pagination--l"></div>
+<div class="swiper-navigation swiper-navigation--arrows">
+<div class="swiper-button swiper-button-next">
+<span class="swiper-icon icon-bracket-r"><span class="sr-only">Next</span></span>
+</div>
+<div class="swiper-button swiper-button-prev">
+<span class="swiper-icon icon-bracket-l"><span class="sr-only">Previous</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="nav--mega-menu" data-trigger-id="6a8da14d-dd48-4069-870e-66a12ba8b2f0">
+<div class="wrapper">
+<span class="nav--mega-menu--panel--title h2">News</span>
+<div class="row">
+<div class="nav__content span-8">
+<div class="row">
+<div class="nav__overview span-4 span-4-ld">
+<div class="nav__description">
+<p>Explore our press releases and news updates. Delve into detailed press kits for information on our work. If it’s UL and newsworthy, it’s here.</p>
+</div>
+<a class="button button--black-outline ul-ga-megamenu-cta" href="/news">View all</a>
+</div>
+<div class="nav__menu span-8">
+<ul class="menu-list menu-list--mega-menu">
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/news/news-stories">News Stories</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/news/press-releases">Press Releases</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/news/feature-stories">Feature Stories</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/news/regulatory-updates">Regulatory Updates</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/news/public-notices">Public Notices</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/news/newsletters">Newsletters</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/media-center">Media Center</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="nav__aside span-4">
+<section class="section section--gallery section--paragraph is-carousel">
+<div class="hash-target" id="1605131939">
+</div>
+<div class="paragraph-gutter paragraph--gallery">
+<div class="section__header">
+</div>
+<div class="section__body">
+<div class="carousel--default center-block" data-module="contentCarousel">
+<div class="swiper-container swiper-container--has-outset-nav">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<img alt="man using and tablet while presenting in front of a room" class="lazy" data-src="https://www.ul.com/sites/g/files/qbfpbp251/files/styles/card/public/2019-05/1.jpg?itok=ke4_KdbF"/>
+</div>
+</div>
+<div class="swiper-pagination swiper-pagination--l"></div>
+<div class="swiper-navigation swiper-navigation--arrows">
+<div class="swiper-button swiper-button-next">
+<span class="swiper-icon icon-bracket-r"><span class="sr-only">Next</span></span>
+</div>
+<div class="swiper-button swiper-button-prev">
+<span class="swiper-icon icon-bracket-l"><span class="sr-only">Previous</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="nav--mega-menu" data-trigger-id="3f71b6bb-ed81-4d2d-9fe1-04ea61a1b912">
+<div class="wrapper">
+<span class="nav--mega-menu--panel--title h2">Events</span>
+<div class="row">
+<div class="nav__content span-8">
+<div class="row">
+<div class="nav__overview span-4 span-4-ld">
+<div class="nav__description">
+<p>Connect with us in person or online, around the globe. We’re everywhere your business needs us to be. </p>
+</div>
+<a class="button button--black-outline ul-ga-megamenu-cta" href="/events">View all</a>
+</div>
+<div class="nav__menu span-8">
+<ul class="menu-list menu-list--mega-menu">
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/events/digital-live-events">Digital Live Events</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/events/on-demand-webinars">On-Demand Webinars</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/events/webinars">Upcoming Webinars</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/events/webinar-series">Webinar Series</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/events">All Events</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="nav__aside span-4">
+<section class="section section--gallery section--paragraph is-carousel">
+<div class="hash-target" id="1605131939">
+</div>
+<div class="paragraph-gutter paragraph--gallery">
+<div class="section__header">
+</div>
+<div class="section__body">
+<div class="carousel--default center-block" data-module="contentCarousel">
+<div class="swiper-container swiper-container--has-outset-nav">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+<img alt="Photo of a crowd attending a presentation in a large view." class="lazy" data-src="https://www.ul.com/sites/g/files/qbfpbp251/files/styles/card/public/2019-05/NBK_Intl_Crown_2018_Press_Conf-2000.jpg?itok=txQdvOqL"/>
+</div>
+</div>
+<div class="swiper-pagination swiper-pagination--l"></div>
+<div class="swiper-navigation swiper-navigation--arrows">
+<div class="swiper-button swiper-button-next">
+<span class="swiper-icon icon-bracket-r"><span class="sr-only">Next</span></span>
+</div>
+<div class="swiper-button swiper-button-prev">
+<span class="swiper-icon icon-bracket-l"><span class="sr-only">Previous</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="nav--mega-menu" data-trigger-id="32e2cba0-c54a-4cd2-aaf9-8aeff6cca7ba">
+<div class="wrapper">
+<span class="nav--mega-menu--panel--title h2">About UL</span>
+<div class="row">
+<div class="nav__content span-8">
+<div class="row">
+<div class="nav__overview span-4 span-4-ld">
+<div class="nav__description">
+<p>As a global safety science leader, UL helps companies to demonstrate safety, enhance sustainability, strengthen security, deliver quality, manage risk and achieve regulatory compliance. </p>
+</div>
+<a class="button button--black-outline ul-ga-megamenu-cta" href="/about">Overview</a>
+</div>
+<div class="nav__menu span-8">
+<ul class="menu-list menu-list--mega-menu">
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/mission">Mission</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/corporate-sustainability">Corporate Sustainability</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/ethics-and-compliance">Ethics and Compliance</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/diversity-and-inclusion">Diversity and Inclusion</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/brand-integrity">Brand Integrity</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/ventures">Ventures</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/leadership">Leadership</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/board-of-directors">Board of Directors</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/careers">Careers</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/history">History</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/locations">Locations</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/about/global-impact-reports">Global Impact Reports</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="nav__aside span-4">
+<section class="section section--simple-menu section--paragraph has-bg has-margin wrapper">
+<div class="section__inner">
+<div class="section__inner wrapper">
+<div class="descriptive-link">
+<div class="descriptive-link__row row row--gutter-s">
+<div class="descriptive-link__title-container span-12">
+<span class="h2 descriptive-link__title">UL Consumer Information</span>
+</div>
+<div class="descriptive-link__description span-8">
+<div class="editor-content">
+<p>See how we put safety science to work to help create a safer, more secure and sustainable world for you.</p></div>
+</div>
+<div class="descriptive-link__cta span-4">
+<a class="ul-ga-megamenu-cta button--red-outline button--xs button" href="/consumers">
+  Learn more</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="nav--mega-menu" data-trigger-id="11f34deb-6f95-4609-a38e-be6b52c2fffd">
+<div class="wrapper">
+<span class="nav--mega-menu--panel--title h2">Resources</span>
+<div class="row">
+<div class="nav__content span-8">
+<div class="row">
+<div class="nav__overview span-4 span-4-ld">
+<div class="nav__description">
+<p>Explore our business intelligence-building digital tools and databases, search for help, review our business information, or share your concerns and questions.</p>
+</div>
+<a class="button button--black-outline ul-ga-megamenu-cta" href="/resources">Overview</a>
+</div>
+<div class="nav__menu span-8">
+<ul class="menu-list menu-list--mega-menu">
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/resources/follow-up-services">Follow-Up Services</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/resources/help">Help and Support</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="https://marks.ul.com">Marks and Labels</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/resources/resource-library">Resource Library</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/resources/apps">Tools, Apps and Databases</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/resources/contracts">Terms and Legal Information</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="https://www.shopulstandards.com/">UL Standards</a>
+</li>
+<li class="menu-item menu-item--default mobile-only">
+<a class="first-level ul-ga-megamenu-link" href="https://my.ul.com/">myUL® Client Portal</a>
+</li>
+<li class="menu-item menu-item--default mobile-only">
+<a class="first-level ul-ga-megamenu-link" href="https://iq.ulprospector.com/info/">Certification Database - UL Product iQ®</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="nav__aside span-4">
+<section class="section section--simple-menu section--paragraph has-bg has-margin wrapper">
+<div class="section__inner">
+<div class="section__inner wrapper">
+<div class="descriptive-link">
+<div class="descriptive-link__row row row--gutter-s">
+<div class="descriptive-link__title-container span-12">
+<span class="h2 descriptive-link__title">myUL® Client Portal</span>
+</div>
+<div class="descriptive-link__description span-8">
+<div class="editor-content">
+<p>A secure, online source for increased visibility into your UL project files, product information, documents, samples and services.</p></div>
+</div>
+<div class="descriptive-link__cta span-4">
+<a class="ul-ga-megamenu-cta button--red-outline button--xs button" href="https://my.ul.com">
+  Go to myUL</a>
+</div>
+</div>
+</div>
+<div class="descriptive-link">
+<div class="descriptive-link__row row row--gutter-s">
+<div class="descriptive-link__title-container span-12">
+<span class="h2 descriptive-link__title">Certification Database — UL Product iQ®</span>
+</div>
+<div class="descriptive-link__description span-8">
+<div class="editor-content">
+<p><span><span><span><span>Access UL certification data on products, components and systems, identify alternatives and view UL guide information with Product iQ.</span></span></span></span></p></div>
+</div>
+<div class="descriptive-link__cta span-4">
+<a class="ul-ga-megamenu-cta button--red-outline button--xs button" href="https://iq.ulprospector.com/info/">
+  Visit</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+<section class="nav--mega-menu" data-trigger-id="e004bdb9-c101-497c-8bee-8672285f5577">
+<div class="wrapper">
+<span class="nav--mega-menu--panel--title h2">Industries</span>
+<div class="row">
+<div class="nav__content span-12">
+<div class="row">
+<div class="nav__overview span-4 span-4-ld display-none">
+<a class="button button--black-outline ul-ga-megamenu-cta" href="/industries">Overview</a>
+</div>
+<div class="nav__menu span-12 span-12-ld full-menu-section col-count-4">
+<ul class="menu-list menu-list--mega-menu">
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/automotive-and-mobility">Automotive and Mobility</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/automotive-and-mobility/automotive-and-commercial-vehicles">Automotive and Commercial Vehicles</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/automotive-and-mobility/e-mobility">e-Mobility</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/automotive-and-mobility/micromobility-device-testing-and-certification">Micromobility</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/building-and-construction">Buildings and Construction</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/building-and-construction/architecture-engineering-and-construction">Architecture, Engineering and Construction</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/building-and-construction/building-envelope-testing-commissioning-and-advisory-services">Building Envelope</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/building-and-construction/building-products-and-systems">Building Products and Systems</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/chemicals-and-materials">Chemicals and Materials</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/chemicals-and-materials/basic-and-industrial-chemicals">Basic and Industrial Chemicals</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/chemicals-and-materials/plastics-and-engineered-materials">Plastics and Engineered Materials</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/chemicals-and-materials/specialty-and-fine-chemicals">Specialty and Fine Chemicals</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/energy-and-utilities">Energy and Utilities</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/energy-and-utilities/batteries-and-energy-storage">Batteries and Energy Storage</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/energy-and-utilities/energy-equipment">Energy Equipment</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/energy-and-utilities/oil-and-gas">Oil and Gas</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/energy-and-utilities/power-distribution">Power Distribution</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/energy-and-utilities/renewables">Renewables</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/financial-and-investment-services">Financial and Investment Services</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/government-services">Government Services</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/healthcare-and-life-sciences">Healthcare and Life Sciences</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/healthcare-and-life-sciences/health-and-wellness-retail">Health and Wellness Retail</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/healthcare-and-life-sciences/healthcare-providers">Healthcare Providers</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/healthcare-and-life-sciences/healthtech">Healthtech</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/healthcare-and-life-sciences/medtech">Medtech</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/healthcare-and-life-sciences/pharmaceuticals-and-biotech">Pharmaceuticals and Biotech</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/industrial-products-and-systems">Industrial Products and Systems</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/industrial-products-and-systems/industrial-machinery-and-automation">Industrial Machinery and Automation</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/industrial-products-and-systems/instruments-and-controls">Instruments and Controls</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/industrial-products-and-systems/low-and-medium-voltage-distribution">Low and Medium Voltage Distribution</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/industrial-products-and-systems/manufacturing-facilities">Manufacturing Facilities</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/life-safety-and-security">Life Safety and Security</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/retail">Retail</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="first-level ul-ga-megamenu-link" href="/industries/technology-and-electronics">Technology and Electronics</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/technology-and-electronics/consumer-electronics">Consumer Electronics</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/technology-and-electronics/information-and-communications-technology">Information and Communications Technology</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default vertical_line_start vertical_line_end">
+<a class="first-level ul-ga-megamenu-link" href="/industries/products-and-components">Products and Components</a>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/appliances">Appliances</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/batteries">Batteries</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/beauty-and-personal-care">Beauty and Personal Care</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/components">Components</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/consumer-packaged-goods">Consumer Packaged Goods</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/furniture">Furniture</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/general-merchandise">General Merchandise</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level accordion ul-ga-megamenu-link" data-module="accordion" href="/industries/products-and-components/hvacr">HVACR</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/household-and-industrial-cleaners">Household and Industrial Cleaners</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level accordion ul-ga-megamenu-link" data-module="accordion" href="/industries/products-and-components/lighting">Lighting</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/otc-and-dietary-supplements">OTC and Dietary Supplements</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/textiles-apparel-and-footwear">Textiles, Apparel and Footwear</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/toys-and-childrens-products">Toys and Children's Products</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/industries/products-and-components/water-and-plumbing">Water and Plumbing</a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-megamenu-link" href="/services/wire-and-cable-testing-certification">Wire and Cable</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="nav__aside span-4 display-none">
+</div>
+</div>
+</div>
+<div class="view_all_mega_menu">
+<a class="ul-ga-megamenu-cta button button--black-outline button--s" href="/industries">View All</a>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="full-sticky-cta col-aside sticky-cta-nav">
+<div class="wrapper">
+<div class="sticky_cta_title page_title_sticky"></div>
+<div class="col-gtr aside-section"><div class="sticky_cta_full siderail-sticky-cta"></div></div>
+</div>
+</div>
+<div class="region region-content">
+<div class="hidden" data-drupal-messages-fallback=""></div><div class="block block-dropdown-language block-dropdown-languagelanguage-interface" id="block-ul-com-theme-dropdownlanguage">
+<fieldset class="js-form-item form-item js-form-wrapper form-wrapper">
+<legend>
+<span class="fieldset-legend">Switch Language</span>
+</legend>
+<div class="fieldset-wrapper">
+<div class="dropbutton-wrapper"><div class="dropbutton-widget"><ul class="dropdown-language-item dropbutton"><li class="en"><span class="language-link active-language">English</span></li><li class="zh-hans"><a class="language-link" href="/zh-hans/resources/online-policies/privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="zh-hans" title="Chinese, Simplified">简体中文</a></li><li class="zh-hant"><a class="language-link" href="/zh-hant/resources/online-policies/privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="zh-hant" title="Chinese, Traditional">繁體中文</a></li><li class="fr"><a class="language-link" href="/fr/resources/online-policies/privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="fr" title="French">Français</a></li><li class="fr-ca"><a class="language-link" href="/fr-ca/resources/online-policies/privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="fr-ca">Français Canadien</a></li><li class="de"><a class="language-link" href="/de/resources/online-policies/privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="de" title="German">Deutsch</a></li><li class="it"><a class="language-link" href="/it/resources/online-policies/privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="it" title="Italian">Italiano</a></li><li class="ja"><a class="language-link" href="/ja/resources/online-policies/privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="ja" title="Japanese">日本語</a></li><li class="ko"><a class="language-link" href="/ko/resources/online-policies/privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="ko" title="Korean">한국어</a></li><li class="pt-br"><a class="language-link" href="/pt-br/resources/online-policies/privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="pt-br" title="Portuguese, Brazil">Português, Brasil</a></li><li class="es"><a class="language-link" href="/es/resources/online-policies/privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="es" title="Spanish">Español</a></li><li class="vi"><a class="language-link" href="/vi/resources/online-policies/privacy-notice?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" hreflang="vi" title="Vietnamese">Tiếng Việt</a></li></ul></div></div>
+</div>
+</fieldset>
+</div>
+<nav class="nav nav--local wrapper is-desktop">
+<div class="nav__inner-container">
+<div class="nav__inner">
+<div class="nav__title-container">
+<span class="nav__title h2"><a href="/resources">Resources</a></span>
+</div>
+<div class="nav__menu-container">
+<ul class="menu-list menu-list--local-nav list-unstyled">
+<li class="menu-item menu-item--local-nav">
+<a class="first-level" href="/resources/follow-up-services">Follow-Up Services</a>
+</li>
+<li class="menu-item menu-item--local-nav">
+<a class="first-level" href="/resources/help">Help and Support</a>
+</li>
+<li class="menu-item menu-item--local-nav">
+<a class="first-level" href="https://marks.ul.com">Marks and Labels</a>
+</li>
+<li class="menu-item menu-item--local-nav">
+<a class="first-level" href="/resources/resource-library">Resource Library</a>
+</li>
+<li class="menu-item menu-item--local-nav">
+<a class="first-level" href="/resources/apps">Tools, Apps and Databases</a>
+</li>
+<li class="menu-item menu-item--local-nav">
+<a class="first-level accordion" data-module="accordion" href="/resources/contracts">Terms and Legal Information</a>
+</li>
+<li class="menu-item menu-item--local-nav">
+<a class="first-level" href="https://www.shopulstandards.com/">UL Standards</a>
+</li>
+<li class="menu-item menu-item--local-nav mobile-only">
+<a class="first-level" href="https://my.ul.com/">myUL® Client Portal</a>
+</li>
+<li class="menu-item menu-item--local-nav mobile-only">
+<a class="first-level" href="https://iq.ulprospector.com/info/">Certification Database - UL Product iQ®</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<div class="views-element-container block block-views block-views-blockhero-block" id="block-ul-com-theme-views-block-hero-block">
+<div><div class="view view-hero view-id-hero view-display-id-block js-view-dom-id-22d627be41fba3eca229ee38e1e274179850d5d7047db8f15ced6f715c04489f">
+<div class="view-content">
+<section class="hero hero--default">
+<div class="swiper-container">
+<div class="swiper-wrapper">
+<div class="hero--default-slide swiper-slide"> <picture>
+<source media="(min-width: 768px)" srcset="/sites/g/files/qbfpbp251/files/styles/hero_full_width/public/2020-04/Privacy-Policy_2400px.jpg?itok=RP__Dq5r 1x" type="image/jpeg"/>
+<source srcset="/sites/g/files/qbfpbp251/files/styles/inline/public/2020-04/Privacy-Policy_2400px.jpg?itok=XEjp8zXP 1x, /sites/g/files/qbfpbp251/files/styles/inline_2x/public/2020-04/Privacy-Policy_2400px.jpg?itok=lNZw_Utp 2x" type="image/jpeg"/>
+<img alt="Abstract image of multi-colored dust" src="/sites/g/files/qbfpbp251/files/styles/hero_full_width/public/2020-04/Privacy-Policy_2400px.jpg?itok=RP__Dq5r" typeof="foaf:Image">
+</img></picture>
+<div class="wrapper">
+<div class="content-container hero-content--background gray">
+<h1>Privacy Notice</h1>
+<p class="description">The information that we may collect from site visitors, and how we use it.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+<div class="block block-system block-system-breadcrumb-block" id="block-breadcrumbs">
+<div class="breadcrumb--wrap breadcrumb--length-4">
+<nav aria-labelledby="system-breadcrumb" class="breadcrumb" role="navigation">
+<ul>
+<li><a href="/" title="Home">Home</a></li>
+<li><a href="/resources" title="Resources">Resources</a></li>
+<li><a href="/resources/online-policies" title="Online Policies">Online Policies</a></li>
+<li title="Privacy Notice">Privacy Notice</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="block block-system block-system-main-block mainpagecontent" id="block-ul-com-theme-mainpagecontent">
+<div class="main-container">
+<main class="" id="main-content">
+<section class="section section--paragraph page--field--body">
+<div class="paragraph-gutter">
+<div class="editor-content">
+<div class="editor-content">
+<p>Effective Date: January 1, 2020</p>
+<p>Please take a few minutes to familiarize yourself with our Privacy Notice. This Privacy Notice applies to this and all other websites (collectively referred to as the “Site”) offered or operated by Underwriters Laboratories Inc. or its subsidiaries or affiliated companies (collectively referred to as “UL”), except for any UL Sites that have their own posted Privacy Notice. Please note that the Site is hosted by UL in the United States and any information you provide may be transferred to the U.S. or other countries.</p>
+<h3>Information we collect</h3>
+<p>We may collect the following types of information:</p>
+<ul><li>Information you provide – When you sign up for access to UL’s online resources (including any customer applications), download documents or complete online forms, we may ask you for certain personal information. You may be asked to provide personal information such as: name, title, function, e-mail address, address and certain demographic information. When placing an order or carrying out a transaction on the Site, you may be asked for financial information such as credit card details. You may also voluntarily share other information such as feedback, opinions, or information shared via the Contact Us feature.</li>
+<li>Cookies – A cookie is a piece of data stored on a user’s computer that is tied to information about the user. When you visit the Site, we send one or more cookies to your computer or other browsing device. We use cookies to improve the quality of our service, including for storing user preferences, improving search results and ad selection, and tracking user trends. Most browsers are initially set up to accept cookies, but you can reset your browser to refuse all cookies or to indicate when a cookie is being sent. However, some UL features and services may not function properly if your cookies are disabled.</li>
+<li>Web beacons – Web pages may contain electronic images (called a “single-pixel GIF” or “web beacon”) that allow a web site to count users who have visited that page or to access certain cookies. We use web beacons to track the effectiveness of an email campaign and to transfer an individual’s unique user identification (often in the form of a cookie) and associate your updated information into our database. Our practice is to include web beacons in HTML-formatted email messages (messages that include graphics) that we send directly or through third parties in order to determine, among many other items, which email messages were opened and to note whether a message was acted upon. In general, any electronic image viewed as part of a web page, including an ad banner, can act as a web beacon.</li>
+<li>Log information – When you access the Site via a browser, application or other client, our servers automatically record certain information. This may include information such as your web request, your interaction with a service, Internet Protocol (IP) address, browser type, browser language, the date and time of your request, and one or more cookies that may uniquely identify your browser or your account.</li>
+<li>Please see our <a href="/customer-resources/online-policies/about-cookies/">Cookie Policy</a> for more detailed information regarding cookies and web beacons.</li>
+</ul><h3>No sensitive personal information or personal information of minors</h3>
+<p>UL does not need or want to collect any sensitive personal information (called special category data in the EU) through the Site. Similarly, minors under the age of 18 should not provide any personal information to UL through the Site. The Site does not knowingly accept sensitive personal information or personal information of minors from users of the Site and/or any third party sites.</p>
+<h3>How we use this information</h3>
+<ul><li>We use information we collect to help us improve the Site and deliver content and functionality that is best suited for you and your device.</li>
+<li>To analyze your use of the Site for trend monitoring and promotional purposes</li>
+<li>The information we collect allows us to keep you posted on UL’s latest announcements, events, and services that we believe may be of interest to you if this is in accordance with your marketing preferences.</li>
+<li>We may use your information to send important notices or communications regarding services you have ordered from UL, even if you have opted out from our marketing communications.</li>
+<li>To respond to inquiries and comments and provide you with support via your preferred communication channels</li>
+<li>To keep the Site safe and secure and comply with our legal requirements and obligations</li>
+<li>To set up and manage your user account</li>
+<li>For any other new purpose for which we notify you before collecting any personal data</li>
+</ul><h3>How we share your information</h3>
+<p>You can choose which, if any, of our online resources you wish to participate in. UL only shares personal information in the following limited circumstances:</p>
+<ul><li>We provide such information to our subsidiaries and affiliated companies where it is necessary to meet the purpose for which you have submitted your personal data and in particular if necessary for the provision of services, account administration, sales, marketing and support. We take steps to ensure that UL companies follow our data protection policy, this privacy notice and applicable local law when handling personal data. This includes having in place proper data transfer mechanisms such as EU standard contractual clauses.</li>
+<li>To third party contractors and providers that perform certain functions on behalf of UL, such as sending email, removing repetitive information from customer lists, analyzing data and processing credit card payments, direct marketing services, and cloud hosting services. These parties only have access to such information as necessary to perform their functions and may not use it for any purpose other than to provide services to us.</li>
+<li>UL, like all companies, is required to respond to lawful requests from law enforcement bodies to access UL premises and systems for purposes relating to national security. This will be strictly limited to the data relevant to the scope of a request and to data subjects covered by the legal jurisdiction of requests.</li>
+<li>We may also process personal data directly relevant to investigating and handling a criminal or civil lawsuit or to take action to prevent fraud, abuse or other violations of our Site Terms of Use.</li>
+<li>For other lawful purposes that may arise such as due to any merger, acquisition, financing, sale of company assets or interests in the company, or transition of service to another provider, or in the event of an insolvency, bankruptcy, or receivership.</li>
+</ul><h3>Safeguarding your information</h3>
+<p>UL uses commercially reasonable efforts to employ security measures designed to protect your personal information from loss, destruction, or access by unauthorized persons. These include, but are not limited to:</p>
+<ul><li>Physical safeguards such as locked doors and file cabinets, controlled access to our facilities and secure destruction of media containing your personal information.</li>
+<li>Technology safeguards, like the use of anti-virus and endpoint protection software, and monitoring of our systems and data centers to ensure that they comply with our security policies.</li>
+<li>Organizational safeguards, like training and awareness programs on security and privacy, to make sure employees understand the importance and means by which they must protect your personal information.</li>
+</ul><h3>Data Retention</h3>
+<p>We will retain your information for as long as is necessary for the purposes for which it was collected. The criteria used to determine our retention periods include:</p>
+<ul><li>How long is the data needed to provide you with our products or services or to operate our business?</li>
+<li>Do you have an account with us? In this case, we will keep your data while your account is active or for as long as needed to provide the services to you.</li>
+<li>Are we subject to a legal, contractual, or similar obligation to retain your data? Examples can include mandatory data retention laws in the applicable jurisdiction, government orders to preserve data relevant to an investigation, or data that must be retained for the purposes of contract or litigation.</li>
+</ul><h3>Accessing and controlling your information</h3>
+<p>You have the following rights in most circumstances:</p>
+<ul><li>The right of access—The right to know whether data concerning you is being processed and if so, the right to gain access to it with a few exceptions.</li>
+<li>The right to rectification—The right to ensure data held about you is accurate, and if it is not, have it corrected.</li>
+<li>The right to erasure or right to be forgotten—Where UL does not have an overriding legal basis to retain your personal information.</li>
+<li>The right to restrict processing—In some circumstances, you have the right to limit how UL processes your personal information if UL does not have an overriding legal basis to continue processing.</li>
+<li>The right to be informed—UL has a responsibility to provide you with the information contained in this privacy notice and to answer questions if you ask for more detail about anything contained here.</li>
+<li>The right to data portability—The right to obtain a copy of the personal data you provided to UL, in a format you can easily take away and load onto another device.</li>
+<li>The right to object—You have the right to withdraw consent or object to processing when processing is based upon consent or legitimate interest as the lawful basis, with some exceptions.</li>
+</ul><p>For many of our services, we provide mechanisms for you to electronically access and update your personal information by logging into your online accounts. You may opt-out of promotional email communications from us by clicking on a link provided in our promotional email messages or sending us an email at <a href="/cdn-cgi/l/email-protection#3b5a594e485e7b4e5715585456"><span class="__cf_email__" data-cfemail="bedfdccbcddbfecbd290ddd1d3">[email protected]</span></a>. After opting-out, you will no longer receive marketing or promotional communications but will continue to receive other messages, such as important notices or communications regarding services you have ordered from UL. For cookies/trackers, you can click the ‘More Information’ link on any UL cookie banner to check that preferences are correct. You can selectively provide consent and withdraw consent via that link. You may also send any requests to <a href="/cdn-cgi/l/email-protection#abcccfdbd9ebdec785c8c4c6"><span class="__cf_email__" data-cfemail="711615010331041d5f121e1c">[email protected]</span></a> or complete our online personal data access request form.</p>
+<h3>California residents: Your California privacy rights</h3>
+<p>California law permits residents to receive: (1) a listing of categories of personal information UL has collected about them, (2) the identity of any third parties to whom UL has disclosed personal information for a business purpose or sold personal information within the previous calendar year and (3) the categories of personal information disclosed or sold to those third parties. California law requires us to request certain personal information to verify your identity prior to these disclosures and prohibits discrimination based on your exercise of these rights.  You can <a href="https://app-de.onetrust.com/app/#/webform/e348820f-6ffc-48f0-aa9f-2d80a79304fc">submit a request</a> for disclosure by contacting us at <a href="/cdn-cgi/l/email-protection#593e3d292b192c35773a3634"><span class="__cf_email__" data-cfemail="c6a1a2b6b486b3aae8a5a9ab">[email protected]</span></a>, calling +1.877.854.3577 or completing our online personal <a href="https://app-de.onetrust.com/app/#/webform/e348820f-6ffc-48f0-aa9f-2d80a79304fc">data access request form</a>. Please note that UL does not sell personal information to third parties or disclose personal information to third parties for the third parties’ direct marketing purposes.  </p>
+<h3>Questions or concerns</h3>
+<p>If you would like more information about any of the above, have concerns, or need information about viewing this Privacy Nitice in alternate formats, you can contact the UL Data Privacy Director at <a href="/cdn-cgi/l/email-protection#d6b1b2a6a496a3baf8b5b9bb"><span class="__cf_email__" data-cfemail="c1a6a5b1b381b4adefa2aeac">[email protected]</span></a> and, if you reside within the EU, and feel there are grounds to do so, you have the right to lodge a complaint with the Irish Data Protection Commissioner:  <a href="https://www.dataprotection.ie/docs/complaints/1592.htm">https://www.dataprotection.ie/docs/complaints/1592.htm</a>.</p></div>
+</div>
+</div>
+</section>
+<section class="section section--addtoany">
+<span class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-title="Privacy Notice" data-a2a-url="https://www.ul.com/resources/online-policies/privacy-notice"><span class="share">Share:</span><a class="a2a_button_linkedin"><span class="icon icon-linkedin"></span></a><a class="a2a_button_twitter"><span class="icon icon-twitter"></span></a><a class="a2a_button_facebook"><span class="icon icon-facebook"></span></a><a class="a2a_button_email"><span class="icon icon-mail"></span></a></span>
+</section>
+</main>
+</div>
+</div>
+</div>
+<div class="region region-bottom">
+<section class="section section--action-banner section--paragraph has-bg has-margin wrapper" id="cta-banner-1" style=" background-color: #c02032;">
+<div class="section__inner wrapper">
+<div class="row row--gutter-l"><div class="span-12 span-6-lt">
+<div class="section__content">
+<h2 class="section__title h2">Get in touch</h2>
+<div class="section__description editor-content">
+<p>
+  Have questions, need specifics? Let's get this conversation started.</p>
+</div>
+<div class="banner-buttons">
+<a class="button--white button--primary button" href="/contact-us">
+  Contact us</a>
+</div>
+</div>
+</div><div class="span-12 span-6-lt">
+<div class="section__content">
+<h2 class="section__title h2">Help and support</h2>
+<div class="section__description editor-content">
+<p>
+  How can we help?</p>
+</div>
+<div class="banner-buttons">
+<a class="button--white button--primary button" href="/resources/help">
+  Visit help center</a>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+</div>
+<footer class="footer">
+<div class="footer__top">
+<div class="wrapper">
+<nav class="footer-nav">
+<ul class="menu-list menu-list--footer-nav">
+<li class="menu-item menu-item--default">
+<span class="menu-item-no-link">Careers</span>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-footer-link" href="/about/careers">Working at UL </a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-footer-link" href="https://hub-ul.icims.com/">Global Job Search </a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-footer-link" href="https://usenglish-ul.icims.com/">US Job Search</a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<span class="menu-item-no-link">Help and Support</span>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-footer-link" href="/resources/help">Help Center </a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-footer-link" href="/resources/apps">Tools, Apps and Databases </a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-footer-link" href="/resources/market-surveillance-departments">Report a Concern </a>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item--default">
+<span class="menu-item-no-link">Contact Center</span>
+<ul>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-footer-link" href="/contact-us">Contact Us </a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-footer-link" href="/preference-center">Manage Your Subscriptions </a>
+</li>
+<li class="menu-item menu-item--default">
+<a class="second-level ul-ga-footer-link" href="/about/locations">Locations </a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<div class="footer-choose-region" data-module="regionClick">
+<h4>Choose a region</h4>
+<div class="js-form-item form-item js-form-type-select form-type-select">
+<label class="sr-only" for="choose-region">Choose a region</label>
+<select class="form-select" data-drupal-selector="choose-region" id="choose-region" name="choose-region">
+<option value="">Select a regional website</option>
+<option value="https://latam.ul.com/es">Argentina (Español)</option>
+<option value="https://australia.ul.com/">Australia (English)</option>
+<option value="https://latam.ul.com/pt-br">Brazil (Português)</option>
+<option value="https://canada.ul.com/">Canada (English)</option>
+<option value="https://canada.ul.com/fr/">Canadá (Français Canadien)</option>
+<option value="https://china.ul.com/">China (简体中文)</option>
+<option value="https://latam.ul.com/es">Colombia (Español)</option>
+<option value="https://denmark.ul.com/">Denmark (English)</option>
+<option value="https://france.ul.com/en/">France (English)</option>
+<option value="https://france.ul.com/">France (Français)</option>
+<option value="https://germany.ul.com/">Germany (Deutsch)</option>
+<option value="https://germany.ul.com/en/">Germany (English)</option>
+<option value="https://hongkong.ul.com/">Hong Kong (繁體中文)</option>
+<option value="https://india.ul.com/">India (English)</option>
+<option value="https://italy.ul.com/en/">Italy (English)</option>
+<option value="https://italy.ul.com/">Italy (Italiano)</option>
+<option value="https://japan.ul.com/">Japan (日本語)</option>
+<option value="https://middle-east.ul.com">Kingdom of Saudi Arabia (English)</option>
+<option value="https://korea.ul.com/">Korea (한국어)</option>
+<option value="https://latam.ul.com/en">Mexico (English)</option>
+<option value="https://latam.ul.com/es">Mexico (Español)</option>
+<option value="https://newzealand.ul.com/">New Zealand (English)</option>
+<option value="https://spain.ul.com/en/">Spain (English)</option>
+<option value="https://spain.ul.com/">Spain (Español)</option>
+<option value="https://taiwan.ul.com/">Taiwan (繁體中文)</option>
+<option value="https://uk.ul.com/">United Kingdom (English)</option>
+<option value="http://www.ul.com">United States (English)</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<div class="footer__bottom">
+<div class="wrapper">
+<div class="footer-logo">
+<a aria-label="UL Logo" href="/">
+<svg class="brand-logo" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<title>UL Logo</title>
+<path d="M10,20C4.5,20,0,15.5,0,10C0,4.5,4.5,0,10,0c5.5,0,10,4.5,10,10C20,15.5,15.5,20,10,20 M10,18.1c4.5,0,8.1-3.6,8.1-8.1 c0-4.5-3.6-8.1-8.1-8.1c-4.5,0-8.1,3.6-8.1,8.1C1.9,14.5,5.5,18.1,10,18.1"></path>
+<path d="M5.1,4.6H7v5.9c0,0.4,0.1,0.7,0.6,0.7c0.5,0,0.6-0.4,0.6-0.8V4.6h1.8v5.7c0,1.3-0.6,2.4-2.5,2.4c-1.6,0-2.5-0.7-2.5-2.4 V4.6"></path>
+<polyline points="10.8,15.4 10.8,7.5 12.7,7.5 12.7,13.8 14.9,13.8 14.9,15.4 10.8,15.4"></polyline>
+</svg>
+</a>
+</div>
+<div class="footer-copyright-section">
+<div class="footer-copyright">
+<p>UL and the UL logo are trademarks of UL LLC ©2022. All rights reserved.</p>
+</div>
+<div class="footer__menu">
+<a data-drupal-link-system-path="node/182046" href="/resources/online-policies">Online Policies</a>
+<a data-drupal-link-system-path="node/181106" href="/impressum">Impressum</a>
+<a data-drupal-link-system-path="node/183441" href="/resources/online-policies/about-cookies">About Cookies</a>
+<a href="https://app-de.onetrust.com/app/#/webform/e348820f-6ffc-48f0-aa9f-2d80a79304fc">Data Subject Access Request Portal</a>
+</div>
+</div>
+<nav class="social-nav">
+<ul>
+<li class="icon icon-linkedin"><a href="https://www.linkedin.com/company/ul-">LinkedIn</a></li>
+<li class="icon icon-twitter"><a href="https://www.twitter.com/uldialogue">Twitter</a></li>
+<li class="icon icon-facebook"><a href="https://www.facebook.com/uldialogue">Facebook</a></li>
+<li class="icon icon-instagram"><a href="https://www.instagram.com/uldialogue">Instagram</a></li>
+<li class="icon icon-youtube"><a href="https://www.youtube.com/ULdialogue">Youtube</a></li>
+</ul>
+</nav>
+<div class="block block-ul-onetrust block-block-onetrust" id="block-onetrustblock">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script charset="UTF-8" data-domain-script="b060a578-9830-448d-9d34-2419f2b5d3cb" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript"></script>
+<script>
+  function OptanonWrapper() {}
+  </script>
+</div>
+</div>
+</div>
+<button class="scrollToTopBtn"><span class="tooltiptext">Back to top</span></button>
+</footer>
+</div>
+<script src="/sites/g/files/qbfpbp251/files/js/js_fbRr3pEkKjuQuyB5IFDm8jJPbPIlf8KZFbnUpJD6JcI.js"></script>
+<script async="" src="//static.addtoany.com/menu/page.js"></script>
+<script src="/sites/g/files/qbfpbp251/files/js/js_8G-cTluo1PKWykvH4wu7vhQ2FnZtesNO_6VbirzvU98.js"></script>
+<script async="" src="/profiles/custom/ul_base_profile/themes/custom/ul_base_theme/build/scripts/fontloader.built.js?v=9.3.15"></script>
+<script src="/profiles/custom/ul_base_profile/themes/custom/ul_base_theme/build/scripts/app.built.js?v=9.3.15"></script>
+<script src="/sites/g/files/qbfpbp251/files/js/js_tqs99uOECXxv7jncjq8vUedFSQndVF9vxhT4pE7zT_s.js"></script>
+<script async="" src="//embed.solosegment.com/analytics/embed/?u=268d8a835b993ba151v2"></script>
+<script async="" class="optanon-category-C0004" src="//embed.solosegment.com/analytics/embed/?u=268d8a835b993ba151v2_framework" type="text/plain"></script>
+<script class="optanon-category-C0003" src="/profiles/custom/ul_enterprise_profile/js/back_button.js?rdf4qu" type="text/plain"></script>
+<script src="/sites/g/files/qbfpbp251/files/js/js_xBnbdhqnbyz4Rl-LJWeuYX1lVnc5DGN5JSKoV0hm8x4.js"></script>
+<script async="" src="/sites/g/files/qbfpbp251/themes/site/ul_com_theme/vendor/SVG_sustainability_report_2020/scripts/TweenMax.min.js?v=1.x"></script>
+<script async="" src="/sites/g/files/qbfpbp251/themes/site/ul_com_theme/vendor/SVG_sustainability_report_2020/scripts/sustainabilityreport.js?v=1.x"></script>
+<script async="" class="optanon-category-C0002" src="/sites/g/files/qbfpbp251/themes/site/ul_com_theme/scripts/hotjar.js?v=1.x" type="text/plain"></script>
+<script src="/sites/g/files/qbfpbp251/files/js/js_Q0kbqw3oX2vYw1wPodwbKtYk0ERdwvceO15E4Qiuj1g.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"2a222ee87c","applicationID":"368375410","transactionName":"YAQHNRcDDUYDWkBfXllOJAIRCwxbTX1GQ0FWDTkPCgYGaSFWWkJDWA0JBBc+LVoGXGJfVEAiCg8REAxZDlxGGw9BCAAW","queueTime":0,"applicationTime":1730,"atts":"TEMEQ18ZHkg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

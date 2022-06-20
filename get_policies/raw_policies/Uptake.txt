@@ -1,0 +1,551 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"350b19199d",applicationID:"584622039"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="DPR, Width, Viewport-Width" http-equiv="Accept-CH"/>
+<script>dataLayer = [];</script>
+<link href="/dist/styles/main-com-0d838c3280.css" rel="stylesheet"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/manifest.json" rel="manifest"/>
+<link color="#000000" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#ffffff" name="theme-color"/>
+<script>
+  function revealFonts() {
+    var root = document.getElementsByTagName('html')[0];
+    root.className += ' js-fonts-loaded';
+  }
+
+  function loadScript(url, callback) {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.onload = function() {
+      callback();
+    };
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  // Load the typekit script
+  loadScript('https://use.typekit.net/nzc1laz.js', function() {
+    try{Typekit.load({
+      async: true,
+      active: revealFonts,
+      inactive: revealFonts
+    });}catch(e){};
+  });
+
+  // After a set amount of time, reveal fonts whether they have loaded or not
+  window.setTimeout(revealFonts, 5000);
+</script>
+<script src="//go.uptake.com/js/forms2/js/forms2.min.js"></script>
+<script type="text/javascript">
+  (function(c,h,a,f,i,e){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  c[a].a=i;c[a].e=e;var g=h.createElement("script");g.async=true;g.type="text/javascript";
+  g.src=f+'?aid='+i;var b=h.getElementsByTagName("script")[0];b.parentNode.insertBefore(g,b);
+  })(window,document,"rtp","//abrtp2-cdn.marketo.com/rtp-api/v1/rtp.js","uptake");
+  rtp('send','view');
+  rtp('get', 'campaign',true);
+</script>
+<title>Privacy Policy | Uptake</title>
+<script>dataLayer = [];
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NHPNTZ9');
+</script><meta content="This Privacy Notice applies only to Uptake’s processing of your Personal Data in connection with your request for more information on Uptake." name="description"/>
+<meta content="no-referrer-when-downgrade" name="referrer"/>
+<meta content="all" name="robots"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Uptake" property="og:site_name"/>
+<meta content="website" property="og:type"/>
+<meta content="https://www.uptake.com/privacy-notice" property="og:url"/>
+<meta content="Privacy Policy" property="og:title"/>
+<meta content="This Privacy Notice applies only to Uptake’s processing of your Personal Data in connection with your request for more information on Uptake." property="og:description"/>
+<meta content="https://uptake.imgix.net/images/UptakeSocial.jpg?auto=format&amp;crop=focalpoint&amp;domain=uptake.imgix.net&amp;fit=crop&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=630&amp;ixlib=php-3.3.1&amp;q=82&amp;w=1200&amp;s=f8beaefe80ad37bf829c367eaed23ccd" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@uptake" name="twitter:site"/>
+<meta content="@uptake" name="twitter:creator"/>
+<meta content="Privacy Policy" name="twitter:title"/>
+<meta content="This Privacy Notice applies only to Uptake’s processing of your Personal Data in connection with your request for more information on Uptake." name="twitter:description"/>
+<meta content="https://uptake.imgix.net/images/UptakeSocial.jpg?auto=format&amp;crop=focalpoint&amp;domain=uptake.imgix.net&amp;fit=crop&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=418&amp;ixlib=php-3.3.1&amp;q=82&amp;w=800&amp;s=6883c923768f0066c58fe5571012dbe7" name="twitter:image"/>
+<meta content="800" name="twitter:image:width"/>
+<meta content="418" name="twitter:image:height"/>
+<link href="https://www.uptake.com/privacy-notice" rel="canonical"/>
+<link href="https://www.uptake.com" rel="home"/>
+<link href="https://www.uptake.com/humans.txt" rel="author" type="text/plain"/></head>
+<body class="l-site js-mobile-nav__background uptake-com"><noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NHPNTZ9" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="l-site__header l-site__header--default">
+<header class="l-site-header js-site-header">
+<section class="l-site-header__secondary-nav">
+<ul class="l-site-header__secondary-nav-content">
+<li class="l-site-header__secondary-nav-item">
+<a class="l-site-header__secondary-nav-link js-ajax-listener" href="https://www.uptake.com/about">About</a>
+</li>
+<li class="l-site-header__secondary-nav-item">
+<a class="l-site-header__secondary-nav-link js-ajax-listener" href="https://www.uptake.com/newsroom">News</a>
+</li>
+<li class="l-site-header__secondary-nav-item">
+<a class="l-site-header__secondary-nav-link js-ajax-listener" href="/newsroom?category=events">Events</a>
+</li>
+<li class="l-site-header__secondary-nav-item">
+<a class="l-site-header__secondary-nav-link js-ajax-listener" href="https://www.uptake.com/partners">Partners</a>
+</li>
+<li class="l-site-header__secondary-nav-item">
+<a class="l-site-header__secondary-nav-link js-ajax-listener" href="https://www.uptake.com/careers">Careers</a>
+</li>
+<li class="l-site-header__secondary-nav-item">
+<a class="l-site-header__secondary-nav-link js-ajax-listener" href="https://www.uptake.com/forms/contact">Contact</a>
+</li>
+</ul>
+</section>
+<section class="l-site-header__body">
+<div class="l-site-header__brand l-site-header__brand--default">
+<a href="https://www.uptake.com/">
+<svg height="20.6px" viewbox="0 0 161.8 20.6" width="161.8px" xmlns="http://www.w3.org/2000/svg"><title>uptake</title><polygon points="140.5 0.3 140.5 20.3 161.8 20.3 161.8 15.8 145.4 15.8 145.4 12.4 161.3 12.4 161.3 8.2 145.4 8.2 145.4 4.8 161.8 4.8 161.8 0.3 140.5 0.3"></polygon><path d="M48.9,7.7a2.1,2.1,0,0,1-2.3,2.4H34.1V5.1H46.7a2.1,2.1,0,0,1,2.3,2.4ZM48.4.4H28.8v20h5.4V14.7H46.5l2.2-.2c3.5-.6,5.4-3,5.4-7S52.1,1,48.4.4"></path><polygon points="57.1 0.3 57.1 5.1 66.4 5.1 66.4 20.3 71.7 20.3 71.7 5.1 81 5.1 81 0.3 57.1 0.3"></polygon><path d="M7.6,20.3h9.2c4.9-.1,7.5-2.6,7.6-7.6V.3H19.2V12.7a2.6,2.6,0,0,1-2.8,2.8H8c-1.8-.1-2.8-1-2.8-2.8V.3H0V12.7c.1,4.9,2.6,7.5,7.6,7.6"></path><polygon points="93.9 0 80.4 13.5 80.4 20.6 93.9 7.1 107.3 20.6 107.3 13.5 93.9 0"></polygon><polygon points="127.8 0.3 116.1 12 116.1 0.3 111.3 0.3 111.3 20.3 114.6 20.3 122.5 12.3 130.4 20.3 137.2 20.3 125.9 9 134.6 0.3 127.8 0.3"></polygon></svg>
+</a>
+</div>
+<div class="l-site-header__content">
+<button class="l-site-header__mobile-trigger js-mobile-nav__reveal" data-nav-group="base" title="press to toggle sidebar" type="button">
+<svg height="20px" role="img" viewbox="0 0 30 20" width="30px" xmlns="http://www.w3.org/2000/svg"><title>menu icon</title><rect height="3" width="30"></rect><rect height="3" width="30" y="8.5"></rect><rect height="3" width="30" y="17"></rect></svg>
+</button>
+<div class="l-site-header__overlay js-mobile-nav__overlay"></div>
+<nav class="l-site-header__nav js-mobile-nav__content" data-nav-group="base">
+<ul class="site-nav"><li class="site-nav__item js-site-nav-item data-current-industry-solutions">
+<a class="site-nav__item-link js-ajax-listener" href="https://www.uptake.com/industry-solutions">
+<span>Industries</span>
+</a><span class="site-nav__item-hit-area js-site-item-hit-area"></span><div class="site-nav__mega-nav"><div class="l-mega-nav"><div class="l-mega-nav__content"><div class="nav-content nav-content--primary-nav nav-content--industries"><div class="nav-content__group-level-1"><h5 class="nav-content__group-heading">
+<span>Process</span></h5><div class="nav-content__group nav-content__group--doubleColumn"><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/chemical-oil-gas">Chemical, Oil &amp; Gas</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/energy">Energy</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/metals-mining">Metals &amp; Mining</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/manufacturing">Manufacturing</a></div></div></div><div class="nav-content__group-level-1"><h5 class="nav-content__group-heading">
+<span>Transportation</span></h5><div class="nav-content__group nav-content__group--singleColumn"><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/on-highway-trucks">On-highway Trucks</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/rail">Rail Operations</a></div></div></div><div class="nav-content__group-level-1"><h5 class="nav-content__group-heading">
+<span>Public Sector</span></h5><div class="nav-content__group nav-content__group--singleColumn"><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/department-of-defense">Department of Defense</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/federal-state-local">Federal, State &amp; Local</a></div></div></div><div class="nav-content__group-level-1"><h5 class="nav-content__group-heading">
+<span>Dealerships</span></h5><div class="nav-content__group nav-content__group--singleColumn"><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/dealer">Equipment Dealers</a></div></div></div></div></div></div></div></li><li class="site-nav__item js-site-nav-item data-current-products">
+<a class="site-nav__item-link js-ajax-listener" href="https://www.uptake.com/products">
+<span>Products</span>
+</a><span class="site-nav__item-hit-area js-site-item-hit-area"></span><div class="site-nav__mega-nav"><div class="l-mega-nav"><div class="l-mega-nav__content"><div class="nav-content nav-content--primary-nav nav-content--products"><div class="nav-content__group-level-1"><div class="nav-content__group nav-content__group--row"><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/products/fusion">Fusion</a><p class="nav-content__item-subheading">OT Data Store</p></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/products/radar">Radar</a><p class="nav-content__item-subheading">Configurable Analytics</p></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/products/asl-explorer">ASL® Explorer</a><p class="nav-content__item-subheading">FMEA Content Library</p></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/products/fleet">Fleet</a><p class="nav-content__item-subheading">Predictive Maintenance</p></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/products/federal">Federal</a><p class="nav-content__item-subheading">Mission Ready Analytics</p></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/dealer">Dealer</a><p class="nav-content__item-subheading">Equipment Dealer Workflow</p></div></div></div></div></div></div></div></li><li class="site-nav__item js-site-nav-item data-current-resources">
+<a class="site-nav__item-link js-ajax-listener" href="https://www.uptake.com/resources">
+<span>Resources</span>
+</a><span class="site-nav__item-hit-area js-site-item-hit-area"></span><div class="site-nav__mega-nav"><div class="l-mega-nav"><div class="l-mega-nav__content"><div class="nav-content nav-content--primary-nav nav-content--resources"><div class="nav-content__group-level-1"><div class="nav-content__group nav-content__group--row"><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/blog">Blog</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="/resources?category=case-study">Case Studies</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="/resources?&amp;category=ebook">eBooks</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="/resources?&amp;category=video">Videos</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="/resources?&amp;category=webinar">Webinars</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="/resources?&amp;category=white-paper">White Papers</a></div></div></div></div></div></div></div></li><li class="site-nav__button">
+<a class="site-nav__button-link" href="https://platform.uptake.com/">
+<span>Customer Login</span>
+</a></li></ul>
+<ul class="site-nav-mobile"><li class="site-nav-mobile__item data-current-industry-solutions">
+<a class="site-nav-mobile__mobile-link js-ajax-listener js-mobile-nav__reveal" data-nav-group="industries" href="https://www.uptake.com/industry-solutions">
+<span>Industries</span><svg height="16px" viewbox="0 0 9 16" width="9px" xmlns="http://www.w3.org/2000/svg"><title>caret right</title><polygon points="1.4 16 0 14.6 6.3 8 0 1.4 1.4 0 9 8 1.4 16"></polygon></svg></a><div class="site-nav-mobile__dropdown js-mobile-nav__content" data-nav-group="industries"><div class="site-nav-mobile__back-btn js-mobile-nav__dismiss" data-nav-group="industries">
+<svg height="16px" viewbox="0 0 9 16" width="9px" xmlns="http://www.w3.org/2000/svg"><title>caret left</title><polygon points="7.6 0 9 1.4 2.7 8 9 14.6 7.6 16 0 8 7.6 0"></polygon></svg><span>Back</span></div><ul class="site-nav-mobile__subnav"><li class="site-nav-mobile__mobile-only">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/industry-solutions">All Industries</a></li><p class="site-nav-mobile__subnav-group-heading">
+Process</p><li class="is-activechemical-oil-gas">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/industry-solutions/chemical-oil-gas">Chemical, Oil &amp; Gas</a></li><li class="is-activeenergy">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/industry-solutions/energy">Energy</a></li><li class="is-activemetals-mining">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/industry-solutions/metals-mining">Metals &amp; Mining</a></li><li class="is-activemanufacturing">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/industry-solutions/manufacturing">Manufacturing</a></li><p class="site-nav-mobile__subnav-group-heading">
+Transportation</p><li class="is-activeon-highway-trucks">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/industry-solutions/on-highway-trucks">On-highway Trucks</a></li><li class="is-activerail">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/industry-solutions/rail">Rail Operations</a></li><p class="site-nav-mobile__subnav-group-heading">
+Public Sector</p><li class="is-activedepartment-of-defense">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/industry-solutions/department-of-defense">Department of Defense</a></li><li class="is-activefederal-state-local">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/industry-solutions/federal-state-local">Federal, State &amp; Local</a></li><p class="site-nav-mobile__subnav-group-heading">
+Dealerships</p><li class="is-activeequipment-dealers">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/dealer">Equipment Dealers</a></li></ul></div></li><li class="site-nav-mobile__item data-current-products">
+<a class="site-nav-mobile__mobile-link js-ajax-listener js-mobile-nav__reveal" data-nav-group="applications" href="https://www.uptake.com/products">
+<span>Products</span><svg height="16px" viewbox="0 0 9 16" width="9px" xmlns="http://www.w3.org/2000/svg"><title>caret right</title><polygon points="1.4 16 0 14.6 6.3 8 0 1.4 1.4 0 9 8 1.4 16"></polygon></svg></a><div class="site-nav-mobile__dropdown js-mobile-nav__content" data-nav-group="applications"><div class="site-nav-mobile__back-btn js-mobile-nav__dismiss" data-nav-group="applications">
+<svg height="16px" viewbox="0 0 9 16" width="9px" xmlns="http://www.w3.org/2000/svg"><title>caret left</title><polygon points="7.6 0 9 1.4 2.7 8 9 14.6 7.6 16 0 8 7.6 0"></polygon></svg><span>Back</span></div><ul class="site-nav-mobile__subnav"><li class="site-nav-mobile__mobile-only">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/products">All Products</a></li><p class="site-nav-mobile__subnav-group-heading">
+Products</p><li class="is-activefusion">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/products/fusion">Fusion</a><p class="site-nav-mobile__item-subheading">OT Data Store</p></li><li class="is-activeradar">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/products/radar">Radar</a><p class="site-nav-mobile__item-subheading">Configurable Analytics</p></li><li class="is-activeasl-explorer">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/products/asl-explorer">ASL® Explorer</a><p class="site-nav-mobile__item-subheading">FMEA Content Library</p></li><li class="is-activefleet">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/products/fleet">Fleet</a><p class="site-nav-mobile__item-subheading">Predictive Maintenance</p></li><li class="is-activefederal">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/products/federal">Federal</a><p class="site-nav-mobile__item-subheading">Mission Ready Analytics</p></li><li class="is-activeequipment-dealer-workflow">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/dealer">Dealer</a><p class="site-nav-mobile__item-subheading">Equipment Dealer Workflow</p></li></ul></div></li><li class="site-nav-mobile__item data-current-resources">
+<a class="site-nav-mobile__mobile-link js-ajax-listener js-mobile-nav__reveal" data-nav-group="resources" href="https://www.uptake.com/resources">
+<span>Resources</span><svg height="16px" viewbox="0 0 9 16" width="9px" xmlns="http://www.w3.org/2000/svg"><title>caret right</title><polygon points="1.4 16 0 14.6 6.3 8 0 1.4 1.4 0 9 8 1.4 16"></polygon></svg></a><div class="site-nav-mobile__dropdown js-mobile-nav__content" data-nav-group="resources"><div class="site-nav-mobile__back-btn js-mobile-nav__dismiss" data-nav-group="resources">
+<svg height="16px" viewbox="0 0 9 16" width="9px" xmlns="http://www.w3.org/2000/svg"><title>caret left</title><polygon points="7.6 0 9 1.4 2.7 8 9 14.6 7.6 16 0 8 7.6 0"></polygon></svg><span>Back</span></div><ul class="site-nav-mobile__subnav"><p class="site-nav-mobile__subnav-group-heading">
+Resources</p><li class="is-activeblog">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/blog">Blog</a></li><li class="is-activecase-studies">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="/resources?category=case-study">Case Studies</a></li><li class="is-activeebooks">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="/resources?&amp;category=ebook">eBooks</a></li><li class="is-activevideos">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="/resources?&amp;category=video">Videos</a></li><li class="is-activewebinars">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="/resources?&amp;category=webinar">Webinars</a></li><li class="is-activewhite-papers">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="/resources?&amp;category=white-paper">White Papers</a></li></ul></div></li><li class="site-nav-mobile__item">
+<a class="site-nav-mobile__mobile-link js-ajax-listener js-mobile-nav__reveal" data-nav-group="company" href="">
+<span>Company</span>
+<svg height="16px" viewbox="0 0 9 16" width="9px" xmlns="http://www.w3.org/2000/svg"><title>caret right</title><polygon points="1.4 16 0 14.6 6.3 8 0 1.4 1.4 0 9 8 1.4 16"></polygon></svg></a><div class="site-nav-mobile__dropdown js-mobile-nav__content" data-nav-group="company"><div class="site-nav-mobile__back-btn js-mobile-nav__dismiss" data-nav-group="company">
+<svg height="16px" viewbox="0 0 9 16" width="9px" xmlns="http://www.w3.org/2000/svg"><title>caret left</title><polygon points="7.6 0 9 1.4 2.7 8 9 14.6 7.6 16 0 8 7.6 0"></polygon></svg><span>Back</span></div><ul class="site-nav-mobile__subnav"><p class="site-nav-mobile__subnav-group-heading">Company</p><li class="is-activeabout">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/about">About</a></li><li class="is-activenews">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/newsroom">News</a></li><li class="is-activeevents">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="/newsroom?category=events">Events</a></li><li class="is-activepartners">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/partners">Partners</a></li><li class="is-activecareers">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/careers">Careers</a></li><li class="is-activecontact">
+<a class="site-nav-mobile__mobile-link js-ajax-listener" href="https://www.uptake.com/forms/contact">Contact</a></li></ul></div></li><li class="site-nav-mobile__button">
+<a class="site-nav-mobile__button-link js-ajax-listener" href="https://www.uptake.com/forms/contact">
+<span>Contact Us</span>
+</a></li><li class="site-nav-mobile__button">
+<a class="site-nav-mobile__button-link js-ajax-listener" href="https://platform.uptake.com/">
+<span>Customer Login</span>
+</a></li></ul>
+</nav>
+</div>
+</section>
+</header>
+</div>
+<div class="l-site__content l-site__content--default" role="main">
+<div class="l-post js-post"><div class="l-post__post"><div class="heading js-hero-heading heading--small heading--no-subheading"><div class="heading__subheading"></div><h1 class="heading__heading">Privacy Notice</h1></div><div class="post-block post-block--type-text"><div class="text"><p>February 10th, 2022<br/></p><h2>Introduction<br/></h2><p><strong>What this Privacy Notice Covers.</strong> This Privacy Notice applies to Uptake’s processing of your Personal Data in connection with your use of Uptake’s website, as well as related products and services we may offer to you (collectively, the “Services”). We treat any data that identifies you, or reasonably can be linked to you, as “Personal Data.” Data that has been de-identified or aggregated so that it cannot reasonably be linked to you is not Personal Data, and we may use that data for any purpose. Throughout this Privacy Notice, you’ll see us talk about “processing” your Personal Data. This has a broad definition and refers to everything we’re doing with respect to your Personal Data under this Privacy Notice. Please note that our website is not intended for anyone under the age of 16. We do not knowingly collect Personal Data from individuals under the age of 16, unless the Personal Data is submitted with verifiable parental consent.</p><p><strong>Read this Privacy Notice!</strong> We want you to feel that our processing of your Personal Data is conducted fairly and transparently, so we want you to read this Privacy Notice. We also understand that you’re busy, and these things can be dense. That’s why we’ve provided...</p><p><strong>A Quick Guide to this Privacy Notice.</strong> This Privacy Notice is your one-stop-shop for understanding what we’re doing with your Personal Data and why. Of course, you should read it top-to-bottom. In case you don’t have the time right now, here is an index to the topics covered in more depth below, so you can jump to your topic of interest and come back to the other parts as soon as you can.</p></div></div><div class="post-block post-block--type-code"><div class="text"><ol><li>
+<a href="#who-are-we">
+<strong>Who are we?</strong>
+</a>
+<br/>
+You want to know what we mean when we say “Uptake” (or “us” or “our” or “we”).</li><li>
+<a href="#what-data">
+<strong>What Personal Data do we collect?</strong>
+</a>
+<br/>
+You want to know what Personal Data we’re collecting.</li><li>
+<a href="#how-data">
+<strong>How do we obtain your Personal Data?</strong>
+</a>
+<br/>
+You want to know how we obtain your Personal Data.</li><li>
+<a href="#why-processing">
+<strong>How are we processing it?</strong>
+</a>
+<br/>
+You want to know how we process your Personal Data and what that means for you.</li><li>
+<a href="#who-else">
+<strong>Who else is getting it?</strong>
+</a>
+<br/>
+You want to know if we’re sharing your Personal Data and, if so, with whom.</li><li>
+<a href="#how-secured">
+<strong>How is it secured?</strong>
+</a>
+<br/>
+You want to know how your Personal Data is secured.</li><li>
+<a href="#eu-users">
+<strong>Are you from the European Union?</strong>
+</a>
+<br/>
+You are an EU data subject and want to know your rights.</li><li>
+<a href="#california-users">
+<strong>Are you a California consumer?</strong>
+</a>
+<br/>
+You are a California consumer and want to know your rights.</li><li>
+<a href="#if-something-changes">
+<strong>What if something changes?</strong>
+</a>
+<br/>
+You’re wondering how you’ll know if our processing or this Privacy Notice changes.</li><li>
+<a href="#anything-else">
+<strong>Anything else?</strong>
+</a>
+<br/>
+You’ve read all of the other sections and still have questions.</li></ol><p><br/></p><p><a name="who-are-we"></a>
+<strong>1. Who are we?</strong>
+<br/>
+When we say “Uptake” (or “us” or “our” or “we”), we mean Uptake Technologies, Inc. and our affiliated companies. We don’t mean other companies or individuals that we don’t own or control. This Privacy Notice only applies to websites and applications within our control and does not apply to any third party sources. Any Personal Data collected through third party websites or applications is subject to the privacy practices of the third party, and you should review the privacy policies of those third parties prior to sharing any data.
+<br/>
+<br/>
+You can find, and send mail to (if you'd like), our headquarters at 600 W. Chicago Ave., Suite 350, Chicago, IL 60654. If you prefer phone, you can reach us at 312-242-2200. Emails related to this Privacy Notice can be sent to <a href="/cdn-cgi/l/email-protection#0575776c7364667c45707571646e602b666a68"><span class="__cf_email__" data-cfemail="6a1a18031c0b09132a1f1a1e0b010f44090507">[email protected]</span></a>.
+<br/>
+<br/>
+<br/></p><p><a name="what-data"></a>
+<strong>2. What Personal Data do we collect?</strong>
+<br/>
+We strive only to collect Personal Data that is necessary, and that Personal Data may include:
+<br/><ul><li><strong>Contact information</strong>, such as your name, address, phone number and email address.</li><li><strong>Internet or similar network activity</strong>, such as your IP address, your language, country and city from which you are browsing, browser, browsing activity, operation system, service provider, and screen resolution.</li><li><strong>Location information</strong>, such as information collected when you access our website.</li><li><strong>Commercial information</strong>, such as information relating to your purchases and services, and purchasing or consuming histories or tendencies.</li><li><strong>Financial information</strong>, such as bank account or credit card information provided when you purchase Services from us.</li></ul>
+<br/>
+<br/>
+<br/></p><p><a name="how-data"></a>
+<strong>3. How do we obtain your Personal Data?</strong>
+<br/><ul><li><strong>From you</strong>: We obtain most of the Personal Data that we collect about you from you when you interact with our website or Services, including when you (1) contact and communicate with us, (2) register for an account with us, or (3) purchase or use our Services, including our website.</li><li><strong>From our partners</strong>: We may obtain Personal Data about you from our service providers or other partners, including marketing partners and analytics providers.</li></ul>
+<br/>
+<br/>
+<br/></p><p><a name="why-processing"></a>
+<strong>4. Why are we processing it?</strong>
+<br/>
+We may use each category of your Personal Data as follows:
+<br/><ul><li><strong>Provide our products and services</strong>: We use Personal Data to furnish our Services, including to process and fulfill purchases of our Services and to improve the quality, safety and security of the Services.</li><li><strong>Communicate with you</strong>: We use Personal Data to respond to communications, contact you about your transactions, promote our Services, provide other relevant information, and request information or feedback.</li><li><strong>Internal research</strong>: We use Personal Data to conduct internal research to develop, improve or repair our products, services or technology, as well as analyze the effectiveness of our marketing strategies.</li><li><strong>Security or fraud prevention</strong>: We use Personal Data to (1) prevent, detect, protect against, or respond to security incidents, and (2) preserve the integrity or security of systems.</li><li><strong>Legal compliance</strong>: We may use Personal Data to comply with applicable law or to comply with a lawful governmental request.</li></ul>
+<br/>
+We strive to retain your Personal Data only for as long as necessary to fulfill the purpose(s) for which we obtained the information or as otherwise required by law.
+<br/>
+<br/>
+<br/></p><p><a name="who-else"></a>
+<strong>5. Who else is getting it?</strong>
+<br/>
+We may share Personal Information with service providers who act on our behalf, our partners, or others operating at your direction or where legally necessary or appropriate. We do not share or sell Personal Information with third parties for their independent purposes, such as marketing.
+<br/><ul><li><strong>Within Uptake and its Legal Affiliates</strong>: Your Personal Data will be shared among employees and contractors, and we may share information with our subsidiaries and legal affiliates.</li><li><strong>Service Providers or Processors</strong>: We engage third parties to act as our service providers and perform certain tasks on our behalf in connection with delivering you our products and Services. The tasks performed by service providers include: (1) processing and storing Personal Data; (2) assisting with marketing communications and advertising; (3) customer service assistance; (4) processing credit card or other financial charges; and (5) providing technology services, including assisting with our Sites. We may share all types of Personal Data described above with service providers. We encourage service providers to take reasonable steps to ensure that they keep Personal Data confidential and only utilize Personal Data as permitted.</li><li><strong>Partners</strong>: We may partner with third parties to provide services and other offerings. Upon your request, we may also share your Personal Data with partners to provide products or services that may interest you. We take reasonable steps to ensure that the entities to which we share your Personal Data keep the information confidential and only use it as permitted.</li><li><strong>Other Legal Purposes</strong>: We also may share Personal Data: (1) with your consent; (2) to respond to subpoenas, court orders, or other legal process or otherwise as required or allowed by law or the competent governmental or judicial authorities; (3) to cooperate with law enforcement, government or regulatory entities, and safety or investigation authorities; (4) to establish or preserve a legal claim or defense; (5) to protect our property, rights and safety, and the property, rights, and safety of a third party or the public in general; or (6) as part of a corporate restructuring, sale of assets, merger or divestiture.</li></ul>
+<br/>
+<br/></p><p><i>Use of Cookies</i>
+<br/>
+Like many commercial websites, we analyze how visitors use our website with "cookie" technology. A cookie is a small text file that is placed on your computer when you access our website and allows us to recognize you each time you visit the website. We may use cookies to (1) enhance or personalize your website usage and experience; (2) monitor website usage; and (3) improve the website and our services, including providing you with interest-based ads. If you choose, you can set your browser to reject cookies or you can manually delete individual cookies or all of the cookies on your computer by following your browser’s help file directions. However, if your browser is set to reject cookies or you manually delete cookies, you may have some trouble accessing and using some of the pages and features on our website. Please note that browser-management tools for cookies are outside of our control, and we cannot guarantee their effectiveness. We may work with service providers that help us track, collect and analyze this information. We may combine the information we collect through cookies with other information we have collected from you or information from other sources.
+<br/>
+<br/>
+<br/></p><p><a name="how-secured"></a>
+<strong>6. How is it secured?</strong><br/>
+We use commercial reasonably physical, technical and administrative security measures to reduce the risk of loss, misuse, unauthorized access, and disclosure. Please note, however, that no security measures are perfectly secure, and we are unable to guarantee the security of your Personal Data.
+<br/>
+<br/>
+<br/></p><p><a name="eu-users"></a>
+<strong>7. Are you from the European Union?</strong>
+<br/>
+The EU’s General Data Protection Regulation provides EU data subjects with the additional rights described below.
+<br/>
+<br/>
+<i>Use of Personal Information</i>
+<br/>
+We generally act as a data controller of EU data subject’s Personal Data submitted to us. We rely on that Personal Data for the legitimate commercial purposes of providing our products and services to you. Where we need to collect Personal Data by law or under the terms of a contract we have with you, and you fail to provide that Personal Data when requested, we may not be able to provide you with our products or services. We make sure we consider and balance any potential impact on you and your rights before we process your Personal Data. We do not use your Personal Data for activities where our interests are overridden by the impact on you unless we have your consent or are otherwise required or permitted to by law. In certain circumstances, we act as a data processor, and, in those circumstances, we process your Personal Data for the purposes set out in this Policy consistent with the data processing terms of those partners.<br>
+<br/>
+We also may rely on your consent to collect, use or disclose your Personal Data. If we are relying on your consent to process your Data, you have the right to withdraw your consent at any time by contacting us at the information below. We will only use your Personal Data for the purposes for which we collected it unless we reasonably consider that we need to use it for another reason and that reason is compatible with the original purpose. If we need to use your Personal Data for an unrelated purpose, we will notify you and explain the legal basis that allows us to do so.
+<br/>
+<br/>
+If you are located in the EU and have any complaints regarding our privacy practices as a data controller, you have the right to make a complaint at any time to your local Supervisory Authority. However, we would appreciate the chance to address your concerns before you approach your Supervisory Authority, so please contact us first at the information provided in this Privacy Notice.
+<br/>
+<br/>
+<i>Your Rights</i>
+<br/>
+If you would like to request a copy of your Personal Data being held by us or request that it be deleted, or to update and/or correct your Personal Data or request that we provide a copy to another data controller of your Personal Data that you have provided to us, please contact us as detailed in the “Who Are We” section above. We will need enough information to ascertain your identity as well as the nature of your request. We will aim to respond to your request within one (1) calendar month of receipt of the request. Where we were unable to do so within the calendar month, we will notify you of the soonest practicable time within which we can respond to your request (and within three (3) months from the date of your request). Please note that there are certain exemptions and restrictions of these rights under the European data privacy laws that enable Personal Data to be retained, processed or withheld from access and we will inform you of these exemptions and restrictions, if applicable.
+<br/>
+<br/>
+<i>International Data Transfers</i>
+<br/>
+We offer European Union Model Clauses, also known as Standard Contractual Clauses, to meet the adequacy and security requirements for our customers that operate in the European Union and the United Kingdom, and make transfers of Personal Data from those jurisdictions to the United States and other countries that lack adequacy determinations. Please contact us as detailed in the “Who Are We” section above for more information.
+<br/>
+<br/>
+<br/></br></p><p><a name="california-users"></a>
+<strong>8. Are you a California consumer?</strong>
+<br/>
+The California Consumer Privacy Act (“CCPA”) provides California residents with the additional rights described below:<ul><li>The right to know what Personal Data we have collected, used, disclosed and sold about you. To submit a request to know, you may call us at 1-800-878-9002, or make the request at <a href="/cdn-cgi/l/email-protection#39494b504f585a40794c494d58525c175a5654"><span class="__cf_email__" data-cfemail="c1b1b3a8b7a0a2b881b4b1b5a0aaa4efa2aeac">[email protected]</span></a>.</li><li>The right to request that we delete any personal information we have collected about you, subject to certain exceptions. To submit a request for deletion, you may call us at 1-800-878-9002, or make the request at <a href="/cdn-cgi/l/email-protection#49393b203f282a30093c393d28222c672a2624"><span class="__cf_email__" data-cfemail="f585879c8394968cb5808581949e90db969a98">[email protected]</span></a>.</li></ul>
+<br/>
+When you exercise these rights and submit a request to us, we will verify your identity, which may include asking you to log in to your account if you have one with us. If you do not have an account with us, we may ask for your email address, order numbers of previous orders of our products and services, the last four digits of a credit or debit card or a bank account number used to make a purchase, the date of your last purchase from us, or other information that we believe you will know that will allow us to verify that the request is coming from the person named in the request. You also may designate an authorized agent to make a request for deletion on your behalf, subject to appropriate verification.
+<br/>
+<br/>
+Your exercise of these rights will have no adverse effect on the price and quality of our goods or services.
+<br/>
+<br/>
+<br/></p><p><a name="if-something-changes"></a>
+<strong>9. What if something changes?</strong>
+<br/>
+It could happen. We may change this Privacy Notice or the way in which we process your Personal Data (including the purpose of that processing or the methods for doing so). If we do, we will update our website to display the current version of this Privacy Notice. We will do our best to notify you of these new versions.
+<br/>
+<br/>
+<br/></p><p><a name="anything-else"></a>
+<strong>10. Anything else?</strong>
+<br/>
+If we haven't answered your question yet, you sure do have a lot of questions. Fire those questions over to <a href="/cdn-cgi/l/email-protection#95e5e7fce3f4f6ecd5e0e5e1f4fef0bbf6faf8"><span class="__cf_email__" data-cfemail="0e7e7c67786f6d774e7b7e7a6f656b206d6163">[email protected]</span></a>.</p></div></div></div><div class="l-post__sidebar"></div></div> </div>
+<div class="l-site__footer" roe="presentation">
+<footer class="l-site-footer"><div class="l-site-footer__nav"><div class="l-site-footer__nav-column"><h5 class="l-site-footer__nav-heading">
+<a href="https://www.uptake.com/products">Products</a></h5><div class="nav-content nav-content--footer-nav"><div class="nav-content__group-level-1"><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/products/asl-explorer">ASL® Explorer</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/products/fusion">Fusion</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/products/fleet">Fleet</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/products/federal">Federal</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/dealer">Equipment Dealer Workflow</a></div></div></div></div><div class="l-site-footer__nav-column"><h5 class="l-site-footer__nav-heading">
+<a href="https://www.uptake.com/industry-solutions">Industries</a></h5><div class="nav-content nav-content--footer-nav"><div class="nav-content__group-level-1"><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/chemical-oil-gas">Chemical, Oil &amp; Gas</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/department-of-defense">Department of Defense</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/energy">Energy</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/dealer">Equipment Dealers</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/federal-state-local">Federal, State &amp; Local</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/manufacturing">Manufacturing</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/metals-mining">Metals &amp; Mining</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/on-highway-trucks">On-highway Trucks</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/industry-solutions/rail">Rail Operations</a></div></div></div></div><div class="l-site-footer__nav-column"><h5 class="l-site-footer__nav-heading">
+<a href="https://www.uptake.com/resources">Resources</a></h5><div class="nav-content nav-content--footer-nav"><div class="nav-content__group-level-1"><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/blog">Blog</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="/resources?category=case-study">Case Studies</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="/resources?&amp;category=ebook">eBooks</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="/resources?&amp;category=video">Videos</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="/resources?&amp;category=webinar">Webinars</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="/resources?&amp;category=white-paper">White Papers</a></div></div></div></div><div class="l-site-footer__nav-column"><h5 class="l-site-footer__nav-heading">
+<a href="https://www.uptake.com/about">Company</a></h5><div class="nav-content nav-content--footer-nav"><div class="nav-content__group-level-1"><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/about">About</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/newsroom">News</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="/newsroom?category=events">Events</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/partners">Partners</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/careers">Careers</a></div><div class="nav-content__link-group-level-2">
+<a class="nav-content__level-2-sub-item" href="https://www.uptake.com/contact">Contact</a></div></div></div></div><ul class="l-site-footer__nav-button-list"><li class="l-site-footer__nav-button">
+<a class="l-site-footer__nav-button-link" href="https://platform.uptake.com/">
+Customer Login
+</a></li></ul></div><div class="footer-contact footer-contact--reverse"><div class="footer-contact__contact"><a href="/">
+<span class="footer-contact__logo footer-contact__logo--wordmark">
+<svg height="20.6px" viewbox="0 0 161.8 20.6" width="161.8px" xmlns="http://www.w3.org/2000/svg"><title>uptake</title><polygon points="140.5 0.3 140.5 20.3 161.8 20.3 161.8 15.8 145.4 15.8 145.4 12.4 161.3 12.4 161.3 8.2 145.4 8.2 145.4 4.8 161.8 4.8 161.8 0.3 140.5 0.3"></polygon><path d="M48.9,7.7a2.1,2.1,0,0,1-2.3,2.4H34.1V5.1H46.7a2.1,2.1,0,0,1,2.3,2.4ZM48.4.4H28.8v20h5.4V14.7H46.5l2.2-.2c3.5-.6,5.4-3,5.4-7S52.1,1,48.4.4"></path><polygon points="57.1 0.3 57.1 5.1 66.4 5.1 66.4 20.3 71.7 20.3 71.7 5.1 81 5.1 81 0.3 57.1 0.3"></polygon><path d="M7.6,20.3h9.2c4.9-.1,7.5-2.6,7.6-7.6V.3H19.2V12.7a2.6,2.6,0,0,1-2.8,2.8H8c-1.8-.1-2.8-1-2.8-2.8V.3H0V12.7c.1,4.9,2.6,7.5,7.6,7.6"></path><polygon points="93.9 0 80.4 13.5 80.4 20.6 93.9 7.1 107.3 20.6 107.3 13.5 93.9 0"></polygon><polygon points="127.8 0.3 116.1 12 116.1 0.3 111.3 0.3 111.3 20.3 114.6 20.3 122.5 12.3 130.4 20.3 137.2 20.3 125.9 9 134.6 0.3 127.8 0.3"></polygon></svg></span><img alt="" class="footer-contact__logo footer-contact__logo--mark" src="/dist/images/uptake-symbol-white.svg"/>
+</a><div class="footer-contact__info">
+<span class="footer-contact__info-icon"><svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>address</title>
+<g>
+<circle cx="16" cy="13.5" r="3.1"></circle>
+<path d="M16,0C7.2,0,0,7.2,0,16s7.2,16,16,16s16-7.2,16-16S24.8,0,16,0z M16.8,25.6c-0.3,0.4-0.9,0.5-1.3,0.2
+c-0.1-0.1-0.2-0.1-0.2-0.2c-5.7-8.2-6.7-9.1-6.7-12.1C8.5,9.4,11.9,6,16,6s7.5,3.4,7.5,7.5C23.5,16.5,22.4,17.4,16.8,25.6z"></path>
+</g>
+</svg>
+</span>
+<a href="https://www.google.com/maps/place/600+W+Chicago+Ave,+Chicago,+IL+60654" target="_blank">
+<address class="footer-contact__info-text">
+600 W Chicago Ave. Suite 350 Chicago, IL 60654
+</address>
+</a></div><div class="footer-contact__info">
+<span class="footer-contact__info-icon"><svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>email</title>
+<path d="M16,0C7.2,0,0,7.2,0,16s7.2,16,16,16s16-7.2,16-16S24.8,0,16,0z M26,21.4c0,1-0.8,1.9-1.9,1.9H7.9
+c-1,0-1.9-0.8-1.9-1.9v-8c0-0.1,0.1-0.2,0.2-0.2c0.1,0,0.1,0,0.1,0.1c0.9,0.7,2,1.5,6,4.4c0.8,0.6,2.2,1.9,3.6,1.9
+c1.4,0,2.8-1.3,3.6-1.9c4-2.9,5.1-3.8,6-4.4c0.1-0.1,0.3-0.1,0.3,0c0,0,0,0.1,0,0.1V21.4z M26,10.9c0,0.3-0.1,0.6-0.4,0.7
+c-1.2,0.9-1.6,1.3-6.8,5c-0.7,0.5-2,1.6-2.9,1.6c-0.9,0-2.2-1.1-2.9-1.6c-5.2-3.8-5.6-4.1-6.8-5C6.1,11.4,6,11.2,6,10.9v-0.7
+c0-1,0.8-1.9,1.9-1.9h16.2c1,0,1.9,0.8,1.9,1.9V10.9z"></path>
+</svg>
+</span>
+<a class="footer-contact__info-text" href="/cdn-cgi/l/email-protection#7b12151d143b0e0b0f1a101e55181416" target="_blank"><span class="__cf_email__" data-cfemail="2841464e47685d585c49434d064b4745">[email protected]</span></a></div><div class="footer-contact__info">
+<span class="footer-contact__info-icon"><svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><title>phone</title>
+<g>
+<path d="M16,22.2c-0.7,0-1.2,0.6-1.2,1.2s0.6,1.2,1.2,1.2c0,0,0,0,0,0c0.7,0,1.2-0.6,1.2-1.2C17.2,22.8,16.7,22.2,16,22.2z"></path>
+<path d="M16,0C7.2,0,0,7.2,0,16s7.2,16,16,16s16-7.2,16-16S24.8,0,16,0z M22.2,24.1c0,1-0.8,1.9-1.9,1.9h-8.8c-1,0-1.9-0.8-1.9-1.9
+V7.9c0-1,0.8-1.9,1.9-1.9h8.8c1,0,1.9,0.8,1.9,1.9V24.1z"></path>
+</g>
+</svg>
+</span>
+<a class="footer-contact__info-text" href="tel:312.242.2200" target="_blank">312.242.2200</a></div></div><div class="footer-contact__social"><ul class="social-list social-list--footer"><li class="social-list__item">
+<a class="social-list__item social-list__item--twitter" href="https://twitter.com/uptake" target="_blank">
+Twitter <svg height="21px" viewbox="0 0 25 21" width="25px" xmlns="http://www.w3.org/2000/svg"><title>twitter</title><path d="M24.4,3.1a9.8,9.8,0,0,1-2.8.8,4.9,4.9,0,0,0,2.1-2.7,9.8,9.8,0,0,1-3.1,1.2,4.9,4.9,0,0,0-8.3,4.5A13.9,13.9,0,0,1,2.2,1.7a4.9,4.9,0,0,0-.7,2.5A5,5,0,0,0,3.8,8.2a6,6,0,0,1-2.1-.6h0a4.8,4.8,0,0,0,3.8,4.8l-1.3.2H3.3A4.9,4.9,0,0,0,7.8,16a9.8,9.8,0,0,1-6.1,2.1H.6a13.8,13.8,0,0,0,7.5,2.2A13.8,13.8,0,0,0,22,6.3c0-.2,0-.4,0-.6A9.9,9.9,0,0,0,24.4,3.1Z"></path></svg></a></li><li class="social-list__item">
+<a class="social-list__item social-list__item--linkedin" href="https://www.linkedin.com/company/3845987" target="_blank">
+LinkedIn <svg height="22px" viewbox="0 0 23 22" width="23px" xmlns="http://www.w3.org/2000/svg"><title>linkedin</title><path d="M22,13.3V21H17.5V13.8c0-1.8-.6-3.1-2.3-3.1a2.5,2.5,0,0,0-2.3,1.6,3.1,3.1,0,0,0-.1,1.1V21H8.3s.1-12.2,0-13.5h4.5V9.4h0a4.5,4.5,0,0,1,4-2.2c3,0,5.2,1.9,5.2,6.1ZM3.6,1a2.3,2.3,0,1,0-.1,4.7h0A2.3,2.3,0,1,0,3.6,1ZM1.3,21H5.8V7.5H1.3Zm0,0"></path></svg></a></li><li class="social-list__item">
+<a class="social-list__item social-list__item--youtube" href="https://www.youtube.com/channel/UCn312Qjz_J_WxY6BHN1y-1g/featured" target="_blank">
+YouTube <svg height="21px" viewbox="0 0 29 21" width="29px" xmlns="http://www.w3.org/2000/svg"><title>youtube</title><path d="M27.5,4a3.4,3.4,0,0,0-2.4-2.4C23,1,14.5,1,14.5,1S6,1,3.9,1.6A3.4,3.4,0,0,0,1.5,4a35.3,35.3,0,0,0-.6,6.5A35.3,35.3,0,0,0,1.5,17a3.4,3.4,0,0,0,2.4,2.4c2.1.6,10.6.6,10.6.6s8.5,0,10.6-.6A3.4,3.4,0,0,0,27.5,17a35.3,35.3,0,0,0,.6-6.5A35.3,35.3,0,0,0,27.5,4ZM11.8,14.6V6.4l7.1,4.1Z"></path></svg></a></li><li class="social-list__item">
+<a class="social-list__item social-list__item--instagram" href="https://www.instagram.com/theuptakers/" target="_blank">
+Instagram <svg height="22px" viewbox="0 0 22 22" width="22px" xmlns="http://www.w3.org/2000/svg"><title>instagram</title><path d="M21,6.9a7.4,7.4,0,0,0-.5-2.4,4.9,4.9,0,0,0-1.2-1.8,4.9,4.9,0,0,0-1.8-1.2A7.4,7.4,0,0,0,15.1,1H6.9a7.4,7.4,0,0,0-2.4.5A4.9,4.9,0,0,0,2.6,2.6,4.9,4.9,0,0,0,1.5,4.4,7.4,7.4,0,0,0,1,6.9C1,7.9,1,8.3,1,11s0,3.1.1,4.1a7.4,7.4,0,0,0,.5,2.4,4.9,4.9,0,0,0,1.2,1.8,4.9,4.9,0,0,0,1.8,1.2,7.4,7.4,0,0,0,2.4.5h8.3a7.4,7.4,0,0,0,2.4-.5,5.1,5.1,0,0,0,2.9-2.9,7.4,7.4,0,0,0,.5-2.4c0-1.1.1-1.4.1-4.1S21,7.9,21,6.9Zm-1.8,8.2a5.6,5.6,0,0,1-.3,1.9,3.3,3.3,0,0,1-1.9,1.9,5.6,5.6,0,0,1-1.9.3H6.9a5.6,5.6,0,0,1-1.9-.3,3.3,3.3,0,0,1-1.9-1.9,5.6,5.6,0,0,1-.3-1.9c0-1.1-.1-1.4-.1-4.1s0-3,.1-4.1a5.6,5.6,0,0,1,.3-1.9,3.1,3.1,0,0,1,.8-1.2,3.1,3.1,0,0,1,1.2-.8,5.6,5.6,0,0,1,1.9-.3h8.1a5.6,5.6,0,0,1,1.9.3,3.1,3.1,0,0,1,1.2.8,3.1,3.1,0,0,1,.8,1.2,5.6,5.6,0,0,1,.3,1.9c0,1.1.1,1.4.1,4.1S19.2,14,19.2,15.1Z"></path><path d="M11,5.8A5.2,5.2,0,1,0,16.2,11,5.2,5.2,0,0,0,11,5.8Zm0,8.5A3.3,3.3,0,1,1,14.3,11,3.3,3.3,0,0,1,11,14.3Z"></path><circle cx="16.4" cy="5.6" r="1.2"></circle></svg></a></li><li class="social-list__item">
+<a class="social-list__item social-list__item--facebook" href="https://www.facebook.com/uptake/" target="_blank">
+Facebook <svg height="22px" viewbox="0 0 22 22" width="22px" xmlns="http://www.w3.org/2000/svg"><title>facebook</title><path d="M19.9,1H2.1A1.1,1.1,0,0,0,1,2.1V19.9A1.1,1.1,0,0,0,2.1,21h9.6V13.3H9.1v-3h2.6V8a3.6,3.6,0,0,1,3.2-4h3V6.8H16.3c-1.3,0-1.5.6-1.5,1.5v1.9h3l-.4,3H14.8V21h5.1A1.1,1.1,0,0,0,21,19.9h0V2.1A1.1,1.1,0,0,0,19.9,1Z"></path></svg></a></li><li class="social-list__item">
+<a class="social-list__item social-list__item--glassdoor" href="https://www.glassdoor.com/Overview/Working-at-Uptake-EI_IE978686.11,17.htm" target="_blank">
+Glassdoor <svg height="22px" viewbox="0 0 22 22" width="22px" xmlns="http://www.w3.org/2000/svg"><title>glassdoor</title><path d="M11,1A10,10,0,1,0,21,11,10,10,0,0,0,11,1Zm4.4,14.4a1.7,1.7,0,0,1-1.7,1.7H8.4a1.7,1.7,0,0,1-1.7-1.7h7V8.1h1.7Zm-7-8.9v7.2H6.7V6.6A1.7,1.7,0,0,1,8.4,4.8h5.2a1.7,1.7,0,0,1,1.7,1.7Z"></path></svg></a></li></ul></div></div><div class="footer-copyright footer-copyright--reverse">
+<small class="footer-copyright__copyright">© 2022 Uptake Technologies Inc. All Rights Reserved. Uptake and the Uptake logo are a trademark or registered trademark of Uptake Technologies Inc. in the U.S. and other countries.</small><div class="footer-copyright__privacy"><a class="cc-revoke footer-copyright__button-link" href="#">Cookie Settings</a>
+<a class="footer-copyright__text-link" href="https://www.uptake.com/legal" target="_self">Legal</a>
+<a class="footer-copyright__text-link" href="https://www.uptake.com/security" target="_self">Security</a></div></div></footer> </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/dist/scripts/vendor/add_mkto_recaptcha.js?v=1"></script>
+<script type="text/javascript">
+  (function() {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//munchkin.marketo.net/munchkin-beta.js';
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
+</script>
+<script>
+window.addEventListener("load", function() {
+  if (typeof window.onecookieconsent === "undefined") {
+    console.log("One Cookie Consent plugin is not loaded.");
+    return;
+  }
+
+  window.onecookieconsent.init({
+    cookieconsent: {"content":{"message":"This website uses cookies to ensure you get the best experience on our website.","dismiss":"Dismiss","allow":"Allow cookies","deny":"Don't allow cookies","link":"Privacy Notice","href":"\/privacy-notice"},"elements":{"dismiss":"<a aria-label=\"dismiss cookie message\" role=button tabindex=\"0\" class=\"cc-btn cc-link cc-dismiss\">{{dismiss}}<\/a>","allow":"<a aria-label=\"allow cookies\" role=button tabindex=\"0\"  class=\"btn btn--dark cc-btn cc-allow\">{{allow}}<\/a>","deny":"<a aria-label=\"deny cookies\" role=button tabindex=\"0\" class=\"btn btn--dark cc-btn cc-deny\">{{deny}}<\/a>"},"revokeBtn":"<a><\/a>","compliance":{"opt-in":"<div class=\"cc-compliance cc-highlight\">{{dismiss}}{{deny}}{{allow}}<\/div>","opt-out":"<div class=\"cc-compliance cc-highlight\">{{dismiss}}{{deny}}{{allow}}<\/div>"},"location":{"services":["maxmind"]},"type":"opt-out","revokable":false,"law":{"hasLaw":["AT","BE","BG","HR","CH","CZ","CY","DE","DK","EE","EL","ES","FI","FR","GB","GI","GR","HU","IE","IT","IS","LV","LT","LU","MT","MC","NO","NL","PL","PO","RO","RU","PT","SK","SI","SE","TR","UA","UK","VA"],"revokable":["AT","BE","BG","HR","CH","CZ","CY","DE","DK","EE","EL","ES","FI","FR","GB","GI","GR","HU","HR","IE","IT","IS","LV","LT","LU","MT","MC","NO","NL","PL","PO","RO","RU","PT","SK","SI","SE","TR","UA","UK","VA"],"explicitAction":["AT","BE","BG","HR","CH","CZ","CY","DE","DK","EE","EL","ES","FI","FR","GB","GI","GR","HU","HR","IE","IT","IS","LV","LT","LU","MT","MC","NO","NL","PL","PO","RO","RU","PT","SK","SI","SE","TR","UA","UK","VA"],"regionalLaw":true}},
+
+    enableCookies: function() {
+              if (typeof window.enableCookies == "function") {
+          return window.enableCookies();
+        }
+          },
+
+    disableCookies: function() {
+              if (typeof window.disableCookies == "function") {
+          return window.disableCookies();
+        }
+          }
+  });
+});
+</script>
+<script>
+  // This can be called multiple times
+  window.enableCookies = function() {
+    // Inform tag manager that consent has been given
+    dataLayer.push({ 'event': 'cookie_consent_given' });
+    dataLayer.push({ 'cookie_consent': 'true' });
+
+    if (typeof Munchkin !== 'undefined') {
+      Munchkin.init('731-FHQ-268', {
+        cookieAnon: false
+      });
+    }
+
+    // reCAPTCHA
+        
+        if (!window.recaptchaSiteKey) {
+      window.recaptchaSiteKey = '6LeSKp8UAAAAALEaCCc3lTU-RstGLEJNPF2CifwT';
+      addMktoRecaptcha();
+    }
+
+      };
+
+  function deleteAllCookies() {
+    var cookies = document.cookie.split(";");
+
+    for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i];
+      var eqPos = cookie.indexOf("=");
+      var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+
+      // TODO: ideally this would be a bit more dynamic when checking the cookie name
+      if (name.trim() !== 'cookieconsent_status') {
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      }
+    }
+  }
+
+  // This can be called multiple times
+  window.disableCookies = function() {
+    deleteAllCookies();
+
+    // Inform tag manager that consent has been revoked
+    dataLayer.push({ 'event': 'cookie_consent_revoked' });
+    dataLayer.push({ 'cookie_consent': 'false' });
+
+    if (typeof Munchkin !== 'undefined') {
+      Munchkin.init('731-FHQ-268', {
+        cookieAnon: true
+      });
+    }
+
+    // reCAPTCHA
+    window.recaptchaSiteKey = undefined;
+  };
+</script>
+<script src="/dist/scripts/common-b29bf1ff65.bundle.js"></script>
+<script>
+  window.lazySizesConfig = {
+    addClasses: true,
+    // expand: 800,
+    lazyClass: 'lazyload',
+    loadingClass: 'is-loading',
+    loadedClass: 'is-loaded'
+  };
+</script>
+<script src="/dist/scripts/main-bfa9a33d6e.bundle.js"></script>
+<script type="application/ld+json">{"@context":"http://schema.org","@graph":[{"@type":"Organization","description":"This Privacy Notice applies only to Uptake’s processing of your Personal Data in connection with your request for more information on Uptake.","image":{"@type":"ImageObject","url":"https://uptake.imgix.net/images/rail-hero01.jpg?auto=format&crop=focalpoint&domain=uptake.imgix.net&fit=crop&fp-x=0.5&fp-y=0.5&h=630&ixlib=php-3.3.1&q=82&w=1200&s=aaa672cc2ca16cc46d641d80c61fcf25"},"mainEntityOfPage":"https://www.uptake.com/privacy-notice","name":"Privacy Policy","url":"https://www.uptake.com/privacy-notice"},{"@id":"#identity","@type":"LocalBusiness","address":{"@type":"PostalAddress","addressCountry":"US","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60654","streetAddress":"600 W Chicago Avenue"},"geo":{"@type":"GeoCoordinates","latitude":"41.8975185","longitude":"-87.643978"},"name":"Uptake","priceRange":"$","telephone":"312-242-2200"},{"@id":"#creator","@type":"Organization"},{"@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":"https://www.uptake.com","name":"Homepage","position":1},{"@type":"ListItem","item":"https://www.uptake.com/privacy-notice","name":"Privacy Notice","position":2}],"name":"Breadcrumbs"}]}</script><script src="https://www.uptake.com/cpresources/9e4dd27e/main.js?v=1655302299"></script>
+<script type="application/ld+json">{"@context":"http://schema.org","@graph":[{"@type":"Organization","description":"This Privacy Notice applies only to Uptake’s processing of your Personal Data in connection with your request for more information on Uptake.","image":{"@type":"ImageObject","url":"https://uptake.imgix.net/images/rail-hero01.jpg?auto=format&crop=focalpoint&domain=uptake.imgix.net&fit=crop&fp-x=0.5&fp-y=0.5&h=630&ixlib=php-3.3.1&q=82&w=1200&s=aaa672cc2ca16cc46d641d80c61fcf25"},"mainEntityOfPage":"https://www.uptake.com/privacy-notice","name":"Privacy Policy","url":"https://www.uptake.com/privacy-notice"},{"@id":"#identity","@type":"LocalBusiness","address":{"@type":"PostalAddress","addressCountry":"US","addressLocality":"Chicago","addressRegion":"IL","postalCode":"60654","streetAddress":"600 W Chicago Avenue"},"geo":{"@type":"GeoCoordinates","latitude":"41.8975185","longitude":"-87.643978"},"name":"Uptake","priceRange":"$","telephone":"312-242-2200"},{"@id":"#creator","@type":"Organization"},{"@type":"BreadcrumbList","description":"Breadcrumbs list","itemListElement":[{"@type":"ListItem","item":"https://www.uptake.com","name":"Homepage","position":1},{"@type":"ListItem","item":"https://www.uptake.com/privacy-notice","name":"Privacy Notice","position":2}],"name":"Breadcrumbs"}]}</script><script src="https://www.uptake.com/cpresources/9e4dd27e/main.js?v=1655302299"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"350b19199d","applicationID":"584622039","transactionName":"YlRWZBdSXhADW0VZC1seYUIMHFkNBl1JHhRdQQ==","queueTime":0,"applicationTime":316,"atts":"ThNVEl9ITR4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

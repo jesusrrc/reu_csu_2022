@@ -1,0 +1,1409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en">
+<head>
+<title>Privacy and Cookie Policy | FireEye</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta content="Privacy and Cookie Policy | FireEye" name="title"/>
+<meta content="2 Nov 2021 00:06:31 UTC" http-equiv="Last-Modified"/>
+<link href="https://www.fireeye.com/company/privacy.html" hreflang="en" rel="alternate"/>
+<link href="https://www.fireeye.de/company/privacy.html" hreflang="de" rel="alternate"/>
+<link href="https://www.fireeye.fr/company/privacy.html" hreflang="fr" rel="alternate"/>
+<link href="https://www.fireeye.jp/company/privacy.html" hreflang="ja" rel="alternate"/>
+<link href="https://www.fireeye.kr/company/privacy.html" hreflang="ko" rel="alternate"/>
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{"GTM-MDPBTTG":true});
+</script>
+<script src="https://www.googleoptimize.com/optimize.js?id=GTM-MDPBTTG"></script>
+<link href="https://www.fireeye.com/company/privacy.html" rel="canonical"/>
+<meta content="en" name="language"/>
+<meta content="en" name="locale"/>
+<meta content="on" http-equiv="cleartype"/>
+<meta content="True" name="HandheldFriendly"/>
+<meta content="320" name="MobileOptimized"/>
+<meta content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport"/>
+<meta content="Review the FireEye privacy and cookie policy on this page." name="description"/>
+<meta content="Privacy and Cookie Policy | FireEye" itemprop="name"/>
+<meta content="Review the FireEye privacy and cookie policy on this page." itemprop="description"/>
+<meta content="https://www.fireeye.com/content/dam/fireeye-www/fw/images/fireeye-2-color-square.png" itemprop="image"/>
+<meta content="@FireEye" name="twitter:site"/>
+<meta content="Privacy and Cookie Policy | FireEye" name="twitter:title"/>
+<meta content="Review the FireEye privacy and cookie policy on this page." name="twitter:description">
+<meta content="@FireEye" name="twitter:creator"/>
+<meta content="https://www.fireeye.com/content/dam/fireeye-www/fw/images/fireeye-2-color-square.png" name="twitter:image">
+<meta content="Privacy and Cookie Policy | FireEye" property="og:title">
+<meta content="website" property="og:type"/>
+<meta content="https://www.fireeye.com/company/privacy.html" property="og:url"/>
+<meta content="https://www.fireeye.com/content/dam/fireeye-www/fw/images/fireeye-2-color-square.png" property="og:image"/>
+<meta content="Review the FireEye privacy and cookie policy on this page." property="og:description"/>
+<meta content="FireEye" property="og:site_name"/>
+<meta content="45127269202" property="fb:admins"/>
+<script src="/etc.clientlibs/clientlibs/granite/jquery.min.js" type="text/javascript"></script>
+<script src="/etc.clientlibs/clientlibs/granite/jquery/granite/csrf.min.js" type="text/javascript"></script>
+<script src="/etc/designs/fireeye-www/clientlibs_nav.min.js" type="text/javascript"></script>
+<script src="//play.vidyard.com/v0/api.js"></script>
+<script type="text/javascript">
+var fdc=fdc||{};
+var cookiesOK = $.cookie("ec-privacy");
+jQuery(window).load(function()
+        {
+            if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) 
+            {
+                jQuery("a.contactlinks").contents().unwrap();
+                jQuery("#contact_us").find("a").contents().first().unwrap();
+                jQuery("#contact_apac").find("a").contents().first().unwrap();
+                jQuery("#contact_emea").find("a").contents().first().unwrap();
+
+
+            }
+        });
+
+var onAccept = function () {
+    $.cookie("ec-privacy", "accept", { path: "/", expires: 365 });
+    jQuery("#cookie-privacy-banner").hide();
+};
+
+var onDecline = function () {
+    $.cookie("ec-privacy", "decline", { path: "/", expires: 365 });
+    jQuery("#cookie-privacy-banner").hide();
+};
+
+var ipLocation = (function () {
+    var banner ="#cookie-privacy-banner";
+
+    /* Show the privacy notification banner. */
+    var showBanner = function (banner) {
+        jQuery(banner).show();
+    };
+
+    /* Suppress the privacy notification banner. */
+    var hideBanner = function (banner) {
+        jQuery(banner).hide();
+    };
+
+    /* These are the country codes for the countries subject to EC privacy laws.
+     * We will check to see if a visitor is coming from one of these countries.
+     * If they are, we display a privacy notification banner. If not, we
+     * do nothing. */
+    var countries = {
+        "AT": true,"BE": true,"BG": true,"HR": true,"CY": true,"CZ": true,"DK": true,
+        "EE": true,"FI": true,"FR": true,"DE": true,"GR": true,"HU": true,"IE": true,
+        "IT": true,"LV": true,"LT": true,"LU": true,"MT": true,"NL": true,"PL": true,
+        "PT": true,"RO": true,"SK": true,"SI": true,"ES": true,"SE": true,"GB": true
+    };
+    var defaultSite = "US";
+
+    var onSuccess = function (geoipResponse) {
+        fdc.geoipResponse = geoipResponse;
+        /* There's no guarantee that a successful response object
+         * has any particular property, so we need to code defensively. */
+        if (!geoipResponse.country.iso_code) {
+            hideBanner(banner);
+            return;
+        }
+        
+        // For testing purposes:
+        if (location.host.indexOf("stage") >= 0 && geoipResponse.country.iso_code === "SG") {
+            geoipResponse.country.iso_code = "ES"
+        }
+
+        /* ISO country codes are in upper case. */
+        var code = geoipResponse.country.iso_code;
+
+        if ((countries[code]) && (cookiesOK == undefined)) {
+            showBanner(banner);
+        }
+        else {
+            hideBanner(banner);
+        }
+    };
+
+    /* We don't really care what the error is. */
+    var onError = function (error) {
+        fdc.geoipResponse = error;
+        hideBanner(banner);
+    };
+
+    return function () {
+        geoip2.country( onSuccess, onError );
+    };
+}());
+
+ipLocation();
+
+if (cookiesOK != "decline") {
+	window.Configuration = window.Configuration || { PUBLISHER: 'fireeye', TRACKING_SERVER: 'fireeye.sc.omtrdc.net', MCID: '12390CDB53E9CC840A490D4E@AdobeOrg', NAMESPACE: 'fireeye' };
+}
+
+</script>
+<script type="text/javascript">
+    if (!String.prototype.includes) {
+        String.prototype.includes = function() {
+            return String.prototype.indexOf.apply(this, arguments) !== -1;
+        };
+    }
+var userAgent = navigator.userAgent,
+gomezAgent = userAgent.includes("GomezAgent"),
+prtgAgent = userAgent.includes("PRTG Network Monitor");
+
+if (gomezAgent || prtgAgent) {
+    cookiesOK = "decline";
+}
+
+if (cookiesOK != "decline") {
+    // Google Analytics was here. Now it's in Tealium and GTM.
+}
+// Temporary patch for AA issue.
+if(typeof _satellite == "undefined") {
+    _satellite = {};
+    _satellite.track = function(){};
+}
+</script>
+<style>
+@media ( max-width : 959px) {
+    .g04 .megamenu .n03-sub_table .n03-sub_cell, .g04 .megamenu .separator {
+        display: block;
+    }
+    .g04 .megamenu .n03_list-item-sub>.megamenu-cta {
+        padding: 0;
+    }
+    .g04 .megamenu .n03-sub_cell.n03-sub_cell-utility {
+        padding: 11px 0 11px 10px;
+    }
+}
+
+@media ( min-width : 48em) {
+    .cta-bar .n01 .n01_cell {
+        width: auto;
+    }
+}
+
+/* styles for the CTA bar test */
+.n01.n01v1 .n01_cell {
+    background-color: #222;
+    border: 1px solid #444;
+}
+
+.n01.n01v1 .n01_cell .ficon, .n01.n01v1 .n01_cell .n01_label, .n01.n01v1 .n01_text
+    {
+    color: #fff;
+}
+
+@media ( min-width : 48em) {
+    .n01.n01v1 .n01_cell {
+        background-color: transparent;
+        border: none;
+    }
+    .n01.n01v1 .n01_link {
+        background-color: #222;
+        border: 1px solid #444;
+        border-right: 0;
+    }
+}
+/* fix for new footer */
+.g03v1 .g03-s-i:after {
+    left: -3px;
+}
+/* fix for tables */
+span.nowrap {
+    white-space: nowrap;
+}
+/* fix for blog cta */
+.blog-cta {
+    border: 1px solid #dadadb;
+    background-color: #ebebed;
+    margin-bottom: 10px;
+    line-height: 0;
+}
+</style>
+<link href="https://cloud.typography.com/6746836/6977592/css/fonts.css" rel="stylesheet" type="text/css"/>
+<link href="/content/dam/fireeye-www/fw/css/patch.css?v=1" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+var addthis_config = addthis_config||{};
+    addthis_config.data_track_clickback = false;
+var addthis_share = {
+   url: window.location.href
+};
+</script>
+<style>
+/* fix for IE */
+.uc-he01v1 .uc-he01_container .background {
+    max-height: 470px;
+    position: absolute;
+}
+.uc-he01v2 .uc-he01_container .background {
+    position: absolute;
+}
+@media (max-width: 48em) {
+    .uc-he01v1 .uc-he01_container .background {
+        max-height: 320px;
+    }
+}
+@media (min-width: 54em) {
+    .uc-he01v1 .uc-he01_container .background {
+        max-height: 600px;
+    }
+}
+</style>
+<style>
+/* Update the images used in the Table component. */
+.c09v1 .tablesorter-default .header, .c09v1 .tablesorter-default .tablesorter-header {
+background-position-x: calc(100% - 4px);
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAUCAYAAAC58NwRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggTWFjaW50b3NoIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjc2NDE0RUUyNjc2QjExRThBNEFDQTFFRUMyNzIyRjM4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjc2NDE0RUUzNjc2QjExRThBNEFDQTFFRUMyNzIyRjM4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTg5MzI0RkY2NzZCMTFFOEE0QUNBMUVFQzI3MjJGMzgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTg5MzI1MDA2NzZCMTFFOEE0QUNBMUVFQzI3MjJGMzgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz567IGQAAAApklEQVR42mL8//8/A0kApAELlgJiG2xyTDjMcQFiayDmRJfApkEbiJWgiq2J0eCCxLYBYkF8GjAUAIEvLg2C2JwAdZ42Ng022DyJ7kwmJFOM8YS+INRABkZSI45sDSAnxRFQuweIj8D8cA+Iz+JR/B6kGD2UQALf8ZiOEawgU45iUQyy/SqumD4C1YgMNhNKS3vwGYBNw1WoM75jdSKpGYjkiAMIMAAPu279CuYueAAAAABJRU5ErkJggg==)
+}
+.c09v1 .tablesorter-default thead .headerSortUp,.c09v1 .tablesorter-default thead .tablesorter-headerSortUp,.c09v1 .tablesorter-default thead .tablesorter-headerAsc{background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAUCAYAAAC58NwRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggTWFjaW50b3NoIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjU4OTMyNEY5Njc2QjExRThBNEFDQTFFRUMyNzIyRjM4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjU4OTMyNEZBNjc2QjExRThBNEFDQTFFRUMyNzIyRjM4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTg5MzI0Rjc2NzZCMTFFOEE0QUNBMUVFQzI3MjJGMzgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTg5MzI0Rjg2NzZCMTFFOEE0QUNBMUVFQzI3MjJGMzgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5TuQesAAAAp0lEQVR42mL8//8/A0kApAELNgbicmxyuDTsBuJ3QCxIjIbQ/wjQQYyGu/9RgRI+DeX/McFuXBqUoO7GBkKxaZj5Hze4i67B5T9hAA5mRlIjjmwNSkAcR0DtHiA+wgTl3APis3gUvwcpBjGYkARBAt/xmM6ArgFkylEsikG2X8WmAWbLezSxzcgcJnzWYzMAm4arUGd8x+pEHPlBCohtsMmRHHEAAQYAbP+KkOIl8zUAAAAASUVORK5CYII=)}
+.c09v1 .tablesorter-default thead .headerSortDown,.c09v1 .tablesorter-default thead .tablesorter-headerSortDown,.c09v1 .tablesorter-default thead .tablesorter-headerDesc{background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAUCAYAAAC58NwRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQwIDc5LjE2MDQ1MSwgMjAxNy8wNS8wNi0wMTowODoyMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTggTWFjaW50b3NoIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjU4OTMyNEZENjc2QjExRThBNEFDQTFFRUMyNzIyRjM4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjU4OTMyNEZFNjc2QjExRThBNEFDQTFFRUMyNzIyRjM4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NTg5MzI0RkI2NzZCMTFFOEE0QUNBMUVFQzI3MjJGMzgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NTg5MzI0RkM2NzZCMTFFOEE0QUNBMUVFQzI3MjJGMzgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6nOhWUAAAAqElEQVR42mL8//8/AymACYe4FBDbkKLBBYitgZiTGA3aQKwEVWxNjAYXJDbIWYL4NGAoAAJfXBoEsTkB6jxtbBpssHkS3ZlMSKYY4wl+QVgwM1Ir4ghqALnxPwFcDlYJchIUz/yPG9yFqUPWoATE73BoCMWmAYTLsSjejawGXQMD1HpkoERIQyiS4g50eWwaGKDOAPlHEF2OBUdwV0CD+j26BMkxDRBgALvSCpUQlZEGAAAAAElFTkSuQmCC)}
+.c09v1 .tablesorter-default thead .sorter-false {
+    background-image: none;
+}
+@media (max-width: 41.9125em){
+    .c09.c09v1.has-data-label tr>:not(:first-child):before {
+        width: auto; min-width: 35%;
+    }
+}
+</style>
+<script>
+$(document).ready(function(){
+    if(typeof(ipLocation) !== "undefined" && typeof fdc.geoipResponse === "undefined"){ipLocation();}
+    if(typeof fdc.geoipResponse !== "undefined"){showCountryNotification(fdc.geoipResponse);}
+    if(typeof fdc.geoipResponse !== "undefined" && typeof fdc.geoipResponse.country !== "undefined" && fdc.geoipResponse.country.is_in_european_union && ($.cookie("ec-privacy") == undefined)){jQuery("#cookie-privacy-banner").show();}
+});
+function showCountryNotification(geoipResponse) {
+	if (!geoipResponse.country || !geoipResponse.country.iso_code) {
+        return;
+    }
+	var code = geoipResponse.country.iso_code,
+	    langIndex = code === "FR" ? 2 : code === "DE" ? 3 : code === "JP" ? 4 : code === "KR" ? 5 : 1;
+	if (langIndex > 1) {
+		$('.c08_modal.lang').addClass("is-open");
+		$('.c08_modal.lang .col:nth-child(' + (langIndex - 1) + ')').show();
+		$('.c08_modal.lang, .c08_modal.lang [data-behavior="dismiss-c08"]').click(function(){
+		    $.cookie("country-notification", "decline", { path: "/", expires: 365 });
+		    closec08();
+		});
+		$('.c08_modal.lang .c08').click(function(e){
+		    e.stopPropagation();
+		});
+		if (($.cookie("country-notification") === "decline") || $(".g01_options_list li:nth-child(" + langIndex + ") a").attr("href").indexOf(".html") < 0) {
+		    closec08();
+		} else {
+		    $(".c08_modal.lang .btn").eq(langIndex - 2).attr("href", $(".g01_options_list li:nth-child(" + langIndex + ") a").attr("href"));
+		}
+	}
+}
+</script>
+<script>    
+     var _6SenseJsonObj = localStorage.getItem('_6senseCompanyDetails'),
+         _6SenseTime = localStorage.getItem('_6senseCompanyDetails-timestamp'),
+         isJsonStale = _6SenseTime === null ? true : Date.now() - parseInt(_6SenseTime) > 86400000; // 86400000 = 1 day in ms
+     
+     window._6si = window._6si || [];
+     window._6si.push(['enableEventTracking', true]);
+     window._6si.push(['setToken', '1322340356018696d853e0ac6f7ce3a2']);
+     window._6si.push(['setEndpoint', 'b.6sc.co']);
+     if(_6SenseJsonObj === null || isJsonStale){
+       window._6si.push(['enableCompanyDetails', true]);
+       window._6si.push(['setEpsilonKey', '325d6d60e24c7cfc3a782839d85ce08c8d3bb27c']);
+       localStorage.setItem('_6senseCompanyDetails-timestamp', Date.now());
+     }  
+    (function () {
+          var gd = document.createElement('script');
+      gd.type = 'text/javascript';
+      gd.async = true;
+      gd.src = '//j.6sc.co/6si.min.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gd, s);
+     })();
+</script>
+<script>
+    var jsonObj;
+
+    function targetPageParams() { 
+        jsonObj = localStorage.getItem('_6senseCompanyDetails');
+        if(jsonObj) {
+        	var jsonVal = JSON.parse(jsonObj);
+            return { 
+                "companyRevenueRange": jsonVal.company.revenue_range, 
+                "companyCountry": jsonVal.company.country, 
+                "companyIndustry": jsonVal.company.industry,
+                "companyName": jsonVal.company.name,
+                "companyRegion": jsonVal.company.region,
+                "companyDomain": jsonVal.company.domain,
+                "segments": JSON.stringify(jsonVal.segments)
+            }; 
+        }
+     }; 
+</script>
+<script>
+$(document).ready(function(){
+    $(".loadmore").on("click", function(){$(".list.parbase").addClass("no-max-height");});
+    // Don't show title text for textures.
+    $(".texture img").attr("title", "");
+});
+</script>
+<style>
+.no-max-height .c11v9 h4{
+    max-height: none !important;
+}
+.g04 #header-search .search-field_submit:after {
+    font-size: 9px;
+}
+.c11v8.hideLinkText .btn {
+    display: inline-block;
+}
+/* CTA fix */
+.g04 .megamenu-tab .has-inner-cta .n03-sub_container {
+    padding: 0;
+    margin: 0 0 0 10px;
+    max-width: 1210px;
+}
+.g04 .megamenu-tab .has-inner-cta .col-wrap {
+    padding: 40px 0;
+}
+.g04 .n03-sub_container[data-columns="1"] .megamenu-cta {
+    width: 50%;
+}
+.g04 .n03-sub_container[data-columns="2"] .megamenu-cta {
+    width: 33.9%;
+}
+.g04 .has-inner-cta > [data-columns="2"] .n03-sub_cell {
+    width: calc(50% - 60px);
+}
+.g04 .n03-sub_container[data-columns="3"] .megamenu-cta {
+    width: 25%;
+}
+.g04 .n03-sub_container[data-columns="4"] .megamenu-cta {
+    width: 20%;
+}
+.g04 .megamenu-cta h5 {
+    line-height: 1.4;
+}
+html .g04 header .megamenu-cta h5 {
+    font-weight: 500;
+    font-size: 15px;
+    color: #44474d;
+}
+html .g04 header .megamenu-cta p {
+    text-transform: none;
+}
+.g04 .n03-sub_table > .megamenu-cta {
+    background: none;
+    padding: 0;
+}
+.g04 .megamenu-cta .n03_utility {
+    border: none;
+    height: 100%;
+}
+.g04 .megamenu-cta .n03_utility_cell {
+    display: block;
+    width: auto;
+    margin-left: 30px;
+}
+/* Un/re-comment to add/remove in the line to the left of the CTA in the megamenu. */
+/*.g04 .n03-sub_table .col-wrap:not(:last-child) .separator.disabled {
+    border-right-color: #ebebed;
+}*/
+
+/* Put a grid over the texture from a neighboring grid. */
+.force {
+    z-index: 15;
+    position: relative;
+}
+/* Remove the gradient above the tiles on blog pages and reduce the space there. */
+.iparsys + .l_container>div.gradient-top {
+    background-image: none;
+}
+.iparsys + .l_container>.gradient-top>div>.g {
+    padding: 0;
+}
+@media (min-width: 35em) {
+    .entries .highlightFirst .c11v9 .c11-image-div {
+        border-left: 1px solid #dadadb;
+        border-right: 1px solid #dadadb;
+    }
+}
+@media (max-width: 1024px) {
+    .uc-he01v2 .panel .asset .image img {
+        max-height: 200px;
+	max-width: 300px;
+    }
+}
+/* mobile view for MegaMenu CTA. */
+@media (max-width: 1024px) {
+    .g04 .megamenu-tab.open .n03_list-item-sub.has-inner-cta {
+        padding-bottom: 0;
+    }
+    .g04 .has-inner-cta > [data-columns="2"] .n03-sub_cell,
+    .g04 .n03-sub_container[data-columns="2"] .megamenu-cta {
+        width: 100%;
+        display: block;
+    }
+    .g04 .megamenu-tab .has-inner-cta .n03-sub_container {
+        margin: 0;
+    }
+    .g04 .megamenu-tab .has-inner-cta .n03-sub_container .col-wrap {
+        padding: 0;
+    }
+    .g04 .megamenu-cta .n03_utility_cell {
+        margin-left: 15px;
+        margin-right: 22px;
+    }
+    .g04 .megamenu-cta .n03_utility_cell:nth-child(1) {
+        padding-bottom: 0;
+    }
+    .g04 .megamenu-cta .n03_utility_cell:nth-child(2) {
+        padding-top: 0;
+    }
+    .g04 .megamenu-cta .n03_utility_cell h5,
+    .g04 .megamenu-cta .n03_utility_cell p {
+        font-size: 12px;
+    }
+    .content-2-par .megamenus .n03-sub_table .megamenu-cta {
+        border-radius: 0;
+    }
+}
+/* Training pages side design. */
+  .training-side-box {background: url('/content/dam/fireeye-www/brand/homepage-banner-images/hpb-bg-testimonial-red.jpg') left no-repeat; background-size: cover; padding:30px; border: 1px solid #dadadb; margin-bottom: 20px;}
+  .training-side-text {color: #ffffff;}
+  .training-side-text a:hover {color: #ffffff; text-decoration: underline;}
+
+/* Avoid column breaks in ordered lists. */
+  .c00 ol > li {page-break-inside: avoid; margin-bottom: 15px;}
+
+/* Safari needs this on html to stop side scrolling, not just on the body. */
+html {overflow-x:hidden;}
+/* Make sure the footer is above a texture that precedes it. */
+#g03-footer {z-index: 725;}
+/* Allow border for linked images. */
+.border>a>img {border: 1px solid #dadadb;}
+/* Allows for easy scrollable text boxes on blog pages right in the Blog Text component. */
+table.limitedHeight td {
+    height: 350px;
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 0;
+}
+/* Fix for edge case in Safari where page title in breadcrumbs wraps when the title is just the right length. */
+.g02_list_item:last-child span {
+    min-width: 360px;
+    display: block;
+}
+/* fix issue of hidden Event Spotlights having margin when used with .row-count-2 */
+.parsys > .spotlight-event.section:empty {
+    display: none;
+}
+@media (min-width: 60em) {
+.row-count-2 .parsys>div:nth-child(even):not(:empty) {
+    margin-right: 40px;
+}
+}
+/* Don't also vertically center a nested column. */
+.l_container.vertically-center .g > div:not(.stacked) > .g-content .g > div > .g-content {
+    top: auto;
+    transform: none;
+    position: unset;
+}
+
+/* Footer SVG resize. */
+@media (max-width: 25em) {
+  .g03 .g03_copyright {background-size: 36px;}
+}
+
+/* HPB padding and resize. */
+@media (max-width: 81em) {
+  .hero-container-v3 {padding: 0 60px !important;}
+}
+@media (max-width: 64em) {
+  .hero-container-v3 {padding: 0 20px !important;}
+}
+@media (max-width: 42em) {
+  .hero-container-v3 {padding: 0 10px !important;}
+  .uc-he01v2 .uc-he01_title {font-size: 1.75rem !important;}
+  .uc-he01v2 .uc-he01_description {font-size: 1.0rem !important;}
+}
+
+/* Some 2021 Redesign changes. */
+html .a02 .search .search-field_text {
+    border: 1px solid #dadadb;
+    border-radius: 5px 0 0 5px;
+}
+html .a02 .search .search-field_submit {
+    background-color: #bf2129;
+    border: 1px solid #dadadb;
+    border-radius: 0 5px 5px 0;
+    height: 29px;
+}
+html .a02 .search .search-field_submit:after {
+    top: 8px;
+    left: 6px;
+}
+html.backdropfilter .g04.masthead {
+    -webkit-backdrop-filter: saturate(150%) blur(15px);
+}
+.blog p, .blog li, .blog .entrytext p, .blog .entrytext li {
+    font-size: 0.9375rem;
+}
+
+</style>
+<link href="/etc/designs/fireeye-www/clientlibs_fw-2021.min.css" rel="stylesheet" type="text/css"/>
+<style>
+/* fix for IE */
+.uc-he01v1 .uc-he01_container .background {
+    max-height: 470px;
+    position: absolute;
+}
+@media (max-width: 48em) {
+    .uc-he01v1 .uc-he01_container .background {
+        max-height: 320px;
+    }
+}
+@media (min-width: 54em) {
+    .uc-he01v1 .uc-he01_container .background {
+        max-height: 600px;
+    }
+}
+</style>
+<script>
+    var companyDetails6Sense = localStorage.getItem('_6senseCompanyDetails');
+
+    if(null != companyDetails6Sense || companyDetails6Sense != "" || companyDetails6Sense != undefined){
+		var jsonVal = JSON.parse(companyDetails6Sense);
+
+        var companyRevenueRange = jsonVal.company.revenue_range;
+        var companyCountry = jsonVal.company.country;
+        var companyIndustry = jsonVal.company.industry;
+        var companyName = jsonVal.company.name;
+        var companyRegion = jsonVal.company.region;
+        var companyDomain = jsonVal.company.domain;
+    	var segments = JSON.stringify(jsonVal.segments);
+    	
+        window.dataLayer=window.dataLayer ||[];
+        window.dataLayer.push({
+                "company_industry" : companyIndustry,
+                "company_name" : companyName,
+                "company_revenue" : companyRevenueRange,
+                "company_country" : companyCountry,
+                "company_region" : companyRegion,
+            	"company_domain" : companyDomain,
+            	"segments" : segments
+        });
+    }
+
+</script>
+<script>
+//window.utag_cfg_ovrd = {noview : true};
+//data to be passed when window load is complete 
+//Code need to be in Headlibs
+var utag_data={
+    "page_name":document.title, 
+    //"page_path": "/content/fireeye-www/en_US/company/privacy",
+    //"page_url": "https://www.fireeye.com/company/privacy.html",
+    //"hashed_user_id":ut.visitor_id, //ut is populated by utag.js and thus is not available yet.
+    //"customer_country":(fdc.geoipResponse && fdc.geoipResponse.country && fdc.geoipResponse.country.iso_code) ? fdc.geoipResponse.country.iso_code : "",
+    //disabled the customer country since it was giving empty value and Tests were failing
+    "tealium_event":"content_category_1", //default event
+    "page_type":"content_category_1"
+}
+</script>
+<script>utag_data.content_cat_1 = "Company";utag_data.content_cat_2 = "Privacy and Cookie Policy";</script>
+<script type="text/javascript">
+    var pathname=window.location.pathname;
+
+    var urldepth=window.location.pathname;
+    // Normal page with content_Category_1
+    if(urldepth=="/")
+    {}
+    else
+    if(urldepth.match(/\/.+?/g).length==1)
+    {
+        utag_data.tealium_event="content_category_1";
+        utag_data.page_type="content_category_1";
+    }
+    // Normal page with content_Category_2
+    else 
+    if(urldepth.match(/\/.+?/g).length>=2)
+    {
+        utag_data.tealium_event="content_category_2";
+        utag_data.page_type="content_category_2";
+    }
+    //Check if page is datasheet
+    if(pathname.includes("datasheet"))
+    {
+            utag_data.tealium_event="data_sheets";
+        	utag_data.page_type="data_sheets";
+    }
+    //check if page is press release
+    /*if(pathname.endsWith("press-releases.html"))
+    {
+        utag_data.tealium_event="listing";
+    }
+    if((pathname.startsWith("/solutions"))&&(pathname.match(/\/.+?/g).length==3))
+    {
+        utag_data.tealium_event="landing";
+        }*/
+    //Check if page is a blog
+    if(pathname.startsWith("/blog"))
+    {
+        utag_data.tealium_event="blog";
+        utag_data.page_type="blog";
+    }
+    if(window.location.pathname.endsWith("contacts.html") || window.location.pathname.endsWith("contact-us.html"))
+    {
+        utag_data.tealium_event="contact";
+        utag_data.page_type="contact";
+    }
+    if(pathname.endsWith("customers.html"))
+    {
+        utag_data.tealium_event="filter";
+        utag_data.page_type="filter";
+    }
+    //Check if page is homepage
+    if(window.location.pathname==="/")
+    {
+        // utag_data.page_type='';
+        utag_data.tealium_event="home";
+        utag_data.page_type="home";
+        delete utag_data.content_cat_1;
+
+    }
+    else
+        //Check if page is job description page
+    if(window.location.pathname.endsWith("jobdescription.html"))
+        {
+            var jobdescription=getParameterByName("jobtitle");
+            var jobloc=getParameterByName("loc");
+            utag_data.job_description=jobdescription+":"+jobloc;
+            utag_data["tealium_event"]="job description";
+            utag_data.page_type="job description";
+
+        }
+        //Function to get query parameter
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MVGC8KK');</script>
+<link href="https://www.fireeye.com/content/dam/framework/touch-icon-iphone-60.png" rel="apple-touch-icon"/>
+<link href="https://www.fireeye.com/content/dam/framework/touch-icon-ipad-76.png" rel="apple-touch-icon" sizes="76x76"/>
+<link href="https://www.fireeye.com/content/dam/framework/touch-icon-iphone-120.png" rel="apple-touch-icon" sizes="120x120"/>
+<link href="https://www.fireeye.com/content/dam/framework/touch-icon-ipad-152.png" rel="apple-touch-icon" sizes="152x152"/>
+<link href="https://www.fireeye.com/content/dam/framework/touch-icon-iphone-180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://www.fireeye.com/content/dam/framework/touch-icon-192.png" rel="touch-icon" sizes="192x192"/>
+<link href="/content/dam/fireeye-www/fw/images/fireeye.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+<link href="/content/dam/fireeye-www/fw/images/fireeye.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+</meta></meta></meta></head>
+<body class="loc-en" data-redesign="redesign-2021" itemscope="" itemtype="http://schema.org/WebPage"><a name="top"></a><script type="text/javascript">window.Granite = window.Granite || {}; window.Granite.csrf = true;</script>
+<div class="clientcontext parbase"><script src="/etc.clientlibs/clientlibs/granite/utils.min.js" type="text/javascript"></script>
+<script src="/etc.clientlibs/clientlibs/granite/jquery/granite.min.js" type="text/javascript"></script>
+<script src="/etc.clientlibs/foundation/clientlibs/jquery.min.js" type="text/javascript"></script>
+<script src="/etc.clientlibs/foundation/clientlibs/shared.min.js" type="text/javascript"></script>
+<script src="/etc.clientlibs/clientlibs/granite/lodash/modern.min.js" type="text/javascript"></script>
+<script src="/etc.clientlibs/cq/personalization/clientlib/personalization/kernel.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $CQ(function() {
+        CQ_Analytics.SegmentMgr.loadSegments("\/etc\/segmentation");
+        CQ_Analytics.ClientContextUtils.init("\/etc\/clientcontext\/default", "\/content\/fireeye\u002Dwww\/en_US\/company\/privacy");
+
+        
+    });
+</script>
+</div>
+<div class="masthead_v2 masthead-v2">
+<div class="g04 masthead g04v1">
+<header itemscope="" itemtype="http://schema.org/WPHeader" role="banner">
+<div class="language-and-search"> <div class="search">
+<div class="content-searchbox searchbox">
+<a class="g01_options-option option-search" data-behavior="showHeaderMenu focusField" data-for="q" href="#header-search">Search</a>
+<div class="option-menu option-menu_search" id="header-search">
+<form action="/search.html" method="get">
+<fieldset class="search-field" title="Search FireEye.com">
+<label class="search-field_label" for="q">Search FireEye.com</label>
+<input autocapitalize="off" autocomplete="off" autocorrect="off" class="input-text search-field_text" data-locale="en" id="q" name="q" placeholder="Search FireEye.com" spellcheck="false" type="text"/>
+<div id="searchboxsuggestions"></div>
+<button class="btn btn-secondary search-field_submit" type="submit">Go</button>
+</fieldset>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="logo-and-megamenu">
+<div class="logo" itemscope="" itemtype="https://schema.org/Brand">
+<a href="https://www.fireeye.com"><img alt="FireEye" class="fireeye" itemprop="logo" src="/content/dam/fireeye-www/fw/images/fe-logo-white.svg"/></a>
+</div>
+<nav class="megamenu">
+<ul><li class="megamenu-tab" data-curry="/company.html" data-link="/products.html">
+<h4 class="megamenu-title">
+<a class="MegaMenus" href="/products.html" itemprop="url">Products</a>
+</h4>
+<div class="content-0-par parsys"><div class="megamenus section">
+<div class="n03_list-item-sub has-inner-cta">
+<div class="n03-sub_container" data-columns="2">
+<div class="n03-sub_table">
+<div class="col-wrap">
+<div class="n03-sub_cell">
+<div class="parsys"><div class="megamenu-list section">
+<h4 class="n03-sub_title">Enterprise Security</h4><ul><li itemprop="url"><a class="MegaMenus" href="/products/helix.html" itemprop="name">Helix Security Platform</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/products/network-security.html" itemprop="name">Network Security and Forensics</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/products/endpoint-security.html" itemprop="name">Endpoint Security</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/products/email-security.html" itemprop="name">Email Security</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/products/cloudvisory.html" itemprop="name">Cloudvisory</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/products/detection-on-demand.html" itemprop="name">Detection On Demand</a></li>
+</ul></div>
+</div>
+</div><div class="separator"></div>
+<div class="n03-sub_cell">
+<div class="parsys"><div class="megamenu-list section">
+<h4 class="n03-sub_title">Security For:</h4><ul><li itemprop="url"><a class="MegaMenus" href="/products/cloud-security.html" itemprop="name">Cloud</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/products/financial-services.html" itemprop="name">Financial Services</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/products/government.html" itemprop="name">Government</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/products/healthcare.html" itemprop="name">Healthcare</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/products/education.html" itemprop="name">Higher Education</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/products/industrial-systems-and-critical-infrastructure-security.html" itemprop="name">Industrial &amp; Critical Infrastructure</a></li>
+</ul></div>
+<div class="htmlpassthru section">
+<style>
+  .content-0-par .n03_utility {background-color: transparent;}
+  .n03_utility_cell {padding: 0 13px 0 0;}
+</style></div>
+</div>
+</div><div class="separator disabled"></div></div><div class="megamenu-cta">
+<div class="n03_utility">
+<div class="n03_utility_container">
+<div class="n03_utility_table">
+<div class="n03_utility_cell">
+<h5>FireEye XDR</h5>
+<p>Simplify threat detection and response with FireEye XDR.</p>
+</div>
+<div class="n03_utility_cell"><div class="button"><a class="btn btn-B2282D compact" href="/products/xdr.html">Explore FireEye XDR</a></div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="view-all-bar">
+<a class="MegaMenus" href="/products.html">
+VIEW ALL PRODUCTS</a>
+</div></div>
+</div>
+</div>
+</li><li class="megamenu-tab" data-curry="/company.html" data-link="/customers.html">
+<h4 class="megamenu-title">
+<a class="MegaMenus" href="/company/customers.html" itemprop="url">Customers</a>
+</h4>
+<div class="content-1-par parsys"><div class="megamenus section">
+<div class="n03_list-item-sub has-inner-cta">
+<div class="n03-sub_container" data-columns="2">
+<div class="n03-sub_table">
+<div class="col-wrap">
+<div class="n03-sub_cell">
+<div class="parsys"><div class="megamenu-list section">
+<h4 class="n03-sub_title">Customers</h4><ul><li itemprop="url"><a class="MegaMenus" href="/customers.html" itemprop="name">Customer Stories</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/company/customers.html" itemprop="name">Customer Success</a></li>
+<li itemprop="url"><a class="MegaMenus" href="https://csportal.fireeye.com/" itemprop="name" target="_blank">Customer Portal</a></li>
+</ul></div>
+<div class="megamenu-list section">
+<h4 class="n03-sub_title">Get Support</h4><ul><li itemprop="url"><a class="MegaMenus" href="/support/contacts.html" itemprop="name">Contact Support</a></li>
+</ul></div>
+</div>
+</div><div class="separator"></div>
+<div class="n03-sub_cell">
+<div class="parsys"><div class="megamenu-list section">
+<h4 class="n03-sub_title">Find Answers</h4><ul><li itemprop="url"><a class="MegaMenus" href="/support/programs.html" itemprop="name">Support Programs</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/support/notices.html" itemprop="name">Support Notices</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/support/products.html" itemprop="name">Supported Products</a></li>
+<li itemprop="url"><a class="MegaMenus" href="https://community.fireeye.com/" itemprop="name" target="_blank">Communities</a></li>
+<li itemprop="url"><a class="MegaMenus" href="https://docs.fireeye.com" itemprop="name" target="_blank">Documentation Portal</a></li>
+</ul></div>
+</div>
+</div><div class="separator disabled"></div></div><div class="megamenu-cta">
+<div class="n03_utility">
+<div class="n03_utility_container">
+<div class="n03_utility_table">
+<div class="n03_utility_cell">
+<h5>Support</h5>
+<p>A global network of support experts available 24x7. We offer simple and flexible support programs to maximize the value of your FireEye products and services.</p>
+</div>
+<div class="n03_utility_cell"><div class="button"><a class="btn btn-44474D expand" href="/support.html">Get support</a></div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li><li class="megamenu-tab" data-curry="/company.html" data-link="/partners.html">
+<h4 class="megamenu-title">
+<a class="MegaMenus" href="/partners.html" itemprop="url">Partners</a>
+</h4>
+<div class="content-2-par parsys"><div class="megamenus section">
+<div class="n03_list-item-sub has-inner-cta">
+<div class="n03-sub_container" data-columns="2">
+<div class="n03-sub_table">
+<div class="col-wrap">
+<div class="n03-sub_cell">
+<div class="parsys"><div class="megamenu-list section">
+<h4 class="n03-sub_title">FireEye Partners</h4><ul><li itemprop="url"><a class="MegaMenus" href="/partners.html" itemprop="name">Partners Overview</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/partners/resellers.html" itemprop="name">FireEye Affinity Resellers</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/partners/strategic-technology-partners.html" itemprop="name">Technology Partners</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/partners/global-solution-providers.html" itemprop="name">Global Solution Providers</a></li>
+</ul></div>
+</div>
+</div><div class="separator"></div>
+<div class="n03-sub_cell">
+<div class="parsys"><div class="megamenu-list section">
+<h4 class="n03-sub_title">Partner Resources</h4><ul><li itemprop="url"><a class="MegaMenus" href="https://partners.fireeye.com/directory/" itemprop="name" target="_blank">Partner Locator</a></li>
+<li itemprop="url"><a class="MegaMenus" href="http://training.fireeye.com/" itemprop="name" target="_blank">Partner Education Center</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/support.html" itemprop="name">Support</a></li>
+</ul></div>
+<div class="megamenu-list section">
+<h4 class="n03-sub_title">Partnering with FireEye</h4><ul><li itemprop="url"><a class="MegaMenus" href="https://www2.fireeye.com/Partner-Request-LP-New.html" itemprop="name" target="_blank">Become a Partner</a></li>
+</ul></div>
+</div>
+</div><div class="separator disabled"></div></div><div class="megamenu-cta">
+<div class="n03_utility">
+<div class="n03_utility_container">
+<div class="n03_utility_table">
+<div class="n03_utility_cell">
+<h5>Partner Portal</h5>
+<p>Access for our registered Partners to help you be successful with FireEye.
+Collateral, deal registration, request for funds, training, enablement, and more.</p>
+</div>
+<div class="n03_utility_cell"><div class="button"><a class="btn btn-44474D compact" href="https://partners.fireeye.com/" target="_blank">Access the portal</a></div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li><li class="megamenu-tab" data-curry="/company.html" data-link="/current-threats.html">
+<h4 class="megamenu-title">
+<a class="MegaMenus" href="/current-threats.html" itemprop="url">Resources</a>
+</h4>
+<div class="content-3-par parsys"><div class="megamenus section">
+<div class="n03_list-item-sub">
+<div class="n03-sub_container" data-columns="3">
+<div class="n03-sub_table">
+<div class="col-wrap">
+<div class="n03-sub_cell">
+<div class="parsys"><div class="megamenu-list section">
+<h4 class="n03-sub_title">Cyber Security</h4><ul><li itemprop="url"><a class="MegaMenus" href="/current-threats/what-is-cyber-security.html" itemprop="name">What is Cyber Security?</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/current-threats/detect-and-prevent.html" itemprop="name">Advanced Detection and Prevention</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/current-threats/how-cyber-attackers-get-in.html" itemprop="name">How Cyber Attacks Compromise Your Network</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/current-threats/what-is-cyber-security/ransomware.html" itemprop="name">What is Ransomware?</a></li>
+<li itemprop="url"><a class="MegaMenus" href="/current-threats/what-is-a-zero-day-exploit.html" itemprop="name">What is a Zero-Day Exploit?</a></li>
+</ul></div>
+<div class="htmlpassthru section">
+<style>
+.g04 .megamenu-list a{padding-right:38px;line-height:1.358;padding-bottom:2px}@media (min-width:60em){.g04 .n03-sub_container{padding-bottom:23px}}@media(min-width:64em) and (max-width:64.5em){.g04 .megamenu-tab:first-child .megamenu-title{padding-left:14px}}@media (min-width:68em) and (max-width:69em){.g04 .megamenu-tab:first-child .megamenu-title{padding-left:30px}}
+.g04 .megamenu-tab {text-transform: none !important;}
+
+</style></div>
+</div>
+</div><div class="separator"></div>
+<div class="n03-sub_cell">
+<div class="parsys"><div class="megamenu-list section">
+<h4 class="n03-sub_title">FireEye Blogs</h4><ul><li itemprop="url"><a class="MegaMenus" href="/blog.html" itemprop="name">Read the FireEye Blogs</a></li>
+</ul></div>
+<div class="megamenu-list section">
+<h4 class="n03-sub_title">Training</h4><ul><li itemprop="url"><a class="MegaMenus" href="/services/training.html" itemprop="name">Education and Training</a></li>
+</ul></div>
+</div>
+</div><div class="separator"></div>
+<div class="n03-sub_cell">
+<div class="parsys"><div class="megamenu-list section">
+<h4 class="n03-sub_title">Free Tools &amp; Newsletters</h4><ul><li itemprop="url"><a class="MegaMenus" href="https://fireeye.market" itemprop="name" target="_blank">FireEye Market</a></li>
+<li itemprop="url"><a class="MegaMenus" href="https://vision.fireeye.com" itemprop="name" target="_blank">The Vision – Digital Magazine</a></li>
+</ul></div>
+</div>
+</div><div class="separator disabled"></div></div></div>
+</div>
+<div class="view-all-bar">
+<a class="MegaMenus" href="/current-threats.html">
+VIEW ALL RESOURCES</a>
+</div></div>
+</div>
+</div>
+</li><li class="megamenu-tab" data-curry="/company.html" data-link="/contact-us.html">
+<h4 class="megamenu-title">
+<a class="MegaMenus" href="/company/contact-us.html" itemprop="url">Contact</a>
+</h4>
+<div class="content-4-par parsys">
+</div>
+</li></ul>
+</nav>
+</div>
+<span class="burger ficon ficon-menu"></span>
+</header>
+</div>
+</div>
+<div id="cookie-privacy-banner" style="display:none;">
+<div class="l_container">
+<div class="g">
+<div class="g-u-1">
+<div class="g-content">
+<div class="cookie-banner">
+<p class="cookie-text">
+To give you the best possible experience, this site uses cookies.  Find out more on <a href="/company/privacy.html" target="_blank">how we use cookies</a>.<button class="cookie-button highlighted" onclick="javascript:onAccept();" type="button">Accept</button>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="breadcrumbs breadcrumb">
+<div class="l_container is-full">
+<div class="g02 g02v0" id="g02-breadcrumbs">
+<div class="g02_container">
+<div class="g02_content">
+<ul class="list-inline g02_list" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+<li class="g02_list_item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a class="BreadCrumb" href="/" itemprop="item"><span itemprop="name">Home</span></a><meta content="1" itemprop="position"/></li>
+<li class="g02_list_item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a class="BreadCrumb" href="/company.html" itemprop="item"><span itemprop="name">About</span></a><meta content="2" itemprop="position"/></li>
+<li class="g02_list_item" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">Privacy and Cookie Policy<meta content="3" itemprop="position"/></span>
+</li></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<main class="l_main" role="main">
+<div class="content-par parsys"><div class="grid-100-full fdc-grids section">
+<div class="l_container g-m background is-full" style="background-image: url(/content/dam/fireeye-www/brand/homepage-banner-images/hpb-bg-dark-01.jpg);background-color: #3D4F65;"><div class="l_container"><div class="g g-m pad-top-80 pad-bottom-70 g-alt"><div class="g-u-1 m_g-u-1">
+<div class="g-content">
+<div class="grid-100-mid parsys"><div class="text parbase section"><div class="c00 c00v0">
+<h1 class="title reverse centered">Privacy and Cookie Policy</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></div>
+<div class="clear-all"></div></div>
+<div class="grid-100-full fdc-grids section">
+<div class="l_container g-m"><div class="g g-m pad-top-80 pad-bottom-80"><div class="g-u-1 m_g-u-1">
+<div class="g-content">
+<div class="grid-100-mid parsys"><div class="text parbase section"><div class="c00 c00v0">
+<h2>FireEye Online Privacy Statement</h2>
+<p>FireEye respects your privacy. When using our website, you may get
+information, communicate with us, or link to other websites with whom
+we do business. While doing this, you may give us information so that
+we can provide enhanced products or services to you, as well as
+personalize your experience on our Website. This online privacy policy
+describes how FireEye and its affiliates and subsidiaries use and
+protect Personal Information that you share with us. "Personal
+Information" is information that enables us to identify you.
+Examples of this kind of information include your email address, name,
+title, or mailing address, and there are other similar kinds of
+information that may be used for the same purpose.</p>
+<p>Your privacy, and the privacy of all users of www.fireeye.com, is of
+the highest priority. If you have any questions, <a href="mailto:privacy@fireeye.com">please email us</a> .<br/> </p>
+<p>This policy governs websites owned and operated by FireEye. Our
+policy does not govern websites of other parties to which we may
+provide links because FireEye is not responsible for and cannot
+control the privacy practices or content of those sites.</p>
+<p>Here are the principles governing our information practices and
+other privacy aspects of our websites:</p>
+<ul> <li>Information Collection and Use</li> <li>Information Sharing
+and Disclosure</li> <li>Cross-Border Transfer</li> <li>IP
+Information Collection and Use Practices</li> <li>Cookies</li>
+<li>Data Storage and Security</li> <li>Your Data Privacy Rights</li>
+<li>Dispute Resolution<br/> </li> <li>Contact Us</li> <li>Policy
+Updates</li> </ul>
+<h5>Information Collection and Use</h5>
+<ul> <li>FireEye collects Personal Information when you register for
+FireEye information such as whitepapers and reports, newsletters or
+webcasts, visit FireEye pages, and enter promotions. This Personal
+Information may include your name, email address, and telephone
+number.</li> <li>FireEye may collect any additional information
+relating to you that you voluntarily provide to us directly through
+our websites or indirectly through our representatives or business
+partners.</li> <p>
+<a id="reg" name="reg"></a></p> <li>FireEye may use Personal
+Information received from you in connection with: to fulfill your
+requests for information on products and services or any specific
+questions sent to us, to respond to any complaints, to contact you
+about offers and new products, to follow up on marketing initiatives
+and to generally manage your relationship with us.</li> </ul>
+<h5>Information Sharing and Disclosure</h5>
+<ul> <li>FireEye will not sell or rent your Personal Information to
+anyone.</li> <li>FireEye will send Personal Information about you to
+other companies or people when:<ul> <li>We have your consent to
+share the information;</li> <li>We need to share your
+information to provide the product or service you have
+requested;</li> <li>We need to send the information to companies
+who work on behalf of FireEye (e.g. affiliates, distributors or
+resellers) to provide a product or service to you or for further
+follow-up related to your interests. The information shared does
+not constitute a sale of your Personal Information.</li> <li>We
+have to disclose your Personal Information in response to a
+lawful request by public authorities and agencies, to meet any
+applicable law and regulation or to protect FireEye’s assets as
+permitted by law.</li> <li>We are subject to the investigatory
+and enforcement powers of the Federal Trade Commission (FTC). We
+may be required to disclose personal information that we handle
+under the Privacy Shield in response to lawful requests by
+public authorities, including to meet national security or law
+enforcement requirements.</li> </ul> </li> </ul>
+<h5>Cross-Border Transfer</h5>
+<p>FireEye may process or otherwise transfer any personal information
+in or to any country outside of the country of origination, including
+such countries with less restrictive data protection laws, to the
+extent necessary for purposes described in this policy. FireEye has
+entered into the <a href="/content/dam/fireeye-www/support/pdfs/50321-standard-contractual-clauses.pdf" target="_blank">EU Standard Contractual Clauses</a> as approved by
+the European Commission, to help ensure an adequate level of data
+protection for any personal data that will be processed or transferred.</p>
+<h5>IP Information Collection and Use Practices</h5>
+<ul> <li>FireEye receives IP addresses from all users because this
+information is automatically reported by your browser each time you
+view a Web page.</li> <li>When a FireEye Web page is requested and
+viewed, that request is logged on our servers with information
+including the IP address of the computer that requested the
+page.</li> <li>IP addresses may be used for various purposes,
+including estimating the total number of users visiting FireEye from
+specific countries or regions of the world.</li> </ul>
+<h5>Cookies</h5>
+<p>A cookie is a small amount of data, which often includes an
+anonymous unique identifier, that is sent to your browser from a
+website's computers and is stored on your computer's hard drive.</p>
+<p>Each website can send its own cookie to your browser if your
+browser's preferences allow it, but to protect your privacy, your
+browser only permits a website to access the cookies it has already
+sent to you, not the cookies sent to you by other sites.</p>
+<p>
+<u>FireEye Practices Regarding Cookies</u>
+<br/> FireEye uses cookies for a number of purposes, including to:</p>
+<ul> <li>Provide you with customized content.</li> <li>Keep track of
+preferences you specify while you are using FireEye's products and
+services.</li> <li>Estimate and report our total audience size and
+traffic.</li> <li>Conduct research to improve FireEye content and
+services.</li> <li>Require you to reenter your FireEye password after
+a certain period of time has elapsed to protect you.</li> </ul>
+<p>In addition to the first-party cookies we set, we use external
+services that set third-party cookies to:</p>
+<ul> <li>Enable information sharing across social media services.</li>
+<li>Provide you with targeted advertising in relevant contexts on
+external sites.</li> <li>Keep track of preferences you specify while
+you are using third-party services.</li> <li>Enable third parties to
+aggregate anonymous user behavior data and provide such research
+data to FireEye.</li> <li>Monitor and report on site and service
+usage across FireEye websites.</li> <li>Query third-party services
+such as Twitter for recently changed information.</li> </ul>
+<p>
+<u>Similar Technologies We Use</u>
+<br/> In addition to cookies, we use Web beacons (also known as
+"clear GIFs" and "1x1" pixels) and coded URLs.
+These techniques may be used:</p>
+<ul> <li>In online advertising to determine which advertisements you
+have viewed.</li> <li>In our promotional emails to track whether an
+email has been viewed and subsequent clicks on hyperlinks.</li>
+<li>To support remarketing for AdWords Ads on the Google Display
+Network. Remarketing technology serves you ads across multiple
+websites based on your browsing interest and behavior.</li> </ul>
+<p>In addition, you may choose not to open emails or download images in
+emails you receive from FireEye.</p>
+<p>To opt out of tracking via coded URLs, you may choose not to click
+on hyperlinks embedded in marketing emails you receive from FireEye.</p>
+<h5>Data Storage and Security</h5>
+<p>
+<u>Account Information</u></p>
+<ul> <li>When you submit information to FireEye, a temporary copy of
+that information is routinely made to prevent accidental loss of
+your information through a computer malfunction or human error.</li>
+<li>Please note that any information that we have copied may remain
+in back-up storage for some period of time after your deletion
+request. This may be the case even though no information about your
+account remains in our active user databases.</li> <li>FireEye does
+not react to Do Not Track signals because there is no standard for
+how those signals are sent.</li> </ul>
+<p>
+<u>Servers</u></p>
+<ul> <li>The FireEye computers (called "servers") that send
+your Web pages process and store an enormous amount of information
+every day. These computer records are called "log
+files."</li> <li>Log files are used for analysis, research,
+auditing, and other purposes, as described above. After this
+information has been used, it is stored and is inaccessible. Until
+the information is stored, your FireEye ID may remain in our active
+server log files.</li> </ul>
+<p>
+<u>Security</u></p>
+<ul> <li>Appropriate technical and physical safeguard measures are in
+place to protect against unauthorized or unlawful access, misuse,
+accidental loss, destruction and alternation of any Personal
+Information which are shared with us in the course of using our
+website services.</li> </ul>
+<h5>Your Data Privacy Rights</h5>
+<p>You have a number of rights under relevant data privacy laws, which
+may include the General Data Protection Regulation (EU) 2016/679 and
+the California Consumer Privacy Act. Depending on where you are based,
+those rights may include the right to (i) request access or copies of
+your personal data FireEye processes, (ii) rectify incorrect personal
+data, (iii) delete your personal data, (iv) restrict the processing of
+your personal data, (v) determine the portability of your personal
+data, (vi) lodge complaints with competent authorities in your
+country, and/or (vii) request a list with the names and addresses of
+any potential recipients of your personal data. To exercise one or
+more of these rights, or to ask questions or relay concerns, please
+contact FireEye’s Data Protection Officer:</p>
+<p style="margin-left: 40.0px;">Richard Weaver<br/> FireEye Security
+Holdings US LLC<br/> 11955 Freedom Drive, Suite 300<br/> Reston,
+Virginia 20190, USA<br/> (703) 935-8012<br/> <a href="mailto:privacy@fireeye.com">privacy@fireeye.com</a></p>
+<p>FireEye will verify requests that it receives and respond in the
+time period required under the relevant data privacy laws.</p>
+<h5>Dispute Resolution</h5>
+<p>If you believe your Personal Information has been used in a way that
+is not consistent with this Policy, we invite you to contact FireEye
+first at <a href="mailto:privacy@fireeye.com">privacy@fireeye.com</a>.
+We will make all efforts to resolve your complaints in a timely and
+accurate manner.</p>
+<h5>Contact Us</h5>
+<p>If you have any questions about this privacy statement, the
+practices of this site, or your dealings with this website, <a href="mailto:privacy@fireeye.com">please contact us</a>.</p>
+<h5>Policy Updates</h5>
+<p>We may update our Policy from time to time. We will post the updated
+version in this section of the website. If the revision is significant
+and may materially change our data privacy practices, we will notify
+you by using other means, e.g. via email.</p>
+<p class="type-XS">Last Updated: October 8, 2021</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="clear-all"></div></div>
+<div class="htmlpassthru section">
+<style>
+  p, ul, li, tr, th, td {font-size: 0.875rem;}
+
+</style></div>
+</div>
+</main>
+<div class="footer_f635 footer">
+<footer class="l_footer g03 g03v0 g03v2 g03-5col" id="g03-footer">
+<div class="main-footer-wrapper">
+<div class="g03_list g03_list_1">
+<div class="parsys"><div class="htmlpassthru section">
+<p style="margin-bottom:6px"><strong>About</strong></p></div>
+<div class="footer-list section">
+<ul class="g03_block"><li class="g03_item"><a class="Footer" href="/company.html">Why FireEye?</a></li>
+<li class="g03_item"><a class="Footer" href="/customers.html">Customer Stories</a></li>
+<li class="g03_item"><a class="Footer" href="/company/jobs.html">Careers</a></li>
+<li class="g03_item"><a class="Footer" href="/company/compliance-certification.html">Certifications and Compliance</a></li>
+<li class="g03_item"><a class="Footer" href="/company/supplier.html">Supplier Documents</a></li>
+<li class="g03_item"><a class="Footer" href="/current-threats.html">Resources</a></li>
+</ul></div>
+</div>
+</div>
+<div class="g03_list g03_list_2">
+<div class="parsys"><div class="htmlpassthru section">
+<p style="margin-bottom:6px"><strong>News and Events</strong></p></div>
+<div class="footer-list section">
+<ul class="g03_block"><li class="g03_item"><a class="Footer" href="/company/newsroom.html">Newsroom</a></li>
+<li class="g03_item"><a class="Footer" href="/company/press-releases.html">Press Releases</a></li>
+<li class="g03_item"><a class="Footer" href="/company/webinars.html">Webinars</a></li>
+<li class="g03_item"><a class="Footer" href="/company/events.html">Events</a></li>
+<li class="g03_item"><a class="Footer" href="/company/awards.html">Awards and Honors</a></li>
+<li class="g03_item"><a class="Footer" href="/company/contact-us/manage-your-communication-preference.html">Email Preferences</a></li>
+</ul></div>
+</div>
+</div>
+<div class="g03_list g03_list_3">
+<div class="parsys"><div class="htmlpassthru section">
+<p style="margin-bottom:6px"><strong>Technical Support</strong></p></div>
+<div class="footer-list section">
+<ul class="g03_block"><li class="g03_item"><a class="Footer" href="/support.html">Support</a></li>
+<li class="g03_item"><a class="Footer" href="/company/security.html">Report Security Issue</a></li>
+<li class="g03_item"><a class="Footer" href="/support/contacts.html">Contact Support</a></li>
+<li class="g03_item"><a class="Footer" href="https://csportal.fireeye.com/" target="_blank">Customer Portal</a></li>
+<li class="g03_item"><a class="Footer" href="https://community.fireeye.com/" target="_blank">Communities</a></li>
+<li class="g03_item"><a class="Footer" href="https://docs.fireeye.com" target="_blank">Documentation Portal</a></li>
+</ul></div>
+</div>
+</div>
+<div class="g03_list g03_list_4">
+<div class="parsys"><div class="htmlpassthru section">
+<p style="margin-bottom:6px"><strong>FireEye Blogs</strong></p></div>
+<div class="footer-list section">
+<ul class="g03_block"><li class="g03_item"><a class="Footer" href="/blog/threat-research.html">Threat Research</a></li>
+<li class="g03_item"><a class="Footer" href="/blog/products-and-services.html">FireEye Stories</a></li>
+<li class="g03_item"><a class="Footer" href="/blog/executive-perspective.html">Industry Perspectives</a></li>
+</ul></div>
+<div class="htmlpassthru section">
+<p style="margin-bottom:6px"><strong>Threat Map</strong></p></div>
+<div class="footer-list section">
+<ul class="g03_block"><li class="g03_item"><a class="Footer" href="/cyber-map/threat-map.html">View the Latest Threats</a></li>
+</ul></div>
+</div>
+</div>
+<div class="g03_list g03_list_5">
+<div class="parsys"><div class="htmlpassthru section">
+<p style="margin-bottom:6px"><strong>Contact Us</strong><br/>
+<div class="footer-list section">
+<ul class="g03_block">
+<li class="g03_item"><a class="contactlinks" href="tel:+1 877-347-3393">+1 877-347-3393</a><br/> </li>
+</ul>
+</div></p></div>
+<div class="htmlpassthru section">
+<p style="margin-bottom:6px"><strong>Stay Connected</strong></p></div>
+<div class="followus-footer section"><h4 class="g03_title" id="g03-followus-title"> </h4><ul class="g03_block g03-s" id="g03-followus-list"><li class="g03_item g03_item-s">
+<a href="https://www.linkedin.com/company/trellixsecurity/" target="_blank">
+<span class="g03-s-i ficon g03-s-i-li ficon-linkedin"></span>
+<span class="g03-s_label">LinkedIn</span>
+</a>
+</li><li class="g03_item g03_item-s">
+<a href="https://twitter.com/Trellix" target="_blank">
+<span class="g03-s-i ficon g03-s-i-tw ficon-twitter2"></span>
+<span class="g03-s_label">Twitter</span>
+</a>
+</li><li class="g03_item g03_item-s">
+<a href="https://www.facebook.com/TeamTrellix" target="_blank">
+<span class="g03-s-i ficon g03-s-i-fb ficon-facebook2"></span>
+<span class="g03-s_label">Facebook</span>
+</a>
+</li><li class="g03_item g03_item-s">
+<a href="https://www.youtube.com/c/TrellixSecurity" target="_blank">
+<span class="g03-s-i ficon g03-s-i-yt ficon-youtube2"></span>
+<span class="g03-s_label">YouTube</span>
+</a>
+</li></ul>
+</div>
+<div class="htmlpassthru section">
+<div class="country-notification">
+<div class="c08_modal lang" id="c08_modal-lang">
+<div class="c08 c08v1">
+<div class="c08_header">
+<a class="ficon ficon-close c08_dismiss" data-behavior="dismiss-c08" href="#dismiss-lightbox"></a>
+</div>
+<div class="c08_content">
+<div class="c08_body">
+<div class="col FR">
+<p class="type-ML">Cette page est également disponible en français.</p>
+<div class="button section"><a class="btn" href="/index.html">Version française</a></div>
+</div>
+<div class="col DE">
+<p class="type-ML">Diese Seite ist auch auf Deutsch verfügbar</p>
+<div class="button section"><a class="btn" href="/index.html">Zur deutschen Seite wechseln</a></div>
+</div>
+<div class="col JP">
+<p class="type-ML">日本語ページを</p>
+<div class="button section"><a class="btn" href="/index.html">見る</a></div>
+</div>
+<div class="col KR">
+<p class="type-ML">해당 페이지는 한글 버전으로 보실 수 있습니다</p>
+<div class="button section"><a class="btn" href="/index.html">바로 가기</a></div>
+</div>
+<hr/>
+<div class="col">
+<p><a class="dismiss" data-behavior="dismiss-c08" href="#dismiss-lightbox">Continue viewing this page in English</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<style>
+.c08_modal.lang {
+    background: rgba(255,255,255,0.8);
+}
+.c08_modal.lang .c08_header {
+    background: transparent;
+    border-left: none;
+}
+.c08_modal.lang .c08 {
+    top: 20%;
+    width: 600px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.37) 0 0 15px;
+    border: 1px solid #b4b5b8;
+    background-image: url("/content/dam/fireeye-www/fw/images/bg-language-select.jpg");
+    background-position: right bottom;
+    margin: 0 auto;
+    position: relative;
+    max-width: 90%;
+}
+.c08_modal.lang .c08_dismiss {
+    color: #222;
+}
+.c08_modal.lang .c08_body {
+    padding: 12px 50px 60px;
+}
+.c08_modal.lang .col {
+    display: none;
+}
+.c08_modal.lang .col:last-child {
+    display: block;
+}
+.c08_modal.lang .btn {
+    margin-bottom: 0;
+}
+.c08_modal.lang hr {
+    margin: 30px 80px;
+}
+.c08_modal.lang hr:before {
+    border-bottom: none;
+}
+</style>
+</div></div>
+</div>
+</div></div>
+<div class="legal-footer-wrapper">
+<div class="legal-footer">
+<div class="g03_copyright">
+<p class="g03_copyright_p">
+Copyright © 2022 FireEye. All rights reserved. <span class="g03-legal"><a href="/company/privacy.html">Privacy &amp; Cookies Policy</a> | <a href="/company/legal.html">Legal Documentation</a></span>
+</p>
+</div><div class="g03_languages">
+<a class="g01_options-option" href="#footer-worldwide">
+<span>Site Language</span>
+<span>English<span class="ficon ficon-globe"></span></span>
+</a>
+<div class="option-menu" id="footer-worldwide">
+<p><strong>My preferred language:</strong></p>
+<ul class="g01_options_list"><li><a href="https://www.fireeye.com/company/privacy.html" target="_blank">English (English)</a></li>
+<li><a href="https://www.fireeye.fr/company/privacy.html" target="_blank">French (Français)</a></li>
+<li><a href="https://www.fireeye.de/company/privacy.html" target="_blank">German (Deutsch)</a></li>
+<li><a href="https://www.fireeye.jp/company/privacy.html" target="_blank">Japanese (日本語)</a></li>
+<li><a href="https://www.fireeye.kr/company/privacy.html" target="_blank">Korean (한국어)</a></li>
+<li><a href="/products/international-literature.html">More languages</a></li>
+</ul>
+</div>
+</div> </div>
+</div>
+</footer>
+</div>
+<script src="/etc/designs/fireeye-www/clientlibs_fw.min.js" type="text/javascript"></script>
+<div class="htmlpassthru_c66c htmlpassthru">
+<script>
+function changeSlide(a) {
+    if(isNaN(a)){console.log("updating i");i=2;a=2;}
+	$('#uc-he01_carousel').removeClass('uc-he01_s-1 uc-he01_s-2 uc-he01_s-3 uc-he01_s-4 uc-he01_s-5');
+	$('.uc-he01_sc_s, .uc-he01_c_btn').removeClass('is-active');
+	$('#uc-he01_sc_s-'+(a)+', [data-target="'+(a)+'"]').addClass('is-active animate');
+	window.setTimeout(function() {$('.uc-he01_sc_s, .uc-he01_c_btn').not('#uc-he01_sc_s-'+(a)).removeClass('animate');}, 1000);
+	$('#uc-he01_carousel').addClass('uc-he01_s-'+(a));
+}
+</script></div>
+</body>
+</html>

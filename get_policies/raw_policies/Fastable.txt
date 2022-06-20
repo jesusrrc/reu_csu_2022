@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="Drupal 7 (https://www.drupal.org)" name="generator"/>
+<link href="https://www.artidea.org/privacy-policy" rel="canonical"/>
+<link href="https://www.artidea.org/node/4413" rel="shortlink"/>
+<meta content="International Festival of Arts and Ideas" property="og:site_name"/>
+<meta content="article" property="og:type"/>
+<meta content="https://www.artidea.org/privacy-policy" property="og:url"/>
+<meta content="Privacy Policy" property="og:title"/>
+<!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="/favicon.png" rel="icon"/>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"497a1958fb",applicationID:"16178945"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<title>Privacy Policy | International Festival of Arts and Ideas</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/sites/all/themes/artidea17/css/h5.css" rel="stylesheet" type="text/css">
+<link href="/sites/all/themes/artidea17/popup22/popup.css?1" rel="stylesheet" type="text/css">
+<link href="https://www.artidea.org/sites/default/files/css/css_1Ud30N_U42R1u3xFWdqrf3El0zx81eDF9EbwaSgZOGE.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.artidea.org/sites/default/files/css/css_lNwaBycJCkI4-v0cyrR9YQyv08EN7lIiS5xrzvUpX14.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.artidea.org/sites/default/files/css/css_uO6MLNGjQlCmFoskx_DzqEjxauw9LcIV5gHC89l0aQU.css" media="all" rel="stylesheet" type="text/css"/>
+<style media="all" type="text/css">
+<!--/*--><![CDATA[/*><!--*/
+.svg-logo-text-fill{fill:#ffffff;}.svg-logo-bubble-fill{fill:#CE0F69;}.node-type-front-page #front-logo .svg-logo-text-fill{fill:#000;}
+
+/*]]>*/-->
+</style>
+<script src="https://webcomponents.spektrix.com/stable/webcomponents-loader.js"></script>
+<script async="" data-components="spektrix-merchandise,spektrix-donate,spektrix-basket-summary,spektrix-login-status" src="https://webcomponents.spektrix.com/stable/spektrix-component-loader.js"></script>
+<style type="text/css">
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      src: url('/sites/all/themes/artidea17/fonts/Montserrat/montserrat-v14-latin-regular.woff2') format('woff2'),
+           url('/sites/all/themes/artidea17/fonts/Montserrat/montserrat-v14-latin-regular.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: italic;
+      font-weight: 400;
+      src: url('/sites/all/themes/artidea17/fonts/Montserrat/montserrat-v14-latin-italic.woff2') format('woff2'),
+           url('/sites/all/themes/artidea17/fonts/Montserrat/montserrat-v14-latin-italic.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      src: url('/sites/all/themes/artidea17/fonts/Montserrat/montserrat-v14-latin-500.woff2') format('woff2'),
+           url('/sites/all/themes/artidea17/fonts/Montserrat/montserrat-v14-latin-500.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: italic;
+      font-weight: 500;
+      src: url('/sites/all/themes/artidea17/fonts/Montserrat/montserrat-v14-latin-500italic.woff2') format('woff2'),
+           url('/sites/all/themes/artidea17/fonts/Montserrat/montserrat-v14-latin-500italic.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      src: url('/sites/all/themes/artidea17/fonts/Montserrat/montserrat-v14-latin-700.woff2') format('woff2'),
+           url('/sites/all/themes/artidea17/fonts/Montserrat/montserrat-v14-latin-700.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: italic;
+      font-weight: 700;
+      src: url('/sites/all/themes/artidea17/fonts/Montserrat/montserrat-v14-latin-700italic.woff2') format('woff2'),
+           url('/sites/all/themes/artidea17/fonts/Montserrat/montserrat-v14-latin-700italic.woff') format('woff');
+    }
+    @font-face {
+      font-family: 'Encode Sans Condensed';
+      font-style: normal;
+      font-weight: 500;
+      src: url('/sites/all/themes/artidea17/fonts/Encode/encode-sans-condensed-v8-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('/sites/all/themes/artidea17/fonts/Encode/encode-sans-condensed-v8-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    @font-face {
+      font-family: 'Encode Sans Condensed';
+      font-style: normal;
+      font-weight: 600;
+      src: url('/sites/all/themes/artidea17/fonts/Encode/encode-sans-condensed-v8-latin-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('/sites/all/themes/artidea17/fonts/Encode/encode-sans-condensed-v8-latin-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    @font-face {
+      font-family: 'Encode Sans Condensed';
+      font-style: normal;
+      font-weight: 700;
+      src: url('/sites/all/themes/artidea17/fonts/Encode/encode-sans-condensed-v8-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('/sites/all/themes/artidea17/fonts/Encode/encode-sans-condensed-v8-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    @font-face {
+      font-family: 'Encode Sans Condensed';
+      font-style: normal;
+      font-weight: 800;
+      src: url('/sites/all/themes/artidea17/fonts/Encode/encode-sans-condensed-v8-latin-800.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('/sites/all/themes/artidea17/fonts/Encode/encode-sans-condensed-v8-latin-800.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+  </style>
+<script src="https://www.artidea.org/sites/default/files/js/js_vOLATOh3v3FWWhcn2fk-F2qcEgkI-5LlBzUjE-yWRp8.js" type="text/javascript"></script>
+<script src="https://www.artidea.org/sites/default/files/js/js_s-vUB9hVAZ9c0vBFp8bk_tmbxs6_TpbzVZLfEWZuwVQ.js" type="text/javascript"></script>
+<script src="https://www.artidea.org/sites/default/files/js/js_ptR1ZjZnexk8gj2Q9mIgM2M_6ztR4ckK-i_6gzFmlNM.js" type="text/javascript"></script>
+<script src="https://www.artidea.org/sites/default/files/js/js_fAxUaknceaOzFZUBXr3TBeo_WVPGChmqdAa7AmeOxd4.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-4457626-1", {"cookieDomain":"auto","allowLinker":true});ga("require", "linker");ga("linker:autoLink", ["artidea.org","www.artidea.org","system.spektrix.com"]);ga("send", "pageview");
+//--><!]]>
+</script>
+<script src="https://www.artidea.org/sites/default/files/js/js_-oEDdwe4XpUqUj4W0KJs96ENaXIrGvjBvIP-WYYBi54.js" type="text/javascript"></script>
+<script src="https://www.artidea.org/sites/default/files/js/js_JnJCaN5K5dfm16WSXcaliKNYOb_6fYgefO6Bqc3hzWY.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"artidea17","theme_token":"SgX88tQ5ZKTkPOsAKXEulWX4dmFtsiv-H4iN4vfJ8MU","js":{"public:\/\/google_tag\/google_tag.script.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.7\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/libraries\/fitvids\/jquery.fitvids.js":1,"sites\/all\/modules\/contrib\/fitvids\/fitvids.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/contrib\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/contrib\/extlink\/js\/extlink.js":1,"sites\/all\/themes\/artidea17\/js\/artidea17-scripts.js":1},"css":{"sites\/all\/modules\/contrib\/fitvids\/fitvids.css":1,"sites\/all\/modules\/contrib\/youtube\/css\/youtube.css":1,"sites\/all\/modules\/contrib\/extlink\/css\/extlink.css":1,"sites\/all\/modules\/contrib\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/themes\/artidea17\/css\/drupal.css":1,"sites\/all\/themes\/artidea17\/css\/theme.css":1,"sites\/all\/themes\/artidea17\/css\/components.css":1,"0":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px","file_public_path":"\/sites\/default\/files","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"better_exposed_filters":{"views":{"landing_page_top":{"displays":{"block":{"filters":[]}}}}},"fitvids":{"custom_domains":["iframe[src^=\u0027http:\/\/www.ustream.tv\u0027]","iframe[src^=\u0027\u0027]"],"selectors":[".field-featured-video\r",".field-video-link\r",".ustream-wrapper\r",".field-video-url .embedded-video .player"],"simplifymarkup":1},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":1,"trackDomainMode":2,"trackCrossDomains":["artidea.org","www.artidea.org","system.spektrix.com"]},"extlink":{"extTarget":"_blank","extClass":0,"extLabel":"(link is external)","extImgClass":0,"extIconPlacement":0,"extSubdomains":1,"extExclude":"","extInclude":"\\.pdf$","extCssExclude":"","extCssExplicit":"","extAlert":0,"extAlertText":"This link will take you to an external web site.","mailtoClass":0,"mailtoLabel":"(link sends e-mail)","extUseFontAwesome":false},"urlIsAjaxTrusted":{"\/search\/node":true}});
+//--><!]]>
+</script>
+<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
+</link></link></head>
+<body class="not-front not-logged-in no-sidebars page-node page-node-4413 node-type-landing-page">
+<div id="fb-root"></div>
+<div id="skip-link">
+<a class="element-invisible element-focusable" href="#page">Skip to main content</a>
+</div>
+<noscript aria-hidden="true"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NP39TPT" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<header id="header-wrapper">
+<div id="header">
+<div id="logo">
+<div id="logo--image">
+<a href="/"><svg aria-label="Home" height="40" role="img" version="1.1" viewbox="0 0 752 460" width="65" xmlns="http://www.w3.org/2000/svg">
+<title>Home</title>
+<g>
+<path class="svg-logo-bubble-fill" d="M255.8,296.6c0,12.3,2,24.7,6.3,36.6l-11.7,21l-14.9-26.4l-19.9,24.7l-10-27.3l-25.4,22l-5.5-27.8L48.2,421
+		l60.4-126.9L69,298.9l6.2-27.5L35.1,267l11.3-27.3l-36.1-14.1l18.6-25.9L1,177.8L28.9,156l-18.6-25.9L46.4,116L35.1,88.7l40.1-4.4
+		l-6.1-27.6l39.5,4.8l-2.3-27.7l36,12.4l1.5-27.9l30.9,18l5.5-27.8l25.5,22l10-27.4l19.8,24.8l14.8-26.5l14.8,26.5l20-24.7l10,27.3
+		l26-22.7l4.9,28.5l31-18l0.5,8.6c-32.1,12-53,38.3-53,72.5c0,21.9,7.1,49.1,34.4,84.1C305.6,203.2,255.8,232.7,255.8,296.6z"></path>
+<path class="svg-logo-bubble-fill" d="M390.2,159.5c-10.4-12-31.7-39.3-31.7-65.6c0-18,13.1-38.2,41-38.2c18,0,41.5,9.8,41.5,39.3
+		C441,130,412.6,146.4,390.2,159.5z"></path>
+<path class="svg-logo-bubble-fill" d="M387.5,359.4c-47.5,0-70.5-41-70.5-68.2c0-25.7,15.9-47.6,49.7-70.5l87.9,112
+		C434.5,349,413.7,359.4,387.5,359.4z"></path>
+<path class="svg-logo-bubble-fill" d="M722,284.4c1.2,39.7-30.1,72.8-69.9,74h-1.6c0.1,0.7,0.1,1.5,0.1,2.2c1.5,52.9-40.2,97.1-93.2,98.6
+		c-30.3,0.9-57.7-12.4-75.8-33.8c-11.5,19.7-32.6,33.1-57.1,33.8c-33.5,1-62-22.3-68.8-53.9c7.6,1.1,15.7,1.7,24.1,1.7
+		c63.9,0,96.1-28.9,106.5-38.2c15.8,18,38.2,38.8,73.2,38.8c19.1,0,33.3-6.6,44.3-10.9v-41c-6,1.6-12.6,3.8-22.4,3.8
+		c-11.5,0-29.5-1.1-56.3-33.8c12-18.6,20.8-39.3,28.5-61.7c12-33.3,14.7-41,36-41h14.2v-35H489.1v35c6,0,19.2,0,19.2,13.1
+		c0,9.3-6,31.7-16.4,50.3L417,191.7c20-11.5,40.6-24.3,55.2-41.2c11.1-4,26.2-5.9,37.2-5.9c27.9,0,51.2,15.7,55.3,35.9
+		c7.2-8.3,17.9-13.5,29.8-13.8c22.5-0.7,41.3,17.1,41.9,39.6c0.1,3.3-0.2,6.5-0.8,9.5c4-0.8,8.1-1.2,12.3-1.3
+		C687.8,213.4,720.9,244.7,722,284.4z"></path>
+<path class="svg-logo-bubble-fill" d="M721.2,185.9c0,13.1-13.2,23.7-29.6,23.7c-16.4,0-29.6-10.6-29.6-23.7c0-13.1,13.3-23.7,29.6-23.7
+		S721.2,172.8,721.2,185.9z"></path>
+<path class="svg-logo-bubble-fill" d="M745.2,147.7c0,7.3-7.4,13.3-16.6,13.3c-9.2,0-16.6-5.9-16.6-13.3c0-7.3,7.4-13.2,16.6-13.2
+		C737.8,134.4,745.2,140.4,745.2,147.7z"></path>
+<path class="svg-logo-bubble-fill" d="M751,120c0,4-4,7.2-9,7.2c-4.9,0-9-3.2-9-7.2s4-7.2,9-7.2S751,116,751,120z"></path>
+</g>
+</svg></a>
+</div>
+<div id="logo--dates">
+        Festival 2022<span class="divider"> | </span><br class="break"/>May 4 – June 26      </div>
+</div>
+<div id="nav-wrapper">
+<div id="upper-nav">
+<div id="nav-menu-account">
+<a href="/my-account">My account</a>
+<spektrix-login-status client-name="artidea" custom-domain="tickets.artidea.org">
+<span data-logged-in-container="" style="display: none;">
+              (<a href="/my-account"><span data-logged-in-status-customer-first-name=""></span></a>)
+            </span>
+<!--              <span data-logged-out-container>-->
+<!--                  <a href="https://thetheatre.org/myaccount">My account</a>-->
+<!--              </span>-->
+</spektrix-login-status> |
+          <spektrix-basket-summary client-name="artidea" custom-domain="tickets.artidea.org">
+<a href="/cart">Cart
+              <span data-basket-summary-basket-total=""></span>
+<span data-basket-item-count=""></span>
+</a>
+</spektrix-basket-summary>
+</div>
+<div id="header-icons">
+<ul>
+<li class="header-icons--social"><a href="https://www.instagram.com/artsideasct/"><svg aria-label="Instagram" class="instagram-icon" height="12" role="img" viewbox="0 0 1792 1792" width="12" xmlns="http://www.w3.org/2000/svg">
+<path d="M1490 1426v-648h-135q20 63 20 131 0 126-64 232.5t-174 168.5-240 62q-197 0-337-135.5t-140-327.5q0-68 20-131h-141v648q0 26 17.5 43.5t43.5 17.5h1069q25 0 43-17.5t18-43.5zm-284-533q0-124-90.5-211.5t-218.5-87.5q-127 0-217.5 87.5t-90.5 211.5 90.5 211.5 217.5 87.5q128 0 218.5-87.5t90.5-211.5zm284-360v-165q0-28-20-48.5t-49-20.5h-174q-29 0-49 20.5t-20 48.5v165q0 29 20 49t49 20h174q29 0 49-20t20-49zm174-208v1142q0 81-58 139t-139 58h-1142q-81 0-139-58t-58-139v-1142q0-81 58-139t139-58h1142q81 0 139 58t58 139z"></path>
+</svg></a></li>
+<li class="header-icons--social"><a href="https://www.facebook.com/artidea"><svg aria-label="Facebook" class="facebook-icon" height="13" role="img" viewbox="0 0 1792 1792" width="13" xmlns="http://www.w3.org/2000/svg">
+<path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"></path>
+</svg></a></li>
+<li class="header-icons--social"><a href="https://twitter.com/artidea"><svg aria-label="Twitter" class="twitter-icon" height="12" role="img" viewbox="0 0 1792 1792" width="12" xmlns="http://www.w3.org/2000/svg">
+<path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"></path>
+</svg></a></li>
+<li class="header-icons--social"><a href="https://www.youtube.com/user/artsideasct"><svg aria-label="YouTube" class="youtube-icon" height="13" role="img" viewbox="0 0 1792 1792" width="13" xmlns="http://www.w3.org/2000/svg">
+<path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5-103 385.5-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103zm384 823q32-18 32-55t-32-55l-544-320q-31-19-64-1-32 19-32 56v640q0 37 32 56 16 8 32 8 17 0 32-9z"></path>
+</svg></a></li>
+<li class="header-icons--search"><a href="/search/node"><svg height="12" viewbox="0 0 1792 1792" width="12" xmlns="http://www.w3.org/2000/svg">
+<path d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 316.5 131.5 316.5-131.5 131.5-316.5zm512 832q0 52-38 90t-90 38q-54 0-90-38l-343-342q-179 124-399 124-143 0-273.5-55.5t-225-150-150-225-55.5-273.5 55.5-273.5 150-225 225-150 273.5-55.5 273.5 55.5 225 150 150 225 55.5 273.5q0 220-124 399l343 343q37 37 37 90z"></path>
+</svg></a></li>
+</ul>
+</div>
+</div>
+<div id="header-menu">
+<div class="menu-block-wrapper menu-block-2 menu-name-main-menu parent-mlid-0 menu-level-1">
+<ul class="menu"><li class="first leaf has-children menu-mlid-454"><a href="/About">About</a></li>
+<li class="leaf menu-mlid-4120"><a href="/support">Support</a></li>
+<li class="leaf menu-mlid-3562"><a href="/WatchListen">Watch &amp; Listen</a></li>
+<li class="leaf menu-mlid-4124"><a href="https://www.artidea.org/2022-in-the-news" title="">In the News</a></li>
+<li class="leaf menu-mlid-459"><a href="https://www.artidea.org/corporate" title="">Sponsorship</a></li>
+<li class="leaf menu-mlid-974"><a href="https://www.artidea.org/general-contact" title="">Contact Us</a></li>
+<li class="leaf menu-mlid-2588"><a href="/getinvolved">Opportunities</a></li>
+<li class="last leaf menu-mlid-4133"><a href="https://www.artidea.org/sign-up" title="">Hear From Us</a></li>
+</ul></div>
+</div>
+</div>
+</div> <!-- /#header -->
+</header>
+<div id="banner-wrapper" style="display: none;">
+<div id="banner">
+<div id="banner-message">
+<div class="message">
+<div class="field-sitewide-banner">
+<a href="https://www.artidea.org/COVID19Policy">Your safety is our priority: we continue to monitor COVID-19 and align our policies with city and CDC guidelines.</a> </div>
+</div>
+</div>
+<div id="banner-close"><svg class="close-icon" height="18" viewbox="0 0 1792 1792" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z"></path>
+</svg></div>
+</div>
+</div>
+<div id="page-wrapper">
+<div id="top-wrapper">
+<div id="breadcrumb">
+<h2 class="element-invisible">You are here</h2><p class="breadcrumb"><a href="/">Home</a> <svg class="chevron-icon" height="9" viewbox="0 0 1792 1792" width="9" xmlns="http://www.w3.org/2000/svg">
+<path d="M1363 877l-742 742q-19 19-45 19t-45-19l-166-166q-19-19-19-45t19-45l531-531-531-531q-19-19-19-45t19-45l166-166q19-19 45-19t45 19l742 742q19 19 19 45t-19 45z"></path>
+</svg> <span>Privacy Policy</span></p> </div>
+</div>
+<div id="page">
+<div class="title-header"><h1 class="title" id="page-title">Privacy Policy</h1></div>
+<div class="region region-content">
+<div class="block block-system" id="block-system-main">
+<div class="content">
+<div class="node node-landing-page clearfix" id="node-4413">
+<div class="content">
+<div class="basic-text">
+<p>We at New Haven International Festival of Arts &amp; Ideas, Inc. (“Festival,” “we,” “us,” or “our”) have created this privacy policy (this “Privacy Policy”) because we know that you care about how information you provide us is used and shared. This Privacy Policy relates to the information collection and use practices of the Festival in connection with our online services (“Services”), which are made available to you through our website, http://www.artidea.org (the “Website”). </p><p> </p><p>By visiting our Website and/or using our Services, you are agreeing to the terms of this Privacy Policy and the accompanying Terms of Use. Capitalized terms not defined in this Privacy Policy shall have the meaning set forth in our Terms of Use. </p><p> </p><p><strong>The information we Collect </strong></p><p>1. Personal Information </p><p>When you sign up to become a Registered User, purchase a ticket, enter a contest, promotion, or sweepstakes, or make a contribution, you will be required to provide us with personal information about yourself (collectively,  “Personal Information”). Such Personal Information for Registered Users may include your name, e-mail address, mailing address, phone number, and cell phone number. We do not collect any Personal Information from you when you use the Services unless you provide us with the Personal Information voluntarily. </p><p> </p><p>2. Billing Information </p><p>When you make a donation or purchase with us, you will be required to provide certain information in addition to the Personal Information noted above. Such information may include a debit card number, credit card number, and similar information (collectively, the “Billing Information”). </p><p> </p><p>3. Other Information </p><p>In addition to the Personal Information and the Billing Information noted above that you voluntarily provide to us, we may collect additional information (collectively, the “Other Information”). Such Other Information may include: </p><p> </p><ul><li><p>Information that we automatically collect when you use the Services, such as your IP addresses, browser type and language, referring and exit pages and URLs, date and time, amount of time spent on particular pages, what sections of the Website you visit, ticket purchases, and similar information concerning your use of the Services. </p></li></ul><ul><li><p>Information that we collect using “cookie” technology. Cookies are small packets of data that a website stores on your computer’s hard drive so that your computer will “remember” information about your visit. We use cookies to help us collect Other Information and to enhance your experience using the Services. If you do not want the Website to place a cookie on your hard drive, you may be able to turn that feature off on your computer. Please consult your Internet browser’s documentation for information on how to do this. However, if you decide not to accept cookies from us, the Services may not function properly. </p></li><li><p>Additional information about yourself that you voluntarily provide to us, such as your hobbies, personal interests, household income range, number of children, gender, demographic information, and product and service preferences. </p></li><li><p>Information that we collect or receive from other sources, such as our ticketing providers. </p></li></ul><p> </p><p><strong>Information collected by or through third-party advertising companies </strong></p><p> </p><p>We may share Other Information about your activity on the Website with third parties for the purpose of tailoring, analyzing, managing, reporting, and optimizing advertising you see on the Website and elsewhere. These third parties may use cookies, pixel tags (also called web beacons or clear gifs), and/or other technologies to collect such Other Information for such purposes. Pixel tags enable us, and these third-party advertisers, to recognize a browser’s cookie when a browser visits the site on which the pixel tag is located in order to learn which advertisement brings a user to a given site. </p><p> </p><p><strong>Accessing and Modifying personal Information and communication preferences </strong></p><p> </p><p>If you have registered for the Services, you may access, review, and make changes to your Personal Information and Billing Information by following the instructions found on the Website. In addition, you may manage your receipt of marketing and non-transactional communications by clicking on the “unsubscribe” link located on the bottom of any Festival marketing email. Registered Users cannot opt out of receiving transactional e-mails related to their account. We will use commercially reasonable efforts to process such requests in a timely manner. You should be aware, however, that it is not always possible to completely remove or modify information in our subscription databases. </p><p> </p><p><strong>How we use and share the information </strong></p><p>We use the Personal Information, the Billing Information, and the Other Information to process transactions; provide you the Services; solicit your feedback; inform you about our products, services, upcoming events, and special promotions and those of our third-party marketing partners; administer and process donations, contests, promotions, and sweepstakes; and improve our Services to you. Also, we may share Personal Information, the Billing Information, and/or Other Information as described below. </p><ul><li><p>Some transactions are processed through our third-party ticketing providers. Generally, when this occurs, you will be redirected to the third party’s website and any information collected during that process will be subject to such third-party’s privacy policy and terms of use and will be shared with us and handled by us in accordance with this Privacy Policy. </p></li></ul><ul><li><p>In order to administer our contests, promotions, and sweepstakes, we may share your Personal Information and Other Information with our third-party promotional and marketing partners. </p></li><li><p>We may from time to time share Personal Information and/or Other Information with other companies who may provide you information about the products and services they offer. However, to the extent required by law, you will be given the opportunity to opt-out of such sharing. </p></li><li><p>When you have opted-in to receive text messages from us, we may use your cell phone number to send you such text messages. If, at any time, you wish to opt-out of receiving such text messages, please contact us. Text message fees and other fees may apply based on the type of text messaging program you have with your carrier. There are no additional fees assessed by THE FESTIVAL. </p></li><li><p>In an ongoing effort to better understand our users and our Services, we might analyze the Other Information in aggregate form in order to operate, maintain, manage, and improve the Services. This aggregate information does not identify you personally. We may share this aggregate data with our affiliates, agents, and business partners. We may also disclose aggregated user statistics in order to describe our products and Services to current and prospective business partners and to other third parties for other lawful purposes. </p></li><li><p>We may employ other companies and individuals to perform functions on our behalf. Examples may include providing marketing assistance, information technology support, and customer service. These other companies will have access to the Personal Information, the Billing Information, and the Other Information only as necessary to perform their functions and to the extent permitted by law. </p></li></ul><ul><li><p>As we develop our business, we might sell or buy businesses or assets. In the event of a corporate sale, merger, reorganization, dissolution, or similar event, the Personal Information, the Billing Information, and the Other Information may be part of the transferred assets. </p></li><li><p>To the extent permitted by law, we may also disclose Personal Information, the Billing Information, and the Other Information when required by law, court order, or other government or law enforcement authority or regulatory agency, or whenever we believe that disclosing the such Information is necessary or advisable, for example, to protect the rights, property, or safety of the Festival or others. </p></li></ul><p> </p><p><strong>How we protect your information </strong></p><p>We take commercially reasonable steps to protect the Personal Information, the Billing Information, and the Other Information from loss, misuse, and unauthorized access, disclosure, alteration, or destruction. Please understand, however, that no security system is impenetrable. We cannot guarantee the security of our databases, nor can we guarantee that the information you supply will not be intercepted while being transmitted to and from us over the Internet. In particular, e-mail sent to or from the Website may not be secure, and you should therefore take special care in deciding what information you send to us via e-mail. </p><p> </p><p><strong>Important Notice to Non-U.S. Residents </strong></p><p> </p><p>The Website and the Services are operated in the United States. If you are located outside of the United States, please be aware that any information you provide to us will be transferred to the United States. By using the Services and/or providing us with any information, you consent to this transfer. </p><p> </p><p><strong>Sensitive personal information </strong></p><p> </p><p>To the extent that the personal information we collect constitutes sensitive personal information under any applicable law(s), including where such laws promote a substantial public interest, the Festival will collect and process this sensitive personal information within the limits provided by applicable law(s). </p><p> </p><p>Some examples of this type of information include: </p><ul><li><p>You have provided medical information to us to request specific assistance (such as the provision of wheelchair-accessible seating) from us </p></li><li><p>You or someone in your party has a medical condition that requires certain accommodations to enjoy our productions </p></li><li><p>You have otherwise chosen to provide such information to us, or that information has been passed onto us by a third party when you purchased your tickets </p></li></ul><p>In addition, you may have requested services that are not “sensitive personal information” but may imply or suggest your religion, health or other information. We do not use such data to infer any sensitive personal information about you. </p><p> </p><p><strong>Information from Minors </strong></p><p>We do not knowingly collect Personal Information from children under the age of 13 through the Services. If you are under 13, please do not give us any Personal Information. We encourage parents and legal guardians to monitor their children’s Internet usage and to help enforce our Privacy Policy by instructing their children to never provide Personal Information through the Services without their permission. If you have reason to believe that a child under the age of 13 has provided Personal Information to us, please contact us, and we will endeavor to delete that information from our databases. </p><p> </p><p><strong>California Residents </strong></p><p> </p><p>Under California Civil Code Section 1798.83, California residents who have an established business relationship with the Festival may choose to opt out of our sharing your Personal Information with third parties for direct marketing purposes. If you are a California resident and (1) you wish to opt out; or (2) you wish to request certain information regarding our disclosure of your Personal Information to third parties for the direct marketing purposes, please send an e-mail to <a href="mailto:FestivalInfo@artidea.org" rel="noreferrer noopener" target="_blank">FestivalInfo@artidea.org</a> or write to us at: </p><p> </p><p>International Festival of Arts &amp; Ideas <br/>Attention: Marketing Department <br/>195 Church Street, 12th Floor <br/>New Haven, CT 06510 </p><p> </p><p><strong>External Websites </strong></p><p>The Website and the Services may contain links to third-party websites. The Festival has no control over the privacy practices or the content of any of our business partners, advertisers, sponsors, or other websites to which we provide links. As such, we are not responsible for the content or the privacy policies of those third-party websites. You should check the applicable third-party privacy policy and terms of use when visiting any other websites. </p><p> </p><p><strong>Changes to this Privacy Policy </strong></p><p>This Privacy Policy is effective as of the date stated at the top of this Privacy Policy. We may change this Privacy Policy from time to time, and will post any changes on the Website as soon as they go into effect. By accessing the Website or using the Services after we make any such changes to this Privacy Policy, you are deemed to have accepted such changes. Please refer back to this Privacy Policy on a regular basis. </p><p> </p> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- /#page -->
+</div><!-- /#page-wrapper -->
+<footer id="footer-wrapper">
+<div id="footer">
+<div id="footer-logo">
+<a href="/">
+<svg aria-label="International Festival of Arts and Ideas" height="208" role="img" version="1.1" viewbox="0 0 317.2 207.9" width="317" xmlns="http://www.w3.org/2000/svg">
+<title>International Festival of Arts and Ideas</title>
+<g>
+<path class="svg-logo-text-fill" d="M43.7,114.4H32.6l-3-10.6H14.2l-3.1,10.6H0l16.6-60h10.7L43.7,114.4z M26.8,93.2l-5-22.2l-5,22.2L26.8,93.2
+		L26.8,93.2z"></path>
+<path class="svg-logo-text-fill" d="M75,114.4L63.1,93.2h-4v21.2H48.3V54.3h15.1c14.5,0,21.3,5.3,21.3,18v3.1c0,8.9-3.1,13.7-10.4,16.1l13.2,22.9
+		L75,114.4L75,114.4z M63.4,83.3c7.8,0,10-2.7,10-8.4v-2c0-5.7-1.5-8.7-9.8-8.7H59v19.1H63.4L63.4,83.3z"></path>
+<path class="svg-logo-text-fill" d="M122.9,64.1h-12.4v50.3H99.8V64.1H87.3v-9.6h35.6L122.9,64.1L122.9,64.1z"></path>
+<path class="svg-logo-text-fill" d="M145.2,63.4c-5.9,0-8.4,1.9-8.4,7.6c0,7.6,6,6.9,15.1,8.4c6.9,1.1,13.6,3.9,13.6,15.9c0,13.9-6,19.7-20.4,19.7
+		c-15,0-19.7-7.3-19.7-16.9h10.8c0.2,4.6,2.3,7.1,9.1,7.1c6.5,0,9.4-2.7,9.4-9.5c0-7.1-8.4-7.1-14.8-8c-6.8-0.9-14-4.2-14-16.6
+		c0-11.2,6.9-17.1,19.2-17.1c10.8,0,18,4,19,16h-10.8C153.1,64.9,150.5,63.4,145.2,63.4z"></path>
+</g>
+<g>
+<path class="svg-logo-text-fill" d="M59.1,181.4H48.2v-60.1h10.8V181.4z"></path>
+<path class="svg-logo-text-fill" d="M88.3,121.2c14.5,0,20.5,5.2,20.5,17.9v24.5c0,12.4-6.2,17.6-20.5,17.6H68.5v-60.1H88.3z M88.3,171.6
+		c7.8,0,9.8-2.7,9.8-8.4v-23.4c0-5.7-1.2-8.7-9.6-8.7h-9.2v40.5H88.3z"></path>
+<path class="svg-logo-text-fill" d="M151.4,121.2v9.4h-23.8v15.5h20.3v9.7h-20.3v15.8h24.9v9.8h-35.7v-60.2L151.4,121.2L151.4,121.2z"></path>
+<path class="svg-logo-text-fill" d="M199.8,181.3h-11.1l-3-10.6h-15.4l-3.1,10.6h-11.1l16.6-60h10.7L199.8,181.3z M182.9,160.2l-5-22.2l-5,22.2
+		L182.9,160.2L182.9,160.2z"></path>
+<path class="svg-logo-text-fill" d="M222.7,130.4c-5.9,0-8.4,1.9-8.4,7.6c0,7.6,6,6.9,15.1,8.4c6.9,1.1,13.6,3.9,13.6,15.9
+		c0,13.9-6,19.7-20.4,19.7c-15,0-19.7-7.3-19.7-16.9h10.8c0.2,4.6,2.3,7.1,9.1,7.1c6.5,0,9.4-2.7,9.4-9.5c0-7.1-8.4-7.1-14.8-8
+		c-6.8-0.9-14-4.2-14-16.6c0-11.2,6.9-17.1,19.2-17.1c10.8,0,18,4,19,16h-10.8C230.5,131.9,227.9,130.4,222.7,130.4z"></path>
+</g>
+<g>
+<path class="svg-logo-text-fill" d="M52.9,21.9H49V0.3h3.9V21.9z"></path>
+<path class="svg-logo-text-fill" d="M70.7,21.9h-3.8L60.6,8.2l0.3,8.2v5.5H57V0.3h3.9l6.4,14.3l-0.4-9.1V0.3h3.9L70.7,21.9L70.7,21.9z"></path>
+<path class="svg-logo-text-fill" d="M85.9,3.8h-4.5v18.1h-3.9V3.8h-4.5V0.3h12.8C85.9,0.3,85.9,3.8,85.9,3.8z"></path>
+<path class="svg-logo-text-fill" d="M100.8,0.3v3.4h-8.6v5.6h7.3v3.5h-7.3v5.7h9v3.5H88.3V0.3H100.8L100.8,0.3z"></path>
+<path class="svg-logo-text-fill" d="M114,21.9l-4.3-7.6h-1.4v7.6h-3.9V0.3h5.5c5.2,0,7.7,1.9,7.7,6.5v1.1c0,3.2-1.1,5-3.7,5.8l4.8,8.2L114,21.9
+		L114,21.9L114,21.9z M109.9,10.7c2.8,0,3.6-1,3.6-3V6.9c0-2.1-0.5-3.1-3.5-3.1h-1.7v6.9H109.9L109.9,10.7z"></path>
+<path class="svg-logo-text-fill" d="M135,21.9h-3.8l-6.4-13.7l0.3,8.2v5.5h-3.9V0.3h3.9l6.4,14.3l-0.4-9.1V0.3h3.9V21.9L135,21.9z"></path>
+<path class="svg-logo-text-fill" d="M153.2,21.9h-4l-1.1-3.8h-5.5l-1.1,3.8h-4l6-21.6h3.9L153.2,21.9z M147.1,14.3l-1.8-8l-1.8,8H147.1z"></path>
+<path class="svg-logo-text-fill" d="M164.9,3.8h-4.5v18.1h-3.9V3.8H152V0.3h12.8L164.9,3.8L164.9,3.8z"></path>
+<path class="svg-logo-text-fill" d="M171.2,21.9h-3.9V0.3h3.9L171.2,21.9L171.2,21.9z"></path>
+<path class="svg-logo-text-fill" d="M175,15.6V6.5c0-4.6,2-6.5,7.2-6.5c5.2,0,7.4,1.9,7.4,6.5v9.2c0,4.5-2.3,6.5-7.4,6.5
+		C177.1,22.1,175,20.1,175,15.6z M185.8,15.4V6.7c0-2-0.5-3.2-3.5-3.2c-2.8,0-3.3,1.3-3.3,3.2v8.8c0,2.1,0.5,3.2,3.3,3.2
+		C185.1,18.7,185.8,17.5,185.8,15.4C185.8,15.4,185.8,15.4,185.8,15.4z"></path>
+<path class="svg-logo-text-fill" d="M207.2,21.9h-3.8l-6.4-13.7l0.3,8.2v5.5h-3.9V0.3h3.9l6.4,14.3l-0.4-9.1V0.3h3.9V21.9L207.2,21.9z"></path>
+<path class="svg-logo-text-fill" d="M225.4,21.9h-4l-1.1-3.8h-5.5l-1.1,3.8h-4l6-21.6h3.9L225.4,21.9z M219.3,14.3l-1.8-8l-1.8,8H219.3z"></path>
+<path class="svg-logo-text-fill" d="M240.1,21.9h-12.3V0.3h3.9v18.1h8.4C240.1,18.4,240.1,21.9,240.1,21.9z"></path>
+<path class="svg-logo-text-fill" d="M59.3,31.5h-7.4V36h6.3v3h-6.3v7.8h-3.2V28.5h10.7V31.5z"></path>
+<path class="svg-logo-text-fill" d="M72.2,28.5v2.8H65V36h6.1v2.9H65v4.8h7.5v3H61.7V28.5H72.2L72.2,28.5z"></path>
+<path class="svg-logo-text-fill" d="M80.3,31.2c-1.8,0-2.5,0.6-2.5,2.3c0,2.3,1.8,2.1,4.6,2.5c2.1,0.3,4.1,1.2,4.1,4.8c0,4.2-1.8,6-6.2,6
+		c-4.5,0-6-2.2-6-5.1h3.3c0.1,1.4,0.7,2.2,2.8,2.2c2,0,2.9-0.8,2.9-2.9c0-2.2-2.6-2.2-4.5-2.4c-2.1-0.3-4.2-1.3-4.2-5
+		c0-3.4,2.1-5.2,5.8-5.2c3.3,0,5.5,1.2,5.8,4.8h-3.3C82.7,31.7,81.9,31.2,80.3,31.2z"></path>
+<path class="svg-logo-text-fill" d="M98.5,31.5h-3.8v15.2h-3.2V31.5h-3.8v-2.9h10.8L98.5,31.5L98.5,31.5z"></path>
+<path class="svg-logo-text-fill" d="M103.6,46.7h-3.3V28.5h3.3V46.7z"></path>
+<path class="svg-logo-text-fill" d="M118.7,28.5l-4.9,18.2h-3.4l-4.9-18.2h3.3l1.6,5.6l1.7,8.5l1.7-8.6l1.6-5.5C115.3,28.5,118.7,28.5,118.7,28.5z
+		"></path>
+<path class="svg-logo-text-fill" d="M131.2,46.7h-3.4l-0.9-3.2h-4.7l-0.9,3.2H118l5-18.2h3.2L131.2,46.7z M126.1,40.3l-1.5-6.7l-1.5,6.7H126.1
+		L126.1,40.3z"></path>
+<path class="svg-logo-text-fill" d="M143.4,46.7h-10.3V28.5h3.3v15.2h7L143.4,46.7L143.4,46.7z"></path>
+<path class="svg-logo-text-fill" d="M150.6,41.4v-7.7c0-3.9,1.7-5.4,6.1-5.4c4.4,0,6.2,1.6,6.2,5.4v7.7c0,3.8-1.9,5.4-6.2,5.4
+		C152.4,46.8,150.6,45.2,150.6,41.4z M159.7,41.2v-7.4c0-1.7-0.4-2.7-3-2.7c-2.4,0-2.8,1.1-2.8,2.7v7.4c0,1.7,0.4,2.7,2.8,2.7
+		C159.1,44,159.7,43,159.7,41.2L159.7,41.2L159.7,41.2z"></path>
+<path class="svg-logo-text-fill" d="M176.7,31.5h-7.4V36h6.3v3h-6.3v7.8H166V28.5h10.7V31.5z"></path>
+</g>
+<g>
+<path class="svg-logo-bubble-fill" d="M218.5,89.5c0,2.5,0.4,4.9,1.2,7.3l-2.3,4.2l-2.9-5.3l-4,4.9l-2-5.5l-5.1,4.4l-1.1-5.5l-25.2,20.3l12-25.3
+		l-7.9,1l1.2-5.5l-8-0.9l2.2-5.4l-7.2-2.8l3.7-5.2l-5.6-4.4l5.6-4.3l-3.7-5.2l7.2-2.8l-2.2-5.4l8-0.9l-1.2-5.5l7.9,1l-0.5-5.5
+		l7.2,2.5l0.3-5.5l6.2,3.6l1.1-5.5l5.1,4.4l2-5.5l4,4.9l2.9-5.3l3,5.3l4-4.9l2,5.5l5.2-4.5l1,5.7l6.2-3.6l0.1,1.7
+		c-6.4,2.4-10.5,7.6-10.5,14.4c0,4.4,1.4,9.8,6.9,16.8C228.4,70.9,218.5,76.8,218.5,89.5z"></path>
+<path class="svg-logo-bubble-fill" d="M245.3,62.2c-2.1-2.4-6.3-7.8-6.3-13.1c0-3.6,2.6-7.6,8.2-7.6c3.6,0,8.3,2,8.3,7.8
+		C255.4,56.3,249.7,59.6,245.3,62.2z"></path>
+<path class="svg-logo-bubble-fill" d="M244.7,102c-7.6,0-13.8-6-14-13.6c0-5.1,3.2-9.5,9.9-14l17.5,22.3C254.1,100,249.9,102,244.7,102z"></path>
+<path class="svg-logo-bubble-fill" d="M311.4,87.1c0.2,7.9-6,14.5-13.9,14.7h-0.3c0,0.1,0,0.3,0,0.4c0.3,10.6-8,19.4-18.6,19.7
+		c-5.8,0.2-11.4-2.3-15.1-6.7c-3.8,6.5-12.1,8.7-18.6,4.9c-3.3-1.9-5.6-5.1-6.4-8.9c1.6,0.2,3.2,0.3,4.8,0.3
+		c12.7,0,19.2-5.8,21.2-7.6c3.2,3.6,7.6,7.7,14.6,7.7c3.1-0.1,6.1-0.9,8.8-2.2v-8.2c-1.4,0.5-2.9,0.7-4.5,0.8
+		c-2.3,0-5.9-0.2-11.2-6.7c2.4-3.9,4.3-8,5.7-12.3c2.4-6.6,2.9-8.2,7.2-8.2h2.8v-7H265v7c1.2,0,3.8,0,3.8,2.6c0,1.9-1.2,6.3-3.3,10
+		l-14.9-18.8c4-2.3,8.1-4.8,11-8.2c2.4-0.8,4.9-1.2,7.4-1.2c5.6,0,10.2,3.1,11,7.2c3-3.4,8.2-3.7,11.5-0.7c1.7,1.5,2.7,3.6,2.8,5.8
+		c0,0.6,0,1.3-0.2,1.9c0.8-0.2,1.6-0.3,2.5-0.3C304.6,72.9,311.2,79.2,311.4,87.1z"></path>
+<ellipse class="svg-logo-bubble-fill" cx="305.3" cy="67.4" rx="5.9" ry="4.7"></ellipse>
+<ellipse class="svg-logo-bubble-fill" cx="312.7" cy="59.8" rx="3.3" ry="2.6"></ellipse>
+<ellipse class="svg-logo-bubble-fill" cx="315.4" cy="54.3" rx="1.8" ry="1.4"></ellipse>
+</g>
+</svg>
+</a>
+</div>
+<div id="footer-signup">
+<div class="footer-signup--content">
+<h2>Stay connected</h2>
+<p>Join our email list</p>
+<form id="footer-email-signup">
+<div class="form-wrapper">
+<div class="form-item">
+<input id="footer-email-signup--email" maxlength="128" name="footer_email_signup__email" placeholder="E-mail" size="30" type="text" value=""/>
+</div>
+<input id="footer-email-signup--submit" name="" type="submit" value="Submit"/>
+</div>
+</form>
+</div>
+</div>
+<div id="footer-main-links">
+<h2>Festival 2022 May 4 – June 26</h2>
+<ul class="menu"><li class="first leaf"><a href="/insider" title="">Insiders</a></li>
+<li class="leaf"><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=uR3sTYrtiEKOMx27H1ckj8suv4FyMLlEr9M3LIklFCVUMUhRWlZWRkFOMDk4RzNaSDNDOEJZS08wVyQlQCN0PWcu" title="">Vendor Application</a></li>
+<li class="leaf"><a href="https://artidea.bamboohr.com/jobs/" title="">Jobs</a></li>
+<li class="last leaf"><a href="/corporate" title="">Sponsorship</a></li>
+</ul> </div>
+<div id="footer-more-links">
+<h2>More Festival Info</h2>
+<ul class="menu"><li class="first leaf"><a href="http://www.artidea.org/video-podcast" title="">Ideas Program Videos</a></li>
+<li class="leaf"><a href="/media" title="">Press Room</a></li>
+<li class="leaf active-trail"><a class="active-trail active" href="/privacy-policy" title="">Privacy Policy</a></li>
+<li class="last leaf"><a href="/AccountabilityProcess" title="">Accountability &amp; Process</a></li>
+</ul> </div>
+<div id="footer-logos">
+<div class="footer-sponsors">
+<div class="footer-sponsors--content">
+<div class="sponsor">
+<img src="https://www.artidea.org/sites/default/files/festival-sponsors/0_yale-color.png"/> </div>
+<div class="sponsor">
+<img src="https://www.artidea.org/sites/default/files/festival-sponsors/1_ct-humanities-color.png"/> </div>
+<div class="sponsor">
+<img src="https://www.artidea.org/sites/default/files/festival-sponsors/2_nea-2018-horiz-color.png"/> </div>
+<div class="sponsor">
+<img src="https://www.artidea.org/sites/default/files/festival-sponsors/3_city-of-new-haven-seal.png"/> </div>
+<div class="sponsor">
+<img src="https://www.artidea.org/sites/default/files/festival-sponsors/4_new-haven-art-culture-tourism-color.png"/> </div>
+<div class="sponsor">
+<img src="https://www.artidea.org/sites/default/files/festival-sponsors/cttclr.png"/> </div>
+<div class="sponsor">
+<img src="https://www.artidea.org/sites/default/files/festival-sponsors/5_ct-ecd-color.png"/> </div>
+<div class="sponsor">
+<img src="https://www.artidea.org/sites/default/files/festival-sponsors/6_cfgnh-color.png"/> </div>
+<div class="sponsor">
+<img src="https://www.artidea.org/sites/default/files/festival-sponsors/8_ct-public-color.png"/> </div>
+</div>
+</div>
+</div>
+<div id="footer-bottom">
+<div id="footer-fineprint">
+<p class="contact">
+          © 2022 International Festival of Arts &amp; Ideas  | 
+          New Haven, Connecticut  | 
+          (888) ART-IDEA  | 
+          <a href="/node/36">Contact Us</a>
+</p>
+<p class="credit">
+          Site design: <a href="http://flyleafcreative.com">Flyleaf Creative, Inc.</a>  | 
+          Site development: <a href="http://markabur.com">Mark Burgess</a>
+</p>
+</div>
+<div id="footer-search">
+<form accept-charset="UTF-8" action="/search/node" class="search-form" id="search-form" method="post"><div><div class="container-inline form-wrapper" id="edit-basic"><div class="form-item form-type-textfield form-item-keys">
+<input class="form-text" id="edit-keys" maxlength="255" name="keys" placeholder="Search" size="40" type="text" value="">
+</input></div>
+<input class="form-submit" id="edit-submit" name="op" type="submit" value="Go"/></div><input name="form_build_id" type="hidden" value="form-U0PMQhhDV7_f3F32CRug3M6mWmPuitbIRLWgEu1faOA"/>
+<input name="form_id" type="hidden" value="search_form"/>
+</div></form> </div>
+</div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+<script>(function(){
+  window._fbds = window._fbds || {};
+  _fbds.pixelId = 250024808500953;
+  var fbds = document.createElement('script');
+  fbds.async = true;
+  fbds.src = '//connect.facebook.net/en_US/fbds.js';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(fbds, s);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(["track", "PixelInitialized", {}]);
+</script>
+<noscript><img alt="" border="0" height="1" src="https://www.facebook.com/tr?id=250024808500953&amp;ev=NoScript" style="display:none" width="1"/></noscript>
+<script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', '6023419694466', {'value':'0.00','currency':'USD'}]);
+</script>
+<noscript><img alt="" height="1" src="https://www.facebook.com/tr?ev=6023419694466&amp;cd[value]=0.00&amp;cd[currency]=USD&amp;noscript=1" style="display:none" width="1"/></noscript>
+</div>
+</footer>
+<div id="mobile-menu">
+<div class="button"><span class="" id="show-menu"></span></div>
+<div id="mobile-menu-dropdown">
+<div class="menu-block-wrapper menu-block-2 menu-name-main-menu parent-mlid-0 menu-level-1">
+<ul class="menu"><li class="first leaf has-children menu-mlid-454"><a href="/About">About</a></li>
+<li class="leaf menu-mlid-4120"><a href="/support">Support</a></li>
+<li class="leaf menu-mlid-3562"><a href="/WatchListen">Watch &amp; Listen</a></li>
+<li class="leaf menu-mlid-4124"><a href="https://www.artidea.org/2022-in-the-news" title="">In the News</a></li>
+<li class="leaf menu-mlid-459"><a href="https://www.artidea.org/corporate" title="">Sponsorship</a></li>
+<li class="leaf menu-mlid-974"><a href="https://www.artidea.org/general-contact" title="">Contact Us</a></li>
+<li class="leaf menu-mlid-2588"><a href="/getinvolved">Opportunities</a></li>
+<li class="last leaf menu-mlid-4133"><a href="https://www.artidea.org/sign-up" title="">Hear From Us</a></li>
+</ul></div>
+<div id="mobile-menu-account">
+<a href="/my-account">My account</a> <a href="/my-account"><spektrix-logged-in-status show-first-name="true"></spektrix-logged-in-status></a><br/><a href="/cart">Cart <spektrix-basket-total></spektrix-basket-total> <spektrix-basket-item-count></spektrix-basket-item-count></a>
+</div>
+<div id="mobile-menu-social">
+<ul>
+<li><a href="https://www.facebook.com/artidea"><svg aria-label="Facebook" class="facebook-icon" height="13" role="img" viewbox="0 0 1792 1792" width="13" xmlns="http://www.w3.org/2000/svg">
+<path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"></path>
+</svg></a></li>
+<li><a href="https://twitter.com/artidea"><svg aria-label="Twitter" class="twitter-icon" height="12" role="img" viewbox="0 0 1792 1792" width="12" xmlns="http://www.w3.org/2000/svg">
+<path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"></path>
+</svg></a></li>
+<li><a href="https://www.instagram.com/artsideasct/"><svg aria-label="Instagram" class="instagram-icon" height="12" role="img" viewbox="0 0 1792 1792" width="12" xmlns="http://www.w3.org/2000/svg">
+<path d="M1490 1426v-648h-135q20 63 20 131 0 126-64 232.5t-174 168.5-240 62q-197 0-337-135.5t-140-327.5q0-68 20-131h-141v648q0 26 17.5 43.5t43.5 17.5h1069q25 0 43-17.5t18-43.5zm-284-533q0-124-90.5-211.5t-218.5-87.5q-127 0-217.5 87.5t-90.5 211.5 90.5 211.5 217.5 87.5q128 0 218.5-87.5t90.5-211.5zm284-360v-165q0-28-20-48.5t-49-20.5h-174q-29 0-49 20.5t-20 48.5v165q0 29 20 49t49 20h174q29 0 49-20t20-49zm174-208v1142q0 81-58 139t-139 58h-1142q-81 0-139-58t-58-139v-1142q0-81 58-139t139-58h1142q81 0 139 58t58 139z"></path>
+</svg></a></li>
+<li><a href="https://www.youtube.com/user/artsideasct"><svg aria-label="YouTube" class="youtube-icon" height="13" role="img" viewbox="0 0 1792 1792" width="13" xmlns="http://www.w3.org/2000/svg">
+<path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5-103 385.5-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103zm384 823q32-18 32-55t-32-55l-544-320q-31-19-64-1-32 19-32 56v640q0 37 32 56 16 8 32 8 17 0 32-9z"></path>
+</svg></a></li>
+</ul>
+</div>
+</div>
+</div>
+<div style="height: 0; overflow: hidden;position: absolute; bottom: 0;">
+<iframe frameborder="0" src="https://tickets.artidea.org/artidea/website/KeepAlive.aspx" style="height: 0; width: 100%;"></iframe> </div>
+<script src="https://r2-t.trackedlink.net/_dmpt.js" type="text/javascript"></script>
+<script>
+      document.body.className.replace('with-popup','');
+    </script>
+<script>(function(d){let s = d.createElement("script");
+        s.setAttribute("data-position", 5);
+        s.setAttribute("data-account", "QXmaXOwtXh");
+        s.setAttribute("src", "https://cdn.userway.org/widget.js");
+        (d.body || d.head).appendChild(s);})(document)</script>
+<noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"497a1958fb","applicationID":"16178945","transactionName":"YlAEbRNWD0tSVkRRV1saJ1oVXg5WHFtfXF1qRQdeBGgXUVZC","queueTime":0,"applicationTime":172,"atts":"ThcHG1tMHEU=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

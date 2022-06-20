@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><script src="/cdn-cgi/apps/head/y7GTe3hWBTXk1g0I6BovNRRhjko.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"e0d0bc1dd8",applicationID:"5601266"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ChargePoint</title>
+<link href="/UI/css/reset.css?1526462530" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/themes/flick/jquery-ui-1.8.16.custom.css?1607411423" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/main.css?1653033515" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/login.css?1584085316" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/dashboard.css?1557479116" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/organization.css?1642143897" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/forms.css?1562566975" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/driver_portal.css?1526462530" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/stations.css?1654694977" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/data_table.css?1526462530" rel="stylesheet" type="text/css"/>
+<link href="/UI/js/dynatree/src/skin/ui.dynatree.css?1526462542" rel="stylesheet" type="text/css"/>
+<link href="/UI/js/jquery.autocomplete-1.1.3/styles.css?1526462542" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/localFilters.css?1554463731" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/jquery.ajaxLoader.css?1526462530" rel="stylesheet" type="text/css"/>
+<link href="/UI/js/jquery/jquery.tooltip.css?1526462542" rel="stylesheet" type="text/css"/>
+<link href="/UI/js/jqPaginator/css/jqpagination.css?1526462542" rel="stylesheet" type="text/css"/>
+<link href="/UI/js/jqwidgets/styles/jqx.base.css?1526462542" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/map_blobs.css?1526462530" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/css_overrides.css?1634888263" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/legal.css?1630045839" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/driver_ui.css?1609828590" rel="stylesheet" type="text/css"/>
+<link href="/UI/css/admin_main.css?1584085316" rel="stylesheet" type="text/css"/>
+<script charset="UTF-8" src="/UI/js/ng2integ/beTop.js?1526462543" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jquery-1.7.2.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jquery-ui.min.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jquery.validate.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jquery.dataTables.min.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jquery-ui-timepicker-addon.js?1649404298" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/util.js?1653033521" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/site.js?1638514472" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/mustache/mustache.js?1526462543" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/dynatree/src/jquery.dynatree.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jquery.cookie.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/globalfilter.js?1645772792" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jquery.autocomplete-1.1.3/jquery.autocomplete.js?1653033521" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jQueryUIPanel/ui.panel.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jquery.ajaxLoader.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jquery.coulombtooltip.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/Localization.js?1607411438" type="text/javascript"></script>
+<script charset="UTF-8" src="/index.php/js/settings" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/language/en/language_en.js?1637305028" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/language/jQueryUIDatePicker/jquery.ui.datepicker-en.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/language/jQueryTimePicker/jquery-ui-timepicker-en.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jqPaginator/jquery.jqpagination.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jqwidgets/jqxcore.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jqwidgets/jqxbuttons.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/jqwidgets/jqxsplitter.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/fyi/fyi.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/cpitracking.js?1526462542" type="text/javascript"></script>
+<script charset="UTF-8" src="https://cdn.polyfill.io/v2/polyfill.js?features=Intl.~locale.en-US" type="text/javascript"></script>
+<script charset="UTF-8" src="/UI/js/language/jQueryValidation/messages_en.js?1526462542" type="text/javascript"></script>
+<link href="/UI/images/favicon.ico" rel="shortcut icon"/>
+<!--[if gte IE 9]>
+          <style type="text/css">
+            .gradientIE {
+               filter: none !important;
+            }
+            .ui-dialog-buttonpane button {
+               filter: none !important;
+            }
+          </style>
+        <![endif]-->
+<!--[if gte IE 8]>
+          <style type="text/css">
+            input.coulombButton {
+            	padding-bottom: 7px;
+                padding-top: 7px;
+            }
+          </style>
+        <![endif]-->
+<!-- This fixes select box dropdown width in IE8 -->
+<!--[if lt IE 9]>
+        <style>
+		.customFilterIEOverflow {
+			width: 125px;
+			overflow: hidden;
+            vertical-align: -5px;
+		}
+        #filterContainer .allFiltersContainer select.customFilterTypeSelect:focus {
+            width:auto !important;
+        }
+        </style>
+        <![endif]-->
+<noscript>
+<meta content="0;url=/logout" http-equiv="refresh">
+</meta></noscript>
+</head>
+<body>
+<div id="bgwrap">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet" type="text/css"/>
+<div class="mainheader driverHeader headerBorder">
+<div class="brandarea" style="width: 100%">
+<img alt="ChargePoint" class="logo fltlft" height="35" src="/UI/images/dp/logo_color.png" width="176"/> </div>
+<div class="headerUtility">
+<a href="https://www.chargepoint.com">Visit ChargePoint.com</a>
+</div>
+</div> <div class="clearfloat"></div>
+<!-- end .header -->
+<div class="clearfloat"></div>
+<div id="mainwrap">
+<!-- main content -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<div class="legal">
+<h1>ChargePoint Privacy Policy</h1>
+<h2>Last Updated: December 20, 2019</h2>
+<p style="text-align:right"><a href="#CCPA">Supplemental Privacy Notice for California Residents</a></p>
+<p>ChargePoint® (“ChargePoint,” “we,” “our,” or “us”) provides this privacy policy (the “Policy”) to inform you on how we process your information, whether you are a visitor to our website, a purchaser of our electric vehicle charging stations, or a user of electric vehicle charging stations on the ChargePoint Network. “ChargePoint Network” refers to ChargePoint’s open-platform network of electric vehicle charging stations and vehicle charging applications.</p>
+<p>Except as explicitly provided herein, this Policy applies to your use of the ChargePoint website (the “Website”), the ChargePoint mobile application (the “App”), and to any service offered by ChargePoint that includes a link to this Policy, including your ChargePoint account (if you have registered or are registering your account) and the ChargePoint radio-frequency identification cards (the “RFID cards”) (each of these services and applications are collectively defined as the “Service”).</p>
+<p>Please read this Policy carefully to understand how we handle your information. By using or otherwise accessing the Service, you agree to this Policy. If you do not agree to this Policy, please do not access or use the Service.</p>
+<ol class="multilevel">
+<li><strong>Information We Collect</strong>
+<p>We obtain information about you when you use or otherwise access the Service. Please note that we need certain types of information to provide the Service to you. If you do not provide us with such information, or if you ask us to delete that information, you may no longer be able to access or use certain parts of our Service.</p>
+<ol>
+<li>Information You Provide Directly to Us
+        <p>We collect information you provide directly to us. For example, you may provide us with information through your:</p>
+<ul>
+<li>Use of the Service;</li>
+<li>Registration for an account;</li>
+<li>Access to and use of the ChargePoint Network;</li>
+<li>Purchases;</li>
+<li>Communications with us, including for customer support, technical assistance, marketing, and billing;</li>
+<li>Communications with other users of the Service; and/or</li>
+<li>Participation in surveys, polls, sweepstakes, or promotions.</li>
+</ul>
+<p>The types of information we collect directly from you include:</p>
+<ul>
+<li>Account Registration Information: If you register for an account, we may collect your name, username, password, title, email address, address, telephone number, postal code, country, location, ChargePoint card number, user identification, user differentiator, information about your vehicle (e.g. make, model, color), and payment information such as the last four digits of your credit card number.</li>
+<li>Social Media Data: When you use ChargePoint’s social media features to communicate with other users of the Service or upload a photo of the station, we collect your username and other information like charging station name and charging station location.</li>
+<li>Charging Network Data: When you use the ChargePoint Network, we may collect information such as, charging session date, start time, end time, duration, identification number, energy dispensed, charging port identification number, total fees associated with each charging session, pricing policy applied, RFID Card Identification Number, power cycle patterns, current, and voltage.</li>
+<li>ChargePoint Station Data: If you own or operate a ChargePoint station for use commercially (a “Site Host”), we collect certain information from you as a Site Host, such as contact details and the Site Host’s affiliation or association to a company account. If you own or operate a ChargePoint station for home use, we may collect session and scheduling data, information relating to the WIFI network you connect to the ChargePoint station, geolocation of the ChargePoint station, and other data you input into the home ChargePoint station.</li>
+<li>User Content: The Service may allow you to upload content, such as images and photos, and communications with other users.</li>
+</ul>
+</li>
+<li>Information We Collect From Third Parties
+        <p>We may collect information about you or others through our affiliates or through non-affiliated third parties. For example, Site Hosts may provide us with additional details about actual or potential users of the ChargePoint stations hosted by the Site Host, including vehicle information and contact information of others.</p>
+<p>We may also collect information about you from non-affiliated third parties for fraud or safety protection purposes, or for marketing purposes. We likewise may combine information that we collect from you through the Service with information that we obtain from such third parties and information derived from any other products or services we provide.</p>
+</li>
+<li>Information We Collect Automatically
+        <p><u>Device/Usage Information</u>. We and our third-party service providers may use cookies, web beacons, and other tracking technologies to collect and store information about your use of the Service. As described further below, we may collect and analyze information including, but not limited to: (1) IP address, (2) date and day of access request, (3) pages viewed, (4) time zone difference to Greenwich Mean Time (GMT), (5) the standard HTTP-header information, (6) the time spent on each page of our Website or App page, (7) links you have clicked on our Website, (8) the page you visit before and after you come to our Website, (9) browser type, (10) operating system, (11) language, (12) advertising identification number and vendor identifier, (13) usage data including information on how you navigate the Service, and (14) version of browser software.</p>
+<p><u>Location Information</u>. When you use the Service, we may collect general location information (such as IP address). If you install our App, we may ask you to grant us access to your mobile device’s geolocation data. If you grant such permission, we may collect information about your precise geolocation, and we may use that information to improve the Service, including providing you with location-based features (e.g. for identification of ChargePoint stations available near you). If you access the Service through a mobile device and you do not want your device to provide us with location-tracking information, you can disable the GPS or other location-tracking functions on your device, provided your device allows you to do this. See your device manufacturer's instructions for further details. If you disable certain functions, you may be unable to use certain parts of the Service.</p>
+<p><u>Cookies and Other Electronic Technologies</u>. Like most websites, ChargePoint uses cookies and similar technologies including web beacons, embedded scripts and e-tags (together referred to as “cookies”, unless otherwise stated) to provide users an efficient user experience in using the Website. A cookie is a small data file that is placed on your computer or mobile device by your web browser. It is a tool that stores information about website visits, recognizes you and your preferences each time you visit the Website, optimizes website functionality, and enables us to provide the Service. Some parts of the Website use cookies to track user traffic patterns.</p>
+<p>ChargePoint uses cookies for a variety of reasons, including to: provide you the Service you have requested, enhance our Website’s performance, or analyze how users use our Website. Our use of cookies falls into the following categories:</p>
+<ul>
+<li><u>Strictly necessary cookies</u>. These are essential to enable you to move around the Website and use its features. Without these cookies, the Service you have requested cannot be provided.</li>
+<li><u>Performance cookies</u>. These cookies improve how our Website works. They collect information about how users use our Website (e.g., which pages users visit most often, and if users get error messages from web pages).</li>
+<li><u>Functionality cookies</u>. These cookies allow us to remember what choices you make (e.g., your username, language or the region you are in) to provide enhanced, more personal features. The information these cookies collect may be anonymized.</li>
+<li><u>Advertising and marketing cookies</u>. These cookies are used to: send you advertising and marketing-related material tailored to you and your interests, limit the number of times you see an advertisement, and help measure advertising campaigns’ effectiveness. These cookies are usually placed by advertising networks with the website operator’s permission. These cookies remember that you have visited a website and this information is shared with other organizations like advertisers. The “interest-based” or “personalized” advertising powered in part by these cookies is usually more relevant to you, but it also generally involves the collection and use of more information about you and your browsing history. There are easy ways to opt out of most or all interest-based or personalized advertising: we describe how to do that in Section 4 titled “Online Analytics and Tailored Advertising.”</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><strong>How We Use Information Collected</strong>
+<p>ChargePoint may use the information we collect from or about you for the following business or commercial purposes, such as uses to:</p>
+<ul>
+<li>Process your application to create an account with ChargePoint;</li>
+<li>Provide our Service to you, including information, products, and services you request from us that enable you to access our charging stations network;</li>
+<li>Process billing functions, including payment of fees;</li>
+<li>Notify you of changes to our Website or Service;</li>
+<li>Manage and administer your account, including to distinguish between multiple vehicles or users under a single account, and for information regarding charging sessions (e.g., duration, energy consumption, station owner and station data);</li>
+<li>Manage and respond to any inquiries, correspondence, concerns or complaints you have sent to us;</li>
+<li>Communicate with you regarding the Service;</li>
+<li>Enable you to communicate with other users;</li>
+<li>Promote and market ChargePoint products and services;</li>
+<li>Analyze use of the Service;</li>
+<li>Improve any services we provide, and research or develop other products or services;</li>
+<li>Keep our Service secure and operational;</li>
+<li>Provide value added service, promotions, and pricing;</li>
+<li>Fulfill the purposes for which you provided it (such as to help you find a ChargePoint station);</li>
+<li>Maintain internal records;</li>
+<li>Create or maintain aggregated, anonymized or de-identified information, which we may use and disclose without restriction;</li>
+<li>Investigate, prevent, or take action regarding unlawful or harmful activities, including potential threats to physical safety, potential fraud, and violations of our Terms and Conditions; and/or</li>
+<li>Safeguard our and others’ rights or property.</li>
+</ul>
+<p>We may combine any of the information that we collect from you with other information, including information that we obtain from third parties, or with information derived from any other products or services we provide. For example, we may combine personal information you provide us, such as an email address, with information automatically collected about your device.</p>
+</li>
+<li><strong>When We Share Your Information </strong>
+<p>We may share your information we collect as follows:</p>
+<ul>
+<li>With our service providers and other contractors (e.g., hosting and financial providers, marketing, customer support platforms, and data storage providers);</li>
+<li>With our affiliates;</li>
+<li>With our distributors, resellers, channel partners, ChargePoint charging station owners, or authorized third parties including third-party network providers, utilities or their respective employees, freelancers, and consultants to help us provide our Service to you;</li>
+<li>With Site Hosts when you connect with a ChargePoint station operated by a Site Host;</li>
+<li>At your direction or with your consent, such as when you use our social media features to provide information to ChargePoint users about our Service or when you direct us to share information with third parties such as utility companies;</li>
+<li>In connection with the negotiation, diligence, or actual merger, acquisition or any form of sale of some or all of ChargePoint assets or business;</li>
+<li>In the unlikely event of insolvency, bankruptcy or receivership in which your information would be transferred as one of ChargePoint’s business assets;</li>
+<li>Where we are legally obligated to disclose information to the government or third parties for the purposes of criminal or fraud investigations, national security, law enforcement or other issues of public importance; and</li>
+<li>Where we otherwise believe it appropriate to investigate, prevent, or take action regarding possible illegal activities, suspected fraud, situations involving potential threats to the physical safety of any person, violations of our Terms and Conditions or any other legal terms governing use of the Service, and/or to protect our rights and property and the rights and property of other users.</li>
+</ul>
+</li>
+<li><strong>Online Analytics and Tailored Advertising</strong>
+<p><u>Analytics</u>. We may use third-party analytics services such as Google Analytics. These service providers use the technologies described in the “Information We Collect Automatically” section above to help us analyze how users use the Service, including analyzing your Website use, compiling reports on Website activity, and providing us with other services relating to Website activity and internet usage. We may also use Google Analytics for certain purposes related to advertising, as described in the following section. To prevent Google Analytics from using your information for analytics, you may install the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Google Analytics Opt-out Browser Add-on</a> for your current web browser.</p>
+<p><u>Tailored Advertising</u>. We and our third-party service providers may use device identifiers and other automated technologies (including cookie identifiers on our website), along with other collected information, to deliver content or tailor ads when you are on our Service or on other devices, apps or websites. These ads may be based, for instance, on the types of websites that you visit over time, the types of apps you have on your device, or de-identified information about you and your likely interests, based on your activities off of our Service. Partners that we or others work with to do the above may track your activities over time (including across different apps or websites) by collecting information through automated means, and they may use this information, and other information they receive from us or other sources, to deliver advertisements to you. You may control and block the cookies used by the Website by modifying the settings in your browser or on your device that allow you to refuse the setting of all or some cookies. You can also adjust your settings so that your browser blocks all cookies or only cookies from third parties. You can also delete cookies that have already been placed. However, please note that if you use your browser or device settings to block all cookies you may not be able to access all or parts of our Website. For more information about how cookies can be managed and deleted please visit <a href="https://www.allaboutcookies.org/" target="_blank">www.allaboutcookies.org</a> or <a href="https://optout.networkadvertising.org/" target="_blank">https://optout.networkadvertising.org</a>.</p>
+</li>
+<li><strong>Security Measures </strong>
+<p>ChargePoint has implemented administrative, physical, and technical security measures to protect your information under our control.</p>
+<p>While ChargePoint takes precautions against possible security breaches of its Website and Service, no website or Internet transmission is completely secure and we cannot guarantee that unauthorized access, hacking, data loss, or other breaches will never occur. We are unable to guarantee the security of your information while it is being transmitted to our Website or stored in our systems and any transmission is at your own risk.</p>
+<p>You should take steps to keep your information safe (including your password) and to log out of your account after use. Where we have provided you, or you have chosen, a password which enables you to access certain parts of our Website, or a ChargePoint RFID Card to access charge stations, you are responsible for keeping your password and ChargePoint RFID Card confidential. You must not share these with anyone or store them in a way that may allow a third party to access them. If that happens, you agree to report it immediately to <a href="mailto:privacy@chargepoint.com">privacy@chargepoint.com</a>. ChargePoint cannot be held responsible for your failure to keep your password or ChargePoint RFID Card secure.</p>
+<p>You should update your password periodically to help reduce the risk of unauthorized access to your account with us. When you do, you should strengthen your password with the combination of uppercase and lowercase letters, numbers, punctuation and other symbols.</p>
+</li>
+<li><strong>Your Choices</strong>
+<p>You may modify certain of the information we maintain about you by accessing your account. You may unsubscribe from marketing communications from us by following the directions in those communications. Please note that where you opt out of, and unsubscribe from, receiving marketing communications, we may still send you certain communications relating to your use of the Service (e.g., service announcements, notices about new features or information on the Service, administrative messages and communications regarding your account).</p>
+<p>Local laws may also grant you additional rights. For example, Nevada consumers may opt out of the sale of “personally identifiable information” for monetary consideration to a person for that person to license or sell such information to additional persons. “Personally identifiable information” includes first and last name, address, email address, phone number, Social Security Number, or an identifier that allows a specific person to be contacted either physically or online. We do not engage in such activity; however, if you are a Nevada resident who has purchased or leased goods or services from us, you may submit a request to opt out of any potential future sales under Nevada law by emailing <a href="mailto:privacy@chargepoint.com">privacy@chargepoint.com</a>. Please note we will take reasonable steps to verify your identity and the authenticity of the request. Once verified, we will maintain your request in the event our practices change.</p>
+<p>If you are a California resident, please see the supplemental disclosure to view details on your rights.</p>
+</li>
+<li><strong>Links to Third Party Websites and Services</strong>
+<p>This Website may contain links to third-party sites. Access to any other websites linked to the ChargePoint Website is at the user’s own risk, and ChargePoint is not responsible for the accuracy or reliability of any information, data, opinions, advice or statements made on these websites. ChargePoint provides these links merely as a convenience and the inclusion of such links does not imply any kind of endorsement. If you provide any third-party with your information, we recommend that you review their privacy policies as ChargePoint does not control how they collect, process and transfer your information.</p>
+</li>
+<li><strong>EU-U.S. Privacy Shield and Swiss-U.S. Privacy Shield</strong>
+<p>ChargePoint complies with the EU-U.S. Privacy Shield Framework and the Swiss-U.S. Privacy Shield Frameworks as set forth by the U.S. Department of Commerce regarding the collection, use, and retention of personal information transferred from the European Union and Switzerland to the United States. ChargePoint has resubmitted its certification to the Department of Commerce so that it adheres to the Privacy Shield Principles. If there is any conflict between the terms in this privacy policy and the Privacy Shield Principles, the Privacy Shield Principles shall govern. To learn more about the Privacy Shield program, and to view our certification, please visit <a href="https://www.privacyshield.gov" target="_blank">www.privacyshield.gov</a>.</p>
+<p>With respect to personal data received or transferred pursuant to the Privacy Shield Frameworks, ChargePoint is subject to the regulatory enforcement powers of the U.S. Federal Trade Commission. In certain situations, ChargePoint may be required to disclose personal data in response to lawful requests by public authorities, including to meet national security or law enforcement requirements.</p>
+<p>Individuals may have the right to limit the use and disclosure of their personal information as required by the Privacy Shield’s Principles, such as whether your personal information is disclosed to a third party or used for purposes materially different from the purpose for which the personal information was originally collected or subsequently authorized by you. </p>
+<p>If you wish to limit the use and disclosure of personal information in accordance with the Privacy Shield Principles, please contact us at <a href="mailto:privacy@chargepoint.com">privacy@chargepoint.com</a>.</p>
+<p>ChargePoint commits to cooperate with EU data protection authorities (DPAs) and the Swiss Federal Data Protection and Information Commissioner (FDPIC) and comply with the advice given by such authorities with regard to human resources data transferred from the EU and Switzerland in the context of the employment relationship.</p>
+<p>In compliance with the EU-US and Swiss-US Privacy Shield Principles, ChargePoint commits to resolve complaints about your privacy and our collection or use of your personal information. European Union or Swiss individuals with inquiries or complaints regarding this Policy should first contact ChargePoint’s Privacy Administrator at:Privacy Administrator 254 E. Hacienda Avenue Campbell, CA 95008 or at <a href="mailto:privacy@chargepoint.com">privacy@chargepoint.com</a></p>
+<p>ChargePoint has further committed to refer unresolved Privacy Shield complaints to JAMS, an alternative dispute resolution provider located in the United States. If you do not receive timely acknowledgement of your complaint from us, or if we have not addressed your complaint to your satisfaction, please visit <a href="https://www.jamsadr.com/eu-us-privacy-shield" target="_blank">www.jamsadr.com/eu-us-privacy-shield</a> for more information or to file a complaint. The services of JAMS are provided at no cost to you. Citizens and residents of the European Union or Switzerland also have the possibility, under certain conditions, to invoke binding arbitration for complaints regarding Privacy Shield compliance not resolved by any of the other Privacy Shield mechanisms. For additional information go to <a href="https://www.privacyshield.gov/article?id=ANNEX-I-introduction" target="_blank">www.privacyshield.gov/article?id=ANNEX-I-introduction</a>.</p>
+<p>Finally, as a last resort and under limited circumstances, EU and Swiss individuals with residual privacy complaints may invoke a binding arbitration option before the Privacy Shield Panel.</p>
+</li>
+<li><strong>Children’s Privacy</strong>
+<p>The Website and Service are intended for persons licensed to drive. In the United States, this typically means individuals over the age of 16. ChargePoint does not knowingly collect any information from anyone under 16 years of age. If you are less than 16 years of age, we request that you do not submit information to us. If we become aware that we have inadvertently collected “personal information” (as defined by the United States Children’s Online Privacy Protection Act) from children under the age of 13 without parental consent, we will take reasonable steps to delete it as soon as possible as required by applicable law.</p>
+</li>
+<li><strong>Changes to Our Privacy Policy</strong>
+<p>We may change this Policy to reflect changes in the law, our information practices or the features of the Service. At the top of our Policy, we will indicate the date of the most recent update. If we make a material change to the Policy, you will be provided with appropriate notice in accordance with legal requirements, which may be thru email. By continuing to use the Service, you are confirming that you have read and understood the latest version of this Policy.</p>
+</li>
+<li><strong>Contact Us</strong>
+<p>You can contact us by email at <a href="mailto:support@chargepoint.com">privacy@chargepoint.com</a> or write to us at: ChargePoint, Attn: Legal Department, 254 E. Hacienda Avenue, Campbell, CA 95008-6901.</p>
+</li>
+</ol>
+<a id="CCPA"></a>
+<h2>Supplemental Privacy Notice for California Residents</h2>
+<p>This Supplemental Privacy Notice supplements the information in our Privacy Policy, and except as provided herein, applies solely to California residents. It applies to personal information we collect on or through the Service and through other means (such as information collected offline, in person, and over the telephone). It does not apply to personal information we collect from our employees and job applicants in their capacity as employees and job applicants. It also does not apply to personal information we collect from employees, owners, directors, officers, or contractors of businesses in the course of our provision or receipt of business-related services.</p>
+<h3>Summary of Information We Collect </h3>
+<p>California law requires us to disclose information regarding the categories of personal information that we have collected about California consumers, the categories of sources from which the information was collected, the business or commercial purposes (as those terms are defined by applicable law) for which the information was collected, and the categories of parties with whom we share personal information. </p>
+<p>We or our service providers may collect the below categories of information for the following business or commercial purposes (as those terms are defined in applicable law):</p>
+<ul>
+<li>Providing the Service (e.g., account servicing and maintenance, order processing and fulfillment, customer service, advertising and marketing, analytics, and communication about the Service);</li>
+<li>Our or our service provider’s operational purposes;</li>
+<li>Auditing consumer interactions on our site (e.g., measuring ad impressions);</li>
+<li>Detecting, protecting against, and prosecuting security incidents and fraudulent or illegal activity;</li>
+<li>Bug detection, error reporting, and activities to maintain the quality or safety of our Service;</li>
+<li>Short-term, transient use, such as customizing content that we or our service providers display on the Service;</li>
+<li>Improving our existing Service and developing new services (e.g., by conducting research to develop new products or features);</li>
+<li>Other uses that advance our commercial or economic interests, such as third-party advertising and communicating with you about relevant offers from third-party partners; and</li>
+<li>Other uses about which we notify you.</li>
+</ul>
+<p>Examples of these types of uses are identified below. We may also use the below categories of personal information for compliance with applicable laws and regulations, and we may combine the information we collect (“aggregate”) or remove pieces of information (“de-identify”) to limit or prevent identification of any particular user or device.</p>
+<table cellpadding="0" cellspacing="0" class="four_cols">
+<thead>
+<tr>
+<th>Categories of Personal Information We Collect</th>
+<th>Categories of Sources</th>
+<th>Examples of Uses</th>
+<th>Categories of Third Parties With Which We May Share That Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifiers (such as name, email address)</td>
+<td>
+<ul>
+<li>You</li>
+<li>Your use of our services/automatically collected from you</li>
+<li>Affiliates</li>
+<li>Third Parties (such as agents/service providers)</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Providing the Service, including to register an account for you</li>
+<li>Fixing and improving the Service</li>
+<li>Marketing and advertising</li>
+<li>Communicating with you, e.g. customer support</li>
+<li>Analyzing use of the Service</li>
+<li>Preventing, detecting, investigating, and responding to fraud, unauthorized access/use of the Service, breaches of terms and policies</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Third parties (such as service providers and Site Hosts)</li>
+<li>Affiliates</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Commercial information (such as transaction data, charging station use data)</td>
+<td>
+<ul>
+<li>You</li>
+<li>Your use of our services/automatically collected from you</li>
+<li>Affiliates</li>
+<li>Third Parties (such as agents/service providers)</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Providing the Service, including to provide you with charging stations</li>
+<li>Fixing and improving the Service</li>
+<li>Marketing and advertising</li>
+<li>Communicating with you</li>
+<li>Analyzing use of the Service</li>
+<li>Preventing, detecting, investigating, and responding to fraud, unauthorized access/use of the Service, breaches of terms and policies</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Third parties (such as service providers)</li>
+<li>Affiliates</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Financial data (such as the last four digits of payment cards)
+      </td>
+<td>
+<ul>
+<li>You</li>
+<li>Affiliates</li>
+<li>Third Parties (such as agents/service providers)</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Providing the Service, including to provide you with charging stations</li>
+<li>Fixing and improving the Service</li>
+<li>Analyzing use of the Service</li>
+<li>Preventing, detecting, investigating, and responding to fraud, unauthorized access/use of the Service, breaches of terms and policies</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Third parties (such as service providers)</li>
+<li>Affiliates</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Internet or other network or device activity (such as IP address, unique device identifier, advertising, app identifiers, browsing history, screen recording of usage, or other usage data)</td>
+<td>
+<ul>
+<li>You</li>
+<li>Your use of our services/automatically collected from you</li>
+<li>Affiliates</li>
+<li>Third Parties (such as agents/service providers)</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Providing the Service, including to provide you with charging stations</li>
+<li>Fixing and improving the Service</li>
+<li>Marketing and advertising</li>
+<li>Usability improvements</li>
+<li>Analyzing use of the Service</li>
+<li>Preventing, detecting, investigating, and responding to fraud, unauthorized access/use of the Service, breaches of terms and policies</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Third parties (such as service providers)</li>
+<li>Affiliates</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Location information (general location, and, if you provide permission, precise GPS location)</td>
+<td>
+<ul>
+<li>You</li>
+<li>Your use of our services/automatically collected from you</li>
+<li>Affiliates</li>
+<li>Third Parties (such as agents/service providers)</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Providing the Service, including to help you locate charging stations</li>
+<li>Fixing and improving the Service</li>
+<li>Marketing and advertising</li>
+<li>Analyzing use of the Service</li>
+<li>Preventing, detecting, investigating, and responding to fraud, unauthorized access/use of the Service, breaches of terms and policies</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Third parties (such as service providers)</li>
+<li>Affiliates</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Sensory information (such as audio recordings if you call our customer service)</td>
+<td>
+<ul>
+<li>You</li>
+<li>Your use of our services/automatically collected from you</li>
+<li>Affiliates</li>
+<li>Third Parties (such as agents/service providers)</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Providing the Service, including to address your service inquiries</li>
+<li>Fixing and improving the Service</li>
+<li>Analyzing use of the Service</li>
+<li>Preventing, detecting, investigating, and responding to fraud, unauthorized access/use of the Service, breaches of terms and policies</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Third parties (such as service providers)</li>
+<li>Affiliates</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Other information that identifies or can be reasonably associated with you (such as communications you send us)</td>
+<td>
+<ul>
+<li>You</li>
+<li>Your use of our services/automatically collected from you</li>
+<li>Affiliates</li>
+<li>Third Parties (such as agents/service providers)</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Providing the Service, including to address your service inquiries</li>
+<li>Fixing and improving the Service</li>
+<li>Marketing and advertising</li>
+<li>Communicating with you</li>
+<li>Analyzing use of the Service</li>
+<li>Preventing, detecting, investigating, and responding to fraud, unauthorized access/use of the Service, breaches of terms and policies</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Third parties (such as service providers)</li>
+<li>Affiliates</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Rights</h3>
+<p>If you are a California resident, you may have certain rights.  California law may permit you to request that we:</p>
+<ul>
+<li>Provide you the categories of personal information we have collected or disclosed about you in the last twelve months; the categories of sources of such information; the business or commercial purpose for collecting or selling your personal information; and the categories of third parties with whom we shared personal information.</li>
+<li>Provide access to and/or a copy of certain information we hold about you.</li>
+<li>Delete certain information we have about you.</li>
+</ul>
+<p>You may have the right to receive information about the financial incentives that we offer to you, if any. You also have the right to not be discriminated against (as provided for in applicable law) for exercising certain of your rights. Certain information may be exempt from such requests under applicable law. We need certain types of information so that we can provide the Service to you. If you ask us to delete it, you may no longer be able to access or use the Service.</p>
+<p>If would like to exercise any of these rights, please submit a request at <a href="mailto:privacy@chargepoint.com">privacy@chargepoint.com</a> or visit <a href="https://na.chargepoint.com/guest/chargepoint_help" target="_blank">https://na.chargepoint.com/guest/chargepoint_help</a>.  You will be required to verify your identity before we fulfill your request. To do so, you will need to provide the information identified in the webform or as otherwise directed by us. You can also designate an authorized agent to make a request on your behalf. To do so, you must provide us with written authorization or a power of attorney, signed by you, for the agent to act on your behalf. You will still need to verify your identity directly with us.</p>
+<p>California residents may opt out of the “sale” of their personal information. ChargePoint does not “sell” your personal information as we understand that term to be defined by the California Consumer Privacy Act and its implementing regulations, and we have not sold your personal information in the past twelve months.</p>
+<h3>California Do-Not-Track</h3>
+<p>We do not respond to browser-initiated Do Not Track signals, as the Internet industry is currently still working on Do Not Track standards, implementations, and solutions.</p>
+<p><strong>Updated: December 20, 2019</strong></p>
+</div> </div>
+</div><!-- end .fixed -->
+<!-- end #bgwrap -->
+<div id="alert" title="Message"></div>
+<div id="foot" role="contentinfo">
+<div id="change_lang">
+<a class="locale locale_chooser_link country_item_unitedstates" href="/change_language/" title="Change your country">
+<span class="flag"></span>
+<div class="country">United States (Change)</div>
+</a>
+</div>
+<div id="gftree_container">
+<div id="gftree" style="text-align:left;">
+<form id="globalFiltersForm">
+<div id="gfactions">
+<input id="gfNOC" type="hidden" value="0"/>
+<input id="gfViewAsOrgId" type="hidden" value="0"/>
+<input id="gfIsGlobalFilterSet" type="hidden" value=""/>
+<a href="javascript:;">
+<img id="btnSelectAll" src="/UI/images/icons/tickWhite.png" title="Select all" valign="middle"/>
+</a>
+<a href="javascript:;">
+<img id="btnUnselectAll" src="/UI/images/icons/deselect.png" title="Un-Select all" valign="middle"/>
+</a>
+<div class="gfaction" id="gfviewas">
+</div>
+<div class="gfaction show" id="gfloadorg">
+</div>
+<div class="hide boldtext" id="viewAsTitle" style="padding:10px;text-align:center;">
+</div>
+</div>
+<div id="tree" name="selNodes"></div>
+</form>
+</div>
+</div> <div style="text-align: right; padding-right: 3em; padding-left: 2em; float: right;">
+<a href="/guest/chargepoint_help?request_receipt=">Generate Receipt</a> <span style="margin-left: 10px; margin-right: 10px;">|</span>
+<a href="https://www.chargepoint.com/about/">About Us</a>
+<span style="margin-left: 10px; margin-right: 10px;">|</span>
+<a href="https://www.chargepoint.com/support/" target="_blank">Contact Us</a>
+<span style="margin-left: 10px; margin-right: 10px;">|</span>
+<a href="/privacy_policy">Privacy Policy</a>
+<span style="margin-left: 10px; margin-right: 10px;">|</span>
+<a href="/privacy_policy#CCPA">California Privacy Notice</a>
+</div>
+<div style="text-align: left; padding-left: 3em;">Copyright © 2008-2022 ChargePoint, Inc. All rights reserved.</div>
+</div>
+<script>
+
+    if (window.self === window.top) {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                CP.initializeGoogleAnalytics("UA-111658223-1","Guest", "");
+        ga('send', 'pageview');
+    }
+
+</script>
+<iframe id="iframedownload" name="download" style="display:none"></iframe>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"e0d0bc1dd8","applicationID":"5601266","transactionName":"Y1VQNxdVXEsFWhBbClofcRYWQF1VS2wtHRBHVUAQSkRAURJYB0s6RF9eCgZN","queueTime":0,"applicationTime":491,"atts":"TxJTQV9PT0U=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

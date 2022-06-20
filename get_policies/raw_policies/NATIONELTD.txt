@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={xpid:"XAEGVF5RGwYEV1dRAgI=",licenseKey:"442438c9d9",applicationID:"5436353"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var i,o=t("ee"),a=t(27),s={};try{i=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,i.indexOf("dev")!==-1&&(s.dev=!0),i.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&o.on("internal-error",function(t){r(t.stack)}),s.dev&&o.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{p?p-=1:i(s||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:c.now();o("err",[t,n])}var o=t("handle"),a=t(28),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError";if(!c.disabled){var p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(10),t(9),"addEventListener"in window&&t(6),c.xhrWrappable&&t(11),d=!0)}s.on("fn-start",function(t,e,n){d&&(p+=1)}),s.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){o("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function i(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+l])try{window.performance[h](m,i,!1)}catch(t){}else try{window.performance[h]("webkit"+m,i,!1)}catch(t){}}function o(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(10),f=t(9),u=t(5),d=t(19),l="learResourceTimings",p="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",S=t("loader");if(!S.disabled){S.features.stn=!0,t(8),"addEventListener"in window&&t(6);var O=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof O&&(this.bstStart=S.now())}),a.on(b,function(t,e){var n=t[0];n instanceof O&&s("bst",[n,e,this.bstStart,S.now()])}),c.on(x,function(t,e,n){this.bstStart=S.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),this.bstType])}),f.on(x,function(){this.bstStart=S.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=S.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):p in window.performance&&(window.performance["c"+l]?window.performance[p](m,i,d(!1)):window.performance[p]("webkit"+m,i,d(!1))),document[p]("scroll",o,d(!1)),document[p]("keypress",o,d(!1)),document[p]("click",o,d(!1))}}},{}],5:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&i(e)}function i(t){s.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return i.emit(n+"start",[t,a],s),s.then(function(t){return i.emit(n+"end",[null,t],s),t},function(t){throw i.emit(n+"end",[t],s),t})})}var i=t("ee").get("fetch"),o=t(28),a=t(27);e.exports=i;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(s,"fetch",c),i.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),i.emit(c+"done",[null,e],n)}else i.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;o&&o.pushState&&o.replaceState&&(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],10:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(c+u,r),o.on(s+u,i)},{}],11:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function i(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function o(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,S.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=t(19),p=NREUM.o,h=p.XHR,m=p.MO,v=p.PR,w=p.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,i,l(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,S=document.createTextNode(R);new m(a).observe(S,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],12:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&l())&&(w.traceContextParentHeader=i(h,m),w.traceContextStateHeader=o(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,r,i){var o=0,a="",s=1,c="",f="";return i+"@nr="+o+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,i,o){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:i,id:t,tr:e,ti:n}};return o&&r!==o&&(s.d.tk=o),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var i=h(n.allowed_origins[r]);if(t.hostname===i.hostname&&t.protocol===i.protocol&&t.port===i.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(24),h=t(14);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],13:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):o(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function i(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function o(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(14),f=t(12).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(20),m=t(18),v=t(15),w=t(19),g=t(21).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(11),t(7),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){o(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],i=this;if(n&&r){var o=m(r);o&&(n.txSize=o)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||i.loadCaptureCalled||(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<l;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var i=f(this.parsedOrigin);if(i&&(i.newrelicHeader||i.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var o={};for(var a in r)o[a]=r[a];o.headers=new Headers(r.headers||{}),e(o.headers,i)&&(this.dt=i),t.length>1?t[1]=o:t.push(o)}else t[0]&&t[0].headers&&e(t[0].headers,i)&&(this.dt=i)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},o=this.target;if("string"==typeof o?n=o:"object"==typeof o&&o instanceof y?n=o.url:window.URL&&"object"==typeof o&&o instanceof URL&&(n=o.href),i(this,n),"data"!==this.params.protocol){var s=(""+(o&&o instanceof y&&o.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],14:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,i={};e.href=t,i.port=e.port;var o=e.href.split("://");!i.port&&o[1]&&(i.port=o[1].split("/")[0].split("@").pop().split(":")[1]),i.port&&"0"!==i.port||(i.port="https"===o[0]?"443":"80"),i.hostname=e.hostname||n.hostname,i.pathname=e.pathname,i.protocol=o[0],"/"!==i.pathname.charAt(0)&&(i.pathname="/"+i.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return i.sameOrigin=a&&(!e.hostname||s),"/"===i.pathname&&(r[t]=i),i}},{}],15:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?i(t.response):"text"===n||""===n||void 0===n?i(t.responseText):void 0}var i=t(18);e.exports=r},{}],16:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),o(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(27),s=t(28),c=t("ee").get("tracer"),f=t("loader"),u=t(21),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var l=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",h=p+"ixn-";a(l,function(t,e){d[e]=i(p,e,!0,"api")}),d.addPageAction=i(p,"addPageAction",!0),d.setCurrentRouteName=i(p,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[f.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),o("err",[t,f.now(),!1,e])}},{}],17:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],18:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],19:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],20:[function(t,e,n){var r=0,i=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);i&&(r=+i[1]),e.exports=r},{}],21:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[s,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:i}},{}],22:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,s=t(29);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],23:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?p("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&p("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var i=[r],o=a({});o&&i.push(o),p("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||p("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,p("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),p("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,l,p=t("handle"),h=t("loader"),m=t(26),v=t(19),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}l=new PerformanceObserver(o);try{l.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],24:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var i,o="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<o.length;s++)i=o[s],"x"===i?a+=t().toString(16):"y"===i?(i=3&t()|8,a+=i.toString(16)):a+=i;return a}function i(){return a(16)}function o(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,i=window.crypto||window.msCrypto;i&&i.getRandomValues&&Uint8Array&&(n=i.getRandomValues(new Uint8Array(t)));for(var o=[],a=0;a<t;a++)o.push(e().toString(16));return o.join("")}e.exports={generateUuid:r,generateSpanId:i,generateTraceId:o}},{}],25:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],26:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(19);e.exports=r;var o,a,s;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],27:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],28:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],29:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!p.aborted||o){t&&a&&t(n,r,i);for(var s=e(i),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var l=d[y[n]];return l&&l.push([x,n,r,s]),s}}function o(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return l[t]=l[t]||i(n)}function w(t,e){p.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:o,addEventListener:o,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function o(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(p.aborted=!0,d=p.backlog={})}var c="nr@context",f=t("gos"),u=t(27),d={},l={},p=e.exports=i();e.exports.getOrSetContext=o,p.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!O++){var t=S.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+S.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=p+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){s("mark",["domContent",a()+S.offset],null,"api")}var a=t(22),s=t("handle"),c=t(27),f=t("ee"),u=t(25),d=t(17),l=t(19),p=d.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!1;NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),S=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(16),t(23),m[v]?(m[v]("DOMContentLoaded",o,l(!1)),h[v]("load",r,l(!1))):(m[w]("onreadystatechange",i),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var O=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var o,a,u,l;try{a=this,o=d(arguments),u="function"==typeof r?r(o,a):r||{}}catch(p){i([p,"",[o,a,c],u],t)}s(n+"start",[o,a,c],u,f);try{return l=e.apply(a,o)}catch(h){throw s(n+"err",[o,a,h],u,f),h}finally{s(n+"end",[o,a,l],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[l]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,i,c,o))}function s(n,r,o,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=l,n}function i(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)p.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[l])}function s(t,e){var n=e(t);return n[l]=t,o(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(28),l="nr@original",p=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,13,4,3]);</script>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Privacy Policy | The Nation</title>
+<link href="http://gmpg.org/xfn/11" rel="profile"/>
+<link href="https://www.thenation.com/xmlrpc.php" rel="pingback"/>
+<link href="https://www.thenation.com/images/favicon.ico?ver=2.0.2" rel="shortcut icon" type="image/ico">
+<link href="https://www.thenation.com/images/touch-icon-32x32.png?ver=2.0.2" rel="apple-touch-icon">
+<link href="https://www.thenation.com/images/touch-icon-76x76.png?ver=2.0.2" rel="apple-touch-icon" sizes="76x76"/>
+<link href="https://www.thenation.com/images/touch-icon-120x120.png?ver=2.0.2" rel="apple-touch-icon" sizes="120x120"/>
+<link href="https://www.thenation.com/images/touch-icon-152x152.png?ver=2.0.2" rel="apple-touch-icon" sizes="152x152"/>
+<meta content="7629206115" property="fb:pages">
+<meta content="711914725636301" property="fb:app_id">
+<script>		
+		var articlereadbyUser  = 0;
+		var pageCounterPaywall = 0; 
+		var checknc 		   = getCookie('SESSchecknc');
+		var currentUrl 		   = document.URL;
+		
+		function getCookie(name){
+			var re = new RegExp(name + "=([^;]+)");
+			var value = re.exec(document.cookie);
+			return (value != null) ? unescape(value[1]) : null;
+		}		
+		
+		
+		var Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(e){var t="";var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f<e.length){n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n>>2;o=(n&3)<<4|r>>4;u=(r&15)<<2|i>>6;a=i&63;if(isNaN(r)){u=a=64}else if(isNaN(i)){a=64}t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)}return t},decode:function(e){var t="";var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,"");while(f<e.length){s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s<<2|o>>4;r=(o&15)<<4|u>>2;i=(u&3)<<6|a;t=t+String.fromCharCode(n);if(u!=64){t=t+String.fromCharCode(r)}if(a!=64){t=t+String.fromCharCode(i)}}t=Base64._utf8_decode(t);return t},_utf8_encode:function(e){e=e.replace(/rn/g,"n");var t="";for(var n=0;n<e.length;n++){var r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r)}else if(r>127&&r<2048){t+=String.fromCharCode(r>>6|192);t+=String.fromCharCode(r&63|128)}else{t+=String.fromCharCode(r>>12|224);t+=String.fromCharCode(r>>6&63|128);t+=String.fromCharCode(r&63|128)}}return t},_utf8_decode:function(e){var t="";var n=0;var r=c1=c2=0;while(n<e.length){r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r);n++}else if(r>191&&r<224){c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&31)<<6|c2&63);n+=2}else{c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&15)<<12|(c2&63)<<6|c3&63);n+=3}}return t}};
+		var global_vars = {site_url:'https://www.thenation.com',login_text:'Log In',login_url:'https://www.thenation.com/login/',admin_link:'https://www.thenation.com/wp-admin/', dash_link: 'https://www.thenation.com/dashboard'}; 
+		var user_name_cookie = getCookie('SESSname');
+		var admin_name_cookie = getCookie('SESSadminname');
+		var is_admin_cookie = getCookie('is_admin');
+	
+		if (is_admin_cookie == "true") {
+			var check_user_logged_in = 1;
+		} else {
+			var check_user_logged_in = user_name_cookie;
+		}
+
+		
+				
+		//Piano	
+		tp = window["tp"] || [];
+		//Reengagement Days left custom variable send to Piano `daysRemaining`
+		var re5days = getCookie("re5days"); 
+		if(re5days != null){
+			var date = new Date(re5days+"");
+			var now = new Date();
+			const diffTime = Math.abs(date - now);
+			const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+			console.log("diff days = "+diffDays);
+			tp.push(['setCustomVariable', 'daysRemaining',diffDays]);
+		}	
+			
+		// Execute when the page is first loaded
+		if(check_user_logged_in != null){
+			
+			var check_user_info = getCookie('SESSuserinfo');
+			
+			if (check_user_info != null) {
+				check_user_info = Base64.decode(check_user_info);	
+				check_user_info = JSON.parse(check_user_info);
+				var user_roles = check_user_info.roles;
+				
+				if (user_roles.includes('subscriber') && null == getCookie('SESSsus_user')) {
+					tp.push(["setCustomVariable", "userType", "Subscriber"]);	
+					tp.push(['setCustomVariable', 'omeda_eid', check_user_info.enc_custno]);
+				}
+				if (user_roles.includes('subscriber') && null != getCookie('SESSsus_user')) {
+					tp.push(["setCustomVariable", "userType", "suspended_user"]);
+					tp.push(['setCustomVariable', 'userLogin', check_user_info.user_login]);
+					tp.push(['setCustomVariable', 'userZip', check_user_info.zip]);	
+					// console.log("zip"+check_user_info.zip);
+					// console.log("login"+check_user_info.user_login);
+					// console.log("suspended_user var pushed");
+				}
+				if (user_roles.includes('nation_user') && null == getCookie('SESSexpireduser')) {
+					tp.push(["setCustomVariable", "userType", "nation_user"]);
+				}	
+
+				if (user_roles.includes('nation_user') && null != getCookie('SESSexpireduser')) {
+					tp.push(["setCustomVariable", "userType", "expired_user"]);
+					tp.push(['setCustomVariable', 'omeda_eid', check_user_info.enc_custno]);
+				}	
+				
+				if (user_roles.includes('nation_user') && null != getCookie('SESSfree_user')) {
+					tp.push(["setCustomVariable", "userType", "free_user"]);
+				}
+				if (user_roles.includes('staff_subscriber') && null != getCookie('SESSstaff_sub_user')) {
+					tp.push(["setCustomVariable", "userType", "staff_subscriber"]);
+				}
+				
+				if (user_roles.includes('premium_subscriber')) {
+					tp.push(["setCustomVariable", "userType", "premium_subscriber"]);
+				}
+			} else {
+				tp.push(["setCustomVariable", "userType", "cms_user"]);
+			}	
+		}else{
+			tp.push(["setCustomVariable", "userType", "Anonymous"]);
+		}
+		
+		/* Pass If Request From Maz or from cxensebot from piano*/
+		if (navigator.userAgent.indexOf("MAZBot") > -1  || navigator.userAgent.toLowerCase().indexOf('cxensebot') > -1) {
+			tp.push(["setCustomVariable", "mazbot", "true"]);
+		}
+		/* Pass If Request From Maz or from cxensebot from piano*/
+		/* Piano cust variable true/false for book_and_arts article */		
+				
+		tp.push(["setContentSection", "page"]);
+				
+		if(check_user_logged_in != null){						
+			if(currentUrl.indexOf("/login/") > -1 && currentUrl.indexOf("reader_id=") == -1){		
+				window.location = document.location.origin;				
+			}
+		}
+			
+		if( check_user_logged_in==null ){
+			if(currentUrl.indexOf("/author-taxonomy/nation-voice/") > -1){			
+				window.location = document.location.origin;			
+			} 
+		}
+		  
+		if(checknc!=null){		
+			if(currentUrl.indexOf("?nc=1") == -1){	
+				if(currentUrl.indexOf("?") == -1){		
+					window.location.href = currentUrl+"?nc=1";		
+				}else{		
+					if(currentUrl.indexOf("&nc=1") == -1){			
+						window.location.href = currentUrl+"&nc=1";			
+					}		
+				}
+			}
+		}		  
+	</script>
+<script>var _sf_startpt=(new Date()).getTime()</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-54LKCF3');</script>
+<script data-cfasync="false" type="text/javascript">
+	  var freestar = freestar || {};
+	  freestar.hitTime = Date.now();
+	  freestar.queue = freestar.queue || [];
+	  freestar.config = freestar.config || {};
+	  
+	   freestar.config.channel = "tn_general_company"; 	  
+	  freestar.debug = window.location.search.indexOf('fsdebug') === -1 ? false : true;
+	  freestar.config.enabled_slots = [];
+	  	  !function(a,b){var c=b.getElementsByTagName("script")[0],d=b.createElement("script"),e="https://a.pub.network/thenation-com";e+=freestar.debug?"/qa/pubfig.min.js":"/pubfig.min.js",d.async=!0,d.src=e,c.parentNode.insertBefore(d,c)}(window,document);
+	  freestar.initCallback = function () { (freestar.config.enabled_slots.length === 0) ? freestar.initCallbackCalled = false : freestar.newAdSlots(freestar.config.enabled_slots) }
+	  	</script>
+<script>
+		!function(f,b,e,v,n,t,s)
+		{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+		n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+		if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+		n.queue=[];t=b.createElement(e);t.async=!0;
+		t.src=v;s=b.getElementsByTagName(e)[0];
+		s.parentNode.insertBefore(t,s)}(window,document,'script', 'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '233793277040432');
+		fbq('track', 'PageView');
+				</script>
+<noscript>
+<img height="1" src="https://www.facebook.com/tr?id=233793277040432&amp;ev=PageView&amp;noscript=1" width="1"/>
+</noscript>
+<link href="https://a.pub.network/core/pubfig/cls.css" rel="stylesheet"/>
+<script async="" src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+<script>var OneSignal=window.OneSignal || [];OneSignal.push(function() {OneSignal.init({appId: "b4af9095-5e41-43f2-a459-8ff89f335115",autoResubscribe: true,notifyButton: {enable: false,},welcomeNotification: {"title": "Welcome to The Nation!","message": "Follow us on Twitter @thenation.","url": ""}});OneSignal.showNativePrompt();});</script>
+<meta content="2d34058c2bfe851f973948e31f4362" name="pocket-site-verification">
+<script src="https://ak.sail-horizon.com/spm/spm.v1.min.js"></script>
+<script>LUX=(function(){var a=("undefined"!==typeof(LUX)&&"undefined"!==typeof(LUX.gaMarks)?LUX.gaMarks:[]);var d=("undefined"!==typeof(LUX)&&"undefined"!==typeof(LUX.gaMeasures)?LUX.gaMeasures:[]);var j="LUX_start";var k=window.performance;var l=("undefined"!==typeof(LUX)&&LUX.ns?LUX.ns:(Date.now?Date.now():+(new Date())));if(k&&k.timing&&k.timing.navigationStart){l=k.timing.navigationStart}function f(){if(k&&k.now){return k.now()}var o=Date.now?Date.now():+(new Date());return o-l}function b(n){if(k){if(k.mark){return k.mark(n)}else{if(k.webkitMark){return k.webkitMark(n)}}}a.push({name:n,entryType:"mark",startTime:f(),duration:0});return}function m(p,t,n){if("undefined"===typeof(t)&&h(j)){t=j}if(k){if(k.measure){if(t){if(n){return k.measure(p,t,n)}else{return k.measure(p,t)}}else{return k.measure(p)}}else{if(k.webkitMeasure){return k.webkitMeasure(p,t,n)}}}var r=0,o=f();if(t){var s=h(t);if(s){r=s.startTime}else{if(k&&k.timing&&k.timing[t]){r=k.timing[t]-k.timing.navigationStart}else{return}}}if(n){var q=h(n);if(q){o=q.startTime}else{if(k&&k.timing&&k.timing[n]){o=k.timing[n]-k.timing.navigationStart}else{return}}}d.push({name:p,entryType:"measure",startTime:r,duration:(o-r)});return}function h(n){return c(n,g())}function c(p,o){for(i=o.length-1;i>=0;i--){var n=o[i];if(p===n.name){return n}}return undefined}function g(){if(k){if(k.getEntriesByType){return k.getEntriesByType("mark")}else{if(k.webkitGetEntriesByType){return k.webkitGetEntriesByType("mark")}}}return a}return{mark:b,measure:m,gaMarks:a,gaMeasures:d}})();LUX.ns=(Date.now?Date.now():+(new Date()));LUX.ac=[];LUX.cmd=function(a){LUX.ac.push(a)};LUX.init=function(){LUX.cmd(["init"])};LUX.send=function(){LUX.cmd(["send"])};LUX.addData=function(a,b){LUX.cmd(["addData",a,b])};LUX_ae=[];window.addEventListener("error",function(a){LUX_ae.push(a)});LUX_al=[];if("function"===typeof(PerformanceObserver)&&"function"===typeof(PerformanceLongTaskTiming)){var LongTaskObserver=new PerformanceObserver(function(c){var b=c.getEntries();for(var a=0;a<b.length;a++){var d=b[a];LUX_al.push(d)}});try{LongTaskObserver.observe({type:["longtask"]})}catch(e){}};</script><script async="" crossorigin="anonymous" defer="" src="https://cdn.speedcurve.com/js/lux.js?id=598658429"></script>
+<style>div.home-wrap .tn-customfull{margin-top:-2rem !important}body #ae_app #ae_launcher.ae-active{display:none !important;}.tn-customfull div#news-letters{margin:0;}div#st-1{margin: 30px 0;}
+div#expand-reduce-grad .tp-container-inner > iframe{width: 100% !important}.tn-poetry-banner-wrapper {max-width: 80rem;margin: 0 auto;padding: 0 15px;}@media only screen and (max-width: 767px) {.tn-poetry-banner-wrapper {padding: 0;}}:focus-visible{outline:2px solid #cc0e0e!important;outline-offset:8px}</style><style type="text/css">
+.ui-menu .ui-menu-item { font-size: 14px; background: #FFFFFF; color: #333333; font-weight: normal; text-shadow: 0; border: 0; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; white-space: nowrap; }
+.ui-menu .ui-menu-item.ui-state-focus, .ui-menu .ui-menu-item.ui-state-hover, .ui-menu .ui-menu-item.ui-state-active { font-size: 14px; background: #EFEFEF; color: #333333; margin: 0; text-shadow: 0; border: 0; }
+.acs_suggesting { background: url(https://www.thenation.com/wp-content/plugins/cloud-search/images/loading.gif) no-repeat 98% 50% !important; }
+#desktop .header-bar.search form input.acs_suggesting{background: url(https://www.thenation.com/wp-content/plugins/cloud-search/images/loading.gif) no-repeat 98% 50% !important;-webkit-transition: unset;transition: unset;}
+</style>
+<meta content="max-image-preview:large" name="robots"/>
+<meta content="Privacy Policy for TheNation.com Information About Us www.thenation.com is a site operated by The Nation Company, LLC (“The Nation”). The Nation is a" name="description"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<link href="https://www.thenation.com/privacy-policy/" rel="canonical">
+<meta content="en_US" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="Privacy Policy" property="og:title"/>
+<meta content="Privacy Policy for TheNation.com Information About Us www.thenation.com is a site operated by The Nation Company, LLC (“The Nation”). The Nation is a" property="og:description"/>
+<meta content="https://www.thenation.com/privacy-policy/" property="og:url"/>
+<meta content="The Nation" property="og:site_name"/>
+<meta content="https://www.facebook.com/TheNationMagazine" property="article:publisher"/>
+<meta content="https://www.thenation.com/authors" property="article:author"/>
+<meta content="2009-12-09T23:28:00+00:00" property="article:published_time"/>
+<meta content="2022-05-04T19:43:50+00:00" property="article:modified_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@TheNation" name="twitter:site"/>
+<meta content="Est. reading time" name="twitter:label1"/>
+<meta content="22 minutes" name="twitter:data1"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.thenation.com/#website","url":"https://www.thenation.com/","name":"The Nation","description":"The Nation Magazine","potentialAction":[{"@type":"SearchAction","target":"https://www.thenation.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://www.thenation.com/privacy-policy/#webpage","url":"https://www.thenation.com/privacy-policy/","name":"Privacy Policy | The Nation","isPartOf":{"@id":"https://www.thenation.com/#website"},"datePublished":"2009-12-09T23:28:00+00:00","dateModified":"2022-05-04T19:43:50+00:00","description":"Privacy Policy for TheNation.com Information About Us www.thenation.com is a site operated by The Nation Company, LLC (\u201cThe Nation\u201d). The Nation is a","breadcrumb":{"@id":"https://www.thenation.com/privacy-policy/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.thenation.com/privacy-policy/"]}]},{"@type":"BreadcrumbList","@id":"https://www.thenation.com/privacy-policy/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://www.thenation.com/","url":"https://www.thenation.com/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://www.thenation.com/privacy-policy/","url":"https://www.thenation.com/privacy-policy/","name":"Privacy Policy"}}]}]}</script>
+<link href="//www.thenation.com" rel="dns-prefetch">
+<link href="//maps.google.com" rel="dns-prefetch">
+<link href="//www.google.com" rel="dns-prefetch">
+<link href="//s.w.org" rel="dns-prefetch"/>
+<link href="https://www.thenation.com/feed/" rel="alternate" title="The Nation » Feed" type="application/rss+xml"/>
+<link href="https://www.thenation.com/comments/feed/" rel="alternate" title="The Nation » Comments Feed" type="application/rss+xml"/>
+<link href="https://www.thenation.com/wp-content/themes/thenation/style.css?ver=2.5.9" id="defaultbasic-css" media="all" rel="stylesheet"/>
+<link href="https://www.thenation.com/wp-content/themes/thenation/stylesheets/all.css?ver=1.2.17" id="thenation-stylesheet-all-css" media="all" rel="stylesheet"/>
+<link href="https://www.thenation.com/wp-content/themes/thenation/stylesheets/fonts.css?ver=1" id="basicfonts-css" media="all" rel="stylesheet"/>
+<link href="https://www.thenation.com/wp-content/themes/thenation/stylesheets/jquery.bxslider.css?ver=1" id="bxslider-css" media="all" rel="stylesheet"/>
+<link href="https://www.thenation.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0" id="wp-block-library-css" media="all" rel="stylesheet"/>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link href="https://www.thenation.com/wp-content/plugins/form-maker/css/jquery-ui-1.10.3.custom.css?ver=6.0" id="jquery-ui-css" media="all" rel="stylesheet"/>
+<link href="https://www.thenation.com/wp-content/plugins/form-maker/css/jquery-ui-spinner.css?ver=6.0" id="jquery-ui-spinner-css" media="all" rel="stylesheet"/>
+<link href="https://www.thenation.com/wp-content/plugins/form-maker/css/calendar-jos.css?ver=6.0" id="form_maker_calendar-jos-css" media="all" rel="stylesheet"/>
+<link href="https://www.thenation.com/wp-content/plugins/form-maker/css/form_maker_frontend.css?ver=6.0" id="form_maker_frontend-css" media="all" rel="stylesheet"/>
+<link href="https://www.thenation.com/wp-content/plugins/form-maker/css/style_submissions.css?ver=6.0" id="style_submissions-css" media="all" rel="stylesheet"/>
+<link href="https://www.thenation.com/wp-content/plugins/paranum/paranum.css?ver=6.0" id="paranum-style-css" media="all" rel="stylesheet"/>
+<link href="https://www.thenation.com/wp-content/plugins/cloud-search/css/dist/cloud-search-suggest.min.css?ver=1.0.0" id="acs_style_suggest-css" media="all" rel="stylesheet"/>
+<script id="jquery-core-js" src="https://www.thenation.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0"></script>
+<script id="jquery-migrate-js" src="https://www.thenation.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2"></script>
+<script id="gmap_form_api-js" src="https://maps.google.com/maps/api/js?sensor=false&amp;ver=6.0"></script>
+<script id="gmap_form-js" src="https://www.thenation.com/wp-content/plugins/form-maker/js/if_gmap_front_end.js?ver=6.0"></script>
+<script id="jelly.min-js" src="https://www.thenation.com/wp-content/plugins/form-maker/js/jelly.min.js?ver=6.0"></script>
+<script id="file-upload-js" src="https://www.thenation.com/wp-content/plugins/form-maker/js/file-upload.js?ver=6.0"></script>
+<script id="Calendar-js" src="https://www.thenation.com/wp-content/plugins/form-maker/js/calendar/calendar.js?ver=6.0"></script>
+<script id="calendar_function-js" src="https://www.thenation.com/wp-content/plugins/form-maker/js/calendar/calendar_function.js?ver=6.0"></script>
+<script id="tn_tinymce_script-js" src="https://www.thenation.com/wp-content/plugins/tn-customeditor//tinymce-dropcap.js?ver=6.0"></script>
+<script id="thenation-prebid-js" src="https://www.thenation.com/wp-content/themes/thenation/js/prebid4.5.0.js"></script>
+<script id="history-js-js" src="https://www.thenation.com/wp-content/themes/thenation/js/history.js?ver=6.0"></script>
+<script id="srcmnt-ajax-request-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var SafeCommentsAjax = {"ajaxurl":"https:\/\/www.thenation.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script id="srcmnt-ajax-request-js" src="https://www.thenation.com/wp-content/plugins/safe-report-comments/js/ajax.js?ver=6.0"></script>
+<link href="https://www.thenation.com/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+<meta content="WordPress 6.0" name="generator">
+<link href="https://www.thenation.com/?p=115577" rel="shortlink"/>
+<link href="https://www.thenation.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.thenation.com%2Fprivacy-policy%2F" rel="alternate" type="application/json+oembed"/>
+<link href="https://www.thenation.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.thenation.com%2Fprivacy-policy%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+<meta content="7629206115" property="fb:pages">
+<style>
+		
+		.drop_c{margin-top:34px !important}
+			.wpsdc-drop-cap {
+				float : left;
+				font-family: "Knockout 49 A", "Knockout 49 B";
+				font-weight: bold;
+				font-style: normal;
+				padding-right : 8px;				
+				font-size : 60px;
+				line-height : 60px;}
+		</style><link href="https://www.thenation.com/wp-content/uploads/2020/09/n-logo.png" rel="icon" sizes="32x32"/>
+<link href="https://www.thenation.com/wp-content/uploads/2020/09/n-logo.png" rel="icon" sizes="192x192"/>
+<link href="https://www.thenation.com/wp-content/uploads/2020/09/n-logo.png" rel="apple-touch-icon"/>
+<meta content="https://www.thenation.com/wp-content/uploads/2020/09/n-logo.png" name="msapplication-TileImage"/>
+<script>
+	jQuery(document).ready(function(){
+		jQuery('#search').submit(function(event){
+			if (jQuery('#search input:text').eq(0).val().length<1){
+				return false;
+			}
+		});
+		jQuery('#searchbox').submit(function(event){
+			if (jQuery('#searchbox input:text').eq(0).val().length<1){
+				return false;
+			}
+		});
+		
+		if (check_user_logged_in == null) {
+			jQuery('.subscribe').css('display', 'block');
+		}
+	});
+	</script>
+<script async="async" src="https://platform-api.sharethis.com/js/sharethis.js#property=609d932fedbfd500110012be&amp;product=undefined" type="text/javascript"></script>
+</meta></meta></link></link></link></link></meta></meta></meta></link></link></head>
+<body>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-54LKCF3" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<script>
+			
+			var _sf_async_config   = _sf_async_config || {};
+			var _sf_async_config   = { uid: 7841, domain: 'thenation.com', useCanonical: true };
+			_sf_async_config.title = "Privacy Policy";
+			
+					  
+			var _cbq = window._cbq = (window._cbq || []);		
+                				
+			if(check_user_logged_in != null){
+				_cbq.push(['_acct', 'paid']);   
+			}else{
+				_cbq.push(['_acct', 'anon']);    
+			}		
+			
+			(function() {
+				function loadChartbeat() {
+					var e = document.createElement('script');
+					var n = document.getElementsByTagName('script')[0];
+					e.type = 'text/javascript';
+					e.async = true;
+					e.src = '//static.chartbeat.com/js/chartbeat.js';
+					n.parentNode.insertBefore(e, n);
+				}
+				loadChartbeat();
+			 })();
+		</script>
+<script>
+</script>
+<script>
+			var pageCounterPaywall ;
+			var isMobile = {
+			Android: function() {
+				return navigator.userAgent.match(/Android/i);
+			},
+			BlackBerry: function() {
+				return navigator.userAgent.match(/BlackBerry/i);
+			},
+			iOS: function() {
+				return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+			},
+			Opera: function() {
+				return navigator.userAgent.match(/Opera Mini/i);
+			},
+			Windows: function() {
+				return navigator.userAgent.match(/IEMobile/i);
+			},
+			any: function() {
+				return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+			}
+		};
+		</script>
+<a class="top-ad-policy" href="http://www.thenation.com/advertising-policy">Ad Policy</a>
+<div class="hfeed site" id="page">
+<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+<header id="desktop">
+<div class="header-bar utility">
+<div class="row">
+<div class="small-12 columns">
+<ul class="actions">
+<li>
+<a class="social-link fb" href="https://www.facebook.com/TheNationMagazine" target="_blank">
+<span>Facebook</span>
+</a>
+</li>
+<li>
+<a class="social-link tw" href="https://twitter.com/thenation" target="_blank">
+<span>Twitter</span>
+</a>
+</li>
+<li>
+<a class="social-link tn_ins" href="https://www.instagram.com/nationmag/" target="_blank">
+<span>Instagram</span>
+</a>
+</li>
+<li>
+<a class="btn btn-yellow donate" href="https://www.thenation.com/donate-website/?sourceid=1020082">
+Donate </a>
+</li>
+<li id="login_status">
+<a class="btn btn-yellow login" href="https://www.thenation.com/login/">Log In</a> </li>
+</ul>
+<nav class="trending">
+<div class="menu-keyword-menu-container"><ul class="menu" id="menu-keyword-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-admin-taxonomy menu-item-235579" id="menu-item-235579"><a href="https://www.thenation.com/content/podcasts/">Podcasts</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-412213" id="menu-item-412213"><a href="https://www.thenation.com/content/books-and-the-arts/">Books &amp; The Arts</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-413926" id="menu-item-413926"><a href="https://www.thenation.com/climate-change/">Climate Justice</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-417494" id="menu-item-417494"><a href="https://www.thenation.com/abortion-rights/">Abortion Rights</a></li>
+</ul></div> </nav>
+</div>
+</div>
+</div>
+<div class="header-bar main" id="'navbar'">
+<div class="row">
+<nav class="primary small-12 columns">
+<ul>
+<li class="home">
+<span class="logo">
+<a href="https://www.thenation.com">
+<img alt="The Nation" class="non-sticky" src="https://www.thenation.com/wp-content/themes/thenation/images/thenation_new-logo-big.svg"/>
+<img alt="The Nation" class="sticky" src="https://www.thenation.com/wp-content/themes/thenation/images/n-logo.png">
+</img></a>
+</span>
+</li>
+<li class="news-links">
+<ul class="menu" id="menu-subject-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-382292" id="menu-item-382292"><a href="https://www.thenation.com/politics/">Politics</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-382329" id="menu-item-382329"><a href="https://www.thenation.com/world/">World</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116709" id="menu-item-116709"><a href="https://www.thenation.com/culture/">Culture</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-367243" id="menu-item-367243"><a href="https://www.thenation.com/events">Events</a></li>
+<li class="shop-header menu-item menu-item-type-custom menu-item-object-custom menu-item-298573" id="menu-item-298573"><a href="https://shop.thenation.com/">Shop</a></li>
+</ul> </li>
+<li class="quick-links">
+<ul>
+<li class="current-issue">
+<a href="https://www.thenation.com/issue/june-27-july-4-2022-issue/">Current Issue</a>
+</li>
+<li class="current-issue"><a href="https://link.thenation.com/join/12x/newslettersignupverify">Newsletters</a></li>
+<li class="subscribe" style="display: none;">
+<a class="header_subscribe" href="https://subscriptions.thenation.com/Nation_index?pk=G2A1TB9">Subscribe</a> </li>
+<li class="search-toggle"><a href="#">Search</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="header-bar search searchbardrop">
+<div class="row">
+<form action="https://www.thenation.com/" id="search" method="get" name="search" role="search">
+<input name="s" placeholder="Search" type="text"/>
+<input name="post_type" type="hidden" value="article">
+<span id="closeSearch"></span>
+</input></form>
+</div>
+</div>
+</header>
+<script>
+				jQuery( document ).ready(function($) {
+					$(".landing ul>li.news-links, .landing ul>li.quick-links").attr('style','display:inline !important');
+					$("#closeSearch").click(function(){						
+						$("#desktop .header-bar.search").slideToggle();						
+					});	
+				});
+			</script>
+<header class="push" id="mobile">
+<div class="header-bar">
+<a class="nav-toggle" href="#mobile-menu">
+<span>Toggle Menu</span>
+</a>
+<span class="logo">
+<a href="https://www.thenation.com">
+<img alt="The Nation" src="https://www.thenation.com/wp-content/themes/thenation/images/n-logo.png"/>
+</a>
+</span>
+<a class="my-profile" href="https://www.thenation.com/login/">
+<span>Log In</span>
+</a>
+<div class="share-icons">
+<ul>
+<li>
+<a class="social-share fb" data-article-title="Privacy Policy" href="javascript:void(0)">
+<span>fb</span>
+</a>
+</li>
+<li>
+<a class="social-share tw" data-article-title="Privacy Policy" href="javascript:void(0)">
+<span>tw</span>
+</a>
+</li>
+<li>
+<a class="social-share mail email" data-article-title="Privacy Policy" href="javascript:void(0)">
+<span>mail</span>
+</a>
+</li>
+<li>
+<a class="social-share msg" data-article-title="Privacy Policy" href="javascript:void(0)">
+<span>msg</span>
+</a>
+</li>
+<li>
+<a class="social-share wa" data-article-title="Privacy Policy" href="javascript:void(0)">
+<span>wa</span>
+</a>
+</li>
+<li>
+<a class="social-share sms" data-article-title="Privacy Policy" href="javascript:void(0)">
+<span>sms</span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="mobile-menu">
+<div class="mobile-scroll">
+<nav class="primary">
+<ul class="menu" id="menu-mobile-subject-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-368175" id="menu-item-368175"><a href="https://www.thenation.com/events/">Events</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-subject menu-item-368172" id="menu-item-368172"><a href="https://www.thenation.com/subject/politics/">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-subject menu-item-368173" id="menu-item-368173"><a href="https://www.thenation.com/subject/world/">World</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-368256" id="menu-item-368256"><a href="https://www.thenation.com/climate-change/">Climate</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-368257" id="menu-item-368257"><a href="https://www.thenation.com/subject/activism/">Activism</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-368174" id="menu-item-368174"><a href="https://www.thenation.com/culture/">Culture</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-368258" id="menu-item-368258"><a href="https://www.thenation.com/content/podcasts/">Podcasts</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-368176" id="menu-item-368176"><a href="https://shop.thenation.com/">Shop</a></li>
+</ul> </nav>
+<nav class="utility">
+<ul>
+<li class="subscribe" style="display: none;">
+<a class="alert header_subscribe" href="https://subscriptions.thenation.com/Nation_index?pk=G2A1TB9">Subscribe</a> </li>
+<li class="current-issue"><a href="https://www.thenation.com/issue/june-27-july-4-2022-issue/">Current Issue</a></li>
+<li class="current-issue"><a href="https://link.thenation.com/join/12x/newslettersignupverify">Newsletters</a></li> <li class="subscribe">
+</li>
+<li>
+<a href="https://www.thenation.com/donate-website/?sourceid=1020082">Donate</a>
+</li>
+<li id="login_mob_status">
+<a class="login" href="https://www.thenation.com/login/">Log In</a> </li>
+</ul>
+</nav>
+<div class="social">
+<a class="social-icon icon-fb" href="https://www.facebook.com/TheNationMagazine" target="_blank">
+<span>Facebook</span>
+</a>
+<a class="social-icon icon-tw" href="https://twitter.com/thenation" target="_blank">
+<span>Twitter</span>
+</a>
+<a class="social-icon icon-ins" href="https://www.instagram.com/nationmag/" target="_blank">
+<span>Instagram</span>
+</a>
+</div>
+<div class="search">
+<form action="https://www.thenation.com/" id="mobile-search" method="get" name="search" role="search">
+<input class="clearable" id="q" name="s" placeholder="Search" required="" type="text"/>
+<input name="post_type" type="hidden" value="article">
+<input class="search_sub" name="submit" type="submit"/>
+</input></form>
+</div>
+</div>
+</div>
+</header>
+<div id="cookies-policy"></div>
+<div class="push ad full-width leaderboard new-article-leaderboard" id="ad-leaderboard">
+<div align="center" data-freestar-ad="__320x100 __970x250" id="thenation_728x90_ATF">
+<script data-cfasync="false" type="text/javascript">
+							freestar.config.enabled_slots.push({ 
+								placementName: "thenation_728x90_ATF", 
+								slotId: "thenation_728x90_ATF",
+								targeting: {
+									tn_pos: 'leaderboard_1',
+									tn_loc:'atf',	
+																			tn_ptype: 'landing'
+											
+								}
+							});
+						  </script>
+</div>
+</div>
+<div id="login-content-id-pcd_login" style="display:none;">
+<div class="lightbox-form">
+<div class="lightbox-inner login_popup">
+<div class="listing__hero row">
+<div class="listing_form small-12 columns">
+<h1>Log In</h1>
+<div class="row primaryError" id="primaryError" style="display: none">
+<div class="field form-field text-field small-12 columns error">
+<p class="errormsg"></p>
+</div>
+</div>
+<form action="index.html" class="search__form" id="lightboxform" name="lightboxform" onsubmit="return trigClick();">
+<div class="row">
+<div class="field form-field e_mail_field_con text-field small-12 columns valid">
+<input class="pcd_email" id="e_mail" name="e_mail" placeholder="" tabindex="1" type="text" value=""/>
+<label for="e_mail">Email *</label>
+</div>
+</div>
+<div class="row">
+<div class="field form-field text-field pwd_field_con small-12 columns error">
+<input class="pcd_pwd" id="pwd" minlength="2" name="pwd" placeholder="" tabindex="2" type="password" value=""/>
+<label for="pwd">Password *</label>
+</div>
+</div>
+<div class="row checkbox-row">
+<div class="field form-field checkbox-field small-7 partsec columns">
+<div class="checkbox">
+<input checked="checked" class="check_input" id="checkbox3" name="checkbox3" tabindex="4" type="checkbox" value="None"/>
+<label for="checkbox3"></label>
+</div>
+<label for="checkbox3">Remember Me</label>
+</div>
+<div class="field form-field checkbox-field small-5 partsec columns pull-right">
+<a href="https://subscriptions.thenation.com/Nation_ForgotPass" style="padding: 0px !Important;" tabindex="5">
+Forgot Your Password?
+</a>
+</div>
+<input id="login-recaptcha-verify" type="hidden"/>
+</div>
+<div class="row">
+<div class="field form-field small-12 medium-6 partsec columns">
+<div class="form-button" id="form-loading">
+<button class="primary-button pcdLoginButton" id="loginBut" tabindex="3" type="button">Log In</button>
+<img alt="loader" class="loaderImg" id="loader" src="https://www.thenation.com/wp-content/themes/thenation/images/loader_40x40.GIF" style="display: none"/>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="field form-field small-12 medium-12 columns Subscriber_btn">
+New to <em>The Nation</em>? <a href="https://subscriptions.thenation.com/Nation_index?pk=G2A1TB9" target="_blank">Subscribe</a><br/>Print subscriber? <a href="https://ssl.drgnetwork.com/ecom/nat/app/live/web_user_maint?pagemode=a&amp;org=NAT" target="_blank">Activate</a> your online access
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+						if(check_user_logged_in != null){
+							/* Header cache issue fix 25/03/2022*/
+							/* username = Base64.decode(check_user_logged_in);  */
+							if(check_user_logged_in === 1){
+								username = Base64.decode(admin_name_cookie);  
+								username_link = global_vars.admin_link; 
+							}
+							else{
+								username = Base64.decode(check_user_logged_in);  
+								username_link = global_vars.dash_link; 
+							}  
+							/* Header cache issue fix 25/03/2022*/
+							if(!isMobile.any()){			
+								var html = '';
+								html += '<a class="header_subscribe" href="'+username_link+'">'+username;
+								html += '</a>';		
+								html += '<a href="https://www.thenation.com/logout.php" class="logout_status">Logout';
+								html += '</a>';				
+								document.getElementById("login_status").innerHTML = html;		
+							}else{					
+								jQuery('#login_mob_status').next().remove();		
+								var html = '';						
+								html += '<a class="header_subscribe" href="'+username_link+'">'+username;
+									html += '</a>';
+								html += '</li>';		
+								html += '<li>';
+									html += '<a href="https://www.thenation.com/logout.php" class="logout_status">Logout';
+								html += '</a>';		
+								document.getElementById("login_mob_status").innerHTML = html;		
+							}  
+							jQuery(".my-profile").attr("href", username_link);
+						}
+						  
+						jQuery( document ).ready(function($) { 
+							$(document).on("click",".logout_status",function(e){		  
+							  document.cookie = "SESSname=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/";		  
+							});
+						});	  
+					</script>
+<div class="container push">
+<div class="content-area" id="primary">
+<main class="site-main" id="main" role="main">
+<div class="container push">
+<div class="article-wrap full-column row" id="wrap">
+<section class="listing listing__search small-12 large-8 columns default-template">
+<section class="article-body">
+<div class="edit_page">
+</div>
+<h1>Privacy Policy for TheNation.com</h1>
+<h2>Information About Us</h2>
+<p>www.thenation.com is a site operated by The Nation Company, LLC (“The Nation”). The Nation is a company registered in New York, NY. We are located at 520 Eighth Avenue, New York, NY 10018.</p>
+<p>We are committed to maintaining the privacy of your personal information. The following privacy policy (this “Policy”) explains our information collection practices, privacy policies and the choices available to you with regard to how your information is collected and utilized.</p>
+<p>This Policy applies to TheNation.com and other sites owned and operated by The Nation (“Sites”) (unless otherwise indicated by such Sites). Each of the Sites may further supplement, revise or otherwise amend this Policy as it relates to such Site.</p>
+<p>If you have any queries about this Policy or how we use your personal information, please contact us using the details at <a href="https://www.thenation.com/contact-us/" rel="noopener" target="_blank">Contact Us</a>.<br/>
+Our nominated person for data protection is Will Herman and their contact details are <a href="/cdn-cgi/l/email-protection#4b3b39223d2a28320b3f232e252a3f22242565282426"><span class="__cf_email__" data-cfemail="95e5e7fce3f4f6ecd5e1fdf0fbf4e1fcfafbbbf6faf8">[email protected]</span></a>.</p>
+<h2>The Information We Collect and How We Collect It</h2>
+<p>We have collected the following categories of personal information from consumers within the last twelve (12) months:</p>
+<table style="border: 1px solid; border-collapse: collapse; padding: 20px margin:50px;" width="75%">
+<tbody>
+<tr valign="top">
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;"><strong>Category</strong></td>
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;"><strong>Examples</strong></td>
+</tr>
+<tr valign="top">
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">A. Identifiers</td>
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">A real name, alias, postal address, unique personal identifier, online identifier, Internet Protocol address, email address, account name, Social Security number, driver’s license number, passport number, or other similar identifiers.</td>
+</tr>
+<tr valign="top">
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">B. Personal information categories listed in the California Customer Records statute (Cal. Civ. Code § 1798.80(e)).</td>
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">A name, signature, Social Security number, physical characteristics or description, address, telephone number, passport number, driver’s license or state identification card number, insurance policy number, education, employment, employment history, bank account number, credit card number, debit card number, or any other financial information, medical information, or health insurance information. Some personal information included in this category may overlap with other categories.</td>
+</tr>
+<tr valign="top">
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">C. Protected classification characteristics under California or federal law.</td>
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">Age (40 years or older), race, color, ancestry, national origin, citizenship, religion or creed, marital status, medical condition, physical or mental disability, sex (including gender, gender identity, gender expression, pregnancy or childbirth and related medical conditions), sexual orientation, veteran or military status, genetic information (including familial genetic information).</td>
+</tr>
+<tr valign="top">
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">D. Commercial information.</td>
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">Records of personal property, products or services purchased, obtained, or considered, or other purchasing or consuming histories or tendencies.</td>
+</tr>
+<tr valign="top">
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">E. Internet or other similar network activity.</td>
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">Browsing history, search history, information on a consumer’s interaction with a website, application, or advertisement.</td>
+</tr>
+<tr valign="top">
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">F. Geolocation data.</td>
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">Physical location or movements.</td>
+</tr>
+<tr valign="top">
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">G. Professional or employment-related information.</td>
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">Current or past job history or performance evaluations.</td>
+</tr>
+<tr valign="top">
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">H. Inferences drawn from other personal information.</td>
+<td style="border: 1px solid; border-collapse: collapse; padding: 15px;">Profile reflecting a person’s preferences, characteristics, psychological trends, predispositions, behavior, attitudes, intelligence, abilities, and aptitudes.</td>
+</tr>
+</tbody>
+</table>
+<p>We obtain the categories of personal information listed above from the following categories of sources:</p>
+<ul>
+<li>Directly from you: Information provided by registering on the Site, submitting an order form, subscribing to our newsletter, contacting us through the Site or via email, etc.</li>
+<li>Automatically collected information: When you access our Site, some information is automatically collected in order to ensure the Site’s functionality.</li>
+<li>Third party sources: We may collect information from third parties to whom you have provided your information, and consented to the sale, rental or transfer thereof (for example, through social media). When accessing the Sites through a third party social media site and/or application, we may access some of your information from your social media account, such as name, email address, profile picture, location, friend list, posts and/or likes. Please note that some aggregate information, that does not personally identify you, such as content viewed on the social media site/application, may also be collected by us if you access the Sites through a third party social media site.</li>
+</ul>
+<p>Information provided by you may be combined with other personally identifiable information from third party sources in order to provide personalized content to you.</p>
+<p>Like most commercial website owners, we collect information using “cookies,” which are small data elements that we place on your computer or device to store your preferences. Cookies help us to deliver advertisements, identify unique browsers that visit us and track usage throughout our Sites. Cookies do not extract personal data about you, like your name or e-mail address. You may block the installation of our cookies by changing the setting on your browser. However, if your browser does not accept cookies, certain areas of the website may not function properly. Some of our third-party merchants and advertisers also use cookies to obtain information about your visits to our Sites, such as the number of times you have viewed an ad (but not your name, address or other personal information), and use this information to serve ads to you on our Sites.</p>
+<p>The Site contains links to third party websites, which we do not operate, control, monitor, endorse or guarantee. This Policy does not apply to the collection and use of information by such third party websites. We suggest that you carefully read the privacy policy and other policies of all third party websites, in order to learn about those sites’ practices regarding the use of your information and how to opt out of the use of cookies.</p>
+<p>We provide hyperlinks to third party websites only for the convenience of our users and it is not a recommendation that users access such third party websites. We do not guarantee the services or goods provided and sold by such third party websites to Internet users.</p>
+<p>YOU AGREE THAT YOUR USE OF ANY THIRD PARTY WEBSITE IS AT YOUR SOLE RISK AND WITHOUT WARRANTIES OF ANY KIND BY THE NATION, EXPRESS, IMPLIED OR OTHERWISE, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF TITLE, FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY OR NONINFRINGEMENT. UNDER NO CIRCUMSTANCES SHALL THE NATION BE LIABLE FOR DAMAGES ARISING FROM ANY TRANSACTION BETWEEN YOU AND ANY THIRD PARTY WEBSITE OR FOR ANY INFORMATION APPEARING ON THIRD PARTY WEBSITES.</p>
+<h2>Why We Collect this Information</h2>
+<p>We collect this information for the purposes set out in the section How We Use the Information We Collect. The lawful basis for which we process your information is:</p>
+<ul>
+<li>your consent;</li>
+<li>processing is necessary for the performance of a contract to which you are a party. If you fail to provide this information we may be unable to perform the contract; and</li>
+<li>processing is necessary for the purpose of the legitimate interest pursued by us or a third party, except where your rights as a data subject override our legitimate interest or the legitimate interest of that third party.</li>
+</ul>
+<h2>How We Use the Information We Collect</h2>
+<ul>
+<li>To enable us to process, validate and verify subscriptions or to process your donations, and for other purposes communicated to you when collecting such information.</li>
+<li>To send you e-mail notifications about our products, services and special offers, or to otherwise contact you. We will only use your personal information for electronic marketing purposes if we are allowed to do this by law or if we have your consent. If you agree to us providing you with marketing information, you can always opt out at a later date as described in this Policy.</li>
+<li>To enhance existing features or develop new features, products and services.</li>
+<li>To provide aggregate anonymous information to our advertisers to help them better understand our services and to monitor the reach of their advertising on the Sites.</li>
+<li>To allow us to personalize the content and advertising that you and others see based on personal characteristics or preferences.</li>
+<li>Responding to customer service requests and similar communications from you.</li>
+<li>Technical assistance.</li>
+</ul>
+<h2>Sharing Your Information</h2>
+<p>In the preceding twelve (12) months, we have disclosed the following categories of personal information for a business purpose:</p>
+<ul>
+<li>Category A: Identifiers.</li>
+<li>Category B: California Customer Records personal information categories.</li>
+<li>Category C: Protected classification characteristics under California or federal law.</li>
+<li>Category D: Commercial information.</li>
+<li>Category E: Internet or other similar network activity.</li>
+<li>Category F: Geolocation data.</li>
+<li>Category G: Professional or employment-related information.</li>
+<li>Category H: Inferences drawn from other personal information.</li>
+</ul>
+<p>We may share your personal information with the following categories of third parties:</p>
+<ul>
+<li>Service providers;</li>
+<li>Business partners;</li>
+<li>Data aggregators;</li>
+<li>Social networking sites;</li>
+<li>Companies affiliated with The Nation, including licensees and joint venture partners, who may be located outside the United States;</li>
+<li>In the event there is a change in the corporate structure of The Nation including, without limitation, by merger, consolidation, sale, liquidation, or transfer of substantial assets, we may, in our sole discretion, transfer, sell or assign users’ information collected on and through the Site to one or more affiliated or unaffiliated third parties or successor in interest; and</li>
+<li>Governmental and/or law enforcement agencies.</li>
+</ul>
+<p>We may share information with third parties for the following purposes:</p>
+<ul>
+<li>We may need to provide your information to our contractors and suppliers who provide services on our behalf, to the extent necessary to enable you to receive those services, such as fulfilling orders, delivering packages, sending postal mail and e-mail, removing repetitive information from customer lists, analyzing data, providing marketing assistance, processing credit card payments and providing customer service. These agents have access to personal information needed to perform their functions, but are contractually prohibited from using it for other purposes.</li>
+<li>We may provide your personal information to our promotional partners in connection with editorial features, contests, sweepstakes, special events or other offerings; personal information collected by our Sites in conjunction with such offerings may also be used for the marketing of additional services and events by the Sites and/or our promotional partners. Please also refer to the specific rules and polices of such events and promotions.</li>
+<li>We have contracted with a number of advertising network partners to monitor certain pages of our website and RSS feeds, including through, web beacons and/or other monitoring technologies to compile anonymous statistics about our website visitors, in order to personalize advertising content for you.</li>
+<li>We make some content, products and services available through cooperative relationships with third parties. For example, from time to time we may collect personally identifiable information from customers on behalf of third parties affiliated with political or other advocacy groups. We may share with third parties any information you provide, or that is collected, in the course of visiting any pages that are made available in cooperation with such third parties.</li>
+<li>In the event of a sale, merger, bankruptcy or other change in control of <em>The Nation</em>, your information may be shared with the person or business that owns or controls the Sites. Opting out of receiving information from third parties will not affect our right to transfer your information to a new owner.</li>
+<li>If required to do so by law or in the good faith belief that such action is necessary to conform to the edicts of the law or comply with a judicial proceeding, court order or legal process or to protect and defend the rights or property of <em>The Nation</em>.</li>
+<li>If you access the Sites’ content through a social media platform, for example by clicking on a link to a news article on a social media page, we may share your information with such social media site. Please note that this Policy does not apply to third party social media sites, and you should always refer to the privacy policies of the relevant social media sites for information concerning their collection and processing of information.</li>
+</ul>
+<p><em>Subscription Lists:</em> In accordance with standard industry practice, we may rent, exchange or sell to third parties mailing address information you provide us when ordering a subscription to our print publication, <em>The Nation</em>. If you are based in the USA, we adhere strictly to the Direct Marketing Association’s Ethical Business Practices. For information about these practices, visit the Direct Marketing Association’s site at <a href="www.dmaresponsibility.org">www.dmaresponsibility.org</a>. If you are based in the EU, we adhere to the following procedures whenever we buy marketing lists:</p>
+<ul>
+<li>we do not use bought-in lists for texts or emails unless we have proof of opt-in consent within the last six months that specifically named us;</li>
+<li>the products or services we are marketing are the same or similar to those that you originally consented to receiving marketing for;</li>
+<li>we only use the information on the lists for marketing purposes;</li>
+<li>when marketing by post or email we include our company name, address and telephone number in the content;</li>
+<li>we provide you with our privacy notice.</li>
+</ul>
+<p>We will not sell a marketing list to a third party unless we can verify that the people on the list:</p>
+<ul>
+<li>gave specific consent to receive marketing from the third party;</li>
+<li>were provided with readily accessible, clear and intelligible information about how their contact details would be used;</li>
+<li>were offered a clear and genuine choice whether or not to have their details used for marketing purposes;</li>
+<li>took positive action to indicate their consent;</li>
+<li>gave their consent reasonably recently (within six months of selling the list);</li>
+<li>in the case of texts or emails, gave specific consent to receive marketing by those means.</li>
+</ul>
+<h2>Sale of Personal Information</h2>
+<p><strong>We may choose to disclose nonpublic personal information about you, the consumer, to a third party for compensation. </strong></p>
+<p>In the preceding twelve (12) months, we have sold the following categories of personal information:</p>
+<p>Category A: Identifiers (specifically name, email address, mailing address).</p>
+<p><em>How to Opt-Out:</em> For subscribers, including California and Nevada residents: if you would like to opt-out of any data exchange, rental, or sale, you may do so by contacting us via email at:<br/>
+<a href="/cdn-cgi/l/email-protection#affcdacddcccddc6cdcaddf0fccaddd9c6cccaefdbc7cac1cedbc6c0c182c2cec8ced5c6c1ca81ccc0c2"><span class="__cf_email__" data-cfemail="abf8dec9d8c8d9c2c9ced9f4f8ced9ddc2c8ceebdfc3cec5cadfc2c4c586c6cacccad1c2c5ce85c8c4c6">[email protected]</span></a> or by clicking <a href="https://www.thenation.com/contact-us/">here</a>. You may also call: 800-333-8536 and ask to speak to an operator.<br/>
+<strong>DO NOT RENT OR SELL MY DATA</strong></p>
+<h2>How Long We Keep Your Information For</h2>
+<p>We keep your information for no longer than is necessary. We will retain your information for any period required by law. Where we are not under a legal obligation to retain your information, we will determine what is necessary by reference to the lawful basis for processing set out above and our legitimate interests.</p>
+<p>If you have any questions about how long we keep your information, please write to us at The Nation Company, LLC, 520 8th Avenue, New York, NY 10018 or visit <a href="https://www.thenation.com/privacy-contact-form/" rel="noopener" target="_blank">https://www.thenation.com/privacy-contact-form/</a></p>
+<h2>Preserving the Privacy of Your Information</h2>
+<p>We endeavor to safeguard and protect your personal information. When you submit personal information on our Sites, such information is protected both online and offline. Only employees and supervisors with specific authorization have access to databases containing visitors’ personal information, and our contractors and agents may access user information on a need to know basis and only for the purposes set forth in this Policy. The databases are protected in a secure facility and credit card information is transmitted via encrypted technology.</p>
+<p>Although we take measures to safeguard against unauthorized disclosures of information, no method of transmission over the Internet, or method of electronic storage, is 100 percent secure, and we cannot assure you that personally identifiable information that we collect will never be disclosed in a manner that is inconsistent with this Policy. While we make reasonable efforts to ensure your information is processed and stored in a secure manner, we cannot guarantee the security of data transferred over the Internet and you assume the risk of any such transfer.</p>
+<h2>Children’s Privacy Statement</h2>
+<p>Our Sites are intended for adults and are not intended for children under the age of 13. We do not knowingly collect personally identifiable information from children under the age of 13 and therefore do not knowingly distribute such information to third parties. If we become aware that we have inadvertently received personally identifiable information from a user under the age of 13, we will delete such information from our records.</p>
+<h2>Do-Not-Track Signals and Similar Mechanisms</h2>
+<p>Some web browsers may transmit “do-not-track” signals to the websites with which the user communicates. We do honor “do-not-track” signals.</p>
+<h2>Correct/Update Your Information</h2>
+<p>Our Sites give users the following options for changing and modifying information previously provided. To opt-out of Nation emails, change your e-mail address or other personal information on file, or otherwise adjust your preferences, <a href="https://www.thenation.com/contact-us/" rel="noopener" target="_blank">click here to contact us</a>. For changes, including renewals and address changes, to your subscription to our print publication, <em>The Nation</em>, visit the <a href="https://www.thenation.com/subscription-services/" rel="noopener" target="_blank">subscription services page</a>. To know what personal information is collected on you specifically or to delete that personal information, you may submit a request by submitting <a href="https://www.thenation.com/privacy-contact-form/" rel="noopener" target="_blank">this form</a>. By removing some of your information, you may not be able to access some of the Sites’ features. We may keep some of your personal information if required by law and/or for recordkeeping purposes.</p>
+<h2>Changes to This Statement</h2>
+<p>We may periodically change, modify or otherwise update this Policy. We will notify you of any material changes to this Policy by posting the revised policy on this page. Any changes to this Policy will become effective when posted on this page. The date of the most recent revision to this Policy is listed below. We encourage you to review our Policy on a regular basis. Your continued use of our Sites constitutes your agreement to this Policy and any updates. This statement is not intended to and does not create any contractual or other legal rights in or on behalf of any party.</p>
+<h2>Opting Out</h2>
+<p>To opt-out of any promotional e-mail, based on information you provided to us through one of our Sites, fill out <a href="https://www.thenation.com/contact-us/" rel="noopener" target="_blank">this form</a>. You can also opt-out of <em>Nation</em> emails or adjust your preferences from any e-mail communication from <em>The Nation</em>.</p>
+<h2>Your Rights Under EU Law</h2>
+<p>If you have created an account with us, you can sign into your account to access and update your information.<br/>
+You have a right to ask us to confirm whether we are processing information about you, and to request access to this information (‘right of access’).</p>
+<p>You may ask us, or we may ask you, to rectify information you or we think is inaccurate, and you may also ask us to remove information which is inaccurate or complete information which is incomplete (‘right to rectification’). If you inform us that your personal data is inaccurate, we will inform relevant third parties with whom we have shared your data so they may update their own records.</p>
+<p>We want to ensure that your personal information is accurate and up to date. If any of the information that you have provided us with changes, for example if you change your email address, name, payment details, or if you wish to cancel your registration, please let us know using the contact details at the end of this Policy.</p>
+<p>You have a right to obtain your personal data from us and reuse it for your own purposes, perhaps for another service, without hindering the usability of the data (‘right of portability’). This right does not apply where processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in us.</p>
+<p>You have a right to seek the erasure of your data (often referred to as the ‘right to be forgotten’). You may wish to exercise this right for any reason, for example where it is no longer necessary for us to continue holding or processing your personal data you may withdraw your consent. You should note that we are entitled to and reserve the right to retain your data for statistical purposes. This right is not absolute, as we may need to continue processing this information, for example, to comply with our legal obligations, or for reasons of public interest.</p>
+<p>You have a right to ask us to restrict our processing of your information (‘right to restriction’) if:</p>
+<ul>
+<li>you contest its accuracy and we need to verify whether it is accurate;</li>
+<li>the processing is unlawful and you ask us to restrict use of it instead of erasing it;</li>
+<li>we no longer need the information for the purpose of processing, but you need it to establish or defend legal claims;</li>
+<li>you have objected to processing of your information being necessary for the performance of a task carried out in the public interest, or for the purposes of our legitimate interests. The restriction would apply while we carry out a balancing act between your rights and our legitimate interests;</li>
+<li>you exercise your right to restrict processing, we would still need to process your information for the purpose of exercising or defending legal claims, protecting the rights of another person or for public interest reasons.</li>
+</ul>
+<p>You have a right to prevent us from processing your data for the purposes of marketing.</p>
+<p>If you would like to exercise any of your rights above, please let us know using the contact details at the end of this Policy. We will act in accordance with your instructions as soon as reasonably possible and there will be no charge.</p>
+<p>You have a right to report any of your concerns about our use of your data to the supervisory authority in your relevant country.</p>
+<h2>Rights of California Consumers</h2>
+<p>If you are a visitor, user or reader who resides in the State of California, the California Consumer Privacy Act of 2018 (CCPA) provides you with specific rights regarding your personal information. This section describes your CCPA rights and explains how to exercise those rights.</p>
+<p>Pursuant to California Civil Code Sec. 1789.3, California resident users are entitled to know that they may file grievances and complaints with the California Department of Consumer Affairs, 1625 North Market Blvd., Suite N 112, Sacramento, CA 95834; or by telephone at (800) 952-5210; or by email to <a class="__cf_email__" data-cfemail="8eeaedefceeaedefa0edefa0e9e1f8a0" href="/cdn-cgi/l/email-protection">[email protected]</a> For more information about protecting your privacy, you may wish to visit: www.ftc.gov.</p>
+<h2>Access to Specific Information and Data Portability Rights</h2>
+<p>You have the right to request that The Nation disclose certain information to you about our collection and use of your personal information over the past twelve (12) months. Once we receive and confirm your verifiable consumer request (see Exercising Access, Data Portability, and Deletion Rights), we will disclose to you:</p>
+<ul>
+<li>The categories of personal information we collected about you;</li>
+<li>The categories of sources from which we collected personal information about you;</li>
+<li>Our business or commercial purpose for collecting or selling that personal information;</li>
+<li>The categories of third parties with whom we share that personal information; and</li>
+<li>The specific pieces of personal information we collected about you (also called a data portability request).</li>
+</ul>
+<p>Additionally, if we sold or disclosed your personal information for a business purpose, we will provide you with two separate lists disclosing:</p>
+<ul>
+<li>The categories of personal information The Nation sold to third parties in the preceding twelve (12) months; and</li>
+<li>The categories of personal information The Nation disclosed for a business purpose to third parties in the preceding twelve (12) months.</li>
+</ul>
+<h2>Deletion Request Rights</h2>
+<p>You have the right to request that The Nation delete any of your personal information that it collected from you and retained, subject to certain exceptions. Once we receive and confirm your verifiable consumer request (see Exercising Access, Data Portability, and Deletion Rights), we will delete (and direct our service providers to delete) your personal information from our records, unless an exception applies.</p>
+<p>We may deny your deletion request in compliance with the CCPA if retaining the information is necessary for us or our service provider(s) to, among others: complete the transaction for which we collected the personal information, provide a good or service that you requested or take actions reasonably anticipated within the context of our ongoing business relationship with you; detect security incidents, protect against malicious, deceptive, fraudulent, or illegal activity, or prosecute those responsible for such activities; comply with a legal obligation; or make other internal and lawful uses of that information that are compatible with the context in which you provided it.</p>
+<h2>Exercising Access, Data Portability, and Deletion Rights</h2>
+<p>To exercise the access, data portability, and deletion rights described above, please submit a verifiable consumer request to us by:</p>
+<ul>
+<li>Website: <a href="https://www.thenation.com/privacy-contact-form/" rel="noopener" target="_blank">www.thenation.com/privacy-contact-form/</a></li>
+<li>Toll-free number: 800-350-6944</li>
+</ul>
+<p>Only you, or a person registered with the California Secretary of State that you authorize to act on your behalf, may make a verifiable consumer request related to your personal information. You may also make a verifiable consumer request on behalf of your minor child.</p>
+<p>You may only make a verifiable consumer request for access or data portability twice within a twelve (12) month period. The verifiable consumer request must:</p>
+<ul>
+<li>Provide sufficient information that allows us to reasonably verify you are the person about whom we collected personal information or an authorized representative; and</li>
+<li>Describe your request with sufficient detail that allows us to properly understand, evaluate, and respond to it.</li>
+</ul>
+<p>We cannot respond to your request or provide you with personal information if we cannot verify your identity or authority to make the request and confirm the personal information relates to you. We will only use personal information provided in a verifiable consumer request to verify the requestor’s identity or authority to make the request.</p>
+<h2>Response Timing and Format</h2>
+<p>We endeavor to respond to a verifiable consumer request within forty-five (45) days of its receipt. If we require more time (up to 45 days), we will inform you of the reason and extension period in writing within the initial forty-five (45) days after receipt of the verifiable consumer request.</p>
+<p>If you have an account with us, our written response to your verifiable consumer request will be delivered through such account. If you do not have an account with us, we will deliver our written response by mail or electronically, at your option. For data portability requests, we will select a format that is readily useable and should allow you to transmit the information from one entity to another entity without hindrance.</p>
+<p>Any disclosures we provide pursuant to a verifiable consumer request will only cover the twelve (12) month period preceding the verifiable consumer request’s receipt. If applicable, our response will also explain the reasons we cannot comply with your request.</p>
+<p>We do not charge a fee to process or respond to your verifiable consumer request, unless such request is excessive, repetitive, or manifestly unfounded. If we determine that the request warrants a fee, we will inform you of the reasons of such decision and provide you with a cost estimate before completing your request.</p>
+<h2>Non-Discrimination</h2>
+<p>We will not discriminate against you for exercising any of your CCPA rights. Unless permitted by the CCPA, we will not:</p>
+<ul>
+<li>Deny you goods or services;</li>
+<li>Charge you different prices or rates for goods or services, including through granting discounts or other benefits, or imposing penalties;</li>
+<li>Provide you a different level or quality of goods or services; or</li>
+<li>Suggest that you may receive a different price or rate for goods or services or a different level or quality of goods or services.</li>
+</ul>
+<h2>Notice of Financial Incentive</h2>
+<p>This Notice is to provide you with information regarding any financial incentive or “price or service difference” that we may provide in exchange for your personal information.</p>
+<p>You may provide personal information from time to time, including your name and email address, in order to access additional free content on our Sites. To receive the financial incentive or price difference, you will be asked to subscribe to our newsletter or create an account. You can opt into the financial incentive or price or service difference by submitting the personal information requested when creating an account or registering for our newsletter. If you wish to opt-out of the financial incentive or price or service difference, do not submit the personal information. If you wish to withdraw from the financial incentive or price difference, please visit <a href="https://www.thenation.com/privacy-contact-form/" rel="noopener" target="_blank">https://www.thenation.com/privacy-contact-form/</a>. Please note that if you withdraw from the financial incentive, you will no longer have access to the additional free content.</p>
+<p>Each financial incentive or price or service difference related to submission and use of consumer personal information is based upon our reasonable but sole determination of the estimated value of such information, which takes into consideration, without limitation, estimates regarding the anticipated revenue generated from such information, the anticipated expenses which might be incurred in the collection, storage, and use of such information in the operation of our business, and other relevant factors related to the estimated value of such information to our business, as permitted under the CCPA.</p>
+<h2>Direct Marketing</h2>
+<p>California law provides that we are required to disclose to our California customers, upon request, the identity of any third parties to whom we have disclosed personal information within the previous calendar year, along with the type of personal information disclosed, for the third parties’ direct marketing purposes, and may request that we not share your information with certain affiliates or third party providers for direct marketing purposes.</p>
+<p>If you are a California resident and would like to make such a request, please submit your request in writing to: Bhaskar Sunkara, The Nation, 520 Eighth Avenue, New York, NY 10018 or visit <a href="https://www.thenation.com/privacy-contact-form/" rel="noopener" target='_blank"'>https://www.thenation.com/privacy-contact-form/</a>. You may also call: 800-350-6944 and ask to speak to an operator.</p>
+<h2>Contact Us</h2>
+<p>If you have any questions about this Policy or about our treatment of your personal information, <a href="https://www.thenation.com/contact-us/" rel="noopener" target="_blank">click here</a> or contact us by mail at the following address: Bhaskar Sunkara, The Nation, 520 Eighth Avenue, New York, NY 10018 or visit <a href="https://www.thenation.com/privacy-contact-form/" rel="noopener" target="_blank">https://www.thenation.com/privacy-contact-form/</a>.</p>
+<p>Last updated on May 4, 2022.</p>
+</section>
+</section>
+<aside class="listing__siderail large-4 show-for-large-up columns">
+<style>
+      .cta.primary.NWVicDNXOb{
+      background: #cc0e0e !important;
+      color: #ffffff !important;
+      }
+      .cta.primary.NWVicDNXOb a:hover
+      {
+      color: #cc0e0e !important;
+      background: #ffffff !important;
+      }
+      </style>
+<div class="siderail__item full cta primary NWVicDNXOb">
+<div class="item__content">
+<h3>GET UNLIMITED DIGITAL ACCESS FOR LESS THAN $3 A MONTH!
+</h3>
+<a class="btn" href="https://subscriptions.thenation.com/Nation_index?pk=G2A1SFT" target="_blank">Subscribe</a>
+</div>
+</div>
+<div class="siderail__item ad">
+<div class="ad__content">
+<div align="center" data-freestar-ad="__300x600" id="thenation_right_rail">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" type="text/javascript">
+						freestar.config.enabled_slots.push({ 
+							placementName: "thenation_right_rail", 
+							slotId: "thenation_right_rail",
+							targeting:{
+								tn_pos: 'rectangle_1',
+								tn_loc:'atf'
+							}	
+						});
+					  </script>
+</div>
+<a class="ad-policy" href="http://www.thenation.com/advertising-policy" target="_blank">Ad Policy</a>
+</div>
+</div>
+<div class="siderail__item list most-popular">
+<div class="list__content" id="thenation-most-popular">
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+</div>
+<div id="show_light_box"></div>
+<div class="tn-show-sfg-subs-popup hide">
+<div class="tn-sfg-subs-popup">
+<a class="tn-sfg-subs-close" href="javascript:void(0)">x</a>
+<iframe allowfullscreen="" id="sfgIframe" src="" style="width:100%;height: 100%;"></iframe>
+</div>
+<div class="tn-sfg-subs-overlay"></div>
+</div>
+<script>
+				jQuery(document).ready(function(){
+					jQuery(document).on('click', '.tn-iframe-subscribe a', function(e){	
+						e.preventDefault();
+						if (typeof thenation_globals != typeof undefined && thenation_globals.tn_paywall_sfgiframe != '') {
+							if (jQuery("#sfgIframe").attr("src") ==  '') {
+								jQuery("#sfgIframe").attr("src", thenation_globals.tn_paywall_sfgiframe);		
+							}							
+							jQuery(".tn-show-sfg-subs-popup").toggleClass("hide");
+							jQuery("body").css({"overflow":"hidden"});
+						}						
+					});
+					
+					jQuery(document).on('click', '.tn-sfg-subs-close', function(e){
+						e.preventDefault();
+						jQuery(".tn-show-sfg-subs-popup").toggleClass("hide");
+						jQuery("body").css({"overflow":"unset"});
+					});
+				});
+			</script>
+</div>
+</div>
+<footer class="push">
+<div class="row">
+<div class="sitemap small-12 columns">
+<div class="block home">
+<span class="logo">
+<a href="https://www.thenation.com"><img alt="The Nation" src="https://www.thenation.com/wp-content/themes/thenation/images/thenation_new-logo-big.svg"/></a>
+</span>
+</div>
+<div class="block social">
+<h2>Follow The Nation</h2>
+<ul>
+<li><a class="fb" href="https://www.facebook.com/TheNationMagazine" target="_blank"></a></li>
+<li><a class="tw" href="https://twitter.com/thenation" target="_blank"></a></li>
+<li><a class="instagram" href="https://www.instagram.com/nationmag/" target="_blank"></a></li>
+<li><a class="rs" href="http://www.thenation.com/feed/?post_type=article" target="_blank"></a></li>
+</ul>
+<h2>Get Email Updates</h2>
+<p>
+Sign up for our free daily newsletter, along with occasional offers for programs that support our journalism. By signing up to receive emails, you agree to receive occasional promotional offers for programs that support <em>The Nation</em>'s journalism. You may unsubscribe or adjust your preferences at any time. You can read our <a href="https://www.thenation.com/privacy-policy" style="font-style: normal;text-decoration: underline !important;font-size: inherit;" target="_blank"><strong>Privacy Policy</strong></a> here.
+</p>
+<div class="newsletter-signup">
+<input class="newsletter-signup__email" id="newsletter_email" name="newsletter_email" placeholder="Email address" required="required" type="email"/>
+<input id="footer-recaptcha-verify" type="hidden"/>
+<input class="newsletter-signup__submit" id="newsletter_footer" type="button" value="submit">
+</input></div>
+<div id="subscribe_newsletter"></div>
+</div>
+<div class="">
+<aside class="widget widget_nav_menu block nation nav" id="nav_menu-5"><h2 class="expander"><a href="#">Sections</a></h2><div class="menu-footer-sections-container"><ul class="menu" id="menu-footer-sections"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119851" id="menu-item-119851"><a href="https://www.thenation.com/politics/">Politics</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-342760" id="menu-item-342760"><a href="https://www.thenation.com/subject/world/">World</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-342759" id="menu-item-342759"><a href="https://www.thenation.com/subject/economy/">Economy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-349020" id="menu-item-349020"><a href="https://www.thenation.com/climate-change/">Climate Change</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119850" id="menu-item-119850"><a href="https://www.thenation.com/culture/">Culture</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-subject menu-item-115792" id="menu-item-115792"><a href="https://www.thenation.com/subject/society/">Society</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-298725" id="menu-item-298725"><a href="https://www.thenation.com/content/oppart/">OppArt</a></li>
+</ul></div></aside>
+</div>
+<div class="">
+<aside class="widget widget_nav_menu block nation nav" id="nav_menu-4"><h2 class="expander"><a href="#">The Nation</a></h2><div class="menu-footer-the-nation-container"><ul class="menu" id="menu-footer-the-nation"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116578" id="menu-item-116578"><a href="https://www.thenation.com/about-us-and-contact/">About</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-115577 current_page_item menu-item-281007" id="menu-item-281007"><a aria-current="page" href="https://www.thenation.com/privacy-policy/">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-404910" id="menu-item-404910"><a href="https://www.thenation.com/termsofuse/">Terms of Use</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178918" id="menu-item-178918"><a href="https://www.thenation.com/advertise/">Advertise</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116581" id="menu-item-116581"><a href="https://www.thenation.com/community-guidelines/">Comments Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-131108" id="menu-item-131108"><a href="https://www.thenation.com/contact-us/">Contact Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116583" id="menu-item-116583"><a href="https://www.thenation.com/help/">Help</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-178899" id="menu-item-178899"><a href="https://www.thenation.com/jobs/">Jobs and Internships</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-284517" id="menu-item-284517"><a href="https://www.thenation.com/donation">Support The Nation</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-347795" id="menu-item-347795"><a href="https://www.thenation.com/events">Nation Events</a></li>
+<li class="shop-footer menu-item menu-item-type-custom menu-item-object-custom menu-item-290196" id="menu-item-290196"><a href="https://shop.thenation.com">Nation Shop</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-179840" id="menu-item-179840"><a href="https://www.thenation.com/travels">Nation Travels</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-272170" id="menu-item-272170"><a href="https://www.thenationwineclub.com">Nation Wine Club</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-384910" id="menu-item-384910"><a href="https://thenationfund.org/">The Nation Fund</a></li>
+</ul></div></aside>
+</div>
+<div class="">
+<aside class="widget widget_nav_menu block nation nav" id="nav_menu-3"><h2 class="expander"><a href="#">Magazine</a></h2><div class="menu-footer-magazine-container"><ul class="menu" id="menu-footer-magazine"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-134664" id="menu-item-134664"><a href="https://www.thenation.com/issue/">Current Issue</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134728" id="menu-item-134728"><a href="https://www.thenation.com/masthead/">Masthead</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116587" id="menu-item-116587"><a href="https://www.thenation.com/archive/">Archive</a></li>
+<li class="tn-subscribe-click menu-item menu-item-type-custom menu-item-object-custom menu-item-134847" id="menu-item-134847"><a href="https://subscriptions.thenation.com/Nation_index?pk=G1A1FDF">Subscribe</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-380175" id="menu-item-380175"><a href="https://subscriptions.thenation.com/loading.do?omedasite=Nation_CustServ&amp;version=1&amp;page=1">Renew</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-327168" id="menu-item-327168"><a href="https://subscriptions.thenation.com/loading.do?omedasite=Nation_Gift">Gift Subscriptions</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-321842" id="menu-item-321842"><a href="https://subscriptions.thenation.com/loading.do?omedasite=Nation_digitalacademic">Academic Rate</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134727" id="menu-item-134727"><a href="https://www.thenation.com/subscription-services/">Subscription Service</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-179839" id="menu-item-179839"><a href="http://www.thenationreprints.com/">Reprints</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-384855" id="menu-item-384855"><a href="https://www.thenation.com/privacy-contact-form/" title="Do Not Rent of Sell My Data">Do Not Rent or Sell My Data</a></li>
+</ul></div></aside>
+</div>
+</div>
+<div class="copyright">
+<div class="small-12 columns">
+<p>Copyright (c) 2022 The Nation Company LLC</p>
+</div>
+</div>
+</div>
+</footer>
+<script>
+		
+		jQuery(document).ready(function(){
+			
+						
+			/*
+			 * Initailize Piano
+			 */
+			
+			tp.push(["init", function() {
+				tp.enableGACrossDomainLinking();
+				tp.experience.init();
+			}]);
+			
+									
+			var currentUrl = document.URL;
+			if(currentUrl.indexOf("?nc=1") > -1){
+				currentUrl = currentUrl.replace("?nc=1","");
+				window.history.pushState({}, null, currentUrl);
+				
+			}
+			
+			if(currentUrl.indexOf("&nc=1") > -1){
+				currentUrl = currentUrl.replace("&nc=1","");
+				window.history.pushState({}, null, currentUrl);
+				
+			}
+			
+			jQuery(".wpsdc-drop-cap").parent("p").addClass("drop_c");	
+		});		
+	</script>
+<link href="https://www.thenation.com/wp-includes/css/dashicons.min.css?ver=6.0" id="dashicons-css" media="all" rel="stylesheet"/>
+<link href="https://www.thenation.com/wp-includes/js/thickbox/thickbox.css?ver=6.0" id="thickbox-css" media="all" rel="stylesheet"/>
+<script id="underscore-js" src="https://www.thenation.com/wp-includes/js/underscore.min.js?ver=1.13.3"></script>
+<script id="wp-util-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script id="wp-util-js" src="https://www.thenation.com/wp-includes/js/wp-util.min.js?ver=6.0"></script>
+<script id="ajax-password-protected-js" src="https://www.thenation.com/wp-content/plugins/ajax-password-protected-master/ajax-password-protected.js?ver=0.0.1"></script>
+<script id="jquery-ui-core-js" src="https://www.thenation.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1"></script>
+<script id="jquery-ui-mouse-js" src="https://www.thenation.com/wp-includes/js/jquery/ui/mouse.min.js?ver=1.13.1"></script>
+<script id="jquery-ui-slider-js" src="https://www.thenation.com/wp-includes/js/jquery/ui/slider.min.js?ver=1.13.1"></script>
+<script id="jquery-ui-controlgroup-js" src="https://www.thenation.com/wp-includes/js/jquery/ui/controlgroup.min.js?ver=1.13.1"></script>
+<script id="jquery-ui-checkboxradio-js" src="https://www.thenation.com/wp-includes/js/jquery/ui/checkboxradio.min.js?ver=1.13.1"></script>
+<script id="jquery-ui-button-js" src="https://www.thenation.com/wp-includes/js/jquery/ui/button.min.js?ver=1.13.1"></script>
+<script id="jquery-ui-spinner-js" src="https://www.thenation.com/wp-includes/js/jquery/ui/spinner.min.js?ver=1.13.1"></script>
+<script id="jquery-effects-core-js" src="https://www.thenation.com/wp-includes/js/jquery/ui/effect.min.js?ver=1.13.1"></script>
+<script id="jquery-effects-shake-js" src="https://www.thenation.com/wp-includes/js/jquery/ui/effect-shake.min.js?ver=1.13.1"></script>
+<script id="tn-jquery-ui-js" src="https://www.thenation.com/wp-content/themes/thenation/js/javascripts/jquery-ui.min.js"></script>
+<script id="acs_script_suggest-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var acs_config_suggest = {"ajax_url":"https:\/\/www.thenation.com\/wp-json\/cloud-search\/v1\/suggest","acs_suggest_selector":"input[name='s']","acs_suggest_trigger":"3","acs_suggest_results":"20","acs_suggest_click":"goto"};
+/* ]]> */
+</script>
+<script id="acs_script_suggest-js" src="https://www.thenation.com/wp-content/themes/thenation/inc/aws-cloudsearch/js/min/aws-cloud-search-local.min.js?ver=1.1.7"></script>
+<script id="thenation-magzine_ajax-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var ajax_object = {"ajax_url":"https:\/\/www.thenation.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script id="thenation-magzine_ajax-js" src="https://www.thenation.com/wp-content/themes/thenation/js/Magzine_issue_ajax.js?ver=1.0.7"></script>
+<script id="thenation-lightbox-js" src="https://www.thenation.com/wp-content/themes/thenation/js/light_box.js"></script>
+<script id="thenation-recaptcha-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var tn_recaptcha_details = {"site_key":"6LeP9_UZAAAAALS1EHTemzatNIX2xPAvIDXJS7ki"};
+/* ]]> */
+</script>
+<script id="thenation-recaptcha-js" src="https://www.google.com/recaptcha/api.js?render=6LeP9_UZAAAAALS1EHTemzatNIX2xPAvIDXJS7ki&amp;onload=tnOnloadCallback&amp;render=explicit"></script>
+<script id="thenation-all-js-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var thenation_globals = {"tn_paywall_sfgiframe":"https:\/\/subscribe.thenation.com\/flex\/na\/key\/G0A1TSA\/","tn_incognito_sub":"https:\/\/subscribe.thenation.com\/flex\/NA\/key\/G0EWCPM\/"};
+/* ]]> */
+</script>
+<script id="thenation-all-js-js" src="https://www.thenation.com/wp-content/themes/thenation/js/javascripts/all.js?ver=2.2.33"></script>
+<script id="thenation-modernizr1-js" src="https://www.thenation.com/wp-content/themes/thenation/js/min/modernizr.min.js"></script>
+<script id="bxslider-js-js" src="https://www.thenation.com/wp-content/themes/thenation/js/jquery.bxslider.js"></script>
+<script id="tn-piano-js" src="https://www.thenation.com/wp-content/themes/thenation/js/min/tn-piano.min.js?ver=3.2.21"></script>
+<script id="thenation-mostpopular-js" src="https://www.thenation.com/wp-content/themes/thenation/js/min/thenation-mostpopular.min.js?ver=1.1.3"></script>
+<script id="thenation-latest_from_the_nation-js" src="https://www.thenation.com/wp-content/themes/thenation/js/thenation-latest-from-the-nation.js?ver=1.1.2"></script>
+<script id="sfg-js-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var sfg_options = {"enable_dash_options":"1"};
+var sfg_options = {"enable_dash_options":"1"};
+/* ]]> */
+</script>
+<script id="sfg-js-js" src="https://www.thenation.com/wp-content/themes/thenation/inc/sfg-subscription/assets/sfg.min.js?ver=3.1.11"></script>
+<script id="thickbox-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/www.thenation.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+/* ]]> */
+</script>
+<script id="thickbox-js" src="https://www.thenation.com/wp-includes/js/thickbox/thickbox.js?ver=3.1-20121105"></script>
+<script>
+	
+		/*subscribe sailthru function start*/
+	
+		function susbcribe_sailthru(form_value){
+			
+			var newsletterArray = new Array();
+
+			var firstname ='';
+
+			var lastname ='';
+
+			var zippostal ='';
+
+			var user_email ='';
+		   
+			jQuery(form_value).closest("form").find("input[name^='sft_variables']").each(function() {
+			   
+				if (jQuery(this).attr("id")=="first_name") {
+				  
+					firstname = jQuery(this).val();
+				 
+				}
+				
+				if (jQuery(this).attr("id")=="last_name") {
+				
+					lastname = jQuery(this).val();
+				
+				}
+				
+				if (jQuery(this).attr("id")=="zip_postal-code") {
+				
+					zippostal = jQuery(this).val();
+				
+				}
+				
+				if (jQuery(this).attr("id")=="email") {
+				
+					user_email = jQuery(this).val();
+				
+				}
+				
+		    });
+		   
+			jQuery(form_value).closest("form").find("input[name^='sft_newssletter_variables']").each(function() {
+			   
+				newsletterArray.push(jQuery(this).attr("id"));         
+			  
+			});  
+			
+			var newsletter_variable=newsletterArray.join(",");
+			
+			var origin_host=document.location.origin;
+			
+			/*call popCenter*/
+			
+			PopupCenter(origin_host+"/submit.php?form_value_fname_val="+firstname+"&form_value_lname_val="+lastname+"&form_value_zip_val="+zippostal+"&form_value_email_val="+user_email+"&email_newsletter="+newsletter_variable,'xtf','300','300');			
+		   
+			jQuery(form_value).closest("form").find("input[name^='sft_variables']").each(function() {
+				
+				if (jQuery(this).attr("id")=="first_name") {
+				
+					jQuery(this).val('');
+				
+				}
+				
+				if (jQuery(this).attr("id")=="last_name") {
+					
+					jQuery(this).val('');
+					
+				}
+				
+				if (jQuery(this).attr("id")=="zip_postal-code") {
+					
+					jQuery(this).val('');
+					
+				}
+				
+				if (jQuery(this).attr("id")=="email") {
+				
+					jQuery(this).val('');
+				
+				}
+				
+			});
+			
+		}  
+		
+		/*subscribe sailthru function end*/
+
+		/*pop up function start*/
+		
+		function PopupCenter(url, title, w, h) {
+			
+			/* Fixes dual-screen position                         Most browsers      Firefox    */
+
+			var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+
+			var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+			var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+
+			var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+			var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+
+			var top = ((height / 2) - (h / 2)) + dualScreenTop;
+			
+			var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+			
+			/* Puts focus on the newWindow */
+
+			if (window.focus) {
+
+				newWindow.focus();
+
+			}
+
+			setTimeout(function () { newWindow.close();}, 5000);
+
+		}
+		
+		/*pop up function end*/		
+	</script>
+<script>		
+		(function(src) {
+			var a = document.createElement("script");
+			a.type = "text/javascript";
+			a.async = true;
+			a.src = src;
+			var b = document.getElementsByTagName("script")[0];
+			b.parentNode.insertBefore(a, b)
+		})("//experience.tinypass.com/xbuilder/experience/load?aid=NmGa4IzWHL");
+	</script>
+<div id="tn-donation-footer"></div>
+<script>
+		window.freestar.queue.push(function(){
+			window.freestar.newStickyFooter("thenation_adhesion");
+		});
+	</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"442438c9d9","applicationID":"5436353","transactionName":"Z1JSYkYACEsAV0cKXV4YcVVACAlWTkRSBFc=","queueTime":0,"applicationTime":370,"atts":"SxVRFA4aG0U=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

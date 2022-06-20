@@ -1,0 +1,2628 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><script data-cfasync="false" type="text/javascript">var ewww_webp_supported=!1;function check_webp_feature(A,e){var w;e=void 0!==e?e:function(){},ewww_webp_supported?e(ewww_webp_supported):((w=new Image).onload=function(){ewww_webp_supported=0<w.width&&0<w.height,e&&e(ewww_webp_supported)},w.onerror=function(){e&&e(!1)},w.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA=="}[A])}check_webp_feature("alpha");</script><script data-cfasync="false" type="text/javascript">var Arrive=function(c,w){"use strict";if(c.MutationObserver&&"undefined"!=typeof HTMLElement){var r,a=0,u=(r=HTMLElement.prototype.matches||HTMLElement.prototype.webkitMatchesSelector||HTMLElement.prototype.mozMatchesSelector||HTMLElement.prototype.msMatchesSelector,{matchesSelector:function(e,t){return e instanceof HTMLElement&&r.call(e,t)},addMethod:function(e,t,r){var a=e[t];e[t]=function(){return r.length==arguments.length?r.apply(this,arguments):"function"==typeof a?a.apply(this,arguments):void 0}},callCallbacks:function(e,t){t&&t.options.onceOnly&&1==t.firedElems.length&&(e=[e[0]]);for(var r,a=0;r=e[a];a++)r&&r.callback&&r.callback.call(r.elem,r.elem);t&&t.options.onceOnly&&1==t.firedElems.length&&t.me.unbindEventWithSelectorAndCallback.call(t.target,t.selector,t.callback)},checkChildNodesRecursively:function(e,t,r,a){for(var i,n=0;i=e[n];n++)r(i,t,a)&&a.push({callback:t.callback,elem:i}),0<i.childNodes.length&&u.checkChildNodesRecursively(i.childNodes,t,r,a)},mergeArrays:function(e,t){var r,a={};for(r in e)e.hasOwnProperty(r)&&(a[r]=e[r]);for(r in t)t.hasOwnProperty(r)&&(a[r]=t[r]);return a},toElementsArray:function(e){return e=void 0!==e&&("number"!=typeof e.length||e===c)?[e]:e}}),e=(l.prototype.addEvent=function(e,t,r,a){a={target:e,selector:t,options:r,callback:a,firedElems:[]};return this._beforeAdding&&this._beforeAdding(a),this._eventsBucket.push(a),a},l.prototype.removeEvent=function(e){for(var t,r=this._eventsBucket.length-1;t=this._eventsBucket[r];r--)e(t)&&(this._beforeRemoving&&this._beforeRemoving(t),(t=this._eventsBucket.splice(r,1))&&t.length&&(t[0].callback=null))},l.prototype.beforeAdding=function(e){this._beforeAdding=e},l.prototype.beforeRemoving=function(e){this._beforeRemoving=e},l),t=function(i,n){var o=new e,l=this,s={fireOnAttributesModification:!1};return o.beforeAdding(function(t){var e=t.target;e!==c.document&&e!==c||(e=document.getElementsByTagName("html")[0]);var r=new MutationObserver(function(e){n.call(this,e,t)}),a=i(t.options);r.observe(e,a),t.observer=r,t.me=l}),o.beforeRemoving(function(e){e.observer.disconnect()}),this.bindEvent=function(e,t,r){t=u.mergeArrays(s,t);for(var a=u.toElementsArray(this),i=0;i<a.length;i++)o.addEvent(a[i],e,t,r)},this.unbindEvent=function(){var r=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<r.length;t++)if(this===w||e.target===r[t])return!0;return!1})},this.unbindEventWithSelectorOrCallback=function(r){var a=u.toElementsArray(this),i=r,e="function"==typeof r?function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.callback===i)return!0;return!1}:function(e){for(var t=0;t<a.length;t++)if((this===w||e.target===a[t])&&e.selector===r)return!0;return!1};o.removeEvent(e)},this.unbindEventWithSelectorAndCallback=function(r,a){var i=u.toElementsArray(this);o.removeEvent(function(e){for(var t=0;t<i.length;t++)if((this===w||e.target===i[t])&&e.selector===r&&e.callback===a)return!0;return!1})},this},i=new function(){var s={fireOnAttributesModification:!1,onceOnly:!1,existing:!1};function n(e,t,r){return!(!u.matchesSelector(e,t.selector)||(e._id===w&&(e._id=a++),-1!=t.firedElems.indexOf(e._id)))&&(t.firedElems.push(e._id),!0)}var c=(i=new t(function(e){var t={attributes:!1,childList:!0,subtree:!0};return e.fireOnAttributesModification&&(t.attributes=!0),t},function(e,i){e.forEach(function(e){var t=e.addedNodes,r=e.target,a=[];null!==t&&0<t.length?u.checkChildNodesRecursively(t,i,n,a):"attributes"===e.type&&n(r,i)&&a.push({callback:i.callback,elem:r}),u.callCallbacks(a,i)})})).bindEvent;return i.bindEvent=function(e,t,r){t=void 0===r?(r=t,s):u.mergeArrays(s,t);var a=u.toElementsArray(this);if(t.existing){for(var i=[],n=0;n<a.length;n++)for(var o=a[n].querySelectorAll(e),l=0;l<o.length;l++)i.push({callback:r,elem:o[l]});if(t.onceOnly&&i.length)return r.call(i[0].elem,i[0].elem);setTimeout(u.callCallbacks,1,i)}c.call(this,e,t,r)},i},o=new function(){var a={};function i(e,t){return u.matchesSelector(e,t.selector)}var n=(o=new t(function(){return{childList:!0,subtree:!0}},function(e,r){e.forEach(function(e){var t=e.removedNodes,e=[];null!==t&&0<t.length&&u.checkChildNodesRecursively(t,r,i,e),u.callCallbacks(e,r)})})).bindEvent;return o.bindEvent=function(e,t,r){t=void 0===r?(r=t,a):u.mergeArrays(a,t),n.call(this,e,t,r)},o};d(HTMLElement.prototype),d(NodeList.prototype),d(HTMLCollection.prototype),d(HTMLDocument.prototype),d(Window.prototype);var n={};return s(i,n,"unbindAllArrive"),s(o,n,"unbindAllLeave"),n}function l(){this._eventsBucket=[],this._beforeAdding=null,this._beforeRemoving=null}function s(e,t,r){u.addMethod(t,r,e.unbindEvent),u.addMethod(t,r,e.unbindEventWithSelectorOrCallback),u.addMethod(t,r,e.unbindEventWithSelectorAndCallback)}function d(e){e.arrive=i.bindEvent,s(i,e,"unbindArrive"),e.leave=o.bindEvent,s(o,e,"unbindLeave")}}(window,void 0),ewww_webp_supported=!1;function check_webp_feature(e,t){var r;ewww_webp_supported?t(ewww_webp_supported):((r=new Image).onload=function(){ewww_webp_supported=0<r.width&&0<r.height,t(ewww_webp_supported)},r.onerror=function(){t(!1)},r.src="data:image/webp;base64,"+{alpha:"UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",animation:"UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA"}[e])}function ewwwLoadImages(e){if(e){for(var t=document.querySelectorAll(".batch-image img, .image-wrapper a, .ngg-pro-masonry-item a, .ngg-galleria-offscreen-seo-wrapper a"),r=0,a=t.length;r<a;r++)ewwwAttr(t[r],"data-src",t[r].getAttribute("data-webp")),ewwwAttr(t[r],"data-thumbnail",t[r].getAttribute("data-webp-thumbnail"));for(var i=document.querySelectorAll(".rev_slider ul li"),r=0,a=i.length;r<a;r++){ewwwAttr(i[r],"data-thumb",i[r].getAttribute("data-webp-thumb"));for(var n=1;n<11;)ewwwAttr(i[r],"data-param"+n,i[r].getAttribute("data-webp-param"+n)),n++}for(r=0,a=(i=document.querySelectorAll(".rev_slider img")).length;r<a;r++)ewwwAttr(i[r],"data-lazyload",i[r].getAttribute("data-webp-lazyload"));for(var o=document.querySelectorAll("div.woocommerce-product-gallery__image"),r=0,a=o.length;r<a;r++)ewwwAttr(o[r],"data-thumb",o[r].getAttribute("data-webp-thumb"))}for(var l=document.querySelectorAll("video"),r=0,a=l.length;r<a;r++)ewwwAttr(l[r],"poster",e?l[r].getAttribute("data-poster-webp"):l[r].getAttribute("data-poster-image"));for(var s,c=document.querySelectorAll("img.ewww_webp_lazy_load"),r=0,a=c.length;r<a;r++)e&&(ewwwAttr(c[r],"data-lazy-srcset",c[r].getAttribute("data-lazy-srcset-webp")),ewwwAttr(c[r],"data-srcset",c[r].getAttribute("data-srcset-webp")),ewwwAttr(c[r],"data-lazy-src",c[r].getAttribute("data-lazy-src-webp")),ewwwAttr(c[r],"data-src",c[r].getAttribute("data-src-webp")),ewwwAttr(c[r],"data-orig-file",c[r].getAttribute("data-webp-orig-file")),ewwwAttr(c[r],"data-medium-file",c[r].getAttribute("data-webp-medium-file")),ewwwAttr(c[r],"data-large-file",c[r].getAttribute("data-webp-large-file")),null!=(s=c[r].getAttribute("srcset"))&&!1!==s&&s.includes("R0lGOD")&&ewwwAttr(c[r],"src",c[r].getAttribute("data-lazy-src-webp"))),c[r].className=c[r].className.replace(/\bewww_webp_lazy_load\b/,"");for(var w=document.querySelectorAll(".ewww_webp"),r=0,a=w.length;r<a;r++)e?(ewwwAttr(w[r],"srcset",w[r].getAttribute("data-srcset-webp")),ewwwAttr(w[r],"src",w[r].getAttribute("data-src-webp")),ewwwAttr(w[r],"data-orig-file",w[r].getAttribute("data-webp-orig-file")),ewwwAttr(w[r],"data-medium-file",w[r].getAttribute("data-webp-medium-file")),ewwwAttr(w[r],"data-large-file",w[r].getAttribute("data-webp-large-file")),ewwwAttr(w[r],"data-large_image",w[r].getAttribute("data-webp-large_image")),ewwwAttr(w[r],"data-src",w[r].getAttribute("data-webp-src"))):(ewwwAttr(w[r],"srcset",w[r].getAttribute("data-srcset-img")),ewwwAttr(w[r],"src",w[r].getAttribute("data-src-img"))),w[r].className=w[r].className.replace(/\bewww_webp\b/,"ewww_webp_loaded");window.jQuery&&jQuery.fn.isotope&&jQuery.fn.imagesLoaded&&(jQuery(".fusion-posts-container-infinite").imagesLoaded(function(){jQuery(".fusion-posts-container-infinite").hasClass("isotope")&&jQuery(".fusion-posts-container-infinite").isotope()}),jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").imagesLoaded(function(){jQuery(".fusion-portfolio:not(.fusion-recent-works) .fusion-portfolio-wrapper").isotope()}))}function ewwwWebPInit(e){ewwwLoadImages(e),ewwwNggLoadGalleries(e),document.arrive(".ewww_webp",function(){ewwwLoadImages(e)}),document.arrive(".ewww_webp_lazy_load",function(){ewwwLoadImages(e)}),document.arrive("videos",function(){ewwwLoadImages(e)}),"loading"==document.readyState?document.addEventListener("DOMContentLoaded",ewwwJSONParserInit):("undefined"!=typeof galleries&&ewwwNggParseGalleries(e),ewwwWooParseVariations(e))}function ewwwAttr(e,t,r){null!=r&&!1!==r&&e.setAttribute(t,r)}function ewwwJSONParserInit(){"undefined"!=typeof galleries&&check_webp_feature("alpha",ewwwNggParseGalleries),check_webp_feature("alpha",ewwwWooParseVariations)}function ewwwWooParseVariations(e){if(e)for(var t=document.querySelectorAll("form.variations_form"),r=0,a=t.length;r<a;r++){var i=t[r].getAttribute("data-product_variations"),n=!1;try{for(var o in i=JSON.parse(i))void 0!==i[o]&&void 0!==i[o].image&&(void 0!==i[o].image.src_webp&&(i[o].image.src=i[o].image.src_webp,n=!0),void 0!==i[o].image.srcset_webp&&(i[o].image.srcset=i[o].image.srcset_webp,n=!0),void 0!==i[o].image.full_src_webp&&(i[o].image.full_src=i[o].image.full_src_webp,n=!0),void 0!==i[o].image.gallery_thumbnail_src_webp&&(i[o].image.gallery_thumbnail_src=i[o].image.gallery_thumbnail_src_webp,n=!0),void 0!==i[o].image.thumb_src_webp&&(i[o].image.thumb_src=i[o].image.thumb_src_webp,n=!0));n&&ewwwAttr(t[r],"data-product_variations",JSON.stringify(i))}catch(e){}}}function ewwwNggParseGalleries(e){if(e)for(var t in galleries){var r=galleries[t];galleries[t].images_list=ewwwNggParseImageList(r.images_list)}}function ewwwNggLoadGalleries(e){e&&document.addEventListener("ngg.galleria.themeadded",function(e,t){window.ngg_galleria._create_backup=window.ngg_galleria.create,window.ngg_galleria.create=function(e,t){var r=$(e).data("id");return galleries["gallery_"+r].images_list=ewwwNggParseImageList(galleries["gallery_"+r].images_list),window.ngg_galleria._create_backup(e,t)}})}function ewwwNggParseImageList(e){for(var t in e){var r=e[t];if(void 0!==r["image-webp"]&&(e[t].image=r["image-webp"],delete e[t]["image-webp"]),void 0!==r["thumb-webp"]&&(e[t].thumb=r["thumb-webp"],delete e[t]["thumb-webp"]),void 0!==r.full_image_webp&&(e[t].full_image=r.full_image_webp,delete e[t].full_image_webp),void 0!==r.srcsets)for(var a in r.srcsets)nggSrcset=r.srcsets[a],void 0!==r.srcsets[a+"-webp"]&&(e[t].srcsets[a]=r.srcsets[a+"-webp"],delete e[t].srcsets[a+"-webp"]);if(void 0!==r.full_srcsets)for(var i in r.full_srcsets)nggFSrcset=r.full_srcsets[i],void 0!==r.full_srcsets[i+"-webp"]&&(e[t].full_srcsets[i]=r.full_srcsets[i+"-webp"],delete e[t].full_srcsets[i+"-webp"])}return e}check_webp_feature("alpha",ewwwWebPInit);</script><meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<link href="https://urbiotica.com/en/privacy-policy/" hreflang="en" rel="alternate"/>
+<link href="https://urbiotica.com/politica-de-privacidad/" hreflang="es" rel="alternate"/>
+<link href="https://urbiotica.com/politica-de-privacidad/" hreflang="x-default" rel="alternate"/>
+<!-- This site is optimized with the Yoast SEO plugin v19.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Privacy policy - Urbiotica</title>
+<link href="https://urbiotica.com/en/privacy-policy/" rel="canonical"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="Privacy policy - Urbiotica" property="og:title"/>
+<meta content="Privacy policy Privacy Policy Information The information received by URBIOTICA through this website will be treated with the utmost confidentiality and confidentiality in accordance with current regulations. URBIOTICA informs the user that the personal data that may be provided through this website will be treated under the responsibility of URBIOTICA for the legitimate purpose and…" property="og:description"/>
+<meta content="https://urbiotica.com/en/privacy-policy/" property="og:url"/>
+<meta content="Urbiotica" property="og:site_name"/>
+<meta content="2022-03-23T11:07:16+00:00" property="article:modified_time"/>
+<meta content="https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Est. reading time" name="twitter:label1"/>
+<meta content="2 minutes" name="twitter:data1"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://urbiotica.com/#website","url":"https://urbiotica.com/","name":"Urbiotica","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://urbiotica.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://urbiotica.com/en/privacy-policy/#primaryimage","url":"https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01.jpg","contentUrl":"https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01.jpg","width":800,"height":800},{"@type":"WebPage","@id":"https://urbiotica.com/en/privacy-policy/#webpage","url":"https://urbiotica.com/en/privacy-policy/","name":"Privacy policy - Urbiotica","isPartOf":{"@id":"https://urbiotica.com/#website"},"primaryImageOfPage":{"@id":"https://urbiotica.com/en/privacy-policy/#primaryimage"},"datePublished":"2021-10-20T13:44:07+00:00","dateModified":"2022-03-23T11:07:16+00:00","breadcrumb":{"@id":"https://urbiotica.com/en/privacy-policy/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://urbiotica.com/en/privacy-policy/"]}]},{"@type":"BreadcrumbList","@id":"https://urbiotica.com/en/privacy-policy/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://urbiotica.com/en/"},{"@type":"ListItem","position":2,"name":"Privacy policy"}]}]}</script>
+<!-- / Yoast SEO plugin. -->
+<link href="//www.google.com" rel="dns-prefetch"/>
+<link href="//use.fontawesome.com" rel="dns-prefetch"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="//s.w.org" rel="dns-prefetch"/>
+<link href="https://urbiotica.com/en/feed/" rel="alternate" title="Urbiotica » Feed" type="application/rss+xml"/>
+<link href="https://urbiotica.com/en/comments/feed/" rel="alternate" title="Urbiotica » Comments Feed" type="application/rss+xml"/>
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/urbiotica.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=b8bff64a5cffc36ef70ca689f0f31088"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<link href="https://urbiotica.com/wp-includes/css/dist/block-library/style.min.css?ver=b8bff64a5cffc36ef70ca689f0f31088" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--blue: #05306F;--wp--preset--color--grey: #FAFAFA;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 14px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 24px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 20px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link href="https://urbiotica.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.5.6.1" id="contact-form-7-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://use.fontawesome.com/releases/v5.12.1/css/all.css?ver=b8bff64a5cffc36ef70ca689f0f31088" id="wpdm-font-awesome-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/download-manager/assets/bootstrap/css/bootstrap.min.css?ver=b8bff64a5cffc36ef70ca689f0f31088" id="wpdm-front-bootstrap-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/download-manager/assets/css/front.css?ver=b8bff64a5cffc36ef70ca689f0f31088" id="wpdm-front-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-includes/css/dashicons.min.css?ver=b8bff64a5cffc36ef70ca689f0f31088" id="dashicons-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/wp-store-locator/css/styles.min.css?ver=2.2.235" id="wpsl-styles-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="//urbiotica.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-list-horizontal/style.min.css?ver=1" id="wpml-legacy-horizontal-list-0-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="//urbiotica.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/menu-item/style.min.css?ver=1" id="wpml-menu-item-0-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/complianz-gdpr/assets/css/cookieblocker.min.css?ver=6.1.6.1" id="cmplz-general-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/uploads/maxmegamenu/style_en.css?ver=8ec693" id="megamenu-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="//fonts.googleapis.com/css2?family=Nunito+Sans%3Awght%40200%3B300%3B400%3B600%3B700&amp;display=swap%22+rel%3D%22stylesheet%22&amp;ver=b8bff64a5cffc36ef70ca689f0f31088" id="sd-fonts-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/themes/urbiotica/assets/css/main.css?ver=1647972510" id="sd-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/themes/urbiotica/assets/vendor/css/owl.carousel.min.css?ver=b8bff64a5cffc36ef70ca689f0f31088" id="owl-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.15.0" id="elementor-icons-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/elementor/assets/css/frontend-lite.min.css?ver=3.6.5" id="elementor-frontend-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/uploads/elementor/css/post-435.css?ver=1654245756" id="elementor-post-435-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/elementor-pro/assets/css/frontend-lite.min.css?ver=3.7.1" id="elementor-pro-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/uploads/elementor/css/global.css?ver=1654245757" id="elementor-global-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/uploads/elementor/css/post-6276.css?ver=1654290303" id="elementor-post-6276-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/wp-file-download/app/admin/assets/css/leanmodal.css?ver=b8bff64a5cffc36ef70ca689f0f31088" id="wpfd-modal-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/wp-file-download/app/includes/elementor/assets/css/elementor.widgets.css?ver=5.5.3" id="wpfd-elementor-widget-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/wp-file-download/app/includes/elementor/assets/css/elementor.dark.css?ver=3.6.5" id="wpfd-elementor-widget-dark-style-css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/wp-file-download/app/includes/elementor/assets/css/elementor.light.css?ver=3.6.5" id="wpfd-elementor-widget-light-style-css" media="(prefers-color-scheme: light)" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/uploads/elementor/css/post-8041.css?ver=1654245758" id="elementor-post-8041-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/um-fonticons-ii.css?ver=2.4.0" id="um_fonticons_ii-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/um-fonticons-fa.css?ver=2.4.0" id="um_fonticons_fa-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/select2/select2.min.css?ver=4.0.13" id="select2-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/um-crop.css?ver=2.4.0" id="um_crop-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/um-modal.css?ver=2.4.0" id="um_modal-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/um-styles.css?ver=2.4.0" id="um_styles-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/um-profile.css?ver=2.4.0" id="um_profile-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/um-account.css?ver=2.4.0" id="um_account-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/um-misc.css?ver=2.4.0" id="um_misc-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/um-fileupload.css?ver=2.4.0" id="um_fileupload-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/pickadate/default.css?ver=2.4.0" id="um_datetime-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/pickadate/default.date.css?ver=2.4.0" id="um_datetime_date-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/pickadate/default.time.css?ver=2.4.0" id="um_datetime_time-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/um-raty.css?ver=2.4.0" id="um_raty-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/simplebar.css?ver=2.4.0" id="um_scrollbar-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/um-tipsy.css?ver=2.4.0" id="um_tipsy-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/um-responsive.css?ver=2.4.0" id="um_responsive-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/css/um-old-default.css?ver=2.4.0" id="um_default_css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CNunito+Sans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=auto&amp;ver=b8bff64a5cffc36ef70ca689f0f31088" id="google-fonts-1-css" media="all" rel="stylesheet" type="text/css"/>
+<script id="jquery-js" src="https://urbiotica.com/wp-includes/js/jquery/jquery.js" type="text/javascript"></script>
+<script id="wpml-cookie-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"\/"}};
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"\/"}};
+/* ]]> */
+</script>
+<script id="wpml-cookie-js" src="https://urbiotica.com/wp-content/plugins/sitepress-multilingual-cms/res/js/cookies/language-cookie.js?ver=4.5.7" type="text/javascript"></script>
+<script id="jquery-elementor-widgets-js" src="https://urbiotica.com/wp-content/plugins/wp-file-download/app/includes/elementor/assets/js/jquery.elementor.widgets.js?ver=5.5.3" type="text/javascript"></script>
+<script id="wpdm-front-bootstrap-js" src="https://urbiotica.com/wp-content/plugins/download-manager/assets/bootstrap/js/bootstrap.bundle.min.js?ver=b8bff64a5cffc36ef70ca689f0f31088" type="text/javascript"></script>
+<script id="wpdm-frontjs-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var wpdm_url = {"home":"https:\/\/urbiotica.com\/en\/","site":"https:\/\/urbiotica.com\/","ajax":"https:\/\/urbiotica.com\/wp-admin\/admin-ajax.php"};
+var wpdm_js = {"spinner":"<i class=\"fas fa-sun fa-spin\"><\/i>"};
+/* ]]> */
+</script>
+<script id="wpdm-frontjs-js" src="https://urbiotica.com/wp-content/plugins/download-manager/assets/js/front.js?ver=6.1.5" type="text/javascript"></script>
+<script id="wpfd-modal-js" src="https://urbiotica.com/wp-content/plugins/wp-file-download/app/admin/assets/js/jquery.leanModal.min.js?ver=b8bff64a5cffc36ef70ca689f0f31088" type="text/javascript"></script>
+<script id="wpfd-elementor-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var wpfd_elemetor_vars = {"dir":"https:\/\/urbiotica.com\/wp-content\/plugins\/wp-file-download\/"};
+/* ]]> */
+</script>
+<script id="wpfd-elementor-js" src="https://urbiotica.com/wp-content/plugins/wp-file-download/app/includes/elementor/assets/js/jquery.elementor.js?ver=b8bff64a5cffc36ef70ca689f0f31088" type="text/javascript"></script>
+<script id="um-gdpr-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/um-gdpr.min.js?ver=2.4.0" type="text/javascript"></script>
+<link href="https://urbiotica.com/en/wp-json/" rel="https://api.w.org/"/><link href="https://urbiotica.com/en/wp-json/wp/v2/pages/6276" rel="alternate" type="application/json"/><link href="https://urbiotica.com/en/?p=6276" rel="shortlink"/>
+<link href="https://urbiotica.com/en/wp-json/oembed/1.0/embed?url=https%3A%2F%2Furbiotica.com%2Fen%2Fprivacy-policy%2F" rel="alternate" type="application/json+oembed"/>
+<link href="https://urbiotica.com/en/wp-json/oembed/1.0/embed?url=https%3A%2F%2Furbiotica.com%2Fen%2Fprivacy-policy%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+<meta content="WPML ver:4.5.7 stt:1,2;" name="generator"/>
+<style type="text/css">
+			.um_request_name {
+				display: none !important;
+			}
+		</style>
+<style>.cmplz-hidden{display:none!important;}</style><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><link href="http://gmpg.org/xfn/11" rel="profile"/><link href="https://urbiotica.com/xmlrpc.php" rel="pingback"/><noscript><style>.lazyload[data-src]{display:none !important;}</style></noscript><style>.lazyload{background-image:none !important;}.lazyload:before{background-image:none !important;}</style><meta content="Powered by Slider Revolution 6.5.24 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." name="generator">
+<link href="https://urbiotica.com/wp-content/uploads/2022/03/cropped-bravatar_urbiotica_02-32x32.png" rel="icon" sizes="32x32">
+<link href="https://urbiotica.com/wp-content/uploads/2022/03/cropped-bravatar_urbiotica_02-192x192.png" rel="icon" sizes="192x192">
+<link href="https://urbiotica.com/wp-content/uploads/2022/03/cropped-bravatar_urbiotica_02-180x180.png" rel="apple-touch-icon"/>
+<meta content="https://urbiotica.com/wp-content/uploads/2022/03/cropped-bravatar_urbiotica_02-270x270.png" name="msapplication-TileImage">
+<script>function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+				try {
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+					if(e.layout==="fullscreen" || e.l==="fullscreen")
+						newh = Math.max(e.mh,window.RSIH);
+					else{
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,
+							sl;
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}
+			//});
+		  };</script>
+<style id="wp-custom-css" type="text/css">
+			.login #login_error, .login .message, .login .success, body.login {
+	color: #1d292f!important;
+}
+/*Search results*/
+.search .site-main {
+	display: grid!important;
+}
+.search-results .post-summary {
+	margin-bottom: 60px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #2fb4e9;
+}
+.search-results .post-summary__title a {
+	display: inline-block;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 300;
+}
+.search-results .post-summary__image {
+	display: none;
+}
+.search-results .entry-category a {
+	color: #2fb4e9;
+}
+/*Download*/
+.w3eden {
+	text-align: center;
+}
+.w3eden .text-center, .modal-icon {
+	display: none!important;
+}
+.page-template-default .w3eden .btn-primary, .page-template-default .w3eden .btn {
+	text-align: center;
+	margin: 0 auto;
+	background-color: #FFF;
+	color: #FFF;
+  border-color: #55595c;
+	text-transform: capitalize!important;
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 600 !important;
+  padding: 7px 20px;
+  text-decoration: none;
+  margin-top: 10px;
+	box-shadow: none; 
+	letter-spacing: 0.8px;
+	font-size: 13px;
+	font-weight: 400;
+}
+.w3eden .btn-primary:hover, .w3eden .btn:hover {
+	background-color: #E1E1E1;
+	color: #FFF;
+	box-shadow: none;
+}
+.w3eden .btn-primary, .w3eden .btn {
+  border-radius: 4px;
+	border: none;
+	text-transform: none;
+  text-decoration: none;
+}
+.w3eden .btn-primary {
+	background: linear-gradient(180deg, #3bc6fe 0%, #2f85a8 100%)!important;
+}
+.w3eden .btn-primary:hover {
+	background: linear-gradient(180deg, #2fb4e9 0%, #214b5d 100%)!important;
+}
+.w3eden .btn-primary a {
+	font-family: "Nunito Sans", sans-serif;
+	font-size: 16px;
+  line-height: 22px;
+  font-weight: 300;
+	padding: 7px 20px;
+	background: linear-gradient(180deg, #3bc6fe 0%, #2f85a8 100%)!important;
+	color: #FFF!important;
+}
+.w3eden .btn-primary a:hover, .w3eden .btn a:hover {
+	background: linear-gradient(180deg, #2fb4e9 0%, #214b5d 100%)!important;
+}
+@media (min-width: 768px) {
+.header-parent-solutions .wrap .parent-download .download-image {
+    top: 0px;
+}
+}
+#content a.wpdm-download-link:link {
+    color: red;
+}
+#wpdm_submit_6284b2a4058f1_7867 {
+	background: linear-gradient(180deg, #3bc6fe 0%, #2f85a8 100%)!important;
+	font-family: "Nunito Sans", sans-serif!important;
+	font-size: 18px!important;
+  line-height: 22px!important;
+  font-weight: 300!important;
+	padding: 7px 20px!important;
+	text-transform: none!important;
+}
+/*Download pages*/
+.page-template-template-solutions .w3eden .btn-primary, .page-template-template-solutions .w3eden .btn, .page-template-template-products .w3eden .btn-primary, .page-template-template-products .w3eden .btn {
+	background: none;
+	border: none;
+	text-transform: capitalize!important;
+  border: none!important;
+  font-size: 18px;
+  line-height: 16px;
+  font-weight: 600 !important;
+  padding: 0px;
+  text-decoration: none;
+  margin-top: 0px;
+	box-shadow: none; 
+	letter-spacing: 0!important;
+}
+.header-parent-solutions .download-icon, .header-parent-products .download-icon {
+   margin-right: 10px;
+}
+.download-catalogue {
+	display: flex;
+  flex-direction: row;
+  justify-content: center;
+	align-items: center;
+	max-width: 200px;
+	margin: 0 auto 20px auto;
+}
+.download-text {
+	color: #fff;
+  font-size: 18px;
+  line-height: 16px;
+}
+.header-parent-solutions .wrap .parent-download a, .header-parent-products .wrap .parent-download a {
+	margin-left: 0px;
+}
+.header-parent-solutions .wrap .parent-download a, .header-parent-products .wrap .parent-download a {
+	justify-content: center;
+	background: linear-gradient(180deg, #3bc6fe 0%, #2f85a8 100%);
+	width: auto;
+	display: inline-block;
+	padding: 10px 25px;
+}
+.header-parent-solutions .wrap .parent-download a:hover, .header-parent-products .wrap .parent-download a:hover {
+	background: linear-gradient(180deg, #2fb4e9 0%, #214b5d 100%);
+}
+/*Download datasheet*/
+.download-datasheet {
+	border: 2px solid #2FB4E9;
+  border-radius: 10px;
+  max-width: 180px;
+  padding: 5px 10px 5px 56px;
+  text-align: left;
+}
+.download-datasheet .download-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start; 
+	color: #2FB4E9;
+	text-decoration: none;
+  display: block;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 600;
+  position: relative;
+}
+.single-hardware-products .w3eden {
+	text-align: left;
+}
+.single-hardware-products .w3eden .btn-primary, .single-hardware-products .w3eden .btn {
+	color: #2FB4E9;
+	background: none!important;
+	border: none;
+	text-transform: capitalize!important;
+  border: none!important;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 600 !important;
+  padding: 0px;
+  text-decoration: none;
+  margin-top: 0px;
+	box-shadow: none; 
+	letter-spacing: 0!important;
+}
+.download-datasheet .download-text:before {
+	content: "";
+  background-image: url(/wp-content/uploads/2021/10/download-icon-2.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: -43px;
+  top: 0;
+}
+.download-datasheet:hover {
+  background-color: #2FB4E9;
+}
+.download-datasheet:hover .w3eden .btn, .download-datasheet:hover .w3eden .btn-primary, .download-datasheet:hover .download-text {
+	color: #FFF;
+}
+.download-datasheet:hover .download-text:before {
+	background-image: url(/wp-content/uploads/2021/10/Icon-download.svg);
+}
+/*Login*/
+body.login {
+	background: #225970!important;
+}
+/*Excepcin Parkctrl*/
+.postid-2436 .features-product-container .wrap .features .feature:before, .postid-6488 .features-product-container .wrap .features .feature:before {
+	content: "";
+	background: none;
+	display: none;
+}
+.image-parkctrl {
+	height: 400px;
+	width: auto;
+	margin: 0 auto;
+}
+/*Resultado buscador*/
+.search .breadcrumb {
+	display: none;
+}
+.search .site-main {
+	display: flex;
+}
+.search .entry-header, .search .archive-description {
+	/*max-width: none;*/
+	/*width: 100vw;*/
+	/*margin: 0 auto;*/
+	background-color: #ECF8FD;
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 40px;
+}
+.search .entry-header h1, .search .archive-description h1 {
+	color: #20292e;
+	font-weight: 600;
+	font-size: 26px;
+	line-height: 26px;
+}
+.no-results .entry-content {
+	text-align: center;
+}
+.search .post-summary .post-summary__image {
+	height: 180px;
+}
+.search .post-summary img {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
+.search .pagination {
+	margin-bottom: 40px;
+}
+.search .site-inner ul li {
+	margin-left: 0;
+}
+.search .site-inner ul li:before {
+	content: "";
+	display: none;
+}
+/*General*/
+b, strong {
+	font-weight: 700;
+}
+.site-footer {
+	width: 100%;
+}
+.alignfull-elementor {
+	padding: 0!important;
+}
+.elementor-page .site-inner {
+    padding: 103px 0 0 0;
+}
+.legal-text a {
+	color: #2fb4e9;
+}
+@media (max-width: 769px) {
+.elementor-page .site-inner {
+    padding: 0px 0 0 0!important;
+}
+}
+.single-post .content-area {
+	max-width: 900px!important;
+	margin: 0 auto;
+}
+.single-post .site-container {
+    margin-bottom: 80px;
+}
+
+/*Header*/
+@media (min-width: 769px) {
+.title-area {
+    max-width: 125px;
+}
+.nav-menu {
+    width: calc(100% - 125px);
+}
+}
+
+/* Menú - Productos - Control */
+#mega-menu-item-2443, #mega-menu-item-6702 {
+	max-width: 210px!important;
+}
+
+/*Nuestros productos Fastprk*/
+.our-products .products .product .product-img {
+	height: 260px;
+}
+.our-products .products .product .product-img img {
+	height: 100%;
+}
+
+/*How it works solution*/
+.how-it-works-container {
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.how-it-works-container .functions-container .functions {
+    margin-bottom: 0px; 
+}
+@media (min-width: 769px) {
+}
+@media (min-width: 992px) {
+	.how-it-works-container {
+			flex-wrap: nowrap;
+	}
+	.how-it-works-container .functions-container {
+    width: calc(100% - 40px);
+    padding: 30px 50px;
+    margin: 0 auto;
+    width: 47%;
+		margin-left: 20px;
+}
+}
+
+/*Header productos y soluciones y descargar catálogo*/
+.header-parent-products, .header-single-products {
+	background-color: rgba(0,0,0,0.4)!important;
+	background-blend-mode: multiply;
+}
+.header-parent-solutions, .header-single-solutions {
+	background-color: rgba(255,255,255,0.4)!important;
+	background-blend-mode: lighten;
+}
+@media (min-width: 769px) {
+	.header-parent-products, .header-single-products {
+	background-color: rgba(0,0,0,0)!important;
+}
+	.header-parent-solutions, .header-single-solutions {
+	background-color: rgba(255,255,255,0)!important;
+}
+.header-parent-products .wrap .parent-download .download-image, .header-parent-solutions .wrap .parent-download .download-image {
+    margin: 0 auto;
+}
+}
+
+/* Más proyectos que han confiado en Fastprk */
+.success-stories-container {
+	margin-top: 50px;
+}
+
+/* Diseña la solución a tu medida */
+.products-section .products-3 .product:nth-child(3) .product-image, .products-section .unique-product .product-image {
+	height: 100%;
+	max-width: 400px;
+}
+.products-section .products-3 .product:nth-child(3) .product-image img, .products-section .unique-product .product-image img {
+	height: 100%!important;
+	object-fit: cover;
+}
+
+/*How it works product*/
+.how-it-works-product-container {
+    flex-wrap: wrap;
+}
+.how-it-works-product-container .how-it-works-info {
+    width: 100%;
+}
+.how-it-works-product-container .how-it-works-info .how-it-works-title {
+    font-size: 30px;
+    line-height: 36px;
+}
+.how-it-works-product-container .how-it-works-info .how-it-works-text {
+    font-size: 22px;
+    line-height: 28px;
+}
+.how-it-works-product-container .how-it-works-info .how-it-works-text-2 {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+@media (min-width: 769px) {
+.how-it-works-product-container {
+        flex-wrap: nowrap;
+}
+ .how-it-works-product-container .how-it-works-info {
+    width: calc(100% - 40px);
+    padding: 80px 50px 80px 0px;
+    width: 47%;
+}
+.how-it-works-product-container .how-it-works-info .how-it-works-title {
+    font-size: 30px;
+    line-height: 32px;
+}
+.how-it-works-product-container .how-it-works-info .how-it-works-text {
+    font-size: 22px;
+    line-height: 26px;
+}
+ .how-it-works-product-container .how-it-works-info .how-it-works-text-2 {
+    font-size: 20px;
+    line-height: 28px;
+}
+}
+@media (min-width: 992px) {
+    .how-it-works-product-container .how-it-works-info .how-it-works-title {
+    font-size: 34px;
+    line-height: 36px;
+}
+    .how-it-works-product-container .how-it-works-info .how-it-works-text {
+    font-size: 28px;
+    line-height: 32px;
+}
+}
+
+.uses-section .uses-container .use .single-product-container .use-product .use-product-image {
+    width: 100%;
+}
+@media (min-width: 376px) {
+	.uses-section .uses-container .use .single-product-container .use-product .use-product-image {
+    width: 46%;
+}
+}
+@media (min-width: 769px) {
+.uses-section .uses-container .use .single-product-container .use-product .use-product-image {
+    height: 350px;
+		width: 30%;
+}
+}
+
+/* Home */
+.circle-image img {
+	position: relative;
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+	object-fit: cover;
+  border: 4px solid #2FB4E9;
+}
+.circle-image img:before{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 230px;
+	height: 230px;
+	background-image: url("/wp-content/uploads/2021/10/Project-decor-dot.svg")
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+@media (min-width: 769px) {
+	.circle-image img {
+	height: 150px;
+	width: 150px;
+}
+.circle-image img:before{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 180px;
+	height: 180px;
+	background-image: url("/wp-content/uploads/2021/10/Project-decor-dot.svg")
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+}
+@media (min-width: 992px) {
+	.circle-image img {
+	position: relative;
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+	object-fit: cover;
+  border: 4px solid #2FB4E9;
+}
+.circle-image img:before{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 230px;
+	height: 230px;
+	background-image: url("/wp-content/uploads/2021/10/Project-decor-dot.svg")
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+}
+
+/*How it works image*/
+.how-it-works-container .image-bg, .how-it-works-product-container .image-bg {
+	width: 100%;
+	height: 100%;
+}
+.how-it-works-container .image-bg img, .how-it-works-product-container .image-bg img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	height: 100%;
+}
+@media (min-width: 992px) {
+	.how-it-works-container .image-bg, .how-it-works-product-container .image-bg {
+	width: 53%;
+	height: 100%;
+}
+	.how-it-works-container .image-bg img, .how-it-works-product-container .image-bg img {
+	height: 560px;
+}
+}
+/*How it works video*/
+.wp-video {
+    width: 100%!important;
+}
+.mejs-video {
+    margin-right: auto;
+}
+.wp-video .mejs-container .mejs-controls {
+   visibility: hidden;
+}
+.mejs-container:hover .mejs-controls {
+     visibility: visible;
+}
+@media (min-width: 769px) {
+.wp-video {
+    width: 53%!important;
+}
+}
+
+/*Carrusel casos éxito*/
+.projects-container .projects-inner .projects .project .project-info .project-title a {
+	color: #fff;
+	text-decoration: none;
+}
+.projects-container .projects-inner .projects {
+    justify-content: center!important;
+}
+.owl-carousel .owl-stage {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.othersolutions-product-container {
+	margin-bottom: 0px;
+}
+/*Solution Products 3 boxes*/
+.products-section .products-3 {
+    background: none;
+}
+.products-section .products-3 .product {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.products-section .products-3 .product:nth-child(3) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+}
+.products-section .products-3 .product:nth-child(3) .product-image {
+    width: 100%;
+}
+@media (min-width: 769px) {
+.products-section .products-3 {
+    background-color: #CFEAF5;
+}
+.products-section .products-3 .product {
+    margin-top: -60px;
+    margin-bottom: 22px;
+}
+.products-section .products-3 .product:nth-child(3) {
+    flex-direction: row;
+    margin-top: 0px;
+    margin-bottom: -60px;
+    width: 100%;
+    align-items: flex-end;
+}
+.products-section .products-3 .product:nth-child(3) .product-image {
+    width: 100%;
+}
+    
+.products-section .products-3 .product:nth-child(3) .product-content {
+    padding: 30px 40px;
+}
+}
+	
+/*Screenshots*/
+.screenshot-content ul li:before {
+	  display: block;
+    position: relative;
+    top: initial;
+    left: initial;
+    margin: 0 auto;
+		margin-bottom: 5px;
+}
+
+/*Mega menu*/
+#mega-menu-primary {
+    top: 0px!important;
+    height: 72px;
+}
+#mega-menu-wrap-primary #mega-menu-primary {
+    display: flex;
+  justify-content: flex-end;
+  align-items: center;
+    height: auto;
+}
+#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item {
+    margin: 20px 10px;
+}
+.mega-menu-wrap {
+    height: auto!important;
+}
+.menu-item.search {
+    float: right;
+    margin: 5px;
+    height: 31px;
+}
+.search-toggle svg, .menu-toggle svg {
+    width: 31px;
+    height: 31px;
+    padding: 7px;
+}
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link {
+    height: auto!important;
+    line-height: 17px;
+}
+@media (min-width: 769px) {
+    #mega-menu-primary {
+    top: 0px!important;
+    height: 72px;
+}
+#mega-menu-wrap-primary #mega-menu-primary {
+    display: flex;
+  justify-content: flex-end;
+  align-items: center;
+    height: 72px;
+}
+    #mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item {
+    padding: 0px;
+    margin: 0;
+}
+.mega-menu-wrap {
+    height: 72px!important;
+}
+    .menu-general .mega-sub-menu {
+    padding-right: 200px!important;
+    background-image: url(/wp-content/uploads/2022/01/menu-img.svg)!important;
+    background-repeat: no-repeat!important;
+    background-size: contain!important;
+    background-position: bottom right!important;
+}
+    li.mega-menu-item.mega-menu-megamenu > ul.mega-sub-menu {
+        top: 72px!important;
+    }
+}
+@media (min-width: 769px) {
+.menu-general .mega-sub-menu {
+    padding-right: 200px!important;
+    background-image: url(/wp-content/uploads/2022/02/menu-img_2.svg)!important;
+}
+}
+@media (min-width: 1024px) {
+.menu-general .mega-sub-menu {
+    padding-right: 450px!important;
+}   
+}
+.menu-general .mega-sub-menu .mega-sub-menu {
+    padding-right: 0!important;
+    background-image: none!important;
+}
+    /*Fastprk*/
+.menu-title {
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 100;
+    border-bottom: 1px solid #2FB4E9;
+    padding-bottom: 5px;
+}
+.menu-title span {
+    font-size: 16px;
+    line-height: 20px;
+}
+.mega-menu-item-type-widget {
+    padding-top: 40px!important;
+    padding-bottom: 0px!important;
+    margin-bottom: 0px!important;
+}
+
+    /*Guiado de parking*/
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link {
+    font-weight: 100;
+    line-height: 26px!important; 
+}
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item > a.mega-menu-link:hover {
+    font-weight: 100;
+}
+.mega-menu-item-type-post_type {
+    padding-top: 0px!important;
+}
+.mega-sub-menu .mega-menu-link {
+    padding: 10px 0 15px 0!important;
+}
+    /*Guiado de parking urbano*/
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item li.mega-menu-item > a.mega-menu-link {
+    font-weight: 300;
+}
+.mega-sub-menu .mega-sub-menu .mega-menu-item a {
+    padding: 0!important;
+    margin-left: 6px!important;
+    padding-left: 14px!important;
+    margin-bottom: 5px!important;
+    position: relative;
+}
+.mega-sub-menu .mega-sub-menu .mega-menu-item a::before {
+    content: "";
+    background-image: url(/wp-content/uploads/2022/01/Blue-dot.svg)!important;
+    background-repeat: no-repeat!important;
+    background-size: contain!important;
+    position: absolute!important;
+    top: 9px!important;
+    left: 0px!important;
+    width: 5px!important;
+    height: 5px!important;
+}
+/*Acceso PRO menú*/
+#mega-menu-item-3300 a, #mega-menu-item-6763 a {    
+    padding: 7px 8px!important;
+    color: #E7E9EC!important;
+  background-color: #225970!important;
+    border-radius: 5px!important;
+}
+#mega-menu-item-3300 a:before, #mega-menu-item-6763 a:before {
+    display: inline-block!important;
+    width: 18px!important;
+    height: 18px!important;
+    background-image: url('/wp-content/uploads/2022/02/Icon-awesome-user-alt.svg')!important;
+    background-repeat: no-repeat!important;
+    background-size: contain!important;
+    position: relative!important;
+    content:"";
+    margin-right: 8px!important;
+}
+@media (max-width: 768px) {
+    .mega-menu-item-3300, .mega-menu-item-6763 {
+     
+    margin-left: 20px!important;
+    }
+}
+#mega-menu-wrap-primary #mega-menu-primary li.mega-wpml-ls-item {
+	background-color: #225970;
+  border-radius: 5px;
+  height: 31px;
+  padding: 7px 3px;
+	margin-left: 5px;
+}
+#mega-menu-wrap-primary #mega-menu-primary li.mega-wpml-ls-item a {
+	padding: 0px 5px 0px 5px!important;
+}
+#mega-menu-wrap-primary #mega-menu-primary li.mega-wpml-ls-item:hover a, #mega-menu-wrap-primary #mega-menu-primary li.mega-wpml-ls-item a:hover {
+	background: #225970!important;
+	color: #e7e9ec!important;
+}
+li.mega-wpml-ls-item ul.mega-sub-menu {
+	top: 32px!important;
+}
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-wpml-ls-item {
+	background: none;
+}
+#mega-menu-wrap-primary #mega-menu-primary li.mega-wpml-ls-item ul.mega-sub-menu li.mega-wpml-ls-item {
+    background: none;
+    border-radius: 0px;
+    height: auto;
+    padding: 0;
+    margin-left: 0px;
+}
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-acceso-pro-menu ul.mega-sub-menu, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-wpml-ls-item a.mega-menu-link {
+    background-color: #1D292F!important;
+	padding: 7px 8px!important;
+}
+.mega-sub-menu .mega-wpml-ls-item {
+	margin: 0!important;
+}
+#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item-has-children > a.mega-menu-link > span.mega-indicator:after {
+	margin-left: 1px;
+}
+@media (min-width: 769px) {
+	.mega-wpml-ls-item .mega-sub-menu {
+	background: none!important;
+	width: 40px!important;
+} 
+}
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-flyout ul.mega-sub-menu li.mega-wpml-ls-item a.mega-menu-link span {
+	color: #e7e9ec;
+}
+#mega-menu-item-3300 .mega-sub-menu a, #mega-menu-item-6763 .mega-sub-menu a {
+    padding: 7px 8px!important;
+  color: #e7e9ec!important;
+  background-color: #1D292F!important;
+  border-radius: 0px!important;
+}
+#mega-menu-item-3300 .mega-sub-menu a:before, #mega-menu-item-6763 .mega-sub-menu a:before {
+    content: ""!important;
+    background: none!important;
+}
+/*Menu responsive only screen and*/
+@media only screen and (max-width: 768px) {
+.mega-sub-menu {
+  padding: 0px!important;
+}
+    .menu-title {
+        font-size: 22px;
+        line-height: 33px;
+    }
+	.mega-menu-item-type-widget {
+		display: none!important;
+	}
+    #mega-menu-wrap-primary #mega-menu-primary .mega-sub-menu li.mega-menu-item {
+        margin: 3px 5px;
+    }
+    #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item {
+        padding: 0px!important;
+    }
+    .mega-sub-menu .mega-menu-link {
+    padding: 0px 0 5px 0!important;
+}
+    #mega-menu-wrap-primary .mega-menu-toggle + #mega-menu-primary {
+    background: #1D292F;
+}
+}
+/*Acceso PRO restringido*/
+.acceso-pro-restringido {
+    max-width: 650px;
+    margin: 40px auto;
+    border-radius: 15px;
+    background-color: #214B5D;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-end;
+}
+.acceso-pro-logo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.acceso-pro-logo img {
+    margin: 20px 20px 10px 20px;
+    max-width: 124px;
+}
+.acceso-pro-logo span {
+    color: #E7E9EC;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 200;
+    margin-bottom: 10px;
+    max-width: 120px;
+  margin: 0 auto;
+    text-align: center;
+}
+.acceso-pro-logo a {
+    color: #FFF;
+    background: none;
+    border: 1px solid #FFF;
+    padding: 7px 19px;
+    font-size: 13px;
+    line-height: 17px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+.acceso-pro-logo a:hover {
+    border: 1px solid #2FB4E9;
+    color: #2FB4E9;
+}
+.acceso-pro-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+}
+.acceso-pro-form p {
+    display: none;
+}
+.acceso-pro-title {
+    color: #C8DCE3;
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.acceso-pro-text {
+    color: #E7E9EC;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 200;
+    margin-bottom: 5px;
+}
+.um-postmessage {
+	color: #FFF;
+  background-color: #2fb4e9;
+  padding: 10px;
+  font-size: 14px;
+  line-height: 17px;
+}
+.um-login {
+    margin-bottom: 0px!important;
+}
+.um-row {
+    margin-bottom: 10px!important;
+}
+.um-field {
+    padding: 0px!important;
+}
+.um-field-area {
+    margin-bottom: 10px!important;
+}
+.um-field-label {
+    margin: 0!important;
+}
+.um-field-label label {
+    font-family: "Nunito Sans", sans-serif!important;
+    color: #E7E9EC!important;
+    font-size: 13px!important;
+    line-height: 16px!important;
+    font-weight: 300;
+}
+.um-col-alt-b {
+    padding: 0!important;
+}
+a.um-link-alt {
+    color: #E7E9EC!important;
+    font-size: 14px!important;
+    line-height: 17px!important;
+    font-weight: 300;
+}
+input[type=submit].um-button, input[type=submit].um-button:focus {
+    background: linear-gradient(
+180deg, #3bc6fe 0%, #2f85a8 100%)!important;
+    color: #FFF;
+    font-size: 13px!important;
+    line-height: 17px!important;
+}
+input[type=submit].um-button:hover {
+    background: linear-gradient(
+180deg, #2fb4e9 0%, #214b5d 100%)!important;
+}
+.um-button {
+    padding: 8px 20px !important;
+}
+.um .um-button.um-alt, .um input[type=submit].um-button.um-alt {
+    color: #FFF!important;
+    background: none!important;
+    border: 1px solid #FFF!important;
+    padding: 7px 19px !important;
+    font-size: 13px!important;
+    line-height: 17px!important;
+}
+.uimob340 .um-half {
+    width: 48%!important;
+    float: left;
+}
+.um-left {
+    margin-right: 4%!important;
+}
+@media (max-width: 600px) {
+    .acceso-pro-restringido {
+        flex-direction: column;
+    }
+    .acceso-pro-logo, .acceso-pro-form {
+        width: 100%;
+    }
+}
+/*Acceso PRO*/
+#et-boc .wpfd-content, .wpfd-content {
+    background: none!important;
+}
+.wpfd-container .wpfd-foldertree {
+    border-right: 1px solid #2FB4E9!important;
+}
+#et-boc .wpfd-content-default .wpfd_list .file, .wpfd-content-default .wpfd_list .file {
+    flex-direction: column;
+}
+#et-boc .wpfd-content-default .wpfd_list .file .filecontent, .wpfd-content-default .wpfd_list .file .filecontent {
+    width: 100%!important;
+}
+#et-boc .wpfd-content-default .wpfd_list .file .file-xinfo, .wpfd-content-default .wpfd_list .file .file-xinfo {
+    padding: 10px 5px!important;
+}
+.wpfd-content-default .wpfd_list .file {
+    border-radius: 12px!important;
+}
+#et-boc .wpfd-content-default .wpfd_list .file h3 a, .wpfd-content-default .wpfd_list .file h3 a {
+    color: #888888!iportant;
+    font-family: "Nunito Sans", sans-serif!important;
+    font-weight: 700!important;
+    font-size: 15px!important;
+    line-height: 18px!important;
+}
+#et-boc .wpfd-content-default .wpfd_list .file .file-xinfo .file-size, #et-boc .wpfd-content-default .wpfd_list .file .file-xinfo .file-hits, #et-boc .wpfd-content-default .wpfd_list .file .file-xinfo .file-dated, .wpfd-content-default .wpfd_list .file .file-xinfo .file-size, .wpfd-content-default .wpfd_list .file .file-xinfo .file-hits, .wpfd-content-default .wpfd_list .file .file-xinfo .file-dated {
+    color: #888888!iportant;
+    font-family: "Nunito Sans", sans-serif!important;
+    font-weight: 500!important;
+    font-size: 12px!important;
+    line-height: 13px!important;
+}
+#et-boc .wpfd-content-default .wpfd_list .file .file-right, .wpfd-content-default .wpfd_list .file .file-right {
+     margin-left: 66px!important;
+}
+#et-boc .wpfd-content-default .wpfd_list .file .file-right .downloadlink, .wpfd-content-default .wpfd_list .file .file-right .downloadlink {
+    font-family: "Nunito Sans", sans-serif!important;
+    font-weight: 700!important;
+    font-size: 13px!important;
+    line-height: 13px!important;
+    border: 1px solid #2FB4E9;
+    margin: 10px 0 5px 0!important;
+}
+#et-boc .wpfd-content .downloadlink, .wpfd-content .downloadlink {
+    padding: 7px 5px 5px 5px!important;
+    width: 120px!important;
+}
+#et-boc .wpfd-content-default .filecontent > div.ext[class*=wpfd-icon-set-], .wpfd-content-default .filecontent > div.ext[class*=wpfd-icon-set-] {
+    height: 60px!important;
+  width: 44px!important;
+}
+#et-boc .wpfd-content .wpfdcategory, .wpfd-content .wpfdcategory {
+    height: 40px!important;
+  padding: 10px!important;
+}
+.wpfd-container .wpfd-foldertree ul li {
+    padding-right: 10px!important;
+}
+#et-boc .wpfd-content-default .wpfd-container .wpfd-foldertree ul.jaofiletree .zmdi-folder, #et-boc .wpfd-content-default .wpfd-container .wpfd-foldertree ul.jaofiletree .zmdi-folder-open, #et-boc .wpfd-content-default .wpfd-container .wpfd-foldertree ul.jaofiletree .icon-open-close, .wpfd-content-default .wpfd-container .wpfd-foldertree ul.jaofiletree .zmdi-folder, .wpfd-content-default .wpfd-container .wpfd-foldertree ul.jaofiletree .zmdi-folder-open, .wpfd-content-default .wpfd-container .wpfd-foldertree ul.jaofiletree .icon-open-close {
+    color: #2FB4E9!important;
+}
+#et-boc .wpfd-content .wpfd-container .wpfd-foldertree ul.jaofiletree li.expanded.selected > .zmdi-folder:before, .wpfd-content .wpfd-container .wpfd-foldertree ul.jaofiletree li.expanded.selected > .zmdi-folder:before {
+    background: url(/wp-content/uploads/2022/02/Icon-folder-collapsed.svg) left center no-repeat!important;
+    background-size: contain!important;
+    width: 18px!important;
+  height: 16px!important;
+}
+#et-boc .wpfd-content-default .wpfd-container .wpfd-foldertree ul.jaofiletree li.selected > a, .wpfd-content-default .wpfd-container .wpfd-foldertree ul.jaofiletree li.selected > a {
+    color: #1D292F!important;
+}
+#et-boc .wpfd-content .wpfd-container .wpfd-foldertree ul.jaofiletree li.expanded > .zmdi-folder:before, .wpfd-content .wpfd-container .wpfd-foldertree ul.jaofiletree li.expanded > .zmdi-folder:before {
+    background: url(/wp-content/uploads/2022/02/Icon-folder-parent.svg) left center no-repeat!important;
+    background-size: contain!important;
+    width: 18px!important;
+  height: 16px!important;
+}
+#et-boc .wpfd-content-default .wpfd-container .wpfd-foldertree ul.jaofiletree a, .wpfd-content-default .wpfd-container .wpfd-foldertree ul.jaofiletree a {
+    font-family: "Nunito Sans", sans-serif!important;
+    font-weight: 600!important;
+    font-size: 14px!important;
+    line-height: 18px!important;
+    color: #2FB4E9!important;
+    margin-top: 4px;
+}
+.jaofiletree li.directory.selected i {
+    font-size: 20px!important;
+}
+.jaofiletree li.directory.selected > a {
+    margin-top: 0px;
+}
+.jaofiletree .zmdi-folder, .jaofiletree .zmdi-folder-open {
+    font-size: 20px!important;
+}
+#et-boc .wpfd-content-default .wpfd-container .wpfd-foldertree ul.jaofiletree .zmdi-folder, .wpfd-content-default .wpfd-container .wpfd-foldertree ul.jaofiletree .zmdi-folder {
+    margin-right: 5px!important;
+}
+.jaofiletree li:before {
+    content: ""!important;
+}
+@media (max-width: 768px) {
+    .wpfd-container .with_foldertree {
+    flex-basis: 100%!important;
+    max-width: 100%!important;
+}
+}
+    /*Casos de éxito*/
+.mega-menu-item-1865, .mega-menu-item-6746 {
+    border-top: 1px solid #2FB4E9!important;
+    padding-top: 15px!important;
+}
+.mega-menu-item-1865 a, .mega-menu-item-6746 a {
+color: #2FB4E9!important;
+}
+@media (max-width: 768px) {
+    .mega-menu {
+        padding: 20px 0!important;
+    }
+    .menu-item.search {
+        display: none;
+    }
+    #mega-menu-primary {
+    top: -1px!important;
+}
+    #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item, #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item {
+        padding-top: 0!important;
+    }
+    .mega-sub-menu .mega-sub-menu .mega-menu-item a {
+        margin-bottom: 0px!important;
+    }
+    .mega-sub-menu .mega-menu-link {
+            padding: 10px 0 5px 0!important;
+    }
+	.mega-menu-item-3300 {
+    width: 172px!important;
+}
+}
+
+/*Casos de éxito thumbnail*/
+.casos .elementor-posts .elementor-post__card .elementor-post__thumbnail img {
+    width: auto;
+}
+/*Recursos*/
+.featured-single-noticias {
+	width: 100%;
+	height: 400px;
+	margin: 0 auto;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.entradas .elementor-posts .elementor-post__card .elementor-post__thumbnail img {
+    height: 100%;
+}
+.entradas .elementor-posts--thumbnail-top .elementor-post__thumbnail__link:hover:after {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #2FB4E9;
+}
+.entradas .facetwp-checkbox {
+    color: #1D292F80;
+    font-family: "Nunito sans", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    padding: 5px 5px 3px 20px;
+    background-color: #FFF;
+    background-image: url(/wp-content/uploads/2022/01/facet-unchecked.svg)!important;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    background-position: left;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.entradas .facetwp-checkbox.checked {
+    background-image: url(/wp-content/uploads/2022/01/facet-checked.svg)!important;
+}
+/*Single*/
+.single-post .entry-title {
+  font-size: 22px;
+  line-height: 32px;
+  color: #1D292F;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-weight: 700;
+}
+.single-post .entry-content p {
+	font-size: 16px;
+  line-height: 28px;
+  color: #1D292F;
+  font-weight: 300;
+}
+.single-post .entry-content h2, .single-post .entry-content h3, .single-post .entry-content h2 strong, .single-post .entry-content h3 strong {
+	font-size: 24px;
+  line-height: 26px;
+  color: #2FB4E9;
+  font-weight: 500;
+}
+.single-post .entry-content h4, .entry-content h4 strong {
+	font-size: 22px;
+  line-height: 24px;
+  color: #1D292F;
+  font-weight: 500;
+}
+.single-post .entry-content h5, .single-post .entry-content h5 strong {
+	font-size: 18px;
+  line-height: 20px;
+  color: #2FB4E9;
+  font-weight: 400;
+}
+.single-post .entry-content a {
+	color: #2FB4E9;
+}
+.single-post .entry-content h1 a, .single-post .entry-content h3 a, .single-post .entry-content h4 a {
+	text-decoration: none;
+	color: #1D292F;
+}
+.single-post .entry-content h2 a, .single-post .entry-content h5 a {
+	color: #2FB4E9;
+	text-decoration: none;
+}
+@media (min-width: 769px) {
+.single-post .entry-title {
+  font-size: 30px;
+  line-height: 41px;
+}
+}
+/*Paginación*/
+.entradas .page-numbers {
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+    vertical-align: center;
+    text-align: center;
+    border: 1px solid #CACFD9;
+    border-radius: 50%;
+    padding: 4px 8px;
+    line-height: 19px;
+}
+.entradas .current {
+    border: 1px solid #2FB4E9;
+    background-color: #2FB4E929;
+}
+.entradas .page-numbers:hover {
+    border: 1px solid #2FB4E9;
+}
+/*Facet WP*/
+.facetwp-counter, .facetwp-expand {
+    display: none;
+}
+.facetwp-checkbox, .checked {
+    color: #1D292F80;
+    font-size: 15px;
+    line-height: 22px;
+    font-family: "Nunito Sans", sans-serif; 
+    font-weight: 400;
+}
+.checked {
+    font-weight: 700;
+}
+/*Casos éxito*/
+.casos .elementor-posts .elementor-post__card .elementor-post__thumbnail img {
+    height: 100%;
+}
+.casos .elementor-posts--thumbnail-top .elementor-post__thumbnail__link:hover:after {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #2FB4E9;
+}
+.casos .facetwp-checkbox, .casos .facetwp-checkbox.checked {
+    color: #2FB4E9;
+    font-family: Helvetica, sans-serif;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 400;
+    background: none;
+    background-color: #2FB4E917;
+    padding: 2px 5px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+		pointer-events: none;
+}
+.casos .facetwp-depth .facetwp-depth {
+	margin-left: 20px;
+}
+.casos .facetwp-depth .facetwp-checkbox {
+    color: #1D292F80;
+    font-family: "Nunito sans", sans-serif;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    padding: 5px 5px 3px 20px;
+    background-color: #FFF;
+    background-image: url(/wp-content/uploads/2022/01/facet-unchecked.svg)!important;
+    background-repeat: no-repeat;
+    background-size: 13px;
+    background-position: left;
+    margin-bottom: 0px;
+    margin-top: 0px;
+		pointer-events: auto;
+}
+.casos .facetwp-depth .facetwp-checkbox.checked {
+    background-image: url(/wp-content/uploads/2022/01/facet-checked.svg)!important;
+}
+/*Buscador partners*/
+.mapa-partners .elementor-widget-container {
+	overflow: hidden;
+}
+.map-multi-marker #infobulle .contact-list li {
+	margin-left: 5px!important;
+}
+/*Buscador partners old*/
+.wpsl-filter {
+	background: none;
+}
+#wpsl-search-wrap form {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+}
+#wpsl-search-wrap form label, #wpsl-search-wrap .wpsl-input label {
+	display: none;
+}
+#wpsl-search-wrap input {
+	border-radius: 0px;
+	outline: none;
+}
+#wpsl-search-input {
+	width: 350px!important;
+}
+#wpsl-search-btn {
+	color: #fff;
+  background: linear-gradient(180deg, #3bc6fe 0%, #2f85a8 100%);
+	font-family: Roboto, sans-serif;
+	font-weight: 400;
+	font-size: 17px;
+  line-height: 23px;
+  font-weight: 300;
+  border-radius: 4px!important;
+  padding: 7px 20px;
+	border: none!important;
+	box-shadow: none;
+}
+#wpsl-search-btn:hover {
+	background: linear-gradient(180deg, #2fb4e9 0%, #214b5d 100%);
+}
+.wpsl-selected-item:after {
+	background-image: url(/wp-content/uploads/2022/02/arrow-down.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+  right: 12px;
+  top: 50%;
+	width: 12px;
+	height: 12px;
+  border: none;
+}
+#wpsl-gmap {
+	border: 2px solid #FFF;
+	border-radius: 12px;
+}
+#wpsl-stores {
+	background-color: #FFF;
+	border-radius: 12px;
+	padding: 10px 15px;
+}
+#wpsl-wrap #wpsl-result-list li {
+	border: none;
+}
+.wpsl-store-location p {
+	margin-bottom: 10px!important;
+	font-weight: 400;
+	color: #333;
+	line-height: 17px;
+}
+.wpsl-store-location p strong {
+	color: #2FB4E9;
+	font-size: 19px;
+	line-height: 21px;
+	font-family: "Nunito Sans", sans-serif;
+	font-weight: 700;
+	border-bottom: 1px solid #2FB4E9;
+	width: 100%;
+	display: block;
+	margin-bottom: 10px;
+}
+.wpsl-store-location p span {
+	padding-left: 25px;
+}
+.wpsl-street {
+	position: relative;
+}
+.wpsl-street:before {
+	content: "";
+ 	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: -2px;
+	left: 0px;
+	background-image: url(/wp-content/uploads/2022/02/map-pin.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.wpsl-contact-details span {
+	margin-bottom: 10px!important;
+	color: #333;
+	position: relative;
+}
+.wpsl-contact-details span:before {
+	content: "";
+ 	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: -2px;
+	left: 0px;
+	background-image: url(/wp-content/uploads/2022/02/map-pin.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.wpsl-contact-details span {
+	margin-bottom: 10px!important;
+	color: #333;
+	position: relative;
+}
+.wpsl-contact-details span:first-child:before {
+	background-image: url(/wp-content/uploads/2022/02/map-phone.svg);
+	width: 15px;
+	height: 15px;
+}
+.wpsl-contact-details span:nth-child(2):before {
+	background-image: url(/wp-content/uploads/2022/02/map-mail.svg);
+	width: 18px;
+	height: 18px;
+	top: 0px;
+}
+.wpsl-contact-details span, .wpsl-contact-details span strong {
+	color: #333333;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 17px;
+	font-family: "Nunito Sans", sans-serif;
+	border-bottom: none;
+	width: auto;
+	display: inline;
+	margin-bottom: 0px;
+}
+.wpsl-direction-wrap {
+	padding-left: 25px;
+}
+.wpsl-directions {
+	color: #2FB4E9;
+	text-decoration: underline!important;;
+}
+.wpsl-dropdown {
+	width: 110px!important;
+}
+@media (max-width: 768px) {
+	#wpsl-search-wrap form {
+		flex-wrap: wrap;
+	}
+	.wpsl-search-btn-wrap {
+		display: block;
+		float: none;
+	}
+	#wpsl-search-input {
+		width: 100%!important;
+	}
+	#wpsl-radius, #wpsl-results, .wpsl-select-wrap, #wpsl-category, #wpsl-search-wrap .wpsl-dropdown {
+		width: 100%!important;
+		margin-right: 0px!important;
+	}
+	.wpsl-input {
+		margin-right: 0px!important;
+	}
+}
+@media (max-width: 900px) {
+	#wpsl-gmap, #wpsl-result-list {
+    float: none;
+    width: 100%;
+	}
+	#wpsl-gmap {
+    margin-bottom: 15px;
+	}
+}
+/*Prefooter*/
+.footer-widgets .wrap-prefooter .prefooter .social-footer a {
+	color: #f7f7f7!important;
+}
+/*Footer widgets*/
+.site-footer {
+	margin: 0;
+}
+.wrap-widgets {
+    display: flex!important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-top: 1px solid #2FB4E933;
+    padding-top: 30px;
+    margin-top: 10px;
+    background-color: #1D292F99;
+}
+@media (min-width: 767px) {
+    .wrap-widgets {
+        background: none;
+    }
+}
+.wrap-widgets p.footer-category {
+    color: #2FB4E9;
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 100;
+    border-bottom: 1px solid #2FB4E999;
+    padding-bottom: 7px;
+    margin-bottom: 10px;
+}
+.wrap-widgets p.footer-category span {
+    font-size: 15px;
+    line-height: 18px;
+    display: block;
+    margin-top: 3px;
+}
+.wrap-widgets p {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 300;
+    color: #E7E9EC;
+    margin-bottom: 5px;
+}
+#casos {
+    border-top: 1px solid #2FB4E999;
+    padding-top: 35px;
+}
+.wrap-widgets h4, .wrap-widgets h4 a {
+    color: #2FB4E9;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700;
+}
+.wrap-widgets h5, .wrap-widgets h5 a {
+    color: #2FB4E9;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 100;
+}
+.wrap-widgets h5 a:hover {
+    color: #E7E9EC;
+}
+.wrap-widgets ul li {
+    border: none;
+    margin-bottom: 5px;
+}
+.wrap-widgets ul li a {
+    display: block;
+    color: #E7E9EC;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 100;
+    padding: 0!important;
+    margin-left: 6px!important;
+    padding-left: 14px!important;
+    margin-bottom: 0px!important;
+    position: relative;
+}
+.wrap-widgets ul li.blue-link-footer a {
+    color: #2FB4E9;
+    border-top: 1px solid #2FB4E999;
+    padding-top: 5px!important;
+}
+.wrap-widgets ul li a:hover {
+    font-weight: 700;
+}
+.wrap-widgets ul li a::before {
+    content: "";
+    background-image: url(/wp-content/uploads/2022/01/Blue-dot.svg)!important;
+    background-repeat: no-repeat!important;
+    background-size: contain!important;
+    position: absolute!important;
+    top: 7px!important;
+    left: 0px!important;
+    width: 5px!important;
+    height: 5px!important;
+}
+.wrap-widgets ul li.blue-link-footer a:before {
+    top: 12px!important;
+}
+.wrap-widgets .footer-section {
+    width: 100%;
+}
+.footer-widgets-1, .footer-widgets-2, .footer-widgets-3, .footer-widgets-4 {
+    width: 100%!important;
+}
+@media (min-width: 767px) {
+    .wrap-widgets .footer-section {
+        width: 47%!important;
+    }
+}
+@media (min-width: 992px) {
+    .wrap-widgets .footer-section {
+        width: 22%!important;
+    }
+}
+.newsletter-form {
+	position: relative;
+}
+.newsletter-form input[type="text"], .newsletter-form input[type="email"], .newsletter-form input[type="text"]:focus, .newsletter-form input[type="email"]:focus {
+    background-color: #E7E9EC;
+    border: 1px solid #1D292F80;
+}
+.newsletter-form ::-webkit-input-placeholder { /* WebKit browsers */
+    color: #1D292F !important;
+    opacity: 0.5;
+    font-size: 14px;
+}
+.newsletter-form :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #1D292F !important;
+    opacity: 0.5;
+    font-size: 14px;
+}
+.newsletter-form ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #1D292F !important;
+    opacity: 0.5;
+    font-size: 14px;
+}
+.newsletter-form :-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #1D292F !important;
+  opacity: 0.5;
+    font-size: 14px;
+}
+.newsletter-form .acceptance-legal-accept .wpcf7-list-item label input[type="checkbox"] + span:before {
+    background-color: #E7E9EC;
+    border-radius: 3px;
+}
+.newsletter-form .acceptance-legal-accept .wpcf7-list-item label .wpcf7-list-item-label {
+    font-size: 12px;
+    font-weight: 300;
+}
+.newsletter-form .acceptance-legal-accept .wpcf7-list-item label .wpcf7-list-item-label a {
+    font-size: 12px;
+    color: #2FB4E9;
+    text-decoration: underline;
+    font-weight: 300;
+}
+.newsletter-form .acceptance-legal-accept .wpcf7-list-item label .wpcf7-list-item-label a:hover {
+    color: #E7E9EC;
+}
+.newsletter-form input[type=submit] {
+    color: #fff;
+  background: #3bc6fe;
+  background: linear-gradient(
+180deg, #3bc6fe 0%, #2f85a8 100%);
+    border: none;
+    font-size: 16px;
+  line-height: 23px;
+  font-weight: 300;
+  border-radius: 4px;
+  padding: 7px 20px;
+  text-decoration: none;
+    margin-top: 10px;
+}
+.newsletter-form input[type=submit]:hover {
+     background: linear-gradient(
+180deg, #2fb4e9 0%, #214b5d 100%);
+}
+/*Contacto*/
+.contacto {
+    position: relative;
+}
+.contacto .elementor-background-overlay {
+    background-image: url(/wp-content/uploads/2022/01/dot-line-child.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    left: calc(50% - 10px);
+  width: 20px;
+  height: 50px;
+    z-index: 100;
+}
+.responsive-form:first-child {
+    padding-right: 20px;
+}
+.responsive-form .form-row {
+    width: 100%;
+}
+.responsive-form .form-row .column-full {
+    float: left;
+    width: 100%;
+}
+.responsive-form .form-row .column-half {
+    float: left;
+    width: 48%;
+}
+@media (max-width: 500px) {
+    .responsive-form .form-row .column-half {
+    width: 100%;
+}
+}
+.responsive-form .form-row .column-half:first-child {
+    margin-right: 4%;
+}
+@media (max-width: 400px) {
+    .responsive-form .form-row .column-half:first-child {
+    margin-right: 0px!important;
+}
+}
+.responsive-form p {
+    margin-bottom: 5px;
+    font-size: 15px;
+    line-height: 20px;
+}
+.responsive-form label {
+    float: left;
+    width: 100%;
+    margin-bottom: 0px;
+}
+.responsive-form input[type="text"], .responsive-form  input[type="email"], .responsive-form  input[type="tel"], .responsive-form input[type="file"] {
+    border-radius: 0px;
+    background-color: #FFF;
+    border: 1px solid #E0E0E0;
+    width: 100%;
+    float: left;
+    margin: 0px!important;
+    margin-bottom: 15px!important;
+    margin-top: 5px!important;
+    padding: 10px 10px;
+    outline: none;
+    font-size: 14px;
+    line-height: 16px;
+}
+.responsive-form textarea {
+    border-radius: 0px;
+    margin: 0px;
+    margin-bottom: 5px;
+    padding: 20px 20px;
+    outline: none;
+    height: 150px;
+    border: 1px solid #E0E0E0;
+    background: #FFF;
+}
+.responsive-form input[type="text"]:focus, .responsive-form  input[type="email"]:focus, .responsive-form  input[type="tel"]:focus, .responsive-form input[type="file"]:focus, .responsive-form textarea:focus {
+	border: 1px solid #E0E0E0;
+}
+.responsive-form a {
+    color: #2FB4E9;
+    font-size: 12px;
+}
+.responsive-form .wpcf7-list-item-label {
+    font-size: 12px;
+}
+.responsive-form input[type="submit"] {
+    border: none;
+    width: 140px;
+    display: block;
+    padding: 8px 24px;
+    outline: none;
+    margin: 10px 0px;
+    font-size: 17px;
+  line-height: 23px;
+  font-weight: 300;
+  border-radius: 4px;
+  padding: 7px 20px;
+  text-decoration: none;
+    color: #fff;
+  background: #3bc6fe;
+  background: linear-gradient(
+180deg
+, #3bc6fe 0%, #2f85a8 100%);
+}
+.responsive-form input[type="submit"]:hover {
+    background: linear-gradient(
+180deg
+, #2fb4e9 0%, #214b5d 100%);
+}
+.acceptance-legal-accept {
+    float: left;
+    width: 100%;
+}
+.acceptance-legal-accept .wpcf7-list-item {
+    margin-left: 0px;
+}
+.acceptance-legal-accept .wpcf7-list-item label {
+    position: relative;
+}
+.acceptance-legal-accept .wpcf7-list-item label .wpcf7-list-item-label {
+    position: relative;
+}
+.acceptance-legal-accept .wpcf7-list-item label input[type="checkbox"] {
+    position: relative;
+    visibility: hidden;
+    width: 15px;
+    height: 15px;
+    margin-right: 13px;
+}
+.acceptance-legal-accept .wpcf7-list-item label input[type="checkbox"] + span:before  {
+    display: block;
+    position: absolute;
+    top: 0px!important;
+    content: '';
+    border-radius: 0px;
+    height: 14px;
+    width: 14px;
+    border: 1px solid #E0E0E0;
+    cursor: pointer;
+}
+.acceptance-legal-accept .wpcf7-list-item label input[type=checkbox] + span:after {
+    display: block;
+    position: absolute; 
+    content: url(/wp-content/uploads/2022/01/checked.svg);
+    border-radius: 100%;
+    height: 10px;
+    width: 10px;
+    top: -6px;
+    left: -26px;
+    visibility: hidden;
+    font-size: 16px;
+}
+.acceptance-legal-accept .wpcf7-list-item label input[type="checkbox"]:checked + span:before {
+    background: transparent;
+}
+.acceptance-legal-accept .wpcf7-list-item label input[type="checkbox"]:checked + span:after {
+    visibility: visible;
+}
+.acceptance-legal-accept .wpcf7-list-item label span.wpcf7-list-item {
+    margin-left: 0px;
+    display: inline-block;
+}
+.wpcf7 form.sent .wpcf7-response-output {
+    border: none;
+    text-align: center;
+    font-size: 1.1em;
+  	color: #FFF;
+	  position: absolute;
+    bottom: 0;
+	bottom: -78px;
+    background-color: #46b450;
+}
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output {
+    border: none;
+    text-align: center;
+    font-size: 1.1em;
+  color: #ffb900;
+}
+/*Popup*/
+.elementor-location-popup form.sent .newsletter-form .wpcf7-response-output {
+	bottom: -50px;
+}
+/*Partners*/
+.partners-header p {
+	display: none;
+}
+.white-form {
+    margin-bottom: 0px;
+    padding-top: 0px!important;
+    padding-bottom: 10px!important;
+}
+.white-form .wpcf7-list-item-label {
+    color: #FFFFFF;
+}
+.white-form .wpcf7-spinner {
+    display: none;
+}
+/*Cookies*/
+#cmplz-document h2 {
+	color: #6EC1E4;
+}
+#cmplz-document ul {
+	list-style: none;
+}
+/*Elementor*/
+.elementor-editor-element-settings li:before {
+	content: "";
+	display: none!important;
+}
+/* Enric Páginas singulares */
+.singular01 {
+  font-size: 16px;
+  line-height: 22px;
+}
+		</style>
+<meta content="WordPress Download Manager 6.1.5" name="generator"/>
+<style type="text/css">/** Mega Menu CSS: fs **/</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@200;200italic;300;300italic;400;italic;600;600italic;700;700italic;800;800italic;900;900italic" rel="stylesheet"/>
+<style>
+            .w3eden .fetfont,
+            .w3eden .btn,
+            .w3eden .btn.wpdm-front h3.title,
+            .w3eden .wpdm-social-lock-box .IN-widget a span:last-child,
+            .w3eden .card-header,
+            .w3eden .card-footer,
+            .w3eden .badge,
+            .w3eden .label,
+            .w3eden .table,
+            .w3eden .card-body,
+            .w3eden .wpdm-frontend-tabs a,
+            .w3eden .alert:before,
+            .w3eden .discount-msg,
+            .w3eden .panel.dashboard-panel h3,
+            .w3eden #wpdm-dashboard-sidebar .list-group-item,
+            .w3eden #package-description .wp-switch-editor,
+            .w3eden .w3eden.author-dashbboard .nav.nav-tabs li a,
+            .w3eden .wpdm_cart thead th,
+            .w3eden #csp .list-group-item,
+            .w3eden .modal-title {
+                font-family: Nunito Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+            .w3eden .btn
+            {
+                font-weight: 800 !important;
+            }
+            .w3eden .btn {
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+            .w3eden #csp .list-group-item {
+                text-transform: unset;
+            }
+
+
+        </style>
+<style>
+        /* WPDM Link Template Styles */
+background: linear-gradient(180deg, #3bc6fe 0%, #2f85a8 100%);
+color: #FFF!important;        </style>
+<style>
+
+            :root {
+                --color-primary: #2fb4e9;
+                --color-primary-rgb: 47, 180, 233;
+                --color-primary-hover: #214b5d;
+                --color-primary-active: #214b5d;
+                --color-secondary: #2fb4e9;
+                --color-secondary-rgb: 47, 180, 233;
+                --color-secondary-hover: #1d292f;
+                --color-secondary-active: #1d292f;
+                --color-success: #2fb4e9;
+                --color-success-rgb: 47, 180, 233;
+                --color-success-hover: #2fb4e9;
+                --color-success-active: #2fb4e9;
+                --color-info: #2fb4e9;
+                --color-info-rgb: 47, 180, 233;
+                --color-info-hover: #1d292f;
+                --color-info-active: #1d292f;
+                --color-warning: #FFB236;
+                --color-warning-rgb: 255, 178, 54;
+                --color-warning-hover: #FFB236;
+                --color-warning-active: #FFB236;
+                --color-danger: #ff5062;
+                --color-danger-rgb: 255, 80, 98;
+                --color-danger-hover: #ff5062;
+                --color-danger-active: #ff5062;
+                --color-green: #30b570;
+                --color-blue: #0073ff;
+                --color-purple: #8557D3;
+                --color-red: #ff5062;
+                --color-muted: rgba(69, 89, 122, 0.6);
+                --wpdm-font: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+
+            .wpdm-download-link.btn.btn-primary {
+                border-radius: 4px;
+            }
+
+
+        </style>
+<script>
+            function wpdm_rest_url(request) {
+                return "https://urbiotica.com/en/wp-json/wpdm/" + request;
+            }
+        </script>
+<link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet"/></meta></link></link></meta></head><body class="page-template-default page page-id-6276 wp-embed-responsive full-width-content mega-menu-primary singular elementor-default elementor-kit-435 elementor-page elementor-page-6276" data-cmplz="1">
+<script data-cfasync="false">if(ewww_webp_supported){document.body.classList.add("webp-support");}</script><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0 0.49803921568627" type="table"></fefuncr><fefuncg tablevalues="0 0.49803921568627" type="table"></fefuncg><fefuncb tablevalues="0 0.49803921568627" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0 1" type="table"></fefuncr><fefuncg tablevalues="0 1" type="table"></fefuncg><fefuncb tablevalues="0 1" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0.54901960784314 0.98823529411765" type="table"></fefuncr><fefuncg tablevalues="0 1" type="table"></fefuncg><fefuncb tablevalues="0.71764705882353 0.25490196078431" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0 1" type="table"></fefuncr><fefuncg tablevalues="0 0.27843137254902" type="table"></fefuncg><fefuncb tablevalues="0.5921568627451 0.27843137254902" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0 0" type="table"></fefuncr><fefuncg tablevalues="0 0.64705882352941" type="table"></fefuncg><fefuncb tablevalues="0 1" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0.78039215686275 1" type="table"></fefuncr><fefuncg tablevalues="0 0.94901960784314" type="table"></fefuncg><fefuncb tablevalues="0.35294117647059 0.47058823529412" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0.65098039215686 0.40392156862745" type="table"></fefuncr><fefuncg tablevalues="0 1" type="table"></fefuncg><fefuncb tablevalues="0.44705882352941 0.4" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><svg focusable="false" height="0" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" viewbox="0 0 0 0" width="0" xmlns="http://www.w3.org/2000/svg"><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr tablevalues="0.098039215686275 1" type="table"></fefuncr><fefuncg tablevalues="0 0.66274509803922" type="table"></fefuncg><fefuncb tablevalues="0.84705882352941 0.41960784313725" type="table"></fefuncb><fefunca tablevalues="1 1" type="table"></fefunca></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"></fecomposite></filter></defs></svg><div class="site-container"><a class="skip-link screen-reader-text" href="#main-content">Skip to content</a><header class="site-header alignfull" role="banner"><div class="wrap"><div class="title-area"><p class="site-title"><a class="lazyload" data-bg="https://urbiotica.com/wp-content/uploads/2021/12/urbiotica_logo_03.svg" href="https://urbiotica.com/en/" rel="home" style="">Urbiotica</a></p></div><button class="menu-toggle"><svg aria-hidden="true" class="svg-icon open" focusable="false" height="24" role="img" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M1.5,2.5 L22.5,2.5 C23.0522847,2.5 23.5,2.94771525 23.5,3.5 L23.5,4.5 C23.5,5.05228475 23.0522847,5.5 22.5,5.5 L1.5,5.5 C0.94771525,5.5 0.5,5.05228475 0.5,4.5 L0.5,3.5 C0.5,2.94771525 0.94771525,2.5 1.5,2.5 Z M1.5,10.5 L22.5,10.5 C23.0522847,10.5 23.5,10.9477153 23.5,11.5 L23.5,12.5 C23.5,13.0522847 23.0522847,13.5 22.5,13.5 L1.5,13.5 C0.94771525,13.5 0.5,13.0522847 0.5,12.5 L0.5,11.5 C0.5,10.9477153 0.94771525,10.5 1.5,10.5 Z M1.5,18.5 L22.5,18.5 C23.0522847,18.5 23.5,18.9477153 23.5,19.5 L23.5,20.5 C23.5,21.0522847 23.0522847,21.5 22.5,21.5 L1.5,21.5 C0.94771525,21.5 0.5,21.0522847 0.5,20.5 L0.5,19.5 C0.5,18.9477153 0.94771525,18.5 1.5,18.5 Z" fill-rule="evenodd"></path></svg><svg aria-hidden="true" class="svg-icon close" focusable="false" height="24" role="img" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14.2989722,12.176322 C14.2519553,12.1294237 14.2255314,12.0657448 14.2255314,11.9993367 C14.2255314,11.9329286 14.2519553,11.8692496 14.2989722,11.8223514 L23.561202,2.56112153 C24.1468512,1.97464389 24.1461797,1.0244473 23.5597021,0.438798032 C22.9732245,-0.146851237 22.0230279,-0.14617973 21.4373786,0.440297885 L12.1761487,9.6975281 C12.1292505,9.74454504 12.0655715,9.77096888 11.9991634,9.77096888 C11.9327553,9.77096888 11.8690764,9.74454504 11.8221782,9.6975281 L2.56094827,0.440297885 C1.97529899,-0.145627512 1.02555007,-0.145851351 0.439624669,0.439797926 C-0.146300728,1.0254472 -0.146524567,1.97519613 0.439124711,2.56112153 L9.69935467,11.8223514 C9.74637162,11.8692496 9.77279546,11.9329286 9.77279546,11.9993367 C9.77279546,12.0657448 9.74637162,12.1294237 9.69935467,12.176322 L0.439124711,21.4385518 C0.0602760557,21.817579 -0.0875858948,22.369928 0.0512370248,22.8875342 C0.190059944,23.4051404 0.59447723,23.8093671 1.1121488,23.9479461 C1.62982038,24.086525 2.18209962,23.9384027 2.56094827,23.5593754 L11.8221782,14.2971456 C11.8690764,14.2501287 11.9327553,14.2237048 11.9991634,14.2237048 C12.0655715,14.2237048 12.1292505,14.2501287 12.1761487,14.2971456 L21.4373786,23.5593754 C22.0230279,24.1453008 22.9727768,24.1455246 23.5587022,23.5598754 C24.1446276,22.9742261 24.1448514,22.0244772 23.5592022,21.4385518 L14.2989722,12.176322 Z" fill-rule="evenodd"></path></svg><span class="screen-reader-text">Menu</span></button><button class="search-toggle"><svg aria-hidden="true" class="svg-icon open" focusable="false" height="24" role="img" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M23.3820159,21.6140159 L16.8530159,15.0850159 C19.8101712,11.1977304 19.2496992,5.68394256 15.5708323,2.47120324 C11.8919653,-0.741536077 6.35292429,-0.554427741 2.89924827,2.89924827 C-0.554427741,6.35292429 -0.741536077,11.8919653 2.47120324,15.5708323 C5.68394256,19.2496992 11.1977304,19.8101712 15.0850159,16.8530159 L21.6140159,23.3820159 C22.1057506,23.8616745 22.8902811,23.8616745 23.3820159,23.3820159 C23.8697748,22.8936054 23.8697748,22.1024263 23.3820159,21.6140159 Z M2.74801587,9.49501587 C2.74801587,5.76709381 5.77009381,2.74501587 9.49801587,2.74501587 C13.2259379,2.74501587 16.2480159,5.76709381 16.2480159,9.49501587 C16.2480159,13.2229379 13.2259379,16.2450159 9.49801587,16.2450159 C5.77192131,16.2406076 2.75242415,13.2211104 2.74801587,9.49501587 Z" fill-rule="evenodd"></path></svg><svg aria-hidden="true" class="svg-icon close" focusable="false" height="24" role="img" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14.2989722,12.176322 C14.2519553,12.1294237 14.2255314,12.0657448 14.2255314,11.9993367 C14.2255314,11.9329286 14.2519553,11.8692496 14.2989722,11.8223514 L23.561202,2.56112153 C24.1468512,1.97464389 24.1461797,1.0244473 23.5597021,0.438798032 C22.9732245,-0.146851237 22.0230279,-0.14617973 21.4373786,0.440297885 L12.1761487,9.6975281 C12.1292505,9.74454504 12.0655715,9.77096888 11.9991634,9.77096888 C11.9327553,9.77096888 11.8690764,9.74454504 11.8221782,9.6975281 L2.56094827,0.440297885 C1.97529899,-0.145627512 1.02555007,-0.145851351 0.439624669,0.439797926 C-0.146300728,1.0254472 -0.146524567,1.97519613 0.439124711,2.56112153 L9.69935467,11.8223514 C9.74637162,11.8692496 9.77279546,11.9329286 9.77279546,11.9993367 C9.77279546,12.0657448 9.74637162,12.1294237 9.69935467,12.176322 L0.439124711,21.4385518 C0.0602760557,21.817579 -0.0875858948,22.369928 0.0512370248,22.8875342 C0.190059944,23.4051404 0.59447723,23.8093671 1.1121488,23.9479461 C1.62982038,24.086525 2.18209962,23.9384027 2.56094827,23.5593754 L11.8221782,14.2971456 C11.8690764,14.2501287 11.9327553,14.2237048 11.9991634,14.2237048 C12.0655715,14.2237048 12.1292505,14.2501287 12.1761487,14.2971456 L21.4373786,23.5593754 C22.0230279,24.1453008 22.9727768,24.1455246 23.5587022,23.5598754 C24.1446276,22.9742261 24.1448514,22.0244772 23.5592022,21.4385518 L14.2989722,12.176322 Z" fill-rule="evenodd"></path></svg><span class="screen-reader-text">Search</span></button><nav class="nav-menu" role="navigation"><div class="mega-menu-wrap" id="mega-menu-wrap-primary"><div class="mega-menu-toggle"><div class="mega-toggle-blocks-left"></div><div class="mega-toggle-blocks-center"></div><div class="mega-toggle-blocks-right"><div class="mega-toggle-block mega-menu-toggle-animated-block mega-toggle-block-0" id="mega-toggle-block-0"><button aria-expanded="false" aria-label="Toggle Menu" class="mega-toggle-animated mega-toggle-animated-slider" type="button">
+<span class="mega-toggle-animated-box">
+<span class="mega-toggle-animated-inner"></span>
+</span>
+</button></div></div></div><ul class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-breakpoint="768" data-document-click="collapse" data-effect="fade_up" data-effect-mobile="disabled" data-effect-speed="200" data-effect-speed-mobile="0" data-event="hover_intent" data-hover-intent-interval="100" data-hover-intent-timeout="300" data-mobile-force-width="body" data-mobile-state="collapse_all" data-panel-inner-width=".wrap" data-panel-width=".site-header" data-second-click="go" data-unbind="true" data-vertical-behaviour="standard" id="mega-menu-primary"><li class="mega-menu-general mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-megamenu mega-align-bottom-left mega-menu-megamenu mega-menu-item-6769 menu-general" id="mega-menu-item-6769"><a aria-expanded="false" aria-haspopup="true" class="mega-menu-link" tabindex="0">Solutions<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-widget widget_custom_html mega-menu-columns-6-of-6 mega-menu-item-custom_html-4" id="mega-menu-item-custom_html-4"><div class="textwidget custom-html-widget"><div class="menu-title">
+	Fastprk <span>smart parking solutions</span>
+</div></div></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-menu-columns-2-of-6 mega-menu-clear mega-menu-item-6732" id="mega-menu-item-6732"><a class="mega-menu-link" href="https://urbiotica.com/en/parking-guidance-solutions/">Guidance<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-solutions mega-menu-item-6770" id="mega-menu-item-6770"><a class="mega-menu-link" href="https://urbiotica.com/en/solution/urban-parking-guidance/">Urban parking guidance</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-solutions mega-menu-item-6771" id="mega-menu-item-6771"><a class="mega-menu-link" href="https://urbiotica.com/en/solution/parkride/">Park&amp;Ride</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-solutions mega-menu-item-6772" id="mega-menu-item-6772"><a class="mega-menu-link" href="https://urbiotica.com/en/solution/tourist-buses/">Tourist buses</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-solutions mega-menu-item-6773" id="mega-menu-item-6773"><a class="mega-menu-link" href="https://urbiotica.com/en/solution/shopping-centres/">Shopping centres</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-solutions mega-menu-item-6774" id="mega-menu-item-6774"><a class="mega-menu-link" href="https://urbiotica.com/en/solution/companies/">Companies</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-solutions mega-menu-item-6775" id="mega-menu-item-6775"><a class="mega-menu-link" href="https://urbiotica.com/en/solution/lorries/">Lorries</a></li> </ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-menu-columns-2-of-6 mega-menu-item-6733" id="mega-menu-item-6733"><a class="mega-menu-link" href="https://urbiotica.com/en/parking-control-solutions/">Control<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-solutions mega-menu-item-6776" id="mega-menu-item-6776"><a class="mega-menu-link" href="https://urbiotica.com/en/solution/loading-and-unloading/">Loading and Unloading</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-solutions mega-menu-item-6777" id="mega-menu-item-6777"><a class="mega-menu-link" href="https://urbiotica.com/en/solution/pay-by-space/">Pay-by-Space</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-solutions mega-menu-item-6778" id="mega-menu-item-6778"><a class="mega-menu-link" href="https://urbiotica.com/en/solution/persons-with-reduced-mobility/">Persons with Reduced Mobility</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-solutions mega-menu-item-6779" id="mega-menu-item-6779"><a class="mega-menu-link" href="https://urbiotica.com/en/solution/limited-time-free-parking/">Limited-time free parking</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-solutions mega-menu-item-6780" id="mega-menu-item-6780"><a class="mega-menu-link" href="https://urbiotica.com/en/solution/electric-vehicles/">Electric Vehicles</a></li> </ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-columns-2-of-6 mega-menu-item-6781" id="mega-menu-item-6781"><a class="mega-menu-link" href="https://urbiotica.com/en/parking-detection-systems-solutions/">Detection</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-columns-2-of-6 mega-menu-clear mega-menu-item-6746" id="mega-menu-item-6746"><a class="mega-menu-link" href="https://urbiotica.com/en/success-stories/">Success stories</a></li></ul>
+</li><li class="mega-menu-general mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-megamenu mega-align-bottom-left mega-menu-megamenu mega-menu-item-6782 menu-general" id="mega-menu-item-6782"><a aria-expanded="false" aria-haspopup="true" class="mega-menu-link" tabindex="0">Products<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-widget widget_custom_html mega-menu-columns-6-of-6 mega-menu-item-custom_html-5" id="mega-menu-item-custom_html-5"><div class="textwidget custom-html-widget"><div class="menu-title">
+	Fastprk <span>products for smart parking</span>
+</div></div></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-menu-columns-2-of-6 mega-menu-clear mega-menu-item-6767" id="mega-menu-item-6767"><a class="mega-menu-link" href="https://urbiotica.com/en/fastprk-guidance-system-products/">Guidance<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-software-products mega-menu-item-6783" id="mega-menu-item-6783"><a class="mega-menu-link" href="https://urbiotica.com/en/software-product/u-admin-guided-control-centre/">U-Admin: Guided Control Centre</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-software-products mega-menu-item-6784" id="mega-menu-item-6784"><a class="mega-menu-link" href="https://urbiotica.com/en/software-product/guide-app/">Guide app</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-hardware-products mega-menu-item-6785" id="mega-menu-item-6785"><a class="mega-menu-link" href="https://urbiotica.com/en/hardware-product/costumized-vms/">Costumized VMS</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-hardware-products mega-menu-item-6786" id="mega-menu-item-6786"><a class="mega-menu-link" href="https://urbiotica.com/en/hardware-product/u-display-vms-modules/">U-Display: VMS modules</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-software-products mega-menu-item-6787" id="mega-menu-item-6787"><a class="mega-menu-link" href="https://urbiotica.com/en/software-product/fastprk-data-api/">Fastprk DATA API</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-software-products mega-menu-item-6788" id="mega-menu-item-6788"><a class="mega-menu-link" href="https://urbiotica.com/en/software-product/u-admin-analytics/">U-Admin: Analytics</a></li> </ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-menu-columns-2-of-6 mega-menu-item-6766" id="mega-menu-item-6766"><a class="mega-menu-link" href="https://urbiotica.com/en/fastprk-control-system-products/">Control<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-software-products mega-menu-item-6789" id="mega-menu-item-6789"><a class="mega-menu-link" href="https://urbiotica.com/en/software-product/parkctrl/">ParkCtrl</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-software-products mega-menu-item-6790" id="mega-menu-item-6790"><a class="mega-menu-link" href="https://urbiotica.com/en/software-product/parktime/">ParkTime</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-software-products mega-menu-item-6791" id="mega-menu-item-6791"><a class="mega-menu-link" href="https://urbiotica.com/en/software-product/fastprk-data-api/">Fastprk DATA API</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-software-products mega-menu-item-6792" id="mega-menu-item-6792"><a class="mega-menu-link" href="https://urbiotica.com/en/software-product/u-admin-analytics/">U-Admin: Analytics</a></li> </ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-menu-columns-2-of-6 mega-menu-item-6768" id="mega-menu-item-6768"><a class="mega-menu-link" href="https://urbiotica.com/en/parking-detection-systems-products/">Detection<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-hardware-products mega-menu-item-6793" id="mega-menu-item-6793"><a class="mega-menu-link" href="https://urbiotica.com/en/hardware-product/u-spot-single-space-detection/">U-Spot: single space detection</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-hardware-products mega-menu-item-6794" id="mega-menu-item-6794"><a class="mega-menu-link" href="https://urbiotica.com/en/hardware-product/u-flow-counting-detection/">U-Flow: counting detection</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-hardware-products mega-menu-item-6795" id="mega-menu-item-6795"><a class="mega-menu-link" href="https://urbiotica.com/en/hardware-product/u-flow-traffic/">U-Flow Traffic</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-hardware-products mega-menu-item-6796" id="mega-menu-item-6796"><a class="mega-menu-link" href="https://urbiotica.com/en/hardware-product/u-spot-visio-space-by-space-camera-detection/">U-Spot Visio: space by space camera detection</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-software-products mega-menu-item-6797" id="mega-menu-item-6797"><a class="mega-menu-link" href="https://urbiotica.com/en/software-product/parking-sensor-integration/">Parking &amp; Sensor integration</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-software-products mega-menu-item-6798" id="mega-menu-item-6798"><a class="mega-menu-link" href="https://urbiotica.com/en/software-product/u-admin-device-data-management/">U-Admin: Device &amp; Data management</a></li> </ul>
+</li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-6762" id="mega-menu-item-6762"><a class="mega-menu-link" href="https://urbiotica.com/en/about-us/" tabindex="0">About us</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-6764" id="mega-menu-item-6764"><a class="mega-menu-link" href="https://urbiotica.com/en/partners/" tabindex="0">Partners</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-6765" id="mega-menu-item-6765"><a class="mega-menu-link" href="https://urbiotica.com/en/resources/" tabindex="0">Resources</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-6761" id="mega-menu-item-6761"><a class="mega-menu-link" href="https://urbiotica.com/en/contact/" tabindex="0">Contact</a></li><li class="mega-acceso-pro-menu mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-6763 acceso-pro-menu" id="mega-menu-item-6763"><a class="mega-menu-link" href="https://urbiotica.com/en/partner-access/" tabindex="0">Partner Access</a></li><li class="mega-menu-item mega-wpml-ls-slot-2 mega-wpml-ls-item mega-wpml-ls-item-en mega-wpml-ls-current-language mega-wpml-ls-menu-item mega-wpml-ls-first-item mega-menu-item-type-wpml_ls_menu_item mega-menu-item-object-wpml_ls_menu_item mega-menu-item-has-children mega-menu-flyout mega-menu-item-wpml-ls-2-en" id="mega-menu-item-wpml-ls-2-en"><a aria-expanded="false" aria-haspopup="true" class="mega-menu-link" href="https://urbiotica.com/en/privacy-policy/" tabindex="0" title="EN">
+<span class="wpml-ls-native" lang="en">EN</span><span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-wpml-ls-slot-2 mega-wpml-ls-item mega-wpml-ls-item-es mega-wpml-ls-menu-item mega-wpml-ls-last-item mega-menu-item-type-wpml_ls_menu_item mega-menu-item-object-wpml_ls_menu_item mega-menu-flyout mega-menu-item-wpml-ls-2-es" id="mega-menu-item-wpml-ls-2-es"><a class="mega-menu-link" href="https://urbiotica.com/politica-de-privacidad/" title="ES">
+<span class="wpml-ls-native" lang="es">ES</span></a></li></ul>
+</li><li class="menu-item search"><button class="search-toggle"><svg aria-hidden="true" class="svg-icon open" focusable="false" height="24" role="img" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M23.3820159,21.6140159 L16.8530159,15.0850159 C19.8101712,11.1977304 19.2496992,5.68394256 15.5708323,2.47120324 C11.8919653,-0.741536077 6.35292429,-0.554427741 2.89924827,2.89924827 C-0.554427741,6.35292429 -0.741536077,11.8919653 2.47120324,15.5708323 C5.68394256,19.2496992 11.1977304,19.8101712 15.0850159,16.8530159 L21.6140159,23.3820159 C22.1057506,23.8616745 22.8902811,23.8616745 23.3820159,23.3820159 C23.8697748,22.8936054 23.8697748,22.1024263 23.3820159,21.6140159 Z M2.74801587,9.49501587 C2.74801587,5.76709381 5.77009381,2.74501587 9.49801587,2.74501587 C13.2259379,2.74501587 16.2480159,5.76709381 16.2480159,9.49501587 C16.2480159,13.2229379 13.2259379,16.2450159 9.49801587,16.2450159 C5.77192131,16.2406076 2.75242415,13.2211104 2.74801587,9.49501587 Z" fill-rule="evenodd"></path></svg><svg aria-hidden="true" class="svg-icon close" focusable="false" height="24" role="img" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14.2989722,12.176322 C14.2519553,12.1294237 14.2255314,12.0657448 14.2255314,11.9993367 C14.2255314,11.9329286 14.2519553,11.8692496 14.2989722,11.8223514 L23.561202,2.56112153 C24.1468512,1.97464389 24.1461797,1.0244473 23.5597021,0.438798032 C22.9732245,-0.146851237 22.0230279,-0.14617973 21.4373786,0.440297885 L12.1761487,9.6975281 C12.1292505,9.74454504 12.0655715,9.77096888 11.9991634,9.77096888 C11.9327553,9.77096888 11.8690764,9.74454504 11.8221782,9.6975281 L2.56094827,0.440297885 C1.97529899,-0.145627512 1.02555007,-0.145851351 0.439624669,0.439797926 C-0.146300728,1.0254472 -0.146524567,1.97519613 0.439124711,2.56112153 L9.69935467,11.8223514 C9.74637162,11.8692496 9.77279546,11.9329286 9.77279546,11.9993367 C9.77279546,12.0657448 9.74637162,12.1294237 9.69935467,12.176322 L0.439124711,21.4385518 C0.0602760557,21.817579 -0.0875858948,22.369928 0.0512370248,22.8875342 C0.190059944,23.4051404 0.59447723,23.8093671 1.1121488,23.9479461 C1.62982038,24.086525 2.18209962,23.9384027 2.56094827,23.5593754 L11.8221782,14.2971456 C11.8690764,14.2501287 11.9327553,14.2237048 11.9991634,14.2237048 C12.0655715,14.2237048 12.1292505,14.2501287 12.1761487,14.2971456 L21.4373786,23.5593754 C22.0230279,24.1453008 22.9727768,24.1455246 23.5587022,23.5598754 C24.1446276,22.9742261 24.1448514,22.0244772 23.5592022,21.4385518 L14.2989722,12.176322 Z" fill-rule="evenodd"></path></svg><span class="screen-reader-text">Search</span></button></li></ul></div></nav><div class="header-search">
+<form action="https://urbiotica.com/en/" class="search-form" method="get" role="search">
+<label>
+<span class="screen-reader-text">Search for</span>
+<input class="search-field" name="s" placeholder="Search…" title="Search for" type="search" value=""/>
+</label>
+<button class="search-submit" type="submit"><svg aria-hidden="true" class="svg-icon" focusable="false" height="16" role="img" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M23.3820159,21.6140159 L16.8530159,15.0850159 C19.8101712,11.1977304 19.2496992,5.68394256 15.5708323,2.47120324 C11.8919653,-0.741536077 6.35292429,-0.554427741 2.89924827,2.89924827 C-0.554427741,6.35292429 -0.741536077,11.8919653 2.47120324,15.5708323 C5.68394256,19.2496992 11.1977304,19.8101712 15.0850159,16.8530159 L21.6140159,23.3820159 C22.1057506,23.8616745 22.8902811,23.8616745 23.3820159,23.3820159 C23.8697748,22.8936054 23.8697748,22.1024263 23.3820159,21.6140159 Z M2.74801587,9.49501587 C2.74801587,5.76709381 5.77009381,2.74501587 9.49801587,2.74501587 C13.2259379,2.74501587 16.2480159,5.76709381 16.2480159,9.49501587 C16.2480159,13.2229379 13.2259379,16.2450159 9.49801587,16.2450159 C5.77192131,16.2406076 2.75242415,13.2211104 2.74801587,9.49501587 Z" fill-rule="evenodd"></path></svg></button>
+</form>
+</div></div></header><div class="header-search alignfull">
+<form action="https://urbiotica.com/en/" class="search-form" method="get" role="search">
+<label>
+<span class="screen-reader-text">Search for</span>
+<input class="search-field" name="s" placeholder="Search…" title="Search for" type="search" value=""/>
+</label>
+<button class="search-submit" type="submit"><svg aria-hidden="true" class="svg-icon" focusable="false" height="16" role="img" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M23.3820159,21.6140159 L16.8530159,15.0850159 C19.8101712,11.1977304 19.2496992,5.68394256 15.5708323,2.47120324 C11.8919653,-0.741536077 6.35292429,-0.554427741 2.89924827,2.89924827 C-0.554427741,6.35292429 -0.741536077,11.8919653 2.47120324,15.5708323 C5.68394256,19.2496992 11.1977304,19.8101712 15.0850159,16.8530159 L21.6140159,23.3820159 C22.1057506,23.8616745 22.8902811,23.8616745 23.3820159,23.3820159 C23.8697748,22.8936054 23.8697748,22.1024263 23.3820159,21.6140159 Z M2.74801587,9.49501587 C2.74801587,5.76709381 5.77009381,2.74501587 9.49801587,2.74501587 C13.2259379,2.74501587 16.2480159,5.76709381 16.2480159,9.49501587 C16.2480159,13.2229379 13.2259379,16.2450159 9.49801587,16.2450159 C5.77192131,16.2406076 2.75242415,13.2211104 2.74801587,9.49501587 Z" fill-rule="evenodd"></path></svg></button>
+</form>
+</div><div id="overlay" onclick="off()"></div><a class="anchor" id="top"></a><div class="site-inner" id="main-content"><div class="content-area wrap"><div class="content-area wrap"><main class="site-main" role="main"><article class="type-page hentry"><header class="entry-header"><h1 class="entry-title">Privacy policy</h1></header><div class="entry-content"> <div class="elementor elementor-6276 elementor-175" data-elementor-id="6276" data-elementor-type="wp-page">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-2aae1b6 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="2aae1b6" data-particle-mobile-disabled="false" data-particle_enable="false" data-settings='{"stretch_section":"section-stretched","background_background":"classic"}'>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-d7cf956" data-element_type="column" data-id="d7cf956">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-3bb052a elementor-widget elementor-widget-heading" data-element_type="widget" data-id="3bb052a" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<style>/*! elementor - v3.6.5 - 27-04-2022 */
+.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style><h2 class="elementor-heading-title elementor-size-default">Privacy policy</h2> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-477e945 legal-text elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="477e945" data-particle-mobile-disabled="false" data-particle_enable="false">
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-a8c59ec" data-element_type="column" data-id="a8c59ec">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-4b53314 elementor-widget elementor-widget-image" data-element_type="widget" data-id="4b53314" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<style>/*! elementor - v3.6.5 - 27-04-2022 */
+.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=".svg"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style> <img alt="" class="attachment-large size-large lazyload ewww_webp_lazy_load" data-sizes="auto" data-src="https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01.jpg" data-src-webp="https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01.jpg.webp" data-srcset="https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01.jpg 800w, https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01-300x300.jpg 300w, https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01-150x150.jpg 150w, https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01-768x768.jpg 768w" data-srcset-webp="https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01.jpg.webp 800w, https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01-300x300.jpg.webp 300w, https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01-150x150.jpg.webp 150w, https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01-768x768.jpg.webp 768w" decoding="async" height="768" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAMgAQAAAADzCzvFAAAAAnRSTlMAAHaTzTgAAABlSURBVHja7cExAQAAAMKg9U9tBn+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAw7rwABdgN32AAAAABJRU5ErkJggg==" width="768"/><noscript><img alt="" class="attachment-large size-large" data-eio="l" height="768" sizes="(max-width: 768px) 100vw, 768px" src="https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01.jpg" srcset="https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01.jpg 800w, https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01-300x300.jpg 300w, https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01-150x150.jpg 150w, https://urbiotica.com/wp-content/uploads/2021/12/privacidad_01-768x768.jpg 768w" width="768"/></noscript> </div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-9988d31" data-element_type="column" data-id="9988d31">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-5065574 elementor-widget elementor-widget-text-editor" data-element_type="widget" data-id="5065574" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<style>/*! elementor - v3.6.5 - 27-04-2022 */
+.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:#818a91;color:#fff}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap{color:#818a91;border:3px solid;background-color:transparent}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap{margin-top:8px}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter{width:1em;height:1em}.elementor-widget-text-editor .elementor-drop-cap{float:left;text-align:center;line-height:1;font-size:50px}.elementor-widget-text-editor .elementor-drop-cap-letter{display:inline-block}</style> <h4 style="color: #6ec1e4;">Privacy Policy</h4><h4>Information</h4><p>The information received by <strong>URBIOTICA</strong> through this website will be treated with the utmost confidentiality and confidentiality in accordance with current regulations.</p><p><strong>URBIOTICA</strong> informs the user that the personal data that may be provided through this website will be treated under the responsibility of <strong>URBIOTICA</strong> for the legitimate purpose and interest of managing the services provided through this Internet Portal.</p><p>Likewise, and whenever you give us your express consent, <strong>URBIOTICA</strong> may use the identification and contact details of the users to keep them informed about the activities, products and services of <strong>URBIOTICA</strong> or other entities related to <strong>URBIOTICA</strong> that may be of interest to them. Said data may also be used for commercial, financial, personalization, operational and statistical purposes, and activities specific to its corporate purpose, expressly authorizing <strong>URBIOTICA</strong> to extract, store data and perform marketing studies in order to adapt its offers to the particular profile of the user.</p><p>By providing your data through the forms included in this website, you are giving your consent to the treatment of them in accordance with the conditions established in this informative clause.</p><h4>Conservation of data</h4><p>The data provided will be kept as long as it does not request the cessation of the activity, the commercial relationship is maintained, during the years necessary to comply with the legal obligations or until they cease to be necessary or pertinent for the purpose for which they were collected or registered.</p><h4>Recipients</h4><p>The data will not be transferred to third parties except in cases where there is a legal obligation.</p><h4>Rights of access, rectification, cancellation and opposition</h4><p>You can request at any time access to your personal data, as well as its rectification, opposition and cancellation, for this you must go to <strong>URBIOTICA</strong> by mail to C/ JOAQUIM MOLINS, 5, 4º1º, 08028, Barcelona, or by email to <a href="mailto:info@urbiotica.com" rel="noopener" target="_blank"><strong>info@urbiotica.com</strong></a>.</p><h4>Security in the processing, computing process and data custody</h4><p><strong>URBIOTICA</strong> declares and guarantees that it maintains the security levels of protection of personal data in accordance with current legislation. For this purpose, it has established a Management System for the Protection of Personal Data in order to determine and implement the technical and organizational means at its disposal to prevent the loss, misuse, alteration, unauthorized access and theft of data provided by the users, without prejudice to inform that security measures on the Internet are not impregnable.</p> </div>
+</div>
+<div class="elementor-element elementor-element-43ffa6d elementor-widget elementor-widget-spacer" data-element_type="widget" data-id="43ffa6d" data-widget_type="spacer.default">
+<div class="elementor-widget-container">
+<style>/*! elementor - v3.6.5 - 27-04-2022 */
+.e-container.e-container--row .elementor-spacer-inner{width:var(--spacer-size)}.e-container.e-container--column .elementor-spacer-inner,.elementor-column .elementor-spacer-inner{height:var(--spacer-size)}</style> <div class="elementor-spacer">
+<div class="elementor-spacer-inner"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div></article></main></div></div></div></div>
+<div class="scrolltop_btn" id="scrolltop_btn" onclick="topFunction()"><i class="fas fa-chevron-up"></i></div><div class="footer-widgets">
+<div class="wrap wrap-prefooter">
+<div class="prefooter">
+<div class="logo-footer"><img alt="" class="attachment-full size-full lazyload" data-src="https://urbiotica.com/wp-content/uploads/2021/12/urbiotica_logo_03.svg" decoding="async" height="72" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKoAAABIAQAAAABOgVOmAAAAAnRSTlMAAHaTzTgAAAAVSURBVDjLY2AYBaNgFIyCUTAK6AcABngAAa1Kl3cAAAAASUVORK5CYII=" width="170"/><noscript><img alt="" class="attachment-full size-full" data-eio="l" height="72" src="https://urbiotica.com/wp-content/uploads/2021/12/urbiotica_logo_03.svg" width="170"/></noscript></div>
+<div class="slogan-footer">Making Sense in Smart Mobility</div>
+<div class="info-footer">
+<div class="address-footer"><i class="fas fa-map-marker-alt"></i>C/ Joaquim Molins 5, 4º 4ª 08028 Barcelona. España</div>
+<div class="phone-footer">
+<i class="fas fa-phone"></i>
+<span>Telephone: </span>+34 931 691 730			<span>Sales: </span>+34 931 691 731		</div>
+</div>
+<div class="social-footer">
+<a href="http://www.facebook.com/urbiotica" rel="nofollow" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://twitter.com/URBIOTICA" rel="nofollow" target="_blank"><i class="fab fa-twitter"></i></a>
+<a href="https://www.youtube.com/user/urbiotica" rel="nofollow" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="https://www.linkedin.com/company/urbiotica-s-l-?trk=ncsrch_hits&amp;goback=%2Efcs_GLHD_urbiotica_false_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2_*2" rel="nofollow" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+</div>
+<div class="wrap wrap-widgets">
+<div class="footer-section footer-section-1"><section class="footer-widgets-1 widget widget_block" id="block-57">
+<h4 id="soluciones">Solutions</h4>
+</section><section class="footer-widgets-1 widget widget_block" id="block-34"><p class="footer-category">Fastprk</p>
+</section><section class="footer-widgets-1 widget widget_block" id="block-58">
+<h5 id="guiardo"><a href="https://urbiotica.com/en/parking-guidance-solutions/">Guidance</a></h5>
+</section><section class="footer-widgets-1 widget widget_block" id="block-60">
+<ul><li><a href="https://urbiotica.com/en/solution/urban-parking-guidance/">Urban parking guidance</a></li><li><a href="https://urbiotica.com/en/solution/parkride/">Park&amp;Ride</a></li><li><a href="https://urbiotica.com/en/solution/tourist-buses/">Tourist buses</a></li><li><a href="https://urbiotica.com/en/solution/shopping-centres/">Shopping centres</a></li><li><a href="https://urbiotica.com/en/solution/companies/">Companies</a></li><li><a href="https://urbiotica.com/en/solution/lorries/">Lorries</a></li></ul></section><section class="footer-widgets-1 widget widget_block" id="block-61">
+<h5 id="control"><a href="https://urbiotica.com/en/parking-control-solutions/">Control</a></h5>
+</section><section class="footer-widgets-1 widget widget_block" id="block-62">
+<ul><li><a href="https://urbiotica.com/en/solution/loading-and-unloading/">Loading and Unloading</a></li><li><a href="https://urbiotica.com/en/solution/pay-by-space/">Pay-by-Space</a></li><li><a href="https://urbiotica.com/en/solution/persons-with-reduced-mobility/">Persons with Reduced Mobility</a></li><li><a href="https://urbiotica.com/en/solution/limited-time-free-parking/">Limited-time free parking</a></li><li><a href="https://urbiotica.com/en/solution/electric-vehicles/">Electric Vehicles</a></li></ul></section><section class="footer-widgets-1 widget widget_block" id="block-63">
+<h5 id="deteccion"><a href="https://urbiotica.com/en/parking-detection-systems-solutions/">Detection</a></h5>
+</section><section class="footer-widgets-1 widget widget_block" id="block-64">
+<h5 id="casos"><a href="https://urbiotica.com/en/success-stories/">Success stories Fastprk</a></h5>
+</section></div><div class="footer-section footer-section-2"><section class="footer-widgets-2 widget widget_block" id="block-51">
+<h4 id="productos">Products</h4>
+</section><section class="footer-widgets-2 widget widget_block" id="block-35"><p class="footer-category">Fastprk</p>
+</section><section class="footer-widgets-2 widget widget_block" id="block-52">
+<h5 id="guiado"><a href="https://urbiotica.com/en/fastprk-guidance-system-products/">Guidance</a></h5>
+</section><section class="footer-widgets-2 widget widget_block" id="block-53">
+<ul><li><a href="https://urbiotica.com/en/software-product/u-admin-guided-control-centre/">Guided Control Centre</a></li><li><a href="https://urbiotica.com/en/software-product/guide-app/">Guide app</a></li><li><a href="https://urbiotica.com/en/hardware-product/costumized-vms/">Costumized VMS</a></li><li><a href="https://urbiotica.com/en/hardware-product/u-display-vms-modules/">U-Display - VMS modules</a></li><li><a href="https://urbiotica.com/en/software-product/fastprk-data-api/">Fastprk Data API</a></li><li><a href="https://urbiotica.com/en/software-product/u-admin-analytics/">U-Admin - Analytics</a></li></ul></section><section class="footer-widgets-2 widget widget_block" id="block-54">
+<h5 id="control-1"><a href="https://urbiotica.com/en/fastprk-control-system-products/">Control</a></h5>
+</section><section class="footer-widgets-2 widget widget_block" id="block-24">
+<ul><li><a href="https://urbiotica.com/en/software-product/parkctrl/">ParkCtrl</a></li><li><a href="https://urbiotica.com/en/software-product/parktime/">ParkTime</a></li><li><a href="https://urbiotica.com/en/software-product/fastprk-data-api/">Fastprk Data API</a></li><li><a href="https://urbiotica.com/en/software-product/u-admin-analytics/">U-Admin - Analytics</a></li></ul></section><section class="footer-widgets-2 widget widget_block" id="block-55">
+<h5 id="deteccion-1"><a href="https://urbiotica.com/en/parking-detection-systems-products/">Detection</a></h5>
+</section><section class="footer-widgets-2 widget widget_block" id="block-56">
+<ul><li><a href="https://urbiotica.com/en/hardware-product/u-spot-single-space-detection/">U-Spot: single space detection</a></li><li><a href="https://urbiotica.com/en/hardware-product/u-flow-counting-detection/">U-Flow: counting detection</a></li><li><a href="https://urbiotica.com/en/hardware-product/u-flow-traffic/">U-Flow applied to traffic</a></li><li><a href="https://urbiotica.com/en/hardware-product/u-spot-visio-space-by-space-camera-detection/">U-Spot Visio: space by space camera detection</a></li><li><a href="https://urbiotica.com/en/software-product/parking-sensor-integration/">Parking &amp; Sensor integration</a></li><li><a href="https://urbiotica.com/en/software-product/u-admin-device-data-management/">U-Admin: Device &amp; Data management</a></li></ul></section></div><div class="footer-section footer-section-3"><section class="footer-widgets-3 widget widget_block" id="block-41">
+<h4 id="nosotros"><a href="https://urbiotica.com/en/about-us">About us</a></h4>
+</section><section class="footer-widgets-3 widget widget_block" id="block-42">
+<ul><li><a href="https://urbiotica.com/en/about-us#who-are-we">Who are we</a></li></ul></section><section class="footer-widgets-3 widget widget_block" id="block-43">
+<h4 id="recursos"><a href="https://urbiotica.com/en/resources/">Resources</a></h4>
+</section><section class="footer-widgets-3 widget widget_block" id="block-44">
+<ul><li><a href="https://urbiotica.com/en/resources/?_categories=news">News</a></li><li><a href="https://urbiotica.com/en/resources/?_categories=videos">Videos</a></li></ul></section><section class="footer-widgets-3 widget widget_block" id="block-45">
+<h4 id="contacto"><a href="https://urbiotica.com/en/contact/">Contact</a></h4>
+</section><section class="footer-widgets-3 widget widget_block" id="block-46">
+<ul><li><a href="https://urbiotica.com/en/contact/">Contact with us</a></li></ul></section></div><div class="footer-section footer-section-4"><section class="footer-widgets-4 widget widget_block" id="block-47">
+<h4 id="newsletter">Newsletter</h4>
+</section><section class="footer-widgets-4 widget widget_block widget_text" id="block-48">
+<p>Subscribe to our mailing list</p>
+</section><section class="footer-widgets-4 widget widget_block" id="block-40"><p><div class="wpcf7" dir="ltr" id="wpcf7-f5892-o1" lang="en-US" role="form">
+<div class="screen-reader-response"><p aria-atomic="true" aria-live="polite" role="status"></p> <ul></ul></div>
+<form action="/en/privacy-policy/?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0#wpcf7-f5892-o1" class="wpcf7-form init mailchimp-ext-0.5.62 wpcf7-acceptance-as-validation" data-status="init" method="post" novalidate="novalidate">
+<div style="display: none;">
+<input name="_wpcf7" type="hidden" value="5892"/>
+<input name="_wpcf7_version" type="hidden" value="5.5.6.1"/>
+<input name="_wpcf7_locale" type="hidden" value="en_US"/>
+<input name="_wpcf7_unit_tag" type="hidden" value="wpcf7-f5892-o1"/>
+<input name="_wpcf7_container_post" type="hidden" value="0"/>
+<input name="_wpcf7_posted_data_hash" type="hidden" value=""/>
+<input name="_wpcf7_recaptcha_response" type="hidden" value=""/>
+</div>
+<div class="newsletter-form">
+<span class="wpcf7-form-control-wrap your-email"><input aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" name="your-email" placeholder="Email" size="40" type="email" value=""/></span><br/>
+<span class="wpcf7-form-control-wrap your-name"><input aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" name="your-name" placeholder="Name" size="40" type="text" value=""/></span><br/>
+<span class="wpcf7-form-control-wrap website-wrap" id="wpcf7-62b0d4775d159-wrapper" style="display:none !important; visibility:hidden !important;"><label class="hp-message" for="wpcf7-62b0d4775d159-field">Please leave this field empty.</label><input autocomplete="new-password" class="wpcf7-form-control wpcf7-text" id="wpcf7-62b0d4775d159-field" name="website" size="40" tabindex="-1" type="text" value=""/></span>
+<div class="form-row">
+<div class="column-full"><span class="wpcf7-form-control-wrap acceptance-legal-accept"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input aria-invalid="false" name="acceptance-legal-accept" type="checkbox" value="1"/><span class="wpcf7-list-item-label">I have read and accept the <a href="/en/privacy-policy/" target="_blank">privacy policy and conditions of use</a>. *</span></label></span></span></span></div>
+<p><span class="wpcf7-form-control-wrap website-wrap" id="wpcf7-62b0d4775d39e-wrapper" style="display:none !important; visibility:hidden !important;"><label class="hp-message" for="28">Please leave this field empty.</label><input autocomplete="new-password" class="wpcf7-form-control wpcf7-text" id="28" name="website" size="40" tabindex="-1" type="text" value=""/></span></p>
+<p><input class="wpcf7-form-control has-spinner wpcf7-submit" type="submit" value="Subscribe me"/>
+</p></div>
+<div aria-hidden="true" class="wpcf7-response-output"></div><p style="display: none !important"><span class="wpcf7-form-control-wrap referer-page"><input aria-invalid="false" class="wpcf7-form-control wpcf7-text referer-page" data-value="http://Direct%20Visit" name="referer-page" type="hidden" value="http://Direct%20Visit"/></span></p>
+<!-- Chimpmail extension by Renzo Johnson --></div></form></div></p>
+</section></div></div></div><footer class="site-footer alignfull" role="contentinfo"><div class="wrap"> <div class="footer-left">
+<div class="footer-credits">
+				2022 Urbiotica © All rights reserved.		</div>
+</div>
+<!-- Footer right -->
+<div class="footer-right">
+<div class="nav-footer"><ul class="menu" id="footer-menu"><li class="menu-item" id="menu-item-6275"><a href="https://urbiotica.com/en/legal-notice/" rel="noopener" target="_blank">Legal notice</a></li>
+<li class="menu-item current-menu-item page_item page-item-6276 current_page_item" id="menu-item-6276"><a aria-current="page" href="https://urbiotica.com/en/privacy-policy/" rel="noopener" target="_blank">Privacy policy</a></li>
+<li class="menu-item" id="menu-item-6277"><a href="https://urbiotica.com/en/cookies-policy/" rel="noopener" target="_blank">Cookies policy</a></li>
+</ul></div> </div>
+</div></footer>
+<script>
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = true;
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+<div id="um_upload_single" style="display:none"></div>
+<div id="um_view_photo" style="display:none">
+<a aria-label="Close view photo modal" class="um-modal-close" data-action="um_remove_modal" href="javascript:void(0);">
+<i class="um-faicon-times"></i>
+</a>
+<div class="um-modal-body photo">
+<div class="um-modal-photo"></div>
+</div>
+</div> <script>
+                jQuery(function($){
+
+                    
+                                    });
+            </script>
+<div id="fb-root"></div>
+<style>
+
+            .wpdm-popover {
+                transition: all ease-in-out 400ms;
+                position: relative;display: inline-block;
+            }
+
+            .wpdm-popover .wpdm-hover-card {
+                position: absolute;
+                left: 0;
+                bottom: 50px;
+                width: 100%;
+                transition: all ease-in-out 400ms;
+                margin-bottom: 28px;
+                opacity: 0;
+                z-index: -999999;
+            }
+
+            .wpdm-popover:hover .wpdm-hover-card {
+                transition: all ease-in-out 400ms;
+                opacity: 1;
+                z-index: 999999;
+                bottom: 0px;
+            }
+
+            .wpdm-popover .wpdm-hover-card.hover-preview img {
+                width: 104px;
+                border-radius: 3px;
+            }
+
+            .wpdm-popover .card .card-footer{
+                background: rgba(0,0,0,0.02);
+            }
+
+            .packinfo {
+                margin-top: 10px;
+                font-weight: 400;
+                font-size: 14px;
+            }
+        </style>
+<script>
+            jQuery(function ($) {
+                $('a[data-show-on-hover]').on('hover', function () {
+                    $($(this).data('show-on-hover')).fadeIn();
+                });
+            });
+        </script>
+<!-- Consent Management powered by Complianz | GDPR/CCPA Cookie Consent https://wordpress.org/plugins/complianz-gdpr -->
+<div id="cmplz-cookiebanner-container"><div aria-describedby="cmplz-message-1-optin" aria-labelledby="cmplz-header-1-optin" aria-live="polite" aria-modal="true" class="cmplz-cookiebanner cmplz-hidden banner-1 optin cmplz-bottom cmplz-categories-type-save-preferences" data-nosnippet="true" role="dialog">
+<div class="cmplz-header">
+<div class="cmplz-logo"></div>
+<div class="cmplz-title" id="cmplz-header-1-optin">Manage cookie consent</div>
+<a class="cmplz-close" role="button" tabindex="0">
+<svg aria-hidden="true" class="svg-inline--fa fa-times fa-w-11" data-icon="times" data-prefix="fas" focusable="false" role="img" viewbox="0 0 352 512" xmlns="http://www.w3.org/2000/svg"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" fill="currentColor"></path></svg>
+</a>
+</div>
+<div class="cmplz-divider cmplz-divider-header"></div>
+<div class="cmplz-body">
+<div class="cmplz-message" id="cmplz-message-1-optin">We use our own and third-party cookies for strictly functional purposes, enabling web browsing, as well as for analytical and web optimisation purposes. Click the Accept all button to confirm that you have read and accepted the information presented. You can manage your consent in our Cookie Policy.</div>
+<!-- categories start -->
+<div class="cmplz-categories">
+<details class="cmplz-category cmplz-functional">
+<summary>
+<span class="cmplz-category-header">
+<span class="cmplz-category-title">Functional</span>
+<span class="cmplz-always-active">
+<span class="cmplz-banner-checkbox">
+<input class="cmplz-consent-checkbox cmplz-functional" data-category="cmplz_functional" id="cmplz-functional-optin" size="40" type="checkbox" value="1">
+<label class="cmplz-label" for="cmplz-functional-optin" tabindex="0"><span>Functional</span></label>
+</input></span>
+								Always active							</span>
+<span class="cmplz-icon cmplz-open"></span>
+</span>
+</summary>
+<div class="cmplz-description">
+<span class="cmplz-description-functional">The technical storage or access is strictly necessary for the legitimate purpose of enabling the use of a specific service explicitly requested by the subscriber or user, or for the sole purpose of carrying out the transmission of a communication over an electronic communications network.</span>
+</div>
+</details>
+<details class="cmplz-category cmplz-preferences">
+<summary>
+<span class="cmplz-category-header">
+<span class="cmplz-category-title">a:2:{s:4:"text";s:0:"";s:4:"show";b:1;}</span>
+<span class="cmplz-banner-checkbox">
+<input class="cmplz-consent-checkbox cmplz-preferences" data-category="cmplz_preferences" id="cmplz-preferences-optin" size="40" type="checkbox" value="1"/>
+<label class="cmplz-label" for="cmplz-preferences-optin" tabindex="0"><span>a:2:{s:4:"text";s:0:"";s:4:"show";b:1;}</span></label>
+</span>
+<span class="cmplz-icon cmplz-open"></span>
+</span>
+</summary>
+<div class="cmplz-description">
+<span class="cmplz-description-preferences">a:2:{s:4:"text";s:0:"";s:4:"show";b:1;}</span>
+</div>
+</details>
+<details class="cmplz-category cmplz-statistics">
+<summary>
+<span class="cmplz-category-header">
+<span class="cmplz-category-title">Statistics</span>
+<span class="cmplz-banner-checkbox">
+<input class="cmplz-consent-checkbox cmplz-statistics" data-category="cmplz_statistics" id="cmplz-statistics-optin" size="40" type="checkbox" value="1"/>
+<label class="cmplz-label" for="cmplz-statistics-optin" tabindex="0"><span>Statistics</span></label>
+</span>
+<span class="cmplz-icon cmplz-open"></span>
+</span>
+</summary>
+<div class="cmplz-description">
+<span class="cmplz-description-statistics">a:2:{s:4:"text";s:0:"";s:4:"show";b:1;}</span>
+<span class="cmplz-description-statistics-anonymous">Technical storage or access that is used exclusively for anonymous statistical purposes. Without a request, voluntary compliance by your Internet Service Provider, or additional records from a third party, information stored or retrieved solely for this purpose cannot be used to identify you.</span>
+</div>
+</details>
+<details class="cmplz-category cmplz-marketing">
+<summary>
+<span class="cmplz-category-header">
+<span class="cmplz-category-title">Marketing</span>
+<span class="cmplz-banner-checkbox">
+<input class="cmplz-consent-checkbox cmplz-marketing" data-category="cmplz_marketing" id="cmplz-marketing-optin" size="40" type="checkbox" value="1"/>
+<label class="cmplz-label" for="cmplz-marketing-optin" tabindex="0"><span>Marketing</span></label>
+</span>
+<span class="cmplz-icon cmplz-open"></span>
+</span>
+</summary>
+<div class="cmplz-description">
+<span class="cmplz-description-marketing">Technical storage or access is necessary to create user profiles to send advertising, or to track the user across a website or across multiple websites for similar marketing purposes.</span>
+</div>
+</details>
+</div><!-- categories end -->
+</div>
+<div class="cmplz-links cmplz-information">
+<a class="cmplz-link cmplz-manage-options cookie-statement" data-relative_url="#cmplz-manage-consent-container" href="#">Manage options</a>
+<a class="cmplz-link cmplz-manage-third-parties cookie-statement" data-relative_url="#cmplz-cookies-overview" href="#">Manage services</a>
+<a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" data-relative_url="#cmplz-tcf-wrapper" href="#">Manage vendors</a>
+<a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" href="https://cookiedatabase.org/tcf/purposes/" rel="noopener noreferrer nofollow" target="_blank">Read more about these purposes</a>
+</div>
+<div class="cmplz-divider cmplz-footer"></div>
+<div class="cmplz-buttons">
+<button class="cmplz-btn cmplz-accept">Accept</button>
+<button class="cmplz-btn cmplz-deny">Deny</button>
+<button class="cmplz-btn cmplz-view-preferences">View preferences</button>
+<button class="cmplz-btn cmplz-save-preferences">Save preferences</button>
+<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" data-relative_url="#cmplz-manage-consent-container" href="#">View preferences</a>
+</div>
+<div class="cmplz-links cmplz-documents">
+<a class="cmplz-link cookie-statement" data-relative_url="" href="#">{title}</a>
+<a class="cmplz-link privacy-statement" data-relative_url="" href="#">{title}</a>
+<a class="cmplz-link impressum" data-relative_url="" href="#">{title}</a>
+</div>
+</div>
+</div>
+<div data-nosnippet="true" id="cmplz-manage-consent"><button class="cmplz-btn cmplz-hidden cmplz-manage-consent manage-consent-1">Manage consent</button>
+</div> <div class="elementor elementor-8041 elementor-8038 elementor-location-popup" data-elementor-id="8041" data-elementor-settings='{"triggers":{"page_load_delay":4,"page_load":"yes"},"timing":{"browsers":"yes","times_times":1,"times":"yes","browsers_browsers":"all"}}' data-elementor-type="popup">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-a1d601f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-element_type="section" data-id="a1d601f" data-particle-mobile-disabled="false" data-particle_enable="false" data-settings='{"background_background":"classic"}'>
+<div class="elementor-container elementor-column-gap-default">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9906efd" data-element_type="column" data-id="9906efd">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-4684705 elementor-widget elementor-widget-heading" data-element_type="widget" data-id="4684705" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Join Our Newsletter!</h2> </div>
+</div>
+<div class="elementor-element elementor-element-902fd2a elementor-widget elementor-widget-text-editor" data-element_type="widget" data-id="902fd2a" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<p>Sign up and we will keep you informed about our latest news. We are not annoying, we promise.</p> </div>
+</div>
+<div class="elementor-element elementor-element-ce99a74 newsletter-popup elementor-widget elementor-widget-shortcode" data-element_type="widget" data-id="ce99a74" data-widget_type="shortcode.default">
+<div class="elementor-widget-container">
+<div class="elementor-shortcode"><div class="wpcf7" dir="ltr" id="wpcf7-f5892-o2" lang="en-US" role="form">
+<div class="screen-reader-response"><p aria-atomic="true" aria-live="polite" role="status"></p> <ul></ul></div>
+<form action="/en/privacy-policy/?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0#wpcf7-f5892-o2" class="wpcf7-form init mailchimp-ext-0.5.62 wpcf7-acceptance-as-validation" data-status="init" method="post" novalidate="novalidate">
+<div style="display: none;">
+<input name="_wpcf7" type="hidden" value="5892"/>
+<input name="_wpcf7_version" type="hidden" value="5.5.6.1"/>
+<input name="_wpcf7_locale" type="hidden" value="en_US"/>
+<input name="_wpcf7_unit_tag" type="hidden" value="wpcf7-f5892-o2"/>
+<input name="_wpcf7_container_post" type="hidden" value="0"/>
+<input name="_wpcf7_posted_data_hash" type="hidden" value=""/>
+<input name="_wpcf7_recaptcha_response" type="hidden" value=""/>
+</div>
+<div class="newsletter-form">
+<span class="wpcf7-form-control-wrap your-email"><input aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" name="your-email" placeholder="Email" size="40" type="email" value=""/></span><br/>
+<span class="wpcf7-form-control-wrap your-name"><input aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" name="your-name" placeholder="Name" size="40" type="text" value=""/></span><br/>
+<span class="wpcf7-form-control-wrap website-wrap" id="wpcf7-62b0d4776e280-wrapper" style="display:none !important; visibility:hidden !important;"><label class="hp-message" for="wpcf7-62b0d4776e280-field">Please leave this field empty.</label><input autocomplete="new-password" class="wpcf7-form-control wpcf7-text" id="wpcf7-62b0d4776e280-field" name="website" size="40" tabindex="-1" type="text" value=""/></span>
+<div class="form-row">
+<div class="column-full"><span class="wpcf7-form-control-wrap acceptance-legal-accept"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input aria-invalid="false" name="acceptance-legal-accept" type="checkbox" value="1"/><span class="wpcf7-list-item-label">I have read and accept the <a href="/en/privacy-policy/" target="_blank">privacy policy and conditions of use</a>. *</span></label></span></span></span></div>
+<p><span class="wpcf7-form-control-wrap website-wrap" id="wpcf7-62b0d4776e334-wrapper" style="display:none !important; visibility:hidden !important;"><label class="hp-message" for="28">Please leave this field empty.</label><input autocomplete="new-password" class="wpcf7-form-control wpcf7-text" id="28" name="website" size="40" tabindex="-1" type="text" value=""/></span></p>
+<p><input class="wpcf7-form-control has-spinner wpcf7-submit" type="submit" value="Subscribe me"/>
+</p></div>
+<div aria-hidden="true" class="wpcf7-response-output"></div><p style="display: none !important"><span class="wpcf7-form-control-wrap referer-page"><input aria-invalid="false" class="wpcf7-form-control wpcf7-text referer-page" data-value="http://Direct%20Visit" name="referer-page" type="hidden" value="http://Direct%20Visit"/></span></p>
+<!-- Chimpmail extension by Renzo Johnson --></div></form></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<link href="https://urbiotica.com/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.5.24" id="rs-plugin-settings-css" media="all" rel="stylesheet" type="text/css">
+<style id="rs-plugin-settings-inline-css" type="text/css">
+#rs-demo-id {}
+</style>
+<script id="eio-lazy-load-js-before" type="text/javascript">
+var eio_lazy_vars = {"exactdn_domain":"","skip_autoscale":0,"threshold":0};
+</script>
+<script id="eio-lazy-load-js" src="https://urbiotica.com/wp-content/plugins/ewww-image-optimizer/includes/lazysizes.min.js?ver=652" type="text/javascript"></script>
+<script id="regenerator-runtime-js" src="https://urbiotica.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9" type="text/javascript"></script>
+<script id="wp-polyfill-js" src="https://urbiotica.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" type="text/javascript"></script>
+<script id="contact-form-7-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/urbiotica.com\/en\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script id="contact-form-7-js" src="https://urbiotica.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.5.6.1" type="text/javascript"></script>
+<script id="jquery-form-js" src="https://urbiotica.com/wp-includes/js/jquery/jquery.form.min.js?ver=4.3.0" type="text/javascript"></script>
+<script async="" defer="" id="tp-tools-js" src="https://urbiotica.com/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.5.18" type="text/javascript"></script>
+<script async="" defer="" id="revmin-js" src="https://urbiotica.com/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.5.24" type="text/javascript"></script>
+<script id="sd-global-js" src="https://urbiotica.com/wp-content/themes/urbiotica/assets/js/global-min.js?ver=1647972510" type="text/javascript"></script>
+<script id="owl-js" src="https://urbiotica.com/wp-content/themes/urbiotica/assets/vendor/js/owl.carousel.min.js?ver=1647972510" type="text/javascript"></script>
+<script id="owl-init-js" src="https://urbiotica.com/wp-content/themes/urbiotica/assets/js/owl.init-min.js?ver=1647972510" type="text/javascript"></script>
+<script id="google-recaptcha-js" src="https://www.google.com/recaptcha/api.js?render=6Lek440UAAAAAAQdczCYh5hgHIP0mjhdTFye_A4-&amp;ver=3.0" type="text/javascript"></script>
+<script id="wpcf7-recaptcha-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6Lek440UAAAAAAQdczCYh5hgHIP0mjhdTFye_A4-","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+</script>
+<script id="wpcf7-recaptcha-js" src="https://urbiotica.com/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=5.5.6.1" type="text/javascript"></script>
+<script id="select2-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/select2/select2.full.min.js?ver=4.0.13" type="text/javascript"></script>
+<script id="underscore-js" src="https://urbiotica.com/wp-includes/js/underscore.min.js?ver=1.13.3" type="text/javascript"></script>
+<script id="wp-util-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script id="wp-util-js" src="https://urbiotica.com/wp-includes/js/wp-util.min.js?ver=b8bff64a5cffc36ef70ca689f0f31088" type="text/javascript"></script>
+<script id="um_crop-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/um-crop.min.js?ver=2.4.0" type="text/javascript"></script>
+<script id="um_modal-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/um-modal.min.js?ver=2.4.0" type="text/javascript"></script>
+<script id="um_jquery_form-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/um-jquery-form.min.js?ver=2.4.0" type="text/javascript"></script>
+<script id="um_fileupload-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/um-fileupload.js?ver=2.4.0" type="text/javascript"></script>
+<script id="um_datetime-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/pickadate/picker.js?ver=2.4.0" type="text/javascript"></script>
+<script id="um_datetime_date-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/pickadate/picker.date.js?ver=2.4.0" type="text/javascript"></script>
+<script id="um_datetime_time-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/pickadate/picker.time.js?ver=2.4.0" type="text/javascript"></script>
+<script id="wp-hooks-js" src="https://urbiotica.com/wp-includes/js/dist/hooks.min.js?ver=c6d64f2cb8f5c6bb49caca37f8828ce3" type="text/javascript"></script>
+<script id="wp-i18n-js" src="https://urbiotica.com/wp-includes/js/dist/i18n.min.js?ver=ebee46757c6a411e38fd079a7ac71d94" type="text/javascript"></script>
+<script id="wp-i18n-js-after" type="text/javascript">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script id="um_raty-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/um-raty.min.js?ver=2.4.0" type="text/javascript"></script>
+<script id="um_tipsy-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/um-tipsy.min.js?ver=2.4.0" type="text/javascript"></script>
+<script id="imagesloaded-js" src="https://urbiotica.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4" type="text/javascript"></script>
+<script id="masonry-js" src="https://urbiotica.com/wp-includes/js/masonry.min.js?ver=4.2.2" type="text/javascript"></script>
+<script id="jquery-masonry-js" src="https://urbiotica.com/wp-includes/js/jquery/jquery.masonry.min.js?ver=3.1.2b" type="text/javascript"></script>
+<script id="um_scrollbar-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/simplebar.min.js?ver=2.4.0" type="text/javascript"></script>
+<script id="um_functions-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/um-functions.min.js?ver=2.4.0" type="text/javascript"></script>
+<script id="um_responsive-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/um-responsive.min.js?ver=2.4.0" type="text/javascript"></script>
+<script id="um_conditional-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/um-conditional.min.js?ver=2.4.0" type="text/javascript"></script>
+<script id="um_scripts-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var um_scripts = {"max_upload_size":"8388608","nonce":"9925bc4e2a"};
+/* ]]> */
+</script>
+<script id="um_scripts-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/um-scripts.min.js?ver=2.4.0" type="text/javascript"></script>
+<script id="um_profile-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/um-profile.min.js?ver=2.4.0" type="text/javascript"></script>
+<script id="um_account-js" src="https://urbiotica.com/wp-content/plugins/ultimate-member/assets/js/um-account.min.js?ver=2.4.0" type="text/javascript"></script>
+<script id="hoverIntent-js" src="https://urbiotica.com/wp-includes/js/hoverIntent.min.js?ver=1.10.2" type="text/javascript"></script>
+<script id="megamenu-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var megamenu = {"timeout":"300","interval":"100"};
+/* ]]> */
+</script>
+<script id="megamenu-js" src="https://urbiotica.com/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=2.9.6" type="text/javascript"></script>
+<script id="cmplz-cookiebanner-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_ajax_content":"","banner_version":"25","version":"6.1.6.1","store_consent":"","do_not_track":"","consenttype":"optin","region":"eu","geoip":"","dismiss_timeout":"","disable_cookiebanner":"","soft_cookiewall":"","dismiss_on_scroll":"","cookie_expiry":"365","url":"https:\/\/urbiotica.com\/en\/wp-json\/complianz\/v1\/","locale":"lang=en&locale=en_US","set_cookies_on_root":"","cookie_domain":"","current_policy_id":"14","cookie_path":"\/","categories":{"statistics":"statistics","marketing":"marketing"},"tcf_active":"","placeholdertext":"Click to accept {category} cookies and enable this content","css_file":"https:\/\/urbiotica.com\/wp-content\/uploads\/complianz\/css\/banner-{banner_id}-{type}.css?v=25","page_links":{"eu":{"cookie-statement":{"title":"Cookies policy","url":"https:\/\/urbiotica.com\/en\/cookies-policy\/"},"privacy-statement":{"title":"Privacy policy","url":"https:\/\/urbiotica.com\/en\/privacy-policy\/"},"impressum":{"title":"Legal notice","url":"https:\/\/urbiotica.com\/en\/legal-notice\/"}},"us":{"impressum":{"title":"Legal notice","url":"https:\/\/urbiotica.com\/en\/legal-notice\/"}},"uk":{"impressum":{"title":"Legal notice","url":"https:\/\/urbiotica.com\/en\/legal-notice\/"}},"ca":{"impressum":{"title":"Legal notice","url":"https:\/\/urbiotica.com\/en\/legal-notice\/"}},"au":{"impressum":{"title":"Legal notice","url":"https:\/\/urbiotica.com\/en\/legal-notice\/"}},"za":{"impressum":{"title":"Legal notice","url":"https:\/\/urbiotica.com\/en\/legal-notice\/"}},"br":{"impressum":{"title":"Legal notice","url":"https:\/\/urbiotica.com\/en\/legal-notice\/"}}},"tm_categories":"","forceEnableStats":"","preview":"","clean_cookies":""};
+/* ]]> */
+</script>
+<script defer="" id="cmplz-cookiebanner-js" src="https://urbiotica.com/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js?ver=6.1.6.1" type="text/javascript"></script>
+<script id="elementor-pro-webpack-runtime-js" src="https://urbiotica.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.7.1" type="text/javascript"></script>
+<script id="elementor-webpack-runtime-js" src="https://urbiotica.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.6.5" type="text/javascript"></script>
+<script id="elementor-frontend-modules-js" src="https://urbiotica.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.6.5" type="text/javascript"></script>
+<script id="elementor-pro-frontend-js-before" type="text/javascript">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/urbiotica.com\/wp-admin\/admin-ajax.php","nonce":"bbe1316b79","urls":{"assets":"https:\/\/urbiotica.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/urbiotica.com\/en\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/urbiotica.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script id="elementor-pro-frontend-js" src="https://urbiotica.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.7.1" type="text/javascript"></script>
+<script id="elementor-waypoints-js" src="https://urbiotica.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2" type="text/javascript"></script>
+<script id="jquery-ui-core-js" src="https://urbiotica.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1" type="text/javascript"></script>
+<script id="elementor-frontend-js-before" type="text/javascript">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.6.5","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"a11y_improvements":true,"e_import_export":true,"additional_custom_breakpoints":true,"e_hidden_wordpress_widgets":true,"theme_builder_v2":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true,"page-transitions":true,"notes":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/urbiotica.com\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":6276,"title":"Privacy%20policy%20-%20Urbiotica","excerpt":"","featuredImage":false}};
+</script>
+<script id="elementor-frontend-js" src="https://urbiotica.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.5" type="text/javascript"></script>
+<script id="pro-elements-handlers-js" src="https://urbiotica.com/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.7.1" type="text/javascript"></script>
+<!-- Statistics script Complianz GDPR/CCPA -->
+<script data-category="statistics" type="text/plain"></script><script>var FWP_HTTP = FWP_HTTP || {}; FWP_HTTP.lang = 'en';</script> <script type="text/javascript">
+			jQuery( window ).on( 'load', function() {
+				jQuery('input[name="um_request"]').val('');
+			});
+		</script>
+</link></body></html>

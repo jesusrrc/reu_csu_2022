@@ -1,0 +1,453 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>Policies — Security Guide  documentation</title>
+<link href="../_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="../_static/css/basic.css" rel="stylesheet" type="text/css"/>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+<script src="../_static/jquery.js"></script>
+<script src="../_static/underscore.js"></script>
+<script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="../_static/doctools.js"></script>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="tokens.html" rel="next" title="Tokens"/>
+<link href="authorization.html" rel="prev" title="Authorization"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- Bootstrap CSS -->
+<link href="../_static/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="../_static/css/font-awesome.min.css" rel="stylesheet"/>
+<!-- Custom CSS -->
+<link href="../_static/css/combined.css" rel="stylesheet"/>
+<!-- Search CSS -->
+<link href="../_static/css/search.css" rel="stylesheet"/>
+<!-- Pygments CSS -->
+<link href="../_static/pygments.css" rel="stylesheet"/>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-17511903-1', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+</head><body>
+<!-- SOURCE_FILE: https://opendev.org/openstack/security-doc/src/security-guide/source/identity/policies.rst -->
+<script>
+    (function (window, document) {
+        var loader = function () {
+            var script = document.createElement("script"), tag = document.getElementsByTagName("script")[0];
+            script.src = "https://search.openstack.org/widget/embed.min.js?t="+Date.now();
+            tag.parentNode.insertBefore(script, tag);
+        };
+        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+    })(window, document);
+</script>
+<nav class="navbar navbar-default" role="navigation">
+<div class="container">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div class="brand-wrapper">
+<a class="navbar-brand" href="https://www.openstack.org/"></a>
+</div>
+<div class="search-icon show"><i class="fa fa-search"></i> Search</div></div>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<div class="search-container tiny">
+<div class="openstack-search-bar" data-baseurl="search.openstack.org" data-context="docs-openstack"></div>
+</div>
+<ul class="nav navbar-nav navbar-main show">
+<li class="search-container-mobile">
+<div class="openstack-search-bar" data-baseurl="search.openstack.org" data-context="docs-openstack"></div>
+</li>
+<li> <!--Software -->
+<a class="drop" href="https://www.openstack.org/software/" id="dropdownMenuSoftware">Software <i class="fa fa-caret-down"></i></a>
+<ul aria-labelledby="dropdownMenuSoftware" class="dropdown-menu" role="menu">
+<li role="presentation"><a href="https://www.openstack.org/software/" role="menuitem" tabindex="-1">Overview</a></li>
+<li role="presentation"><a href="https://www.openstack.org/software/project-navigator/openstack-components" role="menuitem" tabindex="-1">OpenStack Components</a></li>
+<li role="presentation"><a href="https://www.openstack.org/software/project-navigator/sdks" role="menuitem" tabindex="-1">SDKs</a></li>
+<li role="presentation"><a href="https://www.openstack.org/software/project-navigator/deployment-tools" role="menuitem" tabindex="-1">Deployment Tools</a></li>
+<li role="presentation"><a href="https://www.openstack.org/assets/software/projectmap/openstack-map.pdf" role="menuitem" tabindex="-1" target="_blank">OpenStack Map</a></li>
+<li role="presentation"><a href="https://www.openstack.org/software/sample-configs/" role="menuitem" tabindex="-1">Sample Configs</a></li>
+</ul>
+</li>
+<li> <!-- Use Cases -->
+<a class="drop" href="https://www.openstack.org/use-cases/" id="dropdownMenuUsers">Use Cases <i class="fa fa-caret-down"></i></a>
+<ul aria-labelledby="dropdownMenuUsers" class="dropdown-menu" role="menu">
+<li role="presentation"><a href="https://www.openstack.org/use-cases/" role="menuitem" tabindex="-1">Users in Production</a></li>
+<li class="divider" role="presentation"></li>
+<li role="presentation"><a href="https://www.openstack.org/use-cases/bare-metal/" role="menuitem" tabindex="-1">Ironic Bare Metal</a></li>
+<li role="presentation"><a href="https://www.openstack.org/use-cases/edge-computing/" role="menuitem" tabindex="-1">Edge Computing</a></li>
+<li role="presentation"><a href="https://www.openstack.org/use-cases/telecoms-and-nfv/" role="menuitem" tabindex="-1">Telecom &amp; NFV</a></li>
+<li role="presentation"><a href="https://www.openstack.org/use-cases/science/" role="menuitem" tabindex="-1">Science and HPC</a></li>
+<li role="presentation"><a href="https://www.openstack.org/use-cases/containers/" role="menuitem" tabindex="-1">Containers</a></li>
+<li role="presentation"><a href="https://www.openstack.org/use-cases/enterprise/" role="menuitem" tabindex="-1">Enterprise</a></li>
+<li role="presentation"><a href="https://www.openstack.org/surveys/landing" role="menuitem" tabindex="-1">User Survey</a></li>
+</ul>
+</li>
+<li> <!-- Events -->
+<a class="drop" href="https://www.openstack.org/events/" id="dropdownMenuEvents">Events <i class="fa fa-caret-down"></i></a>
+<ul aria-labelledby="dropdownMenuEvents" class="dropdown-menu" role="menu">
+<li role="presentation"><a href="https://www.openstack.org/summit/" role="menuitem" tabindex="-1">Open Infrastructure Summits</a></li>
+<li role="presentation"><a href="https://www.openstack.org/ptg/" role="menuitem" tabindex="-1">Project Teams Gathering</a></li>
+<li role="presentation"><a href="https://www.openstack.org/events/opendev-2020/" role="menuitem" tabindex="-1">OpenDev</a></li>
+<li role="presentation"><a href="https://www.openstack.org/events/community-events/" role="menuitem" tabindex="-1">Community Events</a></li>
+<li role="presentation"><a href="https://www.openstack.org/events/openstackdays" role="menuitem" tabindex="-1">OpenStack &amp; OpenInfra Days</a></li>
+<li role="presentation"><a href="https://www.openstack.org/videos/" role="menuitem" tabindex="-1">Summit Videos</a></li>
+</ul>
+</li>
+<li><!-- Community -->
+<a class="drop" href="https://www.openstack.org/community/" id="dropdownMenuCommunity">Community <i class="fa fa-caret-down"></i></a>
+<ul aria-labelledby="dropdownMenuCommunity" class="dropdown-menu" role="menu">
+<li role="presentation"><a href="https://www.openstack.org/community/" role="menuitem" tabindex="-1">Welcome! Start Here</a></li>
+<li role="presentation"><a href="https://www.openstack.org/community/tech-committee" role="menuitem" tabindex="-1">OpenStack Technical Committee</a></li>
+<li role="presentation"><a href="https://www.openstack.org/community/speakers/" role="menuitem" tabindex="-1">Speakers Bureau</a></li>
+<li role="presentation"><a href="http://wiki.openstack.org" role="menuitem" tabindex="-1">OpenStack Wiki</a></li>
+<li role="presentation"><a href="https://www.openstack.org/coa/" role="menuitem" tabindex="-1">Get Certified (COA)</a></li>
+<li role="presentation"><a href="https://www.openstack.org/community/jobs/" role="menuitem" tabindex="-1">Jobs</a></li>
+<li role="presentation"><a href="https://www.openstack.org/marketing/" role="menuitem" tabindex="-1">Marketing Resources</a></li>
+<li role="presentation"><a href="https://www.openstack.org/news/" role="menuitem" tabindex="-1">Community News</a></li>
+<li role="presentation"><a href="http://superuser.openstack.org" role="menuitem" tabindex="-1">Superuser Magazine</a></li>
+<li class="divider" role="presentation"></li>
+<li role="presentation"><a href="https://www.openstack.org/community/supporting-organizations/" role="menuitem" tabindex="-1">OpenInfra Foundation Supporting Organizations</a></li>
+<li role="presentation"><a href="https://openinfra.dev" role="menuitem" tabindex="-1">Open Infrastructure Foundation (OpenInfra Foundation)</a></li>
+</ul>
+</li>
+<li><!-- Marketplace -->
+<a class="drop" href="https://www.openstack.orgmarketplace/" id="dropdownMenuLearn">Marketplace <i class="fa fa-caret-down"></i></a>
+<ul aria-labelledby="dropdownMenuEvents" class="dropdown-menu dropdown-hover" role="menu">
+<li role="presentation"><a href="https://www.openstack.org/marketplace/training/" role="menuitem" tabindex="-1">Training</a></li>
+<li role="presentation"><a href="https://www.openstack.org/marketplace/distros/" role="menuitem" tabindex="-1">Distros &amp; Appliances</a></li>
+<li role="presentation"><a href="https://www.openstack.org/marketplace/public-clouds/" role="menuitem" tabindex="-1">Public Clouds</a></li>
+<li role="presentation"><a href="https://www.openstack.org/marketplace/hosted-private-clouds/" role="menuitem" tabindex="-1">Hosted Private Clouds</a></li>
+<li role="presentation"><a href="https://www.openstack.org/marketplace/remotely-managed-private-clouds/" role="menuitem" tabindex="-1">Remotely Managed Private Clouds</a></li>
+<li role="presentation"><a href="https://www.openstack.org/marketplace/consulting/" role="menuitem" tabindex="-1">Consulting &amp; Integrators</a></li>
+<li role="presentation"><a href="https://www.openstack.org/marketplace/drivers/" role="menuitem" tabindex="-1">Drivers</a></li>
+</ul>
+</li>
+<li><!-- Blog -->
+<a href="https://www.openstack.org/blog/">Blog</a>
+</li>
+<li><!-- Docs -->
+<a href="http://docs.openstack.org/">Docs</a>
+</li>
+<li> <!-- Join -->
+<li class="join-nav-section">
+<a href="https://openinfra.dev/join/" id="dropdownMenuJoin">Join <i class="fa fa-caret-down"></i></a>
+<ul aria-labelledby="dropdownMenuJoin" class="dropdown-menu dropdown-hover" role="menu" style="display: none;">
+<li role="presentation"><a href="https://openinfra.dev/join/" role="menuitem" tabindex="-1">Sign up for Foundation Membership</a></li>
+<li role="presentation"><a href="https://openinfra.dev/join/" role="menuitem" tabindex="-1">Sponsor the Foundation</a></li>
+<li role="presentation"><a href="https://openinfra.dev" role="menuitem" tabindex="-1">More about the Foundation</a></li>
+</ul>
+</li>
+<li>
+<a class="sign-in-btn" href="https://www.openstack.org/Security/login/?BackURL=/home/">Log In</a>
+</li>
+</li>
+</ul>
+</div>
+</div>
+<!-- /.container -->
+</nav>
+<div class="container docs-book-wrapper">
+<div class="row">
+<div class="col-lg-9 col-md-8 col-sm-8 col-lg-push-3 col-md-push-4 col-sm-push-4">
+<div class="row docs-title">
+<div class="col-lg-8">
+<h1>Policies</h1>
+</div>
+<div class="docs-actions">
+<a href="authorization.html"><i class="fa fa-angle-double-left" data-placement="top" data-toggle="tooltip" title="Previous: Authorization"></i></a>
+<a href="tokens.html"><i class="fa fa-angle-double-right" data-placement="top" data-toggle="tooltip" title="Next: Tokens"></i></a>
+<a href="" id="logABugLink1" target="_blank" title="Found an error? Report a bug against this page"><i class="fa fa-bug" data-placement="top" data-toggle="tooltip" title="Report a Bug"></i></a>
+</div>
+</div>
+<div class="row">
+<div class="col-lg-12">
+<div class="docs-body" role="main">
+<section id="policies">
+<span id="policy-section"></span><h1>Policies<a class="headerlink" href="#policies" title="Permalink to this heading">¶</a></h1>
+<p>Each OpenStack service defines the access policies for its resources in an
+associated policy file. A resource, for example, could be API access, the
+ability to attach to a volume, or to fire up instances. The policy rules are
+specified in JSON format and the file is called <code class="docutils literal notranslate"><span class="pre">policy.json</span></code>. The
+syntax and format of this file is discussed in the <a class="reference external" href="https://docs.openstack.org/ocata/config-reference/policy-json-file.html">Configuration Reference</a>.</p>
+<p>These policies can be modified or updated by the cloud administrator to
+control the access to the various resources. Ensure that any changes to the
+access control policies do not unintentionally weaken the security of any
+resource. Also note that changes to the <code class="docutils literal notranslate"><span class="pre">policy.json</span></code> file become effective
+immediately and do not require the service to be restarted.</p>
+<p>The following example shows how the service can restrict access to create,
+update and delete resources to only those users which have the role of
+<code class="docutils literal notranslate"><span class="pre">cloud_admin</span></code>, which has been defined as being the conjunction of
+<code class="docutils literal notranslate"><span class="pre">role</span> <span class="pre">=</span> <span class="pre">admin</span></code> and <code class="docutils literal notranslate"><span class="pre">domain_id</span> <span class="pre">=</span> <span class="pre">admin_domain_id</span></code>, while the get and list
+resources are made available to users which have the role of <code class="docutils literal notranslate"><span class="pre">cloud_admin</span></code>
+or <code class="docutils literal notranslate"><span class="pre">admin</span></code>.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"admin_required"</span><span class="p">:</span><span class="w"> </span><span class="s2">"role:admin"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"cloud_admin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_required and domain_id:admin_domain_id"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"service_role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"role:service"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"service_or_admin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_required or rule:service_role"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"owner"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"user_id:%(user_id)s or user_id:%(target.token.user_id)s"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"admin_or_owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(rule:admin_required and domain_id:%(target.token.user.domain.id)s) or rule:owner"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"admin_or_cloud_admin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_required or rule:cloud_admin"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"admin_and_matching_domain_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_required and domain_id:%(domain_id)s"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"service_admin_or_owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:service_or_admin or rule:owner"</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="nt">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_required"</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="nt">"identity:get_service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_or_cloud_admin"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"identity:list_services"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_or_cloud_admin"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"identity:create_service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:cloud_admin"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"identity:update_service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:cloud_admin"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"identity:delete_service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:cloud_admin"</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">    </span><span class="nt">"identity:get_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_or_cloud_admin"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"identity:list_endpoints"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:admin_or_cloud_admin"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"identity:create_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:cloud_admin"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"identity:update_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:cloud_admin"</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">"identity:delete_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rule:cloud_admin"</span><span class="p">,</span><span class="w"></span>
+
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="docs-actions">
+<a href="authorization.html"><i class="fa fa-angle-double-left" data-placement="top" data-toggle="tooltip" title="Previous: Authorization"></i></a>
+<a href="tokens.html"><i class="fa fa-angle-double-right" data-placement="top" data-toggle="tooltip" title="Next: Tokens"></i></a>
+<a href="" id="logABugLink3" target="_blank" title="Found an error? Report a bug against this page"><i class="fa fa-bug" data-placement="top" data-toggle="tooltip" title="Report a Bug"></i></a>
+</div>
+<div class="row docs-byline bottom">
+<div class="docs-updated">this page last updated: 2022-06-02 16:10:10</div>
+</div>
+<div class="row">
+<div class="col-lg-8 col-md-8 col-sm-8 docs-license">
+<a href="https://creativecommons.org/licenses/by/3.0/">
+<img alt="Creative Commons Attribution 3.0 License" src="../_static/images/docs/license.png"/>
+</a>
+<p>
+ Except where otherwise noted, this document is licensed under
+ <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons
+ Attribution 3.0 License</a>. See all <a href="https://www.openstack.org/legal">
+ OpenStack Legal Documents</a>.
+</p>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4 docs-actions-wrapper">
+<!-- ID buglinkbottom added so that pre-filled doc bugs
+                 are sent to Launchpad projects related to the
+                 document -->
+<a class="docs-footer-actions" href="#" id="logABugLink2"><i class="fa fa-bug"></i> found an error? report a bug</a>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-4 col-sm-4 col-lg-pull-9 col-md-pull-8 col-sm-pull-8 docs-sidebar">
+<div class="btn-group docs-sidebar-releases">
+<button class="btn docs-sidebar-home" data-placement="top" data-toggle="tooltip" onclick="location.href='/'" title="OpenStack Docs Home"><i class="fa fa-arrow-circle-o-left"></i></button>
+<button class="btn docs-sidebar-release-select" data-toggle="dropdown" href="#" type="button">OpenStack Documentation<i class="fa fa-caret-down"></i></button>
+<ul aria-labelledby="dLabel" class="dropdown-menu docs-sidebar-dropdown" role="menu">
+<li class="dropdown-header" role="presentation">Guides</li>
+<li role="presentation"><a href="https://docs.openstack.org/index.html#install-guides" role="menuitem" tabindex="-1">Install Guides</a></li>
+<li role="presentation"><a href="https://docs.openstack.org/index.html#user-guides" role="menuitem" tabindex="-1">User Guides</a></li>
+<li role="presentation"><a href="https://docs.openstack.org/index.html#configuration-guides" role="menuitem" tabindex="-1">Configuration Guides</a></li>
+<li role="presentation"><a href="https://docs.openstack.org/index.html#ops-and-admin-guides" role="menuitem" tabindex="-1">Operations and Administration Guides</a></li>
+<li role="presentation"><a href="https://docs.openstack.org/index.html#api-guides" role="menuitem" tabindex="-1">API Guides</a></li>
+<li role="presentation"><a href="https://docs.openstack.org/index.html#contributor-guides" role="menuitem" tabindex="-1">Contributor Guides</a></li>
+<li class="dropdown-header" role="presentation">Languages</li>
+<li role="presentation"><a href="https://docs.openstack.org/de/" role="menuitem" tabindex="-1">Deutsch (German)</a></li>
+<li role="presentation"><a href="https://docs.openstack.org/fr/" role="menuitem" tabindex="-1">Français (French)</a></li>
+<li role="presentation"><a href="https://docs.openstack.org/id/" role="menuitem" tabindex="-1">Bahasa Indonesia (Indonesian)</a></li>
+<li role="presentation"><a href="https://docs.openstack.org/it/" role="menuitem" tabindex="-1">Italiano (Italian)</a></li>
+<li role="presentation"><a href="https://docs.openstack.org/ja/" role="menuitem" tabindex="-1">日本語 (Japanese)</a></li>
+<li role="presentation"><a href="https://docs.openstack.org/ko_KR/" role="menuitem" tabindex="-1">한국어 (Korean)</a></li>
+<li role="presentation"><a href="https://docs.openstack.org/pt_BR/" role="menuitem" tabindex="-1">Português (Portuguese)</a></li>
+<li role="presentation"><a href="https://docs.openstack.org/tr_TR/" role="menuitem" tabindex="-1">Türkçe (Türkiye)</a></li>
+<li role="presentation"><a href="https://docs.openstack.org/zh_CN/" role="menuitem" tabindex="-1">简体中文 (Simplified Chinese)</a></li>
+</ul>
+</div>
+<div class="docs-sidebar-toc">
+<div class="docs-sidebar-section" id="table-of-contents">
+<a class="docs-sidebar-section-title" href="../index.html"><h4>Security Guide </h4></a>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../common/conventions.html">Conventions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">System documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../management.html">Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../secure-communication.html">Secure communication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api-endpoints.html">API endpoints</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../identity.html">Identity</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authentication-methods.html">Authentication methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authorization.html">Authorization</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tokens.html">Tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domains.html">Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="federated-keystone.html">Federated keystone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="checklist.html">Checklist</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dashboard.html">Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compute.html">Compute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../block-storage.html">Block Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../image-storage.html">Image Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../shared-file-systems.html">Shared File Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../networking.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../object-storage.html">Object Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../secrets-management.html">Secrets Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging.html">Message queuing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data-processing.html">Data processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../databases.html">Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tenant-data.html">Tenant data privacy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../instance-management.html">Instance security management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../monitoring-logging.html">Monitoring and logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compliance.html">Compliance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security-review.html">Security review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../checklist.html">Security Checklist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">Appendix</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="row footer-links">
+<div class="col-lg-2 col-sm-2">
+<h3>OpenStack</h3>
+<ul>
+<li><a href="https://openstack.org/projects/">Projects</a></li>
+<li><a href="https://www.openstack.org/software/security/">OpenStack Security</a></li>
+<li><a href="https://openstack.org/projects/openstack-faq/">Common Questions</a></li>
+<li><a href="https://openstack.org/blog/">Blog</a></li>g
+          <li><a href="https://openstack.org/news/">News</a></li>
+</ul>
+</div>
+<div class="col-lg-2 col-sm-2">
+<h3>Community</h3>
+<ul>
+<li><a href="https://openstack.org/community/">User Groups</a></li>
+<li><a href="https://openstack.org/community/events/">Events</a></li>
+<li><a href="https://openstack.org/community/jobs/">Jobs</a></li>
+<li><a href="https://openstack.org/foundation/companies/">Companies</a></li>
+<li><a href="https://docs.openstack.org/contributors">Contribute</a></li>
+</ul>
+</div>
+<div class="col-lg-2 col-sm-2">
+<h3>Documentation</h3>
+<ul>
+<li><a href="https://docs.openstack.org">OpenStack Manuals</a></li>
+<li><a href="https://openstack.org/software/start/">Getting Started</a></li>
+<li><a href="https://developer.openstack.org">API Documentation</a></li>
+<li><a href="https://wiki.openstack.org">Wiki</a></li>
+</ul>
+</div>
+<div class="col-lg-2 col-sm-2">
+<h3>Branding &amp; Legal</h3>
+<ul>
+<li><a href="https://openstack.org/brand/">Logos &amp; Guidelines</a></li>
+<li><a href="https://openstack.org/brand/openstack-trademark-policy/">Trademark Policy</a></li>
+<li><a href="https://openstack.org/privacy/">Privacy Policy</a></li>
+<li><a href="https://wiki.openstack.org/wiki/How_To_Contribute#Contributor_License_Agreement">OpenStack CLA</a></li>
+</ul>
+</div>
+<div class="col-lg-4 col-sm-4">
+<h3>Stay In Touch</h3>
+<a class="social-icons footer-twitter" href="https://twitter.com/OpenStack" target="_blank"></a>
+<a class="social-icons footer-facebook" href="https://www.facebook.com/openstack" target="_blank"></a>
+<a class="social-icons footer-linkedin" href="https://www.linkedin.com/company/openstack" target="_blank"></a>
+<a class="social-icons footer-youtube" href="https://www.youtube.com/user/OpenStackFoundation" target="_blank"></a>
+<p class="fine-print">
+          The OpenStack project is provided under the
+          <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a>. Openstack.org is powered by
+          <a href="https://rackspace.com" target="_blank">Rackspace Cloud Computing</a>.
+        </p>
+</div>
+</div>
+</div>
+</footer>
+<!-- jQuery -->
+<script src="../_static/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<!-- Bootstrap JavaScript -->
+<script src="../_static/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- The rest of the JS -->
+<script src="../_static/js/navigation.js" type="text/javascript"></script>
+<!-- Docs JS -->
+<script src="../_static/js/docs.js" type="text/javascript"></script>
+<!-- standard sphinx include libraries, which allow search highlighting -->
+<script src="../_static/underscore.js" type="text/javascript"></script>
+<script src="../_static/doctools.js" type="text/javascript"></script>
+<script src="../_static/searchtools.js" type="text/javascript"></script>
+<script src="../_static/language_data.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+      URL_ROOT:    './',
+      VERSION:     '',
+      COLLAPSE_INDEX: false,
+      FILE_SUFFIX: '.html',
+      LINK_SUFFIX: '.html',
+      SOURCELINK_SUFFIX: '.txt',
+      HAS_SOURCE:  true
+    };
+</script>
+<!-- Javascript for page -->
+<script language="JavaScript">
+  /* Build a description of this page including SHA, source location on git
+   * repo, build time and the project's launchpad bug tag. Set the HREF of the
+   * bug buttons
+   */
+    var lineFeed = "%0A";
+    var gitURL = "Source: Can't derive source file URL";
+
+    /* there have been cases where "pagename" wasn't set; better check for it */
+    /* "giturl" is the URL of the source file on Git and is auto-generated by
+     * openstackdocstheme.
+     *
+     * "pagename" is a standard sphinx parameter containing the name of
+     * the source file, without extension.
+     */
+
+    var sourceFile = "identity/policies" + ".rst";
+    gitURL = "Source: https://opendev.org/openstack/security-doc/src/security-guide/source" + "/" + sourceFile;
+
+    /* gitsha, project and bug_tag rely on variables in conf.py */
+    var gitSha = "SHA: 34a7b3d8821cc18e0cf28ef0bc933e78da434ce3";
+    var repositoryName = "openstack/security-doc";
+    var bugProject = "ossp-security-documentation";
+    var bugTitle = "Policies in Security Guide";
+    var fieldTags = "sec-guide";
+    var useStoryboard = "";
+
+    /* "last_updated" is the build date and time. It relies on the
+       conf.py variable "html_last_updated_fmt", which should include
+       year/month/day as well as hours and minutes                   */
+    var buildstring = "Release:  on 2022-06-02 16:10:10";
+
+    var fieldComment = encodeURI(buildstring) +
+                       lineFeed + encodeURI(gitSha) +
+                       lineFeed + encodeURI(gitURL) ;
+
+    logABug(bugTitle, bugProject, fieldComment, fieldTags, repositoryName, useStoryboard);
+</script>
+</body>
+</html>

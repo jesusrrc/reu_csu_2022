@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 8]>         <html class=" no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>            <html class=" no-js lt-ie10 lt-ie9 ie8"> <![endif]-->
+<!--[if IE 9]>            <html class=" no-js lt-ie10 ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]--><head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script>
+  var functionToInit = [];
+</script><script>
+  var initialDeviceWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+  if (sessionStorage['switchViewportWidth'] >= 1024 && initialDeviceWidth < 1024) {
+    var switchViewport = 1024;
+  } else if (sessionStorage['switchViewportWidth'] < 1024 && initialDeviceWidth >= 1024) {
+    var switchViewport = 1023;
+  } else if (sessionStorage['switchViewportWidth'] != null) {
+    sessionStorage.removeItem('switchViewportWidth');
+  }
+
+  if (switchViewport) {
+    if (sessionStorage['switchViewportDevice'] == 'ie') {
+      var element;
+      if (navigator.userAgent.match(/Windows NT 6.3; ARM(.+)Touch/)) {
+        element = document.createElement("style");
+        element.appendChild(document.createTextNode("@-ms-viewport{width:" + switchViewport + "px;}"));
+      } else {
+        element = document.createElement("link");
+        element.href = switchViewport >= 1024 ? '/frontend/release_2022-05/dist/resources/css/switchToDesktop.css' : '/frontend/release_2022-05/dist/resources/css/switchToMobile.css';
+        element.rel = "stylesheet";
+      }
+      document.getElementsByTagName("head")[0].appendChild(element);
+    } else {
+      document.querySelector("meta[name=viewport]").setAttribute('content', 'width=' + switchViewport);
+    }
+  }
+</script>
+<title>Privacy Policy - Infineon Technologies</title>
+<meta content="Privacy Policy - Infineon Technologies" property="og:title">
+<meta content="" name="description"/>
+<meta content="" property="og:description"/>
+<meta content="" name="keywords"/>
+<meta content="" name="area">
+<link href="https://www.infineon.com/cms/en/about-infineon/privacy-policy/" rel="canonical"/>
+<meta content="Copyright Infineon Technologies AG - all rights reserved" name="copyright">
+<meta content="Infineon Technologies AG" name="publisher">
+<meta content="Infineon Technologies AG" name="author">
+<meta content="virtual identity AG | http://www.virtual-identity.com" name="producer"/>
+<meta content="5a538353-93ac-11e7-b09a-40f2e90e8d04" name="leid"/>
+<link href="/frontend/release_2022-05/dist/resources/img/favicon.ico" rel="shortcut icon" type="image/ico"/>
+<link href="/frontend/release_2022-05/dist/resources/css/ifx.1.css" rel="stylesheet"/>
+<link href="/frontend/release_2022-05/dist/resources/css/ifx.2.css" rel="stylesheet"/>
+<script nomodule="" src="/frontend/release_2022-05/dist/resources/js/vendor/fetch.umd.js"></script>
+<script nomodule="" src="/frontend/release_2022-05/dist/resources/js/es6.object.polyfills.js"></script>
+<script nomodule="" src="/frontend/release_2022-05/dist/resources/js/vendor/es6.append.polyfill.js"></script>
+<script nomodule="" src="/frontend/release_2022-05/dist/resources/js/es6.nodelist.forEach.polyfill.js"></script>
+<script nomodule="" src="/frontend/release_2022-05/dist/resources/js/customEvents.polyfill.js"></script>
+<script nomodule="" src="/frontend/release_2022-05/dist/resources/js/closest.polyfill.js"></script>
+<script src="/frontend/release_2022-05/dist/resources/js/vendor/webcomponents-loader.js"></script>
+<link href="/frontend/release_2022-05/dist/resources/css/registration.css" rel="stylesheet"/>
+<script src="https://www.infineon.com/infineon/frontend/infineon-component-library/dist/component-library-template/component-library-template.js"></script>
+<script src="https://www.infineon.com/myinfineon/frontend/registration-stencil-frontend/dist/myinfineon-registration-stencilfrontend/myinfineon-registration-stencilfrontend.js"></script>
+<script src="https://www.infineon.com/myinfineon/frontend/personalization-stencil/dist/ifx-personalization-service/ifx-personalization-service.js"></script>
+<script src="/frontend/release_2022-05/dist/resources/js/scripts.head.all.min.js"></script>
+<script type="text/javascript">
+  global.configuration.set('data.staticResourcesBase', '/frontend/release_2022-05/dist/resources/');
+  
+  window.preventTrackingOnPage = true;
+</script>
+<script src="/frontend/release_2022-05/dist/resources/js/vendor/update.npm.full.js"></script>
+<script>
+  var $buoop = {required: {e: -4, f: -3, o: -3, s: -1, c: -3}, insecure: true, test: false, dont_show_debuginfo: true, style: 'top', api: 2020.07, reminder: 0};
+  try { document.addEventListener('DOMContentLoaded', function() {$buo($buoop)},false) }
+  catch(e){ window.attachEvent('onload', function() {$buo($buoop)}) }
+</script>
+<!-- get the navigation to breadcrumb object -->
+<script>
+var isIfxUser = false;
+if (document.cookie.split(';').some(function(item) {
+  return item.trim().indexOf('IFX_user=') == 0
+})) {
+  isIfxUser = true;
+}
+
+var pageMetaData = {
+  event: "pageMeta",
+  page: {
+    pageInfo: {
+      pageType: "unassigned",
+      language: "en",
+      samiId: "",
+      cmsId: "",
+      breadcrumbAllLevels: "About Infineon > Privacy Policy",
+      breadcrumbLevel1: "About\x20Infineon",
+      breadcrumbLevel2: "Privacy\x20Policy",
+      
+    }
+  }
+};
+// only add trafficType, if not pushed before
+if (!sessionStorage['trafficTypePushed']) {
+  pageMetaData['user'] = {
+    segment: {
+      trafficType: isIfxUser ? "Infineon" : "External"
+    }
+  }
+  sessionStorage['trafficTypePushed'] = "true";
+}
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push(pageMetaData);
+
+// init global tracking data that the templates can push values in
+window.trackData = window.trackData || {};
+</script>
+<script type="text/javascript">
+  var legacyCookieConsentEnabled = false;
+  var consentCookieName = "cookie_consent_1";
+</script>
+<!-- OneTrust Cookies Consent Notice start for infineon.com -->
+<script charset="UTF-8" data-document-language="true" data-domain-script="85f8227d-e015-4c62-ab96-ee1a08760fb3" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript"></script>
+<!-- OneTrust Cookies Consent Notice end for infineon.com -->
+<script type="text/javascript">
+
+  
+  function openRegistration(extraClickParameters) {
+    var myInfineonRegistration = document.createElement('myifx-registration');
+    var myifxRegistrationSource = extraClickParameters.registrationSource;
+
+    myInfineonRegistration.setAttribute("language", configuration.data.global.language ||"en");
+    myInfineonRegistration.setAttribute("class-attr", "registration registration--modal");
+    myInfineonRegistration.setAttribute("overlay-name", 'Registration');
+
+    myInfineonRegistration.setAttribute("extra-click-parameters", JSON.stringify({'registrationSource' : myifxRegistrationSource}));
+    document.body.appendChild(myInfineonRegistration);
+  }
+
+  
+  function getRegistrationSourceForHashRegister(urlString){
+      var validationPattern = /^\?((\w+=\w+)(&)?)+/g;
+      if(! validationPattern.test(urlString)) {
+        return 'MYIFX_HASH_REGISTER';
+      }
+      var paramStrings = urlString.split('?')[1];
+      var queryString = new URLSearchParams(paramStrings);
+      var registrationSource = queryString.get("registrationSource");
+      switch(registrationSource) {
+        case "cmgmt":
+          return "MYIFX_CYPRESS_SFDC_COLLAB";
+        default:
+          return 'MYIFX_HASH_REGISTER';
+      }
+  }
+
+
+  function showRegistrationModalIfRegisterHashExists() {
+    if (window.location.hash === '#register') {
+      var myifxRegistrationSource = getRegistrationSourceForHashRegister(location.search);
+      openRegistration({registrationSource: myifxRegistrationSource});
+    }
+  }
+
+
+
+  function getUsersConsentInteractionCount(oneTrustMetaInformationCookie) {
+      var interactionCountRegex = /interactionCount=\d+/g;
+      if(!interactionCountRegex.test(oneTrustMetaInformationCookie)){
+        return 0;
+      }
+      var interactionCount = oneTrustMetaInformationCookie.match(interactionCountRegex)[0];
+      var interactionDigitRegex = /\d+/g;
+      var interactionDigit = parseInt((interactionCount.match(interactionDigitRegex))[0]);
+      return interactionDigit;
+
+  }
+
+  window.addEventListener('load',function() {
+    var isConsentAlreadyChoosen = getUsersConsentInteractionCount(vi.helpers.getCookie("OptanonConsent")) > 0;
+    if (isConsentAlreadyChoosen) {
+      showRegistrationModalIfRegisterHashExists();
+    }
+  });
+
+  
+  function OptanonWrapper() {
+    OneTrust.OnConsentChanged(function () {
+      showRegistrationModalIfRegisterHashExists();
+    });
+  }
+</script>
+<!-- Google Tag Manager preview/prod environment -->
+<!-- Google Tag Manager -->
+<script>(function(w, d, s, l, i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'}); f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl+'&gtm_auth=XcwOqCnNeaWAf4j4o2wr1A&gtm_preview=env-2&gtm_cookies_win=x';f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KV9T6RC');</script>
+<!-- End Google Tag Manager -->
+</meta></meta></meta></meta></meta></head>
+<body class="en">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KV9T6RC&gt;m_auth=XcwOqCnNeaWAf4j4o2wr1A&gt;m_preview=env-2&gt;m_cookies_win=x" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="overall-wrapper">
+<div class="site" id="offcanvas-wrapper">
+<div class="site__content">
+<nav class="main clearfix visible-xxs visible-xs visible-sm" id="navigation" role="navigation">
+<ul class="main nav-list" role="menubar">
+</ul>
+</nav><header class="navbar">
+<div class="centered">
+<div itemscope="" itemtype="http://schema.org/Organization">
+<a class="logo" href="/cms/en/" itemprop="url">
+<picture data-itemprop="logo" data-title="Infineon Technologies">
+<source media="(min-width: 1024px) and (min-device-pixel-ratio: 2)" srcset="/frontend/release_2022-05/dist/resources/img/logo-desktop-en-2x.png"/>
+<source media="(min-width: 1024px)" srcset="/frontend/release_2022-05/dist/resources/img/logo-desktop-en.png"/>
+<source data-min-dpr="2" media="(max-width: 1023px) and (min-device-pixel-ratio: 2)" srcset="/frontend/release_2022-05/dist/resources/img/logo-mobile-en-2x.png"/>
+<img alt="Infineon Technologies - Semiconductor and System Solutions" class="img-responsive-lazy" itemprop="logo" loading="lazy" src="/frontend/release_2022-05/dist/resources/img/logo-mobile-en.png"/>
+</picture>
+</a>
+</div>
+<button class="btn btn-link navbar-toggle" id="offcanvas-nav-trigger">
+<span class="sr-only">Toggle Navigation</span>
+<span class="glyphicon glyphicon-menu"></span>
+</button>
+<form action="/cms/en/search.html" class="navbar-search" method="get" role="search">
+<input name="view" type="hidden" value="all"/>
+<fieldset>
+<input autocomplete="off" class="search-input typeahead" data-lang="en" data-provide="typeahead" data-suggestionsurl="/search/suggestions" name="term" placeholder="Search" type="text"/>
+<button class="btn btn-link f0" id="offcanvas-search-trigger" type="submit">
+<span class="glyphicon glyphicon-search"></span>Search</button>
+</fieldset>
+</form>
+<nav class="nav">
+<ul class="first" role="menubar">
+<li class="" role="menuitem">
+<a href="/cms/en/product/">Products</a>
+</li>
+<li class="" role="menuitem">
+<a href="/cms/en/applications/">Applications</a>
+</li>
+<li class="" role="menuitem">
+<a href="/cms/en/design-support/">Design Support</a>
+</li>
+<li class="" role="menuitem">
+<a href="/cms/en/community">Community</a>
+</li>
+<li aria-haspopup="true" class="active blur has-flyout" data-flyout="4" role="menuitem">
+<a href="/cms/en/about-infineon/">About Infineon</a>
+</li>
+<li class="" role="menuitem">
+<a href="/cms/en/careers/">Careers</a>
+</li>
+</ul>
+</nav>
+<main-search-input data-resources="[{paths: ['components/main-search-input/index.js']}]" dropdown-list-items-url="/search/dropdownfields?folder=en&amp;lang=en" lang="en" suggestions-url="/search/typeahead">
+</main-search-input>
+<nav class="metanav">
+<ul>
+<li class="hidden-xxs hidden-xs hidden-sm"><a href="/cms/en/product/promopages/newsletter-registration/">Newsletter</a></li>
+<li class="hidden-xxs hidden-xs hidden-sm"><a href="/cms/en/about-infineon/company/contacts/">Contact</a></li>
+<li class="hidden-xxs hidden-xs hidden-sm"><a href="/cms/en/product/promopages/where-to-buy/">Where to Buy</a></li>
+<li class="flyout flyout-right hover hidden-xxs hidden-xs hidden-sm">
+<span>English<b class="caret"></b></span>
+<ul>
+<li class="line"></li>
+<li><a class="languagelink" href="/cms/cn/about-infineon/privacy-policy/?Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0">简体中文</a></li>
+<li><a class="languagelink" href="/cms/de/about-infineon/privacy-policy/?Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0">Deutsch</a></li>
+<li><a class="languagelink" href="/cms/jp/about-infineon/privacy-policy/?Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0">日本語</a></li>
+</ul>
+</li>
+<li class="flyout login-flyout user-button hover">
+<span class="my-infineon-label"><span class="flyout-login-label glyphicon glyphicon-user"></span><span class="flyout-login-label flyout-login-label-text hidden-xxs hidden-xs hidden-sm">myInfineon</span><b class="caret"></b></span>
+<ul class="flyout-menu-list">
+<li class="line"></li>
+<li class="myInfineon-visitorMenu" data-init="(function(element) {
+                          window.vi.ifxVisitorMenu (element, {
+                          language: configuration.get('global.locale') === 'en' ? 'en' : configuration.get('global.locale').split('_')[0],
+                          template: global.configuration.data.tpl.login.visitorMenu,
+                          myInfineonLoginUrl: 'https://www.infineon.com' + configuration.get('myInfineonLoginUrl'),
+                          myInfineonLoginUrlLabel: configuration.get('i18n.myInfineonLoginUrlLabel'),
+                          myInfineonBenefitsLinkUrl: configuration.get('myInfineonBenefitsLinkUrl'),
+                          myInfineonBenefitsLinkLabel: configuration.get('i18n.myInfineonBenefitsLinkLabel'),
+                          myInfineonDashboardLinkUrl: configuration.get('myInfineonReturnAfterLoginBaseUrl') + configuration.get('myInfineonDashboardLinkUrl'),
+                          myInfineonDashboardLinkLabel: configuration.get('i18n.myInfineonDashboardLinkLabel'),
+                          myInfineonDocumentLibraryLinkUrl: configuration.get('myInfineonReturnAfterLoginBaseUrl') + configuration.get('myInfineonDocumentLibraryLinkUrlWithParam'),
+                          myInfineonDocumentLibraryLinkLabel: configuration.get('i18n.myInfineonDocumentLibraryLinkLabel'),
+                          myInfineonProductRegistrationLinkUrl: configuration.get('myInfineonReturnAfterLoginBaseUrl') + configuration.get('myInfineonProductRegistrationLinkUrlWithParam'),
+                          myInfineonProductRegistrationLinkLabel: configuration.get('i18n.myInfineonProductRegistrationLinkLabel'),
+                          myInfineonInterestsLinkUrl: configuration.get('myInfineonReturnAfterLoginBaseUrl') + configuration.get('myInfineonInterestsLinkUrlWithParam'),
+                          myInfineonInterestsLinkLabel: configuration.get('i18n.myInfineonInterestsLinkLabel'),
+                          myInfineonFollowerNotificationsEnabled: configuration.get('myInfineonFollowerNotificationsEnabled'),
+                          myInfineonNotificationsLinkUrl: configuration.get('myInfineonReturnAfterLoginBaseUrl') + configuration.get('myInfineonNotificationsLinkUrlWithParam'),
+                          myInfineonNotificationsLinkLabel: configuration.get('i18n.myInfineonNotificationsLinkLabel'),
+                          myInfineonProfileLinkUrl: configuration.get('myInfineonReturnAfterLoginBaseUrl') + configuration.get('myInfineonProfileLinkUrlWithParam'),
+                          myInfineonProfileLinkLabel: configuration.get('i18n.myInfineonProfileLinkLabel'),
+                          myInfineonMyCasesTestLinkLabel: configuration.get('myInfineonMyCasesTestLinkLabel'),
+                          myInfineonMyCasesTestLinkUrl: configuration.get('myInfineonMyCasesTestLinkUrl'),
+                          canSeeMyCasesTestLink: configuration.get('myInfineonMyCasesTestLinkEnabled')
+                      });
+                })" data-resources="[{paths: ['ts/ifx.visitorMenu.js', 'css/myInfineon.visitorMenu.css']}]">
+</li>
+<li class="ifx-registration-item"><a class="link ifx-registration" href="javascript:;" id="registration-link">Register for myInfineon</a></li>
+</ul>
+</li>
+<li>
+<a class="cart-button" href="/cms/en/cart/">
+<span class="glyphicon glyphicon-cart"></span><span class="cart-label hidden-xxs hidden-xs hidden-sm">Cart</span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="flyout flyout-nav" id="flyout-4" role="menu">
+<div class="centered">
+<div class="flyout-wrap-table">
+<div class="flyout-wrap">
+<div class="col col-left">
+<ul>
+<li class=""><strong><a href="/cms/en/about-infineon/company/">Company</a></strong></li>
+<li class=""><a href="/cms/en/about-infineon/company/our-divisions/">Our Divisions</a></li>
+<li class=""><a href="/cms/en/about-infineon/company/management-board/">Management Board</a></li>
+<li class=""><a href="/cms/en/about-infineon/company/supervisory-board/">Supervisory Board</a></li>
+<li class=""><a href="/cms/en/about-infineon/company/find-a-location/">Our Locations</a></li>
+<li class=""><a href="/cms/en/about-infineon/company/purchasing/">Procurement</a></li>
+<li class=""><a href="/cms/en/about-infineon/company/quality/">Quality</a></li>
+<li class=""><a href="/cms/en/about-infineon/company/infineon-awards/">Infineon Awards</a></li>
+<li class=""><a href="/cms/en/about-infineon/company/cybersecurity/">Cybersecurity</a></li>
+</ul>
+<ul>
+<li class=""><strong><a href="/cms/en/about-infineon/sustainability/">Sustainability</a></strong></li>
+<li class=""><a href="/cms/en/about-infineon/sustainability/Environmental-Sustainability-and-Climate-Protection/">Environmental Sustainability and Climate Protection</a></li>
+<li class=""><a href="/cms/en/about-infineon/sustainability/Occupational-Safety-and-Health/">Safety and Health</a></li>
+<li class=""><a href="/cms/en/about-infineon/sustainability/business-ethics/">Business Ethics</a></li>
+<li class=""><a href="/cms/en/about-infineon/sustainability/corporate-citizenship/">Corporate Citizenship</a></li>
+<li class=""><a href="/cms/en/about-infineon/sustainability/Sustainable-Supply-Chain-Management/">CSR Supply Chain Management</a></li>
+<li class=""><a href="/cms/en/about-infineon/sustainability/Human-Rights/">Human Rights</a></li>
+<li class=""><a href="/cms/en/about-infineon/sustainability/csr-reporting/">CSR Reporting</a></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li class=""><strong><a href="/cms/en/about-infineon/press/">Press</a></strong></li>
+<li class=""><a href="/cms/en/about-infineon/press/general-information/">General Information</a></li>
+<li class=""><a href="/cms/en/about-infineon/press/press-releases/">Press Releases</a></li>
+<li class=""><a href="/cms/en/about-infineon/press/market-news/">Market News</a></li>
+<li class=""><a href="/cms/en/about-infineon/press/press-kit/">Press Kits</a></li>
+<li class=""><a href="/cms/en/about-infineon/press/media-pool/">Media Pool</a></li>
+<li class=""><a href="/cms/en/about-infineon/press/events/">Events</a></li>
+<li class=""><a href="/cms/en/about-infineon/press/contacts/">Contacts</a></li>
+</ul>
+<ul>
+<li class=""><strong><a href="/cms/en/about-infineon/investor/">Investor</a></strong></li>
+<li class=""><a href="/cms/en/about-infineon/investor/infineon-at-a-glance/">Infineon at a Glance</a></li>
+<li class=""><a href="/cms/en/about-infineon/investor/news-and-events/">News &amp; Events</a></li>
+<li class=""><a href="/cms/en/about-infineon/investor/reports-and-presentations/">Reports &amp; Presentations</a></li>
+<li class=""><a href="/cms/en/about-infineon/investor/infineon-share/">Infineon Share</a></li>
+<li class=""><a href="/cms/en/about-infineon/investor/fixed-income/">Fixed Income</a></li>
+<li class=""><a href="/cms/en/about-infineon/investor/corporate-governance/">Corporate Governance</a></li>
+<li class=""><a href="/cms/en/about-infineon/investor/shareholder-service/">Shareholder Service</a></li>
+<li class=""><a href="/cms/en/about-infineon/investor/contact/">Contact</a></li>
+</ul>
+<ul>
+<li class=""><strong><a href="/cms/en/about-infineon/tradeshows-conferences/">Tradeshows &amp; Conferences</a></strong></li>
+</ul>
+</div>
+<div class="col">
+<ul>
+<li class=""><strong><a href="/cms/en/discoveries/">Discoveries</a></strong></li>
+<li class=""><a href="/cms/en/discoveries/new-mobility/">New Mobility</a></li>
+<li class=""><a href="/cms/en/discoveries/internet-of-things/">Internet of Things</a></li>
+<li class=""><a href="/cms/en/discoveries/energy-efficiency/">Energy Efficiency</a></li>
+<li class=""><a href="/cms/en/discoveries/all-discoveries/">All Discoveries</a></li>
+</ul>
+<div class="media loader">
+<strong class="flyout__headline">
+<a href="https://media.infineon.com" target="_blank">Videos</a></strong>
+<div class="media-wrap"></div>
+</div>
+</div>
+<div class="col news loader">
+<div class="news-wrap"></div>
+<div class="events-wrap"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="alert alert-info hide" data-init="(function($elm) {
+		  $elm.ifxSearchBackLink();})" data-resources="[{paths: ['js/ifx.jquery.ifxSearchBackLink.js'] }]">
+</div>
+<main class="container-fluid site__main" role="main">
+<div class="row">
+<div class="stagecontainer stage" id="stagecontainer"></div></div>
+<div class="stickyElement-wrapper">
+<div class="breadcrumb breadcrumb--top stickyElement">
+<div class="centered">
+<ul class="vertical-list">
+<li><a href="/cms/en/">Home</a></li>
+<li><a href="/cms/en/about-infineon/">About Infineon</a></li>
+<li><span class="folder">Privacy Policy</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="centercontainer"><section class="centered">
+<section class="teaser-headline clearfix">
+<div class="row">
+<div class="col-xs-12 col-sm-8">
+<h1 class="h">Privacy Policy of the Infineon Group </h1>
+</div>
+</div>
+</section>
+<div class="tabbedcontent" data-default-tab="general-information-on-data-protection-privacy-at-infineon">
+<ul class="clearfix" style="display:none;">
+<li data-link="general-information-on-data-protection-privacy-at-infineon">
+<a>General Information</a>
+</li>
+<li data-link="processing-of-your-data">
+<a>Your Data</a>
+</li>
+<li data-link="your-rights">
+<a>Your Rights</a>
+</li>
+<li data-link="infineon-online-services-and-portals">
+<a>Portals</a>
+</li>
+<li data-link="cookies-and-co">
+<a>Cookies</a>
+</li>
+<li data-link="links-to-websites-of-other-providers-and-social-media">
+<a>Others</a>
+</li>
+</ul>
+<div>
+<div data-content-url="/cms/en/about-infineon/privacy-policy/general-information-on-data-protection-privacy-at-infineon/?ajax=true"></div>
+<div data-content-url="/cms/en/about-infineon/privacy-policy/processing-of-your-data/?ajax=true"></div>
+<div data-content-url="/cms/en/about-infineon/privacy-policy/your-rights/?ajax=true"></div>
+<div data-content-url="/cms/en/about-infineon/privacy-policy/infineon-online-services-and-portals/?ajax=true"></div>
+<div data-content-url="/cms/en/about-infineon/privacy-policy/cookies-and-co/?ajax=true"></div>
+<div data-content-url="/cms/en/about-infineon/privacy-policy/links-to-websites-of-other-providers-and-social-media/?ajax=true"></div>
+</div>
+</div>
+</section>
+</div><div id="texthighlight"></div></main>
+<footer class="footer" data-init="(function($elm) {})" data-resources="[{paths: ['js/updateFooter.js'] }]">
+<div class="container-fluid">
+<div id="breadcrumb" style="display:none">
+      Home
+      
+            &gt; About Infineon
+            &gt; Privacy Policy</div>
+<div class="row socialbar-footer">
+<div class="centered">
+<span class="followus">Follow us</span>
+<a data-track-name="socialMediaFollow" href="https://www.facebook.com/Infineon" target="_blank" title="Infineon"><span class="glyphicon glyphicon-facebook2"></span></a><a data-track-name="socialMediaFollow" href="https://www.linkedin.com/company/infineon-technologies/" target="_blank" title="LinkedIn"><span class="glyphicon glyphicon-linkedin2"></span></a><a data-track-name="socialMediaFollow" href="https://twitter.com/Infineon" target="_blank" title="Infineon"><span class="glyphicon glyphicon-twitter2"></span></a><a data-track-name="socialMediaFollow" href="https://www.youtube.com/channel/UCoTflChMPX0VBFXvXYmcu9w" target="_blank" title="Infineon"><span class="glyphicon glyphicon-youtube1"></span></a><a data-track-name="socialMediaFollow" href="https://www.instagram.com/infineoncareers" target="_blank" title="Instagram"><span class="glyphicon glyphicon-instagram"></span></a></div>
+</div>
+<div class="row footer-copyright footer-copyright--center">
+<div class="centered">
+<div class="copyright">
+<p>© 1999 - 2022 Infineon Technologies AG</p>
+<ul class="vertical-list hidden-print">
+<li><a href="/cms/en/about-infineon/usage-terms/">Usage of this website is subject to our Usage Terms</a></li>
+<li><a href="/cms/en/about-infineon/imprint/">Imprint</a></li>
+<li><a href="/cms/en/about-infineon/company/contacts/">Contact</a></li>
+<li><a href="/cms/en/about-infineon/privacy-policy/">Privacy Policy</a></li>
+<li><a href="/cms/en/about-infineon/press/general-information/glossary/">Glossary</a></li>
+</ul>
+</div>
+<div class="copyright copyright--darkFont cn-links">
+<p>
+<a class="extern" href="http://www.beian.miit.gov.cn" target="_blank">苏ICP备15016286号-1</a> | <a class="iconlink iconlink--psb" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32021402001016" target="_blank">苏公网安备 32021402001016号</a> | <a class="extern" href="/cms/cn/ifwu">营业执照</a></p>
+</div>
+</div>
+</div>
+<div class="row hidden-print topBtn-overlay-padding">
+<div class="centered">
+<div class="switch">
+<ul class="vertical-list">
+<li><a class="hidden-xxs hidden-xs hidden-sm" href="#" id="switch-to-mobile">Switch to Mobile Version</a></li>
+<li><a class="hidden-lg hidden-md" href="#" id="switch-to-desktop">Switch to Desktop Version</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+  var navigationPageId = '3925422b-10b7-11e4-b3df-556353e4878f';
+</script>
+<script src="/cms/en/services/js/configuration.js?cv=release_2022-05/dist/resources"></script>
+<script>
+  
+  configuration.data.page.language = 'English';
+  
+  configuration.data.page.languages = [
+    
+    '简体中文', 
+    'Deutsch', 
+    '日本語'
+  ];
+  configuration.data.page.languagesHrefs = [
+    
+    '\x2Fcms\x2Fcn\x2Fabout\x2Dinfineon\x2Fprivacy\x2Dpolicy\x2F\x3FAccess\x2DControl\x2DAllow\x2DOrigin\x3D\x26\x23x2a\x3B\x26Access\x2DControl\x2DAllow\x2DMethods\x3DGET\x26Access\x2DControl\x2DAllow\x2DHeaders\x3DContent\x2DType\x26Access\x2DControl\x2DMax\x2DAge\x3D3600\x26User\x2DAgent\x3DMozilla\x26\x23x2f\x3B5.0\x20\x26\x23x28\x3BX11\x26\x23x3b\x3B\x20Ubuntu\x26\x23x3b\x3B\x20Linux\x20x86_64\x26\x23x3b\x3B\x20rv\x26\x23x3a\x3B52.0\x26\x23x29\x3B\x20Gecko\x26\x23x2f\x3B20100101\x20Firefox\x26\x23x2f\x3B52.0', 
+    '\x2Fcms\x2Fde\x2Fabout\x2Dinfineon\x2Fprivacy\x2Dpolicy\x2F\x3FAccess\x2DControl\x2DAllow\x2DOrigin\x3D\x26\x23x2a\x3B\x26Access\x2DControl\x2DAllow\x2DMethods\x3DGET\x26Access\x2DControl\x2DAllow\x2DHeaders\x3DContent\x2DType\x26Access\x2DControl\x2DMax\x2DAge\x3D3600\x26User\x2DAgent\x3DMozilla\x26\x23x2f\x3B5.0\x20\x26\x23x28\x3BX11\x26\x23x3b\x3B\x20Ubuntu\x26\x23x3b\x3B\x20Linux\x20x86_64\x26\x23x3b\x3B\x20rv\x26\x23x3a\x3B52.0\x26\x23x29\x3B\x20Gecko\x26\x23x2f\x3B20100101\x20Firefox\x26\x23x2f\x3B52.0', 
+    '\x2Fcms\x2Fjp\x2Fabout\x2Dinfineon\x2Fprivacy\x2Dpolicy\x2F\x3FAccess\x2DControl\x2DAllow\x2DOrigin\x3D\x26\x23x2a\x3B\x26Access\x2DControl\x2DAllow\x2DMethods\x3DGET\x26Access\x2DControl\x2DAllow\x2DHeaders\x3DContent\x2DType\x26Access\x2DControl\x2DMax\x2DAge\x3D3600\x26User\x2DAgent\x3DMozilla\x26\x23x2f\x3B5.0\x20\x26\x23x28\x3BX11\x26\x23x3b\x3B\x20Ubuntu\x26\x23x3b\x3B\x20Linux\x20x86_64\x26\x23x3b\x3B\x20rv\x26\x23x3a\x3B52.0\x26\x23x29\x3B\x20Gecko\x26\x23x2f\x3B20100101\x20Firefox\x26\x23x2f\x3B52.0'
+  ];
+
+  </script>
+<script src="/frontend/release_2022-05/dist/resources/js/combined.min.js"></script>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+  function isUserLoggedIn_forStencilLoader() {
+      // _usersession cookie check
+      return !!(document.cookie.match('(^|;) ?_usersession=([^;]*)(;|$)'));
+  }
+
+  
+  if (document.querySelector('#registration-link') != null) {
+    document.querySelector('body').addEventListener('mouseover', function() {
+      if (!document.querySelector('myifx-registration') && !isUserLoggedIn_forStencilLoader()) {
+        document.body.insertAdjacentHTML('afterend', '<myifx-registration show-overlay-on-load="false"></myifx-registration>');
+      }
+    }, { once: true });
+  }
+</script>
+</body>
+</html>

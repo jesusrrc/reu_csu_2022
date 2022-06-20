@@ -1,0 +1,1232 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="" name="description">
+<meta content="" name="keywords"/>
+<title>Privacy Policy</title>
+<script type="text/javascript">
+    var _dispatched_ = {}; //Map of previously dispatched preference levels
+    /*
+    First step is to register with the CM API to receive callbacks when a preference update
+    occurs. You must wait for the CM API (PrivacyManagerAPI object) to exist on the page before
+    registering.
+    */
+    var _i_ = self.postMessage && setInterval(function(){
+        if(self.PrivacyManagerAPI && _i_){
+            var apiObject = {PrivacyManagerAPI:
+            {action:"getConsentDecision",
+                timestamp: new Date().getTime(),
+                self: self.location.host}};
+            self.top.postMessage(JSON.stringify(apiObject),"*");
+            _i_ = clearInterval(_i_);
+        }},50);
+    /*
+    Callbacks will occur in the form of a PostMessage event. This code listens for the
+    appropriately formatted PostMessage event, gets the new consent decision, and then pushes
+    the events into the GTM framework. Once the event is submitted, that consent decision is
+    marked in the 'dispatched' map so it does not occur more than once.
+    */
+    self.addEventListener("message", function(e, d){
+        try{
+            if(e.data && (d= JSON.parse(e.data)) &&
+                (d = d.PrivacyManagerAPI) && d.capabilities &&
+                d.action=="getConsentDecision") {
+                var newDecision =
+                    self.PrivacyManagerAPI.callApi("getGDPRConsentDecision",
+                        self.location.host).consentDecision;
+                newDecision && newDecision.forEach(function(label){
+                    if(!_dispatched_[label]){
+                        self.dataLayer && self.dataLayer.push(
+
+                            {"event":"GDPR Pref Allows "+label}
+                        );
+                        _dispatched_[label] = 1;
+                    }
+                });
+            }
+        }catch(xx)
+
+        {/** not a cm api message **/}
+    });
+</script>
+<script async="async" crossorigin="" src="//consent.trustarc.com/notice?domain=eurogarages.com&amp;c=teconsent&amp;js=nj&amp;noticeType=bb&amp;gtm=1&amp;text=true" type="text/javascript"></script>
+<!-- Google Tag Manager -->
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N2D94ZV');
+</script>
+<!-- End Google Tag Manager -->
+<link href="/content/images/website/icons/favicon.ico?cdv=202204041" rel="icon"/>
+<link href="/content/css/styles.css?cdv=202204041" rel="stylesheet"/>
+<script src="/content/js/runtime.js?cdv=202204041" type="text/javascript"></script>
+<script src="/content/js/front-end.vendors.js?cdv=202204041" type="text/javascript"></script>
+<script src="/content/js/front-end.app.js?cdv=202204041" type="text/javascript"></script>
+<link href="https://www.eg.group/fr/politique-de-confidentialite/" hreflang="fr" rel="alternate">
+<link href="https://www.eg.group/de/datenschutz/" hreflang="de" rel="alternate"/>
+<link href="https://www.eg.group/it/informitiva-sulla-privacy/" hreflang="it" rel="alternate"/>
+<link href="https://www.eg.group/nl/privacybeleid/" hreflang="nl" rel="alternate"/>
+<link href="https://www.eg.group/privacy-policy/" hreflang="en" rel="alternate"/>
+<link href="https://www.eg.group/privacy-policy/" hreflang="x-default" rel="alternate"/>
+</link></meta></meta></head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-N2D94ZV" style="display: none; visibility: hidden" width="0">
+</iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header class="ina-header js-ina-page-header">
+<div class="ina-header__content container-wide">
+<div class="ina-header__select">
+<div class="ina-language dropdown ina-language--full-width">
+<button aria-expanded="false" aria-haspopup="true" class="ina-language__btn dropdown-toggle" data-toggle="dropdown" id="dropdownLanguageButton__e801f5" type="button">
+        EN
+    </button>
+<div aria-labelledby="dropdownLanguageButton__e801f5" class="ina-language__dropdown container-wide dropdown-menu fade">
+<ul class="ina-language__list">
+<li class="ina-language__item">
+<a class="ina-language__link" href="/privacy-policy/">English</a>
+</li>
+<li class="ina-language__item">
+<a class="ina-language__link" href="/de/datenschutz/">Deutsch</a>
+</li>
+<li class="ina-language__item">
+<a class="ina-language__link" href="/fr/politique-de-confidentialite/">Francais</a>
+</li>
+<li class="ina-language__item">
+<a class="ina-language__link" href="/it/informitiva-sulla-privacy/">Italiano</a>
+</li>
+<li class="ina-language__item">
+<a class="ina-language__link" href="/nl/privacybeleid/">Nederlands</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<a class="ina-header__logo-link" href="/">
+<img alt="logo" src="/media/21fpqd0g/header-logo.svg"/>
+</a>
+<div class="ina-header__search">
+<form action="/search/" class="ina-quick-search js-quick-search-form" method="get" role="search">
+<button aria-expanded="false" aria-haspopup="true" class="ina-quick-search__btn dropdown-toggle" data-toggle="dropdown" id="dropdownSearchButton" type="button"></button>
+<div aria-labelledby="dropdownSearchButton" class="ina-quick-search__dropdown dropdown-menu fade">
+<div class="ina-search-textbox js-ina-search-textbox">
+<input aria-label="Search Website" autocomplete="off" class="ina-search-textbox__input js-ina-search-textbox__input open" name="SearchText" placeholder="Search" type="search" value=""/>
+<button aria-label="Start searching" class="ina-search-textbox__btn js-ina-search-textbox__submit-btn" title="Start searching" type="submit"></button>
+</div>
+</div>
+</form>
+<script>
+    $(function () {
+            var $quickSearch = $(".js-quick-search-form");
+            $.ina.frontend.quickSearchService.init($quickSearch);
+        }
+    );
+</script>
+</div>
+<div class="ina-navigation">
+<button aria-label="Menu" class="ina-navigation__open js-navigation-open-btn"></button>
+<div class="ina-navigation__dropdown js-navigation-dropdown">
+<button aria-label="Close" class="ina-navigation__close js-navigation-close-btn"></button>
+<nav class="ina-navigation__nav">
+<ul class="ina-navigation__list">
+<li class="ina-navigation__item">
+<a class="ina-navigation__link" href="/" target="_self" title="Home">Home</a>
+</li>
+<li class="ina-navigation__item">
+<a class="ina-navigation__link" href="/about-us/" target="_self" title="About us">About Us</a>
+</li>
+<li class="ina-navigation__item">
+<a class="ina-navigation__link" href="/work-with-us/" target="_self" title="Work With Us">Work With Us</a>
+</li>
+<li class="ina-navigation__item">
+<a class="ina-navigation__link" href="/sustainability/" target="_self" title="Sustainability">Sustainability</a>
+</li>
+<li class="ina-navigation__item">
+<a class="ina-navigation__link" href="/investors/" target="_self" title="Investor Portal">Investors</a>
+</li>
+<li class="ina-navigation__item">
+<a class="ina-navigation__link" href="/news/" target="_self" title="News">News Centre</a>
+</li>
+<li class="ina-navigation__item">
+<a class="ina-navigation__link" href="/contact-us/" target="_self" title="Contact Us">Contact Us</a>
+</li>
+</ul>
+</nav>
+<article class="ina-social-links">
+<h2 class="ina-social-links__social-title">Follow us on:</h2>
+<ul class="ina-social-links__social-list">
+<li class="ina-social-links__social-item">
+<a class="ina-social-links__social-link" href="https://www.linkedin.com/company/eggroup" style="background-image: url('/media/my1ftkfv/linkedin-icon.svg');" target="_blank"></a>
+</li>
+<li class="ina-social-links__social-item">
+<a class="ina-social-links__social-link" href="https://twitter.com/TheEGGroup" style="background-image: url('/media/j2qgn00k/twitter-icon.svg');" target="_blank"></a>
+</li>
+<li class="ina-social-links__social-item">
+<a class="ina-social-links__social-link" href="https://www.facebook.com/TheEGGroup" style="background-image: url('/media/w4oeoxez/facebook-icon.svg');" target="_blank"></a>
+</li>
+<li class="ina-social-links__social-item">
+<a class="ina-social-links__social-link" href="https://www.instagram.com/eg.groupltd/" style="background-image: url('/media/cbbi3j5m/instagram-icon.svg');" target="_blank"></a>
+</li>
+</ul>
+</article> </div>
+</div>
+<script>
+    $(function () {
+        var $openBtn = $(".js-navigation-open-btn");
+        var $closeBtn = $(".js-navigation-close-btn");
+        var $dropdown = $(".js-navigation-dropdown");
+        var $body = $("body");
+
+        $openBtn.on("click", function () {
+            $dropdown.addClass("open");
+            $body.addClass("overflow-hidden");
+        });
+
+        $closeBtn.on("click", function () {
+            $dropdown.removeClass("open");
+            $body.removeClass("overflow-hidden");
+        })
+    })
+</script>
+</div>
+</header>
+<script>
+    $(function () {
+        var $headerContext = $(".js-ina-page-header")
+        $.ina.frontend.pageHeader.init($headerContext);
+    });
+</script>
+<main class="ina-main-content">
+<div class="ina-custom-content-page">
+<div class="ina-custom-content-page__block">
+<div class="ina-media-block ina-media-base ina-custom-content-page__block">
+<picture class="ina-media-block__picture">
+<source media="(max-width: 767px)" srcset="/media/wkpb0cgy/eg-group-hq-signage.jpg?anchor=center&amp;mode=crop&amp;width=767&amp;height=613&amp;rnd=132731364091930000"/>
+<img alt="}" class="ina-media-block__img" src="/media/wkpb0cgy/eg-group-hq-signage.jpg?anchor=center&amp;mode=crop&amp;width=1920&amp;height=973&amp;rnd=132731364091930000"/>
+</picture>
+<a class="ina-scroll-down-arrow ina-media-block__down-arrow" href="#mainContent" style="background-image: url('/media/nref5n0b/icon-arrow.svg')"></a>
+<div id="mainContent"></div>
+</div>
+</div>
+<style>
+            
+            .ina-text-block--276feb .rte-wrapper {
+                color: #1d1d1b;
+            }
+        
+</style>
+<section class="ina-text-block ina-text-block--276feb ina-text-block--full-width ina-custom-content-page__block ina-custom-content-page__block--colored">
+<div class="ina-text-block__content container-xl">
+<style>
+        
+            .ina-heading--d671e7 .ina-heading__text {
+                color: #1d1d1b;
+            }
+        
+            
+           .ina-heading--d671e7 .ina-heading__line {
+                background-color: #1b75bc;
+            }
+        
+</style>
+<div class="ina-heading-wrapper">
+<h2 class="ina-heading-wrapper__semantic-title visually-hidden">PRIVACY POLICY</h2>
+<div class="ina-heading ina-heading--d671e7 ina-text-block__title">
+<div class="ina-heading__text ina-heading__text--rte rte-wrapper">
+<p><strong>PRIVACY POLICY</strong></p>
+</div>
+<span class="ina-heading__line"></span>
+</div>
+</div>
+<div class="ina-text-block__text rte-wrapper">
+<h5>A global approach to privacy</h5>
+<p>At EG Group, we value and respect the fundamental human rights of privacy and data protection. Our employees and customers across multiple continents work and live with a range of backgrounds, cultures and experiences. In the United Kingdom and Europe, we have a particularly high standard when it comes to privacy and data protection including legislation that provides specific and far-reaching rights to employees and customers. Whilst our employees and customers live and work across the globe, with varying levels of privacy and data protection within their country or regions, we have taken a global approach to our personal information governance. Our team is working hard to provide a similar experience of data privacy and the protections that your data requires, regardless of where you are.</p>
+<p>Below, we have outlined how we process and safeguard your personal information at EG Group. If you are visiting our EG Group site and you are an employee or customer based in another location, please click on the links below to navigate to the Privacy notice for where you are.</p>
+</div>
+</div>
+</section>
+<div class="ina-quick-links-grid ina-custom-content-page__block ina-custom-content-page__block--colored">
+<div class="container-xl ina-quick-links-grid__container">
+<div class="ina-quick-links-grid__grid">
+<div class="ina-quick-links-grid__item ina-quick-links-grid__item--size-3">
+<style>
+</style>
+<article class="ina-quick-link ina-article-link ina-quick-link--30cf43">
+<div class="ina-article-link__content">
+<style>
+            
+           .ina-heading--75e966 .ina-heading__line {
+                background-color: #b92d44;
+            }
+        
+</style>
+<div class="ina-heading-wrapper">
+<h2 class="ina-heading-wrapper__semantic-title visually-hidden">USA</h2>
+<div class="ina-heading ina-heading--75e966 ina-heading--small ina-article-link__title">
+<div class="ina-heading__text ina-heading__text--rte rte-wrapper">
+<p>USA</p>
+</div>
+<span class="ina-heading__line"></span>
+</div>
+</div>
+<div class="rte-wrapper ina-article-link__text">
+<p>Click below to read the Privacy Notice for your region</p>
+</div>
+<style>
+</style>
+<style>
+            
+                .ina-link--add18f .ina-link__icon::after {
+                    border-left-color: #ffffff;
+                }
+            
+            
+                .ina-link--add18f.ina-link--circled-triangle .ina-link__icon::before {
+                    background-color: #b92d44;
+                    border-color: #ffffff;
+                }
+            
+            
+                .ina-link--add18f.ina-link--circled-triangle:hover .ina-link__icon::before,
+                .ina-link--add18f.ina-link--circled-triangle:active .ina-link__icon::before,
+                .ina-link--add18f.ina-link--circled-triangle:focus .ina-link__icon::before {
+                    border-color: #ffffff;
+                    background-color: #ffffff;
+                }
+            
+</style>
+<a class="ina-link ina-link--add18f ina-article-link__btn ina-link--circled-triangle" data-target-content="" href="https://www.eg-america.com/" target="_blank">
+<span class="ina-link__icon"></span>
+    View Privacy Notice
+</a>
+</div>
+</article> </div>
+<div class="ina-quick-links-grid__item ina-quick-links-grid__item--size-3">
+<style>
+</style>
+<article class="ina-quick-link ina-article-link ina-quick-link--55c502">
+<div class="ina-article-link__content">
+<style>
+            
+           .ina-heading--75d0ff .ina-heading__line {
+                background-color: #01247e;
+            }
+        
+</style>
+<div class="ina-heading-wrapper">
+<h2 class="ina-heading-wrapper__semantic-title visually-hidden">Australia</h2>
+<div class="ina-heading ina-heading--75d0ff ina-heading--small ina-article-link__title">
+<div class="ina-heading__text ina-heading__text--rte rte-wrapper">
+<p>Australia</p>
+</div>
+<span class="ina-heading__line"></span>
+</div>
+</div>
+<div class="rte-wrapper ina-article-link__text">
+<p>Click below to read the Privacy Notice for your region</p>
+</div>
+<style>
+</style>
+<style>
+            
+                .ina-link--955e6e .ina-link__icon::after {
+                    border-left-color: #f2f2f2;
+                }
+            
+            
+                .ina-link--955e6e.ina-link--circled-triangle .ina-link__icon::before {
+                    background-color: #01247e;
+                    border-color: #f2f2f2;
+                }
+            
+            
+                .ina-link--955e6e.ina-link--circled-triangle:hover .ina-link__icon::before,
+                .ina-link--955e6e.ina-link--circled-triangle:active .ina-link__icon::before,
+                .ina-link--955e6e.ina-link--circled-triangle:focus .ina-link__icon::before {
+                    border-color: #f2f2f2;
+                    background-color: #f2f2f2;
+                }
+            
+</style>
+<a class="ina-link ina-link--955e6e ina-article-link__btn ina-link--circled-triangle" data-target-content="" href="https://www.eg-australia.com/" target="_blank">
+<span class="ina-link__icon"></span>
+    View Privacy Notice
+</a>
+</div>
+</article> </div>
+<div class="ina-quick-links-grid__item ina-quick-links-grid__item--size-3">
+<style>
+</style>
+<article class="ina-quick-link ina-article-link ina-quick-link--2377c6">
+<div class="ina-article-link__content">
+<style>
+            
+           .ina-heading--f3a1e5 .ina-heading__line {
+                background-color: #0055a4;
+            }
+        
+</style>
+<div class="ina-heading-wrapper">
+<h2 class="ina-heading-wrapper__semantic-title visually-hidden">France</h2>
+<div class="ina-heading ina-heading--f3a1e5 ina-heading--small ina-article-link__title">
+<div class="ina-heading__text ina-heading__text--rte rte-wrapper">
+<p>France</p>
+</div>
+<span class="ina-heading__line"></span>
+</div>
+</div>
+<div class="rte-wrapper ina-article-link__text">
+<p>Click below to read the Privacy Notice for your region</p>
+</div>
+<style>
+</style>
+<style>
+            
+                .ina-link--b96c26 .ina-link__icon::after {
+                    border-left-color: #f2f2f2;
+                }
+            
+            
+                .ina-link--b96c26.ina-link--circled-triangle .ina-link__icon::before {
+                    background-color: #0055a4;
+                    border-color: #f2f2f2;
+                }
+            
+            
+                .ina-link--b96c26.ina-link--circled-triangle:hover .ina-link__icon::before,
+                .ina-link--b96c26.ina-link--circled-triangle:active .ina-link__icon::before,
+                .ina-link--b96c26.ina-link--circled-triangle:focus .ina-link__icon::before {
+                    border-color: #f2f2f2;
+                    background-color: #f2f2f2;
+                }
+            
+</style>
+<a class="ina-link ina-link--b96c26 ina-article-link__btn ina-link--circled-triangle" data-target-content="" href="http://www.stationsbp.fr/" target="_blank">
+<span class="ina-link__icon"></span>
+    View Privacy Notice
+</a>
+</div>
+</article> </div>
+</div>
+</div>
+<div class="container-xl ina-quick-links-grid__container">
+<div class="ina-quick-links-grid__grid">
+<div class="ina-quick-links-grid__item ina-quick-links-grid__item--size-3">
+<style>
+</style>
+<article class="ina-quick-link ina-article-link ina-quick-link--b0d890">
+<div class="ina-article-link__content">
+<style>
+            
+           .ina-heading--e6493e .ina-heading__line {
+                background-color: #e0312c;
+            }
+        
+</style>
+<div class="ina-heading-wrapper">
+<h2 class="ina-heading-wrapper__semantic-title visually-hidden">Belgium</h2>
+<div class="ina-heading ina-heading--e6493e ina-heading--small ina-article-link__title">
+<div class="ina-heading__text ina-heading__text--rte rte-wrapper">
+<p>Belgium</p>
+</div>
+<span class="ina-heading__line"></span>
+</div>
+</div>
+<div class="rte-wrapper ina-article-link__text">
+<p>Click below to read the Privacy Notice for your region</p>
+</div>
+<style>
+</style>
+<style>
+            
+                .ina-link--983a36 .ina-link__icon::after {
+                    border-left-color: #ffffff;
+                }
+            
+            
+                .ina-link--983a36.ina-link--circled-triangle .ina-link__icon::before {
+                    background-color: #e0312c;
+                    border-color: #ffffff;
+                }
+            
+            
+                .ina-link--983a36.ina-link--circled-triangle:hover .ina-link__icon::before,
+                .ina-link--983a36.ina-link--circled-triangle:active .ina-link__icon::before,
+                .ina-link--983a36.ina-link--circled-triangle:focus .ina-link__icon::before {
+                    border-color: #ffffff;
+                    background-color: #ffffff;
+                }
+            
+</style>
+<a class="ina-link ina-link--983a36 ina-article-link__btn ina-link--circled-triangle" data-target-content="" href="https://www.texaco.be/" target="_blank">
+<span class="ina-link__icon"></span>
+    View Privacy Notice
+</a>
+</div>
+</article> </div>
+<div class="ina-quick-links-grid__item ina-quick-links-grid__item--size-3">
+<style>
+</style>
+<article class="ina-quick-link ina-article-link ina-quick-link--631b0f">
+<div class="ina-article-link__content">
+<style>
+            
+           .ina-heading--475e98 .ina-heading__line {
+                background-color: #017fc3;
+            }
+        
+</style>
+<div class="ina-heading-wrapper">
+<h2 class="ina-heading-wrapper__semantic-title visually-hidden">Luxembourg</h2>
+<div class="ina-heading ina-heading--475e98 ina-heading--small ina-article-link__title">
+<div class="ina-heading__text ina-heading__text--rte rte-wrapper">
+<p>Luxembourg</p>
+</div>
+<span class="ina-heading__line"></span>
+</div>
+</div>
+<div class="rte-wrapper ina-article-link__text">
+<p>Click below to read the Privacy Notice for your region</p>
+</div>
+<style>
+</style>
+<style>
+            
+                .ina-link--d5c7e9 .ina-link__icon::after {
+                    border-left-color: #ffffff;
+                }
+            
+            
+                .ina-link--d5c7e9.ina-link--circled-triangle .ina-link__icon::before {
+                    background-color: #017fc3;
+                    border-color: #ffffff;
+                }
+            
+            
+                .ina-link--d5c7e9.ina-link--circled-triangle:hover .ina-link__icon::before,
+                .ina-link--d5c7e9.ina-link--circled-triangle:active .ina-link__icon::before,
+                .ina-link--d5c7e9.ina-link--circled-triangle:focus .ina-link__icon::before {
+                    border-color: #ffffff;
+                    background-color: #ffffff;
+                }
+            
+</style>
+<a class="ina-link ina-link--d5c7e9 ina-article-link__btn ina-link--circled-triangle" data-target-content="" href="https://www.texaco.lu/" target="_blank">
+<span class="ina-link__icon"></span>
+    View Privacy Notice
+</a>
+</div>
+</article> </div>
+<div class="ina-quick-links-grid__item ina-quick-links-grid__item--size-3">
+<style>
+</style>
+<article class="ina-quick-link ina-article-link ina-quick-link--a7ee9d">
+<div class="ina-article-link__content">
+<style>
+            
+           .ina-heading--3c13d5 .ina-heading__line {
+                background-color: #23448b;
+            }
+        
+</style>
+<div class="ina-heading-wrapper">
+<h2 class="ina-heading-wrapper__semantic-title visually-hidden">Netherlands</h2>
+<div class="ina-heading ina-heading--3c13d5 ina-heading--small ina-article-link__title">
+<div class="ina-heading__text ina-heading__text--rte rte-wrapper">
+<p>Netherlands</p>
+</div>
+<span class="ina-heading__line"></span>
+</div>
+</div>
+<div class="rte-wrapper ina-article-link__text">
+<p>Click below to read the Privacy Notice for your region</p>
+</div>
+<style>
+</style>
+<style>
+            
+                .ina-link--d03a14 .ina-link__icon::after {
+                    border-left-color: #ffffff;
+                }
+            
+            
+                .ina-link--d03a14.ina-link--circled-triangle .ina-link__icon::before {
+                    background-color: #23448b;
+                    border-color: #ffffff;
+                }
+            
+            
+                .ina-link--d03a14.ina-link--circled-triangle:hover .ina-link__icon::before,
+                .ina-link--d03a14.ina-link--circled-triangle:active .ina-link__icon::before,
+                .ina-link--d03a14.ina-link--circled-triangle:focus .ina-link__icon::before {
+                    border-color: #ffffff;
+                    background-color: #ffffff;
+                }
+            
+</style>
+<a class="ina-link ina-link--d03a14 ina-article-link__btn ina-link--circled-triangle" data-target-content="" href="https://eg-fuel.com/" target="_blank">
+<span class="ina-link__icon"></span>
+    View Privacy Notice
+</a>
+</div>
+</article> </div>
+</div>
+</div>
+<div class="container-xl ina-quick-links-grid__container">
+<div class="ina-quick-links-grid__grid">
+<div class="ina-quick-links-grid__item ina-quick-links-grid__item--size-3">
+<style>
+</style>
+<article class="ina-quick-link ina-article-link ina-quick-link--e6f26a">
+<div class="ina-article-link__content">
+<style>
+            
+           .ina-heading--d38473 .ina-heading__line {
+                background-color: #ffcc02;
+            }
+        
+</style>
+<div class="ina-heading-wrapper">
+<h2 class="ina-heading-wrapper__semantic-title visually-hidden">Germany
+ 
+ </h2>
+<div class="ina-heading ina-heading--d38473 ina-heading--small ina-article-link__title">
+<div class="ina-heading__text ina-heading__text--rte rte-wrapper">
+<p>Germany</p>
+<p> </p>
+<p> </p>
+</div>
+<span class="ina-heading__line"></span>
+</div>
+</div>
+<div class="rte-wrapper ina-article-link__text">
+<p>Click below to read the Privacy Notice for your region</p>
+</div>
+<style>
+</style>
+<style>
+            
+                .ina-link--7de568 .ina-link__icon::after {
+                    border-left-color: #ffffff;
+                }
+            
+            
+                .ina-link--7de568.ina-link--circled-triangle .ina-link__icon::before {
+                    background-color: #ffcc02;
+                    border-color: #ffffff;
+                }
+            
+            
+                .ina-link--7de568.ina-link--circled-triangle:hover .ina-link__icon::before,
+                .ina-link--7de568.ina-link--circled-triangle:active .ina-link__icon::before,
+                .ina-link--7de568.ina-link--circled-triangle:focus .ina-link__icon::before {
+                    border-color: #ffffff;
+                    background-color: #ffffff;
+                }
+            
+</style>
+<a class="ina-link ina-link--7de568 ina-article-link__btn ina-link--circled-triangle" data-target-content="" href="http://www.roc-karriere.de/" target="_blank">
+<span class="ina-link__icon"></span>
+    View Privacy Notice
+</a>
+</div>
+</article> </div>
+<div class="ina-quick-links-grid__item ina-quick-links-grid__item--size-3">
+<style>
+</style>
+<article class="ina-quick-link ina-article-link ina-quick-link--66e43c">
+<div class="ina-article-link__content">
+<style>
+            
+           .ina-heading--f6ee2b .ina-heading__line {
+                background-color: #1b75bc;
+            }
+        
+</style>
+<div class="ina-heading-wrapper">
+<h2 class="ina-heading-wrapper__semantic-title visually-hidden">Individual Rights Manager</h2>
+<div class="ina-heading ina-heading--f6ee2b ina-heading--small ina-article-link__title">
+<div class="ina-heading__text ina-heading__text--rte rte-wrapper">
+<p>Individual Rights Manager</p>
+</div>
+<span class="ina-heading__line"></span>
+</div>
+</div>
+<div class="rte-wrapper ina-article-link__text">
+<p>Submit a Subject Access Request form</p>
+</div>
+<style>
+</style>
+<style>
+            
+                .ina-link--34a619 .ina-link__icon::after {
+                    border-left-color: #ffffff;
+                }
+            
+            
+                .ina-link--34a619.ina-link--circled-triangle .ina-link__icon::before {
+                    background-color: #1b75bc;
+                    border-color: #ffffff;
+                }
+            
+            
+                .ina-link--34a619.ina-link--circled-triangle:hover .ina-link__icon::before,
+                .ina-link--34a619.ina-link--circled-triangle:active .ina-link__icon::before,
+                .ina-link--34a619.ina-link--circled-triangle:focus .ina-link__icon::before {
+                    border-color: #ffffff;
+                    background-color: #ffffff;
+                }
+            
+</style>
+<a class="ina-link ina-link--34a619 ina-article-link__btn ina-link--circled-triangle" data-target-content="" href="https://submit-irm.trustarc.com/services/validation/39531b88-94fa-4a2e-bb77-fa1b6e6c355a" target="_blank">
+<span class="ina-link__icon"></span>
+    Access Request Form
+</a>
+</div>
+</article> </div>
+</div>
+</div>
+</div>
+<style>
+</style>
+<section class="ina-text-block ina-text-block--a8cf76 ina-text-block--full-width ina-custom-content-page__block ina-custom-content-page__block--colored">
+<div class="ina-text-block__content container-xl">
+<style>
+</style>
+<div class="ina-heading-wrapper">
+<h2 class="ina-heading-wrapper__semantic-title visually-hidden">Privacy Notice</h2>
+<div class="ina-heading ina-heading--97e7d8 ina-text-block__title">
+<div class="ina-heading__text ina-heading__text--rte rte-wrapper">
+<p><strong>Privacy Notice</strong></p>
+</div>
+<span class="ina-heading__line"></span>
+</div>
+</div>
+<div class="ina-text-block__text rte-wrapper">
+<h5>Let's start with the introductions ...</h5>
+<p><strong>We are EG Group </strong></p>
+<p>We are the organisation that is responsible for the personal information processing that this notice describes, and as described in data protection legislation, we’re the ‘data controller’.</p>
+<p>Throughout this notice, when we use terms like ‘we’, ‘us’, ‘our’, or even ‘EG’, we’re referring to EG Group Limited. There are number of companies within EG Group, and whilst we have separate websites and privacy notices for other companies within EG Group, the general processing safeguards in this privacy notice apply to all EG Group companies.</p>
+<p><strong>Our company registration</strong></p>
+<p>EG Group Limited is a company incorporated in England and Wales.  Our registration number is 09826582 and our registered office is Waterside Head Office, Haslingden Road, Guide, Blackburn, Lancashire, United Kingdom, BB1 2FA.</p>
+<p><strong>Our data protection registration</strong></p>
+<p>As an organisation that operations across 10 countries, we comply with varying versions of privacy and data protection legislation. Here in the UK where we have our Headquarters, our data protection supervisory authority is the Information Commissioners Office, or ‘ICO’.</p>
+<p>We’re registered with the ICO, these are the details of our registration:</p>
+<p>Data Controller Name: EG Group Limited</p>
+<p>Registration number: ZB089476</p>
+<p><strong><span>Our </span></strong><strong>Privacy &amp; Data Protection team</strong></p>
+<p>If you ever have a query about how we’re handling your personal information, or you want to exercise a right in relation to your information, there’s a number of ways you can contact our team.</p>
+<p>You can write to us at: DPO, EG Group, Waterside Head Office, Haslingden Road, Guide, Blackburn, Lancashire, United Kingdom, BB1 2FA.</p>
+<p>If you prefer to email, use <a href="mailto:dpo@eurogarages.com">dpo@eurogarages.com</a></p>
+<p>If talking is more your thing, call us on 01254 586366</p>
+<p><strong>Your data protection rights</strong></p>
+<p>We’ll talk more later on about what we call ‘subject access requests’, but if you’d like to exercise one of these rights, you can submit a request using our individual rights form above, it’s quick, easy and goes straight to our Privacy &amp; Data Protection team.</p>
+<p> </p>
+<h5><strong>We’re protecting your information</strong></h5>
+<p>We are committed to your upholding your privacy and protecting the information that we have. So we describe how we collect, use, and share your personal information.</p>
+<p>Privacy and data protection are ever changing and enhancing the rights of individuals. As such, we review how we use personal information, and we may update this privacy notice from time to time to reflect changes in applicable laws or the way we use your personal information. The privacy notice displayed on this page is always the most up to date version.</p>
+<p>We would encourage you to re-visit our privacy notice from time to time so that you are aware of any relevant updates we have made.</p>
+<p> </p>
+<h5><strong>What </strong><strong>do we mean by </strong><strong>personal </strong><strong>information</strong><strong>?</strong></h5>
+<p>In recent years, the most widely talked about data protection law was the EU’s General Data Protection Regulation, also known as the GDPR. The UK adopted the GDPR into UK law and it’s commonly known as the UK GDPR. As you’ll see below, the definition of personal information is quite broad, and we recognise and respect personal information, defined as: -</p>
+<p>“any information relating to an identified or identifiable natural person ('data subject'); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person”.</p>
+<p> </p>
+<h5><strong>How do we categorise information?</strong></h5>
+<p>To help explain the different types of information we use, we use categories. Now, it’s worth pointing out that we only collect personal information that is appropriate and lawful, and we comply with data protection legislation around the world, and there may be locations where we are not permitted to collect the types of information we’ve listed below. But in general terms, this describes the categories we use.</p>
+<p><strong>Identity </strong><strong>information</strong></p>
+<p>Information specifically related to your identity which includes, your full name, marital status, title, date of birth, national insurance details and other recognised official identity documents.</p>
+<p><strong>Contact </strong><strong>information</strong></p>
+<p>The contact information of you and others, including, email addresses and telephone numbers, postal address details and social media handles.</p>
+<p><strong>Technical data</strong></p>
+<p>In this technical age there is quite a bit of technical data around, including internet protocol (IP) address, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform and other technology on the devices you use to access this website. With your permission, we’ll collect information about how you use our website.</p>
+<p><strong>Marketing and communications data</strong></p>
+<p>We’d like to develop lasting relationships and to help with this we collect information about your marketing preferences. But don’t worry, we’re not interested in bombarding you with marketing content, just timely and relevant information about services and products we care about and that we think are relevant to you. We put you in control, so you always have the option to decline this or opt out at any point.</p>
+<p><strong>Special categories of personal </strong><strong>information</strong></p>
+<p>Specifically, through our Global Careers portal, for the purpose of employment and assessing the working capabilities of our employees, we may process special category personal information. There may be instances where other special categories of personal information are disclosed to us, but this is incidental and not part of an organised processing activity.</p>
+<p><strong>Data requiring special protection</strong></p>
+<p>There may be instances where we process criminal record checks, but this is only done where necessary, aligned to local laws and is strictly limited to specific people in our teams.</p>
+<p> </p>
+<h5><strong>How we may collect personal information</strong></h5>
+<p><strong>Personal information you voluntarily provide to us</strong></p>
+<p>It’s important to state that we only collect personal information that is relevant to our relationship with you, for example:-</p>
+<ul>
+<li>when you visit our websites, or use our mobile applications, we use cookies and similar technologies, and we cover this in more detail in our <a href="/cookie-policy/" rel="noopener" target="_blank" title="Cookie Policy">Cookie Policy</a> and our Cookie Settings</li>
+<li>when you subscribe to our mailing lists;</li>
+<li>when you register on our Investor Portal;</li>
+<li>when you attend events or meetings organised by us, or conducted at our offices or sites, for example, sales events, promotional and marketing events, training sessions and social events;</li>
+<li>when your images are captured by us via CCTV cameras while you are within the properties we operate and use, or when photographs or videos of you are taken when you attend events, meetings or training sessions organised by us;</li>
+<li>when you use our services or enter into transactions with us, or express an interest in doing so, including services, products and transactions in person at one of our many locations or electronically;</li>
+<li>when you communicate with us by telephone, email, via our website or through other communication channels, for example, through social media platforms;</li>
+<li>when you submit an employment application to us or when you provide documents or information including your CV in connection with such applications; and/or</li>
+<li>when you submit your personal information to us for any other reason.</li>
+</ul>
+<p><strong>Personal information that has been provided by others</strong></p>
+<p>Depending on your relationship with us, we may also collect your personal information from third party sources, for example:-</p>
+<ul>
+<li>from your referees, educational organisations or previous employers (if you have applied to us for a job);</li>
+<li>from your family members, friends or colleagues who provide your personal information to us on your behalf; and/or</li>
+<li>from public agencies or other public sources.</li>
+</ul>
+<p> </p>
+<h5><strong>Being transparent about our personal information processing</strong></h5>
+<p><strong>Lawful basis</strong></p>
+<p>There are specific reasons set out in data protection law that ensure personal data processing is lawful, this is known as a ‘lawful basis.</p>
+<p>We always have a lawful basis for processing personal information, and we have methodically assessed the purpose or our processing and the lawful basis.</p>
+<p>It’s safe to say that we have a comprehensive list of all of ways we use personal information, which are called ‘processing activities’. If you would like more information about a particular processing activity, we’re more than happy to provide that. You can ask us for information using any of the methods we outlined earlier.</p>
+<p>Here are some of the more common ways we process your information, our lawful basis and how we try to ensure your information and rights are respected:-</p>
+<table border="0" width="100%">
+<tbody>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p><strong>Processing type</strong></p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p><strong>Data category</strong></p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p><strong>Our lawful basis</strong></p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p><strong>Specific purpose, and the respect of your information rights </strong></p>
+</td>
+</tr>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p>Communication via email, post or telephone</p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p>Contact data</p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p>Contractual Obligation</p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p>When you’ve asked us to, we’ll use your information to contact you with details of our products, events and services and to facilitate our relationship with you, your business or colleagues. You can of course ask us not to contact you, but it's likely to affect our ability to fulfil our obligations to you.</p>
+</td>
+</tr>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p>Customer relationship management</p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p>Identity &amp; Contact data</p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p>Legitimate Interest</p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p>We organise our customer records within customer relationship systems, basically an electronic rolodex. We securely store, access, and analyse the information that we have in our CRM systems. The use of our CRM systems helps us ensure the smooth operation of our businesses, plan effectively and it helps us analyse how our business is doing. You can ask for access that that information, ask us to update it, or for us to remove it.</p>
+</td>
+</tr>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p>Customer service tickets </p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p>Identity, Contact, Technical data</p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p>Legitimate Interest</p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p>When you have enquiry or complaint, we use customer service tickets to help us manage the process properly. You can ask for access that that information, ask us to update it, or for us to remove it</p>
+</td>
+</tr>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p>Training and other corporate events</p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p>Identity, Contact, Special category health data</p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p>Contractual Obligation/ Consent</p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p>The information you provide will be used to communicate with you about your attendance at the event and to follow-up on your experience post-event. The personal information we may process could include your name, job title and employer, address and phone number, email address, dietary requirements, access requirements. We will ask for your consent to process health related data</p>
+</td>
+</tr>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p>Email marketing to consumers</p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p>Identity &amp; Contact data</p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p>Legitimate Interest</p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p>We like to let our customers know about our services, products or projects, and when you’re already a customer, we think you’ll be happy for us to send you relevant information. But you can object or opt out of that at any point</p>
+</td>
+</tr>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p>Promotional Images and film footage</p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p>Identity Data</p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p>Consent</p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p>We may take photographs and / or video footage at our offices or an event we host, which could capture personal information of staff, customers, visitors and other third parties. We will always notify participants when a photographer or filmmaker is present at our offices or events. Written consent will always be obtained, and we will respect the wishes of anyone who signals their desire not to have their image taken and will always ask for consent where photos are to be published alongside a name or other personal identifier. You have the right to withdraw consent at any time or to opt out of the activity</p>
+</td>
+</tr>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p>Collection/analysis of statistical information about website usage</p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p>Technical &amp; Usage data</p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p>Consent</p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p>To manage and improve how people engage with our public-facing channels. The information we collect tells us about how you use our website, what links you follow and tells us what you’re most interested in</p>
+</td>
+</tr>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p>Sharing information with Companies House, Accountants, legal advisors, HMRC and Statutory authorities</p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p>Identity, Contact, Financial &amp; Special category data</p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p>Legal Obligation</p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p>We are subject to audits and assessments from industry standard bodies and in the protection of our interests and to comply with UK law, we may be obligated to share information with the statutory authorities</p>
+</td>
+</tr>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p>Administrative purposes</p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p>Identity, Contact &amp; Financial data</p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p>Legitimate Interest</p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p>We may disclose your personal information to other companies within EG Group, our investors and third parties who provide services to us, including our service providers and data processors (providing services such as hosting and maintenance services, analysis services, e-mail messaging services, delivery services, handling of payment transactions, marketing, human resources, professional services, tracing services and when we investigate suspected theft) and our consultants and professional advisors (such as accountants, compliance, lawyers, auditors).</p>
+</td>
+</tr>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p>Fulfil job roles and recruitment</p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p>Identity, Contact, Special category health data</p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p>Contractual Obligation/ Legitimate Interest</p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p>If you apply for a job with us, in addition to the specific position which you have applied for, we pass your personal information to other departments within the EG Group, for the purpose of offering alternative or additional employment opportunities. We’d really like to find work for you, but of course, you can ask us not to do this.</p>
+</td>
+</tr>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p>Security and Safety</p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p>Identity, Contact, Technical &amp; Usage data</p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p>Legal Obligation /Legitimate Interest</p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p>We may process personal data for the specific purposes of security and safety. This is in connection with the buildings that we own and/or rent, or events organised by us or conducted at the buildings we own and/or use; and through the systems that we operate throughout the organisation. We use CCTV in and around our sites, we also use cameras that will automatically recognise your vehicle registration, known as ANPR. We use this technology to prevent, report and investigate crime.</p>
+</td>
+</tr>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p>Marketing engagement metrics</p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p>Identity, Contact, Technical &amp; Usage data</p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p>Consent</p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p>If you would like to receive tailored information about products and services, you will have the opportunity to consent to this. We use cookies to help with the process of delivering digital marketing and tracking your preferences</p>
+</td>
+</tr>
+<tr>
+<td style="width: 20.5555%;" width="25%">
+<p>Investor relations</p>
+</td>
+<td style="width: 17.2876%;" width="25%">
+<p>Identity, Contact, Technical &amp; Usage data</p>
+</td>
+<td style="width: 8.40532%;" width="22%">
+<p>Legitimate interest</p>
+</td>
+<td style="width: 52.7516%;" width="27%">
+<p>We like to build lasting relationships with our Investors, and as well as providing an Investor Portal, which captures limited information so that you can access confidential information, we’ll also use your information to invite you to Press Releases, Presentations and other Investor Relations events</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>When you provide consent to processing</strong></p>
+<p>Where you have given your consent for us or a 3<sup>rd</sup> party of ours to process your data, you can withdraw your consent at any time. Where consent has been used as the lawful basis for processing your information, the information we provide about our processing activities will be fair, transparent, unambiguous and you will have the power to decide whether you give consent.</p>
+<p><strong>Where legitimate interest is the most appropriate lawful basis</strong></p>
+<p>When processing your personal information is a legitimate interest for us, or a third-party, we undertake legitimate interest assessments to ensure that our processing does not impact on the rights and freedoms that you have been afforded by data protection legislation.</p>
+<p><strong>Use permitted under applicable laws</strong></p>
+<p>We may also collect, use, disclose and process your personal information, without your knowledge or consent, where this is required or permitted by law.</p>
+<p> </p>
+<h5>When we share your personal information</h5>
+<p>While providing the services or products that you request from us, we share your information with our processing partners, known as recipients and data processors.</p>
+<p>When disclosing personal information to third parties, we have contracts with these third parties to protect your personal information, which ensures we are compliant with the law and so that they only process your personal information in accordance with our instructions.</p>
+<p>We conduct thorough due diligence with both recipients and data processors around the areas of their data security protocols and data protection policies.</p>
+<p><strong>Recipients of your personal information</strong></p>
+<p>We share your personal information for the following reasons or when required law, for example:-</p>
+<ul>
+<li>personal information is shared internally, across EG Group companies, which can include international colleagues.</li>
+<li>our third-party vendors and service providers, who are engaged to provide business, support, operational and/ or administrative functions such as IT support, auditing, legal, marketing, website maintenance, payment, fulfilment and delivery of orders.</li>
+<li>regulatory authorities, statutory bodies or public agencies, including to support their investigations.</li>
+<li>if the business is sold or integrated with another business, your details will be disclosed to our advisers and any prospective purchaser’s adviser and will be passed to the new owners of the business.</li>
+<li>credit reference agencies, debt collection and tracing agencies, financial organisations.</li>
+<li>investigations by government or law enforcement authorities.</li>
+</ul>
+<p> </p>
+<h5><strong>Sharing your information internationally</strong></h5>
+<p>When we share your information internationally, we have thorough processes in place to determine if that is appropriate, and then we use approved methods of ensuring the transfer is lawful and protects the information we’re transferring.</p>
+<p>As we’ve said earlier, if you’re interested in finding out more information about this, just ask.</p>
+<p> </p>
+<h5><strong>The security of your personal information</strong></h5>
+<p><strong>Unauthorised access</strong></p>
+<p>We have put in place security measures to prevent your personal information from being accidentally lost, used or accessed in an unauthorised way, altered or disclosed.</p>
+<p><strong>Specific access</strong></p>
+<p>We limit access to your personal information to those employees, agents, contractors and other third parties who have been authorised to access your personal information.</p>
+<p><strong>Vulnerabilities</strong></p>
+<p>We have put in place procedures to deal with any suspected personal information breach and will notify you and the appropriate supervisory authority of a breach where we are legally required to do so.</p>
+<p>However, we cannot guarantee that our systems or applications are invulnerable to security breaches, and we can’t provide warranty, guarantee, or representation that your use of our systems or applications is safe and protected from viruses, and other vulnerabilities.</p>
+<p>We also cannot guarantee the security of information that you choose to send us electronically. Sending such data is entirely at your own risk.</p>
+<p> </p>
+<h5><strong>How long we keep personal information</strong></h5>
+<p>We will only retain your personal information for as long as necessary to fulfil the purposes we collected it for, including for the purposes of satisfying any legal, accounting, or reporting requirements.</p>
+<p>To determine the appropriate retention period for personal information, we consider the amount, nature, and sensitivity of the personal information, the potential risk of harm from unauthorised use or disclosure of your personal information, the purposes for which we process your personal information and whether we can achieve those purposes through other means, and the applicable legal requirements.</p>
+<p>Details of retention periods for different aspects of your personal information are available and you can request more details of that by contacting our Privacy &amp; Data Protection team.</p>
+<p> </p>
+<h5><strong>You have rights when it comes to your personal information</strong></h5>
+<p>At any point while we have your personal information you can exercise what we can subject access requests, or individual rights. Privacy and data protection rights can differ depending on your location, but these are the rights that you have if you live in the UK and Europe.</p>
+<p><strong>Right of access</strong></p>
+<p>You have the right to request a copy of the information that we hold about you. Access to a copy of your personal information is often known as a Subject Access Request, is usually free of charge and we have a one-month time period with which to respond.</p>
+<p>If requests to information are excessive or unfounded, the law permits an extension to the one-month timeline of up to two further months if the request is particularly complex. It is also permitted to apply a fair administration fee for access requests that are deemed manifestly unfounded or excessive or if further copies of data are requested.</p>
+<p><strong>Right of rectification</strong></p>
+<p>You have a right to review and correct data that we hold about you that is inaccurate or incomplete.</p>
+<p><strong>Right to be forgotten</strong></p>
+<p>In certain circumstances you can ask for the data we hold about you to be erased from our records. As detailed within data protection law, a request to be forgotten is not an absolute right and will be assessed on its merits.</p>
+<p><strong>Right to restriction of processing</strong></p>
+<p>Where certain conditions apply to have a right to restrict the processing. In particular, where we don’t have to process the data to meet a contractual or other legal requirement, or where we are using the data for direct marketing.</p>
+<p><strong>Right of portability</strong></p>
+<p>You have the right to have the data that you have provided to us, for the fulfilment of a contract or where you have provided your consent, transferred in a structured and machine-readable format to another organisation.</p>
+<p><strong>Right to object</strong></p>
+<p>You have the right to object to certain types of processing, in particular where we process your personal information for marketing purposes, this is an absolute right. You will be able to object to or opt out of any marketing message we send you.</p>
+<p><strong>Right to object to automated processing, including profiling</strong></p>
+<p>You also have the right to be subject to the legal effects of automated processing or profiling.</p>
+<p><strong>Right to judicial review</strong></p>
+<p>In the event that we refuse your request under rights of access, we will provide you with a reason why. You have the right to complain about that, and we have provided a specific section on this below.</p>
+<p>All of the above requests will be forwarded on should there be a third party involved in the processing of your personal information.</p>
+<p>Regardless of where in the world you live or work, you could fill out our individual rights form.</p>
+<p> </p>
+<h5><strong>What to do when things don’t go as planned</strong></h5>
+<p>If you ever wish to make a complaint about how your personal information is being handled by us or third parties, or how your complaint has been handled, you have the right to lodge a complaint directly with the relevant supervisory authority where you live, and with our Privacy &amp; Data Protection Office.</p>
+<p><strong>We'd like to try and resolve a complaint</strong></p>
+<p>You can write to us at: DPO, EG Group, Waterside Head Office, Haslingden Road, Guide, Blackburn, Lancashire, United Kingdom, BB1 2FA.</p>
+<p>If you prefer to email, use <a href="mailto:dpo@eurogarages.com">dpo@eurogarages.com</a></p>
+<p>If talking is more your thing, call us on 01254 586366</p>
+<p><strong>If you wish to lodge a complaint with a supervisory authority</strong></p>
+<p>The UK’s supervisory authority is the Information Commissioners Office.</p>
+<p>Postal Address:</p>
+<p>Information Commissioner, Information Commissioners Office, Wycliffe House, Water Lane, Wilmslow, Cheshire SK9 5AF</p>
+<p>Web: <a href="https://ico.org.uk/make-a-complaint/">https://ico.org.uk/make-a-complaint/</a></p>
+<p>Telephone: 0303 123 1113</p>
+<p> </p>
+<h5>If you'd like more information about this privacy notice </h5>
+<p>If you have any queries about this privacy notice, please feel free to get in touch with our Privacy &amp; Data Protection team and we will do our best to answer your questions.</p>
+<p>This Privacy Policy is effective from the June 2021.</p>
+<p> </p>
+</div>
+</div>
+</section>
+</div>
+<button class="ina-back-to-top js-ina-back-to-top" type="button">
+<span class="sr-only">Back to top</span>
+</button>
+<script>
+    $(function () {
+        var $context = $(document);
+        $.ina.frontend.backToTop.init($context);
+    });
+</script>
+</main>
+<footer class="ina-footer js-ina-page-footer">
+<div class="ina-footer__top">
+<div class="container-xl ina-footer__top-content">
+<article class="ina-footer__col ina-footer__col--address">
+<a class="ina-footer__logo-link" href="/">
+<img alt="logo" class="ina-footer__logo" src="/media/vlcponqf/logo-footer.svg"/>
+</a>
+<div class="ina-footer__address">
+<h2 class="ina-footer__title"> EG Group:</h2>
+<div class="ina-footer__text rte-wrapper">
+<p>Waterside Head Office</p>
+<p>Haslingden Road Blackburn BB1 2FA</p>
+<p>United Kingdom</p>
+<p> </p>
+<p>Registration number: 09826582</p>
+<p>VAT number: 273 5224 09</p>
+</div>
+</div>
+</article>
+<article class="ina-footer__col">
+<h2 class="ina-footer__title">Quick Links</h2>
+<ul class="ina-footer__list">
+<li class="ina-footer__item">
+<a class="ina-footer__link" href="/about-us/" target="_self" title="About us">About Us</a>
+</li>
+<li class="ina-footer__item">
+<a class="ina-footer__link" href="/investors/" target="_self" title="Investor Portal">Investors</a>
+</li>
+<li class="ina-footer__item">
+<a class="ina-footer__link" href="/sustainability/" target="_self" title="Sustainability">Sustainability</a>
+</li>
+</ul>
+</article>
+<article class="ina-footer__col">
+<h2 class="ina-footer__title">Media Links</h2>
+<ul class="ina-footer__list">
+<li class="ina-footer__item">
+<a class="ina-footer__link" href="/news/" target="_self" title="News">News</a>
+</li>
+<li class="ina-footer__item">
+<a class="ina-footer__link" href="/filming-photography-policy/" target="_self" title="Filming &amp; Photography Policy">Filming Policy</a>
+</li>
+<li class="ina-footer__item">
+<a class="ina-footer__link" href="https://group-media-library.eurogarages.com/" target="_blank" title="Image Library">Image Library</a>
+</li>
+<li class="ina-footer__item">
+<a class="ina-footer__link" href="/award-recognitions/" target="_self" title="Award &amp; Recognitions (2)">Awards &amp; Recognition</a>
+</li>
+<li class="ina-footer__item">
+<a class="ina-footer__link" href="/contact-us/#media-form" target="_self" title="Contact Us">Media Contact</a>
+</li>
+</ul>
+</article>
+<div class="ina-footer__col">
+<article class="ina-footer__contacts">
+<a class="ina-footer__link ina-footer__link--arrow" href="/contact-us/#customer_services-form">
+<h2 class="ina-footer__title">Contact us</h2>
+</a>
+</article>
+<article class="ina-social-links">
+<h2 class="ina-social-links__social-title ina-social-links__social-title--white">Social Media:</h2>
+<ul class="ina-social-links__social-list">
+<li class="ina-social-links__social-item">
+<a class="ina-social-links__social-link ina-social-links__social-link--white" href="https://www.linkedin.com/company/eggroup" style="background-image: url('/media/ccvlynbr/linkedin-icon-white.svg');" target="_blank"></a>
+</li>
+<li class="ina-social-links__social-item">
+<a class="ina-social-links__social-link ina-social-links__social-link--white" href="https://twitter.com/TheEGGroup" style="background-image: url('/media/xa4fnc3w/twitter-icon-white.svg');" target="_blank"></a>
+</li>
+<li class="ina-social-links__social-item">
+<a class="ina-social-links__social-link ina-social-links__social-link--white" href="https://www.facebook.com/TheEGGroup" style="background-image: url('/media/3n0bxcda/facebook-icon-white.svg');" target="_blank"></a>
+</li>
+<li class="ina-social-links__social-item">
+<a class="ina-social-links__social-link ina-social-links__social-link--white" href="https://www.instagram.com/eg.groupltd/" style="background-image: url('/media/rlwfkfo5/instagram-icon-white.svg');" target="_blank"></a>
+</li>
+</ul>
+</article></div>
+</div>
+</div>
+<div class="ina-footer__bottom">
+<div class="container-xl ina-footer__bottom-content">
+<div class="ina-footer__nav">
+<div class="ina-footer__language">
+<div class="ina-language dropdown ina-language--black">
+<button aria-expanded="false" aria-haspopup="true" class="ina-language__btn dropdown-toggle" data-toggle="dropdown" id="dropdownLanguageButton__73822e" type="button">
+        EN
+    </button>
+<div aria-labelledby="dropdownLanguageButton__73822e" class="ina-language__dropdown dropdown-menu fade">
+<ul class="ina-language__list">
+<li class="ina-language__item">
+<a class="ina-language__link" href="/privacy-policy/">English</a>
+</li>
+<li class="ina-language__item">
+<a class="ina-language__link" href="/de/datenschutz/">Deutsch</a>
+</li>
+<li class="ina-language__item">
+<a class="ina-language__link" href="/fr/politique-de-confidentialite/">Francais</a>
+</li>
+<li class="ina-language__item">
+<a class="ina-language__link" href="/it/informitiva-sulla-privacy/">Italiano</a>
+</li>
+<li class="ina-language__item">
+<a class="ina-language__link" href="/nl/privacybeleid/">Nederlands</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<ul class="ina-footer__nav-list">
+<li class="ina-footer__nav-item">
+<div class="ina-cookie-consent" id="teconsent"></div>
+</li>
+<li class="ina-footer__nav-item">
+<a class="ina-footer__link" href="/cookie-policy/" target="_self" title="Cookie Policy">Cookie Policy</a>
+</li>
+<li class="ina-footer__nav-item">
+<a class="ina-footer__link" href="/media/lifn14l3/modern-slavery-statement-2021.pdf?culture=en" target="_blank" title="Modern Slavery Statement 2021">Modern Slavery Statement</a>
+</li>
+<li class="ina-footer__nav-item">
+<a class="ina-footer__link" href="/privacy-policy/" target="_self" title="Privacy Policy">Privacy Policy</a>
+</li>
+<li class="ina-footer__nav-item">
+<a class="ina-footer__link" href="/terms-conditions/" target="_self" title="Terms &amp;  Conditions">Terms &amp; Conditions</a>
+</li>
+<li class="ina-footer__nav-item">
+<a class="ina-footer__link" href="/investors/investor-terms-conditions/" target="_self" title="Investor Terms &amp; Conditions">Investor Terms &amp; Conditions</a>
+</li>
+<li class="ina-footer__nav-item">
+<span class="ina-footer__link" id="accessibilityWidget" tabindex="0">Accessibility</span>
+</li>
+</ul>
+</div>
+<div class="ina-footer__copyright">
+<span class="ina-footer__copyright-text">© 2021 Copyright EG Group</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    $(function () {
+        var $footerContext = $(".js-ina-page-footer");
+        $.ina.frontend.pageFooter.init($footerContext);
+    });
+</script>
+<script>
+            $(function() {
+                var $document = $(document);
+                $.ina.frontend.tooltipService.init($document);
+            });
+        </script>
+<script>(function(d){var s = d.createElement("script");s.setAttribute("data-account", "vEIHPVyFlv");s.setAttribute("src", "https://cdn.userway.org/widget.js");(d.body || d.head).appendChild(s);})(document)</script>
+<noscript>Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a></noscript>
+</body>
+</html>

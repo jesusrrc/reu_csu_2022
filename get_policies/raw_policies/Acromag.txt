@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+
+<html data-user-location="US" lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport"/>
+<meta content="ie=edge" http-equiv="X-UA-Compatible"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-7b51a03c0af6e635868",applicationID:"594687533"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<script type="text/javascript">
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+<meta content="telephone=no" name="format-detection"/>
+<link href="https://gmpg.org/xfn/11" rel="profile"/>
+<meta content="max-image-preview:large" name="robots">
+<script data-cfasync="false" data-pagespeed-no-defer="" type="text/javascript">
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+	const gtm4wp_use_sku_instead        = 0;
+	const gtm4wp_id_prefix              = '';
+	const gtm4wp_remarketing            = false;
+	const gtm4wp_eec                    = 1;
+	const gtm4wp_classicec              = false;
+	const gtm4wp_currency               = 'USD';
+	const gtm4wp_product_per_impression = 10;
+	const gtm4wp_needs_shipping_address = false;
+	const gtm4wp_business_vertical      = 'retail';
+	const gtm4wp_business_vertical_id   = 'id';
+</script>
+<script type="text/javascript">
+const gtm4wp_is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+if ( gtm4wp_is_safari ) {
+	window.addEventListener('pageshow', function(event) {
+		if ( event.persisted ) {
+			// if Safari loads the page from cache usually by navigating with the back button
+			// it creates issues with product list click tracking
+			// therefore GTM4WP forces the page reload in this browser
+			window.location.reload();
+		}
+	});
+}
+</script>
+<title>Acromag Privacy Policy | We Protect Your Data</title>
+<meta content="Learn about the data Acromag collects, how it is used, and the steps we take to safeguard your private information." name="description">
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots">
+<link href="https://www.acromag.com/who-we-are/privacy-policy/" rel="canonical">
+<meta content="en_US" property="og:locale">
+<meta content="article" property="og:type"/>
+<meta content="Acromag Privacy Policy | We Protect Your Data" property="og:title"/>
+<meta content="Learn about the data Acromag collects, how it is used, and the steps we take to safeguard your private information." property="og:description"/>
+<meta content="https://www.acromag.com/who-we-are/privacy-policy/" property="og:url"/>
+<meta content="Acromag" property="og:site_name"/>
+<meta content="https://www.facebook.com/acromaginc" property="article:publisher"/>
+<meta content="2022-05-19T18:18:59+00:00" property="article:modified_time"/>
+<meta content="https://www.acromag.com/wp-content/uploads/2019/07/secure90x72.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@acromag" name="twitter:site"/>
+<meta content="Est. reading time" name="twitter:label1"/>
+<meta content="6 minutes" name="twitter:data1"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.acromag.com/#organization","name":"Acromag, Inc.","url":"https://www.acromag.com/","sameAs":["https://www.facebook.com/acromaginc","https://www.linkedin.com/company/acromag","https://www.youtube.com/user/acromagio","https://en.wikipedia.org/wiki/Acromag","https://twitter.com/acromag"],"logo":{"@type":"ImageObject","@id":"https://www.acromag.com/#logo","inLanguage":"en-US","url":"https://www.acromag.com/wp-content/uploads/2019/06/acromag-logo-o.png","width":246,"height":48,"caption":"Acromag, Inc."},"image":{"@id":"https://www.acromag.com/#logo"}},{"@type":"WebSite","@id":"https://www.acromag.com/#website","url":"https://www.acromag.com/","name":"Acromag","description":"The Leader in Industrial I/O","publisher":{"@id":"https://www.acromag.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://www.acromag.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.acromag.com/who-we-are/privacy-policy/#primaryimage","inLanguage":"en-US","url":"https://www.acromag.com/wp-content/uploads/2019/07/secure90x72.png","width":90,"height":72,"caption":"Acromag - Your I/O Experts"},{"@type":"WebPage","@id":"https://www.acromag.com/who-we-are/privacy-policy/#webpage","url":"https://www.acromag.com/who-we-are/privacy-policy/","name":"Acromag Privacy Policy | We Protect Your Data","isPartOf":{"@id":"https://www.acromag.com/#website"},"primaryImageOfPage":{"@id":"https://www.acromag.com/who-we-are/privacy-policy/#primaryimage"},"datePublished":"2019-06-19T14:10:30+00:00","dateModified":"2022-05-19T18:18:59+00:00","description":"Learn about the data Acromag collects, how it is used, and the steps we take to safeguard your private information.","breadcrumb":{"@id":"https://www.acromag.com/who-we-are/privacy-policy/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.acromag.com/who-we-are/privacy-policy/"]}]},{"@type":"BreadcrumbList","@id":"https://www.acromag.com/who-we-are/privacy-policy/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://www.acromag.com/","url":"https://www.acromag.com/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://www.acromag.com/who-we-are/","url":"https://www.acromag.com/who-we-are/","name":"About"}},{"@type":"ListItem","position":3,"item":{"@type":"WebPage","@id":"https://www.acromag.com/who-we-are/privacy-policy/","url":"https://www.acromag.com/who-we-are/privacy-policy/","name":"Privacy Policy"}}]}]}</script>
+<link href="//www.acromag.com" rel="dns-prefetch"/>
+<link href="//s.w.org" rel="dns-prefetch"/>
+<link href="https://www.acromag.com/feed/" rel="alternate" title="Acromag » Feed" type="application/rss+xml"/>
+<link href="https://www.acromag.com/comments/feed/" rel="alternate" title="Acromag » Comments Feed" type="application/rss+xml"/>
+<link href="https://www.acromag.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.3" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/woo-gutenberg-products-block/build/wc-blocks-vendors-style.css?ver=7.4.2" id="wc-blocks-vendors-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/woo-gutenberg-products-block/build/wc-blocks-style.css?ver=7.4.2" id="wc-blocks-style-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link href="https://www.acromag.com/wp-content/plugins/deligent-variable-block-width/css/front-block.css?ver=5.9.3" id="deligent-variable-columns-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/popup-builder/public/css/theme.css?ver=4.1.6" id="theme.css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/popup-builder/public/css/ResetFormStyle.css?ver=4.1.6" id="ResetFormStyle.css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/popup-builder/public/css/SubscriptionForm.css?ver=4.1.6" id="SubscriptionForm.css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/woocommerce-brand/css/framework/bootstrap.css?ver=5.9.3" id="woob-bootstrap-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/woocommerce-brand/css/front-style.css?ver=5.9.3" id="woob-front-end-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/woocommerce-brand/css/msdropdown/dd.css?ver=5.9.3" id="woob-dropdown-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/woocommerce-brand/css/carousel/slick.css?ver=5.9.3" id="woob-carousel-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/woocommerce-brand/css/scroll/tinyscroller.css?ver=5.9.3" id="woob-scroller-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/woocommerce-brand/css/tooltip/tipsy.css?ver=5.9.3" id="woob-tooltip-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=6.4.1" id="woocommerce-layout-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=6.4.1" id="woocommerce-smallscreen-css" media="only screen and (max-width: 768px)" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=6.4.1" id="woocommerce-general-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="woocommerce-inline-inline-css" type="text/css">
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link href="https://www.acromag.com/wp-content/plugins/woocommerce-gateway-authorize-net-cim/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/css/frontend/sv-wc-payment-gateway-payment-form.min.css?ver=5.10.12" id="sv-wc-payment-gateway-payment-form-v5_10_12-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/themes/TheeTheme/dist/css/styles.min.css?ver=5.9.3" id="thee-base-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.acromag.com/wp-content/themes/TheeTheme-Child/dist/css/theme.min.css?ver=1655717786" id="thee-child-css" media="all" rel="stylesheet" type="text/css"/>
+<script id="jquery-core-js" src="https://www.acromag.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" type="text/javascript"></script>
+<script id="jquery-migrate-js" src="https://www.acromag.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" type="text/javascript"></script>
+<script id="Popup.js-js-before" type="text/javascript">
+var sgpbPublicUrl = "https:\/\/www.acromag.com\/wp-content\/plugins\/popup-builder\/public\/";
+var SGPB_JS_LOCALIZATION = {"imageSupportAlertMessage":"Only image files supported","areYouSure":"Are you sure?","addButtonSpinner":"L","audioSupportAlertMessage":"Only audio files supported (e.g.: mp3, wav, m4a, ogg)","publishPopupBeforeElementor":"Please, publish the popup before starting to use Elementor with it!","publishPopupBeforeDivi":"Please, publish the popup before starting to use Divi Builder with it!","closeButtonAltText":"Close"};
+</script>
+<script id="Popup.js-js" src="https://www.acromag.com/wp-content/plugins/popup-builder/public/js/Popup.js?ver=4.1.6" type="text/javascript"></script>
+<script id="PopupConfig.js-js" src="https://www.acromag.com/wp-content/plugins/popup-builder/public/js/PopupConfig.js?ver=4.1.6" type="text/javascript"></script>
+<script id="PopupBuilder.js-js-before" type="text/javascript">
+var SGPB_POPUP_PARAMS = {"popupTypeAgeRestriction":"ageRestriction","defaultThemeImages":{"1":"https:\/\/www.acromag.com\/wp-content\/plugins\/popup-builder\/public\/img\/theme_1\/close.png","2":"https:\/\/www.acromag.com\/wp-content\/plugins\/popup-builder\/public\/img\/theme_2\/close.png","3":"https:\/\/www.acromag.com\/wp-content\/plugins\/popup-builder\/public\/img\/theme_3\/close.png","5":"https:\/\/www.acromag.com\/wp-content\/plugins\/popup-builder\/public\/img\/theme_5\/close.png","6":"https:\/\/www.acromag.com\/wp-content\/plugins\/popup-builder\/public\/img\/theme_6\/close.png"},"homePageUrl":"https:\/\/www.acromag.com\/","isPreview":false,"convertedIdsReverse":[],"dontShowPopupExpireTime":365,"conditionalJsClasses":[],"disableAnalyticsGeneral":"0"};
+var SGPB_JS_PACKAGES = {"packages":{"current":1,"free":1,"silver":2,"gold":3,"platinum":4},"extensions":{"geo-targeting":false,"advanced-closing":false}};
+var SGPB_JS_PARAMS = {"ajaxUrl":"https:\/\/www.acromag.com\/wp-admin\/admin-ajax.php","nonce":"c89e4513ae"};
+</script>
+<script id="PopupBuilder.js-js" src="https://www.acromag.com/wp-content/plugins/popup-builder/public/js/PopupBuilder.js?ver=4.1.6" type="text/javascript"></script>
+<script id="woob-scrollbar-script-js" src="https://www.acromag.com/wp-content/plugins/woocommerce-brand/js/scroll/tinyscroller.js?ver=5.9.3" type="text/javascript"></script>
+<script id="woob-tooltip-script-js" src="https://www.acromag.com/wp-content/plugins/woocommerce-brand/js/tooltip/jquery.tipsy.js?ver=5.9.3" type="text/javascript"></script>
+<script id="woob-front-end-custom-script-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var parameters = {"ajaxurl":"https:\/\/www.acromag.com\/wp-admin\/admin-ajax.php","template_url":""};
+/* ]]> */
+</script>
+<script id="woob-front-end-custom-script-js" src="https://www.acromag.com/wp-content/plugins/woocommerce-brand/js/custom-js.js?ver=5.9.3" type="text/javascript"></script>
+<script id="gtm4wp-woocommerce-enhanced-js" src="https://www.acromag.com/wp-content/plugins/duracelltomi-google-tag-manager/js/gtm4wp-woocommerce-enhanced.js?ver=1.15" type="text/javascript"></script>
+<script id="thee-child-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var theeURLs = {"tplDir":"\/code\/wp-content\/themes\/TheeTheme-Child","tplURL":"https:\/\/www.acromag.com\/wp-content\/themes\/TheeTheme-Child","ajaxURL":"https:\/\/www.acromag.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script id="thee-child-js" src="https://www.acromag.com/wp-content/themes/TheeTheme-Child/dist/js/scripts.min.js?ver=1655717786" type="text/javascript"></script>
+<link href="https://www.acromag.com/wp-json/" rel="https://api.w.org/"/><link href="https://www.acromag.com/wp-json/wp/v2/pages/1776" rel="alternate" type="application/json"/><link href="https://www.acromag.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.acromag.com%2Fwho-we-are%2Fprivacy-policy%2F" rel="alternate" type="application/json+oembed"/>
+<link href="https://www.acromag.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.acromag.com%2Fwho-we-are%2Fprivacy-policy%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+<script data-cfasync="false" data-pagespeed-no-defer="" type="text/javascript">
+	const console_cmd = console.warn || console.log;
+	var dataLayer_content = {"pagePostType":"page","pagePostType2":"single-page","pagePostAuthor":"Richard Horvath"};
+	dataLayer.push( dataLayer_content );
+</script>
+<script data-cfasync="false">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KKSHN52');
+</script>
+<meta content="USD" name="currency-name"/>
+<meta content="$" name="currency-symbol"/>
+<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+<link href="https://www.acromag.com/wp-content/uploads/2019/06/favicon.ico" rel="icon" sizes="32x32"/>
+<link href="https://www.acromag.com/wp-content/uploads/2019/06/favicon.ico" rel="icon" sizes="192x192"/>
+<link href="https://www.acromag.com/wp-content/uploads/2019/06/favicon.ico" rel="apple-touch-icon"/>
+<meta content="https://www.acromag.com/wp-content/uploads/2019/06/favicon.ico" name="msapplication-TileImage">
+<style id="wp-custom-css" type="text/css">
+			/* Homepage */
+.page-id-2 section.hero.acf-block{
+	height:400px
+}
+
+
+/* Miscelaneous */
+.page-id-1733 select.table-pick-list:first-child {
+    display: none;
+}
+p.form-row.validate-required input {
+    display: inline-block!important;
+}
+
+.product-summary{color:white;}
+.product-summary .product-price, .product-summary .product-form, .product-summary .product-actions, .product-summary .product-short-description{color: #000;}
+
+
+#field_25_3 > label {
+	display:none !important;
+}
+		</style>
+</meta></meta></link></meta></meta></meta></head>
+<body class="privacy-policy page-template page-template-templates page-template-no-padding-top page-template-templatesno-padding-top-php page page-id-1776 page-child parent-pageid-1755 theme-TheeTheme woocommerce-no-js no-hero no-padding-top">
+<div class="site" id="page">
+<header class="site-header" id="masthead">
+<div class="header-top">
+<div class="container-fluid top">
+<div class="row align-items-center">
+<div class="col-auto navigation">
+<nav class="menu-top-menu-container"><ul class="menu" id="menu-top-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1463" id="menu-item-1463"><a href="https://www.acromag.com/request-your-catalog/">Request a Catalog</a></li>
+<li class="fancybox menu-item menu-item-type-custom menu-item-object-custom menu-item-36939" id="menu-item-36939"><a href="#newsletter-popup">Subscribe to our newsletter</a></li>
+</ul></nav> </div>
+<div class="col-auto member-area">
+<div class="row">
+<div class="col-auto currency">
+<svg height="32px" style="enable-background:new 0 0 32 32;" version="1.1" viewbox="0 0 32 32" width="32px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+<style type="text/css">
+<![CDATA[
+	.st0{fill:#282425;}
+]]>
+</style>
+<path class="path" d="M32,7c0-0.888-0.314-2.211-1.81-3.473c-0.889-0.75-2.105-1.406-3.617-1.946C23.719,0.562,19.966,0,16.002,0
+	c-3.961,0-7.715,0.562-10.57,1.582c-1.513,0.54-2.728,1.194-3.618,1.946C0.32,4.79,0.004,6.113,0.004,7H0v9h0.004l0,0H0v9h0.004
+	c0,0.887,0.316,2.209,1.811,3.475c0.89,0.75,2.105,1.404,3.618,1.945c2.853,1.02,6.608,1.58,10.57,1.58
+	c3.964,0,7.717-0.561,10.571-1.58c1.512-0.541,2.729-1.195,3.617-1.945C31.686,27.209,32,25.887,32,25v-9l0,0l0,0V7z M7.229,5.196
+	c2.384-0.771,5.5-1.195,8.773-1.195c3.275,0,6.392,0.423,8.775,1.195C27.106,5.95,27.868,6.756,27.989,7
+	c-0.121,0.244-0.883,1.053-3.212,1.806C22.394,9.576,19.277,10,16.002,10c-3.274,0-6.39-0.424-8.773-1.194
+	C4.897,8.053,4.136,7.245,4.015,7C4.136,6.756,4.897,5.95,7.229,5.196z M24.777,26.805C22.394,27.578,19.277,28,16.002,28
+	c-3.274,0-6.39-0.422-8.773-1.195C4.897,26.053,4.136,25.244,4.015,25H4.009v-4.164c0.441,0.207,0.914,0.402,1.423,0.584
+	C8.285,22.438,12.041,23,16.002,23c3.964,0,7.717-0.563,10.571-1.58c0.507-0.18,0.977-0.377,1.416-0.58V25
+	C27.868,25.244,27.106,26.053,24.777,26.805z M24.777,17.805C22.394,18.576,19.277,19,16.002,19c-3.274,0-6.39-0.424-8.773-1.195
+	C4.897,17.053,4.136,16.244,4.015,16H4.009v-4.164c0.441,0.207,0.914,0.401,1.423,0.583C8.287,13.44,12.041,14,16.002,14
+	c3.964,0,7.717-0.561,10.571-1.581c0.507-0.18,0.977-0.375,1.416-0.58V16C27.868,16.244,27.106,17.053,24.777,17.805z"></path>
+</svg>
+<span class="label">USD</span>
+</div>
+<div class="col-auto account">
+<a href="https://www.acromag.com/my-account/">
+<svg height="32px" style="enable-background:new 0 0 32 32;" version="1.1" viewbox="0 0 32 32" width="32px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+<style type="text/css">
+<![CDATA[
+	.st0{fill:#282425;}
+]]>
+</style>
+<path class="path" d="M32,15.985C32,7.157,24.836,0,16,0C7.163,0,0,7.157,0,15.985c0,4.475,1.845,8.516,4.811,11.417
+	c0,0.004,0,0.006,0,0.007c0.146,0.145,0.306,0.271,0.457,0.406c0.206,0.188,0.409,0.382,0.624,0.559
+	c0.186,0.148,0.383,0.286,0.576,0.428c0.215,0.161,0.425,0.328,0.649,0.478c0.208,0.139,0.428,0.26,0.642,0.388
+	c0.224,0.136,0.44,0.278,0.669,0.399c0.227,0.125,0.466,0.228,0.699,0.338c0.23,0.109,0.456,0.229,0.692,0.328
+	c0.245,0.101,0.5,0.184,0.751,0.273c0.236,0.087,0.469,0.181,0.709,0.257c0.261,0.078,0.529,0.136,0.795,0.203
+	c0.242,0.061,0.481,0.134,0.729,0.186c0.271,0.056,0.55,0.083,0.826,0.125c0.251,0.038,0.497,0.087,0.752,0.114
+	c0.293,0.028,0.594,0.031,0.89,0.044c0.245,0.012,0.484,0.036,0.73,0.036c0.236,0,0.465-0.024,0.699-0.035
+	c0.307-0.014,0.619-0.016,0.921-0.047c0.22-0.022,0.434-0.065,0.65-0.097c0.312-0.043,0.626-0.082,0.931-0.141
+	c0.198-0.042,0.385-0.101,0.579-0.149c0.319-0.076,0.639-0.146,0.949-0.242c0.177-0.054,0.345-0.127,0.521-0.188
+	c0.316-0.109,0.636-0.215,0.944-0.345c0.161-0.068,0.314-0.151,0.474-0.225c0.311-0.142,0.623-0.282,0.921-0.443
+	c0.152-0.083,0.295-0.177,0.444-0.264c0.293-0.174,0.588-0.34,0.868-0.531c0.153-0.101,0.294-0.215,0.439-0.32
+	c0.265-0.19,0.534-0.38,0.785-0.586c0.154-0.127,0.297-0.266,0.446-0.397c0.206-0.181,0.419-0.357,0.617-0.548
+	c-0.002-0.004-0.002-0.007-0.002-0.011C30.153,24.503,32,20.462,32,15.985z M19.236,17.953c1.625-1.06,2.7-2.886,2.7-4.968
+	c0-3.277-2.657-5.933-5.937-5.933s-5.938,2.656-5.938,5.933c0,2.082,1.076,3.908,2.7,4.968c-3.256,0.976-5.887,3.383-7.174,6.487
+	c-1.878-2.307-3.009-5.248-3.009-8.455C2.579,8.58,8.588,2.577,16,2.577c7.41,0,13.42,6.003,13.42,13.408
+	c0,3.207-1.131,6.148-3.01,8.455C25.126,21.336,22.493,18.929,19.236,17.953z"></path>
+</svg>
+<span class="label">Login / Create Account</span>
+</a>
+</div>
+<div class="col-auto cart">
+<a href="https://www.acromag.com/cart/">
+<svg height="32px" style="enable-background:new 0 0 29 32;" version="1.1" viewbox="0 0 29 32" width="29px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+<style type="text/css">
+<![CDATA[
+	.st0{fill:#282425;}
+]]>
+</style>
+<path class="path" d="M3.817,29c0,1.658,1.281,3,2.863,3c1.581,0,2.862-1.342,2.862-3c0-1.657-1.281-2.999-2.862-2.999
+	C5.099,26.001,3.817,27.343,3.817,29z M22.905,29c0,1.658,1.282,3,2.863,3c1.58,0,2.863-1.342,2.863-3
+	c0-1.657-1.283-2.999-2.863-2.999C24.188,26.001,22.905,27.343,22.905,29z M28.632,16V4.002H3.817C3.817,1.792,2.108,0,0,0v2.001
+	c1.052,0,1.908,0.896,1.908,2.001l1.435,12.876c-0.874,0.732-1.435,1.858-1.435,3.123c0,2.208,1.71,4,3.819,4h22.905v-2H5.727
+	c-1.056,0-1.91-0.896-1.91-2c0-0.007,0-0.014,0.002-0.023L28.632,16z"></path>
+</svg>
+<span class="label">
+<span class="items-in-cart">0 items in cart</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="header-main">
+<div class="container-fluid main">
+<div class="row align-items-center">
+<div class="col-auto header-branding has-logo">
+<a href="https://www.acromag.com/" rel="home">
+<span class="branding-logo" style="background-image:url(https://www.acromag.com/wp-content/uploads/2019/06/acromag-logo-o.png);"><img alt="Acromag Logo" class="attachment-large size-large" height="48" loading="lazy" src="https://www.acromag.com/wp-content/uploads/2019/06/acromag-logo-o.png" width="246"/></span><span class="branding-name">Acromag</span><span class="branding-tagline">The Leader in Industrial I/O</span> </a>
+</div>
+<nav class="col-auto header-navigation">
+<ul class="menu header-menu" id="header-menu">
+<li class="mega-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-1651 nav-item" id="menu-item-1651" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="nav-link" href="https://www.acromag.com/shop/" title="Products">Products</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-11437 nav-item" id="menu-item-11437" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="nav-link" href="https://www.acromag.com/support/" title="Support">Support</a>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1717 nav-item" id="menu-item-1717" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/support/white-papers/" title="White Papers | Tech Notes">White Papers | Tech Notes</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11445 nav-item" id="menu-item-11445" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/support/faqs/" title="FAQs">FAQs</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11359 nav-item" id="menu-item-11359" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/support/user-manuals/" title="User Manuals">User Manuals</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1652 nav-item" id="menu-item-1652" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="nav-link" href="https://www.acromag.com/news/" title="News">News</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11456 nav-item" id="menu-item-11456" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="nav-link" href="https://www.acromag.com/events/" title="Events">Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-1691 nav-item" id="menu-item-1691" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="nav-link" href="https://www.acromag.com/contact/" title="Contact">Contact</a>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746 nav-item" id="menu-item-1746" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/contact/us-sales/" title="US Sales Offices">US Sales Offices</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745 nav-item" id="menu-item-1745" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/contact/global-sales/" title="Global Sales Offices">Global Sales Offices</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-has-children dropdown menu-item-1837 nav-item" id="menu-item-1837" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="nav-link" href="https://www.acromag.com/who-we-are/" title="About">About</a>
+<ul class="dropdown-menu" role="menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1838 nav-item" id="menu-item-1838" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/who-we-are/acromag-warranty-details/" title="Acromag Warranty">Acromag Warranty</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1840 nav-item" id="menu-item-1840" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/who-we-are/careers/" title="Careers">Careers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57480 nav-item" id="menu-item-57480" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/who-we-are/environmental-issues/" title="Environmental Compliance">Environmental Compliance</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1841 nav-item" id="menu-item-1841" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/who-we-are/history/" title="History">History</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1842 nav-item" id="menu-item-1842" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/who-we-are/industry-associations/" title="Industry Associations">Industry Associations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1846 nav-item" id="menu-item-1846" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/who-we-are/quality-and-certifications/" title="Quality &amp; Certifications">Quality &amp; Certifications</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1845 nav-item" id="menu-item-1845" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/who-we-are/special-services-and-safety-approvals/" title="Special Services and Safety Approvals">Special Services and Safety Approvals</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51475 nav-item" id="menu-item-51475" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/who-we-are/terms-and-conditions/" title="Terms and Conditions">Terms and Conditions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36052 nav-item" id="menu-item-36052" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"><a class="dropdown-item" href="https://www.acromag.com/who-we-are/testimonials/" title="Testimonials">Testimonials</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+<div class="col-auto aside">
+<div class="bg">
+<div class="triangle"></div>
+</div>
+<div class="search item">
+<a class="toggle" data-action="toggle" data-target="#primary-search-form" href="javascript: void();">
+<svg height="32px" style="enable-background:new 0 0 32 32;" version="1.1" viewbox="0 0 32 32" width="32px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+<style type="text/css">
+<![CDATA[
+	.st0{fill:#282425;}
+]]>
+</style>
+<path class="path" d="M21.251,18.594c1.395-1.928,2.216-4.298,2.216-6.86C23.467,5.253,18.214,0,11.733,0C5.252,0,0,5.253,0,11.733
+	s5.252,11.733,11.733,11.733c2.563,0,4.933-0.82,6.861-2.216L27.733,32L32,27.733L21.251,18.594z M11.733,19.199
+	c-4.124,0-7.467-3.343-7.467-7.466c0-4.124,3.343-7.467,7.467-7.467c4.124,0,7.466,3.344,7.466,7.467
+	C19.199,15.856,15.857,19.199,11.733,19.199z"></path>
+</svg>
+<span class="label">Search</span>
+</a>
+<form action="https://www.acromag.com/" class="search-form" id="primary-search-form" method="get">
+<input name="global" type="hidden" value="1"/>
+<div class="flex">
+<label for="primary-search-input">
+<input id="primary-search-input" name="s" placeholder="Type here..." type="search"/>
+</label>
+<button class="naked btn">
+<svg height="32px" style="enable-background:new 0 0 32 32;" version="1.1" viewbox="0 0 32 32" width="32px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+<style type="text/css">
+<![CDATA[
+	.st0{fill:#282425;}
+]]>
+</style>
+<path class="path" d="M21.251,18.594c1.395-1.928,2.216-4.298,2.216-6.86C23.467,5.253,18.214,0,11.733,0C5.252,0,0,5.253,0,11.733
+	s5.252,11.733,11.733,11.733c2.563,0,4.933-0.82,6.861-2.216L27.733,32L32,27.733L21.251,18.594z M11.733,19.199
+	c-4.124,0-7.467-3.343-7.467-7.466c0-4.124,3.343-7.467,7.467-7.467c4.124,0,7.466,3.344,7.466,7.467
+	C19.199,15.856,15.857,19.199,11.733,19.199z"></path>
+</svg>
+</button>
+</div>
+</form>
+</div>
+<div class="help item">
+<a href="https://www.acromag.com/contact">
+<svg height="31px" style="enable-background:new 0 0 32 31;" version="1.1" viewbox="0 0 32 31" width="32px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+<style type="text/css">
+<![CDATA[
+	.st0{fill:#282425;}
+]]>
+</style>
+<path class="path" d="M6,6.163h20v2.055H6V6.163z M6,10.272h16v2.054H6V10.272z M6,14.38h8v2.055H6V14.38z M29,0H3
+	C1.35,0,0,1.387,0,3.082v16.435c0,1.694,1.35,3.081,3,3.081h5v8.217l9.6-8.217H29c1.65,0,3-1.387,3-3.081V3.082
+	C32,1.387,30.65,0,29,0z M28,18.488H16.153L10,24.098v-5.609H4V4.109h24V18.488z"></path>
+</svg>
+<span class="label">Need help?</span>
+</a>
+</div>
+<div class="phone item">
+<a href="tel:+18008822055">
+<button class="btn">
+<i class="fas fa-phone"></i> <span class="label">800-882-2055</span>
+</button>
+</a>
+</div>
+</div>
+<div class="col-auto mobile-nav">
+<div class="label">Menu</div>
+<div class="bars">
+<div class="hamburger hamburger-1"></div>
+<div class="hamburger hamburger-2"></div>
+<div class="hamburger hamburger-3"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="mega-menu" id="mega-menu">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-6">
+<h4 class="main-category-name">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/">
+Embedded I/O &amp; Processing Solutions </a>
+</h4>
+<ul class="subcategories row">
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/acropack-mini-pci-express-based-interface-i-o-boards/">
+AcroPack Mini PCIe-Based Interface I/O Boards </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/pci-i-o-boards/">
+PCI I/O Boards </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/carrier-boards-and-cards/">
+Carrier Boards and Cards </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/pcie-products/">
+PCIe Products </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/com-express-products/">
+COM Express Products </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/pmc-modules-and-pmc-boards/">
+PMC Modules and PMC Boards </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/compactpci-boards/">
+CompactPCI Boards </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/reconfigurable-fpga-boards/">
+Reconfigurable FPGA Boards </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/compactpci-serial-io/">
+CompactPCI Serial I/O </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/vme-boards-vme-carriers/">
+VME Boards &amp; VME Carriers </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/embedded-computers/">
+Embedded Computers </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/vpx-single-board-computers/">
+VPX SBC &amp; VPX Carriers </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/industry-pack-mezzanine-i-o-modules/">
+Industry Pack Mezzanine I/O Modules </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/xmc-boards-carrier-cards/">
+XMC Boards </a>
+</li>
+</ul>
+</div>
+<div class="col-md-6">
+<h4 class="main-category-name">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/">
+Signal Conditioners &amp; Network I/O </a>
+</h4>
+<ul class="subcategories row">
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/4-20ma-isolators/">
+4-20 mA Signal Isolators </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/panel-meters/">
+Panel Meters </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/4-20ma-signal-splitters/">
+4-20mA Signal Splitters </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/limit-alarms/">
+Process Limit Alarms </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/accessories-and-power-supplies/">
+Accessories &amp; Power Supplies </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/profibus-dp-io-modules/">
+Profibus-DP I/O Modules </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/ethernet-io-modules/">
+Ethernet I/O Modules </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/signal-conditioning-data-acquisition/">
+Signal Conditioning, Data Acquisition </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/math-computation-modules/">
+Math Computation Modules </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/process-transmitters/">
+Signal Converters, Transmitters </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/modbus-rtu-io-modules/">
+Modbus-RTU I/O Modules </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/temperature-transmitters/">
+Temperature Transmitters </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/network-repeaters/">
+Network Repeaters </a>
+</li>
+<li class="col-md-6">
+<a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/wireless-i-o/">
+Wireless I/O </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main class="site-content" id="content">
+<div class="breadcrumbs">
+<div class="container">
+<span><span><a href="https://www.acromag.com/">Home</a> » <span><a href="https://www.acromag.com/who-we-are/">About</a> » <span aria-current="page" class="breadcrumb_last">Privacy Policy</span></span></span></span> </div>
+</div>
+<div class="post-content">
+<div class="container">
+<header class="page-header">
+<h1 class="page-title">Privacy Policy</h1>
+</header>
+<article class="post-1776 page type-page status-publish hentry" id="post-1776">
+<div class="editor-content">
+<h2 id="h-acromag-s-privacy-policy">Acromag’s Privacy Policy</h2>
+<p>This Private Policy Notice describes the personal data we collect, how it is used and shared, and your choices regarding this data. You can also <a href="https://www.acromag.com/wp-content/uploads/2021/02/3722008B-Privacy-Policy.pdf" rel="noreferrer noopener" target="_blank">download a PDF copy here</a>.</p>
+<p>This Privacy Policy (the “<strong>Policy</strong>”) for Acromag‚ Inc. (the “<strong>Company</strong>”)‚ located at 30765 S. Wixom Rd., Wixom, MI USA‚ describes:</p>
+<ul><li>What Personal Data the Company <strong>collects</strong> about you;</li><li>How the Company <strong>uses</strong> your Personal Data;</li><li>To whom the Company <strong>discloses</strong> your Personal Data;</li><li>Any international <strong>transfers</strong> of your Personal Data;</li><li>How the Company <strong>safeguards</strong> your Personal Data;</li><li>Whether the Company engages in <strong>automated decision making</strong>; and</li><li>Your <strong>rights</strong> regarding your Personal Data.</li></ul>
+<p>For purposes of this Policy‚</p>
+<ul><li>“<strong>Personal Data</strong>” means any information concerning an identified or identifiable individual; and</li><li>“<strong>Processing</strong>” means any operation with respect to Personal Data‚ such as collection‚ retrieval‚ access‚ use‚ disclosure‚ storage or disposal of Personal Data.</li></ul>
+<div aria-hidden="true" class="wp-block-spacer" style="height:30px"></div>
+<h3 id="h-1-collection-use-and-disclosure-of-your-personal-data">1. Collection‚ Use and Disclosure of Your Personal Data</h3>
+<p>1.1 <strong>Collection.</strong> The Company collects Personal Data from you as you interact with our website or mobile applications. Additionally, the Company collects Personal Data from you during our commercial relationship. The Personal Data collected includes‚ but is not limited to‚ the following:</p>
+<ul><li>First and last names</li><li>Business contact information</li><li>Job title</li></ul>
+<p>Information provided by you to the Company relating to other people will be processed by the Company in accordance with this Policy. You are responsible for the accuracy of such information and for ensuring that those people are aware of the nature of the information you have provided and the way in which it will be processed by the Company.</p>
+<p>1.2 <strong>Use</strong>. The Company uses this information to personalize your experience by providing content on the Website‚ including targeted advertising‚ that we believe may be of most interest to you; fraud prevention purposes; and to send you information and other product information that we think may be of interest to you.</p>
+<p>In addition, cookies and similar technology are used for things like personalizing your experience on our Website‚ analyzing trends‚ determining return visitors‚ serving tailored advertisements on other sites‚ and measuring the effectiveness of our advertising. </p>
+<p>We may use navigational information to help us evaluate how our visitors use and navigate our Website. For example, we collect navigational information to determine things like the number and frequency of visitors to each web page of our Website; the difficulties that visitors may have with our Website; the time it takes a visitor to connect to the Website or download pages; and the length of their visits to our Website. We analyze this information to better understand and improve a visitor’s experience on our Website‚ and for other internal business purposes. We use information collected through cookies and similar technology for many of these same purposes.</p>
+<p>We use third-party service providers to help us provide certain features on our Website and analyze our visitors’ preferences‚ such as Google Analytics. These partners may use cookies and similar technologies described above to collect and analyze information about use of our websites and mobile applications. This service may also collect information regarding the use of other websites‚ apps and online resources.</p>
+<p><strong>Google Analytics</strong> will associate your visitation information that it collects from this site with Google information from accounts of signed-in users who have consented to this association for the purpose of ads personalization. <a href="https://policies.google.com/privacy?hl=en-US" rel="noreferrer noopener" target="_blank">You can view Google’s full policy here</a>.</p>
+<p>1.3 <strong>Disclosures</strong>. Due to business requirements or contractual or statutory obligations‚ the Company may need to disclose your Personal Data to Authorized Third Parties (defined below) for the purposes described above. The Company generally will not disclose your Personal Data to any other third parties unless the disclosure is required by law.</p>
+<p>“<strong>Authorized Third Parties</strong>” include third-party service providers under written contract with the Company or with the Parent Corporation (defined below) on the Company’s behalf.</p>
+<p>1.4 <strong>Mobile Applications.  </strong>Acromag mobile applications may require access to location data. The data these applications use is not stored or sold by Acromag.</p>
+<div aria-hidden="true" class="wp-block-spacer" style="height:30px"></div>
+<h3 id="h-2-international-transfers-of-personal-data">2. International Transfers of Personal Data</h3>
+<p>The Company will transfer your Personal Data to Authorized Third Parties‚ located in the United States‚ for the purposes described above. The Authorized Third Parties in the United States include third party advertising companies‚ used to tailor online advertising to be directed to you on other websites. These third-party advertising companies place‚ use‚ or rely on technology‚ such as cookies and pixel tags‚ to obtain information about your interactions with our Website as well as with other websites. This information helps us select advertising to serve to you and where to serve it based on your experience on our Website and other sites that you visit.</p>
+<div aria-hidden="true" class="wp-block-spacer" style="height:30px"></div>
+<h3 id="h-3-security-measures-for-and-retention-of-personal-data">3. Security Measures for‚ and Retention of‚ Personal Data</h3>
+<p>The Company has implemented reasonable and appropriate administrative‚ physical‚ and technical safeguards for your Personal Data. For example, your Personal Data will be stored on a secure server when in electronic form and in physically secure areas when in paper form. Technical and physical controls restrict access to your Personal Data to employees of the Company with a need to know. The Company will retain your Personal Data throughout the commercial relationship and as long thereafter as is permitted by applicable law. For additional information about the Company’s retention of your Personal Data‚ please contact <a href="/cdn-cgi/l/email-protection#a9eeedf9fbc0c7d8dcc0dbd0e9c8cadbc6c4c8ce87cac6c496dadccbc3cccadd94f9dbc0dfc8cad08c9b99e0c7d8dcc0dbd0"><span class="__cf_email__" data-cfemail="75323125271c1b04001c070c351416071a1814125b161a18">[email protected]</span></a>.</p>
+<div aria-hidden="true" class="wp-block-spacer" style="height:30px"></div>
+<h3 id="h-4-no-automated-decision-making">4. No Automated Decision Making</h3>
+<p>The Company does not make any decisions concerning our commercial relationship only by automated means.</p>
+<div aria-hidden="true" class="wp-block-spacer" style="height:30px"></div>
+<h3 id="h-5-your-rights-with-respect-to-your-personal-data">5. Your Rights with Respect to Your Personal Data</h3>
+<p>You have the right to access your Personal Data and to request that the Company update‚ correct or delete (the “right to be forgotten”) your Personal Data as provided by applicable law. You also have the right to restrict‚ and to object to‚ the Company’s processing of your Personal Data and to data portability as provided by applicable law. Subject to certain limitations‚ the right to data portability allows you to obtain from the Company‚ or to ask the Company to send to a third party‚ a copy of your Personal Data in electronic form that you provided to the Company in connection with our commercial relationship or with your consent. Your right to access your Personal Data includes your right to receive a copy of all‚ or a portion‚ of your Personal Data in the Company’s possession as long as the Company providing your Personal Data would not adversely affect the rights and freedoms of others.</p>
+<p>Right To Object: You have the right to object to the processing of your Personal Data based solely on the Company’s legitimate interests. If you do object in these circumstances‚ the processing of your Personal Data will be stopped unless there is an overriding‚ compelling reason to continue the processing or the processing is necessary to establish‚ pursue or defend legal claims.</p>
+<p>You can exercise these rights by submitting an email to <a href="/cdn-cgi/l/email-protection#b9fefde9ebd0d7c8ccd0cbc0f9d8dacbd6d4d8de97dad6d486caccdbd3dcdacd84e9cbd0cfd8dac09c8b89f0d7c8ccd0cbc0"><span class="__cf_email__" data-cfemail="4f080b1f1d26213e3a263d360f2e2c3d20222e28612c2022">[email protected]</span></a>. The Company will respond to such requests in accordance with applicable data protection law. If you believe that your Personal Data has been processed in violation of applicable data protection law‚ you have the right to lodge a complaint with the data protection authority where you live‚ where you work‚ or where you believe the violation occurred.</p>
+<p>If the Company requests your consent to process your Personal Data and you do consent‚ you may use the contact information above to withdraw your consent. Any withdrawal shall not affect the lawfulness of processing based on consent before its withdrawal‚ and the Company will continue to retain the information that you provided us before you withdrew your consent for as long as allowed or required by applicable law.</p>
+<div aria-hidden="true" class="wp-block-spacer" style="height:30px"></div>
+<p>All trademarks are property of their respective owners.</p>
+<p><a aria-label="ABOUT SSL CERTIFICATES (opens in a new tab)" href="https://www.thawte.com/ssl-certificates/" rel="noreferrer noopener" target="_blank">ABOUT SSL CERTIFICATES</a></p>
+<figure class="wp-block-image"><a href="https://verify.authorize.net/anetseal/?pid=03982ff1-5637-43ac-857e-405fb6eddb1d&amp;rurl=https%3A//www.acromag.com/privacy-policy" rel="noreferrer noopener" target="_blank"><img alt="Authorize.net logo" class="wp-image-11451" height="72" src="https://www.acromag.com/wp-content/uploads/2019/07/secure90x72.png" width="90"/></a></figure>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="site-footer" id="colophon">
+<div class="top part">
+<div class="container">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript"></script>
+<div class="gf_browser_unknown gform_wrapper gform_legacy_markup_wrapper" id="gform_wrapper_7"><div class="gform_anchor" id="gf_7" tabindex="-1"></div>
+<div class="gform_heading">
+<h3 class="gform_title">Stay up to date with Acromag!</h3>
+<span class="gform_description">Enter your details to receive helpful content and product news.</span>
+</div><form action="/who-we-are/privacy-policy/?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0#gf_7" enctype="multipart/form-data" id="gform_7" method="post" novalidate="" target="gform_ajax_frame_7">
+<div class="gform_body gform-body"><ul class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_7"><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_7_1" id="field_7_1"><label class="gfield_label" for="input_7_1">Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email">
+<input aria-invalid="false" aria-required="true" class="medium" id="input_7_1" name="input_1" placeholder="Email Address" type="email" value="">
+</input></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_7_2" id="field_7_2"><label class="gfield_label gfield_label_before_complex">Select the newsletter(s) you are interested in<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_checkbox"><ul class="gfield_checkbox" id="input_7_2"><li class="gchoice gchoice_7_2_1">
+<input class="gfield-choice-input" id="choice_7_2_1" name="input_2.1" type="checkbox" value="Embed">
+<label for="choice_7_2_1" id="label_7_2_1">Embedded Solutions eNewsletter (Embedded I/O, Processing Solutions, FPGAs &amp; SBCs)</label>
+</input></li><li class="gchoice gchoice_7_2_2">
+<input class="gfield-choice-input" id="choice_7_2_2" name="input_2.2" type="checkbox" value="Process"/>
+<label for="choice_7_2_2" id="label_7_2_2">Process Automation Solutions eNewsletter (Remote Network I/O and Signal Conditioning)</label>
+</li></ul></div></li><li class="gfield field_sublabel_below field_description_below hidden_label gfield_visibility_visible" data-js-reload="field_7_3" id="field_7_3"><label class="gfield_label" for="input_7_3">CAPTCHA</label><div class="ginput_container ginput_recaptcha" data-badge="bottomright" data-sitekey="6Lf9JroUAAAAAMPe_QWSFOqGmAhac11RHqB_5HOt" data-size="invisible" data-tabindex="-1" data-theme="light" id="input_7_3"></div></li></ul></div>
+<div class="gform_footer top_label"> <input class="gform_button button" id="gform_submit_button_7" onclick='if(window["gf_submitting_7"]){return false;}  if( !jQuery("#gform_7")[0].checkValidity || jQuery("#gform_7")[0].checkValidity()){window["gf_submitting_7"]=true;}  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_7"]){return false;} if( !jQuery("#gform_7")[0].checkValidity || jQuery("#gform_7")[0].checkValidity()){window["gf_submitting_7"]=true;}  jQuery("#gform_7").trigger("submit",[true]); }' type="submit" value="Submit"/> <input name="gform_ajax" type="hidden" value="form_id=7&amp;title=1&amp;description=1&amp;tabindex=0"/>
+<input class="gform_hidden" name="is_submit_7" type="hidden" value="1"/>
+<input class="gform_hidden" name="gform_submit" type="hidden" value="7"/>
+<input class="gform_hidden" name="gform_unique_id" type="hidden" value=""/>
+<input class="gform_hidden" name="state_7" type="hidden" value="WyJbXSIsIjI0ZWY5MzQyZDg0OGNkMjBhNzM1ZWVhMGQ3ZTYzNGQxIl0="/>
+<input class="gform_hidden" id="gform_target_page_number_7" name="gform_target_page_number_7" type="hidden" value="0"/>
+<input class="gform_hidden" id="gform_source_page_number_7" name="gform_source_page_number_7" type="hidden" value="1"/>
+<input name="gform_field_values" type="hidden" value=""/>
+</div>
+<p style="display: none !important;"><label>Δ<textarea cols="45" maxlength="100" name="ak_hp_textarea" rows="8"></textarea></label><input id="ak_js_1" name="ak_js" type="hidden" value="4"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>
+</div>
+<iframe id="gform_ajax_frame_7" name="gform_ajax_frame_7" src="about:blank" style="display:none;width:0px;height:0px;" title="This iframe contains the logic required to handle Ajax powered Gravity Forms."></iframe>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 7, 'https://www.acromag.com/wp-content/plugins/gravityforms/images/spinner.svg' );jQuery('#gform_ajax_frame_7').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_7');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_7').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_7').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_7').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_7').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_7').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_7').val();gformInitSpinner( 7, 'https://www.acromag.com/wp-content/plugins/gravityforms/images/spinner.svg' );jQuery(document).trigger('gform_page_loaded', [7, current_page]);window['gf_submitting_7'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_7').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_7').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [7]);window['gf_submitting_7'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_7').text());}, 50);}else{jQuery('#gform_7').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [7, current_page]);} );} );
+</script>
+</div>
+</div>
+<div class="middle part">
+<div class="container">
+<div class="row">
+<div class="col-md-4 c1">
+<h3 class="contact-us">Need help? Call us!</h3>
+<div class="phone">
+<a href="tel:+18008822055">800-882-2055</a>
+</div>
+<a href="https://www.acromag.com/contact">
+<button class="btn big alt">Contact Us</button>
+</a>
+<div class="social-holder">
+<div class="social">
+<a href="https://www.facebook.com/acromaginc" target="_blank"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
+</div>
+<div class="social">
+<a href="https://twitter.com/acromag" target="_blank"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+</div>
+<div class="social">
+<a href="https://www.linkedin.com/company/acromag" target="_blank"><i aria-hidden="true" class="fab fa-linkedin-in"></i></a>
+</div>
+<div class="social">
+<a href="https://www.youtube.com/user/acromagio" target="_blank"><i aria-hidden="true" class="fab fa-youtube"></i></a>
+</div>
+<div class="social">
+<a href="https://www.scribd.com/user/15683128/acromaginc" target="_blank"><i aria-hidden="true" class="fab fa-scribd"></i></a>
+</div>
+</div>
+</div>
+<div class="col-md-7 c2">
+<nav class="footer-nav"><ul class="menu" id="menu-footer"><li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-11495" id="menu-item-11495"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/">Embedded I/O &amp; Processing Solutions</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36596" id="menu-item-36596"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/acropack-mini-pci-express-based-interface-i-o-boards/">AcroPack I/O Mezzanine Modules</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36600" id="menu-item-36600"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/carrier-boards-and-cards/">Carrier Boards and Cards</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36598" id="menu-item-36598"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/com-express-products/">COM Express Products</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36605" id="menu-item-36605"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/compactpci-boards/">CompactPCI Boards</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-51122" id="menu-item-51122"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/acropack-mini-pci-express-based-interface-i-o-boards/acropack-carriers/acropack-compactpci-serial-carrier-cards/">AcroPack CompactPCI Serial Carrier Cards</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36606" id="menu-item-36606"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/embedded-computers/">Embedded Computers</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36603" id="menu-item-36603"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/reconfigurable-fpga-boards/">FPGA Modules</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36609" id="menu-item-36609"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/industry-pack-mezzanine-i-o-modules/">Industry Pack Mezzanine I/O Modules</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36602" id="menu-item-36602"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/pci-i-o-boards/">PCI I/O Boards</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36599" id="menu-item-36599"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/pcie-products/">PCIe Products</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36610" id="menu-item-36610"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/vme-boards-vme-carriers/">VME Boards &amp; VME Carriers</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-51124" id="menu-item-51124"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/vpx-single-board-computers/">VPX SBC &amp; VPX Carriers</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-51125" id="menu-item-51125"><a href="https://www.acromag.com/product-category/embedded-i-o-processing-solutions/xmc-boards-carrier-cards/">XMC Boards</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children menu-item-36595" id="menu-item-36595"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/">Signal Conditioning &amp; Network I/O</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36611" id="menu-item-36611"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/ethernet-io-modules/">Ethernet I/O Modules</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36616" id="menu-item-36616"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/modbus-rtu-io-modules/">Modbus-RTU I/O Modules</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36612" id="menu-item-36612"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/profibus-dp-io-modules/">Profibus-DP I/O Modules</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36615" id="menu-item-36615"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/limit-alarms/">Process Limit Alarms</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36613" id="menu-item-36613"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/math-computation-modules/">Math Computation Modules</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36617" id="menu-item-36617"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/network-repeaters/">Network Repeaters</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-51129" id="menu-item-51129"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/panel-meters/">Panel Meters</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-51130" id="menu-item-51130"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/signal-conditioning-data-acquisition/">Signal Conditioning, Data Acquisition</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36619" id="menu-item-36619"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/process-transmitters/">Signal Converters, Transmitters</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36620" id="menu-item-36620"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/temperature-transmitters/">Temperature Transmitters</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-51131" id="menu-item-51131"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/accessories-and-power-supplies/usb-isolator/">USB Isolator</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-36618" id="menu-item-36618"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/4-20ma-isolators/">4-20mA Signal Isolators</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-51127" id="menu-item-51127"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/4-20ma-signal-splitters/">4-20mA Signal Splitters</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-51128" id="menu-item-51128"><a href="https://www.acromag.com/product-category/signal-conditioners-network-i-o/accessories-and-power-supplies/">Accessories &amp; Power Supplies</a></li>
+</ul>
+</li>
+</ul></nav> </div>
+</div>
+</div>
+</div>
+<div class="bottom part">
+<div class="container">
+<div class="row top">
+<div class="col-md-auto c1">
+<a class="logo" href="https://www.acromag.com">
+<img alt="Logo" src="https://www.acromag.com/wp-content/uploads/2019/08/acromag-footer-logo-w-o.png"/>
+</a>
+</div>
+<div class="col-md-auto c2">
+<nav class="footer-secondary-nav"><ul class="menu" id="menu-secondary-footer-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-11376" id="menu-item-11376"><a href="https://www.acromag.com/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1643" id="menu-item-1643"><a href="https://www.acromag.com/my-account/">My account</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11378" id="menu-item-11378"><a href="https://www.acromag.com/who-we-are/careers/">Careers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1644" id="menu-item-1644"><a href="https://www.acromag.com/cart/">View Cart</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11383" id="menu-item-11383"><a href="https://www.acromag.com/sitemap/">Sitemap</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11424" id="menu-item-11424"><a href="https://www.acromag.com/who-we-are/environmental-issues/">Environmental Compliance</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11379" id="menu-item-11379"><a href="https://www.acromag.com/who-we-are/terms-and-conditions/">Terms and Conditions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy current-menu-item page_item page-item-1776 current_page_item menu-item-11380" id="menu-item-11380"><a aria-current="page" href="https://www.acromag.com/who-we-are/privacy-policy/">Privacy Policy</a></li>
+</ul></nav> </div>
+</div>
+<div class="row bottom">
+<div class="col-auto copyright">
+<span>© 2022 Acromag. All rights reserved.</span>
+</div>
+<div class="col-auto developer">
+<a href="https://www.theecommerce.com/woocommerce-development" target="_blank">WooCommerce Development</a> + <a href="https://www.theecommerce.com/ecommerce-marketing/seo" target="_blank">Ecommerce SEO</a> by <a href="https://www.theedigital.com/web-design/ecommerce-website-development" target="_blank">TheeDigital</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<nav class="nav-mobile">
+<div class="scrollable">
+<form action="https://www.acromag.com/" class="search" id="mobile-search">
+<label for="mobile-search-input">
+<input id="mobile-search-input" name="s" placeholder="Search..." type="search"/>
+</label>
+<button class="btn naked">
+<i class="fa fa-search"></i>
+</button>
+</form>
+<ul class="mobile-menu" id="mobile-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11459" id="menu-item-11459"><a href="https://www.acromag.com/shop/">Shop</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1203" id="menu-item-1203"><a href="https://www.acromag.com/my-account/">My account</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1204" id="menu-item-1204"><a href="https://www.acromag.com/contact/">Contact</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11467" id="menu-item-11467"><a href="https://www.acromag.com/contact/us-sales/">US Sales Offices</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11468" id="menu-item-11468"><a href="https://www.acromag.com/contact/global-sales/">Global Sales Offices</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11460" id="menu-item-11460"><a href="https://www.acromag.com/support/">Support</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11464" id="menu-item-11464"><a href="https://www.acromag.com/support/white-papers/">White Papers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11463" id="menu-item-11463"><a href="https://www.acromag.com/support/user-manuals/">User Manuals</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11461" id="menu-item-11461"><a href="https://www.acromag.com/support/faqs/">FAQs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11465" id="menu-item-11465"><a href="https://www.acromag.com/news/">News</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11466" id="menu-item-11466"><a href="https://www.acromag.com/events/">Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-has-children menu-item-11469" id="menu-item-11469"><a href="https://www.acromag.com/who-we-are/">About</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11470" id="menu-item-11470"><a href="https://www.acromag.com/who-we-are/history/">History</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11471" id="menu-item-11471"><a href="https://www.acromag.com/who-we-are/careers/">Careers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11472" id="menu-item-11472"><a href="https://www.acromag.com/who-we-are/special-services-and-safety-approvals/">Special Services and Safety Approvals</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11473" id="menu-item-11473"><a href="https://www.acromag.com/who-we-are/industry-associations/">Industry Associations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11474" id="menu-item-11474"><a href="https://www.acromag.com/who-we-are/quality-and-certifications/">Quality &amp; Certifications</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11475" id="menu-item-11475"><a href="https://www.acromag.com/who-we-are/acromag-warranty-details/">Acromag Warranty</a></li>
+</ul>
+</li>
+</ul> </div>
+<aside>
+<div class="mobile-nav">
+<i class="fa fa-times"></i>
+</div>
+<div class="social-holder">
+<div class="social">
+<a href="https://www.facebook.com/acromaginc" target="_blank"><i aria-hidden="true" class="fab fa-facebook-f"></i></a>
+</div>
+<div class="social">
+<a href="https://twitter.com/acromag" target="_blank"><i aria-hidden="true" class="fab fa-twitter"></i></a>
+</div>
+<div class="social">
+<a href="https://www.linkedin.com/company/acromag" target="_blank"><i aria-hidden="true" class="fab fa-linkedin-in"></i></a>
+</div>
+<div class="social">
+<a href="https://www.youtube.com/user/acromagio" target="_blank"><i aria-hidden="true" class="fab fa-youtube"></i></a>
+</div>
+<div class="social">
+<a href="https://www.scribd.com/user/15683128/acromaginc" target="_blank"><i aria-hidden="true" class="fab fa-scribd"></i></a>
+</div>
+</div>
+</aside>
+</nav>
+<div class="fade-screen"></div>
+<noscript><iframe aria-hidden="true" height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KKSHN52" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<script async="" src="https://connect.livechatinc.com/api/v1/script/c68e47e2-e167-4613-9fe7-8d3e10c05ed8/widget.js" type="text/javascript"></script>
+<div class="modal-popup" id="product-added-popup"></div>
+<div class="modal-popup" id="newsletter-popup">
+<div class="gf_browser_unknown gform_wrapper gform_legacy_markup_wrapper" id="gform_wrapper_12"><div class="gform_anchor" id="gf_12" tabindex="-1"></div>
+<div class="gform_heading">
+<h3 class="gform_title">Stay up to date with Acromag</h3>
+<span class="gform_description">Enter your details to receive helpful content and product news.</span>
+</div><form action="/who-we-are/privacy-policy/?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0#gf_12" enctype="multipart/form-data" id="gform_12" method="post" novalidate="" target="gform_ajax_frame_12">
+<div class="gform_body gform-body"><ul class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_12"><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_12_1" id="field_12_1"><label class="gfield_label gfield_label_before_complex">Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_complex ginput_container no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name" id="input_12_1">
+<span class="name_first" id="input_12_1_3_container">
+<input aria-required="true" id="input_12_1_3" name="input_1.3" tabindex="1501" type="text" value="">
+<label for="input_12_1_3">First</label>
+</input></span>
+<span class="name_last" id="input_12_1_6_container">
+<input aria-required="true" id="input_12_1_6" name="input_1.6" tabindex="1503" type="text" value=""/>
+<label for="input_12_1_6">Last</label>
+</span>
+</div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_12_3" id="field_12_3"><label class="gfield_label" for="input_12_3">Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email">
+<input aria-invalid="false" aria-required="true" class="medium" id="input_12_3" name="input_3" tabindex="1505" type="email" value=""/>
+</div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_12_2" id="field_12_2"><label class="gfield_label gfield_label_before_complex">Product Interest<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_checkbox"><ul class="gfield_checkbox" id="input_12_2"><li class="gchoice gchoice_12_2_1">
+<input class="gfield-choice-input" id="choice_12_2_1" name="input_2.1" tabindex="1506" type="checkbox" value="Embedded Solutions eNewsletter (Embedded I/O, Processing Solutions, FPGAs &amp; SBCs)"/>
+<label for="choice_12_2_1" id="label_12_2_1">Embedded Solutions eNewsletter (Embedded I/O, Processing Solutions, FPGAs &amp; SBCs)</label>
+</li><li class="gchoice gchoice_12_2_2">
+<input class="gfield-choice-input" id="choice_12_2_2" name="input_2.2" tabindex="1507" type="checkbox" value="Process Automation Solutions eNewsletter (Remote Network I/O and Signal Conditioning)"/>
+<label for="choice_12_2_2" id="label_12_2_2">Process Automation Solutions eNewsletter (Remote Network I/O and Signal Conditioning)</label>
+</li></ul></div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_12_4" id="field_12_4"><label class="gfield_label">I would like to receive email communications including new product announcements and application notes/white papers from Acromag. I understand that I can unsubscribe at any time.</label><div class="ginput_container ginput_container_radio"><ul class="gfield_radio" id="input_12_4">
+<li class="gchoice gchoice_12_4_0">
+<input id="choice_12_4_0" name="input_4" tabindex="1508" type="radio" value="Yes"/>
+<label for="choice_12_4_0" id="label_12_4_0">Yes</label>
+</li>
+<li class="gchoice gchoice_12_4_1">
+<input id="choice_12_4_1" name="input_4" tabindex="1509" type="radio" value="No"/>
+<label for="choice_12_4_1" id="label_12_4_1">No</label>
+</li></ul></div></li><li class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible" data-js-reload="field_12_5" id="field_12_5"><label class="gfield_label" for="input_12_5">Email</label><div class="ginput_container"><input autocomplete="new-password" id="input_12_5" name="input_5" type="text" value=""/></div><div class="gfield_description" id="gfield_description_12_5">This field is for validation purposes and should be left unchanged.</div></li></ul></div>
+<div class="gform_footer top_label"> <input class="gform_button button" id="gform_submit_button_12" onclick='if(window["gf_submitting_12"]){return false;}  if( !jQuery("#gform_12")[0].checkValidity || jQuery("#gform_12")[0].checkValidity()){window["gf_submitting_12"]=true;}  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_12"]){return false;} if( !jQuery("#gform_12")[0].checkValidity || jQuery("#gform_12")[0].checkValidity()){window["gf_submitting_12"]=true;}  jQuery("#gform_12").trigger("submit",[true]); }' tabindex="1510" type="submit" value="Submit"/> <input name="gform_ajax" type="hidden" value="form_id=12&amp;title=1&amp;description=1&amp;tabindex=1500"/>
+<input class="gform_hidden" name="is_submit_12" type="hidden" value="1"/>
+<input class="gform_hidden" name="gform_submit" type="hidden" value="12"/>
+<input class="gform_hidden" name="gform_unique_id" type="hidden" value=""/>
+<input class="gform_hidden" name="state_12" type="hidden" value="WyJbXSIsIjI0ZWY5MzQyZDg0OGNkMjBhNzM1ZWVhMGQ3ZTYzNGQxIl0="/>
+<input class="gform_hidden" id="gform_target_page_number_12" name="gform_target_page_number_12" type="hidden" value="0"/>
+<input class="gform_hidden" id="gform_source_page_number_12" name="gform_source_page_number_12" type="hidden" value="1"/>
+<input name="gform_field_values" type="hidden" value=""/>
+</div>
+<p style="display: none !important;"><label>Δ<textarea cols="45" maxlength="100" name="ak_hp_textarea" rows="8"></textarea></label><input id="ak_js_2" name="ak_js" type="hidden" value="214"/><script>document.getElementById( "ak_js_2" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>
+</div>
+<iframe id="gform_ajax_frame_12" name="gform_ajax_frame_12" src="about:blank" style="display:none;width:0px;height:0px;" title="This iframe contains the logic required to handle Ajax powered Gravity Forms."></iframe>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 12, 'https://www.acromag.com/wp-content/plugins/gravityforms/images/spinner.svg' );jQuery('#gform_ajax_frame_12').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_12');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_12').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_12').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_12').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_12').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_12').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_12').val();gformInitSpinner( 12, 'https://www.acromag.com/wp-content/plugins/gravityforms/images/spinner.svg' );jQuery(document).trigger('gform_page_loaded', [12, current_page]);window['gf_submitting_12'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_12').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_12').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [12]);window['gf_submitting_12'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_12').text());}, 50);}else{jQuery('#gform_12').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [12, current_page]);} );} );
+</script>
+</div>
+<div class="cookie-consent-bar" id="cookie-consent-bar">
+<div class="container">
+<div class="row align-items-center">
+<div class="col text">This website uses cookies to ensure you get the best experience on our
+website. <a href="https://www.acromag.com/who-we-are/privacy-policy">Learn More</a>
+</div>
+<div class="col-auto">
+<button class="btn ghost alt">Accept</button>
+</div>
+</div>
+</div>
+</div>
+<div class="modal-popup" id="product-comparison-modal"></div>
+<div class="sgpb-main-popup-data-container-54323" style="position:fixed;opacity: 0;filter: opacity(0%);transform: scale(0);">
+<div class="sg-popup-builder-content" data-events='[{"param":"load","value":"300","hiddenOption":[]}]' data-id="54323" data-options="YToxMDM6e3M6MzY6InNncGItc3Vicy1lbmFibGUtZW1haWwtbm90aWZpY2F0aW9ucyI7czoyOiJvbiI7czoyOToic2dwYi1zdWJzLW5vdGlmaWNhdGlvbnMtZW1haWwiO3M6MTY6ImluZm9AYWNyb21hZy5jb20iO3M6MjM6InNncGItc3Vicy1mb3JtLWJnLWNvbG9yIjtzOjc6IiNGRkZGRkYiO3M6MjU6InNncGItc3Vicy1mb3JtLWJnLW9wYWNpdHkiO3M6MzoiMC44IjtzOjI2OiJzZ3BiLXN1YnMtZm9ybS1wYWRkaW5nLXRvcCI7czoxOiIyIjtzOjI4OiJzZ3BiLXN1YnMtZm9ybS1wYWRkaW5nLXJpZ2h0IjtzOjE6IjIiO3M6Mjk6InNncGItc3Vicy1mb3JtLXBhZGRpbmctYm90dG9tIjtzOjE6IjIiO3M6Mjc6InNncGItc3Vicy1mb3JtLXBhZGRpbmctbGVmdCI7czoxOiIyIjtzOjIwOiJzZ3BiLXN1YnMtdGV4dC13aWR0aCI7czo1OiIzMDBweCI7czoyMToic2dwYi1zdWJzLXRleHQtaGVpZ2h0IjtzOjQ6IjQwcHgiO3M6Mjc6InNncGItc3Vicy10ZXh0LWJvcmRlci13aWR0aCI7czozOiIycHgiO3M6Mjg6InNncGItc3Vicy10ZXh0LWJvcmRlci1yYWRpdXMiO3M6MzoiMHB4IjtzOjI2OiJzZ3BiLXN1YnMtaW5wdXQtbWFyZ2luLXRvcCI7czoxOiIyIjtzOjI4OiJzZ3BiLXN1YnMtaW5wdXQtbWFyZ2luLXJpZ2h0IjtzOjE6IjIiO3M6Mjk6InNncGItc3Vicy1pbnB1dC1tYXJnaW4tYm90dG9tIjtzOjE6IjIiO3M6Mjc6InNncGItc3Vicy1pbnB1dC1tYXJnaW4tbGVmdCI7czoxOiIyIjtzOjIzOiJzZ3BiLXN1YnMtdGV4dC1iZy1jb2xvciI7czo3OiIjRkZGRkZGIjtzOjI3OiJzZ3BiLXN1YnMtdGV4dC1ib3JkZXItY29sb3IiO3M6NzoiI0NDQ0NDQyI7czozNDoic2dwYi1zdWJzLXRleHQtYWN0aXZlLWJvcmRlci1jb2xvciI7czo3OiIjY2NjY2NjIjtzOjIwOiJzZ3BiLXN1YnMtdGV4dC1jb2xvciI7czo3OiIjMDAwMDAwIjtzOjMyOiJzZ3BiLXN1YnMtdGV4dC1wbGFjZWhvbGRlci1jb2xvciI7czo3OiIjQ0NDQ0NDIjtzOjIxOiJzZ3BiLXN1YnMtbGFiZWwtY29sb3IiO3M6NzoiIzAwMDAwMCI7czoxOToic2dwYi1zdWJzLWJ0bi13aWR0aCI7czo1OiIzMDBweCI7czoyMDoic2dwYi1zdWJzLWJ0bi1oZWlnaHQiO3M6NDoiNDBweCI7czoyNjoic2dwYi1zdWJzLWJ0bi1ib3JkZXItd2lkdGgiO3M6MzoiMHB4IjtzOjI3OiJzZ3BiLXN1YnMtYnRuLWJvcmRlci1yYWRpdXMiO3M6MzoiNHB4IjtzOjI3OiJzZ3BiLXN1YnMtYnV0dG9uLW1hcmdpbi10b3AiO3M6MToiMiI7czoyOToic2dwYi1zdWJzLWJ1dHRvbi1tYXJnaW4tcmlnaHQiO3M6MToiMiI7czozMDoic2dwYi1zdWJzLWJ1dHRvbi1tYXJnaW4tYm90dG9tIjtzOjE6IjIiO3M6Mjg6InNncGItc3Vicy1idXR0b24tbWFyZ2luLWxlZnQiO3M6MToiMiI7czoyMzoic2dwYi1zdWJzLWJ0bi1mb250LXNpemUiO3M6NDoiMThweCI7czoyNjoic2dwYi1zdWJzLWJ0bi1ib3JkZXItY29sb3IiO3M6NzoiIzRDQUY1MCI7czoyMjoic2dwYi1zdWJzLWJ0bi1iZy1jb2xvciI7czo3OiIjNENBRjUwIjtzOjI4OiJzZ3BiLXN1YnMtYnRuLWJnLWhvdmVyLWNvbG9yIjtzOjc6IiM0NDllNDgiO3M6MjQ6InNncGItc3Vicy1idG4tdGV4dC1jb2xvciI7czo3OiIjRkZGRkZGIjtzOjI4OiJzZ3BiLXN1YnMtdmFsaWRhdGlvbi1tZXNzYWdlIjtzOjIzOiJUaGlzIGZpZWxkIGlzIHJlcXVpcmVkLiI7czoyMzoic2dwYi1zdWJzLWVycm9yLW1lc3NhZ2UiO3M6NzE6IlRoZXJlIHdhcyBhbiBlcnJvciB3aGlsZSB0cnlpbmcgdG8gc2VuZCB5b3VyIHJlcXVlc3QuIFBsZWFzZSB0cnkgYWdhaW4uIjtzOjI1OiJzZ3BiLXN1YnMtaW52YWxpZC1tZXNzYWdlIjtzOjM1OiJQbGVhc2UgZW50ZXIgYSB2YWxpZCBlbWFpbCBhZGRyZXNzLiI7czoyNToic2dwYi1zdWJzLWhpZGUtc3Vicy11c2VycyI7czoyOiJvbiI7czoyNToic2dwYi1zdWJzLXN1Y2Nlc3MtbWVzc2FnZSI7czo1MDoiWW91IGhhdmUgc3VjY2Vzc2Z1bGx5IHN1YnNjcmliZWQgdG8gdGhlIG5ld3NsZXR0ZXIiO3M6MjY6InNncGItc3Vicy1zdWNjZXNzLWJlaGF2aW9yIjtzOjk6ImhpZGVQb3B1cCI7czozMDoic2dwYi1zdWJzLXN1Y2Nlc3MtcmVkaXJlY3QtVVJMIjtzOjA6IiI7czozNzoic2dwYi1zdWJzLWFjdGl2ZS1pbnRlZ3JhdGlvbnMtZGVmYXVsdCI7czoyOiJvbiI7czoxMDoic2dwYi1lbWFpbCI7czowOiIiO3M6MTc6InNncGItZmlyc3QtbmFtZS0xIjtzOjA6IiI7czoxNjoic2dwYi1sYXN0LW5hbWUtMiI7czowOiIiO3M6MjQ6InNncGItc3Vicy1oaWRkZW4tY2hlY2tlciI7czowOiIiO3M6Mjk6InNncGItc3Vic2NyaXB0aW9uLWZpZWxkcy1qc29uIjtzOjEzNzA6Ilt7InJlcXVpcmVkIjp0cnVlLCJlbmFibGVMYWJlbCI6IiIsImxhYmVsIjoiRW1haWwiLCJmaWVsZE5hbWUiOiJFbWFpbCIsImF0dHJzIjp7Im5hbWUiOiJzYW1wbGVOYW1lIiwiY2xhc3MiOlsic2dwYi1zaW1wbGUtaW5wdXRzIiwianMtc3Vicy10ZXh0LWlucHV0cyJdLCJhdXRvY29tcGxldGUiOiJvZmYifSwicGxhY2Vob2xkZXIiOiJFbWFpbCAqIiwidHlwZSI6ImVtYWlsIn0seyJyZXF1aXJlZCI6ZmFsc2UsImVuYWJsZUxhYmVsIjoiIiwibGFiZWwiOiJMYWJlbCIsImZpZWxkTmFtZSI6IkZpcnN0IE5hbWUiLCJhdHRycyI6eyJuYW1lIjoic2FtcGxlTmFtZSIsImNsYXNzIjpbInNncGItc2ltcGxlLWlucHV0cyIsImpzLXN1YnMtdGV4dC1pbnB1dHMiXSwiYXV0b2NvbXBsZXRlIjoib2ZmIn0sInBsYWNlaG9sZGVyIjoiRmlyc3QgbmFtZSIsInR5cGUiOiJmaXJzdG5hbWUifSx7InJlcXVpcmVkIjpmYWxzZSwiZW5hYmxlTGFiZWwiOiIiLCJsYWJlbCI6IkxhYmVsIiwiZmllbGROYW1lIjoiTGFzdCBOYW1lIiwiYXR0cnMiOnsibmFtZSI6InNhbXBsZU5hbWUiLCJjbGFzcyI6WyJzZ3BiLXNpbXBsZS1pbnB1dHMiLCJqcy1zdWJzLXRleHQtaW5wdXRzIl0sImF1dG9jb21wbGV0ZSI6Im9mZiJ9LCJwbGFjZWhvbGRlciI6Ikxhc3QgbmFtZSIsInR5cGUiOiJsYXN0bmFtZSJ9LHsicmVxdWlyZWQiOjEsImVuYWJsZUxhYmVsIjoxLCJsYWJlbCI6Ik5ld3NsZXR0ZXIgUHJlZmVyZW5jZSIsImZpZWxkTmFtZSI6IlByb2R1Y3QgSW50ZXJlc3QiLCJhdHRycyI6eyJuYW1lIjoic2dwYi1yYWRpb2J1dHRvbiIsImNsYXNzIjpbInNncGItc2ltcGxlLWlucHV0cyJdLCJhdXRvY29tcGxldGUiOiJvZmYifSwicGxhY2Vob2xkZXIiOiJSYWRpbyBCdXR0b24iLCJjaG9pY2VzIjpbIkVtYmVkZGVkIFNvbHV0aW9uczogRW1iZWRkZWQgSS9PLCBGUEdBcyAmIFNCQ3MiLCJQcm9jZXNzIEF1dG9tYXRpb24gU29sdXRpb25zOiBOZXR3b3JrIEkvTyAmIFNpZ25hbCBDb25kaXRpb25pbmciLCJTaWduIG1lIHVwIGZvciBib3RoIG5ld3NsZXR0ZXJzIl0sIm5hbWUiOiJzZ3BiLXJhZGlvYnV0dG9uIiwidHlwZSI6InJhZGlvYnV0dG9uIn0seyJyZXF1aXJlZCI6bnVsbCwiZW5hYmxlTGFiZWwiOiIiLCJsYWJlbCI6IkxhYmVsIiwiZmllbGROYW1lIjoiU3VibWl0IiwiYXR0cnMiOnsibmFtZSI6InNhbXBsZU5hbWUiLCJjbGFzcyI6WyJzZ3BiLXNpbXBsZS1pbnB1dHMiLCJqcy1zdWJzLXN1Ym1pdC1idG4iXSwiYXV0b2NvbXBsZXRlIjoib2ZmIn0sInRpdGxlIjoiU3VibWl0IiwiYnV0dG9uTGFiZWwiOiJTdWJzY3JpYmUiLCJkYXRhUHJvZ3Jlc3MiOiJQbGVhc2Ugd2FpdC4uLiIsInBsYWNlaG9sZGVyIjpudWxsLCJ0eXBlIjoic3VibWl0In1dIjtzOjM2OiJzZ3BiLXN1YnNjcmlwdGlvbi1maWVsZHMtZGVzaWduLWpzb24iO3M6ODIwOiJ7ImlucHV0U3R5bGVzIjp7IndpZHRoIjoiMzAwcHgiLCJoZWlnaHQiOiI0MHB4IiwiYm9yZGVyLXdpZHRoIjoiMnB4IiwiYm9yZGVyLWNvbG9yIjoiI0NDQ0NDQyIsImJhY2tncm91bmQtY29sb3IiOiIjRkZGRkZGIiwicGxhY2Vob2xkZXIiOiIjQ0NDQ0NDIiwiY29sb3IiOiIjMDAwMDAwIiwiYm9yZGVyLXJhZGl1cyI6IjBweCIsImFjdGl2ZS1ib3JkZXItY29sb3IiOiIjY2NjY2NjIiwibGFiZWwtY29sb3IiOiIjMDAwMDAwIiwibWFyZ2luLXRvcCI6IjIiLCJtYXJnaW4tcmlnaHQiOiIyIiwibWFyZ2luLWJvdHRvbSI6IjIiLCJtYXJnaW4tbGVmdCI6IjIifSwic3VibWl0U3R5bGVzIjp7IndpZHRoIjoiMzAwcHgiLCJmb250LXNpemUiOiIxOHB4IiwiaGVpZ2h0IjoiNDBweCIsImJhY2tncm91bmQtY29sb3IiOiIjNENBRjUwIiwiY29sb3IiOiIjRkZGRkZGIiwiYm9yZGVyLXdpZHRoIjoiMHB4IiwiYm9yZGVyLXJhZGl1cyI6IjRweCIsImJvcmRlci1jb2xvciI6IiM0Q0FGNTAiLCJ0ZXh0LXRyYW5zZm9ybSI6Im5vbmUgIWltcG9ydGFudCIsImJvcmRlci1zdHlsZSI6InNvbGlkIiwiaG92ZXItYmFja2dyb3VuZC1jb2xvciI6IiM0NDllNDgiLCJtYXJnaW4tdG9wIjoiMiIsIm1hcmdpbi1yaWdodCI6IjIiLCJtYXJnaW4tYm90dG9tIjoiMiIsIm1hcmdpbi1sZWZ0IjoiMiJ9LCJmb3JtU3R5bGVzIjp7ImJhY2tncm91bmQtY29sb3IiOiJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuOCk7IiwicGFkZGluZy10b3AiOiIyIiwicGFkZGluZy1yaWdodCI6IjIiLCJwYWRkaW5nLWJvdHRvbSI6IjIiLCJwYWRkaW5nLWxlZnQiOiIyIiwicGFkZGluZyI6Mn19IjtzOjI5OiJzZ3BiLXN1YnMtYWN0aXZlLWludGVncmF0aW9ucyI7czoyOiJbXSI7czo5OiJzZ3BiLXR5cGUiO3M6MTI6InN1YnNjcmlwdGlvbiI7czoxNToic2dwYi1pcy1wcmV2aWV3IjtzOjE6IjAiO3M6MTQ6InNncGItaXMtYWN0aXZlIjtzOjc6ImNoZWNrZWQiO3M6MzQ6InNncGItYmVoYXZpb3ItYWZ0ZXItc3BlY2lhbC1ldmVudHMiO2E6MTp7aTowO2E6MTp7aTowO2E6MTp7czo1OiJwYXJhbSI7czoxMjoic2VsZWN0X2V2ZW50Ijt9fX1zOjIwOiJzZ3BiLWNvbnRlbnQtcGFkZGluZyI7czoxOiI3IjtzOjE4OiJzZ3BiLXBvcHVwLXotaW5kZXgiO3M6NDoiOTk5OSI7czoxNzoic2dwYi1wb3B1cC10aGVtZXMiO3M6MTI6InNncGItdGhlbWUtMSI7czoxODoic2dwYi1vdmVybGF5LWNvbG9yIjtzOjA6IiI7czoyMDoic2dwYi1vdmVybGF5LW9wYWNpdHkiO3M6MzoiMC44IjtzOjI1OiJzZ3BiLWNvbnRlbnQtY3VzdG9tLWNsYXNzIjtzOjE2OiJzZy1wb3B1cC1jb250ZW50IjtzOjIwOiJzZ3BiLXNob3ctYmFja2dyb3VuZCI7czoyOiJvbiI7czoyMToic2dwYi1iYWNrZ3JvdW5kLWNvbG9yIjtzOjA6IiI7czoyMDoic2dwYi1jb250ZW50LW9wYWNpdHkiO3M6MzoiMC44IjtzOjIxOiJzZ3BiLWJhY2tncm91bmQtaW1hZ2UiO3M6MDoiIjtzOjI2OiJzZ3BiLWJhY2tncm91bmQtaW1hZ2UtbW9kZSI7czo5OiJuby1yZXBlYXQiO3M6MTI6InNncGItZXNjLWtleSI7czoyOiJvbiI7czoyNDoic2dwYi1lbmFibGUtY2xvc2UtYnV0dG9uIjtzOjI6Im9uIjtzOjIzOiJzZ3BiLWNsb3NlLWJ1dHRvbi1kZWxheSI7czoxOiIwIjtzOjI2OiJzZ3BiLWNsb3NlLWJ1dHRvbi1wb3NpdGlvbiI7czoxMToiYm90dG9tUmlnaHQiO3M6MjQ6InNncGItYnV0dG9uLXBvc2l0aW9uLXRvcCI7czowOiIiO3M6MjY6InNncGItYnV0dG9uLXBvc2l0aW9uLXJpZ2h0IjtzOjE6IjkiO3M6Mjc6InNncGItYnV0dG9uLXBvc2l0aW9uLWJvdHRvbSI7czoxOiI5IjtzOjI1OiJzZ3BiLWJ1dHRvbi1wb3NpdGlvbi1sZWZ0IjtzOjA6IiI7czoxNzoic2dwYi1idXR0b24taW1hZ2UiO3M6MDoiIjtzOjIzOiJzZ3BiLWJ1dHRvbi1pbWFnZS13aWR0aCI7czoyOiIyMSI7czoyNDoic2dwYi1idXR0b24taW1hZ2UtaGVpZ2h0IjtzOjI6IjIxIjtzOjE3OiJzZ3BiLWJvcmRlci1jb2xvciI7czo3OiIjMDAwMDAwIjtzOjE4OiJzZ3BiLWJvcmRlci1yYWRpdXMiO3M6MToiMCI7czoyMzoic2dwYi1ib3JkZXItcmFkaXVzLXR5cGUiO3M6MToiJSI7czoxNjoic2dwYi1idXR0b24tdGV4dCI7czo1OiJDbG9zZSI7czoxODoic2dwYi1vdmVybGF5LWNsaWNrIjtzOjI6Im9uIjtzOjI1OiJzZ3BiLXBvcHVwLWRpbWVuc2lvbi1tb2RlIjtzOjE0OiJyZXNwb25zaXZlTW9kZSI7czozMzoic2dwYi1yZXNwb25zaXZlLWRpbWVuc2lvbi1tZWFzdXJlIjtzOjQ6ImF1dG8iO3M6MTA6InNncGItd2lkdGgiO3M6NToiNjQwcHgiO3M6MTE6InNncGItaGVpZ2h0IjtzOjU6IjQ4MHB4IjtzOjE0OiJzZ3BiLW1heC13aWR0aCI7czowOiIiO3M6MTU6InNncGItbWF4LWhlaWdodCI7czowOiIiO3M6MTQ6InNncGItbWluLXdpZHRoIjtzOjM6IjEyMCI7czoxNToic2dwYi1taW4taGVpZ2h0IjtzOjA6IiI7czoyNToic2dwYi1zaG93LXBvcHVwLXNhbWUtdXNlciI7czoyOiJvbiI7czozMToic2dwYi1zaG93LXBvcHVwLXNhbWUtdXNlci1jb3VudCI7czoxOiIxIjtzOjMyOiJzZ3BiLXNob3ctcG9wdXAtc2FtZS11c2VyLWV4cGlyeSI7czoyOiIzMCI7czozNjoic2dwYi1zaG93LXBvcHVwLXNhbWUtdXNlci1wYWdlLWxldmVsIjtzOjI6Im9uIjtzOjI2OiJzZ3BiLW9wZW4tYW5pbWF0aW9uLWVmZmVjdCI7czo5OiJObyBlZmZlY3QiO3M6Mjc6InNncGItY2xvc2UtYW5pbWF0aW9uLWVmZmVjdCI7czo5OiJObyBlZmZlY3QiO3M6Mjk6InNncGItZW5hYmxlLWNvbnRlbnQtc2Nyb2xsaW5nIjtzOjI6Im9uIjtzOjE2OiJzZ3BiLXBvcHVwLW9yZGVyIjtzOjE6IjAiO3M6MTY6InNncGItcG9wdXAtZGVsYXkiO3M6MToiMCI7czoxMjoic2dwYi1wb3N0LWlkIjtzOjU6IjU0MzIzIjtzOjI1OiJzZ3BiLWVuYWJsZS1wb3B1cC1vdmVybGF5IjtzOjI6Im9uIjtzOjIyOiJzZ3BiLWJ1dHRvbi1pbWFnZS1kYXRhIjtzOjA6IiI7czoyNjoic2dwYi1iYWNrZ3JvdW5kLWltYWdlLWRhdGEiO3M6MDoiIjtzOjE0OiJzZ3BiQ29uZGl0aW9ucyI7Tjt9" id="sg-popup-content-wrapper-54323">
+<div class="sgpb-popup-builder-content-54323 sgpb-popup-builder-content-html">
+<h3>Stay Up To Date With Acromag</h3>
+<p class="has-text-align-center">Join thousands of other industry professionals.<br/>Keep up to date with the latest new products and white papers.<br/>Don’t miss out!</p>
+<div class="sgpb-form-wrapper sgpb-form-54323-wrapper"> <div class="subs-form-messages sgpb-alert sgpb-alert-success sg-hide-element">
+<p>You have successfully subscribed to the newsletter</p>
+</div>
+<div class="subs-form-messages sgpb-alert sgpb-alert-danger sg-hide-element">
+<p>There was an error while trying to send your request. Please try again.</p>
+</div>
+<form action="" class="sgpb-subscription-plus-form sgpb-subscription sgpb-subscription-plus-form-54323" data-popup-id="54323" data-validate-json='{ "rules": { "sgpb-email": {
+					"required": true,
+					"email": true
+				},"sgpb-radiobutton-3": "required"},"messages": { "sgpb-email": {
+					"required": "This field is required.",
+					"email": "Please enter a valid email address."
+				},"sgpb-radiobutton-3": "This field is required."}}' method="get"><div class="sgpb-inputs-container"><div class="sgpb-field-wrapper sgpb-field-email-wrapper sgpb-each-field-main-wrapper"><div class="sgpb-field-wrapper sgpb-field-email-wrapper"><input autocomplete="off" class="sgpb-simple-inputs js-subs-text-inputs" id="sgpb-email" name="sgpb-email" placeholder="Email *" type="email" value=""/></div><div class="sgpb-subscription-plus-form-error-placement sgpb-form-field-sgpb-email-error"></div></div><div class="sgpb-field-wrapper sgpb-field-firstname-wrapper sgpb-each-field-main-wrapper"><div class="sgpb-field-wrapper sgpb-field-firstname-wrapper"><input autocomplete="off" class="sgpb-simple-inputs js-subs-text-inputs" id="sgpb-first-name-1" name="sgpb-first-name-1" placeholder="First name" type="text" value=""/></div><div class="sgpb-subscription-plus-form-error-placement sgpb-form-field-sgpb-first-name-1-error"></div></div><div class="sgpb-field-wrapper sgpb-field-lastname-wrapper sgpb-each-field-main-wrapper"><div class="sgpb-field-wrapper sgpb-field-lastname-wrapper"><input autocomplete="off" class="sgpb-simple-inputs js-subs-text-inputs" id="sgpb-last-name-2" name="sgpb-last-name-2" placeholder="Last name" type="text" value=""/></div><div class="sgpb-subscription-plus-form-error-placement sgpb-form-field-sgpb-last-name-2-error"></div></div><div class="sgpb-field-wrapper sgpb-field-radiobutton-wrapper sgpb-each-field-main-wrapper"><div class="sgpb-label-wrapper sgpb-label-radiobutton-wrapper"><label for="sgpb-radiobutton-3">Newsletter Preference</label></div><div class="sgpb-field-wrapper sgpb-field-radiobutton-wrapper"> <div class="sgpb-buttons-wrapper">
+<div class="sgpb-choice-wrapper"><div class="sgpb-choice-option-wrapper"><input autocomplete="off" class="sgpb-simple-inputs" id="sgpb-radiobutton-3Embedded Solutions: Embedded I/O, FPGAs &amp; SBCs0" name="sgpb-radiobutton-3" type="radio" value="Embedded Solutions: Embedded I/O, FPGAs &amp; SBCs"/></div><div class="sgpb-choice-option-wrapper sgpb-choice-option-label"><label for="sgpb-radiobutton-3Embedded Solutions: Embedded I/O, FPGAs &amp; SBCs0">Embedded Solutions: Embedded I/O, FPGAs &amp; SBCs</label></div></div><div class="sgpb-choice-wrapper"><div class="sgpb-choice-option-wrapper"><input autocomplete="off" class="sgpb-simple-inputs" id="sgpb-radiobutton-3Process Automation Solutions: Network I/O &amp; Signal Conditioning1" name="sgpb-radiobutton-3" type="radio" value="Process Automation Solutions: Network I/O &amp; Signal Conditioning"/></div><div class="sgpb-choice-option-wrapper sgpb-choice-option-label"><label for="sgpb-radiobutton-3Process Automation Solutions: Network I/O &amp; Signal Conditioning1">Process Automation Solutions: Network I/O &amp; Signal Conditioning</label></div></div><div class="sgpb-choice-wrapper"><div class="sgpb-choice-option-wrapper"><input autocomplete="off" class="sgpb-simple-inputs" id="sgpb-radiobutton-3Sign me up for both newsletters2" name="sgpb-radiobutton-3" type="radio" value="Sign me up for both newsletters"/></div><div class="sgpb-choice-option-wrapper sgpb-choice-option-label"><label for="sgpb-radiobutton-3Sign me up for both newsletters2">Sign me up for both newsletters</label></div></div> </div>
+</div><div class="sgpb-subscription-plus-form-error-placement sgpb-form-field-sgpb-radiobutton-3-error"></div></div></div><div class="sgpb-button-container"><div class="sgpb-field-wrapper sgpb-field-submit-wrapper sgpb-each-field-main-wrapper"><div class="sgpb-field-wrapper sgpb-field-submit-wrapper"><input autocomplete="off" class="sgpb-simple-inputs js-subs-submit-btn" data-progress-title="Please wait..." data-title="Subscribe" type="submit" value="Subscribe"/></div><div class="sgpb-subscription-plus-form-error-placement sgpb-form-field-sgpb-submit-4-error"></div></div></div><input name="sgpb-subs-hidden-checker" type="hidden" value=""/></form></div><style>.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .js-subs-text-inputs:active,.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .js-subs-text-inputs:focus {border-color: #cccccc !important;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .sgpb-label-wrapper {color: #000000 !important;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .sgpb-simple-inputs::-webkit-input-placeholder {color: #CCCCCC !important; font-weight: lighter;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .sgpb-simple-inputs::-webkit-input-placeholder {color: #CCCCCC !important; font-weight: lighter;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .sgpb-simple-inputs::-moz-placeholder {color: #CCCCCC !important; font-weight: lighter;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .sgpb-simple-inputs:-ms-input-placeholder {color: #CCCCCC !important; font-weight: lighter;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .sgpb-simple-inputs:-moz-placeholder {color: #CCCCCC !important; font-weight: lighter;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .sgpb-advanced-phone-field-wrapper,.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .sgpb-advanced-phone-field-wrapper select,.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 input[type="text"],.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 textarea,.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 input[type="email"],.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 input[type="number"] {width: 300px !important;height: 40px;border-width: 2px !important;border-color: #CCCCCC !important;background-color: #FFFFFF !important;color: #000000 !important;border-radius: 0px;margin-top: 2px !important;margin-right: 2px !important;margin-bottom: 2px !important;margin-left: 2px !important;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 input[type="checkbox"] {-webkit-appearance: checkbox;!important}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 input[type="checkbox"]:before {content: none;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .sgpb-advanced-phone-field-wrapper {display: flex;background-color: transparent !important;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .sgpb-advanced-phone-field-wrapper select {width: 35% !important;float: left;font-size: 12px !important;margin-top: 5px !important;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .sgpb-advanced-phone-field-wrapper input {width: 64% !important;float: right;margin-top: 5px !important;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 textarea {padding: 5px !important;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .js-subs-submit-btn:hover {background-color: #449e48!important;}.sgpb-form-wrapper .sgpb-subscription-plus-form-54323 .js-subs-submit-btn {font-size: 18px!important;}.sgpb-subscription-plus-form-54323 .js-subs-submit-btn {width: 300px !important;height: 40px !important;background-color: #4CAF50!important;background: linear-gradient(#4CAF50, #4CAF50);color: #FFFFFF !important;border-width: 0px !important;border-radius: 4px !important;border-color: #4CAF50 !important;text-transform: none !important !important;border-style: solid !important;margin-top: 2px !important;margin-right: 2px !important;margin-bottom: 2px !important;margin-left: 2px !important;}.sgpb-subscription-plus-form-54323 {background-color: rgba(255, 255, 255, 0.8);;padding-top: 2px;padding-right: 2px;padding-bottom: 2px;padding-left: 2px;}</style></div>
+</div>
+</div> <script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+<script id="SubscriptionPlusForm.js-js" src="https://www.acromag.com/wp-content/plugins/popupbuilder-subscription-plus/public/js/SubscriptionPlusForm.js?ver=4.1.6" type="text/javascript"></script>
+<script id="Validate.js-js" src="https://www.acromag.com/wp-content/plugins/popupbuilder-subscription-plus/public/js/Validate.js?ver=4.1.6" type="text/javascript"></script>
+<script id="jquery-blockui-js" src="https://www.acromag.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.6.4.1" type="text/javascript"></script>
+<script id="wc-add-to-cart-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/www.acromag.com\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script id="wc-add-to-cart-js" src="https://www.acromag.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=6.4.1" type="text/javascript"></script>
+<script id="js-cookie-js" src="https://www.acromag.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.6.4.1" type="text/javascript"></script>
+<script id="woocommerce-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script id="woocommerce-js" src="https://www.acromag.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=6.4.1" type="text/javascript"></script>
+<script id="wc-cart-fragments-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_f66203fedcaafd583416ee4826685ef9","fragment_name":"wc_fragments_f66203fedcaafd583416ee4826685ef9","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script id="wc-cart-fragments-js" src="https://www.acromag.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=6.4.1" type="text/javascript"></script>
+<script id="jquery-payment-js" src="https://www.acromag.com/wp-content/plugins/woocommerce/assets/js/jquery-payment/jquery.payment.min.js?ver=3.0.0-wc.6.4.1" type="text/javascript"></script>
+<script id="sv-wc-payment-gateway-payment-form-v5_10_12-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var sv_wc_payment_gateway_payment_form_params = {"card_number_missing":"Card number is missing","card_number_invalid":"Card number is invalid","card_number_digits_invalid":"Card number is invalid (only digits allowed)","card_number_length_invalid":"Card number is invalid (wrong length)","cvv_missing":"Card security code is missing","cvv_digits_invalid":"Card security code is invalid (only digits are allowed)","cvv_length_invalid":"Card security code is invalid (must be 3 or 4 digits)","card_exp_date_invalid":"Card expiration date is invalid","check_number_digits_invalid":"Check Number is invalid (only digits are allowed)","check_number_missing":"Check Number is missing","drivers_license_state_missing":"Drivers license state is missing","drivers_license_number_missing":"Drivers license number is missing","drivers_license_number_invalid":"Drivers license number is invalid","account_number_missing":"Account Number is missing","account_number_invalid":"Account Number is invalid (only digits are allowed)","account_number_length_invalid":"Account number is invalid (must be between 5 and 17 digits)","routing_number_missing":"Routing Number is missing","routing_number_digits_invalid":"Routing Number is invalid (only digits are allowed)","routing_number_length_invalid":"Routing number is invalid (must be 9 digits)"};
+/* ]]> */
+</script>
+<script id="sv-wc-payment-gateway-payment-form-v5_10_12-js" src="https://www.acromag.com/wp-content/plugins/woocommerce-gateway-authorize-net-cim/vendor/skyverge/wc-plugin-framework/woocommerce/payment-gateway/assets/dist/frontend/sv-wc-payment-gateway-payment-form.js?ver=5.10.12" type="text/javascript"></script>
+<script id="wc-authorize-net-cim-js" src="https://www.acromag.com/wp-content/plugins/woocommerce-gateway-authorize-net-cim/assets/js/frontend/wc-authorize-net-cim.min.js?ver=3.6.3" type="text/javascript"></script>
+<script id="hoverIntent-js" src="https://www.acromag.com/wp-includes/js/hoverIntent.min.js?ver=1.10.2" type="text/javascript"></script>
+<script id="regenerator-runtime-js" src="https://www.acromag.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9" type="text/javascript"></script>
+<script id="wp-polyfill-js" src="https://www.acromag.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" type="text/javascript"></script>
+<script id="wp-dom-ready-js" src="https://www.acromag.com/wp-includes/js/dist/dom-ready.min.js?ver=ecda74de0221e1c2ce5c57cbb5af09d5" type="text/javascript"></script>
+<script id="wp-hooks-js" src="https://www.acromag.com/wp-includes/js/dist/hooks.min.js?ver=1e58c8c5a32b2e97491080c5b10dc71c" type="text/javascript"></script>
+<script id="wp-i18n-js" src="https://www.acromag.com/wp-includes/js/dist/i18n.min.js?ver=30fcecb428a0e8383d3776bcdd3a7834" type="text/javascript"></script>
+<script id="wp-i18n-js-after" type="text/javascript">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script id="wp-a11y-js-translations" type="text/javascript">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script id="wp-a11y-js" src="https://www.acromag.com/wp-includes/js/dist/a11y.min.js?ver=68e470cf840f69530e9db3be229ad4b6" type="text/javascript"></script>
+<script defer="defer" id="gform_json-js" src="https://www.acromag.com/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.6.1" type="text/javascript"></script>
+<script id="gform_gravityforms-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mon","tuesday":"Tue","wednesday":"Wed","thursday":"Thu","friday":"Fri","saturday":"Sat","sunday":"Sun"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https:\/\/www.acromag.com\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/www.acromag.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/www.acromag.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/www.acromag.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/www.acromag.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+/* ]]> */
+</script>
+<script defer="defer" id="gform_gravityforms-js" src="https://www.acromag.com/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.6.1" type="text/javascript"></script>
+<script defer="defer" id="gform_recaptcha-js" src="https://www.google.com/recaptcha/api.js?hl=en&amp;ver=5.9.3#038;render=explicit" type="text/javascript"></script>
+<script defer="defer" id="gform_placeholder-js" src="https://www.acromag.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.6.1" type="text/javascript"></script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 7) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [7, 1]) } );
+</script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 12) {} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [12, 1]) } );
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-7b51a03c0af6e635868","applicationID":"594687533","transactionName":"YlNaZkcCXkNXVhIMW1sZeVFBCl9eGVsJSERUUlxbWwQdRFlF","queueTime":0,"applicationTime":1123,"atts":"ThRZEA8YTU0=","errorBeacon":"bam.nr-data.net","agent":""}</script><script crossorigin="anonymous" data-cf-beacon='{"rayId":"71e744270a58f341","version":"2022.6.0","r":1,"token":"53fb6165e4694d169bb21d486e1bf387","si":100}' defer="" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"></script>
+</body>
+</html>

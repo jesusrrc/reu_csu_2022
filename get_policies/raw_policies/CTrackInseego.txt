@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11"> <script type="text/javascript">if(!gform){document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0});var gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),null==t&&(t=10),gform.hooks[o][n].push({tag:i,callable:r,priority:t})},doHook:function(o,n,r){if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[o][n]){var t,i=gform.hooks[o][n];i.sort(function(o,n){return o.priority-n.priority});for(var e=0;e<i.length;e++)"function"!=typeof(t=i[e].callable)&&(t=window[t]),"action"==o?t.apply(null,r):r[0]=t.apply(null,r)}if("filter"==o)return r[0]},removeHook:function(o,n,r,t){if(null!=gform.hooks[o][n])for(var i=gform.hooks[o][n],e=i.length-1;0<=e;e--)null!=t&&t!=i[e].tag||null!=r&&r!=i[e].priority||i.splice(e,1)}}}</script>
+<script data-cfasync="false" type="text/javascript">
+  window.SiteData = {
+    lead: {
+      fields: {
+        'submission_page': document.location.href,
+      },
+
+      init: function() {
+        // Set referrer
+        if (!sessionStorage.hasOwnProperty('lead_referrer')) {
+          this.setField('referrer', document.referrer);
+        }
+
+        // Set landing page
+        if (!sessionStorage.hasOwnProperty('lead_landing_page')) {
+          this.setField('landing_page', document.location.href);
+        }
+
+        this.setSessionFields();
+      },
+
+      setField: function(field, data) {
+        SiteData.lead.fields[field] = sessionStorage['lead_' + field] = data;
+      },
+
+      setSessionFields: function() {
+        var leadField = 'lead_';
+        var keys = Object.keys(sessionStorage).filter(function(word) {
+          return word.indexOf(leadField) !== -1;
+        });
+        keys.forEach(function(key) {
+          SiteData.lead.fields[key.substring(leadField.length)] = sessionStorage[key];
+        });
+      },
+
+      populateFormFields: function() {
+        document.querySelectorAll('.ctrack-wizard-form').forEach(function(form) {
+          Array.from(form.elements).forEach(function(elem) {
+            if (elem.name === 'input_23') {
+              if (typeof SiteData.lead.fields['referrer'] !== 'undefined' && SiteData.lead.fields['referrer'] !== '') {
+                elem.value = SiteData.lead.fields['referrer'];
+              }
+            }
+            if (elem.name === 'input_24') {
+              if (typeof SiteData.lead.fields['landing_page'] !== 'undefined' && SiteData.lead.fields['landing_page'] !== '') {
+                elem.value = SiteData.lead.fields['landing_page'];
+              }
+            }
+            if (elem.name === 'input_25') {
+              if (typeof SiteData.lead.fields['submission_page'] !== 'undefined' && SiteData.lead.fields['submission_page'] !== '') {
+                elem.value = SiteData.lead.fields['submission_page'];
+              }
+            }
+
+            // if (typeof SiteData.lead.fields[elem.name] !== 'undefined' && SiteData.lead.fields[elem.name] !== '') {
+            //   elem.value = SiteData.lead.fields[elem.name];
+            // }
+          });
+        });
+      },
+    }
+  };
+
+  // Initialize any modules that have init() methods.
+  for (var name in SiteData) {
+    if (typeof SiteData[name].init === 'function') {
+      SiteData[name].init();
+    }
+  }
+</script>
+<meta content="IE=EDGE" http-equiv="X-UA-Compatible"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, maximum-scale=1.0" name="viewport"/>
+<script src="https://cookie-cdn.cookiepro.com/consent/11655039-286c-4e8f-993d-71e5de8e7494/OtAutoBlock.js" type="text/javascript"></script>
+<script charset="UTF-8" data-domain-script="11655039-286c-4e8f-993d-71e5de8e7494" src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js" type="text/javascript"></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<title>Privacy Policy | Ctrack by Inseego, Australia and New Zealand</title>
+<meta content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1" name="robots"/>
+<meta content="Browse more information on Ctrack’s Privacy Policy." name="description"/>
+<meta content="https://ctrack-anz.com/wp-content/uploads/2019/09/cropped-favicon.png" property="og:image"/>
+<meta content="512" property="og:image:width"/>
+<meta content="512" property="og:image:height"/>
+<meta content="en_GB" property="og:locale"/>
+<meta content="website" property="og:type"/>
+<meta content="Privacy Policy | Ctrack by Inseego, Australia and New Zealand" property="og:title"/>
+<meta content="Browse more information on Ctrack’s Privacy Policy." property="og:description"/>
+<meta content="https://ctrack-anz.com/privacy/" property="og:url"/>
+<meta content="Ctrack by Inseego | Australia and New Zealand" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Privacy Policy | Ctrack by Inseego, Australia and New Zealand" name="twitter:title"/>
+<meta content="Browse more information on Ctrack’s Privacy Policy." name="twitter:description"/>
+<meta content="https://ctrack-anz.com/wp-content/uploads/2019/09/cropped-favicon.png" name="twitter:image"/>
+<meta content="512" name="twitter:image:width"/>
+<meta content="512" name="twitter:image:height"/>
+<link href="https://ctrack-anz.com/privacy/" rel="canonical"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://ctrack-anz.com/","name":"Ctrack by Inseego | Australia and New Zealand"}},{"@type":"ListItem","position":2,"item":{"@id":"https://ctrack-anz.com/privacy/","name":"Privacy Policy | Ctrack by Inseego, Australia and New Zealand"}}]}</script>
+<link href="https://ctrack-anz.com/wp-content/themes/ctrack/style.1655407812.css?ver=all" id="ctrack_style-css" media="all" rel="stylesheet" type="text/css"/>
+<script id="jquery-core-js" src="https://ctrack-anz.com/wp-includes/js/jquery/jquery.min.js?ver=3.5.1" type="text/javascript"></script>
+<script>
+			document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
+		</script>
+<style>
+			.no-js img.lazyload { display: none; }
+			figure.wp-block-image img.lazyloading { min-width: 150px; }
+							.lazyload, .lazyloading { opacity: 0; }
+				.lazyloaded {
+					opacity: 1;
+					transition: opacity 400ms;
+					transition-delay: 0ms;
+				}
+					</style>
+<link href="https://ctrack-anz.com/wp-content/uploads/2019/09/cropped-favicon-32x32.png" rel="icon" sizes="32x32"/>
+<link href="https://ctrack-anz.com/wp-content/uploads/2019/09/cropped-favicon-192x192.png" rel="icon" sizes="192x192"/>
+<link href="https://ctrack-anz.com/wp-content/uploads/2019/09/cropped-favicon-180x180.png" rel="apple-touch-icon"/>
+<meta content="https://ctrack-anz.com/wp-content/uploads/2019/09/cropped-favicon-270x270.png" name="msapplication-TileImage"/>
+<style>
+  /* fix Modal Popup initial display */
+  .modal-window {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+<script>
+  jQuery(window).scroll(function(){
+    if (jQuery(this).scrollTop() > 40) {
+      jQuery('#logo-menu').addClass('scrolled');
+    } else {
+      jQuery('#logo-menu').removeClass('scrolled');
+    }
+  });
+
+  (function(l){var i,s={touchend:function(){}};for(i in s)l.addEventListener(i,s)})(document); // sticky hover fix in iOS
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MW78ZTL');</script>
+<style>
+  div.logos-container .ind-logo img,
+  footer div.logos-container .ind-logo img {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+
+  section.block.testimonials .testimonial-meta img {
+    filter: none;
+    opacity: 1;
+  }
+
+  li#menu-item-5021 {
+    margin-top: 10px;
+  }
+  
+  @media only screen and (max-width: 695px) {
+    #cookie_action_close_header {
+      display: block !important;
+    }
+  }
+</style>
+<script async="" src="/cdn-cgi/bm/cv/669835187/api.js"></script></head>
+<body class="page-template-default page page-id-182 page-parent wp-featherlight-captions privacy">
+<span class="scroll-id" id="top"></span>
+<header>
+<div id="search-login">
+<div class="inner">
+<form action="https://ctrack-anz.com/" id="searchform" method="get">
+<input class="field" id="s" name="s" placeholder="Search" type="text"/>
+<label>
+<input class="submit" id="searchsubmit" name="submit" type="submit"/>
+<i class="fal fa-search"></i>
+</label>
+</form>
+<ul id="login-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children my-parent-item menu-item-1955" id="menu-item-1955"><a href="#">Log in <i class="fal fa-sign-in"></i></a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1953" id="menu-item-1953"><a href="https://online.ctrack-anz.com/">Ctrack Online</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1954" id="menu-item-1954"><a href="https://mobile.ctrack-anz.com/">Ctrack Mobi</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="logo-menu">
+<div class="inner">
+<a href="https://ctrack-anz.com/" id="logo">
+<img alt="Ctrack by Inseego" class="ctrack lazyload" data-src="https://ctrack-anz.com/wp-content/themes/ctrack/images/ctrack-by-inseego.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/><noscript><img alt="Ctrack by Inseego" class="ctrack" src="https://ctrack-anz.com/wp-content/themes/ctrack/images/ctrack-by-inseego.svg"/></noscript>
+</a>
+<nav id="mobile">
+<button onclick="myFunction()"><i class="fad fa-bars"></i></button>
+<ul id="menu-mobile" style="opacity:0;pointer-events:none">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children my-parent-item menu-item-343" id="menu-item-343"><a href="#">Solutions</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-342" id="menu-item-342"><a href="https://ctrack-anz.com/solutions/">Our Solutions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75" id="menu-item-75"><a href="https://ctrack-anz.com/solutions/vehicle-tracking/">Vehicle Tracking</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76" id="menu-item-76"><a href="https://ctrack-anz.com/solutions/routing-scheduling/">Routing &amp; Scheduling</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77" id="menu-item-77"><a href="https://ctrack-anz.com/solutions/smart-edriver/">Electronic Work Diary</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80" id="menu-item-80"><a href="https://ctrack-anz.com/solutions/costs-management/">Costs Management</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84" id="menu-item-84"><a href="https://ctrack-anz.com/solutions/cameras/">Cameras</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88" id="menu-item-88"><a href="https://ctrack-anz.com/solutions/peripherals/">Peripherals</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-795" id="menu-item-795"><a href="https://ctrack-anz.com/solutions/software/">Software</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-794" id="menu-item-794"><a href="https://ctrack-anz.com/solutions/hardware/">Hardware</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2311" id="menu-item-2311"><a href="https://ctrack-anz.com/solutions/asset-trackers/">Asset Trackers</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children my-parent-item menu-item-344" id="menu-item-344"><a href="#">Benefits</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1195" id="menu-item-1195"><a href="https://ctrack-anz.com/benefits/">Key Benefits</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-122" id="menu-item-122"><a href="https://ctrack-anz.com/benefits/compliance/">Compliance</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-123" id="menu-item-123"><a href="https://ctrack-anz.com/benefits/roi-calculator/">ROI Calculator</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children my-parent-item menu-item-347" id="menu-item-347"><a href="#">Customers &amp; Results</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1198" id="menu-item-1198"><a href="https://ctrack-anz.com/customers-results/">Customers &amp; Results</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-108" id="menu-item-108"><a href="https://ctrack-anz.com/customers-results/industries/">Industries</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111" id="menu-item-111"><a href="https://ctrack-anz.com/customers-results/case-studies/">Case Studies</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children my-parent-item menu-item-348" id="menu-item-348"><a href="#">Company</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1201" id="menu-item-1201"><a href="https://ctrack-anz.com/company/">About Ctrack</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115" id="menu-item-115"><a href="https://ctrack-anz.com/company/news-media-centre/">News &amp; Media Centre</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116" id="menu-item-116"><a href="https://ctrack-anz.com/company/careers/">Careers</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children my-parent-item menu-item-349" id="menu-item-349"><a href="#">Contact</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-117" id="menu-item-117"><a href="https://ctrack-anz.com/get-in-touch/">Get in touch</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-121" id="menu-item-121"><a href="https://ctrack-anz.com/get-in-touch/faqs/">FAQs</a></li>
+</ul>
+</li>
+<li class="social">
+<a href="https://www.facebook.com/ctrackanz" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://twitter.com/CtrackANZ" target="_blank"><i class="fab fa-twitter"></i></a>
+<a href="https://www.youtube.com/user/CtrackANZVideos" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="https://www.linkedin.com/company/ctrack-anz/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+</li>
+</ul>
+<script>
+              function myFunction() {
+                var x = document.getElementById("menu-mobile");
+                if (x.style.opacity === "0") {
+                  x.style.opacity = "1";
+                  document.getElementById("menu-mobile").style.pointerEvents = "initial";
+                } else {
+                  x.style.opacity = "0";
+                  document.getElementById("menu-mobile").style.pointerEvents = "none";
+                }
+              }
+            </script>
+</nav>
+<nav id="main">
+<ul id="menu-main">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children my-parent-item menu-item-343"><a href="#">Solutions</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-342"><a href="https://ctrack-anz.com/solutions/">Our Solutions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75"><a href="https://ctrack-anz.com/solutions/vehicle-tracking/">Vehicle Tracking</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76"><a href="https://ctrack-anz.com/solutions/routing-scheduling/">Routing &amp; Scheduling</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a href="https://ctrack-anz.com/solutions/smart-edriver/">Electronic Work Diary</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a href="https://ctrack-anz.com/solutions/costs-management/">Costs Management</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="https://ctrack-anz.com/solutions/cameras/">Cameras</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-88"><a href="https://ctrack-anz.com/solutions/peripherals/">Peripherals</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-795"><a href="https://ctrack-anz.com/solutions/software/">Software</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-794"><a href="https://ctrack-anz.com/solutions/hardware/">Hardware</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2311"><a href="https://ctrack-anz.com/solutions/asset-trackers/">Asset Trackers</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children my-parent-item menu-item-344"><a href="#">Benefits</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1195"><a href="https://ctrack-anz.com/benefits/">Key Benefits</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-122"><a href="https://ctrack-anz.com/benefits/compliance/">Compliance</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-123"><a href="https://ctrack-anz.com/benefits/roi-calculator/">ROI Calculator</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children my-parent-item menu-item-347"><a href="#">Customers &amp; Results</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1198"><a href="https://ctrack-anz.com/customers-results/">Customers &amp; Results</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-108"><a href="https://ctrack-anz.com/customers-results/industries/">Industries</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-111"><a href="https://ctrack-anz.com/customers-results/case-studies/">Case Studies</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children my-parent-item menu-item-348"><a href="#">Company</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1201"><a href="https://ctrack-anz.com/company/">About Ctrack</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"><a href="https://ctrack-anz.com/company/news-media-centre/">News &amp; Media Centre</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="https://ctrack-anz.com/company/careers/">Careers</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children my-parent-item menu-item-349"><a href="#">Contact</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-117"><a href="https://ctrack-anz.com/get-in-touch/">Get in touch</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-121"><a href="https://ctrack-anz.com/get-in-touch/faqs/">FAQs</a></li>
+</ul>
+</li>
+</ul>
+<script>
+              jQuery(document).ready(function($){
+                $("li.menu-item a").each(function(){
+                  if ( $(this).text().length > 25 ) {
+                    $(this).addClass('breakword');
+                  }
+                });
+              });
+            </script>
+<ul id="social">
+<li><a href="https://www.facebook.com/ctrackanz" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="https://twitter.com/CtrackANZ" target="_blank"><i class="fab fa-twitter"></i></a></li>
+<li><a href="https://www.youtube.com/user/CtrackANZVideos" target="_blank"><i class="fab fa-youtube"></i></a></li>
+<li><a href="https://www.linkedin.com/company/ctrack-anz/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+</ul>
+</nav>
+</div>
+<div id="alert-banner"><div>Important changes are coming to Ctrack – <strong><a href="/ctrack-becomes-inseego/">Find out more</a></strong>.</div></div>
+</div>
+</header>
+<div id="wrap">
+<section class="no-header-image" id="page-heading">
+<div class="inner">
+<h1>Privacy Policy</h1>
+</div>
+</section>
+<div id="crumbs">
+<div class="inner">
+<span property="itemListElement" typeof="ListItem"><a class="home" href="https://ctrack-anz.com" property="item" title="Go to Ctrack by Inseego | Australia and New Zealand." typeof="WebPage"><span property="name">Home</span></a><meta content="1" property="position"/></span> › <span class="post post-page current-item">Privacy Policy</span> </div>
+</div>
+<section class="block columns bg-white count1 left">
+<div class="inner wide alignleft">
+<div class="column text-type wysiwyg">
+<p>Ctrack ANZ is committed to protecting your privacy and developing technology that gives you the most powerful and safe online experience. This Statement of Privacy applies to the Ctrack ANZ Web site and governs data collection and usage. By using the Ctrack ANZ website, you consent to the data practices described in this statement.</p>
+<h3>Collection of Your Personal Information</h3>
+<p>Ctrack ANZ collects personally identifiable information, such as your e-mail address, name, home or work address or telephone number. Ctrack ANZ also collects anonymous demographic information, which is not unique to you, such as your Postcode, age, gender, preferences, interests and favourites.</p>
+<p>There is also information about your computer hardware and software that is automatically collected by Ctrack ANZ. This information can include: your IP address, browser type, domain names, access times and referring Web site addresses. This information is used by Ctrack ANZ for the operation of the service, to maintain quality of the service, and to provide general statistics regarding use of the Ctrack ANZ Web site.</p>
+<p>Please keep in mind that if you directly disclose personally identifiable information or personally sensitive data through Ctrack ANZ public message boards, this information may be collected and used by others. Note: Ctrack ANZ does not read any of your private online communications.</p>
+<p>Ctrack ANZ encourages you to review the privacy statements of Web sites you choose to link to from Ctrack ANZ so that you can understand how those Web sites collect, use and share your information. Ctrack ANZ is not responsible for the privacy statements or other content on Web sites outside of the Ctrack ANZ and Ctrack ANZ family of Web sites.</p>
+<h3>Use of Your Personal Information</h3>
+<p>Ctrack ANZ collects and uses your personal information to operate the Ctrack ANZ Web site and deliver the services you have requested. Ctrack ANZ also uses your personally identifiable information to inform you of other products or services available from Ctrack ANZ and its affiliates. Ctrack ANZ may also contact you via surveys to conduct research about your opinion of current services or of potential new services that may be offered.</p>
+<p>Ctrack ANZ does not sell, rent or lease its customer lists to third parties. Ctrack ANZ may, from time to time, contact you on behalf of external business partners about a particular offering that may be of interest to you. In those cases, your unique personally identifiable information (e-mail, name, address, telephone number) is not transferred to the third party. In addition, Ctrack ANZ may share data with trusted partners to help us perform statistical analysis, send you email or postal mail, provide customer support, or arrange for deliveries. All such third parties are prohibited from using your personal information except to provide these services to Ctrack ANZ, and they are required to maintain the confidentiality of your information.</p>
+<p>Ctrack ANZ does not use or disclose sensitive personal information, such as race, religion, or political affiliations, without your explicit consent.</p>
+<p>Ctrack ANZ keeps track of the Web sites and pages our customers visit within Ctrack ANZ, in order to determine what Ctrack ANZ services are the most popular. This data is used to deliver customised content and advertising within Ctrack ANZ to customers whose behaviour indicates that they are interested in a particular subject area.</p>
+<p>Ctrack ANZ Web sites will disclose your personal information, without notice, only if required to do so by law or in the good faith belief that such action is necessary to: (a) conform to the edicts of the law or comply with legal process served on Ctrack ANZ or the site; (b) protect and defend the rights or property of Ctrack ANZ; and, (c) act under exigent circumstances to protect the personal safety of users of Ctrack ANZ, or the public.</p>
+<h3>Use of Cookies</h3>
+<p>The Ctrack ANZ Web site use “cookies” to help you personalise your online experience. A cookie is a text file that is placed on your hard disk by a Web page server. Cookies cannot be used to run programs or deliver viruses to your computer. Cookies are uniquely assigned to you and can only be read by a web server in the domain that issued the cookie to you.</p>
+<p>One of the primary purposes of cookies is to provide a convenience feature to save you time. The purpose of a cookie is to tell the Web server that you have returned to a specific page. For example, if you personalise Ctrack ANZ pages, or register with Ctrack ANZ site or services, a cookie helps Ctrack ANZ to recall your specific information on subsequent visits. This simplifies the process of recording your personal information, such as billing addresses, shipping addresses, and so on. When you return to the same Ctrack ANZ Web site, the information you previously provided can be retrieved, so you can easily use the Ctrack ANZ features that you customised.</p>
+<p>You have the ability to accept or decline cookies. Most Web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. If you choose to decline cookies, you may not be able to fully experience the interactive features of the Ctrack SA services or Web sites you visit.</p>
+<h3>Security of Your Personal Information</h3>
+<p>Ctrack ANZ secures your personal information from unauthorised access, use or disclosure. Ctrack ANZ secures the personally identifiable information you provide on computer servers in a controlled, secure environment, protected from unauthorised access, use or disclosure. When personal information (such as a credit card number) is transmitted to other Web sites, it is protected through the use of encryption, such as the Secure Socket Layer (SSL) protocol.</p>
+<h3>Changes to this Statement</h3>
+<p>Ctrack ANZ will occasionally update this Statement of Privacy to reflect company and customer feedback. Ctrack ANZ encourages you to periodically review this Statement to be informed of how Ctrack ANZ is protecting your information.</p>
+<h3>Contact Information</h3>
+<p>Ctrack ANZ welcomes your comments regarding this Statement of Privacy. If you believe that Ctrack ANZ has not adhered to this Statement, please contact Ctrack ANZ at <a class="__cf_email__" data-cfemail="cba2a5ada48ba8bfb9aaa8a0e68a8591e5a8a4a6e5" href="/cdn-cgi/l/email-protection">[email protected]</a> We will use commercially reasonable efforts to promptly determine and remedy the problem.</p>
+</div>
+</div>
+</section>
+</div>
+<div class="call-to-action modal-window popup-form" id="gform-44">
+<div class="inside">
+<a class="modal-close" href="#formclose" title="Close"><i class="far fa-times"></i></a>
+<div class="modal-text">
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript"></script>
+<div class="gf_browser_unknown gform_wrapper gform_wrapper_original_id_44 gform_legacy_markup_wrapper" id="gform_wrapper_618437921"><div class="gform_anchor" id="gf_618437921" tabindex="-1"></div>
+<div class="gform_heading">
+<h3 class="gform_title">Free trial</h3>
+<span class="gform_description">Get in touch with our friendly and experienced team today for a free trial and quote to suit your business.</span>
+</div><form action="/privacy/?Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Origin=%2A&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0#gf_618437921" enctype="multipart/form-data" id="gform_618437921" method="post" target="gform_ajax_frame_618437921">
+<div class="gform_body gform-body"><ul class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_618437921"><li class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_44_18"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_618437921_18" name="input_18" type="hidden" value="https://ctrack-anz.com/privacy/?Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Origin=%2A&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0"/></div></li><li class="gfield double gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_44_10"><label class="gfield_label gfield_label_before_complex">Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_complex ginput_container no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name" id="input_618437921_10">
+<span class="name_first" id="input_618437921_10_3_container">
+<input aria-label="First name" aria-required="true" id="input_618437921_10_3" name="input_10.3" placeholder="First name" type="text" value=""/>
+<label for="input_618437921_10_3">First name</label>
+</span>
+<span class="name_last" id="input_618437921_10_6_container">
+<input aria-label="Last name" aria-required="true" id="input_618437921_10_6" name="input_10.6" placeholder="Last name" type="text" value=""/>
+<label for="input_618437921_10_6">Last name</label>
+</span>
+</div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_visible" id="field_44_17"><label class="gfield_label" for="input_618437921_17">Location</label><div class="ginput_container ginput_container_select"><select aria-invalid="false" class="medium gfield_select" id="input_618437921_17" name="input_17"><option class="gf_placeholder" selected="selected" value="">Location</option><option value="NSW">NSW</option><option value="VIC">VIC</option><option value="QLD">QLD</option><option value="NT">NT</option><option value="ACT">ACT</option><option value="TAS">TAS</option><option value="WA">WA</option><option value="SA">SA</option><option value="New Zealand">New Zealand</option></select></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_44_9"><label class="gfield_label" for="input_618437921_9">Company<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="medium" id="input_618437921_9" name="input_9" placeholder="Company" type="text" value=""/> </div></li><li class="gfield vehicles gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_44_16"><label class="gfield_label" for="input_618437921_16">No. of vehicles<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_number"><input aria-describedby="gfield_instruction_44_16" aria-invalid="false" aria-required="true" class="medium" id="input_618437921_16" name="input_16" placeholder="No. of vehicles" type="text" value=""/><div class="instruction" id="gfield_instruction_44_16">Please enter a number from <strong>1</strong> to <strong>5000</strong>.</div></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_44_2"><label class="gfield_label" for="input_618437921_2">Email address<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email">
+<input aria-invalid="false" aria-required="true" class="medium" id="input_618437921_2" name="input_2" placeholder="Email address" type="text" value=""/>
+</div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_44_3"><label class="gfield_label" for="input_618437921_3">Phone number<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_phone"><input aria-invalid="false" aria-required="true" class="medium" id="input_618437921_3" name="input_3" placeholder="Phone number" type="text" value=""/></div></li><li class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible" id="field_44_19"><label class="gfield_label" for="input_618437921_19">Name</label><div class="ginput_container"><input id="input_618437921_19" name="input_19" type="text" value=""/></div><div class="gfield_description" id="gfield_description_44_19">This field is for validation purposes and should be left unchanged.</div></li></ul></div>
+<div class="gform_footer top_label"> <input class="gform_button button" id="gform_submit_button_618437921" onclick='if(window["gf_submitting_618437921"]){return false;}  window["gf_submitting_618437921"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_618437921"]){return false;} window["gf_submitting_618437921"]=true;  jQuery("#gform_618437921").trigger("submit",[true]); }' type="submit" value="Get your free trial"/> <input name="gform_ajax" type="hidden" value="form_id=44&amp;title=1&amp;description=1&amp;tabindex=1"/>
+<input class="gform_hidden" name="is_submit_44" type="hidden" value="1"/>
+<input class="gform_hidden" name="gform_submit" type="hidden" value="44"/>
+<input class="gform_hidden" name="gform_unique_id" type="hidden" value=""/>
+<input class="gform_hidden" name="state_44" type="hidden" value="WyJbXSIsIjg3OGMyMTAyYjBhMzMzNDI4NzU3MTk1MDRlMmFjMmU3Il0="/>
+<input class="gform_hidden" id="gform_target_page_number_618437921_44" name="gform_target_page_number_44" type="hidden" value="0"/>
+<input class="gform_hidden" id="gform_source_page_number_618437921_44" name="gform_source_page_number_44" type="hidden" value="1"/>
+<input name="gform_random_id" type="hidden" value="618437921"/><input name="gform_field_values" type="hidden" value=""/>
+</div>
+</form>
+</div>
+<iframe id="gform_ajax_frame_618437921" name="gform_ajax_frame_618437921" src="about:blank" style="display:none;width:0px;height:0px;" title="This iframe contains the logic required to handle Ajax powered Gravity Forms."></iframe>
+<script type="text/javascript">gform.initializeOnLoaded( function() {gformInitSpinner( 618437921, '/wp-content/themes/ctrack/images/spinner.svg' );jQuery('#gform_ajax_frame_618437921').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_618437921');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_618437921').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_618437921').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_618437921').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_618437921').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_618437921').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_618437921_44').val();gformInitSpinner( 618437921, '/wp-content/themes/ctrack/images/spinner.svg' );jQuery(document).trigger('gform_page_loaded', [618437921, current_page]);window['gf_submitting_618437921'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_618437921').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_618437921').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [618437921]);window['gf_submitting_618437921'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_618437921').text());}, 50);}else{jQuery('#gform_618437921').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [618437921, current_page]);} );} );</script>
+</div>
+</div>
+<style>
+	#gform-44.modal-window > div.inside:before {
+		background-image: url(https://ctrack-anz.com/wp-content/uploads/2019/10/clicks.jpg);
+		}
+	</style>
+</div>
+<script type="text/javascript">
+  function hide_modal44()
+  {
+    $('#gform-44').modal('hide');
+  }
+</script>
+<script>
+function modalClose44() {
+    if (location.hash == '#gform-44') {
+        location.hash = '';
+    }
+}
+
+document.addEventListener('keyup', function(e) {
+    if (e.keyCode == 27) {
+        modalClose44();
+    }
+});
+
+var modal = document.querySelector('#gform-44');
+modal.addEventListener('click', function(e) {
+    modalClose44();
+}, false);
+
+modal.children[0].addEventListener('click', function(e) {
+    e.stopPropagation();
+}, false);
+</script>
+<div class="call-to-action modal-window popup-form" id="gform-40">
+<div class="inside">
+<a class="modal-close" href="#formclose" title="Close"><i class="far fa-times"></i></a>
+<div class="modal-text">
+<div class="gf_browser_unknown gform_wrapper gform_wrapper_original_id_40 gform_legacy_markup_wrapper" id="gform_wrapper_597290181"><div class="gform_anchor" id="gf_597290181" tabindex="-1"></div>
+<div class="gform_heading">
+<h3 class="gform_title">Get a free demo</h3>
+<span class="gform_description">Get in touch with our friendly and experienced team today for a free, no obligation demo and quote to suit your business.</span>
+</div><form action="/privacy/?Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Origin=%2A&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0#gf_597290181" enctype="multipart/form-data" id="gform_597290181" method="post" target="gform_ajax_frame_597290181">
+<div class="gform_body gform-body"><ul class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_597290181"><li class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_40_18"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_597290181_18" name="input_18" type="hidden" value="https://ctrack-anz.com/privacy/?Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Origin=%2A&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0"/></div></li><li class="gfield double gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_40_10"><label class="gfield_label gfield_label_before_complex">Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_complex ginput_container no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name" id="input_597290181_10">
+<span class="name_first" id="input_597290181_10_3_container">
+<input aria-label="First name" aria-required="true" id="input_597290181_10_3" name="input_10.3" placeholder="First name" type="text" value=""/>
+<label for="input_597290181_10_3">First name</label>
+</span>
+<span class="name_last" id="input_597290181_10_6_container">
+<input aria-label="Last name" aria-required="true" id="input_597290181_10_6" name="input_10.6" placeholder="Last name" type="text" value=""/>
+<label for="input_597290181_10_6">Last name</label>
+</span>
+</div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_visible" id="field_40_17"><label class="gfield_label" for="input_597290181_17">Location</label><div class="ginput_container ginput_container_select"><select aria-invalid="false" class="medium gfield_select" id="input_597290181_17" name="input_17"><option class="gf_placeholder" selected="selected" value="">Location</option><option value="NSW">NSW</option><option value="VIC">VIC</option><option value="QLD">QLD</option><option value="NT">NT</option><option value="ACT">ACT</option><option value="TAS">TAS</option><option value="WA">WA</option><option value="SA">SA</option><option value="New Zealand">New Zealand</option></select></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_40_9"><label class="gfield_label" for="input_597290181_9">Company<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="medium" id="input_597290181_9" name="input_9" placeholder="Company" type="text" value=""/> </div></li><li class="gfield vehicles gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_40_16"><label class="gfield_label" for="input_597290181_16">No. of vehicles<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_number"><input aria-describedby="gfield_instruction_40_16" aria-invalid="false" aria-required="true" class="medium" id="input_597290181_16" name="input_16" placeholder="No. of vehicles" type="text" value=""/><div class="instruction" id="gfield_instruction_40_16">Please enter a number from <strong>1</strong> to <strong>5000</strong>.</div></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_40_2"><label class="gfield_label" for="input_597290181_2">Email address<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email">
+<input aria-invalid="false" aria-required="true" class="medium" id="input_597290181_2" name="input_2" placeholder="Email address" type="text" value=""/>
+</div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_40_3"><label class="gfield_label" for="input_597290181_3">Phone number<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_phone"><input aria-invalid="false" aria-required="true" class="medium" id="input_597290181_3" name="input_3" placeholder="Phone number" type="text" value=""/></div></li><li class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible" id="field_40_19"><label class="gfield_label" for="input_597290181_19">Email</label><div class="ginput_container"><input id="input_597290181_19" name="input_19" type="text" value=""/></div><div class="gfield_description" id="gfield_description_40_19">This field is for validation purposes and should be left unchanged.</div></li></ul></div>
+<div class="gform_footer top_label"> <input class="gform_button button" id="gform_submit_button_597290181" onclick='if(window["gf_submitting_597290181"]){return false;}  window["gf_submitting_597290181"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_597290181"]){return false;} window["gf_submitting_597290181"]=true;  jQuery("#gform_597290181").trigger("submit",[true]); }' type="submit" value="Schedule your free demo"/> <input name="gform_ajax" type="hidden" value="form_id=40&amp;title=1&amp;description=1&amp;tabindex=1"/>
+<input class="gform_hidden" name="is_submit_40" type="hidden" value="1"/>
+<input class="gform_hidden" name="gform_submit" type="hidden" value="40"/>
+<input class="gform_hidden" name="gform_unique_id" type="hidden" value=""/>
+<input class="gform_hidden" name="state_40" type="hidden" value="WyJbXSIsIjg3OGMyMTAyYjBhMzMzNDI4NzU3MTk1MDRlMmFjMmU3Il0="/>
+<input class="gform_hidden" id="gform_target_page_number_597290181_40" name="gform_target_page_number_40" type="hidden" value="0"/>
+<input class="gform_hidden" id="gform_source_page_number_597290181_40" name="gform_source_page_number_40" type="hidden" value="1"/>
+<input name="gform_random_id" type="hidden" value="597290181"/><input name="gform_field_values" type="hidden" value=""/>
+</div>
+</form>
+</div>
+<iframe id="gform_ajax_frame_597290181" name="gform_ajax_frame_597290181" src="about:blank" style="display:none;width:0px;height:0px;" title="This iframe contains the logic required to handle Ajax powered Gravity Forms."></iframe>
+<script type="text/javascript">gform.initializeOnLoaded( function() {gformInitSpinner( 597290181, '/wp-content/themes/ctrack/images/spinner.svg' );jQuery('#gform_ajax_frame_597290181').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_597290181');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_597290181').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_597290181').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_597290181').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_597290181').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_597290181').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_597290181_40').val();gformInitSpinner( 597290181, '/wp-content/themes/ctrack/images/spinner.svg' );jQuery(document).trigger('gform_page_loaded', [597290181, current_page]);window['gf_submitting_597290181'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_597290181').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_597290181').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [597290181]);window['gf_submitting_597290181'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_597290181').text());}, 50);}else{jQuery('#gform_597290181').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [597290181, current_page]);} );} );</script>
+</div>
+</div>
+<style>
+	#gform-40.modal-window > div.inside:before {
+		background-image: url(https://ctrack-anz.com/wp-content/uploads/2019/10/clicks.jpg);
+		}
+	</style>
+</div>
+<script type="text/javascript">
+  function hide_modal40()
+  {
+    $('#gform-40').modal('hide');
+  }
+</script>
+<script>
+function modalClose40() {
+    if (location.hash == '#gform-40') {
+        location.hash = '';
+    }
+}
+
+document.addEventListener('keyup', function(e) {
+    if (e.keyCode == 27) {
+        modalClose40();
+    }
+});
+
+var modal = document.querySelector('#gform-40');
+modal.addEventListener('click', function(e) {
+    modalClose40();
+}, false);
+
+modal.children[0].addEventListener('click', function(e) {
+    e.stopPropagation();
+}, false);
+</script>
+<div class="call-to-action modal-window popup-form" id="gform-43">
+<div class="inside">
+<a class="modal-close" href="#formclose" title="Close"><i class="far fa-times"></i></a>
+<div class="modal-text">
+<div class="gf_browser_unknown gform_wrapper gform_wrapper_original_id_43 gform_legacy_markup_wrapper" id="gform_wrapper_1880007219"><div class="gform_anchor" id="gf_1880007219" tabindex="-1"></div>
+<div class="gform_heading">
+<h3 class="gform_title">Request a quote</h3>
+<span class="gform_description">Get in touch with our friendly and experienced team today for a free, no obligation demo and quote to suit your business.</span>
+</div><form action="/privacy/?Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Origin=%2A&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0#gf_1880007219" enctype="multipart/form-data" id="gform_1880007219" method="post" target="gform_ajax_frame_1880007219">
+<div class="gform_body gform-body"><ul class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_1880007219"><li class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_43_18"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_1880007219_18" name="input_18" type="hidden" value="https://ctrack-anz.com/privacy/?Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Origin=%2A&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0"/></div></li><li class="gfield double gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_43_10"><label class="gfield_label gfield_label_before_complex">Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_complex ginput_container no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name" id="input_1880007219_10">
+<span class="name_first" id="input_1880007219_10_3_container">
+<input aria-label="First name" aria-required="true" id="input_1880007219_10_3" name="input_10.3" placeholder="First name" type="text" value=""/>
+<label for="input_1880007219_10_3">First name</label>
+</span>
+<span class="name_last" id="input_1880007219_10_6_container">
+<input aria-label="Last name" aria-required="true" id="input_1880007219_10_6" name="input_10.6" placeholder="Last name" type="text" value=""/>
+<label for="input_1880007219_10_6">Last name</label>
+</span>
+</div></li><li class="gfield field_sublabel_below field_description_below gfield_visibility_visible" id="field_43_17"><label class="gfield_label" for="input_1880007219_17">Location</label><div class="ginput_container ginput_container_select"><select aria-invalid="false" class="medium gfield_select" id="input_1880007219_17" name="input_17"><option class="gf_placeholder" selected="selected" value="">Location</option><option value="NSW">NSW</option><option value="VIC">VIC</option><option value="QLD">QLD</option><option value="NT">NT</option><option value="ACT">ACT</option><option value="TAS">TAS</option><option value="WA">WA</option><option value="SA">SA</option><option value="New Zealand">New Zealand</option></select></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_43_9"><label class="gfield_label" for="input_1880007219_9">Company<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="medium" id="input_1880007219_9" name="input_9" placeholder="Company" type="text" value=""/> </div></li><li class="gfield vehicles gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_43_16"><label class="gfield_label" for="input_1880007219_16">No. of vehicles<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_number"><input aria-describedby="gfield_instruction_43_16" aria-invalid="false" aria-required="true" class="medium" id="input_1880007219_16" name="input_16" placeholder="No. of vehicles" type="text" value=""/><div class="instruction" id="gfield_instruction_43_16">Please enter a number from <strong>1</strong> to <strong>5000</strong>.</div></div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_43_2"><label class="gfield_label" for="input_1880007219_2">Email address<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email">
+<input aria-invalid="false" aria-required="true" class="medium" id="input_1880007219_2" name="input_2" placeholder="Email address" type="text" value=""/>
+</div></li><li class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_43_3"><label class="gfield_label" for="input_1880007219_3">Phone number<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_phone"><input aria-invalid="false" aria-required="true" class="medium" id="input_1880007219_3" name="input_3" placeholder="Phone number" type="text" value=""/></div></li><li class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible" id="field_43_19"><label class="gfield_label" for="input_1880007219_19">Phone</label><div class="ginput_container"><input id="input_1880007219_19" name="input_19" type="text" value=""/></div><div class="gfield_description" id="gfield_description_43_19">This field is for validation purposes and should be left unchanged.</div></li></ul></div>
+<div class="gform_footer top_label"> <input class="gform_button button" id="gform_submit_button_1880007219" onclick='if(window["gf_submitting_1880007219"]){return false;}  window["gf_submitting_1880007219"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1880007219"]){return false;} window["gf_submitting_1880007219"]=true;  jQuery("#gform_1880007219").trigger("submit",[true]); }' type="submit" value="Request your quote"/> <input name="gform_ajax" type="hidden" value="form_id=43&amp;title=1&amp;description=1&amp;tabindex=1"/>
+<input class="gform_hidden" name="is_submit_43" type="hidden" value="1"/>
+<input class="gform_hidden" name="gform_submit" type="hidden" value="43"/>
+<input class="gform_hidden" name="gform_unique_id" type="hidden" value=""/>
+<input class="gform_hidden" name="state_43" type="hidden" value="WyJbXSIsIjg3OGMyMTAyYjBhMzMzNDI4NzU3MTk1MDRlMmFjMmU3Il0="/>
+<input class="gform_hidden" id="gform_target_page_number_1880007219_43" name="gform_target_page_number_43" type="hidden" value="0"/>
+<input class="gform_hidden" id="gform_source_page_number_1880007219_43" name="gform_source_page_number_43" type="hidden" value="1"/>
+<input name="gform_random_id" type="hidden" value="1880007219"/><input name="gform_field_values" type="hidden" value=""/>
+</div>
+</form>
+</div>
+<iframe id="gform_ajax_frame_1880007219" name="gform_ajax_frame_1880007219" src="about:blank" style="display:none;width:0px;height:0px;" title="This iframe contains the logic required to handle Ajax powered Gravity Forms."></iframe>
+<script type="text/javascript">gform.initializeOnLoaded( function() {gformInitSpinner( 1880007219, '/wp-content/themes/ctrack/images/spinner.svg' );jQuery('#gform_ajax_frame_1880007219').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_1880007219');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1880007219').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_1880007219').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_1880007219').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_1880007219').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1880007219').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_1880007219_43').val();gformInitSpinner( 1880007219, '/wp-content/themes/ctrack/images/spinner.svg' );jQuery(document).trigger('gform_page_loaded', [1880007219, current_page]);window['gf_submitting_1880007219'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_1880007219').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_1880007219').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [1880007219]);window['gf_submitting_1880007219'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_1880007219').text());}, 50);}else{jQuery('#gform_1880007219').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [1880007219, current_page]);} );} );</script>
+</div>
+</div>
+<style>
+	#gform-43.modal-window > div.inside:before {
+		background-image: url(https://ctrack-anz.com/wp-content/uploads/2019/10/clicks.jpg);
+		}
+	</style>
+</div>
+<script type="text/javascript">
+  function hide_modal43()
+  {
+    $('#gform-43').modal('hide');
+  }
+</script>
+<script>
+function modalClose43() {
+    if (location.hash == '#gform-43') {
+        location.hash = '';
+    }
+}
+
+document.addEventListener('keyup', function(e) {
+    if (e.keyCode == 27) {
+        modalClose43();
+    }
+});
+
+var modal = document.querySelector('#gform-43');
+modal.addEventListener('click', function(e) {
+    modalClose43();
+}, false);
+
+modal.children[0].addEventListener('click', function(e) {
+    e.stopPropagation();
+}, false);
+</script>
+<div class="call-to-action modal-window popup-form" id="gform-47">
+<div class="inside">
+<a class="modal-close" href="#formclose" title="Close"><i class="far fa-times"></i></a>
+<div class="modal-text">
+<div class="gf_browser_unknown gform_wrapper gform_wrapper_original_id_47 gravity-theme ctrack-wizard-form_wrapper" id="gform_wrapper_1296192008"><div class="gform_anchor" id="gf_1296192008" tabindex="-1"></div>
+<div class="gform_heading">
+<h2 class="gform_title">Wizard Form - Free trial</h2>
+<span class="gform_description"></span>
+<p class="gform_required_legend">"<span class="gfield_required gfield_required_asterisk">*</span>" indicates required fields</p>
+</div><form action="/privacy/?Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Origin=%2A&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0#gf_1296192008" class="ctrack-wizard-form" enctype="multipart/form-data" id="gform_1296192008" method="post" target="gform_ajax_frame_1296192008">
+<div class="gf_progressbar_wrapper" id="gf_progressbar_wrapper_47">
+<p class="gf_progressbar_title">Step <span class="gf_step_current_page">1</span> of <span class="gf_step_page_count">7</span>
+</p>
+<div aria-hidden="true" class="gf_progressbar gf_progressbar_blue">
+<div class="gf_progressbar_percentage percentbar_blue percentbar_0" style="width:0%;"><span>0%</span></div>
+</div></div>
+<div class="gform_body gform-body"><div class="gform_page" id="gform_page_47_1">
+<div class="gform_page_fields"><div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_1296192008"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_2"><h3 class="gsection_title">Let's get started. What features are you interested in?</h3></div><fieldset class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below hidden_label gfield_visibility_visible" id="field_47_3"><legend class="gfield_label gfield_label_before_complex">Features<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></legend><div class="ginput_container ginput_container_checkbox"><div class="gfield_checkbox" id="input_1296192008_3"><div class="gchoice gchoice_47_3_1">
+<input class="gfield-choice-input" id="choice_1296192008_47_3_1" name="input_3.1" type="checkbox" value="GPS Fleet Tracking"/>
+<label for="choice_1296192008_47_3_1" id="label_1296192008_47_3_1">GPS Fleet Tracking</label>
+</div><div class="gchoice gchoice_47_3_2">
+<input class="gfield-choice-input" id="choice_1296192008_47_3_2" name="input_3.2" type="checkbox" value="Asset Management"/>
+<label for="choice_1296192008_47_3_2" id="label_1296192008_47_3_2">Asset Management</label>
+</div><div class="gchoice gchoice_47_3_3">
+<input class="gfield-choice-input" id="choice_1296192008_47_3_3" name="input_3.3" type="checkbox" value="Compliance (EWD, IAP, RUC)"/>
+<label for="choice_1296192008_47_3_3" id="label_1296192008_47_3_3">Compliance (EWD, IAP, RUC)</label>
+</div><div class="gchoice gchoice_47_3_4">
+<input class="gfield-choice-input" id="choice_1296192008_47_3_4" name="input_3.4" type="checkbox" value="Fuel Tax Management"/>
+<label for="choice_1296192008_47_3_4" id="label_1296192008_47_3_4">Fuel Tax Management</label>
+</div><div class="gchoice gchoice_47_3_5">
+<input class="gfield-choice-input" id="choice_1296192008_47_3_5" name="input_3.5" type="checkbox" value="Integrated Cameras"/>
+<label for="choice_1296192008_47_3_5" id="label_1296192008_47_3_5">Integrated Cameras</label>
+</div><div class="gchoice gchoice_47_3_6">
+<input class="gfield-choice-input" id="choice_1296192008_47_3_6" name="input_3.6" type="checkbox" value="Routing &amp; Scheduling"/>
+<label for="choice_1296192008_47_3_6" id="label_1296192008_47_3_6">Routing &amp; Scheduling</label>
+</div></div></div></fieldset></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_next_button button" id="gform_next_button_1296192008_1" onclick='jQuery("#gform_target_page_number_1296192008_47").val("2");  jQuery("#gform_1296192008").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1296192008_47").val("2");  jQuery("#gform_1296192008").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_47_2" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_47_2"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_4"><h3 class="gsection_title">How many vehicles in your fleet?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_5"><label class="gfield_label" for="input_1296192008_5">Enter fleet size<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_number"><input aria-describedby="gfield_instruction_47_5" aria-invalid="false" aria-required="true" class="large" id="input_1296192008_5" name="input_5" type="text" value=""/></div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1296192008_20" onclick='jQuery("#gform_target_page_number_1296192008_47").val("1");  jQuery("#gform_1296192008").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1296192008_47").val("1");  jQuery("#gform_1296192008").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1296192008_20" onclick='jQuery("#gform_target_page_number_1296192008_47").val("3");  jQuery("#gform_1296192008").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1296192008_47").val("3");  jQuery("#gform_1296192008").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_47_3" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_47_3"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_21"><h3 class="gsection_title">Where are you located?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_22"><label class="gfield_label" for="input_1296192008_22">Location<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_select"><select aria-invalid="false" aria-required="true" class="large gfield_select" id="input_1296192008_22" name="input_22"><option value="NSW">NSW</option><option value="VIC">VIC</option><option value="QLD">QLD</option><option value="NT">NT</option><option value="ACT">ACT</option><option value="TAS">TAS</option><option value="WA">WA</option><option value="SA">SA</option><option value="New Zealand">New Zealand</option></select></div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1296192008_6" onclick='jQuery("#gform_target_page_number_1296192008_47").val("2");  jQuery("#gform_1296192008").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1296192008_47").val("2");  jQuery("#gform_1296192008").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1296192008_6" onclick='jQuery("#gform_target_page_number_1296192008_47").val("4");  jQuery("#gform_1296192008").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1296192008_47").val("4");  jQuery("#gform_1296192008").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_47_4" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_47_4"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_7"><h3 class="gsection_title">What company do you work for?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_8"><label class="gfield_label" for="input_1296192008_8">Company name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="large" id="input_1296192008_8" name="input_8" type="text" value=""/> </div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1296192008_9" onclick='jQuery("#gform_target_page_number_1296192008_47").val("3");  jQuery("#gform_1296192008").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1296192008_47").val("3");  jQuery("#gform_1296192008").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1296192008_9" onclick='jQuery("#gform_target_page_number_1296192008_47").val("5");  jQuery("#gform_1296192008").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1296192008_47").val("5");  jQuery("#gform_1296192008").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_47_5" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_47_5"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_10"><h3 class="gsection_title">What is your name?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_11"><label class="gfield_label" for="input_1296192008_11">First name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="large" id="input_1296192008_11" name="input_11" type="text" value=""/> </div></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_12"><label class="gfield_label" for="input_1296192008_12">Last name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="large" id="input_1296192008_12" name="input_12" type="text" value=""/> </div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1296192008_13" onclick='jQuery("#gform_target_page_number_1296192008_47").val("4");  jQuery("#gform_1296192008").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1296192008_47").val("4");  jQuery("#gform_1296192008").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1296192008_13" onclick='jQuery("#gform_target_page_number_1296192008_47").val("6");  jQuery("#gform_1296192008").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1296192008_47").val("6");  jQuery("#gform_1296192008").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_47_6" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_47_6"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_14"><h3 class="gsection_title">Nearly there, where should we send your information?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_15"><label class="gfield_label" for="input_1296192008_15">Email address<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email">
+<input aria-invalid="false" aria-required="true" class="large" id="input_1296192008_15" name="input_15" type="text" value=""/>
+</div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1296192008_16" onclick='jQuery("#gform_target_page_number_1296192008_47").val("5");  jQuery("#gform_1296192008").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1296192008_47").val("5");  jQuery("#gform_1296192008").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1296192008_16" onclick='jQuery("#gform_target_page_number_1296192008_47").val("7");  jQuery("#gform_1296192008").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1296192008_47").val("7");  jQuery("#gform_1296192008").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_47_7" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_47_7"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_17"><h3 class="gsection_title">Last question, what's your phone number?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_18"><label class="gfield_label" for="input_1296192008_18">Phone number<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_phone"><input aria-invalid="false" aria-required="true" class="large" id="input_1296192008_18" name="input_18" type="text" value=""/></div></div><div class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_23"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_1296192008_23" name="input_23" type="hidden" value=""/></div></div><div class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_24"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_1296192008_24" name="input_24" type="hidden" value=""/></div></div><div class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_25"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_1296192008_25" name="input_25" type="hidden" value=""/></div></div><div class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_47_26"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_1296192008_26" name="input_26" type="hidden" value="Free trial"/></div></div></div></div>
+<div class="gform_page_footer top_label"><input class="gform_previous_button button" id="gform_previous_button_47" onclick='if(window["gf_submitting_1296192008"]){return false;}  window["gf_submitting_1296192008"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1296192008"]){return false;} window["gf_submitting_1296192008"]=true;  jQuery("#gform_1296192008").trigger("submit",[true]); }' type="submit" value="Back"/> <input class="gform_button button" id="gform_submit_button_1296192008" onclick='if(window["gf_submitting_1296192008"]){return false;}  window["gf_submitting_1296192008"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1296192008"]){return false;} window["gf_submitting_1296192008"]=true;  jQuery("#gform_1296192008").trigger("submit",[true]); }' type="submit" value="Submit"/> <input name="gform_ajax" type="hidden" value="form_id=47&amp;title=1&amp;description=1&amp;tabindex=1"/>
+<input class="gform_hidden" name="is_submit_47" type="hidden" value="1"/>
+<input class="gform_hidden" name="gform_submit" type="hidden" value="47"/>
+<input class="gform_hidden" name="gform_unique_id" type="hidden" value=""/>
+<input class="gform_hidden" name="state_47" type="hidden" value="WyJbXSIsIjg3OGMyMTAyYjBhMzMzNDI4NzU3MTk1MDRlMmFjMmU3Il0="/>
+<input class="gform_hidden" id="gform_target_page_number_1296192008_47" name="gform_target_page_number_47" type="hidden" value="2"/>
+<input class="gform_hidden" id="gform_source_page_number_1296192008_47" name="gform_source_page_number_47" type="hidden" value="1"/>
+<input name="gform_random_id" type="hidden" value="1296192008"/><input name="gform_field_values" type="hidden" value=""/>
+</div>
+</div></div>
+</form>
+</div>
+<iframe id="gform_ajax_frame_1296192008" name="gform_ajax_frame_1296192008" src="about:blank" style="display:none;width:0px;height:0px;" title="This iframe contains the logic required to handle Ajax powered Gravity Forms."></iframe>
+<script type="text/javascript">gform.initializeOnLoaded( function() {gformInitSpinner( 1296192008, '/wp-content/themes/ctrack/images/spinner.svg' );jQuery('#gform_ajax_frame_1296192008').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_1296192008');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1296192008').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_1296192008').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_1296192008').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_1296192008').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1296192008').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_1296192008_47').val();gformInitSpinner( 1296192008, '/wp-content/themes/ctrack/images/spinner.svg' );jQuery(document).trigger('gform_page_loaded', [1296192008, current_page]);window['gf_submitting_1296192008'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_1296192008').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_1296192008').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [1296192008]);window['gf_submitting_1296192008'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_1296192008').text());}, 50);}else{jQuery('#gform_1296192008').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [1296192008, current_page]);} );} );</script>
+</div>
+</div>
+<style>
+	#gform-47.modal-window > div.inside:before {
+		background-image: url(https://ctrack-anz.com/wp-content/uploads/2019/10/clicks.jpg);
+		}
+	</style>
+</div>
+<script type="text/javascript">
+  function hide_modal47()
+  {
+    $('#gform-47').modal('hide');
+  }
+</script>
+<script>
+function modalClose47() {
+    if (location.hash == '#gform-47') {
+        location.hash = '';
+    }
+}
+
+document.addEventListener('keyup', function(e) {
+    if (e.keyCode == 27) {
+        modalClose47();
+    }
+});
+
+var modal = document.querySelector('#gform-47');
+modal.addEventListener('click', function(e) {
+    modalClose47();
+}, false);
+
+modal.children[0].addEventListener('click', function(e) {
+    e.stopPropagation();
+}, false);
+</script>
+<div class="call-to-action modal-window popup-form" id="gform-48">
+<div class="inside">
+<a class="modal-close" href="#formclose" title="Close"><i class="far fa-times"></i></a>
+<div class="modal-text">
+<div class="gf_browser_unknown gform_wrapper gform_wrapper_original_id_48 gravity-theme ctrack-wizard-form_wrapper" id="gform_wrapper_1888534131"><div class="gform_anchor" id="gf_1888534131" tabindex="-1"></div>
+<div class="gform_heading">
+<h2 class="gform_title">Wizard Form - Get a free demo</h2>
+<span class="gform_description"></span>
+<p class="gform_required_legend">"<span class="gfield_required gfield_required_asterisk">*</span>" indicates required fields</p>
+</div><form action="/privacy/?Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Origin=%2A&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0#gf_1888534131" class="ctrack-wizard-form" enctype="multipart/form-data" id="gform_1888534131" method="post" target="gform_ajax_frame_1888534131">
+<div class="gf_progressbar_wrapper" id="gf_progressbar_wrapper_48">
+<p class="gf_progressbar_title">Step <span class="gf_step_current_page">1</span> of <span class="gf_step_page_count">7</span>
+</p>
+<div aria-hidden="true" class="gf_progressbar gf_progressbar_blue">
+<div class="gf_progressbar_percentage percentbar_blue percentbar_0" style="width:0%;"><span>0%</span></div>
+</div></div>
+<div class="gform_body gform-body"><div class="gform_page" id="gform_page_48_1">
+<div class="gform_page_fields"><div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_1888534131"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_2"><h3 class="gsection_title">Let's get started. What features are you interested in?</h3></div><fieldset class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below hidden_label gfield_visibility_visible" id="field_48_3"><legend class="gfield_label gfield_label_before_complex">Features<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></legend><div class="ginput_container ginput_container_checkbox"><div class="gfield_checkbox" id="input_1888534131_3"><div class="gchoice gchoice_48_3_1">
+<input class="gfield-choice-input" id="choice_1888534131_48_3_1" name="input_3.1" type="checkbox" value="GPS Fleet Tracking"/>
+<label for="choice_1888534131_48_3_1" id="label_1888534131_48_3_1">GPS Fleet Tracking</label>
+</div><div class="gchoice gchoice_48_3_2">
+<input class="gfield-choice-input" id="choice_1888534131_48_3_2" name="input_3.2" type="checkbox" value="Asset Management"/>
+<label for="choice_1888534131_48_3_2" id="label_1888534131_48_3_2">Asset Management</label>
+</div><div class="gchoice gchoice_48_3_3">
+<input class="gfield-choice-input" id="choice_1888534131_48_3_3" name="input_3.3" type="checkbox" value="Compliance (EWD, IAP, RUC)"/>
+<label for="choice_1888534131_48_3_3" id="label_1888534131_48_3_3">Compliance (EWD, IAP, RUC)</label>
+</div><div class="gchoice gchoice_48_3_4">
+<input class="gfield-choice-input" id="choice_1888534131_48_3_4" name="input_3.4" type="checkbox" value="Fuel Tax Management"/>
+<label for="choice_1888534131_48_3_4" id="label_1888534131_48_3_4">Fuel Tax Management</label>
+</div><div class="gchoice gchoice_48_3_5">
+<input class="gfield-choice-input" id="choice_1888534131_48_3_5" name="input_3.5" type="checkbox" value="Integrated Cameras"/>
+<label for="choice_1888534131_48_3_5" id="label_1888534131_48_3_5">Integrated Cameras</label>
+</div><div class="gchoice gchoice_48_3_6">
+<input class="gfield-choice-input" id="choice_1888534131_48_3_6" name="input_3.6" type="checkbox" value="Routing &amp; Scheduling"/>
+<label for="choice_1888534131_48_3_6" id="label_1888534131_48_3_6">Routing &amp; Scheduling</label>
+</div></div></div></fieldset></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_next_button button" id="gform_next_button_1888534131_1" onclick='jQuery("#gform_target_page_number_1888534131_48").val("2");  jQuery("#gform_1888534131").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1888534131_48").val("2");  jQuery("#gform_1888534131").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_48_2" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_48_2"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_4"><h3 class="gsection_title">How many vehicles in your fleet?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_5"><label class="gfield_label" for="input_1888534131_5">Enter fleet size<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_number"><input aria-describedby="gfield_instruction_48_5" aria-invalid="false" aria-required="true" class="large" id="input_1888534131_5" name="input_5" type="text" value=""/></div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1888534131_20" onclick='jQuery("#gform_target_page_number_1888534131_48").val("1");  jQuery("#gform_1888534131").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1888534131_48").val("1");  jQuery("#gform_1888534131").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1888534131_20" onclick='jQuery("#gform_target_page_number_1888534131_48").val("3");  jQuery("#gform_1888534131").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1888534131_48").val("3");  jQuery("#gform_1888534131").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_48_3" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_48_3"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_21"><h3 class="gsection_title">Where are you located?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_22"><label class="gfield_label" for="input_1888534131_22">Location<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_select"><select aria-invalid="false" aria-required="true" class="large gfield_select" id="input_1888534131_22" name="input_22"><option value="NSW">NSW</option><option value="VIC">VIC</option><option value="QLD">QLD</option><option value="NT">NT</option><option value="ACT">ACT</option><option value="TAS">TAS</option><option value="WA">WA</option><option value="SA">SA</option><option value="New Zealand">New Zealand</option></select></div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1888534131_6" onclick='jQuery("#gform_target_page_number_1888534131_48").val("2");  jQuery("#gform_1888534131").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1888534131_48").val("2");  jQuery("#gform_1888534131").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1888534131_6" onclick='jQuery("#gform_target_page_number_1888534131_48").val("4");  jQuery("#gform_1888534131").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1888534131_48").val("4");  jQuery("#gform_1888534131").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_48_4" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_48_4"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_7"><h3 class="gsection_title">What company do you work for?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_8"><label class="gfield_label" for="input_1888534131_8">Company name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="large" id="input_1888534131_8" name="input_8" type="text" value=""/> </div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1888534131_9" onclick='jQuery("#gform_target_page_number_1888534131_48").val("3");  jQuery("#gform_1888534131").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1888534131_48").val("3");  jQuery("#gform_1888534131").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1888534131_9" onclick='jQuery("#gform_target_page_number_1888534131_48").val("5");  jQuery("#gform_1888534131").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1888534131_48").val("5");  jQuery("#gform_1888534131").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_48_5" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_48_5"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_10"><h3 class="gsection_title">What is your name?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_11"><label class="gfield_label" for="input_1888534131_11">First name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="large" id="input_1888534131_11" name="input_11" type="text" value=""/> </div></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_12"><label class="gfield_label" for="input_1888534131_12">Last name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="large" id="input_1888534131_12" name="input_12" type="text" value=""/> </div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1888534131_13" onclick='jQuery("#gform_target_page_number_1888534131_48").val("4");  jQuery("#gform_1888534131").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1888534131_48").val("4");  jQuery("#gform_1888534131").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1888534131_13" onclick='jQuery("#gform_target_page_number_1888534131_48").val("6");  jQuery("#gform_1888534131").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1888534131_48").val("6");  jQuery("#gform_1888534131").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_48_6" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_48_6"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_14"><h3 class="gsection_title">Nearly there, where should we send your information?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_15"><label class="gfield_label" for="input_1888534131_15">Email address<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email">
+<input aria-invalid="false" aria-required="true" class="large" id="input_1888534131_15" name="input_15" type="text" value=""/>
+</div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1888534131_16" onclick='jQuery("#gform_target_page_number_1888534131_48").val("5");  jQuery("#gform_1888534131").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1888534131_48").val("5");  jQuery("#gform_1888534131").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1888534131_16" onclick='jQuery("#gform_target_page_number_1888534131_48").val("7");  jQuery("#gform_1888534131").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1888534131_48").val("7");  jQuery("#gform_1888534131").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_48_7" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_48_7"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_17"><h3 class="gsection_title">Last question, what's your phone number?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_18"><label class="gfield_label" for="input_1888534131_18">Phone number<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_phone"><input aria-invalid="false" aria-required="true" class="large" id="input_1888534131_18" name="input_18" type="text" value=""/></div></div><div class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_23"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_1888534131_23" name="input_23" type="hidden" value=""/></div></div><div class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_24"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_1888534131_24" name="input_24" type="hidden" value=""/></div></div><div class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_25"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_1888534131_25" name="input_25" type="hidden" value=""/></div></div><div class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_48_26"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_1888534131_26" name="input_26" type="hidden" value="Get a demo"/></div></div></div></div>
+<div class="gform_page_footer top_label"><input class="gform_previous_button button" id="gform_previous_button_48" onclick='if(window["gf_submitting_1888534131"]){return false;}  window["gf_submitting_1888534131"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1888534131"]){return false;} window["gf_submitting_1888534131"]=true;  jQuery("#gform_1888534131").trigger("submit",[true]); }' type="submit" value="Back"/> <input class="gform_button button" id="gform_submit_button_1888534131" onclick='if(window["gf_submitting_1888534131"]){return false;}  window["gf_submitting_1888534131"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1888534131"]){return false;} window["gf_submitting_1888534131"]=true;  jQuery("#gform_1888534131").trigger("submit",[true]); }' type="submit" value="Submit"/> <input name="gform_ajax" type="hidden" value="form_id=48&amp;title=1&amp;description=1&amp;tabindex=1"/>
+<input class="gform_hidden" name="is_submit_48" type="hidden" value="1"/>
+<input class="gform_hidden" name="gform_submit" type="hidden" value="48"/>
+<input class="gform_hidden" name="gform_unique_id" type="hidden" value=""/>
+<input class="gform_hidden" name="state_48" type="hidden" value="WyJbXSIsIjg3OGMyMTAyYjBhMzMzNDI4NzU3MTk1MDRlMmFjMmU3Il0="/>
+<input class="gform_hidden" id="gform_target_page_number_1888534131_48" name="gform_target_page_number_48" type="hidden" value="2"/>
+<input class="gform_hidden" id="gform_source_page_number_1888534131_48" name="gform_source_page_number_48" type="hidden" value="1"/>
+<input name="gform_random_id" type="hidden" value="1888534131"/><input name="gform_field_values" type="hidden" value=""/>
+</div>
+</div></div>
+</form>
+</div>
+<iframe id="gform_ajax_frame_1888534131" name="gform_ajax_frame_1888534131" src="about:blank" style="display:none;width:0px;height:0px;" title="This iframe contains the logic required to handle Ajax powered Gravity Forms."></iframe>
+<script type="text/javascript">gform.initializeOnLoaded( function() {gformInitSpinner( 1888534131, '/wp-content/themes/ctrack/images/spinner.svg' );jQuery('#gform_ajax_frame_1888534131').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_1888534131');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1888534131').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_1888534131').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_1888534131').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_1888534131').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1888534131').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_1888534131_48').val();gformInitSpinner( 1888534131, '/wp-content/themes/ctrack/images/spinner.svg' );jQuery(document).trigger('gform_page_loaded', [1888534131, current_page]);window['gf_submitting_1888534131'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_1888534131').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_1888534131').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [1888534131]);window['gf_submitting_1888534131'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_1888534131').text());}, 50);}else{jQuery('#gform_1888534131').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [1888534131, current_page]);} );} );</script>
+</div>
+</div>
+<style>
+	#gform-48.modal-window > div.inside:before {
+		background-image: url(https://ctrack-anz.com/wp-content/uploads/2019/10/clicks.jpg);
+		}
+	</style>
+</div>
+<script type="text/javascript">
+  function hide_modal48()
+  {
+    $('#gform-48').modal('hide');
+  }
+</script>
+<script>
+function modalClose48() {
+    if (location.hash == '#gform-48') {
+        location.hash = '';
+    }
+}
+
+document.addEventListener('keyup', function(e) {
+    if (e.keyCode == 27) {
+        modalClose48();
+    }
+});
+
+var modal = document.querySelector('#gform-48');
+modal.addEventListener('click', function(e) {
+    modalClose48();
+}, false);
+
+modal.children[0].addEventListener('click', function(e) {
+    e.stopPropagation();
+}, false);
+</script>
+<div class="call-to-action modal-window popup-form" id="gform-49">
+<div class="inside">
+<a class="modal-close" href="#formclose" title="Close"><i class="far fa-times"></i></a>
+<div class="modal-text">
+<div class="gf_browser_unknown gform_wrapper gform_wrapper_original_id_49 gravity-theme ctrack-wizard-form_wrapper" id="gform_wrapper_1701327016"><div class="gform_anchor" id="gf_1701327016" tabindex="-1"></div>
+<div class="gform_heading">
+<h2 class="gform_title">Wizard Form - Request a quote</h2>
+<span class="gform_description"></span>
+<p class="gform_required_legend">"<span class="gfield_required gfield_required_asterisk">*</span>" indicates required fields</p>
+</div><form action="/privacy/?Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Origin=%2A&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0#gf_1701327016" class="ctrack-wizard-form" enctype="multipart/form-data" id="gform_1701327016" method="post" target="gform_ajax_frame_1701327016">
+<div class="gf_progressbar_wrapper" id="gf_progressbar_wrapper_49">
+<p class="gf_progressbar_title">Step <span class="gf_step_current_page">1</span> of <span class="gf_step_page_count">7</span>
+</p>
+<div aria-hidden="true" class="gf_progressbar gf_progressbar_blue">
+<div class="gf_progressbar_percentage percentbar_blue percentbar_0" style="width:0%;"><span>0%</span></div>
+</div></div>
+<div class="gform_body gform-body"><div class="gform_page" id="gform_page_49_1">
+<div class="gform_page_fields"><div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_1701327016"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_2"><h3 class="gsection_title">Let's get started. What features are you interested in?</h3></div><fieldset class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below hidden_label gfield_visibility_visible" id="field_49_3"><legend class="gfield_label gfield_label_before_complex">Features<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></legend><div class="ginput_container ginput_container_checkbox"><div class="gfield_checkbox" id="input_1701327016_3"><div class="gchoice gchoice_49_3_1">
+<input class="gfield-choice-input" id="choice_1701327016_49_3_1" name="input_3.1" type="checkbox" value="GPS Fleet Tracking"/>
+<label for="choice_1701327016_49_3_1" id="label_1701327016_49_3_1">GPS Fleet Tracking</label>
+</div><div class="gchoice gchoice_49_3_2">
+<input class="gfield-choice-input" id="choice_1701327016_49_3_2" name="input_3.2" type="checkbox" value="Asset Management"/>
+<label for="choice_1701327016_49_3_2" id="label_1701327016_49_3_2">Asset Management</label>
+</div><div class="gchoice gchoice_49_3_3">
+<input class="gfield-choice-input" id="choice_1701327016_49_3_3" name="input_3.3" type="checkbox" value="Compliance (EWD, IAP, RUC)"/>
+<label for="choice_1701327016_49_3_3" id="label_1701327016_49_3_3">Compliance (EWD, IAP, RUC)</label>
+</div><div class="gchoice gchoice_49_3_4">
+<input class="gfield-choice-input" id="choice_1701327016_49_3_4" name="input_3.4" type="checkbox" value="Fuel Tax Management"/>
+<label for="choice_1701327016_49_3_4" id="label_1701327016_49_3_4">Fuel Tax Management</label>
+</div><div class="gchoice gchoice_49_3_5">
+<input class="gfield-choice-input" id="choice_1701327016_49_3_5" name="input_3.5" type="checkbox" value="Integrated Cameras"/>
+<label for="choice_1701327016_49_3_5" id="label_1701327016_49_3_5">Integrated Cameras</label>
+</div><div class="gchoice gchoice_49_3_6">
+<input class="gfield-choice-input" id="choice_1701327016_49_3_6" name="input_3.6" type="checkbox" value="Routing &amp; Scheduling"/>
+<label for="choice_1701327016_49_3_6" id="label_1701327016_49_3_6">Routing &amp; Scheduling</label>
+</div></div></div></fieldset></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_next_button button" id="gform_next_button_1701327016_1" onclick='jQuery("#gform_target_page_number_1701327016_49").val("2");  jQuery("#gform_1701327016").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1701327016_49").val("2");  jQuery("#gform_1701327016").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_49_2" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_49_2"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_4"><h3 class="gsection_title">How many vehicles in your fleet?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_5"><label class="gfield_label" for="input_1701327016_5">Enter fleet size<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_number"><input aria-describedby="gfield_instruction_49_5" aria-invalid="false" aria-required="true" class="large" id="input_1701327016_5" name="input_5" type="text" value=""/></div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1701327016_20" onclick='jQuery("#gform_target_page_number_1701327016_49").val("1");  jQuery("#gform_1701327016").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1701327016_49").val("1");  jQuery("#gform_1701327016").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1701327016_20" onclick='jQuery("#gform_target_page_number_1701327016_49").val("3");  jQuery("#gform_1701327016").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1701327016_49").val("3");  jQuery("#gform_1701327016").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_49_3" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_49_3"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_21"><h3 class="gsection_title">Where are you located?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_22"><label class="gfield_label" for="input_1701327016_22">Location<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_select"><select aria-invalid="false" aria-required="true" class="large gfield_select" id="input_1701327016_22" name="input_22"><option value="NSW">NSW</option><option value="VIC">VIC</option><option value="QLD">QLD</option><option value="NT">NT</option><option value="ACT">ACT</option><option value="TAS">TAS</option><option value="WA">WA</option><option value="SA">SA</option><option value="New Zealand">New Zealand</option></select></div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1701327016_6" onclick='jQuery("#gform_target_page_number_1701327016_49").val("2");  jQuery("#gform_1701327016").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1701327016_49").val("2");  jQuery("#gform_1701327016").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1701327016_6" onclick='jQuery("#gform_target_page_number_1701327016_49").val("4");  jQuery("#gform_1701327016").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1701327016_49").val("4");  jQuery("#gform_1701327016").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_49_4" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_49_4"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_7"><h3 class="gsection_title">What company do you work for?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_8"><label class="gfield_label" for="input_1701327016_8">Company name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="large" id="input_1701327016_8" name="input_8" type="text" value=""/> </div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1701327016_9" onclick='jQuery("#gform_target_page_number_1701327016_49").val("3");  jQuery("#gform_1701327016").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1701327016_49").val("3");  jQuery("#gform_1701327016").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1701327016_9" onclick='jQuery("#gform_target_page_number_1701327016_49").val("5");  jQuery("#gform_1701327016").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1701327016_49").val("5");  jQuery("#gform_1701327016").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_49_5" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_49_5"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_10"><h3 class="gsection_title">What is your name?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_11"><label class="gfield_label" for="input_1701327016_11">First name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="large" id="input_1701327016_11" name="input_11" type="text" value=""/> </div></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_12"><label class="gfield_label" for="input_1701327016_12">Last name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_text"><input aria-invalid="false" aria-required="true" class="large" id="input_1701327016_12" name="input_12" type="text" value=""/> </div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1701327016_13" onclick='jQuery("#gform_target_page_number_1701327016_49").val("4");  jQuery("#gform_1701327016").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1701327016_49").val("4");  jQuery("#gform_1701327016").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1701327016_13" onclick='jQuery("#gform_target_page_number_1701327016_49").val("6");  jQuery("#gform_1701327016").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1701327016_49").val("6");  jQuery("#gform_1701327016").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_49_6" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_49_6"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_14"><h3 class="gsection_title">Nearly there, where should we send your information?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_15"><label class="gfield_label" for="input_1701327016_15">Email address<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_email">
+<input aria-invalid="false" aria-required="true" class="large" id="input_1701327016_15" name="input_15" type="text" value=""/>
+</div></div></div>
+</div>
+<div class="gform_page_footer top_label">
+<input class="gform_previous_button button" id="gform_previous_button_1701327016_16" onclick='jQuery("#gform_target_page_number_1701327016_49").val("5");  jQuery("#gform_1701327016").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1701327016_49").val("5");  jQuery("#gform_1701327016").trigger("submit",[true]); } ' type="button" value="Back"/> <input class="gform_next_button button" id="gform_next_button_1701327016_16" onclick='jQuery("#gform_target_page_number_1701327016_49").val("7");  jQuery("#gform_1701327016").trigger("submit",[true]); ' onkeypress='if( event.keyCode == 13 ){ jQuery("#gform_target_page_number_1701327016_49").val("7");  jQuery("#gform_1701327016").trigger("submit",[true]); } ' type="button" value="Next"/>
+</div>
+</div>
+<div class="gform_page" id="gform_page_49_7" style="display:none;">
+<div class="gform_page_fields">
+<div class="gform_fields top_label form_sublabel_below description_below" id="gform_fields_49_7"><div class="gfield gsection field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_17"><h3 class="gsection_title">Last question, what's your phone number?</h3></div><div class="gfield gfield--width-full gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_18"><label class="gfield_label" for="input_1701327016_18">Phone number<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class="ginput_container ginput_container_phone"><input aria-invalid="false" aria-required="true" class="large" id="input_1701327016_18" name="input_18" type="text" value=""/></div></div><div class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_23"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_1701327016_23" name="input_23" type="hidden" value=""/></div></div><div class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_24"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_1701327016_24" name="input_24" type="hidden" value=""/></div></div><div class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_25"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_1701327016_25" name="input_25" type="hidden" value=""/></div></div><div class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" id="field_49_26"><div class="ginput_container ginput_container_text"><input aria-invalid="false" class="gform_hidden" id="input_1701327016_26" name="input_26" type="hidden" value="Request a quote"/></div></div></div></div>
+<div class="gform_page_footer top_label"><input class="gform_previous_button button" id="gform_previous_button_49" onclick='if(window["gf_submitting_1701327016"]){return false;}  window["gf_submitting_1701327016"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1701327016"]){return false;} window["gf_submitting_1701327016"]=true;  jQuery("#gform_1701327016").trigger("submit",[true]); }' type="submit" value="Back"/> <input class="gform_button button" id="gform_submit_button_1701327016" onclick='if(window["gf_submitting_1701327016"]){return false;}  window["gf_submitting_1701327016"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1701327016"]){return false;} window["gf_submitting_1701327016"]=true;  jQuery("#gform_1701327016").trigger("submit",[true]); }' type="submit" value="Submit"/> <input name="gform_ajax" type="hidden" value="form_id=49&amp;title=1&amp;description=1&amp;tabindex=1"/>
+<input class="gform_hidden" name="is_submit_49" type="hidden" value="1"/>
+<input class="gform_hidden" name="gform_submit" type="hidden" value="49"/>
+<input class="gform_hidden" name="gform_unique_id" type="hidden" value=""/>
+<input class="gform_hidden" name="state_49" type="hidden" value="WyJbXSIsIjg3OGMyMTAyYjBhMzMzNDI4NzU3MTk1MDRlMmFjMmU3Il0="/>
+<input class="gform_hidden" id="gform_target_page_number_1701327016_49" name="gform_target_page_number_49" type="hidden" value="2"/>
+<input class="gform_hidden" id="gform_source_page_number_1701327016_49" name="gform_source_page_number_49" type="hidden" value="1"/>
+<input name="gform_random_id" type="hidden" value="1701327016"/><input name="gform_field_values" type="hidden" value=""/>
+</div>
+</div></div>
+</form>
+</div>
+<iframe id="gform_ajax_frame_1701327016" name="gform_ajax_frame_1701327016" src="about:blank" style="display:none;width:0px;height:0px;" title="This iframe contains the logic required to handle Ajax powered Gravity Forms."></iframe>
+<script type="text/javascript">gform.initializeOnLoaded( function() {gformInitSpinner( 1701327016, '/wp-content/themes/ctrack/images/spinner.svg' );jQuery('#gform_ajax_frame_1701327016').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_1701327016');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1701327016').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_1701327016').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_1701327016').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_1701327016').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1701327016').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_1701327016_49').val();gformInitSpinner( 1701327016, '/wp-content/themes/ctrack/images/spinner.svg' );jQuery(document).trigger('gform_page_loaded', [1701327016, current_page]);window['gf_submitting_1701327016'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_1701327016').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_1701327016').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [1701327016]);window['gf_submitting_1701327016'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_1701327016').text());}, 50);}else{jQuery('#gform_1701327016').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [1701327016, current_page]);} );} );</script>
+</div>
+</div>
+<style>
+	#gform-49.modal-window > div.inside:before {
+		background-image: url(https://ctrack-anz.com/wp-content/uploads/2019/10/clicks.jpg);
+		}
+	</style>
+</div>
+<script type="text/javascript">
+  function hide_modal49()
+  {
+    $('#gform-49').modal('hide');
+  }
+</script>
+<script>
+function modalClose49() {
+    if (location.hash == '#gform-49') {
+        location.hash = '';
+    }
+}
+
+document.addEventListener('keyup', function(e) {
+    if (e.keyCode == 27) {
+        modalClose49();
+    }
+});
+
+var modal = document.querySelector('#gform-49');
+modal.addEventListener('click', function(e) {
+    modalClose49();
+}, false);
+
+modal.children[0].addEventListener('click', function(e) {
+    e.stopPropagation();
+}, false);
+</script>
+<div class="footers">
+<footer class="bg-black" id="main">
+<div class="inner">
+<div>
+<h4>Get in Touch</h4>
+<p><strong>Australia<br/>
+</strong>1300 304 033 or<br/>
++61 2 9429 3999</p>
+<p><strong>New Zealand</strong><br/>
+0800 899 000 or<br/>
++64 9336 1591</p>
+</div>
+<div>
+<h4>Quick Links</h4><ul class="menu" id="menu-quick-links"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3015" id="menu-item-3015"><a href="https://ctrack-anz.com/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-151" id="menu-item-151"><a href="https://ctrack-anz.com/solutions/">Solutions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1223" id="menu-item-1223"><a href="https://ctrack-anz.com/benefits/">Benefits</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1224" id="menu-item-1224"><a href="https://ctrack-anz.com/customers-results/">Customers &amp; Results</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1225" id="menu-item-1225"><a href="https://ctrack-anz.com/company/">Company</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-415" id="menu-item-415"><a href="https://ctrack-anz.com/company/news-media-centre/">News &amp; Media</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-155" id="menu-item-155"><a href="https://ctrack-anz.com/get-in-touch/">Get in touch</a></li>
+</ul> </div>
+<div>
+<h4>Solutions</h4><ul class="menu" id="menu-solutions"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-142" id="menu-item-142"><a href="https://ctrack-anz.com/solutions/vehicle-tracking/">Vehicle Tracking</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-143" id="menu-item-143"><a href="https://ctrack-anz.com/solutions/routing-scheduling/">Routing &amp; Scheduling</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-144" id="menu-item-144"><a href="https://ctrack-anz.com/solutions/smart-edriver/">Electronic Work Diary</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-145" id="menu-item-145"><a href="https://ctrack-anz.com/solutions/costs-management/">Costs Management</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146" id="menu-item-146"><a href="https://ctrack-anz.com/solutions/cameras/">Cameras</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147" id="menu-item-147"><a href="https://ctrack-anz.com/solutions/peripherals/">Peripherals</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1226" id="menu-item-1226"><a href="https://ctrack-anz.com/solutions/hardware/">Hardware</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1227" id="menu-item-1227"><a href="https://ctrack-anz.com/solutions/software/">Software</a></li>
+</ul> </div>
+<div class="legal">
+<div>
+<img alt="Ctrack by Inseego" class="lazyload" data-src="https://ctrack-anz.com/wp-content/themes/ctrack/images/ctrack-white.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/><noscript><img alt="Ctrack by Inseego" src="https://ctrack-anz.com/wp-content/themes/ctrack/images/ctrack-white.svg"/></noscript>
+</div>
+</div>
+</div>
+</footer>
+<footer id="colophon">
+<div class="inner">
+<span><p>© Copyright Ctrack. All rights reserved. Ctrack is an <a href="https://www.inseego.com" rel="noopener" target="_blank">Inseego</a> company. <button class="ot-sdk-show-settings" id="ot-sdk-btn">Manage cookies</button></p>
+</span>
+<span><p><a href="/terms/">Terms &amp; Conditions</a> – <a href="/privacy/">Privacy Policy</a></p>
+</span>
+</div>
+</footer>
+</div>
+<link href="https://ctrack-anz.com/wp-content/uploads/hummingbird-assets/de8df809e5b8179e0b0bba6d67d5fe97.css" id="wphb-1-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://ctrack-anz.com/wp-content/plugins/wp-featherlight/css/wp-featherlight.min.css?ver=1.3.4" id="wp-featherlight-css" media="all" rel="stylesheet" type="text/css"/>
+<script id="page-scroll-to-id-plugin-script-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var mPS2id_params = {"instances":{"mPS2id_instance_0":{"selector":"a.ps2id[href*='#']:not([href='#'])","autoSelectorMenuLinks":"false","excludeSelector":"a[href^='#tab-'], a[href^='#tabs-'], a[data-toggle]:not([data-toggle='tooltip']), a[data-slide], a[data-vc-tabs], a[data-vc-accordion]","scrollSpeed":800,"autoScrollSpeed":"true","scrollEasing":"easeInOutQuint","scrollingEasing":"easeOutQuint","forceScrollEasing":"false","pageEndSmoothScroll":"true","stopScrollOnUserAction":"false","autoCorrectScroll":"false","autoCorrectScrollExtend":"false","layout":"vertical","offset":"180","dummyOffset":"false","highlightSelector":"","clickedClass":"mPS2id-clicked","targetClass":"mPS2id-target","highlightClass":"mPS2id-highlight","forceSingleHighlight":"false","keepHighlightUntilNext":"false","highlightByNextTarget":"false","appendHash":"false","scrollToHash":"true","scrollToHashForAll":"true","scrollToHashDelay":0,"scrollToHashUseElementData":"true","scrollToHashRemoveUrlHash":"false","disablePluginBelow":0,"adminDisplayWidgetsId":"true","adminTinyMCEbuttons":"true","unbindUnrelatedClickEvents":"false","unbindUnrelatedClickEventsSelector":"","normalizeAnchorPointTargets":"false","encodeLinks":"false"}},"total_instances":"1","shortcode_class":"_ps2id"};
+/* ]]> */
+</script>
+<script id="page-scroll-to-id-plugin-script-js" src="https://ctrack-anz.com/wp-content/plugins/page-scroll-to-id/js/page-scroll-to-id.min.js?ver=1.7.5" type="text/javascript"></script>
+<script id="responsive-videos-js" src="https://ctrack-anz.com/wp-content/themes/ctrack/scripts/responsive-video.js?ver=1.0.0" type="text/javascript"></script>
+<script id="swiper-js" src="https://ctrack-anz.com/wp-content/themes/ctrack/scripts/swiper.min.js?ver=5.3.0" type="text/javascript"></script>
+<script id="wphb-2-js" src="https://ctrack-anz.com/wp-content/uploads/hummingbird-assets/d5664e5c5d09496e8a9efca8e2ca55a5.js" type="text/javascript"></script>
+<script id="wp-polyfill-js" src="https://ctrack-anz.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=7.4.4" type="text/javascript"></script>
+<script id="wp-polyfill-js-after" type="text/javascript">
+( 'fetch' in window ) || document.write( '<script src="https://ctrack-anz.com/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="https://ctrack-anz.com/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.DOMRect ) || document.write( '<script src="https://ctrack-anz.com/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="https://ctrack-anz.com/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="https://ctrack-anz.com/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="https://ctrack-anz.com/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>' );( 'objectFit' in document.documentElement.style ) || document.write( '<script src="https://ctrack-anz.com/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js?ver=2.3.4"></scr' + 'ipt>' );
+</script>
+<script id="wphb-3-js" src="https://ctrack-anz.com/wp-content/uploads/hummingbird-assets/681de9a480e4451061459acd56def8b2.js" type="text/javascript"></script>
+<script id="wphb-3-js-after" type="text/javascript">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script id="wp-a11y-js-translations" type="text/javascript">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", {"translation-revision-date":"2021-04-15 04:12:40+0000","generator":"GlotPress\/3.0.0-alpha.2","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"en_AU"},"Notifications":["Notifications"]}},"comment":{"reference":"wp-includes\/js\/dist\/a11y.js"}} );
+</script>
+<script id="wp-a11y-js" src="https://ctrack-anz.com/wp-includes/js/dist/a11y.min.js?ver=5e00de7a43b31bbb9eaf685f089a3903" type="text/javascript"></script>
+<script id="wphb-4-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mon","tuesday":"Tue","wednesday":"Wed","thursday":"Thu","friday":"Fri","saturday":"Sat","sunday":"Sun"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"}}};
+var gf_global = {"gf_currency_config":{"name":"Australian Dollar","symbol_left":"$","symbol_right":"","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2},"base_url":"https:\/\/ctrack-anz.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/ctrack-anz.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_legacy_multi = {"44":"1"};
+var gf_global = {"gf_currency_config":{"name":"Australian Dollar","symbol_left":"$","symbol_right":"","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2},"base_url":"https:\/\/ctrack-anz.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/ctrack-anz.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_legacy_multi = {"44":"1","40":"1"};
+var gf_global = {"gf_currency_config":{"name":"Australian Dollar","symbol_left":"$","symbol_right":"","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2},"base_url":"https:\/\/ctrack-anz.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/ctrack-anz.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_legacy_multi = {"44":"1","40":"1","43":"1"};
+var gf_global = {"gf_currency_config":{"name":"Australian Dollar","symbol_left":"$","symbol_right":"","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2},"base_url":"https:\/\/ctrack-anz.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/ctrack-anz.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_legacy_multi = {"44":"1","40":"1","43":"1","47":""};
+var gf_global = {"gf_currency_config":{"name":"Australian Dollar","symbol_left":"$","symbol_right":"","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2},"base_url":"https:\/\/ctrack-anz.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/ctrack-anz.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_legacy_multi = {"44":"1","40":"1","43":"1","47":"","48":""};
+var gf_global = {"gf_currency_config":{"name":"Australian Dollar","symbol_left":"$","symbol_right":"","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2},"base_url":"https:\/\/ctrack-anz.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/ctrack-anz.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_legacy_multi = {"44":"1","40":"1","43":"1","47":"","48":"","49":""};
+/* ]]> */
+</script>
+<script id="wphb-4-js" src="https://ctrack-anz.com/wp-content/uploads/hummingbird-assets/871d78f72797f0bed2c9b45880682f90.js" type="text/javascript"></script>
+<script type="text/javascript"> gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 44) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );</script><script type="text/javascript"> gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [44, 1]) } ); </script><script type="text/javascript"> gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 40) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );</script><script type="text/javascript"> gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [40, 1]) } ); </script><script type="text/javascript"> gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 43) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );</script><script type="text/javascript"> gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [43, 1]) } ); </script><script type="text/javascript"> gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 47) {} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );</script><script type="text/javascript"> gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [47, 1]) } ); </script><script type="text/javascript"> gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 48) {} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );</script><script type="text/javascript"> gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [48, 1]) } ); </script><script type="text/javascript"> gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 49) {} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );</script><script type="text/javascript"> gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [49, 1]) } ); </script>
+<script data-cfasync="false" type="text/javascript">
+  SiteData.lead.populateFormFields();
+</script>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'71e748729cb0ad92',m:'jCGwWVuFvgPK0dMysUzrEtKqrFxUw2K.DEBCQ3WBIFI-1655757243-0-AbJ4nj1ADHWRnTxEx3jnhkw7cM35+btyoejcbjmtavu6eXIFpH+HL6OE3DFgN1YRr8umRfdDBTqfvH06SCe1ngeCrL1/qbFKWF1Ab8orpX+/ItIjIrj38Uoj/mgsEOAagkDahl5Wf13mLNvirS0zRenPwh0axbNaHgLOAupnrYh360uLwS/jTQ+XSNkuxGdYhPxg42sQw0ywW3RP+QjdZfYhS7oGzxhPuwPkPfxBBgTJjm8D/1eSAvkgfpLB3k5RxqAVmXNkELUAoVLIeEV8yMdu/Jh3iRZ7OWRgg1jQSpYMs1KHsTBVLg9bLAnqtk5cWPjMbDxpmxFuT2kxrRF/8WfeltLi6T8iwEe23ZPkjeeBQ119Nd8mcYRFVgKGX8NGp04zCbSnyNKkj1Ki5cWuIYLa/v95ALYLLBY6xS9hflgky1kWuJy9/kFizDMAQpmSSA==',s:[0x05e09d56e5,0x4f130aee45],}})();</script><script crossorigin="anonymous" data-cf-beacon='{"rayId":"71e748729cb0ad92","token":"4f31714b971e402da0814fdebd6f4769","version":"2022.6.0","si":100}' defer="" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"></script>
+</body>
+</html>

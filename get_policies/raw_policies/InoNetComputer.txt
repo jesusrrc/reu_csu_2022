@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="/TDPortal/Content/Styles/font-awesome.min.css?v=20220611003758" id="lnkFontAwesome" rel="stylesheet" type="text/css"/><script src="/TDPortal/Content/Scripts/jquery/2.2.4/jquery.min.js?v=20220611003758"></script><script src="/TDPortal/Content/Scripts/jquery-migrate/1.4.1/jquery-migrate.min.js?v=20220611003758"></script><script src="/TDPortal/Content/Scripts/jquery-ui/1.12.1/jquery-ui-1.12.1.custom.timepicker.min.js?v=20220611003758"></script><link href="/TDPortal/Content/Styles/jquery-ui/1.12.1/jquery-ui.compiled.min.css?v=20220611003758" rel="stylesheet" type="text/css"/><link href="/TDPortal/Content/bootstrap/3.4.1/dist/css/bootstrap.min.css?v=20220611003758" id="lnkBootstrapCSS" rel="stylesheet" type="text/css"/><script src="/TDPortal/Content/bootstrap/3.4.1/dist/js/bootstrap.min.js?v=20220611003758"></script><link href="/TDClient/Styles/bootstrap_custom.min.css?v=20220611003756" rel="stylesheet" type="text/css"/><link href="/TDClient/Styles/TDStyles.min.css?v=20220611003756" rel="stylesheet" type="text/css"/><link href="https://newpaltz.teamdynamix.com/TDPortal/BE/Style/208/TDClient/1905?v=20210710023510" rel="stylesheet" type="text/css"/><script src="/TDPortal/Content/Scripts/tdx/TDJSFramework.compiled.min.js?v=20220611003758"></script><script src="/TDPortal/Content/Scripts/underscore/1.12.1/underscore-min.js?v=20220611003758"></script>
+<script src="/TDClient/Scripts/clientOS.min.js?v=20220611003756"></script>
+<script src="/TDClient/Scripts/collapseMe.min.js?v=20220611003756"></script>
+<script src="/TDClient/Scripts/tdsearchfilter.min.js?v=20220611003756"></script>
+<script src="/TDClient/Scripts/SiteSearch.min.js?v=20220611003756"></script>
+<script src="/TDPortal/Content/Scripts/tdx/elasticsearchAutocomplete/elasticsearchAutocomplete.min.js?v=20220611003758"></script>
+<link href="https://newpaltz.teamdynamix.com/TDPortal/BE/Icon/208/1905?v=20160928173919" id="ctl00_ctl00_lnkFavicon" rel="shortcut icon"/>
+<script async="" src="//www.googletagmanager.com/gtag/js?id=UA-614474-26"></script>
+<script>
+
+      $(function () {
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        // Be sure to set the proper cookie domain to the customer's full subdomain when sending the pageview hit.
+        gtag('config', 'UA-614474-26', { 'cookie_domain': 'newpaltz.teamdynamix.com' });
+
+        });
+
+    </script>
+<script>
+
+      $(function () {
+        var masterUi = MasterUI({
+          isPostback: false,
+        baseUrl: '/TDClient/',
+        isTdGoogleAnalyticsEnabled: true,
+        isAuthenticated: false
+        });
+
+      $('#collapseMe').collapseMe({
+        toggleVisibilitySelector: '.navbar-toggle'
+      });
+
+    });
+
+      // The sub-nav menu uses padding-top to position itself below the header bar and main navigation sections. When the
+      // window is resized, there is a chance that the content of these header or nav sections wraps, causing the height
+      // to change, potentially covering the sub-nav menu, which is obviously a big usability problem. This function
+      // listens for when the window size or orientation is changing (and also when the window first loads), and adjusts
+      // the padding so that the sub-nav menu appears in the correct location.
+      $(window).bind('load ready resize orientationchange', function () {
+        var headerHeight = $('#divMstrHeader').height();
+        $('#navShim').css({
+          "padding-top": headerHeight
+        });
+
+        $('#content').css({
+          "padding-top": headerHeight,
+          "margin-top": headerHeight * -1
+        });
+      });
+  </script>
+<script src="/TDPortal/Content/select2/v3/select2.min.js?v=20220611004822"></script><link href="/TDPortal/Content/select2/v3/select2.compiled.min.css?v=20220611004822" id="lnkSelect2" rel="stylesheet" type="text/css"/>
+<script src="/TDClient/Scripts/attachmentHandler.min.js?v=20220611003756"></script>
+<style type="text/css">
+    .honey-pot-div {
+      display: none;
+    }
+  </style>
+<script>
+
+    
+
+    function checkRecipients() {
+      if ($('#ctl00_ctl00_cpContent_cpContent_shareRecipients').val().trim() === "") {
+        alert('You must first enter a valid email.');
+        $('#divShareModal').modal('toggle');
+      }
+    }
+
+    function toggleFeedback(isHelpful) {
+      $('#divHelpfulComments').show();
+      $('#divHelpfulYesNo').hide();
+      $('#ctl00_ctl00_cpContent_cpContent_hdnIsHelpful').val(isHelpful);
+      $('#ctl00_ctl00_cpContent_cpContent_txtComments').focus();
+    }
+
+    function toggleFeedbackResult() {
+      $('#divWasHelpful, #divFeedbackRecorded, #divHelpfulComments, #divHelpfulYesNo').toggle();
+    }
+
+    // The following two functions were added as a result of ticket ID: 1392522. We are generating these buttons dynamically to
+    // prevent bots from clicking them and posting feedback on an article. Additionally, we have an input that is hidden from
+    // the user. If a bot enters text in that input, which it likely will (bots love filling out forms), then we don't accept the
+    // form submission
+    function generateFeedbackButtons() {
+      var $btnHelpfulYes = $('<button id="btnHelpfulYes" type="button" class="btn btn-primary gutter-left" onclick="toggleFeedback(1);">Yes</button>');
+      var $btnHelpfulNo = $('<button id="btnHelpfulNo" type="button" class="btn btn-primary gutter-left-sm" onclick="toggleFeedback(0);">No</button>');
+
+      $('#divWasHelpful').append($btnHelpfulYes);
+      $('#divWasHelpful').append($btnHelpfulNo);
+    }
+    function attemptAddFeedback(e) {
+      if ($('#honeyPot').val() !== '') {
+        e.preventDefault();
+        window.location.reload();
+      }
+    }
+
+    function cancelFeedback() {
+      $('#ctl00_ctl00_cpContent_cpContent_txtComments').val('');
+      $('#divHelpfulComments, #divHelpfulYesNo').toggle();
+    }
+
+    function confirmDeleteFeedback(id) {
+      if (confirm('Are you sure you want to delete this feedback? This cannot be undone.')) {
+        $('#ctl00_ctl00_cpContent_cpContent_hdnFeedbackID').val(id);
+        __doPostBack('ctl00$ctl00$cpContent$cpContent$btnDeleteFeedback', '');
+      }
+    }
+
+    function toggleAddressed(id, isAddressed) {
+      $('#ctl00_ctl00_cpContent_cpContent_hdnFeedbackID').val(id);
+      $('#ctl00_ctl00_cpContent_cpContent_hdnIsAddressed').val(isAddressed);
+      __doPostBack('ctl00$ctl00$cpContent$cpContent$btnToggleAddressed', '');
+    }
+
+    $(function () {
+      
+
+      generateFeedbackButtons();
+      $('[data-toggle="popover"]').popover();
+
+      var attachmentHandler = new TeamDynamix.AttachmentHandler({
+        containerSelector: '.js-article-attachments',
+        resultLabelSelector: '#ctl00_ctl00_cpContent_cpContent_lblResults_lblResults-label',
+        baseControllerUrl: '/TDClient/1905/Portal/Shared/Attachments',
+        antiForgeryToken: 'wOvO79QFWt8SBTu8bsjPwaLrOY3x3sBdzlXgIa_toMA4YsuDvC-GWBJKKOLCdE3csfC_iIg-e1QnX3SIUsBX0xIRP941:B7u-VO5BqfKSD3Qpxx3HcQj_gimRFHogboeanFEbl5ktnBrGoe4xwnYXFbnC_m4jZriK1DtYaMYsEvTtgqnGP7PuIXw1',
+        itemId: 20993,
+        componentId: 26
+      });
+
+      // Don't try and update the table styles if the user wanted to opt out.
+      $('#ctl00_ctl00_cpContent_cpContent_divBody table:not(.SkipTableFixup)').each(function () {
+        var padding = $(this).attr('cellpadding');
+        var spacing = $(this).attr('cellspacing');
+
+        $(this).css("border-collapse", "separate");
+
+        if (spacing) {
+          $(this).css("border-spacing", spacing + "px");
+        }
+
+        $(this).find('td').each(function () { $(this).css('padding', padding + 'px') });
+      });
+
+      
+    });
+
+    
+</script>
+<meta content="Acceptable Uses and Privacy Policy" property="og:title"/>
+<meta content="article" property="og:type"/>
+<meta content="https://newpaltz.teamdynamix.com/TDClient/1905/Portal/KB/ArticleDet?ID=20993" property="og:url"/>
+<meta content="https://newpaltz.teamdynamix.com/TDPortal/BE/Logo/208/1905" property="og:image"/>
+<meta content="SUNY New Paltz - Knowledge Base" property="og:site_name"/>
+<meta content="Policies" property="article:section"/>
+<meta content="2016-12-07T14:42Z" property="article:published_time"/>
+<meta content="2021-10-07T19:29Z" property="article:modified_time"/>
+<meta content="policy" property="article:tag"/><title>
+	Article - Acceptable Uses and Privacy...
+</title></head>
+<body>
+<form action="/TDClient/1905/Portal/KB/ArticleDet?ID=20993&amp;Access-Control-Allow-Origin=*&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+(X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0)+Gecko%2F20100101+Firefox%2F52.0" id="aspnetForm" method="post">
+<input id="__VIEWSTATE" name="__VIEWSTATE" type="hidden" value="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"/>
+<script src="/TDClient/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvmVxW3-Ljsg_2Hna32smxrg-6ogyYAN3UTPsJQ8m1uwzn_kuf2Wpne6NSFmYui3h0wCQhJN3ZUiLTNkvhiIgZpq74-lKmofUPQGJ8own8RI2_mwAcmvlSj2WBnqwm5Wj4cyNvv81&amp;t=49337fe8" type="text/javascript"></script>
+<script src="/TDClient/WebResource.axd?d=xtfVMqdF1exC2MBVkOJwMveStDR5kg3dbZWgIXMXZmB1xXom6CcIrWFgHa7jsp4qJuFW2L5XShudyzlBsIO3JhCfiU5HmL2BDz__mCv9dznmBlEMS7LvcYg6wTdPTrAXIXI2CvtjwlnpZd-j4Zpsx2wG_uA1&amp;t=637904905760000000" type="text/javascript"></script>
+<script src="/TDClient/WebResource.axd?d=sp7vCoAo-SSYfpsQ1sYBBeEDnwCGxDYEwZCM0ler88yoVZIPDXMk1C3XF2L2L0xrbB8Rvhli51TswRlmPIOCZgaY58lKhPr-Pv1jTFJ1oUAu7x6RDtNFZUxbtxs3KYQGLK6FpPD5bKuB0e0NmS9HkAqRVks1&amp;t=637904905760000000" type="text/javascript"></script>
+<script src="/TDClient/WebResource.axd?d=icMURy63hv40LPPfq4rTvmm-RfB_YkC6rEEF_2QOO68q3TseXYNBetRKKgBXJ8mn2e8UIgCPiV23HaQUZbjySMHqSgmYZgLcYltBqwD2_EK8aQ08zBuqc3ZBVZITQrbtn6w46dRxFLibMIQg0Aho73rn8Rpxrzg5YMG_JR0UOrUR0wlZ0&amp;t=637904905760000000" type="text/javascript"></script>
+<script src="/TDClient/WebResource.axd?d=1HpFfNpwNihNfEP1lyJHvdPVqbv8KRoFH4-_ZORUgPOP-bqmmtIJRvFQc7828Vf59O_-fdBXcnwdv-hYp5RptPuHmMR0kGQM0_3rS4Z7sKfC7jy9Cc_8fyfcUWa8psszacEQlAXHPXmNwyRymbGSywEmhrE1&amp;t=637904905760000000" type="text/javascript"></script>
+<input id="__VIEWSTATEGENERATOR" name="__VIEWSTATEGENERATOR" type="hidden" value="784CA02E"/>
+<div id="ctl00_ctl00_upMain" style="display:none;">
+<div id="ctl00_ctl00_pbMain" style="position: fixed; top: 50%; left: 0px; width: 100%; height: 1px; overflow: visible; z-index: 2000; display: block;"><div style="margin-left: -125px; position: fixed; top: 50%; left: 50%; width: 250px; height: 90px;"><div class="well shadow"><h2 class="h4 gutter-top-none">Updating...</h2><div class="progress" style="margin-bottom: 0;"><div aria-valuemax="100" aria-valuemin="0" class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%"></div></div></div></div></div>
+</div>
+<header role="banner">
+<div class="master-header NoPrint" id="divMstrHeader" style="background-color: #fff;">
+<div class="logo-header-full hidden-xs">
+<div class="pull-left">
+<a class="sr-only sr-only-focusable" href="#mainContent">Skip to main content</a>
+</div>
+<div class="container logo-header clearfix" id="ctl00_ctl00_divPageHeader" style="padding: 5px;">
+<div class="pull-left logo-container" id="divLogo">
+<a href="https://www.newpaltz.edu/" target="_blank">
+<img alt="SUNY New Paltz Home Page" class="js-logo img-responsive" src="/TDPortal/BE/Logo/208/1905"/>
+</a>
+</div>
+<div class="master-header-right pull-right padding-top padding-bottom">
+<div class="pull-left topLevelSearch input-group">
+<div class="gutter-bottom input-group site-search" id="SiteSearch-682636bdd6b54a90a2f8c98411df2772" style="max-width: 400px;">
+<div class="input-group-btn" id="SiteSearch-dropdown-682636bdd6b54a90a2f8c98411df2772">
+<button aria-expanded="false" aria-haspopup="true" class="btn btn-default dropdown-toggle" data-component="all" data-toggle="dropdown" id="SiteSearch-filter-682636bdd6b54a90a2f8c98411df2772" title="Filter your search by categories" type="button">
+<span class="fa fa-globe"></span><span aria-hidden="true" class="fa fa-fw fa-nopad fa-caret-down"></span>
+<span class="sr-only"> Filter your search by category. Current category:
+          <span class="js-current-component">All</span>
+</span>
+</button>
+<ul class="dropdown-menu">
+<li>
+<a data-component="all" data-component-icon="fa-globe" data-component-text="All" href="javascript:void(0);" title="Search all areas">
+<span aria-hidden="true" class="fa fa-fw fa-nopad fa-globe"></span>
+            All
+          </a>
+</li>
+<li class="divider" role="separator"></li>
+<li role="presentation">
+<a data-component="kb" data-component-icon="fa-lightbulb-o" data-component-text="Knowledge Base" href="javascript:void(0);" role="menuitem" title="Search Knowledge Base">
+<span aria-hidden="true" class="fa fa-fw fa-nopad fa-lightbulb-o"></span>
+              Knowledge Base
+            </a>
+</li>
+<li role="presentation">
+<a data-component="sc" data-component-icon="fa-compass" data-component-text="Service Catalog" href="javascript:void(0);" role="menuitem" title="Search Service Catalog">
+<span aria-hidden="true" class="fa fa-fw fa-nopad fa-compass"></span>
+              Service Catalog
+            </a>
+</li>
+</ul>
+</div>
+<input aria-label="Search the client portal" autocomplete="off" class="form-control" id="SiteSearch-text-682636bdd6b54a90a2f8c98411df2772" placeholder="Search the client portal" title="To search for items with a specific tag, enter the # symbol followed by the name of the tag.
+To search for items using exact match, place double quotes around your text." type="text"/>
+<span class="input-group-btn">
+<button class="btn btn-default" id="SiteSearch-button-682636bdd6b54a90a2f8c98411df2772" title="Search" type="button">
+<span aria-hidden="true" class="fa fa-fw fa-nopad fa-search blue"></span>
+<span class="sr-only">Search</span>
+</button>
+</span>
+</div>
+<script>
+  $(function() {
+    var siteSearch = new TeamDynamix.SiteSearch({
+      searchUrl: "/TDClient/1905/Portal/Shared/Search",
+      enableAutocompleteSearch: true,
+      autocompleteSearchUrl: '/TDClient/1905/Portal/Shared/AutocompleteSearch',
+      autocompleteResultsPosition: 'fixed',
+      autocompleteResultsZIndex: 1000,
+      searchTextBoxSelector: '#SiteSearch-text-682636bdd6b54a90a2f8c98411df2772',
+      searchComponentFilterButtonSelector: '#SiteSearch-filter-682636bdd6b54a90a2f8c98411df2772',
+      searchButtonSelector: '#SiteSearch-button-682636bdd6b54a90a2f8c98411df2772',
+      searchFilterDropdownSelector: '#SiteSearch-dropdown-682636bdd6b54a90a2f8c98411df2772',
+      showKnowledgeBaseOption: true,
+      showServicesOption: true,
+      showForumsOption: false,
+      autoFocusSearch: false
+    });
+  });
+  </script>
+</div>
+<div class="pull-right gutter-top-sm" title="Sign In">
+<a href="/TDClient/1905/Portal/Login.aspx?ReturnUrl=%2fTDClient%2f1905%2fPortal%2fKB%2fArticleDet%3fID%3d20993%26Access-Control-Allow-Origin%3d*%26Access-Control-Allow-Methods%3dGET%26Access-Control-Allow-Headers%3dContent-Type%26Access-Control-Max-Age%3d3600%26User-Agent%3dMozilla%252F5.0%2b(X11%253B%2bUbuntu%253B%2bLinux%2bx86_64%253B%2brv%253A52.0)%2bGecko%252F20100101%2bFirefox%252F52.0">Sign In
+                </a>
+</div>
+</div>
+</div>
+</div>
+<nav aria-label="Primary" class="navbar navbar-default themed tdbar" id="ctl00_ctl00_mainNav">
+<div class="container" id="navContainer">
+<div class="navbar-header">
+<button class="pull-left navbar-toggle collapsed themed tdbar-button-anchored tdbar-toggle gutter-left" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+<span class="tdbar-button-anchored icon-bar"></span>
+<span class="tdbar-button-anchored icon-bar"></span>
+<span class="tdbar-button-anchored icon-bar"></span>
+<span class="sr-only">Show Applications Menu</span>
+</button>
+<a class="navbar-brand hidden-sm hidden-md hidden-lg themed tdbar-button-anchored truncate-be" href="#">
+
+                Client Portal
+              </a>
+</div>
+<div class="collapse navbar-collapse" id="td-navbar-collapse">
+<ul class="nav navbar-nav nav-collapsing" id="collapseMe">
+<li class="themed tdbar-button-anchored hidden-sm hidden-md hidden-lg">
+<a href="/TDClient/1905/Portal/Login.aspx?ReturnUrl=%2fTDClient%2f1905%2fPortal%2fKB%2fArticleDet%3fID%3d20993%26Access-Control-Allow-Origin%3d*%26Access-Control-Allow-Methods%3dGET%26Access-Control-Allow-Headers%3dContent-Type%26Access-Control-Max-Age%3d3600%26User-Agent%3dMozilla%252F5.0%2b(X11%253B%2bUbuntu%253B%2bLinux%2bx86_64%253B%2brv%253A52.0)%2bGecko%252F20100101%2bFirefox%252F52.0">Sign In</a>
+</li>
+<li class="themed tdbar-button-anchored hidden-sm hidden-md hidden-lg" id="divSearch">
+<a href="/TDClient/1905/Portal/Shared/Search" title="search">Search</a>
+</li>
+<li class="themed tdbar-button-anchored" id="divDesktop364d4bab-ccea-420a-81f3-7d1f28917c07">
+<a href="/TDClient/1905/Portal/Home/">Home</a>
+</li>
+<li class="themed tdbar-button-anchored" id="divDesktopb5eba506-2f2f-4dc5-8550-df382ff3042a">
+<a href="/TDClient/1905/Portal/Home/?ID=b5eba506-2f2f-4dc5-8550-df382ff3042a">Classroom/Labs</a>
+</li>
+<li class="themed tdbar-button-anchored sr-focusable" id="divTDRequests">
+<a href="/TDClient/1905/Portal/Requests/ServiceCatalog">Services</a>
+</li>
+<li class="themed tdbar-button-anchored sr-focusable" id="divTDKnowledgeBase">
+<a href="/TDClient/1905/Portal/KB/">Knowledge Base</a>
+</li>
+<li class="themed tdbar-button-anchored hidden-xs more-items-button" id="moreMenu">
+<a data-toggle="dropdown" href="javascript:;" title="More Applications">
+<span class="sr-only">More Applications</span>
+<span aria-hidden="true" class="fa fa-ellipsis-h"></span>
+</a>
+<ul class="dropdown-menu dropdown-menu-right themed tdbar" id="collapsed"></ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<div class="hidden-xs hidden-sm" id="navShim"></div>
+<main role="main">
+<div id="content">
+<div id="mainContent" tabindex="-1"></div>
+<nav aria-label="Knowledge Base" class="tdbar-sub NoPrint hidden-xs navbar-subnav" id="divTabHeader">
+<a class="sr-only sr-only-focusable" href="#kbContent">Skip to Knowledge Base content</a>
+<div class="container clearfix">
+<ul class="nav navbar-nav js-submenu" id="kbSubMenu" style="margin-left: -15px;">
+<li>
+<a href="/TDClient/1905/Portal/KB/Search">Search <span class="sr-only">Articles</span></a>
+</li>
+</ul>
+</div>
+</nav>
+<div class="container gutter-top gutter-bottom" id="kbContent" style="outline:none;" tabindex="-1">
+<input id="ctl00_ctl00_cpContent_cpContent_hdnFeedbackID" name="ctl00$ctl00$cpContent$cpContent$hdnFeedbackID" type="hidden"/>
+<input id="ctl00_ctl00_cpContent_cpContent_hdnIsAddressed" name="ctl00$ctl00$cpContent$cpContent$hdnIsAddressed" type="hidden"/>
+<span aria-atomic="true" aria-live="polite" id="ctl00_ctl00_cpContent_cpContent_lblResults_ctl00"><span class="red" id="ctl00_ctl00_cpContent_cpContent_lblResults_lblResults-label"></span></span>
+<div class="clearfix">
+<ol class="breadcrumb pull-left">
+<li><a href="/TDClient/1905/Portal/KB/">Knowledge Base</a></li><li class="active"><a href="/TDClient/1905/Portal/KB/?CategoryID=4271">Policies</a></li><li class="active">Acceptable Uses and Privacy Policy</li>
+</ol>
+<span class="js-open-monitor" style="display: none;"></span>
+</div>
+<div class="row gutter-top">
+<div class="col-md-8" id="divMainContent">
+<h1 class="gutter-top" style="-ms-word-wrap: break-word; word-wrap: break-word;">
+        Acceptable Uses and Privacy Policy
+      </h1>
+<div id="ctl00_ctl00_cpContent_cpContent_divTags">
+<span class="sr-only">Tags</span>
+<span aria-hidden="true" class="fa fa-tags gray gutter-right-sm" title="Tags"></span>
+<a href="/TDClient/1905/Portal/KB/Search?SearchText=%2523policy" id="ctl00_ctl00_cpContent_cpContent_rptTags_ctl00_TagControl1_lnkDisplay" title="policy">policy</a>
+</div>
+<div class="gutter-top break-word ckeShim clearfix" id="ctl00_ctl00_cpContent_cpContent_divBody"><h2><strong>Computer and Network Policies</strong></h2>
+<p>The Information Technology resources, including but not limited to, physical devices, data and informational systems owned and operated by SUNY New Paltz, SUNY New Paltz Foundation, or the Research Foundation used at SUNY New Paltz must be used in a manner that is consistent with the College educational purposes and environment. All users of these resources are expected to act in a spirit of mutual respect and cooperation and to adhere to the policies set forth in this and associated documents.</p>
+<p>Use of the Information Technology resources requires that you have a valid user account. You are responsible for the safeguarding of your computer account. Your account and network connection are for your individual use. A computer account is to be used only by the person to whom it has been issued. You are responsible for all actions originating through your account or network connection. You must not misrepresent or conceal your identity in electronic messages and actions.</p>
+<h2><strong>Acceptable Uses</strong></h2>
+<p>The campus computing facilities and network resources are provided for instructional, administrative, and research purposes. All registered students, faculty and staff as well as officially recognized organizations and affiliated individuals are allowed use of these facilities appropriate to their role at the institution. Computing facilities and services are primarily provided for academic and support purposes and should never be used for commercial purposes.</p>
+<h3><strong>The following activities are prohibited:</strong></h3>
+<ul>
+<li>Using College computers and network services to harass or threaten other computer users, or to publicly display offensive or obscene messages</li>
+<li>Impersonating another user via electronic means</li>
+<li>Unauthorized access to any computer or network based resource including but not limited to the reading, copying, manipulation or deletion of another user’s files and data</li>
+<li>Making unauthorized duplicates of software, music, or other copyrighted material; running file sharing software which allows others access to copyrighted materials. For more information please see our Digital Millennium Copyright Act policy.</li>
+<li>Introducing or utilizing any form of malicious software (including viruses, worms, spyware, keyloggers)</li>
+<li>Interfering with the operation of SUNY New Paltz Information Technology facilities by deliberately or inadvertently degrading or disrupting system performance, security, or administrative operations</li>
+<li>Using SUNY New Paltz Information Technology resources for commercial or profit making enterprises, except for those activities officially sanctioned by the College.</li>
+<li>Any mass electronic communications in support of political campaigning, advocacy, or endorsements (such as for national, state, local, or union offices or legislative changes)</li>
+<li>Writing personal communications in a manner that could reasonably be interpreted as coming from an official of the state or SUNY New Paltz.</li>
+</ul>
+<p>We reserve the right to remove or block any computer/device or to demand the removal of a network service from a computer/device that causes an inordinate strain on network or server resources, whether intentional or unintentional. This includes, but is not limited to spreading spam or viruses, causing or participating in denial of service attacks, and any other activities which consume an excessive amount of bandwidth a user may be held accountable for the activities of their computer/device, as well as any activities performed under their computer user id. It is the responsibility of the user to ensure that their computer is “patched” for security vulnerabilities and that it is free of viruses, to this end, resources and assistance may be available through the Service Desk.</p>
+<h3><br/>
+Backups</h3>
+<p>SUNY New Paltz backs up data on our systems that is critical to the College’s operations and also provides network storage locations for users to store files to be backed up. Additional steps may be taken by users to back up their individual files as computers themselves are not backed up. Backing up individual files to USB or external hard drives is permissible as long as they do not violate the <a href="https://newpaltz.teamdynamix.com/TDClient/KB/ArticleDet?ID=20997">Confidential Information Policy</a>. Any full disk backup will be required to be encrypted as well as password protected. The College will make a best effort in recovering user files from failed media however the College is not responsible for the loss of user’s files or data. Non-work related files (family photos, personal music collections, etc) are not governed by the best effort policy as they are extraneous to the mission of the College. For more information on accessing network locations for storage and/or proper backup procedure, please contact the Service Desk.</p>
+<h3>Privacy</h3>
+<p><strong>You must not share your password with others (including your supervisors or employees who you supervise)</strong>. You are responsible for all activity associated with this account. All of our users are expected to respect the privacy of others. Any attempt to gain access to private information or passwords (via technological or social means) is prohibited. Any form of “identity theft” or the compromising of another individuals personal information is strictly prohibited.</p>
+<p><br/>
+All users should be aware that there is no guarantee of privacy when using our facilities. Unencrypted network traffic might be intercepted, e-mails may be spoofed, etc. In addition, the College reserves the right to monitor its network and servers in order to investigate performance or system problems. This includes, but is not limited to, locating viruses or other harmful programs, gathering performance or usage statistics, verifying that both College and student owned computers and devices are following the policies set forth by the College.</p>
+<p>While the College does not routinely monitor individual usage of its computing resources, the normal operation and maintenance of the College computing resources require the backup and caching of data and communications, the logging of activity, the monitoring of general usage patterns and other such activities that are necessary for the rendition of service. Monitoring or review of your data or network activity may be granted by the College President or their designee in the case of imminent risk to health and safety or as a result of a lawful order. Furthermore, the President or designee can also grant access to such information for purposes of investigating suspected inappropriate activity by an employee. </p>
+<p>Access to student records information is governed by the Family and Educational Rights and Privacy Act (FERPA).  </p>
+<p>In addition, the College is required under the federal law known as the “Digital Millennium Copyright Act” to respond to complaints from copyright holders about unauthorized distribution or use of copyrighted materials. Copyright violations committed by users may result in disciplinary sanctions against the user as required by law and local policy. We do not monitor traffic, but in order to comply with this law we do log connections to the network. For more information see our <a href="https://newpaltz.teamdynamix.com/TDClient/KB/ArticleDet?ID=23103" target="_blank">DMCA policy</a>.</p>
+<h3><strong>Range of Disciplinary Sanctions</strong></h3>
+<p>Persons in violation of this policy are subject to a full range of sanctions, including, but not limited to, the loss of computer or network access privileges, disciplinary action, and separation/expulsion from SUNY New Paltz. Some violations may constitute criminal offenses, as defined by local, state, and federal laws. In these cases, the College will cooperate with law enforcement authorities.</p></div>
+<div class="well gutter-top-lg" id="divFeedback2">
+<div class="row" id="divHelpfulYesNo">
+<div class="col-sm-7">
+<div>
+<a href="/TDClient/1905/Portal/Login.aspx?ReturnUrl=%2fTDClient%2f1905%2fPortal%2fKB%2fArticleDet%3fID%3d20993%26Access-Control-Allow-Origin%3d*%26Access-Control-Allow-Methods%3dGET%26Access-Control-Allow-Headers%3dContent-Type%26Access-Control-Max-Age%3d3600%26User-Agent%3dMozilla%252F5.0%2b(X11%253B%2bUbuntu%253B%2bLinux%2bx86_64%253B%2brv%253A52.0)%2bGecko%252F20100101%2bFirefox%252F52.0">Sign in to leave feedback</a>
+</div>
+</div>
+<div class="col-sm-5 text-right">
+<div aria-atomic="true" aria-live="polite" id="ctl00_ctl00_cpContent_cpContent_UpdatePanel1">
+	
+                0 reviews
+              
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content gutter-top gutter-bottom">
+<div id="ctl00_ctl00_cpContent_cpContent_upFeedbackGrid">
+<a aria-hidden="true" class="hidden" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ctl00$cpContent$cpContent$btnToggleAddressed", "", true, "", "", false, true))' id="ctl00_ctl00_cpContent_cpContent_btnToggleAddressed" tabindex="-1">Blank</a>
+<a aria-hidden="true" class="hidden" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ctl00$cpContent$cpContent$btnDeleteFeedback", "", true, "", "", false, true))' id="ctl00_ctl00_cpContent_cpContent_btnDeleteFeedback" tabindex="-1">Blank</a>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<a aria-hidden="true" class="hidden" href='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$ctl00$cpContent$cpContent$btnToggleFavorite", "", true, "", "", false, true))' id="ctl00_ctl00_cpContent_cpContent_btnToggleFavorite" tabindex="-1">Blank</a>
+<div class="panel panel-default gutter-top" id="divDetails">
+<div class="panel-heading">
+<h3 class="panel-title">Details</h3>
+</div>
+<div class="panel-body">
+<div id="ArticleID">
+<span class="control-label gutter-bottom-xs">Article ID: </span>
+            20993
+          </div>
+<div class="disp-group" id="divAuthor">
+<span class="control-label gutter-bottom-xs">Created
+            </span>
+<div>
+<span id="ctl00_ctl00_cpContent_cpContent_udtCreatedDate">Wed 12/7/16 9:42 AM</span><span id="ctl00_ctl00_cpContent_cpContent_lblCreatedBy"></span>
+</div>
+</div>
+<div class="disp-group" id="ctl00_ctl00_cpContent_cpContent_divModified">
+<span class="control-label gutter-bottom-xs">Modified
+            </span>
+<div>
+<span id="ctl00_ctl00_cpContent_cpContent_udtModifiedDate">Thu 10/7/21 3:29 PM</span><span id="ctl00_ctl00_cpContent_cpContent_lblModifiedBy"></span>
+</div>
+</div>
+<div class="js-custom-attributes-container">
+</div>
+</div>
+</div>
+<div class="panel panel-default" id="ctl00_ctl00_cpContent_cpContent_divKB">
+<div class="panel-heading">
+<h3 class="panel-title">Related Articles (3)</h3>
+</div>
+<div class="panel-body">
+<div class="gutter-top-sm gutter-bottom-lg" id="ctl00_ctl00_cpContent_cpContent_rptArticles_ctl00_ctlArticle_divContainer">
+<div class="clearfix">
+<div class="pull-left font-md">
+<a href="https://newpaltz.teamdynamix.com/TDClient/1905/Portal/KB/ArticleDet?ID=20997" target="_blank">Confidential Information Policy</a>
+</div>
+<div class="pull-right">
+</div>
+</div>
+</div>
+<div class="gutter-top-sm gutter-bottom-lg" id="ctl00_ctl00_cpContent_cpContent_rptArticles_ctl01_ctlArticle_divContainer">
+<div class="clearfix">
+<div class="pull-left font-md">
+<a href="https://newpaltz.teamdynamix.com/TDClient/1905/Portal/KB/ArticleDet?ID=21007" target="_blank">Faculty and Staff Email Policy</a>
+</div>
+<div class="pull-right">
+</div>
+</div>
+</div>
+<div class="gutter-top-sm gutter-bottom-lg" id="ctl00_ctl00_cpContent_cpContent_rptArticles_ctl02_ctlArticle_divContainer">
+<div class="clearfix">
+<div class="pull-left font-md">
+<a href="https://newpaltz.teamdynamix.com/TDClient/1905/Portal/KB/ArticleDet?ID=20998" target="_blank">Information Security Policy</a>
+</div>
+<div class="pull-right">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="js-article-attachments" id="divAttachments"></div>
+</div>
+</div>
+<div id="ctl00_ctl00_cpContent_cpContent_divProgress" style="display: none; z-index: 60;">
+<div id="ctl00_ctl00_cpContent_cpContent_pbMain" style="position: fixed; top: 50%; left: 0px; width: 100%; height: 1px; overflow: visible; z-index: 2000; display: block;"><div style="margin-left: -125px; position: fixed; top: 50%; left: 50%; width: 250px; height: 90px;"><div class="well shadow"><h2 class="h4 gutter-top-none">Deleting...</h2><div class="progress" style="margin-bottom: 0;"><div aria-valuemax="100" aria-valuemin="0" class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%"></div></div></div></div></div>
+</div>
+<div aria-labelledby="myModalLabel" class="modal fade" id="divShareModal" role="dialog" tabindex="-1">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">×</span></button>
+<h4 class="modal-title" id="myModalLabel">
+<span aria-hidden="true" class="fa fa-share-alt fa-fw"></span>Share
+          </h4>
+</div>
+<div class="modal-body">
+<div class="form-group required">
+<label class="control-label" for="ctl00_ctl00_cpContent_cpContent_shareRecipients">Recipient(s) <small>- separate email addresses with a comma</small></label>
+<input class="form-control" id="ctl00_ctl00_cpContent_cpContent_shareRecipients" name="ctl00$ctl00$cpContent$cpContent$shareRecipients" type="text"/>
+</div>
+<div class="form-group">
+<label class="control-label" for="ctl00_ctl00_cpContent_cpContent_shareBody">Message</label>
+<script type="text/javascript">
+
+  (function () {
+
+    window.addEventListener('CKEDITOR-config-loaded', function () {
+
+      if (window.CKEDITOR) {
+
+        setCKEditorConfigs();
+
+        // The "CKEDITOR-config-loaded" event is thrown after the CKEDITOR global variable has been created, but before the instance of CKEditor is ready.
+        // At this point attach a listener to the global variable for the instanceReady event so we can attach our nanospell scripts.
+        // Then manually call the startNanospell function on the instance to attach our css file after the plugin.js script has been attached. 
+        initialize();
+
+      }
+                       
+    });
+
+  })();
+
+  function setCKEditorConfigs() {
+
+    window.CKEDITOR.config['clientScripts'] = [{"scriptPath":["/TDPortal/Content/bootstrap/3.4.1/dist/js/bootstrap.min.js","https://newpaltz.teamdynamix.com/TDPortal/Content/Scripts/tdx/TDJSFramework.compiled.min.js"],"scriptDependencyPath":"/TDPortal/Content/Scripts/jquery/2.2.4/jquery.min.js"}];
+
+    window.CKEDITOR.config['clientStyles'] = ["/TDPortal/Content/bootstrap/3.4.1/dist/css/bootstrap.min.css","/TDClient/Styles/bootstrap_custom.min.css","/TDClient/Styles/TDStyles.min.css","https://newpaltz.teamdynamix.com/TDPortal/BE/Style/208/TDClient/1905"];
+
+    window.CKEDITOR.config['itemTemplates'] = '';
+
+  }
+
+  function initialize() {
+
+    window.CKEDITOR.on('instanceReady', function (evt) {
+
+      if (evt.editor.element.$.id == 'ctl00_ctl00_cpContent_cpContent_shareBody_txtBody') {
+
+        nanospell.ckeditor('ctl00_ctl00_cpContent_cpContent_shareBody_txtBody', {
+          dictionary: 'en',
+          server: 'asp.net'
+        });
+
+        setTimeout(function () { evt.editor.startNanospell(); }, 200);
+
+        // Check if we should mark the editor as required
+        if ($(evt.editor.element.$).parents('div.required').length > 0) {
+          evt.editor.editable().setAttribute('aria-required', 'true');
+        }
+      }
+
+    });
+  }
+
+</script>
+<span class="sr-only">Press Alt + 0 within the editor to access accessibility instructions, or press Alt + F10 to access the menu.</span>
+<textarea cols="20" id="ctl00_ctl00_cpContent_cpContent_shareBody_txtBody" name="ctl00$ctl00$cpContent$cpContent$shareBody$txtBody" rows="2">
+Check out this article I found in the Client Portal knowledge base.&lt;br /&gt;&lt;br /&gt;&lt;a href="https://newpaltz.teamdynamix.com/TDClient/1905/Portal/KB/ArticleDet?ID=20993"&gt;https://newpaltz.teamdynamix.com/TDClient/1905/Portal/KB/ArticleDet?ID=20993&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;Acceptable Uses and Privacy Policy</textarea>
+<script src="/TDPortal/Content/nanospell/autoload.js?v=20220611003758"></script>
+</div>
+</div>
+<div class="modal-footer text-left">
+<button class="btn btn-primary" id="ctl00_ctl00_cpContent_cpContent_btnSendShare" onclick="checkRecipients(); if (typeof(Page_ClientValidate) == 'function') Page_ClientValidate(''); __doPostBack('ctl00$ctl00$cpContent$cpContent$btnSendShare','')" type="button">
+<span aria-hidden="true" class="fa fa-paper-plane-o"></span><span class="padding-left-xs">Send</span>
+</button>
+<button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script type="text/javascript">
+//<![CDATA[
+setNavPosition('TDKnowledgeBase');window.CKEDITOR_BASEPATH = 'https://newpaltz.teamdynamix.com/TDPortal/Content/ckeditor/';
+//]]>
+</script>
+<script src="https://newpaltz.teamdynamix.com/TDPortal/Content/ckeditor/ckeditor.js?t=C6HH5UF" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+var CKEditor_Controls=[],CKEditor_Init=[];function CKEditor_TextBoxEncode(d,e){var f;if(typeof CKEDITOR=='undefined'||typeof CKEDITOR.instances[d]=='undefined'){f=document.getElementById(d);if(f)f.value=f.value.replace(/</g,'&lt;').replace(/>/g,'&gt;');}else{var g=CKEDITOR.instances[d];if(e&&(typeof Page_BlockSubmit=='undefined'||!Page_BlockSubmit)){g.destroy();f=document.getElementById(d);if(f)f.style.visibility='hidden';}else g.updateElement();}};(function(){if(typeof CKEDITOR!='undefined'){var d=document.getElementById('ctl00_ctl00_cpContent_cpContent_shareBody_txtBody');if(d)d.style.visibility='hidden';}var e=function(){var f=CKEditor_Controls,g=CKEditor_Init,h=window.pageLoad,i=function(){for(var j=f.length;j--;){var k=document.getElementById(f[j]);if(k&&k.value&&(k.value.indexOf('<')==-1||k.value.indexOf('>')==-1))k.value=k.value.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');}if(typeof CKEDITOR!='undefined')for(var j=0;j<g.length;j++)g[j].call(this);};window.pageLoad=function(j,k){if(k.get_isPartialLoad())setTimeout(i,0);if(h&&typeof h=='function')h.call(this,j,k);};if(typeof Page_ClientValidate=='function'&&typeof CKEDITOR!='undefined')Page_ClientValidate=CKEDITOR.tools.override(Page_ClientValidate,function(j){return function(){for(var k in CKEDITOR.instances){if(document.getElementById(k))CKEDITOR.instances[k].updateElement();}return j.apply(this,arguments);};});setTimeout(i,0);};if(typeof Sys!='undefined'&&typeof Sys.Application!='undefined')Sys.Application.add_load(e);if(window.addEventListener)window.addEventListener('load',e,false);else if(window.attachEvent)window.attachEvent('onload',e);})();CKEditor_Controls.push('ctl00_ctl00_cpContent_cpContent_shareBody_txtBody');
+CKEditor_Init.push(function(){if(typeof CKEDITOR.instances['ctl00_ctl00_cpContent_cpContent_shareBody_txtBody']!='undefined' || !document.getElementById('ctl00_ctl00_cpContent_cpContent_shareBody_txtBody')) return;CKEDITOR.replace('ctl00_ctl00_cpContent_cpContent_shareBody_txtBody',{"contentsCss" : ['https://newpaltz.teamdynamix.com/TDPortal/Content/ckeditor/contents.css', '/TDPortal/Content/Styles/font-awesome.min.css'], "height" : "175", "htmlEncodeOutput" : true, "image_previewText" : " ", "removePlugins" : "elementspath,fontawesome,youtube", "toolbar" : "TDSimple"}); });
+//]]>
+</script>
+</form>
+<footer role="contentinfo">
+<div class="master-footer">
+<script src="https://ai.ocelotbot.com/embed/standard/8f061dbf-9515-412c-92a2-771f25345ea6?campus_id=5060&amp;office_id=5059" type="text/javascript"></script>
+</div>
+</footer>
+<script>
+
+    
+    
+
+      // Inject the Google Analytics isogram. This must happen here because it
+      // cannot be injected through an external javascript library.
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    
+
+      // Per Incident #6707155. Need to focus on img. pseudo-class :focus-within is not supported in IE
+      (function ($) {
+        var $anchor = $('#divLogo a');
+        var $beLogo = $('#divLogo a img');
+
+        $anchor.focus(function () {
+          $beLogo.addClass('accessibility-focus-on-logo');
+        })
+          .blur(function () {
+            $beLogo.removeClass('accessibility-focus-on-logo');
+          })
+      })(jQuery);
+
+  </script>
+</body>
+</html>

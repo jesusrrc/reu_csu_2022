@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="ie=edge" http-equiv="x-ua-compatible"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"9190ea8d4e",applicationID:"163786345"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+<!-- This site is optimized with the Yoast SEO plugin v19.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Privacy Policy | Tempo</title>
+<meta content="Read the Tempo Automation Privacy Policy. Last Updated: Oct 2, 2021." name="description">
+<link href="https://www.tempoautomation.com/privacy-policy/" rel="canonical"/>
+<meta content="en_US" property="og:locale">
+<meta content="article" property="og:type"/>
+<meta content="Privacy Policy | Tempo" property="og:title"/>
+<meta content="Read the Tempo Automation Privacy Policy. Last Updated: Oct 2, 2021." property="og:description"/>
+<meta content="https://www.tempoautomation.com/privacy-policy/" property="og:url"/>
+<meta content="Tempo" property="og:site_name"/>
+<meta content="https://www.facebook.com/tempo.automation" property="article:publisher"/>
+<meta content="2021-10-02T00:03:32+00:00" property="article:modified_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@TempoAutomation" name="twitter:site"/>
+<meta content="Est. reading time" name="twitter:label1"/>
+<meta content="1 minute" name="twitter:data1"/>
+<!-- / Yoast SEO plugin. -->
+<link href="//ajax.googleapis.com" rel="dns-prefetch"/>
+<link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/>
+<link href="//player.vimeo.com" rel="dns-prefetch"/>
+<link href="//www.tempoautomation.com" rel="dns-prefetch"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="//s.w.org" rel="dns-prefetch"/>
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.tempoautomation.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.0"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link href="https://www.tempoautomation.com/wp-includes/css/dist/block-library/style.min.css?ver=6.0" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link href="https://www.tempoautomation.com/wp-includes/css/dashicons.min.css?ver=6.0" id="dashicons-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;display=swap" id="roboto-font-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" id="material-icons-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/styles/main.css" id="main/css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/styles/additional.css" id="additional/css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/styles_fixes/fixes.css?ver=0.1" id="fixes/css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/styles/style.css" id="style/css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css?ver=6.0" id="slick-css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css?ver=6.0" id="fancybox-css-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.tempoautomation.com/wp-content/plugins/bbpowerpack/assets/css/animate.min.css?ver=3.5.1" id="pp-animate-css" media="all" rel="stylesheet" type="text/css"/>
+<script id="jquery-js" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js?ver=2.2.4" type="text/javascript"></script>
+<script defer="defer" id="lazysizes.bgset-js-js" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/plugins/bgset/ls.bgset.min.js?ver=5.2.0" type="text/javascript"></script>
+<script defer="defer" id="lazysizes-js-js" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js?ver=5.2.0" type="text/javascript"></script>
+<script defer="defer" id="vimeo-api-js" src="https://player.vimeo.com/api/player.js?ver=6.0" type="text/javascript"></script>
+<link href="https://www.tempoautomation.com/wp-json/" rel="https://api.w.org/"/><link href="https://www.tempoautomation.com/wp-json/wp/v2/pages/437" rel="alternate" type="application/json"/><link href="https://www.tempoautomation.com/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+<link href="https://www.tempoautomation.com/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+<meta content="WordPress 6.0" name="generator"/>
+<link href="https://www.tempoautomation.com/?p=437" rel="shortlink"/>
+<link href="https://www.tempoautomation.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.tempoautomation.com%2Fprivacy-policy%2F" rel="alternate" type="application/json+oembed"/>
+<link href="https://www.tempoautomation.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.tempoautomation.com%2Fprivacy-policy%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+<script>
+			var bb_powerpack = {
+				ajaxurl: 'https://www.tempoautomation.com/wp-admin/admin-ajax.php'
+			};
+		</script>
+<!-- Start Drift By WP-Plugin: Drift -->
+<!-- Start of Async Drift Code -->
+<script>
+!function() {
+  var t;
+  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+  t.factory = function(e) {
+    return function() {
+      var n;
+      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+    };
+  }, t.methods.forEach(function(e) {
+    t[e] = t.factory(e);
+  }), t.load = function(t) {
+    var e, n, o, i;
+    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  });
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('wmyywty4ki6h');
+</script>
+<!-- End of Async Drift Code --><!-- end: Drift Code. -->
+<script src="https://go.tempoautomation.com/dcjs/618841/583/dc.js" type="text/javascript"></script>
+<!--noptimize-->
+<!-- Google Optimize Anti-flicker snippet (recommended)   
+Removed by Cinch to kill the white page 
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-TH2FCW8':true});</script> -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TH2FCW8');</script>
+<!-- End Google Tag Manager -->
+<!-- Facebook Domain Verification -->
+<meta content="r78huab3tlf9t89qbiv0tyy2ym5xr8" name="facebook-domain-verification"/>
+<!-- End Facebook Domain Verification -->
+<style type="text/css">
+  .client-logos .clean-list img {
+    width: auto;
+    height: auto;
+    max-height: 54px;
+  }
+</style>
+<!-- Facebook Pixel Code -->
+<!-- Removed by Cinch on June 7th 2022; Request from Matt Lukens
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '632615547766355');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=632615547766355&ev=PageView&noscript=1"
+/></noscript>
+-->
+<!-- End Facebook Pixel Code --><!-- organization Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Corporation","name":"Tempo","url":"https:\/\/www.tempoautomation.com","logo":{"@type":"ImageObject","url":"https:\/\/www.tempoautomation.com\/wp-content\/uploads\/2020\/02\/Tempo-Logo-Gray.png","width":637,"height":600},"sameAs":["https:\/\/www.facebook.com\/TempoAutomation\/","https:\/\/twitter.com\/tempoautomation","https:\/\/www.linkedin.com\/company\/tempo-automation\/"]}</script><!-- / organization Schema optimized by Schema Pro --><!-- breadcrumb Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/www.tempoautomation.com\/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/www.tempoautomation.com\/privacy-policy\/","name":"Privacy Policy"}}]}</script><!-- / breadcrumb Schema optimized by Schema Pro --><meta content="Tempo" name="application-name"/> <meta content="#FFFFFF" name="msapplication-TileColor"/> <meta content="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/mstile-144x144.png" name="msapplication-TileImage"/> <meta content="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/mstile-70x70.png" name="msapplication-square70x70logo"/> <meta content="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/mstile-150x150.png" name="msapplication-square150x150logo"/> <meta content="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/mstile-310x150.png" name="msapplication-wide310x150logo"/> <meta content="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/mstile-310x310.png" name="msapplication-square310x310logo"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/apple-touch-icon-57x57.png" rel="apple-touch-icon-precomposed" sizes="57x57"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/apple-touch-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/apple-touch-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/apple-touch-icon-60x60.png" rel="apple-touch-icon-precomposed" sizes="60x60"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/apple-touch-icon-120x120.png" rel="apple-touch-icon-precomposed" sizes="120x120"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/apple-touch-icon-76x76.png" rel="apple-touch-icon-precomposed" sizes="76x76"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/apple-touch-icon-152x152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/favicon-196x196.png" rel="icon" sizes="196x196" type="image/png"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/favicon-128.png" rel="icon" sizes="128x128" type="image/png"/> <link href="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/favicon.ico" rel="shortcut icon"/> <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+            {'gtm.start': new Date().getTime(),event:'gtm.js'}
+
+        );var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TH2FCW8');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link href="https://www.tempoautomation.com/wp-content/uploads/2021/09/cropped-tempo-block-logo-32x32.png" rel="icon" sizes="32x32">
+<link href="https://www.tempoautomation.com/wp-content/uploads/2021/09/cropped-tempo-block-logo-192x192.png" rel="icon" sizes="192x192"/>
+<link href="https://www.tempoautomation.com/wp-content/uploads/2021/09/cropped-tempo-block-logo-180x180.png" rel="apple-touch-icon"/>
+<meta content="https://www.tempoautomation.com/wp-content/uploads/2021/09/cropped-tempo-block-logo-270x270.png" name="msapplication-TileImage"/>
+</link></meta></meta></meta></head>
+<body class="page-template page-template-template-privacy page-template-template-privacy-php page page-id-437 wp-schema-pro-1.7.0 privacy-policy sidebar-primary">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TH2FCW8" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="body-wrap compensate-for-scrollbar" id="body-wrap">
+<!--[if IE]>
+    <div class="alert alert-warning">
+        You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+        your
+        browser</a> to improve your experience.    </div>
+    <![endif]-->
+<header class="site-header" id="site-header">
+<div class="header-mobile">
+<div class="header-wrapper">
+<a class="header-logo" href="https://www.tempoautomation.com/" title="Tempo">
+<img alt="Tempo" class="lazyload" data-src="https://www.tempoautomation.com/wp-content/themes/tempo/assets/images/tempo-block-logo.svg"/>
+</a>
+<a class="header-menu-cta" href="#" id="header-menu-cta">
+<span></span><span></span><span></span>
+</a>
+</div>
+</div>
+<div class="header-desktop">
+<div class="header-wrapper">
+<a class="header-logo" href="https://www.tempoautomation.com/" title="Tempo">
+<img alt="Tempo" class="lazyload" data-src="https://www.tempoautomation.com/wp-content/themes/tempo/assets/images/tempo-block-logo.svg"/>
+</a>
+<div class="main-menu-wrap">
+<nav class="menu-primary-container"><ul class="main-menu" id="menu-primary"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8093" id="menu-item-8093"><a href="#">PCBA Services</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8097" id="menu-item-8097"><a href="https://www.tempoautomation.com/services/turnkey-pcb-assembly/">Turnkey Assembly</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8096" id="menu-item-8096"><a href="https://www.tempoautomation.com/services/rapid-pcba-prototyping/">Rapid Prototyping</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8095" id="menu-item-8095"><a href="https://www.tempoautomation.com/services/on-demand-pcba-manufacturing/">On-Demand Manufacturing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12830" id="menu-item-12830"><a href="https://www.tempoautomation.com/services/supply-chain-solutions/">Supply Chain Solutions</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8094" id="menu-item-8094"><a href="#">Capabilities</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24" id="menu-item-24"><a href="https://www.tempoautomation.com/capabilities/">Our Capabilities</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13383" id="menu-item-13383"><a href="https://www.tempoautomation.com/certifications/">Certifications</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5658" id="menu-item-5658"><a href="https://www.tempoautomation.com/digital-thread/">The Digital Thread</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9907" id="menu-item-9907"><a href="#">Industries</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13037" id="menu-item-13037"><a href="https://www.tempoautomation.com/automotive-pcba-manufacturing/">Automotive</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11751" id="menu-item-11751"><a href="https://www.tempoautomation.com/aviation-defense-pcba-manufacturing/">Aviation &amp; Defense</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11788" id="menu-item-11788"><a href="https://www.tempoautomation.com/consumer-electronics-pcba-manufacturing/">Consumer Electronics</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11730" id="menu-item-11730"><a href="https://www.tempoautomation.com/design-firm-pcba-manufacturing/">Design Firms</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13972" id="menu-item-13972"><a href="https://www.tempoautomation.com/energy-pcba-manufacturing/">Energy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9910" id="menu-item-9910"><a href="https://www.tempoautomation.com/pcba-for-makers-of-industrial-tech/">Industrial Technology</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12979" id="menu-item-12979"><a href="https://www.tempoautomation.com/medical-device-pcba-manufacturing/">Medical Device</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13395" id="menu-item-13395"><a href="https://www.tempoautomation.com/semiconductor-pcba-manufacturing/">Semiconductor</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13038" id="menu-item-13038"><a href="https://www.tempoautomation.com/space-pcba-manufacturing/">Space</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-325" id="menu-item-325"><a href="#">Resources</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26" id="menu-item-26"><a href="https://www.tempoautomation.com/how-it-works/">How To Order</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13624" id="menu-item-13624"><a href="https://www.tempoautomation.com/faq/">Frequently Asked Questions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4878" id="menu-item-4878"><a href="https://www.tempoautomation.com/drcs-and-stackup-downloads/">Stackup and Design Rules Files</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12978" id="menu-item-12978"><a href="https://www.tempoautomation.com/virtual-factory-tour/" rel="noopener" target="_blank">Virtual Factory Tour</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13398" id="menu-item-13398"><a href="/case-studies">Case Studies</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9331" id="menu-item-9331"><a href="https://www.tempoautomation.com/webinars-and-demos/">Webinars and Demos</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13285" id="menu-item-13285"><a href="https://www.tempoautomation.com/ebooks/">eBooks and White Papers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23" id="menu-item-23"><a href="https://www.tempoautomation.com/pcb-manufacturing-blog-news-events/">Blog</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5662" id="menu-item-5662"><a href="#">About Us</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12344" id="menu-item-12344"><a href="https://www.tempoautomation.com/investor-relations/">Investor Relations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5663" id="menu-item-5663"><a href="https://www.tempoautomation.com/about-us/">Who We Are</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9931" id="menu-item-9931"><a href="https://www.tempoautomation.com/leadership/">Leadership</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27" id="menu-item-27"><a href="https://www.tempoautomation.com/join-us/">Careers</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5660" id="menu-item-5660"><a href="https://www.tempoautomation.com/category/news/">Newsroom</a></li>
+</ul>
+</li>
+</ul></nav> </div>
+<div class="icon-wrap">
+<a class="icon head-search" href="#" id="desktop-icon-search" jsicon="search"></a>
+<a class="icon head-user" href="https://secure.tempoautomation.com/accounts/login/" jsicon="user" target="_blank"></a>
+</div>
+<div class="button-wrap">
+<a class="spin-button" href="https://secure.tempoautomation.com/accounts/quote-signup?next=/rfq/">Get a Quote</a>
+</div>
+</div>
+</div>
+<div class="search-popup">
+<div class="container">
+<span class="icon-exit" id="search-popup-close"></span>
+<section ajax-search="" class="content-search">
+<form action="https://www.tempoautomation.com/" ajax-url="/search-ajax" autocomplete="off" id="js-search-form" method="get" role="search">
+<input autocomplete="off" form-input="" name="s" placeholder="Search..." type="text"/>
+<span class="icon" jsicon="search"></span>
+<span class="loading"></span>
+</form>
+<div class="inline-result" form-result=""></div>
+</section>
+</div>
+</div>
+</header>
+<!-- START CONTENT -->
+<section class="terms-hero hero" id="privacy-hero">
+<div class="flex"></div>
+<div class="background lazyload" data-bgset="https://www.tempoautomation.com/wp-content/uploads/2018/08/privacy-policy-bg.jpg"></div>
+<div class="container">
+<h1>Privacy Policy</h1>
+</div>
+</section>
+<section class="section-block terms-intro">
+<span class="anchor-link-section" id="terms-conditions-intro"></span>
+<div class="intro-head">
+<span class="intro-icon">
+<img alt="Privacy Policy" class="lazyload" data-src="https://www.tempoautomation.com/wp-content/themes/tempo/dist/icons/svg/icon-policy.svg"/>
+</span>
+</div>
+<div class="container">
+<div class="section-text">
+<p>At Tempo Automation, Inc. (“<strong>Tempo Automation</strong><strong>”</strong>,<strong> “we</strong>”, or “<strong>us</strong><strong>”),</strong> we recognize that privacy is important.  We have created this Privacy Policy to inform you of how we collect, use, and disclose personal information from users of our website at <a href="https://www.tempoautomation.com/">www.tempoautomation.com</a> (as well as any other websites or domains owned or operated by us), and from purchasers of our custom-built printed circuit board assemblies (“<strong>PCBAs</strong>”) and other products (collectively, our “<strong>Products</strong>”) and services provided by us and related plug-in software and tools (collectively, our “<strong>Services</strong>”).  As we update and expand our services, this Privacy Policy may change, so please refer back to it periodically. </p>
+<p>Our servers are located in the United States.  We may also transfer your personal information from the United States to other countries or regions in connection with processing and fulfilling orders, storing and processing data, and otherwise operating our Services.  In some cases, we may process personal information on a server outside your own country or region.  You should be aware that each country or region can have its own privacy and data security laws, some of which may be less stringent than your own country or region. </p>
+<p>If you exercise any of your rights under this Privacy Policy, you will not be treated in a discriminatory manner or receive a lesser degree of service from us.</p>
+<p>For more information, or if you have questions or concerns regarding this Privacy Policy, you may email us at <a href="mailto:support@tempoautomation.com">support@tempoautomation.com</a> or write to us at: Tempo Automation, Inc., Attention: Privacy Matters, 2460 Alameda Street, San Francisco, California 94103, U.S.A<em>.</em></p>
+<p> </p>
+</div>
+</div>
+</section>
+<section class="section-block terms-cards" id="privacy-cards">
+<div class="container">
+<div class="blog-posts">
+<div class="blog-post-card card-simple">
+<div class="card-infos">
+<div class="card-title">
+<h2>What Information and Data Do We Collect?</h2>
+<p>We do not market our website or services to children under the age of 13, nor do we knowingly collect personal information from children under the age of 13.  We do not knowingly collect personal information of individuals who are at least 13 years of age and less than 18 years of age, without the consent of their parent or guardian.
+
+We collect the following categories of personal information about you when you use our services: 
+</p>
+</div>
+<div class="card-content">
+<ul class="card-list list-blue">
+<li>
+<p>Identifiers, which include personally identifiable information, such as your name, postal address, zip code, telephone number, email, online identifier, and internet protocol address, and your Tempo Automation registered user account information, such as account name, security questions, and passcode.
+</p>
+</li>
+<li>
+<p>Commercial Information, which includes records of Products or Services purchased, obtained, or considered, or order purchasing or consuming history or tendencies.</p>
+</li>
+<li>
+<p>Internet or Other Electronic Network Activity Information, which includes browsing history, search history, and information regarding a consumer’s interaction with an internet website, application, or advertisement. </p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="blog-post-card card-simple">
+<div class="card-infos">
+<div class="card-title">
+<h2>How Do We Collect Your Information?</h2>
+<p>The ways in which we collect that personal information when you use our services include:</p>
+</div>
+<div class="card-content">
+<ul class="card-list list-blue">
+<li>
+<p>When you make a request for quotation with us, we require you to provide certain information, which may include your email, zip code, or other personally identifiable information.  When your order is confirmed, we collect additional information from you, including personally identifiable information, such as your name, address, and telephone number.  If you pay through a payment account, we require you to provide credit card, debit card, or other payment account information.</p>
+</li>
+<li>
+<p>To facilitate your use of our Services, we provide you with the ability to register and create a registered user account with Tempo Automation.  In order to register and create the account, you are required to provide certain information, including personally identifiable information.  As you use the Services, you may be able to add additional information to your account.</p>
+</li>
+<li>
+<p>In connection with orders you place with us, you may send email or other communications to us.  We also provide users with surveys requesting information about your experience with us and our Services to which you may respond, and we may provide you with other opportunities to submit reviews, comments, feedback, and other information about us and our Services.  We will collect and retain those communications, responses, and submissions. </p>
+</li>
+<li>
+<p>We collect information about your interaction with and your use of our website and Services, such as your IP address, your device, browser and operating system type and version, event information (such as device crashes), which pages you view, which page linked you to our website, and which link you select when you leave our website.</p>
+</li>
+<li>
+<p>We use various technologies to collect information through your interaction with and use of our website and services.  These technologies include cookies (small files that are sent to your browser or device when you visit a website that allow the website to recognize you when you visit again and permit storage of information such as user preferences) and may also include web beacons, clear GIFs, pixels and other pixel tags (small blocks of code that can be used to read and place cookies and transmit information), HTML5 and other local storage and caching (technology that allows an application or website to store and retrieve data on a user’s device), and similar technologies.  For some of these technologies, your device or browser may offer privacy settings which may enable you to disable the usage of such technologies, but some services or features of our website may not function properly or as well as intended as a result.  You should keep in mind that the privacy settings offered by your device or browser may only apply to that specific device or browser.</p>
+</li>
+<li>
+<p>We may also collect information from other sources and add it to our database.  For example, we may use third party marketing and sales services or manual updates by our employees to supplement existing databases of user information.</p>
+</li>
+<li>
+<p>We may also provide community activities on our website, such as a blog that permits user comments or feedback.  You are not required to disclose any personal information when submitting or posting comments or other information through such community activities, but you will be able to do so in connection with the submitted or posted information that you generate.  As this information will be publicly available to users of our Services, we urge you to use caution, if you choose to include personal information in such community activities. </p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="blog-post-card card-simple">
+<div class="card-infos">
+<div class="card-title">
+<h2>How Do We Use Information that We Collect?</h2>
+<p>We use personal information for the purposes described in this Privacy Policy or disclosed to you in connection with our Services to provide Products and Services to our customers and for other business purposes.  For example, we may use your information to:</p>
+</div>
+<div class="card-content">
+<ul class="card-list list-blue">
+<li>
+<p>enable you to access and use our Services and to send you information relating to your use of our Services, such as to provide you with quotations for Products and Services, to assemble and deliver your orders and process payment for your orders, and to provide you with order confirmations and payment receipts, technical notices, updates, security alerts, support and administrative messages, and other communications about your account and use of the Services;</p>
+</li>
+<li>
+<p>operate and maintain the Services, such as to ensure the technical functioning of the Services, to perform analytics, to conduct research, to improve our Services and develop new Products and Services, and to enhance, personalize, and customize your experience and enjoyment using our Services;</p>
+</li>
+<li>
+<p>create, publish, disclose, and use information from which we have removed personally identifiable information (for example by summarizing or aggregating data or removing personally identifiable information from data) for our business purposes, including preparing industry analyses and analyzing our customer base and for marketing and advertising purposes;</p>
+</li>
+<li>
+<p>facilitate your use of our Services by providing you with the ability to register and create an account with Tempo Automation, which requires that you provide certain information, including personally identifiable information, and to add additional information to your account as you use our Services;</p>
+</li>
+<li>
+<p>respond to your comments and questions and provide customer service;</p>
+</li>
+<li>
+<p>inform you about Products and Services we offer, promotional offers, and similar matters;</p>
+</li>
+<li>
+<p>protect against, investigate, and deter fraudulent, unauthorized, or illegal activity;</p>
+</li>
+<li>
+<p>protect our rights and property and those of our users; or</p>
+</li>
+<li>
+<p>comply with our legal obligations, resolve any disputes we may have with any of our users, and enforce our agreements with third parties.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="blog-post-card card-simple">
+<div class="card-infos">
+<div class="card-title">
+<h2>When Do We Share Personal Information with Others?</h2>
+<p>We will not disclose or share your personal information to affiliates or third parties for their direct marketing purposes without first obtaining your “opt-in” consent.  We may share personal information with third parties in the following circumstances:</p>
+</div>
+<div class="card-content">
+<ul class="card-list list-blue">
+<li>
+<p>We may share personal information with third parties who provide materials or services to us in the course of our providing Products and Services to our customers, such as materials suppliers, component manufacturers and vendors, payment processing services, fraud detection services, and services relating to data collection, processing, hosting, reporting, and analytics.  We limit the personal information we provide to these materials or service providers to information which is reasonably necessary for them to provide us with the materials or services.</p>
+</li>
+<li>
+<p>We may release personal information we collect when we believe that such release is appropriate to comply with the law (for example, pursuant to a subpoena, warrant, or court order), to protect against fraudulent, abusive, or unlawful use of our Services, to protect our rights or property or the rights and property of others, to enforce our agreements, policies, and terms of use, and to investigate possible violations, or to prevent or address a situation involving danger of death or injury to a person or property.</p>
+</li>
+<li>
+<p>We may disclose or transfer your personal information to a third party if we sell, transfer, divest, or disclose all or a portion of our business or assets to another company in connection with or during negotiation of a merger, acquisition, financing transaction, bankruptcy, or dissolution.</p>
+</li>
+<li>
+<p>We may share personal information with others when you authorize us to do so.</p>
+</li>
+<li>
+<p>We may share aggregated, de-identified, or other non-personally identifiable information with third parties in our discretion.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="blog-post-card card-simple">
+<div class="card-infos">
+<div class="card-title">
+<h2>Cookie Statement</h2>
+<p>Our website uses cookies.  We will request your consent to accept the cookies, which you may decline to provide, but some services or features of our website may not function properly or as well as intended as a result.</p>
+</div>
+<div class="card-content">
+<ul class="card-list list-blue">
+<li>
+<p>Cookies are small files that are sent to your browser or device when you visit a website which allow the website to recognize you when you visit again and permit storage of information such as user preferences.  We use cookies to better understand user behavior, for security and fraud prevention purposes, and to tell us which parts of our websites people have visited.  You are able to disable cookies on your browser at any time.  For further information on cookies and how to manage or disable cookies for your browser, visit: https://www.allaboutcookies.org</p>
+</li>
+<li>
+<p>Strictly Necessary Cookies: These cookies are set as required to enable you to explore our website and utilize its features. </p>
+</li>
+<li>
+<p>Website Functionality Cookies: These cookies allow our website to remember the choices you enter into the site (i.e., your region, language preferences, or username) and provide a customized experience. </p>
+</li>
+<li>
+<p>Other Cookies: These cookies are used to understand how visitors interact with our website, including by helping us to assess the effectiveness of web searches and advertisements. </p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="blog-post-card card-simple">
+<div class="card-infos">
+<div class="card-title">
+<h2>How Do We Protect the Integrity and Security of Personal Information?</h2>
+<p>We take the following steps to protect your personal information:</p>
+</div>
+<div class="card-content">
+<ul class="card-list list-blue">
+<li>
+<p>We take reasonable measures to protect the integrity and security of personally identifiable information and other personal information that we collect.  We securely store your data on servers in the United States.  The security measures we take include physical, technological, and organizational procedures designed to protect the integrity and security of your personal information.  We also take reasonable steps to ensure that the personal information we process is accurate, complete, and current, but we depend on our users to update or correct their personal information whenever necessary.  Your Tempo Automation registered user account information is protected by a password that you select for your privacy and security.  We encourage you to use a “strong” password (i.e., a password that includes a combination of upper- and lower-case letters, numbers, and symbols).  Please also make sure to protect your account information and log off when you are done using our Services, especially if other users have access to the device you are using to access the Services.  Please be aware, however, that no protection measures are perfect or impenetrable.  Although we believe the measures we take are reasonable measures to protect the integrity and security of your personally identifiable information, we cannot guarantee its absolute integrity and security or that unauthorized third parties will never be able to defeat the security measures taken by Tempo Automation or our third-party service providers.  We assume no liability or responsibility for disclosure of your information due to errors in transmission, unauthorized third-party access, or other causes beyond our control.  You play an important role in keeping your personal information secure.  You should not share your username, password, or other security information for your Tempo Automation account with anyone.  If we receive instructions using your username and password, we will treat those instructions as having been authorized by you.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="blog-post-card card-simple">
+<div class="card-infos">
+<div class="card-title">
+<h2>How Can You Update, Correct, or Delete Your Personal Information?</h2>
+<p>We provide the following means for you to update or correct your personal information or to delete/deactivate your registered user account:</p>
+</div>
+<div class="card-content">
+<ul class="card-list list-blue">
+<li>
+<p>We maintain your personal information in our business records for the period of time your personal information is needed for business purposes and to comply with legal requirements and our records retention policy.  You may update or make corrections to your personal information through your registered user account.  You may request us to make updates, corrections, or deletions to your personal information or to delete/deactivate your registered user account by writing us at Tempo Automation, Inc., Attention: Privacy Matters, 2460 Alameda Street, San Francisco, California 94103, U.S.A., or email us at support@tempoautomation.com, and we will take reasonable efforts to incorporate the updates, corrections, or deletions promptly, subject to our right to maintain personal information needed for our business purposes and legal compliance purposes.  For example, when information is corrected, updated, or deleted, we may keep a copy of the prior version for our records or legal compliance purposes.  Also, you may not be able to change or remove information relating to processed quotation requests or orders, or that you submit or post publicly while participating in the Services.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="blog-post-card card-simple">
+<div class="card-infos">
+<div class="card-title">
+<h2>Your California Privacy Rights.</h2>
+<p>Individuals who are residents of the State of California have the following rights under the California Consumer Privacy Act (“CCPA”):</p>
+</div>
+<div class="card-content">
+<ul class="card-list list-blue">
+<li>
+<p>The right to request deletion of your personal information, under certain conditions.</p>
+</li>
+<li>
+<p>The right to request correction of inaccurate information.</p>
+</li>
+<li>
+<p>The right to request disclosure of the following:
+- The categories of personal information we have collected.
+- The categories of sources from which the personal information is collected.
+- The business or commercial purpose for collecting or selling personal information. 
+- The categories of third parties with whom we share personal information with. 
+- The specific pieces of your personal information we have collected. 
+- The categories of personal information that we have sold about you and the categories of third parties to whom the personal information was sold. 
+- The categories of personal information that we disclosed about you for a business purpose.
+</p>
+</li>
+<li>
+<p>We do not sell your personal information within the meaning of “sell” under the CCPA, and we have not sold personal information within the meaning of “sell” under the CCPA in the last 12 months.  We have disclosed personal information of our customers, including identifiers and commercial information, to third parties, such as payment processors and manufacturers and vendors, in the last 12 months in order to provide Products and Services on behalf of those customers, including obtaining materials and components for orders and processing payments for orders.
+
+The law provides that a company may have a privacy policy that provides you with an “opt-in” choice for use of your personal information by affiliates or third parties for direct marketing purposes, or an “opt-out” choice with information on how to exercise the opt-out option.  We have selected the “opt-in” choice.  As described above under the sub-heading “When Do We Share Personal Information with Others?”, we will not provide your personally identifiable information to affiliates or third parties for direct marketing purposes without your “opt-in” consent.
+
+If you are a California resident and would like more information about our compliance with your California privacy rights or have questions on any of the provisions in this Privacy Policy, you may email us at: support@tempoautomation.com, or write to us at: Tempo Automation, Inc., Attention: Privacy Matters, 2460 Alameda Street, San Francisco, California 94103, U.S.A., or you may call us at the following toll-free number: 1-877-676-1045 (U.S. domestic calls only). 
+</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="blog-post-card card-simple">
+<div class="card-infos">
+<div class="card-title">
+<h2>Your Data Protection Rights under the General Data Protection Regulation (“GDPR”).</h2>
+<p>Individuals who reside within the European Union are entitled to the following data protection rights under the GDPR:</p>
+</div>
+<div class="card-content">
+<ul class="card-list list-blue">
+<li>
+<p>The right to access: You have the right to request us for copies of your personal data.  We may charge you a small fee for this service. </p>
+</li>
+<li>
+<p>The right to reflection: You have the right to request that we correct any information you believe is inaccurate.  You also have the right to request us to complete information you believe is incomplete. </p>
+</li>
+<li>
+<p>The right to erasure: You have the right to request that we erase your personal data, under certain conditions. </p>
+</li>
+<li>
+<p>The right to restrict processing: You have the right to request that we restrict the processing of your personal data, under certain conditions. </p>
+</li>
+<li>
+<p>The right to data portability: You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions. </p>
+</li>
+<li>
+<p></p>
+</li>
+</ul>
+</div>
+<div class="card-foot">
+<p>If you make a request under the GDPR, we have one month to respond to you.  If you would like to exercise any of these rights, please contact us via email at: support@tempoautomation.com, or write to us at: Tempo Automation, Inc., Attention: Privacy Matters, 2460 Alameda Street, San Francisco, California 94103, U.S.A.</p>
+</div>
+</div>
+</div>
+<div class="blog-post-card card-simple">
+<div class="card-infos">
+<div class="card-title">
+<h2>How Can This Privacy Policy Be Changed?</h2>
+<p>We reserve the right to change this Privacy Policy at any time.</p>
+</div>
+<div class="card-content">
+<ul class="card-list list-blue">
+<li>
+<p>We periodically review our Privacy Policy and place any updates to it on this webpage.  We recommend that you review this Privacy Policy periodically so that you are aware of any changes.  Changes will take effect immediately upon posting of the updated Privacy Policy.  This Privacy Policy was last updated on October 2, 2021.</p>
+</li>
+</ul>
+</div>
+<div class="card-foot">
+<p>Tempo Automation, Inc. – October 2, 2021</p>
+</div>
+</div>
+</div>
+</div>
+<div class="blog-posts">
+</div>
+</div>
+</section>
+<section class="section-box section-map">
+<span class="anchor-link-section" id="company-location"></span>
+<div class="background lazyload" data-bgset="https://www.tempoautomation.com/wp-content/uploads/2018/08/join-us-map.jpg"></div>
+<div class="container">
+<h2>Where we are located:</h2>
+<div class="location">
+<span jsicon="location"></span>
+<span>2460 Alameda Street,  San Francisco, CA, 94103</span>
+</div>
+<a class="button-larger button-cyan" href="https://secure.tempoautomation.com/accounts/login/?__hstc=46213176.e930976fb40d9e0d9e9a5b7e8445ee95.1531845792681.1531853133707.1531861156009.3&amp;__hssc=46213176.50.1531861156009&amp;__hsfp=1748584724">
+            Quoting Tool        </a>
+</div>
+</section>
+<!-- END CONTENT -->
+</div><!-- /.body-wrap -->
+<!-- START FOOTER -->
+<footer class="main-footer">
+<div class="container flex-row">
+<div class="scroll-up" jsicon="arrow-thin"></div>
+<div class="child-container flex-row">
+<div class="foot-group foot-menu">
+<section class="widget nav_menu-2 widget_nav_menu"><h4>Resources</h4><div class="menu-footer-left-container"><ul class="menu" id="menu-footer-left"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45" id="menu-item-45"><a href="https://www.tempoautomation.com/capabilities/">Capabilities</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46" id="menu-item-46"><a href="https://www.tempoautomation.com/pcb-manufacturing-blog-news-events/">Blog/News/Events</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5142" id="menu-item-5142"><a href="https://www.tempoautomation.com/drcs-and-stackup-downloads/">DRCs and Stackup Files</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-499" id="menu-item-499"><a href="https://www.tempoautomation.com/faq/">FAQ</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13588" id="menu-item-13588"><a href="https://www.tempoautomation.com/certifications/">Certifications</a></li>
+</ul></div></section> </div>
+<div class="foot-group foot-menu">
+<section class="widget nav_menu-3 widget_nav_menu"><h4>Company</h4><div class="menu-footer-centre-container"><ul class="menu" id="menu-footer-centre"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1205" id="menu-item-1205"><a href="https://www.tempoautomation.com/how-it-works/">How It Works</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-500" id="menu-item-500"><a href="https://www.tempoautomation.com/about-us/">About Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1204" id="menu-item-1204"><a href="https://www.tempoautomation.com/join-us/">Join Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-563" id="menu-item-563"><a href="https://www.tempoautomation.com/terms/">Terms and Conditions of Sale</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-437 current_page_item menu-item-564" id="menu-item-564"><a aria-current="page" href="https://www.tempoautomation.com/privacy-policy/">Privacy Policy</a></li>
+</ul></div></section> </div>
+<div class="foot-group foot-menu">
+<section class="widget nav_menu-4 widget_nav_menu"><h4>Contact</h4><div class="menu-footer-right-container"><ul class="menu" id="menu-footer-right"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-58" id="menu-item-58"><a href="mailto:support@tempoautomation.com">Customer Support</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-550" id="menu-item-550"><a href="https://www.tempoautomation.com/contact-us/">Contact Us</a></li>
+</ul></div></section> </div>
+<div class="foot-group">
+<h4>Connect</h4>
+<div class="foot-socials">
+<ul>
+<li><a class="icon" href="https://twitter.com/tempoautomation" jsicon="twitter"></a></li><li><a class="icon" href="https://www.linkedin.com/company/tempo-automation/" jsicon="linkedin"></a></li><li><a class="icon" href="https://www.facebook.com/tempo.automation/" jsicon="facebook"></a></li> </ul>
+</div>
+<div class="foot-gmap">
+<a class="gmap-image" href="https://goo.gl/maps/YNrPMZuxCrj" target="_blank">
+<img alt="2460 Alameda St, San Francisco" class="lazyload" data-src="https://www.tempoautomation.com/wp-content/themes/tempo/dist/images/foot-map.jpg" width="144"/>
+</a>
+<p>2460 Alameda Street, <br/>San Francisco, CA, 94103</p>
+</div>
+</div>
+</div>
+</div>
+<div class="container foot-credits">
+<ul>
+<li>
+<span>
+                    © 2022 - Tempo.
+                    All rights reserved                </span>
+</li>
+</ul>
+</div>
+</footer>
+<!-- END FOOTER -->
+<div class="mobile-menu" id="mobile-menu">
+<span class="exit" id="mobile-menu-exit"></span>
+<div class="logo-wrap">
+<a class="logo" href="/"></a>
+</div>
+<div class="main-menu-wrap">
+<nav class="menu-primary-container"><ul class="main-menu" id="menu-primary-1"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8093"><a href="#">PCBA Services</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8097"><a href="https://www.tempoautomation.com/services/turnkey-pcb-assembly/">Turnkey Assembly</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8096"><a href="https://www.tempoautomation.com/services/rapid-pcba-prototyping/">Rapid Prototyping</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8095"><a href="https://www.tempoautomation.com/services/on-demand-pcba-manufacturing/">On-Demand Manufacturing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12830"><a href="https://www.tempoautomation.com/services/supply-chain-solutions/">Supply Chain Solutions</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8094"><a href="#">Capabilities</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="https://www.tempoautomation.com/capabilities/">Our Capabilities</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13383"><a href="https://www.tempoautomation.com/certifications/">Certifications</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5658"><a href="https://www.tempoautomation.com/digital-thread/">The Digital Thread</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9907"><a href="#">Industries</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13037"><a href="https://www.tempoautomation.com/automotive-pcba-manufacturing/">Automotive</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11751"><a href="https://www.tempoautomation.com/aviation-defense-pcba-manufacturing/">Aviation &amp; Defense</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11788"><a href="https://www.tempoautomation.com/consumer-electronics-pcba-manufacturing/">Consumer Electronics</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11730"><a href="https://www.tempoautomation.com/design-firm-pcba-manufacturing/">Design Firms</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13972"><a href="https://www.tempoautomation.com/energy-pcba-manufacturing/">Energy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9910"><a href="https://www.tempoautomation.com/pcba-for-makers-of-industrial-tech/">Industrial Technology</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12979"><a href="https://www.tempoautomation.com/medical-device-pcba-manufacturing/">Medical Device</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13395"><a href="https://www.tempoautomation.com/semiconductor-pcba-manufacturing/">Semiconductor</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13038"><a href="https://www.tempoautomation.com/space-pcba-manufacturing/">Space</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-325"><a href="#">Resources</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="https://www.tempoautomation.com/how-it-works/">How To Order</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13624"><a href="https://www.tempoautomation.com/faq/">Frequently Asked Questions</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4878"><a href="https://www.tempoautomation.com/drcs-and-stackup-downloads/">Stackup and Design Rules Files</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12978"><a href="https://www.tempoautomation.com/virtual-factory-tour/" rel="noopener" target="_blank">Virtual Factory Tour</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13398"><a href="/case-studies">Case Studies</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9331"><a href="https://www.tempoautomation.com/webinars-and-demos/">Webinars and Demos</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13285"><a href="https://www.tempoautomation.com/ebooks/">eBooks and White Papers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a href="https://www.tempoautomation.com/pcb-manufacturing-blog-news-events/">Blog</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5662"><a href="#">About Us</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12344"><a href="https://www.tempoautomation.com/investor-relations/">Investor Relations</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5663"><a href="https://www.tempoautomation.com/about-us/">Who We Are</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9931"><a href="https://www.tempoautomation.com/leadership/">Leadership</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="https://www.tempoautomation.com/join-us/">Careers</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5660"><a href="https://www.tempoautomation.com/category/news/">Newsroom</a></li>
+</ul>
+</li>
+</ul></nav> </div>
+<div class="icon-wrap">
+<a class="icon icon-search" href="#" id="mobile-icon-search">Search</a>
+<a class="icon icon-user" href="https://secure.tempoautomation.com/accounts/login/" target="_blank">Sign In</a>
+</div>
+<div class="foot-socials">
+<ul>
+<li><a class="icon" href="https://www.facebook.com/tempo.automation/" jsicon="facebook">
+<svg viewbox="0 0 264 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229"></path>
+</svg>
+</a>
+</li>
+<li>
+<a class="icon" href="https://twitter.com/tempoautomation" jsicon="twitter">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+</svg>
+</a>
+</li>
+<li>
+<a class="icon" href="https://plus.google.com/+TempoAutomation" jsicon="google">
+<svg viewbox="0 0 488 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path>
+</svg>
+</a>
+</li>
+<li>
+<a class="icon" href="https://www.linkedin.com/company/tempo-automation/" jsicon="linkedin">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M100.3 480H7.4V180.9h92.9V480zM53.8 140.1C24.1 140.1 0 115.5 0 85.8 0 56.1 24.1 32 53.8 32c29.7 0 53.8 24.1 53.8 53.8 0 29.7-24.1 54.3-53.8 54.3zM448 480h-92.7V334.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V480h-92.8V180.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V480z"></path>
+</svg>
+</a>
+</li>
+</ul>
+</div>
+</div><div class="sticky__footer__bar" data-cookie-expires="1" data-cookie-name="tempo-ace-merger-announcement" id="sticky-footer-bar">
+<span class="sticky__footer__bar--close" id="close-sticky-footer-bar"></span>
+<div class="sticky__footer__bar__content">
+<p class="sticky__footer__bar__content__inner">Tempo Automation Inc., Set to Go Public Through Merger with ACE Convergence Acquisition Corp. <a href="https://www.tempoautomation.com/news/tempo-ace-merger/">Learn More</a></p>
+</div>
+</div>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TH2FCW8" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<script charset="utf-8" type="text/javascript">
+var _uf = _uf || {};
+_uf.domain = ".tempoautomation.com";
+_uf.add_to_form = "none";
+_uf.secure = true;
+_uf.initial_utm_params = true;
+_uf.additional_params_map = { gclid: "utmc_last_gclid" };
+_uf.additional_initial_params_map = { gclid: "utmc_first_gclid" };
+</script>
+<script async="" src="https://www.tempoautomation.com/wp-content/themes/tempo/includes/utm-form-1.2.0.js"></script>
+<!--noptimize-->
+<!-- BEGIN Global Listener for Pardot Message from Child Frame -->
+<script defer="defer" type="text/javascript">
+(function(window) {
+  addEvent(window, 'message', function(message) {
+    var dataLayer = window.dataLayer || (window.dataLayer = []);
+    var messageOriginsTC = ['https://go.pardot.com', 'https://go.tempoautomation.com']
+    if (messageOriginsTC.indexOf(message.origin) !== -1 && typeof message.data === 'string' && message.data.startsWith('dlEvent_')){
+      messageArray = message.data.split("_");
+      eventName = messageArray[1];
+      redirect = messageArray[2];
+      dataLayer.push({
+        'event': eventName,
+        'eventCallback' : function() {
+          if (redirect ==='rfq') {window.location = 'https://secure.tempoautomation.com/accounts/quote-signup?next=/rfq/';}
+        },
+        'eventTimeout' : 2000
+      });
+    }
+  });
+  function addEvent(el, evt, fn) {
+    if (el.addEventListener) {
+      el.addEventListener(evt, fn);
+    } else if (el.attachEvent) {
+      el.attachEvent('on' + evt, function(evt) {
+        fn.call(el, evt);
+      });
+    } else if (typeof el['on' + evt] === 'undefined' || el['on' + evt] === null) {
+      el['on' + evt] = function(evt) {
+        fn.call(el, evt);
+      };
+    }
+  }
+})(window);
+</script>
+<!-- END Global Listener for Pardot Message from Child Frame -->
+<!-- BEGIN Newsletter Subscribe Success Insertion -->
+<script defer="defer" type="text/javascript">
+$(document).ready(function() {
+  if(window.location.hash && document.location.pathname.indexOf("/blog/") == 0) {
+    if(window.location.hash.substring(1)=='subscribe-success'){
+      $('<span><h3>Thanks for Subscribing!</h3><br></span>').prependTo('.breadcrumb > div.container');
+    }
+    else if(window.location.hash.substring(1)=='subscribe-error'){
+      $('<span><h3>We\'re having trouble signing you up for the newsletter. Please try again later.</h3><br></span>').prependTo('.breadcrumb > div.container');
+    }
+  }
+});
+</script>
+<!-- END Newsletter Subscribe Success Insertion -->
+<!--/noptimize--><script defer="defer" id="slick-js-js" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js?ver=1.9" type="text/javascript"></script>
+<script defer="defer" id="fancybox-js-js" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js?ver=3.5.7" type="text/javascript"></script>
+<script id="main/js-js-extra" type="text/javascript">
+/* <![CDATA[ */
+var tempo = {"ajax_url":"https:\/\/www.tempoautomation.com\/wp-admin\/admin-ajax.php","load_more":"More","loading_more":"Loading...","no_items":"No more items"};
+/* ]]> */
+</script>
+<script defer="defer" id="main/js-js" src="https://www.tempoautomation.com/wp-content/themes/tempo/dist/scripts/main.js" type="text/javascript"></script>
+<script defer="defer" id="jobs/js-js" src="https://www.tempoautomation.com/wp-content/themes/tempo/dist/scripts/custom.js" type="text/javascript"></script>
+<script defer="defer" id="fixes/js-js" src="https://www.tempoautomation.com/wp-content/themes/tempo/dist/script_fixes/fixes.js.php" type="text/javascript"></script>
+<script defer="defer" id="js-cookie-js" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js?ver=2.2.1" type="text/javascript"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9190ea8d4e","applicationID":"163786345","transactionName":"bwRVNUoDDxBWBkAIDFZOYhNRTU4KWQFRGU1ICUc=","queueTime":0,"applicationTime":924,"atts":"Q0NWQwIZHB4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

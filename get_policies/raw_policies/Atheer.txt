@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head><meta charset="utf-8"/><!-- Optimized with WP Meteor v2.3.10 - https://wordpress.org/plugins/wp-meteor/ --><script>var _wpmeteor={"rdelay":86400000,"elementor-animations":true,"elementor-pp":true,"v":"2.3.10"};if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]wpmeteordisable/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?wpmeteordisable=1"}else{document.location.href=href.replace("#","?wpmeteordisable=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&wpmeteordisable=1"}else{document.location.href=href.replace("#","&wpmeteordisable=1#")}}}}</script><script>!function(t){var e={};function n(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return t[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=t,n.c=e,n.d=function(t,e,r){n.o(t,e)||Object.defineProperty(t,e,{enumerable:!0,get:r})},n.r=function(t){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(t,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(t,"__esModule",{value:!0})},n.t=function(t,e){if(1&e&&(t=n(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)n.d(r,o,function(e){return t[e]}.bind(null,o));return r},n.n=function(t){var e=t&&t.__esModule?function(){return t.default}:function(){return t};return n.d(e,"a",e),e},n.o=function(t,e){return Object.prototype.hasOwnProperty.call(t,e)},n.p="/",n(n.s=0)}([function(t,e,n){t.exports=n(1)},function(t,e,n){"use strict";n.r(e);var r=new(function(){function t(){this.l=[]}var e=t.prototype;return e.emit=function(t,e){void 0===e&&(e=null),this.l[t]&&this.l[t].forEach((function(t){return t(e)}))},e.on=function(t,e){var n;(n=this.l)[t]||(n[t]=[]),this.l[t].push(e)},e.off=function(t,e){this.l[t]=(this.l[t]||[]).filter((function(t){return t!==e}))},t}()),o=new Date,i=document,a=function(){function t(){this.known=[]}var e=t.prototype;return e.init=function(){var t,e=this,n=!1,o=function(t){if(!n&&t&&t.fn&&!t.__wpmeteor){var r=function(e){return i.addEventListener("DOMContentLoaded",(function(n){e.bind(i)(t,n)})),this};e.known.push([t,t.fn.ready,t.fn.init.prototype.ready]),t.fn.ready=r,t.fn.init.prototype.ready=r,t.__wpmeteor=!0}return t};window.jQuery&&(t=o(window.jQuery)),Object.defineProperty(window,"jQuery",{get:function(){return t},set:function(e){return t=o(e)}}),r.on("l",(function(){return n=!0}))},e.unmock=function(){this.known.forEach((function(t){var e=t[0],n=t[1],r=t[2];e.fn.ready=n,e.fn.init.prototype.ready=r}))},t}(),c={};!function(t,e){try{var n=Object.defineProperty({},e,{get:function(){c[e]=!0}});t.addEventListener(e,null,n),t.removeEventListener(e,null,n)}catch(t){}}(window,"passive");var u=c,f=window,d=document,s=["mouseover","keydown","touchmove","touchend","wheel"],l=["mouseover","mouseout","touchstart","touchmove","touchend","click"],p="data-wpmeteor-",v=function(){function t(){}return t.prototype.init=function(t){var e=!1,n=!1,o=function t(o){e||(e=!0,s.forEach((function(e){return d.body.removeEventListener(e,t,u)})),clearTimeout(n),location.href.match(/wpmeteornopreload/)||r.emit("pre"),r.emit("fi"))},i=function(t){var e=new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0});return Object.defineProperty(e,"target",{writable:!1,value:t.target}),e};t<1e4&&r.on("i",(function(){e||(n=setTimeout(o,t))}));var a=[],c=function(t){t.target&&"dispatchEvent"in t.target&&("click"===t.type?(t.preventDefault(),t.stopPropagation(),a.push(i(t))):"touchmove"!==t.type&&a.push(t),t.target.setAttribute(p+t.type,!0))};r.on("l",(function(){var t;for(l.forEach((function(t){return f.removeEventListener(t,c)}));t=a.shift();){var e=t.target;e.getAttribute(p+"touchstart")&&e.getAttribute(p+"touchend")&&!e.getAttribute(p+"click")?(e.getAttribute(p+"touchmove")||(e.removeAttribute(p+"touchmove"),a.push(i(t))),e.removeAttribute(p+"touchstart"),e.removeAttribute(p+"touchend")):e.removeAttribute(p+t.type),e.dispatchEvent(t)}}));d.addEventListener("DOMContentLoaded",(function t(){s.forEach((function(t){return d.body.addEventListener(t,o,u)})),l.forEach((function(t){return f.addEventListener(t,c)})),d.removeEventListener("DOMContentLoaded",t)}))},t}(),m=document,h=m.createElement("span");h.setAttribute("id","elementor-device-mode"),h.setAttribute("class","elementor-screen-only");var y=window,b=document,g=b.documentElement,w=function(t){return t.getAttribute("class")||""},E=function(t,e){return t.setAttribute("class",e)},L=function(){window.addEventListener("load",(function(){var t=(m.body.appendChild(h),getComputedStyle(h,":after").content.replace(/"/g,"")),e=Math.max(g.clientWidth||0,y.innerWidth||0),n=Math.max(g.clientHeight||0,y.innerHeight||0),o=["_animation_"+t,"animation_"+t,"_animation","_animation","animation"];Array.from(b.querySelectorAll(".elementor-invisible")).forEach((function(t){var i=t.getBoundingClientRect();if(i.top+y.scrollY<=n&&i.left+y.scrollX<e)try{var a=JSON.parse(t.getAttribute("data-settings"));if(a.trigger_source)return;for(var c,u=a._animation_delay||a.animation_delay||0,f=0;f<o.length;f++)if(a[o[f]]){o[f],c=a[o[f]];break}if(c){var d=w(t),s="none"===c?d:d+" animated "+c,l=setTimeout((function(){E(t,s.replace(/\belementor\-invisible\b/,"")),o.forEach((function(t){return delete a[t]})),t.setAttribute("data-settings",JSON.stringify(a))}),u);r.on("fi",(function(){clearTimeout(l),E(t,w(t).replace(new RegExp("\b"+c+"\b"),""))}))}}catch(t){console.error(t)}}))}))},S=document,A="querySelectorAll",O="data-in-mega_smartmenus",_="DOMContentLoaded",j="readystatechange",P="message",k=console.error;!function(t,e,n,i,c,u,f,d,s){var l,p,m=t.constructor.name+"::",h=e.constructor.name+"::",y=function(e,n){n=n||t;for(var r=0;r<this.length;r++)e.call(n,this[r],r,this)};"NodeList"in t&&!NodeList.prototype.forEach&&(NodeList.prototype.forEach=y),"HTMLCollection"in t&&!HTMLCollection.prototype.forEach&&(HTMLCollection.prototype.forEach=y),_wpmeteor["elementor-animations"]&&L(),_wpmeteor["elementor-pp"]&&function(){var t=S.createElement("div");t.innerHTML='<span class="sub-arrow --wp-meteor"><i class="fa" aria-hidden="true"></i></span>';var e=t.firstChild;S.addEventListener("DOMContentLoaded",(function(){Array.from(S[A](".pp-advanced-menu ul")).forEach((function(t){if(!t.getAttribute(O)){(t.getAttribute("class")||"").match(/\bmega\-menu\b/)&&t[A]("ul").forEach((function(t){t.setAttribute(O,!0)}));var n=function(t){for(var e=[];t=t.previousElementSibling;)e.push(t);return e}(t),r=n.filter((function(t){return t})).filter((function(t){return"A"===t.tagName})).pop();if(r||(r=n.map((function(t){return Array.from(t[A]("a"))})).filter((function(t){return t})).flat().pop()),r){var o=e.cloneNode(!0);r.appendChild(o),new MutationObserver((function(t){t.forEach((function(t){t.addedNodes.forEach((function(t){if(1===t.nodeType&&"SPAN"===t.tagName)try{r.removeChild(o)}catch(t){}}))}))})).observe(r,{childList:!0})}}}))}))}();var b,g,w=[],E=[],x={},C=!1,T=!1,M=setTimeout;var N=e[n].bind(e),R=e[i].bind(e),H=t[n].bind(t),D=t[i].bind(t);"undefined"!=typeof EventTarget&&(b=EventTarget.prototype.addEventListener,g=EventTarget.prototype.removeEventListener,N=b.bind(e),R=g.bind(e),H=b.bind(t),D=g.bind(t));var z,q=e.createElement.bind(e),B=e.__proto__.__lookupGetter__("readyState").bind(e);Object.defineProperty(e,"readyState",{get:function(){return z||B()},set:function(t){return z=t}});var Q=function(t){return E.filter((function(e,n){var r=e[0],o=(e[1],e[2]);if(!(t.indexOf(r.type)<0)){o||(o=r.target);try{for(var i=o.constructor.name+"::"+r.type,a=0;a<x[i].length;a++){if(x[i][a])if(!W[i+"::"+n+"::"+a])return!0}}catch(t){}}})).length},W={},I=function(t){E.forEach((function(n,r){var o=n[0],i=n[1],a=n[2];if(!(t.indexOf(o.type)<0)){a||(a=o.target);try{var c=a.constructor.name+"::"+o.type;if((x[c]||[]).length)for(var u=0;u<x[c].length;u++){var f=x[c][u];if(f){var d=c+"::"+r+"::"+u;if(!W[d]){W[d]=!0,e.readyState=i;try{f.hasOwnProperty("prototype")&&f.prototype.constructor!==f?f(o):f.bind(a)(o)}catch(t){k(t,f)}}}}}catch(t){k(t)}}}))};N(_,(function(t){E.push([t,e.readyState,e])})),N(j,(function(t){E.push([t,e.readyState,e])})),H(_,(function(n){E.push([n,e.readyState,t])})),H(d,(function(n){E.push([n,e.readyState,t]),G||I([_,j,P,d])}));var J=function(n){E.push([n,e.readyState,t])};H(P,J),r.on("fi",(function(){T=!0,G=!0,e.readyState="loading",M(X)}));H(d,(function t(){C=!0,T&&!G&&(e.readyState="loading",M(X)),D(d,t)})),(new v).init(_wpmeteor.rdelay);var F=new a;F.init();var G=!1,X=function n(){var o=w.shift();if(o)if(o[c]("data-src"))o.hasAttribute("data-async")?(U(o),M(n)):U(o,n);else if("javascript/blocked"==o.type)U(o),M(n);else if(o.hasAttribute("data-wpmeteor-onload")){var i=o[c]("data-wpmeteor-onload");try{new Function(i).call(o)}catch(t){k(t)}M(n)}else M(n);else if(Q([_,j,P]))I([_,j,P]),M(n);else if(T&&C)if(Q([d,P]))I([d,P]),M(n);else{if(t.RocketLazyLoadScripts)try{RocketLazyLoadScripts.run()}catch(t){k(t)}e.readyState="complete",D(P,J),(x[m+"message"]||[]).forEach((function(t){H(P,t)})),F.unmock(),Z=N,$=R,nt=H,rt=D,G=!1,setTimeout((function(){return r.emit("l")}))}else G=!1},Y=function(t){for(var n=e.createElement("SCRIPT"),r=t.attributes,o=r.length-1;o>=0;o--)n.setAttribute(r[o].name,r[o].value);return n.bypass=!0,n.type=t.hasAttribute("data-wpmeteor-module")?"module":"text/javascript",(t.text||"").match(/^\s*class RocketLazyLoadScripts/)?n.text=t.text.replace(/^\s*class RocketLazyLoadScripts/,"window.RocketLazyLoadScripts=class").replace("RocketLazyLoadScripts.run();",""):n.text=t.text,n[f]("data-wpmeteor-after"),n},K=function(t,e){var n=t.parentNode;n&&n.replaceChild(e,t)},U=function(t,e){if(t[c]("data-src")){var r=Y(t),o=b?b.bind(r):r[n].bind(r);if(e){var i=function(){return M(e)};o(d,i),o(s,i)}r.src=t[c]("data-src"),r[f]("data-src"),K(t,r)}else"javascript/blocked"===t.type?K(t,Y(t)):onLoad&&onLoad()},V=function(t,e){var n=(x[t]||[]).indexOf(e);if(n>=0)return x[t][n]=void 0,!0},Z=function(t,e){if(e&&(t===_||t===j)){var n=h+t;return x[n]=x[n]||[],void x[n].push(e)}for(var r=arguments.length,o=new Array(r>2?r-2:0),i=2;i<r;i++)o[i-2]=arguments[i];return N.apply(void 0,[t,e].concat(o))},$=function(t,e){t===_&&V(h+t,e);return R(t,e)};Object.defineProperties(e,((l={})[n]={get:function(){return Z},set:function(){return Z}},l[i]={get:function(){return $},set:function(){return $}},l)),r.on("pre",(function(){return w.forEach((function(t){var n=t[c]("data-src");if(n){var r=q("link");r.rel="pre"+d,r.as="script",r.href=n,r.crossorigin=!0,e.head.appendChild(r)}}))})),N(_,(function(){e.querySelectorAll("script[data-wpmeteor-after]").forEach((function(t){return w.push(t)}));var t=["link"].map((function(t){return t+"[data-wpmeteor-onload]"})).join(",");e.querySelectorAll(t).forEach((function(t){return w.push(t)}))}));var tt=function(t){if(e.currentScript)try{var n=e.currentScript.parentElement,r=e.currentScript.nextSibling,i=document.createElement("div");i.innerHTML=t,Array.from(i.childNodes).forEach((function(t){"SCRIPT"===t.nodeName?n.insertBefore(Y(t),r):n.insertBefore(t,r)}))}catch(t){console.error(t)}else k((new Date-o)/1e3,"document.currentScript not set",t)},et=function(t){return tt(t+"\n")};Object.defineProperties(e,{write:{get:function(){return tt},set:function(t){return tt=t}},writeln:{get:function(){return et},set:function(t){return et=t}}});var nt=function(t,e){if(e&&(t===d||t===_||t===P)){var n=t===_?h+t:m+t;return x[n]=x[n]||[],void x[n].push(e)}for(var r=arguments.length,o=new Array(r>2?r-2:0),i=2;i<r;i++)o[i-2]=arguments[i];return H.apply(void 0,[t,e].concat(o))},rt=function(t,e){t===d&&V(t===_?h+t:m+t,e);return D(t,e)};Object.defineProperties(t,((p={})[n]={get:function(){return nt},set:function(){return nt}},p[i]={get:function(){return rt},set:function(){return rt}},p));var ot=function(t){var e;return{get:function(){return e},set:function(n){return e&&V(t,n),x[t]=x[t]||[],x[t].push(n),e=n}}},it=ot(m+d);Object.defineProperty(t,"onload",it),N(_,(function(){Object.defineProperty(e.body,"onload",it)})),Object.defineProperty(e,"onreadystatechange",ot(h+j)),Object.defineProperty(t,"onmessage",ot(m+P));var at=1,ct=function(){--at||r.emit("i")};H(d,(function t(){M((function(){e.querySelectorAll("img").forEach((function(t){if(!t.complete&&(t.currentSrc||t.src)&&"lazy"==!(t.loading||"").toLowerCase()||(r=t.getBoundingClientRect(),o=window.innerHeight||document.documentElement.clientHeight,i=window.innerWidth||document.documentElement.clientWidth,r.top>=-1*o*1&&r.left>=-1*i*1&&r.bottom<=2*o&&r.right<=2*i)){var e=new Image;e[n](d,ct),e[n](s,ct),e.src=t.currentSrc||t.src,at++}var r,o,i})),ct()})),D(d,t)}));var ut=Object.defineProperty;Object.defineProperty=function(n,r,o){return n===t&&["jQuery","onload"].indexOf(r)>=0||(n===e||n===e.body)&&["readyState","write"].indexOf(r)>=0?n:ut(n,r,o)},Object.defineProperties=function(t,e){for(var n in e)Object.defineProperty(t,n,e[n]);return t}}(window,document,"addEventListener","removeEventListener","getAttribute",0,"removeAttribute","load","error")}]);
+</script>
+<meta content="width=device-width, initial-scale=1, minimum-scale=1" name="viewport"/>
+<link href="http://gmpg.org/xfn/11" rel="profile"/>
+<script data-wpmeteor-after="REORDER" type="javascript/blocked">/* wpack.io publicPath */window.__wpackIoprestoPlayerdist='https://www.atheerair.com/wp-content/plugins/presto-player/dist/';</script><script data-wpmeteor-after="REORDER" type="javascript/blocked">/* wpack.io publicPath */window.__wpackIoprestoPlayerdist='https://www.atheerair.com/wp-content/plugins/presto-player/dist/';</script><script data-wpmeteor-after="REORDER" type="javascript/blocked">/* wpack.io publicPath */window.__wpackIoprestoPlayerdist='https://www.atheerair.com/wp-content/plugins/presto-player/dist/';</script><script data-wpmeteor-after="REORDER" type="javascript/blocked">/* wpack.io publicPath */window.__wpackIoprestoPlayerdist='https://www.atheerair.com/wp-content/plugins/presto-player/dist/';</script><script data-wpmeteor-after="REORDER" type="javascript/blocked">/* wpack.io publicPath */window.__wpackIoprestoPlayerdist='https://www.atheerair.com/wp-content/plugins/presto-player/dist/';</script><script data-wpmeteor-after="REORDER" type="javascript/blocked">/* wpack.io publicPath */window.__wpackIoprestoPlayerdist='https://www.atheerair.com/wp-content/plugins/presto-player/dist/';</script><meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots">
+<script data-wpmeteor-after="REORDER" type="javascript/blocked">
+$(window).scroll(function(){
+var sticky = $('.header'),
+scroll = $(window).scrollTop();
+if (scroll >= 100) sticky.addClass('header-fixed');
+else sticky.removeClass('header-fixed');
+});
+</script>
+<!-- This site is optimized with the Yoast SEO plugin v17.6 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Privacy Policy –</title>
+<link href="https://www.atheerair.com/privacy-policy/" rel="canonical">
+<meta content="en_US" property="og:locale">
+<meta content="article" property="og:type"/>
+<meta content="Privacy Policy –" property="og:title"/>
+<meta content="https://www.atheerair.com/privacy-policy/" property="og:url"/>
+<meta content="2022-02-08T07:29:15+00:00" property="article:modified_time"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Est. reading time" name="twitter:label1"/>
+<meta content="16 minutes" name="twitter:data1"/>
+<script class="yoast-schema-graph" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.atheerair.com/#website","url":"https://www.atheerair.com/","name":"","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.atheerair.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"WebPage","@id":"https://www.atheerair.com/privacy-policy/#webpage","url":"https://www.atheerair.com/privacy-policy/","name":"Privacy Policy &ndash;","isPartOf":{"@id":"https://www.atheerair.com/#website"},"datePublished":"2021-05-24T07:14:27+00:00","dateModified":"2022-02-08T07:29:15+00:00","breadcrumb":{"@id":"https://www.atheerair.com/privacy-policy/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.atheerair.com/privacy-policy/"]}]},{"@type":"BreadcrumbList","@id":"https://www.atheerair.com/privacy-policy/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Privacy Policy"}]}]}</script>
+<!-- / Yoast SEO plugin. -->
+<link href="//www.atheerair.com" rel="dns-prefetch"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="//s.w.org" rel="dns-prefetch"/>
+<link href="https://www.atheerair.com/feed/" rel="alternate" title=" » Feed" type="application/rss+xml"/>
+<link href="https://www.atheerair.com/comments/feed/" rel="alternate" title=" » Comments Feed" type="application/rss+xml"/>
+<script data-wpmeteor-after="REORDER" type="javascript/blocked">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.atheerair.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.1"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link href="https://www.atheerair.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8.1" id="wp-block-library-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.atheerair.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.5.3" id="contact-form-7-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.atheerair.com/wp-content/plugins/featured-post-creative/assets/css/wpfp-public.css?ver=1.2.5" id="wpfp-public-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.atheerair.com/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.2.9" id="rs-plugin-settings-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="rs-plugin-settings-inline-css" type="text/css">
+#rs-demo-id {}
+</style>
+<link href="https://www.atheerair.com/wp-content/plugins/category-ajax-filter-pro/assets/css/common/common.css?ver=6.6" id="tc-caf-pro-common-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.atheerair.com/wp-content/plugins/extensive-vc-addon/assets/css/main.min.css?ver=5.8.1" id="extensive-vc-main-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.atheerair.com/wp-content/plugins/extensive-vc-addon/assets/css/ion-icons/css/ionicons.min.css?ver=5.8.1" id="ionicons-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.atheerair.com/wp-content/uploads/maxmegamenu/style.css?ver=83cb25" id="megamenu-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.atheerair.com/wp-includes/css/dashicons.min.css?ver=5.8.1" id="dashicons-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.atheerair.com/wp-content/themes/neve-child/style.css?ver=5.8.1" id="mytheme-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.atheerair.com/wp-content/themes/neve/style-main.min.css?ver=2.11.4" id="neve-style-css" media="all" rel="stylesheet" type="text/css"/>
+<style id="neve-style-inline-css" type="text/css">
+.header-menu-sidebar-inner li.menu-item-nav-search { display: none; }
+ .container{ max-width: 748px; } .has-neve-button-color-color{ color: var(--nv-secondary-accent)!important; } .has-neve-button-color-background-color{ background-color: var(--nv-secondary-accent)!important; } .single-post-container .alignfull > [class*="__inner-container"], .single-post-container .alignwide > [class*="__inner-container"]{ max-width:718px } .button.button-primary, button, input[type=button], .btn, input[type="submit"], /* Buttons in navigation */ ul[id^="nv-primary-navigation"] li.button.button-primary > a, .menu li.button.button-primary > a, .wp-block-button.is-style-primary .wp-block-button__link, .wc-block-grid .wp-block-button .wp-block-button__link, form input[type="submit"], form button[type="submit"], #comments input[type="submit"]{ background-color: var(--nv-secondary-accent);color: var(--nv-text-color);border-radius:0px 0px 0px 0px;border:none;border-width:1px 1px 1px 1px; font-size: 14px; } .button.button-primary:hover, ul[id^="nv-primary-navigation"] li.button.button-primary > a:hover, .menu li.button.button-primary > a:hover, .wp-block-button.is-style-primary .wp-block-button__link:hover, .wc-block-grid .wp-block-button .wp-block-button__link:hover, form input[type="submit"]:hover, form button[type="submit"]:hover, #comments input[type="submit"]:hover{ background-color: var(--nv-secondary-accent);color: var(--nv-text-color); } .button.button-secondary:not(.secondary-default), .wp-block-button.is-style-secondary .wp-block-button__link{ background-color: var(--nv-primary-accent);color: var(--nv-text-dark-bg);border-radius:0px 0px 0px 0px;border:none;border-width:2px 2px 2px 2px; font-size: 14px; } .button.button-secondary.secondary-default{ background-color: var(--nv-primary-accent);color: var(--nv-text-dark-bg);border-radius:0px 0px 0px 0px;border:none;border-width:2px 2px 2px 2px; } .button.button-secondary:not(.secondary-default):hover, .wp-block-button.is-style-secondary .wp-block-button__link:hover{ background-color: var(--nv-primary-accent);color: var(--nv-text-dark-bg); } .button.button-secondary.secondary-default:hover{ background-color: var(--nv-primary-accent);color: var(--nv-text-dark-bg); } .button.button-primary, .wp-block-button.is-style-primary .wp-block-button__link, .wc-block-grid .wp-block-button .wp-block-button__link, form input[type="submit"], form button[type="submit"], #comments input[type="submit"]{ padding:16px 35px 16px 35px; } .button.button-secondary:not(.secondary-default), .wp-block-button.is-style-secondary .wp-block-button__link{ padding:16px 35px 16px 35px; } body, .site-title{ font-size: 15px; line-height: 1.6; letter-spacing: 0px; font-weight: 400; text-transform: none; font-family: Manrope, var(--nv-fallback-ff); } h1, .single h1.entry-title{ font-size: 39px; line-height: 1.2em; letter-spacing: 0px; font-weight: 600; text-transform: none; font-family: Manrope, var(--nv-fallback-ff); } h2{ font-size: 30px; line-height: 1.3em; letter-spacing: 0px; font-weight: 600; text-transform: none; font-family: Manrope, var(--nv-fallback-ff); } h3, .woocommerce-checkout h3{ font-size: 20px; line-height: 1.3em; letter-spacing: 0px; font-weight: 600; text-transform: none; font-family: Manrope, var(--nv-fallback-ff); } h4{ font-size: 16px; line-height: 1.3em; letter-spacing: 0px; font-weight: 600; text-transform: none; font-family: Manrope, var(--nv-fallback-ff); } h5{ font-size: 14px; line-height: 1.3em; letter-spacing: 0px; font-weight: 600; text-transform: none; font-family: Manrope, var(--nv-fallback-ff); } h6{ font-size: 14px; line-height: 1.3em; letter-spacing: 0px; font-weight: 600; text-transform: none; font-family: Manrope, var(--nv-fallback-ff); } .nv-post-thumbnail-wrap img{ box-shadow:0 1px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.1); } form:not([role="search"]):not(.woocommerce-cart-form):not(.woocommerce-ordering):not(.cart) input:read-write:not(#coupon_code), form textarea, form select, .widget select{ margin-bottom: 10px; } form input:read-write, form textarea, form select, form select option, form.wp-block-search input.wp-block-search__input, .widget select{ color: var(--nv-text-color); font-family: Manrope, var(--nv-fallback-ff); } form label, .wpforms-container .wpforms-field-label{ margin-bottom: 10px; } form.search-form input:read-write{ padding-right:45px !important; font-family: Manrope, var(--nv-fallback-ff); } .header-main-inner,.header-main-inner a:not(.button),.header-main-inner .navbar-toggle{ color: var(--nv-text-color); } .header-main-inner .nv-icon svg,.header-main-inner .nv-contact-list svg{ fill: var(--nv-text-color); } .header-main-inner .icon-bar{ background-color: var(--nv-text-color); } .hfg_header .header-main-inner .nav-ul .sub-menu{ background-color: var(--nv-site-bg); } .hfg_header .header-main-inner{ background-color: var(--nv-site-bg); } .header-menu-sidebar .header-menu-sidebar-bg,.header-menu-sidebar .header-menu-sidebar-bg a:not(.button),.header-menu-sidebar .header-menu-sidebar-bg .navbar-toggle{ color: var(--nv-text-color); } .header-menu-sidebar .header-menu-sidebar-bg .nv-icon svg,.header-menu-sidebar .header-menu-sidebar-bg .nv-contact-list svg{ fill: var(--nv-text-color); } .header-menu-sidebar .header-menu-sidebar-bg .icon-bar{ background-color: var(--nv-text-color); } .hfg_header .header-menu-sidebar .header-menu-sidebar-bg .nav-ul .sub-menu{ background-color: var(--nv-site-bg); } .hfg_header .header-menu-sidebar .header-menu-sidebar-bg{ background-color: var(--nv-site-bg); } .header-menu-sidebar{ width: 360px; } .builder-item--logo .site-logo img{ max-width: 32px; } .builder-item--logo .site-logo{ padding:10px 0px 10px 0px; } .builder-item--logo{ margin:0px 0px 0px 0px; } .builder-item--nav-icon .navbar-toggle, .header-menu-sidebar .close-sidebar-panel .navbar-toggle{ border-radius:3px;border:1px solid;border-width:1px; } .builder-item--nav-icon .navbar-toggle{ padding:10px 15px 10px 15px; } .builder-item--nav-icon{ margin:0px 0px 0px 0px; } .builder-item--primary-menu .nav-menu-primary > .nav-ul li:not(.woocommerce-mini-cart-item) > a,.builder-item--primary-menu .nav-menu-primary > .nav-ul .has-caret > a,.builder-item--primary-menu .nav-menu-primary > .nav-ul .neve-mm-heading span,.builder-item--primary-menu .nav-menu-primary > .nav-ul .has-caret{ color: var(--nv-text-color); } .builder-item--primary-menu .nav-menu-primary > .nav-ul li:not(.woocommerce-mini-cart-item) > a:after,.builder-item--primary-menu .nav-menu-primary > .nav-ul li > .has-caret > a:after{ background-color: var(--nv-secondary-accent); } .builder-item--primary-menu .nav-menu-primary > .nav-ul li:not(.woocommerce-mini-cart-item):hover > a,.builder-item--primary-menu .nav-menu-primary > .nav-ul li:hover > .has-caret > a,.builder-item--primary-menu .nav-menu-primary > .nav-ul li:hover > .has-caret{ color: var(--nv-secondary-accent); } .builder-item--primary-menu .nav-menu-primary > .nav-ul li:hover > .has-caret svg{ fill: var(--nv-secondary-accent); } .builder-item--primary-menu .nav-menu-primary > .nav-ul li.current-menu-item > a,.builder-item--primary-menu .nav-menu-primary > .nav-ul li.current_page_item > a,.builder-item--primary-menu .nav-menu-primary > .nav-ul li.current_page_item > .has-caret > a{ color: var(--nv-text-color); } .builder-item--primary-menu .nav-menu-primary > .nav-ul li.current-menu-item > .has-caret svg{ fill: var(--nv-text-color); } .builder-item--primary-menu .nav-ul > li:not(:last-of-type){ margin-right:20px; } .builder-item--primary-menu .style-full-height .nav-ul li:not(.menu-item-nav-search):not(.menu-item-nav-cart):hover > a:after{ width: calc(100% + 20px); } .builder-item--primary-menu .nav-ul li a, .builder-item--primary-menu .neve-mm-heading span{ min-height: 25px; } .builder-item--primary-menu{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px; font-weight: 600; text-transform: uppercase; padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--primary-menu svg{ width: 1em;height: 1em; } .footer-top-inner{ background-color: #0c4649; } .footer-top-inner,.footer-top-inner a:not(.button),.footer-top-inner .navbar-toggle{ color: #ffffff; } .footer-top-inner .nv-icon svg,.footer-top-inner .nv-contact-list svg{ fill: #ffffff; } .footer-top-inner .icon-bar{ background-color: #ffffff; } .footer-top-inner .nav-ul .sub-menu{ background-color: #0c4649; } .footer-bottom-inner{ background-color: var(--nv-dark-bg); } .footer-bottom-inner,.footer-bottom-inner a:not(.button),.footer-bottom-inner .navbar-toggle{ color: var(--nv-text-dark-bg); } .footer-bottom-inner .nv-icon svg,.footer-bottom-inner .nv-contact-list svg{ fill: var(--nv-text-dark-bg); } .footer-bottom-inner .icon-bar{ background-color: var(--nv-text-dark-bg); } .footer-bottom-inner .nav-ul .sub-menu{ background-color: var(--nv-dark-bg); } .builder-item--footer-one-widgets{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer-two-widgets{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer-three-widgets{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer-four-widgets{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer_copyright{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px; font-weight: 500; text-transform: none; padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer_copyright svg{ width: 1em;height: 1em; } @media(min-width: 576px){ .container{ max-width: 992px; } .single-post-container .alignfull > [class*="__inner-container"], .single-post-container .alignwide > [class*="__inner-container"]{ max-width:962px } .button.button-primary, button, input[type=button], .btn, input[type="submit"], /* Buttons in navigation */ ul[id^="nv-primary-navigation"] li.button.button-primary > a, .menu li.button.button-primary > a, .wp-block-button.is-style-primary .wp-block-button__link, .wc-block-grid .wp-block-button .wp-block-button__link, form input[type="submit"], form button[type="submit"], #comments input[type="submit"]{ font-size: 14px; } .button.button-secondary:not(.secondary-default), .wp-block-button.is-style-secondary .wp-block-button__link{ font-size: 14px; } .button.button-primary, .wp-block-button.is-style-primary .wp-block-button__link, .wc-block-grid .wp-block-button .wp-block-button__link, form input[type="submit"], form button[type="submit"], #comments input[type="submit"]{ padding:16px 35px 16px 35px; } .button.button-secondary:not(.secondary-default), .wp-block-button.is-style-secondary .wp-block-button__link{ padding:16px 35px 16px 35px; } body, .site-title{ font-size: 16px; line-height: 1.6; letter-spacing: 0px; } h1, .single h1.entry-title{ font-size: 55px; line-height: 1.3em; letter-spacing: 0px; } h2{ font-size: 35px; line-height: 1.3em; letter-spacing: 0px; } h3, .woocommerce-checkout h3{ font-size: 20px; line-height: 1.3em; letter-spacing: 0px; } h4{ font-size: 16px; line-height: 1.3em; letter-spacing: 0px; } h5{ font-size: 14px; line-height: 1.3em; letter-spacing: 0px; } h6{ font-size: 14px; line-height: 1.3em; letter-spacing: 0px; } .header-menu-sidebar{ width: 360px; } .builder-item--logo .site-logo img{ max-width: 32px; } .builder-item--logo .site-logo{ padding:10px 0px 10px 0px; } .builder-item--logo{ margin:0px 0px 0px 0px; } .builder-item--nav-icon .navbar-toggle{ padding:10px 15px 10px 15px; } .builder-item--nav-icon{ margin:0px 0px 0px 0px; } .builder-item--primary-menu .nav-ul > li:not(:last-of-type){ margin-right:20px; } .builder-item--primary-menu .style-full-height .nav-ul li:not(.menu-item-nav-search):not(.menu-item-nav-cart):hover > a:after{ width: calc(100% + 20px); } .builder-item--primary-menu .nav-ul li a, .builder-item--primary-menu .neve-mm-heading span{ min-height: 25px; } .builder-item--primary-menu{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px; padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--primary-menu svg{ width: 1em;height: 1em; } .builder-item--footer-one-widgets{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer-two-widgets{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer-three-widgets{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer-four-widgets{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer_copyright{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px; padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer_copyright svg{ width: 1em;height: 1em; } }@media(min-width: 960px){ .container{ max-width: 1170px; } body:not(.single):not(.archive):not(.blog):not(.search) .neve-main > .container .col{ max-width: 100%; } body:not(.single):not(.archive):not(.blog):not(.search) .nv-sidebar-wrap{ max-width: 0%; } .neve-main > .archive-container .nv-index-posts.col{ max-width: 100%; } .neve-main > .archive-container .nv-sidebar-wrap{ max-width: 0%; } .neve-main > .single-post-container .nv-single-post-wrap.col{ max-width: 70%; } .single-post-container .alignfull > [class*="__inner-container"], .single-post-container .alignwide > [class*="__inner-container"]{ max-width:789px } .container-fluid.single-post-container .alignfull > [class*="__inner-container"], .container-fluid.single-post-container .alignwide > [class*="__inner-container"]{ max-width:calc(70% + 15px) } .neve-main > .single-post-container .nv-sidebar-wrap{ max-width: 30%; } .button.button-primary, button, input[type=button], .btn, input[type="submit"], /* Buttons in navigation */ ul[id^="nv-primary-navigation"] li.button.button-primary > a, .menu li.button.button-primary > a, .wp-block-button.is-style-primary .wp-block-button__link, .wc-block-grid .wp-block-button .wp-block-button__link, form input[type="submit"], form button[type="submit"], #comments input[type="submit"]{ font-size: 16px; } .button.button-secondary:not(.secondary-default), .wp-block-button.is-style-secondary .wp-block-button__link{ font-size: 16px; } .button.button-primary, .wp-block-button.is-style-primary .wp-block-button__link, .wc-block-grid .wp-block-button .wp-block-button__link, form input[type="submit"], form button[type="submit"], #comments input[type="submit"]{ padding:16px 35px 16px 35px; } .button.button-secondary:not(.secondary-default), .wp-block-button.is-style-secondary .wp-block-button__link{ padding:16px 35px 16px 35px; } body, .site-title{ font-size: 17px; line-height: 1.7; letter-spacing: 0px; } h1, .single h1.entry-title{ font-size: 70px; line-height: 1.3em; letter-spacing: 0px; } h2{ font-size: 50px; line-height: 1.3em; letter-spacing: 0px; } h3, .woocommerce-checkout h3{ font-size: 24px; line-height: 1.3em; letter-spacing: 0px; } h4{ font-size: 20px; line-height: 1.3em; letter-spacing: 0px; } h5{ font-size: 16px; line-height: 1.3em; letter-spacing: 0px; } h6{ font-size: 16px; line-height: 1.3em; letter-spacing: 0px; } .header-main-inner{ height:80px; } .header-menu-sidebar{ width: 360px; } .builder-item--logo .site-logo img{ max-width: 200px; } .builder-item--logo .site-logo{ padding:10px 0px 10px 0px; } .builder-item--logo{ margin:0px 0px 0px 0px; } .builder-item--nav-icon .navbar-toggle{ padding:10px 15px 10px 15px; } .builder-item--nav-icon{ margin:0px 0px 0px 0px; } .builder-item--primary-menu .nav-ul > li:not(:last-of-type){ margin-right:20px; } .builder-item--primary-menu .style-full-height .nav-ul li:not(.menu-item-nav-search):not(.menu-item-nav-cart) > a:after{ left:-10px;right:-10px } .builder-item--primary-menu .style-full-height .nav-ul li:not(.menu-item-nav-search):not(.menu-item-nav-cart):hover > a:after{ width: calc(100% + 20px); } .builder-item--primary-menu .nav-ul li a, .builder-item--primary-menu .neve-mm-heading span{ min-height: 25px; } .builder-item--primary-menu{ font-size: 0.8em; line-height: 1.6em; letter-spacing: 0px; padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--primary-menu svg{ width: 0.8em;height: 0.8em; } .builder-item--footer-one-widgets{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer-two-widgets{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer-three-widgets{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer-four-widgets{ padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer_copyright{ font-size: 1em; line-height: 1.6em; letter-spacing: 0px; padding:0px 0px 0px 0px;margin:0px 0px 0px 0px; } .builder-item--footer_copyright svg{ width: 1em;height: 1em; } }:root{--nv-primary-accent:#2b2b2b;--nv-secondary-accent:#fcaf3b;--nv-site-bg:#ffffff;--nv-light-bg:#ededed;--nv-dark-bg:#14171c;--nv-text-color:#14171c;--nv-text-dark-bg:#ffffff;--nv-c-1:#77b978;--nv-c-2:#f37262;--nv-fallback-ff:Lucida Sans Unicode, Lucida Grande, sans-serif;}
+ #content.neve-main .container .alignfull > [class*="__inner-container"],#content.neve-main .alignwide > [class*="__inner-container"]{ max-width: 718px; } @media(min-width: 576px){ #content.neve-main .container .alignfull > [class*="__inner-container"],#content.neve-main .alignwide > [class*="__inner-container"]{ max-width: 962px; } } @media(min-width: 960px) { #content.neve-main .container .alignfull > [class*="__inner-container"],#content.neve-main .container .alignwide > [class*="__inner-container"]{ max-width: 1140px; } #content.neve-main > .container > .row > .col{ max-width: 100%; } #content.neve-main > .container > .row > .nv-sidebar-wrap, #content.neve-main > .container > .row > .nv-sidebar-wrap.shop-sidebar { max-width: 0%; } } 
+</style>
+<link href="https://www.atheerair.com/wp-content/plugins/ultimate-posts-widget/css/upw-theme-standard.min.css?ver=5.8.1" id="upw_theme_standard-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Raleway%3A400%2C500%2C600%2C700%2C800%2C900%7CPoppins%3A400%2C700&amp;subset=latin-ext&amp;ver=1.0" id="extensive-vc-google-fonts-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="//www.atheerair.com/wp-content/uploads/js_composer/js_composer_front_custom.css?ver=6.2.0" id="js_composer_front-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.atheerair.com/wp-content/uploads/smile_fonts/Defaults/Defaults.css?ver=5.8.1" id="bsf-Defaults-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.atheerair.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/style.min.css?ver=3.19.0" id="ultimate-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.atheerair.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/headings.min.css?ver=3.19.0" id="ultimate-headings-style-css" media="all" rel="stylesheet" type="text/css"/>
+<link href="//fonts.googleapis.com/css?family=Manrope%3A400%2C600&amp;display=swap&amp;ver=2.11.4" id="neve-google-font-manrope-css" media="all" rel="stylesheet" type="text/css"/>
+<script data-defer="" data-src="https://www.atheerair.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" data-wpmeteor-after="REORDER" id="jquery-core-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" data-wpmeteor-after="REORDER" id="jquery-migrate-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.0.5" data-wpmeteor-after="REORDER" id="tp-tools-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.2.9" data-wpmeteor-after="REORDER" id="revmin-js" type="javascript/blocked"></script>
+<script data-wpmeteor-after="REORDER" id="tc-caf-frontend-scripts-pro-js-extra" type="javascript/blocked">
+/* <![CDATA[ */
+var tc_caf_ajax = {"ajax_url":"https:\/\/www.atheerair.com\/wp-admin\/admin-ajax.php","nonce":"e27020563e","plugin_path":"https:\/\/www.atheerair.com\/wp-content\/plugins\/category-ajax-filter\/"};
+var tc_caf_ajax = {"ajax_url":"https:\/\/www.atheerair.com\/wp-admin\/admin-ajax.php","nonce":"e27020563e","plugin_path":"https:\/\/www.atheerair.com\/wp-content\/plugins\/category-ajax-filter\/"};
+/* ]]> */
+</script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-content/plugins/category-ajax-filter-pro/assets/js/script.js?ver=6.6" data-wpmeteor-after="REORDER" id="tc-caf-frontend-scripts-pro-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/ultimate-params.min.js?ver=3.19.0" data-wpmeteor-after="REORDER" id="ultimate-vc-params-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/headings.min.js?ver=3.19.0" data-wpmeteor-after="REORDER" id="ultimate-headings-script-js" type="javascript/blocked"></script>
+<link href="https://www.atheerair.com/wp-json/" rel="https://api.w.org/"/><link href="https://www.atheerair.com/wp-json/wp/v2/pages/626" rel="alternate" type="application/json"/><link href="https://www.atheerair.com/xmlrpc.php?rsd" rel="EditURI" title="RSD" type="application/rsd+xml"/>
+<link href="https://www.atheerair.com/wp-includes/wlwmanifest.xml" rel="wlwmanifest" type="application/wlwmanifest+xml"/>
+<meta content="WordPress 5.8.1" name="generator"/>
+<link href="https://www.atheerair.com/?p=626" rel="shortlink"/>
+<link href="https://www.atheerair.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.atheerair.com%2Fprivacy-policy%2F" rel="alternate" type="application/json+oembed"/>
+<link href="https://www.atheerair.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.atheerair.com%2Fprivacy-policy%2F&amp;format=xml" rel="alternate" type="text/xml+oembed"/>
+<!-- Google Tag Manager -->
+<script data-wpmeteor-after="REORDER" type="javascript/blocked">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MBZW9LR');</script>
+<!-- End Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Ads: 378447455 -->
+<script data-async="" data-src="https://www.googletagmanager.com/gtag/js?id=AW-378447455" data-wpmeteor-after="REORDER" type="javascript/blocked"></script>
+<script data-wpmeteor-after="REORDER" type="javascript/blocked">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-378447455');
+</script><style id="mystickymenu" type="text/css">#mysticky-nav { width:100%; position: static; }#mysticky-nav.wrapfixed { position:fixed; left: 0px; margin-top:0px;  z-index: 99990; -webkit-transition: 0.3s; -moz-transition: 0.3s; -o-transition: 0.3s; transition: 0.3s; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; filter: alpha(opacity=90); opacity:0.9; background-color: #f7f5e7;}#mysticky-nav.wrapfixed .myfixed{ background-color: #f7f5e7; position: relative;top: auto;left: auto;right: auto;}#mysticky-nav .myfixed { margin:0 auto; float:none; border:0px; background:none; max-width:100%; }</style> <style type="text/css">
+</style>
+<script data-wpmeteor-after="REORDER" type="javascript/blocked">
+				jQuery(document).ready(function($) {
+				var ult_smooth_speed = 480;
+				var ult_smooth_step = 80;
+				$('html').attr('data-ult_smooth_speed',ult_smooth_speed).attr('data-ult_smooth_step',ult_smooth_step);
+				});
+			</script><meta content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress." name="generator"/>
+<meta content="Powered by Slider Revolution 6.2.9 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." name="generator"/>
+<link href="https://www.atheerair.com/wp-content/uploads/2021/05/Atheer-favicon-green-150x146.png" rel="icon" sizes="32x32"/>
+<link href="https://www.atheerair.com/wp-content/uploads/2021/05/Atheer-favicon-green.png" rel="icon" sizes="192x192"/>
+<link href="https://www.atheerair.com/wp-content/uploads/2021/05/Atheer-favicon-green.png" rel="apple-touch-icon"/>
+<meta content="https://www.atheerair.com/wp-content/uploads/2021/05/Atheer-favicon-green.png" name="msapplication-TileImage"/>
+<script data-wpmeteor-after="REORDER" type="javascript/blocked">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}				
+					if(window.rs_init_css===undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));					
+					document.getElementById(e.c).height = newh+"px";
+					window.rs_init_css.innerHTML += "#"+e.c+"_wrapper { height: "+newh+"px }";				
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };</script>
+<style id="wp-custom-css" type="text/css">
+			.frontBtnStyle1 .wpb_wrapper .vc_btn3-inline a.vc_btn3-shape-rounded { 
+    background: #02BF9D;
+    border: solid 1px #02BF9D;
+    border-radius: 48px;
+    padding: 15px 40px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
+    outline: 0;
+    cursor: pointer;
+    text-transform: capitalize;
+    text-decoration: none !important;
+}
+
+.buttonStyleArrow2 .vc_btn3-inline 
+a.vc_general.vc_btn3.vc_btn3-size-md.vc_btn3-shape-rounded {   
+    color: #26464B;
+    border-color: transparent!important;
+    background-color: transparent!important;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid rgb(38 70 75 / 26%) !important;
+    padding: 0 15px 0px 0px;
+    border-radius: 0px;
+    text-transform: capitalize;
+}
+
+.buttonStyleArrow2 .vc_btn3-inline 
+a.vc_general.vc_btn3.vc_btn3-size-md.vc_btn3-shape-rounded    .vc_btn3-icon {
+    font-size: 17px;
+    height: 10px;
+    line-height: 10px;
+    right: 0;
+}
+
+.digitalFrontLine .wpb_wrapper h4 > strong {
+    font-weight: 500 !important; 
+}
+
+.pb50 {
+      padding-bottom: 50px !important;
+}
+
+.r20 .wpb_single_image img { 
+      border-radius: 20px;  
+} 
+
+#hs-eu-cookie-confirmation {
+    display: none !important; 
+}
+
+/*updated ui css start*/
+
+.digitalFrontLine .wpb_wrapper .headingType3.mb-0 h2 {  
+    margin-bottom: 0px !important; 
+} 
+
+.blogInnerHeads .uvc-main-heading.ult-responsive>h2 {
+    color: #26464b !important;
+    font-weight: 600 !important; 
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+h1.vc_custom_heading.mb-0 {
+    margin-bottom: 0px !important; 
+}
+
+.realityBox .vc_col-sm-6 .vc_column-inner .wpb_wrapper h2.mb-0 {
+    margin-bottom: 10px !important; 
+}
+
+.howAthereWorks.GetLatestUi .wpb_wrapper h2 {
+    color: #fff;
+    font-size: 34px;
+}
+
+body .aviationType2 .cut1 h2 { 
+    color: #26464B !important;
+    margin-bottom: 0px !important;    
+}
+
+.aviationType2 .cut2 h2 { 
+    color: #02bf9d !important;
+    margin-bottom: 30px; 
+}
+
+.digitalFrontLine .wpb_wrapper h2.headingType3:after {
+    display: none; 
+}
+
+.webinarEventMain .webinarEvent2 .wpb_wrapper h2 { 
+    font-size: 28px;
+}
+
+.howAthereWorks .wpb_wrapper .ult-adjust-bottom-margin.mb-0 h2 {
+    margin-bottom: 0px !important; 
+}
+
+.digitalFrontLine.insideHeader .wpb_wrapper h2 {       
+    color: #fff;
+    font-weight: 500;
+    font-size: 42px;
+    margin-bottom: 10px;
+    text-align: center!important;
+    display: block;
+    width: 100%;
+}
+
+.digitalFrontLine.insideHeader .wpb_wrapper h2.first-l::first-line {
+    color: #fff !important; 
+}
+
+.realityBox .vc_col-sm-6 .vc_column-inner .wpb_wrapper h2 {
+    padding-left: 20px;
+    font-size: 22px;
+    color: #26464B;
+    font-weight: 600;
+}
+
+.innerEventType4 .vc_col-sm-6.formSeven>.vc_column-inner>.wpb_wrapper h1.vc_custom_heading { 
+    background: rgb(255 255 255 / 0%)!important;
+    color: #02bf9d!important;
+    border-radius: 40px;
+    padding: 0 0;
+    display: inline-block;
+    text-align: left;
+    border: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.arJourneyMap h1.vc_custom_heading {
+    text-align: left!important;
+    font-size: 13px!important;
+}
+
+.howAthereWorks.innerEventType4 .wpb_wrapper h2 {  
+    color: #26464B!important;
+    font-style: normal!important;
+    font-size: 34px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.digitalFrontLine.insideHeader .wpb_wrapper h1.textcol1 {
+    opacity: 1;
+    color: #02bf9d;
+}
+
+.realityBox .vc_col-sm-6.formSeven .vc_column-inner .wpb_wrapper h2 {
+    padding-left: 0;
+    font-size: 28px;
+    color: #26464B;
+    margin-bottom: 30px;
+}
+
+.realityBox .vc_col-sm-6.RightContacts .vc_column-inner .wpb_wrapper h2 {
+    padding-left: 0;
+    font-size: 44px;
+    color: #26464B;
+    font-weight: 600;
+}
+
+.requestDemos .leftSidebarForm .wpb_wrapper h2 {  
+    color: #26464B;
+    font-style: normal!important;
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.unleashPower.digitalFrontLine .wpb_wrapper h2 { 
+    color: #fff;
+    font-weight: 500;
+}
+
+.howAthereWorks.PrivacyHead .wpb_wrapper h2 {          
+    font-size: 40px;
+    line-height: 45px;
+    margin-bottom: 0 !important; 
+}
+
+.atheerEventType2 .vc_column_container.vc_col-sm-4>.vc_column-inner .wpb_wrapper h2 {   
+    padding-left: 20px;
+    padding-right: 20px; 
+    font-size: 20px;
+    line-height: 1.3em;
+    letter-spacing: 0;  
+}
+
+.realityBox .vc_col-sm-6.formSeven .vc_column-inner .wpb_wrapper h2 {   
+    padding-left: 0;
+    font-size: 28px;
+    color: #26464B;
+    margin-bottom: 30px;
+}
+
+.realityBox.innerRequestdemo2 .vc_col-sm-6.RightContacts .vc_column-inner .wpb_wrapper h2 {
+    color: #26464b;
+    font-style: normal!important;
+    font-weight: 500;
+    font-size: 38px;
+    position: relative;
+    margin-bottom: 36px;
+}
+
+.howAthereWorks .wpb_wrapper h2 {
+    color: #26464B;
+    font-style: normal!important;
+    font-size: 42px;
+}
+
+.howAthereWorks .wpb_wrapper h2 {
+    margin-bottom:30px!important;
+}
+
+.mt-3{
+    margin-top: 1.5rem;
+}
+
+/*Icons style */
+
+.icon-style img { 
+    background: var(--nv-secondary-accent);
+    padding: 16px;
+}
+
+/* Style the field labels */
+
+.fw400 { 
+      font-weight: 400; 
+}
+
+.fw500 {
+      font-weight: 500;
+}
+
+.digitalFrontLine .wpb_wrapper h2 {
+    color: #26464B;
+    font-style: normal!important;
+    font-weight: 500;
+    font-size: 42px;
+    position: relative;
+    margin-bottom: 36px;
+}
+
+.unleashPower.digitalFrontLine .wpb_wrapper h2::first-line {          
+    color: #02BF9D;
+}
+
+.unleashPower.digitalFrontLine.newUnleash.homeBanner1 .wpb_wrapper h2 {   
+    font-size: 45px; 
+}
+
+.unleashPower.digitalFrontLine.newUnleash.homeBanner1 .wpb_wrapper h2::first-line {          
+    color: #fff; 
+}
+
+.unleashPower.digitalFrontLine .wpb_wrapper h2 {    
+    color: #fff;
+    font-weight: 500;
+}
+
+.digitalFrontLine .wpb_wrapper h2:after {  
+    content: "";
+    width: 50px;
+    height: 3px;
+    background: #02BF9D;
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+}
+
+.howThere .vc_col-sm-6 .wpb_wrapper h2:after {
+    display: block; 
+    content: "";
+    width: 50px;
+    height: 3px;
+    background: #02BF9D;
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+}
+
+.transformFront.digitalFrontLine .wpb_wrapper h2 {    
+    line-height: 60px;
+    text-transform: capitalize;
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.unleashPower.digitalFrontLine .wpb_wrapper h2::first-line {
+    color: #fff;  
+}
+
+.digitalFrontLine .wpb_wrapper .headingType3 h2:after {
+    display: none; 
+}
+
+.digitalFrontLine .wpb_wrapper h2.headingType3:after {     
+    display: none;
+}
+
+.howThere .vc_col-sm-6 .wpb_wrapper h2 {
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.mb-20 {
+    margin-bottom: 20px !important; 
+}
+
+.digitalFrontLine .wpb_wrapper .headingType3 h2::first-line { 
+    color: #26464B; 
+}
+.digitalFrontLine .wpb_wrapper .headingType3 h2:after {
+    display: none;
+}     
+
+.aviationType2 .cut1 h2 {  
+    color: #26464B!important;
+}
+
+.aviationType2 .cut1 h2:first-line {
+    color: #26464B !important;
+}
+
+.aviationType2 .cut1 h2 {
+    color: #26464B !important;
+}
+
+.aviationType2 .cut2 h2 {
+    color: #02bf9d !important;
+    margin-bottom: 30px;
+}
+
+.aviationType3 .cut1 h2:first-line {
+    color: #26464B !important;
+}
+
+.aviationType2 .cut1.cut3 h2:first-line {    
+    color: #02bf9d !important; 
+}
+
+.aviationType3 .cut1 h2 {
+    color: #26464B !important;
+}
+
+.aviationType3 .cut2 h2 {
+    color: #02bf9d !important;
+}
+
+.aviationType5 figure .vc_single_image-wrapper img.vc_single_image-img {
+    border-radius: 0px 50px 0px 50px;
+}
+
+.unleashPower.digitalFrontLine.aviationType5 .wpb_wrapper h2:first-line {
+    color: #fff !important;
+}
+
+.unleashPower.digitalFrontLine.aviationType5 .wpb_wrapper h2:after {
+    display: none;
+}
+
+.transformFront.digitalFrontLine .vc_col-sm-8 .wpb_wrapper h2 {
+    line-height: 45px;
+    text-transform: capitalize;
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 30px;
+    color: #fff;
+    font-family: inherit !important;
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.transformFront.digitalFrontLine .vc_col-sm-8 .wpb_wrapper .headingType3 h2:after {
+    display: none; 
+}
+
+.digitalFrontLine.abouts1 .wpb_wrapper h2.about2 {
+    text-align: center;
+    display: block;
+    font-size: 42px;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 100px;
+}
+
+.unleashPower.digitalFrontLine .wpb_wrapper h2.mb-0 {    
+    margin-bottom: 0px !important; 
+}
+
+.digitalFrontLine.abouts1 .wpb_wrapper h2.about2::first-line {  
+    color: #27c7a6 !important; 
+}
+
+.aviationType2.atheerManagements .cut1 h2 {  
+    margin-bottom: 22px !important; 
+}
+
+.digitalFrontLine .wpb_wrapper .infoboxType1 h2 { 
+    font-size: 38px;  
+    margin-bottom: 0; 
+    text-align: center;   
+}
+.digitalFrontLine .wpb_wrapper .infoboxType1 h2:after {
+    display: none;
+}
+
+.howAthereWorks.innerEventType4 .wpb_wrapper h2.h2set1 {
+    color: #02BF9D !important;
+    font-size: 38px !important;
+    line-height: 50px !important;
+}
+
+.arJourneyMap.innerEventType4 .eventHeading3>.wpb_wrapper h2.h2Whites { 
+    color: #ffffff !important;   
+    font-size: 38px !important;
+    line-height: 50px !important;
+}
+
+.arJourneyMap.innerEventType4 .eventHeading3>.wpb_wrapper .text-primary {
+    color: #02BF9D !important;
+}
+
+.testGravityForm form {
+    padding: 50px 60px 30px;
+    background: #1a293e;  
+} 
+.testGravityForm form .gform_footer.top_label input[type="submit"] { 
+    background: #02bf9d;  
+    color: white;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    font-size: 20px; 
+    padding: 10px 0; 
+    outline: 0; 
+}
+.howAthereWorks .ourCustomers .wpb_wrapper {
+    text-align: left;
+}
+.AccordTyps1 .vc_tta-panels .vc_tta-panel-heading > .vc_tta-panel-title.vc_tta-controls-icon-position-left 
+a > .vc_tta-icon.fas.fa-circle {
+    display: none;
+}
+.AccordTyps1 .vc_tta-panels .vc_tta-panel-heading > .vc_tta-panel-title.vc_tta-controls-icon-position-left 
+a > span.vc_tta-title-text { 
+    font-size: 17px;
+    color: #113e44; 
+    text-align: left;
+    margin-left: 0;
+    font-weight: 600;
+    line-height: 22px;   
+}
+.AccordTyps1 .vc_tta-panels .vc_tta-panel-heading > .vc_tta-panel-title.vc_tta-controls-icon-position-left {
+    font-size: 18px;
+    margin-bottom: 0px !important;
+}
+.AccordTyps1 .vc_tta-panels .vc_tta-panel-body { 
+    padding: 10px 58px !important; 
+}
+.AccordTyps1 .vc_tta-panels .vc_tta-panel-body .wpb_wrapper > p {
+    text-align: left; 
+}
+.optiPreventive {
+    padding-bottom: 70px !important; 
+}
+.optiPreventive #gform_confirmation_message_43 {  
+    font-size: 40px;
+    color: #fff;
+    font-weight: bolder;
+}
+.optiPreventive form#gform_43 {
+    position: relative; 
+}
+.optiPreventive form#gform_43 .gform_body.gform-body { 
+    width: 100%;
+    max-width: 94%;     
+}
+.optiPreventive .gform_wrapper.gravity-theme form#gform_43 .gfield input.large {
+    height: 55px;
+    border-radius: 48px;
+    padding-left: 18px;
+    padding-right: 130px;
+}
+.optiPreventive form#gform_43 .gform_footer.top_label {                    
+    position: absolute;
+    right: -10px;
+    top: -22px;            
+}
+.optiPreventive form#gform_43 .gform_footer.top_label > input[type="submit"] {
+    margin-bottom: 0px !important; 
+    color: #fff;
+    background: #02bf9d;
+    border-radius: 32px;
+    padding: 12px 32px;
+    font-family: inherit !important;
+    font-style: normal;
+    font-size: 14px;
+    display: inline-block;
+    border: solid 1px #02bf9d;
+    height: 55px;
+}
+.optiPreventive form#gform_43 .gform_footer.top_label > input[type="submit"]:hover, 
+.optiPreventive form#gform_43 .gform_footer.top_label > input[type="submit"]:focus { 
+    background: #02bf9d !important; 
+    opacity: 1; 
+}
+.gform_wrapper .gform_validation_errors>h2.hide_summary {
+    margin: 0;
+    font-size: 16px;
+    margin-bottom: 0px !important;
+    color: red;
+}
+body .d-none {
+    display: none !important; 
+}
+.optiPreventive .vc_btn3.vc_btn3-color-info.vc_btn3-style-modern {  
+    background: #18474e;
+    border: solid 1px #18474e;  
+    box-shadow: none; 
+    border-radius: 48px;
+    padding: 15px 40px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #fff;
+    outline: 0;
+    cursor: pointer;
+    text-transform: capitalize;
+    text-decoration: none !important;
+}
+.unleashPower.digitalFrontLine .wpb_wrapper h2.gform_submission_error.hide_summary {  
+    color: red; 
+    font-size: 22px;
+    background: transparent;
+    margin-top: -8px;
+}
+.unleashPower.digitalFrontLine .wpb_wrapper h2.gform_submission_error.hide_summary:after {
+    display: none; 
+}
+.unleashPower.digitalFrontLine .gform_validation_errors>h2.gform_submission_error span.gform-icon {
+    right: 0;
+    left: auto; 
+}
+@media (max-width: 767px) {
+    .optiPreventive form#gform_43 .gform_footer.top_label {  
+        position: static;
+    }
+    .optiPreventive .gform_wrapper.gravity-theme form#gform_43 .gfield input.large {
+        padding-right: 18px; 
+    }
+    .optiPreventive form#gform_43 .gform_body.gform-body {    
+        max-width: 100%; 
+    }
+    .testGravityForm form {
+        padding: 25px 25px 3px; 
+    }
+    .AccordTyps1 .vc_tta-panels .vc_tta-panel-body {
+        padding: 10px 28px !important;
+    }
+    .AccordTyps1 .vc_tta-panels .vc_tta-panel-heading > .vc_tta-panel-title.vc_tta-controls-icon-position-left a {
+        padding-left: 30px !important; 
+    } 
+    .AccordTyps1 .vc_tta-controls-icon-position-left .vc_tta-controls-icon {  
+        left: 8px !important;
+    }
+    .AccordTyps1 .vc_tta-panels .vc_tta-panel-heading > .vc_tta-panel-title.vc_tta-controls-icon-position-left a > 
+    span.vc_tta-title-text {
+        font-size: 15px; 
+    }
+    .ulType1.AccordTyps1 li {
+        font-size: 15px; 
+    }
+    .AccordTyps1 .vc_tta-panels .vc_tta-panel-body .wpb_wrapper > p {
+        font-size: 15px;  
+    }
+    .howAthereWorks .ourCustomers .wpb_wrapper {
+        text-align: center;
+    }
+    .mobiCenter {
+        text-align: center !important; 
+    }
+}
+@media (min-width: 768px) {
+    .ourCustomers {
+        padding-left: 50px;  
+    }
+}
+/*Blog Page Form 18May2022*/
+
+.form-center-box{width:2200px !important; left: -51rem !important; bottom: -23px;} 
+.form-center-box .vc_column-inner{
+	    width: 50% !important; 
+    text-align: center !important;
+}           
+.form-center-box  h4{
+	color:#fff;
+	font-size:42px;
+}
+@media(max-width:1366px){
+	.form-center-box {
+    width: 1837px !important;
+    left: -37rem !important;
+ }
+}  
+
+@media(max-width:1024px){
+	.form-center-box {
+    width: 146% !important;
+    left: 0 !important;
+ }
+	.form-center-box .vc_column-inner{
+		width:70% !important; }
+}   
+
+.form-center-box form input[type="submit"]{
+	background-color: #18474e !important;
+	font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+	color:#fff !important;
+	border-radius: 48px !important;
+} 
+/*End Blog Page Form 18May2022*/
+
+/*updated ui css end*/   
+.optiPreventive #gform_wrapper_43  form#gform_43 .gform_footer.top_label > input[type="submit"] {
+	background: #18474e; 
+  border: solid 1px #18474e; 
+}
+
+		</style>
+<style data-type="vc_shortcodes-custom-css" type="text/css">.vc_custom_1621861007540{background-color: #e0e0e0 !important;background-position: center !important;background-repeat: no-repeat !important;background-size: cover !important;}</style><noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><style type="text/css">/** Mega Menu CSS: fs **/</style>
+<link href="https://www.atheerair.com/wp-content/themes/neve-child/style.css" rel="stylesheet"/>
+<!-- OneTrust Cookies Consent Notice start for atheerair.com -->
+<script charset="UTF-8" data-domain-script="5367f13f-2439-48a9-b2e4-0b9cdffc310d" data-src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-wpmeteor-after="REORDER" type="javascript/blocked"></script>
+<script data-wpmeteor-after="REORDER" type="javascript/blocked">
+
+    function OptanonWrapper() { }
+
+    </script>
+<script data-wpmeteor-after="REORDER" type="javascript/blocked"> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('YEgkB8lB5RJ4ep3Z'); </script>
+<!-- One Trust Cookies Consent Notice end for atheerair.com -->
+</meta></link></meta></head>
+<body class="privacy-policy page-template-default page page-id-626 wp-custom-logo extensive-vc-1.9 mega-menu-primary nv-sidebar-full-width nv-without-title menu_sidebar_slide_left evc-predefined-style wpb-js-composer js-comp-ver-6.2.0 vc_responsive" id="neve_body">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-MBZW9LR" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><div class="wrapper">
+<header class="header" id="header" role="banner">
+<a class="neve-skip-link show-on-focus" href="#content" tabindex="0">
+            Skip to content        </a>
+<div class="hfg_header site-header" id="header-grid">
+<nav class="header--row header-main hide-on-mobile hide-on-tablet layout-full-contained nv-navbar header--row" data-row-id="main" data-show-on="desktop">
+<div class="header--row-inner header-main-inner">
+<div class="container">
+<div class="row row--wrapper" data-section="hfg_header_layout_main">
+<div class="builder-item hfg-item-first col-4 desktop-left"><div class="item--inner builder-item--logo" data-item-id="logo" data-section="title_tagline">
+<div class="site-logo">
+<a aria-label="" class="brand" href="https://www.atheerair.com/" title=""><div class="title-with-logo"><img alt="" class="skip-lazy" height="24" loading="lazy" src="https://www.atheerair.com/wp-content/uploads/2021/09/logo.png" width="181"/><div class="nv-title-tagline-wrap"><p class="site-title"></p></div></div></a></div>
+</div>
+</div><div class="builder-item has-nav hfg-item-last col-8 desktop-right"><div class="item--inner builder-item--primary-menu has_menu" data-item-id="primary-menu" data-section="header_menu_primary">
+<div class="nv-nav-wrap">
+<div aria-label="Primary Menu" class="style-plain nav-menu-primary" role="navigation">
+<div class="mega-menu-wrap" id="mega-menu-wrap-primary"><div class="mega-menu-toggle"><div class="mega-toggle-blocks-left"></div><div class="mega-toggle-blocks-center"></div><div class="mega-toggle-blocks-right"><div class="mega-toggle-block mega-menu-toggle-animated-block mega-toggle-block-0" id="mega-toggle-block-0"><button aria-expanded="false" aria-label="Toggle Menu" class="mega-toggle-animated mega-toggle-animated-slider" type="button">
+<span class="mega-toggle-animated-box">
+<span class="mega-toggle-animated-inner"></span>
+</span>
+</button></div></div></div><ul class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-breakpoint="768" data-document-click="collapse" data-effect="fade_up" data-effect-mobile="disabled" data-effect-speed="200" data-effect-speed-mobile="0" data-event="hover_intent" data-hover-intent-interval="100" data-hover-intent-timeout="300" data-mobile-force-width="false" data-mobile-state="collapse_all" data-second-click="go" data-unbind="true" data-vertical-behaviour="standard" id="mega-menu-primary"><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-home mega-align-bottom-left mega-menu-flyout mega-menu-item-346" id="mega-menu-item-346"><a class="mega-menu-link" href="https://www.atheerair.com/" tabindex="0">Home</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-714" id="mega-menu-item-714"><a class="mega-menu-link" href="https://www.atheerair.com/connected-worker-platform/" tabindex="0">Platform</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-megamenu mega-align-bottom-left mega-menu-grid mega-menu-item-1116" id="mega-menu-item-1116"><a aria-expanded="false" aria-haspopup="true" class="mega-menu-link" tabindex="0">Solutions<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-row" id="mega-menu-1116-0">
+<ul class="mega-sub-menu">
+<li class="mega-menu-column mega-menu-columns-4-of-12" id="mega-menu-1116-0-0">
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-has-icon mega-icon-left mega-menu-item-1117" id="mega-menu-item-1117"><a class="dashicons-building mega-menu-link" href="#">Industry<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2130" id="mega-menu-item-2130"><a class="mega-menu-link" href="https://www.atheerair.com/automotive-industry-connected-worker/">Automotive</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1917" id="mega-menu-item-1917"><a class="mega-menu-link" href="https://www.atheerair.com/aviation-industry-connected-worker/">Aviation</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2890" id="mega-menu-item-2890"><a class="mega-menu-link" href="https://www.atheerair.com/manufacturing-industry-connected-worker/">Manufacturing</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2889" id="mega-menu-item-2889"><a class="mega-menu-link" href="https://www.atheerair.com/mining-and-metals-industry-connected-worker/">Mining And Metals</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2888" id="mega-menu-item-2888"><a class="mega-menu-link" href="https://www.atheerair.com/oil-and-gas-industry-connected-worker/">Oil Gas And Energy</a></li> </ul>
+</li> </ul>
+</li><li class="mega-menu-column mega-menu-columns-4-of-12" id="mega-menu-1116-0-1">
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-has-icon mega-icon-left mega-menu-item-1118" id="mega-menu-item-1118"><a class="dashicons-book mega-menu-link" href="#">Use Case<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2193" id="mega-menu-item-2193"><a class="mega-menu-link" href="https://www.atheerair.com/audit-and-inspections/">Audit &amp; Quality</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2192" id="mega-menu-item-2192"><a class="mega-menu-link" href="https://www.atheerair.com/continuous-improvement/">Continuous Improvement</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2196" id="mega-menu-item-2196"><a class="mega-menu-link" href="https://www.atheerair.com/dealer-operations/">Dealer Operations</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2225" id="mega-menu-item-2225"><a class="mega-menu-link" href="https://www.atheerair.com/field-operations/">Field Operations</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2226" id="mega-menu-item-2226"><a class="mega-menu-link" href="https://www.atheerair.com/health-and-safety/">Health And Safety</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2191" id="mega-menu-item-2191"><a class="mega-menu-link" href="https://www.atheerair.com/maintenance-operations/">Maintenance Operations</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2195" id="mega-menu-item-2195"><a class="mega-menu-link" href="https://www.atheerair.com/production-operations/">Production Operations</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2172" id="mega-menu-item-2172"><a class="mega-menu-link" href="https://www.atheerair.com/remote-support/">Remote Technician Support</a></li> </ul>
+</li> </ul>
+</li><li class="mega-menu-column mega-menu-columns-4-of-12" id="mega-menu-1116-0-2">
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-has-icon mega-icon-left mega-menu-item-1119" id="mega-menu-item-1119"><a class="dashicons-text-page mega-menu-link" href="#">Applications<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4551" id="mega-menu-item-4551"><a class="mega-menu-link" href="https://www.atheerair.com/self-assist/">Self Assist</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4549" id="mega-menu-item-4549"><a class="mega-menu-link" href="https://www.atheerair.com/work-assist/">Work Assist</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4550" id="mega-menu-item-4550"><a class="mega-menu-link" href="https://www.atheerair.com/remote-assist/">Remote Assist</a></li> </ul>
+</li> </ul>
+</li> </ul>
+</li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-1123" id="mega-menu-item-1123"><a aria-expanded="false" aria-haspopup="true" class="mega-menu-link" tabindex="0">Resources<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-915" id="mega-menu-item-915"><a class="mega-menu-link" href="https://www.atheerair.com/blog/">Blogs</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2637" id="mega-menu-item-2637"><a class="mega-menu-link" href="https://www.atheerair.com/webinars/">Webinars</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1129" id="mega-menu-item-1129"><a class="mega-menu-link" href="https://www.atheerair.com/ebook-and-whitepapers/">eBook &amp; Whitepapers</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-7805" id="mega-menu-item-7805"><a class="mega-menu-link" href="https://www.atheerair.com/connected-front-line-worker-platform-rfp-template/">Connected Front Line Worker Platform RFP Template</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-7413" id="mega-menu-item-7413"><a class="mega-menu-link" href="https://www.atheerair.com/frontline-worker-platform-journey-map/">Front Line Journey Map</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1127" id="mega-menu-item-1127"><a class="mega-menu-link" href="https://frontlineos-atheer.zendesk.com/hc/en-us" target="_blank">Help Center</a></li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-1238" id="mega-menu-item-1238"><a class="mega-menu-link" href="https://www.atheerair.com/contact-us/" tabindex="0">Contact Us</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-align-bottom-left mega-menu-flyout mega-menu-item-1128" id="mega-menu-item-1128"><a class="mega-menu-link" href="https://app.atheer.io/signin" tabindex="0" target="_blank">Login</a></li><li class="mega-requestBtn mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-1130 requestBtn" id="mega-menu-item-1130"><a class="mega-menu-link" href="https://www.atheerair.com/demo-request/" tabindex="0">Request A Demo</a></li></ul></div> </div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+</nav>
+<nav class="header--row header-main hide-on-desktop layout-full-contained nv-navbar header--row" data-row-id="main" data-show-on="mobile">
+<div class="header--row-inner header-main-inner">
+<div class="container">
+<div class="row row--wrapper" data-section="hfg_header_layout_main">
+<div class="builder-item hfg-item-first col-8 tablet-left mobile-left"><div class="item--inner builder-item--logo" data-item-id="logo" data-section="title_tagline">
+<div class="site-logo">
+<a aria-label="" class="brand" href="https://www.atheerair.com/" title=""><div class="title-with-logo"><img alt="" class="skip-lazy" height="24" loading="lazy" src="https://www.atheerair.com/wp-content/uploads/2021/09/logo.png" width="181"/><div class="nv-title-tagline-wrap"><p class="site-title"></p></div></div></a></div>
+</div>
+</div><div class="builder-item hfg-item-last col-4 tablet-right mobile-right"><div class="item--inner builder-item--nav-icon" data-item-id="nav-icon" data-section="header_menu_icon">
+<div class="menu-mobile-toggle item-button navbar-toggle-wrapper">
+<button aria-label="
+			Navigation Menu			" class="navbar-toggle">
+<div class="bars">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</div>
+<span class="screen-reader-text">Toggle Navigation</span>
+</button>
+</div> <!--.navbar-toggle-wrapper-->
+</div>
+</div> </div>
+</div>
+</div>
+</nav>
+<div class="header-menu-sidebar menu-sidebar-panel slide_left" id="header-menu-sidebar">
+<div class="header-menu-sidebar-bg" id="header-menu-sidebar-bg">
+<div class="close-sidebar-panel navbar-toggle-wrapper">
+<button aria-label="
+				Navigation Menu				" class="navbar-toggle active">
+<div class="bars">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</div>
+<span class="screen-reader-text">
+				Toggle Navigation					</span>
+</button>
+</div>
+<div class="header-menu-sidebar-inner" id="header-menu-sidebar-inner">
+<div class="builder-item has-nav hfg-item-last hfg-item-first col-12 desktop-right tablet-left mobile-left"><div class="item--inner builder-item--primary-menu has_menu" data-item-id="primary-menu" data-section="header_menu_primary">
+<div class="nv-nav-wrap">
+<div aria-label="Primary Menu" class="style-plain nav-menu-primary" role="navigation">
+<div class="mega-menu-wrap" id="mega-menu-wrap-primary"><div class="mega-menu-toggle"><div class="mega-toggle-blocks-left"></div><div class="mega-toggle-blocks-center"></div><div class="mega-toggle-blocks-right"><div class="mega-toggle-block mega-menu-toggle-animated-block mega-toggle-block-0" id="mega-toggle-block-0"><button aria-expanded="false" aria-label="Toggle Menu" class="mega-toggle-animated mega-toggle-animated-slider" type="button">
+<span class="mega-toggle-animated-box">
+<span class="mega-toggle-animated-inner"></span>
+</span>
+</button></div></div></div><ul class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-breakpoint="768" data-document-click="collapse" data-effect="fade_up" data-effect-mobile="disabled" data-effect-speed="200" data-effect-speed-mobile="0" data-event="hover_intent" data-hover-intent-interval="100" data-hover-intent-timeout="300" data-mobile-force-width="false" data-mobile-state="collapse_all" data-second-click="go" data-unbind="true" data-vertical-behaviour="standard" id="mega-menu-primary"><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-home mega-align-bottom-left mega-menu-flyout mega-menu-item-346" id="mega-menu-item-346"><a class="mega-menu-link" href="https://www.atheerair.com/" tabindex="0">Home</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-714" id="mega-menu-item-714"><a class="mega-menu-link" href="https://www.atheerair.com/connected-worker-platform/" tabindex="0">Platform</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-menu-megamenu mega-align-bottom-left mega-menu-grid mega-menu-item-1116" id="mega-menu-item-1116"><a aria-expanded="false" aria-haspopup="true" class="mega-menu-link" tabindex="0">Solutions<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-row" id="mega-menu-1116-0">
+<ul class="mega-sub-menu">
+<li class="mega-menu-column mega-menu-columns-4-of-12" id="mega-menu-1116-0-0">
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-has-icon mega-icon-left mega-menu-item-1117" id="mega-menu-item-1117"><a class="dashicons-building mega-menu-link" href="#">Industry<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2130" id="mega-menu-item-2130"><a class="mega-menu-link" href="https://www.atheerair.com/automotive-industry-connected-worker/">Automotive</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1917" id="mega-menu-item-1917"><a class="mega-menu-link" href="https://www.atheerair.com/aviation-industry-connected-worker/">Aviation</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2890" id="mega-menu-item-2890"><a class="mega-menu-link" href="https://www.atheerair.com/manufacturing-industry-connected-worker/">Manufacturing</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2889" id="mega-menu-item-2889"><a class="mega-menu-link" href="https://www.atheerair.com/mining-and-metals-industry-connected-worker/">Mining And Metals</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2888" id="mega-menu-item-2888"><a class="mega-menu-link" href="https://www.atheerair.com/oil-and-gas-industry-connected-worker/">Oil Gas And Energy</a></li> </ul>
+</li> </ul>
+</li><li class="mega-menu-column mega-menu-columns-4-of-12" id="mega-menu-1116-0-1">
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-has-icon mega-icon-left mega-menu-item-1118" id="mega-menu-item-1118"><a class="dashicons-book mega-menu-link" href="#">Use Case<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2193" id="mega-menu-item-2193"><a class="mega-menu-link" href="https://www.atheerair.com/audit-and-inspections/">Audit &amp; Quality</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2192" id="mega-menu-item-2192"><a class="mega-menu-link" href="https://www.atheerair.com/continuous-improvement/">Continuous Improvement</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2196" id="mega-menu-item-2196"><a class="mega-menu-link" href="https://www.atheerair.com/dealer-operations/">Dealer Operations</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2225" id="mega-menu-item-2225"><a class="mega-menu-link" href="https://www.atheerair.com/field-operations/">Field Operations</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2226" id="mega-menu-item-2226"><a class="mega-menu-link" href="https://www.atheerair.com/health-and-safety/">Health And Safety</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2191" id="mega-menu-item-2191"><a class="mega-menu-link" href="https://www.atheerair.com/maintenance-operations/">Maintenance Operations</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2195" id="mega-menu-item-2195"><a class="mega-menu-link" href="https://www.atheerair.com/production-operations/">Production Operations</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2172" id="mega-menu-item-2172"><a class="mega-menu-link" href="https://www.atheerair.com/remote-support/">Remote Technician Support</a></li> </ul>
+</li> </ul>
+</li><li class="mega-menu-column mega-menu-columns-4-of-12" id="mega-menu-1116-0-2">
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-has-icon mega-icon-left mega-menu-item-1119" id="mega-menu-item-1119"><a class="dashicons-text-page mega-menu-link" href="#">Applications<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4551" id="mega-menu-item-4551"><a class="mega-menu-link" href="https://www.atheerair.com/self-assist/">Self Assist</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4549" id="mega-menu-item-4549"><a class="mega-menu-link" href="https://www.atheerair.com/work-assist/">Work Assist</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-4550" id="mega-menu-item-4550"><a class="mega-menu-link" href="https://www.atheerair.com/remote-assist/">Remote Assist</a></li> </ul>
+</li> </ul>
+</li> </ul>
+</li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-1123" id="mega-menu-item-1123"><a aria-expanded="false" aria-haspopup="true" class="mega-menu-link" tabindex="0">Resources<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-915" id="mega-menu-item-915"><a class="mega-menu-link" href="https://www.atheerair.com/blog/">Blogs</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2637" id="mega-menu-item-2637"><a class="mega-menu-link" href="https://www.atheerair.com/webinars/">Webinars</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-1129" id="mega-menu-item-1129"><a class="mega-menu-link" href="https://www.atheerair.com/ebook-and-whitepapers/">eBook &amp; Whitepapers</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-7805" id="mega-menu-item-7805"><a class="mega-menu-link" href="https://www.atheerair.com/connected-front-line-worker-platform-rfp-template/">Connected Front Line Worker Platform RFP Template</a></li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-7413" id="mega-menu-item-7413"><a class="mega-menu-link" href="https://www.atheerair.com/frontline-worker-platform-journey-map/">Front Line Journey Map</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-1127" id="mega-menu-item-1127"><a class="mega-menu-link" href="https://frontlineos-atheer.zendesk.com/hc/en-us" target="_blank">Help Center</a></li></ul>
+</li><li class="mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-1238" id="mega-menu-item-1238"><a class="mega-menu-link" href="https://www.atheerair.com/contact-us/" tabindex="0">Contact Us</a></li><li class="mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-align-bottom-left mega-menu-flyout mega-menu-item-1128" id="mega-menu-item-1128"><a class="mega-menu-link" href="https://app.atheer.io/signin" tabindex="0" target="_blank">Login</a></li><li class="mega-requestBtn mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-1130 requestBtn" id="mega-menu-item-1130"><a class="mega-menu-link" href="https://www.atheerair.com/demo-request/" tabindex="0">Request A Demo</a></li></ul></div> </div>
+</div>
+</div>
+</div> </div>
+</div>
+</div>
+<div class="header-menu-sidebar-overlay"></div>
+</div>
+</header>
+<main class="neve-main" id="content" role="main">
+<div class="container single-page-container">
+<div class="row">
+<div class="nv-single-page-wrap col">
+<div class="nv-content-wrap entry-content"><div class="vc_row wpb_row vc_row-fluid digitalFrontLine insideHeader vc_custom_1621861007540 vc_row-has-fill" data-vc-full-width="true" data-vc-full-width-init="false"><div class="digiSidebar wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><h2 class="vc_custom_heading headingType3" style="text-align: left">Atheer’s Privacy Policy</h2>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p><!--(figmeta)eyJmaWxlS2V5IjoiWVNJdG9OZFNuRlY4b2ZhWTByUVlmSyIsInBhc3RlSUQiOjc0NDEzNTQ0NywiZGF0YVR5cGUiOiJzY2VuZSJ9Cg==(/figmeta)--><!--(figma)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(/figma)-->Last Updated: Feb 22, 2020</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row-full-width vc_clearfix"></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-528962b0d9a24719e uvc-5622 headingType3" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-528962b0d9a24719e" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-528962b0d9a24719e h2"><h2 style="font-weight:normal;">Our Commitment to Protecting Your Privacy</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;">Different countries, their sub-divisions (like the U.S. state of California) and transnational regions (like the European Economic Area or EEA) define “Personal Information” in many different ways. Atheer views the collection of Personal Information in the broadest terms and considers “Personal Information” <strong>as any information that identifies, relates to, describes, is capable of being associated with, or could reasonably be linked, directly or indirectly, with a particular person or individual.</strong></p>
+<p style="text-align: left;">Atheer attempts under all circumstances to minimize to the greatest extent possible the collection, processing, usage and storing of any Personal Information and only uses Personal Information for the limited purposes described in this Privacy Policy.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-62662b0d9a24758f uvc-4776" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-62662b0d9a24758f" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-62662b0d9a24758f h2"><h2 style="font-weight:normal;">What is Personal Information?</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;">Different countries, their sub-divisions (like the U.S. state of California) and transnational regions (like the European Economic Area or EEA) define “Personal Information” in many different ways. Atheer views the collection of Personal Information in the broadest terms and considers “Personal Information” as any information that identifies, relates to, describes, is capable of being associated with, or could reasonably be linked, directly or indirectly, with a particular person or individual.</p>
+<p style="text-align: left;">Atheer attempts under all circumstances to minimize to the greatest extent possible the collection, processing, usage and storing of any Personal Information and only uses Personal Information for the limited purposes described in this Privacy Policy.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-822362b0d9a2478ba uvc-8558" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-822362b0d9a2478ba" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-822362b0d9a2478ba h2"><h2 style="font-weight:normal;">Information We Collect and Receive and How We Collect This Information.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;"><strong>Atheer Service and Registration.</strong> Atheer may collect and receive Personal Information in a variety of ways and use them for different purposes. For example, when you sign up for the Atheer Services or attend events and visit our offices, we collect personal data identifiers such as your name, email address, organization name, and other contact information. We also collect other information required to configure, use, and provide support for the Atheer Services including your device IP address, the time you visited, and cookies activity.</p>
+<p style="text-align: left;"><strong>Cookies.</strong> A cookie is a piece of information that our web server sends to your computer or device (actually to your browser file) when you access a website. Then when you come back to our site, the browser will detect whether you have one of our cookies on your computer or device. Our cookies help provide additional functionality to the website and help us analyze website usage more accurately. We use both our own and third party cookies for statistical purposes and to improve our website. You can set some of your own Cookie preferences or disable them entirely, but doing so may affect the functionality of the Atheer Services, including your receipt of notifications.</p>
+<p style="text-align: left;"><strong>IP Address.</strong> When you visit our website, we collect your IP address information in order to provide you more relevant content.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-676662b0d9a247c0b uvc-5954" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-676662b0d9a247c0b" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-676662b0d9a247c0b h2"><h2 style="font-weight:normal;">How We Use Collected Personal Information.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;"><strong>The Personal Information we collect is used for various purposes such as:</strong></p>
+<p style="text-align: left;"><strong>Providing Services.</strong> We may contact you to provision the Atheer Services, provide technical support, track site usage and assist with website account session authentication and to identify you when you visit our website.</p>
+<p style="text-align: left;"><strong>Communicating with You About Our Services.</strong> The Personal Information collected is used to provide you with information that you request from us. Your email address will be used to notify you of critical updates, account information, and news or announcements that may be of interest to you.</p>
+<p style="text-align: left;"><strong>Processing Payments. </strong>In limited circumstances, we may use your Personal Data, including your contact data, to administer our business activities and carry out our obligations arising from any contracts between you and us, including invoicing.</p>
+<p style="text-align: left;"><strong>Improving our Services.</strong> The Personal Information is also used to improve our website and your website experience.</p>
+<p style="text-align: left;"><strong>Supporting Security.</strong> We use the information to investigate and prevent security issues and abuse. Additionally, such information may be used to respond to law enforcement requests as required by applicable law, court order or governmental regulations.</p>
+<p style="text-align: left;"><strong>Marketing Our Products and Services.</strong> We may use your Personal Information to send promotional communications that may be of specific interest to you and your organization, including information about new Atheer Services features and to drive customer product engagement.</p>
+<p style="text-align: left;"><strong>Sharing of Personal Information.</strong> We do not share, sell, rent, or trade any Personal Information that you provide us with third parties, except as required to provide our customers access to the Atheer Services and as otherwise specified in this Privacy Policy.</p>
+<p style="text-align: left;"><strong>Storing Personal Information.</strong> Atheer uses certain <strong>“Third Party Service Providers”</strong> to host, maintain and co-locate the applications and functionality that are include in Atheer Services, and such Third Party Service Providers may act as sub-processors of Personal Information we collect, store and process from users of Atheer Services. In addition to the security protections provided by these trusted Third Party Service Providers, Atheer maintains and has implemented its own administrative, physical, and technical safeguards that reasonably and appropriately protect the confidentiality, integrity, and availability of the Personal Information that Atheer receives, maintains, processes or transmits on behalf of such Atheer Service customers and their users.</p>
+<p style="text-align: left;"><strong>Attribution.</strong> Atheer may include a list of customers of the Atheer Services as well as testimonials on the Atheer website that contain a customer name, logo and associated employee name and title. We include this information on our website only with prior consent of the specific companies, customers and individual users and customer employees.</p>
+<p style="text-align: left;"><strong>Public Forums.</strong> You acknowledge that any information you post on any Atheer provided blog, bulletin board or similar forum may be freely used by Atheer, any Atheer customer or any other visitor to such forum, and therefore, you shall have no expectation of privacy with respect to any data or information included in such forum.</p>
+<p style="text-align: left;"><strong>Required by Law.</strong> Atheer reserves the right to use or disclose Personal Information provided by any website visitor or user of Atheer Services if required by law or if we reasonably believe that use or disclosure is necessary to protect our rights or to comply with a judicial proceeding, court order, or legal process.</p>
+<p style="text-align: left;">Atheer retains customer Personal Information for a period of time that is consistent with the purpose of the data collection, or where it has a justifiable business need to do so, such as enforcing our agreements or resolving disputes, or unless a longer retention period is required by law. If neither of the preceding instances apply, Atheer will securely delete, destroy, and remove such Personal Information from our Atheer Services platform and/or instruct Third Party Services Parties to securely delete, destroy, and remove such Personal Information from their own systems.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-974962b0d9a247ff3 uvc-9782" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-974962b0d9a247ff3" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-974962b0d9a247ff3 h2"><h2 style="font-weight:normal;">Third Party Service Providers.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;"><strong>Atheer Customers.</strong> We may share Personal Information we collect through the Atheer Services with our third-party data center service providers that assist us with operating the Atheer Services. Third Party Service Providers that we use are required to protect all data provided hereunder (including any Personal Information) as Atheer confidential information, implement reasonable industry standard security protections and safeguards, secure and maintain key data security qualifications such as ISO 27001 certification and/or SOC-2 reports, and restrict the onward transfer and disclosure of Personal Information to any other third party.</p>
+<p style="text-align: left;"><strong>Website Visitors.</strong> As you browse Atheerair.com, we place cookies on your computer or device to assist us in marketing our Services to you and so that we can understand your interests in our technology. Our marketing service partners enable us to present our website visitors with information on our Services based on your previous interaction with atheerair.com. The techniques our partners employ do not automatically collect Personal Information such as your name, email address, postal address, or telephone number. In addition, we use Google, Inc. to collect data to track and examine the use of atheerair.com by website visitors, to prepare reports on website activities. Google may use the data collected to contextualize and personalize the ads it displays on its own advertising network.</p>
+<p style="text-align: left;"><strong>Your Choice: Opt Out.</strong> You can choose not to provide certain information to Atheer, but this choice may impair your ability to use the Atheer Services or gain the full functionality of our website. You may also opt out of Google Analytics by visiting the <a href="http://tools.google.com/dlpage/gaoptout" rel="noopener" target="_blank">Google Analytics opt-out page</a>.To opt out of Atheer’s general marketing tracking, please send an email to <a href="mailto:privacy@atheerair.com">privacy@atheerair.com</a> and include “Opt-Out Request” in the subject line.</p>
+<p style="text-align: left;"><strong>Do Not Track.</strong> Atheer does not respond to ‘Do Not Track’ browser signals or other mechanisms. Third parties may collect Personal Information about your online activities over time and across sites when you visit our website or use the Atheer Service.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-219162b0d9a248351 uvc-6716" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-219162b0d9a248351" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-219162b0d9a248351 h2"><h2 style="font-weight:normal;">Data Integrity – Data Transacted Through The Atheer Services.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;">Atheer will use Personal Information only in ways that are compatible with the purposes for which it was collected or subsequently authorized by the individual user or visitor. Atheer will take reasonable steps to ensure that Personal Information is relevant to its intended use, accurate, complete, and current. We also process the Personal Information of our customers and their users subject to contract terms and conditions. A customer contract is another source of consent that Atheer uses and relies upon as a legal basis of processing Personal Information.</p>
+<p style="text-align: left;">When third party providers and developers use the Atheer Services, data is sent <strong>(“Published“)</strong> and received <strong>(“Subscribed“)</strong> through the Atheer Services. Aggregate, non-personally identifiable data Published to, and Subscribed from, the Atheer Services may be used by Atheer to help with the development, tuning and scaling of the Atheer Services, including the generation of reports. Reporting is used both for internal use and to provide reports available to the Atheer customer associated with such provided data. Atheer will keep all data private, and will not share data with any third parties, except as an aggregate data set across multiple Atheer customers (for example, advertising the total number of video sessions conducted on the Atheer Service per day). Occasionally we may use the aggregated data and information collected in this way to notify all our customers about new services or special offers.</p>
+<p style="text-align: left;">Atheer provides various levels of security and the Atheer Service encrypts data on device, in transit, and at rest. Please check the Atheer documentation for up-to-date information on the various security levels offered to third party providers and developers by the Atheer Services. In addition, Atheer takes reasonable measures, including technical, physical, and administrative measures and training, designed to protect Personal Information from loss, misuse, unauthorized disclosure, access, alteration, and destruction. Atheer safeguards Personal Information according to established security standards and periodically assesses new technology for methods of protecting information.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-724062b0d9a248671 uvc-7523" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-724062b0d9a248671" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-724062b0d9a248671 h2"><h2 style="font-weight:normal;">Children.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;">If you are under 18, or under the age of majority in the jurisdiction in which you reside, you may only use the Atheer website and Atheer Services with the consent of your parent or legal guardian.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-238462b0d9a2488f9 uvc-703" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-238462b0d9a2488f9" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-238462b0d9a2488f9 h2"><h2 style="font-weight:normal;">Consent.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;">By accessing and using this Atheer website and/or the Atheer Services, you agree to this Privacy Policy. Your continued use of the Atheer website or Atheer Services constitutes your agreement to this Privacy Policy and any updates. In the event of a corporate sale, merger, reorganization, dissolution or similar event, Personal Information may be part of the transferred assets to the acquiring company. You acknowledge that such transfers may occur, and that any acquirer or successor of Atheer may continue to use your Personal Information as described in this Privacy Policy without additional consent from you, provided such entity agrees to and adopts the provisions of this Privacy Policy.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-927962b0d9a248b0b uvc-6901" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-927962b0d9a248b0b" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-927962b0d9a248b0b h2"><h2 style="font-weight:normal;">Changes to Privacy Policy.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;">If our Privacy Policy or procedures change, we will promptly post those changes to our website. Any such changes will be effective immediately upon being posted, unless otherwise stated in the change. Atheer may share Personal Information with any entity that is affiliated with us for purposes consistent with this Policy.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-357562b0d9a248dc2 uvc-7770" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-357562b0d9a248dc2" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-357562b0d9a248dc2 h2"><h2 style="font-weight:normal;">Terms of Service.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;">Our <a href="https://www.atheerair.com/atheer-msa/__hstc=21851044.967c7a97a2a8bb10da2395988c4df528.1621835552621.1621835552621.1621839354850.2&amp;__hssc=21851044.1.1621839354850&amp;__hsfp=322626364" rel="noopener" target="_blank">Terms of Service</a> take precedence over any conflicting Privacy Policy provision contained herein with respect to our customers’ use and access rights to the Atheer Services.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-517162b0d9a24908d uvc-8804" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-517162b0d9a24908d" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-517162b0d9a24908d h2"><h2 style="font-weight:normal;">Access to Your Personal Information.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;">You may contact Atheer to request Personal Information held by Atheer in order to correct, amend or delete information that is inaccurate. You may contact Atheer using the information below under the “Contact Us” section.</p>
+<p style="text-align: left;">Atheer complies with the provisions of the Regulation (EU) 2016/679 of the European Parliament, known as the General Data Protection Regulation (“GDPR”). For purposes of Article 14(2) of the GDPR, Atheer relies on the following lawful basis for processing Personal Information (referred to as Personal Data under GDPR): consent, compliance with law and legitimate interests.</p>
+<p style="text-align: left;">Data Processors and Data Controllers. Under GDPR, Atheer acts as a Data Processor with respect to data provided to the company through the Atheer Services by its customers. Atheer acts as a Data Controller with regard to data collected as part of its marketing activities.</p>
+<p style="text-align: left;">Intra-EEA Data Transfers. All transfers of Personal Information internally within the European Economic Area are performed in accordance with GDPR.</p>
+<p style="text-align: left;">Model Clauses. In addition, for those commercial customers on Atheer’s Service plans, Atheer will execute Standard Contractual Clauses (also known as Model Clauses) as defined in Article 29 of GDPR.</p>
+<p style="text-align: left;">Data Security. With respect to any of your Personal Information or Personal Data that is being processed by Atheer and that is subject to GDPR, Atheer shall provide an adequate level of protection of the Personal Information transferred outside the European Economic Area, either by us, our affiliates, and/or third party agents, in accordance with applicable legislation, and in particular by executing the Standard Contractual Clauses approved by the European Commission.</p>
+<p style="text-align: left;">Atheer Privacy Contact. If you wish to exercise any of privacy rights under GDPR, or if you need further information regarding these privacy rights, please contact us at privacy@atheerair.com.</p>
+<p style="text-align: left;">Data Controller. In limited circumstances, where Atheer processes your Personal Information as a data controller, you are entitled to the following privacy rights under certain circumstances:</p>
+<p style="text-align: left;"><strong>Right of access</strong></p>
+<p style="text-align: left;"><strong>Right to rectification</strong></p>
+<p style="text-align: left;"><strong>Right to erasure (Right to be forgotten)</strong></p>
+<p style="text-align: left;"><strong>Right of restriction of processing</strong></p>
+<p style="text-align: left;"><strong>Right to data portability</strong></p>
+<p style="text-align: left;"><strong>Right to object</strong></p>
+<p style="text-align: left;"><strong>Automated individual decision-making, including profiling</strong></p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-817062b0d9a2493ae uvc-5397" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-817062b0d9a2493ae" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-817062b0d9a2493ae h2"><h2 style="font-weight:normal;">California Privacy Rights.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;">Atheer complies with the California Consumer Privacy Act (“CCPA”) which went into effect as of January 1, 2020. CCPA applies to data collected by certain enterprises involving “consumers” (which means any California resident).</p>
+<p style="text-align: left;">CCPA defines “personal information” as any information that identifies, relates to, describes, is capable of being associated with, or could reasonably be linked, directly or indirectly, with a particular consumer or household.</p>
+<p style="text-align: left;"><strong>California Notice of Collection; Categories of Personal Information Collected.</strong></p>
+<p style="text-align: left;">Atheer has or may collect information corresponding to the following categories of information enumerated in the CCPA:</p>
+<p style="text-align: left;">Identifiers, including name, email address, account name, IP address – and an ID number assigned to Your account.</p>
+<p style="text-align: left;">Analytics and Advertising, including purchases and engagement with the Services.</p>
+<p style="text-align: left;">Internet activity, including history of visiting and interacting with our Service, browser type, browser language and other information collected automatically.</p>
+<p style="text-align: left;">Inferences, including information about interests and preferences.</p>
+<p style="text-align: left;">For more information on what we collect, please review the section on “Personal Information We Collect and Receive and How We Collect This Information”.</p>
+<p style="text-align: left;">We collect and use these categories of Personal Information for the business purposes described in the section on “How We Use Collected Personal Information”, including to provide and manage the Atheer Services related to our platform.</p>
+<p style="text-align: left;">We do not generally sell information as the term “sell” is traditionally understood. However, to the extent “sale” under the CCPA is interpreted to include advertising technology activities such as those disclosed in the section “How We Use Collected Personal Information”, we will comply with applicable law as to such activity.</p>
+<p style="text-align: left;">No sale of personal information. In the twelve months prior to the effective date of this Privacy Policy, Atheer has not sold any Personal Information of consumers, as those terms are defined under the California Consumer Privacy Act.</p>
+<p style="text-align: left;">We disclose the following categories of information for commercial purposes:</p>
+<p style="text-align: left;">Commercial Information;</p>
+<p style="text-align: left;">Customer Records;</p>
+<p style="text-align: left;">Location Data;</p>
+<p style="text-align: left;">Inferences; and</p>
+<p style="text-align: left;">Internet activity.</p>
+<p style="text-align: left;">We use and partner with different types of entities to assist us with our daily operations and manage Atheer Services.</p>
+<p style="text-align: left;">Right to Know and Delete. If you are a California resident, you have the right to know certain information about our data practices in the preceding 12 months. In particular, you have the right to request the following from us:</p>
+<p style="text-align: left;"><strong>The categories of Personal Information we have collected about you;</strong></p>
+<p style="text-align: left;"><strong>The categories of sources from which the Personal Information was collected;</strong></p>
+<p style="text-align: left;"><strong>The categories of Personal Information about you that we disclosed for a business purpose or sold;</strong></p>
+<p style="text-align: left;"><strong>The categories of third parties to whom the Personal Information was disclosed for a business person or sold;</strong></p>
+<p style="text-align: left;"><strong>The business or commercial purpose for collecting or selling the Personal Information; and<br/>
+The specific pieces of Personal Information we have collected about you.</strong></p>
+<p style="text-align: left;">In addition, you have the right to delete the Personal Information we have collected from you. However, this is not an absolute right and we may have legal grounds for keeping such data.</p>
+<p style="text-align: left;"><strong>Exercising Your Rights Under CCPA.</strong> To exercise any of these rights, please submit a request to <a href="mailto:privacy@atheerair.com">privacy@atheerair.com.</a> In the request, please specify which right you are seeking to exercise and the scope of the request. We will confirm receipt of your request within ten (10) days. We may require specific information from you to help us verify your identity and process Your request. If we are unable to verify your identity, we may deny your requests to know or delete.</p>
+<p style="text-align: left;"><strong>Authorized Agent.</strong> You can designate an authorized agent to submit requests on your behalf. However, we will require written proof of the agent’s permission to do so and verify your identity directly.</p>
+<p style="text-align: left;"><strong>Right to Non-Discrimination.</strong> You have the right to non-discriminatory treatment by us, should you exercise any of your rights under CCPA.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-381762b0d9a249788 uvc-3430" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-381762b0d9a249788" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-381762b0d9a249788 h2"><h2 style="font-weight:normal;">CAN SPAM Act.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;">The CAN-SPAM Act is a law that sets the rules for commercial email, establishes requirements for commercial messages, gives recipients the right to have emails stopped from being sent to them, and spells out tough penalties for violations. We collect your email address in order to:</p>
+<p style="text-align: left;">Send information, respond to inquiries, and/or other requests or questions</p>
+<p style="text-align: left;">Market to our mailing list or continue to send emails to our clients after the original transaction has occurred.</p>
+<p style="text-align: left;"><strong>To be in accordance with CANSPAM, we agree to the following:</strong></p>
+<p style="text-align: left;"><strong>Not use false or misleading subjects or email addresses.</strong></p>
+<p style="text-align: left;"><strong>Identify the message as an advertisement in some reasonable way.</strong></p>
+<p style="text-align: left;"><strong>Include the physical address of our business or site headquarters.</strong></p>
+<p style="text-align: left;"><strong>Monitor third-party email marketing services for compliance, if one is used.</strong></p>
+<p style="text-align: left;"><strong>Honor opt-out/unsubscribe requests quickly.</strong></p>
+<p style="text-align: left;"><strong>Allow users to unsubscribe by using the link at the bottom of each email.</strong></p>
+<p style="text-align: left;">If at any time you would like to unsubscribe from receiving future emails, you can follow the instructions at the bottom of each email and we will promptly remove you from ALL correspondence.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-730362b0d9a2499ff uvc-202" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-730362b0d9a2499ff" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-730362b0d9a2499ff h2"><h2 style="font-weight:normal;">Data We Do Not Collect.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;">Atheer does not collect, process, use or store:</p>
+<p style="text-align: left;">Any medical records or health information as defined under the U.S. Health Insurance Portability and Accountability Act passed by Congress in 1996 (<strong>“HIPAA”</strong>);</p>
+<p style="text-align: left;">Any banking or other sensitive financial information regulated under Gramm-Leach-Bliley Act (otherwise known as the Financial Modernization Act of 1999) such as non-public personal information (<strong>“NPI”</strong>), or other sensitive personally identifiable information such as social security numbers, credit card numbers, tax payer identification numbers, or other regulated financial information; or</p>
+<p style="text-align: left;">Special categories of personal data as defined in Article 9 of GDPR.</p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-434462b0d9a249c7b uvc-4006" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-434462b0d9a249c7b" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-434462b0d9a249c7b h2"><h2 style="font-weight:normal;">Responding to Your Data Requests.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;">Atheer commits to promptly responding to your request about our collection or use of your Personal Information. We will respond to such inquiries within the time periods described in relevant laws, including GDPR and CCPA. Any inquiries or requests regarding our Privacy Policy or your Personal Information should be directed to Atheer at:</p>
+<p style="text-align: left;"><strong>Email: <a href="mailto:privacy@Atheerair.com">privacy@atheerair.com</a></strong></p>
+<p style="text-align: left;"><strong>Postal mail: Atheer Inc., 2350 Mission College Blvd., #1200, Santa Clara, CA, 95054, USA</strong></p>
+</div>
+</div>
+</div></div></div></div><div class="vc_row wpb_row vc_row-fluid howAthereWorks PrivacyHead"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="uvc-heading ult-adjust-bottom-margin ultimate-heading-75462b0d9a249ee7 uvc-277" data-halign="left" data-hspacer="no_spacer" id="ultimate-heading-75462b0d9a249ee7" style="text-align:left"><div class="uvc-heading-spacer no_spacer" style="top"></div><div class="uvc-main-heading ult-responsive" data-responsive-json-new='{"font-size":"","line-height":""}' data-ultimate-target=".uvc-heading.ultimate-heading-75462b0d9a249ee7 h2"><h2 style="font-weight:normal;">Contact Us.</h2></div></div><div class="vc_empty_space" style="height: 10px"><span class="vc_empty_space_inner"></span></div>
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: left;">If there are any general questions regarding this Privacy Policy, you may contact us using this information:</p>
+<p style="text-align: left;"><strong>Email: <a href="mailto:privacy@Atheerair.com">privacy@atheerair.com </a></strong>attention to Atheer’s Chief Privacy Officer.</p>
+<p style="text-align: left;">Postal mail: Atheer Inc., 2350 Mission College Blvd., #1200, Santa Clara, CA, 95054, USA</p>
+<p style="text-align: left;"><strong>Last Update: February 22, 2020</strong></p>
+<p style="text-align: left;"><strong>Prior Privacy Policy Dated <a href="https://atheerair.com/privacy-policy-may242018/?__hstc=21851044.967c7a97a2a8bb10da2395988c4df528.1621835552621.1621839354850.1621844562483.3&amp;__hssc=21851044.1.1621844562483&amp;__hsfp=322626364" rel="noopener" target="_blank">May 24 ,2018</a></strong></p>
+</div>
+</div>
+</div></div></div></div>
+</div> </div>
+</div>
+</div>
+</main><!--/.neve-main-->
+<div class="footer-up-layer-one">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="footer-bredcrumb">
+<p class="footer-logo"><img alt="logo" class="footImg" src="https://www.atheerair.com/wp-content/uploads/2021/09/logo-5.png"/> <img alt="logo text" class="footImg footer-logo-text" src="https://www.atheerair.com/wp-content/uploads/2021/09/logo-text.png"/><p id="breadcrumbs"><span><span aria-current="page" class="breadcrumb_last">Privacy Policy</span></span></p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="site-footer" id="site-footer">
+<div class="hfg_footer">
+<div class="footer--row footer-top layout-full-contained" data-row-id="top" data-show-on="desktop" id="cb-row--footer-top">
+<div class="footer--row-inner footer-top-inner footer-content-wrap">
+<div class="container">
+<div class="hfg-grid nv-footer-content hfg-grid-top row--wrapper row" data-section="hfg_footer_layout_top">
+<div class="builder-item hfg-item-first col-3 desktop-left tablet-left mobile-left hfg-item-v-middle"><div class="item--inner builder-item--footer-one-widgets" data-item-id="footer-one-widgets" data-section="sidebar-widgets-footer-one-widgets">
+<div class="widget-area">
+<div class="widget widget_block" id="block-6"><div class="row" style="align-items: start;">
+<div class="col-sm-12">
+<div class="headOnes">ABOUT ATHEER:</div>
+<p class="about-atheer">Atheer’s AR-powered Front Line Worker Platform is a suite of modern digital tools used
+            by the world’s leading industrial enterprises to enable their front-line teams to work faster, better, and
+            safer.</p>
+<p></p>
+</div>
+<div class="col-sm-12 mt-3">
+<div class="headOnes">HEADQUARTERS:</div>
+<p>2350 Mission College Blvd<br/>
+            Suite #1200<br/>
+            Santa Clara, CA 95054</p>
+<p></p>
+</div>
+</div></div><div class="widget widget_block widget_text" id="block-5">
+<p></p>
+</div> </div>
+</div>
+</div><div class="builder-item col-3 desktop-left tablet-left mobile-left hfg-item-v-middle"><div class="item--inner builder-item--footer-two-widgets" data-item-id="footer-two-widgets" data-section="sidebar-widgets-footer-two-widgets">
+<div class="widget-area">
+<div class="widget_text widget widget_custom_html" id="custom_html-7"><p class="widget-title">OVERVIEW</p><div class="textwidget custom-html-widget"><a href="https://atheerair.com/">Home</a><br>
+<a href="https://atheerair.com/connected-worker-platform/">Platform</a><br>
+<a href="https://atheerair.com/demo-request/">Catch Atheer in Action</a><br/>
+</br></br></div></div> </div>
+</div>
+</div><div class="builder-item col-3 desktop-left tablet-left mobile-left hfg-item-v-middle"><div class="item--inner builder-item--footer-three-widgets" data-item-id="footer-three-widgets" data-section="sidebar-widgets-footer-three-widgets">
+<div class="widget-area">
+<div class="widget_text widget widget_custom_html" id="custom_html-8"><p class="widget-title">RESOURCES</p><div class="textwidget custom-html-widget"><a href="https://atheerair.com/blog/">Blog</a><br/>
+<a href="https://atheerair.com/webinars/">Webinars</a><br/>
+<a href="https://atheerair.com/ebook-and-whitepapers/">Ebooks &amp; Whitepapers</a><br/>
+<a href="https://atheerair.com/frontline-worker-platform-journey-map/">Front Line Platform Journey Map</a><br/>
+</div></div> </div>
+</div>
+</div><div class="builder-item hfg-item-last col-3 desktop-left tablet-left mobile-left hfg-item-v-middle"><div class="item--inner builder-item--footer-four-widgets" data-item-id="footer-four-widgets" data-section="sidebar-widgets-footer-four-widgets">
+<div class="widget-area">
+<div class="widget_text widget widget_custom_html" id="custom_html-6"><p class="widget-title">COMPANY</p><div class="textwidget custom-html-widget"><a href="https://atheerair.com/about-atheer/">About Atheer</a><br/>
+<a href="https://atheerair.com/work-with-us/">Careers</a><br/>
+<a href="https://atheerair.com/contact-us/">Contact Us</a><br/>
+<a href="https://atheerair.com/privacy-policy/">Privacy Policy</a>
+</div></div> </div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+<div class="footer--row footer-bottom layout-full-contained" data-row-id="bottom" data-show-on="desktop" id="cb-row--footer-bottom">
+<div class="footer--row-inner footer-bottom-inner footer-content-wrap">
+<div class="container">
+<div class="hfg-grid nv-footer-content hfg-grid-bottom row--wrapper row" data-section="hfg_footer_layout_bottom">
+<div class="builder-item hfg-item-last hfg-item-first col-12 mobile-center tablet-center desktop-left hfg-item-v-middle"><div class="item--inner builder-item--footer_copyright" data-item-id="footer_copyright" data-section="footer_copyright">
+<div class="component-wrap">
+<div class="copyRightOne">
+<div class="vc_col-sm-6">
+<p>
+<a href="#" rel="nofollow">Copyright © Atheer, Inc 2022</a>
+</p>
+</div>
+<div class="vc_col-sm-6">
+<ul class="socialOnes">
+<li><a href="https://www.facebook.com/Atheerlabs/" target="_blank"><img alt="Facebook" src="https://live-atheer.pantheonsite.io/wp-content/uploads/2021/06/facebook-1.png" title="Facebook"/></a></li>
+<li><a href="https://twitter.com/AtheerAiR" target="_blank"><img alt="Twitter" src="https://live-atheer.pantheonsite.io/wp-content/uploads/2021/06/twitter-1.png" title="Twitter"/></a></li>
+<li><a href="https://www.linkedin.com/company/atheer/" target="_blank"><img alt="Linkedin" src="https://live-atheer.pantheonsite.io/wp-content/uploads/2021/06/linkedin-1.png" title="Linkedin"/></a></li>
+<li><a href="mailto:info@atheerair.com" target="_blank"><img alt="Email" src="https://live-atheer.pantheonsite.io/wp-content/uploads/2021/06/mails.png" title="Email"/></a></li>
+</ul>
+</div>
+</div></div>
+</div>
+</div> </div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</div><!--/.wrapper-->
+<!-- Start of Async HubSpot Analytics Code -->
+<script data-wpmeteor-after="REORDER" type="javascript/blocked">
+(function(d,s,i,r) {
+if (d.getElementById(i)){return;}
+var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/2520307.js';
+e.parentNode.insertBefore(n, e);
+})(document,"script","hs-analytics",300000);
+</script>
+<!-- End of Async HubSpot Analytics Code -->
+<script data-defer="" data-src="https://www.atheerair.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7" data-wpmeteor-after="REORDER" id="regenerator-runtime-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" data-wpmeteor-after="REORDER" id="wp-polyfill-js" type="javascript/blocked"></script>
+<script data-wpmeteor-after="REORDER" id="contact-form-7-js-extra" type="javascript/blocked">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/www.atheerair.com\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.5.3" data-wpmeteor-after="REORDER" id="contact-form-7-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-content/plugins/mystickymenu/js/detectmobilebrowser.js?ver=2.5.6" data-wpmeteor-after="REORDER" id="detectmobilebrowser-js" type="javascript/blocked"></script>
+<script data-wpmeteor-after="REORDER" id="mystickymenu-js-extra" type="javascript/blocked">
+/* <![CDATA[ */
+var option = {"mystickyClass":"header.header","activationHeight":"0","disableWidth":"0","disableLargeWidth":"0","adminBar":"false","device_desktop":"1","device_mobile":"1","mystickyTransition":"fade","mysticky_disable_down":"false"};
+/* ]]> */
+</script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-content/plugins/mystickymenu/js/mystickymenu.min.js?ver=2.5.6" data-wpmeteor-after="REORDER" id="mystickymenu-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-content/plugins/extensive-vc-addon/assets/plugins/appear/jquery.appear.js?ver=5.8.1" data-wpmeteor-after="REORDER" id="appear-js" type="javascript/blocked"></script>
+<script data-wpmeteor-after="REORDER" id="extensive-vc-main-script-js-extra" type="javascript/blocked">
+/* <![CDATA[ */
+var evcVars = {"global":{"adminAjaxUrl":"https:\/\/www.atheerair.com\/wp-admin\/admin-ajax.php","sliderNavPrevArrow":"ion-ios-arrow-left","sliderNavNextArrow":"ion-ios-arrow-right"}};
+/* ]]> */
+</script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-content/plugins/extensive-vc-addon/assets/js/main.min.js?ver=5.8.1" data-wpmeteor-after="REORDER" id="extensive-vc-main-script-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4" data-wpmeteor-after="REORDER" id="imagesloaded-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-includes/js/masonry.min.js?ver=4.2.2" data-wpmeteor-after="REORDER" id="masonry-js" type="javascript/blocked"></script>
+<script data-wpmeteor-after="REORDER" id="neve-script-js-extra" type="javascript/blocked">
+/* <![CDATA[ */
+var NeveProperties = {"ajaxurl":"https:\/\/www.atheerair.com\/wp-admin\/admin-ajax.php","nonce":"2c918f7897","isRTL":"","isCustomize":"","masonryStatus":"enabled","masonryColumns":"3","blogLayout":"grid"};
+/* ]]> */
+</script>
+<script data-async="" data-defer="" data-src="https://www.atheerair.com/wp-content/themes/neve/assets/js/build/modern/frontend.js?ver=2.11.4" data-wpmeteor-after="REORDER" id="neve-script-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-includes/js/comment-reply.min.js?ver=5.8.1" data-wpmeteor-after="REORDER" id="comment-reply-js" type="javascript/blocked"></script>
+<script data-wpmeteor-after="REORDER" id="ultimate-smooth-scroll-js-extra" type="javascript/blocked">
+/* <![CDATA[ */
+var php_vars = {"step":"80","speed":"480"};
+/* ]]> */
+</script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/SmoothScroll.min.js?ver=3.19.0" data-wpmeteor-after="REORDER" id="ultimate-smooth-scroll-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-includes/js/hoverIntent.min.js?ver=1.10.1" data-wpmeteor-after="REORDER" id="hoverIntent-js" type="javascript/blocked"></script>
+<script data-wpmeteor-after="REORDER" id="megamenu-js-extra" type="javascript/blocked">
+/* <![CDATA[ */
+var megamenu = {"timeout":"300","interval":"100"};
+/* ]]> */
+</script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=2.9.4" data-wpmeteor-after="REORDER" id="megamenu-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-includes/js/wp-embed.min.js?ver=5.8.1" data-wpmeteor-after="REORDER" id="wp-embed-js" type="javascript/blocked"></script>
+<script data-defer="" data-src="https://www.atheerair.com/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.2.0" data-wpmeteor-after="REORDER" id="wpb_composer_front_js-js" type="javascript/blocked"></script>
+<div class="footer-bottom-one">ATHEER, Atheer, AIR, ATHEER AIR, AIR SUITE, AIR ENTERPRISE, AIR EXPERIENCE, Front Line OS, and the Atheer logo are trademarks of Atheer, Inc in the United States and/or other countries.</div>
+</body>
+</html>

@@ -1,0 +1,804 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="images/favicon.ico" rel="shortcut icon"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Trusted Video Management | NUUO Inc.</title>
+<meta content="NUUO Crystal™ is the award winning Linux enterprise VMS solution for you" name="description"/>
+<meta content="Video Surveilllance, NUUO, NVR, VMS" name="keywords"/>
+<link href="css.css" rel="stylesheet" type="text/css">
+<link href="jquerycssmenu.css" rel="stylesheet" type="text/css"/>
+<!--[if lte IE 7]>
+<style type="text/css">
+html .jquerycssmenu{height: 1%;} /*Holly Hack for IE7 and below*/
+</style>
+<![endif]-->
+<script src="js/common.js" type="text/javascript"></script>
+<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.cookie.js" type="text/javascript"></script>
+<script src="jquerycssmenu.js" type="text/javascript"></script>
+<script src="script/AdShow.js" type="text/javascript"></script>
+<script src="script/abgne_carousel.js" type="text/javascript"></script>
+<script src="js/wiki_ajax.js" type="text/javascript"></script>
+<link href="css/jquery.css" rel="stylesheet" type="text/css"/>
+<link href="css/abgne_carousel.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+
+	ul, li {
+		margin: 0;
+		padding: 0;
+		*list-style-position: inside 
+		/*list-style: none;*/
+	}
+	.abgne_tab {
+	clear: left;
+	width: 709px;
+	/*height: 100%;*/
+	margin-top: 15px;
+	/*background:#D3E6FA;
+	background:url(images/_stlg.png);*/
+	}
+	ul.tabs {
+		width: 100%;
+		height: 32px;
+		list-style: none;
+			}
+	ul.tabs li {
+		float: left;
+		height: 31px;
+		line-height: 31px;
+		overflow: hidden;
+		position: relative;
+		margin-bottom: -1px solid;/*讓 li 往下移來遮住 ul 的部份 border-bottom */
+		background: #DAECFB; /* 未點選顏色 */
+		color:#000000;
+		border-right:1px solid  #008DC3;
+		border-left: 1px solid  #E6E6E6;
+		list-style: none;
+		
+	}
+	ul.tabs li a {
+	display: block;
+	padding: 0 20px;
+	border:;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif, clean;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-align:center;
+	list-style: none;
+			}
+	ul.tabs li a:hover {
+	background: #E1E1E1;
+		}
+	ul.tabs li.active  {
+	background:#E6E6E6; /* 點選顏色 */
+	border-left: 3px solid  #E6E6E6;
+	border-right:3px solid  #E6E6E6;
+	
+	}
+	
+	ul.tabs li.active .title_type02-2{
+		color:#000000;
+	}
+	
+	ul.tabs li.active a:hover {
+		background: #E1E1E1;
+	}
+	div.tab_container {/*內容*/
+	clear: left;
+	width: 699px;
+	border-top: none;
+	background:#E6E6E6;
+	padding:5px;
+	}
+	div.tab_container .tab_content {
+	padding: 20px;
+	margin-bottom: 5px;
+	word-wrap: break-word;
+	word-break: normal;
+	}
+	
+
+	
+	div.tab_container .tab_content h2 {
+		margin: 0 0 20px;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+	$('a[href=#pagetop]').click(function(){
+        $('html, body').animate({scrollTop:0}, 'slow');
+        return false;
+      });
+	 }); 
+</script>
+<!----20140617 add S------>
+<script>
+function over(imgObj,picname) { imgObj.src=picname; } 
+function out(imgObj,picname) { imgObj.src=picname; } 
+</script>
+<!----------><style type="text/css">
+	ul, li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.abgne_tab {
+	clear: left;
+	width: 695px;
+	height: 100%;
+	margin-top: 20px;		
+	}
+	ul.tabs {
+		width: 100%;
+		height: 32px;
+			}
+	ul.tabs li {
+		float: left;
+		height: 31px;
+		line-height: 31px;
+		overflow: hidden;
+		position: relative;
+		margin-bottom: -1px solid;/*讓 li 往下移來遮住 ul 的部份 border-bottom */
+		background: #DAECFB; /* 未點選顏色 */
+		color:#000000;
+		border-right:1px solid  #008DC3;
+		border-left: 1px solid  #E6E6E6;
+			}
+	ul.tabs li a {
+	display: block;
+	padding: 0 20px;
+	border:;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif, clean;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-align:center;
+			}
+	ul.tabs li a:hover {
+	background: #E1E1E1;
+		}
+	ul.tabs li.active  {
+	background:#E6E6E6; /* 點選顏色 */
+	border-left: 3px solid  #E6E6E6;
+	border-right:3px solid  #E6E6E6;
+	color:#DAECFB;	
+	}
+	ul.tabs li.active a:hover {
+		background: #E1E1E1;
+	}
+	div.tab_container {/*內容*/
+		clear: left;
+		width: 685px;
+		border-top: none;
+		background:#E6E6E6;
+		padding:5px;
+	}
+	div.tab_container .tab_content {
+		padding: 20px;
+	}
+	div.tab_container .tab_content h2 {
+		margin: 0 0 20px;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+		// 預設顯示第一個 Tab
+		var _showTab = 0;
+		var $defaultLi = $('ul.tabs li').eq(_showTab).addClass('active');
+		$($defaultLi.find('a').attr('href')).siblings().hide();
+		
+		// 當 li 頁籤被點擊時...
+		// 若要改成滑鼠移到 li 頁籤就切換時, 把 click 改成 mouseover
+		$('ul.tabs li').click(function() {
+			// 找出 li 中的超連結 href(#id)
+			var $this = $(this),
+				_clickTab = $this.find('a').attr('href');
+			// 把目前點擊到的 li 頁籤加上 .active
+			// 並把兄弟元素中有 .active 的都移除 class
+			$this.addClass('active').siblings('.active').removeClass('active');
+			// 淡入相對應的內容並隱藏兄弟元素
+			$(_clickTab).stop(false, true).fadeIn().siblings().hide();
+
+			return false;
+		}).find('a').focus(function(){
+			this.blur();
+		});
+	});
+</script>
+</link></head>
+<body topmargin="0">
+<!-- Google Code for NUUO -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 985756878;
+var google_conversion_label = "1fdUCNrIrwQQzumF1gM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script src="//www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/985756878/?value=0&amp;label=1fdUCNrIrwQQzumF1gM&amp;guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+</div>
+</noscript>
+<div id="content">
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="960">
+<!--DWLayoutTable-->
+<tr>
+<td bgcolor="#000000" colspan="2" height="100" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="960">
+<!--DWLayoutTable-->
+<!-- E2HaFBpS37cV-MNtCSQakrrWG_E -->
+<!---------20131113 add google analytices---------------
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+_gaq.push(['_require', 'inpage_linkid', pluginUrl]);///20131114 加強語法
+  _gaq.push(['_setAccount', 'UA-37767650-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>----->
+<!---------20131113 add google analytices-------------------->
+<!--------20140305 s------------->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-37767650-1', 'nuuo.com');
+  ga('send', 'pageview');
+
+</script>
+<!------------------------E------>
+<!------20140219 add google S---------->
+<!-- Google 再营销代码 -->
+<!--------------------------------------------------
+再营销代码不得与个人身份信息相关联，也不得放置在与敏感类别相关的网页上。有关如何设置代码的详细信息和说明，请访问：http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1001908087;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script src="//www.googleadservices.com/pagead/conversion.js" type="text/javascript">
+</script>
+<noscript>
+<div style="display:inline;">
+<img alt="" height="1" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1001908087/?value=0&amp;guid=ON&amp;script=0" style="border-style:none;" width="1"/>
+</div>
+</noscript>
+<!---------20140219 add google E------------->
+<script>
+    $(function(){
+        $('#LAN').change(function (e) {
+            
+            // MJ-APP fix
+            $.post('include/setLAN.php', {LAN:$('#LAN').val()}, function(){
+                reloadCheck();
+            });
+            
+            //$.ajax({
+            //    type: "POST",
+            //    dataType:'json',
+            //    data: { 'LAN':$('#LAN').val() },
+            //    url: 'include/setLAN.php',
+            //    beforeSend: function(XMLHttpRequest){
+            //
+            //    },
+            //    success:function(json, textStatus) {
+            //        //console.info(textStatus);	 
+            //        reloadCheck();
+            //    },
+            //    complete: function(XMLHttpRequest, textStatus){
+            //
+            //    },
+            //    error: function(json, textStatus) {
+            //        //console.log(textStatus);
+            //        //alert('Ajax request 發生錯誤');
+            //        //reloadCheck();
+            //    }
+            //});
+        });
+
+        $(".defaultText").focus(function(srcc)
+        {
+            if ($(this).val() == $(this)[0].title)
+            {
+                $(this).removeClass("defaultTextActive");
+                $(this).val("");
+            }
+        });
+
+        $(".defaultText").blur(function()
+        {
+            if ($(this).val() == "")
+            {
+                $(this).addClass("defaultTextActive");
+                $(this).val($(this)[0].title);
+            }
+        });
+
+        $(".defaultText").blur();
+
+
+        $('#btnSearch').click(function(){
+
+            if($('#searchVal').val() == '' ||$('#searchVal').val()=='Search' ){
+                alert('Please input search keyword');
+                $("#searchVal").focus();
+            }else{
+                $("form#searchForm").submit();
+            }
+
+        });
+    })
+</script>
+<tr>
+<td valign="top" width="230"><a href="index.php"><img border="0" src="images/index_nuuo_logo.jpg"/></a></td>
+<td valign="top" width="779"><table border="0" cellpadding="0" cellspacing="0">
+<!--DWLayoutTable-->
+<tr>
+<td height="65" width="61"> </td>
+<td align="right" nowrap="nowrap" valign="middle" width="717">
+<div style="width:20px; height:24px; float:right; margin-right:8px;">
+<span style="width:86px; height:27px;">
+<img border="0" height="22" hidefocus="true" id="btnSearch" src="images/search_icon.gif" style="margin-bottom:-6px;cursor:pointer" width="20"/>
+</span>
+</div>
+<div style="width:55px; height:24px; float:right; margin-right:1px;">
+<form action="search.php" id="searchForm" style="margin:0;padding:0">
+<input class="form_box03 defaultText" id="searchVal" name="keyWord" size="14" title="Search" type="text"/>
+</form>
+</div>
+<div style="width:70px; height:24px; float:right; margin-right:4px;">
+<select class="form_box01" id="LAN" name="LAN">
+<option selected="selected" value="english">English</option>
+</select>
+</div>
+<div class="logintxt" style="height:20px; float:right; margin-right:5px;padding-top:4px;white-space: nowrap;">
+<img align="absmiddle" border="0" src="images/icon_question.jpg"/> <a class="logintxt" href="Wheretobuy.php"> Where to buy</a></div>
+<div class="logintxt" style="height:20px; float:right; margin-right:6px;padding-top:4px;">
+<img align="absmiddle" border="0" height="13" src="images/lock-ico.gif" width="13"/> <a class="logintxt" href="login.php"> Login</a>
+</div>
+<div class="friends-links">
+<h2 id="friends-links" style="position: fixed;right:-800px; top: -600px; overflow: hidden;;width:150px">
+<a href="https://www.redtubepornhd.com/real-teens-penelope-kay-does-anal.html" title="real teens penelope kay does anal">real teens penelope kay does anal</a>
+<a href="https://www.xvideosporns.mobi/video/asian-girl-caught-masturbating/" title="Asian Girl Caught Masturbating">Asian Girl Caught Masturbating</a>
+<a href="https://www.xhamsterporno.info/video/64/sapphic-erotica-lesbian-sex-by-lela-and-mae-lesbian-premier/" title="Sapphic Erotica lesbian sex by Lela and Mae Lesbian Premier">Sapphic Erotica lesbian sex by Lela and Mae Lesbian Premier</a>
+<a href="https://www.sexgirlporn.com/video/90/her-best-friend-needed-some-anal-so-she-helped-her-out/" title="Her best friend needed some anal so she helped her out">Her best friend needed some anal so she helped her out</a>
+<a href="https://www.xnxxsexporn.info/video/7406/young-hot-girl-is-being-fucked-on-holiday-anal/" title="Young hot girl is being fucked on holiday anal">Young hot girl is being fucked on holiday anal</a>
+<a href="https://www.sehrporno.com/video/5402/a-young-schoolgirl-seduced-a-photographer-fucked-for-a-photo-shoot/" title="A young Schoolgirl seduced a photographer. Fucked for a photo shoot">A young Schoolgirl seduced a photographer. Fucked for a photo shoot</a>
+</h2></div>
+</td>
+</tr>
+</table></td>
+<td height="65" width="2"></td>
+</tr>
+<tr>
+<td colspan="2" height="35" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--DWLayoutTable-->
+<tr>
+<td background="images/index_04.jpg" height="34">
+<div class="jquerycssmenu" id="myjquerymenu" style="*margin-top:-20px">
+<ul>
+<img height="28" src="images/menu_icon.jpg" style="float:left; z-index:0;*margin-top:-35px" width="3"/>
+<li><a class="menu_url" href="index.php" title="Home">Home</a></li>
+<img height="28" src="images/menu_icon.jpg" style="float:left;*margin-top:-35px" width="3"/>
+<li><a class="menu_url" href="Solutions.php" title="Solutions">Solutions</a>
+<ul>
+<li><a href="SolutionNode.php?stid=0001&amp;node=0#" title="Industry Solutions">
+              Industry Solutions              </a>
+<ul>
+<li><a href="SolutionNode.php?stid=0001&amp;node=2#" title="Retail">
+                  Retail                  </a></li>
+<li><a href="SolutionNode.php?stid=0001&amp;node=3#" title="Transportation">
+                  Transportation                  </a></li>
+<li><a href="SolutionNode.php?stid=0001&amp;node=4#" title="Industrial">
+                  Industrial                  </a></li>
+<li><a href="SolutionNode.php?stid=0001&amp;node=5#" title="Education">
+                  Education                  </a></li>
+<li><a href="SolutionNode.php?stid=0001&amp;node=6#" title="Banking">
+                  Banking                  </a></li>
+<li><a href="SolutionNode.php?stid=0001&amp;node=7#" title="Hospitality">
+                  Hospitality                  </a></li>
+<li><a href="SolutionNode.php?stid=0001&amp;node=9#" title="Government">
+                  Government                  </a></li>
+<li><a href="SolutionNode.php?stid=0001&amp;node=8#" title="Residential">
+                  Residential                  </a></li>
+</ul>
+</li>
+<li><a href="SolutionNode.php?stid=0002&amp;node=1#" title="Success Stories">
+              Success Stories              </a>
+</li>
+<li class="none"><a href="SolutionNode.php?stid=0003&amp;node=10#" title="NUUO Technology">
+              NUUO Technology              </a>
+</li>
+</ul>
+</li>
+<img height="28" src="images/menu_icon.jpg" style="float:left;*margin-top:-35px" width="3"/>
+<li><a class="menu_url" href="Products.php" title="Products">Products</a>
+<ul>
+<li><a href="#" style="cursor:text" title="NUUO Crystal™ Family">
+            NUUO Crystal™ Family            </a>
+<ul>
+<li><a href="ProductNode.php?node=24#" title="NUUO NuStation">
+                NUUO NuStation                </a>
+</li>
+<li><a href="ProductNode.php?node=22#" title="NUUO Titan Pro (NA Only)">
+                NUUO Titan Pro (NA Only)                </a>
+</li>
+<li><a href="ProductNode.php?node=18#" title="NUUO Network Storage">
+                NUUO Network Storage                </a>
+</li>
+<li><a href="ProductNode.php?node=14#" title="NUUO Crystal™">
+                NUUO Crystal™                </a>
+</li>
+</ul>
+</li>
+<li><a href="#" style="cursor:text" title="NUUO Mainconsole Family">
+            NUUO Mainconsole Family            </a>
+<ul>
+<li><a href="ProductNode.php?node=3#" title="NUUO CMS">
+                NUUO CMS                </a>
+</li>
+<li><a href="ProductNode.php?node=5#" title="NUUO Mainconsole">
+                NUUO Mainconsole                </a>
+</li>
+<li><a href="ProductNode.php?node=4#" title="NUUO Hybrid Appliance">
+                NUUO Hybrid Appliance                </a>
+</li>
+<li><a href="ProductNode.php?node=2#" title="NUUO NVRmini 2">
+                NUUO NVRmini 2                </a>
+</li>
+<li><a href="ProductNode.php?node=6#" title="NUUO IVS (Video Analytics)">
+                NUUO IVS (Video Analytics)                </a>
+</li>
+<li><a href="ProductNode.php?node=17#" title="NUUO IP Appliance">
+                NUUO IP Appliance                </a>
+</li>
+<li><a href="ProductNode.php?node=21#" title="NUUO Report Service">
+                NUUO Report Service                </a>
+</li>
+<li><a href="ProductNode.php?node=23#" title="NUUO NVRSolo_Plus">
+                NUUO NVRSolo_Plus                </a>
+</li>
+<li><a href="ProductNode.php?node=37#" title="NUUO NVRmini 3">
+                NUUO NVRmini 3                </a>
+</li>
+</ul>
+</li>
+<li><a href="#" style="cursor:text" title="Metadata Application">
+            Metadata Application            </a>
+<ul>
+<li><a href="ProductNode.php?node=29#" title="NUUO Mainconsole Family">
+                NUUO Mainconsole Family                </a>
+<ul>
+<li><a href="ProductNode.php?node=7#" title="POS">POS</a><!---------POS-----------!>
+                    </li>
+                                        <li><a href="ProductNode.php?node=8#"   title="LPR" >LPR</a><!---------POS-----------!>
+                    </li>
+                                        <li><a href="ProductNode.php?node=9#"   title="Access Control" >Access Control</a><!---------POS-----------!>
+                    </li>
+                                        <li><a href="ProductNode.php?node=25#"   title="Facial Recognition" >Facial Recognition</a><!---------POS-----------!>
+                    </li>
+                                      </ul>
+                                  </li>
+                                <li ><a href="ProductNode.php?node=30#"   title="NUUO Crystal™" >
+                NUUO Crystal™                </a>
+                                    <ul>
+                                        <li><a href="ProductNode.php?node=15#"   title="POS" >POS</a><!---------LPR-----------!>
+                    </li>
+                                        <li><a href="ProductNode.php?node=20#"   title="LPR" >LPR</a><!---------LPR-----------!>
+                    </li>
+                                        <li><a href="ProductNode.php?node=16#"   title="Access Control" >Access Control</a><!---------LPR-----------!>
+                    </li>
+                                        <li><a href="ProductNode.php?node=26#"   title="Facial Recognition" >Facial Recognition</a><!---------LPR-----------!>
+                    </li>
+                                      </ul>
+                                  </li>
+                                <li ><a href="ProductNode.php?node=19#"   title="NUUO NuFace" >
+                NUUO NuFace                </a>
+                                  </li>
+                              </ul>
+                          </li>
+                        <li ><a href="ProductNode.php?node=10#"   title="Accessories" >
+            Accessories            </a>
+                          </li>
+                        <li ><a href="ProductNode.php?node=11#"   title="Mobile Client" >
+            Mobile Client            </a>
+                          </li>
+                        <li ><a href="ProductNode.php?node=12#"   title="SDK" >
+            SDK            </a>
+                          </li>
+                        <li ><a href="#"  style="cursor:text" title="Champ Family" >
+            Champ Family            </a>
+                            <ul>
+                                <li ><a href="ProductNode.php?node=31#"   title="IP Camera" >
+                IP Camera                </a>
+                                  </li>
+                              </ul>
+                          </li>
+                        <li ><a href="#"  style="cursor:text" title="NUUO Thermal Detection" >
+            NUUO Thermal Detection            </a>
+                            <ul>
+                                <li ><a href="ProductNode.php?node=36#"   title="NUUO Temperature Monitoring Panel" >
+                NUUO Temperature Monitoring Panel                </a>
+                                  </li>
+                                <li ><a href="ProductNode.php?node=33#"   title="NUUO Thermal Detection" >
+                NUUO Thermal Detection                </a>
+                                  </li>
+                              </ul>
+                          </li>
+                        <li class="none"><a href="ProductNode.php?node=35#"   title="NUUO VZIII" >
+            NUUO VZIII            </a>
+                          </li>
+                      </ul>
+        </li>
+        <img src="images/menu_icon.jpg" width="3" height="28" / style="float:left;*margin-top:-35px">
+        <li><a href="Partners.php" class="menu_url" title="Partners">Partners</a>
+          <ul>
+                        <li ><a href="PartnerNode.php?node_id=1#  1"  title="Channel Partners">
+             Channel Partners            </a>
+                            <ul>
+                                <li><a href="PartnerNode.php?node_id=1#1"   title="Channel Program Overview">
+                 Channel Program Overview                </a></li>
+                                <li><a href="PartnerNode.php?node_id=1#2"   title="Education&Certification">
+                 Education&Certification                </a></li>
+                                <li><a href="PartnerNode.php?node_id=1#3"   title="Partner Marketing Portal">
+                 Partner Marketing Portal                </a></li>
+                              </ul>
+                          </li>
+                        <li ><a href="PartnerNode.php?node_id=2#  1"  title="Solution Partners">
+             Solution Partners            </a>
+                            <ul>
+                                <li><a href="PartnerNode.php?node_id=2#1"   title="IP Camera">
+                 IP Camera                </a></li>
+                                <li><a href="PartnerNode.php?node_id=2#2"   title="Access Control">
+                 Access Control                </a></li>
+                                <li><a href="PartnerNode.php?node_id=2#3"   title="LPR">
+                 LPR                </a></li>
+                                <li><a href="PartnerNode.php?node_id=2#4"   title="Hardware">
+                 Hardware                </a></li>
+                                <li><a href="PartnerNode.php?node_id=2#5"   title="POS">
+                 POS                </a></li>
+                                <li><a href="PartnerNode.php?node_id=2#6"   title="BMS">
+                 BMS                </a></li>
+                                <li><a href="PartnerNode.php?node_id=2#7"   title="RFID">
+                 RFID                </a></li>
+                                <li><a href="PartnerNode.php?node_id=2#8"   title="Video Analytics">
+                 Video Analytics                </a></li>
+                              </ul>
+                          </li>
+                        <li class="none"><a href="PartnerNode.php?node_id=3#  1"  title="Technology Partners">
+             Technology Partners            </a>
+                            <ul>
+                                <li><a href="PartnerNode.php?node_id=3#1"   title="Intel">
+                 Intel                </a></li>
+                                <li><a href="PartnerNode.php?node_id=3#2"   title="ImmerVision">
+                 ImmerVision                </a></li>
+                              </ul>
+                          </li>
+                      </ul>
+        </li>
+        <img src="images/menu_icon.jpg" width="3" height="28"  style="float:left;*margin-top:-35px">
+        <!--1020227 edit second menu S-->
+<li><a class="menu_url" href="Support.php" title="Support">Support</a>
+<ul>
+<li><a href="SupportNode.php?node_id=5#" title="eHelpdesk">
+             eHelpdesk            </a>
+</li>
+<li><a href="SupportNode.php?node_id=2#" title="NUUO Wiki">
+             NUUO Wiki            </a>
+</li>
+<li><a href="SupportNode.php?node_id=3#" title="NuCalculator">
+             NuCalculator            </a>
+</li>
+<li><a href="SupportNode.php?node_id=6#" title="Video Library">
+             Video Library            </a>
+</li>
+<li class="none"><a href="#" style="cursor:text" title="Product Support">
+             Product Support            </a>
+<ul>
+<li><a href="SupportNode.php?node_id=4#" title="Supported Camera">
+                 Supported Camera                </a></li>
+<li><a href="SupportNode.php?node_id=8#" title="Discontinued Product">
+                 Discontinued Product                </a></li>
+<li><a href="SupportNode.php?node_id=10#" title="RMA Process">
+                 RMA Process                </a></li>
+<li><a href="SupportNode.php?node_id=11#" title="NUUO &amp; Open Source">
+                 NUUO &amp; Open Source                </a></li>
+<li><a href="SupportNode.php?node_id=12#" title="Compatibility List">
+                 Compatibility List                </a></li>
+</ul>
+</li>
+</ul>
+</li>
+<!--1020227 edit second menu E-->
+<img height="28" src="images/menu_icon.jpg" style="float:left;*margin-top:-35px" width="3"/>
+<li><a class="menu_url" href="NewsEvents.php" title="News &amp; Events">News &amp; Events</a>
+<ul>
+<li><a href="NewsEventsNode.php?node_id=1" title="News">
+              News              </a></li>
+<li><a href="NewsEventsNode.php?node_id=2" title="Events">
+              Events              </a></li>
+<li><a href="NewsEventsNode.php?node_id=3" title="Training Schedule">
+              Training Schedule              </a></li>
+<li class="none"><a href="NewsEventsNode.php?node_id=4" title="Corporate Newsletter">
+              Corporate Newsletter              </a></li>
+</ul>
+</li>
+<img height="28" src="images/menu_icon.jpg" style="float:left;*margin-top:-35px" width="3"/>
+<li><a class="menu_url" href="DownloadMainpage.php" title="Downloads">Downloads</a>
+<ul>
+<li><a href="DownloadMainpage.php#1" title="Software/ Firmware">
+            Software/ Firmware            </a></li>
+<li><a href="DownloadMainpage.php#2" title="Products-Technical Documentation">
+            Products-Technical Documen..            </a></li>
+<li><a href="DownloadMainpage.php#3" title="Marketing Materials">
+            Marketing Materials            </a></li>
+<li class="none"><a href="DownloadMainpage.php#4" title="Trial Versions">
+            Trial Versions            </a></li>
+</ul>
+</li>
+<img height="28" src="images/menu_icon.jpg" style="float:left;*margin-top:-35px" width="3"/>
+<li><a class="menu_url" href="Company.php" title="Company">Company</a>
+<ul>
+<li><a href="CompanyNode.php?node_id=1#" title="About NUUO">
+             About NUUO            </a>
+</li>
+<li><a href="CompanyNode.php?node_id=2#" title="Award-Winning History">
+             Award-Winning History            </a>
+</li>
+<li><a href="CompanyNode.php?node_id=8#" title="Investor Relations 投資人關係">
+             Investor Relations 投資人關係            </a>
+<ul>
+<li><a href="CompanyNode.php?node_id=8#1" title="Shareholders Service">
+                 Shareholders Service                </a></li>
+<li><a href="CompanyNode.php?node_id=8#2" title="Contact">
+                 Contact                </a></li>
+<li><a href="CompanyNode.php?node_id=8#3" title="Calendar">
+                 Calendar                </a></li>
+</ul>
+</li>
+<li><a href="CompanyNode.php?node_id=4#" title="Contact Us">
+             Contact Us            </a>
+</li>
+<li class="none"><a href="CompanyNode.php?node_id=3#" title="Careers">
+             Careers            </a>
+</li>
+</ul>
+</li>
+<img height="28" src="images/menu_icon.jpg" style="float:left;*margin-top:-35px" width="3"/>
+</li></ul>
+<br style="clear: left"/>
+</li></ul></li></ul></li></ul></div>
+</td>
+<script type="text/javascript">
+	$(function(){
+		
+		var menuDefault = $('#myjquerymenu').width();
+		var myMenu = $('#myjquerymenu').find('ul:eq(0)').children('li');
+		var spacer = 27;
+		var menuWidth = 0;
+		 myMenu.each(function(index) { 
+			tmpWidth = $(this).children('.menu_url').parent().width();
+			menuWidth += tmpWidth;
+		  })
+		  
+		 offset = (menuDefault - menuWidth - spacer)/2;
+		 offsetpx = offset+'px';
+		  
+		$("#myjquerymenu").css("padding-left",offsetpx);
+		
+	});
+
+	</script> </tr></table></td>
+<td></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td colspan="2" height="23" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--DWLayoutTable-->
+<tr>
+<td width="19"></td>
+<td valign="middle" width="941"><div style=" height:15px; margin-bottom:5px; margin-top:-6px;">
+<p class="type_01">
+<a class="type_01" href="index.php">Home</a>&gt;
+          <a class="type_01" href="Privacy.php">Privacy Statement</a></p>
+</div></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td colspan="2" height="194" valign="top"><table border="0" cellpadding="0" cellspacing="0" style="margin-bottom:10px;" width="100%">
+<!--DWLayoutTable-->
+<tr>
+<td bgcolor="#000000" height="194" valign="top" width="695"><img height="194" src="							backend/home/privacy/banner/source/0001.jpg?t=20220621044626							" width="960"/></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td height="247" valign="top" width="708"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--DWLayoutTable-->
+<tr>
+<td height="247" valign="top" width="708"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--DWLayoutTable-->
+<tr>
+<td valign="top" width="708"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<!--DWLayoutTable-->
+<tr>
+<td colspan="3" valign="top"></td>
+<td height="29" valign="top" width="907"><div align="justify" class="aboutsuccess">
+<span class="title_type02-1" style="font-family: Arial, Helvetica, sans-serif, clean; font-size: 16px; line-height: 28px; font-weight: bold; color: rgb(40, 75, 165); text-align: justify; ">Welcome to the NUUO Inc. website. </span><br style="font-family: Arial, Helvetica, sans-serif, clean; color: rgb(0, 0, 0); line-height: 20.981481552124023px; text-align: justify; "/>
+<p style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); line-height: 20.981481552124023px; ">
+	By accessing NUUO Inc. Website, www.nuuo.com, you agree to the following terms. If you do not agree to the following terms, please notice that you are not allowed to use the Website.<br/>
+	 </p>
+<p style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); line-height: 20.981481552124023px; ">
+	In accordance with our terms and conditions of use, you are granted to access and use the NUUO Inc. Website in non-exclusive, non-transferable, revocable manners. You may not use any print out or electronic version of any part of the Website or its contents in any litigation or arbitration matter whatsoever under any circumstances.</p>
+<p style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); line-height: 20.981481552124023px; ">
+	The contents of this Website, including but not limited to information, documents, products, logos, graphics, images, sounds, software, and services are the copyrighted work of NUUO Inc. and/or our third party suppliers, authors, developers and vendors. Any rights not expressly granted herein are reserved. You are not permitted to use any content and materials from the Website in any manner that may infringe any copyright, intellectual property right, proprietary right of NUUO Inc. or any third parties. You may not remove, change or obscure any copyright or proprietary notice or terms of use contained in this Website.</p>
+<p style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); line-height: 20.981481552124023px; ">
+	Reproduction, republication, sell, rent, lease, loan, transfer, distribution or storage of part or all of the contents in any form without the prior written permission of NUUO Inc. is prohibited except in accordance with the following terms. You may browse NUUO Inc. Web pages on your computer or print copies of extracts from these pages not for redistribution but for personal use only, unless otherwise consented to in writing by NUUO Inc. . You may not decompile, disassemble or reverse engineer any website software or content. Information harvest from this Website by any automatic or manual process is not allowed. Compilations or derivative works of any content and materials from the website are also not allowed. Individual documents on our Website pages may be subject to additional terms indicated in those documents. The content and use of this site is permitted to private, non-commercial use. The use of press releases and other documents classified as "public" is permitted in public communications only if the source of this information has been stated.</p>
+<p style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); line-height: 20.981481552124023px; ">
+	This site and the contents herein are provided as a convenience for NUUO Inc.'s clients. The contents of Website provided by NUUO Inc. are on "as is" and "as available" basis and NUUO Inc. does not gurantee them to be uninterrupted or error-free. NUUO Inc. reserves the right to revise the pages or withdraw access to them at any time. NO WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF TITLE OR NON-INFRINGEMENT OR IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, IS MADE IN RELATION TO THE AVAILABILITY, ACCURACY, RELIABILITY OR CONTENT OF THESE PAGES. NUUO INC. SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR FOR BUSINESS INTERRUPTION ARISING OUT OF THE USE OF OR INABILITY TO USE THIS SERVICE, EVEN IF NUUO INC. HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN JURISDICTIONS ALLOWING EXCLUSION OF CERTAIN WARRANTIES OR LIMITATIONS OF LIABILITY. THEREFORE, THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY IN YOUR REGION. THE LIABILITY OF NUUO INC. WOULD IN SUCH CASE BE LIMITED TO THE GREATEST EXTENT PERMITTED BY LAW.</p>
+<p style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); line-height: 20.981481552124023px; ">
+	NUUO Inc. does not and cannot review the content posted by users on its site , is not responsible for such content and may at any time at its discretion remove any such content.</p>
+<p style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); line-height: 20.981481552124023px; ">
+	NUUO® is a registered trademark of NUUO Inc. and NUUO US Inc. . All other product names, company names and services are either trademarks or registered trademarks of NUUO Inc. or their respective companies. Your access to this site should not be construed as granting any license or right to use any trademarks appearing on the site without the prior written consent of NUUO Inc. or the third party owner thereof.<a href="https://www.replicawatch.gr/" style="font-family: Arial, Verdana, sans-serif;">replica watches</a></p>
+<p style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); line-height: 20.981481552124023px; ">
+	Copyright © NUUO Inc. 2020. All rights reserved.</p>
+<a href="https://www.watchestimes.cn/" style="display:none;">best replica watches</a>
+</div></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+<td rowspan="2" valign="top" width="20"><img alt="" height="192" src="images/nuuo__04.jpg" width="20"/></td>
+</tr>
+<tr>
+<td height="1"></td>
+</tr>
+</table>
+<map id="Map" name="Map">
+<area alt="Login" coords="9,5,68,20" href="login.html" shape="rect"/>
+</map>
+<map id="Map2" name="Map2">
+<area alt="Search" coords="1,4,15,21" href="#" shape="rect"/>
+</map>
+<div align="center" class="index_box02"><table bgcolor="#000000" border="0" cellpadding="0" cellspacing="0" height="28px" width="960">
+<!--DWLayoutTable-->
+<tr>
+<td height="40" width="20"> </td>
+<td align="left" valign="middle" width="460">© Copyright 2021 NUUO Inc. All Rights Reserved. </td>
+<td align="right" class="type_url04-1" valign="middle" width="460">
+<a align="bottom" broder="0" class="type_url04" href="https://www.linkedin.com/company/nuuo-inc.?trk=company_name">
+<img align="bottom" height="18" src="images/linkedin-icon.gif" valign="bottom" with="18"/></a> <a align="bottom" broder="0" class="type_url04" href="https://www.youtube.com/user/NUUOMKT"><img align="bottom" height="18" src="images/Youtube_icon.png" valign="bottom" with="18"/></a> │<a class="type_url04" href="CompanyNode.php?node_id=4">Contact Us</a> │  <a class="type_url04" href="SiteMap.php">Site Map</a>│ <a class="type_url04" href="Privacy.php">Privacy Statement </a>│</td>
+<td width="20"> </td>
+</tr>
+</table></div>
+</div>
+</body>
+</html>

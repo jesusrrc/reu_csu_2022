@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en-gb">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<link href="images/favicon.png" rel="shortcut icon" type="image/png"/>
+<!-- Favicon -->
+<!--<link rel="shortcut icon" href="images/favicon.jpg">-->
+<!-- this styles only adds some repairs on idevices  -->
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Google fonts - witch you want to use - (rest you can just remove) -->
+<link href="google-fonts/style.css" rel="stylesheet" type="text/css"/>
+<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>-->
+<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+<!-- ######### CSS STYLES ######### -->
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<!-- font awesome icons -->
+<link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+<!-- simple line icons -->
+<link href="css/simpleline-icons/simple-line-icons.css" media="screen" rel="stylesheet" type="text/css">
+<!-- et linefont icons -->
+<link href="css/et-linefont/etlinefont.css" rel="stylesheet"/>
+<!-- animations -->
+<link href="js/animations/css/animations.min.css" media="all" rel="stylesheet" type="text/css">
+<!-- responsive devices styles -->
+<link href="css/responsive-leyouts.css" media="screen" rel="stylesheet" type="text/css"/>
+<!-- shortcodes -->
+<link href="css/shortcodes.css" media="screen" rel="stylesheet" type="text/css"/>
+<!-- style switcher -->
+<link href="js/style-switcher/color-switcher.css" media="screen" rel="stylesheet"/>
+<!-- mega menu -->
+<link href="js/mainmenu/bootstrap.min.css" rel="stylesheet"/>
+<!--<link href="js/mainmenu/demo.css" rel="stylesheet">
+<link href="js/mainmenu/menu.css" rel="stylesheet">-->
+<!-- MasterSlider -->
+<link href="js/masterslider/style/masterslider.css" rel="stylesheet">
+<link href="js/masterslider/skins/default/style.css" rel="stylesheet"/>
+<!-- cubeportfolio -->
+<link href="js/cubeportfolio/cubeportfolio.min.css" rel="stylesheet" type="text/css"/>
+<!-- owl carousel -->
+<link href="js/carouselowl/owl.transitions.css" rel="stylesheet"/>
+<link href="js/carouselowl/owl.carousel.css" rel="stylesheet"/>
+<!-- accordion -->
+<link href="js/accordion/style.css" rel="stylesheet" type="text/css">
+<link href="css/shortcodes.css" media="screen" rel="stylesheet" type="text/css">
+<link href="css/cookie-banner.css" rel="stylesheet" type="text/css"/>
+<!--<script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script> 
+<link rel="stylesheet" media="screen" href="js/bootstrap/bootstrap.min.css" type="text/css" />-->
+<style type="text/css">
+/***********************************************************************************
+ *	 - HEADER
+ ***********************************************************************************/
+	
+	#header {
+	position: relative;
+}
+ #header [class^="col-"] {
+ position: static;
+}
+#header .container {
+	position: relative;
+}
+ @media (min-width: 1300px) {
+ #header {
+			/*position: absolute;*/
+			z-index: 9000;
+			/*left: 50%;*/
+			width: 100%;
+ padding: 0 20px;
+			/*margin-top: -45px;
+			margin-left: -620px;*/
+			background-color: #fff;
+}
+ #header .container {
+ position: static;
+}
+}
+/***********************************************************************************
+ *	- LOGO
+ ***********************************************************************************/
+
+	#logo {
+	max-width: 100%;
+	margin: 5px 0 10px;
+}
+#logo a {
+	display: inline-block;
+	max-width: 100%;
+	text-align: center;
+}
+ @media (max-width: 767px) {
+ #logo {
+ margin-right: 60px;
+}
+}
+/***********************************************************************************
+ *	- MENU
+ ***********************************************************************************/
+	
+	.menu,  .menu ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.menu {
+	float: right;
+	margin-top: 35px;
+}
+.menu > li {
+	float: left;
+}
+.menu li a {
+	display: block;
+	padding: 4px 25px;
+	color: #9f9f9f;
+	/*font-family: "Open Sans", Arial, sans-serif;*/
+		font-family: 'open_sansregular';
+	font-size: 13px;
+	line-height: 24px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.menu > li > a {
+	position: relative;
+	padding: 10px 10px 35px 10px;
+	margin-right: 10px;
+	color: #242424;
+	/*font-family: "Montserrat", Arial, sans-serif;*/
+		font-size: 14px;
+	line-height: 20px;
+	text-transform: uppercase;
+}
+.menu > li > a:after {
+	display: block;
+	width: 0;
+	border-bottom: 2px solid #5d0133;
+	content: "";
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.menu > li:last-child > a {
+	margin-right: 0;
+}
+.menu li.dropdown ul {
+	position: absolute;
+	z-index: 2000;
+	top: 100%;
+	left: 0;
+	display: none;
+	width: 225px;
+	border: 1px solid #525252;
+	background-color: #242424;
+}
+.menu li.dropdown ul li > a {
+	border-bottom: 1px dashed #525252;
+}
+.menu li.dropdown ul li:last-child > a {
+	border-bottom: none;
+}
+.menu li.dropdown ul li a,  .megamenu-container .section ul li a {
+	position: relative;
+}
+.menu li.dropdown ul li a:after,  .megamenu-container .section ul li a:after {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	color: #5d0133;
+	font-family: "FontAwesome";
+	opacity: 0;
+	content: "\f105";
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.menu li.dropdown ul li a:hover:after,  .menu li.dropdown ul li.sfHover > a:after,  .megamenu-container .section ul li a:hover:after {
+	left: 10px;
+	opacity: 1;
+}
+.menu li.dropdown ul ul {
+	top: -1px;
+	left: 100%;
+}
+.menu li.dropdown:hover > ul {
+	display: block;
+}
+.menu li.megamenu .megamenu-container {
+	position: absolute;
+	z-index: 2000;
+	top: 100%;
+	left: 0;
+	display: none;
+	width: 100%;
+	border: 1px solid #525252;
+	background-color: #242424;
+}
+.megamenu-container .section {
+	float: left;
+	width: 25%;
+	padding: 10px 0;
+	border-right: 1px dashed #525252;
+}
+.megamenu-container.col-2 .section {
+	width: 50%;
+}
+.megamenu-container.col-3 .section {
+	width: 33.33333333%;
+}
+.megamenu-container.col-4 .section {
+	width: 25%;
+}
+.megamenu-container.col-5 .section {
+	width: 20%;
+}
+.menu li.megamenu:hover > .megamenu-container {
+	display: block;
+}
+.sf-arrows .sf-with-ul:before {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: 0;
+	height: 0;
+	display: none;
+	border: 5px solid transparent;
+	border-top-color: #242424;
+	margin-top: -20px;
+	content: "";
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.sf-arrows > li:hover > .sf-with-ul:before {
+	border-top-color: #9f9f9f;
+}
+.sf-arrows ul .sf-with-ul:before {
+	display: block;
+	border-color: transparent;
+	border-left-color: #9f9f9f;
+	margin-top: -5px;
+	margin-right: 10px;
+}
+.sf-arrows ul li:hover > .sf-with-ul:before {
+	border-left-color: #fff;
+}
+.menu li a:hover {
+	text-decoration: none;
+}
+.menu > li > a:hover:after,  .menu > li.sfHover > a:after,  .menu > li.active > a:after {
+	width: 100%;
+}
+.menu li.dropdown ul li a:hover,  .menu li.dropdown ul li.sfHover > a,  .menu li.megamenu .megamenu-container a:hover {
+	color: #fff;
+}
+ @media (min-width: 768px) and (max-width: 991px) {
+ .menu {
+ display: none;
+}
+}
+ @media (max-width: 767px) {
+ .menu {
+ display: none;
+}
+}
+/***********************************************************************************
+ *	- MOBILE MENU
+ ***********************************************************************************/	
+	
+	#mobile-menu-button {
+	float: right;
+	display: none;
+	width: 48px;
+	height: 48px;
+	border-radius: 3px;
+	background-color: #5d0133;
+	color: #fff;
+	font-size: 24px;
+	line-height: 48px;
+	text-align: center;
+	text-decoration: none;
+}
+#mobile-menu,  #mobile-menu ul {
+	list-style: none;
+	display: none;
+	margin: 0;
+	background-color: #5d0133;
+}
+#mobile-menu {
+	border-bottom: 1px solid #fff;
+}
+#mobile-menu li a {
+	display: block;
+	padding: 10px 20px;
+	border-top: 1px solid #fff;
+	color: #fff;
+	text-decoration: none;
+}
+#mobile-menu > li > a {
+	text-transform: uppercase;
+	font-weight: 700;/*font-family: "Montserrat", Arial, sans-serif;*/
+	}
+#mobile-menu ul a {
+	padding-left: 40px;
+}
+#mobile-menu ul ul a {
+	padding-left: 60px;
+}
+#mobile-menu .megamenu-container {
+	display: none;
+	margin-left: 0;
+}
+#mobile-menu .megamenu-container .section {
+	float: none;
+	width: 100%;
+	margin-bottom: -1px;
+	padding: 0 20px 20px 20px;
+}
+#mobile-menu .megamenu-container .section ul {
+	display: block;
+	margin: 0 -25px -20px;
+}
+#mobile-menu .megamenu-container .section ul a {
+	padding-left: 40px;
+}
+#mobile-menu .megamenu-container .section > ul li a:before {
+	display: none;
+}
+#mobile-menu .megamenu-container .section ul li:last-child a {
+	border-bottom: 1px solid #fff;
+}
+#mobile-menu li.dropdown > a,  #mobile-menu li.megamenu > a {
+	position: relative;
+}
+#mobile-menu li.dropdown > a:after,  #mobile-menu li.megamenu > a:after {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-top-color: #fff;
+	margin-top: -2px;
+	content: "";
+}
+#mobile-menu li.dropdown > a.open:after,  #mobile-menu li.megamenu > a.open:after {
+	border-top-color: transparent;
+	border-bottom-color: #fff;
+	margin-top: -6px;
+}
+ @media (min-width: 768px) and (max-width: 991px) {
+ #mobile-menu-button {
+ display: block;
+ margin-top: 27px;
+}
+}
+ @media (max-width: 767px) {
+ #mobile-menu-button {
+ position: absolute;
+ top: 31px;
+ right: 15px;
+ display: block;
+}
+}
+/***********************************************************************************
+ *	- SEARCH
+ ***********************************************************************************/
+	
+	.menu li.search {
+	position: relative;
+}
+.menu li.search a {
+	position: relative;
+	top: -2px;
+	font-size: 16px;
+	text-decoration: none;
+}
+.menu li.search a:hover {
+	color: #5d0133;
+}
+.menu li.search a:hover:after,  .menu li.search.sfHover a:after {
+	display: none;
+}
+	
+	
+/***********************************************************************************
+ *	- STICKY
+ ***********************************************************************************/
+	
+	#header-sticky [class^="col-"] {
+ position: static;
+}
+#header-sticky .container {
+	position: relative;
+}
+#header-sticky {
+	position: fixed;
+	z-index: 8000;
+	top: 0;
+	right: 0;
+	left: 0;
+	display: none;
+	width: 100%;
+	margin: 0 auto;
+	background-color: #fff;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.06);
+}
+#header-sticky #logo {
+	margin: 13px 0 14px;
+}
+#header-sticky .menu {
+	margin-top: 20px;
+}
+#header-sticky .menu > li > a {
+	padding-bottom: 27px;
+}
+#header-sticky .sf-arrows .sf-with-ul:before {
+	margin-top: -13px;
+}
+#header-sticky .sf-arrows ul .sf-with-ul:before {
+	margin-top: -5px;
+}
+ @media (min-width: 768px) and (max-width: 991px) {
+ #header-sticky {
+ visibility: hidden;
+}
+}
+ @media (max-width: 767px) {
+ #header-sticky {
+ visibility: hidden;
+}
+}
+</style>
+<!-- Comodo seal -->
+<!-- UWE: 2020/06/08 gives error
+<script type="text/javascript"> //<![CDATA[ 
+var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
+document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+//]]>
+</script>
+-->
+</link></link></link></link></link></link></meta></head>
+<body>
+<div class="site_wrapper">
+<div class="top_nav">
+<div class="container">
+<div class="left"> <a href="mailto:sales@gambitcomm.com"><i class="fa fa-envelope"></i>   sales@gambitcomm.com</a> <i class="fa fa-phone-square"></i>  (603) 889 5100. </div>
+<!-- end left -->
+<div class="right hidden-xs">
+<a class="tpbut" href="https://github.com/gambitcomminc" target="_blank">
+<i class="fa"><img src="images/github-icon.png" width="10"/></i></a>
+<a class="tpbut" href="https://gambitcomm.blogspot.com" target="_blank">
+<i class="fa"><img src="images/blogger-icon.png" width="10"/></i></a>
+<a class="tpbut" href="https://youtube.com/user/gambitcomm" target="_blank"><i class="fa"><img src="images/youtube-icon.png" width="14"/></i></a>
+<a class="tpbut" href="https://www.linkedin.com/company/42408?trk=prof-exp-company-name" target="_blank">
+<i class="fa fa-linkedin"></i></a>
+<a class="tpbut" href="https://twitter.com/MIMICSim" target="_blank"><i class="fa fa-twitter"></i></a>
+<a class="tpbut" href="https://www.facebook.com/pages/Nashua-NH/Gambit-Communications-Inc/105269342840455"><i class="fa fa-facebook"></i></a>
+</div>
+<!-- end right -->
+</div>
+</div>
+<!-- end top navigation links -->
+<div class="clearfix"></div>
+<header>
+<div id="header">
+<div class="container">
+<div class="row">
+<div class="col-sm-3">
+<!-- LOGO -->
+<a href="index.php">
+<div id="logo"> <img alt="" src="assets/images/logo1.jpg"/> </div>
+<!-- LOGO -->
+</a> </div>
+<!-- col -->
+<div class="col-sm-9">
+<!-- MENU -->
+<nav> <a href="#" id="mobile-menu-button"><i class="fa fa-bars"></i></a>
+<ul class="menu clearfix" id="menu">
+<!--<li class="active"><a href="index.php">Home</a></li>-->
+<li class=""><a href="index.php">Home</a></li>
+<!--<li class="megamenu">
+		<a href="products.php">Products</a>
+		<div class="megamenu-container col-3">
+		<div class="section">
+
+		<ul>
+		<li>
+                <h5><a href="mimic-simulator.php">MIMIC Simulator Suite</a></h5>
+                </li>
+                          <li><a href="snmp-simulator.php"><i class="fa fa-angle-right"></i> SNMP </a></li>
+                          <li> <a href="snmp-simulator.php"><i class="fa fa-angle-right"></i> SNMP 	Simulator</a></li>
+                          <li><a href="netflowsimulator.php"><i class="fa fa-angle-right"></i> NetFlow Simulator</a></li>
+                          <li><a href="sflowsimulator.php"><i class="fa fa-angle-right"></i> sFlow Simulator</a></li>
+                          <li> <a href="websimulator.php"><i class="fa fa-angle-right"></i> Web Simulator</a></li>
+                          <li> <a href="iot_simulator.php"><i class="fa fa-angle-right"></i> IoT Simulator</a></li>
+                          <li> <a href="mqttsimulator.php"><i class="fa fa-angle-right"></i> MQTT Simulator</a></li>
+                          <li> <a href="ios-simulator.php"><i class="fa fa-angle-right"></i> IOS Simulator</a></li>
+                          <li><a href="junos-simulator.php"><i class="fa fa-angle-right"></i> JUNOS Simulator</a></li>
+                          <li><a href="server-simulator.php"><i class="fa fa-angle-right"></i> Server Simulator</a></li>
+                          <li> <a href="wireless-simulator.php"><i class="fa fa-angle-right"></i> Wireless Simulator</a></li>
+                          <li> <a href="redfish-simulator.php"><i class="fa fa-angle-right"></i> Redfish Simulator</a></li>
+                          <li> <a href="ipmi-simulator.php"><i class="fa fa-angle-right"></i> IPMI Simulator</a></li>
+                          <li> <a href="cable-modem-simulator.php"><i class="fa fa-angle-right"></i> Cable Modem Simulator</a></li>
+												</ul>
+
+											</div>
+                                            
+                                            
+											<div class="section">
+
+												<ul>
+													<li><a href="enterprise-vlab.php"><i class="fa fa-angle-right"></i>Enterprise Lab</a></li>
+    <li><a href="ccna-vlab.php"><i class="fa fa-angle-right"></i>CCNA Lab</a></li>
+    <li><a href="cloud-vlab.php"><i class="fa fa-angle-right"></i>Cloud - Online Lab</a></li>
+    <li><a href="iccnalab.php"><i class="fa fa-angle-right"></i>iCCNALab for iPhone</a></li>
+                          <hr/>
+                          <br/>
+                          <li>
+                            <p>Why MIMIC Simulator?</p>
+                          </li>
+                          <li><i class="fa fa-angle-right"></i>A better way to Test, 
+                            Evaluate & Train on 
+                            Management Applications</li>
+                          <li class="dart hidden-xs"> <img src="images/mimic_view.gif" alt="" class="rimg" /> </li>
+												</ul>
+
+											</div>
+											<div class="section">
+
+												<ul>
+													<li>
+                            <p>About our products</p>
+                          </li>
+                          <li>MIMIC Simulator creates a real world lab environment, with 100,000 devices, at a fraction of the cost of physical equipment. It provides an interactive hands-on lab for quality assurance, development, sales presentation, evaluation, deployment and training of enterprise management applications. Users create a customizable virtual environment populated with simulated routers, hubs, switches, WiFi/WiMAX/LTE devices, probes, cable modems, servers and workstations.  </li>
+                          <li class="dart hidden-xs"> <img src="images/inmenu-img1.png" alt="" class="rimg" /> </li>
+												</ul>
+
+											</div>
+											
+										</div>
+									</li>-->
+<li class="dropdown"> <a href="products.php">Products</a>
+<ul>
+<li class="visible-xs"><a href="products.php">Our Products</a></li>
+<li class="dropdown"> <a href="mimic-simulator.php">MIMIC Simulator Suite</a>
+<ul>
+<li class="visible-xs"><a href="mimic-simulator.php">MIMIC Simulator Suite</a></li>
+<li> <a href="snmp-simulator.php"><i class="fa fa-angle-right"></i> SNMP 	Simulator</a></li>
+<li><a href="netflowsimulator.php"><i class="fa fa-angle-right"></i> NetFlow Simulator</a></li>
+<li><a href="sflowsimulator.php"><i class="fa fa-angle-right"></i> sFlow Simulator</a></li>
+<li> <a href="websimulator.php"><i class="fa fa-angle-right"></i> Web Simulator</a></li>
+<li> <a href="iot_simulator.php"><i class="fa fa-angle-right"></i> IoT Simulator</a></li>
+<li> <a href="mqttsimulator.php"><i class="fa fa-angle-right"></i> MQTT Simulator</a></li>
+<li> <a href="ios-simulator.php"><i class="fa fa-angle-right"></i> IOS Simulator</a></li>
+<li><a href="junos-simulator.php"><i class="fa fa-angle-right"></i> JUNOS Simulator</a></li>
+<li><a href="server-simulator.php"><i class="fa fa-angle-right"></i> Server Simulator</a></li>
+<li> <a href="wireless-simulator.php"><i class="fa fa-angle-right"></i> Wireless Simulator</a></li>
+<li> <a href="redfish-simulator.php"><i class="fa fa-angle-right"></i> Redfish Simulator</a></li>
+<li> <a href="ipmi-simulator.php"><i class="fa fa-angle-right"></i> IPMI Simulator</a></li>
+<li> <a href="cable-modem-simulator.php"><i class="fa fa-angle-right"></i> Cable Modem Simulator</a></li>
+</ul>
+</li>
+<li class="dropdown"> <a href="#">MIMIC Virtual Lab</a>
+<ul>
+<li><a href="https://aws.amazon.com/marketplace/pp/B084WZH8G5/" target="new">AWS IoT Simulator</a></li>
+<li><a href="https://mqttlab.iotsim.io" target="new">MQTT Lab</a></li>
+<li><a href="cloud-vlab.php">CCNA Lab</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="dropdown"> <a href="download-support.php">Support</a>
+<ul>
+<li><a href="download-support.php">Downloads</a></li>
+<li><a href="evaluation.php">Evaluation</a></li>
+<li><a href="web-demo.php">Web Demo</a></li>
+<li><a href="usergroup.php">User Group</a></li>
+<li><a href="problem-report.php">Problem Report</a></li>
+<li><a href="inforequest.php">Info Request</a></li>
+<li><a href="support-platforms.php">Supported Platforms</a></li>
+<li><a href="reference.php">Resources</a></li>
+</ul>
+</li>
+<li class="dropdown"> <a href="news.php">Newsroom</a>
+<ul>
+<li><a href="news.php">News</a></li>
+<li><a href="press-release.php">Press Releases</a></li>
+<!--        <li><a href="events.php">Events</a></li>   -->
+<li><a href="testimonials.php">Testimonials</a></li>
+<li><a href="casestudies.php">Case Studies</a></li>
+<li><a href="casestudies.php#app-briefs">Application Briefs</a></li>
+<li><a href="casestudies.php#brochure">Brochure</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<!--<a href="partners.php">Partners</a>-->
+<a href="programs-partners.php">Partners</a>
+<ul>
+<li> <a href="programs-partners.php">Partner Programs </a> </li>
+<li> <a href="corporate-partners.php">Corporate Partners</a> </li>
+<li> <a href="lab-partners.php">Lab Partners</a> </li>
+<li> <a href="education-partners.php">Education Partners</a> </li>
+</ul>
+</li>
+<li class="dropdown"> <a href="courses.php">Training</a>
+<ul>
+<li> <a href="courses.php">Courses </a> </li>
+<li> <a href="schedule.php">Schedule</a> </li>
+</ul>
+</li>
+<li class="dropdown"> <a href="contact.php">Contact</a> </li>
+</ul>
+</nav>
+</div>
+<!-- col -->
+</div>
+<!-- row -->
+</div>
+<!-- container -->
+</div>
+<!-- 	header -->
+</header>
+<div id="cookieConsent">
+<div id="closeCookieConsent">x</div>
+        This website uses cookies.
+ <a href="../site/privacy.php" target="_blank">More info
+<img src="../site/images/pageexit.png" width="16"/>
+</a>.
+ <a class="cookieConsentOK">That's Fine</a>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){   
+    if (localStorage.getItem("cookieSeen") == "shown") {
+    	return
+    }
+    setTimeout(function () {
+        $("#cookieConsent").fadeIn(200);
+     }, 2000);
+    $("#closeCookieConsent, .cookieConsentOK").click(function() {
+        $("#cookieConsent").fadeOut(200);
+	localStorage.setItem("cookieSeen", "shown")
+    }); 
+}); 
+</script>
+<link href="js/tabs/assets/css/responsive-tabs3.css" rel="stylesheet" type="text/css"/>
+<div class="clearfix"></div>
+<div class="page_title2">
+<div class="container">
+<h1 class="caps">Privacy Policy </h1>
+<div class="pagenation"> <a href="index.php">Home</a> <i>/</i> Privacy policy</div>
+</div>
+</div>
+<div class="content_fullwidth less2">
+<div class="container">
+<!-- left sidebar starts -->
+<div class="left_sidebar">
+<div class="bordbox">
+<div class="sidebar_widget">
+<div class="sidebar_title">
+<h3 class="roboto">Company Profile</h3>
+</div>
+<ul class="arrows_list1">
+<li class=""><a href="about.php"><i class="fa fa-angle-right"></i> About us</a></li>
+<li><a href="contact.php"><i class="fa fa-angle-right"></i>Contact</a></li>
+<li><a href="location.php"><i class="fa fa-angle-right"></i>Locations</a></li>
+<!--    <li><a href="sales-office.php"><i class="fa fa-angle-right"></i>Sales Offices</a></li>
+--!>
+    
+    <li class=""><a href="career.php"><i class="fa fa-angle-right"></i>Career Opportunities</a></li>
+    
+    <li class=" active"><a href="privacy.php"><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
+    
+    <li class=""><a href="trademarks.php"><i class="fa fa-angle-right"></i>Trademark & Copyrights</a></li>
+  </ul>
+</div>
+<!-- end section -->
+</ul></div>
+<div class="clearfix margin_top3"></div>
+<div class="bordbox">
+<div class="sidebar_widget">
+<div class="sidebar_title">
+<h3 class="roboto">Our Products</h3>
+</div>
+<ul class="arrows_list1">
+<li><a href="mimic-simulator.php"><i class="fa fa-angle-right"></i> MIMIC Simulator</a></li>
+<li><a href="ccna-vlab.php"><i class="fa fa-angle-right"></i>MIMIC Virtual Lab</a></li>
+</ul>
+</div>
+<!-- end section -->
+</div>
+</div>
+<!-- end left sidebar -->
+<div class="content_right">
+<img class="img-responsive" src="images/Privacy-Policy-banner.png">
+<div class="margin_bottom3"></div>
+<p>We take your privacy seriously.
+We will not sell, transfer, or license the identifying information provided by you to third parties except to provide products or services you have requested or when we have your express permission.</p>
+<p>We occasionally contract with third-party service providers and suppliers to provide limited services on our behalf, including packaging, mailing and delivering purchases, answering customer questions about products or services, sending postal mail and processing event registration. We will only provide those companies the information they need to deliver the service, and they are prohibited from using it for any purpose other than to carry out the services they are performing for Gambit Communications.</p>
+<p>We may disclose your personal information if required to do so by law.</p>
+<p>This website uses
+<a href="https://en.wikipedia.org/wiki/HTTP_cookie">cookies</a>
+to tailor content and information that we may send or display to you,
+including Google analytic services, etc.
+
+<p>This website contains links to other websites. We do not share your personal information with those websites and are not responsible for their privacy practices or the content.</p>
+</p></img></div>
+<!-- end content right side -->
+</div>
+</div>
+<!-- end content area -->
+<div class="clearfix margin_top12"></div>
+<footer class="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-3 col-sm-6 animate" data-anim-delay="100" data-anim-type="fadeInUp">
+<h4>CONTACT DETAILS</h4>
+<ul class="faddress">
+<li><i class="fa fa-home"></i>  Gambit Communications ®</li>
+<li><i class="fa fa-map-marker fa-lg"></i>  76 Northeastern Blvd., Suite 29A <br/>
+                 Nashua, NH 03062, USA </li>
+<li><i class="fa fa-phone"></i>  (603) 889 5100</li>
+<li><i class="fa fa-print"></i>  (603) 889-5005</li>
+<li><a href="mailto:info@gambitcomm.com"><i class="fa fa-envelope"></i>  info@gambitcomm.com</a></li>
+<li><img alt="" src="images/footer-wmap.png"/></li>
+</ul>
+</div>
+<!-- end address -->
+<div class="col-md-3 col-sm-6 animate" data-anim-delay="100" data-anim-type="fadeInUp">
+<h4>LINKS</h4>
+<div class="qlinks">
+<ul>
+<li><a href="index.php"><i class="fa fa-angle-right"></i> Home </a></li>
+<li><a href="about.php"><i class="fa fa-angle-right"></i> About us</a></li>
+<li><a href="career.php"><i class="fa fa-angle-right"></i> Career</a></li>
+<li><a href="products.php"><i class="fa fa-angle-right"></i> Products</a></li>
+<li><a href="courses.php"><i class="fa fa-angle-right"></i> Training</a></li>
+<li><a href="sitemap.xml" target="_blank"><i class="fa fa-angle-right"></i> Sitemap</a></li>
+<li><a href="contact.php"><i class="fa fa-angle-right"></i> Contact us</a></li>
+</ul>
+</div>
+</div>
+<div class="col-md-3 animate" data-anim-delay="300" data-anim-type="fadeInUp">
+<h4>OUR SUPPORT</h4>
+<div class="qlinks">
+<ul>
+<li><a href="download-support.php"><i class="fa fa-angle-right"></i> Downloads</a></li>
+<li><a href="evaluation.php"><i class="fa fa-angle-right"></i> Evaluation</a></li>
+<li><a href="web-demo.php"><i class="fa fa-angle-right"></i> Web Demo</a></li>
+<!--<li><a href="usergroup.php"><i class="fa fa-angle-right"></i> User Group</a></li>-->
+<li><a href="problem-report.php"><i class="fa fa-angle-right"></i> Problem Report</a></li>
+<li><a href="inforequest.php"><i class="fa fa-angle-right"></i> Info Request</a></li>
+<li><a href="support-platforms.php"><i class="fa fa-angle-right"></i> Supported Platforms</a></li>
+<li><a href="reference.php"><i class="fa fa-angle-right"></i> Resources</a></li>
+</ul>
+</div>
+</div>
+<!-- end site info -->
+</div>
+</div>
+<!-- end footer -->
+<div class="clearfix"></div>
+<div class="copyright_info">
+<div class="container">
+<div class="clearfix divider_dashed10"></div>
+<div class="row">
+<div class="col-md-8 animate" data-anim-delay="300" data-anim-type="fadeInRight"> Copyright © 2022, Gambit Communications, Inc. All rights reserved. <a href="privacy.php">Privacy Policy</a> | <a href="trademarks.php">Trademark</a> </div>
+<div class="col-md-4">
+<ul class="footer_social_links">
+<li class="animate" data-anim-delay="300" data-anim-type="zoomIn"><a href="https://www.facebook.com/pages/Nashua-NH/Gambit-Communications-Inc/105269342840455"><i class="fa fa-facebook"></i></a></li>
+<li class="animate" data-anim-delay="300" data-anim-type="zoomIn"><a href="https://twitter.com/MIMICSim"><i class="fa fa-twitter"></i></a></li>
+<li class="animate" data-anim-delay="300" data-anim-type="zoomIn"><a href="https://www.linkedin.com/company/42408?trk=prof-exp-company-name"><i class="fa fa-linkedin"></i></a></li>
+<li class="animate" data-anim-delay="300" data-anim-type="zoomIn"><a href="https://youtube.com/user/gambitcomm"><i class="fa"><img src="images/youtube-icon.png" width="14"/></i></a></li>
+<li class="animate" data-anim-delay="300" data-anim-type="zoomIn"><a href="https://gambitcomm.blogspot.com"><i class="fa"><img src="images/blogger-icon.png" width="10"/></i></a></li>
+<li class="animate" data-anim-delay="300" data-anim-type="zoomIn"><a href="https://github.com/gambitcomminc"><i class="fa"><img src="images/github-icon.png" width="10"/></i></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- end copyright info -->
+</footer>
+<a class="scrollup" href="#">Scroll</a>
+<!-- end scroll to top of the page-->
+</div>
+<!-- ######### JS FILES ######### -->
+<!-- get jQuery used for the theme -->
+<script src="js/universal/jquery.js" type="text/javascript"></script>
+<script src="js/style-switcher/styleselector.js"></script>
+<script src="js/animations/js/animations.min.js" type="text/javascript"></script>
+<script src="js/mainmenu/bootstrap.min.js"></script>
+<script src="js/mainmenu/customeUI.js"></script>
+<script src="js/scrolltotop/totop.js" type="text/javascript"></script>
+<script src="js/mainmenu/sticky.js" type="text/javascript"></script>
+<script src="js/mainmenu/modernizr.custom.75180.js" type="text/javascript"></script>
+<script src="js/masterslider/jquery.easing.min.js"></script>
+<script src="js/accordion/jquery.accordion.js" type="text/javascript"></script>
+<script src="js/accordion/custom.js" type="text/javascript"></script>
+<script src="js/universal/custom.js" type="text/javascript"></script>
+<script src="js/mainmenu/modernizr.custom.75180.js" type="text/javascript"></script>
+<script src="js/cubeportfolio/jquery.cubeportfolio.min.js" type="text/javascript"></script>
+<script src="js/cubeportfolio/main.js" type="text/javascript"></script>
+<script src="js/masterslider/masterslider.min.js"></script>
+<script type="text/javascript">
+
+(function($) {
+
+ "use strict";
+
+	var slider = new MasterSlider();
+
+	// adds Arrows navigation control to the slider.
+
+	slider.control('arrows');
+
+	slider.control('bullets');
+
+	
+
+	slider.setup('masterslider' , {
+
+		 width:1400,    // slider standard width
+
+		 height:530,   // slider standard height
+
+		 space:0,
+
+		 speed:45,
+
+		 layout:'fullwidth',
+
+		 loop:true,
+
+		 preload:0,
+
+		 autoplay:true,
+
+		 view:"parallaxMask"
+
+	});
+
+})(jQuery);
+
+</script>
+<script src="js/aninum/jquery.animateNumber.min.js"></script>
+<script src="js/carouselowl/owl.carousel.js"></script>
+<script src="js/universal/custom.js" type="text/javascript"></script>
+<script src="js/tabs/assets/js/responsive-tabs.min.js" type="text/javascript"></script>
+<!-- MENU -->
+<script src="assets/plugins/menu/hoverIntent.js"></script>
+<script src="assets/plugins/menu/superfish.js"></script>
+<!-- PARALLAX -->
+<script src="assets/plugins/parallax/jquery.stellar.min.js"></script>
+<!-- CUSTOM JS -->
+<script src="assets/js/custom.js"></script>
+<!-- GOOGLETAGS JS -->
+<!-- Global site tag (gtag.js) - Google Ads: 1072530657 -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-1072530657"></script>
+<script src="assets/js/googletags.js"></script>
+</div></body></html>

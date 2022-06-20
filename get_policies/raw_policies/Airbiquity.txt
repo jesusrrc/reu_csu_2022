@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]--><!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]--><!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"> <!--<![endif]--><head> <!-- Google Tag Manager --> <script>        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', '');
+    </script> <!-- End Google Tag Manager --> <meta charset="utf-8"/> <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["gov-bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"cbe04b4f50",applicationID:"284351732"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script> <meta content="width=device-width" name="viewport"/> <meta content="Vehicle Telematics, Geofencing &amp; Fleet Tracking Systems for the Connected Car" name="DC.title"> <meta content="telematics, connected car, vehicle telematics systems, vehicle telematics, connected vehicle,
+automotive telematics, fleet telematics, telematic systems, telematics device, smartphone integration, vehicle tracking system, geofencing, geo fencing, fleet tracking system, mobile integration, connected car services, car telematics, car geofencing, car geo-fencing, vehicle geofencing, vehicle geo-fencing, vehicle mobile integration, car mobile intgegration, mobile integration platform, integrated mobile solutions, telematics for cars, mobile integration solutions, mobile vehicle integration" name="DC.subject"> <meta content="Airbiquity is the global leader in vehicle telematics, geofencing, and connected car systems, with more than four million connected vehicles on the road. Specializing in automotive telematics, including fleet vehicle tracking systems and connected vehicle services, Airbiquity�s telematics systems conduct millions of transactions each day across its infrastructure." name="DC.description"> <meta content="2006-10-09" name="DC.date" scheme="DCTERMS.W3CDTF"/> <meta content="Text" name="DC.type" scheme="DCTERMS.DCMIType"/> <meta content="text/html" name="DC.format"/> <meta content="http://www.airbiquity.com/" name="DC.identifier" scheme="DCTERMS.URI"/> <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/> <link href="//fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet" type="text/css"/> <link href="//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic" rel="stylesheet" type="text/css"/> <link href="/packages/ctm_prowess/themes/airbqpl/css/bootstrap.min.css" rel="stylesheet"/> <link href="/packages/ctm_prowess/themes/airbqpl/css/bootstrap-theme.css" rel="stylesheet"/> <link href="/packages/ctm_prowess/themes/airbqpl/css/flexslider.css" rel="stylesheet"/> <link href="/packages/ctm_prowess/themes/airbqpl/css/styles.css" rel="stylesheet"/> <!-- Temporary Styles --> <style>        /* Helper Styles */
+        .grey-bg {
+            background: #efefef;
+        }
+
+        .list-no-pad {
+            padding: 0;
+        }
+
+        .section-padding {
+            padding: 4% 15px;
+        }
+
+        .st-wrapper .st-icon {
+            margin: 3px 0;
+        }
+
+        .image-overlay-block.left-text,
+        .image-overlay-block.right-text,
+        .image-overlay-block.wide-left,
+        .image-overlay-block.wide-right {
+            margin-bottom: 0;
+        }
+
+        /* Print Button */
+        .st-icon a.print {
+            color: #4d4d4d;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: rgb(255, 255, 255); /* Old browsers */
+            /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNWU1ZTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+            background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(229, 229, 229, 1))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* IE10+ */
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=0); /* IE6-8 */
+            padding: 4px;
+            margin: 5px 0;
+            font-size: 12px;
+        }
+
+        .st-icon a.print:before {
+            font-family: 'FontAwesome';
+            content: "\f02f";
+            padding-right: 3px;
+            position: static;
+        }
+
+        .st-icon a.print:hover {
+            text-decoration: none;
+        }
+
+        /* Header */
+        .navbar-nav ul.children {
+            padding: 0;
+        }
+
+        header ul.navbar-nav ul.children li.nav-path-selected a,
+        header ul.navbar-nav > li.nav-path-selected > ul > li > a {
+            border-top: 5px solid transparent;
+        }
+
+        /* Page Specific */
+        body#home #homepage-featured {
+            padding-top: 2%;
+            background: url(/packages/ctm_prowess/themes/airbqpl/css/images/performance-platform-background.jpg) no-repeat;
+            background-position: center center;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            -ms-background-size: cover;
+        }
+
+        body#home #homepage-featured.no-bg {
+            background-color: #212a34;
+            background-image: none;
+        }
+
+        body#home #hero p {
+            width: 100%;
+        }
+
+        body#home .abq-watermark img {
+            margin-top: 12%;
+        }
+
+        body#home #homepage-featured h2,
+        body#home #homepage-featured p {
+            color: #FFF;
+        }
+
+        body#home #homepage-featured h2 {
+            font-size: 36px;
+            margin-bottom: 0.7em;
+        }
+
+        body#home #homepage-featured p {
+            font-size: 22px;
+        }
+
+        body#home .cloud-graphic {
+            padding: 4% 50% 10% 15px;
+        }
+
+        #choreo-platform #cloud-graphic {
+            background: none;
+        }
+
+        #container #multi-use {
+            padding-top: 2em;
+            padding-bottom: 0;
+        }
+
+        /* Page Banners */
+        #choreo-platform #main.no-gutter #top-content {
+            background: url(/files/9014/3275/6947/choreo-platform-banner.jpg) no-repeat;
+            padding: 10% 0 8% !important;
+        }
+
+        #sub {
+            background: #fff url(/themes/prowess/css/images/faded-road.jpg) no-repeat center bottom !important;
+            background-size: contain !important !important;
+            -webkit-background-size: contain !important;
+            -moz-background-size: contain !important;
+            -ms-background-size: contain !important;
+            -o-background-size: contain !important;
+        }
+
+        /* SKU Buttons */
+        #cta-buttons .multi-btn .content-inner {
+            text-align: center;
+            padding: 0 !important;
+            background: none;
+        }
+
+        #cta-buttons .multi-btn {
+            overflow: hidden;
+        }
+
+        .multi-btn-content {
+            position: static !important;
+            padding: 29% 10px;
+        }
+
+        #cta-buttons .multi-btn-content {
+            display: table-cell;
+            vertical-align: middle;
+            background: rgba(28, 154, 214, 0.25);
+        }
+
+        #cta-buttons .multi-btn .bg-holder {
+            display: table;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        #cta-buttons .multi-btn-content:hover {
+            background: rgba(0, 0, 0, 0.25);
+            transition: 0.2s all ease-in-out;
+            -webkit-transition: 0.2s all ease-in-out;
+            -moz-transition: 0.2s all ease-in-out;
+            -ms-transition: 0.2s all ease-in-out;
+            -o-transition: 0.2s all ease-in-out;
+        }
+
+        #cta-buttons.four-cta-btn .multi-btn-content .content-inner {
+            padding: 13.7% 0;
+        }
+
+        #main-container .multi-btn .sku-name {
+            color: #FFF;
+        }
+
+        #main-container .multi-btn p.button {
+            margin: 0;
+        }
+
+        #main-container .button.big-font a {
+            font-size: 1.3em;
+        }
+
+        #main-container #cta-buttons p.button a:hover,
+        #main-container #multi-use #cta-buttons p.button a:hover {
+            background: rgb(240, 81, 35);
+        }
+
+        #main-container #cta-buttons p.button a:hover:after,
+        #main-container #multi-use #cta-buttons p.button a:hover:after {
+            border-color: transparent transparent #f15023 transparent;
+        }
+
+        /* SKU Backgrounds */
+        #cta-buttons .infotainment-delivery.multi-btn .bg-holder {
+            background: url(/files/3914/0330/6531/driver-experience-button.jpg) no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+        }
+
+        #cta-buttons .safety-security.multi-btn .bg-holder {
+            background: url(/files/5214/0330/6528/driver-assistance-button.jpg) no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+        }
+
+        #cta-buttons .service-management.multi-btn .bg-holder {
+            background: url(/files/5414/0190/8297/connective-vehicle-cta-bg-small.jpg) no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+        }
+
+        #cta-buttons .electric-vehicle.multi-btn .bg-holder {
+            background: url(/files/2814/0330/6529/driver-efficiency-button.jpg) no-repeat;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+        }
+
+        /* SKU Icons */
+        #cta-buttons .infotainment-delivery.multi-btn .sku-icon:after {
+            content: url(/files/6914/3259/8341/music-note.png);
+        }
+
+        #cta-buttons .safety-security.multi-btn .sku-icon:after {
+            content: url(/themes/prowess/css/images/driver-assistance-icon.png);
+        }
+
+        #cta-buttons .service-management.multi-btn .sku-icon:after {
+            content: url(/themes/prowess/css/images/connected-vehicle-icon.png);
+        }
+
+        #cta-buttons .electric-vehicle.multi-btn .sku-icon:after {
+            content: url(/files/4514/3259/8340/lightning-bolt.png);
+        }
+
+        /* Flexslider */
+        #hmi-demo-slider .flexslider {
+            margin: 0;
+        }
+
+        #main-container .flexslider,
+        #main-container .flexslider ul li {
+            position: relative;
+        }
+
+        #container .flexslider ul,
+        #container .flexslider ul li {
+            margin-bottom: 0 !important;
+        }
+
+        .flexcaption.bottomleft {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        #main-container .flexslider.imageslider .flexcaption .flexcontent,
+        #main-container .flexslider.imageslider .flexcaption .flexcontent h2,
+        #main-container .flexslider.imageslider .flexcaption .flexcontent h4,
+        #main-container .flexslider.imageslider .flexcaption .flexcontent p {
+            margin: 0;
+            font-weight: normal;
+            font-size: 1em;
+        }
+
+        #main-container .flexslider.imageslider .flexcontent {
+            padding: 0.5em;
+        }
+
+        #main-container .flexslider .flex-direction-nav {
+            height: 0;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -28px;
+            width: 100%;
+        }
+
+        #main-container .flexslider.imageslider .flex-control-nav {
+            bottom: -10% !important;
+        }
+
+        /* Tooltips */
+        .litetooltip-wrapper .tooltip-menu.choreo-services,
+        .litetooltip-wrapper .tooltip-menu.choreo-services a:hover,
+        .litetooltip-wrapper .template.choreo-services {
+            background: #97ca3d !important;
+        }
+
+        .litetooltip-wrapper .template.choreo-services h4,
+        .litetooltip-wrapper .template.choreo-services p {
+            background: transparent !important;
+            color: #FFF;
+            font-size: 22px !important;
+            font-weight: 600 !important;
+            font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        .litetooltip-wrapper .template.choreo-services p {
+            color: #333333 !important;
+        }
+
+        @media screen\0 {
+            /* IE-specific SVG styles */
+            svg {
+                width: 100% !important;
+                padding-bottom: 140% !important;
+                height: 1px !important;
+                overflow: visible !important;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            #top-content img {
+                width: 100%
+            }
+        }
+
+        @media (max-width: 991px) {
+            body#home #homepage-featured {
+                background-position: right center;
+            }
+
+            body#home .car-ticker,
+            body#home .abq-watermark {
+                display: none;
+            }
+
+            body#home #ticker-wrap {
+                padding: .5em 0 !important;
+            }
+
+            body#home #ticker-wrap .ticker {
+                font-size: 48px;
+            }
+
+            body#home #ticker-wrap #ticker p {
+                margin-bottom: 0;
+            }
+
+            #cta-buttons.four-cta-btn .multi-btn {
+                margin-bottom: 2em;
+            }
+
+            header #navigation .nav > li > a {
+                border-left: 5px solid transparent;
+                padding: 5px;
+            }
+
+            header #navigation .navbar-nav ul.children li a {
+                padding-left: 15px;
+            }
+
+            header #navigation .nav > li > a:focus,
+            header #navigation .nav > li > a:hover,
+            header #navigation .nav > li > a:active,
+            header #navigation ul.navbar-nav li.nav-path-selected a.nav-path-selected {
+                border-top: 0;
+                border-left: 5px solid #97ca3d;
+            }
+        }
+
+        @media (max-width: 767px) {
+            body#home .cloud-graphic {
+                padding: 3% 27% 3% 27%;
+            }
+
+            body#home #homepage-featured h2 {
+                font-size: 23px;
+            }
+
+            body#home #homepage-featured p {
+                font-size: 16px;
+            }
+
+            #choreo-platform #main.no-gutter #top-content {
+                background-position: right 40% center;
+            }
+
+            #cta-buttons.four-cta-btn .multi-btn-content .content-inner {
+                padding: 24.7% 0;
+            }
+
+            #cta-buttons .multi-btn {
+                margin-bottom: 2em;
+                clear: both;
+                margin: 0 auto 2em auto;
+                float: none;
+            }
+
+            .multi-btn-inner {
+                display: inline-block;
+            }
+
+            .three-cta-btn .multi-btn-content .content-inner,
+            .three-cta-btn #multi-connected-vehicle .multi-btn-content .content-inner {
+                padding: 29.65% 0;
+            }
+
+            .responsive-table td {
+                display: block;
+            }
+        }
+
+        @media (min-width: 480px) and (max-width: 767px) {
+            #cta-buttons .multi-btn {
+                width: 70%;
+            }
+        }
+    </style> <style media="print">        @page {
+            margin: 1cm .5cm 3cm !important;
+        }
+
+        * {
+            color: #000 !important;
+            background: transparent none !important;
+        }
+
+        header,
+        #social-wrap,
+        footer,
+        .site-description,
+        .site-title,
+        .print-btn,
+        .mobile-btn-wrapper,
+        #navigation,
+        #ccm-page-controls-wrapper,
+        #footer-sitemap,
+        .footer-social,
+        .title-frame,
+        p a[href^="#"]:after {
+            display: none !important;
+        }
+
+        html,
+        body {
+            margin: 0 !important;
+        }
+
+        body {
+            font: 12pt Georgia, "Times New Roman", Times, serif !important;
+            line-height: 1.3 !important;
+        }
+
+        h1 {
+            font-size: 24pt !important;
+        }
+
+        h2 {
+            margin-top: 25pt !important;
+            font-size: 14pt !important;
+        }
+
+        aside h2 {
+            font-size: 18pt !important;
+        }
+
+        h3, h4 {
+            page-break-after: avoid;
+        }
+
+        p {
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        pre,
+        blockquote,
+        ul {
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            margin: 0 !important;
+        }
+
+        #header-container {
+            padding: 0 !important;
+        }
+
+        #site-name {
+            width: 100% !important;
+            text-align: center !important;
+        }
+
+        #site-name > div {
+            width: 100% !important;
+            padding: 0 !important;
+        }
+
+        #content > div {
+            padding-top: 1cm !important;
+        }
+
+        footer {
+            border: none !important;
+            page-break-after: always;
+        }
+
+        #main-container ul li {
+            list-style-type: inherit !important;
+        }
+
+        p a {
+            word-wrap: break-word !important;
+        }
+
+        p a:after {
+            font-size: 80% !important;
+            content: " (http://www.airbiquity.com/" attr(href) ")" !important;
+        }
+
+        p a[href^="http://"]:after {
+            content: " (" attr(href) ")" !important;
+        }
+
+        /* Print Icon */
+        .print {
+            position: relative;
+            padding-left: 25px;
+        }
+body.japanese header .nav > li > a {
+    padding: 15px 10px;
+}
+        .print:before {
+            left: 0;
+            width: 25px;
+            content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiPjxwYXRoIGQ9Im0xMjggNDM5bDI1NiAwbDAtNzNsLTI1NiAweiBtMC0xODNsMjU2IDBsMC0xMTBsLTQ2IDBjLTcgMC0xNC0yLTE5LThjLTUtNS04LTEyLTgtMTlsMC00NmwtMTgzIDB6IG0zMjkgMThjMC01LTItOS01LTEzYy00LTMtOC01LTEzLTVjLTUgMC05IDItMTMgNWMtNCA0LTUgOC01IDEzYzAgNSAxIDEwIDUgMTNjNCA0IDggNiAxMyA2YzUgMCA5LTIgMTMtNmMzLTMgNS04IDUtMTN6IG0zNyAwbDAgMTE5YzAgMy0xIDUtMyA3Yy0yIDEtNCAyLTYgMmwtNjQgMGwwIDQ2YzAgOC0zIDE0LTggMTljLTYgNi0xMiA4LTIwIDhsLTI3NCAwYy04IDAtMTQtMi0yMC04Yy01LTUtOC0xMS04LTE5bDAtNDZsLTY0IDBjLTIgMC00LTEtNi0yYy0yLTItMy00LTMtN2wwLTExOWMwLTE1IDYtMjggMTYtMzhjMTEtMTEgMjQtMTcgMzktMTdsMTggMGwwLTE1NWMwLTggMy0xNCA4LTE5YzYtNiAxMi04IDIwLThsMTkyIDBjNyAwIDE2IDEgMjUgNWM5IDQgMTYgOSAyMiAxNGw0MyA0M2M1IDYgMTAgMTMgMTQgMjJjNCA5IDYgMTggNiAyNWwwIDczbDE4IDBjMTUgMCAyOCA2IDM5IDE3YzEwIDEwIDE2IDIzIDE2IDM4eiI+PC9wYXRoPjwvc3ZnPg==");
+        }
+
+    </style> <link href="/packages/ctm_prowess/themes/airbqpl/typography.css" media="screen" rel="stylesheet" type="text/css"> <link href="/packages/ctm_prowess/themes/airbqpl/css/airbiquity.css?asfsafd" media="screen" rel="stylesheet" type="text/css"> <link href="http://purl.org/dc/elements/1.1/" rel="schema.DC"> <link href="http://purl.org/dc/terms/" rel="schema.DCTERMS"> <title>Privacy Policy :: concrete5</title><meta content="text/html; charset=utf-8" http-equiv="content-type"/><meta content="concrete5" name="generator"/><link href="https://www.airbiquity.com/application/files/6714/8175/9651/favicon.ico" rel="shortcut icon" type="image/x-icon"><link href="https://www.airbiquity.com/application/files/6714/8175/9651/favicon.ico" rel="icon" type="image/x-icon"><link href="https://www.airbiquity.com/company/privacy?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko%2F20100101%20Firefox%2F52.0" rel="canonical"/><script type="text/javascript">    var CCM_DISPATCHER_FILENAME = "/index.php";
+    var CCM_CID = 210;
+    var CCM_EDIT_MODE = false;
+    var CCM_ARRANGE_MODE = false;
+    var CCM_IMAGE_PATH = "/concrete/images";
+    var CCM_TOOLS_PATH = "/index.php/tools/required";
+    var CCM_APPLICATION_URL = "https://www.airbiquity.com";
+    var CCM_REL = "";
+    var CCM_ACTIVE_LOCALE = "en_US";</script><script src="/concrete/js/jquery.js?ccm_nocache=1a72ca0f3692b16db9673a9a89faff0649086c52" type="text/javascript"></script>
+<link data-source="/concrete/blocks/switch_language/templates/flags/view.css?ccm_nocache=1a72ca0f3692b16db9673a9a89faff0649086c52" href="/application/files/cache/css/f62bb09a9d7d9f79e901f42689f0258a0ad1dfe1.css?ccm_nocache=1a72ca0f3692b16db9673a9a89faff0649086c52" media="all" rel="stylesheet" type="text/css"/>
+<!-- Global site tag (gtag.js) - Google Analytics --><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-28555470-1"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-28555470-1');</script> <!-- FancyBox --> <link href="/packages/ctm_prowess/themes/airbqpl/js/fancybox/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css"> <script src="/packages/ctm_prowess/themes/airbqpl/js/libs/jquery.mousewheel-3.0.6.pack.js" type="text/javascript"></script> <!-- Modernizr --> <script src="/packages/ctm_prowess/themes/airbqpl/js/libs/modernizr.min.js"></script> <!-- ShareThis Button scripts --> <script type="text/javascript">// stLight.options({publisher: "e8b436b9-b2dd-4669-a393-696c18186b90", doNotHash: true, doNotCopy: false, hashAddressBar: false});</script> <!--[if lt IE 9]>    <script src="/packages/ctm_prowess/themes/airbqpl/js/libs/html5shiv.js"></script>    <![endif]--></link></link></link></link></link></link></link></meta></meta></meta></head><!-- full --><body class="page-210 page" id="privacy"><!-- Google Tag Manager (noscript) --><noscript> <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=" style="display:none;visibility:hidden" width="0"></iframe></noscript><!-- End Google Tag Manager (noscript) --><div class="ccm-page ccm-page-id-210 page-type-page page-template-full"> <div id="container "> <!--[if lt IE 9]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade
+            to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google
+            Chrome Frame</a> to experience this site.</p><![endif]--> <div class="container-fluid" id="social-wrap"> <div class="container" id="social-icons"> <a href="http://twitter.com/Airbiquity" target="_blank"><img alt="Twitter Airbiquity" class="ccm-image-block img-responsive bID-817" height="30" src="/application/files/2714/8097/9679/twitter.png" width="30"/></a> <script>        $(function() {
+            $('.bID-817')
+                .mouseover(function(){$(this).attr("src", '/application/files/2214/8097/9679/twitter_hover.png');})
+                .mouseout(function(){$(this).attr("src", '/application/files/2714/8097/9679/twitter.png');});
+        });
+    </script>
+<a href="http://www.linkedin.com/company/airbiquity" target="_blank"><img alt="LinkedIn Airbiquity" class="ccm-image-block img-responsive bID-818" height="30" src="/application/files/3614/8105/5573/linkedin.png" width="30"/></a> <script>        $(function() {
+            $('.bID-818')
+                .mouseover(function(){$(this).attr("src", '/application/files/5114/8105/5573/linkedin_hover.png');})
+                .mouseout(function(){$(this).attr("src", '/application/files/3614/8105/5573/linkedin.png');});
+        });
+    </script>
+<a href="http://www.facebook.com/Airbiquity" target="_blank"><img alt="Airbiquity Facebook" class="ccm-image-block img-responsive bID-819" height="30" src="/application/files/8114/8105/5573/facebook.png" width="30"/></a> <script>        $(function() {
+            $('.bID-819')
+                .mouseover(function(){$(this).attr("src", '/application/files/6514/8105/5572/facebook_hover.png');})
+                .mouseout(function(){$(this).attr("src", '/application/files/8114/8105/5573/facebook.png');});
+        });
+    </script>
+<a href="/rss/blog" target="_blank"><img alt="Airbiquity RSS" class="ccm-image-block img-responsive bID-831" height="30" src="/application/files/7314/8105/5572/rss.png" width="30"/></a> <script>        $(function() {
+            $('.bID-831')
+                .mouseover(function(){$(this).attr("src", '/application/files/6914/8105/5571/rss_hover.png');})
+                .mouseout(function(){$(this).attr("src", '/application/files/7314/8105/5572/rss.png');});
+        });
+    </script>
+<a href="http://www.youtube.com/channel/UCoIK9xUElMjzmoYLTTuXgkQ" target="_blank"><img alt="Airbiquity YouTube" class="ccm-image-block img-responsive bID-821" height="30" src="/application/files/2014/8105/5571/youtube101grey.png" width="30"/></a> <script>        $(function() {
+            $('.bID-821')
+                .mouseover(function(){$(this).attr("src", '/application/files/4514/8105/5572/youtube101red.png');})
+                .mouseout(function(){$(this).attr("src", '/application/files/2014/8105/5571/youtube101grey.png');});
+        });
+    </script>
+<div class="ccm-block-switch-language-flags"> <div class="ccm-block-switch-language-flags-label"></div> <a class="ccm-block-switch-language-active-flag" href="https://www.airbiquity.com/company/privacy" title="English"><img alt="us" class="ccm-region-flag" id="ccm-region-flag-us" src="/concrete/images/countries/us.png"/></a> <a class="" href="https://www.airbiquity.com/jp/company/privacy" title="日本語"><img alt="jp" class="ccm-region-flag" id="ccm-region-flag-jp" src="/concrete/images/countries/jp.png"/></a> </div></div> </div> <header class="container-fluid"> <div class="container" id="header-container"> <section class="row" id="header-right"> <div class="col-sm-12 col-md-3" id="site-name"> <div class="col-xs-10 col-sm-10"><span class="logo"> <a href="https://www.airbiquity.com/"><img alt="" class="ccm-image-block img-responsive bID-1862" height="121" src="/application/files/8414/8097/9324/airbiquity.png" width="250"/></a></span> </div><!--// .col-xs-10.col-sm-12 --> <div class="mobile-btn-wrapper col-xs-2 col-sm-2 hidden-md hidden-lg"> <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> </div><!--// .mobile-btn-wrapper.col-xs-2 --> </div> <div class="col-sm-12 col-md-9" id="navigation"> <nav class="navbar" role="navigation"> <div class="row"> <div class="collapse navbar-collapse" id="navigation"> <ul class="nav navbar-nav"><li class="pointer-me"><a class="pointer-me" href="#" target="_self">Product Offerings</a><ul class="children nav"><li class=""><a class="" href="https://www.airbiquity.com/product-offerings/datamatic-edge-data-platform" target="_self">DATAmatic Edge Data Management</a></li><li class=""><a class="" href="https://www.airbiquity.com/product-offerings/software-and-data-management" target="_self">OTAmatic Software Management Platform</a></li></ul></li><li class="pointer-me"><a class="pointer-me" href="#" target="_self">Technology Integrations</a><ul class="children nav"><li class=""><a class="" href="https://www.airbiquity.com/datamatic/technology-integrations" target="_self">DATAmatic Technology Integrations</a></li><li class=""><a class="" href="https://www.airbiquity.com/product-offerings/technology-integrations" target="_self">OTAmatic Technology Integrations</a></li></ul></li><li class=""><a class="" href="https://www.airbiquity.com/program-experience" target="_self">Program Experience</a></li><li class=""><a class="" href="https://www.airbiquity.com/company" target="_self">About Airbiquity</a><ul class="children nav"><li class=""><a class="" href="https://www.airbiquity.com/company/leadership" target="_self">Leadership Team</a></li><li class=""><a class="" href="https://www.airbiquity.com/company/board" target="_self">Board of Directors</a></li><li class=""><a class="" href="https://www.airbiquity.com/company/working-here" target="_self">Working Here</a></li></ul></li><li class="pointer-me"><a class="pointer-me" href="#" target="_self">Airbiquity News</a><ul class="children nav"><li class=""><a class="" href="https://www.airbiquity.com/news/press-releases" target="_self">Press Releases</a></li><li class=""><a class="" href="https://www.airbiquity.com/news/news" target="_self">In the Media</a></li><li class=""><a class="" href="https://www.airbiquity.com/news/blog-posts" target="_self">Blog Posts</a></li></ul></li><li class=""><a class="" href="https://www.airbiquity.com/contact-us" target="_self">Contact Us</a></li></ul> <div class="clearboth"> </div> </div> </div><!-- // nav container --> </nav><!-- nav ends --> </div> </section><!-- // #header-right --> </div><!-- // #header-container --> </header><!-- // header --> <section class="full" id="main-container"><section class="container-fluid" id="heading"><div class="row"></div></section><!-- // #heading --> <section class="container-fluid" id="page-meta"> <div class="row"> <section class="col-md-12" id="page-title"><h1>Privacy Policy</h1></section> </div> </section><!-- #page-meta ends --> <div class="container-fluid no-gutter" id="main"> <img class="title-frame" height="80" src="/packages/ctm_prowess/themes/airbqpl/css/images/title-frame.png" width="1920"> <section class="container odd-row" id="content"> <div class="col-md-12" style="padding-top: 4%;"> <p><em>Last Updated: October 30, 2021</em></p><p><strong>Privacy Statement</strong></p><p>Airbiquity Inc. and its subsidiaries (collectively, ”Airbiquity”) respects the privacy of all of our clients, their customers and our customers, particularly as it relates to maintaining the confidentiality of any personally identifiable information that we receive. This privacy policy explains the types of personal information we collect through the Airbiquity website (the “website”) and by other means, how we use it, and the circumstances under which we may share it.  This privacy policy applies to any client, customer, employee and applicant information that we receive in connection with the website. The terms "we," "our," and "us" in this privacy policy refer to Airbiquity.  </p><p><strong>Information Collected</strong></p><p>Airbiquity collects and retains contact information for you as a visitor only if you voluntarily supply us with this information. You may choose to provide us with this information, including your name, e-mail address, street address, telephone number or other information to access protected information on the website or so we can follow up with you after your visit. If you have voluntarily provided this information, you consented to the collection and use of your personal information as described in this privacy policy.</p><p>Airbiquity does not share, sell, rent, or trade personal information collected through the website with third parties for their sole promotional purposes or as otherwise outlined in this policy. Airbiquity may share information with third parties who are clients, distributors or resellers of Airbiquity services. Airbiquity may disclose information in special cases when we have a good faith belief that such action is necessary to: (a) conform to legal requirements or comply with legal process; (b) protect and defend our rights or property; (c) enforce the <a href="https://www.airbiquity.com/company/terms-use/">Terms of Use</a>; or (d) act to protect the interests of our users or others.</p><p>In the event Airbiquity goes through a business transition, such as a merger, acquisition by another company, or sale of all or a portion of its assets, your personally identifiable information collected through the website may be among the assets transferred. You will be notified via prominent notice on our website of any such change in ownership or control of your personal information.</p><p><strong>Use of Website</strong></p><p>Airbiquity and its authorized service providers may observe your activities, preferences, and transactional data relating to your use of the website and any services provided through the website. Airbiquity and its authorized service provider may use this information to diagnose website technical problems and track aggregate traffic patterns throughout the website.  While we may collect or log this information, we do not match this information with your personal information or other personal information (such as your IP address) unless you have chosen to identify yourself (for example, by completing a contact form on the website). If you have submitted contact information through the website, Airbiquity may use information from cookies and web beacons to provide you with information about us and our services.</p><p><strong>Third-Party Websites and Online Forums</strong></p><p>The website may contain links to other websites that are not owned or controlled by Airbiquity. Please be aware that we are not responsible for the privacy practices of such sites.</p><p>This website may allow you to post comments, for example, on a developer blog. These comments and discussions are moderated, and may be accessed for technical reasons. We will not use the information you post on an online forum beyond the purpose for which you posted it. You should only post personal information to online forums with the awareness that the information will be made available to others inside and outside of Airbiquity. Any comments posted by individuals on an online forum, such as a blog, are his or her own and should not be considered as reflecting the opinion of Airbiquity. To request removal of your personal information from our blog or community forum, contact us at <a href="mailto:privacy@airbiquity.com" target="_blank">privacy@airbiquity.com</a>. In some cases, we may not be able to remove your personal information, in which case we will let you know if we are unable to do so and why.</p><p><strong>Security</strong></p><p>Airbiquity employs appropriate technical and organizational measures to ensure the security of all data. However, the security of information transmitted through the Internet can never be guaranteed. Access to and use of password protected and/or secure area of any Airbiquity site is restricted to authorized users only. Access may be terminated or suspended in our discretion and unauthorized access to such areas is prohibited and may lead to criminal prosecution.</p><p><strong>Children</strong></p><p>Airbiquity's products and services are directed at an adult market. The website is not intended for individuals under the age of eighteen. Accordingly, we will not knowingly collect or use information from children.  If any children have provided personal information, a parent or guardian may so inform us by writing us at the address provided in the Contacting Us section below, and we will use commercially reasonable efforts to delete it from our database, subject to applicable law and this privacy policy.</p><p><strong>Cookies</strong></p><p>Cookies are small text files that our website asks to place on your computer's hard drive. If your browser is set to accept cookies, then your browser adds the text in a small file. We do not use cookies to read any other information on your computer's hard drive. We may use cookie technology to authenticate your access to various areas of our website, to help us analyze website traffic and to track when site visitors provide information. You can set your browser to refuse cookies, or to warn you before a cookie is placed.  We may also use web beacons, or transparent GIF files, provided by our service provider to report activity on our site and help measure its effectiveness. The information that we collect by means of these technologies is anonymous and not personally identifiable unless you have chosen to identify yourself through a form on the website.</p><p><strong>Data Processing</strong></p><p>Any personal data collected about European Union visitors via this website will be processed in the United States by Airbiquity or its third party service provider. When you provide personal data to Airbiquity, you consent to the processing of your data in the United States as the website is operated in the United States.</p><p><strong>Contacting Us</strong></p><p>If at any time after registering on the website, you change your mind about receiving information from us, have questions or need to correct, update or remove information, simply contact us at <a href="mailto:privacy@airbiquity.com" target="_blank">privacy@airbiquity.com</a> or by regular mail addressed to: Airbiquity Inc., Attn: Privacy – Legal Dept., 1191 Second Avenue, Suite 1900, Seattle, WA 98101 USA. We will respond to your correspondence within 30 days from the date of receipt. However, we will retain and use your information as necessary to comply with our legal obligations, resolve disputes, and enforce our agreements.</p><p><strong>Changes to this Privacy Policy</strong></p><p>We reserve the right to modify this privacy policy. If we do change our privacy practices, we will post those changes on this page.  If we make any material changes to this privacy policy, we will notify you by means of a notice on this website prior to the change becoming effective.  Please check from time to time to make sure that you are aware of any changes.</p><p>Copyright © 2021 Airbiquity Inc. All rights reserved. Airbiquity<sup>®</sup> and the Airbiquity logo are registered trademarks of Airbiquity Inc.</p> </div>
+</section><!-- // #content --></img></div><!-- // #main --></section><!-- // #main-container --><footer class="container-fluid"><div class="container" id="footer-container"><div class="row"><div class="footer col-md-10" id="footer-sitemap"> <div class="ccm-custom-style-container ccm-custom-style-footersitemap-6534 sitemap-block"> <h4>Product Offerings</h4><ul><li><a href="/product-offerings/software-and-data-management" title="OTA Software and Data Management">OTAmatic Software Management</a></li><li><a href="https://www.airbiquity.com/product-offerings/datamatic-edge-data-platform">DATAmatic Edge Data Management</a></li></ul> </div> <div class="ccm-custom-style-container ccm-custom-style-footersitemap-6535 sitemap-block"> <h4>Technology Integrations</h4><ul><li><a href="https://www.airbiquity.com/product-offerings/technology-integrations" title="OTA Software and Data Management">OTAmatic Technology Integrations</a></li><li><a href="https://www.airbiquity.com/datamatic/technology-integrations">DATAmatic Technology Integrations</a></li></ul> </div> <div class="ccm-custom-style-container ccm-custom-style-footersitemap-6536 sitemap-block"> <h4><a href="/index.php/program-experience" title="Program Experience">Program Experience</a></h4><p> </p> </div> <div class="ccm-custom-style-container ccm-custom-style-footersitemap-5793 sitemap-block"> <h4><a href="/company" title="About Airbiquity">About Airbiquity</a></h4><ul><li><a href="/company/leadership" title="Leadership">Leadership Team</a></li><li><a href="/company/working-here" title="Working Here">Working Here</a></li><li><a href="/company/board" title="Board">Board of Directors</a></li><li><a href="/company/terms-use" title="Terms of Use">Terms Of Use</a></li><li><a href="/company/privacy" title="Privacy">Privacy Policy</a></li></ul> </div> <div class="ccm-custom-style-container ccm-custom-style-footersitemap-6131 sitemap-block"> <h4>Airbiquity News</h4><ul><li><a href="/news/press-releases" title="Press Releases">Press Releases</a></li><li><a href="/news/news" title="In the News">In the News</a></li><li><a href="/blog-events/blog-posts" title="Blog">Blog Posts</a></li></ul> </div></div><!-- // #footer --><div class="footer-social col-md-2"> <h4><a href="/contact-us" title="Contact Us">Contact Us</a></h4><h4>Follow Us</h4> <a href="http://twitter.com/Airbiquity" target="_blank"><img alt="Twitter Airbiquity " class="ccm-image-block img-responsive bID-822" height="30" src="/application/files/2714/8097/9679/twitter.png" width="30"/></a> <script>        $(function() {
+            $('.bID-822')
+                .mouseover(function(){$(this).attr("src", '/application/files/2214/8097/9679/twitter_hover.png');})
+                .mouseout(function(){$(this).attr("src", '/application/files/2714/8097/9679/twitter.png');});
+        });
+    </script>
+<a href="http://www.linkedin.com/company/airbiquity" target="_blank"><img alt="LinkedIn Airbiquity " class="ccm-image-block img-responsive bID-823" height="30" src="/application/files/3614/8105/5573/linkedin.png" width="30"/></a> <script>        $(function() {
+            $('.bID-823')
+                .mouseover(function(){$(this).attr("src", '/application/files/5114/8105/5573/linkedin_hover.png');})
+                .mouseout(function(){$(this).attr("src", '/application/files/3614/8105/5573/linkedin.png');});
+        });
+    </script>
+<a href="http://www.facebook.com/Airbiquity" target="_blank"><img alt="Airbiquity Facebook " class="ccm-image-block img-responsive bID-824" height="30" src="/application/files/8114/8105/5573/facebook.png" width="30"/></a> <script>        $(function() {
+            $('.bID-824')
+                .mouseover(function(){$(this).attr("src", '/application/files/6514/8105/5572/facebook_hover.png');})
+                .mouseout(function(){$(this).attr("src", '/application/files/8114/8105/5573/facebook.png');});
+        });
+    </script>
+<a href="/rss/blog" target="_blank"><img alt="Airbiquity RSS " class="ccm-image-block img-responsive bID-832" height="30" src="/application/files/7314/8105/5572/rss.png" width="30"/></a> <script>        $(function() {
+            $('.bID-832')
+                .mouseover(function(){$(this).attr("src", '/application/files/6914/8105/5571/rss_hover.png');})
+                .mouseout(function(){$(this).attr("src", '/application/files/7314/8105/5572/rss.png');});
+        });
+    </script>
+<a href="http://www.youtube.com/channel/UCoIK9xUElMjzmoYLTTuXgkQ" target="_blank"><img alt="Airbiquity YouTube " class="ccm-image-block img-responsive bID-826" height="30" src="/application/files/2014/8105/5571/youtube101grey.png" width="30"/></a> <script>        $(function() {
+            $('.bID-826')
+                .mouseover(function(){$(this).attr("src", '/application/files/4514/8105/5572/youtube101red.png');})
+                .mouseout(function(){$(this).attr("src", '/application/files/2014/8105/5571/youtube101grey.png');});
+        });
+    </script> </div><!-- // #footer --></div><section class="row" id="credits"><div class="col-md-10"><p class="pull-left">                                
+
+    Airbiquity®, Airbiquity Choreo®, and OTAmatic®, are trademarks of Airbiquity Inc.  © 2016-
+                                2022 concrete5 Inc. All Rights Reserved </p></div></section><!-- // #credits --></div><!-- // #footer-container --></footer><a class="to-top" href="#0">Top</a></div><!-- // container --><!-- <script src="/packages/ctm_prowess/themes/airbqpl/js/libs/bootstrap.min.js"></script> --><script src="/packages/ctm_prowess/themes/airbqpl/js/plugins.js"></script><script src="/packages/ctm_prowess/themes/airbqpl/js/libs/jquery.flexslider.js"></script><script src="/packages/ctm_prowess/themes/airbqpl/js/script.js"></script><script type="text/javascript">$(document).ready(function() {
+
+		$('div.leader').children('div.leader-details-hid').on({
+			mouseover: function(){
+			var tmimg = $(this).parent().children('img');
+			tmimg.attr('src', tmimg.data('hover'));
+			},
+			mouseout: function(){
+			var tmimg = $(this).parent().children('img');
+			tmimg.attr('src', tmimg.data('msout'));
+			},
+		});
+
+
+		 $(".hidetext").click(function () {
+		 $(".leader-details-hid").toggle("slow")
+		});
+
+		});
+
+		// line break after first word in navigation
+        $('.navbar ul.nav li a').each(function() {
+            var obj = $(this);
+            var text = obj.html();
+            var parts = [];
+
+            // Split on "and" if we can
+            var andLocation = text.toLowerCase().indexOf(' and ');
+            if (andLocation === -1) {
+                andLocation = text.toLowerCase().indexOf(' & ');
+            }
+
+            if (andLocation !== -1) {
+                parts = [text.substr(0, andLocation), text.substr(andLocation + 1)];
+            }
+
+            // Otherwise just grab the first word
+            if (!parts.length) {
+                parts = text.split(' ');
+            }
+
+            var replace = '<span class="firstWord">'+parts[0]+'</span><br />';
+            parts.shift();
+            replace += parts.join(' ');
+            obj.html(replace);
+        });</script><style>body.japanese header .nav > li > a {
+    padding: 15px 10px;
+}
+@media only screen and (max-width:767px) { .ccm-page.ccm-page-id-175.page-type-page.page-template-multi-use-triple-blue div.ccm-layout-column , .ccm-page.ccm-page-id-2350.page-type-page.page-template-full div.ccm-layout-column {
+    width: 100% !important;
+    margin: 10px auto;
+    float: none;
+    text-align: center !important;
+}
+.ccm-page.ccm-page-id-2350.page-type-page.page-template-full div.ccm-layout-column p {
+    width: 100% !important;
+    margin: 0 auto;
+ float:none; text-align: center !important;
+}section#content-area-1 {
+    margin: 0;
+}
+.ccm-custom-style-container.ccm-custom-style-content83-4521 {
+    padding-top: 0px;
+}
+.ccm-page.ccm-page-id-2350.page-type-page.page-template-full #main-container p img {
+    display: block;
+    margin: 0 auto !important;
+    text-align: center;
+    float: none !important;
+}
+}</style><script data-source="/concrete/blocks/image/view.js?ccm_nocache=1a72ca0f3692b16db9673a9a89faff0649086c52" src="/application/files/cache/js/f26372f4d455cc07519a2e900b48e12cdbdeb871.js?ccm_nocache=1a72ca0f3692b16db9673a9a89faff0649086c52" type="text/javascript"></script>
+<!--<script type="text/javascript">--><!--			function downloadJSAtOnload() {--><!--				var element = document.createElement("script");--><!--				element.src = "//ws.sharethis.com/button/buttons.js";--><!--				document.body.appendChild(element);--><!--			}--><!--			if (window.addEventListener)--><!--				window.addEventListener("load", downloadJSAtOnload, false);--><!--			else if (window.attachEvent)--><!--				window.attachEvent("onload", downloadJSAtOnload);--><!--			else window.onload = downloadJSAtOnload;--><!--</script>--></div> <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"gov-bam.nr-data.net","licenseKey":"cbe04b4f50","applicationID":"284351732","transactionName":"NgABN0VYWUYHAEQMWg9KNhFeFl5bAgZIS0UJFQ==","queueTime":0,"applicationTime":815,"atts":"GkcCQQ1CSkg=","errorBeacon":"gov-bam.nr-data.net","agent":""}</script></body></html>

@@ -1,0 +1,3448 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+<script type="text/javascript">
+$('.collapse').on('shown.bs.collapse', function(){
+$(this).parent().find(".glyphicon-plus").removeClass("glyphicon-plus").addClass("glyphicon-minus");
+}).on('hidden.bs.collapse', function(){
+$(this).parent().find(".glyphicon-minus").removeClass("glyphicon-minus").addClass("glyphicon-plus");
+});
+
+
+</script>
+<style type="text/css">
+
+<!-- Begin: accordion styles -->
+
+
+ .panel-group .panel {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #EEEEEE;
+    }
+    .panel-default > .panel-heading {
+    padding: 0;
+    border-radius: 0;
+    color: #212121;
+    background-color: #FAFAFA;
+    border-color: #EEEEEE;
+    }
+    .panel-title {
+    font-size: 14px;
+    }
+    .panel-title > a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    }
+    .more-less {
+    float: right;
+    color: #212121;
+    }
+    .panel-default > .panel-heading + .panel-collapse > .panel-body {
+    border-top-color: #EEEEEE;
+    }
+
+
+<!-- End: accordion styles -->
+
+
+
+
+<!-- Begin: table styles -->
+		
+.comparison {
+  max-width:996px;
+  margin:0 auto;
+  font:13px/1.4 "Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align:center;
+  padding:0px;
+ margin-top: 20px;
+}
+
+.comparison table {
+  width:100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  border-bottom:1px solid #CCC;
+  border-left: 1px solid #CCC;
+}
+
+.comparison td, .comparison th {
+  border-right:1px solid #CCC;
+  empty-cells: show;
+  padding:10px;
+}
+
+.compare-heading {
+  font-size:18px;
+  font-family: OmnesRegular, Arial, sans-serif;
+ /* font-weight:bold !important; */
+  color: #ffffff;
+  border-bottom:0 !important;
+  padding-top:10px !important;
+  padding-bottom:10px !important;
+	background-color: #0098D6;
+}
+	
+	
+.packages {
+  font-size:18px;
+font-family: OmnesRegular, Arial, sans-serif;
+ /* font-weight:bold !important; */
+  border:0px !important;
+  padding-top:10px !important;
+  padding-bottom:10px !important;
+	background-color: none;
+}
+
+/*.comparison tbody tr:nth-child(odd) {
+  display:none;
+} */
+
+.comparison .compare-row {
+  background:#F5F5F5;
+}
+
+.comparison .tickblue {
+  /*color:#05666D; */
+	color: #000000;
+}
+
+.comparison .tickgreen {
+  color:#009E2C;
+}
+
+.comparison th {
+  font-weight:normal;
+  padding:0;
+  border-bottom:1px solid #CCC;
+}
+
+/*.comparison tr td:first-child {
+  text-align:left;
+} */
+  
+.comparison .qbse, .comparison .qbo, .comparison .tl {
+  color:#FFF;
+  padding:10px;
+  font-size:13px;
+  border-right:1px solid #CCC;
+  border-bottom:0;
+}
+
+.comparison .tl2 {
+  border-right:0;
+}
+
+.comparison .qbse {
+  background:#05666D;
+  border-top-left-radius: 3px;
+  border-left:0px;
+}
+
+.comparison .qbo {
+  background:#02A09C;
+  border-top-right-radius: 0px;
+  border-right:0px;
+}
+
+.comparison .price-info {
+  padding:5px 15px 15px 15px;
+}
+.comparison .price-info2 {
+  padding:5px 15px 15px 15px;
+  border-top:1px solid #CCC;
+}
+.comparison .price-info3 {
+	font-family: OmnesRegular, Arial, sans-serif;
+  padding:15px 15px 15px 15px;
+  border-top:1px solid #CCC;
+background-color: #0098D6;
+color: #ffffff;
+	
+}	
+	
+.comparison .price-info4 {
+  padding:15px 15px 15px 15px;
+  border-top:1px solid #CCC;
+background-color: #04325B;
+color: #ffffff;
+	
+}
+	
+	
+.comparison .price-was {
+	font-family: OmnesRegular, Arial, sans-serif;
+  color:#ffffff;
+  /*text-decoration: line-through;*/
+}
+
+.comparison .price-now, .comparison .price-now span {
+  color:#0098D6;
+}
+
+.comparison .price-now span {
+  font-size:32px;
+}
+
+.comparison .price-small {
+    font-size: 18px !important;
+    position: relative;
+    top: -11px;
+    left: 2px;
+}
+
+.comparison .price-buy {
+  background:#ff5406;
+  padding:10px 20px;
+  font-size:12px;
+  display:inline-block;
+  color:#FFF;
+  text-decoration:none;
+  border-radius:3px;
+  text-transform:uppercase;
+  margin:5px 0 10px 0;
+}
+
+.comparison .price-try {
+  font-size:12px;
+}
+
+.comparison .price-try a {
+  color:#202020;
+}
+
+@media (max-width: 767px) {
+ /* .comparison td:first-child, .comparison th:first-child {
+    display: none;
+  } */
+  .comparison tbody tr:nth-child(odd) {
+    display:table-row;
+    background:#F7F7F7;
+  }
+  .comparison .row {
+    background:#FFF;
+  }
+  .comparison td, .comparison th {
+    border:1px solid #CCC;
+  }
+  .price-info {
+  border-top:0 !important;
+  
+}
+  
+}
+
+@media (max-width: 639px) {
+  .comparison .price-buy {
+    padding:5px 10px;
+  }
+  .comparison td, .comparison th {
+    padding:10px 5px;
+  }
+  .comparison .hide-mobile {
+    display:none;
+  }
+  .comparison .price-now span {
+  font-size:16px;
+}
+
+.comparison .price-small {
+    font-size: 16px !important;
+    top: 0;
+    left: 0;
+}
+  .comparison .qbse, .comparison .qbo {
+    font-size:12px;
+    padding:10px 5px;
+  }
+  .comparison .price-buy {
+    margin-top:10px;
+  }
+  .compare-heading {
+  font-size:13px;
+}
+}
+<!-- end: table styles -->
+		
+	</style>
+<title>Privacy Policy | Deltek</title>
+<meta content="Learn more about Deltek's commitment and compliance in protecting your privacy." name="description">
+<link href="https://www.deltek.com/en/legal" rel="canonical"/>
+<!-- Google Tag Manager -->
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-SVN7');</script>
+<!-- End Google Tag Manager -->
+<script async="" defer="" src="https://www.google.com/recaptcha/api.js"></script>
+<script async="" src="https://play.vidyard.com/embed/v4.js" type="text/javascript"></script>
+<link href="/ui/css/main.min.css" rel="stylesheet"/>
+<link href="/ui/css/hero.min.css" rel="stylesheet"/>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script>
+       document.getElementsByTagName('html')[0].className = 'no-transform';
+    </script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script
+<![endif]-->
+<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<script src="/ui/js/jquery-3.3.1.min.js"></script>
+<script>
+    var jq = jQuery.noConflict();
+</script>
+<script src="/ui/js/slick.min.js"></script>
+<script src="/ui/js/resource-center.js"></script>
+<script type="text/javascript">
+    var _elqQ = _elqQ || [];
+    _elqQ.push(['elqSetSiteId', '1161']);
+    //_elqQ.push(['elqTrackPageView']);
+    _elqQ.push(['elqTrackPageView', window.location.href]);
+
+    (function () {
+        function async_load() {
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = '//img.en25.com/i/elqCfg.min.js';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        }
+        if (window.attachEvent) { window.attachEvent('onload', async_load); }
+        else { window.addEventListener('DOMContentLoaded', async_load, false); }
+    })();
+</script>
+</link></meta></meta></head>
+<body data-offset="110" data-spy="scroll" data-target=".product-nav">
+<div id="GlobalVideoModal">
+<div class="modalbox">
+<div class="modalbox__mask" role="dialog"></div>
+<div class="modalbox__content" role="alert">
+<div class="modalbox__content__wrapper">
+<button class="modalbox__close" role="button">X</button>
+<div class="modalbox__content__video">
+<div id="VideoPlaceholder"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="clearfix hidden-lg hidden-md" id="mobile-nav">
+<div class="mobile-pane">
+<ul class="list-unstyled">
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/industries" data-target="Industries" href="javascript:void(0);">
+                        Industries
+                    </a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/products" data-target="Products" href="javascript:void(0);">
+                        Products
+                    </a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/support" data-target="Support" href="javascript:void(0);">
+                        Support
+                    </a>
+</li>
+<li>
+<a data-gtm="floating-nav" data-href="/en/customers" data-target="Customers" href="/en/customers">
+                        Customers
+                    </a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/partners" data-target="Partners" href="javascript:void(0);">
+                        Partners
+                    </a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/about" data-target="About" href="javascript:void(0);">
+                        About
+                    </a>
+</li>
+<li id="mobile-localization">
+<a aria-expanded="false" aria-haspopup="true" class="icon icon-arrowtop hidden plus-minus" data-target="#" data-toggle="dropdown" id="languagebox" role="button">
+        USA
+    </a>
+<div class="tool-link language dropdown hidden-sm hidden-xs">
+<a aria-expanded="false" aria-haspopup="true" class="icon icon-arrowtop hidden-xs hidden-sm" data-target="#" data-toggle="dropdown" id="languagebox" role="button">
+            USA
+        </a>
+<div aria-labelledby="languagebox" class="dropdown-menu">
+<section class="col-md-10 row">
+<span>Countries:</span>
+<ul class="col-md-4">
+<li>
+<img alt="en" src="/~/icon/country-selector/usa.jpg"/>USA<a href="/en">English</a>
+</li>
+<li>
+<img alt="da" src="/~/icon/country-selector/denmarck.jpg"/>Denmark<a href="/da-dk">Dansk</a>
+</li>
+<li>
+<img alt="de" src="/~/icon/country-selector/german.jpg"/>Germany<a href="/de-de">Deutsch</a>
+</li>
+<li>
+<img alt="nl" src="/~/icon/country-selector/thenetherlands.jpg"/>Netherlands<a href="/nl-nl">Nederlands</a>
+</li>
+<li>
+<img alt="nb" src="/~/icon/country-selector/norway.jpg"/>Norway<a href="/nb-no">Norsk </a>
+</li>
+<li>
+<img alt="sv" src="/~/icon/country-selector/sweden.jpg"/>Sweden<a href="/sv-se">Svenska</a>
+</li>
+</ul>
+<ul class="col-md-4">
+<li>
+<img alt="en" src="/~/icon/country-selector/uk.jpg"/>United Kingdom<a href="/en-gb">English</a>
+</li>
+<li>
+<img alt="fr" src="/~/icon/country-selector/france.jpg"/>France<a href="/fr-fr">Français</a>
+</li>
+<li>
+<img alt="en" src="/~/icon/country-selector/au.jpg"/>Australia<a href="/en-au">English</a>
+</li>
+<li>
+<img alt="ar" src="/~/icon/country-selector/uae.jpg"/>UAE<a href="/ar-ae">English</a>
+</li>
+</ul>
+</section>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="mobile-pane">
+<header>
+<a class="nav-back" href="javascript:void">Back</a>
+<span class="mobile-pane-title">
+<a data-gtm="top-nav" href="">Title</a>
+</span>
+</header>
+<section class="nav-section" data-nav="Industries" data-parent="Industries">
+<ul class="list-unstyled">
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/industries" data-parent="Industries" data-target="All-Industries" href="javascript:void(0);">
+                                    All Industries
+                                </a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Products" data-parent="Products">
+<ul class="list-unstyled">
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/products/small-business" data-parent="Products" data-target="Small-Business" href="javascript:void(0);">
+                                    Small Business
+                                </a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/products/project-erp" data-parent="Products" data-target="ERP-and-PSA" href="javascript:void(0);">
+                                    ERP and PSA
+                                </a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/products/enterprise-information-management" data-parent="Products" data-target="Information-Management-and-Field-Applications" href="javascript:void(0);">
+                                    Information Management and Field Applications
+                                </a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/products/business-development" data-parent="Products" data-target="Business-Development" href="javascript:void(0);">
+                                    Business Development
+                                </a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/products/project-and-portfolio-management" data-parent="Products" data-target="Project-Portfolio-Management" href="javascript:void(0);">
+                                    Project Portfolio Management
+                                </a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/products/hr-and-talent-management" data-parent="Products" data-target="Human-Capital-Management" href="javascript:void(0);">
+                                    Human Capital Management
+                                </a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/products/technology-platform" data-parent="Products" data-target="Deltek-Technology-Platform" href="javascript:void(0);">
+                                    Deltek Technology Platform
+                                </a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/products/payments" data-parent="Products" data-target="Payments" href="javascript:void(0);">
+                                    Payments
+                                </a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/products" data-parent="Products" data-target="All-Products" href="javascript:void(0);">
+                                    All Products
+                                </a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Support" data-parent="Support">
+<ul class="list-unstyled">
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/support/customer-care" data-parent="Support" data-target="Customer-Care" href="javascript:void(0);">
+                                    Customer Care
+                                </a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://deltek.custhelp.com/">Deltek Support Center Login</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/support/global-consulting">Global Consulting</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/support/deltek-university" data-parent="Support" data-target="Product-Training" href="javascript:void(0);">
+                                    Product Training
+                                </a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/support/user-groups" data-parent="Support" data-target="User-Groups" href="javascript:void(0);">
+                                    User Groups
+                                </a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Customers" data-parent="Customers">
+<ul class="list-unstyled">
+</ul>
+</section>
+<section class="nav-section" data-nav="Partners" data-parent="Partners">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/partners">Deltek Partner Network</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/partners/become-partner">Become a Partner</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/partners/marketplace">Search the Marketplace</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/partners/login">Partner Portal Login</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="About" data-parent="About">
+<ul class="list-unstyled">
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/" data-parent="About" data-target="Company-Information" href="javascript:void(0);">
+                                    Company Information
+                                </a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/about/security-and-trust">Security and Trust</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/about/purposeful-innovation">Purposeful Innovation</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="/en/learn/blogs" data-parent="About" data-target="Blogs" href="javascript:void(0);">
+                                    Blogs
+                                </a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/about/events">Events and Webinars</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/resources">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/about/careers">Careers</a>
+</li>
+</ul>
+</section>
+</div>
+<div class="mobile-pane">
+<header>
+<a class="nav-back" href="javascript:void">Back</a>
+<span class="mobile-pane-title">
+<a data-gtm="top-nav" href="">Title</a>
+</span>
+</header>
+<section class="nav-section" data-nav="All-Industries" data-parent="Industries">
+<span class="mobile-column-header">All Industries</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/industries/accounting" target="_self">Accounting &amp; CPA</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/industries/aerospace-and-defense" target="_self">Aerospace &amp; Defense</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/industries/aec" target="_self">Architecture, Engineering &amp; Construction (AEC)</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/industries/epc" target="_self">Engineering Procurement Construction (EPC)</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/industries/energy-oil-gas" target="_self">Energy, Oil &amp; Gas</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/industries/government-contracting" target="_self">Government Contracting</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/industries/it-consulting" target="_self">Management &amp; IT Consulting</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/industries/marketing-agencies" target="_self">Marketing Agencies</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/industries/nonprofit" target="_self">Nonprofit</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Small-Business" data-parent="Products">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/small-business" target="_self">Overview</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="ERP-and-PSA" data-parent="Products">
+<ul class="list-unstyled">
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="ERP-and-PSA" data-target="Costpoint-for-Government-Contractors" href="javascript:void(0);">Costpoint for Government Contractors</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="ERP-and-PSA" data-target="Costpoint-for-Manufacturing" href="javascript:void(0);">Costpoint for Manufacturing</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="ERP-and-PSA" data-target="Maconomy-for-Commercial-Enterprise" href="javascript:void(0);">Maconomy for Commercial Enterprise</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="ERP-and-PSA" data-target="Ajera-for-Small-A&amp;E" href="javascript:void(0);">Ajera for Small A&amp;E</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="ERP-and-PSA" data-target="Vantagepoint-for-A&amp;E-and-Consulting" href="javascript:void(0);">Vantagepoint for A&amp;E and Consulting</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="ERP-and-PSA" data-target="WorkBook-for-Agencies" href="javascript:void(0);">WorkBook for Agencies</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="ERP-and-PSA" data-target="ComputerEase-for-Construction" href="javascript:void(0);">ComputerEase for Construction</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Information-Management-and-Field-Applications" data-parent="Products">
+<ul class="list-unstyled">
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Information-Management-and-Field-Applications" data-target="Project-Information-Management-for-AEC" href="javascript:void(0);">Project Information Management for AEC</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Information-Management-and-Field-Applications" data-target="ConceptShare-Proofing-for-Agencies" href="javascript:void(0);">ConceptShare Proofing for Agencies</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Information-Management-and-Field-Applications" data-target="Specification-Solutions-for-AECO" href="javascript:void(0);">Specification Solutions for AECO</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Information-Management-and-Field-Applications" data-target="ArchiSnapper-Field-Reporting-for-AEC" href="javascript:void(0);">ArchiSnapper Field Reporting for AEC</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Business-Development" data-parent="Products">
+<ul class="list-unstyled">
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Business-Development" data-target="GovWin-IQ-for-Federal-Market-Intelligence" href="javascript:void(0);">GovWin IQ for Federal Market Intelligence</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Business-Development" data-target="GovWin-IQ-for-State-&amp;-Local-Market-Intelligence" href="javascript:void(0);">GovWin IQ for State &amp; Local Market Intelligence</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Business-Development" data-target="Vantagepoint-CRM" href="javascript:void(0);">Vantagepoint CRM</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Project-Portfolio-Management" data-parent="Products">
+<ul class="list-unstyled">
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Project-Portfolio-Management" data-target="Cobra-for-Cost-and-Earned-Value-Management" href="javascript:void(0);">Cobra for Cost and Earned Value Management</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Project-Portfolio-Management" data-target="Acumen-for-Schedule-Quality,-Risk-and-Modeling" href="javascript:void(0);">Acumen for Schedule Quality, Risk and Modeling</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Project-Portfolio-Management" data-target="Acumen-Touchstone-for-Evaluating-Schedules" href="javascript:void(0);">Acumen Touchstone for Evaluating Schedules</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Project-Portfolio-Management" data-target="wInsight-Analytics-for-Earned-Value-Analysis" href="javascript:void(0);">wInsight Analytics for Earned Value Analysis</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Project-Portfolio-Management" data-target="PM-Compass-for-Project-Visibility-and-Control" href="javascript:void(0);">PM Compass for Project Visibility and Control</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Project-Portfolio-Management" data-target="Open-Plan-for-Schedule-and-Resource-Management" href="javascript:void(0);">Open Plan for Schedule and Resource Management</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Human-Capital-Management" data-parent="Products">
+<ul class="list-unstyled">
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Human-Capital-Management" data-target="Talent-Management" href="javascript:void(0);">Talent Management</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Human-Capital-Management" data-target="Costpoint-Time-&amp;-Expense-for-Gov’t-Contractors" href="javascript:void(0);">Costpoint Time &amp; Expense for Gov’t Contractors</a>
+</li>
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Human-Capital-Management" data-target="Core-HR-for-Professional-Services" href="javascript:void(0);">Core HR for Professional Services</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Deltek-Technology-Platform" data-parent="Products">
+<ul class="list-unstyled">
+<li>
+<a class="has-children" data-gtm="floating-nav" data-href="tertiaryNodePanel.Url" data-parent="Deltek-Technology-Platform" data-target="Developer-Resources" href="javascript:void(0);">Developer Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" data-href="" data-parent="Deltek-Technology-Platform" data-target="Overview" href="javascript:void(0);">Overview</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Payments" data-parent="Products">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/payments">Overview</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="All-Products" data-parent="Products">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products" target="_self">Overview</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Customer-Care" data-parent="Support">
+<span class="mobile-column-header">Customer Care</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/support/customer-care">Customer Care Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/support/customer-care/support-plans" target="_self">Support Plans</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/support/customer-care/customer-success-program" target="_self">Customer Success Program</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/support/customer-care/community">Deltek Community</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://deltek.custhelp.com/" target="_blank">Deltek Support Center Login</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Deltek-Support-Center-Login" data-parent="Support">
+</section>
+<section class="nav-section" data-nav="Global-Consulting" data-parent="Support">
+</section>
+<section class="nav-section" data-nav="Product-Training" data-parent="Support">
+<span class="mobile-column-header">Product Training</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/support/deltek-university">Deltek University Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://education.deltek.com/web/dlz_login_page/" target="Active Browser">DLZ Login Instructions</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="User-Groups" data-parent="Support">
+<span class="mobile-column-header">User Groups</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/support/user-groups" target="_self">User Groups Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/support/user-groups/acumen-user-groups" target="_self">Acumen User Groups</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/support/user-groups/ajera-user-groups" target="_self">Ajera User Groups</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/support/user-groups/costpoint-user-groups" target="_self">Costpoint User Groups</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/support/user-groups/vision-user-groups" target="_self">Vantagepoint/Vision User Groups</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/support/user-groups/winsight-user-groups" target="_self">wInsight User Groups</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Deltek-Partner-Network" data-parent="Partners">
+</section>
+<section class="nav-section" data-nav="Become-a-Partner" data-parent="Partners">
+</section>
+<section class="nav-section" data-nav="Search-the-Marketplace" data-parent="Partners">
+</section>
+<section class="nav-section" data-nav="Partner-Portal-Login" data-parent="Partners">
+</section>
+<section class="nav-section" data-nav="Company-Information" data-parent="About">
+<span class="mobile-column-header">Company Information</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/about">Company Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/about/media-center">Newsroom</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/about/culture" target="_self">Our Culture and Careers</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/about/management-team">Leadership</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/about/awards">Awards</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/about/deltek-cares">#DeltekCares</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/about/locations">Locations</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Security-and-Trust" data-parent="About">
+</section>
+<section class="nav-section" data-nav="Purposeful-Innovation" data-parent="About">
+</section>
+<section class="nav-section" data-nav="Blogs" data-parent="About">
+<span class="mobile-column-header">Blogs</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs">Blog Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/project-nation">Deltek Project Nation</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/uk-blog">EMEA and APAC</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/a-and-e">Architecture and Engineering</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/b2g-essentials">B2G Market Advisor</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/construction" target="_self">Construction</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/government-contracting">Government Contracting</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/consulting">Management and IT Consulting</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/marketing-agencies">Marketing and Creative Agencies</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/deltek-ajera">Deltek Ajera</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/computerease">Deltek + ComputerEase</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/deltek-costpoint">Deltek Costpoint</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/deltek-maconomy">Deltek Maconomy</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/deltek-pim">Deltek PIM</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/deltek-specification-solutions" target="_self">Deltek Specification Solutions</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/talent-management">Deltek Talent Management</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/deltek-vantagepoint">Deltek Vantagepoint</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/deltek-vision">Deltek Vision</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/deltek-workbook">Deltek WorkBook &amp; Deltek ConceptShare</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Events-and-Webinars" data-parent="About">
+</section>
+<section class="nav-section" data-nav="Resources" data-parent="About">
+</section>
+<section class="nav-section" data-nav="Careers" data-parent="About">
+</section>
+</div>
+<div class="mobile-pane">
+<header>
+<a class="nav-back" href="javascript:void">Back</a>
+<span class="mobile-pane-title">
+<a data-gtm="top-nav" href="">Title</a>
+</span>
+</header>
+<section class="nav-section" data-nav="All-Industries" data-parent="All-Industries">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/industries/accounting" target="_self">Accounting &amp; CPA</a>
+</li>
+</ul>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/industries/aerospace-and-defense" target="_self">Aerospace &amp; Defense</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Overview" data-parent="Small-Business">
+</section>
+<section class="nav-section" data-nav="Costpoint-for-Government-Contractors" data-parent="ERP-and-PSA">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/costpoint" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/costpoint/resources" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/costpoint/small-business" target="_self">Small Business</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/costpoint/videos" target="_self">Product Videos</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/deltek-costpoint-demo-1?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Costpoint-for-Manufacturing" data-parent="ERP-and-PSA">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/costpoint/manufacturing" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/costpoint/resources" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/deltek-costpoint-demo-1?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Maconomy-for-Commercial-Enterprise" data-parent="ERP-and-PSA">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/maconomy" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/maconomy/product-support-page" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/Deltek-Maconomy?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Ajera-for-Small-A&amp;E" data-parent="ERP-and-PSA">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/ajera" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/ajera/product-support-page" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/Deltek-Ajera-Demo-Request?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Vantagepoint-for-A&amp;E-and-Consulting" data-parent="ERP-and-PSA">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/vantagepoint" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/vantagepoint/videos" target="_self">Product Videos</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/vantagepoint-demo?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+<span class="mobile-column-header">Industry</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/vantagepoint/architecture-and-engineering" target="_self">Architecture &amp; Engineering</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/vantagepoint/consulting" target="_self">Consulting</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="WorkBook-for-Agencies" data-parent="ERP-and-PSA">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/workbook" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/workbook/product-packages" target="_self">Product Packages</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/workbook/resources" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/workbook/videos" target="_self">Product Videos</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/WorkBook-Request-Demo?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="ComputerEase-for-Construction" data-parent="ERP-and-PSA">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/computerease" target="_self">Overview</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Project-Information-Management-for-AEC" data-parent="Information-Management-and-Field-Applications">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/enterprise-information-management/project-information-management" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/enterprise-information-management/project-information-management/resources" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/Deltek-PIM-Demo?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="ConceptShare-Proofing-for-Agencies" data-parent="Information-Management-and-Field-Applications">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/conceptshare" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/conceptshare/product-packages" target="_self">Product Packages</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://portal.conceptshare.com/customerPortalV4/login/" target="_blank">Customer Login</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/conceptshare-free-trial?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request Free Trial</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Specification-Solutions-for-AECO" data-parent="Information-Management-and-Field-Applications">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/specification-solutions" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/specification-solutions/resources" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/specification-solutions/login" target="_self">Customer Logins</a>
+</li>
+</ul>
+<span class="mobile-column-header">Industry</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/specification-solutions/architecture-and-engineering" target="_self">Specpoint for A&amp;E</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/specification-solutions/bpm" target="_self">Specpoint for BPM</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="ArchiSnapper-Field-Reporting-for-AEC" data-parent="Information-Management-and-Field-Applications">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/archisnapper" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://app3.archisnapper.com/users/sign_up?lang=en&amp;sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=deltek_nav&amp;partnerref=website_deltek-com_deltek_nav" target="_blank">Start a Free Trial</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="GovWin-IQ-for-Federal-Market-Intelligence" data-parent="Business-Development">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/business-development/govwin/federal-market-intelligence" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/business-development/govwin/resources" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/business-development/govwin/videos" target="_self">Product Videos</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/business-development/govwin/federal-market-intelligence/subscriptions">Subscriptions</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/Try-GovWin-IQ-Federal?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Try GovWin IQ for Free</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://iq.govwin.com" target="_blank">Customer Login</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="GovWin-IQ-for-State-&amp;-Local-Market-Intelligence" data-parent="Business-Development">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/business-development/govwin/state-local-government" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/business-development/govwin/resources" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/business-development/govwin/videos" target="_self">Product Videos</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/business-development/govwin/state-local-government/subscriptions">Subscriptions</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/Try-GovWin-IQ-State-Local?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Try GovWin IQ for Free</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://iq.govwin.com" target="_blank">Customer Login</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Vantagepoint-CRM" data-parent="Business-Development">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/vantagepoint/crm-and-pipeline-management" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="" target="_self">Pricing</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/vantagepoint-demo?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Cobra-for-Cost-and-Earned-Value-Management" data-parent="Project-Portfolio-Management">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-and-portfolio-management/cobra" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-and-portfolio-management/cobra/resources" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/Deltek-Cobra?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Acumen-for-Schedule-Quality,-Risk-and-Modeling" data-parent="Project-Portfolio-Management">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-and-portfolio-management/acumen" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-and-portfolio-management/acumen/resources" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/Acumen-Free-Trial-Request?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Free Trial</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Acumen-Touchstone-for-Evaluating-Schedules" data-parent="Project-Portfolio-Management">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-and-portfolio-management/touchstone" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-and-portfolio-management/touchstone/resources" target="_self">Resources</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="wInsight-Analytics-for-Earned-Value-Analysis" data-parent="Project-Portfolio-Management">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-and-portfolio-management/winsight-analytics" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-and-portfolio-management/winsight-analytics/product-support-page" target="_self">Resources</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="PM-Compass-for-Project-Visibility-and-Control" data-parent="Project-Portfolio-Management">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-and-portfolio-management/pm-compass" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-and-portfolio-management/pm-compass/product-support-page" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/Deltek-PM-Compass-Demo-Request?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Open-Plan-for-Schedule-and-Resource-Management" data-parent="Project-Portfolio-Management">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-and-portfolio-management/open-plan" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-and-portfolio-management/open-plan/product-support-page" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/Open-Plan-Demo-Request?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Talent-Management" data-parent="Human-Capital-Management">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/hr-and-talent-management/talent-management" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/hr-and-talent-management/talent-management/resources" target="_self">Resources</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://info.deltek.com/Deltek-Talent-Management-Demo?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Costpoint-Time-&amp;-Expense-for-Gov’t-Contractors" data-parent="Human-Capital-Management">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/costpoint/time-and-expense" target="_self">Overview</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/project-erp/costpoint/time-and-expense#contact-us" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Core-HR-for-Professional-Services" data-parent="Human-Capital-Management">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/hr-and-talent-management/core-hr" target="_self">Overview</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Developer-Resources" data-parent="Deltek-Technology-Platform">
+<span class="mobile-column-header">About</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/products/technology-platform/developer-resources" target="_self">Overview</a>
+</li>
+</ul>
+<span class="mobile-column-header">Products</span>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="https://help.deltek.com/Product/Ajera/api/index.html" target="_blank">Ajera</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://computereaseapi.deltek.com/" target="_blank">Deltek + ComputerEase</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/technology-platform/developer-resources/conceptshare">ConceptShare</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/technology-platform/developer-resources/costpoint">Costpoint</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://dsm.deltek.com/DeltekSoftwareManagerWebServices/downloadFile.ashx?documentid=8F8FF9D6-7B49-4607-945B-CB3C4D28DC64" target="_blank">GovWin IQ</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://dsm.deltek.com/DeltekSoftwareManagerWebServices/downloadFile.ashx?documentid=6B16DE5E-4D81-4F43-A41A-3B40953E1432" target="_blank">Maconomy</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="/en/products/technology-platform/developer-resources/ppm">Project &amp; Portfolio Management</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://help.deltek.com/Product/TalentManagement/Documentation/Developer_Resources.html" target="_blank">Talent Management</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://help.deltek.com/product/Vantagepoint/api" target="_blank">Vantagepoint</a>
+</li>
+<li>
+<a data-gtm="floating-nav" href="https://workbookapi.deltek.com/" target="_blank">WorkBook</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Overview" data-parent="Deltek-Technology-Platform">
+</section>
+<section class="nav-section" data-nav="Overview" data-parent="Payments">
+</section>
+<section class="nav-section" data-nav="Overview" data-parent="All-Products">
+</section>
+<section class="nav-section" data-nav="Customer-Care" data-parent="Customer-Care">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/support/customer-care">Customer Care Overview</a>
+</li>
+</ul>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/support/customer-care/support-plans" target="_self">Support Plans</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Product-Training" data-parent="Product-Training">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/support/deltek-university">Deltek University Overview</a>
+</li>
+</ul>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="https://education.deltek.com/web/dlz_login_page/" target="Active Browser">DLZ Login Instructions</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="User-Groups" data-parent="User-Groups">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/support/user-groups" target="_self">User Groups Overview</a>
+</li>
+</ul>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/support/user-groups/acumen-user-groups" target="_self">Acumen User Groups</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Company-Information" data-parent="Company-Information">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/about">Company Overview</a>
+</li>
+</ul>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/about/media-center">Newsroom</a>
+</li>
+</ul>
+</section>
+<section class="nav-section" data-nav="Blogs" data-parent="Blogs">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs">Blog Overview</a>
+</li>
+</ul>
+<ul class="list-unstyled">
+<li>
+<a data-gtm="floating-nav" href="/en/learn/blogs/project-nation">Deltek Project Nation</a>
+</li>
+</ul>
+</section>
+</div>
+</nav>
+<header>
+<form id="eloqua_personalization_form">
+<input name="elqCustomerGUID" type="hidden" value=""/>
+</form>
+<script type="text/javascript">
+    function initializationCallBack() {
+        initializeEloqua("1161", "https://img.en25.com/i/elqCfg.min.js");
+        initializeExplicit("Your Role", "Company Size", "Industry");
+    }
+
+    var timerId = null, timeout = 5;
+    function WaitUntilCustomerGUIDIsRetrieved() {
+        if (!!(timerId)) {
+            if (timeout === 0) {
+                return;
+            }
+
+            if (typeof this.GetElqCustomerGUID === 'function') {
+                var elqCustomerId = GetElqCustomerGUID();
+                document.forms["eloqua_personalization_form"].elements["elqCustomerGUID"].value = elqCustomerId;
+                SendEloquaVisitorId(elqCustomerId);
+                return;
+            }
+
+            timeout -= 1;
+        }
+
+        timerId = setTimeout("WaitUntilCustomerGUIDIsRetrieved()", 500);
+        return;
+    }
+
+    window.onload = WaitUntilCustomerGUIDIsRetrieved;
+    _elqQ.push(['elqGetCustomerGUID']);
+
+</script>
+<div class="main-header">
+<div class="container">
+<div class="logo pull-left">
+<a data-gtm="header-logo" href="/en">
+<img alt="Deltek, Inc Logo" class="img-responsive" src="/-/media/images danielle/tbt - odd sizes/logos/header-logo.ashx?h=56&amp;iar=0&amp;w=195&amp;hash=1F4049F32CF1BF5CC7B6EE16E685F5A5"/>
+</a>
+</div>
+<div class="header-links pull-right">
+<div class="tools-nav">
+<a aria-expanded="false" aria-haspopup="true" class="icon icon-arrowtop hidden plus-minus" data-target="#" data-toggle="dropdown" id="languagebox" role="button">
+        USA
+    </a>
+<div class="tool-link language dropdown hidden-sm hidden-xs">
+<a aria-expanded="false" aria-haspopup="true" class="icon icon-arrowtop hidden-xs hidden-sm" data-target="#" data-toggle="dropdown" id="languagebox" role="button">
+            USA
+        </a>
+<div aria-labelledby="languagebox" class="dropdown-menu">
+<section class="col-md-10 row">
+<span>Countries:</span>
+<ul class="col-md-4">
+<li>
+<img alt="en" src="/~/icon/country-selector/usa.jpg"/>USA<a href="/en">English</a>
+</li>
+<li>
+<img alt="da" src="/~/icon/country-selector/denmarck.jpg"/>Denmark<a href="/da-dk">Dansk</a>
+</li>
+<li>
+<img alt="de" src="/~/icon/country-selector/german.jpg"/>Germany<a href="/de-de">Deutsch</a>
+</li>
+<li>
+<img alt="nl" src="/~/icon/country-selector/thenetherlands.jpg"/>Netherlands<a href="/nl-nl">Nederlands</a>
+</li>
+<li>
+<img alt="nb" src="/~/icon/country-selector/norway.jpg"/>Norway<a href="/nb-no">Norsk </a>
+</li>
+<li>
+<img alt="sv" src="/~/icon/country-selector/sweden.jpg"/>Sweden<a href="/sv-se">Svenska</a>
+</li>
+</ul>
+<ul class="col-md-4">
+<li>
+<img alt="en" src="/~/icon/country-selector/uk.jpg"/>United Kingdom<a href="/en-gb">English</a>
+</li>
+<li>
+<img alt="fr" src="/~/icon/country-selector/france.jpg"/>France<a href="/fr-fr">Français</a>
+</li>
+<li>
+<img alt="en" src="/~/icon/country-selector/au.jpg"/>Australia<a href="/en-au">English</a>
+</li>
+<li>
+<img alt="ar" src="/~/icon/country-selector/uae.jpg"/>UAE<a href="/ar-ae">English</a>
+</li>
+</ul>
+</section>
+</div>
+</div>
+<div class="tool-link dropdown login hidden-xs">
+<a aria-expanded="false" aria-haspopup="true" class="icon icon-login" data-target="#" data-toggle="dropdown" id="loginbox" role="button"></a>
+<ul aria-labelledby="contact" class="dropdown-menu" style="display: none;">
+<li>
+<a href="#">Login:</a>
+</li>
+<li>
+<a data-gtm="login click" href="https://iq.govwin.com" rel="noopener noreferrer" target="_blank" title="My GovWin">My GovWin</a>
+</li>
+<li>
+<a data-gtm="login click" href="https://deltek.custhelp.com/" rel="noopener noreferrer" target="_blank" title="Deltek Support Center">Deltek Support Center</a>
+</li>
+<li>
+<a data-gtm="login click" href="/en/partners/login" target="_parent" title="Deltek Partner Network">Deltek Partner Network</a>
+</li>
+<li>
+<a data-gtm="login click" href="https://education.deltek.com/web/dlz_login_page/" rel="noopener noreferrer" target="_blank" title="Deltek Learning Zone">Deltek Learning Zone</a>
+</li>
+<li>
+<a data-gtm="login click" href="/en/products/specification-solutions/login" target="_parent" title="Deltek Specification Solutions">Deltek Specification Solutions</a>
+</li>
+</ul>
+</div>
+<div class="tool-link hidden-xs">
+<a class="icon icon-email" href="/en/about/contact-us"></a>
+</div>
+<div class="tool-link search">
+<a class="icon icon-search" href="javascript:void(0);"></a>
+</div>
+<div class="tool-link mobile-toggle visible-xs visible-sm">
+<button class="mob-menu" data-toggle="offcanvas" type="button">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+</div>
+<div class="search-box">
+<form action="/en/search" class="validate-form" method="get">
+<button class="icon icon-search" type="submit"></button>
+<div class="form-group">
+<input class="form-control required" id="keyword" maxlength="200" name="keyword" placeholder="Search this site" type="text"/>
+</div>
+</form>
+</div>
+<div class="menu-nav hidden-xs hidden-sm">
+<nav>
+<ul class="list-inline">
+<li class="has-menu">
+<a data-gtm="no-click" data-open="false" href="/en/industries" target="_self">Industries</a>
+<div class="menu-wrapper">
+<div class="menu">
+<div class="menu_header">
+<a data-gtm="top-nav" href="/en/industries" target="_self">Industries</a>
+<a class="close" href="javascript:void(0);">Close</a>
+</div>
+</div>
+<div class="col-md-3 links-col">
+<ul class="list-unstyled level2">
+<li class="nosubmenu">
+<a data-content="All-Industries" href="javascript:void(0);"><div style="max-width:190px;">All Industries</div></a>
+</li>
+</ul>
+</div>
+<div class="submenu col-md-9" data-link="All-Industries" data-parent="All-Industries">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header"></span>
+<div class="col-md-12">
+<span class="nav-column-header">All Industries</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/industries/accounting" target="_self">Accounting &amp; CPA</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/industries/aerospace-and-defense" target="_self">Aerospace &amp; Defense</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/industries/aec" target="_self">Architecture, Engineering &amp; Construction (AEC)</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/industries/epc" target="_self">Engineering Procurement Construction (EPC)</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/industries/energy-oil-gas" target="_self">Energy, Oil &amp; Gas</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/industries/government-contracting" target="_self">Government Contracting</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/industries/it-consulting" target="_self">Management &amp; IT Consulting</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/industries/marketing-agencies" target="_self">Marketing Agencies</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/industries/nonprofit" target="_self">Nonprofit</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Small Business Solutions" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-small-businesspromo2021.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=1E9309126D15FBB5EF31A8EEEFC527C6" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Solutions for Small Businesses</p>
+<div>
+<p>Easy-to-use technology that grows with you and helps increase productivity and profitability.</p>
+<a class="btn" data-gtm="top-nav" href="/en/products/small-business" role="button" target="_parent" title="Find Out More">Find Out More</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="has-menu">
+<a data-gtm="no-click" data-open="false" href="/en/products" target="_self">Products</a>
+<div class="menu-wrapper">
+<div class="menu">
+<div class="menu_header">
+<a data-gtm="top-nav" href="/en/products" target="_self">Products</a>
+<a class="close" href="javascript:void(0);">Close</a>
+</div>
+</div>
+<div class="col-md-3 links-col">
+<ul class="list-unstyled level2">
+<li class="has-submenu">
+<a data-content="" href="javascript:void(0);"><div style="max-width:190px;">Small Business</div></a>
+<ul class="level3 list-unstyled">
+<li><a class="product-landing" data-gtm="floating-nav" href="/en/products/small-business">Small Business Overview</a></li>
+</ul>
+</li>
+<li class="has-submenu">
+<a data-content="" href="javascript:void(0);"><div style="max-width:190px;">ERP and PSA</div></a>
+<ul class="level3 list-unstyled">
+<li><a class="product-landing" data-gtm="floating-nav" href="/en/products/project-erp">ERP and PSA Overview</a></li>
+<li>
+<a class="has-megaNav" data-content="Costpoint-for-Government-Contractors" data-parent="ERP-and-PSA" href="javascript:void(0);"><div style="max-width:190px;">Costpoint for Government Contractors</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="Costpoint-for-Manufacturing" data-parent="ERP-and-PSA" href="javascript:void(0);"><div style="max-width:190px;">Costpoint for Manufacturing</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="Maconomy-for-Commercial-Enterprise" data-parent="ERP-and-PSA" href="javascript:void(0);"><div style="max-width:190px;">Maconomy for Commercial Enterprise</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="Ajera-for-Small-A&amp;E" data-parent="ERP-and-PSA" href="javascript:void(0);"><div style="max-width:190px;">Ajera for Small A&amp;E</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="Vantagepoint-for-A&amp;E-and-Consulting" data-parent="ERP-and-PSA" href="javascript:void(0);"><div style="max-width:190px;">Vantagepoint for A&amp;E and Consulting</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="WorkBook-for-Agencies" data-parent="ERP-and-PSA" href="javascript:void(0);"><div style="max-width:190px;">WorkBook for Agencies</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="ComputerEase-for-Construction" data-parent="ERP-and-PSA" href="javascript:void(0);"><div style="max-width:190px;">ComputerEase for Construction</div></a>
+</li>
+</ul>
+</li>
+<li class="has-submenu">
+<a data-content="" href="javascript:void(0);"><div style="max-width:190px;">Information Management and Field Applications</div></a>
+<ul class="level3 list-unstyled">
+<li><a class="product-landing" data-gtm="floating-nav" href="/en/products/enterprise-information-management">Information Management and Field Applications Overview</a></li>
+<li>
+<a class="has-megaNav" data-content="Project-Information-Management-for-AEC" data-parent="Information-Management-and-Field-Applications" href="javascript:void(0);"><div style="max-width:190px;">Project Information Management for AEC</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="ConceptShare-Proofing-for-Agencies" data-parent="Information-Management-and-Field-Applications" href="javascript:void(0);"><div style="max-width:190px;">ConceptShare Proofing for Agencies</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="Specification-Solutions-for-AECO" data-parent="Information-Management-and-Field-Applications" href="javascript:void(0);"><div style="max-width:190px;">Specification Solutions for AECO</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="ArchiSnapper-Field-Reporting-for-AEC" data-parent="Information-Management-and-Field-Applications" href="javascript:void(0);"><div style="max-width:190px;">ArchiSnapper Field Reporting for AEC</div></a>
+</li>
+</ul>
+</li>
+<li class="has-submenu">
+<a data-content="" href="javascript:void(0);"><div style="max-width:190px;">Business Development</div></a>
+<ul class="level3 list-unstyled">
+<li><a class="product-landing" data-gtm="floating-nav" href="/en/products/business-development">Business Development Overview</a></li>
+<li>
+<a class="has-megaNav" data-content="GovWin-IQ-for-Federal-Market-Intelligence" data-parent="Business-Development" href="javascript:void(0);"><div style="max-width:190px;">GovWin IQ for Federal Market Intelligence</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="GovWin-IQ-for-State-&amp;-Local-Market-Intelligence" data-parent="Business-Development" href="javascript:void(0);"><div style="max-width:190px;">GovWin IQ for State &amp; Local Market Intelligence</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="Vantagepoint-CRM" data-parent="Business-Development" href="javascript:void(0);"><div style="max-width:190px;">Vantagepoint CRM</div></a>
+</li>
+</ul>
+</li>
+<li class="has-submenu">
+<a data-content="" href="javascript:void(0);"><div style="max-width:190px;">Project Portfolio Management</div></a>
+<ul class="level3 list-unstyled">
+<li><a class="product-landing" data-gtm="floating-nav" href="/en/products/project-and-portfolio-management">Project Portfolio Management Overview</a></li>
+<li>
+<a class="has-megaNav" data-content="Cobra-for-Cost-and-Earned-Value-Management" data-parent="Project-Portfolio-Management" href="javascript:void(0);"><div style="max-width:190px;">Cobra for Cost and Earned Value Management</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="Acumen-for-Schedule-Quality,-Risk-and-Modeling" data-parent="Project-Portfolio-Management" href="javascript:void(0);"><div style="max-width:190px;">Acumen for Schedule Quality, Risk and Modeling</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="Acumen-Touchstone-for-Evaluating-Schedules" data-parent="Project-Portfolio-Management" href="javascript:void(0);"><div style="max-width:190px;">Acumen Touchstone for Evaluating Schedules</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="wInsight-Analytics-for-Earned-Value-Analysis" data-parent="Project-Portfolio-Management" href="javascript:void(0);"><div style="max-width:190px;">wInsight Analytics for Earned Value Analysis</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="PM-Compass-for-Project-Visibility-and-Control" data-parent="Project-Portfolio-Management" href="javascript:void(0);"><div style="max-width:190px;">PM Compass for Project Visibility and Control</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="Open-Plan-for-Schedule-and-Resource-Management" data-parent="Project-Portfolio-Management" href="javascript:void(0);"><div style="max-width:190px;">Open Plan for Schedule and Resource Management</div></a>
+</li>
+</ul>
+</li>
+<li class="has-submenu">
+<a data-content="" href="javascript:void(0);"><div style="max-width:190px;">Human Capital Management</div></a>
+<ul class="level3 list-unstyled">
+<li><a class="product-landing" data-gtm="floating-nav" href="/en/products/hr-and-talent-management">Human Capital Management Overview</a></li>
+<li>
+<a class="has-megaNav" data-content="Talent-Management" data-parent="Human-Capital-Management" href="javascript:void(0);"><div style="max-width:190px;">Talent Management</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="Costpoint-Time-&amp;-Expense-for-Gov’t-Contractors" data-parent="Human-Capital-Management" href="javascript:void(0);"><div style="max-width:190px;">Costpoint Time &amp; Expense for Gov’t Contractors</div></a>
+</li>
+<li>
+<a class="has-megaNav" data-content="Core-HR-for-Professional-Services" data-parent="Human-Capital-Management" href="javascript:void(0);"><div style="max-width:190px;">Core HR for Professional Services</div></a>
+</li>
+</ul>
+</li>
+<li class="has-submenu">
+<a data-content="" href="javascript:void(0);"><div style="max-width:190px;">Deltek Technology Platform</div></a>
+<ul class="level3 list-unstyled">
+<li><a class="product-landing" data-gtm="floating-nav" href="/en/products/technology-platform">Deltek Technology Platform Overview</a></li>
+<li>
+<a class="has-megaNav" data-content="Developer-Resources" data-parent="Deltek-Technology-Platform" href="javascript:void(0);"><div style="max-width:190px;">Developer Resources</div></a>
+</li>
+</ul>
+</li>
+<li class="has-submenu">
+<a data-content="" href="javascript:void(0);"><div style="max-width:190px;">Payments</div></a>
+<ul class="level3 list-unstyled">
+<li><a class="product-landing" data-gtm="floating-nav" href="/en/products/payments">Payments Overview</a></li>
+</ul>
+</li>
+<li class="has-submenu">
+<a data-content="" href="javascript:void(0);"><div style="max-width:190px;">All Products</div></a>
+<ul class="level3 list-unstyled">
+<li><a class="product-landing" data-gtm="floating-nav" href="/en/products">All Products Overview</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="submenu col-md-9" data-link="Overview" data-parent="Small-Business">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header"></span>
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Costpoint-for-Government-Contractors" data-parent="ERP-and-PSA">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Costpoint for Government Contractors</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/costpoint" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/costpoint/resources" target="_self">Resources</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/costpoint/small-business" target="_self">Small Business</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/costpoint/videos" target="_self">Product Videos</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/deltek-costpoint-demo-1?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Costpoint Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-costpoint-for-government-contractors-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=74D446765D572F3DB0FFFC55991EE93B" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Costpoint Demo</p>
+<div>
+<p>Power project success with Costpoint for Government Contractors.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/deltek-costpoint-for-the-enterprise?id={F254363B-33D2-4835-9F2A-88D690131271}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Costpoint-for-Manufacturing" data-parent="ERP-and-PSA">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Costpoint for Manufacturing</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/costpoint/manufacturing" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/costpoint/resources" target="_self">Resources</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/deltek-costpoint-demo-1?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Costpoint for Manufacturing" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-costpoint-for-manufacturing-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=096E6B5C73A01FD6D6FD5D90F9ABD8B9" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Costpoint Demo</p>
+<div>
+<p>Power project success with Costpoint for Manufacturing.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/eto-manufacturing-software-for-government-contracts-demo?id={A3814B7E-CF62-42F3-93E7-1A67A4778158}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Maconomy-for-Commercial-Enterprise" data-parent="ERP-and-PSA">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Maconomy for Commercial Enterprise</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/maconomy" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/maconomy/product-support-page" target="_self">Resources</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/Deltek-Maconomy?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Maconomy Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-maconomy-for-commercial-enterprise-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=628FBCF69CEB91F8E9908D7F127C6AA7" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Maconomy Demo</p>
+<div>
+<p>Power project success with Maconomy for Commercial Enterprise.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/deltek-maconomy-overview-demo?id={294C1620-76AA-4366-98C8-725300AD1EEE}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Ajera-for-Small-A&amp;E" data-parent="ERP-and-PSA">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Ajera for Small A&amp;E</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/ajera" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/ajera/product-support-page" target="_self">Resources</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/Deltek-Ajera-Demo-Request?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Ajera Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300ajeraforsmallaenavicon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=FFFBE12AD4995FBC053E26E5880E5981" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Ajera Demo</p>
+<div>
+<p>Power project success with Ajera for Small A&amp;E.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/deltek-ajera-overview?id={C6858B43-0645-4023-A2B5-543B000DA137}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Vantagepoint-for-A&amp;E-and-Consulting" data-parent="ERP-and-PSA">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Deltek Vantagepoint for A&amp;E and Consulting</span>
+<div class="col-md-4">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="">
+<a data-gtm="top-nav" href="/en/products/vantagepoint" target="_self">Overview</a>
+</li>
+<li class="">
+<a data-gtm="top-nav" href="/en/products/vantagepoint/videos" target="_self">Product Videos</a>
+</li>
+<li class="">
+<a data-gtm="top-nav" href="https://info.deltek.com/vantagepoint-demo?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</div>
+<div class="col-md-8">
+<span class="nav-column-header">Industry</span>
+<div class="row">
+<div class="list-unstyled col-md-6">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="top-nav" href="/en/products/vantagepoint/architecture-and-engineering" target="_self">Architecture &amp; Engineering</a>
+</li>
+</ul>
+</div>
+<div class="list-unstyled col-md-6">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="top-nav" href="/en/products/vantagepoint/consulting" target="_self">Consulting</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Vantagepoint Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300vantagepointforaeconsultingnavicon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=64130CA735E5B2C381850D820B42C9ED" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Vantagepoint</p>
+<div>
+<p>Power project success with Deltek Vantagepoint for A&amp;E and Consulting.</p>
+<a class="btn" data-gtm="top-nav" href="https://info.deltek.com/vantagepoint-demo?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" rel="noopener noreferrer" role="button" target="_blank" title="Learn More">Learn More</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="WorkBook-for-Agencies" data-parent="ERP-and-PSA">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">WorkBook for Agencies</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/workbook" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/workbook/product-packages" target="_self">Product Packages</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/workbook/resources" target="_self">Resources</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/workbook/videos" target="_self">Product Videos</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/WorkBook-Request-Demo?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="WorkBook Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-workbook-for-agencies-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=2BF0B63309DB19AA85C981DA52196E18" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">WorkBook Demo</p>
+<div>
+<p>Power project success with WorkBook for Agencies.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/illuminate-your-agencys-potential-with-workbook-demo?id={9A3F6358-66A3-4CEB-9D60-B5993879FCDD}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="ComputerEase-for-Construction" data-parent="ERP-and-PSA">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">ComputerEase for Construction</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/computerease" target="_self">Overview</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="ComputerEase Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-computerease-nav-icons.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=2F284A97367D5B64115BBBE8F12162AB" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">ComputerEase Demo</p>
+<div>
+<p>Power project success with ComputerEase.</p>
+<a class="btn" data-gtm="top-nav" href="https://www.construction-software.com/video-demo/" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Project-Information-Management-for-AEC" data-parent="Information-Management-and-Field-Applications">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Project Information Management for AEC</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/enterprise-information-management/project-information-management" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/enterprise-information-management/project-information-management/resources" target="_self">Resources</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/Deltek-PIM-Demo?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="PIM Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-project-information-management-for-aec-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=FA557BC022A58BBDD5E4810BB5B4322E" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">PIM for AEC Demo</p>
+<div>
+<p>Power project success with Project Information Management for AEC.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/deltek-pim-overview-demo?id={CAA232DA-59F3-4F1C-9EAE-DE75F0720C46}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="ConceptShare-Proofing-for-Agencies" data-parent="Information-Management-and-Field-Applications">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">ConceptShare Proofing for Agencies</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/conceptshare" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/conceptshare/product-packages" target="_self">Product Packages</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://portal.conceptshare.com/customerPortalV4/login/" target="_blank">Customer Login</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/conceptshare-free-trial?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request Free Trial</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="ConceptShare Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-conceptshare-prooﬁng-for-agencies-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=F7AE84F01DE5BD4B28345BAA7F87152A" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">ConceptShare Demo</p>
+<div>
+<p>Power project success with ConceptShare Prooﬁng for Agencies.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/conceptshare-online-proofing-demo?id={28971F08-4455-4EB6-8E92-51F69FFD7DD8}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Specification-Solutions-for-AECO" data-parent="Information-Management-and-Field-Applications">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Specification Solutions for AECO</span>
+<div class="col-md-4">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="">
+<a data-gtm="top-nav" href="/en/products/specification-solutions" target="_self">Overview</a>
+</li>
+<li class="">
+<a data-gtm="top-nav" href="/en/products/specification-solutions/resources" target="_self">Resources</a>
+</li>
+<li class="">
+<a data-gtm="top-nav" href="/en/products/specification-solutions/login" target="_self">Customer Logins</a>
+</li>
+</ul>
+</div>
+<div class="col-md-8">
+<span class="nav-column-header">Industry</span>
+<div class="row">
+<div class="list-unstyled col-md-6">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="top-nav" href="/en/products/specification-solutions/architecture-and-engineering" target="_self">Specpoint for A&amp;E</a>
+</li>
+</ul>
+</div>
+<div class="list-unstyled col-md-6">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="top-nav" href="/en/products/specification-solutions/bpm" target="_self">Specpoint for BPM</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Request a Demo" class="img-responsive" height="299" src="/-/media/images/deltek/500x-navpromos/500x300-specsolutions-nav-icon.ashx?h=299&amp;iar=0&amp;w=500&amp;hash=5E70C2C818A76FEC86AAAC9A7F7BF721" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Introducing Specpoint</p>
+<div>
+<p>All-in-one specification and design automation tool &amp; home of AIA MasterSpec®.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/specpoint-overview-demo?id={5E186E87-5D9A-470B-A365-674E2C34DB37}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="ArchiSnapper-Field-Reporting-for-AEC" data-parent="Information-Management-and-Field-Applications">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">ArchiSnapper Field Reporting for AEC</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/archisnapper" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://app3.archisnapper.com/users/sign_up?lang=en&amp;sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=deltek_nav&amp;partnerref=website_deltek-com_deltek_nav" target="_blank">Start a Free Trial</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="ArchiSnapper" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-nav-icon-archisnapper.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=8266833DEFC506DD5E7E08B938CC8DE4" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">ArchiSnapper Demo</p>
+<div>
+<p>Work faster with paperless inspections and automated field reports.</p>
+<a class="btn" data-gtm="top-nav" href="/en/download?id={30DEBE2E-EE71-48A4-8201-3B136DE0516D}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="GovWin-IQ-for-Federal-Market-Intelligence" data-parent="Business-Development">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">GovWin IQ for Federal Market Intelligence</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/business-development/govwin/federal-market-intelligence" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/business-development/govwin/resources" target="_self">Resources</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/business-development/govwin/videos" target="_self">Product Videos</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/business-development/govwin/federal-market-intelligence/subscriptions">Subscriptions</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/Try-GovWin-IQ-Federal?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Try GovWin IQ for Free</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://iq.govwin.com" target="_blank">Customer Login</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="GovWin Fed Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-govwin-iq-for-federal-market-intelligence-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=8061507FD7088DA267471FE6F8EF3703" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Govwin IQ Fed Demo</p>
+<div>
+<p>Find and win more federal government contracts.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/govwin-iq-federal-overview-demo?id={C1809209-D9C3-4086-BC08-ABAE0A71C784}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="GovWin-IQ-for-State-&amp;-Local-Market-Intelligence" data-parent="Business-Development">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">GovWin IQ for State &amp; Local Market Intelligence</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/business-development/govwin/state-local-government" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/business-development/govwin/resources" target="_self">Resources</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/business-development/govwin/videos" target="_self">Product Videos</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/business-development/govwin/state-local-government/subscriptions">Subscriptions</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/Try-GovWin-IQ-State-Local?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Try GovWin IQ for Free</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://iq.govwin.com" target="_blank">Customer Login</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="GovWin SLED Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300govwiniqforstatelocalmarketintelligencenavicon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=8DF9E42BFE2AC50C9BF8DB4BCE09AC7D" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">GovWin IQ SLED Demo</p>
+<div>
+<p>Grow your state, local and education business.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/govwin-iq-for-sled-contractors-demo?id={D6D63316-0C85-4A09-A835-EF7AB55F8CC4}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Vantagepoint-CRM" data-parent="Business-Development">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Deltek Vantagepoint CRM</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/vantagepoint/crm-and-pipeline-management" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="" target="_self">Pricing</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/vantagepoint-demo?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Vantagepoint CRM Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-deltek-vantagepoint-crm-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=B88B921954C40C01FD66B75BAA168DEF" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Vantagepoint CRM Demo</p>
+<div>
+<p>Power project success with Deltek Vantagepoint CRM.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/deltek-vantagepoint-crm-and-pipeline-management-demo?id={D864510A-5C68-4DA6-81C8-576B7D1CFB76}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Cobra-for-Cost-and-Earned-Value-Management" data-parent="Project-Portfolio-Management">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Cobra for Cost and Earned Value Management</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-and-portfolio-management/cobra" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-and-portfolio-management/cobra/resources" target="_self">Resources</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/Deltek-Cobra?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Cobra Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-cobra-for-project-budgets-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=919B156A4B474DF37B3ED6AE9D736B2E" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Cobra Demo</p>
+<div>
+<p>Power project success with Cobra for Project Budgets.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/deltek-cobra-overview-video-demo?id={F9F1E7C5-04CA-4058-8B7F-CD098B47A533}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Acumen-for-Schedule-Quality,-Risk-and-Modeling" data-parent="Project-Portfolio-Management">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Acumen for Schedule Quality, Risk and Modeling</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-and-portfolio-management/acumen" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-and-portfolio-management/acumen/resources" target="_self">Resources</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/Acumen-Free-Trial-Request?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Free Trial</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Acumen Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300acumenforscheduleprojectrisknavicon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=8BC45C8C31D6E7F07A9B9B5ED304A642" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Acumen Demo</p>
+<div>
+<p>Power project success with Acumen for Schedule &amp; Project Risk.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/deltek-acumen-overview?id={64ECE73A-F4A6-4D59-AF99-446C52FB26CD}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Acumen-Touchstone-for-Evaluating-Schedules" data-parent="Project-Portfolio-Management">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Acumen Touchstone for Evaluating Schedules</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-and-portfolio-management/touchstone" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-and-portfolio-management/touchstone/resources" target="_self">Resources</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Acumen Touchstone for Evaluating Schedules" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-acumen-touchstone-for-evaluating-schedules-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=4696BC8B4E9846C361DBA3B4BAD50E3B" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Acumen Touchstone Demo</p>
+<div>
+<p>Power project success with Acumen Touchstone for Evaluating Schedules.</p>
+<a class="btn" data-gtm="top-nav" href="/en/download?id={1CE3A583-5CB8-441A-8941-9C85AA68732E}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="wInsight-Analytics-for-Earned-Value-Analysis" data-parent="Project-Portfolio-Management">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">wInsight Analytics for Earned Value Analysis</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-and-portfolio-management/winsight-analytics" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-and-portfolio-management/winsight-analytics/product-support-page" target="_self">Resources</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="wInsight Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-winsight-analytics-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=AC42A495EBAEC9FF309C77053B8812EC" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">wInsight Analytics Demo</p>
+<div>
+<p>Power project success with wInsight Analytics.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/deltek-winsight-analytics-overview-demo?id={C3B8CFBE-29EE-483C-9C1C-0FD660AF60E4}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="PM-Compass-for-Project-Visibility-and-Control" data-parent="Project-Portfolio-Management">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">PM Compass for Project Visibility and Control</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-and-portfolio-management/pm-compass" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-and-portfolio-management/pm-compass/product-support-page" target="_self">Resources</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/Deltek-PM-Compass-Demo-Request?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="PM Compass Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-pm-compass-for-project-workflow-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=9042A92AACF1F554BB4631BA58847F4A" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">PM Compass Demo</p>
+<div>
+<p>Power project success with PM Compass for Project Workflow.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/deltek-pm-compass-overview-demo?id={9CC965E8-7015-430A-8B67-21CE93E23545}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Open-Plan-for-Schedule-and-Resource-Management" data-parent="Project-Portfolio-Management">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Open Plan for Schedule and Resource Management</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-and-portfolio-management/open-plan" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-and-portfolio-management/open-plan/product-support-page" target="_self">Resources</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/Open-Plan-Demo-Request?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Open Plan Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-open-plan-for-schedules-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=4C2345682E83A4AEB6E4295A7CB2E15F" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Open Plan Demo</p>
+<div>
+<p>Power project success with Open Plan for Schedules.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/deltek-open-plan-overview-demo-video?id={DC0AAE43-20B0-4156-B920-6DD78684B338}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Talent-Management" data-parent="Human-Capital-Management">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Talent Management</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/hr-and-talent-management/talent-management" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/hr-and-talent-management/talent-management/resources" target="_self">Resources</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://info.deltek.com/Deltek-Talent-Management-Demo?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=Nav&amp;PartnerRef=website_deltek-com_Nav" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Talent Management Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-talent-management-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=CC0763F7B4271B5F78827CD9F20A3E97" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Talent Management Demo</p>
+<div>
+<p>Power project success with Talent Management.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/resources/deltek-talent-management?id={161E5B07-9953-4D88-A930-1AE5CB820FB1}" rel="noopener noreferrer" role="button" target="_blank" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Costpoint-Time-&amp;-Expense-for-Gov’t-Contractors" data-parent="Human-Capital-Management">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Costpoint Time &amp; Expense for Government Contractors</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/costpoint/time-and-expense" target="_self">Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/project-erp/costpoint/time-and-expense#contact-us" target="_blank">Request a Demo</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Costpoint T&amp;E Demo" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300costpointtimeexpenseforgovernmentcontractors02navicons-2.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=CA926220D7346604FB43F2756B476703" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Costpoint Time &amp; Expense Demo</p>
+<div>
+<p>Power project success with Costpoint Time &amp; Expense for Government Contractors.</p>
+<a class="btn" data-gtm="top-nav" href="/learn/resources/costpoint-time-and-expense?id={C8A939D8-0CFB-41E9-96C5-33549313E1FB}" role="button" title="Watch Video">Watch Video</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Core-HR-for-Professional-Services" data-parent="Human-Capital-Management">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header">Core HR for Professional Services</span>
+<div class="col-md-12">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/products/hr-and-talent-management/core-hr" target="_self">Overview</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="HR Management Contact" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-hr-management-nav-icons.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=BF6FCEA328A02F8106B142060FC90844" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Core HR</p>
+<div>
+<p>Power project success with Core HR.</p>
+<a class="btn" data-gtm="top-nav" href="/en/products/hr-and-talent-management/core-hr#contact-us" role="button" title="Learn More">Learn More</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Developer-Resources" data-parent="Deltek-Technology-Platform">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header"></span>
+<div class="col-md-4">
+<span class="nav-column-header">About</span>
+<ul class="list-unstyled clearfix">
+<li class="">
+<a data-gtm="top-nav" href="/en/products/technology-platform/developer-resources" target="_self">Overview</a>
+</li>
+</ul>
+</div>
+<div class="col-md-8">
+<span class="nav-column-header">Products</span>
+<div class="row">
+<div class="list-unstyled col-md-6">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="top-nav" href="https://help.deltek.com/Product/Ajera/api/index.html" target="_blank">Ajera</a>
+</li>
+<li>
+<a data-gtm="top-nav" href="https://computereaseapi.deltek.com/" target="_blank">Deltek + ComputerEase</a>
+</li>
+<li>
+<a data-gtm="top-nav" href="/en/products/technology-platform/developer-resources/conceptshare">ConceptShare</a>
+</li>
+<li>
+<a data-gtm="top-nav" href="/en/products/technology-platform/developer-resources/costpoint">Costpoint</a>
+</li>
+<li>
+<a data-gtm="top-nav" href="https://dsm.deltek.com/DeltekSoftwareManagerWebServices/downloadFile.ashx?documentid=8F8FF9D6-7B49-4607-945B-CB3C4D28DC64" target="_blank">GovWin IQ</a>
+</li>
+</ul>
+</div>
+<div class="list-unstyled col-md-6">
+<ul class="list-unstyled">
+<li>
+<a data-gtm="top-nav" href="https://dsm.deltek.com/DeltekSoftwareManagerWebServices/downloadFile.ashx?documentid=6B16DE5E-4D81-4F43-A41A-3B40953E1432" target="_blank">Maconomy</a>
+</li>
+<li>
+<a data-gtm="top-nav" href="/en/products/technology-platform/developer-resources/ppm">Project &amp; Portfolio Management</a>
+</li>
+<li>
+<a data-gtm="top-nav" href="https://help.deltek.com/Product/TalentManagement/Documentation/Developer_Resources.html" target="_blank">Talent Management</a>
+</li>
+<li>
+<a data-gtm="top-nav" href="https://help.deltek.com/product/Vantagepoint/api" target="_blank">Vantagepoint</a>
+</li>
+<li>
+<a data-gtm="top-nav" href="https://workbookapi.deltek.com/" target="_blank">WorkBook</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Project Nation Blog" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-project-nation-nav-icon.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=1E4D335D5ABD6CB56C151D36B347871F" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Join Deltek Project Nation</p>
+<div>
+<p>The latest industry trends, technology and issues shaping project-based businesses today.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/blogs/project-nation" role="button" target="_parent" title="Read Our Blogs">Read Our Blogs</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Overview" data-parent="Deltek-Technology-Platform">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header"></span>
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Overview" data-parent="Payments">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header"></span>
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Overview" data-parent="All-Products">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header"></span>
+</div>
+<div class="col-md-4">
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="has-menu">
+<a data-gtm="no-click" data-open="false" href="/en/support">Support</a>
+<div class="menu-wrapper">
+<div class="menu">
+<div class="menu_header">
+<a data-gtm="top-nav" href="/en/support">Support</a>
+<a class="close" href="javascript:void(0);">Close</a>
+</div>
+</div>
+<div class="col-md-3 links-col">
+<ul class="list-unstyled level2">
+<li class="nosubmenu">
+<a data-content="Customer-Care" href="javascript:void(0);"><div style="max-width:190px;">Customer Care</div></a>
+</li>
+<li class="nosubmenu">
+<a class="linkable level2-nosubmenu" data-gtm="floating-nav" href="https://deltek.custhelp.com/"><div style="max-width:190px;">Deltek Support Center Login</div></a>
+</li>
+<li class="nosubmenu">
+<a class="linkable level2-nosubmenu" data-gtm="floating-nav" href="/en/support/global-consulting"><div style="max-width:190px;">Global Consulting</div></a>
+</li>
+<li class="nosubmenu">
+<a data-content="Product-Training" href="javascript:void(0);"><div style="max-width:190px;">Product Training</div></a>
+</li>
+<li class="nosubmenu">
+<a data-content="User-Groups" href="javascript:void(0);"><div style="max-width:190px;">User Groups</div></a>
+</li>
+</ul>
+</div>
+<div class="submenu col-md-9" data-link="Customer-Care" data-parent="Customer-Care">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header"></span>
+<div class="col-md-12">
+<span class="nav-column-header">Customer Care</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/support/customer-care">Customer Care Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/support/customer-care/support-plans" target="_self">Support Plans</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/support/customer-care/customer-success-program" target="_self">Customer Success Program</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/support/customer-care/community">Deltek Community</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://deltek.custhelp.com/" target="_blank">Deltek Support Center Login</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="JD Power" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-nav-ad-jd-power.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=40B8D0DACE83001A14DF29CAB19183DF" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">J.D. Power Recognizes Deltek</p>
+<div>
+<p>Thank you to our customers for honoring us a third year in a row with the J.D. Power recognition for Assisted Technical Support.</p>
+<a class="btn" data-gtm="top-nav" href="/en/about/media-center/press-releases/2020/deltek-recognized-by-jd-power" role="button">Learn More</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Product-Training" data-parent="Product-Training">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header"></span>
+<div class="col-md-12">
+<span class="nav-column-header">Product Training</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/support/deltek-university">Deltek University Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="https://education.deltek.com/web/dlz_login_page/" target="Active Browser">DLZ Login Instructions</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Deltek University" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-nav-ad-du.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=2AC32D449C2F2FDC7BBA9B3DF22EA8DC" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">DLZ Courses</p>
+<div>
+<p>The Deltek Learning Zone offers the product knowledge you need to succeed.</p>
+<a class="btn" data-gtm="top-nav" href="https://education.deltek.com/web/du_course_catalog/portal/" role="button" title="Learn More">Learn More</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="User-Groups" data-parent="User-Groups">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header"></span>
+<div class="col-md-12">
+<span class="nav-column-header">User Groups</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/support/user-groups" target="_self">User Groups Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/support/user-groups/acumen-user-groups" target="_self">Acumen User Groups</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/support/user-groups/ajera-user-groups" target="_self">Ajera User Groups</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/support/user-groups/costpoint-user-groups" target="_self">Costpoint User Groups</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/support/user-groups/vision-user-groups" target="_self">Vantagepoint/Vision User Groups</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/support/user-groups/winsight-user-groups" target="_self">wInsight User Groups</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="User Groups" class="img-responsive" height="300" src="/-/media/images/deltek/home-page/pods/500x300-user-groups-nav-image.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=10A1B8AF215B30615F40732AF8804FD1" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Product Reviews</p>
+<div>
+<p>Share your story by providing a review of Deltek products.</p>
+<a class="btn" data-gtm="top-nav" href="https://info.deltek.com/product-reviews?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=NavOffers&amp;partnerref=website_deltek-com_NavOffers " rel="noopener noreferrer" role="button" target="_blank" title="Leave a Review">Leave a Review</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="has-nomenu">
+<a data-gtm="top-nav" data-open="false" href="/en/customers">Customers</a>
+</li>
+<li class="has-menu">
+<a data-gtm="no-click" data-open="false" href="/en/partners">Partners</a>
+<div class="menu-wrapper">
+<div class="menu">
+<div class="menu_header">
+<a data-gtm="top-nav" href="/en/partners">Partners</a>
+<a class="close" href="javascript:void(0);">Close</a>
+</div>
+</div>
+<div class="col-md-3 links-col">
+<ul class="list-unstyled level2">
+<li class="nosubmenu">
+<a class="linkable level2-nosubmenu" data-gtm="floating-nav" href="/en/partners"><div style="max-width:190px;">Deltek Partner Network</div></a>
+</li>
+<li class="nosubmenu">
+<a class="linkable level2-nosubmenu" data-gtm="floating-nav" href="/en/partners/become-partner"><div style="max-width:190px;">Become a Partner</div></a>
+</li>
+<li class="nosubmenu">
+<a class="linkable level2-nosubmenu" data-gtm="floating-nav" href="/en/partners/marketplace"><div style="max-width:190px;">Search the Marketplace</div></a>
+</li>
+<li class="nosubmenu">
+<a class="linkable level2-nosubmenu" data-gtm="floating-nav" href="/en/partners/login"><div style="max-width:190px;">Partner Portal Login</div></a>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class="has-menu">
+<a data-gtm="no-click" data-open="false" href="/en/about">About</a>
+<div class="menu-wrapper">
+<div class="menu">
+<div class="menu_header">
+<a data-gtm="top-nav" href="/en/about">About</a>
+<a class="close" href="javascript:void(0);">Close</a>
+</div>
+</div>
+<div class="col-md-3 links-col">
+<ul class="list-unstyled level2">
+<li class="nosubmenu">
+<a data-content="Company-Information" href="javascript:void(0);"><div style="max-width:190px;">Company Information</div></a>
+</li>
+<li class="nosubmenu">
+<a class="linkable level2-nosubmenu" data-gtm="floating-nav" href="/en/about/security-and-trust"><div style="max-width:190px;">Security and Trust</div></a>
+</li>
+<li class="nosubmenu">
+<a class="linkable level2-nosubmenu" data-gtm="floating-nav" href="/en/about/purposeful-innovation"><div style="max-width:190px;">Purposeful Innovation</div></a>
+</li>
+<li class="nosubmenu">
+<a data-content="Blogs" href="javascript:void(0);"><div style="max-width:190px;">Blogs</div></a>
+</li>
+<li class="nosubmenu">
+<a class="linkable level2-nosubmenu" data-gtm="floating-nav" href="/en/about/events"><div style="max-width:190px;">Events and Webinars</div></a>
+</li>
+<li class="nosubmenu">
+<a class="linkable level2-nosubmenu" data-gtm="floating-nav" href="/en/learn/resources"><div style="max-width:190px;">Resources</div></a>
+</li>
+<li class="nosubmenu">
+<a class="linkable level2-nosubmenu" data-gtm="floating-nav" href="/en/about/careers"><div style="max-width:190px;">Careers</div></a>
+</li>
+</ul>
+</div>
+<div class="submenu col-md-9" data-link="Company-Information" data-parent="Company-Information">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header"></span>
+<div class="col-md-12">
+<span class="nav-column-header">Company Information</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/about">Company Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/about/media-center">Newsroom</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/about/culture" target="_self">Our Culture and Careers</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/about/management-team">Leadership</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/about/awards">Awards</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/about/deltek-cares">#DeltekCares</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/about/locations">Locations</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Careers" class="img-responsive" height="360" src="/-/media/images/deltek/500x-navpromos/500x300-nav-ad-careers.ashx?h=360&amp;iar=0&amp;w=600&amp;hash=2CA565CC99AEF75C3E85E226116608FE" width="600"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Join Our Team</p>
+<div>
+<p>Find your dream Deltek job now!</p>
+<a class="btn" data-gtm="top-nav" href="https://sjobs.brassring.com/TGWebHost/home.aspx?partnerid=25397&amp;siteid=5259" rel="noopener noreferrer" role="button" target="_blank" title="Search Jobs">Search Jobs</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="submenu col-md-9" data-link="Blogs" data-parent="Blogs">
+<div class="row">
+<div class="col-md-8">
+<span class="col-md-12 nav-flyout-header"></span>
+<div class="col-md-12">
+<span class="nav-column-header">Blogs</span>
+<ul class="list-unstyled clearfix">
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs">Blog Overview</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/project-nation">Deltek Project Nation</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/uk-blog">EMEA and APAC</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/a-and-e">Architecture and Engineering</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/b2g-essentials">B2G Market Advisor</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/construction" target="_self">Construction</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/government-contracting">Government Contracting</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/consulting">Management and IT Consulting</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/marketing-agencies">Marketing and Creative Agencies</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/deltek-ajera">Deltek Ajera</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/computerease">Deltek + ComputerEase</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/deltek-costpoint">Deltek Costpoint</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/deltek-maconomy">Deltek Maconomy</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/deltek-pim">Deltek PIM</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/deltek-specification-solutions" target="_self">Deltek Specification Solutions</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/talent-management">Deltek Talent Management</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/deltek-vantagepoint">Deltek Vantagepoint</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/deltek-vision">Deltek Vision</a>
+</li>
+<li class="col-md-6">
+<a data-gtm="top-nav" href="/en/learn/blogs/deltek-workbook">Deltek WorkBook &amp; Deltek ConceptShare</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-md-4">
+<div class="thumbnail">
+<div class="media">
+<img alt="Project Nation Blog" class="img-responsive" height="300" src="/-/media/images/deltek/500x-navpromos/500x300-project-nation-blog-nav.ashx?h=300&amp;iar=0&amp;w=500&amp;hash=8B37780B74F3BBE164335E82BB9BB5F2" width="500"/>
+</div>
+<div class="caption">
+<p class="titlePromo">Project Nation</p>
+<div>
+<p>The latest trends and issues shaping project-based businesses.</p>
+<a class="btn" data-gtm="top-nav" href="/en/learn/blogs/project-nation" role="button" title="Read the Blog">Read the Blog</a> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</header><div class="main-content">
+<div class="breadcrumbs hidden-xs">
+<div class="container">
+<ol class="breadcrumb">
+<li>
+<a href="/en/">Home</a>
+</li>
+<li class="active">Privacy Policy</li>
+</ol>
+</div>
+</div><div class="section application-spot-container" style="background-color: ">
+<div class="container">
+<div class="general-title">
+<h1>Deltek Privacy Policy</h1>
+<p><h5><em>Effective Date: September 15, 2021</em></h5>
+<p> </p>
+<h4>I. Purpose</h4>
+<p>Deltek values and respects the privacy of those who visit Deltek.com and its dependent pages (the <strong>“Sites”</strong>) or use Deltek’s software, products, and web-based services (the “<strong>Services</strong>”). This Privacy Policy addresses our privacy practices relating to visitors and users (collectively, <strong>“Users”</strong>) of our Sites and Services. This Privacy Policy applies to and serves as notification regarding information collected automatically via the Sites or Services, as well as that which is affirmatively provided by Users.</p>
+<p>If you do not want your Personal Data to be collected or processed as described in this Privacy Policy and in accordance with our privacy practices as explained herein, you should not use the Sites. If you use our Services and have questions regarding the treatment of Personal Data, you should contact your Customer Care Representative and consult the terms of your Deltek agreement related to those Services (your <strong>“Services Agreement”</strong>). </p>
+<p>For purposes of this Privacy Policy:</p>
+<ol style="list-style-type: lower-roman;">
+<li style="margin-top: 10px;"><strong>“Personal Data”</strong> means any information that, by itself or in combination with other information, identifies, relates to, describes, is capable of being associated with, or could reasonably be linked, directly or indirectly, with a particular natural person, including, based on applicable Privacy Laws, a consumer or household. While this Privacy Policy uses the term Personal Data, it shall be read to encompass similar terms of art, such as Personal Information and Personally Identifiable Information, depending on jurisdiction. This does not include anonymized, aggregated, statistical, or non-personally identifiable data resulting from the use of the Sites and Services. See the <strong>Personal Data Categories Chart (<a href="#pdcc">Section X</a>)</strong> for more detailed information.</li>
+<li style="margin-top: 10px;"><strong>“Privacy Laws”</strong> refers to the applicable legislation, statutory instruments, and any other enforceable laws, codes, regulations, or guidelines regulating the collection, transfer, processing, use, and disclosure of, and/or rights to Users’ Personal Data based on their governing jurisdiction, including, in particular: (i) the California Consumer Privacy Act and its implementing regulations, as amended from time to time (the <strong>“CCPA”</strong>) and (ii) the European Union’s General Data Protection Regulation (EU) 2016/679 and any Member State implementing legislation, as amended from time to time (the <strong>“GDPR”</strong>).</li>
+</ol>
+<div class="container">
+<div class="container demo">
+<div aria-multiselectable="true" class="panel-group" id="accordion" role="tablist">
+<div class="panel panel-default">
+<div class="panel-heading" id="headingOne" role="tab">
+<h4 class="panel-title">
+<a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button">
+<em class="more-less glyphicon glyphicon-plus"></em>
+II.	Collection and Use of Personal Data
+</a>
+</h4>
+</div>
+<div aria-expanded="true" aria-labelledby="headingOne" class="panel-collapse collapse" id="collapseOne" role="tabpanel">
+<div class="panel-body">
+<p style="margin-top: -5px;">Deltek uses information about Users, including Personal Data, for a variety of purposes, including:</p>
+<ol style="list-style-type: lower-roman;">
+<li style="margin-top: 10px;">To enable you to use our Sites or Services;</li>
+<li>To monitor usage and analyze statistical information related to our Sites or Services;</li>
+<li>To supply information regarding your Services upon your request;</li>
+<li>To respond to your comments, questions, and requests;</li>
+<li>To carry out our obligations and enforce rights arising from our contractual relationship with you;</li>
+<li>To improve and maintain the security, performance, and operational efficiency of our Sites or Services;</li>
+<li>To provide customer support;</li>
+<li>To send communications regarding Services or information related thereto; and/or</li>
+<li>For any other purpose with your consent.</li>
+</ol>
+<p>When you visit the Sites, including if you have visited the Sites in the past twelve (12) months, Deltek has collected Personal Data as listed in the <strong>Personal Data Categories Chart (<a href="#pdcc">Section X</a>)</strong> below. The categories of Personal Data collected by customers through the use of the Services varies based on the specific Services provided, the engagement and scope of Services requested, and/or any configurations or customizations undertaken on your behalf in accordance with the terms of your Services Agreement. Customers should contact their Customer Care Representative for more information.</p>
+<ol style="list-style-type: lower-alpha;">
+<li style="margin-top: 10px;"><span style="text-decoration: underline;">Data Integrity</span><br/>
+<br/>
+    You are responsible for the accuracy of the information you provide to Deltek. Deltek will use reasonable efforts to maintain the accuracy and integrity of such information and update it, as appropriate. Deltek will not maintain data any longer than necessary for the purposes stated without your consent unless legally required.
+    </li>
+<li style="margin-top: 10px;"><span style="text-decoration: underline;">End-User Personal Data</span><br/>
+<br/>
+    As part of using the Services, you may enable access to your end-users (as governed by the terms of your Services Agreement). Deltek collects Personal Data on behalf of our customers in order to provide the Services and has no direct relationship with your end-users whose Personal Data may be processed in connection with the provision of those Services. You are solely responsible for establishing policies for and ensuring compliance with applicable Privacy Laws relating to the collection of Personal Data from your end-users. For a description of the respective standard obligations of Customers and Deltek set forth in your Services Agreement, please refer to that agreement.
+    </li>
+<li style="margin-top: 10px;"><span style="text-decoration: underline;">Automated Collection</span><br/>
+<br/>
+    Deltek collects log files, domain names, and IP addresses of Users for statistical purposes, to measure use, to improve the content or responsiveness of the Sites, or to customize the content or layout of the Site for individual Users. Deltek may also aggregate this information to identify traffic patterns for the Sites. This data helps Deltek understand how Users consume information on the Site and interact with the Services with the ultimate goal of building an experience that improves Deltek’s processes and priorities in accordance with User needs. Access to this data is restricted to those who administer Deltek’s network and Sites. Deltek may use and disclose this data to third parties only in connection with monitoring our networks for security purposes, in response to legal process or law enforcement inquiries, to control any abuses of the Sites, or to address identified violations of any contractual provision entered into between you and Deltek.<br/>
+<br/>
+    In addition, most web browsers contain cookies, but also provide controls that allow you to block or delete them. You have the ability to accept or decline cookies from the Sites at any time by modifying the settings in your web browser. Certain Site and Service features require cookies to function. Please be aware that if you choose to block cookies, you may not be able to access or use those features and preferences that are dependent on cookies. <br/>
+<br/>
+    For further information about how cookies and other tracking technologies may collect information, please see our <a href="/en/legal/cookie-policy" target="_blank">Cookie Policy</a>.
+    </li>
+</ol>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="headingTwo" role="tab">
+<h4 class="panel-title">
+<a aria-controls="collapseTwo" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role="button">
+<em class="more-less glyphicon glyphicon-plus"></em>
+III.	Purposes of Personal Data Processing
+</a>
+</h4>
+</div>
+<div aria-expanded="false" aria-labelledby="headingTwo" class="panel-collapse collapse" id="collapseTwo" role="tabpanel">
+<div class="panel-body">
+<p style="margin-top: -5px;">Deltek’s legal basis for collecting and using Personal Data will depend on the Personal Data concerned and the specific context in which Deltek collects it. </p>
+<p>However, Deltek will normally collect Personal Data with your consent, to perform a contract (for example, when providing Services), or where the processing is in Deltek’s legitimate interests and not overridden by your data protection interests or fundamental rights and freedoms. In some cases, Deltek may also have a legal obligation to process Personal Data or may need to do so in order to exercise, establish, or defend legal claims.</p>
+<p>If Deltek asks you to provide Personal Data to comply with a legal requirement or to perform a contract, Deltek will make this clear at the relevant time and advise whether the provision of Personal Data is mandatory or not (as well as the possible consequences, if any,  if you do not provide that Personal Data).</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="headingThree" role="tab">
+<h4 class="panel-title">
+<a aria-controls="collapseThree" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseThree" role="button">
+<em class="more-less glyphicon glyphicon-plus"></em>
+IV.	Confidentiality and Security of Personal Data
+</a>
+</h4>
+</div>
+<div aria-expanded="false" aria-labelledby="headingThree" class="panel-collapse collapse" id="collapseThree" role="tabpanel">
+<div class="panel-body">
+<p style="margin-top: -5px;">Security is one of Deltek’s highest priorities. Deltek takes commercially reasonable and appropriate steps to protect Personal Data transmitted from you to the Sites and in connection with the Services and to protect such data from loss, misuse, or unauthorized access, disclosure, alteration, or destruction. You should keep in mind that no internet transmission is ever 100% secure or error-free. In particular,
+email may not be secure and therefore special care should be taken when deciding what information is sent to Deltek via email. Where you use passwords, ID numbers, or other special access features, it is your responsibility to safeguard them.
+</p>
+<p>We make commercially reasonable efforts to reduce the risk of data breaches and have dedicated controls and procedures in place for such situations, along with the procedures to make notifications to the relevant supervisory authorities and data subjects (where applicable).</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="headingFour" role="tab">
+<h4 class="panel-title">
+<a aria-controls="collapseFour" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseFour" role="button">
+<em class="more-less glyphicon glyphicon-plus"></em>
+V.	Disclosures/Onward Transfers of Personal Data
+</a>
+</h4>
+</div>
+<div aria-expanded="false" aria-labelledby="headingFour" class="panel-collapse collapse" id="collapseFour" role="tabpanel">
+<div class="panel-body">
+<p style="margin-top: -5px;">Any Personal Data provided to Deltek will be used for Deltek’s business purposes only and only disclosed on a need-to-know basis or as required by law. When Deltek provides Personal Data to third parties used to deliver or support specific Services to you, our agreements with these third parties do not permit them to use Personal Data outside the scope of fulfilling those Services nor allow them to further disclose your Personal Data. You should consult your Services Agreement for information regarding disclosures and transfers relevant to the Services. </p>
+<p>Deltek’s business partners are independent third parties. In the event information you provide is shared with our business partners, the notice you receive at the moment of collection will identify the relevant partner and providing your information is always discretionary. Any relationship or communications you elect to enter into with a partner for additional information, products, and services is directly between you and that third party.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="headingFive" role="tab">
+<h4 class="panel-title">
+<a aria-controls="collapseFive" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseFive" name="personal-data" role="button">
+<em class="more-less glyphicon glyphicon-plus"></em>
+VI.	User Rights to Personal Data
+</a>
+</h4>
+</div>
+<div aria-expanded="false" aria-labelledby="headingFive" class="panel-collapse collapse" id="collapseFive" role="tabpanel">
+<div class="panel-body">
+<p style="margin-top: -5px;">Deltek collects and processes Personal Data consistent with the disclosures in this Privacy Policy. Depending on applicable Privacy Laws, you may have the right to request Deltek disclose certain information to you and/or about our collection and use of your Personal Data. You may have the right to object to or request access to your Personal Data, to restrict the processing of your Personal Data, or to have your Personal Data transferred, corrected, or deleted. You may also have the right of portability with respect to your Personal Data. However, you should note that these rights are not absolute and, depending on the type of information affected, Deltek may be permitted, or even required by law, to refuse your request. In all events, upon receipt of a valid, verifiable request, Deltek will explain its position in detail.</p>
+<p>Depending on the circumstances of your relationship with Deltek, the disclosure may extend over the previous twelve (12) months. Consumers should submit their requests as described in <strong>Contact Us (<a href="#contact-us">Section IX</a>)</strong>. It is important to note that Deltek is required to verify your identity in order to respond. Deltek will respond to verifiable requests within a reasonable period of time after receipt. </p>
+<ol style="list-style-type: lower-alpha;">
+<li style="margin-top: 10px;"><span style="text-decoration: underline;">Marketing</span><br/>
+<br/>
+    Based on applicable Privacy Laws, Deltek may separately ask you to opt-in to receive promotional and/or marketing communications. At any time, you can manage your communication preferences via the <a href="https://info.deltek.com/email-subscription-management" target="_blank">Email Preference Center</a> or you may unsubscribe from receiving such communications by utilizing the “unsubscribe” or opt-out feature within the communication. Requests to unsubscribe from Deltek communications may also be made by contacting Deltek via the methods indicated in <strong>Contact Us (<a href="#contact-us">Section IX</a>)</strong>, but you should note that requests made through these alternative methods may take up to five (5) business days from receipt to process.
+    </li>
+<li style="margin-top: 10px;"><span style="text-decoration: underline;">Selling of Personal Data</span><br/>
+<br/>
+    Deltek’s disclosures of Personal Data to its affiliates, third-party service providers, partners, or subprocessors do not qualify as “sales” within the scope and meaning of the CCPA as the disclosures are necessary to perform the business purpose under your Services Agreement or facilitate business communications and/or transactions between the parties. See <strong>Questions (<a href="#CollapseEight">Section VIII</a>)</strong> below for more information. <br/>
+<br/>
+	As defined under <em>Chapter 603A of Nevada Revised Statute</em>, as amended, Deltek does not exchange “covered information” (as defined under the Nevada Statute) for monetary consideration to any person or entity for the purpose of licensing or selling the covered information.
+    </li>
+<li style="margin-top: 10px;"><span style="text-decoration: underline;">Personal Data Collection Based on Consent</span><br/>
+<br/>
+    If Deltek collects and processes Personal Data with your consent, you can withdraw your consent at any time. Withdrawing consent will not affect the lawfulness of any processing Deltek conducted prior to your withdrawal, nor will it affect processing of Personal Data conducted in reliance on lawful processing grounds other than your consent.
+    </li>
+<li style="margin-top: 10px;"><span style="text-decoration: underline;">Concerns</span><br/>
+<br/>
+    Under the GDPR, you may submit inquiries or concerns to your data protection authority or another appropriate regulator about Deltek’s collection and processing of your Personal Data. For more information, you should contact the appropriate local data protection authority. Contact details for data protection authorities in the European Economic Area are available <a href="https://edpb.europa.eu/about-edpb/board/members_en" target="_blank">here</a>.<br/>
+<br/>
+    Under the CCPA, you may also submit inquiries or concerns about Deltek’s collection and processing of your Personal Data. In addition to those methods noted in <strong>Contact Us (<a href="#contact-us">Section IX</a>)</strong>, California consumers may contact Deltek via our US toll-free number 1-800-456-2009, option 4 to submit your request or inquiry.
+    </li>
+<li style="margin-top: 10px;"><span style="text-decoration: underline;">Non-Discrimination under CCPA</span><br/>
+<br/>
+    Deltek will not discriminate against you for exercising any of your CCPA rights. Unless permitted by the CCPA, Deltek will not:<br/>
+<ol style="margin: 8px 0px; list-style-type: lower-roman;">
+<li>Deny goods or Services;</li>
+<li>Charge different prices or rates for goods or Services;</li>
+<li>Provide a different level or quality of goods or Services; or</li>
+<li>Suggest that you receive a different price or rate for or a different level of quality of goods or Services.</li>
+</ol>
+    The CCPA requires that we disclose to you that Deltek may offer and you may consent to receive certain financial incentives permitted by the CCPA that can result in different prices, rates, or quality levels. Any CCPA-permitted financial incentive offered must reasonably relate to the value of your Personal Data and will contain written terms that describe the program’s material aspects. You may revoke your consent to participate or receive such financial incentives at any time.
+    </li>
+</ol>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="headingSix" role="tab">
+<h4 class="panel-title">
+<a aria-controls="collapseSix" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseSix" role="button">
+<em class="more-less glyphicon glyphicon-plus"></em>
+VII.	Privacy Policy Changes
+</a>
+</h4>
+</div>
+<div aria-expanded="false" aria-labelledby="headingSix" class="panel-collapse collapse" id="collapseSix" role="tabpanel">
+<div class="panel-body">
+<p style="margin-top: -5px;">This Privacy Policy is current as of the Effective Date set forth above. Deltek reserves the right to change this Privacy Policy from time to time, consistent with Privacy Laws, principles, and/or technical requirements. Unless such changes afford greater protections to your privacy interests, or you otherwise consent, such changes will apply only to Personal Data received after the Effective Date of such change. You should refer to this Privacy Policy regularly, as it will be updated from time to time.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="headingEight" role="tab">
+<h4 class="panel-title">
+<a aria-controls="collapseEight" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseEight" role="button">
+<em class="more-less glyphicon glyphicon-plus"></em>
+VIII.	Questions
+</a>
+</h4>
+</div>
+<div aria-expanded="false" aria-labelledby="headingEight" class="panel-collapse collapse" id="collapseEight" role="tabpanel">
+<div class="panel-body">
+<p style="margin-top: -5px;">For more information on <a href="/en/about/security-and-trust/privacy" target="_blank">Deltek’s privacy practices</a> or other security and compliance activities, please visit our <a href="/en/about/security-and-trust" target="_blank">Deltek Security and Trust Center</a>. Deltek acknowledges that individuals may have certain rights to their Personal Data under applicable Privacy Laws. Please be aware that there may be circumstances in which additional legal requirements may prohibit or narrow Deltek’s ability to address individual requests. If you would like more information regarding Deltek’s privacy practices, <a href="/en/about/security-and-trust/privacy#145dc18b-3618-435f-a2ea-a1b73991cb23" target="_blank">please submit an inquiry</a>.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="headingNine" role="tab">
+<h4 class="panel-title">
+<a aria-controls="collapseNine" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseNine" name="contact-us" role="button">
+<em class="more-less glyphicon glyphicon-plus"></em>
+IX.	Contact Us
+</a>
+</h4>
+</div>
+<div aria-expanded="false" aria-labelledby="headingNine" class="panel-collapse collapse" id="collapseNine" role="tabpanel">
+<div class="panel-body">
+<p style="margin-top: -5px;">If you have any questions about this Privacy Policy or if you wish to submit a request pursuant to <strong>User Rights to Personal Data (<a href="#personal-data">Section VI</a>)</strong>, please contact us via email at <a href="mailto:privacy@deltek.com">privacy@deltek.com</a>. Deltek customers should contact their Customer Care Representative for additional information and assistance.</p>
+<p>Written requests or notifications may be sent to:</p>
+<p style="margin-left: 20px;">Deltek - Office of the General Counsel<br/>
+Attn: Privacy<br/>
+2291 Wood Oak Drive<br/>
+Herndon, VA 20171
+USA
+</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" id="headingTen" role="tab">
+<h4 class="panel-title">
+<a aria-controls="collapseTen" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseTen" name="pdcc" role="button">
+<em class="more-less glyphicon glyphicon-plus"></em>
+X. Personal Data Categories Chart
+</a>
+</h4>
+</div>
+<div aria-expanded="false" aria-labelledby="headingTen" class="panel-collapse collapse" id="collapseTen" role="tabpanel">
+<div class="panel-body">
+<p style="margin-top: -5px;">This chart is for informational purposes only. Deltek customers should consult their Services Agreement or contact their Customer Care Representative for information on the scope of Personal Data pertinent to their Services.</p>
+<div class="comparison" style="margin-top: 8px; margin-bottom: 20px;">
+<table>
+<thead>
+<tr>
+<th class="compare-heading">
+            Category of Personal Data
+            </th>
+<th class="compare-heading">
+            Specific Pieces of Personal Data
+            </th>
+</tr>
+</thead>
+<tbody>
+<tr class="compare-row">
+<td valign="top"><span class="tickblue">
+<p>A. Identifiers</p>
+</span></td>
+<td valign="top"><span class="tickblue">
+<p>Name, alias, postal address, unique personal identifier, online identifier, IP address, email address, account name, or other similar identifiers.</p>
+</span></td>
+</tr>
+<tr>
+<td valign="top"><span class="tickblue">
+<p>B. Personal information per the <em>California Customer Records statute</em> (<em>Cal. Civ. Code § 1798.80(e)</em>)</p>
+</span></td>
+<td valign="top"><span class="tickblue">
+<p>Name, signature, address, or telephone number. </p>
+</span></td>
+</tr>
+<tr class="compare-row">
+<td valign="top"><span class="tickblue">
+<p>C. Commercial information</p>
+</span></td>
+<td valign="top"><span class="tickblue">
+<p>Records of products or services purchased, obtained, or considered.</p>
+</span></td>
+</tr>
+<tr>
+<td valign="top"><span class="tickblue">
+<p>D. Internet or other similar network activity</p>
+</span></td>
+<td valign="top"><span class="tickblue">
+<p>Browsing history, search history, or information on User interactions with the Sites or Services.</p>
+</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--</div>-->
+</div>
+</div>
+<!-- panel-group -->
+</div>
+<!-- container -->
+</div>
+</div>
+</div></p>
+</div>
+</div>
+</div>
+</div><footer>
+<div class="main-footer">
+<div class="top-links hidden-xs">
+<div class="container">
+<div class="menu-nav">
+<nav>
+<nav>
+<ul class="list-inline">
+<li>
+<a data-gtm="footer-nav" href="/en/industries">Industries</a>
+</li>
+<li>
+<a data-gtm="footer-nav" href="/en/products">Products</a>
+</li>
+<li>
+<a data-gtm="footer-nav" href="/en/support">Support</a>
+</li>
+<li>
+<a data-gtm="footer-nav" href="/en/customers">Customers</a>
+</li>
+<li>
+<a data-gtm="footer-nav" href="/en/partners">Partners</a>
+</li>
+<li>
+<a data-gtm="footer-nav" href="/en/about">About</a>
+</li>
+</ul>
+</nav>
+</nav>
+</div>
+</div>
+</div><div class="footer-tools">
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-8">
+<div class="info">
+<div class="logo">
+<a data-gtm="footer-logo" href="/">
+<img alt="Deltek, Inc Logo" class="img-responsive" src="/-/media/images/deltek/logos/footer-logo.ashx?h=65&amp;iar=0&amp;w=425&amp;hash=F91BB1AD466F0D7239BF203BF8BF0559"/>
+</a>
+</div>
+<p>
+        Deltek is the leading global provider of software and solutions for project-based businesses.
+    </p>
+</div>
+<div class="communication">
+<span>Stay Connected</span>
+<p>US: 800.456.2009</p>
+<p><a href="/en/about/contact-us">Contact Us &gt;</a></p>
+</div>
+</div>
+<div class="hidden-xs col-sm-6 col-md-4">
+<div class="social">
+<span>Follow Us</span>
+<nav>
+<ul class="list-inline">
+<li>
+<a class="icon icon-fb" data-gtm="social-cta" href="https://www.facebook.com/deltekinc" rel="noopener noreferrer" target="_blank" title=" "> </a>
+</li>
+<li>
+<a class="icon icon-linkedin" data-gtm="social-cta" href="https://www.linkedin.com/company/deltek " rel="noopener noreferrer" target="_blank" title=" "> </a>
+</li>
+<li>
+<a class="icon icon-twitter" data-gtm="social-cta" href="https://twitter.com/Deltek" rel="noopener noreferrer" target="_blank"></a>
+</li>
+<li>
+<a class="icon icon-google" data-gtm="social-cta" href="https://www.instagram.com/deltekinc/" rel="noopener noreferrer" target="_blank"> </a>
+</li>
+<li>
+<a class="icon icon-youtube" data-gtm="social-cta" href="https://www.youtube.com/user/deltekinc" rel="noopener noreferrer" target="_blank"> </a>
+</li>
+</ul>
+</nav>
+</div><div class="newsletter">
+<a class="btn" href="https://info.deltek.com/deltek-opt-in?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=footerlink&amp;partnerref=website_deltek-com_footerlink" rel="noopener noreferrer" role="button" target="_blank" title="Join our Communications">Join our Communications</a></div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+<div class="legal-nav">
+<span>© 2022 Deltek, Inc.</span>
+<nav>
+<ul class="list-inline">
+<li>
+<a href="/en/legal">Privacy Policy</a>
+</li>
+<li>
+<a href="/-/media/legal/transparency-statement.ashx" rel="noopener noreferrer" target="_blank" title="Transparency Statement ">Transparency Statement</a>
+</li>
+<li>
+<!-- JUVE: ARCTRUST COOKIE PREFERENCE - START1 -->
+<div id="teconsent"></div>
+<!-- JUVE: ARCTRUST COOKIE PREFERENCE - END1 -->
+</li>
+<li>
+<a href="/en/sitemap">Sitemap</a>
+</li>
+</ul>
+</nav>
+</div>
+<!-- JUVE: ARCTRUST COOKIE PREFERENCE - START2 -->
+<script async="async" crossorigin="" src="//consent.trustarc.com/notice?domain=deltek.com&amp;c=teconsent&amp;text=true&gt;m=1"></script>
+<!-- JUVE: ARCTRUST COOKIE PREFERENCE - END2 -->
+</div>
+<div class="visible-xs col-xs-12">
+<div class="social">
+<span>Follow Us</span>
+<nav>
+<ul class="list-inline">
+<li>
+<a class="icon icon-fb" data-gtm="social-cta" href="https://www.facebook.com/deltekinc" rel="noopener noreferrer" target="_blank" title=" "> </a>
+</li>
+<li>
+<a class="icon icon-linkedin" data-gtm="social-cta" href="https://www.linkedin.com/company/deltek " rel="noopener noreferrer" target="_blank" title=" "> </a>
+</li>
+<li>
+<a class="icon icon-twitter" data-gtm="social-cta" href="https://twitter.com/Deltek" rel="noopener noreferrer" target="_blank"></a>
+</li>
+<li>
+<a class="icon icon-google" data-gtm="social-cta" href="https://www.instagram.com/deltekinc/" rel="noopener noreferrer" target="_blank"> </a>
+</li>
+<li>
+<a class="icon icon-youtube" data-gtm="social-cta" href="https://www.youtube.com/user/deltekinc" rel="noopener noreferrer" target="_blank"> </a>
+</li>
+</ul>
+</nav>
+</div><div class="newsletter">
+<a class="btn" href="https://info.deltek.com/deltek-opt-in?sourceid=49&amp;utm_source=deltek-com&amp;utm_medium=website&amp;utm_campaign=footerlink&amp;partnerref=website_deltek-com_footerlink" rel="noopener noreferrer" role="button" target="_blank" title="Join our Communications">Join our Communications</a></div>
+</div>
+</div>
+<div class="row">
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script src="/ui/js/main.js"></script>
+<script src="/ui/js/rolepicker.js"></script>
+<script src="/ui/js/pressreleases.js"></script>
+<script src="/ui/js/relatedproducts.js"></script>
+<script src="/ui/js/calculators/axium-roi.js"></script>
+<script src="/ui/js/pages/search-helper.js"></script>
+<script src="/ui/js/smLoadMore.js"></script>
+<script src="/ui/js/industriesList.js"></script>
+<script src="/ui/js/videoModal.js"></script>
+<script src="/ui/js/arrow-accordion.js"></script>
+<script src="/ui/js/cardTrio.js"></script>
+<script src="/ui/js/searchFilter.js"></script>
+<script src="/ui/js/clamp.min.js"></script>
+<script src="/ui/js/truncate.js"></script>
+<script src="/ui/js/objectFitPolyfill.js"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-SVN7" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<script defer="" src="/ui/js/GTM.js"></script>
+</body>
+</html>

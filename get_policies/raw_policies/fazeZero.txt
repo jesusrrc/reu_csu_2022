@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<script data-cfasync="false" data-ezscrex="false" data-pagespeed-no-defer="">var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=true;__ez.queue=(function(){var count=0,incr=0,items=[],timeDelayFired=false,hpItems=[],lpItems=[],allowLoad=true;var obj={func:function(name,funcName,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError){var self=this;this.name=name;this.funcName=funcName;this.parameters=parameters===null?null:(parameters instanceof Array)?parameters:[parameters];this.isBlock=isBlock;this.blockedBy=blockedBy;this.deleteWhenComplete=deleteWhenComplete;this.isError=false;this.isComplete=false;this.isInitialized=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){log("... func = "+name);self.isInitialized=true;self.isComplete=true;log("... func.apply: "+name);var funcs=self.funcName.split('.');var func=null;if(funcs.length>3){}else if(funcs.length===3){func=window[funcs[0]][funcs[1]][funcs[2]];}else if(funcs.length===2){func=window[funcs[0]][funcs[1]];}else{func=window[self.funcName];}
+if(typeof func!=='undefined'&&func!==null){func.apply(null,this.parameters);}
+if(self.deleteWhenComplete===true)delete items[name];if(self.isBlock===true){log("----- F'D: "+self.name);processAll();}}},file:function(name,path,isBlock,blockedBy,async,defer,proceedIfError){var self=this;this.name=name;this.path=path;this.async=async;this.defer=defer;this.isBlock=isBlock;this.blockedBy=blockedBy;this.isInitialized=false;this.isError=false;this.isComplete=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){self.isInitialized=true;log("... file = "+name);var scr=document.createElement('script');scr.src=path;if(async===true)scr.async=true;else if(defer===true)scr.defer=true;scr.onerror=function(){log("----- ERR'D: "+self.name);self.isError=true;if(self.isBlock===true){processAll();}};scr.onreadystatechange=scr.onload=function(){var state=scr.readyState;log("----- F'D: "+self.name);if((!state||/loaded|complete/.test(state))){self.isComplete=true;if(self.isBlock===true){processAll();}}};document.getElementsByTagName('head')[0].appendChild(scr);}},fileLoaded:function(name,isComplete){this.name=name;this.path="";this.async=false;this.defer=false;this.isBlock=false;this.blockedBy=[];this.isInitialized=true;this.isError=false;this.isComplete=isComplete;this.proceedIfError=false;this.isTimeDelay=false;this.process=function(){};}};function init(){window.addEventListener("load",function(){setTimeout(function(){timeDelayFired=true;log('TDELAY -----');processAll();},5000);},false);}
+function addFile(name,path,isBlock,blockedBy,async,defer,proceedIfError,priority){var item=new obj.file(name,path,isBlock,blockedBy,async,defer,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function setallowLoad(settobool){allowLoad=settobool}
+function addFunc(name,func,parameters,isBlock,blockedBy,autoInc,deleteWhenComplete,proceedIfError,priority){if(autoInc===true)name=name+"_"+incr++;var item=new obj.func(name,func,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFile(name,path){var item=new obj.file(name,path,false,[],false,false,true);item.isTimeDelay=true;log(name+' ... '+' FILE! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,parameters,false,[],true,true);item.isTimeDelay=true;log(name+' ... '+' FUNCTION! TDELAY');lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
+function isBlocked(item){if(item.isTimeDelay===true&&timeDelayFired===false){log(item.name+" blocked = TIME DELAY!");return true;}
+if(item.blockedBy instanceof Array){for(var i=0;i<item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+" blocked = "+block);return true;}else if(item.proceedIfError===true&&items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+" blocked = "+block);return true;}}}
+return false;}
+function markLoaded(filename){if(!filename||0===filename.length){return;}
+if(filename in items){var item=items[filename];if(item.isComplete===true){log(item.name+' '+filename+': error loaded duplicate')}else{item.isComplete=true;item.isInitialized=true;}}else{items[filename]=new obj.fileLoaded(filename,true);}
+log("markLoaded dummyfile: "+items[filename].name);}
+function logWhatsBlocked(){for(var i in items){if(items.hasOwnProperty(i)===false)continue;var item=items[i];isBlocked(item)}}
+function log(msg){var href=window.location.href;var reg=new RegExp('[?&]ezq=([^&#]*)','i');var string=reg.exec(href);var res=string?string[1]:null;if(res==="1")console.debug(msg);}
+function processAll(){count++;if(count>200)return;log("let's go");processItems(hpItems);processItems(lpItems);}
+function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+': error')}else if(item.isComplete===true){log(item.name+': complete already')}else if(item.isInitialized===true){log(item.name+': initialized already')}}else{item.process();}}}
+init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad,markLoaded:markLoaded,logWhatsBlocked:logWhatsBlocked,};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent("on"+t,n):delete e["on"+t]};__ez.script.add=function(e){var t=document.createElement("script");t.src=e,t.async=!0,t.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(t)};__ez.dot={};__ez.queue.addFile('/detroitchicago/boise.js', '/detroitchicago/boise.js?gcb=195-0&cb=1', true, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/memphis.js', '/detroitchicago/memphis.js?gcb=195-0&cb=16', true, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/minneapolis.js', '/detroitchicago/minneapolis.js?gcb=195-0&cb=3', true, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/rochester.js', '/detroitchicago/rochester.js?gcb=195-0&cb=12', false, ['/detroitchicago/memphis.js','/detroitchicago/minneapolis.js'], true, false, true, false);__ez.vep=(function(){var pixels=[],pxURL="/detroitchicago/grapefruit.gif";function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&&__ez.dot.isValid(pixelData)){pixels.push({type:'video',video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender"){return;}
+if(__ez.dot.isDefined(pixels)&&pixels.length>0){while(pixels.length>0){var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(__ez.template.isOrig===true?1:0)+"&v="+btoa(JSON.stringify(pushPixels));__ez.dot.Fire(pixelURL);}}
+pixels=[];}
+return{Add:AddPixel,Fire:Fire};})();</script><script data-cfasync="false" data-ezscrex="false" data-pagespeed-no-defer="">__ez.pel=(function(){var pixels=[],pxURL="/porpoiseant/army.gif";function AddAndFirePixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0);Fire();}
+function AddAndFireOrigPixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0,true);Fire();}
+function GetCurrentPixels(){return pixels;}
+function AddPixel(adSlot,pixelData,revenue,est_revenue,bid_floor_filled,bid_floor_prev,stat_source_id,isOrig){if(!__ez.dot.isDefined(adSlot)||__ez.dot.isAnyDefined(adSlot.getSlotElementId,adSlot.ElementId)==false){return;}
+if(typeof isOrig==='undefined'){isOrig=false;}
+var ad_position_id=parseInt(__ez.dot.getTargeting(adSlot,'ap'));var impId=__ez.dot.getSlotIID(adSlot),adUnit=__ez.dot.getAdUnit(adSlot,isOrig);var compId=parseInt(__ez.dot.getTargeting(adSlot,"compid"));var lineItemId=0;var creativeId=0;var ezimData=getEzimData(adSlot);if(typeof ezimData=='object'){if(ezimData.creative_id!==undefined){creativeId=ezimData.creative_id;}
+if(ezimData.line_item_id!==undefined){lineItemId=ezimData.line_item_id;}}
+if(__ez.dot.isDefined(impId,adUnit)&&__ez.dot.isValid(pixelData)){if((impId!=="0"||isOrig===true)&&adUnit!==""){pixels.push({type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),revenue:revenue,est_revenue:est_revenue,ad_position:ad_position_id,ad_size:"",bid_floor_filled:bid_floor_filled,bid_floor_prev:bid_floor_prev,stat_source_id:stat_source_id,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:compId,line_item_id:lineItemId,creative_id:creativeId,data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig,});}}}
+function AddPixelById(impFullId,pixelData,isOrig,revenue){var vals=impFullId.split('/');if(__ez.dot.isDefined(impFullId)&&vals.length===3&&__ez.dot.isValid(pixelData)){var adUnit=vals[0],impId=vals[2];var pix={type:"impression",impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig};if(typeof revenue!=='undefined'){pix.revenue=revenue;}
+pixels.push(pix);}}
+function Fire(){if(typeof document.visibilityState!=='undefined'&&document.visibilityState==="prerender")return;if(__ez.dot.isDefined(pixels)&&pixels.length>0){var allPixels=[pixels.filter(function(pixel){return pixel.is_orig}),pixels.filter(function(pixel){return!pixel.is_orig})];allPixels.forEach(function(pixels){while(pixels.length>0){var isOrig=pixels[0].is_orig||false;var j=5;if(j>pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+"?orig="+(isOrig===true?1:0)+"&sts="+btoa(JSON.stringify(pushPixels));if(typeof window.isAmp!=='undefined'&&isAmp&&typeof window._ezaq!=='undefined'&&_ezaq.hasOwnProperty("domain_id")){pixelURL+="&visit_uuid="+_ezaq['visit_uuid'];}
+__ez.dot.Fire(pixelURL);}});}
+pixels=[];}
+function getEzimData(adSlot){if(typeof _ezim_d=="undefined"){return false;}
+var adUnitName=__ez.dot.getAdUnitPath(adSlot).split('/').pop();if(typeof _ezim_d==='object'&&_ezim_d.hasOwnProperty(adUnitName)){return _ezim_d[adUnitName];}
+for(var ezimKey in _ezim_d){if(ezimKey.split('/').pop()===adUnitName){return _ezim_d[ezimKey];}}
+return false;}
+return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();__ez.queue.addFile('/detroitchicago/raleigh.js', '/detroitchicago/raleigh.js?gcb=195-0&cb=5', false, [], true, false, true, false);__ez.queue.addFile('/detroitchicago/tampa.js', '/detroitchicago/tampa.js?gcb=195-0&cb=4', false, [], true, false, true, false);</script>
+<script data-cfasync="false" data-ezscrex="false">(function(){if("function"===typeof window.CustomEvent)return!1;window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:null};var b=document.createEvent("CustomEvent");b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b}})();</script><script data-cfasync="false" data-ezscrex="false">__ez.queue.addFile('/detroitchicago/tulsa.js', '/detroitchicago/tulsa.js?gcb=195-0&cb=6', false, [], true, false, true, false);</script>
+<meta content="FaxZero.com Privacy Policy" name="description"/>
+<meta content="FaxZero.com Privacy Policy" name="keywords"/>
+<title>FaxZero.com Privacy Policy</title>
+<meta content="website" property="og:type"/>
+<meta content="FaxZero.com" property="og:title"/>
+<meta content="Send a fax to anywhere in the U.S. or Canada for free." property="og:description"/>
+<meta content="https://FaxZero.com/" property="og:url"/>
+<meta content="FaxZero.com" property="og:site_name"/>
+<meta content="https://faxzero.com/images/logo200.png" property="og:image"/>
+<meta content="200" property="og:image:width"/>
+<meta content="200" property="og:image:height"/>
+<meta content="124295344264243" property="fb:admins"/>
+<meta content="https://www.facebook.com/FaxZero" property="article:publisher"/>
+<meta content="https://faxzero.com/images/logo200.png" property="og:image:secure_url"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="@FaxZero" name="twitter:site"/>
+<meta content="@FaxZero" name="twitter:creator"/>
+<meta content="FaxZero.com" name="twitter:domain"/>
+<meta content="FaxZero.com" name="twitter:title"/>
+<meta content="Send a fax to anywhere in the U.S. or Canada for free." name="twitter:description"/>
+<meta content="https://faxzero.com/images/logo200.png" name="twitter:image"/>
+<script async="" src="https://tf5.textshark.com/de_wrapper.php?cid=faxzero"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-876144366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments);}
+  gtag('js', new Date());
+ 
+  gtag('config', 'AW-876144366');
+</script>
+<script type="text/javascript">
+
+_linkedin_data_partner_id = "230786";
+
+</script><script type="text/javascript">
+
+(function(){var s = document.getElementsByTagName("script")[0];
+
+var b = document.createElement("script");
+
+b.type = "text/javascript";b.async = true;
+
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+
+s.parentNode.insertBefore(b, s);})();
+
+</script>
+<noscript>
+<img alt="" height="1" src="https://dc.ads.linkedin.com/collect/?pid=230786&amp;fmt=gif" style="display:none;" width="1"/>
+</noscript>
+<link href="/css/style_combined_min.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+function loadjsfile(filename){
+
+  var fileref=document.createElement('script')
+  fileref.setAttribute("type","text/javascript")
+  fileref.setAttribute("src", filename)
+
+  document.getElementsByTagName("head")[0].appendChild(fileref)
+}
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+<link href="https://faxzero.com/privacy_policy.php?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0" rel="canonical"/>
+<script type="text/javascript">var ezouid = "1";</script><base href="https://faxzero.com/privacy_policy.php?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0"/><script type="text/javascript">
+var ezoTemplate = 'old_site_gc';
+if(typeof ezouid == 'undefined')
+{
+    var ezouid = 'none';
+}
+var ezoFormfactor = '1';
+var ezo_elements_to_check = Array();
+</script><!-- START EZHEAD -->
+<script data-ezscrex="false" type="text/javascript">
+var soc_app_id = '0';
+var did = 181837;
+var ezdomain = 'faxzero.com';
+var ezoicSearchable = 1;
+</script>
+<!--{jquery}-->
+<!-- END EZHEAD -->
+<script data-cfasync="false" data-ezscrex="false" type="text/javascript">var _ezaq = {"ad_cache_level":0,"ad_lazyload_version":0,"ad_load_version":0,"city":"Macon","country":"US","days_since_last_visit":-1,"domain_id":181837,"engaged_time_visit":0,"ezcache_level":1,"ezcache_skip_code":11,"form_factor_id":1,"framework_id":1,"is_return_visitor":false,"is_sitespeed":0,"last_page_load":"","last_pageview_id":"","lt_cache_level":0,"metro_code":503,"page_ad_positions":"","page_view_count":0,"page_view_id":"f9413592-2cb8-4a5f-53d1-42c6f61624a1","position_selection_id":0,"postal_code":"31204","pv_event_count":0,"response_size_orig":56242,"response_time_orig":118,"serverid":"54.234.217.92:6313","state":"GA","t_epoch":1655758074,"template_id":126,"time_on_site_visit":0,"url":"https://faxzero.com/privacy_policy.php?Access-Control-Allow-Origin=%2A\u0026Access-Control-Allow-Methods=GET\u0026Access-Control-Allow-Headers=Content-Type\u0026Access-Control-Max-Age=3600\u0026User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0","user_id":0,"word_count":2580,"worst_bad_word_level":0};var _ezExtraQueries = "&ez_orig=1";</script>
+<script data-cfasync="false" data-ezscrex="false" data-pagespeed-no-defer="">
+function create_ezolpl(pvID, rv) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    __ez.ck.setByCat("ezux_lpl_181837=" + new Date().getTime() + "|" + pvID + "|" + rv + "; " + expires, 3);
+}
+function attach_ezolpl(pvID, rv) {
+    if (document.readyState === "complete") {
+        create_ezolpl(pvID, rv);
+    }
+    if(window.attachEvent) {
+        window.attachEvent("onload", create_ezolpl, pvID, rv);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                create_ezolpl(pvID, rv);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = create_ezolpl.bind(null, pvID, rv);
+        }
+    }
+}
+
+__ez.queue.addFunc("attach_ezolpl", "attach_ezolpl", ["f9413592-2cb8-4a5f-53d1-42c6f61624a1", "false"], false, ['/detroitchicago/boise.js'], true, false, false, false);
+</script></head>
+<body dir="LTR" lang="en-US" link="#0000ff" text="#000000">
+<table border="1" cellspacing="1" id="header_contact" style="border-color:#A7CF3A;background-color:#009FDB; border-collapse: collapse;" width="100%">
+<tbody><tr>
+<td width="100%">
+<table border="0" cellspacing="1" id="AutoNumber4" style="border-collapse: collapse;border-color:#1111111;" width="100%">
+<tbody><tr>
+<td align="center" width="50%">
+<font color="#FFFFFF" face="Verdana" style="font-size: 8pt"><b>24,076,073 faxes sent</b></font></td>
+<td align="center" width="50%">
+<font color="#FFFFFF" face="Verdana" style="font-size: 8pt"><b>
+<a href="//faxzero.com/faq.php">
+<font color="#FFFFFF">faq</font></a></b>Â  |Â  <b>
+<a href="//faxzero.com/contact.php">
+<font color="#FFFFFF">contact</font></a></b></font></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<div id="feature-banner">
+<p>FaxZero has been featured in:</p>
+<a href="//faxzero.com/kudos.php">link</a>
+</div>
+<div id="header">
+<table border="0" cellpadding="0" cellspacing="3" class="admin-text" id="AutoNumber2" style="border-collapse: collapse; border-color:#E5E5E5;">
+<tbody><tr><td>Â </td></tr>
+<tr>
+<td valign="top" width="100%">
+<div class="header">
+<a href="https://faxzero.com"><img align="top" alt="FaxZero.com" border="0" height="116" src="https://faxzero.com/images/faxzero_logo_summer.png" width="273"/></a>
+<br/><span class="print_conf">Send faxes for free to anywhere in the U.S. and Canada
+		            <br/>Or, <a href="https://faxzero.com/international/">Send an International Fax</a><br/><a href="//faxzero.com/fax_congress.php">Fax your congressperson</a>, <a href="//faxzero.com/fax_senate.php">senator</a>, or <a href="https://faxzero.com/fax_governor.php">governor</a></span>
+<br/><br/><br/>
+<script type="text/javascript">
+			            <!--
+
+var validated_uploads = new Object();
+validated_uploads.fcontent='';
+validated_uploads.fcontent2='';
+validated_uploads.fcontent3='';
+validated_uploads.uglyfile = new Array();
+validated_uploads.uglyfile2 = new Array();
+validated_uploads.uglyfile3 = new Array();
+validated_uploads.unsfile = new Array();
+validated_uploads.unsfile2 = new Array();
+validated_uploads.unsfile3 = new Array();
+validated_uploads.spfile = new Array();
+validated_uploads.spfile2 = new Array();
+validated_uploads.spfile3 = new Array();
+
+	function good_ext(ufilename)
+	{	
+
+		if (ufilename!='')
+		{
+			var true_ext=get_ext(ufilename);
+			if (true_ext=='')
+			{
+				return true;
+			}
+			else
+			{
+				if (true_ext.search(/\.(doc|docx|rtf|pdf|ppt|png|jpg|jpeg|gif|tif|tiff|xls|xlsx|txt|htm|html)/i)==-1)
+				{
+				teststr='doc|docx|rtf|pdf|ppt|png|jpg|jpeg|gif|tif|tiff|xls|xlsx|txt|htm|html';
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+
+			}
+
+
+		} 
+		return true;
+
+	}
+	function get_rec_ext_suggestions(true_ext)
+	{
+	
+	var true_ext=true_ext.toLowerCase();
+		switch(true_ext)
+		{
+		case '.odt':
+			return 'Please covert your ODT documents to DOC or PDF to fax them.';
+		  break;
+		  case '.xps':
+			return 'Please covert your XPS documents to DOC or PDF to fax them.';
+		  break;
+		  case '.zip':
+			return 'Please extract your documents from the zip file to fax them.';
+		  break;
+		 case '.wps':
+			return 'Please save your wps file as doc or rtf and try again.';
+		  break;
+		 case '.js':
+			return 'Please rename your javascript file as .txt and try again.';
+		  break;
+		 case '.xml':
+			return 'Please rename your xml file as .txt and try again.';
+		  break;
+
+		default:
+			return 'Try converting or copy the conent of your document to a supported format and try again.';	
+	}
+
+	}
+	function get_ext(ufilename)
+	{
+
+		if (ufilename!='')
+		{
+
+	 	var period=ufilename.lastIndexOf('.');
+		
+		if (period==-1)
+		{
+			return '';
+		}
+		else
+		{		
+			return ufilename.substr(period);
+		}
+		}
+		else
+		{
+			return '';
+		}
+	}
+
+function ugly_ext(ufilename)
+	{
+	
+		if (ufilename!='')
+		{
+			var true_ext=get_ext(ufilename);
+	if (true_ext=='')
+			{
+				return true;
+			}
+			else
+			{
+				if (true_ext.search(/\.(docm|pub|pages|vsd|bmp|odt|log|sig|sql|wma|mp3|wmv|lnk|pst|com|mht|js|wps|xml|zip|max|cab|exe|dll|cwk|jnt|xml|opd|dat|shs|qpw|xps|gdoc|gsheet|gdraw|gtable|gform|gslides)/i)!=-1)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+
+			}
+
+
+		} 
+		return true;
+	
+	}
+	function get_total_files_selected()
+	{
+		return this.document.getElementById('file').files.length+this.document.getElementById('file2').files.length+this.document.getElementById('file3').files.length;
+	}
+	function humanFileSize(bytes, si) {
+    var thresh = si ? 1000 : 1024;
+    if(Math.abs(bytes) < thresh) {
+        return bytes + ' B';
+    }
+    var units = si
+        ? ['kB','MB','GB','TB','PB','EB','ZB','YB']
+        : ['KiB','MiB','GiB','TiB','PiB','EiB','ZiB','YiB'];
+    var u = -1;
+    do {
+        bytes /= thresh;
+        ++u;
+    } while(Math.abs(bytes) >= thresh && u < units.length - 1);
+    return bytes.toFixed(1)+' '+units[u];
+}
+	function get_file_selected_size()
+{
+	var total_size=0;
+
+	var inpFiles = document.getElementsByName('fax_file[]');
+
+	for (var j = 0; j < inpFiles.length; j++) 
+	{
+		{
+
+			for (var i = 0; i < inpFiles[j].files.length; ++i) {
+				var size = inpFiles[j].files.item(i).size;
+				total_size=total_size+size;
+			
+				}
+		}
+	}
+		return total_size
+	
+		
+}
+	function ugly_remain()
+	{
+    if (validated_uploads.uglyfile.length+validated_uploads.uglyfile2.length+validated_uploads.uglyfile3.length>0)
+    {
+	return true;
+	}
+	return false;
+	
+	}
+function make_fupload_content(inpnumber)
+{
+var fupload_content='';
+if (validated_uploads['uglyfile'+inpnumber].length>0)
+{
+fupload_content+='<span style="color:red"><b>Definitely unsupported file(s):</b></span><br/>';
+
+for (var uglyfileindex in validated_uploads['uglyfile'+inpnumber])
+{
+fupload_content+='<span title="'+get_rec_ext_suggestions(get_ext(validated_uploads['uglyfile'+inpnumber][uglyfileindex]))+'">'+validated_uploads['uglyfile'+inpnumber][uglyfileindex]+'</span><br />';
+}
+fupload_content+='<br />';
+}
+if (validated_uploads['unsfile'+inpnumber].length>0)
+{
+fupload_content+='<b>Possibly unsupported file(s):</b><br/>'+validated_uploads['unsfile'+inpnumber].join('<br />')+'<br />';
+}
+if (validated_uploads['spfile'+inpnumber].length>0)
+{
+fupload_content+='<br /><b>Supported file(s):</b><br/>'+validated_uploads['spfile'+inpnumber].join('<br />')+'<br />';
+}
+return fupload_content;
+}
+function bad_email(sender_emailaddress)
+{
+sender_emailaddress=sender_emailaddress.toLowerCase();
+    var atloc= sender_emailaddress.lastIndexOf('@');
+    if (atloc ==-1) {
+      return 'no_at';
+    }
+
+      return 'not_ms';
+    
+
+
+}
+function checkext(inpnumber)
+    {
+	      if (inpnumber==null)
+      {
+        inpnumber='';
+
+      }
+validated_uploads['uglyfile'+inpnumber]=[];
+validated_uploads['unsfile'+inpnumber]=[];
+validated_uploads['spfile'+inpnumber]=[];
+if (this.document.getElementById('file'+inpnumber).files.length==1)
+{
+
+      if (!ugly_ext(this.document.getElementById('file'+inpnumber).value))
+      {
+	
+        if (good_ext(this.document.getElementById('file'+inpnumber).value))
+        {
+	validated_uploads['spfile'+inpnumber].push(this.document.getElementById('file'+inpnumber).files[0].name);
+validated_uploads['fcontent'+inpnumber]=make_fupload_content(inpnumber);
+
+          this.document.getElementById('jsfaxerr').innerHTML='';
+          this.document.getElementById('alert_file'+inpnumber).style.color="#00FF00";
+	   this.document.getElementById('alert_file'+inpnumber).innerHTML='<span title="Supported file format.">&#10004;</span>';
+	   this.document.getElementById('file'+inpnumber).title='Supported file format.';
+
+          return true;
+        }
+        else
+        {
+			validated_uploads['unsfile'+inpnumber].push(this.document.getElementById('file'+inpnumber).files[0].name);
+
+          this.document.getElementById('alert_file'+inpnumber).style.color="#FF0000";
+	   this.document.getElementById('alert_file'+inpnumber).innerHTML='<span title="Most likely this file will not be sent properly. We highly suggest converting it to a known supported format">?</span>';
+	   this.document.getElementById('file'+inpnumber).title='Most likely this file will not be sent properly. We highly suggest converting it to a known supported format';
+
+          this.document.getElementById('jsfaxerr').innerHTML='The file you just attached may not be supported by our system.<br /><a href="faq.php#formats" target="_blank">Click to see the list of supported formats</a>';
+          return false;
+        }
+      }
+      else
+      {
+
+	validated_uploads['uglyfile'+inpnumber].push(this.document.getElementById('file'+inpnumber).files[0].name);
+
+	   this.document.getElementById('alert_file'+inpnumber).style.color="#FF0000";
+	   this.document.getElementById('alert_file'+inpnumber).innerHTML='<span title="'+get_rec_ext_suggestions(get_ext(this.document.getElementById('file'+inpnumber).value))+'">&#10008;</span>';
+	   this.document.getElementById('file'+inpnumber).title=get_rec_ext_suggestions(get_ext(this.document.getElementById('file'+inpnumber).value));
+       this.document.getElementById('jsfaxerr').innerHTML='The file you just attached is not supported by our system and cannot be faxed. <a href="faq.php#formats" target="_blank">Click to see the list of supported formats</a>';
+          return false;
+      
+      }
+
+    }
+	else
+	{
+
+	if (this.document.getElementById('file'+inpnumber).files.length==0)
+	{
+					  this.document.getElementById('jsfaxerr').innerHTML='';
+		   this.document.getElementById('alert_file'+inpnumber).innerHTML='';
+			 this.document.getElementById('file'+inpnumber).title='';
+	return true;
+	}
+	
+		var bad_found=false;
+			for (fcount=0; fcount<this.document.getElementById('file'+inpnumber).files.length; fcount++)
+		{
+if (!ugly_ext(this.document.getElementById('file'+inpnumber).files[fcount].name))
+      {
+
+	
+        if (good_ext(this.document.getElementById('file'+inpnumber).files[fcount].name))
+        {
+			validated_uploads['spfile'+inpnumber].push(this.document.getElementById('file'+inpnumber).files[fcount].name);
+
+        }
+        else
+        {
+
+         		bad_found=true;
+				validated_uploads['unsfile'+inpnumber].push(this.document.getElementById('file'+inpnumber).files[fcount].name);
+
+        }
+		}
+		 else
+      {
+
+		bad_found=true;
+     	validated_uploads['uglyfile'+inpnumber].push(this.document.getElementById('file'+inpnumber).files[fcount].name);
+
+      }
+	}
+validated_uploads['fcontent'+inpnumber]=make_fupload_content(inpnumber);
+
+		if (bad_found==true)
+		{
+		 this.document.getElementById('alert_file'+inpnumber).style.color="#FF0000";
+	   this.document.getElementById('alert_file'+inpnumber).innerHTML='<span title="Most likely the attachments will not be sent properly. We highly suggest converting problem files to a known supported format">'+
+	   '<div style="cursor:pointer; color:#FF0000; text-decoration:none;" onclick="javascript: show_f_popup('+"'cfileudiv"+"',validated_uploads['fcontent"+inpnumber+"'],'lightboxspace"+"'); return false;"+'">'+
+	   '?</div></span>';
+	   this.document.getElementById('file'+inpnumber).title='Most likely the attachments will not be sent properly. We highly suggest converting problem files to a known supported format';
+			 this.document.getElementById('jsfaxerr').innerHTML='One or more of the files you just selected may not be supported by our system.<br /><a href="faq.php#formats" target="_blank">Click to see the list of supported formats</a>';
+		return false;
+		}
+		else
+		{
+				  this.document.getElementById('jsfaxerr').innerHTML='';
+			  this.document.getElementById('alert_file'+inpnumber).style.color="#00FF00";
+		   this.document.getElementById('alert_file'+inpnumber).innerHTML='<span title="All selected files are of supported file format.">'+
+	   '<div style="cursor:pointer; color:#00FF00; text-decoration:none;" onclick="javascript: show_f_popup('+"'cfileudiv"+"',validated_uploads['fcontent"+inpnumber+"'],'lightboxspace"+"'); return false;"+'">'+
+	   '&#10004;</span>';
+			 this.document.getElementById('file'+inpnumber).title='All selected files are of supported file format.';
+		return true;
+		}
+	}
+}
+
+			            // -->
+			        </script>
+<script type="text/javascript">    
+			             <!--
+	var google_adnum = 0;
+			          // -->
+			        </script>
+</div>
+</td>
+</tr>
+<tr>
+<td valign="top" width="100%"><h2 style="color:red;"></h2>Â </td>
+</tr>
+<tr>
+<td valign="top" width="100%">
+<style type="text/css">
+.statelink a:link
+{
+    font-size: 9pt !important;
+}
+</style>
+<div align="center" class="msg confirm rounded" style="width: auto !important;">
+<meta content="text/html; charset=utf-8" http-equiv="CONTENT-TYPE"/>
+<title>_</title>
+<meta content="OpenOffice 4.1.3  (Win32)" name="GENERATOR"/>
+<meta content="20161118;21233730" name="CREATED"/>
+<meta content="0;0" name="CHANGED"/>
+<meta content="14.0000" name="AppVersion"/>
+<meta content="0" name="DocSecurity"/>
+<meta content="false" name="HyperlinksChanged"/>
+<meta content="false" name="LinksUpToDate"/>
+<meta content="false" name="ScaleCrop"/>
+<meta content="false" name="ShareDoc"/>
+<style type="text/css">
+	<!--
+		@page { margin-left: 2.54cm; margin-right: 2.54cm; margin-top: 1.27cm; margin-bottom: 1.27cm }
+		@page:first { }
+		P { margin-bottom: 0.21cm; direction: ltr; color: #000000; widows: 2; orphans: 2 }
+		P.western { font-size: 12pt; so-language: en-AU }
+		P.cjk { font-family: "?????? Pro W3"; font-size: 12pt }
+		P.ctl { font-size: 12pt }
+		H2 { margin-top: 0.35cm; margin-bottom: 0cm; direction: ltr; color: #4f81bd; page-break-inside: avoid; widows: 2; orphans: 2 }
+		H2.western { font-family: "Cambria", serif; font-size: 13pt; so-language: en-AU }
+		H2.cjk { font-family: "?????? Pro W3"; font-size: 13pt }
+		H2.ctl { font-family: "Times New Roman"; font-size: 13pt }
+		A:link { color: #0000ff; so-language: zxx }
+	-->
+	</style>
+<div type="HEADER">
+<p align="RIGHT" lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+</div>
+<p align="CENTER" class="western" lang="en-AU" style="margin-bottom: 0cm"><a name="_GoBack"></a>
+<font color="#00000a"><font face="Calibri, serif"><b>FaxZero.com
+Online Privacy Policy</b></font></font></p>
+<p class="western" lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+<p class="western" lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif"><b>Effective: November 30 2016</b></font></font><font color="#ff4500"><font face="Calibri, serif">
+</font></font>
+</p>
+<p align="CENTER" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif">Savetz Publishing
+Inc. (âSavetzâ, âwe,â âus,â
+âourâ) is committed to letting you know how we will
+collect and use your personally identifiable information.  This
+Privacy Policy is applicable to our </font></font><font face="Calibri, serif">FaxZero.com
+(including any versions optimized for viewing on wireless or tablet
+devices) (âWebsiteâ), and to the Internet-based facsimile
+(âfaxâ) transmission services provided by Savetz on the
+Website (the âFax Servicesâ).  </font><font color="#00000a"><font face="Calibri, serif">We
+have established this Privacy Policy to let you know the kinds of
+information we may gather, why we gather your information, what we
+use your information for, when we might disclose your information,
+and how you can manage your information.  </font></font>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p lang="en-AU" style="margin-bottom: 0cm"><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3">Please
+note that this Privacy Policy applies only to FaxZero.com, and not to
+any other website owned or operated by Savetz.  </font></font></font></span></span></font></font></font><font color="#00000a"><font face="Calibri, serif">To
+understand how Savetz handles your information with respect to the
+use of those websites, please consult the privacy policy governing those websites, located at <a href="https://www.savetzpublishing.com/privacy_policy.php">https://www.savetzpublishing.com/privacy_policy.php</a></font></font>
+<font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3">
+</font></font></font></span></span></font></font></font><font color="#00000a"><font face="Calibri, serif">.</font></font></p>
+<p lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+<p lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif">This
+Privacy Policy also</font></font><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3">
+does </font></font></font></span></span></font></font></font><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3">not
+apply to information that you may submit to us offline, or to
+third-party websites and applications that may be linked to or from
+the Website.  </font></font></font></span></span></font></font></font><font color="#00000a"><font face="Calibri, serif">We
+are not responsible for the actions and privacy policies of such
+third-party </font></font><font color="#00000a"><font face="Calibri, serif"><span lang="en-US">websites
+and applications.</span></font></font><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3">
+Please consult the privacy policies of those third-party websites and
+applications for information about their data practices.</font></font></font></span></span></font></font></font></p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif"><b>By visiting the
+Website and/or using the Fax Services, you are accepting the
+practices described in this Privacy Policy.  If you do not agree to
+the terms of this Privacy Policy, please do not use the Website or
+Fax Services  We reserve the right to modify the terms of this
+Privacy Policy from time to time without notice. Your continued use
+of our Website or Fax Services following the posting of changes will
+mean that you accept those changes.  </b></font></font>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<h2 align="JUSTIFY" class="western" lang="en-AU" style="margin-top: 0cm; page-break-inside: auto">
+Part I<font color="#00000a"><font face="Calibri, serif">If you have
+any questions about this </font></font><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3">Privacy
+Policy</font></font></font></span></span></font></font></font><font color="#00000a"><font face="Calibri, serif">,
+you should contact us by email at support@FaxZero.com</font></font><font color="#00000a"><font face="Calibri, serif"><span style="font-weight: normal">.</span></font></font><font color="#00000a"><font face="Calibri, serif">
+</font></font>
+</h2>
+<p class="western" lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+<ol>
+<li><h2 align="JUSTIFY" class="western" lang="en-AU" style="margin-top: 0cm; page-break-inside: auto">
+<font color="#00000a"><font face="Calibri, serif"><font size="3">What
+	Information About Me Is Collected and Stored?</font></font></font></h2>
+</li></ol>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p lang="en-AU" style="margin-bottom: 0cm"><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3">We
+collect two basic types of information from you: (1) personally
+identifiable information (âPIIâ) and (2) non-personally
+identifiable information (ânon-PIIâ).  PII is any
+information that you supply to us that can individually identify you.
+ PII includes, among other things, your name, contact information
+(</font></font></font></span></span></font></font></font><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3"><i>e.g.</i></font></font></font></span></span></font></font></font><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3">,
+email address, postal address, telephone number), payment information
+(</font></font></font></span></span></font></font></font><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3"><i>e.g.</i></font></font></font></span></span></font></font></font><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3">,
+credit/debit card information, bank account number), driverâs
+license or state identification number, social security number,
+photographs in which you may be recognized, and biometric information
+(</font></font></font></span></span></font></font></font><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3"><i>e.g.</i></font></font></font></span></span></font></font></font><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3">,
+fingerprints, voiceprints).  Non-PII includes information that does
+not personally identify you.  Non-PII includes, among other things,
+information about your use of the Website, such as your IP address,
+device identifiers, general location information, and demographic
+data.</font></font></font></span></span></font></font></font></p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<ol>
+<ol type="A">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif"><b>Personally
+		Identifiable Information</b></font></font></p>
+</li></ol>
+</ol>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif">As a general
+matter, you can browse the Website without submitting your PII to us.
+ However, there are a number of circumstances in which you may choose
+supply us with your PII.  The following lists the most common ways in
+which we may collect your PII:</font></font></p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<ul>
+<li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Submission
+	of sender and receiver information when sending a fax.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Submission
+	of content to be sent in a fax.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Request
+	for customer service or other assistance.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Sign
+	up to receive e-mail newsletters or alerts.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Purchasing
+	Fax Services on the Website.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif">Participation
+	on, and interaction with, social media accounts involving Savetz.</font></font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Any
+	other place where you knowingly volunteer information through the
+	Website or Fax Services.</font></p>
+</li></ul>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+<ol>
+<ol start="2" type="A">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font face="Arial, serif"><font size="2"><font color="#00000a"><font face="Calibri, serif"><font size="3"><b>Non-Personally
+		Identifiable Information</b></font></font></font></font></font></p>
+</li></ol>
+</ol>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif">As stated above, we
+also collect </font></font><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3">non-PII
+when users interact with the Website.  Non-PII does not personally
+identify you.  </font></font></font></span></span></font></font></font><font color="#00000a"><font face="Calibri, serif">Generally,
+we collect and store the following categories of non-PII:</font></font></p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<ul>
+<li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Device
+	information used to access the Website.  This may include an IP
+	address, unique device identifiers, browser type, browser language,
+	and similar information.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Usage
+	information about your interaction with the Website. This includes a
+	history of the pages viewed or advertisements clicked on, or other
+	information used to customize the Website.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Additional
+	 use data, such as time and date of access, software crash reports,
+	session identification number, and referring website addresses.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Aggregate
+	data regarding the use of the Website.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Demographic
+	data such as age, gender, and five-digit ZIP code.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">User
+	search terms and search results.</font></p>
+</li></ul>
+<p class="western" lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+<ol>
+<ol start="3" type="A">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif"><b>Collection
+		of Your Location Information</b></font></font></p>
+</li></ol>
+</ol>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif">You may send us
+information which may disclose the general location of your device at
+the time you access the Website.  Advertisements and certain content
+may be directed to you as a result of the collection of this data. 
+In addition, in some cases, the Website can deliver content based on
+your specific location if you choose to enable that feature.</font></font></p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<ol>
+<ol start="4" type="A">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif"><b>Use
+		of Cookies, Other Tracking Technologies, and Internet Advertising</b></font></font></p>
+</li></ol>
+</ol>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif">Like many websites,
+we use âcookies,â which are small text files stored on
+your computer or equipment when you visit certain online pages that
+record your preferences and actions. We use cookies to track use of
+the Website and our online services.  We may also use cookies to
+monitor traffic, improve the Website, and make the Website easier to
+use and more relevant.  </font></font><font face="Calibri, serif">Most
+web browsers automatically accept cookies.  If you prefer, however,
+you can usually modify your browser setting to disable or reject
+cookies. If you delete your cookies or if you set your browser to
+decline cookies, some features of the Website may not work or may not
+work as designed.  For more information on cookies and how to disable
+them, you can consult the information provided by the Interactive
+Advertising Bureau at </font><a href="http://www.allaboutcookies.org"><font face="Calibri, serif"><u>www.allaboutcookies.org</u></font></a><font face="Calibri, serif">.
+ </font>
+</p>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm;">
+<font color="#00000a"><font face="Calibri, serif"><span lang="en-US">We
+may use web beacons or other technologies on the Website.  A web
+beacon (also known as âaction tagsâ, âtracer tagsâ,
+or âsingle-pixel gifsâ) is an invisible graphic on a web
+page that is programmed to collect information about your use of a
+given website. We do not share or provide PII we may collect through
+such web beacons, such as names, e-mail addresses and phone numbers
+with third parties without your express permission.  We may also use
+locally stored objects to store data about your use of the Website. 
+Locally stored objects are a feature that permits websites to store
+data on your computer but not in a cookie.</span></font></font></p>
+<br/>
+<p></p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font face="Calibri, serif">The Website also uses Google Analytics, a
+web analytics service provided by Google, Inc. (âGoogleâ).
+ Google Analytics uses cookies or other tracking technologies to help
+us analyze how users interact with and use the Website, compile
+reports regarding activity, and provide other services related to
+activity and usage.  The technologies used by Google may collect
+information such as your IP address, time of visit, whether you are a
+return visitor, and any referring website.  The Website does not use
+Google Analytics to gather any PII.  The information generated by
+Google Analytics will be transmitted to and stored by Google and will
+be subject to Googleâs <a href="http://www.google.com/policies/privacy/">privacy
+policies</a>.  </font>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif">In addition, some
+content or applications, including advertisements, on the website are
+served by unaffiliated third parties, including advertisers, ad
+networks and servers, content providers and application providers</font></font><font color="#00000a"><font face="Calibri, serif"><span lang="en-US">.
+ </span></font></font><font color="#00000a"><font face="Calibri, serif">These
+third parties may use tracking technologies to collect information
+about you when you use the Website.  They may collect information
+about your online activities over time and across different websites
+and other online services.  They may use this information to provide
+you with interest-based advertising or other targeted content.</font></font><font color="#00000a"><font face="Calibri, serif"><span lang="en-US">
+They may use persistent identifiers to anonymously track your
+Internet usage across other websites in their networks beyond these
+Website.  Such third parties may, with sufficient data from other
+sources, be able to personally identify you, unknown to us.  </span></font></font><font color="#00000a"><font face="Calibri, serif">We
+do not control these third partiesâ tracking technologies or
+how they may be used.  If you have any questions about an
+advertisement or other targeted content, you should contact the
+responsible advertiser directly.</font></font><font color="#00000a"><font face="Calibri, serif"><span lang="en-US">
+ To learn more about the use of this information, or to choose not to
+have this information used by some our third party advertising
+partners by opting out, please visit the Digital Advertising Alliance
+by clicking </span></font></font><a href="http://www.aboutads.info/choices/"><font face="Calibri, serif">http://www.aboutads.info/choices/</font></a><font color="#00000a"><font face="Calibri, serif"><span lang="en-US">.
+ </span></font></font>
+</p>
+<br/>
+<p></p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif">Your browser or
+device may include âDo Not Trackâ functionality.  </font></font><font face="Calibri, serif">Because
+a "Do Not Track" protocol has not yet been finalized,
+</font><font color="#00000a"><font face="Calibri, serif">Savetzâs
+information collection and disclosure practices with respect to this
+Website and the Fax Services, and the choices that we provide to
+customers, will continue to operate as described in this Privacy
+Policy, whether or not a Do Not Track signal is received.</font></font><font color="#ff4500"><font face="Calibri, serif">
+</font></font>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<ol start="2">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif"><u><b>How
+	Do We Use Your Information?</b></u></font></font></p>
+</li></ol>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font face="Arial, serif"><font size="2"><font color="#00000a"><font face="Calibri, serif"><font size="3">We
+use the information we learn from you to help us personalize and
+continually improve your experience on the Website and using the Fax
+Services.  We may use your personally and non-personally identifiable
+information in the following ways:</font></font></font></font></font></p>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font face="Arial, serif"><font size="2"><font color="#00000a"><font face="Calibri, serif"><font size="3">The
+following general uses:</font></font></font></font></font></p>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+<ul>
+<li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Provide
+	content, products and Fax Services. </font>
+</p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Communicate
+	about account or transactions and send information about features
+	and enhancements. </font>
+</p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Communicate
+	about changes to our policies.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Personalize
+	content and experiences.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Offers
+	or promotions for our products, services or special events.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Provide
+	advertising on the Website, including advertising based on usersâ
+	activity on the Website or activity on third-party websites. </font>
+</p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Optimize
+	or improve our products, Fax Services and operations.</font></p>
+</li><li><p lang="en-AU" style="margin-bottom: 0cm"><font face="Calibri, serif">Detect,
+	investigate, and prevent activities that may violate our policies or
+	be illegal.</font></p>
+</li><li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font face="Arial, serif"><font size="2"><font face="Calibri, serif"><font size="3">Perform
+	statistical, demographic, and marketing analyses of users of the
+	Website and Fax Services, and their purchasing patterns.</font></font></font></font></p>
+</li></ul>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif">We may use the
+information from one portion of the Website on other portions of
+Website, and we may combine information gathered from multiple
+portions of the Website and the Fax Services into a single record. 
+We may also use or combine information that we collect offline, from
+other Savetz-operated websites, or from third-party sources, to
+enhance, expand, and check the accuracy of your customer records.</font></font></p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-left: 0.64cm; margin-bottom: 0cm">
+<br/>
+</p>
+<ol start="3">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif"><u><b>Who
+	Do We Provide Your PII To?</b></u></font></font></p>
+</li></ol>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif">We may disclose
+your PII collected on the Website and through your use of the Fax
+Services to our agents, affiliates, partners, and other third parties
+as described below. </font></font>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<ol>
+<ol type="A">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif"><b>Third-Party
+		Agents</b></font></font></p>
+</li></ol>
+</ol>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif">We have third-party
+agents, subsidiaries, affiliates and service providers that perform
+functions on our behalf, including, but not limited to, hosting,
+content syndication, content management, services related to the
+transmission of faxes, technical integration, payment processing,
+marketing, analytics, customer service, and fraud protection.  These
+entities may have access to PII if needed to perform their functions.
+</font></font>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<ol>
+<ol start="2" type="A">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font face="Arial, serif"><font size="2"><font color="#00000a"><font face="Calibri, serif"><font size="3"><b>Fax
+		Cover Pages and Contents</b></font></font></font></font></font></p>
+</li></ol>
+</ol>
+<p align="JUSTIFY" lang="en-AU" style="margin-left: 1.27cm; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font face="Arial, serif"><font size="2"><font color="#00000a"><font face="Calibri, serif"><font size="3">The
+sender and receiver PII that you provide to us for the transmission
+of a fax, and any PII that you include in the contents of a fax, will
+be disclosed to the recipient(s) of that fax and third parties that
+may handle the fax.  Such third parties may include, but are not
+limited to, our service providers, as stated above, and any third
+parties that may handle or have access to faxes sent to your intended
+recipient (e.g., workers in the same office, workers at a store that
+provides fax services to consumers, other residents of a household). 
+</font></font></font><font face="Calibri, serif"><font size="3">Savetz
+is not responsible for any information provided by you to third
+parties, and such information is not subject to this Privacy Policy.</font></font></font></font></p>
+<p align="JUSTIFY" lang="en-AU" style="margin-left: 1.91cm; margin-bottom: 0cm">
+<br/>
+</p>
+<ol>
+<ol start="3" type="A">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font face="Arial, serif"><font size="2"><font color="#00000a"><font face="Calibri, serif"><font size="3"><b>Assignment</b></font></font></font></font></font></p>
+</li></ol>
+</ol>
+<p align="JUSTIFY" lang="en-AU" style="margin-left: 1.27cm; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font face="Arial, serif"><font size="2"><font color="#00000a"><font face="Calibri, serif"><font size="3">We
+may change our ownership or corporate organization while providing
+the Website and the Fax Services.  We may also sell certain assets
+associated with the Website or the Fax Services.  In such event, we
+may transfer some or all of your information to an entity acquiring
+all or part of our assets or to another entity with which we have
+merged.  </font></font></font><font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3">Under
+such circumstances, we would request the acquiring party to follow
+the practices described in this Privacy Policy.  Nevertheless, we
+cannot promise that an acquiring party or the merged entity will have
+the same privacy practices or treat your information the same as
+described in this Privacy Policy.</font></font></font></span></span></font></font></font></font></font></p>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+<ol>
+<ol start="4" type="A">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font face="Arial, serif"><font size="2"><font color="#00000a"><font face="Calibri, serif"><font size="3"><b>Law
+		Enforcement, Legal Process, and Emergency Situations</b></font></font></font></font></font></p>
+</li></ol>
+</ol>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font face="Arial, serif"><font size="2"><font color="#00000a"><font face="Calibri, serif"><font size="3">We
+may use or disclose information collected through the Fax Services
+pursuant to valid legal process.  We may use or disclose PII
+collected through the Website if required to do so by law or on the
+good-faith belief that such action is necessary to (a) conform to
+applicable law or comply with legal process served on us or the
+Website, (b) protect and defend our rights or property, the Website
+or our users, or (c) act to protect the personal safety of us, users
+of the Website or the public.</font></font></font></font></font></p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<ol start="4">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif"><u><b>What
+	Steps Are Taken to Keep Personally Identifiable Information Secure?</b></u></font></font></p>
+</li></ol>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm; widows: 0; orphans: 0">
+<font size="2"><font color="#00000a"><font face="Calibri, serif"><font size="3">We
+are concerned about ensuring the security of your PII and take
+certain security measures to help protect such information.  Please
+understand, however, that </font></font></font><font color="#00000a"><font face="Calibri, serif"><font size="3">while
+we try our best to safeguard your PII and the confidentiality of your
+communications through the Fax Services, no transmission of data over
+the Internet or any other public network can be guaranteed to be 100%
+secure.</font></font></font></font></p>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm; widows: 0; orphans: 0">
+<br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif">You need to help
+protect the privacy of your own information. You must take
+precautions to protect the security of any PII that you transmit over
+any public or untrusted network by using encryption and other
+techniques to prevent unauthorized interception of your PII. You are
+responsible for the security of your information when using
+unencrypted, public or otherwise unsecured networks. </font></font><font color="#00000a"><font face="Calibri, serif">
+</font></font>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm"><a name="ProComm"></a>
+<br/>
+</p>
+<ol start="5">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif"><u><b>How
+	Long Do We Keep Personally Identifiable Information?</b></u></font></font></p>
+</li></ol>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm;">
+<font color="#00000a"><font face="Calibri, serif"><span lang="en">The
+time period for which we keep information varies according to what
+the information is used for. In some cases, there are legal
+requirements to keep data for a minimum period. Unless there is a
+specific legal requirement for us to keep the information, we will
+retain it for no longer than is necessary for the purposes for which
+the data was collected or for which it is to be further processed.</span></font></font></p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<ol start="6">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif"><u><b>Childrenâs
+	Information? </b></u></font></font>
+</p>
+</li></ol>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#4a4a4a"><font face="Verdana, serif"><font size="2" style="font-size: 9pt"><span style="font-style: normal"><span style="font-weight: normal"><font color="#00000a"><font face="Calibri, serif"><font size="3">The
+Website and Fax Services are not intended for children under 13 years
+of age.  Unless otherwise disclosed during collection and with parent
+or guardian consent, Savetz does not knowingly collect PII from
+children under 13 years of age.  If you are under 13 years of age, do
+not provide PII to Savetz through the Sites.  If Savetz discovers
+that a child under the age of 13 has provided Savetz with PII and we
+do not have parental consent, Savetz will promptly delete that
+childâs information from the Site. If you believe that company
+has been provided with the PII of a child under the age of 13 without
+parental consent, please notify us immediately at
+</font></font></font></span></span></font></font></font><font color="#00000a"><font face="Calibri, serif">support@FaxZero.com.</font></font></p>
+<p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+<ol start="7">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif"><u><b>Notice
+	to Non-US Users</b></u></font></font></p>
+</li></ol>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif">If you are located
+outside the United States, you should be aware that your PII will be
+transferred to the United States, the laws of which may be deemed by
+the your country to have inadequate data protection. If you
+voluntarily submit PII to us, you consent to the use of such
+information as provided in this Privacy Policy and to the transfer of
+that information to and storage of that information in the United
+States.</font></font></p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<ol start="8">
+<li><p align="JUSTIFY" lang="en-AU" style="margin-bottom: 0cm"><font color="#00000a"><font face="Calibri, serif"><u><b>E-Mail
+	Marketing Messages and Newsletters</b></u></font></font></p>
+</li></ol>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<font color="#00000a"><font face="Calibri, serif">You may receive our
+newsletter if you have signed up to receive it.  If at any time you
+no longer wish to receive e-mail newsletters from Savetz, you may
+opt-out through the email, or you may contact us at
+</font></font><font color="#00000a"><font face="Calibri, serif">support@FaxZero.com.</font></font><font color="#00000a"><font face="Calibri, serif">
+ Please note that if you opt-out of receiving our e-mail newsletters,
+we may still contact you via e-mail on matters related to the Fax
+Services that you have requested from Savetz, the operation of the
+Website, your correspondence with us, changes in policies, and as
+permitted and required by law.</font></font>
+</p>
+<p align="JUSTIFY" class="western" lang="en-AU" style="margin-bottom: 0cm">
+<br/>
+</p>
+<div type="FOOTER">
+<p lang="en-AU" style="margin-bottom: 0cm"><br/>
+</p>
+</div>
+</div>
+<div class="ads"></div>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="bottom">
+<br/>
+<!--Live Validation Rules Here//-->
+<script type="text/javascript">
+</script>
+<!--Live Validation Rules Here//-->
+<div class="container">
+<br/>
+<hr noshade="noshade" size="1" style="color:#C0C0C0;"/>
+<div style="float:right">
+<font color="#A8A8A8" face="Arial" style="font-size: 9pt">FaxZeroÂ® is copyright Â© 2006-2022 by <a href="//www.savetzpublishing.com/">Savetz Publishing</a>, Inc. <span class="print_conf">| <a href="//faxzero.com/terms_of_use.php" rel="nofollow">Terms of use</a>. | <a href="//faxzero.com/kudos.php">Kudos for FaxZero</a>.
+        </span></font></div>
+<br/>
+<!--		<div id="bbb_logo">
+		<p align="center">
+		<a href="//www.bbb.org/oregon/business-reviews/internet-services/savetz-publishing-in-portland-or-22644528#bbblogo" target="_blank" rel="nofollow"><img align="top" border="0" src="/images/bbbseal1.gif" alt="BBBOnLine Reliability Program" /></a>
+		</p>
+		</div>
+	</div> -->
+<!--    <script type="text/javascript" src="/js/jquery.js"></script>	   
+    <script type="text/javascript" src="/js/jquery.MultiFile.js"></script>
+    <script type="text/javascript" src="/js/jquery.MetaData.js"></script>
+    <script type="text/javascript" src="/js/fileupload.js"></script>   -->
+<!-- TinyMCE -->
+<script defer="" src="/js/tinymce_latest/tinymce_with_conf.min.js" type="text/javascript"></script>
+<!-- /TinyMCE -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-191321-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</div>
+<script defer="" src="/js/liveval_with_conf.js" type="text/javascript"></script>
+</div><script async="" style="display:none;" type="text/javascript">
+__ez.queue.addFile('/detroitchicago/edmonton.webp', '/detroitchicago/edmonton.webp?a=a&cb=0&shcb=34', true, ['/detroitchicago/minneapolis.js'], true, false, false, false);
+__ez.queue.addFile('/porpoiseant/jellyfish.webp', '/porpoiseant/jellyfish.webp?a=a&cb=0&shcb=34', false, [], true, false, false, false);
+</script>
+<script>var _audins_dom="faxzero_com",_audins_did=181837;__ez.queue.addDelayFunc("audins.js","__ez.script.add", "//go.ezoic.net/detroitchicago/audins.js?cb=195-0");</script><noscript><div style="display:none;"><img alt="Quantcast" border="0" height="1" src="//pixel.quantserve.com/pixel/p-31iz6hfFutd16.gif?labels=Domain.faxzero_com,DomainId.181837" width="1"/></div></noscript>
+<script data-cfasync="false" type="text/javascript"></script>
+<script>__ez.queue.addFile('/tardisrocinante/vitals.js', '/tardisrocinante/vitals.js?gcb=0&cb=3', false, ['/detroitchicago/minneapolis.js'], true, false, true, false);</script>
+<script>__ez.queue.addFile('/beardeddragon/drake.js', '/beardeddragon/drake.js?gcb=0&cb=4', false, [], true, false, true, false);</script></body></html>

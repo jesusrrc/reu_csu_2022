@@ -1,0 +1,3355 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"986cdeaf27",applicationID:"540138458"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<style>.has-ge-edit-dark-indigo-color {
+    color: #0d1623;
+  }
+  .has-ge-edit-dark-indigo-background-color {
+    background-color: #0d1623;
+  }
+  .has-ge-edit-white-color {
+    color: #ffffff;
+  }
+  .has-ge-edit-white-background-color {
+    background-color: #ffffff;
+  }
+  .has-dark-blue-grey-color {
+    color: #1e2f46;
+  }
+  .has-dark-blue-grey-background-color {
+    background-color: #1e2f46;
+  }
+  .has-ge-edit-light-blue-color {
+    color: #00b5e2;
+  }
+  .has-ge-edit-light-blue-background-color {
+    background-color: #00b5e2;
+  }
+  .has-blueberry-color {
+    color: #3e439b;
+  }
+  .has-blueberry-background-color {
+    background-color: #3e439b;
+  }
+  .has-ge-edit-gray-color {
+    color: #f0f3f7;
+  }
+  .has-ge-edit-gray-background-color {
+    background-color: #f0f3f7;
+  }
+  .has-cerulean-color {
+    color: #0870d8;
+  }
+  .has-cerulean-background-color {
+    background-color: #0870d8;
+  }
+  .has-ge-dark-light-grey-color {
+    color: #e5e9ee;
+  }
+  .has-ge-dark-light-grey-background-color {
+    background-color: #e5e9ee;
+  }
+  .has-ge-dull-light-grey-color {
+    color: #f4f4f6;
+  }
+  .has-ge-dull-light-grey-background-color {
+    background-color: #f4f4f6;
+  }
+  .has-ge-dark-grey-color {
+    color: #979797;
+  }
+  .has-ge-dark-grey-background-color {
+    background-color: #979797;
+  }
+  .has-ge-dark-purple-color {
+    color: #32356e;
+  }
+  .has-ge-dark-purple-background-color {
+    background-color: #32356e;
+  }</style>
+<style>/* @see https://github.com/aFarkas/lazysizes#broken-image-symbol */.js img.lazyload:not([src]) { visibility: hidden; }/* @see https://github.com/aFarkas/lazysizes#automatically-setting-the-sizes-attribute */.js img.lazyloaded[data-sizes=auto] { display: block; width: 100%; }</style>
+<link href="https://www.ge.com/privacy" rel="canonical"/>
+<meta content="Read GE's privacy policy, find out about the personal information we hold for our customers, partners and everyone who uses our products and services." name="description"/>
+<meta content="ge privacy policy" name="abstract"/>
+<meta content="Drupal 9 (https://www.drupal.org)" name="Generator"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport"/>
+<style>
+	@media screen and (max-width: 1050px) {
+	  div#wheel-css {
+	   display: none;
+	  }
+	 h6.wheel-css {
+	   display: none;
+	  }
+	}
+	.fls-block h6 {
+		font-size: 17px;
+	}
+
+	.fls-block form .custome_select {
+		width: 35%;
+		padding: 0px;
+	}
+	.fls-block .form-select{
+		padding: 0rem 2rem;
+		border: none;
+		width: 100%;
+		height: 64px;
+		border-radius: 10px;
+		background-color: var(--ge-white);
+		font-size: 22px;
+		outline: none;	
+	}
+	.fls-block .custome_select:before
+	{
+		bottom: 34% !important;
+		pointer-events: none;
+	}
+	.fls-block .custome_select:after
+	{
+		bottom: 37% !important;
+		pointer-events: none;
+	}
+	.fls-block .text-muted {
+		font-size: 18px;
+		margin: 1rem 0;
+	}
+	.download-table ul.download-table-header {
+		list-style: none;
+		display: flex;
+		padding: 0px;
+		margin: 0px;
+	}
+	.download-table ul {
+		margin: 0;
+		padding: 0px;
+		list-style: none;
+	}
+	.download-table ul> li{
+		position: relative;
+		width: 100%;
+		border-bottom: 1px solid rgba(30, 47, 70, 0.1);
+	}
+	ul.download-table-header.text-uppercase {
+		border-top: none;
+	}
+	.download-table ul {
+		border-top: 2px solid var(--ge-light-blue);
+	}
+	.fls-results {
+		width: 100%;
+		margin-bottom: 120px;
+	}
+	.download-table ul li{
+		position: relative;
+		width: 100%;
+		border-bottom: 1px solid rgba(30, 47, 70, 0.1);
+	}
+	.download-table ul li a {
+		color: var(--ge-dark-blue-grey);
+		letter-spacing: normal;
+		font-size: 26px;
+		font-family: gesans-regular !important;
+		line-height: 3.46;
+	}
+	.ficon-download::before {
+		float: right;
+		font-family: icomoon!important;
+	}
+	.fls-block .views-exposed-form {
+		margin-bottom: 40px;
+	}
+	@media (max-width:767px) {
+	.fls-block form .custome_select{
+		width: 100%;
+	}
+	.fls-block h6 {
+		font-size: 15px;
+	}
+	.fls-block form .custome_select {
+		width: 100%;
+		padding: 0px;
+	}
+	.fls-block .form-select{
+	font-size: 17px;
+	}
+	.fls-block .text-muted {
+		font-size: 17px;
+	}
+	.download-table ul li a {
+		font-size: 18px;
+	}
+	}
+	</style>
+<meta content="#ffffff" name="msapplication-TileColor"/>
+<meta content="https://www.ge.com/themes/custom/ge_com_unified/assets/icons/mstile-144x144.png?v=zX70X9A8R5" name="msapplication-TileImage"/>
+<meta content="https://www.ge.com/themes/custom/ge_com_unified/assets/icons/browserconfig.xml?v=zX70X9A8R5" name="msapplication-config"/>
+<meta content="#ffffff" name="theme-color"/>
+<meta class="swiftype" content="1" data-type="integer" name="domain-identifier"/>
+<link href="/core/misc/favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+<link href="https://www.ge.com/privacy" hreflang="da" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="de" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="en" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="es" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="fr" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="it" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="hu" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="nl" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="nn" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="pl" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="pt-pt" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="fi" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="sv" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="ar" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="cs" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="ru" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="zh-hans" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="ja" rel="alternate"/>
+<link href="https://www.ge.com/privacy" hreflang="ko" rel="alternate"/>
+<link crossorigin="anonymous" href="https://unifiedsearch.geapps.io" rel="preconnect"/>
+<link href="https://unifiedsearch.geapps.io" rel="dns-prefetch"/>
+<link as="script" href="https://unifiedsearch.geapps.io/ge-component-client.js" importance="high" rel="preload"/>
+<link as="script" href="https://unifiedsearch.geapps.io/embedunifiedsearch.js" importance="high" rel="preload"/>
+<link as="script" href="https://unifiedsearch.geapps.io/ge-render-component.js" importance="high" rel="preload"/>
+<link as="script" href="https://unifiedsearch.geapps.io/ge-component.js" importance="high" rel="preload"/>
+<link href="https://www.ge.com/themes/custom/ge_com_unified/assets/icons/apple-touch-icon.png?v=zX70X9A8R5" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://www.ge.com/themes/custom/ge_com_unified/assets/icons/favicon-32x32.png?v=zX70X9A8R5" rel="icon" sizes="32x32" type="image/png"/>
+<link href="https://www.ge.com/themes/custom/ge_com_unified/assets/icons/favicon-16x16.png?v=zX70X9A8R5" rel="icon" sizes="16x16" type="image/png"/>
+<link href="https://www.ge.com/themes/custom/ge_com_unified/assets/icons/android-chrome-192x192.png?v=zX70X9A8R5" rel="icon" sizes="192x192" type="image/png"/>
+<link href="https://www.ge.com/themes/custom/ge_com_unified/assets/icons/site.webmanifest?v=zX70X9A8R5" rel="manifest"/>
+<link color="#005eb8" href="https://www.ge.com/themes/custom/ge_com_unified/assets/icons/safari-pinned-tab.svg?v=zX70X9A8R5" rel="mask-icon"/>
+<link href="https://www.ge.com/themes/custom/ge_com_unified/assets/icons/favicon.ico?v=zX70X9A8R5" rel="alternate icon" type="image/vnd.microsoft.icon"/>
+<link as="font" crossorigin="anonymous" href="https://www.ge.com/themes/custom/ge_com_unified/assets/fonts/gesans-regular/gesans-regular.ttf" rel="preload" type="font/ttf"/>
+<link as="font" crossorigin="anonymous" href="https://www.ge.com/themes/custom/ge_com_unified/assets/fonts/gesans-bold-italic/gesans-bolditalic.ttf" rel="preload" type="font/ttf"/>
+<link as="font" crossorigin="anonymous" href="https://www.ge.com/themes/custom/ge_com_unified/assets/fonts/gesans-bold/gesans-bold.ttf" rel="preload" type="font/ttf"/>
+<link as="font" crossorigin="anonymous" href="https://www.ge.com/themes/custom/ge_com_unified/assets/fonts/gesans-italic/gesans-italic.ttf" rel="preload" type="font/ttf"/>
+<link as="font" crossorigin="anonymous" href="https://www.ge.com/themes/custom/ge_com_unified/assets/fonts/icomoon.ttf?q42c8h" rel="preload" type="font/ttf"/>
+<link as="font" crossorigin="anonymous" href="https://www.ge.com/themes/custom/ge_com_unified/assets/fonts/ge-corporate-icons.ttf?761hjh" rel="preload" type="font/ttf"/>
+<script defer="" src="/sites/default/files/google_tag/geasone_gtm/google_tag.script.js?rdfia0"></script>
+<script defer="" src="/sites/default/files/google_tag/ge_ir_gtm/google_tag.script.js?rdfia0"></script>
+<title>GE Privacy Policy | General Electric</title>
+<link href="/sites/default/files/css/css_Gc4ns3uUBe1CsPa-sf070j8TJMTRP2vl0WmM2vtleME.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_ncyJbJfvwpzyMr36oJoJ_QZLbKHAI2a0umaTBvJ6EAU.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_wcjTAmdy4BNDPDNGQMfFUXm9tCLIkAz2O0RITMeIdyk.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_XjrqyA-_qArsSjcTSQptj0tUgb984M1iln34_vJONTA.css" media="all" rel="stylesheet"/>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" media="all" rel="stylesheet"/>
+<link href="//unifiedsearch.geapps.io/css/ge_unified_search.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_VTeWen4TqbsISIcfqIj5at0tOMglyCTYL-eq6Dl7Of4.css" media="all" rel="stylesheet"/>
+<script async="" src="//script.crazyegg.com/pages/scripts/0092/1071.js"></script>
+<script src="/sites/default/files/js/js_lA8BclaBBdJQ-ZBKkT4TWsQGIZ2ugya99Q7bUT11AGk.js"></script>
+<script async="" importance="high" src="//unifiedsearch.geapps.io/ge-component-client.js"></script>
+<script async="" src="/cdn-cgi/bm/cv/669835187/api.js"></script></head>
+<body>
+<a class="visually-hidden focusable" href="#main-content">
+      Skip to main content
+    </a>
+<noscript aria-hidden="true"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PM823KK" style="display:none;visibility:hidden" width="0"></iframe></noscript><noscript aria-hidden="true"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NGZJGTW" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<div class="page ge-page" role="ge-main-page-content">
+<!--  Render Navigations -->
+<!-- header menu begins -->
+<header class="header ge-header ge-primary-blue-header" role="header">
+<nav class="contextual-region navbar navbar-dark navbar-expand-lg ge-menu-main bg-transparent text-white px-3 px-lg-4" data-block-plugin-id="system_menu_block:main" id="block-ge-com-unified-main-menu">
+<div class="container-fluid">
+<a class="navbar-brand text-white" href="/">
+<img alt="General Electric" class="d-inline-block img-fluid" src="/themes/custom/ge_com_unified/logo.svg" title="General Electric Logo"/>
+</a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler ml-auto rounded-0 collapsed" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<ul class="nav d-lg-none ge-nav-icons-mobile">
+<li class="nav-item icon d-none">
+<a class="nav-link px-3 text-white" href="/contact/general" id="email-icon">
+<i class="icon ficon-email"><span class="hidden">email</span></i>
+</a>
+</li>
+<li class="nav-item icon d-none">
+<a class="nav-link px-3 text-white" href="https://www.ge.com/directory" id="globe-icon">
+<i class="ficon-globe"><span class="hidden">Globe</span></i>
+</a>
+</li>
+<li class="nav-item icon pl-3 search-icon">
+<a class="nav-link px-3 text-white" href="javascript:void(0);" id="ge-search-component-init">
+<i class="ficon-search"><span class="hidden">Search</span></i>
+</a>
+</li>
+</ul>
+<ul class="nav d-none d-lg-flex ge-nav-icons-mobile">
+<li class="nav-item icon d-none">
+<a class="nav-link px-3 text-white" href="/contact/general" id="email-icon">
+<i class="icon ficon-email"><span class="hidden">email</span></i>
+</a>
+</li>
+<li class="nav-item icon d-none">
+<a class="nav-link px-3 text-white" href="https://www.ge.com/directory" id="globe-icon">
+<i class="ficon-globe"><span class="hidden">Globe</span></i>
+</a>
+</li>
+<li class="nav-item icon pl-3 search-icon">
+<a class="nav-link px-3 text-white" href="javascript:void(0);" id="ge-search-component-init">
+<i class="ficon-search"><span class="hidden">Search</span></i>
+</a>
+</li>
+</ul>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="main-menu-wrapper ml-auto">
+<ul class="navbar-nav ml-auto first--level" data-region="header">
+<li class="nav-item menu-level-one">
+<a class="nav-link px-auto px-lg-3 text-white" href="/news/" target="_self" title="News">            News
+                                  </a>
+<div aria-labelledby="dropdown01" class="dropdown-menu megamenu">
+<div class="row">
+<div class="dd-container">
+<div class="no-position dd-links">
+<ul class="list-unstyled second--level">
+<li>
+<a class="dropdown-item body-1" href="/news/press-releases" target="_self" title="Press releases">              Press releases
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Company news and announcements.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Access the latest press releases, media contacts, and press tools.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Reports" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/GE_Reports.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" href="https://www.ge.com/news/" target="_self" title="GE Reports">              GE Reports
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Stories from the world of GE.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Discover how our people &amp; technology are solving global issues, improving lives, and changing industries.
+              </p>
+<ul class="list-unstyled">
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/news">                      Innovation Stories
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/news/reports/category/performance">                      Business Performance Articles
+                                                                </a>
+</h6></div>
+</li>
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Reports" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/GE_Reports_sm.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" href="/news/gevoices" rel="noopener noreferrer" target="_blank" title="GE Voices">              Voices
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Sign up today and get involved!</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Voices is a network for GE’s US supporters interested in the company’s impact in their communities and in issues that impact the company. 
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Aviation Employee" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Aviation_Employee_28_04_0.jpg"/>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="dd-content-block">
+<h2 class="col-xl-12 col-lg-12">Company news and stories.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                    Explore the latest stories, news, downloads, and press tools.
+                  </p>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE News" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/GE_News_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-item menu-level-one">
+<a class="nav-link px-auto px-lg-3 text-white" data-drupal-link-system-path="node/6994" href="/investor-relations" title="Investors overview">            Investors
+                                  </a>
+<div aria-labelledby="dropdown01" class="dropdown-menu megamenu">
+<div class="row">
+<div class="dd-container">
+<div class="no-position dd-links">
+<ul class="list-unstyled second--level">
+<li>
+<a class="dropdown-item body-1" href="https://www.ge.com/sites/default/files/ge-company-overview.pdf" target="_blank" title="GE company overview">              GE company overview
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">GE Company Overview.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+</p>
+<ul class="list-unstyled">
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sites/default/files/ge-company-overview.pdf" target="_blank">                      Presentation
+                                                                </a>
+</h6></div>
+</li>
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Block Island" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2021-09/BlockIsland_by_JeffMilstein.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7063" href="/investor-relations/stocks" title="Stock">              Stock
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Stock.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Get the latest GE stock data.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Stock" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Stock_mega_menu_0.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/6991" href="/investor-relations/events-reports" title="Events &amp; reports">              Events &amp; reports
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Investor events and reports.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Tune in or catch up on GE’s latest investor events and reports.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Investor events and reports" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Events_and_Reports.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7179" href="/investor-relations/ir-updates" title="IR Updates">              IR Updates
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">GE in the news.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Read the latest GE financial news releases and stories.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE financial news" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Financial_News_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7064" href="/investor-relations/sec-filings" title="SEC filings">              SEC filings
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">SEC filings.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Explore GE’s recent and historic SEC filings.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="SEC Filings" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/SEC_Filing_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/28087" href="/investor-relations/annual-report" title="Annual report">              Annual report
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Annual Report.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Access GE’s recent and historic Annual Reports and accompanying materials.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Annual Report" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Annual_report.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/28978" href="/investor-relations/annualmeeting" title="Annual meeting">              Annual meeting
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Annual meeting</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Read GE’s 2022 Proxy Statement, vote your shares and access the 2022 Annual Meeting.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="annual meeting" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2022-03/DJI_0770.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7018" href="/investor-relations/governance" title="Governance">              Governance
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Governance.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Learn about governance at GE, including the latest Proxy Statement and information about the GE Board of Directors.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Governance menu" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Governance_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/6780" href="/investor-relations/shareholder-services" title="Shareholder services">              Shareholder services
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">GE Shareholder Services.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Access important shareholder information.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Shareholder services image" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Shareholder_Services_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7082" href="/investor-relations/ir-contact" title="Contact">              Contact
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Contact us.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Get in touch and stay informed.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Contact Investor Relations" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/contact_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="dd-content-block">
+<h2 class="col-xl-12 col-lg-12">Investor Relations at GE.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                    Learn how we’re delivering on our priorities.
+                  </p>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Solar Invester LV5 Series" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Solar_Inverter_LV5_Series_01.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-item menu-level-one">
+<a class="nav-link px-auto px-lg-3 text-white" data-drupal-link-system-path="node/6741" href="/about-us" title="About us">            About us
+                                  </a>
+<div aria-labelledby="dropdown01" class="dropdown-menu megamenu">
+<div class="row">
+<div class="dd-container">
+<div class="no-position dd-links">
+<ul class="list-unstyled second--level">
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/6777" href="/about-us/leadership/executives" title="GE leadership">              GE leadership
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Meet our executives.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Accomplished leaders building GE’s legacy.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Leadership narrow" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Leadership_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/6977" href="/about-us/history" title="History">              History
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Over 125 years of innovation.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Explore a timeline of GE technologies that have spurred transformation across the world.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Line men" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Limmen_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/28335" href="/about-us/diversity" title="Diversity">              Diversity
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Building a world that works for everyone.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 At GE, we are committed to building a more diverse workforce and a more inclusive workplace.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="DiversityPage_Top_Image.jpg" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2021-02/DiversityPage_Top_Image_0.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/23760" href="/about-us/energy-transition" title="Energy Transition">              Energy Transition
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Advancing the future of energy.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Our energy expertise spans from renewable wind energy to emission-reducing natural gas, as well as physical and digital solutions to modernize the grid connecting it all.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Hero and Menu" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2021-03/Hero%20and%20menu%20image.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" href="https://www.ge.com/sustainability" title="ESG">              ESG
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Environmental, Social and Governance at GE.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 A culture of integrity, compliance, safety, and respect for human rights, while reducing our environmental footprint.
+              </p>
+<ul class="list-unstyled">
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability">                      Home
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability/ourpriorities">                      Our Priorities
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability/ourinnovation">                      Our Innovation
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability/ourculture">                      Our Culture
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability/ourphilanthropy">                      Our Philanthropy
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability/public-policy">                      Public Policy
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability/reports-hub">                      Reports Hub
+                                                                </a>
+</h6></div>
+</li>
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Offshore Haliade Wind Turbine" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-03/GE_Offshore_Haliade_X.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7125" href="/faq" title="FAQs">              FAQs
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Frequently asked questions.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Answers to popular and relevant inquiries.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Frequently asked questions" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/FAQs_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" href="https://www.ge.com/contact/general" title="Contact us">              Contact us
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Questions and inquiries.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Contact information for general inquiries and feedback.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Contact GE employees" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Contact_2_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7356" href="/about-us/covid-19" title="COVID-19 response">              COVID-19
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">GE is supporting the fight against COVID-19.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 We’re continuing to do all we can to support our customers and employees during this unprecedented time.  We’re deeply proud of GE employees around the world rising to the challenge.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE's COVID-19 Response" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/COVID-19_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="dd-content-block">
+<h2 class="col-xl-12 col-lg-12">Building a world that works.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                    Our technology, global network, and exceptional team is fueled by a mission—building a world that works.
+                  </p>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Person working on top o Wind Turbine" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2022-04/about_geVer2-Menu.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-item menu-level-one">
+<a class="nav-link px-auto px-lg-3 text-white iexternal" href="https://jobs.gecareers.com/global/en" rel="noopener noreferrer" target="_blank" title="Careers">            Careers
+                                    <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div aria-labelledby="dropdown01" class="dropdown-menu megamenu">
+<div class="row">
+<div class="dd-container">
+<div class="no-position dd-links">
+<ul class="list-unstyled second--level">
+<li>
+<a class="dropdown-item body-1 iexternal" href="https://jobs.gecareers.com/global/en/search-results" rel="noopener noreferrer" target="_blank" title="Search jobs">              Search jobs
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Explore careers at GE.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Find yourself a world changing job.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Search GE jobs" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Search_Jobs_at_ge_0.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1 iexternal" href="https://jobs.gecareers.com/global/en/working-at-ge" rel="noopener noreferrer" target="_blank" title="Working at GE">              Working at GE
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">A career at GE is more than the work you do.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Learn more about our culture, businesses, and life at GE.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Working at GE" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Working_at_GE.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1 iexternal" href="https://jobs.gecareers.com/global/en/diversity-at-ge" rel="noopener noreferrer" target="_blank" title="Inclusion &amp; Diversity">              Inclusion &amp; Diversity
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">GE's culture of inclusion.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 By embracing diverse teams and perspectives, we are better equipped to build a world that works.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Inclusion and diversity at GE" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Inclusion_Diversity_GE.jpg"/>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="dd-content-block">
+<h2 class="col-xl-12 col-lg-12">Join the team.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                    At GE, we rise to the challenge of building a world that works. Explore a career with us.
+                  </p>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Careers at GE" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Careers_at_GE.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-item menu-level-one">
+<span class="idropdown nav-link px-auto px-lg-3 text-white" title="Businesses">            Businesses
+                        <span class="businesses-icon ficon-dropdown"></span>
+</span>
+<div aria-labelledby="dropdown01" class="dropdown-menu megamenu">
+<div class="row">
+<div class="dd-container">
+<div class="no-position dd-links">
+<ul class="list-unstyled second--level">
+<li>
+<a class="iexternal dropdown-item body-1" href="/additive/" rel="noopener noreferrer" target="_blank" title="Additive">              Additive
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">We're built to be your full-service additive partner.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Offering a suite of products to help unlock the full potential of additive manufacturing.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Additive" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Additive_narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1 iexternal" href="https://www.geaviation.com" rel="noopener noreferrer" target="_blank" title="Aviation">              Aviation
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">A driving force for flight.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 GE Aviation is a world-leading provider of aircraft engines, systems and avionics.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Aviation" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Aviation_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1 iexternal" href="https://www.gecapital.com/" rel="noopener noreferrer" target="_blank" title="Capital">              Capital
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Serving customers and markets aligned to GE’s businesses.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 We connect capital to infrastructure and deliver innovative financial solutions that help make the world work better. 
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Capital" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Capital_Narrow_0.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="iexternal dropdown-item body-1" href="/digital/" rel="noopener noreferrer" target="_blank" title="Digital">              Digital
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Putting industrial data to work.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Transforming how industry solves its toughest challenges by bringing simplicity, speed and scale to digital transformation.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Digital" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Digital_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1 iexternal" href="https://www.gehealthcare.com/" rel="noopener noreferrer" target="_blank" title="Healthcare">              Healthcare
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">At the center of an ecosystem striving for precision health.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 We build intelligent devices, data analytics, applications and services to enable healthcare practitioners to deliver care more efficiently and with better outcomes.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Healthcare" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Healthcare_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<span class="dropdown-item body-1" title="Power">              Power
+                                        </span>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Powering forward.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Creating the energy technologies of the future and improving the power networks that we depend on today.
+              </p>
+<ul class="list-unstyled">
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/gas-power" target="_blank">                      Gas Power
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/steam-power" target="_blank">                      Steam Power
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://nuclear.gepower.com/" target="_blank">                      Nuclear
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.gepowerconversion.com/" target="_blank">                      Power Conversion
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.geenergyconsulting.com/" target="_blank">                      Energy Consulting
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Power Turbine" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Power_Turbine_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<span class="dropdown-item body-1" target="_blank" title="Renewable Energy">              Renewable Energy
+                                        </span>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Wind, hydro, hybrid power, distributed by grid.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Together with our customers, we’re proving that no one is ever limited to only affordable, reliable, or sustainable energy.
+              </p>
+<ul class="list-unstyled">
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/renewableenergy" target="_blank">                      Renewable Energy
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/wind-energy/onshore-wind" target="_blank">                      Onshore Wind
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/wind-energy/offshore-wind" target="_blank">                      Offshore Wind
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/hydro-power" target="_blank">                      Hydro
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/hybrid" target="_blank">                      Hybrids
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.gegridsolutions.com/index.htm" target="_blank">                      Grid Solutions
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Renewable Energy" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Renewable_Energy_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="iexternal dropdown-item body-1" href="/research/" rel="noopener noreferrer" target="_blank" title="Research">              Research
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Where research meets reality to propel GE and the world forward.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 GE's innovation engine where ideas become reality to create a better world and deliver differentiated tech across the company's industrial portfolio.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Research" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/research_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7001" href="/licensing" title="Licensing">              Licensing
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Partnering to define the future of industries.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Commercializing GE’s technology and IP to accelerate growth and achieve market differentiation.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Licensing image" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-03/licensing_690_575.jpg"/>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="dd-content-block">
+<h2 class="col-xl-12 col-lg-12">Inventing the future of industry.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                    GE's dedicated team, leading technology, and global reach and capabilities help the world work more efficiently, reliably, and safely.
+                  </p>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE businesses" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/City_Image_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<span class="dd-lightbox"></span>
+<span class="dd-bg"></span>
+</ul>
+</div>
+</div>
+<!-- mobile menu -->
+<div class="mobile-navbar overlay d-lg-none">
+<div class="wrap_overlay collapse" id="navbarSupportedContent">
+<div class="inner--wrapper">
+<ul class="list-unstyled nav--list--level1 col-md-6 col-sm-12">
+<li class="nav-item">
+<div class="active-arrow">
+<a class="nav-link px-auto px-lg-3 text-white mobilenav-link" href="/news/" target="_self" title="News"> <h3>News <i class="dropdown-right ficon-dropdown"></i></h3>
+</a>
+</div>
+<ul class="list-unstyled nav--list--level2 col-md-12 col-sm-12">
+<li class="nav-item--level2">
+<a class="mobilenav-link back--btn">
+<span><i class="icon icon--arrow-left"></i></span> BACK
+        </a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="/news/" target="_self" title="News"> <h3>News</h3>
+</a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="/news/press-releases" target="_self" title="Press releases"> <h3>Press releases</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.ge.com/news/" target="_self" title="GE Reports"> <h3>GE Reports</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+<li class="nav-item">
+<a href="https://www.ge.com/news">                  Innovation Stories
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/news/reports/category/performance">                  Business Performance Articles
+                                                    </a>
+</li>
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="/news/gevoices" rel="noopener noreferrer" target="_blank" title="GE Voices"> <h3>Voices</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<div class="active-arrow">
+<a class="nav-link px-auto px-lg-3 text-white mobilenav-link" data-drupal-link-system-path="node/6994" href="/investor-relations" title="Investors overview"> <h3>Investors <i class="dropdown-right ficon-dropdown"></i></h3>
+</a>
+</div>
+<ul class="list-unstyled nav--list--level2 col-md-12 col-sm-12">
+<li class="nav-item--level2">
+<a class="mobilenav-link back--btn">
+<span><i class="icon icon--arrow-left"></i></span> BACK
+        </a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/6994" href="/investor-relations" title="Investors overview"> <h3>Investors overview</h3>
+</a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.ge.com/sites/default/files/ge-company-overview.pdf" target="_blank" title="GE company overview"> <h3>GE company overview</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+<li class="nav-item">
+<a href="https://www.ge.com/sites/default/files/ge-company-overview.pdf" target="_blank">                  Presentation
+                                                    </a>
+</li>
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7063" href="/investor-relations/stocks" title="Stock"> <h3>Stock</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/6991" href="/investor-relations/events-reports" title="Events &amp; reports"> <h3>Events &amp; reports</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7179" href="/investor-relations/ir-updates" title="IR Updates"> <h3>IR Updates</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7064" href="/investor-relations/sec-filings" title="SEC filings"> <h3>SEC filings</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/28087" href="/investor-relations/annual-report" title="Annual report"> <h3>Annual report</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/28978" href="/investor-relations/annualmeeting" title="Annual meeting"> <h3>Annual meeting</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7018" href="/investor-relations/governance" title="Governance"> <h3>Governance</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/6780" href="/investor-relations/shareholder-services" title="Shareholder services"> <h3>Shareholder services</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7082" href="/investor-relations/ir-contact" title="Contact"> <h3>Contact</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<div class="active-arrow">
+<a class="nav-link px-auto px-lg-3 text-white mobilenav-link" data-drupal-link-system-path="node/6741" href="/about-us" title="About us"> <h3>About us <i class="dropdown-right ficon-dropdown"></i></h3>
+</a>
+</div>
+<ul class="list-unstyled nav--list--level2 col-md-12 col-sm-12">
+<li class="nav-item--level2">
+<a class="mobilenav-link back--btn">
+<span><i class="icon icon--arrow-left"></i></span> BACK
+        </a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/6741" href="/about-us" title="About us"> <h3>About us</h3>
+</a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/6777" href="/about-us/leadership/executives" title="GE leadership"> <h3>GE leadership</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/6977" href="/about-us/history" title="History"> <h3>History</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/28335" href="/about-us/diversity" title="Diversity"> <h3>Diversity</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/23760" href="/about-us/energy-transition" title="Energy Transition"> <h3>Energy Transition</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.ge.com/sustainability" title="ESG"> <h3>ESG</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability">                  Home
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability/ourpriorities">                  Our Priorities
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability/ourinnovation">                  Our Innovation
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability/ourculture">                  Our Culture
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability/ourphilanthropy">                  Our Philanthropy
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability/public-policy">                  Public Policy
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability/reports-hub">                  Reports Hub
+                                                    </a>
+</li>
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7125" href="/faq" title="FAQs"> <h3>FAQs</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.ge.com/contact/general" title="Contact us"> <h3>Contact us</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7356" href="/about-us/covid-19" title="COVID-19 response"> <h3>COVID-19</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<div class="active-arrow">
+<a class="nav-link px-auto px-lg-3 text-white iexternal mobilenav-link" href="https://jobs.gecareers.com/global/en" rel="noopener noreferrer" target="_blank" title="Careers"> <h3>Careers <i class="dropdown-right ficon-dropdown"></i></h3>
+</a>
+</div>
+<ul class="list-unstyled nav--list--level2 col-md-12 col-sm-12">
+<li class="nav-item--level2">
+<a class="mobilenav-link back--btn">
+<span><i class="icon icon--arrow-left"></i></span> BACK
+        </a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://jobs.gecareers.com/global/en" rel="noopener noreferrer" target="_blank" title="Careers"> <h3>Careers</h3>
+</a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://jobs.gecareers.com/global/en/search-results" rel="noopener noreferrer" target="_blank" title="Search jobs"> <h3>Search jobs</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://jobs.gecareers.com/global/en/working-at-ge" rel="noopener noreferrer" target="_blank" title="Working at GE"> <h3>Working at GE</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://jobs.gecareers.com/global/en/diversity-at-ge" rel="noopener noreferrer" target="_blank" title="Inclusion &amp; Diversity"> <h3>Inclusion &amp; Diversity</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<div class="active-arrow">
+<span class="idropdown nav-link px-auto px-lg-3 text-white mobilenav-link" title="Businesses"> <h3>Businesses <i class="dropdown-right ficon-dropdown"></i></h3>
+</span>
+</div>
+<ul class="list-unstyled nav--list--level2 col-md-12 col-sm-12">
+<li class="nav-item--level2">
+<a class="mobilenav-link back--btn">
+<span><i class="icon icon--arrow-left"></i></span> BACK
+        </a>
+</li>
+<li class="nav-item--level2">
+<span class="mobilenav-link" title="Businesses"> <h3>Businesses</h3>
+</span>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="/additive/" rel="noopener noreferrer" target="_blank" title="Additive"> <h3>Additive</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.geaviation.com" rel="noopener noreferrer" target="_blank" title="Aviation"> <h3>Aviation</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.gecapital.com/" rel="noopener noreferrer" target="_blank" title="Capital"> <h3>Capital</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="/digital/" rel="noopener noreferrer" target="_blank" title="Digital"> <h3>Digital</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.gehealthcare.com/" rel="noopener noreferrer" target="_blank" title="Healthcare"> <h3>Healthcare</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<span class="mobilenav-link" title="Power"> <h3>Power</h3>
+</span>
+<ul class="list-unstyled nav--list--level3">
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/gas-power" target="_blank">                  Gas Power
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/steam-power" target="_blank">                  Steam Power
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://nuclear.gepower.com/" target="_blank">                  Nuclear
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.gepowerconversion.com/" target="_blank">                  Power Conversion
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.geenergyconsulting.com/" target="_blank">                  Energy Consulting
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+</ul>
+</li>
+<li class="nav-item--level2">
+<span class="mobilenav-link" target="_blank" title="Renewable Energy"> <h3>Renewable Energy</h3>
+</span>
+<ul class="list-unstyled nav--list--level3">
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/renewableenergy" target="_blank">                  Renewable Energy
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/wind-energy/onshore-wind" target="_blank">                  Onshore Wind
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/wind-energy/offshore-wind" target="_blank">                  Offshore Wind
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/hydro-power" target="_blank">                  Hydro
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/hybrid" target="_blank">                  Hybrids
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.gegridsolutions.com/index.htm" target="_blank">                  Grid Solutions
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="/research/" rel="noopener noreferrer" target="_blank" title="Research"> <h3>Research</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7001" href="/licensing" title="Licensing"> <h3>Licensing</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-item icon">
+<a class="nav-link px-3 text-white" href="mailto:" id="email-icon">
+<i class="icon ficon-email"><span class="hidden">email</span></i>
+</a>
+</li>
+<li class="nav-item icon">
+<a class="mobilenav-link text-white" href="" id="globe-icon">
+<i class="ficon-globe"><span class="hidden">Globe</span></i>
+</a>
+</li>
+<li class="nav-item header-stock-ticker">
+<a class="nav-link ge-stock-ticker mobile-menu ml-0 pl-0" href="" id="ge-stock-ticker" target="_self">GE</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<ul class="nav d-none d-lg-flex ge-nav-icons-desktop">
+<li class="nav-item icon">
+<a class="nav-link px-3 text-white" href="/contact/general" id="email-icon">
+<i class="icon ficon-email"><span class="hidden">email</span></i>
+</a>
+</li>
+<li class="nav-item icon">
+<a class="nav-link px-3 text-white" href="https://www.ge.com/directory" id="globe-icon">
+<i class="ficon-globe"><span class="hidden">Globe</span></i>
+</a>
+</li>
+<li class="nav-item icon search-icon">
+<a class="nav-link" id="ge-search-component-init">
+<i class="ficon-search"><span class="hidden">Search</span></i>
+</a>
+</li>
+<li class="nav-item header-stock-ticker">
+<a class="nav-link ge-stock-ticker" href="https://www.ge.com/investor-relations/stocks" id="ge-stock-ticker" target="_self">GE</a>
+</li>
+</ul>
+<span class="dd-light-mask"> </span>
+</div>
+<span class="dd-light-mask"> </span>
+</nav>
+<div class="block block--basic block--ge-com-unified-accessibilityscript">
+<div class="basic__body"><script>
+(function(){
+var s = document.createElement('script'),
+e = ! document.body ? document.querySelector('head') : document.body;
+s.src = 'https://acsbap.com/apps/app/assets/js/acsb.js';
+s.async = s.defer = true;
+s.onload = function(){
+acsbJS.init({
+statementLink : 'https://www.ge.com/accessibility',
+feedbackLink : '',
+footerHtml : '&nbsp;',
+hideMobile : false,
+hideTrigger : false,
+language : 'en',
+position : 'left',
+leadColor : '#005eb8',
+triggerColor : '#005eb8',
+triggerRadius : '50%',
+triggerPositionX : 'left',
+triggerPositionY : 'bottom',
+triggerIcon : 'wheels',
+triggerSize : 'medium',
+triggerOffsetX : 20,
+triggerOffsetY : 75,
+mobile : {
+triggerSize: 'small',
+triggerPositionX : 'left',
+triggerPositionY : 'bottom',
+triggerOffsetX : 0,
+triggerOffsetY : 20,
+triggerRadius : '50%'
+}
+});
+};
+e.appendChild(s);
+}());
+</script></div>
+</div>
+</header>
+<!-- header menu ends -->
+<!-- floating header menu begins -->
+<header class="header ge-header sticky--float--header d-none d-lg-flex">
+<nav class="contextual-region navbar navbar-dark navbar-expand-lg ge-menu-main bg-transparent text-white px-3 px-lg-4" data-block-plugin-id="system_menu_block:main" id="block-ge-com-unified-main-menu">
+<div class="container-fluid">
+<a class="navbar-brand text-white" href="/">
+<img alt="General Electric" class="d-inline-block img-fluid" src="/themes/custom/ge_com_unified/logo.svg" title="General Electric Logo"/>
+</a>
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler ml-auto rounded-0 collapsed" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<ul class="nav d-lg-none ge-nav-icons-mobile">
+<li class="nav-item icon d-none">
+<a class="nav-link px-3 text-white" href="/contact/general" id="email-icon">
+<i class="icon ficon-email"><span class="hidden">email</span></i>
+</a>
+</li>
+<li class="nav-item icon d-none">
+<a class="nav-link px-3 text-white" href="https://www.ge.com/directory" id="globe-icon">
+<i class="ficon-globe"><span class="hidden">Globe</span></i>
+</a>
+</li>
+<li class="nav-item icon pl-3 search-icon">
+<a class="nav-link px-3 text-white" href="javascript:void(0);" id="ge-search-component-init">
+<i class="ficon-search"><span class="hidden">Search</span></i>
+</a>
+</li>
+</ul>
+<ul class="nav d-none d-lg-flex ge-nav-icons-mobile">
+<li class="nav-item icon d-none">
+<a class="nav-link px-3 text-white" href="/contact/general" id="email-icon">
+<i class="icon ficon-email"><span class="hidden">email</span></i>
+</a>
+</li>
+<li class="nav-item icon d-none">
+<a class="nav-link px-3 text-white" href="https://www.ge.com/directory" id="globe-icon">
+<i class="ficon-globe"><span class="hidden">Globe</span></i>
+</a>
+</li>
+<li class="nav-item icon pl-3 search-icon">
+<a class="nav-link px-3 text-white" href="javascript:void(0);" id="ge-search-component-init">
+<i class="ficon-search"><span class="hidden">Search</span></i>
+</a>
+</li>
+</ul>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="main-menu-wrapper ml-auto">
+<ul class="navbar-nav ml-auto first--level" data-region="header">
+<li class="nav-item menu-level-one">
+<a class="nav-link px-auto px-lg-3 text-white" href="/news/" target="_self" title="News">            News
+                                  </a>
+<div aria-labelledby="dropdown01" class="dropdown-menu megamenu">
+<div class="row">
+<div class="dd-container">
+<div class="no-position dd-links">
+<ul class="list-unstyled second--level">
+<li>
+<a class="dropdown-item body-1" href="/news/press-releases" target="_self" title="Press releases">              Press releases
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Company news and announcements.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Access the latest press releases, media contacts, and press tools.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Reports" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/GE_Reports.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" href="https://www.ge.com/news/" target="_self" title="GE Reports">              GE Reports
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Stories from the world of GE.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Discover how our people &amp; technology are solving global issues, improving lives, and changing industries.
+              </p>
+<ul class="list-unstyled">
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/news">                      Innovation Stories
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/news/reports/category/performance">                      Business Performance Articles
+                                                                </a>
+</h6></div>
+</li>
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Reports" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/GE_Reports_sm.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" href="/news/gevoices" rel="noopener noreferrer" target="_blank" title="GE Voices">              Voices
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Sign up today and get involved!</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Voices is a network for GE’s US supporters interested in the company’s impact in their communities and in issues that impact the company. 
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Aviation Employee" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Aviation_Employee_28_04_0.jpg"/>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="dd-content-block">
+<h2 class="col-xl-12 col-lg-12">Company news and stories.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                    Explore the latest stories, news, downloads, and press tools.
+                  </p>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE News" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/GE_News_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-item menu-level-one">
+<a class="nav-link px-auto px-lg-3 text-white" data-drupal-link-system-path="node/6994" href="/investor-relations" title="Investors overview">            Investors
+                                  </a>
+<div aria-labelledby="dropdown01" class="dropdown-menu megamenu">
+<div class="row">
+<div class="dd-container">
+<div class="no-position dd-links">
+<ul class="list-unstyled second--level">
+<li>
+<a class="dropdown-item body-1" href="https://www.ge.com/sites/default/files/ge-company-overview.pdf" target="_blank" title="GE company overview">              GE company overview
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">GE Company Overview.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+</p>
+<ul class="list-unstyled">
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sites/default/files/ge-company-overview.pdf" target="_blank">                      Presentation
+                                                                </a>
+</h6></div>
+</li>
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Block Island" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2021-09/BlockIsland_by_JeffMilstein.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7063" href="/investor-relations/stocks" title="Stock">              Stock
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Stock.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Get the latest GE stock data.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Stock" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Stock_mega_menu_0.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/6991" href="/investor-relations/events-reports" title="Events &amp; reports">              Events &amp; reports
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Investor events and reports.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Tune in or catch up on GE’s latest investor events and reports.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Investor events and reports" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Events_and_Reports.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7179" href="/investor-relations/ir-updates" title="IR Updates">              IR Updates
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">GE in the news.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Read the latest GE financial news releases and stories.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE financial news" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Financial_News_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7064" href="/investor-relations/sec-filings" title="SEC filings">              SEC filings
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">SEC filings.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Explore GE’s recent and historic SEC filings.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="SEC Filings" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/SEC_Filing_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/28087" href="/investor-relations/annual-report" title="Annual report">              Annual report
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Annual Report.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Access GE’s recent and historic Annual Reports and accompanying materials.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Annual Report" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Annual_report.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/28978" href="/investor-relations/annualmeeting" title="Annual meeting">              Annual meeting
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Annual meeting</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Read GE’s 2022 Proxy Statement, vote your shares and access the 2022 Annual Meeting.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="annual meeting" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2022-03/DJI_0770.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7018" href="/investor-relations/governance" title="Governance">              Governance
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Governance.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Learn about governance at GE, including the latest Proxy Statement and information about the GE Board of Directors.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Governance menu" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Governance_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/6780" href="/investor-relations/shareholder-services" title="Shareholder services">              Shareholder services
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">GE Shareholder Services.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Access important shareholder information.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Shareholder services image" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Shareholder_Services_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7082" href="/investor-relations/ir-contact" title="Contact">              Contact
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Contact us.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Get in touch and stay informed.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Contact Investor Relations" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/contact_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="dd-content-block">
+<h2 class="col-xl-12 col-lg-12">Investor Relations at GE.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                    Learn how we’re delivering on our priorities.
+                  </p>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Solar Invester LV5 Series" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Solar_Inverter_LV5_Series_01.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-item menu-level-one">
+<a class="nav-link px-auto px-lg-3 text-white" data-drupal-link-system-path="node/6741" href="/about-us" title="About us">            About us
+                                  </a>
+<div aria-labelledby="dropdown01" class="dropdown-menu megamenu">
+<div class="row">
+<div class="dd-container">
+<div class="no-position dd-links">
+<ul class="list-unstyled second--level">
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/6777" href="/about-us/leadership/executives" title="GE leadership">              GE leadership
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Meet our executives.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Accomplished leaders building GE’s legacy.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Leadership narrow" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Leadership_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/6977" href="/about-us/history" title="History">              History
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Over 125 years of innovation.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Explore a timeline of GE technologies that have spurred transformation across the world.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Line men" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Limmen_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/28335" href="/about-us/diversity" title="Diversity">              Diversity
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Building a world that works for everyone.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 At GE, we are committed to building a more diverse workforce and a more inclusive workplace.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="DiversityPage_Top_Image.jpg" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2021-02/DiversityPage_Top_Image_0.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/23760" href="/about-us/energy-transition" title="Energy Transition">              Energy Transition
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Advancing the future of energy.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Our energy expertise spans from renewable wind energy to emission-reducing natural gas, as well as physical and digital solutions to modernize the grid connecting it all.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Hero and Menu" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2021-03/Hero%20and%20menu%20image.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" href="https://www.ge.com/sustainability" title="ESG">              ESG
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Environmental, Social and Governance at GE.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 A culture of integrity, compliance, safety, and respect for human rights, while reducing our environmental footprint.
+              </p>
+<ul class="list-unstyled">
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability">                      Home
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability/ourpriorities">                      Our Priorities
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability/ourinnovation">                      Our Innovation
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability/ourculture">                      Our Culture
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability/ourphilanthropy">                      Our Philanthropy
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability/public-policy">                      Public Policy
+                                                                </a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a href="https://www.ge.com/sustainability/reports-hub">                      Reports Hub
+                                                                </a>
+</h6></div>
+</li>
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Offshore Haliade Wind Turbine" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-03/GE_Offshore_Haliade_X.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7125" href="/faq" title="FAQs">              FAQs
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Frequently asked questions.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Answers to popular and relevant inquiries.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Frequently asked questions" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/FAQs_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" href="https://www.ge.com/contact/general" title="Contact us">              Contact us
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Questions and inquiries.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Contact information for general inquiries and feedback.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Contact GE employees" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Contact_2_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7356" href="/about-us/covid-19" title="COVID-19 response">              COVID-19
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">GE is supporting the fight against COVID-19.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 We’re continuing to do all we can to support our customers and employees during this unprecedented time.  We’re deeply proud of GE employees around the world rising to the challenge.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE's COVID-19 Response" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/COVID-19_mega_menu.jpg"/>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="dd-content-block">
+<h2 class="col-xl-12 col-lg-12">Building a world that works.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                    Our technology, global network, and exceptional team is fueled by a mission—building a world that works.
+                  </p>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Person working on top o Wind Turbine" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2022-04/about_geVer2-Menu.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-item menu-level-one">
+<a class="nav-link px-auto px-lg-3 text-white iexternal" href="https://jobs.gecareers.com/global/en" rel="noopener noreferrer" target="_blank" title="Careers">            Careers
+                                    <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div aria-labelledby="dropdown01" class="dropdown-menu megamenu">
+<div class="row">
+<div class="dd-container">
+<div class="no-position dd-links">
+<ul class="list-unstyled second--level">
+<li>
+<a class="dropdown-item body-1 iexternal" href="https://jobs.gecareers.com/global/en/search-results" rel="noopener noreferrer" target="_blank" title="Search jobs">              Search jobs
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Explore careers at GE.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Find yourself a world changing job.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Search GE jobs" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Search_Jobs_at_ge_0.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1 iexternal" href="https://jobs.gecareers.com/global/en/working-at-ge" rel="noopener noreferrer" target="_blank" title="Working at GE">              Working at GE
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">A career at GE is more than the work you do.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Learn more about our culture, businesses, and life at GE.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Working at GE" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Working_at_GE.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1 iexternal" href="https://jobs.gecareers.com/global/en/diversity-at-ge" rel="noopener noreferrer" target="_blank" title="Inclusion &amp; Diversity">              Inclusion &amp; Diversity
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">GE's culture of inclusion.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 By embracing diverse teams and perspectives, we are better equipped to build a world that works.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Inclusion and diversity at GE" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Inclusion_Diversity_GE.jpg"/>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="dd-content-block">
+<h2 class="col-xl-12 col-lg-12">Join the team.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                    At GE, we rise to the challenge of building a world that works. Explore a career with us.
+                  </p>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Careers at GE" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Careers_at_GE.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li class="nav-item menu-level-one">
+<span class="idropdown nav-link px-auto px-lg-3 text-white" title="Businesses">            Businesses
+                        <span class="businesses-icon ficon-dropdown"></span>
+</span>
+<div aria-labelledby="dropdown01" class="dropdown-menu megamenu">
+<div class="row">
+<div class="dd-container">
+<div class="no-position dd-links">
+<ul class="list-unstyled second--level">
+<li>
+<a class="iexternal dropdown-item body-1" href="/additive/" rel="noopener noreferrer" target="_blank" title="Additive">              Additive
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">We're built to be your full-service additive partner.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Offering a suite of products to help unlock the full potential of additive manufacturing.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Additive" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-05/Additive_narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1 iexternal" href="https://www.geaviation.com" rel="noopener noreferrer" target="_blank" title="Aviation">              Aviation
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">A driving force for flight.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 GE Aviation is a world-leading provider of aircraft engines, systems and avionics.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Aviation" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Aviation_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1 iexternal" href="https://www.gecapital.com/" rel="noopener noreferrer" target="_blank" title="Capital">              Capital
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Serving customers and markets aligned to GE’s businesses.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 We connect capital to infrastructure and deliver innovative financial solutions that help make the world work better. 
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Capital" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Capital_Narrow_0.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="iexternal dropdown-item body-1" href="/digital/" rel="noopener noreferrer" target="_blank" title="Digital">              Digital
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Putting industrial data to work.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Transforming how industry solves its toughest challenges by bringing simplicity, speed and scale to digital transformation.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Digital" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Digital_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1 iexternal" href="https://www.gehealthcare.com/" rel="noopener noreferrer" target="_blank" title="Healthcare">              Healthcare
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">At the center of an ecosystem striving for precision health.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 We build intelligent devices, data analytics, applications and services to enable healthcare practitioners to deliver care more efficiently and with better outcomes.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Healthcare" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Healthcare_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<span class="dropdown-item body-1" title="Power">              Power
+                                        </span>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Powering forward.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Creating the energy technologies of the future and improving the power networks that we depend on today.
+              </p>
+<ul class="list-unstyled">
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/gas-power" target="_blank">                      Gas Power
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/steam-power" target="_blank">                      Steam Power
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://nuclear.gepower.com/" target="_blank">                      Nuclear
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.gepowerconversion.com/" target="_blank">                      Power Conversion
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.geenergyconsulting.com/" target="_blank">                      Energy Consulting
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Power Turbine" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Power_Turbine_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<span class="dropdown-item body-1" target="_blank" title="Renewable Energy">              Renewable Energy
+                                        </span>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Wind, hydro, hybrid power, distributed by grid.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Together with our customers, we’re proving that no one is ever limited to only affordable, reliable, or sustainable energy.
+              </p>
+<ul class="list-unstyled">
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/renewableenergy" target="_blank">                      Renewable Energy
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/wind-energy/onshore-wind" target="_blank">                      Onshore Wind
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/wind-energy/offshore-wind" target="_blank">                      Offshore Wind
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/hydro-power" target="_blank">                      Hydro
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/hybrid" target="_blank">                      Hybrids
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+<li>
+<div class="link-secondary"><h6 class="link-color">
+<a class="iexternal" href="https://www.gegridsolutions.com/index.htm" target="_blank">                      Grid Solutions
+                                                                  <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</h6></div>
+</li>
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Renewable Energy" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/Renewable_Energy_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="iexternal dropdown-item body-1" href="/research/" rel="noopener noreferrer" target="_blank" title="Research">              Research
+                                          <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Where research meets reality to propel GE and the world forward.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 GE's innovation engine where ideas become reality to create a better world and deliver differentiated tech across the company's industrial portfolio.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE Research" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/research_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</li>
+<li>
+<a class="dropdown-item body-1" data-drupal-link-system-path="node/7001" href="/licensing" title="Licensing">              Licensing
+                                        </a>
+<div class="second-level-description">
+<h2 class="col-xl-8 col-lg-8">Partnering to define the future of industries.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                 Commercializing GE’s technology and IP to accelerate growth and achieve market differentiation.
+              </p>
+<ul class="list-unstyled">
+</ul>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="Licensing image" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-03/licensing_690_575.jpg"/>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="dd-content-block">
+<h2 class="col-xl-12 col-lg-12">Inventing the future of industry.</h2>
+<p class="dd-description body-2 col-xl-8 col-lg-8">
+                    GE's dedicated team, leading technology, and global reach and capabilities help the world work more efficiently, reliably, and safely.
+                  </p>
+<div class="dropdown_img">
+<div class="wrapper_img">
+<img alt="GE businesses" class="dd-image w-100 lazyload" loading="lazy" src="/sites/default/files/2020-04/City_Image_Narrow.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<span class="dd-lightbox"></span>
+<span class="dd-bg"></span>
+</ul>
+</div>
+</div>
+<!-- mobile menu -->
+<div class="mobile-navbar overlay d-lg-none">
+<div class="wrap_overlay collapse" id="navbarSupportedContent">
+<div class="inner--wrapper">
+<ul class="list-unstyled nav--list--level1 col-md-6 col-sm-12">
+<li class="nav-item">
+<div class="active-arrow">
+<a class="nav-link px-auto px-lg-3 text-white mobilenav-link" href="/news/" target="_self" title="News"> <h3>News <i class="dropdown-right ficon-dropdown"></i></h3>
+</a>
+</div>
+<ul class="list-unstyled nav--list--level2 col-md-12 col-sm-12">
+<li class="nav-item--level2">
+<a class="mobilenav-link back--btn">
+<span><i class="icon icon--arrow-left"></i></span> BACK
+        </a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="/news/" target="_self" title="News"> <h3>News</h3>
+</a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="/news/press-releases" target="_self" title="Press releases"> <h3>Press releases</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.ge.com/news/" target="_self" title="GE Reports"> <h3>GE Reports</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+<li class="nav-item">
+<a href="https://www.ge.com/news">                  Innovation Stories
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/news/reports/category/performance">                  Business Performance Articles
+                                                    </a>
+</li>
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="/news/gevoices" rel="noopener noreferrer" target="_blank" title="GE Voices"> <h3>Voices</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<div class="active-arrow">
+<a class="nav-link px-auto px-lg-3 text-white mobilenav-link" data-drupal-link-system-path="node/6994" href="/investor-relations" title="Investors overview"> <h3>Investors <i class="dropdown-right ficon-dropdown"></i></h3>
+</a>
+</div>
+<ul class="list-unstyled nav--list--level2 col-md-12 col-sm-12">
+<li class="nav-item--level2">
+<a class="mobilenav-link back--btn">
+<span><i class="icon icon--arrow-left"></i></span> BACK
+        </a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/6994" href="/investor-relations" title="Investors overview"> <h3>Investors overview</h3>
+</a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.ge.com/sites/default/files/ge-company-overview.pdf" target="_blank" title="GE company overview"> <h3>GE company overview</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+<li class="nav-item">
+<a href="https://www.ge.com/sites/default/files/ge-company-overview.pdf" target="_blank">                  Presentation
+                                                    </a>
+</li>
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7063" href="/investor-relations/stocks" title="Stock"> <h3>Stock</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/6991" href="/investor-relations/events-reports" title="Events &amp; reports"> <h3>Events &amp; reports</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7179" href="/investor-relations/ir-updates" title="IR Updates"> <h3>IR Updates</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7064" href="/investor-relations/sec-filings" title="SEC filings"> <h3>SEC filings</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/28087" href="/investor-relations/annual-report" title="Annual report"> <h3>Annual report</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/28978" href="/investor-relations/annualmeeting" title="Annual meeting"> <h3>Annual meeting</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7018" href="/investor-relations/governance" title="Governance"> <h3>Governance</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/6780" href="/investor-relations/shareholder-services" title="Shareholder services"> <h3>Shareholder services</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7082" href="/investor-relations/ir-contact" title="Contact"> <h3>Contact</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<div class="active-arrow">
+<a class="nav-link px-auto px-lg-3 text-white mobilenav-link" data-drupal-link-system-path="node/6741" href="/about-us" title="About us"> <h3>About us <i class="dropdown-right ficon-dropdown"></i></h3>
+</a>
+</div>
+<ul class="list-unstyled nav--list--level2 col-md-12 col-sm-12">
+<li class="nav-item--level2">
+<a class="mobilenav-link back--btn">
+<span><i class="icon icon--arrow-left"></i></span> BACK
+        </a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/6741" href="/about-us" title="About us"> <h3>About us</h3>
+</a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/6777" href="/about-us/leadership/executives" title="GE leadership"> <h3>GE leadership</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/6977" href="/about-us/history" title="History"> <h3>History</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/28335" href="/about-us/diversity" title="Diversity"> <h3>Diversity</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/23760" href="/about-us/energy-transition" title="Energy Transition"> <h3>Energy Transition</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.ge.com/sustainability" title="ESG"> <h3>ESG</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability">                  Home
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability/ourpriorities">                  Our Priorities
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability/ourinnovation">                  Our Innovation
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability/ourculture">                  Our Culture
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability/ourphilanthropy">                  Our Philanthropy
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability/public-policy">                  Public Policy
+                                                    </a>
+</li>
+<li class="nav-item">
+<a href="https://www.ge.com/sustainability/reports-hub">                  Reports Hub
+                                                    </a>
+</li>
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7125" href="/faq" title="FAQs"> <h3>FAQs</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.ge.com/contact/general" title="Contact us"> <h3>Contact us</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7356" href="/about-us/covid-19" title="COVID-19 response"> <h3>COVID-19</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<div class="active-arrow">
+<a class="nav-link px-auto px-lg-3 text-white iexternal mobilenav-link" href="https://jobs.gecareers.com/global/en" rel="noopener noreferrer" target="_blank" title="Careers"> <h3>Careers <i class="dropdown-right ficon-dropdown"></i></h3>
+</a>
+</div>
+<ul class="list-unstyled nav--list--level2 col-md-12 col-sm-12">
+<li class="nav-item--level2">
+<a class="mobilenav-link back--btn">
+<span><i class="icon icon--arrow-left"></i></span> BACK
+        </a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://jobs.gecareers.com/global/en" rel="noopener noreferrer" target="_blank" title="Careers"> <h3>Careers</h3>
+</a>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://jobs.gecareers.com/global/en/search-results" rel="noopener noreferrer" target="_blank" title="Search jobs"> <h3>Search jobs</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://jobs.gecareers.com/global/en/working-at-ge" rel="noopener noreferrer" target="_blank" title="Working at GE"> <h3>Working at GE</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://jobs.gecareers.com/global/en/diversity-at-ge" rel="noopener noreferrer" target="_blank" title="Inclusion &amp; Diversity"> <h3>Inclusion &amp; Diversity</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<div class="active-arrow">
+<span class="idropdown nav-link px-auto px-lg-3 text-white mobilenav-link" title="Businesses"> <h3>Businesses <i class="dropdown-right ficon-dropdown"></i></h3>
+</span>
+</div>
+<ul class="list-unstyled nav--list--level2 col-md-12 col-sm-12">
+<li class="nav-item--level2">
+<a class="mobilenav-link back--btn">
+<span><i class="icon icon--arrow-left"></i></span> BACK
+        </a>
+</li>
+<li class="nav-item--level2">
+<span class="mobilenav-link" title="Businesses"> <h3>Businesses</h3>
+</span>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="/additive/" rel="noopener noreferrer" target="_blank" title="Additive"> <h3>Additive</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.geaviation.com" rel="noopener noreferrer" target="_blank" title="Aviation"> <h3>Aviation</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.gecapital.com/" rel="noopener noreferrer" target="_blank" title="Capital"> <h3>Capital</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="/digital/" rel="noopener noreferrer" target="_blank" title="Digital"> <h3>Digital</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="https://www.gehealthcare.com/" rel="noopener noreferrer" target="_blank" title="Healthcare"> <h3>Healthcare</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<span class="mobilenav-link" title="Power"> <h3>Power</h3>
+</span>
+<ul class="list-unstyled nav--list--level3">
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/gas-power" target="_blank">                  Gas Power
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/steam-power" target="_blank">                  Steam Power
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://nuclear.gepower.com/" target="_blank">                  Nuclear
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.gepowerconversion.com/" target="_blank">                  Power Conversion
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.geenergyconsulting.com/" target="_blank">                  Energy Consulting
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+</ul>
+</li>
+<li class="nav-item--level2">
+<span class="mobilenav-link" target="_blank" title="Renewable Energy"> <h3>Renewable Energy</h3>
+</span>
+<ul class="list-unstyled nav--list--level3">
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/renewableenergy" target="_blank">                  Renewable Energy
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/wind-energy/onshore-wind" target="_blank">                  Onshore Wind
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/wind-energy/offshore-wind" target="_blank">                  Offshore Wind
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/hydro-power" target="_blank">                  Hydro
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.ge.com/renewableenergy/hybrid" target="_blank">                  Hybrids
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li class="nav-item">
+<a class="iexternal" href="https://www.gegridsolutions.com/index.htm" target="_blank">                  Grid Solutions
+                                                      <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" href="/research/" rel="noopener noreferrer" target="_blank" title="Research"> <h3>Research</h3> <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+<li class="nav-item--level2">
+<a class="mobilenav-link" data-drupal-link-system-path="node/7001" href="/licensing" title="Licensing"> <h3>Licensing</h3>
+</a>
+<ul class="list-unstyled nav--list--level3">
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-item icon">
+<a class="nav-link px-3 text-white" href="mailto:" id="email-icon">
+<i class="icon ficon-email"><span class="hidden">email</span></i>
+</a>
+</li>
+<li class="nav-item icon">
+<a class="mobilenav-link text-white" href="" id="globe-icon">
+<i class="ficon-globe"><span class="hidden">Globe</span></i>
+</a>
+</li>
+<li class="nav-item header-stock-ticker">
+<a class="nav-link ge-stock-ticker mobile-menu ml-0 pl-0" href="" id="ge-stock-ticker" target="_self">GE</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<ul class="nav d-none d-lg-flex ge-nav-icons-desktop">
+<li class="nav-item icon">
+<a class="nav-link px-3 text-white" href="/contact/general" id="email-icon">
+<i class="icon ficon-email"><span class="hidden">email</span></i>
+</a>
+</li>
+<li class="nav-item icon">
+<a class="nav-link px-3 text-white" href="https://www.ge.com/directory" id="globe-icon">
+<i class="ficon-globe"><span class="hidden">Globe</span></i>
+</a>
+</li>
+<li class="nav-item icon search-icon">
+<a class="nav-link" id="ge-search-component-init">
+<i class="ficon-search"><span class="hidden">Search</span></i>
+</a>
+</li>
+<li class="nav-item header-stock-ticker">
+<a class="nav-link ge-stock-ticker" href="https://www.ge.com/investor-relations/stocks" id="ge-stock-ticker" target="_self">GE</a>
+</li>
+</ul>
+<span class="dd-light-mask"> </span>
+</div>
+<span class="dd-light-mask"> </span>
+</nav>
+<div class="block block--basic block--ge-com-unified-accessibilityscript">
+<div class="basic__body"><script>
+(function(){
+var s = document.createElement('script'),
+e = ! document.body ? document.querySelector('head') : document.body;
+s.src = 'https://acsbap.com/apps/app/assets/js/acsb.js';
+s.async = s.defer = true;
+s.onload = function(){
+acsbJS.init({
+statementLink : 'https://www.ge.com/accessibility',
+feedbackLink : '',
+footerHtml : '&nbsp;',
+hideMobile : false,
+hideTrigger : false,
+language : 'en',
+position : 'left',
+leadColor : '#005eb8',
+triggerColor : '#005eb8',
+triggerRadius : '50%',
+triggerPositionX : 'left',
+triggerPositionY : 'bottom',
+triggerIcon : 'wheels',
+triggerSize : 'medium',
+triggerOffsetX : 20,
+triggerOffsetY : 75,
+mobile : {
+triggerSize: 'small',
+triggerPositionX : 'left',
+triggerPositionY : 'bottom',
+triggerOffsetX : 0,
+triggerOffsetY : 20,
+triggerRadius : '50%'
+}
+});
+};
+e.appendChild(s);
+}());
+</script></div>
+</div>
+</header>
+<!-- floating header menu ends -->
+<main class="ge-main main_block" role="main">
+<section class="ge-basic-header header--ge-primary-blue">
+<div class="container-fluid-custom">
+<div class="row">
+<div class="col-12">
+<div class="hero_text">
+<h5 class="masthead-title">GE Privacy Policy</h5>
+<h1 class="main-title" title="Privacy Policy">Privacy Policy</h1>
+<div class="header-bottom-section">
+             
+                        </div>
+</div>
+</div>
+</div>
+</div></section>
+<div class="hidden" data-drupal-messages-fallback=""></div>
+<div class="block block--ge-com-unified-content">
+<!-- main content begins -->
+<main class="archive-main-wrapper">
+<section class="ge-basic">
+<div class="container-fluid global-margin">
+<div class="row">
+<div class="col-xl-1 col-lg-1 order-lg-1 col-md-12 order-3">
+<div class="social-icons">
+<div class="block-social-media-links block block-social-media-links-block" id="block-socialmedialinks">
+<div class="content">
+<ul class="social-media-links--platforms platforms vertical">
+<li>
+<a aria-label="General Electric Facebook page" class="social-media-link-icon--facebook" href="https://www.facebook.com/ge" title="General Electric Facebook page">
+<span class="fa fa-facebook fa-fw"></span>
+</a>
+</li>
+<li>
+<a aria-label="General Electric Twitter page" class="social-media-link-icon--twitter" href="https://www.twitter.com/generalelectric" title="General Electric Twitter page">
+<span class="fa fa-twitter fa-fw"></span>
+</a>
+</li>
+<li>
+<a aria-label="General Electric LinkedIn page" class="social-media-link-icon--linkedin" href="https://www.linkedin.com/company/ge/" title="General Electric LinkedIn page">
+<span class="fa fa-linkedin fa-fw"></span>
+</a>
+</li>
+<li>
+<a aria-label="General Electric E-Mail" class="social-media-link-icon--email" href="/cdn-cgi/l/email-protection#d0b6b5b5b4b2b1b3bbfea4b5b1bd90b7b5feb3bfbdefa3a5b2bab5b3a4ed83b5beb4f5e2e0b5bdb1b9bcf5e2e0a4bff5e2e09795" title="General Electric E-Mail">
+<span class="fa fa-envelope fa-fw"></span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div about="/privacy" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12 order-2" data-history-node-id="6744" id="article_description" role="article" typeof="schema:WebPage">
+<div class="article-content">
+<div class="language-switcher">
+<h6>LANGUAGE</h6>
+<div class="option_selector form-field offset-lg-1">
+<div class="row">
+<div class="col-xl-6 col-lg-6 col-md-12">
+<form accept-charset="UTF-8" action="/privacy?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla/5.0%20%28X11%3B%20Ubuntu%3B%20Linux%20x86_64%3B%20rv%3A52.0%29%20Gecko/20100101%20Firefox/52.0" autocomplete="on" class="ge-lang-dropdown-form" data-drupal-selector="ge-lang-dropdown-form" id="ge-lang-dropdown-form" method="post">
+<div class="js-form-item form-item js-form-type-select form-item-ge-lang-dropdown-select js-form-item-ge-lang-dropdown-select form-no-label form-group">
+<div class="form-group custome_select archive_select"><select class="ge-lang-dropdown-select-element form-select" data-drupal-selector="edit-ge-lang-dropdown-select" id="edit-ge-lang-dropdown-select" name="ge_lang_dropdown_select"><option value="da">Dansk</option><option value="de">Deutsch</option><option selected="selected" value="en">English</option><option value="es">Español</option><option value="fr">Français</option><option value="it">Italiano</option><option value="hu">Magyar</option><option value="ms">Melayu</option><option value="nl">Nederlands</option><option value="nn">Norsk</option><option value="pl">Polski</option><option value="pt-pt">Português</option><option value="fi">Suomi</option><option value="sv">Svenska</option><option value="ar">العربية</option><option value="cs">Čeština</option><option value="ru">Русский</option><option value="zh-hans">中文 (简体)</option><option value="ja">日本語</option><option value="ko">한국어</option></select></div>
+</div>
+<noscript><div> <input class="button js-form-submit form-submit btn btn-primary" data-drupal-selector="edit-submit" id="edit-submit" name="op" type="submit" value="Go"/>
+</div></noscript>
+<input class="form-control" data-drupal-selector="form-hed3lev53uy2pdsl4g8npi8o1qxazgav7kmkbc0qr00" name="form_build_id" type="hidden" value="form-Hed3lev53UY2PDsL4g8npI8o1QxAzGAV7KMkBC0qR00"/>
+<input class="form-control" data-drupal-selector="edit-ge-lang-dropdown-form" name="form_id" type="hidden" value="ge_lang_dropdown_form"/>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="body-2">
+<p>Last Updated December 15, 2020</p>
+<p>The General Electric Company and its wholly and majority-owned entities (collectively, the “GE Group”), respect your concerns about privacy. References in this Privacy Policy to “GE”, “we”, “us”, and “our” are references to the entity responsible for the processing of your personal information, which generally is the entity that obtains your personal information.</p>
+<p>This Privacy Policy applies to the personal information we obtain through the GE Group’s properties, including websites, mobile applications and social media pages that reference this Privacy Policy (“Online Channels”); offline collection in connection with sales, marketing, partner and supplier engagement (“Offline Channels”); and third-party sources, including ad networks and lead brokers (collectively, the “Channels”). This Privacy Policy does not apply to personal information obtained through our Careers website, which is subject to the Candidate Privacy Notice <a href="https://www.ge.com/careers/privacy?_ga=2.176820899.705392240.1652705083-2138717391.1646227988">available here</a>, or to products and services that post separate privacy policies.</p>
+<p>This Privacy Policy describes the types of personal information we obtain through the Channels, how we may use that personal information, with whom we may share it, and how you may exercise your rights regarding our processing of the information. The Privacy Policy also describes the measures we take to safeguard the personal information we obtain and how you can contact us about our privacy practices. </p>
+<p>The Online Channels may provide links to other third-party websites and features, or contain third-party cookies, that are not owned or controlled by the GE Group. Please review the privacy policies of these third parties to familiarize yourself with their practices. You may also exercise your choices regarding third-party cookies using our Cookie Consent Tool by clicking on “Cookies” at the bottom of the page for the GE Business you are interested in managing cookie preferences for.<br/>
+ </p>
+<p>Click on one of the links below to jump to the listed section:</p>
+<ul>
+<li style="list-style:disc"><a href="#_Personal_Information_We">Personal Information We Obtain</a>
+<ul>
+<li style="list-style:disc"><a href="#_Cookies_and_Similar">Cookies and Similar Technologies</a></li>
+</ul>
+</li>
+<li style="list-style:disc"><a href="#_How_We_Use">How We Use Personal Information</a></li>
+<li style="list-style:disc"><a href="#_Personal_Information_Sharing">Personal Information Sharing</a></li>
+<li style="list-style:disc"><a href="#_Data_Transfers">Data Transfers</a></li>
+<li style="list-style:disc"><a href="#_Your_Choices">Your Choices</a></li>
+<li style="list-style:disc"><a href="#_How_We_Protect">How We Protect Personal Information</a></li>
+<li style="list-style:disc"><a href="#_Retention_of_Personal">Retention of Personal Information</a></li>
+<li style="list-style:disc"><a href="#_Additional_Information">Additional Information &amp; Jurisdiction Specific Notices</a>
+<ul>
+<li style="list-style:disc"><a href="/privacy/china-notice">Notice to residents of Mainland China</a></li>
+<li style="list-style:disc"><a href="/privacy/california-notice">Notice to California Residents</a></li>
+<li style="list-style:disc"><a href="/privacy/japan-notice">Notice Regarding Joint Use of Personal Data Under the Personal Information Protection Act of Japan</a></li>
+<li style="list-style:disc"><a href="/privacy/russia-notice">Personal Data Processing Policy in Russia/ПОЛОЖЕНИЕ О ПОРЯДКЕ ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ</a></li>
+<li style="list-style:disc"><a href="/privacy/brazilian-notice">Notice to residents of Brazil</a></li>
+<li style="list-style:disc"><a href="#_Personal_Information">Children’s Personal Information</a></li>
+<li style="list-style:disc"><a href="#_Changes_to_Our">Changes to Our Privacy Policy</a></li>
+</ul>
+</li>
+<li style="list-style:disc"><a href="#_How_to_Contact">How To Contact Us</a></li>
+</ul>
+<div id="_Personal_Information_We">
+<h3>Personal Information We Obtain</h3>
+</div>
+<p>We may obtain personal information through the Channels. The types of personal information we may obtain include:</p>
+<ul>
+<li style="list-style:disc">contact information (such as name, phone and fax number, email and postal address) for you or for others (e.g., principals in your business);</li>
+<li style="list-style:disc">information used to create your online account (such as username, password and security question and answer);</li>
+<li style="list-style:disc">biographical and demographic information (such as date of birth, age, gender, job title/position, marital status and dependent, spousal and other family information);</li>
+<li style="list-style:disc">purchase and customer service history;</li>
+<li style="list-style:disc">financial information (such as payment information, including name, billing address and payment card details (i.e., card number, expiration date and security code); bank account information; financial statements; income; and credit score);</li>
+<li style="list-style:disc">location data (such as data derived from your IP address, country and zip code) and the precise geolocation of your mobile device where we have provided notice and choice, as appropriate;</li>
+<li style="list-style:disc">audio, electronic, or visual information;</li>
+<li style="list-style:disc">contact information you provide about friends or other people you would like us to contact;</li>
+<li style="list-style:disc">inferences about you, including about your preferences;</li>
+<li style="list-style:disc">clickstream data and other information about your online activities (such as information about your devices, browsing actions and usage patterns), including across the Online Channels and third-party websites, that we obtain through the use of cookies, web beacons and similar technologies (see our <a href="#" onclick="event.preventDefault(); window.evidon.notice.showConsentTool();">Cookie Consent Tool</a>); and</li>
+<li style="list-style:disc">other personal information contained in content you submit to us (such as through our <a href="https://www.ge.com/contact/general">“Contact Us”</a> feature).</li>
+</ul>
+<p>In addition, in connection with our insurance and financial services products, we may obtain government-issued ID numbers and Tax ID numbers, such as US Social Security numbers.</p>
+<p>We use third-party web analytics services in connection with the Online Channels, including Google Analytics, Adobe Analytics and Marketo, which use cookies and similar technologies to collect data (such as IP addresses) to evaluate use of and interaction with the Online Channels. (You may learn about Google’s advertising features, including Google Analytics’ <a href="https://support.google.com/analytics/answer/6004245?hl=en">currently available opt-out mechanisms, here</a>. To learn more about these and other analytics services and how to opt out, <a href="#">please view our Cookie Consent Tool here</a>.)</p>
+<p>Please note that providing personal information to us is voluntary on your part. If you choose not to provide us certain information, we may not be able to offer you certain products and services, and you may not be able to access certain features of the Online Channels.</p>
+<div id="_Cookies_and_Similar">
+<h4>Cookies and Similar Technologies</h4>
+</div>
+<p>Like most companies, GE uses cookies and similar technologies (“cookies”) on our websites to personalize and enhance your experience on our sites.</p>
+<p><strong>How We Use Cookies</strong></p>
+<p>Cookies contain small amounts of information which are downloaded to your device when you visit our website.  Cookies are sent back to our website to allow us to recognize your device.</p>
+<p style="margin-left: 40px;"><em>Essential Cookies</em> allow us to recognize your device to help you navigate efficiently to obtain the information and services you have requested.</p>
+<p style="margin-left: 40px;"><em>Analytical and Customization Cookies</em> allow our site to remember your preferences such as language selection, and help you to view information that is most relevant to your interests; these cookies also help us to maintain and improve our websites by providing information on how visitors find and use the sites, and how well the sites are performing.</p>
+<p style="margin-left: 40px;"><em>Advertising Cookies</em> may be used in some cases to make advertising messages more relevant to you.</p>
+<p><strong>Making Cookie Choices</strong><br/>
+You may see the list of GE and selected partner cookies on our website and make choices about those cookies by visiting our Cookie Consent Tool, by clicking on “Cookies” at the bottom of the page for the GE Business you are interested in managing cookie preferences for. In addition to our Cookie Consent Tool, most browsers allow you to manage cookie preferences, If you decide to disable cookies on our site, you may not be able to take full advantage of all our website features once you have done so. Except for cookies that are essential to the operation of this website (Essential Cookies), you may make choices about the cookies on this website. Please note that if you choose to manage cookies on our websites, the Tool will place a cookie on your device to allow your choices to be honored.</p>
+<p><strong>Sharing Tools</strong><br/>
+To enhance your experience on our websites, we sometimes embed content and sharing tools from other third-party sites, such as “like” buttons from social networking sites; these third-party sites may also place and access cookies on your device. GE does not control the placement or access of these third-party cookies. The third parties can be found in our Cookie Consent Tool. Please review the privacy policies of these third parties to familiarize yourself with their practices. You may exercise choices regarding third party cookies using our Cookie Consent Tool, by clicking on “Cookies” at the bottom of the page for the GE Business you are interested in managing cookie preferences for.</p>
+<div id="_How_We_Use">
+<h3>How We Use Personal Information</h3>
+</div>
+<p>We may use the personal information we obtain to:</p>
+<ul>
+<li style="list-style:disc">provide and administer our products and services;</li>
+<li style="list-style:disc">process and fulfill orders and keep you informed about the status of your order;</li>
+<li style="list-style:disc">communicate about and administer our products, services, events, programs and promotions (such as by sending alerts, promotional materials, newsletters and other marketing communications);</li>
+<li style="list-style:disc">conduct and facilitate surveys, sweepstakes, contests, focus groups and market research initiatives;</li>
+<li style="list-style:disc">perform data analytics (such as market research, trend analysis, financial analysis and customer segmentation);</li>
+<li style="list-style:disc">engage in ad retargeting and evaluate the effectiveness of our marketing efforts (including through our participation in ad networks);</li>
+<li style="list-style:disc">provide customer support;</li>
+<li style="list-style:disc">process, evaluate and respond to requests, inquiries and applications;</li>
+<li style="list-style:disc">create, administer and communicate with you about your account (including any purchases and payments);</li>
+<li style="list-style:disc">administer and register participants in our courses;</li>
+<li style="list-style:disc">provide investor services;</li>
+<li style="list-style:disc">conduct marketing and sales activities (including generating leads, pursuing marketing prospects, performing market research, determining and managing the effectiveness of our advertising and marketing campaigns and managing our brand);</li>
+<li style="list-style:disc">operate, evaluate and improve our business (such as by administering, enhancing and improving our products and services; developing new products, services and Online Channels; managing our communications and customer relationships; and performing accounting, auditing, billing, reconciliation and collection activities);</li>
+<li style="list-style:disc">verify your identity and protect against and prevent fraud and other unlawful activity, unauthorized transactions, claims and other liabilities, and manage risk exposure and quality;</li>
+<li style="list-style:disc">conduct investigations and comply with and enforce applicable legal requirements, relevant industry standards, contractual obligations and our policies and terms (such as this Privacy Policy and other Online Channels terms of use); and</li>
+<li style="list-style:disc">maintain and enhance the safety and security of our products, services, Online Channels, network services, information resources and employees.</li>
+</ul>
+<p>We may combine personal information we obtain through Online Channels with information we obtain through Offline Channels, as well as other information, for the purposes described above. We may anonymize or aggregate personal information and use it for the purposes described above and for other purposes to the extent permitted by applicable law. We also may use personal information for additional purposes that we identify at the time of collection. We will obtain your consent for these additional uses to the extent required by applicable law.</p>
+<p>Where required by applicable law, we will obtain your consent for the processing of your personal information for direct marketing purposes.</p>
+<p>The legal basis for GE processing your personal information as described above will typically be one of the following:</p>
+<ul>
+<li style="list-style:disc">Your consent;</li>
+<li style="list-style:disc">Performance of a contract with you or a relevant party;</li>
+<li style="list-style:disc">Our legitimate business interests; or</li>
+<li style="list-style:disc">Compliance with our legal obligations.</li>
+</ul>
+<div id="_Personal_Information_Sharing">
+<h3>Personal Information Sharing</h3>
+</div>
+<p>We do not sell or otherwise disclose personal information about you except as described here or at the time of collection.</p>
+<ul>
+<li style="list-style:disc">We may share personal information within the GE Group for the purposes described in this Privacy Policy.</li>
+<li style="list-style:disc">We may share personal information with service providers we have retained to perform services on our behalf (such as payment processing, order fulfillment, customer support and data analytics). These service providers are contractually required to safeguard the information provided to them and are restricted from using or disclosing such information except as necessary to perform services on our behalf or to comply with legal requirements.</li>
+<li style="list-style:disc">We may share personal information with our joint marketing partners and other business partners for the purposes described in this Privacy Policy, or in the case of processing that is specific to a particular GE Business , as described in the Business privacy and / or information handling practices notice.</li>
+<li style="list-style:disc">We may disclose personal information about you (1) if we are required or permitted to do so by applicable law or legal process (such as a court order or subpoena), (2) to law enforcement authorities or other government officials to comply with a legitimate legal request, (3) when we believe disclosure is necessary to prevent physical harm or financial loss, (4) to establish, exercise or defend our legal rights, (5) in connection with an investigation of suspected or actual fraud or illegal activity or (6) otherwise with your consent.</li>
+<li style="list-style:disc">We reserve the right to transfer to relevant third-parties any information we have about you in the event of a potential or actual sale or transfer of all or a portion of our business or assets (including in the event of a merger, acquisition, joint venture, reorganization, divestiture, dissolution or liquidation) or other business combination. In such case, we will require the relevant third parties to provide comparable levels of protection as the GE Group provides with respect to the information we share.</li>
+</ul>
+<div id="_Data_Transfers">
+<h3>Data Transfers</h3>
+</div>
+<p>We may transfer the personal information we collect through the Channels to, and store such data in, other countries, including the U.S., which may have different data protection laws than the country in which the information was provided. If we do so, we will transfer the personal information only for the purposes described in this Privacy Policy. To the extent required by applicable law, when we transfer your personal information to recipients in other countries, we will take measures to protect that information. The GE Group has entered into Binding Corporate Rules governing our handling of personal information of residents of the European Union. For further information about the GE Group’s Binding Corporate Rules, <a href="https://www.ge.com/bcr?_ga=2.209918995.705392240.1652705083-2138717391.1646227988">please click here</a>.</p>
+<p>The General Electric Company’s privacy practices, described in this Privacy Policy, comply with the APEC Cross Border Privacy Rules (CBPR) system. The APEC CBPR system provides a framework for organizations to ensure protection of personal information transferred among participating APEC economies. More information about the APEC framework <a href="https://www.ge.com/sites/default/files/CBPR-PoliciesRulesGuidelines.pdf">can be found here</a>.</p>
+<div id="_Your_Choices">
+<h3>Your Choices</h3>
+</div>
+<p>We offer you certain choices in connection with the personal information we obtain about you. To update your preferences, limit the communications you receive from us or submit a request, please contact us as specified in the <a href="#_How_to_Contact">How To Contact Us</a> section of this Privacy Policy.</p>
+<p>You also may exercise choice over how information about your interests is used by ad networks to deliver you relevant advertising. To learn how to opt out of ad network interest-based advertising in the United States, please visit <a href="http://optout.aboutads.info/#!/">Digital Advertising Alliance</a>, and the <a href="http://optout.networkadvertising.org/#!/">Network Advertising Initiative</a> <strong>.  </strong>In the European Union, please visit <a href="http://www.youronlinechoices.eu/">European Interactive Digital Advertising Alliance</a>. In Canada, to consent to receiving electronic communications, please visit <a href="https://www.ge.com/ca/casl">https://www.ge.com/ca/casl</a> and, to learn how to opt out of receiving electronic communications, please visit <a href="http://sc.ge.com/*casl-unsubscribe">http://sc.ge.com/*casl-unsubscribe</a>. The Online Channels are not designed to respond to “do not track” signals received from web browsers.</p>
+<p>To the extent provided by the law of your jurisdiction, you may have the right to (1) access certain personal information we process about you and request details of that processing; (2) request that we update, correct, amend, erase, or restrict your personal information or; (3) exercise your right to data portability. Where provided by law, you may withdraw consent you previously provided to us or object at any time to the processing of your personal information on legitimate grounds relating to your particular situation, and we will apply your preferences going forward as appropriate. To request to exercise these rights, please contact us as indicated in the <a href="#_How_to_Contact">How To Contact Us</a> section of this Privacy Policy. For more information, please see the “Individual Rights” section of our Binding <a href="http://www.ge.com/bcr">Corporate Rules here</a>. To help protect your privacy and maintain security, we may take steps to verify your identity before granting you access to the information. To the extent permitted by applicable law, a charge may apply before we provide you with a copy of any of your personal information that we maintain. Depending on your location, you may have the right to file a complaint with a government regulator if you are not satisfied with our response. GE endeavors to respond to complaints within thirty days of receipt.</p>
+<div id="_How_We_Protect">
+<h3><strong>How We Protect Personal Information Transmission</strong></h3>
+</div>
+<p>We maintain administrative, technical and physical safeguards, consistent with legal requirements where the personal information was obtained, designed to protect against unlawful or unauthorized destruction, loss, alteration, use or disclosure of, or access to, the personal information provided to us through the Channels.</p>
+<div id="_Retention_of_Personal">
+<h3><strong>Retention of Personal Information</strong></h3>
+</div>
+<p>To the extent permitted by applicable law, we retain personal information we obtain about you as long as (1) it is needed for the purposes for which we obtained it, in accordance with the provisions of this Privacy Policy or (2) we have another lawful basis, stated in this Privacy Policy or at the point of collection, for retaining that information beyond the period for which it is necessary to serve the original purpose for obtaining the personal information.</p>
+<div id="_Additional_Information">
+<h3><strong>Additional Information &amp; Jurisdiction Specific Notices</strong></h3>
+</div>
+<ul>
+<li style="list-style:disc"><a href="/privacy/china-notice">Notice to residents of Mainland China</a></li>
+<li style="list-style:disc"><a href="/privacy/california-notice">Notice to California Residents</a></li>
+<li style="list-style:disc"><a href="/privacy/japan-notice">Notice Regarding Joint Use of Personal Data Under the Personal Information Protection Act of Japan</a></li>
+<li style="list-style:disc"><a href="/privacy/russia-notice">Personal Data Processing Policy in Russia/ПОЛОЖЕНИЕ О ПОРЯДКЕ ОБРАБОТКИ ПЕРСОНАЛЬНЫХ ДАННЫХ</a></li>
+<li style="list-style:disc"><a href="/privacy/brazilian-notice">Notice to residents of Brazil</a></li>
+</ul>
+<div id="_Personal_Information">
+<h4><strong>Children’s Personal Information</strong></h4>
+</div>
+<p>The Online Channels are designed for a general audience and are not directed to children under the age of 13. We do not knowingly collect or solicit personal information from children under the age of 13 through the Online Channels. If we become aware that we have collected personal information from a child under the age of 13, we will promptly delete the information from our records. If you believe that a child under the age of 13 may have provided us with personal information, please contact us as specified in the <a href="#_How_to_Contact">How To Contact Us</a> section of this Privacy Policy.</p>
+<div id="_Changes_to_Our">
+<h4><strong>Changes to Our Privacy Policy</strong></h4>
+</div>
+<p>This Privacy Policy may be updated periodically and without prior notice to you to reflect changes in our information practices. We will indicate at the top of this Privacy Policy when it was most recently updated.</p>
+<div id="_How_to_Contact">
+<h3><strong>How to Contact Us</strong></h3>
+</div>
+<p>If you have any questions or comments about this Privacy Policy or if you would like us to update information we have about you or your preferences, please contact us by visiting our <a href="https://www.ge.com/contact/general">Feedback &amp; Inquiries Form</a> or write to us at:</p>
+<p><br/>
+Attn: Chief Privacy Officer<br/>
+General Electric Company<br/>
+5 Necco Street<br/>
+Boston, MA 02210<br/>
+United States</p>
+<p>If you have an unresolved privacy or data use concern that we have not addressed satisfactorily, please contact our U.S.-based third-party dispute resolution provider (free of charge) at <a href="https://feedback-form.truste.com/watchdog/request" target="_blank">https://feedback-form.truste.com/watchdog/request</a>.</p>
+<p><a href="https://www.gehealthcare.co.uk/~/media/5C75986D05A94F67864288C8BFA7FBD4">For a list of privacy contacts at GE Healthcare, click here.</a></p>
+<div>
+<div style="float:left; width: 28%;">
+<div><a href="//privacy.truste.com/privacy-seal/validation?rid=44f36dba-364f-4e48-9eb7-767d1d839f27" target="_blank"><img alt="GE Privacy Seal" data-entity-type="" data-entity-uuid="" src="//privacy-policy.truste.com/privacy-seal/seal?rid=44f36dba-364f-4e48-9eb7-767d1d839f27" style="border: none"/></a></div>
+</div>
+<div style="float:left;">
+<div><a href="//privacy.truste.com/privacy-seal/validation?rid=8ff8685d-eefa-45dd-8438-894ada0f458c" target="_blank"><img alt="GE Privacy Seal" data-entity-type="" data-entity-uuid="" src="//privacy-policy.truste.com/privacy-seal/seal?rid=8ff8685d-eefa-45dd-8438-894ada0f458c" style="border: none"/></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</main>
+</div>
+<!-- Footer container begins -->
+<footer class="ge-footer pt-5 px-md-0 px-lg-0 pb-0 align-items-start" role="footer">
+<div class="container-fluid-custom">
+<div class="row">
+<div class="pb-3 col-12 d-flex justify-content-center col-md-4 col-lg-3 mb-3 mb-md-0">
+<div class="inner-content">
+<div class="block block--basic block--footerlogostacked">
+<div class="basic__body"><p><img alt="General Electric Logo" class="ge_logo_stacked" data-entity-type="file" data-entity-uuid="b450a74a-bb41-4fef-9e1c-5579a493a959" src="/themes/custom/ge_unified/assets/images/GE_logo_default.svg" title="General Electric Logo"/></p></div>
+</div>
+</div>
+</div>
+<div class="pb-3 col-6 col-md-4 col-lg-3 mb-3 mb-md-0">
+<div class="inner-content">
+<div class="block block--ge-com-unified-footer-menu-custom-1">
+<ul class="ge-footer-menu-custom-1">
+<li>
+<a class="body-2" href="https://www.ge.com/contact/general" target="_self" title="Contact us">          Contact us
+                            </a>
+</li>
+<li>
+<a class="body-2 evidon_cookie iexternal" href="http://info.evidon.com/pub_info/3428" rel="noopener noreferrer" target="_blank">          Cookies
+                              <span class="fa-ext extlink"><span class="ficon-external-link-rd" title="(link is external)"></span><span class="visually-hidden">(link is external)</span></span>
+</a>
+</li>
+<li>
+<a class="body-2" data-drupal-link-system-path="node/7082" href="/investor-relations/ir-contact" target="_self" title="Investor contacts">          Investor contacts
+                            </a>
+</li>
+<li>
+<a class="body-2" data-drupal-link-system-path="node/6744" href="/privacy" target="_self" title="Privacy">          Privacy
+                            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="pb-3 col-6 col-md-4 col-lg-3 mb-3 mb-md-0">
+<div class="inner-content">
+<div class="block block--ge-com-unified-footer-menu-custom-2">
+<ul class="ge-footer-menu-custom-2">
+<li>
+<a class="body-2" data-drupal-link-system-path="node/6752" href="/terms" target="_self" title="Terms">          Terms
+                            </a>
+</li>
+<li>
+<a class="body-2" data-drupal-link-system-path="node/7075" href="/sitemap" target="_self" title="Site map">          Site map
+                            </a>
+</li>
+<li>
+<a class="body-2" href="https://jobs.gecareers.com/global/en/accessibility" target="_self" title="Accessibility">          Accessibility
+                            </a>
+</li>
+<li>
+<a class="body-2" data-drupal-link-system-path="node/6749" href="/pay-transparency" target="_self" title="Pay transparency">          Pay transparency
+                            </a>
+</li>
+<li>
+<a class="body-2" href="https://www.ge.com/careers/fraud" title="Fraud alert">          Fraud alert
+                            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="pb-3 col-12 offset-md-4 col-md-8 col-lg-3 offset-lg-0 mt-3 mt-lg-0 pt-3 pt-lg-0 w-border-top w-bt-lg-0">
+<div class="inner-content">
+<div class="block block--ge-com-unified-footer-menu-download-link">
+<ul class="ge-footer-menu-download-link">
+<li>
+<i class="ficon-file text-white mr-2"></i>
+<a class="body-2" href="https://www.ge.com/sites/default/files/uk_modern_slavery_act_statement.pdf" rel="noopener noreferrer" target="_blank" title="UK modern slavery act statement">          UK modern slavery act statement
+                            </a>
+</li>
+<li>
+<i class="ficon-file text-white mr-2"></i>
+<a class="body-2" href="https://www.ge.com/sites/default/files/GEA33646_California_Transparency_Factsheet_R8.pdf" rel="noopener noreferrer" target="_blank" title="California transparency in supply chain">          California transparency in supply chain
+                            </a>
+</li>
+<li>
+<i class="ficon-file text-white mr-2"></i>
+<a class="body-2" href="https://www.ge.com/sites/default/files/S&amp;L_Booklet_English_0.pdf" rel="noopener noreferrer" target="_blank" title="Integrity at GE ">          Integrity at GE
+                            </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ge-copyrights px-md-4" role="copyrights">
+<div class="container-fluid-custom">
+<div class="row align-items-center">
+<div class="py-3 col-12 col-md-6 d-none d-md-block">
+<div class="inner-content text-center text-md-left">
+<div class="block block--copyrightblock">
+<p class="body-3" title="Copyright 2022 General Electric">© 2022 General Electric</p>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6">
+<div class="inner-content text-center text-md-right">
+<div class="block-social-media-links block block--social-media-links">
+<ul class="social-media-links--platforms platforms inline horizontal">
+<li>
+<a aria-label="General Electric Facebook page" class="social-media-link-icon--facebook" href="https://www.facebook.com/ge" target="_blank" title="General Electric Facebook page">
+<span class="fa fa-facebook fa-in"></span>
+</a>
+</li>
+<li>
+<a aria-label="General Electric YouTube page" class="social-media-link-icon--youtube" href="https://www.youtube.com/ge" target="_blank" title="General Electric YouTube page">
+<span class="fa fa-youtube fa-in"></span>
+</a>
+</li>
+<li>
+<a aria-label="General Electric Instagram page" class="social-media-link-icon--instagram" href="https://www.instagram.com/generalelectric" target="_blank" title="General Electric Instagram page">
+<span class="fa fa-instagram fa-in"></span>
+</a>
+</li>
+<li>
+<a aria-label="General Electric Twitter page" class="social-media-link-icon--twitter" href="https://www.twitter.com/generalelectric" target="_blank" title="General Electric Twitter page">
+<span class="fa fa-twitter fa-in"></span>
+</a>
+</li>
+<li>
+<a aria-label="General Electric LinkedIn page" class="social-media-link-icon--linkedin" href="https://www.linkedin.com/company/ge" target="_blank" title="General Electric LinkedIn page">
+<span class="fa fa-linkedin fa-in"></span>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="pb-2 col-12 d-block d-md-none mt-2 mt-md-0">
+<div class="inner-content text-center text-md-left">
+<div class="block block--copyrightblock">
+<p class="body-3" title="Copyright 2022 General Electric">© 2022 General Electric</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Footer container ends -->
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/6744","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"crazyegg\/crazyegg,ge_add_to_calendar\/ge-add-to-calendar,ge_add_to_calendar\/ge-add-to-calendar-styles,ge_com_unified\/evidon,ge_com_unified\/style,ge_evidon\/ge_evidon,ge_evidon\/ge_evidon.custom_js,ge_language_switcher\/ge-lang-dropdown-form,ge_mailchimp_subscription\/ge_mailchimp,ge_unified\/font-awesome,ge_unified\/ge_unified_menu,ge_unified\/search-geapps-prod,ge_unified\/stock-ticker,ge_unified\/style,lazy\/lazy,micon\/micon,radix\/bootstrap,radix\/style,social_media_links\/social_media_links.theme,system\/base","theme":"ge_com_unified","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"ge_base_path":{"basepath":"https:\/\/www.ge.com\/"},"ge_mailchimp_subscription":{"ge_mailchimp":{"timezone":"America\/New_York","basepath":"https:\/\/www.ge.com\/"}},"lazy":{"lazysizes":{"lazyClass":"lazyload","loadedClass":"lazyloaded","loadingClass":"lazyloading","preloadClass":"lazypreload","errorClass":"lazyerror","autosizesClass":"lazyautosizes","srcAttr":"data-src","srcsetAttr":"data-srcset","sizesAttr":"data-sizes","minSize":40,"customMedia":[],"init":true,"expFactor":1.5,"hFac":0.8000000000000000444089209850062616169452667236328125,"loadMode":2,"loadHidden":true,"ricTimeout":0,"throttleDelay":125,"plugins":[]},"placeholderSrc":"data:image\/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==","preferNative":false,"minified":true,"libraryPath":"\/libraries\/lazysizes"},"ge_unified_menu":{"ge_unifiedsearch_env":"0","global_directory":"https:\/\/www.ge.com\/directory","ge_stock_ticker_path":"https:\/\/www.ge.com\/investor-relations\/stocks"},"user":{"uid":0,"permissionsHash":"872dc89a1dfd070afb6a821afea1a1001b4563689611ba6201807ae4056171c5"}}</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/sites/default/files/js/js_0jJQeiFe6nGrD0ufNFJjSRsjkYxH-vYg5Sn1kMrCn0Y.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/sites/default/files/js/js_ZdF8ipgdNAsEgcfD85QyItyc4lPHJ9FAz7V8GQ5fQL8.js"></script>
+<script src="/sites/default/files/js/js_OGKq3V9cxI4pWc62qqE09EQzwlaQVLhG-16iAqiCaEU.js"></script>
+<script src="/sites/default/files/js/js_9Q0Y4pMgkJK-6ZW3KI7MlVYAGQenq1RB5whPXOenOBM.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"986cdeaf27","applicationID":"540138458","transactionName":"YVJUMUIADUNWB01bClgYdwZECAxeGAFXRgxCThgLXwUGHlQFV10LX1RXCQ==","queueTime":0,"applicationTime":375,"atts":"TRVXRwoaHk0=","errorBeacon":"bam.nr-data.net","agent":""}</script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'71e773849e8bb14b',m:'hpD5k3eLDsSlH_YOGckvQ12xeGlhcUZNxjEAd03AC9A-1655759007-0-AfN9qfKOLPCePAum/LB51XwqO1DZx0BXiyCosn7HpKeuERolxc3e5DU2HJhujE3aAmRcaAygZKnlFPB8R5HOis/MTqTPzN4s1x3BFfZHr/nJdyQLlW1MQwbr14RT83+kxwyp2vM9uV5ZkWu9dePVBvLtTpOZgs99P/A6I6BlmtXUYZ6MWrdDozC92dz+SsKmgIw/X4xr6YLhkpinnm4OjFALqZ/ayGOeA4AivpeoQ5hocoMeN6+u1BdneQj58IxJcGAcb5ggVTZkUN3aeANyd/81n0fXPiAbc6KTVB6VQ1P+ekRcw6+C32TSucRBRjVAKBzV08RPIvvwvPefLzouotRdd6yiG6bPnBOnQiOAYWEjfhiGL6LBuI02/h8KlHlVh/rEc0CmODFkxUTMs2Hp1STKi8lT6cNi+iczGtuxqYZlYX7y69EXPO07ZvvxPZL/Cg==',s:[0xd0be7cedea,0x2846570b6e],}})();</script><script crossorigin="anonymous" data-cf-beacon='{"rayId":"71e773849e8bb14b","token":"3fa1c78fa65c47ff8b163f9155bf50cc","version":"2022.6.0","si":100}' defer="" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194"></script>
+</body>
+</html>

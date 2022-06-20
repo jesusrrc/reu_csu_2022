@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+<meta charset="utf-8"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"959a8d97de",applicationID:"146857664"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<noscript><style>form.antibot * :not(.antibot-message) { display: none !important; }</style>
+</noscript><script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({"drupalLanguage":"en","drupalCountry":"US","siteName":"Portland.gov","entityCreated":"1551474176","entityLangcode":"en","entityStatus":"1","entityUid":"0","entityUuid":"5e932305-c17c-448c-ae4d-3217b99c90ca","entityVid":"152077","entityName":"Anonymous","entityType":"node","entityBundle":"page","entityId":"571","entityTitle":"Privacy policy","entityTaxonomy":{"page_type":{"39":"Information"},"topics":{"29":"Public records"}},"userUid":0});</script>
+<meta content="Portland" name="geo.placename"/>
+<meta content="45.515012;-122.679096" name="geo.position"/>
+<meta content="US-OR" name="geo.region"/>
+<link href="https://www.portland.gov/help/about/privacy" rel="canonical"/>
+<meta content="The City of Portland takes your privacy seriously. This policy is designed to let you know what information the City collects when you use Portland.gov, why we collect it, and how we use the information." name="description"/>
+<meta content="Portland.gov" property="og:site_name"/>
+<meta content="https://www.portland.gov/help/about/privacy" property="og:url"/>
+<meta content="Privacy policy" property="og:title"/>
+<meta content="The City of Portland takes your privacy seriously. This policy is designed to let you know what information the City collects when you use Portland.gov, why we collect it, and how we use the information." property="og:description"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="The City of Portland takes your privacy seriously. This policy is designed to let you know what information the City collects when you use Portland.gov, why we collect it, and how we use the information." name="twitter:description"/>
+<meta content="Privacy policy" name="twitter:title"/>
+<meta content="https://www.portland.gov/help/about/privacy" name="twitter:url"/>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta class="swiftype" content="portland.gov" data-type="string" name="domain-identifier"/>
+<meta class="swiftype" content="2" data-type="integer" name="site-priority"/>
+<link href="/themes/custom/cloudy/favicon.ico" rel="icon" type="image/vnd.microsoft.icon"/>
+<link href="https://www.portland.gov/help/about/privacy" hreflang="en" rel="alternate"/>
+<script defer="" src="/sites/default/files/google_tag/portland.gov/google_tag.script.js?rdkf7l"></script>
+<title>Privacy policy | Portland.gov</title>
+<link href="/sites/default/files/css/css_ZupvHUQR9FeKKS0y6JWXge-jymqUUT1g21Qt7KitowI.css" media="all" rel="stylesheet"/>
+<link href="/sites/default/files/css/css_D8LZNaAhMHVBlvzouLtOM_DtEhVdA_A_iLq-nqnvG1s.css" media="all" rel="stylesheet"/>
+</head>
+<body class="group-page path-node page-node-type-page">
+<a class="visually-hidden focusable skip-link" href="#main-content">
+      Skip to main content
+    </a>
+<noscript aria-hidden="true"><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5DGTRSB&gt;m_auth=gX0sWBBfUHwzWER-y90CyQ&gt;m_preview=env-1&gt;m_cookies_win=x" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+<div class="region region-pre-header">
+<div class="views-element-container block block-views block-views-blockalerts-block-1" data-block-plugin-id="views_block:alerts-block_1" id="block-cloudy-views-block-alerts-block-1">
+<div class="content">
+<div><div class="view view-alerts view-id-alerts view-display-id-block_1 js-view-dom-id-393c1161e5dbe17f6eae1f3b08285e96a7a874ddf3ab84102bbefbfcc1737ddf">
+<div class="view-content">
+<div class="views-row">
+<div class="alert alert--warning" data-changed="1655133938" data-nid="20426">
+<div class="container">
+<div class="alert__wrapper">
+<span class="icon icon--size-s"><svg height="512" id="icon-danger" role="img" viewbox="0 0 576 512" width="576" xmlns="http://www.w3.org/2000/svg"><title>danger</title><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z" fill="currentColor"></path></svg></span>
+<div class="alert__wrapper-inner">
+<div class="alert__title font-weight-bold"><span class="field field--name-title field--type-string field--label-hidden">Most City offices closed next Monday, June 20, to observe Juneteenth</span>
+</div><div class="alert__body">
+<div class="clearfix text-formatted field field--label-hidden field--name-field-alert-text field--type-text-long"><div class="field__item"><p>The City of Portland recognizes Juneteenth as a formal day of remembrance to honor Black American history and the end of slavery in the United States. <a href="https://juneteenth.com/">Learn about Juneteenth</a>.</p></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<header aria-label="Site header" class="cloudy-header" id="header" role="banner">
+<div class="cloudy-header__wrapper d-flex justify-content-between align-items-center flex-wrap px-0">
+<div class="region region-header cloudy-header__logo-wrapper">
+<a aria-label="Go to the official City of Portland, Oregon website homepage." class="align-self-center" href="/" rel="home" title="Go to the official City of Portland, Oregon website homepage.">
+<picture>
+<source media="(max-width: 767.98px)" srcset="/themes/custom/cloudy/images/brand/seal-logo-mobile.png, 
+            /themes/custom/cloudy/images/brand/seal-logo-mobile-2x.png 2x,
+            /themes/custom/cloudy/images/brand/seal-logo-mobile-3x.png 3x"/>
+<source media="(min-width: 768px)" srcset="/themes/custom/cloudy/images/brand/seal-logo.png, 
+            /themes/custom/cloudy/images/brand/seal-logo-2x.png 2x,
+            /themes/custom/cloudy/images/brand/seal-logo-3x.png 3x"/>
+<img alt="Official City of Portland seal. The image depicts Portlandia holding her trident backdropped by mountain and river, accompanied by the text 'City of Portland, Oregon 1851'" class="img-fluid" src="/themes/custom/cloudy/images/brand/seal-logo.png"/>
+</picture>
+</a>
+</div>
+<button aria-controls="cloudy-search" aria-expanded="false" aria-label="toggle site search" class="cloudy-header__toggle cloudy-header__toggle--search" data-target="#cloudy-search" data-toggle="collapse" role="button" type="button">
+<span class="toggle__label">
+<span class="icon toggle-icon icon-search"></span>
+            Search
+          </span>
+</button>
+<div class="cloudy-header__search-wrapper collapse" id="cloudy-search">
+<div class="d-flex px-4 py-6 px-md-0 py-lg-0 align-items-center">
+<div class="region region-header-form cloudy-header__search-region">
+<div class="search-api-page-block-form-search-portland-gov search-api-page-block-form search-form search-block-form container-inline cloudy-search-form cloudy-search-form--small block block-search-api-page block-search-api-page-form-block d-block d-lg-flex align-items-center" data-block-plugin-id="search_api_page_form_block" data-drupal-selector="search-api-page-block-form-search-portland-gov" id="block-searchapipagesearchblockform" novalidate="">
+<div class="content w-100">
+<form accept-charset="UTF-8" action="/search" id="search-api-page-block-form-search-portland-gov" method="get">
+<div class="js-form-item form-item js-form-type-search-api-autocomplete form-item-keys js-form-item-keys form-no-label">
+<label class="visually-hidden" for="edit-keys">Search</label>
+<input aria-label="Search Portland.gov" class="form-autocomplete cloudy-search-form__input" data-autocomplete-path="/search_api_autocomplete/search_portland_gov" data-drupal-selector="edit-keys" data-search-api-autocomplete-search="search_portland_gov" data-twig-suggestion="search-api-page-block-form-search-portland-gov" id="edit-keys" maxlength="128" name="keys" placeholder="Search Portland.gov" size="20" title="Search Portland.gov" type="search" value=""/>
+</div>
+<div class="form-actions js-form-wrapper form-wrapper" data-drupal-selector="edit-actions" data-twig-suggestion="search-api-page-block-form-search-portland-gov" id="edit-actions">
+<input aria-label="submit" class="button js-form-submit form-submit cloudy-btn--icon" data-drupal-selector="edit-submit" data-twig-suggestion="search-api-page-block-form-search-portland-gov" id="edit-submit" name="op" type="submit" value=""/></div>
+</form>
+</div>
+</div>
+</div>
+<button aria-controls="cloudy-search" aria-expanded="false" aria-label="close site search" class="cloudy-header__close-search" data-target="#cloudy-search" data-toggle="collapse" role="button" type="button">
+<span class="icon icon--size-s m-0"><svg aria-hidden="true" focusable="false" height="16" id="icon-close" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><title>close</title><path d="M9.61001 7.66556L13.5381 3.73744C13.7334 3.54217 13.7334 3.22561 13.5381 3.03034L12.6542 2.14645C12.459 1.95118 12.1424 1.95118 11.9471 2.14645L8.01902 6.07457L4.09099 2.14653C3.89572 1.95126 3.57916 1.95126 3.38388 2.14653L2.5 3.03042C2.30473 3.22569 2.30473 3.54225 2.5 3.73752L6.42803 7.66556L2.75475 11.3388C2.55948 11.5341 2.55948 11.8507 2.75475 12.0459L3.63863 12.9298C3.8339 13.1251 4.15047 13.1251 4.34574 12.9298L8.01902 9.25655L11.6924 12.9299C11.8877 13.1252 12.2042 13.1252 12.3995 12.9299L13.2834 12.046C13.4787 11.8508 13.4787 11.5342 13.2834 11.3389L9.61001 7.66556Z" fill="currentColor"></path></svg></span> </button>
+</div>
+</div>
+<button aria-controls="cloudy-menu" aria-expanded="false" aria-label="toggle site menu" class="cloudy-header__toggle cloudy-header__toggle--menu" data-target="#cloudy-menu" data-toggle="collapse" role="button" type="button">
+<span class="toggle__label">
+<span class="icon toggle-icon icon-menu"></span>
+          Menu
+        </span>
+</button>
+</div>
+<div class="cloudy-header__menu-wrapper collapse" id="cloudy-menu">
+<div class="container py-4 region region-primary-menu">
+<nav class="block block-system block-system-menu-blockmain mb-4" data-block-plugin-id="system_menu_block:main" id="block-cloudy-main-menu">
+<h2 class="h3">General Information</h2>
+<ul class="list-unstyled mb-0 mx-n4 tiles">
+<li class="d-flex">
+<a class="mega-menu__link--gtm tile d-flex text-decoration-none p-4 flex-grow-1" href="/advisory-groups">
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">Advisory Groups</span>
+<span class="text-dark">Groups, boards, and commissions.</span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="mega-menu__link--gtm tile d-flex text-decoration-none p-4 flex-grow-1" href="/bureaus-offices">
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">Bureaus and Offices</span>
+<span class="text-dark">City departments.</span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="mega-menu__link--gtm tile d-flex text-decoration-none p-4 flex-grow-1" href="/events">
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">Calendar of Events</span>
+<span class="text-dark">Events, public meetings, and hearings.</span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="mega-menu__link--gtm tile d-flex text-decoration-none p-4 flex-grow-1" href="/charter-code-policies">
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">Charter, Code, Policies</span>
+<span class="text-dark">Official City documents.</span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="mega-menu__link--gtm tile d-flex text-decoration-none p-4 flex-grow-1" href="/council-clerk">
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">City Council</span>
+<span class="text-dark">Live sessions, agendas, and archives.</span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="mega-menu__link--gtm tile d-flex text-decoration-none p-4 flex-grow-1" href="/construction">
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">Construction Projects</span>
+<span class="text-dark">Building, transportation, maintenance, and sewer projects.</span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="mega-menu__link--gtm tile d-flex text-decoration-none p-4 flex-grow-1" href="/parks/search">
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">Find a Park</span>
+<span class="text-dark">Parks, facilities, and reservations.</span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="mega-menu__link--gtm tile d-flex text-decoration-none p-4 flex-grow-1" href="/neighborhoods">
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">Neighborhoods</span>
+<span class="text-dark">Neighborhood directory.</span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="mega-menu__link--gtm tile d-flex text-decoration-none p-4 flex-grow-1" href="/news">
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">News</span>
+<span class="text-dark">Articles, blogs, press releases, public notices, and newsletters.</span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="mega-menu__link--gtm tile d-flex text-decoration-none p-4 flex-grow-1" href="/projects">
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">Projects</span>
+<span class="text-dark">Planning, outreach and education, strategic, and technology projects.</span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="mega-menu__link--gtm tile d-flex text-decoration-none p-4 flex-grow-1" href="/services">
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">Services and Resources</span>
+<span class="text-dark">Service and resource directory.</span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="mega-menu__link--gtm tile d-flex text-decoration-none p-4 flex-grow-1" href="https://www.governmentjobs.com/careers/portlandor">
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">Jobs with the City</span>
+<span class="text-dark">Opportunities posted to governmentjobs.com</span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+</ul>
+</nav>
+<nav class="views-element-container block block-views block-views-blockelected-official-menu-mega-menu-block mb-0" data-block-plugin-id="views_block:elected_official_menu-mega_menu_block" id="block-views-block-elected-official-menu-mega-menu-block">
+<h2 class="h3">Elected Officials</h2>
+<div><div class="view view-elected-official-menu view-id-elected_official_menu view-display-id-mega_menu_block js-view-dom-id-a68b1dcf7469110f41be5c6581f0348002f9daf0d84e0d0c3f2297f81156470d">
+<div class="view-content">
+<div>
+<ul class="tiles list-unstyled mb-0 mx-n4">
+<li class="d-flex">
+<a class="tile d-flex align-items-center text-decoration-none p-4 flex-grow-1" href="/wheeler">
+<div class="mr-4">
+<div class="field field--label-hidden field--name-field-person-image field--type-entity-reference"><div class="mb-0"><div class="media media--type-image media--view-mode-elected-official-thumbnail"><div class="field field--label-hidden field--name-image field--type-image mb-0"><div class="mb-0"><picture><source media="all and (min-width: 992px)" srcset="/sites/default/files/styles/elected_official_thumbnail_80x80/public/2022/wheeler-headshot-2022.jpg?itok=6iJB3OUT 1x" type="image/jpeg"/><source media="all and (min-width: 576px)" srcset="/sites/default/files/styles/elected_official_thumbnail_64x64/public/2022/wheeler-headshot-2022.jpg?itok=aej9Jmel 1x" type="image/jpeg"/><source media="all and (max-width: 575px)" srcset="/sites/default/files/styles/elected_official_thumbnail_64x64/public/2022/wheeler-headshot-2022.jpg?itok=aej9Jmel 1x" type="image/jpeg"/><img alt="Mayor Wheeler in front of City Hall" class="rounded-circle img-fluid" is_rounded="" src="/sites/default/files/styles/elected_official_thumbnail_80x80/public/2022/wheeler-headshot-2022.jpg?itok=6iJB3OUT" typeof="foaf:Image"/></picture></div></div></div></div></div>
+</div>
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">
+<div class="field field--label-hidden field--name-field-name field--type-string"><div class="mb-0">Ted Wheeler</div></div></span>
+<span class="text-dark">
+<div class="field field--label-hidden field--name-field-official-title field--type-string"><div class="mb-0">Mayor</div></div></span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="tile d-flex align-items-center text-decoration-none p-4 flex-grow-1" href="/rubio">
+<div class="mr-4">
+<div class="field field--label-hidden field--name-field-person-image field--type-entity-reference"><div class="mb-0"><div class="media media--type-image media--view-mode-elected-official-thumbnail"><div class="field field--label-hidden field--name-image field--type-image mb-0"><div class="mb-0"><picture><source media="all and (min-width: 992px)" srcset="/sites/default/files/styles/elected_official_thumbnail_80x80/public/2021/carmen-rubio.jpg?itok=F5_1Tp2p 1x" type="image/jpeg"/><source media="all and (min-width: 576px)" srcset="/sites/default/files/styles/elected_official_thumbnail_64x64/public/2021/carmen-rubio.jpg?itok=iAvpf1Ii 1x" type="image/jpeg"/><source media="all and (max-width: 575px)" srcset="/sites/default/files/styles/elected_official_thumbnail_64x64/public/2021/carmen-rubio.jpg?itok=iAvpf1Ii 1x" type="image/jpeg"/><img alt="Commissioner Carmen Rubio photo" class="rounded-circle img-fluid" is_rounded="" src="/sites/default/files/styles/elected_official_thumbnail_80x80/public/2021/carmen-rubio.jpg?itok=F5_1Tp2p" typeof="foaf:Image"/></picture></div></div></div></div></div>
+</div>
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">
+<div class="field field--label-hidden field--name-field-name field--type-string"><div class="mb-0">Carmen Rubio</div></div></span>
+<span class="text-dark">
+<div class="field field--label-hidden field--name-field-official-title field--type-string"><div class="mb-0">City Commissioner</div></div></span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="tile d-flex align-items-center text-decoration-none p-4 flex-grow-1" href="/ryan">
+<div class="mr-4">
+<div class="field field--label-hidden field--name-field-person-image field--type-entity-reference"><div class="mb-0"><div class="media media--type-image media--view-mode-elected-official-thumbnail"><div class="field field--label-hidden field--name-image field--type-image mb-0"><div class="mb-0"><picture><source media="all and (min-width: 992px)" srcset="/sites/default/files/styles/elected_official_thumbnail_80x80/public/2021/katalina-berbari-2_0.jpg?itok=ppO0piHB 1x" type="image/jpeg"/><source media="all and (min-width: 576px)" srcset="/sites/default/files/styles/elected_official_thumbnail_64x64/public/2021/katalina-berbari-2_0.jpg?itok=dPCRA5ae 1x" type="image/jpeg"/><source media="all and (max-width: 575px)" srcset="/sites/default/files/styles/elected_official_thumbnail_64x64/public/2021/katalina-berbari-2_0.jpg?itok=dPCRA5ae 1x" type="image/jpeg"/><img alt="Commissioner Dan Ryan" class="rounded-circle img-fluid" is_rounded="" src="/sites/default/files/styles/elected_official_thumbnail_80x80/public/2021/katalina-berbari-2_0.jpg?itok=ppO0piHB" typeof="foaf:Image"/></picture></div></div></div></div></div>
+</div>
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">
+<div class="field field--label-hidden field--name-field-name field--type-string"><div class="mb-0">Dan Ryan</div></div></span>
+<span class="text-dark">
+<div class="field field--label-hidden field--name-field-official-title field--type-string"><div class="mb-0">City Commissioner</div></div></span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="tile d-flex align-items-center text-decoration-none p-4 flex-grow-1" href="/hardesty">
+<div class="mr-4">
+<div class="field field--label-hidden field--name-field-person-image field--type-entity-reference"><div class="mb-0"><div class="media media--type-image media--view-mode-elected-official-thumbnail"><div class="field field--label-hidden field--name-image field--type-image mb-0"><div class="mb-0"><picture><source media="all and (min-width: 992px)" srcset="/sites/default/files/styles/elected_official_thumbnail_80x80/public/2022/commissioner-hardesty-speaks-at-healthy-business-press-conference-031422_23.jpg?itok=TmGvLEgn 1x" type="image/jpeg"/><source media="all and (min-width: 576px)" srcset="/sites/default/files/styles/elected_official_thumbnail_64x64/public/2022/commissioner-hardesty-speaks-at-healthy-business-press-conference-031422_23.jpg?itok=3Wpb0OyC 1x" type="image/jpeg"/><source media="all and (max-width: 575px)" srcset="/sites/default/files/styles/elected_official_thumbnail_64x64/public/2022/commissioner-hardesty-speaks-at-healthy-business-press-conference-031422_23.jpg?itok=3Wpb0OyC 1x" type="image/jpeg"/><img alt="Commissioner Hardesty speaks at press conference for Healthy Businesses and plazas programs March 14, 2022" class="rounded-circle img-fluid" is_rounded="" src="/sites/default/files/styles/elected_official_thumbnail_80x80/public/2022/commissioner-hardesty-speaks-at-healthy-business-press-conference-031422_23.jpg?itok=TmGvLEgn" typeof="foaf:Image"/></picture></div></div></div></div></div>
+</div>
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">
+<div class="field field--label-hidden field--name-field-name field--type-string"><div class="mb-0">Jo Ann Hardesty</div></div></span>
+<span class="text-dark">
+<div class="field field--label-hidden field--name-field-official-title field--type-string"><div class="mb-0">City Commissioner</div></div></span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="tile d-flex align-items-center text-decoration-none p-4 flex-grow-1" href="/mapps">
+<div class="mr-4">
+<div class="field field--label-hidden field--name-field-person-image field--type-entity-reference"><div class="mb-0"><div class="media media--type-image media--view-mode-elected-official-thumbnail"><div class="field field--label-hidden field--name-image field--type-image mb-0"><div class="mb-0"><picture><source media="all and (min-width: 992px)" srcset="/sites/default/files/styles/elected_official_thumbnail_80x80/public/2021/minguswattributionjpegcrop2_0.jpg?itok=1EafYxZs 1x" type="image/jpeg"/><source media="all and (min-width: 576px)" srcset="/sites/default/files/styles/elected_official_thumbnail_64x64/public/2021/minguswattributionjpegcrop2_0.jpg?itok=B3r9zjsb 1x" type="image/jpeg"/><source media="all and (max-width: 575px)" srcset="/sites/default/files/styles/elected_official_thumbnail_64x64/public/2021/minguswattributionjpegcrop2_0.jpg?itok=B3r9zjsb 1x" type="image/jpeg"/><img alt="Mapps: Kat Berbari Photo" class="rounded-circle img-fluid" is_rounded="" src="/sites/default/files/styles/elected_official_thumbnail_80x80/public/2021/minguswattributionjpegcrop2_0.jpg?itok=1EafYxZs" typeof="foaf:Image"/></picture></div></div></div></div></div>
+</div>
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">
+<div class="field field--label-hidden field--name-field-name field--type-string"><div class="mb-0">Mingus Mapps</div></div></span>
+<span class="text-dark">
+<div class="field field--label-hidden field--name-field-official-title field--type-string"><div class="mb-0">City Commissioner</div></div></span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+<li class="d-flex">
+<a class="tile d-flex align-items-center text-decoration-none p-4 flex-grow-1" href="/auditor/hull-caballero">
+<div class="mr-4">
+<div class="field field--label-hidden field--name-field-person-image field--type-entity-reference"><div class="mb-0"><div class="media media--type-image media--view-mode-elected-official-thumbnail"><div class="field field--label-hidden field--name-image field--type-image mb-0"><div class="mb-0"><picture><source media="all and (min-width: 992px)" srcset="/sites/default/files/styles/elected_official_thumbnail_80x80/public/2021/mary-hull-caballero_headshot.jpg?itok=wTyI1z0z 1x" type="image/jpeg"/><source media="all and (min-width: 576px)" srcset="/sites/default/files/styles/elected_official_thumbnail_64x64/public/2021/mary-hull-caballero_headshot.jpg?itok=s408c0s1 1x" type="image/jpeg"/><source media="all and (max-width: 575px)" srcset="/sites/default/files/styles/elected_official_thumbnail_64x64/public/2021/mary-hull-caballero_headshot.jpg?itok=s408c0s1 1x" type="image/jpeg"/><img alt="Photograph of elected City Auditor Mary Hull Caballero" class="rounded-circle img-fluid" is_rounded="" src="/sites/default/files/styles/elected_official_thumbnail_80x80/public/2021/mary-hull-caballero_headshot.jpg?itok=wTyI1z0z" typeof="foaf:Image"/></picture></div></div></div></div></div>
+</div>
+<div class="d-flex flex-column">
+<span class="h5 mb-0 text-primary">
+<div class="field field--label-hidden field--name-field-name field--type-string"><div class="mb-0">Mary Hull Caballero</div></div></span>
+<span class="text-dark">
+<div class="field field--label-hidden field--name-field-official-title field--type-string"><div class="mb-0">City Auditor</div></div></span>
+</div>
+<i class="d-md-none mr-0 ml-auto align-self-center text-muted fas fa-angle-right"></i> </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</div>
+</header>
+<div class="bg-light admin-tabs" id="tabs" role="navigation">
+<div class="region region-tabs">
+</div>
+</div>
+<div class="region region-messages">
+<div class="hidden" data-drupal-messages-fallback=""></div>
+</div>
+<section class="pre-content container d-print-block">
+<div class="block block-system block-system-breadcrumb-block mb-6" data-block-plugin-id="system_breadcrumb_block" id="block-cloudy-breadcrumbs">
+<div class="content">
+<nav aria-label="breadcrumb" class="breadcrumb" role="navigation">
+<h2 class="sr-only" id="system-breadcrumb">Breadcrumb</h2>
+<ol class="breadcrumb__list">
+<li class="breadcrumb__item">
+<a href="/">Home</a>
+</li>
+<li class="breadcrumb__item">
+<span aria-hidden="true" class="breadcrumb__divider">/</span>
+<a href="/help">Portland.gov Help and Support</a>
+</li>
+<li class="breadcrumb__item">
+<span aria-hidden="true" class="breadcrumb__divider">/</span>
+<a href="/help/about">About Portland.gov</a>
+</li>
+</ol>
+</nav>
+</div>
+</div>
+</section>
+<main class="d-print-block" data-swiftype-index="true" id="main-content" role="main">
+<div class="main-content container">
+<div>
+<div>
+<div class="region region-content">
+<div class="block block-core block-page-title-block mb-6" data-block-plugin-id="page_title_block" id="block-cloudy-page-title">
+<div class="content">
+<h1 class="page-title"><span class="field field--name-title field--type-string field--label-hidden">Privacy policy</span>
+</h1>
+</div>
+</div>
+<div class="block block-system block-system-main-block mb-6" data-block-plugin-id="system_main_block" id="block-cloudy-content">
+<div class="content">
+<div class="row">
+<div class="cloudy-content col-lg-8 col-md-12">
+<article about="/help/about/privacy" role="article">
+<div class="badge badge-pill text-wrap text-left badge-light mb-4">
+          Information
+      </div>
+<div class="field field--label-hidden field--name-field-summary field--type-string"><div class="cloudy-lead-text">The City of Portland takes your privacy seriously. This policy is designed to let you know what information the City collects when you use Portland.gov, why we collect it, and how we use the information.</div></div>
+<div class="node__content clearfix">
+<div id="sticky-anchor"></div>
+<div class="toc-js" data-back-to-top="0" data-back-to-top-label="Back to top" data-container=".field--name-field-body-content" data-highlight-offset="100" data-highlight-on-scroll="1" data-list-type="ul" data-prefix="" data-scroll-to-offset="0" data-selectors="h2" data-selectors-minimum="0" data-smooth-scrolling="1" data-sticky="0" data-sticky-offset="0" data-sticky-stop="" data-sticky-stop-padding="0" id="toc-js-node-571">
+<div class="toc-title h2">On this page</div>
+<nav aria-label="On this page" role="navigation"></nav>
+</div>
+<div class="clearfix text-formatted field field--label-hidden field--name-field-body-content field--type-text-long"><div class="field__item"><p>The Bureau of Technology Services utilizes three principles in its approach to privacy and user information within Portland.gov:</p><ol><li>Collect only information necessary to monitor and improve Portland.gov</li><li>Make the collection of personal information transparent</li><li>Be a responsible steward of the information we hold</li></ol><p>This policy addresses collection, use, and security of and access to information obtained through use of Portland.gov. The information presented here is not meant to be a contract of any type, either express or implied, and should not be treated as such by you. The information in this statement and/or the policies described here may change at any time, without prior notice to you. This policy does not describe information collection policies on any other site.  This notice covers the following topics:</p><ul><li>Section A. Information Collected and Its Use</li><li>Section B. Personal Information and Choice</li><li>Section C. Public Access to Information</li><li>Section D. Information Accuracy</li><li>Section E. Use of Cookies and Applets</li><li>Section F. Security</li><li>Section G. Electronic Commerce</li><li>Section H. Third Party Link Disclaimer</li><li>Section I. Children's Privacy Protection</li><li>Section J. Interactive Features</li><li>Section K. Contact Information</li></ul><p><strong>Section A. Information Collected and Its Use</strong></p><p>We collect limited non-personally identifying information that your browser makes available automatically whenever you visit Portland.gov. This information includes:</p><ol><li>The Internet Protocol Address and the apparent Fully Qualified Domain Name ("Domain Name") used. The Internet Protocol address is a numerical identifier assigned either to your Internet service provider or directly to your computer. We use the Internet Protocol Address to direct Internet traffic to you. This address can be translated to determine the domain name of your service provider (e.g. xcompany.com or yourschool.edu) or of your computer if your computer has a domain name assigned directly to it. Generally, the City only determines visitor domain names if a security issue is suspected. Unless you have directly registered a domain name, this information will not provide the City with your name and/or address;</li><li>The type of browser and operating system you used;</li><li>The date and time you visited this site;</li><li>The web pages or services you accessed at this site; and</li><li>The web site you visited prior to coming to this web site.</li></ol><p>Certain City created applications, such as PDX Reporter, collect your location and other additional user provided information, such as your name and/or email address. You control whether you provide your name and/or email address. You may choose to rely on your mobile device to indicate the location of your service issue or you may choose to manually provide the location of your service issue. In either case, you transmit your location to the City for the purpose of identifying a service issue. The City uses this location information to distinguish services requests. The City uses your name and email address to provide you with personalized updates on the service issues you reported.</p><p>We also collect aggregated information from all of our visitors to measure performance, analyze traffic patterns and improve Portland.gov's content.</p><p>Some Portland.gov services require you to register for an account. We ask you for some information in order to create an account (typically your name, email address and a password for your account) and we will use that information to provide the service. For certain services, such as our online payment services, we may request payment information which may be stored temporarily in encrypted form on secure servers.</p><p>Except for authorized law enforcement investigations and the security purposes mentioned elsewhere in this notice, no other attempts are made to identify you or your usage habits. The City strives to collect the minimum information necessary to comply with applicable law or provide the service requested.</p><p>The City does not sell or rent or your information, including email addresses, to any outside organization, unless legally required to do so under state or federal law. The City does not disclose payment or other personally information other than as necessary to complete a financial transaction, upon explicit permission from the applicable user, or compelled by law.</p><p>If you have elected not to receive further information from the City, we will not send such information. If you have elected to receive further communication from the City, we will only send information in categories that have been authorized.</p><p><strong>Section B. Personal Information and Choice</strong></p><p>"Personal identifiable information" is information about a natural person that is readily identifiable to that specific individual. Personal information includes such things as an individual's name in combination with their social security number, drivers license number, or other financial information such as a payment card number. A domain name or Internet Protocol address is not considered personal information.</p><p>We collect no personal identifiable information about you unless you voluntarily provide it to us by sending us email, subscribing to notifications, participating in a survey, completing an online form, or engaging in an online transaction. You may choose not to contact us by email, participate in a survey, provide personal information using an online form, or engage in an electronic transaction.</p><p>If personal identifiable information is requested on the web site or volunteered by you, federal or state law may protect it. However, this information is treated like any other information provided to the City and may be subject to public inspection and copying if not protected by federal or state law.</p><p>If you believe that your personal identifiable information is being used for a purpose other than what was intended when submitted, you may contact the person identified in the Contact Information Section of this statement.</p><p>Users are cautioned that the collection of personal identifiable information requested from or volunteered by children online or by email will be treated the same as information given by an adult, and may be subject to public access.</p><p><strong>Section C. Public Access to Information</strong></p><p>The City may be required to release certain information under Oregon’s <a href="https://www.doj.state.or.us/oregon-department-of-justice/public-records/attorney-generals-public-records-and-meetings-manual/i-public-records/#:~:text=Under%20Oregon's%20Public%20Records%20Law,committee%20of%20the%20Legislative%20Assembly" title="https://www.doj.state.or.us/oregon-department-of-justice/public-records/attorney-generals-public-records-and-meetings-manual/i-public-records/#:~:text=Under%20Oregon's%20Public%20Records%20Law,committee%20of%20the%20Legislative%20Assembly">Public Records Law</a>.</p><p>In the event of a conflict between this Privacy Notice and Oregon's Public Records Law or other law governing the disclosure of records, the law will control.</p><p><strong>Section D. Information Accuracy</strong></p><p>The City of Portland has made every reasonable effort to ensure the accuracy and timeliness of the information provided on this web site. However, the City does not guarantee the accuracy of the information provided on this site. Therefore, the City of Portland shall assume no liability for any errors, omissions or in inaccuracies in the information.</p><p><strong>Section E. Cookies</strong></p><p>Portland.gov use "cookies" to enable streamlined services, such as streamlined logins. Portland.gov does not use cookies to track any personal information. Cookies are text files, or entries in larger files, utilized to distinguish between visitors to a website and to track information during multiple visits to a website. The use of cookies is a standard practice among websites. Most web browsers may be customized to reject cookies, to only accept or reject cookies by your intervention, or to delete cookies. Rejecting and/or removing cookies may lead to loss of functionality on those Portland.gov pages that require cookies to function fully. If you elected the "Save" option for signing in to Portland.gov, the cookie will contain your password in an encrypted form. Deleting such a cookie will require you to login next time you visit the site (the cookie is also removed if the "Log-Off" link is selected.)</p><p><strong>Section F. Security</strong></p><p>Portland.gov monitors network traffic to identify unauthorized attempts to upload or change information or to otherwise cause damage to the site. By using this Web site you expressly consent to such monitoring. The City's Bureau of Technology Services takes appropriate security measures to protect against unauthorized access, alteration or destruction of data.</p><p>Unauthorized attempts to upload information or change information on this site are prohibited and may be punishable under the state Computer Trespass law and federal statutes including the Computer Fraud and Abuse Act of 1984 and the National Information Infrastructure Protection Act of 1996.</p><p><strong>Section G. Electronic Commerce</strong></p><p>Increasingly, you have the option to do business with the City over the internet including making electronic payments for goods and services. Such transactions are allowed only under tightly controlled circumstances, where there are appropriate technological and other safeguards in place to protect financial and other sensitive, personally identifiable data.</p><p>Under statute, the City is responsible for properly securing communications that are exempt from public disclosure including financial information.</p><p>Wherever possible, the City does not see or collect financial information. Instead, designated banks route the data, transfer the funds and confirm payment to both you and the City. Additional measures, including but not limited to encryption are used to ensure the integrity and security of your financial information.</p><p><strong>Section H. Third Party Links Disclaimer</strong></p><p>The City's web site has many links to other websites that are operated by third parties, such as other government agencies, nonprofit organizations and private businesses. This Privacy Policy does not apply to third party sites. Visitors linking to another site are encouraged to examine the privacy policy of that site.</p><p><strong>Section I. Children's Privacy Protection</strong></p><p>The City of Portland is not directed to children under 13, and does not knowingly collect personal information from children. For information on the Childrens Online Protection Act (COPPA), please see: <a href="http://www.coppa.org/">http://www.coppa.org/</a></p><p><strong>Section J. Interactive Features</strong></p><p>Portland.gov interactive features (forums, comment boards and blogs, etc.) are not public forums and you are not anonymous. Prohibited uses include politics, advertising, and other such uses as determined from time to time. Use of language inappropriate to minors and threatening or malicious comments are prohibited. Forums are monitored regularly and objectionable content deleted.</p><p><strong>Section K. Contact Information</strong></p><p>If you have any questions or concerns about the City of Portland's use of your information or about this Privacy Statement, please send an email to <a href="mailto:cityinfo@portlandoregon.gov">cityinfo@portlandoregon.gov</a>.</p><p>This statement is effective on September 20, 2011</p></div></div>
+</div>
+</article>
+</div>
+<div class="cloudy-side col-lg-4 col-md-12">
+<div class="views-element-container"><div class="view view-page-menu view-id-page_menu view-display-id-block_siblings_to_parent_menu js-view-dom-id-bfe0994f0eaa8e1516fec575e42d3be3fbde56eef26118d2421a28d2d81abf9e">
+<div class="view-content">
+<nav aria-labelledby="menu-heading">
+<h2 id="menu-heading"><span class="sr-only">Menu for </span> <a href="/help/about" hreflang="en">About</a>
+<ul class="menu--pages nav flex-column">
+<li class="nav-item"><a class="nav-link" href="/help/about/accessibility">Accessibility</a></li>
+<li class="nav-item"><a class="nav-link" href="/captioning-transcription-policy">Captions and Transcriptions</a></li>
+<li class="nav-item"><a class="nav-link active disabled" href="/help/about/privacy">Privacy</a></li>
+</ul>
+</h2></nav>
+</div>
+</div>
+</div>
+<div class="field field--label-above field--name-field-topics field--type-entity-reference"><h2 class="field__label">Topics</h2><div class="field__items"><div class="field__item"><a href="/public-records" hreflang="en">Public records</a></div></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="block block-block-content block-block-content7dc74839-c339-461f-9344-87a6db099602 mt-8 mb-4" data-block-plugin-id="block_content:7dc74839-c339-461f-9344-87a6db099602" id="block-feedbacklink">
+<div class="content">
+<div class="clearfix text-formatted field field--label-hidden field--name-body field--type-text-with-summary"><div class="field__item"><p>See something we could improve on this page? <a href="/feedback">Give website feedback</a>.</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="cloudy-footer" role="contentinfo">
+<section class="cloudy-footer--top">
+<div class="container">
+<div class="row">
+<div class="col-12 col-md-8 order-2 order-md-1">
+<div class="region region-footer-top">
+<div class="block block-block-content block-block-content02922411-4e28-4548-bc1c-9996d35127fc mb-6" data-block-plugin-id="block_content:02922411-4e28-4548-bc1c-9996d35127fc" id="block-footeraccessibilitystatement">
+<div class="content">
+<div class="clearfix text-formatted field field--label-hidden field--name-body field--type-text-with-summary"><div class="field__item"><p>The City of Portland ensures meaningful access to City programs, services, and activities to comply with Civil Rights Title VI and ADA Title II laws and reasonably provides: translation, interpretation, modifications, accommodations, alternative formats, auxiliary aids and services.  Request these services <a href="/311/ada-request">online</a> or call <a href="tel:5038234000">503-823-4000</a>, Relay Service: <a href="tel:711">711</a>. </p><p><a href="tel:5038234000">503-823-4000</a>  Traducción e Interpretación | Biên Dịch và Thông Dịch  | 口笔译服务  |  Устный и письменный перевод  |  Turjumaad iyo Fasiraad | Письмовий і усний переклад  |  Traducere și interpretariat  |  Chiaku me Awewen Kapas | अनुवादन तथा व्याख्या </p></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-12 order-1 col-md-4 order-md-2 align-self-center mb-8 mb-md-0">
+<a class="cloudy-link cloudy-link--has-background" href="/services"><span>Explore all services</span><span class="icon icon--size-xs"><svg aria-hidden="true" focusable="false" height="16" id="icon-arrow-right" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><title>arrow right</title><path d="M14.5303 8.53033C14.8232 8.23744 14.8232 7.76256 14.5303 7.46967L9.75736 2.6967C9.46447 2.40381 8.98959 2.40381 8.6967 2.6967C8.40381 2.98959 8.40381 3.46447 8.6967 3.75736L12.9393 8L8.6967 12.2426C8.40381 12.5355 8.40381 13.0104 8.6967 13.3033C8.98959 13.5962 9.46447 13.5962 9.75736 13.3033L14.5303 8.53033ZM0 8.75H14V7.25H0V8.75Z" fill="currentColor"></path></svg></span></a> </div>
+</div>
+</div>
+</section>
+<section class="cloudy-footer--bottom">
+<div class="container">
+<div class="row">
+<div class="col-12 col-md-6 col-lg-3 mb-8">
+<div>
+<div>
+<h2 class="h6">General information</h2>
+<div class="cloudy-contact__resource">
+<div class="cloudy-contact-item__resource-wrapper">
+<a class="cloudy-link cloudy-link--has-icon" href="mailto:cityinfo@portlandoregon.gov"><span class="icon icon--size-xs"><svg aria-hidden="true" focusable="false" height="16" id="icon-email" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><title>email</title><path d="M14.5 2H1.5C0.671562 2 0 2.67156 0 3.5V12.5C0 13.3284 0.671562 14 1.5 14H14.5C15.3284 14 16 13.3284 16 12.5V3.5C16 2.67156 15.3284 2 14.5 2ZM14.5 3.5V4.77516C13.7993 5.34575 12.6822 6.233 10.2942 8.10297C9.76787 8.51694 8.72537 9.51147 8 9.49988C7.27475 9.51159 6.23191 8.51678 5.70584 8.10297C3.31813 6.23328 2.20078 5.34584 1.5 4.77516V3.5H14.5ZM1.5 12.5V6.69994C2.21606 7.27028 3.23153 8.07063 4.77931 9.28263C5.46234 9.82028 6.6585 11.0072 8 11C9.33491 11.0072 10.5159 9.8375 11.2204 9.28288C12.7682 8.07091 13.7839 7.27034 14.5 6.69997V12.5H1.5Z" fill="currentColor"></path></svg></span><span>cityinfo@portlandoregon.gov</span></a> </div>
+<div class="cloudy-contact-item__resource-wrapper">
+<a class="cloudy-link cloudy-link--has-icon" href="tel:503-823-4000"><span class="icon icon--size-xs"><svg height="16" id="icon-phone" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><title>phone number</title><path d="M15.9059 0.771335L12.6537 0.0208469C12.487 -0.0208469 12.3202 0 12.1534 0.0833876C11.9866 0.166775 11.872 0.281433 11.8094 0.427362L10.3085 3.92964C10.2459 4.09642 10.2355 4.26319 10.2772 4.42997C10.3189 4.5759 10.4023 4.70098 10.5274 4.80521L12.4036 6.36873C11.8407 7.57785 11.0798 8.66189 10.1208 9.62085C9.18274 10.5798 8.0987 11.3407 6.86873 11.9036L5.33648 10.0274C5.23225 9.88143 5.09674 9.79805 4.92997 9.7772C4.76319 9.73551 4.60684 9.74593 4.46091 9.80847L0.958632 11.3094C0.791857 11.372 0.666775 11.4866 0.583388 11.6534C0.5 11.8202 0.479153 11.987 0.520847 12.1537L1.27134 15.4059C1.29218 15.5935 1.37557 15.7394 1.5215 15.8436C1.66743 15.9479 1.82378 16 1.99055 16C4.61726 16 7.05635 15.3433 9.30782 14.03C11.4967 12.7375 13.2375 10.9967 14.53 8.80782C15.8433 6.55635 16.5 4.11726 16.5 1.49055C16.5 1.32378 16.4479 1.16743 16.3436 1.0215C16.2394 0.87557 16.0935 0.792182 15.9059 0.771335Z" fill="currentColor"></path></svg></span><span>503-823-4000</span></a> </div>
+<div class="cloudy-contact-item__resource-wrapper">
+<a class="cloudy-link cloudy-link--has-icon" href="tel:711"><span class="icon icon--size-xs"><svg height="16" id="icon-oregon-relay" role="img" viewbox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><title>Oregon Relay Service</title><path d="M7.59728 0.0622559C4.92023 0.0622559 0.5 1.99222 0.5 7.84436C0.769779 5.74838 2.61673 1.61868 7.59728 1.61868C12.5778 1.61868 13.0136 6.53696 13.0136 6.22568C13.0136 0.0622559 7.90856 0.0622559 7.59728 0.0622559Z" fill="currentColor"></path><path d="M9.09144 16C11.7685 16 16.1887 14.07 16.1887 8.2179C15.9189 10.3139 14.072 14.4436 9.09144 14.4436C4.1109 14.4436 3.6751 9.52529 3.6751 9.83657C3.6751 16 8.78016 16 9.09144 16Z" fill="currentColor"></path><path d="M7.22373 1.99222C8.75102 1.99222 9.97957 2.5897 10.7715 3.17393C10.9859 3.33208 10.7976 3.62297 10.5374 3.56606C7.43698 2.8881 3.30155 5.01081 3.30155 10.0233C3.30155 15.6265 7.97081 15.9377 6.47665 15.9377C4.98249 15.9377 0.749023 13.572 0.749023 9.02724C0.749023 4.48249 4.42218 1.99222 7.22373 1.99222Z" fill="currentColor"></path><path d="M9.52725 13.9455C7.99996 13.9455 6.7714 13.348 5.9795 12.7638C5.76513 12.6057 5.95334 12.3148 6.21359 12.3717C9.31399 13.0496 13.4494 10.9269 13.4494 5.9144C13.4494 0.311285 8.78016 9.53674e-07 10.2743 9.53674e-07C11.7685 9.53674e-07 16.002 2.36576 16.002 6.91051C16.002 11.4553 12.3288 13.9455 9.52725 13.9455Z" fill="currentColor"></path></svg></span><span>711</span></a> <span class="pl-1">Oregon Relay Service</span>
+</div>
+<h2 class="h6 mt-8">Follow on Social Media</h2>
+<div class="cloudy-contact-item__resource-wrapper">
+<a class="cloudy-link cloudy-link--has-icon" href="http://facebook.com/PortlandORGov"><span class="icon icon--size-xs"><svg aria-hidden="true" fill="currentColor" focusable="false" height="16" role="img" viewbox="-4 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M7.0068 9L7.3957 6.10437H4.96453V4.22531C4.96453 3.43313 5.30414 2.66094 6.393 2.66094H7.4982V0.195625C7.4982 0.195625 6.4952 0 5.53629 0C3.53418 0 2.22551 1.38688 2.22551 3.8975V6.10437H0V9H2.22551V16H4.96453V9H7.0068Z"></path></svg></span><span>PortlandORGov</span></a> </div>
+<div class="cloudy-contact-item__resource-wrapper">
+<a class="cloudy-link cloudy-link--has-icon" href="http://twitter.com/PortlandGov"><span class="icon icon--size-xs"><svg aria-hidden="true" fill="currentColor" focusable="false" height="16" role="img" viewbox="0 -1.5 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M14.3554 3.23858C14.3655 3.3807 14.3655 3.52286 14.3655 3.66498C14.3655 8 11.066 12.995 5.03555 12.995C3.17767 12.995 1.45179 12.4569 0 11.5229C0.26397 11.5533 0.517752 11.5635 0.791878 11.5635C2.32485 11.5635 3.73605 11.0457 4.86296 10.1625C3.42133 10.132 2.2132 9.18785 1.79694 7.88834C2.00001 7.91878 2.20304 7.93909 2.41626 7.93909C2.71067 7.93909 3.00511 7.89847 3.2792 7.82744C1.77666 7.52284 0.649721 6.20306 0.649721 4.60914V4.56855C1.08625 4.81221 1.59391 4.96449 2.13195 4.98477C1.24869 4.39592 0.670034 3.39086 0.670034 2.25379C0.670034 1.64466 0.832441 1.08629 1.11672 0.598971C2.73095 2.58882 5.15736 3.8883 7.87816 4.03045C7.82741 3.7868 7.79694 3.53301 7.79694 3.2792C7.79694 1.47207 9.25888 0 11.0761 0C12.0203 0 12.8731 0.395939 13.4721 1.03554C14.2132 0.89341 14.9238 0.619284 15.5533 0.243657C15.3096 1.0051 14.7919 1.64469 14.1117 2.05076C14.7716 1.97973 15.4112 1.79694 16 1.54316C15.5534 2.19288 14.995 2.77154 14.3554 3.23858Z"></path></svg></span><span>PortlandGov</span></a> </div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-3 mb-8">
+<div>
+<div class="region region-footer-second">
+<nav aria-labelledby="block-terms-policies-menu" class="block block-menu navigation menu--terms-policies" data-block-plugin-id="system_menu_block:terms-policies" id="block-terms-policies" role="navigation">
+<h2 id="block-terms-policies-menu">Terms, policies</h2>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/25709" href="/311/ada-request" title="Request accommodations under the Americans with Disabilities Act">ADA Accommodation</a>
+</li>
+<li class="menu-item">
+<a data-drupal-link-system-path="node/569" href="/captioning-transcription-policy" title="Policies regarding the captioning and transcription of video and audio">Captioning, transcription</a>
+</li>
+<li class="menu-item">
+<a href="/privacy-policy">Privacy policy</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-3 mb-2 order-md-last">
+<div class="region region-footer-third">
+<nav aria-labelledby="block-portlandgov-menu" class="block block-menu navigation menu--footer" data-block-plugin-id="system_menu_block:footer" id="block-portlandgov" role="navigation">
+<h2 id="block-portlandgov-menu">Portland.gov</h2>
+<ul class="menu">
+<li class="menu-item">
+<a data-drupal-link-system-path="node/6008" href="/help/about">About this Website</a>
+</li>
+<li class="menu-item">
+<a href="https://www.portlandoregon.gov/employee" title="Employee information on PortlandOregon.gov">Employee Portal</a>
+</li>
+</ul>
+</nav>
+<div class="block block-portland block-portland-login-block mb-6" data-block-plugin-id="portland_login_block" id="block-portlandloginblock">
+<div class="content">
+<a href="/user/login?destination=/help/about/privacy?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0">Editor log in</a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-12 col-md-6 col-lg-3 mb-2 order-lg-first">
+<div class="region region-footer-fourth">
+<div class="block block-copyright-block mb-6" data-block-plugin-id="copyright_block" id="block-cloudy-copyrightblock">
+<div class="content">
+<h2 class="h6">City of Portland, Oregon</h2>
+<p><img alt="Portland City Seal" src="/themes/custom/cloudy/images/city-seal.png"/></p>
+<p>© Copyright 2018-2022</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</footer>
+</div>
+<script data-drupal-selector="drupal-settings-json" type="application/json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/571","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"Access-Control-Allow-Headers":"Content-Type","Access-Control-Allow-Methods":"GET","Access-Control-Allow-Origin":"*","Access-Control-Max-Age":"3600","User-Agent":"Mozilla\/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko\/20100101 Firefox\/52.0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"classy\/base,classy\/messages,cloudy\/bootstrap,cloudy\/global,core\/normalize,core\/picturefill,datalayer\/behaviors,extlink\/drupal.extlink,filter\/caption,search_api_autocomplete\/search_api_autocomplete,system\/base,toc_js\/toc,views\/views.module","theme":"cloudy","theme_token":null},"ajaxTrustedUrl":{"\/search":true},"dataLayer":{"defaultLang":"en","languages":{"en":{"id":"en","name":"English","direction":"ltr","weight":0},"es":{"id":"es","name":"Spanish","direction":"ltr","weight":1},"vi":{"id":"vi","name":"Vietnamese","direction":"ltr","weight":2},"zh-hans":{"id":"zh-hans","name":"Chinese, Simplified","direction":"ltr","weight":3},"ru":{"id":"ru","name":"Russian","direction":"ltr","weight":4}}},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":"","extInclude":"","extCssExclude":"#toolbar-administration, .field--name-field-facebook, .field--name-field-twitter, .field--name-field-instagram, .field--name-field-youtube, .field--name-field-linkedin, .field--name-field-nextdoor, .cloudy-global-menu, .block-cloudy-main-menu","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":true,"extIconPlacement":"append","extFaLinkClasses":"fas fa-external-link-alt","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":["portland.gov","www.portland.gov","portlandoregon.gov","www.portlandoregon.gov","efiles.portlandoregon.gov","portlandmaps.com","www.portlandmaps.com","www.governmentjobs.com"]}},"search_api_autocomplete":{"search_portland_gov":{"delay":60,"auto_submit":true,"min_length":3}},"ajax":[],"user":{"uid":0,"permissionsHash":"937e1108eee9bf2b64e5f7b22309b9af2473c44de8847cf4ffcb77cc27466177"}}</script>
+<script src="/sites/default/files/js/js_eleL628lIjeBSD6ufnS_JlHtEGL1Z8pPMxYUQ9Vjg3I.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"959a8d97de","applicationID":"146857664","transactionName":"YlRaMUNYWhZRUBVaX1seeQZFUFsLH3cTRkBUXWQLXl1ROXNcD0dCWl1UAENlegpUVjdaVUJyVwtFS1sJXFYTHg5DWF0S","queueTime":0,"applicationTime":1093,"atts":"ThNZRwtCSRg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

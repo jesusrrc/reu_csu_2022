@@ -1,0 +1,2118 @@
+
+<!DOCTYPE html>
+
+<!--[if IEMobile 7]><html class="iem7"  lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7"  lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8"  lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9"  lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html dir="ltr" lang="en" prefix="og: http://ogp.me/ns# content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#"><!--<![endif]-->
+<head>
+<script type="text/javascript">
+if (window.BEJSSDKObserver === undefined) {
+  (function(BEJSSDKObserver, $, undefined) {
+    var observer = void 0;
+    var listeners = [];
+    var readySet = [];
+    var doc = window.document;
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+    function checkSelector(selector, fn, indexList) {
+      var elements = doc.querySelectorAll(selector);
+  /**
+    issues on IE @see https://www.codesd.com/item/javascript-es6-not-a-function-error.html
+    elements = Array.from(elements);
+
+    */
+    for (var i = 0, len = elements.length; i < len; i++) {
+      /* -1 means all instances */
+      if (indexList != -1 && !(i in indexList)) {
+        continue;
+      }
+      var element = elements[i];
+      for (var j = 0; j < readySet.length; j++) {
+        if (readySet[j] == element.className || readySet[j] == element.id) {
+          return;
+        }
+      }
+      if (element.className) {
+        readySet.push(element.className);
+      }
+      if (element.id) {
+        readySet.push(element.id);
+      }
+
+      if (!element.ready || MutationObserver==null) {
+        element.ready = true;
+        fn.call(element, element);
+      }
+    }
+  }
+
+  function checkListeners() {
+    listeners.forEach(function (listener) {
+      return checkSelector(listener.selector, listener.fn, listener.indexList);
+    });
+  }
+
+  function removeListener(selector, fn) {
+    var i = listeners.length;
+    while (i--) {
+      var listener = listeners[i];
+      if (listener.selector === selector && listener.fn === fn) {
+        listeners.splice(i, 1);
+        if (!listeners.length && observer) {
+          observer.disconnect();
+          observer = null;
+        }
+      }
+    }
+  }
+
+/**
+ * Fire event on first js selector
+ * @param selector string to watch on
+ * @param fn       callback function
+ * @param index_list can be undefined which means only first one
+ *                   or -1 which means all
+ *                   or a list of allowable indexes
+ */
+ BEJSSDKObserver.jsElementReady = function(selector, fn, index_list) {
+  if (index_list === undefined) {
+    index_list = [];
+    index_list.push(0);
+  }
+
+  if (MutationObserver != null) {
+    if (!observer) {
+      observer = new MutationObserver(checkListeners);
+      observer.observe(doc.documentElement, {
+        childList: true,
+        subtree: true
+      });
+    }
+    listeners.push({ selector: selector, fn: fn, indexList: index_list });
+  } else {
+    /* <= IE8 */
+    if (!document.addEventListener) {
+      /* log("<=IE8 attachEvent assignment"); */
+      document.addEventListener = document.attachEvent;
+    }
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var elements = doc.querySelectorAll(selector);
+      for (var i = 0, len = elements.length; i < len; i++) {
+        /* -1 means all instances */
+        if (index_list != -1 && !(i in index_list)) {
+          continue;
+        }
+        var element = elements[i];
+        element.ready = true;
+        fn.call(element, element);
+      }
+    });
+  }
+
+  checkSelector(selector, fn, index_list);
+  return function () {
+    return removeListener(selector, fn);
+  };
+};
+}(window.BEJSSDKObserver = window.BEJSSDKObserver || {}));
+}
+var jsElementReady = window.BEJSSDKObserver.jsElementReady;
+
+if (window.BELinkBlockGenerator === undefined) {
+  (function(BELinkBlockGenerator, $, undefined) {
+    BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH = 100;
+    BELinkBlockGenerator.MAXIMUM_DESC_LENGTH = 200;
+
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_URL_TYPE = 0;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_HEADLINE_TYPE = 1;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_DESCRIPTION_TYPE = 2;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_IMAGE_TYPE = 3;
+
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_OVERWRITE = 0;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_POST_APPEND_ELEMENT = 1;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_ELEMENT = 2;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_PARENT = 3;
+
+    BELinkBlockGenerator.setMaximumHeadlineLength = function(length) {
+      BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH = length;
+    };
+
+    BELinkBlockGenerator.setMaximumDescriptionLength = function(length) {
+      BELinkBlockGenerator.MAXIMUM_DESC_LENGTH = length;
+    };
+
+    BELinkBlockGenerator.generateIndividualLinks = function(parentElement, linkStructure, link) {
+      var link_level_element_tag = linkStructure[0];
+      var link_level_element = document.createElement(link_level_element_tag);
+      var link_attribute_dictionary = linkStructure[1];
+      var allowable_elements = linkStructure[2];
+      var children_link_structures = linkStructure[3];
+      for (var link_attribute_key in link_attribute_dictionary) {
+        link_level_element.setAttribute(link_attribute_key, link_attribute_dictionary[link_attribute_key]);
+      }
+
+      var added_something = false;
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_URL_TYPE)>=0) {
+        link_level_element.setAttribute('href', link.url);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_HEADLINE_TYPE)>=0 && link.h1) {
+        var headline_text = link.h1;
+        if (headline_text.length > BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH) {
+          headline_text = headline_text.substring(0, BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH) + '...';
+        }
+        var text_node = document.createTextNode(headline_text);
+        link_level_element.appendChild(text_node);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_DESCRIPTION_TYPE)>=0 && link.desc) {
+        var desc_text = link.desc;
+        if (desc_text.length > BELinkBlockGenerator.MAXIMUM_DESC_LENGTH) {
+          desc_text = desc_text.substring(0, BELinkBlockGenerator.MAXIMUM_DESC_LENGTH) + '...';
+        }
+        var text_node = document.createTextNode(desc_text);
+        link_level_element.appendChild(text_node);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_IMAGE_TYPE)>=0 && link.image) {
+        link_level_element.setAttribute('src', link.image);
+        added_something = true;
+      }
+/**
+    don't emit for empty links, desc, headline, image
+    except for parent structures where allowable_length=0
+    */
+    if (!added_something && allowable_elements.length != 0) {
+
+      return;
+    }
+    /* go depth first */
+    for (var childrenIndex=0; childrenIndex<children_link_structures.length; childrenIndex++) {
+      var childLinkStructure = children_link_structures[childrenIndex];
+      BELinkBlockGenerator.generateIndividualLinks(link_level_element, childLinkStructure, link);
+    }
+    parentElement.appendChild(link_level_element);
+  };
+
+  BELinkBlockGenerator.insertLinkBlocks = function(targetElement, replacementStrategy, overallStructure, linkStructure, links,
+                                                   titleStructure) {
+    if (targetElement == null) {
+      return;
+    }
+
+    if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_OVERWRITE) {
+      while (targetElement.firstChild) {
+        targetElement.removeChild(targetElement.firstChild);
+      }
+    }
+
+    var previousElement = targetElement;
+    for (var i=0;i<overallStructure.length;i++) {
+      var level_definition = overallStructure[i];
+      var level_element_tag = level_definition[0];
+      var level_element = document.createElement(level_element_tag);
+      var attribute_dictionary = level_definition[1];
+      for (var attribute_key in attribute_dictionary) {
+        level_element.setAttribute(attribute_key, attribute_dictionary[attribute_key]);
+      }
+
+      /* need to place title structure */
+      if (titleStructure && titleStructure[0] == i) {
+        var title_element_tag = titleStructure[1];
+        var title_element = document.createElement(title_element_tag);
+        var title_attribute_dictionary = titleStructure[2];
+        var title_text_content = titleStructure[3];
+        for (var title_attribute_key in title_attribute_dictionary) {
+          title_element.setAttribute(title_attribute_key, title_attribute_dictionary[title_attribute_key]);
+        }
+
+        var title_text_node = document.createTextNode(title_text_content);
+        title_element.appendChild(title_text_node);
+
+
+        level_element.appendChild(title_element);
+      }
+
+      /* last level place links */
+      if (i == overallStructure.length-1) {
+        for (var link_i=0; link_i < links.length; link_i++) {
+          var link = links[link_i];
+          for (var linkStructureIndex=0;linkStructureIndex < linkStructure.length; linkStructureIndex++) {
+            BELinkBlockGenerator.generateIndividualLinks(level_element, linkStructure[linkStructureIndex], link)
+          }
+        }
+      }
+
+      /* first level child we need to check placement */
+      if (previousElement == targetElement) {
+        if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_ELEMENT) {
+          /* 2 means insert right before */
+          previousElement.insertBefore(level_element, targetElement.firstChild);
+        } else if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_PARENT) {
+          /* 3 means insert right before at parent level */
+          var parentElement = previousElement.parentElement;
+          parentElement.insertBefore(level_element, previousElement);
+        } else {
+          previousElement.appendChild(level_element);
+        }
+      } else {
+        previousElement.appendChild(level_element);
+      }
+      previousElement = level_element;
+    }
+  };
+}(window.BELinkBlockGenerator = window.BELinkBlockGenerator || {}))
+};
+</script>
+<style>
+.be-ix-link-block .be-container{padding:0 5px}
+.be-ix-link-block .be-related-link-container{margin-bottom:1.5em}
+.be-ix-link-block .be-related-link-container .be-label{margin:0;color:#c1b7ae;letter-spacing:1px;line-height:30px;font-weight:400;text-transform:uppercase;font-size:1.1em}
+.be-ix-link-block .be-related-link-container .be-list{display:inline-block;list-style:none;margin:0;padding:0}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item{display:inline-block;margin:0;margin-right:30px;line-height:14px}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item a{color:#FFF;font-size:15px;font-weight:300}
+@media (max-width: 767px) {
+.be-ix-link-block .be-related-link-container .be-label{width:100%;margin-bottom:20px}
+.be-ix-link-block .be-related-link-container .be-list{display:block;width:100%}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item{display:block;margin-right:0;margin-bottom:18px}
+}
+@media (min-width: 768px) {
+.be-ix-link-block .be-related-link-container .be-label{width:auto;display:inline-block;margin-right:30px}
+.be-ix-link-block .be-related-link-container .be-list{width:auto}
+}
+</style>
+<script data-cfasync="false" data-customerid="f00000000047733" data-testmode="true" id="marvel" src="https://marvel-b2-cdn.bc0a.com/marvel.js"></script>
+<script>
+      (function() {
+      var bec = document.createElement('script');
+      bec.type = 'text/javascript';
+      bec.async = true;
+      bec.setAttribute("data-id", "bec");
+      bec.setAttribute("org-id", "f00000000047733");
+      bec.setAttribute("domain", ".silver-peak.com");
+      bec.setAttribute("session-timeout", 86400000);
+      bec.src = document.location.protocol + '//cdn.b0e8.com/conv_v3.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(bec, s);
+})();
+</script>
+<meta charset="utf-8"/>
+<script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "name": "Silver Peak",
+            "alternateName": "Silver Peak - SD-WAN Solution",
+            "url": "https://www.silver-peak.com"
+        },
+        {
+            "@type": "Organization",
+            "logo": "https://www.silver-peak.com/sites/all/themes/silverpeak/image/logo.png",
+            "url": "https://www.silver-peak.com"
+        },
+        {
+            "@type": "WebPage",
+            "name": "Silver Peak Privacy Policy",
+            "url": "https://www.silver-peak.com/legal/privacy-policy",
+            "description": "(Effective May 1, 2021) Silver Peak Systems, Inc. (\u0022Silver Peak\u0022, \u0022we\u0022, \u0022us\u0022 or \u0022our\u0022) values the privacy of those who provide personal information to us Summary This privacy policy describes the information identifying you that we collect, how we use this information, with whom it is shared, and how it is stored. Typically, we collect customer data in order to provide the products and services that customers purchase or request from us, including without limitation the cloud portal and the Silver Peak Unity Orchestrator\u0026trade;. For example, we may capture email addresses so that a customer can check the status of their software or open a case with our tech support team. We collect visitor data through our website in order to understand and improve our website content, as well as maintain a secure computing environment. We collect marketing data in order to respond to inquiries about our products and services and provide access to the latest topical information that potential customers might be interested in. When we collect this data, we do so in compliance with this privacy policy, which describes how we handle the data we collect in more detail. This policy also describes other important topics relating to information privacy like security and compliance. Please read this privacy policy carefully to understand how we handle your personal information. By accessing or browsing www.silver-peak.com (our \u0022Website\u0022) and/or using any of the services that we provide to you or you access, you confirm that you have read and understood the entirety of this privacy policy. About Silver Peak Information Collection Use of Information Disclosure of Information Retention of Information Your Rights Transfer of Information Security Third-Party Websites Cookies Changes to Our Privacy Policy Making a Complaint Contact Us 1. About Silver Peak 1.1 The following Silver Peak companies collect, process, transfer and store in accordance with this privacy policy: Silver Peak Systems, Inc. 2860 De La Cruz Blvd, Santa Clara, CA 95050 (USA). 1.2 You can contact us by phone at: +1 888 343 2860, by post at: Silver Peak System, Inc., 2860 De La Cruz Blvd., Santa Clara, CA 95050 or by email at: privacy@silver-peak.com. 1.3 With respect to personal information transferred from the Europe Economic Area (\u201cEEA\u201d), UK or Switzerland to Silver Peak Systems Inc, we will process personal information in accordance with applicable privacy laws. 1.4 The General Data Protection Regulation (GDPR) grants EU residents greater protections over what personal information is used, as well as how, and for how long. This Privacy Policy was implemented with GDPR in mind. Silver Peak\u2019s commitment is to comply with the GDPR in its current state and evolves. Specific questions related to GDPR compliance may be directed to privacy@silver-peak.com. 2. Information collection We may collect and process any of the following information about you and we refer to this as \u201cpersonal information\u201d throughout this policy: 2.1 Information you give us. You may give us information about yourself by using the online forms provided on the Website or by contacting us by phone, e-mail or other means. This includes, for example, filling in our \u0027Contact Us\u0027 form on our Website or when you provide your information to us in order to receive our services. By providing this information to us, you agree it will be processed in compliance with applicable privacy laws. The information you give us may include: your name; your job title; company name; e-mail address; your telephone number; account information; your company\u0027s address; any updates to information provided to us. Please note that we need certain types of information so that we can provide services to you. If you do not provide us with such information, or ask us to delete it, you may no longer be able to access our services. 2.2 Information we may collect about you. Each time you visit the Website we may automatically collect any of the following information technical information, including the Internet protocol (IP) address used to connect your computer to the internet, domain name and country which requests information, the files requested, browser type and version, browser plug-in types and versions, operating system and platform; and information about your visit, including the full Uniform Resource Locators (URL) clickstream to, through and from our site (including date and time), length of visits to certain pages, page interaction information (such as scrolling, clicks, and mouse-overs) and methods used to browse away from the page. 2.3 Information we may receive from other sources. We will receive information about you if you obtain our services through one of our resellers. The types of information that we may receive are the same as the information that you may give to us detailed in section 2.1 above. We will receive information about you if you use any of the other websites we operate or the other services we provide. In this case, we will have informed you when we collected that data that it may be shared internally and combined with data collected on the Website. We work closely with third parties (including, for example, advertising networks, analytics and search information providers) and may receive information about you from them. 3. Use of information 3.1 We, or third party data processors acting on our behalf, collect, use and store the personal information listed above to enable you to receive services for which you or your company have entered into a contract with us and/or because it is in the legitimate interests of Silver Peak to handle your personal information. More specifically, we collect, use and store our personal information for the following reasons: to allow you to access and use the Website and to register for an account; to provide you with the information and services that you request from us; to carry out activities for business purposes and in the legitimate interests of Silver Peak, for example, pursuing debt, ensuring the security of and measuring interest and engagement in our services and Website, undertaking research for technological development, improving, upgrading or enhancing our services, and debugging to identify and repair errors; to verify your identity in order to prevent and detect money laundering, fraud and security incidents; to provide customer support services to detect, prevent and address technical issues. to carry out statistical analysis and market research; for marketing, advertising and promotional purposes including short-term, transient use, such as contextual customization of ads; to notify you about changes to our services and to keep you informed about our fees and charges; to manage job applications; for auditing relating to interactions, transaction and other compliance activities; and with your consent only, to contact you (including by email or post) with information about our products and services which either you request, or which we feel will be of interest to you. 3.2 We will also collect details about you as a user of the Website for the purposes of improving and maintaining our Website, preparing reports or compiling statistics in order to improve our services. Such details will be anonymized as far as is reasonably possible and you will not be identifiable from the data collected. 4. Legal Basis for Processing under the GDPR 4.1 If you are from the European Economic Area (\u201cEEA\u201d), UK or Switzerland Silver Peak\u2019s legal basis for Processing the personal information described in this Notice depends on the personal information we collect and the specific context in which we collect it. 4.2 We may process your personal information because: We need to perform a contract with you To provide information or services you requested You have given us your consent to process your personal information for the respective purposes To comply with our legal obligations 4.3\tIn addition, we may process your personal information on the basis of the legitimate interest of Silver Peak in providing your information on our Websites and to improve our Websites. 5. Disclosure of information 5.1 We share the following categories of personal information: identifiers and contact information such as name, email address and telephone number; and internet or other electronic network activity such as browsing history, search history, information on a consumer\u2019s interaction with an internet website, application or advertisement. 5.2 We will share your personal information with any company that is a member of our group, which are listed at the start of this privacy policy. 5.3 We will share your personal information with the following categories of third parties, including: our service providers and sub-contractors, including but not limited to payment processors, suppliers of technical and support services and cloud service providers; companies that assist us in our marketing, advertising and promotional activities; analytics and search engine providers that assist us in the improvement and optimization of our Website; and systems integrators and service providers who resell our services and products. Any third parties with whom we share your personal information are limited (by law and by contract) in their ability to use your personal information for any purpose other than to provide services for us. We will always ensure that any third parties with whom we share your personal information are subject to privacy and security obligations consistent with this privacy policy and applicable laws. 5.4 We will also disclose your personal information to third parties: if we sell or buy any business or assets, we may disclose your personal information to the prospective seller or buyer of such business or assets; if Silver Peak or substantially all of its assets are acquired by a third party, in which case personal information held by Silver Peak will be one of the transferred assets; if we are under a duty to disclose or share your personal information in order to comply with any legal obligation, any lawful request from government or law enforcement officials and as may be required to meet national security or law enforcement requirements or prevent illegal activity; in order to enforce or apply our terms and conditions or any other agreement or to respond to any claims, to protect our rights or the rights of a third party, to protect the safety of any person or to prevent any illegal activity; or to protect the rights, property, or safety of Silver Peak, our customers or other persons. This may include exchanging information with other organizations for the purposes of fraud protection and credit risk reduction. 5.5 Except as expressly detailed above, we will never share, sell or rent any of your personal information to any third party without notifying you or, where required by applicable law, obtaining your consent. Where you have given your consent for us to use your information in a particular way, but later change your mind, you should contact us, and we will stop doing so. We have not sold consumer\u2019s personal information in the preceding 12 months. 6. Retention of information We retain personal information for as long as you use the services we provide and then as required to comply with applicable laws. 7. Your rights 7.1 In the EEA and in certain other jurisdictions, you have certain data protection rights. We take reasonable steps to allow you to correct, amend, delete or limit the Processing of your personal information where required by law. 7.2 Where required by law, you have the following data protection rights: Right of access. You have the right to obtain information as to whether we process your personal information and to receive a copy of your personal information retained by us as a Controller. In addition, you have the right to obtain certain information about how and why we process your personal information. Right to rectification. You have the right to have your personal information amended or rectified where it is inaccurate and to have incomplete personal information about you completed. Right to erasure. You have the right to erasure of your personal information, inter alia, in the following cases: I.\tYour personal information is no longer necessary in relation to the purpose for which they were collected and processed; II.\tOur legal grounds for the Processing of your personal information is consent, you withdraw your consent and we have no other legal ground for the Processing of your personal information; III. Our legal grounds for the Processing of your personal information is that the Processing is necessary for legitimate interests pursued by us or a third party, you object to our Processing and we do not have any overriding legitimate grounds; IV.\tYour personal information has been unlawfully processed V.\tYour personal information must be erased to comply with a legal obligation to which we are subject. Right to restrict the Processing of your personal information. You have the right to restrict our Processing of your personal information in the following cases: I.\tFor a period enabling us to verify the accuracy of your personal information where you have contested the accuracy of such personal information; II.\tYour personal information has been unlawfully processed and you request restriction of the Processing of your personal information instead of their erasure; III. Your personal information is no longer necessary in relation to the purpose for which they were collected and processed but the personal information is required by you to establish, exercise or defend legal claims; or IV.\tFor a period enabling us to verify whether our legitimate grounds override your interests where you have objected to the Processing of your personal information. Right to object to the Processing. You have the right to object to our Processing of your personal information, inter alia, in the following cases: I.\tOur legal grounds for the Processing is that the Processing is necessary for a legitimate interest pursued by us or a third party; or II.\tOur Processing is for direct marketing purposes. Right to data portability. You have the right to receive your personal information which you have provided to us and you have the right that we send your personal information to another organization (or ask us to do so if technically feasible) where our lawful basis for the Processing is your consent, or where the Processing is necessary for the performance of our contract with you and the Processing is carried out by automated means. The right to withdraw consent. You also have the right to withdraw your consent at any time where Silver Peak Systems relied on your consent to process your personal information. Please note that we may ask you to verify your identity before responding to such requests. 8. California Privacy Rights 8.1 California Civil Code Section \u00a7 1798.83 entitles California residents to request information concerning whether a business has disclosed personal information to any third parties for the third parties\u2019 direct marketing purposes. To make such a request, please contact privacy@silverpeak.com. We will respond by email within the time required by law. 8.2 You may contact us by email at privacy@silver-peak.com at any time, to request that we: a.\tupdate any personal information which is out of date or incorrect; b.\tdelete any personal information which we are holding about you; c.\trestrict the way that we process your personal information; d.\tprovide your personal information to a third-party provider of services; or e.\tprovide you with a copy of any personal information which we hold about you. f.\tcease processing your data subject to our legitimate interests as stated in Section 3c. We maintain the opportunity to demonstrate compelling legitimate grounds for the processing which override the interests, right and freedoms of the data subject or for the establishment, exercise or defense of legal claims, in which case we will be permitted to continue such processing. We will consider all such requests and provide our response within the time period stated by applicable law. 8.3 You have the right to ask us to not process your personal information for marketing purposes. We will inform you (before collecting your personal information) if we intend to use your personal information for such purposes or if we intend to disclose your information to any third party for such purposes. You can exercise your right to prevent such processing by checking certain boxes on the forms we use to collect your personal information. Alternatively, you can contact us by email at privacy@silver-peak.com at any time. 8.4 If you have previously given your consent to the use of your personal information for marketing purposes, you can choose to stop receiving marketing communications which we send to you from time to time by following the unsubscribe instructions included in such communications. Alternatively, you can opt out of such communications at any time by contacting us by email at privacy@silver-peak.com. 8.5 You can choose to opt-out from your personal information being: a.\tused for any purpose that differs from the purposes notified to you when we collected your personal information; or b.\tdisclosed to any third party. 8.6 If you would like to do this, please contact us by phone at: +1 888 343 2860, by mail at: Silver Peak System, Inc., 2860 De La Cruz Blvd., Santa Clara, CA 95050 or by email at: privacy@silver-peak.com. Please note that opting-out may prevent us from providing you with our services or information requested by you. 9. Transfers of information 9.1 If you are located outside of the United States, the personal information that we collect from you will be transferred to, and stored in the United States or another location outside of the EEA, UK or Switzerland. Any transfer of the personal information to the United States or another location outside of the EEA, UK or Switzerland will be in compliance with applicable privacy laws. 9.2 The personal information will also be processed by staff operating in the United States or outside the EEA, UK or Switzerland working for us, other members of our group or third party data processors. Such staff may be engaged in, among other things, the provision of our services to you, the processing of transactions and/or the provision of support services. By providing us with your personal information you acknowledge any such transfer, storage and processing. 9.3 We will always take steps to ensure that such transfers comply with applicable privacy laws and we will take all reasonable precautions to ensure that your personal information is treated securely and in accordance with this privacy policy. 10. Security 10.1 Silver Peak is committed to protecting personal information from loss, misuse, disclosure, alteration, unauthorized access and destruction and takes all reasonable precautions to safeguard the confidentiality of personal information. Although we make every effort to protect the personal information which you provide to us, the transmission of data over the internet is not completely secure. As such, you acknowledge and accept that we cannot guarantee the security of your information transmitted to the Website and that any such transmission is at your own risk. Once we have received your information, we will use strict procedures and security features to prevent unauthorized access. 10.2 Consistent with applicable laws and requirements, including the GDPR, Silver Peak has put in place appropriate physical, electronic, and administrative safeguards to protect your personal information from loss, misuse, alteration, theft, unauthorized access, or unauthorized disclosure. We evaluate these safeguards on an ongoing basis to help minimize risks from new security threats as they become known. 10.3 We restrict access to personal information to personnel and third parties that require access to such information for legitimate, and relevant business purposes. Our staff members, contractors and third parties who will have access to personal information on our instructions will be bound to confidentiality and we use controls to limit access to individuals that require such access for the performance of their responsibilities and tasks. 10.4 Where we have given you (or where you have chosen) a password which enables you to access your online account, you are responsible for keeping this password confidential. We ask you not to share a password with anyone. 11. Third party websites 11.1 The Website may, from time to time, contain links to websites operated by third parties. Please note that this privacy policy only applies to the personal information that we collect through this Website and we cannot be responsible for personal information collected and stored by third parties. Third party websites have their own terms and conditions and privacy policies, and you should read these carefully before you submit any personal information to these websites. We do not endorse or otherwise accept any responsibility or liability for the content of such third party websites or third party terms and conditions or policies. 12. Cookies 12.1 Some pages on our Website use cookies, which are small files placed on your internet browser when you visit our Website. We use cookies in order to offer you a more tailored experience in the future, by understanding and remembering your particular browsing preferences. 12.2 For detailed information on the cookies we use and the purposes for which we use them, please refer to our cookies policy below. By continuing to use the Website and/or our services, you are agreeing to our use of cookies as described in our cookies policy. 13. Children\u2019s Information Our services are not directed to children under 17 (or other age as required by local law), and we do not knowingly collect personal information from children. If you learn that your child has provided us with personal information without your consent, you may contact us as set forth below. If we learn that we have collected any personal information in violation of applicable law, we will promptly take steps to delete such information and terminate the child\u2019s account. 14. Changes to our privacy policy We may update our privacy policy from time to time. By continuing to use the services and our Website, you agree to the latest version of our privacy policy. Any changes we make to our privacy policy in the future will be posted on this page and, where appropriate, notified to you by email prior to such changes being effective. Please check back frequently to see any updates or changes to our privacy policy. 15. Making a complaint If you are located in the EEA, UK or Switzerland, you may make a complaint to a supervisory body for data protection matters in the country in which you are based. In the UK, this would be the UK Information Commissioner\u0027s Office (https://ico.org.uk/). Alternatively, you may seek a remedy through local courts if you believe your rights have been breached. 16. Contact us If you have any questions in relation to this privacy policy or how we collect, use or store your personal information, you can contact us by phone at: +1 888 343 2860, by post at: Silver Peak Systems, Inc. 2860 De La Cruz Blvd. Santa Clara, CA 95050 Attention: Legal Department or by email at: privacy@silver-peak.com. Cookies Policy IMPORTANT NOTICE: PLEASE READ CAREFULLY BEFORE USING THIS WEBSITE: This site uses cookies to store information on your computer. By using this site, you agree to the placement of cookies on your computer in accordance with the terms of this policy. If you do not wish to accept cookies in connection with your use of this Website, you must stop using our Website or use your browser settings to block the placing of cookies. 1. What are Cookies? A cookie is a text-only string of information that a website transfers to the cookie file of the browser on your computer\u0027s hard disk so that the website can recognize you when you revisit and remember certain information about you. This can include which pages you have visited, choices you have made from menus, any specific information you have entered into forms and the time and date of your visit. 2. Types of Cookies There are two main types of cookies: \u2022\tSession cookies: these are temporary cookies that expire at the end of a browser session; that is, when you leave the site. Session cookies allow the website to recognize you as you navigate between pages during a single browser session and allow you to use the website most efficiently. For example, session cookies enable a website to remember that a user has placed items in an online shopping basket. \u2022\tPersistent cookies: in contrast to session cookies, persistent cookies are stored on your equipment between browsing sessions until expiry or deletion. They therefore enable the website to \u201crecognize\u201d you on your return remember your preferences and tailor services to you. In addition to session cookies and persistent cookies, there may be other cookies which are set by a website which you have chosen to visit, such as this website, in order to provide us or third parties with information. 3. Our Use of Cookies We currently use, and may use in the future, the following types of cookies on this website. We use session cookies to: \u2022\tHelp us maintain security and verify your details whilst you use the website as you navigate from page to page, which enables you to avoid having to re-enter your details each time you enter a new page. We use persistent cookies to: \u2022\tHelp us recognize you as a unique user when you return to our website so that you do not have to input your details multiple times as you move between our pages or services \u2022\tRemember how you have customized your use of this site, such as your preferred currency and time zone \u2022\tCollect and compile anonymous, aggregated information for statistical and evaluation purposes to help us understand how users use the website and help us improve the structure of our website. Many cookies are designed to give you optimal usage of the web. For example, we use cookies to enable you to improve your user experience when using our website, e.g. a cookie which recognizes if your browser supports specific technology features. This helps, for example, in enabling web pages to be loaded more quickly when you request the download of a large file. In addition to cookies which send information to us, we also use cookies which collect information and send it to third-parties. An example of this is Google Analytics. Google has developed the Google Analytics opt-out browser add-on for the Google Analytics JavaScript (ga.js, analytics.js, dc.js). If you want to opt out of Google Analytics, you can download and install the add-on for your web browser here. Please check the relevant third-party website for more information about their use of cookies. Where this site allows such cookies to be set or you access other websites from this site using the links provided, the operators of these websites will use cookies in accordance with their own cookies policy, which may differ from ours. As with first party cookies, you are able to block third party cookies through your browser settings. Some of our cookies may collect and store your personal information, such as your name or email address. We are committed to respecting and protecting your privacy and will ensure that all personal information collected by us is kept and treated in accordance with our privacy policy. A link to this policy is available within the footer of this portal. 4. Refusing Cookies on this Site Most browsers are initially set to accept cookies. However, you can disable cookies if you wish, generally through changing your internet software browsing settings. It may also be possible to configure your browser settings to enable acceptance of specific cookies or to notify you each time a new cookie is about to be stored on your computer enabling you to decide whether to accept or reject the cookie. To manage your use of cookies there are various resources available to you, for example the \u201cHelp\u201d section on your browser may assist you. You can also disable or delete the stored data used by technology similar to cookies, such as Local Shared Objects or Flash cookies, by managing your browser\u0027s \u201cadd-on settings\u201d or visiting the website of its manufacturer. As our cookies allow you to access some of our website\u0027s essential features we recommend that you leave cookies enabled, otherwise, if cookies are disabled, it may mean that you experience reduced functionality. 5. Additional Resources Useful information about cookies can be found at: http://www.allaboutcookies.org/ http://www.youronlinechoices.eu/ https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer https://www.ftc.gov/site-information/privacy-policy/internet-cookies"
+        }
+    ]
+}</script><link href="https://www.silver-peak.com/sites/all/themes/silverpeak/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
+<meta content="This privacy policy describes the information identifying you that we collect, how we use this information, with whom it is shared, and how it is stored" name="description"/>
+<meta content="This privacy policy describes the information identifying you that we collect, how we use this information, with whom it is shared, and how it is stored" name="abstract"/>
+<link href="https://www.silver-peak.com/legal/privacy-policy" rel="canonical"/>
+<meta content="Silver Peak Privacy Policy" property="og:title"/>
+<meta content='(Effective May 1, 2021) Silver Peak Systems, Inc. ("Silver Peak", "we", "us" or "our") values the privacy of those who provide personal information to us Summary This privacy policy describes the information identifying you that we collect, how we use this information, with whom it is shared, and how it is stored. Typically, we collect customer data in order to provide the products and services that customers purchase or request from us, including without limitation the cloud portal and the Silver Peak Unity Orchestrator™.' property="og:description"/>
+<meta content="2021-04-29T14:27:53-07:00" property="og:updated_time"/>
+<meta content="2017-07-24T10:36:38-07:00" property="article:published_time"/>
+<meta content="2021-04-29T14:27:53-07:00" property="article:modified_time"/>
+<meta content="Silver Peak Privacy Policy" name="dcterms.title"/>
+<meta content="Kyle Hand" name="dcterms.creator"/>
+<meta content='(Effective May 1, 2021) Silver Peak Systems, Inc. ("Silver Peak", "we", "us" or "our") values the privacy of those who provide personal information to us Summary This privacy policy describes the information identifying you that we collect, how we use this information, with whom it is shared, and how it is stored. Typically, we collect customer data in order to provide the products and services that customers purchase or request from us, including without limitation the cloud portal and the Silver Peak Unity Orchestrator™.' name="dcterms.description"/>
+<meta content="2017-07-24T10:36-07:00" name="dcterms.date"/>
+<meta content="Text" name="dcterms.type"/>
+<meta content="text/html" name="dcterms.format"/>
+<link href="https://www.silver-peak.com/legal/privacy-policy" hreflang="x-default" rel="alternate"/>
+<link href="https://www.silver-peak.com/legal/privacy-policy" hreflang="en" rel="alternate"/>
+<title>Silver Peak Privacy Policy</title>
+<meta content="width" name="MobileOptimized"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width" name="viewport"/>
+<meta content="on" name="twitter:widgets:csp"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"f3e1c3f02b",applicationID:"23519202"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+<meta content="QObMkXYgiQMzOib-BTxYhwIFOtovho3v1vlCUme9yXo" name="google-site-verification">
+<meta content="F4B6617B89CF2C301C40867D7DF38927" name="msvalidate.01">
+<script src="https://use.fontawesome.com/b8808c7dde.js"></script>
+<link href="/security-advisories-rss.xml" rel="alternate" title="Silver Peak - Security Advisory RSS Feed" type="application/rss+xml"/>
+<link href="/sites/all/themes/silverpeak/images/apple-touch-icon-57x57.png" rel="apple-touch-icon-precomposed" sizes="57x57"/>
+<link href="/sites/all/themes/silverpeak/images/apple-touch-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114"/>
+<link href="/sites/all/themes/silverpeak/images/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72"/>
+<link href="/sites/all/themes/silverpeak/images/apple-touch-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144"/>
+<link href="/sites/all/themes/silverpeak/images/apple-touch-icon-60x60.png" rel="apple-touch-icon-precomposed" sizes="60x60"/>
+<link href="/sites/all/themes/silverpeak/images/apple-touch-icon-120x120.png" rel="apple-touch-icon-precomposed" sizes="120x120"/>
+<link href="/sites/all/themes/silverpeak/images/apple-touch-icon-76x76.png" rel="apple-touch-icon-precomposed" sizes="76x76"/>
+<link href="/sites/all/themes/silverpeak/images/apple-touch-icon-152x152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="/sites/all/themes/silverpeak/images/favicon-196x196.png" rel="icon" sizes="196x196" type="image/png"/>
+<link href="/sites/all/themes/silverpeak/images/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/sites/all/themes/silverpeak/images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/sites/all/themes/silverpeak/images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/sites/all/themes/silverpeak/images/favicon-128.png" rel="icon" sizes="128x128" type="image/png"/>
+<meta content=" " name="application-name">
+<meta content="#FFFFFF" name="msapplication-TileColor">
+<meta content="/sites/all/themes/silverpeak/images/mstile-144x144.png" name="msapplication-TileImage">
+<meta content="/sites/all/themes/silverpeak/images/mstile-70x70.png" name="msapplication-square70x70logo">
+<meta content="/sites/all/themes/silverpeak/images/mstile-150x150.png" name="msapplication-square150x150logo"/>
+<meta content="/sites/all/themes/silverpeak/images/mstile-310x150.png" name="msapplication-wide310x150logo"/>
+<meta content="/sites/all/themes/silverpeak/images/mstile-310x310.png" name="msapplication-square310x310logo"/>
+<link href="/sites/all/themes/silverpeak/images/favicon.ico" rel="icon" type="image/x-icon"/>
+<meta content="on" http-equiv="cleartype"/>
+<link href="https://www.silver-peak.com/sites/default/files/css/css_kShW4RPmRstZ3SpIC-ZvVGNFVAi0WEMuCnI0ZkYIaFw.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.silver-peak.com/sites/default/files/css/css_TH3-bzXxn6PJQkEkAEcY-AxXDCuaDxCS7COeQF6SNak.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.silver-peak.com/sites/default/files/css/css_p6fDSGFhBUzYhKTr9yQJ2VN4pxq2f_mtQznVTomuO88.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://www.silver-peak.com/sites/default/files/css/css_KxK36oZ9x7p0V8ocQFBoisrzyj4Kv5Oj-iEMF9Q5scA.css" media="all" rel="stylesheet" type="text/css"/>
+<style>@media (max-width:600px){.hideonmobile{display:none !important;}}
+</style>
+<link href="https://www.silver-peak.com/sites/default/files/css/css_oKASHjKfVA49jxQsCcd_Se2RQ82AL6cUj1xCBJWfDaM.css" media="all" rel="stylesheet" type="text/css"/>
+<script src="https://www.silver-peak.com/sites/default/files/js/js_Hs9xvnwXoow-K_YEgInXO5Sf98gGNfNCMgMmcIIufck.js"></script>
+<script src="https://www.silver-peak.com/sites/default/files/js/js_gN4YeBpsn5v-d8rIdkE1JsLkB3JpnLcC2I9wy5vMA0E.js"></script>
+<script src="https://www.silver-peak.com/sites/default/files/js/js_M2uVBH4Vc34zf4TmiULxRPVZvdXUinyi2Orqz4UuBVI.js"></script>
+<script src="https://www.silver-peak.com/sites/default/files/js/js_uCQ9ge8ZJfTiaZ2BIhdg6hryO8YI5hXSELImZAaBVYM.js"></script>
+<script>(function($) {
+      $(document).ready(function() {
+          effectsIn = Drupal.settings.inEffects;
+          effectsOut = Drupal.settings.outEffects;
+          var options_20 = Drupal.settings.md_slider_options_20;
+          if(!window.listMegaSlide){window.listMegaSlide = [];} $('.md-slide-items').each(function(index, item){
+            if($(item).attr('id') == 'md-slider-20-block'){
+              listMegaSlide[index] = $('#md-slider-20-block').mdSlider(options_20);
+            }
+          });
+      });
+    })(jQuery);</script>
+<script defer="defer" src="//script.crazyegg.com/pages/scripts/0077/2461.js"></script>
+<script src="https://www.silver-peak.com/sites/default/files/js/js_G2SFKAq42rsqEK8eyMYoLG_ENdQ63n3ATKm9h2t6jPc.js"></script>
+<script src="https://www.silver-peak.com/sites/default/files/js/js_E9kzobN89GHRwtmm7TkM_G2hD-9NJJAzEb6MrLyNY1I.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"silverpeak","theme_token":"IjG1RG__tWv3h7B3ftMrhAMm15G0TUOdkLe6XqQ7U_I","jquery_version":"1.11","js":{"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.11\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.accordion.min.js":1,"misc\/ajax.js":1,"sites\/all\/modules\/jquery_update\/js\/jquery_update.js":1,"sites\/all\/modules\/silverpeak_infoctr\/sp_infoctr.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/plain\/colorbox_style.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox_load.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox_inline.js":1,"sites\/all\/modules\/scroll_to_top\/scroll_to_top.js":1,"sites\/all\/modules\/md_slider\/js\/jquery.touchwipe.js":1,"sites\/all\/modules\/md_slider\/js\/modernizr.js":1,"sites\/all\/modules\/md_slider\/js\/jquery-migrate-1.2.1.min.js":1,"sites\/all\/modules\/md_slider\/js\/jquery.easing.js":1,"sites\/all\/modules\/md_slider\/js\/md-slider.js":1,"0":1,"\/\/script.crazyegg.com\/pages\/scripts\/0077\/2461.js":1,"misc\/progress.js":1,"sites\/all\/modules\/colorbox_node\/colorbox_node.js":1,"sites\/all\/themes\/silverpeak\/js\/jquery.fadegallery.js":1,"sites\/all\/themes\/silverpeak\/js\/jquery.scrollgallery.js":1,"sites\/all\/themes\/silverpeak\/js\/jquery.tabs.js":1,"sites\/all\/themes\/silverpeak\/js\/jquery.sameheight.js":1,"sites\/all\/themes\/silverpeak\/js\/js-custom-forms.js":1,"sites\/all\/themes\/silverpeak\/js\/jquery.collapsible.js":1,"sites\/all\/themes\/silverpeak\/js\/Placeholders.min.js":1,"sites\/all\/themes\/silverpeak\/js\/jquery.flash.js":1,"sites\/all\/themes\/silverpeak\/js\/carousel.min.js":1,"sites\/all\/themes\/silverpeak\/js\/script.js":1,"sites\/all\/themes\/silverpeak\/js\/silver-peak.js":1,"sites\/all\/themes\/silverpeak\/js\/states.js":1,"sites\/all\/themes\/silverpeak\/js\/owl.carousel.js":1,"sites\/all\/themes\/silverpeak\/js\/local1.js":1,"sites\/all\/themes\/silverpeak\/js\/local2.js":1,"sites\/all\/themes\/silverpeak\/js\/local3.js":1,"sites\/all\/themes\/silverpeak\/js\/parallax.js":1,"sites\/all\/themes\/silverpeak\/js\/calender.js":1,"sites\/all\/themes\/silverpeak\/js\/sp-colorbox.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"sites\/all\/modules\/scroll_to_top\/scroll_to_top.css":1,"modules\/aggregator\/aggregator.css":1,"sites\/all\/modules\/colorbox_node\/colorbox_node.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/plain\/colorbox_style.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/openlayers_proximity\/openlayers_proximity.css":1,"sites\/all\/modules\/md_slider\/css\/animate.css":1,"sites\/all\/modules\/md_slider\/css\/md-slider.css":1,"public:\/\/md-slider-md-slider-5a21e4bab7a28-layers.css":1,"sites\/all\/modules\/md_slider\/css\/md-slider-style.css":1,"1":1,"sites\/all\/themes\/silverpeak\/system.menus.css":1,"sites\/all\/themes\/silverpeak\/css\/global.styles.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":false,"mobiledevicewidth":"480px","specificPagesDefaultValue":"admin*\nimagebrowser*\nimg_assist*\nimce*\nnode\/add\/*\nnode\/*\/edit\nprint\/*\nprintpdf\/*\nsystem\/ajax\nsystem\/ajax\/*"},"scroll_to_top":{"label":""},"inEffects":["bounceIn","bounceInDown","bounceInUp","bounceInLeft","bounceInRight","fadeIn","fadeInUp","fadeInDown","fadeInLeft","fadeInRight","fadeInUpBig","fadeInDownBig","fadeInLeftBig","fadeInRightBig","flipInX","flipInY","foolishIn","lightSpeedIn","puffIn","rollIn","rotateIn","rotateInDownLeft","rotateInDownRight","rotateInUpLeft","rotateInUpRight","twisterInDown","twisterInUp","swap","swashIn","tinRightIn","tinLeftIn","tinUpIn","tinDownIn","vanishIn"],"outEffects":["bombRightOut","bombLeftOut","bounceOut","bounceOutDown","bounceOutUp","bounceOutLeft","bounceOutRight","fadeOut","fadeOutUp","fadeOutDown","fadeOutLeft","fadeOutRight","fadeOutUpBig","fadeOutDownBig","fadeOutLeftBig","fadeOutRightBig","flipOutX","flipOutY","foolishOut","hinge","holeOut","lightSpeedOut","puffOut","rollOut","rotateOut","rotateOutDownLeft","rotateOutDownRight","rotateOutUpLeft","rotateOutUpRight","rotateDown","rotateUp","rotateLeft","rotateRight","swashOut","tinRightOut","tinLeftOut","tinUpOut","tinDownOut","vanishOut"],"md_slider_options_20":{"fullwidth":true,"transitionsSpeed":800,"width":"1440","height":"524","enableDrag":true,"responsive":true,"pauseOnHover":false,"loop":true,"showLoading":false,"loadingPosition":"bottom","showArrow":true,"showBullet":false,"showNavigationLinks":false,"posBullet":"5","showThumb":false,"posThumb":"1","slideShowDelay":"8000","slideShow":true,"styleBorder":"0","styleShadow":"0","videoBox":false,"autoplayVideo":false},"colorbox_node":{"width":"600px","height":"600px"}});</script>
+<!--[if lt IE 9]>
+            <script src="/sites/all/themes/zen/js/html5-respond.js"></script>
+            <![endif]-->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
+</meta></meta></meta></meta></meta></meta></head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-3094 node-type-page section-legal">
+<!-- Google Tag Manager -->
+<noscript><iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-MP9SNL" style="display:none;visibility:hidden" width="0"></iframe></noscript> <script>(function (w, d, s, l, i) {
+              w[l] = w[l] || [];
+              w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+              var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+              j.async = true;
+              j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+              f.parentNode.insertBefore(j, f);
+          })(window, document, 'script', 'dataLayer', 'GTM-MP9SNL');</script>
+<!-- End Google Tag Manager -->
+<p id="skip-link">
+<a class="element-invisible element-focusable" href="#main-menu">Jump to navigation</a>
+</p>
+<script type="text/javascript">
+    function positionLinkBlock(targetContainer) {
+        if (targetContainer != null) {
+            var strLinkBlock = '<div class="be-related-link-container"><div class="be-container"><h4 class="be-label">RELATED TOPICS:</h4><ul class="be-list"><li class="be-list-item"><a class="be-related-link" href="https://www.silver-peak.com/sd-wan/moving-to-sd-wan">Moving to an SD-WAN</a></li><li class="be-list-item"><a class="be-related-link" href="https://www.silver-peak.com/sd-wan/sd-wan-explained">SD-WAN Explained</a></li><li class="be-list-item"><a class="be-related-link" href="https://www.silver-peak.com/sd-wan/top-benefits-sd-wan">Top Benefits of SD-WAN</a></li></ul></div></div>';
+            targetContainer.insertAdjacentHTML('afterbegin', strLinkBlock);
+        }
+    }
+
+    jsElementReady('.be-ix-link-block', positionLinkBlock)
+
+</script>
+<ul id="be_sdkms_capsule" style="display:none!important">
+<li id="be_sdkms_sdk_version">be_ixf; php_sdk; php_sdk_1.4.11</li>
+<li id="be_sdkms_capsule_connect_timer">18 ms</li>
+<li id="be_sdkms_capsule_index_time">iy_2022; im_06; id_20; ih_13; imh_26; i_epoch:1655756802252</li>
+<li id="be_sdkms_capsule_pub">ixf-compiler; ixf-compiler_1.0.0.0</li>
+<li id="be_sdkms_capsule_date_modified">py_2021; pm_11; pd_15; ph_11; pmh_07; p_epoch:1637003274558</li>
+</ul>
+<ul id="be_sdkms_node" style="display:none!important">
+<li id="be_sdkms_pub">link-block; link-block_link-block; bodystr</li>
+<li id="be_sdkms_date_modified">pn_tstr:Mon Nov 15 11:07:54 PST 2021; pn_epoch:1637003274558</li>
+<li id="be_sdkms_timer">0 ms</li>
+</ul>
+<ul id="be_sdkms_capsule" style="display:none!important">
+<li id="be_sdkms_sdk_version">be_ixf; php_sdk; php_sdk_1.4.11</li>
+<li id="be_sdkms_original_url">https://www.silver-peak.com/legal/privacy-policy?Access-Control-Allow-Origin=%2A&amp;Access-Control-Allow-Methods=GET&amp;Access-Control-Allow-Headers=Content-Type&amp;Access-Control-Max-Age=3600&amp;User-Agent=Mozilla%2F5.0+%28X11%3B+Ubuntu%3B+Linux+x86_64%3B+rv%3A52.0%29+Gecko%2F20100101+Firefox%2F52.0</li>
+<li id="be_sdkms_normalized_url">https://www.silver-peak.com/legal/privacy-policy</li>
+</ul>
+<!-- logo, main navigation, mobile navigation -->
+<div class="top-nav-wrapper">
+<div class="top-nav-outer">
+<div class="top-nav-inner">
+<div class="logo">
+<a href="/" title="Back to Home">
+<i aria-hidden="true" class="ico-sp-horiz"></i>
+</a>
+</div>
+<div class="search-top">
+<a class="search-button" href="#">
+<i aria-hidden="true" class="ico-magnifier"></i>
+</a>
+</div>
+<div class="toggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<!-- Main Navigation -->
+<div about="/blocks/main-navigation" class="node node-editblock view-mode-full clearfix" id="node-23" typeof="sioc:Item foaf:Document">
+<span class="rdf-meta element-hidden" content="Main Navigation" property="dc:title"></span>
+<div class="content">
+<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><style>
+    .top-nav-wrapper .logo i.ico-sp-horiz {
+        margin-top: -12px;
+    }
+    .ico-sp-horiz {
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/silver-peak-logo.svg') no-repeat center center;
+    }
+    .front .banner-wrapper {
+        margin-top: 75px;
+    }
+    #node-23 {
+        width: 930px;
+    }
+    .top-nav-wrapper {
+        padding-top: 0!important;
+        height: 75px;
+        background-color: #fff;
+        box-shadow: 0 15px 15px -15px rgb(0 0 0 / 25%);
+    }
+    .top-nav {
+        float: right;
+    }
+    .top-nav > ul > li {
+        height: 75px;
+        width: 143px;
+        float: left;
+        text-align: center;
+        background-color: #fff;
+        line-height: 1em;
+        background-size: 100% 200%;
+        background-position: left top;
+        transition: all .1s ease;
+    }
+    .top-nav > ul > li > a {
+        color: #0f3250;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 1.2;
+        padding: 29px 5px;
+    }
+    .top-nav > ul > li.parent:hover > a {
+        background-color: transparent;
+        color: #ff8400;
+        transition: all .1s ease;
+    }
+    .top-nav .external-aruba a::after {
+        content: '';
+        padding: 0 10px;
+        width: 20px;
+        height: 20px;
+        display: inline;
+        position: relative;
+        margin-left: 10px;
+        margin-top: -2px;
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/External-Link_Icon_20x20-Navy.svg') no-repeat center center;
+    }
+    .top-nav .external-aruba a:hover::after {
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/External-Link_Icon_20x20-Orange.svg') no-repeat center center;
+        transition: all .1s ease;
+    }
+    .top-nav > ul > li > ul {
+        top: 75px;
+        border: none;
+        background: #fcfcfc;
+        opacity: 1;
+        z-index: auto;
+        box-shadow: 0 5px 55px -15px rgb(0 0 0 / 35%);
+    }
+    .top-nav h3 {
+        color: #0f3250;
+        font-size: 16px!important;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-bottom: 2px solid rgb(0 0 0 / 25%)!important;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+    }
+    .top-nav .menu-left li {
+        margin-bottom: 20px;
+        padding: 0;
+    }
+    .top-nav .menu-left li a {
+        color: #0f3250;
+        text-transform: none;
+    }
+    .top-nav .menu-left li a:hover {
+        color: #ff8400;
+        transition: all .1s ease;
+    }
+    .top-nav .menu-left p {
+        color: #0f3250;
+        line-height: 1.56;
+    }
+    .top-nav .menu-left p a {
+        color: #ff8400;
+    }
+    .top-nav .menu-left p a:hover {
+        color: #ff4c00;
+        transition: all .1s ease;
+    }
+    .top-nav .products .menu-left {
+        width: 50%;
+        float: left;
+        padding: 40px;
+    }
+    .top-nav .products .menu-right {
+        width: 50%;
+        float: right;
+        background-color: #f4f3f4;
+        padding: 40px;
+        height: 100%;
+    }
+    .top-nav .menu-cta .cta-text h2 {
+        color: #0f3250;
+        line-height: 1.2;
+        font-size: 22px !important;
+        font-weight: 300 !important;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+    .top-nav .menu-cta .cta-text p {
+        color: #0f3250;
+    }
+    .top-nav .btn-tag {
+        margin-top: 40px;
+        display: inline-block;
+        margin-right: 20px;
+    }
+    .top-nav .btn-tag a {
+        background-color: #ff8300;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: normal;
+        letter-spacing: 0.45px;
+        padding: 10px 30px;
+        border-radius: 0;
+        border: none;
+    }
+    .top-nav .btn-tag a:hover {
+        background-color: #ff4c00;
+        color: #fff;
+        transition: all .1s ease;
+    }
+    .top-nav .solutions .partner.solution-menu {
+        width: 20%;
+        float: left;
+    }
+    .top-nav>ul>li.why-silver-peak-menu {
+        margin-left: -12px;
+    }
+    .become-a-partner-link {
+        padding-top: 32px;
+    }
+    .top-nav .products .enterprise {
+        width: 48%;
+        float: left;
+        margin-right: 3%;
+    }
+    .top-nav .products .service-provider {
+        width: 49%;
+        float: right;
+    }
+    /* .solution-menu */
+    .top-nav .menu-left.solution-menu {
+        width: 73% !important;
+        float: left;
+        padding: 40px;
+    }
+    .top-nav .menu-right.solution-menu {
+        width: 27% !important;
+        float: right;
+        background-color: rgba(255, 255, 255, 0.28);
+        padding: 40px;
+        height: 100%;
+    }
+    .top-nav .menu-cta .cta-text.solution-menu {
+        width: 50%;
+        float: left;
+        text-align: left;
+        margin: 0;
+        display: block;
+    }
+    .top-nav .solutions .enterprise.solution-menu {
+        width: 50%;
+        float: left;
+    }
+    .top-nav .solutions .service-provider.solution-menu {
+        width: 25%;
+        float: right;
+    }
+    .solution-menu-container {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        -webkit-flex-flow: row wrap;
+        list-style: none;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .solution-menu-item {
+        width: 50%;
+    }
+    /* .solution-menu Language */
+    .top-nav > ul > li.language > a {
+        padding: 27px 5px;
+    }
+    .top-nav .menu-left.language-menu {
+        width: 100%;
+        float: left;
+        padding: 40px;
+    }
+    .top-nav .language-links {
+        width: 20%;
+        float: right;
+        margin-right: 3%;
+    }
+    .top-nav>ul>li.parent.partners.language {
+        width: 80px;
+    }
+    .top-nav>ul>li.parent.partners.language img {
+        margin-top: -3px;
+    }
+    .top-nav-wrapper .search-top a:hover i {
+        color: #ff8300;
+    }
+    .search-box {
+        top: 75px;
+    }
+    .searchbox-in .searchbox-btn i {
+        color: #ff8300;
+    }
+    section.pp-notice {
+        display: none !important;
+    }
+    @media all and (max-width: 1555px) {
+        .top-nav .menu-cta .cta-text h2.sp-solutions {
+            color: #fff;
+            line-height: 1.2;
+            font-size: 20px !important;
+            font-weight: 300 !important;
+            margin-bottom: -20px;
+            width: 190%;
+            margin-top: -30px;
+        }
+    }
+    @media all and (max-width: 1370px) {
+        #node-23 {
+            margin-top: 0px;
+        }
+    }
+    @media all and (max-width: 1229px) {
+        div.menu-cta.solution-menu I.ico-sd-wan {
+            Margin-top: -50px;
+        }
+        .top-nav .menu-cta .cta-text.solution-menu h2 {
+            width: 180%;
+        }
+        .top-nav .menu-cta .cta-text.solution-menu {
+            margin-top: -15px;
+        }
+        div.cta-text.solution-menu div.btn-tag {
+            margin-top: 20px;
+        }
+    }
+    @media all and (max-width: 1197px) {
+        #node-23 {
+            margin-top: -50px;
+        }
+    }
+    @media all and (max-width: 1135px) {
+        #node-23 {
+            margin-top: -73px;
+        }
+    }
+    @media all and (max-width: 986px) {
+        /* globe icon */
+        .top-nav>ul>li.parent.partners.language {
+            width: 100%;
+        }
+        .top-nav .language-links {
+            width: 20%;
+            float: left;
+            margin-right: 3%;
+        }
+        .top-nav .enterprise h3.language {
+            border-bottom: 1px solid #959595;
+            color: #959595;
+            padding-bottom: 5px
+            text-transform: uppercase;
+            font-size: 18px;
+            margin-bottom: 20px;
+            width: 100px;
+            font-size: 13px;
+        }
+        /* Partners Solutions - small mobile */
+        .top-nav .partner h3 {
+            color: #959595;
+            border-bottom: 1px solid #959595;
+            padding-bottom: 3px;
+            text-transform: uppercase;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        .top-nav>ul {
+            width: 100%;
+            right: 0;
+            overflow: scroll;
+            margin-top: 29px;
+        }
+        .top-nav>ul>li {
+            width: 100%;
+            text-align: left;
+            height: initial;
+        }
+    }
+    @media all and (max-width: 768px) {
+        .top-nav .menu-left.solution-menu {
+            width: 100%;
+        }
+        .top-nav .solutions .enterprise.solution-menu {
+            width: 100%;
+        }
+        .solution-menu-item {
+            width: 100%;
+        }
+        .top-nav .solutions .service-provider.solution-menu {
+            width: 100%;
+        }
+        .top-nav .products .menu-left {
+            width: 100%;
+        }
+        .top-nav .products .enterprise {
+            width: 100%;
+        }
+        .top-nav .products .service-provider {
+            width: 100%;
+        }
+        /* globe icon */
+        .top-nav>ul>li.parent.partners.language {
+            width: 100%;
+        }
+        .top-nav .language-links {
+            width: 20%;
+            float: left;
+            margin-right: 3%;
+        }
+        .top-nav .enterprise h3.language {
+            border-bottom: 1px solid #959595;
+            color: #959595;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 18px;
+            margin-bottom: 20px;
+            width: 100px;
+            font-size: 13px;
+        }
+        .top-nav>ul {
+            width: 100%;
+            right: 0;
+            overflow: scroll;
+            margin-top: 29px;
+        }
+        .top-nav>ul>li {
+            width: 100%;
+            text-align: left;
+            height: initial;
+        }
+    }
+</style>
+<nav class="top-nav">
+<ul>
+<li class="parent solutions"><a class="not-active" href="//www.silver-peak.com/">Solutions</a>
+<ul class="submenu">
+<div class="menu-left solution-menu">
+<div class="enterprise solution-menu">
+<h3 class="menu-heading">Enterprise</h3>
+<ul class="solution-menu-container">
+<li class="solution-menu-item external-aruba"><a href="https://www.arubanetworks.com/products/sd-wan/">SD-WAN</a></li>
+<li class="solution-menu-item external-aruba"><a href="https://www.arubanetworks.com/solutions/edge-to-cloud-security/">WAN Edge Security</a></li>
+<li class="solution-menu-item external-aruba"><a href="https://www.arubanetworks.com/solutions/multi-cloud-networking">Multi-Cloud Networking</a></li>
+<li class="solution-menu-item external-aruba"><a href="https://www.arubanetworks.com/solutions/wan-optimization/">WAN Optimization</a></li>
+<li class="solution-menu-item external-aruba"><a href="https://www.arubanetworks.com/solutions/router-replacement/">Router Replacement</a></li>
+</ul>
+</div>
+<div class="partner solution-menu">
+<h3 class="menu-heading">Partner Solutions</h3>
+<li class="external-aruba"><a href="https://www.arubanetworks.com/partners/technology-partners/zscaler-solutions/">Zscaler</a></li>
+</div>
+<div class="service-provider solution-menu">
+<h3 class="menu-heading">Service Providers</h3>
+<li class="external-aruba"><a href="https://www.arubanetworks.com/solutions/global-service-providers/ ">Service Provider SD-WAN</a></li>
+</div>
+</div>
+</ul>
+</li>
+<li class="parent products">
+<a class="not-active" href="//www.silver-peak.com/">Products</a>
+<ul class="submenu">
+<div class="menu-left">
+<div class="enterprise">
+<h3 class="menu-heading">Enterprise</h3>
+<li class="external-aruba"><a href="https://www.arubanetworks.com/products/sd-wan/edgeconnect/">Aruba EdgeConnect</a>
+</li>
+<li class="external-aruba"><a href="https://www.arubanetworks.com/products/sd-wan/edgeconnect/orchestrator/">Aruba Orchestrator</a></li>
+<li class="external-aruba"><a href="https://www.arubanetworks.com/products/sd-wan/edgeconnect/boost/">Aruba Boost WAN Optimization</a></li>
+</div>
+<div class="service-provider">
+<h3 class="menu-heading">Service Providers</h3>
+<li class="external-aruba"><a href="https://www.arubanetworks.com/products/sd-wan/edgeconnect/">Aruba EdgeConnect</a></li>
+<li class="external-aruba"><a href="https://www.arubanetworks.com/products/sd-wan/edgeconnect/boost/">Aruba Boost WAN Optimization</a></li>
+</div>
+</div>
+<div class="menu-right">
+<div class="menu-cta">
+<div class="cta-text">
+<h2 class="nowrap">SD-WAN Test Drive and Demo</h2>
+<p>We invite you to test drive the Unity EdgeConnect SD-WAN edge platform. Register today to gain full access to the industry’s only business-driven WAN edge solution.</p>
+<div class="btn-tag">
+<a class="btn-text" href="//www.silver-peak.com/test-drive-the-silver-peak-sd-wan" onmousedown="dataLayer.push({'event': 'eventTracker', 'eventCat': 'Top Nav CTAs', 'eventAct': 'Click Test Drive CTA', 'eventLbl': '/test-drive-the-silver-peak-sd-wan', 'eventVal': 0});">Test Drive</a>
+</div>
+<div class="btn-tag">
+<a class="btn-text" href="//www.silver-peak.com/sd-wan-interactive-demo" onmousedown="dataLayer.push({'event': 'eventTracker', 'eventCat': 'Top Nav CTAs', 'eventAct': 'Click Guided Tour CTA', 'eventLbl': '/sd-wan-interactive-demo', 'eventVal': 0});">Guided Tour</a>
+</div>
+</div>
+</div>
+</div>
+</ul>
+</li>
+<li class="parent support-menu"><a href="//www.silver-peak.com/">Support</a>
+<ul class="submenu">
+<div class="menu-left">
+<div class="enterprise">
+<li><a href="//www.silver-peak.com/support" rel="nofollow">Overview</a></li>
+<li><a href="//www.silver-peak.com/support/training" rel="nofollow">Training</a></li>
+<li class="external-aruba"><a href="https://www.arubanetworks.com/techdocs/sdwan/">User Documentation</a></li>
+<li class="external-aruba"><a href="https://www.arubanetworks.com/support-services/security-bulletins/">Security Advisories</a></li>
+<li class="external-aruba"><a href="https://www.arubanetworks.com/techdocs/sdwan/docs/advisories/#contact-information">Contact Security Incidence Response Team</a></li>
+</div>
+<div class="service-provider">
+<li><a href="//www.silver-peak.com/support/customer-login" rel="nofollow">Customer Login</a></li>
+<li><a href="//www.silver-peak.com/support/support-registration" rel="nofollow">Support Registration</a></li>
+<li><a href="//www.silver-peak.com/support/submit-a-case" rel="nofollow">Submit a Case</a></li>
+</div>
+</div>
+</ul>
+</li>
+<li class="parent partners"><a class="not-active" href="//www.silver-peak.com/">Partners</a>
+<ul class="submenu">
+<div class="menu-left">
+<div class="enterprise partner-links">
+<h3 class="menu-heading">Strategic Partners</h3>
+<li class="external-aruba"><a href="https://www.arubanetworks.com/partners/technology-partners/partner-finder/#program=4">Technology Alliances</a></li>
+<li><a href="//www.silver-peak.com/company/authorized-deployment-partners">Authorized Deployment Partners</a></li>
+<li><a href="//www.silver-peak.com/company/certified-deployment-partners">Certified Deployment Partners</a></li>
+<li><a href="//www.silver-peak.com/company/service-provider-partners">Service Provider partners</a></li>
+<li><a href="//www.silver-peak.com/company/system-integrator-partners">System Integrator Partners</a></li>
+</div>
+<div class="partner-login service-provider">
+<h3 class="menu-heading">Channel Partners</h3>
+<li><a href="//www.silver-peak.com/channel-partners">Overview</a></li>
+<li><a href="https://partners.silver-peak.com/partnerhub/PC_BecomePartner" target="_blank">Become A Channel Partner</a></li>
+<li><a href="//www.silver-peak.com/channel-partners-locator">Channel Partner Locator</a></li>
+<p><a href="https://partners.silver-peak.com/partnerhub/PC_PartnerLogin" rel="nofollow" target="_blank">Login</a> to your Partner Portal to access essential sales tools.</p>
+</div>
+</div>
+</ul>
+</li>
+<li class="parent partners language"><a class="not-active" href="//www.silver-peak.com/"><img alt="Language" src="//www.silver-peak.com/sites/default/files/images/icons/globe-icon-gray.png" title="Language"/></a>
+<ul class="submenu">
+<div class="menu-left language-menu">
+<div class="enterprise language-links">
+<h3 class="language menu-heading">Language</h3>
+<li><a href="//www.silver-peak.com/">English</a></li>
+<li>
+<a href="https://fr.silver-peak.com" onmousedown="dataLayer.push({'event': 'eventTracker', 'eventCat': 'Top Nav CTAs', 'eventAct': 'Click French Menu', 'eventLbl': 'fr.silver-peak.com', 'eventVal': 0});">French</a>
+</li>
+<li>
+<a href="https://de.silver-peak.com" onmousedown="dataLayer.push({'event': 'eventTracker', 'eventCat': 'Top Nav CTAs', 'eventAct': 'Click German Menu', 'eventLbl': 'de.silver-peak.com', 'eventVal': 0});">German</a>
+</li>
+<li>
+<a href="https://ja.silver-peak.com" onmousedown="dataLayer.push({'event': 'eventTracker', 'eventCat': 'Top Nav CTAs', 'eventAct': 'Click Japanese Menu', 'eventLbl': 'ja.silver-peak.com', 'eventVal': 0});">Japanese</a>
+</li>
+</div>
+</div>
+</ul>
+</li>
+</ul>
+</nav></div></div></div> </div>
+</div>
+</div>
+</div>
+<div class="search-box">
+<div class="searchbox-in">
+<form action="/search">
+<input autofocus="" class="search-input" name="keys" onkeypress="this.style.width = (((this.value.length + 1) *36)-((this.value.length)*5))+ 'px';" placeholder="SEARCH" type="text"/>
+<!-- <input type="submit" value="go" class="go-btn"> -->
+<a class="searchbox-btn" href="#">
+<i aria-hidden="true" class="ico-magnifier"></i>
+</a>
+</form>
+</div>
+</div>
+</div>
+<div>
+<!-- Notification -->
+<div about="/blocks/top-nav-under-main-nav-notification" class="node node-editblock view-mode-full clearfix" id="node-3737" typeof="sioc:Item foaf:Document">
+<span class="rdf-meta element-hidden" content="Top Nav Under MAIN NAV - NOTIFICATION" property="dc:title"></span>
+<div class="content">
+<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><!--
+<section class="pp-notice fadeOut privacy">
+    <div class="sp-div-w1200">
+        <ul class="pp-notice-container">
+            <li class="pp-notice-item fadeOut">
+                <p>New Privacy policy updates effective August 1, 2020, click <a href="//www.silver-peak.com/legal/privacy-policy-070120" target="_blank"> here</a> for the current Privacy policy information.</p>
+            </li>
+        </ul>
+    </div>
+</section>
+-->
+<section class="pp-notice">
+<div class="sp-div-w1200">
+<ul class="pp-notice-container">
+<li class="pp-notice-item wfh">
+<p>Silver Peak was acquired by Aruba, a Hewlett Packard Enterprise Company</p>
+<div class="cta-wfh-survey">
+<a class="wfh-btn" href="//www.silver-peak.com/news/press-releases/hpe-completes-acquisition-of-silver-peak" target="_blank">Learn More</a>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<style>
+    
+    section.pp-notice.privacy {
+        margin-bottom: -22px;
+        border-bottom: 1px solid #5a5a5a;
+    }
+
+    section.pp-notice.privacy {
+        margin-bottom: -22px;   
+    }
+    
+    .cta-wfh-survey {
+        display: inline-block;
+        
+    }
+    
+    
+    .wfh-btn {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        width: 160px;
+        text-align: center;
+        display: inline-block;
+        margin: 0 auto 32px;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: all .8s;
+        font-size: 16px;
+        border: 1px solid #FFF !important;
+        font-weight: 600;
+        margin-left: 25px;
+    }
+    .wfh-btn:hover {
+        border: 1px solid #66456f!important;
+        background-color: #FFF!important;
+        color: #000 !important;
+        transition: .5s all;
+        text-decoration: none;
+        cursor: pointer
+    }
+
+    
+    section.sp-home-section-1 {
+        background: transparent !important;
+    }
+    section.sp-home-section-1 .promo-wrapper {
+        background: #192f59;
+        margin-bottom: -2px;
+    }
+    
+    #content .field-name-body li:before {
+        content: "";
+    }
+    
+    section.pp-notice {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        background: #505461 !important;
+        top: 80px;
+        display: block;
+        z-index: 100;
+        height: 46px;
+        margin-bottom: -2px;
+    }
+    
+    body.front section.pp-notice {
+        top: 100px;
+        height: 44px;
+        margin-bottom: 0px;
+    }
+    
+    
+    section.pp-notice p {
+        color: #FFF;
+        font-weight: 400;
+        font-size: 15px;
+        margin-top: 10px;
+        line-height: 24px;
+        display: inline;
+    }
+    .pp-notice-container {
+        list-style: none;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        justify-content: center;
+    }
+    .pp-notice-item {
+        /* width: 900px; */
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 4px;
+    }
+    
+    .pp-notice-item a {
+        /*n text-decoration: underline !important; */
+        color: #007dba;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .pp-notice-item.wfh a {
+        color: #FFF;
+        font-weight: 400;
+        cursor: pointer;
+        outline: 0; 
+    }
+
+    @media all and (max-width: 500px) { 
+
+       section.pp-notice {
+            top: 65px;
+            height: 100px;
+            margin-bottom: 5px;
+        }
+        
+        body.front section.pp-notice {
+            top: 85px;
+            height: 100px;
+            margin-bottom: 5px;
+        }
+        section.pp-notice p {
+            color: #FFF;
+            font-weight: 400;
+            font-size: 15px;
+            margin-top: 10px;
+            line-height: 24px;
+            display: block;
+            margin: auto;
+            margin-left: -35px;
+        }
+
+        .pp-notice-item {
+            padding-top: 10px;
+        }
+        
+        .cta-wfh-survey {
+            display: inline-block;
+            margin-left: -60px;
+        }
+
+    
+    }
+    
+    @media all and (max-width: 350px) { 
+    
+        section.pp-notice {
+            top: 65px;
+        }
+        
+        body.front section.pp-notice {
+            top: 63px;
+            height: 105px;
+            margin-bottom: -20px;
+        }
+    
+    }
+
+
+</style>
+<script>
+    
+    jQuery( document ).ready(function(){
+        
+        jQuery('.pp-notice.fadeOut').fadeIn('slow', function(){
+            jQuery('.pp-notice.fadeOut').delay(5000).fadeOut(); 
+        });
+
+        jQuery('li.pp-notice-item.fadeOut p').fadeIn('slow', function(){
+           jQuery('li.pp-notice-item.fadeOut p').delay(5000).fadeOut(); 
+        });
+        
+
+    });
+    
+</script>
+</div></div></div> </div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="body-wrapper">
+<div id="page">
+<div id="main">
+<div class="column clearfix" id="content" role="main">
+<a id="main-content"></a>
+<hgroup class="head-box">
+<h1 class="title" id="page-title">Silver Peak Privacy Policy</h1>
+</hgroup>
+<div id="content-holder">
+<div class="block block-block first odd" id="block-block-6">
+<style>
+@media only screen and (max-width: 800px) {
+    .no800, .no1000 {
+        display: none !important;
+    }
+}
+
+.md-video .md-playbtn {
+display:none;
+}
+
+</style>
+<script>
+jQuery(document).ready(function() {
+
+    //Homepage: slide 3. Gartner WAN Edge - “Get the Report” CTA Button
+    jQuery('.md-object.text-green-cta.md-layer-20-3-2').empty();
+
+    jQuery('.md-object.text-green-cta.md-layer-20-3-2').append( "<a href='https://www.silver-peak.com/sd-wan-edge-gartner-magic-quadrant-2020' onmousedown=\"dataLayer.push({'event': 'eventTracker', 'eventCat': 'Outbound Links', 'eventAct': 'Click', 'eventLbl': 'www.silver-peak.com/sd-wan-edge-gartner-magic-quadrant-2020', 'eventVal': 0});\">Get the Report</a>" );
+
+
+
+    // Homepage: Slide 4. Webinar: /wan-transformation
+    jQuery('.md-object.text-green-cta.md-layer-20-6-2').empty();
+
+    jQuery('.md-object.text-green-cta.md-layer-20-6-2').append( "<a href='https://www.silver-peak.com/2021-top-sd-wan-edge-predictions-webinar' onmousedown=\"dataLayer.push({'event': 'eventTracker', 'eventCat': 'Outbound Links', 'eventAct': 'Click', 'eventLbl': '/wan-transformation-for-the-cloud-first-enterprise-webinar', 'eventVal': 0});\">Watch the Webinar</a>" );
+    
+
+    //Homepage: Slide 5. Top 8 Predictions Webinar
+    jQuery('.md-object.text-green-cta.md-layer-20-7-1').empty();
+
+    jQuery('.md-object.text-green-cta.md-layer-20-7-1').append( "<a href='https://www.silver-peak.com/2021-top-sd-wan-edge-predictions-webinar' onmousedown=\"dataLayer.push({'event': 'eventTracker', 'eventCat': 'Outbound Links', 'eventAct': 'Click', 'eventLbl': 'www.silver-peak.com/2021-top-sd-wan-edge-predictions-webinar', 'eventVal': 0});\">Watch the Webinar</a>" );
+
+    
+    // Homepage: Slide 6. Focus
+    jQuery('.md-object.text-green-cta.md-layer-20-8-1').empty();
+
+    jQuery('.md-object.text-green-cta.md-layer-20-8-1').append( "<a href='https://www.silver-peak.com/focus' onmousedown=\"dataLayer.push({'event': 'eventTracker', 'eventCat': 'Outbound Links', 'eventAct': 'Click', 'eventLbl': 'www.silver-peak.com/focus', 'eventVal': 0});\">Learn More</a>" );
+
+
+    // Homepage: Slide 7. SD-WAN
+    jQuery('.md-object text-green-cta md-layer-20-9-2').empty();
+
+    jQuery('.md-object text-green-cta md-layer-20-9-2').append( "<a href='https://www.silver-peak.com/sd-wan' onmousedown=\"dataLayer.push({'event': 'eventTracker', 'eventCat': 'Outbound Links', 'eventAct': 'Click', 'eventLbl': 'www.silver-peak.com/sd-wan', 'eventVal': 0});\">Learn More</a>" );
+
+    
+    //Homepage: Slide 8. PPW
+    jQuery('.md-object.text-green-cta.md-layer-20-10-1').empty();
+
+    jQuery('.md-object.text-green-cta.md-layer-20-10-1').append( "<a href='https://www.silver-peak.com/peak-performance-sd-wan-technical-workshop#america' onmousedown=\"dataLayer.push({'event': 'eventTracker', 'eventCat': 'Outbound Links', 'eventAct': 'Click', 'eventLbl': '/peak-performance-sd-wan-technical-workshop#america', 'eventVal': 0});\">Save Your Seat</a>" );
+    
+    
+    // Homepage: Slide 9. Whitepaper
+    jQuery('.md-object.text-green-cta.md-layer-20-11-1').empty();
+
+    jQuery('.md-object.text-green-cta.md-layer-20-11-1').append( "<a href='https://www.silver-peak.com/successful-network-and-security-transformation-powers-the-digital-enterprise' onmousedown=\"dataLayer.push({'event': 'eventTracker', 'eventCat': 'Outbound Links', 'eventAct': 'Click', 'eventLbl': '/successful-network-and-security-transformation-powers-the-digital-enterprise', 'eventVal': 0});\">Get the White Paper</a>" );
+    
+
+    // Homepage: Slide 10. Six Ways eBook
+    jQuery('.md-object.text-green-cta.md-layer-20-12-1').empty();
+
+    jQuery('.md-object.text-green-cta.md-layer-20-12-1').append( "<a href='https://www.silver-peak.com/six-ways-a-business-driven-sd-wan-edge-yields-a-multiplier-effect' onmousedown=\"dataLayer.push({'event': 'eventTracker', 'eventCat': 'Outbound Links', 'eventAct': 'Click', 'eventLbl': '/six-ways-a-business-driven-sd-wan-edge-yields-a-multiplier-effect', 'eventVal': 0});\">Download eBook</a>" );
+    
+
+});</script>
+</div>
+<article about="/legal/privacy-policy" class="node-3094 node node-page view-mode-full clearfix" typeof="foaf:Document">
+<header>
+<span class="rdf-meta element-hidden" content="Silver Peak Privacy Policy" property="dc:title"></span>
+</header>
+<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><div class="sp-pp-updated-date">(Effective May 1, 2021) </div>
+<p>Silver Peak Systems, Inc. (<strong>"Silver Peak", "we", "us" or "our"</strong>) values the privacy of those who provide personal information to us</p>
+<h2>Summary</h2>
+<p>This privacy policy describes the information identifying you that we collect, how we use this information, with whom it is shared, and how it is stored.  Typically, we collect <strong>customer data</strong> in order to provide the products and services that customers purchase or request from us, including without limitation the cloud portal and the Silver Peak Unity Orchestrator™.  For example, we may capture email addresses so that a customer can check the status of their software or open a case with our tech support team.  We collect <strong>visitor data</strong> through our website in order to understand and improve our website content, as well as maintain a secure computing environment.  We collect <strong>marketing data</strong> in order to respond to inquiries about our products and services and provide access to the latest topical information that potential customers might be interested in. When we collect this data, we do so in compliance with this privacy policy, which describes how we handle the data we collect in more detail.  This policy also describes other important topics relating to information privacy like security and compliance.</p>
+<p><strong>Please read this privacy policy carefully to understand how we handle your personal information.</strong></p>
+<p>By accessing or browsing <a href="http://www.silver-peak.com" target="_blank">www.silver-peak.com</a> (our "<strong>Website</strong>") and/or using any of the services that we provide to you or you access, you confirm that you have read and understood the entirety of this privacy policy.</p>
+<p><a href="#about">About Silver Peak</a></p>
+<p><a href="#info-collect">Information Collection</a></p>
+<p><a href="#use-info">Use of Information</a></p>
+<p><a href="#disclosure-info">Disclosure of Information</a></p>
+<p><a href="#retention-info">Retention of Information</a></p>
+<p><a href="#your-rights">Your Rights</a></p>
+<p><a href="#transfers-info">Transfer of Information</a></p>
+<p><a href="#security">Security</a></p>
+<p><a href="#third-party-websites">Third-Party Websites</a></p>
+<p><a href="#cookies">Cookies</a></p>
+<p><a href="#changes-privacy-policy">Changes to Our Privacy Policy</a></p>
+<p><a href="#making-complaint">Making a Complaint</a></p>
+<p><a href="#contact-us">Contact Us</a></p>
+<h2 id="about">1. About Silver Peak</h2>
+<p>1.1 The following Silver Peak companies collect, process, transfer and store in accordance with this privacy policy: Silver Peak Systems, Inc. 2860 De La Cruz Blvd, Santa Clara, CA 95050 (USA).</p>
+<p>1.2 You can contact us by phone at: +1 888 343 2860, by post at: Silver Peak System, Inc., 2860 De La Cruz Blvd., Santa Clara, CA 95050 or by email at:  <a href="mailto:privacy@silver-peak.com">privacy@silver-peak.com</a>.</p>
+<p>1.3 With respect to personal information transferred from the Europe Economic Area (<strong>“EEA”</strong>), UK or Switzerland to Silver Peak Systems Inc, we will process personal information in accordance with applicable privacy laws. </p>
+<p>1.4 The General Data Protection Regulation (GDPR) grants EU residents greater protections over what personal information is used, as well as how, and for how long. This Privacy Policy was implemented with GDPR in mind. Silver Peak’s commitment is to comply with the GDPR in its current state and evolves. Specific questions related to GDPR compliance may be directed to <a href="mailto:privacy@silver-peak.com">privacy@silver-peak.com</a>.</p>
+<h2 id="info-collect">2. Information collection</h2>
+<p>We may collect and process any of the following information about you and we refer to this as “personal information” throughout this policy:</p>
+<p>2.1 <u>Information you give us</u>. You may give us information about yourself by using the online forms provided on the Website or by contacting us by phone, e-mail or other means. This includes, for example, filling in our 'Contact Us' form on our Website or when you provide your information to us in order to receive our services. By providing this information to us, you agree it will be processed in compliance with applicable privacy laws.</p>
+<h3>The information you give us may include:</h3>
+<ol style="list-style-type: lower-alpha;">
+<li>your name;</li>
+<li>your job title;</li>
+<li>company name;</li>
+<li>e-mail address;</li>
+<li>your telephone number;</li>
+<li>account information;</li>
+<li>your company's address;</li>
+<li>any updates to information provided to us.</li>
+</ol>
+<p>Please note that we need certain types of information so that we can provide services to you. If you do not provide us with such information, or ask us to delete it, you may no longer be able to access our services.</p>
+<p>2.2 <u>Information we may collect about you</u>. Each time you visit the Website we may automatically collect any of the following information</p>
+<ol style="list-style-type: lower-alpha;">
+<li>technical information, including the Internet protocol (IP) address used to connect your computer to the internet, domain name and country which requests information, the files requested, browser type and version, browser plug-in types and versions, operating system and platform; and</li>
+<li>information about your visit, including the full Uniform Resource Locators (URL) clickstream to, through and from our site (including date and time), length of visits to certain pages, page interaction information (such as scrolling, clicks, and mouse-overs) and methods used to browse away from the page.</li>
+</ol>
+<p>2.3 <u>Information we may receive from other sources</u>.</p>
+<ol style="list-style-type: lower-alpha;">
+<li>We will receive information about you if you obtain our services through one of our resellers. The types of information that we may receive are the same as the information that you may give to us detailed in section 2.1 above.</li>
+<li>We will receive information about you if you use any of the other websites we operate or the other services we provide. In this case, we will have informed you when we collected that data that it may be shared internally and combined with data collected on the Website. We work closely with third parties (including, for example, advertising networks, analytics and search information providers) and may receive information about you from them.</li>
+</ol>
+<h2 id="use-info">3. Use of information</h2>
+<p>3.1 We, or third party data processors acting on our behalf, collect, use and store the personal information listed above to enable you to receive services for which you or your company have entered into a contract with us and/or because it is in the legitimate interests of Silver Peak to handle your personal information. More specifically, we collect, use and store our personal information for the following reasons:</p>
+<ol style="list-style-type: lower-alpha;">
+<li>to allow you to access and use the Website and to register for an account;</li>
+<li>to provide you with the information and services that you request from us;</li>
+<li>to carry out activities for business purposes and in the legitimate interests of Silver Peak, for example, pursuing debt, ensuring the security of and measuring interest and engagement in our services and Website, undertaking research for technological development, improving, upgrading or enhancing our services, and debugging to identify and repair errors;</li>
+<li>to verify your identity in order to prevent and detect money laundering, fraud and security incidents;</li>
+<li>to provide customer support services</li>
+<li>to detect, prevent and address technical issues.</li>
+<li>to carry out statistical analysis and market research;</li>
+<li>for marketing, advertising and promotional purposes including short-term, transient use, such as contextual customization of ads;</li>
+<li>to notify you about changes to our services and to keep you informed about our fees and charges;</li>
+<li>to manage job applications;</li>
+<li>for auditing relating to interactions, transaction and other compliance activities; and </li>
+<li>with your consent only, to contact you (including by email or post) with information about our products and services which either you request, or which we feel will be of interest to you.</li>
+</ol>
+<p>3.2 We will also collect details about you as a user of the Website for the purposes of improving and maintaining our Website, preparing reports or compiling statistics in order to improve our services. Such details will be anonymized as far as is reasonably possible and you will not be identifiable from the data collected.</p>
+<h2 id="gdpr-info">4. Legal Basis for Processing under the GDPR</h2>
+<p>4.1 If you are from the European Economic Area (“EEA”), UK or Switzerland Silver Peak’s legal basis for Processing the personal information described in this Notice depends on the personal information we collect and the specific context in which we collect it.</p>
+<p>4.2 We may process your personal information because:</p>
+<ol style="list-style-type: lower-alpha;">
+<li>We need to perform a contract with you</li>
+<li>To provide information or services you requested</li>
+<li>You have given us your consent to process your personal information for the respective purposes</li>
+<li>To comply with our legal obligations</li>
+</ol>
+<p>4.3	In addition, we may process your personal information on the basis of the legitimate interest of Silver Peak in providing your information on our Websites and to improve our Websites.</p>
+<h2 id="disclosure-info">5. Disclosure of information</h2>
+<p>5.1 We share the following categories of personal information:</p>
+<ol style="list-style-type: lower-alpha;">
+<li>identifiers and contact information such as name, email address and telephone number; and</li>
+<li>internet or other electronic network activity such as browsing history, search history, information on a consumer’s interaction with an internet website, application or advertisement.</li>
+</ol>
+<p>5.2 We will share your personal information with any company that is a member of our group, which are listed at the start of this privacy policy.</p>
+<p>5.3 We will share your personal information with the following categories of third parties, including:</p>
+<ol style="list-style-type: lower-alpha;">
+<li>our service providers and sub-contractors, including but not limited to payment processors, suppliers of technical and support services and cloud service providers;</li>
+<li>companies that assist us in our marketing, advertising and promotional activities;</li>
+<li>analytics and search engine providers that assist us in the improvement and optimization of our Website; and</li>
+<li>systems integrators and service providers who resell our services and products. Any third parties with whom we share your personal information are limited (by law and by contract) in their ability to use your personal information for any purpose other than to provide services for us. We will always ensure that any third parties with whom we share your personal information are subject to privacy and security obligations consistent with this privacy policy and applicable laws.</li>
+</ol>
+<p>5.4 We will also disclose your personal information to third parties:</p>
+<ol style="list-style-type: lower-alpha;">
+<li>if we sell or buy any business or assets, we may disclose your personal information to the prospective seller or buyer of such business or assets;</li>
+<li>if Silver Peak or substantially all of its assets are acquired by a third party, in which case personal information held by Silver Peak will be one of the transferred assets;</li>
+<li>if we are under a duty to disclose or share your personal information in order to comply with any legal obligation, any lawful request from government or law enforcement officials and as may be required to meet national security or law enforcement requirements or prevent illegal activity;</li>
+<li>in order to enforce or apply our terms and conditions or any other agreement or to respond to any claims, to protect our rights or the rights of a third party, to protect the safety of any person or to prevent any illegal activity; or</li>
+<li>to protect the rights, property, or safety of Silver Peak, our customers or other persons. This may include exchanging information with other organizations for the purposes of fraud protection and credit risk reduction.</li>
+</ol>
+<p>5.5 Except as expressly detailed above, we will never share, sell or rent any of your personal information to any third party without notifying you or, where required by applicable law, obtaining your consent. Where you have given your consent for us to use your information in a particular way, but later change your mind, you should contact us, and we will stop doing so. We have not sold consumer’s personal information in the preceding 12 months.</p>
+<h2 id="retention-info">6. Retention of information</h2>
+<p>We retain personal information for as long as you use the services we provide and then as required to comply with applicable laws.</p>
+<h2 id="your-rights">7. Your rights</h2>
+<p>7.1 In the EEA and in certain other jurisdictions, you have certain data protection rights. We take reasonable steps to allow you to correct, amend, delete or limit the Processing of your personal information where required by law.</p>
+<p>7.2 Where required by law, you have the following data protection rights:</p>
+<ol style="list-style-type: lower-alpha;">
+<li>Right of access. You have the right to obtain information as to whether we process your personal information and to receive a copy of your personal information retained by us as a Controller. In addition, you have the right to obtain certain information about how and why we process your personal information.</li>
+<li>Right to rectification. You have the right to have your personal information amended or rectified where it is inaccurate and to have incomplete personal information about you completed.</li>
+<li>Right to erasure. You have the right to erasure of your personal information, inter alia, in the following cases:</li>
+<ul>
+<li>I.	Your personal information is no longer necessary in relation to the purpose for which they were collected and processed;</li>
+<li>II.	Our legal grounds for the Processing of your personal information is consent, you withdraw your consent and we have no other legal ground for the Processing of your personal information;</li>
+<li>III. Our legal grounds for the Processing of your personal information is that the Processing is necessary for legitimate interests pursued by us or a third party, you object to our Processing and we do not have any overriding legitimate grounds;</li>
+<li>IV.	Your personal information has been unlawfully processed</li>
+<li>V.	Your personal information must be erased to comply with a legal obligation to which we are subject.</li>
+</ul>
+<li>Right to restrict the Processing of your personal information. You have the right to restrict our Processing of your personal information in the following cases:</li>
+<ul>
+<li>I.	For a period enabling us to verify the accuracy of your personal information where you have contested the accuracy of such personal information;</li>
+<li>II.	Your personal information has been unlawfully processed and you request restriction of the Processing of your personal information instead of their erasure;</li>
+<li>III. Your personal information is no longer necessary in relation to the purpose for which they were collected and processed but the personal information is required by you to establish, exercise or defend legal claims; or</li>
+<li>IV.	For a period enabling us to verify whether our legitimate grounds override your interests where you have objected to the Processing of your personal information.</li>
+</ul>
+<li>Right to object to the Processing. You have the right to object to our Processing of your personal information, inter alia, in the following cases:</li>
+<ul>
+<li>I.	Our legal grounds for the Processing is that the Processing is necessary for a legitimate interest pursued by us or a third party; or</li>
+<li>II.	Our Processing is for direct marketing purposes.</li>
+</ul>
+<li>Right to data portability. You have the right to receive your personal information which you have provided to us and you have the right that we send your personal information to another organization (or ask us to do so if technically feasible) where our lawful basis for the Processing is your consent, or where the Processing is necessary for the performance of our contract with you and the Processing is carried out by automated means.</li>
+<li>The right to withdraw consent. You also have the right to withdraw your consent at any time where Silver Peak Systems relied on your consent to process your personal information.</li>
+</ol>
+<p>Please note that we may ask you to verify your identity before responding to such requests.</p>
+<h2 id="california-privacy-rights">8. California Privacy Rights</h2>
+<p>8.1 California Civil Code Section § 1798.83 entitles California residents to request information concerning whether a business has disclosed personal information to any third parties for the third parties’ direct marketing purposes. To make such a request, please contact privacy@silverpeak.com. We will respond by email within the time required by law.</p>
+<p>8.2 You may contact us by email at <a href="mailto:privacy@silver-peak.com">privacy@silver-peak.com</a> at any time, to request that we:</p>
+<ul>
+<li>a.	update any personal information which is out of date or incorrect;</li>
+<li>b.	delete any personal information which we are holding about you;</li>
+<li>c.	restrict the way that we process your personal information;</li>
+<li>d.	provide your personal information to a third-party provider of services; or</li>
+<li>e.	provide you with a copy of any personal information which we hold about you.</li>
+<li>f.	cease processing your data subject to our legitimate interests as stated in Section 3c.  We maintain the opportunity to demonstrate compelling legitimate grounds for the processing which override the interests, right and freedoms of the data subject or for the establishment, exercise or defense of legal claims, in which case we will be permitted to continue such processing. </li>
+</ul>
+<p>We will consider all such requests and provide our response within the time period stated by applicable law.</p>
+<p>8.3 You have the right to ask us to not process your personal information for marketing purposes. We will inform you (before collecting your personal information) if we intend to use your personal information for such purposes or if we intend to disclose your information to any third party for such purposes. You can exercise your right to prevent such processing by checking certain boxes on the forms we use to collect your personal information. Alternatively, you can contact us by email at <a href="mailto:privacy@silver-peak.com">privacy@silver-peak.com</a> at any time.</p>
+<p>8.4 If you have previously given your consent to the use of your personal information for marketing purposes, you can choose to stop receiving marketing communications which we send to you from time to time by following the unsubscribe instructions included in such communications. Alternatively, you can opt out of such communications at any time by contacting us by email at <a href="mailto:privacy@silver-peak.com">privacy@silver-peak.com</a>.</p>
+<p>8.5 You can choose to opt-out from your personal information being:</p>
+<ul>
+<li>a.	used for any purpose that differs from the purposes notified to you when we collected your personal information; or</li>
+<li>b.	disclosed to any third party.</li>
+</ul>
+<p>8.6 If you would like to do this, please contact us by phone at: +1 888 343 2860, by mail at: Silver Peak System, Inc., 2860 De La Cruz Blvd., Santa Clara, CA 95050 or by email at: privacy@silver-peak.com. Please note that opting-out may prevent us from providing you with our services or information requested by you.</p>
+<h2>9. Transfers of information</h2>
+<p>9.1 If you are located outside of the United States, the personal information that we collect from you will be transferred to, and stored in the United States or another location outside of the EEA, UK or Switzerland. Any transfer of the personal information to the United States or another location outside of the EEA, UK or Switzerland will be in compliance with applicable privacy laws.</p>
+<p>9.2 The personal information will also be processed by staff operating in the United States or outside the EEA, UK or Switzerland working for us, other members of our group or third party data processors. Such staff may be engaged in, among other things, the provision of our services to you, the processing of transactions and/or the provision of support services. By providing us with your personal information you acknowledge any such transfer, storage and processing.</p>
+<p>9.3 We will always take steps to ensure that such transfers comply with applicable privacy laws and we will take all reasonable precautions to ensure that your personal information is treated securely and in accordance with this privacy policy.</p>
+<h2 id="security">10. Security</h2>
+<p>10.1 Silver Peak is committed to protecting personal information from loss, misuse, disclosure, alteration, unauthorized access and destruction and takes all reasonable precautions to safeguard the confidentiality of personal information. Although we make every effort to protect the personal information which you provide to us, the transmission of data over the internet is not completely secure. As such, you acknowledge and accept that we cannot guarantee the security of your information transmitted to the Website and that any such transmission is at your own risk. Once we have received your information, we will use strict procedures and security features to prevent unauthorized access.</p>
+<p>10.2 Consistent with applicable laws and requirements, including the GDPR, Silver Peak has put in place appropriate physical, electronic, and administrative safeguards to protect your personal information from loss, misuse, alteration, theft, unauthorized access, or unauthorized disclosure. We evaluate these safeguards on an ongoing basis to help minimize risks from new security threats as they become known.</p>
+<p>10.3 We restrict access to personal information to personnel and third parties that require access to such information for legitimate, and relevant business purposes.  Our staff members, contractors and third parties who will have access to personal information on our instructions will be bound to confidentiality and we use controls to limit access to individuals that require such access for the performance of their responsibilities and tasks.</p>
+<p>10.4 Where we have given you (or where you have chosen) a password which enables you to access your online account, you are responsible for keeping this password confidential. We ask you not to share a password with anyone.</p>
+<h2 id="third-party-websites">11. Third party websites</h2>
+<p>11.1 The Website may, from time to time, contain links to websites operated by third parties. Please note that this privacy policy only applies to the personal information that we collect through this Website and we cannot be responsible for personal information collected and stored by third parties. Third party websites have their own terms and conditions and privacy policies, and you should read these carefully before you submit any personal information to these websites. We do not endorse or otherwise accept any responsibility or liability for the content of such third party websites or third party terms and conditions or policies.</p>
+<h2 id="cookies">12. Cookies</h2>
+<p>12.1 Some pages on our Website use cookies, which are small files placed on your internet browser when you visit our Website. We use cookies in order to offer you a more tailored experience in the future, by understanding and remembering your particular browsing preferences.</p>
+<p>12.2 For detailed information on the cookies we use and the purposes for which we use them, please refer to our cookies policy <a href="#cookies-policy">below</a>. By continuing to use the Website and/or our services, you are agreeing to our use of cookies as described in our cookies policy.</p>
+<h2 id="changes-privacy-policy">13. Children’s Information</h2>
+<p>Our services are not directed to children under 17 (or other age as required by local law), and we do not knowingly collect personal information from children.  If you learn that your child has provided us with personal information without your consent, you may contact us as set forth below.  If we learn that we have collected any personal information in violation of applicable law, we will promptly take steps to delete such information and terminate the child’s account.</p>
+<h2 id="making-complaint">14. Changes to our privacy policy</h2>
+<p>We may update our privacy policy from time to time. By continuing to use the services and our Website, you agree to the latest version of our privacy policy. Any changes we make to our privacy policy in the future will be posted on this page and, where appropriate, notified to you by email prior to such changes being effective. Please check back frequently to see any updates or changes to our privacy policy.</p>
+<h2 id="making-a-complaint">15. Making a complaint</h2>
+<p>If you are located in the EEA, UK or Switzerland, you may make a complaint to a supervisory body for data protection matters in the country in which you are based. In the UK, this would be the UK Information Commissioner's Office (https://ico.org.uk/). Alternatively, you may seek a remedy through local courts if you believe your rights have been breached.</p>
+<h2 id="contact-us">16. Contact us</h2>
+<p>If you have any questions in relation to this privacy policy or how we collect, use or store your personal information, you can contact us by phone at: +1 888 343 2860, by post at: Silver Peak Systems, Inc. 2860 De La Cruz Blvd. Santa Clara, CA 95050 Attention: Legal Department or by email at: <a href="mailto:privacy@silver-peak.com">privacy@silver-peak.com</a>.</p>
+<h2 id="cookies-policy">Cookies Policy</h2>
+<p>IMPORTANT NOTICE: PLEASE READ CAREFULLY BEFORE USING THIS WEBSITE: This site uses cookies to store information on your computer. By using this site, you agree to the placement of cookies on your computer in accordance with the terms of this policy. <strong>If you do not wish to accept cookies in connection with your use of this Website, you must stop using our Website or use your browser settings to block the placing of cookies.</strong></p>
+<h2>1. What are Cookies?</h2>
+<p>A cookie is a text-only string of information that a website transfers to the cookie file of the browser on your computer's hard disk so that the website can recognize you when you revisit and remember certain information about you. This can include which pages you have visited, choices you have made from menus, any specific information you have entered into forms and the time and date of your visit.</p>
+<h2>2. Types of Cookies</h2>
+<p>There are two main types of cookies:</p>
+<ul>
+<li>•	Session cookies: these are temporary cookies that expire at the end of a browser session; that is, when you leave the site. Session cookies allow the website to recognize you as you navigate between pages during a single browser session and allow you to use the website most efficiently. For example, session cookies enable a website to remember that a user has placed items in an online shopping basket.</li>
+<li>•	Persistent cookies: in contrast to session cookies, persistent cookies are stored on your equipment between browsing sessions until expiry or deletion. They therefore enable the website to “recognize” you on your return remember your preferences and tailor services to you.</li>
+</ul>
+<p>In addition to session cookies and persistent cookies, there may be other cookies which are set by a website which you have chosen to visit, such as this website, in order to provide us or third parties with information.</p>
+<h2>3. Our Use of Cookies</h2>
+<p>We currently use, and may use in the future, the following types of cookies on this website.</p>
+<p>We use session cookies to:</p>
+<ul>
+<li>•	Help us maintain security and verify your details whilst you use the website as you navigate from page to page, which enables you to avoid having to re-enter your details each time you enter a new page.</li>
+</ul>
+<p>We use persistent cookies to:</p>
+<ul>
+<li>•	Help us recognize you as a unique user when you return to our website so that you do not have to input your details multiple times as you move between our pages or services</li>
+<li>•	Remember how you have customized your use of this site, such as your preferred currency and time zone</li>
+<li>•	Collect and compile anonymous, aggregated information for statistical and evaluation purposes to help us understand how users use the website and help us improve the structure of our website.</li>
+</ul>
+<p>Many cookies are designed to give you optimal usage of the web. For example, we use cookies to enable you to improve your user experience when using our website, e.g. a cookie which recognizes if your browser supports specific technology features. This helps, for example, in enabling web pages to be loaded more quickly when you request the download of a large file.</p>
+<p>In addition to cookies which send information to us, we also use cookies which collect information and send it to third-parties. An example of this is Google Analytics. Google has developed the Google Analytics opt-out browser add-on for the Google Analytics JavaScript (ga.js, analytics.js, dc.js). If you want to opt out of Google Analytics, you can download and install the add-on for your web browser here. Please check the relevant third-party website for more information about their use of cookies. Where this site allows such cookies to be set or you access other websites from this site using the links provided, the operators of these websites will use cookies in accordance with their own cookies policy, which may differ from ours.
+</p>
+<p>As with first party cookies, you are able to block third party cookies through your browser settings.</p>
+<p>Some of our cookies may collect and store your personal information, such as your name or email address. We are committed to respecting and protecting your privacy and will ensure that all personal information collected by us is kept and treated in accordance with our privacy policy. A link to this policy is available within the footer of this portal.</p>
+<h2>4. Refusing Cookies on this Site</h2>
+<p>Most browsers are initially set to accept cookies. However, you can disable cookies if you wish, generally through changing your internet software browsing settings. It may also be possible to configure your browser settings to enable acceptance of specific cookies or to notify you each time a new cookie is about to be stored on your computer enabling you to decide whether to accept or reject the cookie. To manage your use of cookies there are various resources available to you, for example the “Help” section on your browser may assist you. You can also disable or delete the stored data used by technology similar to cookies, such as Local Shared Objects or Flash cookies, by managing your browser's “add-on settings” or visiting the website of its manufacturer. As our cookies allow you to access some of our website's essential features we recommend that you leave cookies enabled, otherwise, if cookies are disabled, it may mean that you experience reduced functionality.</p>
+<h2>5. Additional Resources</h2>
+<p>Useful information about cookies can be found at:</p>
+<ul>
+<li><a href="http://www.allaboutcookies.org/" target="_blank">http://www.allaboutcookies.org/</a></li>
+<li><a href="http://www.youronlinechoices.eu/" target="_blank">http://www.youronlinechoices.eu/</a></li>
+<li><a href="https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer" target="_blank">https://support.mozilla.org/en-US/kb/cookies-information-websites-store-on-your-computer</a></li>
+<li><a href="https://www.ftc.gov/site-information/privacy-policy/internet-cookies" target="_blank">https://www.ftc.gov/site-information/privacy-policy/internet-cookies</a></li>
+</ul>
+<style media="screen">
+#content .field-name-body ol li {
+  list-style: unset;
+  position: relative;
+}
+#content .field-name-body li:before {
+    content: none;
+}
+
+.sp-pp-updated-date {
+    margin: 0 0 18px;
+    color: #474747;
+    font-size: 1.125em;
+    line-height: 1.5em;
+    margin-top: -30px;
+    margin-bottom: 40px;
+}
+    
+</style></div></div></div>
+</article>
+<div class="block block-block last odd" id="block-block-13">
+<style>
+#back-top {
+    margin-left: 94%;
+}
+
+@media all and (max-width: 400px) { 
+#back-top {
+    margin-left: 82%;
+}
+
+}
+
+
+
+</style>
+</div>
+<div class="clearfix"></div>
+</div><!--/#content-holder-->
+</div><!-- /#content -->
+</div><!-- /#main -->
+</div><!-- /#page -->
+</div><!-- /#body-wrapper-->
+<!-- Footer nodeblock -->
+<div about="/blocks/footer-editable-block" class="node node-editblock view-mode-full clearfix" id="node-3444" typeof="sioc:Item foaf:Document">
+<span class="rdf-meta element-hidden" content="Footer Editable Block" property="dc:title"></span>
+<div class="content">
+<div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><style>
+    .glbl-ft {
+        background-color: #0f3250;
+        float: left;
+        width: 100%;
+        padding-top: 80px;
+        background-image: none !important;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-attachment: scroll;
+        background-size: cover;
+        font-family: 'Open Sans', Arial, sans-serif !important;
+    }
+    .glbl-ft a:hover,
+    #footer-block-cms a:hover {
+        color: #ff4c00;
+        text-decoration: none;
+        transition: all 0.1s ease-in-out;
+    }
+    .glbl-ft .external-aruba a::after {
+        content: '';
+        padding: 0 10px;
+        width: 20px;
+        height: 20px;
+        display: inline;
+        position: relative;
+        margin-left: 10px;
+        margin-top: -2px;
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/External-Link_Icon_20x20-Wht.svg') no-repeat center center;
+    }
+    .glbl-ft .external-aruba a:hover::after {
+        transition: all 0.1s ease-in-out;
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/External-Link_Icon_20x20-Blood-Orange.svg') no-repeat center center;
+    }
+    section#footer-block-cms {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        margin-top: -80px;
+    }
+    #footer-block-cms #footer-div-w1200 {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
+    }
+    #footer-block-cms .flex-footer-container-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 4rem;
+        list-style: none;
+    }
+    #footer-block-cms .flex-footer-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        list-style: none;
+    }
+    #footer-block-cms .flex-footer-item {
+        text-align: left;
+        width: 250px;
+        border-radius: 3px;
+        font-size: 16px;
+        padding: 5px;
+    }
+    #footer-block-cms h3 {
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px; 
+        text-transform: uppercase;
+        line-height: 26px; 
+        margin-bottom: 2em;
+        text-align: left;
+    }
+    #footer-block-cms p {
+        color: #fff;
+        font-size: 14px;
+        line-height: 26px;
+    }
+    #footer-block-cms .special-line-height {
+        line-height: 20px;
+    }
+    #footer-block-cms a {
+        color: #fff;
+        font-style: normal !important;
+    }
+    #footer-block-cms .flex-footer-item-social-icons {
+        display: flex;
+        flex-direction: row;
+        width: 350px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    #footer-block-cms [class^="ico-"],
+    [class*=" ico-"] {
+
+        font-size: 30px;
+        padding: 10px;
+    }
+    .flex-footer-item-social-icons p {
+        padding-top: 10px;
+    }
+    #footer-block-cms .footer-bottom {
+        margin-top: -50px;
+    }
+    #footer-block-cms-social-icons {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+    #footer-block-cms-legal {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+    #footer-block-cms-legal .flex-footer-container {
+        list-style: none;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .flex-footer-item-legal {
+        text-align: left;
+        font-size: 16px;
+        margin-left: -30px;
+    }
+    .flex-footer-item-legal a {
+        color: #fff;
+        font-size: 12px;
+        line-height: 22px;
+        padding-right: 20px;
+    }
+    #footer-block-cms-legal {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        margin-top: -40px;
+    }
+    #footer-block-cms-legal #footer-div-w1200 {
+        max-width: 1150px;
+        margin: 0 auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    .flex-footer-item-legal .ico-sp-horiz {
+        height: 55px;
+        width: 190px;
+        text-align: right;
+        display: inline-block;
+        margin-top: -15px;
+        margin-right: 2px;
+    }
+    .glbl-social {
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        line-height: 26px;
+    }
+    .glbl-cpyrt {
+        color: #fff;
+        font-size: 12px; 
+        line-height: 22px;
+    }
+    @media all and (max-width: 480px) {
+        section#footer-block-cms {
+            margin-top: -50px;
+        }
+        #footer-block-cms-legal {
+            padding-left: 15px;
+        }
+    }
+    .flex-footer-item-social-icons a {
+        position: relative;
+        display: inline-block;
+        height: 32px;
+        width: 32px;
+        text-indent: -9999px;
+        margin: 0 11px 20px 0;
+    }
+    a.fsl-airheads {
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/icons-footer-airheads.svg') no-repeat center center;
+    }
+    a.fsl-twitter {
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/icons-footer-twitter.svg') no-repeat center center;
+    }
+    a.fsl-linkedin {
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/icons-footer-linkedin.svg') no-repeat center center;
+    }
+    a.fsl-facebook {
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/icons-footer-facebook.svg') no-repeat center center;
+    }
+    a.fsl-youtube {
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/icons-footer-youtube.svg') no-repeat center center;
+    }
+    a.fsl-airheads:hover {
+        transition: all 0.1s ease-in-out;
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/icons-footer-airheads-orange.svg') no-repeat center center;
+    }
+    a.fsl-twitter:hover {
+        transition: all 0.1s ease-in-out;
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/icons-footer-twitter-orange.svg') no-repeat center center;
+    }
+    a.fsl-linkedin:hover {
+        transition: all 0.1s ease-in-out;
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/icons-footer-linkedin-orange.svg') no-repeat center center;
+    }
+    a.fsl-facebook:hover {
+        transition: all 0.1s ease-in-out;
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/icons-footer-facebook-orange.svg') no-repeat center center;
+    }
+    a.fsl-youtube:hover {
+        transition: all 0.1s ease-in-out;
+        background: url('https://www.silver-peak.com/sites/default/files/images/icons/icons-footer-youtube-orange.svg') no-repeat center center;
+    }
+    .footer-logos {
+        margin-bottom: 4rem;
+    }
+    .footer-logos img {
+        height: 55px;
+    }
+    .footer-logos img.aruba-logo {
+        padding-right: 40px;
+        border-right: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    .footer-logos img.silver-peak-logo {
+        padding-left: 30px;
+    }
+</style>
+<footer class="glbl-ft">
+<section id="footer-block-cms">
+<div id="footer-div-w1200">
+<!--ul class="flex-footer-container">
+                <IXF: Place the following div before flex-footer-container>
+                    <div class="be-ix-link-block"><Link Equity Target Div></div>
+                <IXF: end>
+            </ul-->
+<ul class="flex-footer-container-top">
+<div class="footer-logos">
+<img alt="Aruba logo" class="aruba-logo" src="https://www.silver-peak.com/sites/default/files/images/icons/aruba_hp_lockup_reversed.svg">
+<img alt="Silver Peak logo" class="silver-peak-logo" src="https://www.silver-peak.com/sites/default/files/images/home/2020/silver-peak-logo-white.png"/>
+</img></div>
+<p class="glbl-social">Connect with us</p>
+<li class="flex-footer-item-social-icons">
+<a class="fsl-airheads" href="https://community.arubanetworks.com/" target="_blank" title="Airheads Community"> </a>
+<a class="fsl-twitter" href="https://twitter.com/ArubaNetworks" target="_blank" title="Twitter"> </a>
+<a class="fsl-linkedin" href="https://www.linkedin.com/company/aruba-a-hewlett-packard-enterprise-company" target="_blank" title="LinkedIn"> </a>
+<a class="fsl-facebook" href="https://www.facebook.com/arubanetworks" target="_blank" title="FaceBook"> </a>
+<a class="fsl-youtube" href="https://www.youtube.com/c/arubanetworks/" target="_blank" title="Youtube"></a>
+</li>
+</ul>
+</div>
+</section>
+<section id="footer-block-cms">
+<div id="footer-div-w1200">
+<ul class="flex-footer-container">
+<!--li class="flex-footer-item">
+                    <h3><a href="https://www.arubanetworks.com/products/sd-wan/" target="_blank" title="Solutions" >Solutions</a></h3>
+                    <p class="external-aruba"><a href="https://www.arubanetworks.com/products/sd-wan/" target="_blank" title="SD-WAN">SD-WAN</a></p>
+                    <p><a href="/solutions/hybrid-wan" title="Hybrid WAN">Hybrid WAN</a></p>
+                    <p class="external-aruba"><a href="https://www.arubanetworks.com/solutions/router-replacement/" target="_blank" title="Router Replacement">Router Replacement</a></p>
+                    <p><a href="/sd-wan/cloud-application-performance" title="Cloud Application Performance">Cloud App Performance</a></p>
+                    <p class="external-aruba"><a href="https://www.arubanetworks.com/solutions/edge-to-cloud-security/" target="_blank" title="WAN Edge Security">WAN Edge Security</a></p>
+                    <p class="external-aruba"><a href="https://www.arubanetworks.com/solutions/wan-optimization/" target="_blank" title="WAN Optimization">WAN Optimization</a></p>
+                    <p><a href="/sd-wan/voice-video-over-broadband" title="Voice and Video over Broadband"><span class="special-line-height">Voice and Video over Broadband</span></a></p>
+                    <p class="external-aruba"><a href="https://www.arubanetworks.com/solutions/multi-cloud-networking/" target="_blank" title="Multi-Cloud Networking">Multi-Cloud Networking</a></p>
+                    <p><a href="/products/unity-architecture" title="Unity Architecture">Unity Architecture</a></p>
+                    <p><a href="/solutions/service-provider-sd-wan" title="Service Provider SD-WAN">Service Provider SD-WAN</a></p>
+                </li-->
+<!--li class="flex-footer-item">
+                    <h3><a href="/products" title="Products">Products</a></h3>
+                    <p><a href="/products" title="Products">Products Overview</a></p>
+                    <p class="external-aruba"><a href="https://www.arubanetworks.com/products/sd-wan/edgeconnect/" target="_blank" title="Unity EdgeConnect">Unity EdgeConnect</a></p>
+                    <p class="external-aruba"><a href="https://www.arubanetworks.com/products/sd-wan/edgeconnect/orchestrator/" target="_blank" title="Unity Orchestrator">Unity Orchestrator</a></p>
+                    <p class="external-aruba"><a href="https://www.arubanetworks.com/products/sd-wan/edgeconnect/boost/" target="_blank" title="Unity Boost">Unity Boost</a></p>
+                    <p><a href="/products/wan-optimization/nx-physical-appliances" title="NX Appliances">NX Appliances</a></p>
+                    <p><a href="/products/wan-optimization/vx-virtual-appliances" title="VX Appliances">VX Appliances</a></p>
+                    <p><a href="/products/wan-optimization/gms" title="GMS">GMS</a></p>
+                    <p><a href="/products/unity-orchestrator-sp" title="Service Provider Unity OrchestratorSP"><span class="special-line-height">Service Provider Unity Orchestrator<sup>SP</sup></span></a></p>
+                </li-->
+<li class="flex-footer-item">
+<h3><a href="/support" title="Support">Support</a></h3>
+<p><a href="/support/training" title="Training">Training</a></p>
+<p class="external-aruba"><a href="https://www.arubanetworks.com/techdocs/sdwan/" title="User Documentation">User Documentation</a></p>
+<p class="external-aruba"><a href="https://www.arubanetworks.com/support-services/security-bulletins/" title="Security Advisories">Security Advisories</a></p>
+<p><a href="/support/customer-login" title="Customer Login">Customer Login</a></p>
+<p><a href="/support/support-registration" title="Support Registration">Support Registration</a></p>
+<p><a href="/support/submit-a-case" title="Submit a Case">Submit a Case</a></p>
+</li>
+<li class="flex-footer-item">
+<h3><a href="https://www.arubanetworks.com/partners/technology-partners/partner-finder/#program=4" title="Partners">Partners</a></h3>
+<p class="external-aruba"><a href="https://www.arubanetworks.com/partners/technology-partners/partner-finder/#program=4" target="_blank" title="Technology Alliances">
+                            Technology Alliances</a></p>
+<p><a href="https://partners.silver-peak.com/partnerhub/PC_PartnerLogin" rel="nofollow" target="_blank" title="Channel Partners Login">
+                            Channel Partners Login</a></p>
+<p><a href="/channel-partners" rel="nofollow" target="_blank" title="Channel Partners">
+                            Channel Partners</a></p>
+<p><a href="/company/authorized-deployment-partners" rel="nofollow" target="_blank" title="Authorized Deployment Partners">
+                            Authorized Deployment</a></p>
+<p><a href="/company/service-provider-partners" rel="nofollow" target="_blank" title="Service Provider Partners">
+                            Service Providers</a></p>
+<p><a href="/company/system-integrator-partners">System Integrators</a></p>
+<p><a href="https://partners.silver-peak.com/partnerhub/PC_BecomePartner" rel="nofollow" target="_blank" title="Become a Partner">
+                            Become a Partner</a></p>
+<p><a href="/channel-partners-locator">Channel Partner Locator</a></p>
+</li>
+<!--li class="flex-footer-item">
+                    <h3><a href="/company" title="Company">Company</a></h3>
+                    <p class="external-aruba"><a href="https://www.arubanetworks.com/resources/case-studies/#opt=en&prod=16" target="_blank" title="Customers">Customers</a></p>
+                    <p><a href="/company/leadership" title="Leadership">Leadership</a></p>
+                    <p class="external-aruba"><a href="https://www.arubanetworks.com/company/events/" target="_blank" title="Events">Events</a></p>
+                    <p><a href="/webinars" title="Webinars">Webinars</a></p>
+                    <p><a href="/resource-center" title="Resource Center">Resource Center</a></p>
+                    <p><a href="/company/faq" title="FAQ">FAQ</a></p>
+                    <p><a href="https://blog.silver-peak.com/" target="_blank" title="WANSpeak Blog">WANSpeak Blog</a></p> 
+                    <p><a href="/news/press-releases" title="Press Releases">Press Releases</a></p>
+                    <p class="external-aruba"><a href="https://news.arubanetworks.com/home/default.aspx" target="_blank" title="In the News">In the News</a></p>
+                    <p><a href="/news/awards" rel="nofollow" title="Awards">Awards</a></p>
+                    <p><a href="/company/locations" title="Locations">Locations</a></p>
+                    <p><a href="https://www.silver-peak.com/sites/default/files/pdf/legal/anti-slavery-policy-signature-112519.pdf" title="Supply Chain Transparency">Supply Chain Transparency</a></p>
+                </li-->
+</ul>
+</div>
+</section>
+<section id="footer-block-cms-legal">
+<div id="footer-div-w1200">
+<ul class="flex-footer-container">
+<li class="flex-footer-item-legal">
+<a href="/legal/privacy-policy" rel="nofollow" title="Legal">Privacy Policy</a>
+<!--<a href="https://www.hpe.com/us/en/legal/privacy.html" rel="nofollow" title="Legal">Privacy Policy</a>-->
+<a href="/legal/terms-of-use" rel="nofollow" title="Legal">Terms of Use</a>
+<!--a href="/sitemap" title="Sitemap">Sitemap</a-->
+<!--a href="https://careers.arubanetworks.com/" target="_blank" title="Careers">Careers</a-->
+<!--a href="/company/media-center" title="Media Center">Media Center</a-->
+<!--a href="/company/contact" title="Contact Us">Contact Us</a-->
+<!--a href="tel:8885987325" title="Give us a call!">888-598-7325</a-->
+</li>
+<li class="flex-footer-item-legal">
+<p class="glbl-cpyrt">© Copyright 2022 Hewlett Packard Enterprise Development LP</p>
+</li>
+</ul>
+</div>
+</section>
+</footer></div></div></div> </div>
+</div>
+<div class="region region-bottom">
+<div class="block block-block first odd" id="block-block-17">
+<style>
+
+#block-block-3 .footer-cta {
+    bottom: 56px;
+} 
+    
+.footer-cookies-consent {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background: #464e7e;
+   text-align: center;
+    z-index: 1000;
+}
+.footer-cookies-consent p {
+    color: #FFF;
+    padding-top: 13px;
+    display: inline-block;
+}
+.footer-cookies-consent a {
+    color: #FFF;    
+    text-decoration: underline;
+}
+.close-x {
+    background: url(https://www.silver-peak.com/sites/default/files/images/cookies-consent/cookies-x.png) center no-repeat;
+    background-size: 20px 20px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: text-bottom;
+    margin-left: 85px;
+    cursor: pointer;
+}
+.close-x:hover {    
+    opacity: 0.8;
+    cursor: pointer;
+}
+    
+@media all and (max-width: 480px) { 
+    
+    .footer-cookies-consent {
+        text-align: left;
+        padding: 10px;
+    }
+    .footer-cookies-consent p {
+        margin-right: 80px;   
+    }
+    .close-x {
+        margin-top: -200px;
+        margin-bottom: 125px;
+        margin-left: 260px;
+    }
+
+}
+    
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .close-x {
+        margin-top: -200px;
+        margin-bottom: 100px;
+        margin-left: 330px;
+    }
+      
+}
+    
+</style>
+<div class="footer-cookies-consent">
+<p>Silver Peak uses cookies. Using our website means that you acknowledge the use of cookies. For more information, see our <a href="//www.silver-peak.com/legal/privacy-policy" target="_blank">Privacy Policy</a>.</p>
+<span class="close-x"></span>
+</div>
+<script>
+/*!
+ * jQuery Cookie Plugin v1.4.1
+ * https://github.com/carhartl/jquery-cookie
+ *
+ * Copyright 2013 Klaus Hartl
+ * Released under the MIT license
+ */
+(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD
+		define(['jquery'], factory);
+	} else if (typeof exports === 'object') {
+		// CommonJS
+		factory(require('jquery'));
+	} else {
+		// Browser globals
+		factory(jQuery);
+	}
+}(function ($) {
+
+	var pluses = /\+/g;
+
+	function encode(s) {
+		return config.raw ? s : encodeURIComponent(s);
+	}
+
+	function decode(s) {
+		return config.raw ? s : decodeURIComponent(s);
+	}
+
+	function stringifyCookieValue(value) {
+		return encode(config.json ? JSON.stringify(value) : String(value));
+	}
+
+	function parseCookieValue(s) {
+		if (s.indexOf('"') === 0) {
+			// This is a quoted cookie as according to RFC2068, unescape...
+			s = s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+		}
+
+		try {
+			// Replace server-side written pluses with spaces.
+			// If we can't decode the cookie, ignore it, it's unusable.
+			// If we can't parse the cookie, ignore it, it's unusable.
+			s = decodeURIComponent(s.replace(pluses, ' '));
+			return config.json ? JSON.parse(s) : s;
+		} catch(e) {}
+	}
+
+	function read(s, converter) {
+		var value = config.raw ? s : parseCookieValue(s);
+		return $.isFunction(converter) ? converter(value) : value;
+	}
+
+	var config = $.cookie = function (key, value, options) {
+
+		// Write
+
+		if (value !== undefined && !$.isFunction(value)) {
+			options = $.extend({}, config.defaults, options);
+
+			if (typeof options.expires === 'number') {
+				var days = options.expires, t = options.expires = new Date();
+				t.setTime(+t + days * 864e+5);
+			}
+
+			return (document.cookie = [
+				encode(key), '=', stringifyCookieValue(value),
+				options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+				options.path    ? '; path=' + options.path : '',
+				options.domain  ? '; domain=' + options.domain : '',
+				options.secure  ? '; secure' : ''
+			].join(''));
+		}
+
+		// Read
+
+		var result = key ? undefined : {};
+
+		// To prevent the for loop in the first place assign an empty array
+		// in case there are no cookies at all. Also prevents odd result when
+		// calling $.cookie().
+		var cookies = document.cookie ? document.cookie.split('; ') : [];
+
+		for (var i = 0, l = cookies.length; i < l; i++) {
+			var parts = cookies[i].split('=');
+			var name = decode(parts.shift());
+			var cookie = parts.join('=');
+
+			if (key && key === name) {
+				// If second argument (value) is a function it's a converter...
+				result = read(cookie, value);
+				break;
+			}
+
+			// Prevent storing a cookie that we couldn't decode.
+			if (!key && (cookie = read(cookie)) !== undefined) {
+				result[name] = cookie;
+			}
+		}
+
+		return result;
+	};
+
+	config.defaults = {};
+
+	$.removeCookie = function (key, options) {
+		if ($.cookie(key) === undefined) {
+			return false;
+		}
+
+		// Must not alter options, thus extending a fresh object...
+		$.cookie(key, '', $.extend({}, options, { expires: -1 }));
+		return !$.cookie(key);
+	};
+
+}));
+
+</script>
+<script>
+
+//jQuery(function () {
+jQuery(document).ready(function() {    
+    if (jQuery.cookie('spCookiesConsent')) {
+        jQuery('.footer-cookies-consent').remove();
+    }
+});
+jQuery(document).on('click','.close-x',function(){
+    jQuery('.footer-cookies-consent').fadeTo(300,0,function(){
+        jQuery('.footer-cookies-consent').remove();
+        jQuery('#block-block-17').remove();
+        
+    });
+    jQuery.cookie('spCookiesConsent', '1', {expires: 21, path: '/'});
+});
+    
+</script>
+</div>
+<div class="block block-block even" id="block-block-1">
+<script async="" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56f044a87b55b5ed" type="text/javascript"></script>
+</div>
+<div class="block block-block last odd" id="block-block-7">
+<!-- UTM to Cookie -->
+<script>
+function dpi_getQueryStringValue(e){e=e.replace(/[*+?^$.\[\]{}()|\\\/]/g,"\\$&");var t=location.search.match(new RegExp("[?&]"+e+"=([^&]+)(&|$)"));return t&&decodeURIComponent(t[1].replace(/\+/g," "))}function dpi_getDomain(){var e=/[\w-]+\.(com|net|org|co\.uk|co|us|pantheonsite\.io)/gi,t=location.hostname;return t.match(e)[0]}var dpi_marketoUtmFields={utm_source:["ppcSource__c","utmSource"],utm_medium:["ppcMedium__c","utmMedium"],utm_campaign:["ppcCampaign__c","utmCampaign"],utm_adgroup:["ppcAdGroup__c","utmAdGroup"],utm_term:["ppcKeyword__c","utmTerm"],utm_content:["ppcContent__c","utmContent"],ppcoffr:"ppcoffr__c",ppctype:"ppctype__c"},dpi_cookieDomain="example.com";!function(e){var t=!1;if("function"==typeof define&&define.amd&&(define(e),t=!0),"object"==typeof exports&&(module.exports=e(),t=!0),!t){var o=window.Cookies,i=window.Cookies=e();i.noConflict=function(){return window.Cookies=o,i}}}(function(){function e(){for(var e=0,t={};e<arguments.length;e++){var o=arguments[e];for(var i in o)t[i]=o[i]}return t}function t(o){function i(t,r,n){var p;if("undefined"!=typeof document){if(arguments.length>1){if(n=e({path:"/"},i.defaults,n),"number"==typeof n.expires){var c=new Date;c.setMilliseconds(c.getMilliseconds()+864e5*n.expires),n.expires=c}try{p=JSON.stringify(r),/^[\{\[]/.test(p)&&(r=p)}catch(a){}return r=o.write?o.write(r,t):encodeURIComponent(String(r)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,decodeURIComponent),t=encodeURIComponent(String(t)),t=t.replace(/%(23|24|26|2B|5E|60|7C)/g,decodeURIComponent),t=t.replace(/[\(\)]/g,escape),document.cookie=[t,"=",r,n.expires?"; expires="+n.expires.toUTCString():"",n.path?"; path="+n.path:"",n.domain?"; domain="+n.domain:"",n.secure?"; secure":""].join("")}t||(p={});for(var d=document.cookie?document.cookie.split("; "):[],u=/(%[0-9A-Z]{2})+/g,m=0;m<d.length;m++){var s=d[m].split("="),l=s.slice(1).join("=");'"'===l.charAt(0)&&(l=l.slice(1,-1));try{var _=s[0].replace(u,decodeURIComponent);if(l=o.read?o.read(l,_):o(l,_)||l.replace(u,decodeURIComponent),this.json)try{l=JSON.parse(l)}catch(a){}if(t===_){p=l;break}t||(p[_]=l)}catch(a){}}return p}}return i.set=i,i.get=function(e){return i.call(i,e)},i.getJSON=function(){return i.apply({json:!0},[].slice.call(arguments))},i.defaults={},i.remove=function(t,o){i(t,"",e(o,{expires:-1}))},i.withConverter=t,i}return t(function(){})});var dpi_queryStringUtmVals={},dpi_cookieUtmVals={};"example.com"==dpi_cookieDomain&&(dpi_cookieDomain=dpi_getDomain());for(property in dpi_marketoUtmFields)if("[object Array]"===Object.prototype.toString.call(dpi_marketoUtmFields[property]))for(field in dpi_marketoUtmFields[property])dpi_getQueryStringValue(property)&&(dpi_queryStringUtmVals[dpi_marketoUtmFields[property][field]]=dpi_getQueryStringValue(property));else dpi_getQueryStringValue(property)&&dpi_getQueryStringValue(property).length>0&&(dpi_queryStringUtmVals[dpi_marketoUtmFields[property]]=dpi_getQueryStringValue(property));Object.keys(dpi_queryStringUtmVals).length>0&&Cookies.set("dpi_utmVals",dpi_queryStringUtmVals,{expires:3652,domain:"."+dpi_cookieDomain}),"undefined"!=typeof Cookies.getJSON("dpi_utmVals")&&setTimeout(function(){"undefined"!=typeof MktoForms2&&MktoForms2.whenReady(function(e){e.addHiddenFields(Cookies.getJSON("dpi_utmVals"),{domain:"."+dpi_cookieDomain}),e.onSuccess(function(e){Cookies.remove("dpi_utmVals",{domain:"."+dpi_cookieDomain})})})},2e3);
+</script>
+</div>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f3e1c3f02b","applicationID":"23519202","transactionName":"M1ZaYkpWCEcAAUINCgoceVVMXglaTj1EARMNQFFZVl4IUz4UXwES","queueTime":0,"applicationTime":552,"atts":"HxFZFAJMG0k=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
