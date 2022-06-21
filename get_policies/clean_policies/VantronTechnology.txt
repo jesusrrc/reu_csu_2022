@@ -1,0 +1,33 @@
+[8] errorexception in channel.php line 269
+undefined index: description
+}
+$retrieval = $this->request->get('');
+$page = $this->request->get('page');
+$type = $this->request->get('type');
+$bsh_bid = $this->request->get('bsh_bid');  // 分享的参数
+if($retrieval && !$type && !$page && !$bsh_bid){
+$a=array_keys($retrieval['description'] );
+$last= end($a) ;
+$search="";
+foreach ($retrieval['description']  as $key=>$val){
+$search  .= " b.retrieval  like '%{$val}%'  " . ($key==$last?'  ':' and ') ;
+$map      = " b.retrieval  like '%{$val}%'  " . ($key==$last?'  ':' or ') ;
+}
+if($search){
+$where  = " {$search} and a.channel_id = $channel->id";
+$maps   = " {$map}   and a.channel_id = $channel->id";
+call stack
+in channel.php line 269
+at error::apperror(8, 'undefined index: des...', '/var/www/html/addons...', 269, ['diyname' => 'privacy', 'channel' => object(channel), 'filterlist' => [], ...]) in channel.php line 269
+at channel->index()
+at call_user_func_array([object(channel), 'index'], []) in route.php line 76
+at route->execute('cms', 'channel', 'index')
+at reflectionmethod->invokeargs(object(route), ['cms', 'channel', 'index']) in app.php line 343
+at app::invokemethod(['\think\addons\route', 'execute'], ['access-control-allow-origin' => '*', 'access-control-allow-methods' => 'get', 'access-control-allow-headers' => 'content-type', ...]) in app.php line 470
+at app::exec(['type' => 'method', 'method' => ['\think\addons\route', 'execute'], 'var' => ['addon' => 'cms', 'controller' => 'channel', 'action' => 'index']], ['app_host' => '', 'app_debug' => true, 'app_trace' => false, ...]) in app.php line 139
+at app::run() in start.php line 19
+at require('/var/www/html/thinkp...') in index.php line 24
+environment variables
+get data
+server/request data
+thinkphp constants
