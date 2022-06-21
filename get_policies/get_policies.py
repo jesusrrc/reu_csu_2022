@@ -17,13 +17,18 @@ import sys
 import urllib.request
 import time
 import re
+import itertools
 from bs4 import BeautifulSoup
 
 # Creating an useragent for certain servers that reject
 # requests without user agents.
-header = {
-  'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36',
-}
+headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Max-Age': '3600',
+    'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'
+    }
 
 # Arrays to store companies and their links.
 pairs = list()
@@ -41,20 +46,28 @@ for pair in fp:
 
 fp.close()                      # Closing first reader.
 
+# Removing duplicates.
+pairsS = set(tuple(x) for x in pairs)
+pairs  = [ list(x) for x in pairsS ]
+
+# A regular expression to remove special characters from names.
+regex = re.compile('[^a-zA-Z0-9]')
+
 for pair in pairs:
-  req = requests.get(pair[1], headers=header)
-  content = BeautifulSoup(req.content, 'html.parser')
+  flag = 1                                                       # Resetting flag and printing pair.
+  print(pair)
 
-  print( content ) 
+  if( pair[1][len(pair[1])-3:len(pair[1])] == "pdf" ):           # A check to procure we are not using a PDF file.
+    flag = 0
 
+  try: 
+    req = requests.get(pair[1], headers, timeout=10)             # Making request with header.
+  except:
+    print("Found an error while accessing site.")
+    flag = 0
 
-#  page = urllib.request.Request(pair[1])         # Making request to page.
-#  page.add_header("User-Agent", "aUserAgent")
-#  page = urllib.request.urlopen(pair[1]).read()
-  #page = BeautifulSoup(page, 'html.parser')
-  print("done")
-
-#  pageContent = str(page)                         # Getting content as string.
-
-  fp = open( pair[0]+".txt", 'x' )                # Writing content to a custom file
-  fp.write(pageContent)
+  if( flag == 1 ):
+    pageContent = BeautifulSoup(req.content, 'html.parser')      # Opening html file and writing
+    fp = open( regex.sub('',pair[0])+".txt", 'x' )          # content to a text file.
+    fp.write(str(pageContent))
+    fp.close()
