@@ -11,3 +11,9 @@ script should be piped to a file named iot_names.
 * `output.html`: An HTML file with the raw IoT company names.
 * `iot_names_3`: A text file with the actual names of IoT companies. Note that this file may contain repeated
 tokens.
+
+## Compilation
+
+To extract the names, please run the script in this fashion on a Linux terminal:
+
+    python3 get_policy_names_iotone.py | iot_names.txt
