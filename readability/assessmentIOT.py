@@ -13,7 +13,6 @@
 # Used libraries.
 import readability
 import nltk
-nltk.download('punkt')
 import os
 import sys
 import re
@@ -26,7 +25,7 @@ import re
 # Pos: Returns the average number of words/tokens.
 #
 #########################################################################################
-
+"""
 def avgNumWords( sentences ):
   avg = 0
 
@@ -35,6 +34,7 @@ def avgNumWords( sentences ):
 
   avg = float( avg / len(sentences) )         # Calculating average.
   return avg 
+"""
 
 #########################################################################################
 #
@@ -95,19 +95,16 @@ for line in lst:
 for sent in sentences:
   text = text + " " + sent
 
-"""
-# Making report.
-print("File name = ", fileName )
-print("Number of sentences = ", len(sentences), "\nAverage number of words", avgNumWords(sentences) ) 
-readabi = readability.Readability(text)
-print( "ARI Score = ", readabi.ari() ) 
-print( "FK = ", readabi.flesch_kincaid() )
-print( "G-Fog = ", readabi.gunning_fog() )
-"""
-
 # Making report.
 results = readability.getmeasures(text, lang='en')
-print("File name = ", fileName )
-print( results['readability grades'], '\n' )
-print( results['sentence info'], '\n' )
-print( results['word usage'],'\n' )
+
+print("Filename ; ", fileName )
+
+for x in (results['readability grades'].items()):
+  print( x[0], ";", x[1] )
+
+for x in (results['sentence info'].items()):
+  print( x[0], ";", x[1] )  
+
+for x in (results['word usage'].items()):
+  print( x[0], ";", x[1] )    
