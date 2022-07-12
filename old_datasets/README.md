@@ -6,5 +6,5 @@ are not available as CSV files by default. Particularly, this folder includes th
 
 * OPP 115 dataset (https://www.usableprivacy.org/data).
 * Purpose-Extraction dataset (https://www.hindawi.com/journals/scn/2021/5552501/).
-* REU@CSU team's dataset.
-* Carnegie-Mellon dataset (https://sc.cs.cmu.edu/research-detail/73-usable-privacy-policy-project).
+* REU@CSU 2021 team's dataset.
+* Carnegie-Mellon's dataset (https://sc.cs.cmu.edu/research-detail/73-usable-privacy-policy-project).
