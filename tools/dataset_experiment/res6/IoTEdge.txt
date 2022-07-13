@@ -1,0 +1,115 @@
+this browser is no longer supported.
+upgrade to microsoft edge to take advantage of the latest features, security updates, and technical support.
+security standards for azure iot edge.
+article.
+03/07/2022.
+5 minutes to read.
+6 contributors.
+in this article.
+applies to.
+iot edge 1.
+1  iot edge 1.
+2.
+azure iot edge addresses the risks that are inherent when moving your data and analytics to the intelligent edge.
+the iot edge security standards balance flexibility for different deployment scenarios with the protection that you expect from all azure services.
+iot edge runs on various makes and models of hardware, supports several operating systems, and applies to diverse deployment scenarios.
+rather than offering concrete solutions for specific scenarios, iot edge is an extensible security framework based on well-grounded principles that are designed for scale.
+the risk of a deployment scenario depends on many factors, including.
+solution ownership.
+deployment geography.
+data sensitivity.
+privacy.
+application vertical.
+regulatory requirements.
+this article provides an overview of the iot edge security framework.
+for more information, see securing the intelligent edge.
+standards.
+standards promote ease of scrutiny and ease of implementation, both of which are hallmarks of security.
+a security solution should lend itself to scrutiny under evaluation to build trust and shouldn't be a hurdle to deployment.
+the design of the framework to secure azure iot edge is based on time-tested and industry proven security protocols for familiarity and reuse.
+authentication.
+when you deploy an iot solution, you need to know that only trusted actors, devices, and modules have access to your solution.
+certificate-based authentication is the primary mechanism for authentication for the azure iot edge platform.
+this mechanism is derived from a set of standards governing public key infrastructure (pkix) by the internet engineering task force (ietf).
+all devices, modules, and actors that interact with the azure iot edge device should have unique certificate identities.
+this guidance applies whether the interactions are physical or through a network connection.
+not every scenario or component may lend itself to certificate-based authentication, so the extensibility of the security framework offers secure alternatives.
+for more information, see azure iot edge certificate usage.
+authorization.
+the principle of least privilege says that users and components of a system should have access only to the minimum set of resources and data needed to perform their roles.
+devices, modules, and actors should access only the resources and data within their permission scope, and only when it is architecturally allowable.
+some permissions are configurable with sufficient privileges and others are architecturally enforced.
+for example, some modules may be authorized to connect to azure iot hub.
+however, there is no reason why a module in one iot edge device should access the twin of a module in another iot edge device.
+other authorization schemes include certificate signing rights and role-based access control (rbac).
+attestation.
+attestation ensures the integrity of software bits, which is important for detecting and preventing malware.
+the azure iot edge security framework classifies attestation under three main categories.
+static attestation.
+runtime attestation.
+software attestation.
+static attestation.
+static attestation verifies the integrity of all software on a device during power-up, including the operating system, all runtimes, and configuration information.
+because static attestation occurs during power-up, it's often referred to as secure boot.
+the security framework for iot edge devices extends to manufacturers and incorporates secure hardware capabilities that assure static attestation processes.
+these processes include secure boot and secure firmware upgrade.
+working in close collaboration with silicon vendors eliminates superfluous firmware layers, so minimizes the threat surface.
+runtime attestation.
+once a system has completed a secure boot process, well-designed systems should detect attempts to inject malware and take proper countermeasures.
+malware attacks may target the system's ports and interfaces.
+if malicious actors have physical access to a device, they may tamper with the device itself or use side-channel attacks to gain access.
+such malcontent, whether malware or unauthorized configuration changes, can't be detected by static attestation because it is injected after the boot process.
+countermeasures offered or enforced by the device’s hardware help to ward off such threats.
+the security framework for iot edge explicitly calls for extensions that combat runtime threats.
+software attestation.
+all healthy systems, including intelligent edge systems, need patches and upgrades.
+security is important for update processes, otherwise they can be potential threat vectors.
+the security framework for iot edge calls for updates through measured and signed packages to assure the integrity of and authenticate the source of the packages.
+this standard applies to all operating systems and application software bits.
+hardware root of trust.
+for many intelligent edge devices, especially devices that can be physically accessed by potential malicious actors, hardware security is the last defense for protection.
+tamper resistant hardware is crucial for such deployments.
+azure iot edge encourages secure silicon hardware vendors to offer different flavors of hardware root of trust to accommodate various risk profiles and deployment scenarios.
+hardware trust may come from common security protocol standards like trusted platform module (iso/iec 11889) and trusted computing group’s device identifier composition engine (dice).
+secure enclave technologies like trustzones and software guard extensions (sgx) also provide hardware trust.
+certification.
+to help customers make informed decisions when procuring azure iot edge devices for their deployment, the iot edge framework includes certification requirements.
+foundational to these requirements are certifications pertaining to security claims and certifications pertaining to validation of the security implementation.
+for example, a security claim certification means that the iot edge device uses secure hardware known to resist boot attacks.
+a validation certification means that the secure hardware was properly implemented to offer this value in the device.
+in keeping with the principle of simplicity, the framework tries to keep the burden of certification minimal.
+extensibility.
+with iot technology driving different types of business transformations, security should evolve in parallel to address emerging scenarios.
+the azure iot edge security framework starts with a solid foundation on which it builds in extensibility into different dimensions to include.
+first party security services like the device provisioning service for azure iot hub.
+third-party services like managed security services for different application verticals (like industrial or healthcare) or technology focus (like security monitoring in mesh networks, or silicon hardware attestation services) through a rich network of partners.
+legacy systems to include retrofitting with alternate security strategies, like using secure technology other than certificates for authentication and identity management.
+secure hardware for adoption of emerging secure hardware technologies and silicon partner contributions.
+in the end, securing the intelligent edge requires collaborative contributions from an open community driven by the common interest in securing iot.
+these contributions might be in the form of secure technologies or services.
+the azure iot edge security framework offers a solid foundation for security that is extensible for the maximum coverage to offer the same level of trust and integrity in the intelligent edge as with azure cloud.
+next steps.
+read more about how azure iot edge is securing the intelligent edge.
+feedback.
+submit and view feedback for.
+light.
+dark.
+high contrast.
+previous version docs.
+blog.
+contribute.
+privacy & cookies.
+terms of use.
+trademarks.
+© microsoft 2022.
+in this article.
+light.
+dark.
+high contrast.
+previous version docs.
+blog.
+contribute.
+privacy & cookies.
+terms of use.
+trademarks.
+© microsoft 2022.

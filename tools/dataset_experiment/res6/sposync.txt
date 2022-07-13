@@ -1,0 +1,134 @@
+this browser is no longer supported.
+upgrade to microsoft edge to take advantage of the latest features, security updates, and technical support.
+set-spotenantsyncclientrestriction.
+reference.
+controls tenant-wide options and restrictions specific to syncing files.
+in this article.
+syntax.
+description.
+this cmdlet contains more than one parameter set.
+you may only use parameters from one parameter set, and you may not combine parameters from different parameter sets.
+for more information about how to use parameter sets, see cmdlet parameter sets.
+you must be a sharepoint online administrator or global administrator to run the cmdlet.
+requires a valid connect-sposervice context to identify the tenant.
+for information on how to connect to the tenant, see connect-sposervice.
+the set-spotenantsyncclientrestriction cmdlet is used to control a variety of tenant-wide administrative settings related to syncing files from onedrive and sharepoint.
+you may use it to.
+set restrictions on whether users can sync items to non-domain joined machines, control the list of allowed domains, and manage whether mac clients (which do not support domain join) can sync.
+set restrictions on whether users can sync items to non-domain joined machines, control the list of allowed domains, and manage whether mac clients (which do not support domain join) can sync.
+prevents files with specific extensions from being synced.
+prevents files with specific extensions from being synced.
+controls whether users can continue to sync onedrive for business libraries with the old onedrive for business sync client.
+controls whether users can continue to sync onedrive for business libraries with the old onedrive for business sync client.
+restrict non-domain joined machines from syncing.
+the set-spotenantsyncclientrestriction cmdlet can be used to enable the feature for tenancy and set the domain guids in the safe recipients list.
+when this feature is enabled it can take up to 24 hours for the change to take effect.
+however, any changes to the safe domains list are reflected within five minutes.
+important.
+the new onedrive for business next generation sync client lets you connect and sync files from your onedrive for business.
+you can add a work or school account to the new onedrive for business sync client and sync all your files in onedrive to your computer.
+for more information, see improve your onedrive sync experience.
+when the feature is enabled the following will occur.
+all onedrive for business sync client requests originating from a domain that is not on the safe recipients list will be blocked.
+all onedrive for business sync client requests originating from a domain that is not on the safe recipients list will be blocked.
+all microsoft onedrive mac sync client and mac beta client requests will not be blocked by default.
+all microsoft onedrive mac sync client and mac beta client requests will not be blocked by default.
+microsoft onedrive mobile apps  are not blocked when this feature is enabled.
+microsoft onedrive mobile apps  are not blocked when this feature is enabled.
+regardless whether a computer is managed by a device management solution, a sync relationship will not be established unless they are   joined to a domain in the safe recipient list.
+regardless whether a computer is managed by a device management solution, a sync relationship will not be established unless they are   joined to a domain in the safe recipient list.
+any files that have been previously been synced down to your computer will not be deleted.
+any files that have been previously been synced down to your computer will not be deleted.
+when this feature is enabled, please be aware the following upload behavior.
+new or existing files added to the client will still be uploaded to the server and will not be blocked.
+regardless if the computer is joined to a domain which is set in the safe recipient list.
+regardless if the computer is joined to  a domain which is not set in the safe recipient list.
+and for all non-domain joined computers.
+when this feature is enabled, please be aware the following upload behavior.
+new or existing files added to the client will still be uploaded to the server and will not be blocked.
+regardless if the computer is joined to a domain which is set in the safe recipient list.
+regardless if the computer is joined to  a domain which is not set in the safe recipient list.
+and for all non-domain joined computers.
+microsoft  onedrive for business sync client prior to version 15.
+0.
+4693.
+1000 will stop syncing existing libraries.
+microsoft  onedrive for business sync client prior to version 15.
+0.
+4693.
+1000 will stop syncing existing libraries.
+important.
+in order to explicitly block microsoft onedrive client for mac or onedrive for business next generation sync client on mac os x, please run the set-spotenantsyncclientrestriction cmdlet with the blockmacsync parameter set to true.
+for more information about the next generation sync client for mac os x, see get started with the new onedrive sync client on mac os x.
+important.
+there is a known onedrive for business sync client issue where syncing is being  blocked even if a computer is joined to a domain which is  set in the safe recipient list.
+to resolve this behavior, obtain the 15.
+0.
+4719.
+1000 version or higher of the sync client, see may 12, 2015, update for onedrive for business.
+note.
+to determine the version of your sync client, see what version of the sync client am i using.
+the latest onedrive for business sync client can be downloaded from download onedrive for windows or how to install onedrive for business for sharepoint and sharepoint online.
+important.
+this capability doesn't support microsoft azure active directory (ad) joined or workplace joined devices.
+for additional information about how to troubleshoot the onedrive for business sync client, see how to switch from an msi installation of onedrive for business (formerly skydrive pro) standalone to a click-to-run installation of onedrive for business (formerly skydrive pro) standalone.
+block specific file extensions from syncing.
+the set-spotenantsyncclientrestriction cmdlet can be used to configure a list of file extensions that should not be synced by the onedrive sync client, such as .
+pst files.
+any file extension may be blocked using this feature, but note that it may take up to 24 hours for a change to take affect across all user devices.
+when this feature is enabled, users syncing any file that is in the exclusion list will see an error message informing them of the block.
+important.
+this feature is only supported by the new onedrive for business sync client.
+to determine the version of your sync client, see what version of the sync client am i using.
+examples.
+--------------------example 1---------------------.
+this example enables the feature for the  tenancy and adds the domains guids to the safe recipient list.
+--------------------example 2------------------.
+this example turns on the block mac sync functionality.
+--------------------example 3------------------.
+this example blocks syncing of powerpoint, word, and excel file types using the new sync client (onedrive.
+exe).
+--------------------example 4------------------.
+this example clears the excludedfileextension list and lets all file types synced with the new client (onedrive.
+exe).
+parameters.
+block mac sync clients-- the beta version and the new sync client (onedrive.
+exe).
+the values for this parameter are true and false.
+the default value is false.
+sets the domain guid to add to the safe recipient list.
+requires a minimum of 1 domain guid.
+the maximum number of domain guids allowed are 125.
+enables the feature to block sync originating from domains that are not present in the safe recipients list.
+blocks certain file types from syncing with the new sync client (onedrive.
+exe).
+note.
+it may take up to one hour for changes to take effect.
+inputs.
+none.
+outputs.
+system.
+object.
+feedback.
+submit and view feedback for.
+light.
+dark.
+high contrast.
+previous version docs.
+blog.
+contribute.
+privacy & cookies.
+terms of use.
+trademarks.
+© microsoft 2022.
+in this article.
+light.
+dark.
+high contrast.
+previous version docs.
+blog.
+contribute.
+privacy & cookies.
+terms of use.
+trademarks.
+© microsoft 2022.
