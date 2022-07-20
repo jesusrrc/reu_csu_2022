@@ -29,10 +29,7 @@ We retrieved and recorded the following metrics:
 * Number of Prepositions.
 
 <p align="center">
-  <figure align="center">
   <img width="700" src="https://github.com/jesusrrc/reu_csu_2022/blob/main/readability/plots/example.png">
-  <figcaption align"center">Figure: Sample Scatterplot for a Readability Metric.</figcaption>
-  </figure>
 </p>
 
 ## Files/Scripts
