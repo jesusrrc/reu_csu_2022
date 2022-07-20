@@ -6,27 +6,29 @@ This folder contains the files/scripts used perform readability assessments and 
 We used an external Python package to obtain these metrics [1].
 
 We retrieved and recorded the following metrics:
-* Kincaid Grade Level
-* Automated Readability Index (ARI)
-* Coleman-Liau Index
-* Flesch Reading Ease Test
-* Gunning Fog Index
-* Lix Readability Formula
-* SMOG Readability Formula
-* Rix Readability Test
-* Dale-Chall Index
-* Characters per Word
-* Syllables per Word
-* Words per Sentence
-* Number of Characters
-* Number of Syllables
-* Number of Words
-* Number of Sentences
-* Number of Be Verbs
-* Number of Auxilliary Verbs
-* Number of Conjunctions
-* Number of Pronouns
-* Number of Prepositions
+* Kincaid Grade Level.
+* Automated Readability Index (ARI).
+* Coleman-Liau Index.
+* Flesch Reading Ease Test.
+* Gunning Fog Index.
+* Lix Readability Formula.
+* SMOG Readability Formula.
+* Rix Readability Test.
+* Dale-Chall Index.
+* Characters per Word.
+* Syllables per Word.
+* Words per Sentence.
+* Number of Characters.
+* Number of Syllables.
+* Number of Words.
+* Number of Sentences.
+* Number of Be Verbs.
+* Number of Auxilliary Verbs.
+* Number of Conjunctions.
+* Number of Pronouns.
+* Number of Prepositions.
+
+![Figure: A sample scatterplot for the Kincaid readability test.](https://github.com/jesusrrc/reu_csu_2022/blob/main/readability/plots/0.pdf)
 
 ## Files/Scripts
 
