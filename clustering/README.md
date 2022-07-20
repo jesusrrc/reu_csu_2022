@@ -33,4 +33,4 @@ stored under `sample_results.txt`
 
 [1] https://ieeexplore.ieee.org/document/8443795  \
 [2] https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html \
-[3] https://www.mentimeter.com/features/word-cloud \ 
+[3] https://www.mentimeter.com/features/word-cloud  
