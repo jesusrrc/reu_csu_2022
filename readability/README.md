@@ -28,9 +28,9 @@ We retrieved and recorded the following metrics:
 * Number of Pronouns.
 * Number of Prepositions.
 
-lign="right" width="100" height="100" src="http://www.fillmurray.com/100/100">
-
-<img align="right" width="100" height="100" src="https://github.com/jesusrrc/reu_csu_2022/blob/main/readability/plots/example.png">
+<p align="center">
+  <img width="450" height="450" src="https://github.com/jesusrrc/reu_csu_2022/blob/main/readability/plots/example.png">
+</p>
 
 ## Files/Scripts
 
