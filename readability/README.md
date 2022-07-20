@@ -29,7 +29,7 @@ We retrieved and recorded the following metrics:
 * Number of Prepositions.
 
 <p align="center">
-  <img width="450" height="450" src="https://github.com/jesusrrc/reu_csu_2022/blob/main/readability/plots/example.png">
+  <img width="450" src="https://github.com/jesusrrc/reu_csu_2022/blob/main/readability/plots/example.png">
 </p>
 
 ## Files/Scripts
