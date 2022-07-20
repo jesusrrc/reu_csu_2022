@@ -2,7 +2,7 @@
 
 ## Description
 
-This folder contains the files/scripts used perform readability assessments and visualize these metrics with scatterplots.
+This folder contains the files/scripts used perform readability assessments and visualize these metrics with scatterplots (see figure below).
 We used an external Python package to obtain these metrics [1].
 
 We retrieved and recorded the following metrics:
