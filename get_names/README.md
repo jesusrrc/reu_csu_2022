@@ -21,5 +21,5 @@ To extract the names, please run the script in this fashion on a Linux terminal,
 
 ## References
 
-[1] https://www.iotone.com/about \ 
+[1] https://www.iotone.com/about\ 
 [2] https://www.iotone.com/suppliers
