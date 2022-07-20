@@ -14,6 +14,7 @@ import os
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
+import statistics
 
 #########################################################################################
 #
@@ -107,11 +108,42 @@ y_axes = [ "kincaid", "ari", "coleman_liau", "flesch", "gfi", "lix", "smog", "ri
 "words_per_sent", "chars", "syll", "words", "sents", "to_be_verbs", "aux_verbs", "conjunctions", "pronouns", "prepositions"
 ]
 
-i = 0
-for y in y_axes:
-  plt.title("Figure "+y)
-  plt.scatter( m0,m1,s=[2 for n in range(len(m0))] )
+data = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m16, m17, m18, m19, m24, m25, m26, m27, m28 ]
+
+titles = [
+  "Kincaid Grade Level",
+  "Automated Readability Index (ARI)",
+  "Coleman-Liau Index",
+  "Flesch Reading Ease Test",
+  "Gunning Fog Index",
+  "Lix Readability Formula",
+  "SMOG Readability Formula",
+  "Rix Readability Test",
+  "Dale-Chall Index",
+  "Characters per Word",
+  "Syllables per Word",
+  "Words per Sentence",
+  "Number of Characters",
+  "Number of Syllables",
+  "Number of Words",
+  "Number of Sentences",
+  "Number of Be Verbs",
+  "Number of Auxilliary Verbs",
+  "Number of Conjunctions",
+  "Number of Pronouns",
+  "Number of Prepositions"
+]
+
+# Statistical report.
+for i in range( 0, len(y_axes) ):
+  print(titles[i])
+  print( max(data[i]), statistics.median(data[i]), sum(data[i])/float(len(data[i])) )
+
+# Data plots.
+for i in range( 0,len(y_axes) ):
+  plt.title( titles[i] ) 
+  plt.scatter( m0, data[i], s=[2 for n in range(len(m0))] )
   plt.xlabel( "file_ids" )
-  plt.ylabel( y )
+  plt.ylabel( y_axes[i] )
   plt.savefig( str(i)+'.pdf' )
-  i = i + 1 
+  plt.clf()
