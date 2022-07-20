@@ -28,7 +28,7 @@ We retrieved and recorded the following metrics:
 * Number of Pronouns.
 * Number of Prepositions.
 
-![Figure: A sample scatterplot for the Kincaid readability test.](https://github.com/jesusrrc/reu_csu_2022/blob/main/readability/plots/0.pdf)
+![Figure: A sample scatterplot for the Kincaid readability test.](https://github.com/jesusrrc/reu_csu_2022/blob/main/readability/plots/example.pdf)
 
 ## Files/Scripts
 
