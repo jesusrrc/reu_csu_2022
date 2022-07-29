@@ -1,39 +1,35 @@
 """
 Title: PurExt Implementation
 Author: Vincent Miller
-Date: 13 June 2022
-Description: Implement the PurExt algorithm to pull purpose-aware rules from privacy policies
-    See notes.txt for more details
+Date: 18 July 2022
+Description: Implement the Purpose Extraction (PurExt) algorithm to extract purpose-aware rules from privacy policies.
+Files: main.py - controls how many processes to split the workload, and calls the process_policies() function.
+       functions.py - required file, contains necessary functions that perform the bulk of the work.
+Input: Plain text (.txt) files stored in folder "Plain Text Policies/".
+Output: Comma Separated Values (.csv) files stored in folder "Extracted Policies/".
 """
-import spacy
-import classifier
-from spacy import displacy
+import os
+import time
+import multiprocessing
+import functions
 
-# PurExt examples
-s1 = "The purpose of collecting your location data and speed is to analyze your train statistics."  # explicit
-# r1({},{“collect”},{“your location data”,”speed”},{“analyze your train statistics”})
-s2 = "The reason of using your name and e-mail address includes website account registration."  # explicit
-# r2({}, {“use”}, {“Your name”, “e-mail address”}, {“website account registration”})
-s3 = "The app will collect your heart rate and pulse to make suggestions for future workouts."  # implicit
+multiprocess = True  # turn on/off multiprocess
+process = 8  # how many processes to use, and how many splits to perform on dir list
+files_all = os.listdir("Plain Text Policies/")  # puts all files in dir to list
 
-# Because these sentences don't have periods (.), spacy doesn't tokenize them correctly.
-# my attempt to add . to the end of every line
-with open("Plain Text Policies/PurExtSents.txt", 'r') as istr:
-    with open('output.txt', 'w') as ostr:
-        for line in istr:
-            line = line.rstrip('\n') + '.'
-            print(line, file=ostr)
+if multiprocess:
+    # split files into even lists for each process
+    files_split = [files_all[i:i + process] for i in range(0, len(files_all), process)]
+    if __name__ == "__main__":  # main check gate
+        start_time = time.perf_counter()  # start performance timer
+        pool = multiprocessing.Pool(processes=process)  # initialize multiple processes
+        pool.map(functions.process_policies, files_split)  # start processes for function and input
+        end_time = time.perf_counter()  # end performance timer
+        print(f"Total Time: {end_time - start_time:0.2f} seconds")
+else:
+    functions.process_policies(files_all)
 
-nlp = spacy.load("en_core_web_sm")
+# functions.generate_totals()
 
-file = open("output.txt", "r")
-doc = nlp(file.read())
-file.close()
-
-# doc = nlp(s1 + " " + s2 + " " + s3)
-
-classifier.sentence_classifier(doc)
-
-
-# http://127.0.0.1:5000 to view dependency tree
-# displacy.serve(doc, options={"compact": True, "collapse_phrases": True})`
+# display dependency tree for sentence at http://127.0.0.1:5000
+# displacy.serve(doc)  # options={"compact": True, "collapse_phrases": True}
