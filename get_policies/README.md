@@ -17,11 +17,11 @@ into plaintext files.
 
 To obtain the raw HTML files, run this Python scripts, procuring `raw_policies` and `links_7` are in the same directory:
 
-    python3 get_policies.
+    python3 get_policies.py
 
 Then, we can convert the HTML files into plaintext files, procuring `cleaned_policies` exists in the current directory:
 
-    python3 extract_valid.py
+    python3 clean_policies.py
 
 ## References
 
