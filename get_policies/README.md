@@ -1,4 +1,4 @@
-# readability: Automated Extraction and Preprocessing of IoT Privacy Policies.
+# get_policies: Automated Extraction and Preprocessing of IoT Privacy Policies.
 
 ## Description
 
