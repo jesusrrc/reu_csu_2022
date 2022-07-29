@@ -1,7 +1,7 @@
 # pur_ext: PurExt Implementation
-**Author:** Vincent Miller
-**Date:** 18 July 2022
-**Files:** main.py, functions.py, policy_totals.csv, README.txt
+**Author:** Vincent Miller \
+**Date:** 18 July 2022 \
+**Files:** main.py, functions.py, policy_totals.csv, README.txt \ 
 **Folders:** Extracted Policies, Plain Text Policies
 
 ## `main.py`
