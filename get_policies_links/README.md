@@ -7,8 +7,8 @@ the project, we obtained about 3000 links to privacy policies from Google.
 
 ## Files/Scripts
 
-* `get_policies_links.py`: A
-* `get_assessments_IOT.sh`: 
+* `get_policies_links.py`: Python script to extract links to IoT privacy policies from the web.
+* `iot_names_3`: Text file with names of IoT companies. 
 
 ## Compilation
 
