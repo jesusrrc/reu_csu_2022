@@ -46,7 +46,6 @@ def cleanPolicy( fileName ):
   for element in soup.find_all(tags):
     if( element.text != "" and element.text != "\n" ):
       x = element.text
-      x = x.lower()
       x = x.strip()
       x = x.replace('\n', '')
       myList.append(x)

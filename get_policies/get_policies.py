@@ -50,6 +50,8 @@ fp.close()                      # Closing first reader.
 pairsS = set(tuple(x) for x in pairs)
 pairs  = [ list(x) for x in pairsS ]
 
+print( len(pairs) ) 
+
 # A regular expression to remove special characters from names.
 regex = re.compile('[^a-zA-Z0-9]')
 
